@@ -1,36 +1,36 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001E8 RID: 488
+// Token: 0x02000174 RID: 372
 public class MaintainAnimationDirection : StateMachineBehaviour
 {
-	// Token: 0x06000901 RID: 2305 RVA: 0x00008CED File Offset: 0x00006EED
+	// Token: 0x060007A3 RID: 1955 RVA: 0x000256BD File Offset: 0x000238BD
 	private void Initialize(Animator animator, AnimatorStateInfo stateInfo)
 	{
 		this.animator = animator;
 	}
 
-	// Token: 0x06000902 RID: 2306 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x060007A4 RID: 1956 RVA: 0x000256C6 File Offset: 0x000238C6
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 	}
 
-	// Token: 0x06000903 RID: 2307 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x060007A5 RID: 1957 RVA: 0x000256C8 File Offset: 0x000238C8
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 	}
 
-	// Token: 0x06000904 RID: 2308 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x060007A6 RID: 1958 RVA: 0x000256CA File Offset: 0x000238CA
 	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 	}
 
-	// Token: 0x04000B9C RID: 2972
+	// Token: 0x040009CE RID: 2510
 	private Animator animator;
 
-	// Token: 0x04000B9D RID: 2973
+	// Token: 0x040009CF RID: 2511
 	private AnimationClip clip;
 
-	// Token: 0x04000B9E RID: 2974
+	// Token: 0x040009D0 RID: 2512
 	private bool isInitialized;
 }

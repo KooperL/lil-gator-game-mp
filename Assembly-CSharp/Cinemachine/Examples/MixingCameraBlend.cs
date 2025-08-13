@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Cinemachine.Examples
 {
-	// Token: 0x020003EE RID: 1006
+	// Token: 0x020002FA RID: 762
 	[AddComponentMenu("")]
 	public class MixingCameraBlend : MonoBehaviour
 	{
-		// Token: 0x06001364 RID: 4964 RVA: 0x000107C1 File Offset: 0x0000E9C1
+		// Token: 0x06001035 RID: 4149 RVA: 0x0004DCE1 File Offset: 0x0004BEE1
 		private void Start()
 		{
 			if (this.followTarget)
@@ -17,7 +17,7 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x06001365 RID: 4965 RVA: 0x0005EC4C File Offset: 0x0005CE4C
+		// Token: 0x06001036 RID: 4150 RVA: 0x0004DD10 File Offset: 0x0004BF10
 		private void Update()
 		{
 			if (this.followTarget)
@@ -39,26 +39,26 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x0400190F RID: 6415
+		// Token: 0x0400154A RID: 5450
 		public Transform followTarget;
 
-		// Token: 0x04001910 RID: 6416
+		// Token: 0x0400154B RID: 5451
 		public float initialBottomWeight = 20f;
 
-		// Token: 0x04001911 RID: 6417
+		// Token: 0x0400154C RID: 5452
 		public MixingCameraBlend.AxisEnum axisToTrack;
 
-		// Token: 0x04001912 RID: 6418
+		// Token: 0x0400154D RID: 5453
 		private CinemachineMixingCamera vcam;
 
-		// Token: 0x020003EF RID: 1007
+		// Token: 0x02000452 RID: 1106
 		public enum AxisEnum
 		{
-			// Token: 0x04001914 RID: 6420
+			// Token: 0x04001E03 RID: 7683
 			X,
-			// Token: 0x04001915 RID: 6421
+			// Token: 0x04001E04 RID: 7684
 			Z,
-			// Token: 0x04001916 RID: 6422
+			// Token: 0x04001E05 RID: 7685
 			XZ
 		}
 	}

@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Token: 0x02000057 RID: 87
+// Token: 0x02000044 RID: 68
 public interface IOnLeafPileDestroy
 {
-	// Token: 0x06000134 RID: 308
+	// Token: 0x0600010F RID: 271
 	void OnLeafPileDestroy();
 }

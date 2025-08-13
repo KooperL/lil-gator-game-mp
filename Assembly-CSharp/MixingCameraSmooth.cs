@@ -2,10 +2,10 @@
 using Cinemachine;
 using UnityEngine;
 
-// Token: 0x020001F1 RID: 497
+// Token: 0x0200017B RID: 379
 public class MixingCameraSmooth : MonoBehaviour
 {
-	// Token: 0x06000931 RID: 2353 RVA: 0x00008F81 File Offset: 0x00007181
+	// Token: 0x060007CF RID: 1999 RVA: 0x000260C5 File Offset: 0x000242C5
 	private void OnValidate()
 	{
 		if (this.mixingCamera == null)
@@ -15,20 +15,20 @@ public class MixingCameraSmooth : MonoBehaviour
 		this.UpdateWeights();
 	}
 
-	// Token: 0x06000932 RID: 2354 RVA: 0x00008FA3 File Offset: 0x000071A3
+	// Token: 0x060007D0 RID: 2000 RVA: 0x000260E7 File Offset: 0x000242E7
 	private void OnEnable()
 	{
 		this.t = 0f;
 		this.UpdateWeights();
 	}
 
-	// Token: 0x06000933 RID: 2355 RVA: 0x00008FB6 File Offset: 0x000071B6
+	// Token: 0x060007D1 RID: 2001 RVA: 0x000260FA File Offset: 0x000242FA
 	private void Start()
 	{
 		this.childCameraCount = this.mixingCamera.ChildCameras.Length;
 	}
 
-	// Token: 0x06000934 RID: 2356 RVA: 0x000391E0 File Offset: 0x000373E0
+	// Token: 0x060007D2 RID: 2002 RVA: 0x00026110 File Offset: 0x00024310
 	private void LateUpdate()
 	{
 		float num = Time.deltaTime * (float)this.childCameraCount / this.smoothTime;
@@ -40,7 +40,7 @@ public class MixingCameraSmooth : MonoBehaviour
 		this.UpdateWeights();
 	}
 
-	// Token: 0x06000935 RID: 2357 RVA: 0x0003925C File Offset: 0x0003745C
+	// Token: 0x060007D3 RID: 2003 RVA: 0x0002618C File Offset: 0x0002438C
 	private void UpdateWeights()
 	{
 		float num = this.t;
@@ -54,7 +54,7 @@ public class MixingCameraSmooth : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000936 RID: 2358 RVA: 0x000392D8 File Offset: 0x000374D8
+	// Token: 0x060007D4 RID: 2004 RVA: 0x00026208 File Offset: 0x00024408
 	private void UpdateWeightsOld()
 	{
 		float num = this.t;
@@ -71,25 +71,25 @@ public class MixingCameraSmooth : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000BDD RID: 3037
+	// Token: 0x04000A01 RID: 2561
 	public CinemachineMixingCamera mixingCamera;
 
-	// Token: 0x04000BDE RID: 3038
+	// Token: 0x04000A02 RID: 2562
 	public float smoothTime = 5f;
 
-	// Token: 0x04000BDF RID: 3039
+	// Token: 0x04000A03 RID: 2563
 	[Range(0f, 1f)]
 	public float endSmoothing;
 
-	// Token: 0x04000BE0 RID: 3040
+	// Token: 0x04000A04 RID: 2564
 	private const float initialT = 0f;
 
-	// Token: 0x04000BE1 RID: 3041
+	// Token: 0x04000A05 RID: 2565
 	public float t;
 
-	// Token: 0x04000BE2 RID: 3042
+	// Token: 0x04000A06 RID: 2566
 	private int childCameraCount;
 
-	// Token: 0x04000BE3 RID: 3043
+	// Token: 0x04000A07 RID: 2567
 	private const int endOffset = -1;
 }

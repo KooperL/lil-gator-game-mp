@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000376 RID: 886
+// Token: 0x0200029C RID: 668
 public class TitleScreen : MonoBehaviour
 {
 }

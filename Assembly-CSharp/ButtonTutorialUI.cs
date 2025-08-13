@@ -1,13 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001FD RID: 509
+// Token: 0x02000187 RID: 391
 public class ButtonTutorialUI : MonoBehaviour
 {
-	// Token: 0x06000972 RID: 2418 RVA: 0x00039C38 File Offset: 0x00037E38
+	// Token: 0x06000808 RID: 2056 RVA: 0x00026B84 File Offset: 0x00024D84
 	public void Activate()
 	{
 		if (this.allowRecentlyPressed && this.buttonTutorial.HasBeenPressedRecently)
+		{
+			return;
+		}
+		if (Game.IsNewGamePlus)
 		{
 			return;
 		}
@@ -20,14 +24,14 @@ public class ButtonTutorialUI : MonoBehaviour
 		this.showTime = Time.time + (this.buttonTutorial.HasBeenPressed ? this.hasBeenPressedDelay : this.hasntBeenPressedDelay);
 	}
 
-	// Token: 0x06000973 RID: 2419 RVA: 0x0000929E File Offset: 0x0000749E
+	// Token: 0x06000809 RID: 2057 RVA: 0x00026C02 File Offset: 0x00024E02
 	public void Hide()
 	{
 		base.gameObject.SetActive(false);
 		base.enabled = false;
 	}
 
-	// Token: 0x06000974 RID: 2420 RVA: 0x00039CB0 File Offset: 0x00037EB0
+	// Token: 0x0600080A RID: 2058 RVA: 0x00026C18 File Offset: 0x00024E18
 	private void Update()
 	{
 		if (Game.HasControl)
@@ -52,21 +56,21 @@ public class ButtonTutorialUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000C1E RID: 3102
+	// Token: 0x04000A35 RID: 2613
 	public ButtonTutorial buttonTutorial;
 
-	// Token: 0x04000C1F RID: 3103
+	// Token: 0x04000A36 RID: 2614
 	public UIHideBehavior visualUI;
 
-	// Token: 0x04000C20 RID: 3104
+	// Token: 0x04000A37 RID: 2615
 	public float hasBeenPressedDelay = 10f;
 
-	// Token: 0x04000C21 RID: 3105
+	// Token: 0x04000A38 RID: 2616
 	public float hasntBeenPressedDelay = 1f;
 
-	// Token: 0x04000C22 RID: 3106
+	// Token: 0x04000A39 RID: 2617
 	public bool allowRecentlyPressed;
 
-	// Token: 0x04000C23 RID: 3107
+	// Token: 0x04000A3A RID: 2618
 	private float showTime = -1f;
 }

@@ -5,33 +5,33 @@ using UnityEngine;
 
 namespace Rewired.Platforms.Switch
 {
-	// Token: 0x02000408 RID: 1032
+	// Token: 0x0200030F RID: 783
 	[AddComponentMenu("Rewired/Nintendo Switch Input Manager")]
 	[RequireComponent(typeof(InputManager))]
 	public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputManager
 	{
-		// Token: 0x06001575 RID: 5493 RVA: 0x0000614F File Offset: 0x0000434F
+		// Token: 0x06001246 RID: 4678 RVA: 0x0004E981 File Offset: 0x0004CB81
 		object IExternalInputManager.Initialize(Platform platform, object configVars)
 		{
 			return null;
 		}
 
-		// Token: 0x06001576 RID: 5494 RVA: 0x00002229 File Offset: 0x00000429
+		// Token: 0x06001247 RID: 4679 RVA: 0x0004E984 File Offset: 0x0004CB84
 		void IExternalInputManager.Deinitialize()
 		{
 		}
 
-		// Token: 0x04001AE1 RID: 6881
+		// Token: 0x04001714 RID: 5908
 		[SerializeField]
 		private NintendoSwitchInputManager.UserData _userData = new NintendoSwitchInputManager.UserData();
 
-		// Token: 0x02000409 RID: 1033
+		// Token: 0x02000457 RID: 1111
 		[Serializable]
 		private class UserData : IKeyedData<int>
 		{
-			// Token: 0x170003F2 RID: 1010
-			// (get) Token: 0x06001578 RID: 5496 RVA: 0x00010E6D File Offset: 0x0000F06D
-			// (set) Token: 0x06001579 RID: 5497 RVA: 0x00010E75 File Offset: 0x0000F075
+			// Token: 0x17000546 RID: 1350
+			// (get) Token: 0x06001B82 RID: 7042 RVA: 0x000746A0 File Offset: 0x000728A0
+			// (set) Token: 0x06001B83 RID: 7043 RVA: 0x000746A8 File Offset: 0x000728A8
 			public int allowedNpadStyles
 			{
 				get
@@ -44,9 +44,9 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x170003F3 RID: 1011
-			// (get) Token: 0x0600157A RID: 5498 RVA: 0x00010E7E File Offset: 0x0000F07E
-			// (set) Token: 0x0600157B RID: 5499 RVA: 0x00010E86 File Offset: 0x0000F086
+			// Token: 0x17000547 RID: 1351
+			// (get) Token: 0x06001B84 RID: 7044 RVA: 0x000746B1 File Offset: 0x000728B1
+			// (set) Token: 0x06001B85 RID: 7045 RVA: 0x000746B9 File Offset: 0x000728B9
 			public int joyConGripStyle
 			{
 				get
@@ -59,9 +59,9 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x170003F4 RID: 1012
-			// (get) Token: 0x0600157C RID: 5500 RVA: 0x00010E8F File Offset: 0x0000F08F
-			// (set) Token: 0x0600157D RID: 5501 RVA: 0x00010E97 File Offset: 0x0000F097
+			// Token: 0x17000548 RID: 1352
+			// (get) Token: 0x06001B86 RID: 7046 RVA: 0x000746C2 File Offset: 0x000728C2
+			// (set) Token: 0x06001B87 RID: 7047 RVA: 0x000746CA File Offset: 0x000728CA
 			public bool adjustIMUsForGripStyle
 			{
 				get
@@ -74,9 +74,9 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x170003F5 RID: 1013
-			// (get) Token: 0x0600157E RID: 5502 RVA: 0x00010EA0 File Offset: 0x0000F0A0
-			// (set) Token: 0x0600157F RID: 5503 RVA: 0x00010EA8 File Offset: 0x0000F0A8
+			// Token: 0x17000549 RID: 1353
+			// (get) Token: 0x06001B88 RID: 7048 RVA: 0x000746D3 File Offset: 0x000728D3
+			// (set) Token: 0x06001B89 RID: 7049 RVA: 0x000746DB File Offset: 0x000728DB
 			public int handheldActivationMode
 			{
 				get
@@ -89,9 +89,9 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x170003F6 RID: 1014
-			// (get) Token: 0x06001580 RID: 5504 RVA: 0x00010EB1 File Offset: 0x0000F0B1
-			// (set) Token: 0x06001581 RID: 5505 RVA: 0x00010EB9 File Offset: 0x0000F0B9
+			// Token: 0x1700054A RID: 1354
+			// (get) Token: 0x06001B8A RID: 7050 RVA: 0x000746E4 File Offset: 0x000728E4
+			// (set) Token: 0x06001B8B RID: 7051 RVA: 0x000746EC File Offset: 0x000728EC
 			public bool assignJoysticksByNpadId
 			{
 				get
@@ -104,9 +104,9 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x170003F7 RID: 1015
-			// (get) Token: 0x06001582 RID: 5506 RVA: 0x00010EC2 File Offset: 0x0000F0C2
-			// (set) Token: 0x06001583 RID: 5507 RVA: 0x00010ECA File Offset: 0x0000F0CA
+			// Token: 0x1700054B RID: 1355
+			// (get) Token: 0x06001B8C RID: 7052 RVA: 0x000746F5 File Offset: 0x000728F5
+			// (set) Token: 0x06001B8D RID: 7053 RVA: 0x000746FD File Offset: 0x000728FD
 			public bool useVibrationThread
 			{
 				get
@@ -119,8 +119,8 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x170003F8 RID: 1016
-			// (get) Token: 0x06001584 RID: 5508 RVA: 0x00010ED3 File Offset: 0x0000F0D3
+			// Token: 0x1700054C RID: 1356
+			// (get) Token: 0x06001B8E RID: 7054 RVA: 0x00074706 File Offset: 0x00072906
 			private NintendoSwitchInputManager.NpadSettings_Internal npadNo1
 			{
 				get
@@ -129,8 +129,8 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x170003F9 RID: 1017
-			// (get) Token: 0x06001585 RID: 5509 RVA: 0x00010EDB File Offset: 0x0000F0DB
+			// Token: 0x1700054D RID: 1357
+			// (get) Token: 0x06001B8F RID: 7055 RVA: 0x0007470E File Offset: 0x0007290E
 			private NintendoSwitchInputManager.NpadSettings_Internal npadNo2
 			{
 				get
@@ -139,8 +139,8 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x170003FA RID: 1018
-			// (get) Token: 0x06001586 RID: 5510 RVA: 0x00010EE3 File Offset: 0x0000F0E3
+			// Token: 0x1700054E RID: 1358
+			// (get) Token: 0x06001B90 RID: 7056 RVA: 0x00074716 File Offset: 0x00072916
 			private NintendoSwitchInputManager.NpadSettings_Internal npadNo3
 			{
 				get
@@ -149,8 +149,8 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x170003FB RID: 1019
-			// (get) Token: 0x06001587 RID: 5511 RVA: 0x00010EEB File Offset: 0x0000F0EB
+			// Token: 0x1700054F RID: 1359
+			// (get) Token: 0x06001B91 RID: 7057 RVA: 0x0007471E File Offset: 0x0007291E
 			private NintendoSwitchInputManager.NpadSettings_Internal npadNo4
 			{
 				get
@@ -159,8 +159,8 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x170003FC RID: 1020
-			// (get) Token: 0x06001588 RID: 5512 RVA: 0x00010EF3 File Offset: 0x0000F0F3
+			// Token: 0x17000550 RID: 1360
+			// (get) Token: 0x06001B92 RID: 7058 RVA: 0x00074726 File Offset: 0x00072926
 			private NintendoSwitchInputManager.NpadSettings_Internal npadNo5
 			{
 				get
@@ -169,8 +169,8 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x170003FD RID: 1021
-			// (get) Token: 0x06001589 RID: 5513 RVA: 0x00010EFB File Offset: 0x0000F0FB
+			// Token: 0x17000551 RID: 1361
+			// (get) Token: 0x06001B93 RID: 7059 RVA: 0x0007472E File Offset: 0x0007292E
 			private NintendoSwitchInputManager.NpadSettings_Internal npadNo6
 			{
 				get
@@ -179,8 +179,8 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x170003FE RID: 1022
-			// (get) Token: 0x0600158A RID: 5514 RVA: 0x00010F03 File Offset: 0x0000F103
+			// Token: 0x17000552 RID: 1362
+			// (get) Token: 0x06001B94 RID: 7060 RVA: 0x00074736 File Offset: 0x00072936
 			private NintendoSwitchInputManager.NpadSettings_Internal npadNo7
 			{
 				get
@@ -189,8 +189,8 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x170003FF RID: 1023
-			// (get) Token: 0x0600158B RID: 5515 RVA: 0x00010F0B File Offset: 0x0000F10B
+			// Token: 0x17000553 RID: 1363
+			// (get) Token: 0x06001B95 RID: 7061 RVA: 0x0007473E File Offset: 0x0007293E
 			private NintendoSwitchInputManager.NpadSettings_Internal npadNo8
 			{
 				get
@@ -199,8 +199,8 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x17000400 RID: 1024
-			// (get) Token: 0x0600158C RID: 5516 RVA: 0x00010F13 File Offset: 0x0000F113
+			// Token: 0x17000554 RID: 1364
+			// (get) Token: 0x06001B96 RID: 7062 RVA: 0x00074746 File Offset: 0x00072946
 			private NintendoSwitchInputManager.NpadSettings_Internal npadHandheld
 			{
 				get
@@ -209,8 +209,8 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x17000401 RID: 1025
-			// (get) Token: 0x0600158D RID: 5517 RVA: 0x00010F1B File Offset: 0x0000F11B
+			// Token: 0x17000555 RID: 1365
+			// (get) Token: 0x06001B97 RID: 7063 RVA: 0x0007474E File Offset: 0x0007294E
 			public NintendoSwitchInputManager.DebugPadSettings_Internal debugPad
 			{
 				get
@@ -219,8 +219,8 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x17000402 RID: 1026
-			// (get) Token: 0x0600158E RID: 5518 RVA: 0x0005ED7C File Offset: 0x0005CF7C
+			// Token: 0x17000556 RID: 1366
+			// (get) Token: 0x06001B98 RID: 7064 RVA: 0x00074758 File Offset: 0x00072958
 			private Dictionary<int, object[]> delegates
 			{
 				get
@@ -332,7 +332,7 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x0600158F RID: 5519 RVA: 0x0005EFCC File Offset: 0x0005D1CC
+			// Token: 0x06001B99 RID: 7065 RVA: 0x000749A8 File Offset: 0x00072BA8
 			bool IKeyedData<int>.TryGetValue<T>(int key, out T value)
 			{
 				object[] array;
@@ -351,7 +351,7 @@ namespace Rewired.Platforms.Switch
 				return true;
 			}
 
-			// Token: 0x06001590 RID: 5520 RVA: 0x0005F014 File Offset: 0x0005D214
+			// Token: 0x06001B9A RID: 7066 RVA: 0x000749F0 File Offset: 0x00072BF0
 			bool IKeyedData<int>.TrySetValue<T>(int key, T value)
 			{
 				object[] array;
@@ -368,81 +368,81 @@ namespace Rewired.Platforms.Switch
 				return true;
 			}
 
-			// Token: 0x04001AE2 RID: 6882
+			// Token: 0x04001E0A RID: 7690
 			[SerializeField]
 			private int _allowedNpadStyles = -1;
 
-			// Token: 0x04001AE3 RID: 6883
+			// Token: 0x04001E0B RID: 7691
 			[SerializeField]
 			private int _joyConGripStyle = 1;
 
-			// Token: 0x04001AE4 RID: 6884
+			// Token: 0x04001E0C RID: 7692
 			[SerializeField]
 			private bool _adjustIMUsForGripStyle = true;
 
-			// Token: 0x04001AE5 RID: 6885
+			// Token: 0x04001E0D RID: 7693
 			[SerializeField]
 			private int _handheldActivationMode;
 
-			// Token: 0x04001AE6 RID: 6886
+			// Token: 0x04001E0E RID: 7694
 			[SerializeField]
 			private bool _assignJoysticksByNpadId = true;
 
-			// Token: 0x04001AE7 RID: 6887
+			// Token: 0x04001E0F RID: 7695
 			[SerializeField]
 			private bool _useVibrationThread = true;
 
-			// Token: 0x04001AE8 RID: 6888
+			// Token: 0x04001E10 RID: 7696
 			[SerializeField]
 			private NintendoSwitchInputManager.NpadSettings_Internal _npadNo1 = new NintendoSwitchInputManager.NpadSettings_Internal(0);
 
-			// Token: 0x04001AE9 RID: 6889
+			// Token: 0x04001E11 RID: 7697
 			[SerializeField]
 			private NintendoSwitchInputManager.NpadSettings_Internal _npadNo2 = new NintendoSwitchInputManager.NpadSettings_Internal(1);
 
-			// Token: 0x04001AEA RID: 6890
+			// Token: 0x04001E12 RID: 7698
 			[SerializeField]
 			private NintendoSwitchInputManager.NpadSettings_Internal _npadNo3 = new NintendoSwitchInputManager.NpadSettings_Internal(2);
 
-			// Token: 0x04001AEB RID: 6891
+			// Token: 0x04001E13 RID: 7699
 			[SerializeField]
 			private NintendoSwitchInputManager.NpadSettings_Internal _npadNo4 = new NintendoSwitchInputManager.NpadSettings_Internal(3);
 
-			// Token: 0x04001AEC RID: 6892
+			// Token: 0x04001E14 RID: 7700
 			[SerializeField]
 			private NintendoSwitchInputManager.NpadSettings_Internal _npadNo5 = new NintendoSwitchInputManager.NpadSettings_Internal(4);
 
-			// Token: 0x04001AED RID: 6893
+			// Token: 0x04001E15 RID: 7701
 			[SerializeField]
 			private NintendoSwitchInputManager.NpadSettings_Internal _npadNo6 = new NintendoSwitchInputManager.NpadSettings_Internal(5);
 
-			// Token: 0x04001AEE RID: 6894
+			// Token: 0x04001E16 RID: 7702
 			[SerializeField]
 			private NintendoSwitchInputManager.NpadSettings_Internal _npadNo7 = new NintendoSwitchInputManager.NpadSettings_Internal(6);
 
-			// Token: 0x04001AEF RID: 6895
+			// Token: 0x04001E17 RID: 7703
 			[SerializeField]
 			private NintendoSwitchInputManager.NpadSettings_Internal _npadNo8 = new NintendoSwitchInputManager.NpadSettings_Internal(7);
 
-			// Token: 0x04001AF0 RID: 6896
+			// Token: 0x04001E18 RID: 7704
 			[SerializeField]
 			private NintendoSwitchInputManager.NpadSettings_Internal _npadHandheld = new NintendoSwitchInputManager.NpadSettings_Internal(0);
 
-			// Token: 0x04001AF1 RID: 6897
+			// Token: 0x04001E19 RID: 7705
 			[SerializeField]
 			private NintendoSwitchInputManager.DebugPadSettings_Internal _debugPad = new NintendoSwitchInputManager.DebugPadSettings_Internal(0);
 
-			// Token: 0x04001AF2 RID: 6898
+			// Token: 0x04001E1A RID: 7706
 			private Dictionary<int, object[]> __delegates;
 		}
 
-		// Token: 0x0200040A RID: 1034
+		// Token: 0x02000458 RID: 1112
 		[Serializable]
 		private sealed class NpadSettings_Internal : IKeyedData<int>
 		{
-			// Token: 0x17000403 RID: 1027
-			// (get) Token: 0x060015A8 RID: 5544 RVA: 0x00010FD9 File Offset: 0x0000F1D9
-			// (set) Token: 0x060015A9 RID: 5545 RVA: 0x00010FE1 File Offset: 0x0000F1E1
+			// Token: 0x17000557 RID: 1367
+			// (get) Token: 0x06001BB2 RID: 7090 RVA: 0x00074B8C File Offset: 0x00072D8C
+			// (set) Token: 0x06001BB3 RID: 7091 RVA: 0x00074B94 File Offset: 0x00072D94
 			private bool isAllowed
 			{
 				get
@@ -455,9 +455,9 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x17000404 RID: 1028
-			// (get) Token: 0x060015AA RID: 5546 RVA: 0x00010FEA File Offset: 0x0000F1EA
-			// (set) Token: 0x060015AB RID: 5547 RVA: 0x00010FF2 File Offset: 0x0000F1F2
+			// Token: 0x17000558 RID: 1368
+			// (get) Token: 0x06001BB4 RID: 7092 RVA: 0x00074B9D File Offset: 0x00072D9D
+			// (set) Token: 0x06001BB5 RID: 7093 RVA: 0x00074BA5 File Offset: 0x00072DA5
 			private int rewiredPlayerId
 			{
 				get
@@ -470,9 +470,9 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x17000405 RID: 1029
-			// (get) Token: 0x060015AC RID: 5548 RVA: 0x00010FFB File Offset: 0x0000F1FB
-			// (set) Token: 0x060015AD RID: 5549 RVA: 0x00011003 File Offset: 0x0000F203
+			// Token: 0x17000559 RID: 1369
+			// (get) Token: 0x06001BB6 RID: 7094 RVA: 0x00074BAE File Offset: 0x00072DAE
+			// (set) Token: 0x06001BB7 RID: 7095 RVA: 0x00074BB6 File Offset: 0x00072DB6
 			private int joyConAssignmentMode
 			{
 				get
@@ -485,14 +485,14 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x060015AE RID: 5550 RVA: 0x0001100C File Offset: 0x0000F20C
+			// Token: 0x06001BB8 RID: 7096 RVA: 0x00074BBF File Offset: 0x00072DBF
 			internal NpadSettings_Internal(int playerId)
 			{
 				this._rewiredPlayerId = playerId;
 			}
 
-			// Token: 0x17000406 RID: 1030
-			// (get) Token: 0x060015AF RID: 5551 RVA: 0x0005F0FC File Offset: 0x0005D2FC
+			// Token: 0x1700055A RID: 1370
+			// (get) Token: 0x06001BB9 RID: 7097 RVA: 0x00074BDC File Offset: 0x00072DDC
 			private Dictionary<int, object[]> delegates
 			{
 				get
@@ -540,7 +540,7 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x060015B0 RID: 5552 RVA: 0x0005F1AC File Offset: 0x0005D3AC
+			// Token: 0x06001BBA RID: 7098 RVA: 0x00074C8C File Offset: 0x00072E8C
 			bool IKeyedData<int>.TryGetValue<T>(int key, out T value)
 			{
 				object[] array;
@@ -559,7 +559,7 @@ namespace Rewired.Platforms.Switch
 				return true;
 			}
 
-			// Token: 0x060015B1 RID: 5553 RVA: 0x0005F1F4 File Offset: 0x0005D3F4
+			// Token: 0x06001BBB RID: 7099 RVA: 0x00074CD4 File Offset: 0x00072ED4
 			bool IKeyedData<int>.TrySetValue<T>(int key, T value)
 			{
 				object[] array;
@@ -576,32 +576,32 @@ namespace Rewired.Platforms.Switch
 				return true;
 			}
 
-			// Token: 0x04001AF3 RID: 6899
+			// Token: 0x04001E1B RID: 7707
 			[Tooltip("Determines whether this Npad id is allowed to be used by the system.")]
 			[SerializeField]
 			private bool _isAllowed = true;
 
-			// Token: 0x04001AF4 RID: 6900
+			// Token: 0x04001E1C RID: 7708
 			[Tooltip("The Rewired Player Id assigned to this Npad id.")]
 			[SerializeField]
 			private int _rewiredPlayerId;
 
-			// Token: 0x04001AF5 RID: 6901
+			// Token: 0x04001E1D RID: 7709
 			[Tooltip("Determines how Joy-Cons should be handled.\n\nUnmodified: Joy-Con assignment mode will be left at the system default.\nDual: Joy-Cons pairs are handled as a single controller.\nSingle: Joy-Cons are handled as individual controllers.")]
 			[SerializeField]
 			private int _joyConAssignmentMode = -1;
 
-			// Token: 0x04001AF6 RID: 6902
+			// Token: 0x04001E1E RID: 7710
 			private Dictionary<int, object[]> __delegates;
 		}
 
-		// Token: 0x0200040B RID: 1035
+		// Token: 0x02000459 RID: 1113
 		[Serializable]
 		private sealed class DebugPadSettings_Internal : IKeyedData<int>
 		{
-			// Token: 0x17000407 RID: 1031
-			// (get) Token: 0x060015B8 RID: 5560 RVA: 0x0001105C File Offset: 0x0000F25C
-			// (set) Token: 0x060015B9 RID: 5561 RVA: 0x00011064 File Offset: 0x0000F264
+			// Token: 0x1700055B RID: 1371
+			// (get) Token: 0x06001BC2 RID: 7106 RVA: 0x00074D3C File Offset: 0x00072F3C
+			// (set) Token: 0x06001BC3 RID: 7107 RVA: 0x00074D44 File Offset: 0x00072F44
 			private int rewiredPlayerId
 			{
 				get
@@ -614,9 +614,9 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x17000408 RID: 1032
-			// (get) Token: 0x060015BA RID: 5562 RVA: 0x0001106D File Offset: 0x0000F26D
-			// (set) Token: 0x060015BB RID: 5563 RVA: 0x00011075 File Offset: 0x0000F275
+			// Token: 0x1700055C RID: 1372
+			// (get) Token: 0x06001BC4 RID: 7108 RVA: 0x00074D4D File Offset: 0x00072F4D
+			// (set) Token: 0x06001BC5 RID: 7109 RVA: 0x00074D55 File Offset: 0x00072F55
 			private bool enabled
 			{
 				get
@@ -629,14 +629,14 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x060015BC RID: 5564 RVA: 0x0001107E File Offset: 0x0000F27E
+			// Token: 0x06001BC6 RID: 7110 RVA: 0x00074D5E File Offset: 0x00072F5E
 			internal DebugPadSettings_Internal(int playerId)
 			{
 				this._rewiredPlayerId = playerId;
 			}
 
-			// Token: 0x17000409 RID: 1033
-			// (get) Token: 0x060015BD RID: 5565 RVA: 0x0005F22C File Offset: 0x0005D42C
+			// Token: 0x1700055D RID: 1373
+			// (get) Token: 0x06001BC7 RID: 7111 RVA: 0x00074D70 File Offset: 0x00072F70
 			private Dictionary<int, object[]> delegates
 			{
 				get
@@ -673,7 +673,7 @@ namespace Rewired.Platforms.Switch
 				}
 			}
 
-			// Token: 0x060015BE RID: 5566 RVA: 0x0005F2B0 File Offset: 0x0005D4B0
+			// Token: 0x06001BC8 RID: 7112 RVA: 0x00074DF4 File Offset: 0x00072FF4
 			bool IKeyedData<int>.TryGetValue<T>(int key, out T value)
 			{
 				object[] array;
@@ -692,7 +692,7 @@ namespace Rewired.Platforms.Switch
 				return true;
 			}
 
-			// Token: 0x060015BF RID: 5567 RVA: 0x0005F2F8 File Offset: 0x0005D4F8
+			// Token: 0x06001BC9 RID: 7113 RVA: 0x00074E3C File Offset: 0x0007303C
 			bool IKeyedData<int>.TrySetValue<T>(int key, T value)
 			{
 				object[] array;
@@ -709,17 +709,17 @@ namespace Rewired.Platforms.Switch
 				return true;
 			}
 
-			// Token: 0x04001AF7 RID: 6903
+			// Token: 0x04001E1F RID: 7711
 			[Tooltip("Determines whether the Debug Pad will be enabled.")]
 			[SerializeField]
 			private bool _enabled;
 
-			// Token: 0x04001AF8 RID: 6904
+			// Token: 0x04001E20 RID: 7712
 			[Tooltip("The Rewired Player Id to which the Debug Pad will be assigned.")]
 			[SerializeField]
 			private int _rewiredPlayerId;
 
-			// Token: 0x04001AF9 RID: 6905
+			// Token: 0x04001E21 RID: 7713
 			private Dictionary<int, object[]> __delegates;
 		}
 	}

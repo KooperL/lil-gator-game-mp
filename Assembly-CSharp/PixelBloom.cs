@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-// Token: 0x02000330 RID: 816
-[PostProcess(typeof(PixelBloomRenderer), 2, "Custom/PixelBloom", true)]
+// Token: 0x02000268 RID: 616
+[PostProcess(typeof(PixelBloomRenderer), PostProcessEvent.AfterStack, "Custom/PixelBloom", true)]
 [Serializable]
 public sealed class PixelBloom : PostProcessEffectSettings
 {
-	// Token: 0x040014B9 RID: 5305
+	// Token: 0x04001193 RID: 4499
 	[Range(0f, 1f)]
 	[Tooltip("Grayscale effect intensity.")]
 	public FloatParameter blend = new FloatParameter

@@ -4,12 +4,12 @@ using AOT;
 using Steamworks;
 using UnityEngine;
 
-// Token: 0x02000094 RID: 148
+// Token: 0x02000073 RID: 115
 [DisallowMultipleComponent]
 public class SteamManager : MonoBehaviour
 {
-	// Token: 0x17000024 RID: 36
-	// (get) Token: 0x06000207 RID: 519 RVA: 0x00003AB5 File Offset: 0x00001CB5
+	// Token: 0x17000013 RID: 19
+	// (get) Token: 0x060001D0 RID: 464 RVA: 0x00009E99 File Offset: 0x00008099
 	protected static SteamManager Instance
 	{
 		get
@@ -22,8 +22,8 @@ public class SteamManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000025 RID: 37
-	// (get) Token: 0x06000208 RID: 520 RVA: 0x00003AD9 File Offset: 0x00001CD9
+	// Token: 0x17000014 RID: 20
+	// (get) Token: 0x060001D1 RID: 465 RVA: 0x00009EBD File Offset: 0x000080BD
 	public static bool Initialized
 	{
 		get
@@ -32,28 +32,28 @@ public class SteamManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000209 RID: 521 RVA: 0x00003AFB File Offset: 0x00001CFB
+	// Token: 0x060001D2 RID: 466 RVA: 0x00009EDF File Offset: 0x000080DF
 	public static void ForceInitialize()
 	{
 		SteamManager.Instance.Initialize();
 	}
 
-	// Token: 0x0600020A RID: 522 RVA: 0x00003B07 File Offset: 0x00001D07
+	// Token: 0x060001D3 RID: 467 RVA: 0x00009EEB File Offset: 0x000080EB
 	[MonoPInvokeCallback(typeof(SteamAPIWarningMessageHook_t))]
 	protected static void SteamAPIDebugTextHook(int nSeverity, StringBuilder pchDebugText)
 	{
 		Debug.LogWarning(pchDebugText);
 	}
 
-	// Token: 0x0600020B RID: 523 RVA: 0x00003B0F File Offset: 0x00001D0F
-	[RuntimeInitializeOnLoadMethod(4)]
+	// Token: 0x060001D4 RID: 468 RVA: 0x00009EF3 File Offset: 0x000080F3
+	[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
 	private static void InitOnPlayMode()
 	{
 		SteamManager.s_EverInitialized = false;
 		SteamManager.s_instance = null;
 	}
 
-	// Token: 0x0600020C RID: 524 RVA: 0x0001DCE0 File Offset: 0x0001BEE0
+	// Token: 0x060001D5 RID: 469 RVA: 0x00009F04 File Offset: 0x00008104
 	protected void Initialize()
 	{
 		if (this.thisInitialized)
@@ -105,13 +105,13 @@ public class SteamManager : MonoBehaviour
 		SteamManager.s_EverInitialized = true;
 	}
 
-	// Token: 0x0600020D RID: 525 RVA: 0x00003B1D File Offset: 0x00001D1D
+	// Token: 0x060001D6 RID: 470 RVA: 0x00009FF4 File Offset: 0x000081F4
 	protected virtual void Awake()
 	{
 		this.Initialize();
 	}
 
-	// Token: 0x0600020E RID: 526 RVA: 0x0001DDD0 File Offset: 0x0001BFD0
+	// Token: 0x060001D7 RID: 471 RVA: 0x00009FFC File Offset: 0x000081FC
 	protected virtual void OnEnable()
 	{
 		if (SteamManager.s_instance == null)
@@ -129,7 +129,7 @@ public class SteamManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600020F RID: 527 RVA: 0x00003B25 File Offset: 0x00001D25
+	// Token: 0x060001D8 RID: 472 RVA: 0x0000A04A File Offset: 0x0000824A
 	protected virtual void OnDisable()
 	{
 		if (SteamManager.s_instance != this)
@@ -144,7 +144,7 @@ public class SteamManager : MonoBehaviour
 		SteamAPI.Shutdown();
 	}
 
-	// Token: 0x06000210 RID: 528 RVA: 0x00003B49 File Offset: 0x00001D49
+	// Token: 0x060001D9 RID: 473 RVA: 0x0000A06E File Offset: 0x0000826E
 	protected virtual void Update()
 	{
 		if (!this.m_bInitialized)
@@ -154,24 +154,24 @@ public class SteamManager : MonoBehaviour
 		SteamAPI.RunCallbacks();
 	}
 
-	// Token: 0x040002EF RID: 751
+	// Token: 0x04000269 RID: 617
 	protected static bool s_EverInitialized = false;
 
-	// Token: 0x040002F0 RID: 752
+	// Token: 0x0400026A RID: 618
 	protected static SteamManager s_instance;
 
-	// Token: 0x040002F1 RID: 753
+	// Token: 0x0400026B RID: 619
 	protected bool m_bInitialized;
 
-	// Token: 0x040002F2 RID: 754
+	// Token: 0x0400026C RID: 620
 	protected SteamAPIWarningMessageHook_t m_SteamAPIWarningMessageHook;
 
-	// Token: 0x040002F3 RID: 755
+	// Token: 0x0400026D RID: 621
 	public const uint appID = 1586800U;
 
-	// Token: 0x040002F4 RID: 756
+	// Token: 0x0400026E RID: 622
 	public static readonly AppId_t appID_t = new AppId_t(1586800U);
 
-	// Token: 0x040002F5 RID: 757
+	// Token: 0x0400026F RID: 623
 	private bool thisInitialized;
 }

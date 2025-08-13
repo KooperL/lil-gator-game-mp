@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x02000468 RID: 1128
+	// Token: 0x02000328 RID: 808
 	[AddComponentMenu("")]
 	[RequireComponent(typeof(Selectable))]
 	public class ScrollRectSelectableChild : MonoBehaviour, ISelectHandler, IEventSystemHandler
 	{
-		// Token: 0x170005B3 RID: 1459
-		// (get) Token: 0x06001BC1 RID: 7105 RVA: 0x00015553 File Offset: 0x00013753
+		// Token: 0x17000408 RID: 1032
+		// (get) Token: 0x0600168D RID: 5773 RVA: 0x0005E656 File Offset: 0x0005C856
 		private RectTransform parentScrollRectContentTransform
 		{
 			get
@@ -21,8 +21,8 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x170005B4 RID: 1460
-		// (get) Token: 0x06001BC2 RID: 7106 RVA: 0x0006E004 File Offset: 0x0006C204
+		// Token: 0x17000409 RID: 1033
+		// (get) Token: 0x0600168E RID: 5774 RVA: 0x0005E664 File Offset: 0x0005C864
 		private Selectable selectable
 		{
 			get
@@ -36,8 +36,8 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x170005B5 RID: 1461
-		// (get) Token: 0x06001BC3 RID: 7107 RVA: 0x00015560 File Offset: 0x00013760
+		// Token: 0x1700040A RID: 1034
+		// (get) Token: 0x0600168F RID: 5775 RVA: 0x0005E68A File Offset: 0x0005C88A
 		private RectTransform rectTransform
 		{
 			get
@@ -46,7 +46,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001BC4 RID: 7108 RVA: 0x0001556D File Offset: 0x0001376D
+		// Token: 0x06001690 RID: 5776 RVA: 0x0005E697 File Offset: 0x0005C897
 		private void Start()
 		{
 			this.parentScrollRect = base.transform.GetComponentInParent<ScrollRect>();
@@ -57,7 +57,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001BC5 RID: 7109 RVA: 0x0006E02C File Offset: 0x0006C22C
+		// Token: 0x06001691 RID: 5777 RVA: 0x0005E6C4 File Offset: 0x0005C8C4
 		public void OnSelect(BaseEventData eventData)
 		{
 			if (this.parentScrollRect == null)
@@ -88,7 +88,7 @@ namespace Rewired.UI.ControlMapper
 				return;
 			}
 			Vector2 vector;
-			if (!MathTools.GetOffsetToContainRect(rect3, rect, ref vector))
+			if (!MathTools.GetOffsetToContainRect(rect3, rect, out vector))
 			{
 				return;
 			}
@@ -98,16 +98,16 @@ namespace Rewired.UI.ControlMapper
 			this.parentScrollRectContentTransform.anchoredPosition = anchoredPosition;
 		}
 
-		// Token: 0x04001DAE RID: 7598
+		// Token: 0x040018BC RID: 6332
 		public bool useCustomEdgePadding;
 
-		// Token: 0x04001DAF RID: 7599
+		// Token: 0x040018BD RID: 6333
 		public float customEdgePadding = 50f;
 
-		// Token: 0x04001DB0 RID: 7600
+		// Token: 0x040018BE RID: 6334
 		private ScrollRect parentScrollRect;
 
-		// Token: 0x04001DB1 RID: 7601
+		// Token: 0x040018BF RID: 6335
 		private Selectable _selectable;
 	}
 }

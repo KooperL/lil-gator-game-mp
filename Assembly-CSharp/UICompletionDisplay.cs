@@ -2,16 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020003A1 RID: 929
+// Token: 0x020002BF RID: 703
 public class UICompletionDisplay : MonoBehaviour
 {
-	// Token: 0x0600119F RID: 4511 RVA: 0x0000F0C7 File Offset: 0x0000D2C7
+	// Token: 0x06000EC7 RID: 3783 RVA: 0x00046A32 File Offset: 0x00044C32
 	private void OnEnable()
 	{
 		this.UpdateDisplay();
 	}
 
-	// Token: 0x060011A0 RID: 4512 RVA: 0x00057F78 File Offset: 0x00056178
+	// Token: 0x06000EC8 RID: 3784 RVA: 0x00046A3C File Offset: 0x00044C3C
 	private void OnDisable()
 	{
 		if (this.objectPercentObject != null)
@@ -26,7 +26,7 @@ public class UICompletionDisplay : MonoBehaviour
 		this.characterResource.skipDelta = false;
 	}
 
-	// Token: 0x060011A1 RID: 4513 RVA: 0x00057FD4 File Offset: 0x000561D4
+	// Token: 0x06000EC9 RID: 3785 RVA: 0x00046A98 File Offset: 0x00044C98
 	public void UpdateDisplay()
 	{
 		bool flag = this.playgroundStates.StateID >= 4;
@@ -41,24 +41,24 @@ public class UICompletionDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040016B4 RID: 5812
+	// Token: 0x0400133E RID: 4926
 	public GameObject objectPercentObject;
 
-	// Token: 0x040016B5 RID: 5813
+	// Token: 0x0400133F RID: 4927
 	public GameObject characterPercentObject;
 
-	// Token: 0x040016B6 RID: 5814
+	// Token: 0x04001340 RID: 4928
 	public UIItemResource objectResource;
 
-	// Token: 0x040016B7 RID: 5815
+	// Token: 0x04001341 RID: 4929
 	public UIItemResource characterResource;
 
-	// Token: 0x040016B8 RID: 5816
+	// Token: 0x04001342 RID: 4930
 	public Text objectPercentDisplay;
 
-	// Token: 0x040016B9 RID: 5817
+	// Token: 0x04001343 RID: 4931
 	public Text characterPercentDisplay;
 
-	// Token: 0x040016BA RID: 5818
+	// Token: 0x04001344 RID: 4932
 	public QuestStates playgroundStates;
 }

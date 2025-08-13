@@ -1,20 +1,20 @@
 ﻿using System;
 
-// Token: 0x02000179 RID: 377
+// Token: 0x02000120 RID: 288
 [Serializable]
 public class GameSaveData
 {
-	// Token: 0x170000B3 RID: 179
-	// (get) Token: 0x06000716 RID: 1814 RVA: 0x00007322 File Offset: 0x00005522
+	// Token: 0x17000053 RID: 83
+	// (get) Token: 0x060005F2 RID: 1522 RVA: 0x0001F530 File Offset: 0x0001D730
 	public bool IsInitialized
 	{
 		get
 		{
-			return this.ints != null && this.ints.ContainsKey("WorldState") && this.ints["WorldState"] != 0;
+			return this.ints != null && ((this.ints.ContainsKey("WorldState") && this.ints["WorldState"] != 0) || (this.ints.ContainsKey("NewGameIndex") && this.ints["NewGameIndex"] != 0));
 		}
 	}
 
-	// Token: 0x06000717 RID: 1815 RVA: 0x0003330C File Offset: 0x0003150C
+	// Token: 0x060005F3 RID: 1523 RVA: 0x0001F594 File Offset: 0x0001D794
 	public GameSaveData Clone()
 	{
 		GameSaveData gameSaveData = (GameSaveData)base.MemberwiseClone();
@@ -25,21 +25,21 @@ public class GameSaveData
 		return gameSaveData;
 	}
 
-	// Token: 0x0400099C RID: 2460
+	// Token: 0x0400083D RID: 2109
 	public const int currentVersion = 10;
 
-	// Token: 0x0400099D RID: 2461
+	// Token: 0x0400083E RID: 2110
 	public int v = 10;
 
-	// Token: 0x0400099E RID: 2462
+	// Token: 0x0400083F RID: 2111
 	public string playerName;
 
-	// Token: 0x0400099F RID: 2463
+	// Token: 0x04000840 RID: 2112
 	public BoolDictionary bools = new BoolDictionary();
 
-	// Token: 0x040009A0 RID: 2464
+	// Token: 0x04000841 RID: 2113
 	public IntDictionary ints = new IntDictionary();
 
-	// Token: 0x040009A1 RID: 2465
+	// Token: 0x04000842 RID: 2114
 	public bool[] objectStates = new bool[0];
 }

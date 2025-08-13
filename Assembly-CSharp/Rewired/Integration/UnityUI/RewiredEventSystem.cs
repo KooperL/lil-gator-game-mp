@@ -4,13 +4,13 @@ using UnityEngine.EventSystems;
 
 namespace Rewired.Integration.UnityUI
 {
-	// Token: 0x02000421 RID: 1057
+	// Token: 0x02000315 RID: 789
 	[AddComponentMenu("Rewired/Rewired Event System")]
 	public class RewiredEventSystem : EventSystem
 	{
-		// Token: 0x17000431 RID: 1073
-		// (get) Token: 0x06001704 RID: 5892 RVA: 0x00011BBA File Offset: 0x0000FDBA
-		// (set) Token: 0x06001705 RID: 5893 RVA: 0x00011BC2 File Offset: 0x0000FDC2
+		// Token: 0x17000302 RID: 770
+		// (get) Token: 0x0600135B RID: 4955 RVA: 0x000520C8 File Offset: 0x000502C8
+		// (set) Token: 0x0600135C RID: 4956 RVA: 0x000520D0 File Offset: 0x000502D0
 		public bool alwaysUpdate
 		{
 			get
@@ -23,7 +23,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x06001706 RID: 5894 RVA: 0x000620C8 File Offset: 0x000602C8
+		// Token: 0x0600135D RID: 4957 RVA: 0x000520DC File Offset: 0x000502DC
 		protected override void Update()
 		{
 			if (this.alwaysUpdate)
@@ -49,7 +49,7 @@ namespace Rewired.Integration.UnityUI
 			base.Update();
 		}
 
-		// Token: 0x04001B4F RID: 6991
+		// Token: 0x0400174A RID: 5962
 		[Tooltip("If enabled, the Event System will be updated every frame even if other Event Systems are enabled. Otherwise, only EventSystem.current will be updated.")]
 		[SerializeField]
 		private bool _alwaysUpdate;

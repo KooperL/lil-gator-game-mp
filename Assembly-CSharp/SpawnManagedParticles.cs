@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000157 RID: 343
+// Token: 0x02000104 RID: 260
 public class SpawnManagedParticles : MonoBehaviour
 {
-	// Token: 0x06000666 RID: 1638 RVA: 0x00030A8C File Offset: 0x0002EC8C
+	// Token: 0x06000554 RID: 1364 RVA: 0x0001C550 File Offset: 0x0001A750
 	public void OnEnable()
 	{
 		if (Time.timeSinceLevelLoad < 0.5f)
@@ -33,27 +33,27 @@ public class SpawnManagedParticles : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000899 RID: 2201
+	// Token: 0x04000752 RID: 1874
 	public SpawnManagedParticles.ParticleType particleType;
 
-	// Token: 0x0400089A RID: 2202
+	// Token: 0x04000753 RID: 1875
 	public int particleCount = 5;
 
-	// Token: 0x0400089B RID: 2203
+	// Token: 0x04000754 RID: 1876
 	public bool overrideVelocity;
 
-	// Token: 0x0400089C RID: 2204
+	// Token: 0x04000755 RID: 1877
 	[ConditionalHide("overrideVelocity", true)]
 	public Vector3 velocity;
 
-	// Token: 0x02000158 RID: 344
+	// Token: 0x020003AB RID: 939
 	public enum ParticleType
 	{
-		// Token: 0x0400089E RID: 2206
+		// Token: 0x04001B62 RID: 7010
 		Dust,
-		// Token: 0x0400089F RID: 2207
+		// Token: 0x04001B63 RID: 7011
 		FloorDust,
-		// Token: 0x040008A0 RID: 2208
+		// Token: 0x04001B64 RID: 7012
 		Ripples
 	}
 }

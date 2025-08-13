@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200037B RID: 891
+// Token: 0x020002A1 RID: 673
 public class RenameCharacter : MonoBehaviour
 {
-	// Token: 0x060010FD RID: 4349 RVA: 0x0000E9ED File Offset: 0x0000CBED
+	// Token: 0x06000E39 RID: 3641 RVA: 0x00044588 File Offset: 0x00042788
 	public void DoTheThing()
 	{
 		UIMenus.u.CloseMenus();

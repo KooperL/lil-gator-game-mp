@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000329 RID: 809
+// Token: 0x02000262 RID: 610
 [AddComponentMenu("Wobble/Rotating Bone")]
 public class WobbleBoneRotate : WobbleBoneBase
 {
-	// Token: 0x06000FD5 RID: 4053 RVA: 0x00052164 File Offset: 0x00050364
+	// Token: 0x06000D27 RID: 3367 RVA: 0x0003F8B4 File Offset: 0x0003DAB4
 	public override void Initialize()
 	{
 		this.parent = base.transform.parent;
@@ -47,7 +47,7 @@ public class WobbleBoneRotate : WobbleBoneBase
 		this.initialDirectionLocal = this.parent.rotation.Inverse() * this.initialDirection;
 	}
 
-	// Token: 0x06000FD6 RID: 4054 RVA: 0x000522C4 File Offset: 0x000504C4
+	// Token: 0x06000D28 RID: 3368 RVA: 0x0003FA14 File Offset: 0x0003DC14
 	public override void RunWobbleUpdate()
 	{
 		this.oldRotation = this.visualRotation;
@@ -69,7 +69,7 @@ public class WobbleBoneRotate : WobbleBoneBase
 		this.visualRotation = this.rotation;
 	}
 
-	// Token: 0x06000FD7 RID: 4055 RVA: 0x000523CC File Offset: 0x000505CC
+	// Token: 0x06000D29 RID: 3369 RVA: 0x0003FB1C File Offset: 0x0003DD1C
 	private void LockAxis()
 	{
 		if (this.lockXAxis || this.lockYAxis || this.lockZAxis)
@@ -92,7 +92,7 @@ public class WobbleBoneRotate : WobbleBoneBase
 		}
 	}
 
-	// Token: 0x06000FD8 RID: 4056 RVA: 0x0000DB3F File Offset: 0x0000BD3F
+	// Token: 0x06000D2A RID: 3370 RVA: 0x0003FBB1 File Offset: 0x0003DDB1
 	public override void ApplyRotation()
 	{
 		this.interpolatedRotation = this.visualRotation;
@@ -100,7 +100,7 @@ public class WobbleBoneRotate : WobbleBoneBase
 		this.LockAxis();
 	}
 
-	// Token: 0x06000FD9 RID: 4057 RVA: 0x0000DB64 File Offset: 0x0000BD64
+	// Token: 0x06000D2B RID: 3371 RVA: 0x0003FBD6 File Offset: 0x0003DDD6
 	public override void ApplyRotation(float t)
 	{
 		this.interpolatedRotation = Quaternion.SlerpUnclamped(this.oldRotation, this.visualRotation, t);
@@ -108,45 +108,45 @@ public class WobbleBoneRotate : WobbleBoneBase
 		this.LockAxis();
 	}
 
-	// Token: 0x04001476 RID: 5238
+	// Token: 0x04001153 RID: 4435
 	private Vector3 initialPosition;
 
-	// Token: 0x04001477 RID: 5239
+	// Token: 0x04001154 RID: 4436
 	private Vector3 initialDirectionLocal;
 
-	// Token: 0x04001478 RID: 5240
+	// Token: 0x04001155 RID: 4437
 	private Vector3 initialDirection;
 
-	// Token: 0x04001479 RID: 5241
+	// Token: 0x04001156 RID: 4438
 	private Quaternion initialLocalRotation;
 
-	// Token: 0x0400147A RID: 5242
+	// Token: 0x04001157 RID: 4439
 	private Quaternion oldRotation;
 
-	// Token: 0x0400147B RID: 5243
+	// Token: 0x04001158 RID: 4440
 	private Quaternion visualRotation;
 
-	// Token: 0x0400147C RID: 5244
+	// Token: 0x04001159 RID: 4441
 	private WobbleBoneBase[] childBones;
 
-	// Token: 0x0400147D RID: 5245
+	// Token: 0x0400115A RID: 4442
 	private Transform parent;
 
-	// Token: 0x0400147E RID: 5246
+	// Token: 0x0400115B RID: 4443
 	public float rotateAmount = 1f;
 
-	// Token: 0x0400147F RID: 5247
+	// Token: 0x0400115C RID: 4444
 	public bool lockXAxis;
 
-	// Token: 0x04001480 RID: 5248
+	// Token: 0x0400115D RID: 4445
 	public bool lockYAxis;
 
-	// Token: 0x04001481 RID: 5249
+	// Token: 0x0400115E RID: 4446
 	public bool lockZAxis;
 
-	// Token: 0x04001482 RID: 5250
+	// Token: 0x0400115F RID: 4447
 	public bool specifyReferenceBones;
 
-	// Token: 0x04001483 RID: 5251
+	// Token: 0x04001160 RID: 4448
 	public WobbleBoneBase[] referenceBones;
 }

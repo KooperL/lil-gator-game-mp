@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200005D RID: 93
+// Token: 0x0200004A RID: 74
 public class BlacksmithHit : MonoBehaviour, IHit
 {
-	// Token: 0x06000145 RID: 325 RVA: 0x0001B588 File Offset: 0x00019788
+	// Token: 0x06000120 RID: 288 RVA: 0x00006F04 File Offset: 0x00005104
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		this.charge = Mathf.MoveTowards(this.charge, 1f, this.hitChargeAmount);
@@ -32,7 +32,7 @@ public class BlacksmithHit : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x06000146 RID: 326 RVA: 0x0001B6C4 File Offset: 0x000198C4
+	// Token: 0x06000121 RID: 289 RVA: 0x00007040 File Offset: 0x00005240
 	private void Update()
 	{
 		if (this.charge < 1f && this.charge > 0f)
@@ -77,131 +77,131 @@ public class BlacksmithHit : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x040001D7 RID: 471
+	// Token: 0x0400018D RID: 397
 	public float hitChargeAmount = 0.03f;
 
-	// Token: 0x040001D8 RID: 472
+	// Token: 0x0400018E RID: 398
 	[ReadOnly]
 	public float charge;
 
-	// Token: 0x040001D9 RID: 473
+	// Token: 0x0400018F RID: 399
 	public float chargeDrainSpeed = 0.15f;
 
-	// Token: 0x040001DA RID: 474
+	// Token: 0x04000190 RID: 400
 	public float chargeDrainAcc = 0.5f;
 
-	// Token: 0x040001DB RID: 475
+	// Token: 0x04000191 RID: 401
 	[ReadOnly]
 	public float chargeVelocity;
 
-	// Token: 0x040001DC RID: 476
+	// Token: 0x04000192 RID: 402
 	public BlacksmithHit.HitParticles[] hitParticles;
 
-	// Token: 0x040001DD RID: 477
+	// Token: 0x04000193 RID: 403
 	public BlacksmithHit.ChargeParticles[] chargeParticles;
 
-	// Token: 0x040001DE RID: 478
+	// Token: 0x04000194 RID: 404
 	public BlacksmithHit.ChargeAudio[] chargeAudio;
 
-	// Token: 0x040001DF RID: 479
+	// Token: 0x04000195 RID: 405
 	public UnityEvent onFullyCharged;
 
-	// Token: 0x040001E0 RID: 480
+	// Token: 0x04000196 RID: 406
 	public MultilingualTextDocument document;
 
-	// Token: 0x040001E1 RID: 481
+	// Token: 0x04000197 RID: 407
 	public BlacksmithHit.ChargeShout[] chargeShouts;
 
-	// Token: 0x040001E2 RID: 482
+	// Token: 0x04000198 RID: 408
 	public DialogueActor[] actors;
 
-	// Token: 0x0200005E RID: 94
+	// Token: 0x02000362 RID: 866
 	[Serializable]
 	public struct HitParticles
 	{
-		// Token: 0x040001E3 RID: 483
+		// Token: 0x04001A1C RID: 6684
 		public ParticleSystem particles;
 
-		// Token: 0x040001E4 RID: 484
+		// Token: 0x04001A1D RID: 6685
 		[Range(0f, 1f)]
 		public float lowThreshold;
 
-		// Token: 0x040001E5 RID: 485
+		// Token: 0x04001A1E RID: 6686
 		public int lowCount;
 
-		// Token: 0x040001E6 RID: 486
+		// Token: 0x04001A1F RID: 6687
 		[Range(0f, 1f)]
 		public float highThreshold;
 
-		// Token: 0x040001E7 RID: 487
+		// Token: 0x04001A20 RID: 6688
 		public int highCount;
 	}
 
-	// Token: 0x0200005F RID: 95
+	// Token: 0x02000363 RID: 867
 	[Serializable]
 	public struct ChargeParticles
 	{
-		// Token: 0x040001E8 RID: 488
+		// Token: 0x04001A21 RID: 6689
 		public ParticleSystem particles;
 
-		// Token: 0x040001E9 RID: 489
+		// Token: 0x04001A22 RID: 6690
 		[Range(0f, 1f)]
 		public float lowThreshold;
 
-		// Token: 0x040001EA RID: 490
+		// Token: 0x04001A23 RID: 6691
 		public float lowEmission;
 
-		// Token: 0x040001EB RID: 491
+		// Token: 0x04001A24 RID: 6692
 		[Range(0f, 1f)]
 		public float highThreshold;
 
-		// Token: 0x040001EC RID: 492
+		// Token: 0x04001A25 RID: 6693
 		public float highEmission;
 	}
 
-	// Token: 0x02000060 RID: 96
+	// Token: 0x02000364 RID: 868
 	[Serializable]
 	public struct ChargeAudio
 	{
-		// Token: 0x040001ED RID: 493
+		// Token: 0x04001A26 RID: 6694
 		public AudioSource audioSource;
 
-		// Token: 0x040001EE RID: 494
+		// Token: 0x04001A27 RID: 6695
 		[Range(0f, 1f)]
 		public float lowThreshold;
 
-		// Token: 0x040001EF RID: 495
+		// Token: 0x04001A28 RID: 6696
 		[Range(0f, 1f)]
 		public float lowVolume;
 
-		// Token: 0x040001F0 RID: 496
+		// Token: 0x04001A29 RID: 6697
 		[Range(0f, 2f)]
 		public float lowPitch;
 
-		// Token: 0x040001F1 RID: 497
+		// Token: 0x04001A2A RID: 6698
 		[Range(0f, 1f)]
 		public float highThreshold;
 
-		// Token: 0x040001F2 RID: 498
+		// Token: 0x04001A2B RID: 6699
 		[Range(0f, 1f)]
 		public float highVolume;
 
-		// Token: 0x040001F3 RID: 499
+		// Token: 0x04001A2C RID: 6700
 		[Range(0f, 2f)]
 		public float highPitch;
 	}
 
-	// Token: 0x02000061 RID: 97
+	// Token: 0x02000365 RID: 869
 	[Serializable]
 	public struct ChargeShout
 	{
-		// Token: 0x040001F4 RID: 500
+		// Token: 0x04001A2D RID: 6701
 		public float chargeThreshold;
 
-		// Token: 0x040001F5 RID: 501
+		// Token: 0x04001A2E RID: 6702
 		public bool triggered;
 
-		// Token: 0x040001F6 RID: 502
+		// Token: 0x04001A2F RID: 6703
 		[ChunkLookup("document")]
 		public string id;
 	}

@@ -3,11 +3,11 @@ using System.Collections;
 using Rewired;
 using UnityEngine;
 
-// Token: 0x020002FB RID: 763
+// Token: 0x0200023A RID: 570
 public class Shop : MonoBehaviour
 {
-	// Token: 0x170001B7 RID: 439
-	// (get) Token: 0x06000F16 RID: 3862 RVA: 0x0000D25E File Offset: 0x0000B45E
+	// Token: 0x170000D2 RID: 210
+	// (get) Token: 0x06000C70 RID: 3184 RVA: 0x0003C805 File Offset: 0x0003AA05
 	private Shop.ShopItem currentItem
 	{
 		get
@@ -16,21 +16,21 @@ public class Shop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F17 RID: 3863 RVA: 0x0000D278 File Offset: 0x0000B478
+	// Token: 0x06000C71 RID: 3185 RVA: 0x0003C81F File Offset: 0x0003AA1F
 	private void Awake()
 	{
 		this.displayedItems = new int[this.itemSlots.Length];
 		this.cameraDelta = this.camera.transform.position - this.itemSlots[0].position;
 	}
 
-	// Token: 0x06000F18 RID: 3864 RVA: 0x0000D2B5 File Offset: 0x0000B4B5
+	// Token: 0x06000C72 RID: 3186 RVA: 0x0003C85C File Offset: 0x0003AA5C
 	private void Start()
 	{
 		this.UpdateInventory();
 		base.enabled = false;
 	}
 
-	// Token: 0x06000F19 RID: 3865 RVA: 0x0004F944 File Offset: 0x0004DB44
+	// Token: 0x06000C73 RID: 3187 RVA: 0x0003C86C File Offset: 0x0003AA6C
 	public void Activate()
 	{
 		base.enabled = true;
@@ -44,10 +44,10 @@ public class Shop : MonoBehaviour
 		{
 			this.rePlayer = ReInput.players.GetPlayer(0);
 		}
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveHorizontal), 0, 3, ReInput.mapping.GetActionId("UIHorizontal"));
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveHorizontal), 0, 19, ReInput.mapping.GetActionId("UIHorizontal"));
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnSubmit), 0, 3, ReInput.mapping.GetActionId("UISubmit"));
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnCancel), 0, 3, ReInput.mapping.GetActionId("UICancel"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveHorizontal), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("UIHorizontal"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveHorizontal), UpdateLoopType.Update, InputActionEventType.NegativeButtonJustPressed, ReInput.mapping.GetActionId("UIHorizontal"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnSubmit), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("UISubmit"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnCancel), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("UICancel"));
 		this.selectionIndex = 0;
 		this.UpdateSelection();
 		this.camera.transform.position = this.itemSlots[this.selectionIndex].position + this.cameraDelta;
@@ -55,7 +55,7 @@ public class Shop : MonoBehaviour
 		this.playerMark.SetActive(true);
 	}
 
-	// Token: 0x06000F1A RID: 3866 RVA: 0x0004FA84 File Offset: 0x0004DC84
+	// Token: 0x06000C74 RID: 3188 RVA: 0x0003C9AC File Offset: 0x0003ABAC
 	public void Deactivate()
 	{
 		this.camera.SetActive(false);
@@ -68,32 +68,32 @@ public class Shop : MonoBehaviour
 		this.playerMark.SetActive(false);
 	}
 
-	// Token: 0x06000F1B RID: 3867 RVA: 0x0004FB0C File Offset: 0x0004DD0C
+	// Token: 0x06000C75 RID: 3189 RVA: 0x0003CA34 File Offset: 0x0003AC34
 	private void OnMoveHorizontal(InputActionEventData obj)
 	{
 		float axisRaw = obj.GetAxisRaw();
 		this.MoveSelection(axisRaw > 0f);
 	}
 
-	// Token: 0x06000F1C RID: 3868 RVA: 0x0000D2C4 File Offset: 0x0000B4C4
+	// Token: 0x06000C76 RID: 3190 RVA: 0x0003CA57 File Offset: 0x0003AC57
 	private void OnCancel(InputActionEventData obj)
 	{
 		this.Deactivate();
 	}
 
-	// Token: 0x06000F1D RID: 3869 RVA: 0x0000D2CC File Offset: 0x0000B4CC
+	// Token: 0x06000C77 RID: 3191 RVA: 0x0003CA5F File Offset: 0x0003AC5F
 	private void OnSubmit(InputActionEventData obj)
 	{
 		this.Buy();
 	}
 
-	// Token: 0x06000F1E RID: 3870 RVA: 0x0004FB30 File Offset: 0x0004DD30
+	// Token: 0x06000C78 RID: 3192 RVA: 0x0003CA68 File Offset: 0x0003AC68
 	private void Update()
 	{
 		this.camera.transform.position = Vector3.SmoothDamp(this.camera.transform.position, this.itemSlots[this.selectionIndex].position + this.cameraDelta, ref this.cameraVelocity, 0.25f);
 	}
 
-	// Token: 0x06000F1F RID: 3871 RVA: 0x0004FB8C File Offset: 0x0004DD8C
+	// Token: 0x06000C79 RID: 3193 RVA: 0x0003CAC4 File Offset: 0x0003ACC4
 	public void MoveSelection(bool isRight)
 	{
 		this.selectionIndex += (isRight ? 1 : (-1));
@@ -108,13 +108,13 @@ public class Shop : MonoBehaviour
 		this.UpdateSelection();
 	}
 
-	// Token: 0x06000F20 RID: 3872 RVA: 0x0000D2D4 File Offset: 0x0000B4D4
+	// Token: 0x06000C7A RID: 3194 RVA: 0x0003CB17 File Offset: 0x0003AD17
 	private void UpdateSelection()
 	{
 		UIMenus.shop.Load(this.currentItem, this);
 	}
 
-	// Token: 0x06000F21 RID: 3873 RVA: 0x0004FBE0 File Offset: 0x0004DDE0
+	// Token: 0x06000C7B RID: 3195 RVA: 0x0003CB2C File Offset: 0x0003AD2C
 	private void UpdateInventory()
 	{
 		for (int i = 0; i < this.displayedItemCount; i++)
@@ -161,7 +161,7 @@ public class Shop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F22 RID: 3874 RVA: 0x0004FD68 File Offset: 0x0004DF68
+	// Token: 0x06000C7C RID: 3196 RVA: 0x0003CCB4 File Offset: 0x0003AEB4
 	public void Buy()
 	{
 		Shop.ShopItem shopItem = this.shopItems[this.displayedItems[this.selectionIndex]];
@@ -171,10 +171,10 @@ public class Shop : MonoBehaviour
 			base.StartCoroutine(this.RunBuyItem(shopItem.item));
 			return;
 		}
-		UIMenus.shop.SetDescription(DialogueManager.d.chunkDic[this.notEnoughChunk].lines[0].GetText(Language.English));
+		UIMenus.shop.SetDescription(DialogueManager.d.chunkDic[this.notEnoughChunk].lines[0].GetText(Language.Auto));
 	}
 
-	// Token: 0x06000F23 RID: 3875 RVA: 0x0000D2E7 File Offset: 0x0000B4E7
+	// Token: 0x06000C7D RID: 3197 RVA: 0x0003CD4A File Offset: 0x0003AF4A
 	public IEnumerator RunBuyItem(ItemObject item)
 	{
 		this.Deactivate();
@@ -188,73 +188,73 @@ public class Shop : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04001366 RID: 4966
+	// Token: 0x0400105E RID: 4190
 	private MultilingualTextDocument document;
 
-	// Token: 0x04001367 RID: 4967
+	// Token: 0x0400105F RID: 4191
 	public Shop.ShopItem[] shopItems;
 
-	// Token: 0x04001368 RID: 4968
+	// Token: 0x04001060 RID: 4192
 	public Transform[] itemSlots;
 
-	// Token: 0x04001369 RID: 4969
+	// Token: 0x04001061 RID: 4193
 	private int[] displayedItems;
 
-	// Token: 0x0400136A RID: 4970
+	// Token: 0x04001062 RID: 4194
 	public GameObject camera;
 
-	// Token: 0x0400136B RID: 4971
+	// Token: 0x04001063 RID: 4195
 	public GameObject playerMark;
 
-	// Token: 0x0400136C RID: 4972
+	// Token: 0x04001064 RID: 4196
 	private int displayedItemCount;
 
-	// Token: 0x0400136D RID: 4973
+	// Token: 0x04001065 RID: 4197
 	private int selectionIndex;
 
-	// Token: 0x0400136E RID: 4974
+	// Token: 0x04001066 RID: 4198
 	private Vector3 cameraDelta;
 
-	// Token: 0x0400136F RID: 4975
+	// Token: 0x04001067 RID: 4199
 	public ItemResource itemResource;
 
-	// Token: 0x04001370 RID: 4976
+	// Token: 0x04001068 RID: 4200
 	public string notEnoughChunk;
 
-	// Token: 0x04001371 RID: 4977
+	// Token: 0x04001069 RID: 4201
 	public DialogueActor actor;
 
-	// Token: 0x04001372 RID: 4978
+	// Token: 0x0400106A RID: 4202
 	private Vector3 cameraVelocity;
 
-	// Token: 0x04001373 RID: 4979
-	private Player rePlayer;
+	// Token: 0x0400106B RID: 4203
+	private global::Rewired.Player rePlayer;
 
-	// Token: 0x020002FC RID: 764
+	// Token: 0x0200041F RID: 1055
 	[Serializable]
 	public struct ShopItem
 	{
-		// Token: 0x04001374 RID: 4980
+		// Token: 0x04001D3B RID: 7483
 		[TextLookup("document")]
 		public string choiceDisplay;
 
-		// Token: 0x04001375 RID: 4981
+		// Token: 0x04001D3C RID: 7484
 		public ItemObject item;
 
-		// Token: 0x04001376 RID: 4982
+		// Token: 0x04001D3D RID: 7485
 		public int cost;
 
-		// Token: 0x04001377 RID: 4983
+		// Token: 0x04001D3E RID: 7486
 		public int priority;
 
-		// Token: 0x04001378 RID: 4984
+		// Token: 0x04001D3F RID: 7487
 		public GameObject gameObject;
 
-		// Token: 0x04001379 RID: 4985
+		// Token: 0x04001D40 RID: 7488
 		[ChunkLookup("document")]
 		public string unlockChunk;
 
-		// Token: 0x0400137A RID: 4986
+		// Token: 0x04001D41 RID: 7489
 		public bool isHidden;
 	}
 }

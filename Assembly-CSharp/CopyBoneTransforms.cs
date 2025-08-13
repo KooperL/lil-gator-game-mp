@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x0200000B RID: 11
 public class CopyBoneTransforms : MonoBehaviour
 {
-	// Token: 0x0600001D RID: 29 RVA: 0x000174B8 File Offset: 0x000156B8
+	// Token: 0x0600001D RID: 29 RVA: 0x000026C0 File Offset: 0x000008C0
 	[ContextMenu("Apply Transforms From Source")]
 	public void ApplyTransformsFromSource()
 	{

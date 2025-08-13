@@ -1,21 +1,21 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000085 RID: 133
+// Token: 0x02000066 RID: 102
 public class QuestProfileHandler : MonoBehaviour
 {
-	// Token: 0x060001C6 RID: 454 RVA: 0x0000373F File Offset: 0x0000193F
+	// Token: 0x06000191 RID: 401 RVA: 0x000092F6 File Offset: 0x000074F6
 	[ContextMenu("Set Complete")]
 	public void SetComplete()
 	{
 		this.profile.MarkCompleted();
 	}
 
-	// Token: 0x060001C7 RID: 455 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000192 RID: 402 RVA: 0x00009303 File Offset: 0x00007503
 	public void SetStarted()
 	{
 	}
 
-	// Token: 0x040002B7 RID: 695
+	// Token: 0x04000238 RID: 568
 	public QuestProfile profile;
 }

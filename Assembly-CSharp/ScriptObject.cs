@@ -4,7 +4,7 @@ using UnityEngine;
 // Token: 0x0200000D RID: 13
 public class ScriptObject : ScriptableObject
 {
-	// Token: 0x06000024 RID: 36 RVA: 0x0001750C File Offset: 0x0001570C
+	// Token: 0x06000024 RID: 36 RVA: 0x00002768 File Offset: 0x00000968
 	private string GetCleanString(string source)
 	{
 		source = source.Replace("\r\n", " ");

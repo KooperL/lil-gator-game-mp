@@ -1,26 +1,26 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200014E RID: 334
+// Token: 0x020000FB RID: 251
 [RequireComponent(typeof(Rigidbody))]
 public class RigidbodySleep : MonoBehaviour
 {
-	// Token: 0x0600063D RID: 1597 RVA: 0x000067EF File Offset: 0x000049EF
+	// Token: 0x0600052B RID: 1323 RVA: 0x0001BCC4 File Offset: 0x00019EC4
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 		this.rigidbody.Sleep();
 	}
 
-	// Token: 0x0600063E RID: 1598 RVA: 0x00006808 File Offset: 0x00004A08
+	// Token: 0x0600052C RID: 1324 RVA: 0x0001BCDD File Offset: 0x00019EDD
 	private void FixedUpdate()
 	{
 		this.isSleeping = this.rigidbody.IsSleeping();
 	}
 
-	// Token: 0x04000867 RID: 2151
+	// Token: 0x04000720 RID: 1824
 	private Rigidbody rigidbody;
 
-	// Token: 0x04000868 RID: 2152
+	// Token: 0x04000721 RID: 1825
 	public bool isSleeping;
 }

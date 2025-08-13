@@ -3,12 +3,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020002AE RID: 686
+// Token: 0x02000210 RID: 528
 public class ChoiceQuest : MonoBehaviour
 {
-	// Token: 0x17000160 RID: 352
-	// (get) Token: 0x06000D56 RID: 3414 RVA: 0x0000C2CF File Offset: 0x0000A4CF
-	// (set) Token: 0x06000D57 RID: 3415 RVA: 0x0000C2E2 File Offset: 0x0000A4E2
+	// Token: 0x170000B8 RID: 184
+	// (get) Token: 0x06000B5B RID: 2907 RVA: 0x00038240 File Offset: 0x00036440
+	// (set) Token: 0x06000B5C RID: 2908 RVA: 0x00038253 File Offset: 0x00036453
 	private bool State
 	{
 		get
@@ -21,13 +21,13 @@ public class ChoiceQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D58 RID: 3416 RVA: 0x0000C2F5 File Offset: 0x0000A4F5
+	// Token: 0x06000B5D RID: 2909 RVA: 0x00038266 File Offset: 0x00036466
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000D59 RID: 3417 RVA: 0x00049968 File Offset: 0x00047B68
+	// Token: 0x06000B5E RID: 2910 RVA: 0x00038270 File Offset: 0x00036470
 	private void UpdateState()
 	{
 		if (this.crier != null)
@@ -50,13 +50,13 @@ public class ChoiceQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D5A RID: 3418 RVA: 0x0000C2FD File Offset: 0x0000A4FD
+	// Token: 0x06000B5F RID: 2911 RVA: 0x000382F4 File Offset: 0x000364F4
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000D5B RID: 3419 RVA: 0x0000C30C File Offset: 0x0000A50C
+	// Token: 0x06000B60 RID: 2912 RVA: 0x00038303 File Offset: 0x00036503
 	private IEnumerator RunConversation()
 	{
 		if (!this.State)
@@ -100,57 +100,57 @@ public class ChoiceQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0400119C RID: 4508
+	// Token: 0x04000F11 RID: 3857
 	public string id;
 
-	// Token: 0x0400119D RID: 4509
+	// Token: 0x04000F12 RID: 3858
 	public DialogueActor[] actors;
 
-	// Token: 0x0400119E RID: 4510
+	// Token: 0x04000F13 RID: 3859
 	public ChoiceQuest.Prompt[] prompts;
 
-	// Token: 0x0400119F RID: 4511
+	// Token: 0x04000F14 RID: 3860
 	public string beforeState;
 
-	// Token: 0x040011A0 RID: 4512
+	// Token: 0x04000F15 RID: 3861
 	public int minCorrect = 1;
 
-	// Token: 0x040011A1 RID: 4513
+	// Token: 0x04000F16 RID: 3862
 	public string rewardText;
 
-	// Token: 0x040011A2 RID: 4514
+	// Token: 0x04000F17 RID: 3863
 	public UnityEvent onReward;
 
-	// Token: 0x040011A3 RID: 4515
+	// Token: 0x04000F18 RID: 3864
 	public string afterText;
 
-	// Token: 0x040011A4 RID: 4516
+	// Token: 0x04000F19 RID: 3865
 	public string afterState;
 
-	// Token: 0x040011A5 RID: 4517
+	// Token: 0x04000F1A RID: 3866
 	public UnityEvent onAfter;
 
-	// Token: 0x040011A6 RID: 4518
+	// Token: 0x04000F1B RID: 3867
 	public GameObject crier;
 
-	// Token: 0x020002AF RID: 687
+	// Token: 0x020003FA RID: 1018
 	[Serializable]
 	public struct Prompt
 	{
-		// Token: 0x040011A7 RID: 4519
+		// Token: 0x04001CB5 RID: 7349
 		public string text;
 
-		// Token: 0x040011A8 RID: 4520
+		// Token: 0x04001CB6 RID: 7350
 		public ChoiceQuest.Prompt.Choice[] choices;
 
-		// Token: 0x020002B0 RID: 688
+		// Token: 0x020004BE RID: 1214
 		[Serializable]
 		public struct Choice
 		{
-			// Token: 0x040011A9 RID: 4521
+			// Token: 0x04001FAC RID: 8108
 			public bool isCorrect;
 
-			// Token: 0x040011AA RID: 4522
+			// Token: 0x04001FAD RID: 8109
 			public string response;
 		}
 	}

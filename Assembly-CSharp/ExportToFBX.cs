@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200033C RID: 828
+// Token: 0x02000272 RID: 626
 public class ExportToFBX : MonoBehaviour
 {
-	// Token: 0x0600101A RID: 4122 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000D65 RID: 3429 RVA: 0x000409D7 File Offset: 0x0003EBD7
 	private void Start()
 	{
 	}
 
-	// Token: 0x0600101B RID: 4123 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000D66 RID: 3430 RVA: 0x000409D9 File Offset: 0x0003EBD9
 	private void Update()
 	{
 	}

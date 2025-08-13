@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200034A RID: 842
+// Token: 0x0200027C RID: 636
 public class TerrainTweakAlphamaps : MonoBehaviour
 {
-	// Token: 0x06001055 RID: 4181 RVA: 0x00054220 File Offset: 0x00052420
+	// Token: 0x06000D99 RID: 3481 RVA: 0x00041DE4 File Offset: 0x0003FFE4
 	private void OnValidate()
 	{
 		if (this.terrain == null)
@@ -31,7 +31,7 @@ public class TerrainTweakAlphamaps : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001056 RID: 4182 RVA: 0x000542F4 File Offset: 0x000524F4
+	// Token: 0x06000D9A RID: 3482 RVA: 0x00041EB8 File Offset: 0x000400B8
 	[ContextMenu("Grab Alphamaps")]
 	public void GrabAlphamaps()
 	{
@@ -40,7 +40,7 @@ public class TerrainTweakAlphamaps : MonoBehaviour
 		this.modifiedAlphamaps = (float[,,])this.alphamaps.Clone();
 	}
 
-	// Token: 0x06001057 RID: 4183 RVA: 0x0000E128 File Offset: 0x0000C328
+	// Token: 0x06000D9B RID: 3483 RVA: 0x00041F1A File Offset: 0x0004011A
 	[ContextMenu("Apply Alphamaps")]
 	public void ApplyAlphamaps()
 	{
@@ -48,19 +48,19 @@ public class TerrainTweakAlphamaps : MonoBehaviour
 		this.terrain.terrainData.SetAlphamaps(0, 0, this.alphamaps);
 	}
 
-	// Token: 0x04001531 RID: 5425
+	// Token: 0x040011F1 RID: 4593
 	private Terrain terrain;
 
-	// Token: 0x04001532 RID: 5426
+	// Token: 0x040011F2 RID: 4594
 	public bool areAlphamapsGrabbed;
 
-	// Token: 0x04001533 RID: 5427
+	// Token: 0x040011F3 RID: 4595
 	public float[,,] alphamaps;
 
-	// Token: 0x04001534 RID: 5428
+	// Token: 0x040011F4 RID: 4596
 	public float[,,] modifiedAlphamaps;
 
-	// Token: 0x04001535 RID: 5429
+	// Token: 0x040011F5 RID: 4597
 	[Range(-1f, 1f)]
 	public float[] offsets;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000F1 RID: 241
+// Token: 0x020000B3 RID: 179
 public class FairyDialogueActor : DialogueActor
 {
-	// Token: 0x0600048C RID: 1164 RVA: 0x0002B004 File Offset: 0x00029204
+	// Token: 0x060003DF RID: 991 RVA: 0x00016C44 File Offset: 0x00014E44
 	protected override void Start()
 	{
 		this.perlinSeed = 1000f * Random.value;
@@ -18,18 +18,17 @@ public class FairyDialogueActor : DialogueActor
 		base.transform.parent = base.transform.parent.parent;
 	}
 
-	// Token: 0x0600048D RID: 1165 RVA: 0x0002B090 File Offset: 0x00029290
+	// Token: 0x060003E0 RID: 992 RVA: 0x00016CD0 File Offset: 0x00014ED0
 	private Vector3 GetPerlinOffset()
 	{
 		float num = this.perlinSpeed * Time.time;
-		Vector3 vector;
-		vector..ctor(Mathf.PerlinNoise(this.perlinSeed, num), Mathf.PerlinNoise(this.perlinSeed, 10000f + num), Mathf.PerlinNoise(this.perlinSeed, 20000f + num));
+		Vector3 vector = new Vector3(Mathf.PerlinNoise(this.perlinSeed, num), Mathf.PerlinNoise(this.perlinSeed, 10000f + num), Mathf.PerlinNoise(this.perlinSeed, 20000f + num));
 		vector *= 2f;
 		vector -= Vector3.one;
 		return this.perlinRadius * Vector3.ClampMagnitude(vector, 1f);
 	}
 
-	// Token: 0x0600048E RID: 1166 RVA: 0x0002B110 File Offset: 0x00029310
+	// Token: 0x060003E1 RID: 993 RVA: 0x00016D50 File Offset: 0x00014F50
 	public override void LateUpdate()
 	{
 		base.LateUpdate();
@@ -49,7 +48,7 @@ public class FairyDialogueActor : DialogueActor
 		base.transform.position = this.position;
 	}
 
-	// Token: 0x0600048F RID: 1167 RVA: 0x0002B200 File Offset: 0x00029400
+	// Token: 0x060003E2 RID: 994 RVA: 0x00016E40 File Offset: 0x00015040
 	protected override void UpdateMouthFlap()
 	{
 		float num = Mathf.SmoothStep(0f, 1f, this.mouthControl);
@@ -57,7 +56,7 @@ public class FairyDialogueActor : DialogueActor
 		this.fairySprite.color = Color.Lerp(this.mouthClosedColor, this.mouthOpenColor, this.mouth * num);
 	}
 
-	// Token: 0x06000490 RID: 1168 RVA: 0x000054D5 File Offset: 0x000036D5
+	// Token: 0x060003E3 RID: 995 RVA: 0x00016EBA File Offset: 0x000150BA
 	public override void MouthOpen()
 	{
 		this.mouthOpen = true;
@@ -66,55 +65,55 @@ public class FairyDialogueActor : DialogueActor
 		PlayAudio.p.PlayVoice(base.transform.position, this.voicePitchMultiplier, this.voiceVarianceMultiplier);
 	}
 
-	// Token: 0x0400066B RID: 1643
+	// Token: 0x0400055C RID: 1372
 	[Header("Fairy Settings (Ignore everything above)")]
 	public SpriteRenderer fairySprite;
 
-	// Token: 0x0400066C RID: 1644
+	// Token: 0x0400055D RID: 1373
 	public float mouthClosedSize = 0.2f;
 
-	// Token: 0x0400066D RID: 1645
+	// Token: 0x0400055E RID: 1374
 	public float mouthOpenSize = 0.5f;
 
-	// Token: 0x0400066E RID: 1646
+	// Token: 0x0400055F RID: 1375
 	public Color mouthClosedColor = Color.grey;
 
-	// Token: 0x0400066F RID: 1647
+	// Token: 0x04000560 RID: 1376
 	public Color mouthOpenColor = Color.white;
 
-	// Token: 0x04000670 RID: 1648
+	// Token: 0x04000561 RID: 1377
 	public float perlinRadius = 0.5f;
 
-	// Token: 0x04000671 RID: 1649
+	// Token: 0x04000562 RID: 1378
 	public float perlinSpeed = 0.25f;
 
-	// Token: 0x04000672 RID: 1650
+	// Token: 0x04000563 RID: 1379
 	private float perlinSeed;
 
-	// Token: 0x04000673 RID: 1651
+	// Token: 0x04000564 RID: 1380
 	public float acceleration = 5f;
 
-	// Token: 0x04000674 RID: 1652
+	// Token: 0x04000565 RID: 1381
 	public float smoothTime = 0.2f;
 
-	// Token: 0x04000675 RID: 1653
+	// Token: 0x04000566 RID: 1382
 	private const float maxSpeed = 15f;
 
-	// Token: 0x04000676 RID: 1654
+	// Token: 0x04000567 RID: 1383
 	private const float maxDistance = 5f;
 
-	// Token: 0x04000677 RID: 1655
+	// Token: 0x04000568 RID: 1384
 	private Vector3 anchorPoint;
 
-	// Token: 0x04000678 RID: 1656
+	// Token: 0x04000569 RID: 1385
 	public Vector3 talkingAnchorPoint;
 
-	// Token: 0x04000679 RID: 1657
+	// Token: 0x0400056A RID: 1386
 	private Vector3 position;
 
-	// Token: 0x0400067A RID: 1658
+	// Token: 0x0400056B RID: 1387
 	private Vector3 velocity;
 
-	// Token: 0x0400067B RID: 1659
+	// Token: 0x0400056C RID: 1388
 	private Transform originalParent;
 }

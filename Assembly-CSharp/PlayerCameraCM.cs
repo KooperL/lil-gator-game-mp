@@ -2,16 +2,16 @@
 using Cinemachine;
 using UnityEngine;
 
-// Token: 0x0200026B RID: 619
+// Token: 0x020001E2 RID: 482
 public class PlayerCameraCM : MonoBehaviour
 {
-	// Token: 0x06000BD4 RID: 3028 RVA: 0x0000B20B File Offset: 0x0000940B
+	// Token: 0x06000A1F RID: 2591 RVA: 0x0002F0BC File Offset: 0x0002D2BC
 	public void Awake()
 	{
 		this.cm = base.GetComponent<CinemachineFreeLook>();
 	}
 
-	// Token: 0x06000BD5 RID: 3029 RVA: 0x00040B80 File Offset: 0x0003ED80
+	// Token: 0x06000A20 RID: 2592 RVA: 0x0002F0CC File Offset: 0x0002D2CC
 	private void Start()
 	{
 		this.rigidbody = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
@@ -22,7 +22,7 @@ public class PlayerCameraCM : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000BD6 RID: 3030 RVA: 0x00040C00 File Offset: 0x0003EE00
+	// Token: 0x06000A21 RID: 2593 RVA: 0x0002F14C File Offset: 0x0002D34C
 	private void LateUpdate()
 	{
 		this.yAxis = this.cm.m_YAxis.Value;
@@ -55,7 +55,7 @@ public class PlayerCameraCM : MonoBehaviour
 		Vector3 vector = this.rigidbody.transform.position + 0.75f * Vector3.up;
 		Vector3 vector2 = this.YAxisToPosition(num2) - vector;
 		Debug.DrawLine(vector, vector + vector2);
-		while (num2 < 1f && Physics.BoxCast(vector, 0.1f * Vector3.one, vector2, Quaternion.identity, vector2.magnitude, this.raycastMask, 2))
+		while (num2 < 1f && Physics.BoxCast(vector, 0.1f * Vector3.one, vector2, Quaternion.identity, vector2.magnitude, this.raycastMask, QueryTriggerInteraction.Collide))
 		{
 			num += this.raycastStep;
 			num2 += this.raycastStep;
@@ -70,13 +70,13 @@ public class PlayerCameraCM : MonoBehaviour
 		this.cm.m_YAxis.Value = this.yAxis;
 	}
 
-	// Token: 0x06000BD7 RID: 3031 RVA: 0x0000B219 File Offset: 0x00009419
+	// Token: 0x06000A22 RID: 2594 RVA: 0x0002F3BA File Offset: 0x0002D5BA
 	private float AngleToYAxis(float angle)
 	{
 		return angle;
 	}
 
-	// Token: 0x06000BD8 RID: 3032 RVA: 0x00040E70 File Offset: 0x0003F070
+	// Token: 0x06000A23 RID: 2595 RVA: 0x0002F3C0 File Offset: 0x0002D5C0
 	private Vector3 YAxisToPosition(float yAxis)
 	{
 		yAxis = Mathf.Clamp01(yAxis);
@@ -97,48 +97,48 @@ public class PlayerCameraCM : MonoBehaviour
 		return this.rigidbody.transform.position + Quaternion.Euler(0f, this.cm.m_XAxis.Value, 0f) * vector;
 	}
 
-	// Token: 0x04000EE0 RID: 3808
+	// Token: 0x04000CA2 RID: 3234
 	private CinemachineFreeLook cm;
 
-	// Token: 0x04000EE1 RID: 3809
+	// Token: 0x04000CA3 RID: 3235
 	public PlayerMovement movement;
 
-	// Token: 0x04000EE2 RID: 3810
+	// Token: 0x04000CA4 RID: 3236
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000EE3 RID: 3811
+	// Token: 0x04000CA5 RID: 3237
 	public float defaultTarget = 0.5f;
 
-	// Token: 0x04000EE4 RID: 3812
+	// Token: 0x04000CA6 RID: 3238
 	public float velocitySpeed = 1f;
 
-	// Token: 0x04000EE5 RID: 3813
+	// Token: 0x04000CA7 RID: 3239
 	public float velocityImpact = 0.5f;
 
-	// Token: 0x04000EE6 RID: 3814
+	// Token: 0x04000CA8 RID: 3240
 	private float velocityModifiedTarget = 0.5f;
 
-	// Token: 0x04000EE7 RID: 3815
+	// Token: 0x04000CA9 RID: 3241
 	public LayerMask raycastMask;
 
-	// Token: 0x04000EE8 RID: 3816
+	// Token: 0x04000CAA RID: 3242
 	public float raycastStep = 0.1f;
 
-	// Token: 0x04000EE9 RID: 3817
+	// Token: 0x04000CAB RID: 3243
 	private float raycastVelocity;
 
-	// Token: 0x04000EEA RID: 3818
+	// Token: 0x04000CAC RID: 3244
 	public float raycastAdjustTime = 0.2f;
 
-	// Token: 0x04000EEB RID: 3819
+	// Token: 0x04000CAD RID: 3245
 	private bool recenteringActive;
 
-	// Token: 0x04000EEC RID: 3820
+	// Token: 0x04000CAE RID: 3246
 	private float recenterVelocity;
 
-	// Token: 0x04000EED RID: 3821
+	// Token: 0x04000CAF RID: 3247
 	private Vector3[] rigPositions;
 
-	// Token: 0x04000EEE RID: 3822
+	// Token: 0x04000CB0 RID: 3248
 	private float yAxis = 0.5f;
 }

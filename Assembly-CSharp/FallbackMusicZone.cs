@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200001F RID: 31
+// Token: 0x02000021 RID: 33
 public class FallbackMusicZone : MonoBehaviour
 {
-	// Token: 0x06000062 RID: 98 RVA: 0x00002557 File Offset: 0x00000757
+	// Token: 0x06000069 RID: 105 RVA: 0x000037C1 File Offset: 0x000019C1
 	private void Awake()
 	{
 		if (!string.IsNullOrEmpty(this.stateName))
@@ -13,7 +13,7 @@ public class FallbackMusicZone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000063 RID: 99 RVA: 0x00018010 File Offset: 0x00016210
+	// Token: 0x0600006A RID: 106 RVA: 0x000037E8 File Offset: 0x000019E8
 	private void OnTriggerStay(Collider other)
 	{
 		if (this.musicToOverride.isPlaying && !this.musicToOverride.isLocked && !this.musicToOverride.IsEligible)
@@ -26,19 +26,19 @@ public class FallbackMusicZone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000078 RID: 120
+	// Token: 0x0400008E RID: 142
 	public MusicSystem musicToOverride;
 
-	// Token: 0x04000079 RID: 121
+	// Token: 0x0400008F RID: 143
 	public MusicSystem musicToUse;
 
-	// Token: 0x0400007A RID: 122
+	// Token: 0x04000090 RID: 144
 	public MusicSystemDynamicStates dynamicStates;
 
-	// Token: 0x0400007B RID: 123
+	// Token: 0x04000091 RID: 145
 	[DynamicStateLookup("dynamicStates")]
 	public string stateName;
 
-	// Token: 0x0400007C RID: 124
+	// Token: 0x04000092 RID: 146
 	private int dynamicStateIndex = -1;
 }

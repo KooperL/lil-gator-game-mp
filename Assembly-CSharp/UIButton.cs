@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-// Token: 0x02000395 RID: 917
+// Token: 0x020002B6 RID: 694
 public class UIButton : MonoBehaviour
 {
-	// Token: 0x0600116A RID: 4458 RVA: 0x00057298 File Offset: 0x00055498
+	// Token: 0x06000E98 RID: 3736 RVA: 0x00045C10 File Offset: 0x00043E10
 	private void OnEnable()
 	{
 		if (this.image == null)
@@ -20,7 +20,7 @@ public class UIButton : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600116B RID: 4459 RVA: 0x0000EEC1 File Offset: 0x0000D0C1
+	// Token: 0x06000E99 RID: 3737 RVA: 0x00045C67 File Offset: 0x00043E67
 	private void OnDisable()
 	{
 		if (this.buttonObject != null)
@@ -29,7 +29,7 @@ public class UIButton : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600116C RID: 4460 RVA: 0x000572F0 File Offset: 0x000554F0
+	// Token: 0x06000E9A RID: 3738 RVA: 0x00045C94 File Offset: 0x00043E94
 	private void UpdateSprite()
 	{
 		Sprite inputSprite = this.buttonObject.InputSprite;
@@ -37,9 +37,9 @@ public class UIButton : MonoBehaviour
 		this.image.sprite = inputSprite;
 	}
 
-	// Token: 0x04001671 RID: 5745
+	// Token: 0x04001305 RID: 4869
 	private Image image;
 
-	// Token: 0x04001672 RID: 5746
+	// Token: 0x04001306 RID: 4870
 	public UIButtonObject buttonObject;
 }

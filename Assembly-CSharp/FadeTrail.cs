@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000050 RID: 80
+// Token: 0x0200003E RID: 62
 public class FadeTrail : MonoBehaviour
 {
-	// Token: 0x06000122 RID: 290 RVA: 0x00002F6B File Offset: 0x0000116B
+	// Token: 0x060000FD RID: 253 RVA: 0x000068C4 File Offset: 0x00004AC4
 	public void OnValidate()
 	{
 		if (this.rigidbody == null)
@@ -17,7 +17,7 @@ public class FadeTrail : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000123 RID: 291 RVA: 0x00002FA1 File Offset: 0x000011A1
+	// Token: 0x060000FE RID: 254 RVA: 0x000068FA File Offset: 0x00004AFA
 	private void Start()
 	{
 		this.fadeStartTime = Time.time + this.fadeDelay;
@@ -25,7 +25,7 @@ public class FadeTrail : MonoBehaviour
 		this.baseWidth = this.trailRenderer.widthMultiplier;
 	}
 
-	// Token: 0x06000124 RID: 292 RVA: 0x0001B1A8 File Offset: 0x000193A8
+	// Token: 0x060000FF RID: 255 RVA: 0x00006934 File Offset: 0x00004B34
 	private void Update()
 	{
 		float magnitude = this.rigidbody.velocity.magnitude;
@@ -38,36 +38,36 @@ public class FadeTrail : MonoBehaviour
 		this.trailRenderer.widthMultiplier = this.baseWidth * this.smoothFade;
 	}
 
-	// Token: 0x040001A6 RID: 422
+	// Token: 0x0400015F RID: 351
 	public TrailRenderer trailRenderer;
 
-	// Token: 0x040001A7 RID: 423
+	// Token: 0x04000160 RID: 352
 	public Rigidbody rigidbody;
 
-	// Token: 0x040001A8 RID: 424
+	// Token: 0x04000161 RID: 353
 	public float fastestSpeed = 10f;
 
-	// Token: 0x040001A9 RID: 425
+	// Token: 0x04000162 RID: 354
 	public float slowestSpeed = 3f;
 
-	// Token: 0x040001AA RID: 426
+	// Token: 0x04000163 RID: 355
 	public float fadeDelay = 1f;
 
-	// Token: 0x040001AB RID: 427
+	// Token: 0x04000164 RID: 356
 	public float fadeDuration = 1f;
 
-	// Token: 0x040001AC RID: 428
+	// Token: 0x04000165 RID: 357
 	private float fadeStartTime;
 
-	// Token: 0x040001AD RID: 429
+	// Token: 0x04000166 RID: 358
 	private float fadeEndTime;
 
-	// Token: 0x040001AE RID: 430
+	// Token: 0x04000167 RID: 359
 	private float smoothFade;
 
-	// Token: 0x040001AF RID: 431
+	// Token: 0x04000168 RID: 360
 	private float smoothFadeVel;
 
-	// Token: 0x040001B0 RID: 432
+	// Token: 0x04000169 RID: 361
 	private float baseWidth;
 }

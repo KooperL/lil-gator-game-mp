@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
 
-// Token: 0x02000199 RID: 409
+// Token: 0x0200013C RID: 316
 public class InteractPickup : PersistentObject, Interaction
 {
-	// Token: 0x0600079F RID: 1951 RVA: 0x00034AD4 File Offset: 0x00032CD4
+	// Token: 0x0600067A RID: 1658 RVA: 0x000214B8 File Offset: 0x0001F6B8
 	public void Interact()
 	{
 		if (this.resource != null)
@@ -20,7 +20,7 @@ public class InteractPickup : PersistentObject, Interaction
 		}
 	}
 
-	// Token: 0x060007A0 RID: 1952 RVA: 0x00007A4E File Offset: 0x00005C4E
+	// Token: 0x0600067B RID: 1659 RVA: 0x00021525 File Offset: 0x0001F725
 	private IEnumerator RunWithItem()
 	{
 		this.item.Activate();
@@ -30,18 +30,18 @@ public class InteractPickup : PersistentObject, Interaction
 		yield break;
 	}
 
-	// Token: 0x04000A2A RID: 2602
+	// Token: 0x040008BA RID: 2234
 	public ItemResource resource;
 
-	// Token: 0x04000A2B RID: 2603
+	// Token: 0x040008BB RID: 2235
 	public int resourceAmount;
 
-	// Token: 0x04000A2C RID: 2604
+	// Token: 0x040008BC RID: 2236
 	public bool showItemOnFirstPickup = true;
 
-	// Token: 0x04000A2D RID: 2605
+	// Token: 0x040008BD RID: 2237
 	public string itemID;
 
-	// Token: 0x04000A2E RID: 2606
+	// Token: 0x040008BE RID: 2238
 	public DSItem item;
 }

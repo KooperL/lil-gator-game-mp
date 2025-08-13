@@ -2,123 +2,123 @@
 
 namespace Rewired
 {
-	// Token: 0x020003FB RID: 1019
+	// Token: 0x02000302 RID: 770
 	public interface IGamepadTemplate : IControllerTemplate
 	{
-		// Token: 0x170001FA RID: 506
-		// (get) Token: 0x06001367 RID: 4967
+		// Token: 0x170000EB RID: 235
+		// (get) Token: 0x06001038 RID: 4152
 		IControllerTemplateButton actionBottomRow1 { get; }
 
-		// Token: 0x170001FB RID: 507
-		// (get) Token: 0x06001368 RID: 4968
+		// Token: 0x170000EC RID: 236
+		// (get) Token: 0x06001039 RID: 4153
 		IControllerTemplateButton a { get; }
 
-		// Token: 0x170001FC RID: 508
-		// (get) Token: 0x06001369 RID: 4969
+		// Token: 0x170000ED RID: 237
+		// (get) Token: 0x0600103A RID: 4154
 		IControllerTemplateButton actionBottomRow2 { get; }
 
-		// Token: 0x170001FD RID: 509
-		// (get) Token: 0x0600136A RID: 4970
+		// Token: 0x170000EE RID: 238
+		// (get) Token: 0x0600103B RID: 4155
 		IControllerTemplateButton b { get; }
 
-		// Token: 0x170001FE RID: 510
-		// (get) Token: 0x0600136B RID: 4971
+		// Token: 0x170000EF RID: 239
+		// (get) Token: 0x0600103C RID: 4156
 		IControllerTemplateButton actionBottomRow3 { get; }
 
-		// Token: 0x170001FF RID: 511
-		// (get) Token: 0x0600136C RID: 4972
+		// Token: 0x170000F0 RID: 240
+		// (get) Token: 0x0600103D RID: 4157
 		IControllerTemplateButton c { get; }
 
-		// Token: 0x17000200 RID: 512
-		// (get) Token: 0x0600136D RID: 4973
+		// Token: 0x170000F1 RID: 241
+		// (get) Token: 0x0600103E RID: 4158
 		IControllerTemplateButton actionTopRow1 { get; }
 
-		// Token: 0x17000201 RID: 513
-		// (get) Token: 0x0600136E RID: 4974
+		// Token: 0x170000F2 RID: 242
+		// (get) Token: 0x0600103F RID: 4159
 		IControllerTemplateButton x { get; }
 
-		// Token: 0x17000202 RID: 514
-		// (get) Token: 0x0600136F RID: 4975
+		// Token: 0x170000F3 RID: 243
+		// (get) Token: 0x06001040 RID: 4160
 		IControllerTemplateButton actionTopRow2 { get; }
 
-		// Token: 0x17000203 RID: 515
-		// (get) Token: 0x06001370 RID: 4976
+		// Token: 0x170000F4 RID: 244
+		// (get) Token: 0x06001041 RID: 4161
 		IControllerTemplateButton y { get; }
 
-		// Token: 0x17000204 RID: 516
-		// (get) Token: 0x06001371 RID: 4977
+		// Token: 0x170000F5 RID: 245
+		// (get) Token: 0x06001042 RID: 4162
 		IControllerTemplateButton actionTopRow3 { get; }
 
-		// Token: 0x17000205 RID: 517
-		// (get) Token: 0x06001372 RID: 4978
+		// Token: 0x170000F6 RID: 246
+		// (get) Token: 0x06001043 RID: 4163
 		IControllerTemplateButton z { get; }
 
-		// Token: 0x17000206 RID: 518
-		// (get) Token: 0x06001373 RID: 4979
+		// Token: 0x170000F7 RID: 247
+		// (get) Token: 0x06001044 RID: 4164
 		IControllerTemplateButton leftShoulder1 { get; }
 
-		// Token: 0x17000207 RID: 519
-		// (get) Token: 0x06001374 RID: 4980
+		// Token: 0x170000F8 RID: 248
+		// (get) Token: 0x06001045 RID: 4165
 		IControllerTemplateButton leftBumper { get; }
 
-		// Token: 0x17000208 RID: 520
-		// (get) Token: 0x06001375 RID: 4981
+		// Token: 0x170000F9 RID: 249
+		// (get) Token: 0x06001046 RID: 4166
 		IControllerTemplateAxis leftShoulder2 { get; }
 
-		// Token: 0x17000209 RID: 521
-		// (get) Token: 0x06001376 RID: 4982
+		// Token: 0x170000FA RID: 250
+		// (get) Token: 0x06001047 RID: 4167
 		IControllerTemplateAxis leftTrigger { get; }
 
-		// Token: 0x1700020A RID: 522
-		// (get) Token: 0x06001377 RID: 4983
+		// Token: 0x170000FB RID: 251
+		// (get) Token: 0x06001048 RID: 4168
 		IControllerTemplateButton rightShoulder1 { get; }
 
-		// Token: 0x1700020B RID: 523
-		// (get) Token: 0x06001378 RID: 4984
+		// Token: 0x170000FC RID: 252
+		// (get) Token: 0x06001049 RID: 4169
 		IControllerTemplateButton rightBumper { get; }
 
-		// Token: 0x1700020C RID: 524
-		// (get) Token: 0x06001379 RID: 4985
+		// Token: 0x170000FD RID: 253
+		// (get) Token: 0x0600104A RID: 4170
 		IControllerTemplateAxis rightShoulder2 { get; }
 
-		// Token: 0x1700020D RID: 525
-		// (get) Token: 0x0600137A RID: 4986
+		// Token: 0x170000FE RID: 254
+		// (get) Token: 0x0600104B RID: 4171
 		IControllerTemplateAxis rightTrigger { get; }
 
-		// Token: 0x1700020E RID: 526
-		// (get) Token: 0x0600137B RID: 4987
+		// Token: 0x170000FF RID: 255
+		// (get) Token: 0x0600104C RID: 4172
 		IControllerTemplateButton center1 { get; }
 
-		// Token: 0x1700020F RID: 527
-		// (get) Token: 0x0600137C RID: 4988
+		// Token: 0x17000100 RID: 256
+		// (get) Token: 0x0600104D RID: 4173
 		IControllerTemplateButton back { get; }
 
-		// Token: 0x17000210 RID: 528
-		// (get) Token: 0x0600137D RID: 4989
+		// Token: 0x17000101 RID: 257
+		// (get) Token: 0x0600104E RID: 4174
 		IControllerTemplateButton center2 { get; }
 
-		// Token: 0x17000211 RID: 529
-		// (get) Token: 0x0600137E RID: 4990
+		// Token: 0x17000102 RID: 258
+		// (get) Token: 0x0600104F RID: 4175
 		IControllerTemplateButton start { get; }
 
-		// Token: 0x17000212 RID: 530
-		// (get) Token: 0x0600137F RID: 4991
+		// Token: 0x17000103 RID: 259
+		// (get) Token: 0x06001050 RID: 4176
 		IControllerTemplateButton center3 { get; }
 
-		// Token: 0x17000213 RID: 531
-		// (get) Token: 0x06001380 RID: 4992
+		// Token: 0x17000104 RID: 260
+		// (get) Token: 0x06001051 RID: 4177
 		IControllerTemplateButton guide { get; }
 
-		// Token: 0x17000214 RID: 532
-		// (get) Token: 0x06001381 RID: 4993
+		// Token: 0x17000105 RID: 261
+		// (get) Token: 0x06001052 RID: 4178
 		IControllerTemplateThumbStick leftStick { get; }
 
-		// Token: 0x17000215 RID: 533
-		// (get) Token: 0x06001382 RID: 4994
+		// Token: 0x17000106 RID: 262
+		// (get) Token: 0x06001053 RID: 4179
 		IControllerTemplateThumbStick rightStick { get; }
 
-		// Token: 0x17000216 RID: 534
-		// (get) Token: 0x06001383 RID: 4995
+		// Token: 0x17000107 RID: 263
+		// (get) Token: 0x06001054 RID: 4180
 		IControllerTemplateDPad dPad { get; }
 	}
 }

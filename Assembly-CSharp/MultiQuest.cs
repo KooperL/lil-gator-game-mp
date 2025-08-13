@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020002C7 RID: 711
+// Token: 0x02000218 RID: 536
 public class MultiQuest : MonoBehaviour
 {
-	// Token: 0x17000186 RID: 390
-	// (get) Token: 0x06000DF1 RID: 3569 RVA: 0x0000C7A7 File Offset: 0x0000A9A7
-	// (set) Token: 0x06000DF2 RID: 3570 RVA: 0x0000C7BA File Offset: 0x0000A9BA
+	// Token: 0x170000C0 RID: 192
+	// (get) Token: 0x06000B9C RID: 2972 RVA: 0x000389ED File Offset: 0x00036BED
+	// (set) Token: 0x06000B9D RID: 2973 RVA: 0x00038A00 File Offset: 0x00036C00
 	public int Count
 	{
 		get
@@ -20,7 +20,7 @@ public class MultiQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DF3 RID: 3571 RVA: 0x0004B3F8 File Offset: 0x000495F8
+	// Token: 0x06000B9E RID: 2974 RVA: 0x00038A14 File Offset: 0x00036C14
 	public void CompleteSubQuest()
 	{
 		int num = this.Count + 1;
@@ -31,12 +31,12 @@ public class MultiQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400122D RID: 4653
+	// Token: 0x04000F6A RID: 3946
 	public string id;
 
-	// Token: 0x0400122E RID: 4654
+	// Token: 0x04000F6B RID: 3947
 	public int totalSubQuests;
 
-	// Token: 0x0400122F RID: 4655
+	// Token: 0x04000F6C RID: 3948
 	public UnityEvent onAllComplete;
 }

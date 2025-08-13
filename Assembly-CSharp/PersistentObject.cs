@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200021C RID: 540
+// Token: 0x020001A2 RID: 418
 public class PersistentObject : MonoBehaviour
 {
-	// Token: 0x170000F9 RID: 249
-	// (get) Token: 0x06000A11 RID: 2577 RVA: 0x00009B44 File Offset: 0x00007D44
+	// Token: 0x17000079 RID: 121
+	// (get) Token: 0x06000890 RID: 2192 RVA: 0x00028886 File Offset: 0x00026A86
 	public bool PersistentState
 	{
 		get
@@ -15,12 +15,12 @@ public class PersistentObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A12 RID: 2578 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000891 RID: 2193 RVA: 0x00028898 File Offset: 0x00026A98
 	public virtual void OnValidate()
 	{
 	}
 
-	// Token: 0x06000A13 RID: 2579 RVA: 0x00009B56 File Offset: 0x00007D56
+	// Token: 0x06000892 RID: 2194 RVA: 0x0002889A File Offset: 0x00026A9A
 	public virtual void Load(bool state)
 	{
 		if (!this.isPersistent)
@@ -31,7 +31,7 @@ public class PersistentObject : MonoBehaviour
 		base.gameObject.SetActive(!state);
 	}
 
-	// Token: 0x06000A14 RID: 2580 RVA: 0x0003B4CC File Offset: 0x000396CC
+	// Token: 0x06000893 RID: 2195 RVA: 0x000288BC File Offset: 0x00026ABC
 	public virtual void SaveTrue()
 	{
 		if (!this.isPersistent)
@@ -48,7 +48,7 @@ public class PersistentObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A15 RID: 2581 RVA: 0x0003B51C File Offset: 0x0003971C
+	// Token: 0x06000894 RID: 2196 RVA: 0x0002890C File Offset: 0x00026B0C
 	[ContextMenu("Find persistent objects")]
 	public void FindPersistentObjects()
 	{
@@ -63,17 +63,17 @@ public class PersistentObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000C9A RID: 3226
+	// Token: 0x04000A9A RID: 2714
 	public bool isPersistent = true;
 
-	// Token: 0x04000C9B RID: 3227
+	// Token: 0x04000A9B RID: 2715
 	[ConditionalHide("isPersistent", true)]
 	public int id = -1;
 
-	// Token: 0x04000C9C RID: 3228
+	// Token: 0x04000A9C RID: 2716
 	public UnityEvent onSaveTrue;
 
-	// Token: 0x04000C9D RID: 3229
+	// Token: 0x04000A9D RID: 2717
 	[ReadOnly]
 	public bool isLoaded;
 }

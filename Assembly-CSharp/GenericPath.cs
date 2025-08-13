@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000184 RID: 388
+// Token: 0x02000129 RID: 297
 public class GenericPath : MonoBehaviour
 {
-	// Token: 0x170000B7 RID: 183
-	// (get) Token: 0x06000747 RID: 1863 RVA: 0x00007582 File Offset: 0x00005782
+	// Token: 0x17000057 RID: 87
+	// (get) Token: 0x06000622 RID: 1570 RVA: 0x0001FF34 File Offset: 0x0001E134
 	public Bounds Bounds
 	{
 		get
@@ -18,7 +18,7 @@ public class GenericPath : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000748 RID: 1864 RVA: 0x00033A68 File Offset: 0x00031C68
+	// Token: 0x06000623 RID: 1571 RVA: 0x0001FF4C File Offset: 0x0001E14C
 	private void GenerateBounds()
 	{
 		this.generatedBounds = true;
@@ -29,44 +29,44 @@ public class GenericPath : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000749 RID: 1865 RVA: 0x00033AC4 File Offset: 0x00031CC4
+	// Token: 0x06000624 RID: 1572 RVA: 0x0001FFA8 File Offset: 0x0001E1A8
 	public float SqrDistance(Vector3 point)
 	{
 		return this.Bounds.SqrDistance(base.transform.InverseTransformPoint(point));
 	}
 
-	// Token: 0x0600074A RID: 1866 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000625 RID: 1573 RVA: 0x0001FFCF File Offset: 0x0001E1CF
 	public virtual void UpdatePath()
 	{
 	}
 
-	// Token: 0x0600074B RID: 1867 RVA: 0x00007598 File Offset: 0x00005798
+	// Token: 0x06000626 RID: 1574 RVA: 0x0001FFD1 File Offset: 0x0001E1D1
 	protected Vector3 GetPosition(int i)
 	{
 		return base.transform.TransformPoint(this.GetPositionLocal(i));
 	}
 
-	// Token: 0x0600074C RID: 1868 RVA: 0x000075AC File Offset: 0x000057AC
+	// Token: 0x06000627 RID: 1575 RVA: 0x0001FFE5 File Offset: 0x0001E1E5
 	protected Vector3 GetPositionLocal(int i)
 	{
 		i = Mathf.Clamp(i, 0, this.positions.Length - 1);
 		return this.positions[i];
 	}
 
-	// Token: 0x0600074D RID: 1869 RVA: 0x000075CD File Offset: 0x000057CD
+	// Token: 0x06000628 RID: 1576 RVA: 0x00020006 File Offset: 0x0001E206
 	public Vector3 GetPosition(float t)
 	{
 		return base.transform.TransformPoint(this.GetPositionLocal(t));
 	}
 
-	// Token: 0x0600074E RID: 1870 RVA: 0x000075E1 File Offset: 0x000057E1
+	// Token: 0x06000629 RID: 1577 RVA: 0x0002001A File Offset: 0x0001E21A
 	public Vector3 GetPositionLocal(float t)
 	{
 		t = Mathf.Clamp(t / (float)(this.positions.Length - 1), 1E-08f, 1f);
 		return iTween.PointOnPath(this.positions, t);
 	}
 
-	// Token: 0x0600074F RID: 1871 RVA: 0x00033AEC File Offset: 0x00031CEC
+	// Token: 0x0600062A RID: 1578 RVA: 0x00020048 File Offset: 0x0001E248
 	[ContextMenu("Snap to ground")]
 	public void SnapToGround()
 	{
@@ -80,7 +80,7 @@ public class GenericPath : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000750 RID: 1872 RVA: 0x00033B4C File Offset: 0x00031D4C
+	// Token: 0x0600062B RID: 1579 RVA: 0x000200A8 File Offset: 0x0001E2A8
 	public int GetClosest(Vector3 position)
 	{
 		position = base.transform.InverseTransformPoint(position);
@@ -98,13 +98,13 @@ public class GenericPath : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000751 RID: 1873 RVA: 0x0000760D File Offset: 0x0000580D
+	// Token: 0x0600062C RID: 1580 RVA: 0x00020107 File Offset: 0x0001E307
 	public float GetClosestInterpolated(Vector3 position)
 	{
 		return this.GetClosestInterpolated(position, this.GetClosest(position));
 	}
 
-	// Token: 0x06000752 RID: 1874 RVA: 0x00033BAC File Offset: 0x00031DAC
+	// Token: 0x0600062D RID: 1581 RVA: 0x00020118 File Offset: 0x0001E318
 	public float GetClosestInterpolated(Vector3 position, int closest)
 	{
 		int num;
@@ -149,31 +149,31 @@ public class GenericPath : MonoBehaviour
 		return (float)num + num5;
 	}
 
-	// Token: 0x06000753 RID: 1875 RVA: 0x0000761D File Offset: 0x0000581D
+	// Token: 0x0600062E RID: 1582 RVA: 0x00020209 File Offset: 0x0001E409
 	public Vector3 GetDirection(int closest)
 	{
 		return this.GetDirection((float)closest);
 	}
 
-	// Token: 0x06000754 RID: 1876 RVA: 0x00033CA0 File Offset: 0x00031EA0
+	// Token: 0x0600062F RID: 1583 RVA: 0x00020214 File Offset: 0x0001E414
 	public Vector3 GetDirection(float interpolatedPosition)
 	{
 		return (this.GetPosition(interpolatedPosition + 0.01f) - this.GetPosition(interpolatedPosition - 0.01f)).normalized;
 	}
 
-	// Token: 0x06000755 RID: 1877 RVA: 0x00007627 File Offset: 0x00005827
+	// Token: 0x06000630 RID: 1584 RVA: 0x00020248 File Offset: 0x0001E448
 	public Vector3 ClosestPointOnPath(Vector3 point)
 	{
 		return this.GetPosition(this.GetClosestInterpolated(point));
 	}
 
-	// Token: 0x06000756 RID: 1878 RVA: 0x00007636 File Offset: 0x00005836
+	// Token: 0x06000631 RID: 1585 RVA: 0x00020257 File Offset: 0x0001E457
 	public float DistanceToPath(Vector3 point)
 	{
 		return Vector3.Distance(this.ClosestPointOnPath(point), point);
 	}
 
-	// Token: 0x06000757 RID: 1879 RVA: 0x00033CD4 File Offset: 0x00031ED4
+	// Token: 0x06000632 RID: 1586 RVA: 0x00020268 File Offset: 0x0001E468
 	public float MoveAlongPath(float t, float distance)
 	{
 		if (distance == 0f)
@@ -199,15 +199,15 @@ public class GenericPath : MonoBehaviour
 		return Mathf.Clamp(t + distance * num2, 0f, (float)(this.positions.Length - 1));
 	}
 
-	// Token: 0x040009C5 RID: 2501
+	// Token: 0x0400085B RID: 2139
 	public Vector3[] positions;
 
-	// Token: 0x040009C6 RID: 2502
+	// Token: 0x0400085C RID: 2140
 	private bool generatedBounds;
 
-	// Token: 0x040009C7 RID: 2503
+	// Token: 0x0400085D RID: 2141
 	private Bounds bounds;
 
-	// Token: 0x040009C8 RID: 2504
+	// Token: 0x0400085E RID: 2142
 	private const float speedStepProbe = 0.01f;
 }

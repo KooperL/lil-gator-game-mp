@@ -3,13 +3,13 @@ using Rewired;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200039B RID: 923
+// Token: 0x020002B9 RID: 697
 [CreateAssetMenu]
 public class UIButtonObject : ScriptableObject
 {
-	// Token: 0x170001D4 RID: 468
-	// (get) Token: 0x06001187 RID: 4487 RVA: 0x0000EFEF File Offset: 0x0000D1EF
-	// (set) Token: 0x06001188 RID: 4488 RVA: 0x0000EFF7 File Offset: 0x0000D1F7
+	// Token: 0x170000E1 RID: 225
+	// (get) Token: 0x06000EAF RID: 3759 RVA: 0x0004665C File Offset: 0x0004485C
+	// (set) Token: 0x06000EB0 RID: 3760 RVA: 0x00046664 File Offset: 0x00044864
 	public int InputMode
 	{
 		get
@@ -26,8 +26,8 @@ public class UIButtonObject : ScriptableObject
 		}
 	}
 
-	// Token: 0x170001D5 RID: 469
-	// (get) Token: 0x06001189 RID: 4489 RVA: 0x00057CBC File Offset: 0x00055EBC
+	// Token: 0x170000E2 RID: 226
+	// (get) Token: 0x06000EB1 RID: 3761 RVA: 0x00046680 File Offset: 0x00044880
 	public Sprite InputSprite
 	{
 		get
@@ -48,12 +48,12 @@ public class UIButtonObject : ScriptableObject
 		}
 	}
 
-	// Token: 0x0600118A RID: 4490 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000EB2 RID: 3762 RVA: 0x000466D0 File Offset: 0x000448D0
 	private void Awake()
 	{
 	}
 
-	// Token: 0x0600118B RID: 4491 RVA: 0x0000F013 File Offset: 0x0000D213
+	// Token: 0x06000EB3 RID: 3763 RVA: 0x000466D2 File Offset: 0x000448D2
 	private void OnEnable()
 	{
 		if (!InputHelper.activeButtonObjects.Contains(this))
@@ -62,27 +62,27 @@ public class UIButtonObject : ScriptableObject
 		}
 	}
 
-	// Token: 0x04001699 RID: 5785
+	// Token: 0x04001323 RID: 4899
 	public Sprite generic;
 
-	// Token: 0x0400169A RID: 5786
+	// Token: 0x04001324 RID: 4900
 	public Sprite kbm;
 
-	// Token: 0x0400169B RID: 5787
+	// Token: 0x04001325 RID: 4901
 	public Sprite xb;
 
-	// Token: 0x0400169C RID: 5788
+	// Token: 0x04001326 RID: 4902
 	public Sprite ps;
 
-	// Token: 0x0400169D RID: 5789
+	// Token: 0x04001327 RID: 4903
 	public Sprite sw;
 
-	// Token: 0x0400169E RID: 5790
+	// Token: 0x04001328 RID: 4904
 	public UnityEvent onDeviceChanged;
 
-	// Token: 0x0400169F RID: 5791
+	// Token: 0x04001329 RID: 4905
 	public int inputMode;
 
-	// Token: 0x040016A0 RID: 5792
-	private Player rePlayer;
+	// Token: 0x0400132A RID: 4906
+	private global::Rewired.Player rePlayer;
 }

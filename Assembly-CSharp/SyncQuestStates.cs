@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000088 RID: 136
+// Token: 0x02000069 RID: 105
 public class SyncQuestStates : MonoBehaviour
 {
-	// Token: 0x060001CE RID: 462 RVA: 0x0001D580 File Offset: 0x0001B780
+	// Token: 0x06000199 RID: 409 RVA: 0x000093C8 File Offset: 0x000075C8
 	private void OnValidate()
 	{
 		if (this.stateMachine == null)
@@ -22,7 +22,7 @@ public class SyncQuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001CF RID: 463 RVA: 0x00003759 File Offset: 0x00001959
+	// Token: 0x0600019A RID: 410 RVA: 0x00009457 File Offset: 0x00007657
 	public virtual void OnEnable()
 	{
 		this.stateMachine.onStateChange.AddListener(new UnityAction<int>(this.UpdateState));
@@ -32,7 +32,7 @@ public class SyncQuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001D0 RID: 464 RVA: 0x00003795 File Offset: 0x00001995
+	// Token: 0x0600019B RID: 411 RVA: 0x00009493 File Offset: 0x00007693
 	private void OnDisable()
 	{
 		if (this.stateMachine != null)
@@ -41,7 +41,7 @@ public class SyncQuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001D1 RID: 465 RVA: 0x0001D610 File Offset: 0x0001B810
+	// Token: 0x0600019C RID: 412 RVA: 0x000094C0 File Offset: 0x000076C0
 	[ContextMenu("Auto Populate")]
 	public void AutoPopulate()
 	{
@@ -78,7 +78,7 @@ public class SyncQuestStates : MonoBehaviour
 		this.statePairs = list.ToArray();
 	}
 
-	// Token: 0x060001D2 RID: 466 RVA: 0x0001D6F0 File Offset: 0x0001B8F0
+	// Token: 0x0600019D RID: 413 RVA: 0x000095A0 File Offset: 0x000077A0
 	public void UpdateState(int newStateIndex)
 	{
 		bool flag = false;
@@ -120,42 +120,42 @@ public class SyncQuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001D3 RID: 467 RVA: 0x000037C1 File Offset: 0x000019C1
+	// Token: 0x0600019E RID: 414 RVA: 0x00009686 File Offset: 0x00007886
 	public void SetCompleted()
 	{
 		this.questProfile.MarkCompleted();
 	}
 
-	// Token: 0x040002B9 RID: 697
+	// Token: 0x0400023A RID: 570
 	public QuestStates stateMachine;
 
-	// Token: 0x040002BA RID: 698
+	// Token: 0x0400023B RID: 571
 	public QuestProfile questProfile;
 
-	// Token: 0x040002BB RID: 699
+	// Token: 0x0400023C RID: 572
 	public SyncQuestStates.QuestStateTask[] statePairs;
 
-	// Token: 0x02000089 RID: 137
+	// Token: 0x02000370 RID: 880
 	[Serializable]
 	public class QuestStateTask
 	{
-		// Token: 0x040002BC RID: 700
+		// Token: 0x04001A5D RID: 6749
 		[HideInInspector]
 		public string name;
 
-		// Token: 0x040002BD RID: 701
+		// Token: 0x04001A5E RID: 6750
 		[StateMachineLookup("stateMachine")]
 		public int stateIndex;
 
-		// Token: 0x040002BE RID: 702
+		// Token: 0x04001A5F RID: 6751
 		[QuestTaskLookup("questProfile")]
 		public int visibleTask = -1;
 
-		// Token: 0x040002BF RID: 703
+		// Token: 0x04001A60 RID: 6752
 		[QuestTaskLookup("questProfile")]
 		public int completedTask = -1;
 
-		// Token: 0x040002C0 RID: 704
+		// Token: 0x04001A61 RID: 6753
 		public bool completePrevious = true;
 	}
 }

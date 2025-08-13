@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200018E RID: 398
+// Token: 0x02000133 RID: 307
 public class BreakableObject : PersistentObject, IOnTimeout
 {
-	// Token: 0x170000B9 RID: 185
-	// (get) Token: 0x0600077A RID: 1914 RVA: 0x00007811 File Offset: 0x00005A11
+	// Token: 0x17000059 RID: 89
+	// (get) Token: 0x06000655 RID: 1621 RVA: 0x00020992 File Offset: 0x0001EB92
 	public bool IsBroken
 	{
 		get
@@ -20,13 +20,13 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x0600077B RID: 1915 RVA: 0x00007834 File Offset: 0x00005A34
+	// Token: 0x06000656 RID: 1622 RVA: 0x000209B5 File Offset: 0x0001EBB5
 	public override void OnValidate()
 	{
 		base.OnValidate();
 	}
 
-	// Token: 0x0600077C RID: 1916 RVA: 0x00034204 File Offset: 0x00032404
+	// Token: 0x06000657 RID: 1623 RVA: 0x000209C0 File Offset: 0x0001EBC0
 	public override void Load(bool state)
 	{
 		this.isBroken = state;
@@ -45,7 +45,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x0600077D RID: 1917 RVA: 0x0000783C File Offset: 0x00005A3C
+	// Token: 0x06000658 RID: 1624 RVA: 0x00020A53 File Offset: 0x0001EC53
 	public virtual void OnEnable()
 	{
 		this.Load(this.isBroken);
@@ -55,7 +55,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x0600077E RID: 1918 RVA: 0x00034298 File Offset: 0x00032498
+	// Token: 0x06000659 RID: 1625 RVA: 0x00020A78 File Offset: 0x0001EC78
 	public virtual void OnDisable()
 	{
 		if (this.isBroken && this.breakingObject != null)
@@ -72,7 +72,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x0600077F RID: 1919 RVA: 0x000342E4 File Offset: 0x000324E4
+	// Token: 0x0600065A RID: 1626 RVA: 0x00020AC4 File Offset: 0x0001ECC4
 	private bool IsRanged(bool isHeavy = false)
 	{
 		if (isHeavy)
@@ -97,7 +97,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		return true;
 	}
 
-	// Token: 0x06000780 RID: 1920 RVA: 0x0003435C File Offset: 0x0003255C
+	// Token: 0x0600065B RID: 1627 RVA: 0x00020B3C File Offset: 0x0001ED3C
 	private bool CanBeDestroyed(bool isHeavy = false, bool isRanged = false)
 	{
 		if (this.isNonRanged && isRanged)
@@ -137,13 +137,13 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		return false;
 	}
 
-	// Token: 0x06000781 RID: 1921 RVA: 0x0000785F File Offset: 0x00005A5F
+	// Token: 0x0600065C RID: 1628 RVA: 0x00020BCA File Offset: 0x0001EDCA
 	public virtual void Break()
 	{
 		this.Break(false, Vector3.zero, false);
 	}
 
-	// Token: 0x06000782 RID: 1922 RVA: 0x000343EC File Offset: 0x000325EC
+	// Token: 0x0600065D RID: 1629 RVA: 0x00020BDC File Offset: 0x0001EDDC
 	public virtual void Break(bool fromAttachment, Vector3 velocity, bool isHeavy = false)
 	{
 		if (Time.time - this.lastBreakTime < 0.1f)
@@ -247,7 +247,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		this.onNearbyHit.Invoke();
 	}
 
-	// Token: 0x06000783 RID: 1923 RVA: 0x000346AC File Offset: 0x000328AC
+	// Token: 0x0600065E RID: 1630 RVA: 0x00020E9C File Offset: 0x0001F09C
 	public void OnTimeout()
 	{
 		this.breakingObject = null;
@@ -268,7 +268,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x06000784 RID: 1924 RVA: 0x00034744 File Offset: 0x00032944
+	// Token: 0x0600065F RID: 1631 RVA: 0x00020F34 File Offset: 0x0001F134
 	public void ValidateBreak()
 	{
 		this.waitForValidation = false;
@@ -286,82 +286,82 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x040009EE RID: 2542
+	// Token: 0x04000884 RID: 2180
 	public GameObject intactObject;
 
-	// Token: 0x040009EF RID: 2543
+	// Token: 0x04000885 RID: 2181
 	public GameObject brokenObject;
 
-	// Token: 0x040009F0 RID: 2544
+	// Token: 0x04000886 RID: 2182
 	public GameObject breakingPrefab;
 
-	// Token: 0x040009F1 RID: 2545
+	// Token: 0x04000887 RID: 2183
 	private GameObject breakingObject;
 
-	// Token: 0x040009F2 RID: 2546
+	// Token: 0x04000888 RID: 2184
 	[ReadOnly]
 	public bool isBroken;
 
-	// Token: 0x040009F3 RID: 2547
+	// Token: 0x04000889 RID: 2185
 	public UnityEvent onBreak;
 
-	// Token: 0x040009F4 RID: 2548
+	// Token: 0x0400088A RID: 2186
 	public UnityEvent onHit;
 
-	// Token: 0x040009F5 RID: 2549
+	// Token: 0x0400088B RID: 2187
 	public UnityEvent onRangedHit;
 
-	// Token: 0x040009F6 RID: 2550
+	// Token: 0x0400088C RID: 2188
 	public UnityEvent onNearbyHit;
 
-	// Token: 0x040009F7 RID: 2551
+	// Token: 0x0400088D RID: 2189
 	[Space]
 	public bool isAttached;
 
-	// Token: 0x040009F8 RID: 2552
+	// Token: 0x0400088E RID: 2190
 	[ConditionalHide("isAttached", true)]
 	public BreakableObject parentBreakable;
 
-	// Token: 0x040009F9 RID: 2553
+	// Token: 0x0400088F RID: 2191
 	[ConditionalHide("isAttached", true)]
 	public bool breakParent;
 
-	// Token: 0x040009FA RID: 2554
+	// Token: 0x04000890 RID: 2192
 	public BreakableObject[] childBreakables;
 
-	// Token: 0x040009FB RID: 2555
+	// Token: 0x04000891 RID: 2193
 	[Space]
 	public bool isSturdy;
 
-	// Token: 0x040009FC RID: 2556
+	// Token: 0x04000892 RID: 2194
 	[ConditionalHide("isSturdy", true)]
 	public int sturdyHits = 3;
 
-	// Token: 0x040009FD RID: 2557
+	// Token: 0x04000893 RID: 2195
 	[ConditionalHide("isSturdy", true)]
 	public GameObject crackedObject;
 
-	// Token: 0x040009FE RID: 2558
+	// Token: 0x04000894 RID: 2196
 	public bool isInvincible;
 
-	// Token: 0x040009FF RID: 2559
+	// Token: 0x04000895 RID: 2197
 	public bool isNonRanged;
 
-	// Token: 0x04000A00 RID: 2560
+	// Token: 0x04000896 RID: 2198
 	[ConditionalHide("isSturdy", true, ConditionalSourceField2 = "isInvincible", UseOrLogic = true)]
 	public AudioSourceVariance bonkSound;
 
-	// Token: 0x04000A01 RID: 2561
+	// Token: 0x04000897 RID: 2199
 	public BoxCollider bonkBoxReference;
 
-	// Token: 0x04000A02 RID: 2562
+	// Token: 0x04000898 RID: 2200
 	[ConditionalHide("isPersistent", true, true)]
 	public bool respawn;
 
-	// Token: 0x04000A03 RID: 2563
+	// Token: 0x04000899 RID: 2201
 	[HideInInspector]
 	public bool waitForValidation;
 
-	// Token: 0x04000A04 RID: 2564
+	// Token: 0x0400089A RID: 2202
 	private float lastBreakTime = -1f;
 }

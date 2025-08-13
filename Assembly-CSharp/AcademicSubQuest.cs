@@ -2,12 +2,12 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020002A5 RID: 677
+// Token: 0x0200020D RID: 525
 public class AcademicSubQuest : MonoBehaviour
 {
-	// Token: 0x17000157 RID: 343
-	// (get) Token: 0x06000D34 RID: 3380 RVA: 0x0000C1BE File Offset: 0x0000A3BE
-	// (set) Token: 0x06000D35 RID: 3381 RVA: 0x0000C1D1 File Offset: 0x0000A3D1
+	// Token: 0x170000B5 RID: 181
+	// (get) Token: 0x06000B4B RID: 2891 RVA: 0x0003815A File Offset: 0x0003635A
+	// (set) Token: 0x06000B4C RID: 2892 RVA: 0x0003816D File Offset: 0x0003636D
 	private int State
 	{
 		get
@@ -20,8 +20,8 @@ public class AcademicSubQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000158 RID: 344
-	// (get) Token: 0x06000D36 RID: 3382 RVA: 0x0000C1E4 File Offset: 0x0000A3E4
+	// Token: 0x170000B6 RID: 182
+	// (get) Token: 0x06000B4D RID: 2893 RVA: 0x00038180 File Offset: 0x00036380
 	public bool IsComplete
 	{
 		get
@@ -30,7 +30,7 @@ public class AcademicSubQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D37 RID: 3383 RVA: 0x0000C1EF File Offset: 0x0000A3EF
+	// Token: 0x06000B4E RID: 2894 RVA: 0x0003818B File Offset: 0x0003638B
 	private void OnValidate()
 	{
 		if (this.academicQuest == null)
@@ -39,13 +39,13 @@ public class AcademicSubQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D38 RID: 3384 RVA: 0x0000C20A File Offset: 0x0000A40A
+	// Token: 0x06000B4F RID: 2895 RVA: 0x000381A6 File Offset: 0x000363A6
 	public void Conversation()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000D39 RID: 3385 RVA: 0x0000C219 File Offset: 0x0000A419
+	// Token: 0x06000B50 RID: 2896 RVA: 0x000381B5 File Offset: 0x000363B5
 	public IEnumerator RunConversation()
 	{
 		Game.DialogueDepth++;
@@ -78,17 +78,17 @@ public class AcademicSubQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000D3A RID: 3386 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B51 RID: 2897 RVA: 0x000381C4 File Offset: 0x000363C4
 	public void UpdateState()
 	{
 	}
 
-	// Token: 0x0400117A RID: 4474
+	// Token: 0x04000F05 RID: 3845
 	public string stateID;
 
-	// Token: 0x0400117B RID: 4475
+	// Token: 0x04000F06 RID: 3846
 	public AcademicQuest academicQuest;
 
-	// Token: 0x0400117C RID: 4476
+	// Token: 0x04000F07 RID: 3847
 	public DialogueActor[] actors;
 }

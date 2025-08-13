@@ -2,24 +2,24 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020003A3 RID: 931
+// Token: 0x020002C1 RID: 705
 public class UIFPS : MonoBehaviour
 {
-	// Token: 0x060011A8 RID: 4520 RVA: 0x0000F148 File Offset: 0x0000D348
+	// Token: 0x06000ED0 RID: 3792 RVA: 0x00046C99 File Offset: 0x00044E99
 	private void Start()
 	{
 		this.frameConsistency = new bool[10];
 		this.frameTimings = new FrameTiming[20];
 	}
 
-	// Token: 0x060011A9 RID: 4521 RVA: 0x0000F164 File Offset: 0x0000D364
+	// Token: 0x06000ED1 RID: 3793 RVA: 0x00046CB5 File Offset: 0x00044EB5
 	private void OnEnable()
 	{
 		this.display.text = "";
 		this.updateDisplayCounter = 0;
 	}
 
-	// Token: 0x060011AA RID: 4522 RVA: 0x0000F17D File Offset: 0x0000D37D
+	// Token: 0x06000ED2 RID: 3794 RVA: 0x00046CCE File Offset: 0x00044ECE
 	private void Update()
 	{
 		FrameTimingManager.CaptureFrameTimings();
@@ -31,7 +31,7 @@ public class UIFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011AB RID: 4523 RVA: 0x00058154 File Offset: 0x00056354
+	// Token: 0x06000ED3 RID: 3795 RVA: 0x00046CFC File Offset: 0x00044EFC
 	private void UpdateDisplay()
 	{
 		uint latestTimings = FrameTimingManager.GetLatestTimings(20U, this.frameTimings);
@@ -81,45 +81,45 @@ public class UIFPS : MonoBehaviour
 		this.display.text = string.Format("FPS: {0:0.0}\nCPU: {1:0.0}ms\nGPU: {2:0.0}ms", this.fps, num4, num5);
 	}
 
-	// Token: 0x040016C4 RID: 5828
+	// Token: 0x0400134E RID: 4942
 	public static bool isCumulative;
 
-	// Token: 0x040016C5 RID: 5829
+	// Token: 0x0400134F RID: 4943
 	public Text display;
 
-	// Token: 0x040016C6 RID: 5830
+	// Token: 0x04001350 RID: 4944
 	private float fps;
 
-	// Token: 0x040016C7 RID: 5831
+	// Token: 0x04001351 RID: 4945
 	private float smoothFPS;
 
-	// Token: 0x040016C8 RID: 5832
+	// Token: 0x04001352 RID: 4946
 	private bool[] frameConsistency;
 
-	// Token: 0x040016C9 RID: 5833
+	// Token: 0x04001353 RID: 4947
 	private int frameIndex;
 
-	// Token: 0x040016CA RID: 5834
+	// Token: 0x04001354 RID: 4948
 	private float consistencyCounter;
 
-	// Token: 0x040016CB RID: 5835
+	// Token: 0x04001355 RID: 4949
 	private int updateDisplayCounter;
 
-	// Token: 0x040016CC RID: 5836
+	// Token: 0x04001356 RID: 4950
 	private const int updateInterval = 10;
 
-	// Token: 0x040016CD RID: 5837
+	// Token: 0x04001357 RID: 4951
 	private FrameTiming[] frameTimings;
 
-	// Token: 0x040016CE RID: 5838
+	// Token: 0x04001358 RID: 4952
 	private const int frameTimingCount = 20;
 
-	// Token: 0x040016CF RID: 5839
+	// Token: 0x04001359 RID: 4953
 	private double cCpuTime;
 
-	// Token: 0x040016D0 RID: 5840
+	// Token: 0x0400135A RID: 4954
 	private double cGpuTime;
 
-	// Token: 0x040016D1 RID: 5841
+	// Token: 0x0400135B RID: 4955
 	private int cumulativeCount;
 }

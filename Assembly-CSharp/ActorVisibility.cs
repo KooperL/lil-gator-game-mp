@@ -1,23 +1,23 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000D2 RID: 210
+// Token: 0x020000A8 RID: 168
 public class ActorVisibility : MonoBehaviour
 {
-	// Token: 0x0600037A RID: 890 RVA: 0x00004AA1 File Offset: 0x00002CA1
+	// Token: 0x06000335 RID: 821 RVA: 0x00012FA3 File Offset: 0x000111A3
 	private void OnValidate()
 	{
 		this.UpdateRenderers();
 	}
 
-	// Token: 0x0600037B RID: 891 RVA: 0x00004AA9 File Offset: 0x00002CA9
+	// Token: 0x06000336 RID: 822 RVA: 0x00012FAB File Offset: 0x000111AB
 	[ContextMenu("Update Renderers")]
 	public void UpdateRenderers()
 	{
 		this.renderers = base.GetComponentsInChildren<Renderer>();
 	}
 
-	// Token: 0x0600037C RID: 892 RVA: 0x000262E8 File Offset: 0x000244E8
+	// Token: 0x06000337 RID: 823 RVA: 0x00012FBC File Offset: 0x000111BC
 	public void Show()
 	{
 		foreach (Renderer renderer in this.renderers)
@@ -29,7 +29,7 @@ public class ActorVisibility : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600037D RID: 893 RVA: 0x00026320 File Offset: 0x00024520
+	// Token: 0x06000338 RID: 824 RVA: 0x00012FF4 File Offset: 0x000111F4
 	public void Hide()
 	{
 		foreach (Renderer renderer in this.renderers)
@@ -41,6 +41,6 @@ public class ActorVisibility : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000506 RID: 1286
+	// Token: 0x04000468 RID: 1128
 	public Renderer[] renderers;
 }

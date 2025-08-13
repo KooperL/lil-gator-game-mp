@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Cinemachine.Examples
 {
-	// Token: 0x020003EA RID: 1002
+	// Token: 0x020002F7 RID: 759
 	[AddComponentMenu("")]
 	public class ActivateCamOnPlay : MonoBehaviour
 	{
-		// Token: 0x06001359 RID: 4953 RVA: 0x0001073A File Offset: 0x0000E93A
+		// Token: 0x0600102C RID: 4140 RVA: 0x0004DAD9 File Offset: 0x0004BCD9
 		private void Start()
 		{
 			if (this.vcam)
@@ -16,7 +16,7 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x04001904 RID: 6404
+		// Token: 0x04001541 RID: 5441
 		public CinemachineVirtualCameraBase vcam;
 	}
 }

@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020000B0 RID: 176
+// Token: 0x0200008A RID: 138
 public class CameraFocalPoint : MonoBehaviour
 {
-	// Token: 0x0600028F RID: 655 RVA: 0x00004154 File Offset: 0x00002354
+	// Token: 0x06000245 RID: 581 RVA: 0x0000C3E0 File Offset: 0x0000A5E0
 	public static bool HasActive()
 	{
 		return CameraFocalPoint.all.Count != 0;
 	}
 
-	// Token: 0x06000290 RID: 656 RVA: 0x00004163 File Offset: 0x00002363
+	// Token: 0x06000246 RID: 582 RVA: 0x0000C3EF File Offset: 0x0000A5EF
 	public static bool GetActive(out Vector3 position)
 	{
 		if (CameraFocalPoint.all.Count == 0)
@@ -23,7 +23,7 @@ public class CameraFocalPoint : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000291 RID: 657 RVA: 0x000202C8 File Offset: 0x0001E4C8
+	// Token: 0x06000247 RID: 583 RVA: 0x0000C428 File Offset: 0x0000A628
 	private void OnEnable()
 	{
 		int num = -1;
@@ -49,15 +49,15 @@ public class CameraFocalPoint : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000292 RID: 658 RVA: 0x0000419A File Offset: 0x0000239A
+	// Token: 0x06000248 RID: 584 RVA: 0x0000C4AC File Offset: 0x0000A6AC
 	private void OnDisable()
 	{
 		CameraFocalPoint.all.Remove(this);
 	}
 
-	// Token: 0x04000398 RID: 920
+	// Token: 0x040002FF RID: 767
 	public static List<CameraFocalPoint> all = new List<CameraFocalPoint>();
 
-	// Token: 0x04000399 RID: 921
+	// Token: 0x04000300 RID: 768
 	public int priority;
 }

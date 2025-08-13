@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine.UI;
 
-// Token: 0x02000366 RID: 870
+// Token: 0x0200028C RID: 652
 public class UIPictureDisplay : UIDisplay
 {
-	// Token: 0x040015B5 RID: 5557
+	// Token: 0x04001255 RID: 4693
 	public Image pictureImage;
 }

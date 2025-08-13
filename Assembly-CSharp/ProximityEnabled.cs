@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200029D RID: 669
+// Token: 0x0200020A RID: 522
 public class ProximityEnabled : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06000CFD RID: 3325 RVA: 0x0000C050 File Offset: 0x0000A250
+	// Token: 0x06000B32 RID: 2866 RVA: 0x00037DC7 File Offset: 0x00035FC7
 	private void OnValidate()
 	{
 		if (this.collider == null)
@@ -13,19 +13,19 @@ public class ProximityEnabled : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000CFE RID: 3326 RVA: 0x00002ADC File Offset: 0x00000CDC
+	// Token: 0x06000B33 RID: 2867 RVA: 0x00037DE3 File Offset: 0x00035FE3
 	private void OnEnable()
 	{
 		FastUpdateManager.updateEveryNonFixed.Add(this);
 	}
 
-	// Token: 0x06000CFF RID: 3327 RVA: 0x0000285D File Offset: 0x00000A5D
+	// Token: 0x06000B34 RID: 2868 RVA: 0x00037DF0 File Offset: 0x00035FF0
 	private void OnDisable()
 	{
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x06000D00 RID: 3328 RVA: 0x0000C06C File Offset: 0x0000A26C
+	// Token: 0x06000B35 RID: 2869 RVA: 0x00037DFE File Offset: 0x00035FFE
 	public void OnTriggerEnter(Collider other)
 	{
 		this.stepsSinceProximity = 0;
@@ -35,7 +35,7 @@ public class ProximityEnabled : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000D01 RID: 3329 RVA: 0x00048E9C File Offset: 0x0004709C
+	// Token: 0x06000B36 RID: 2870 RVA: 0x00037E18 File Offset: 0x00036018
 	public void ManagedUpdate()
 	{
 		Vector3 position = Player.Position;
@@ -53,7 +53,7 @@ public class ProximityEnabled : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000D02 RID: 3330 RVA: 0x00048EF8 File Offset: 0x000470F8
+	// Token: 0x06000B37 RID: 2871 RVA: 0x00037E74 File Offset: 0x00036074
 	private void OnProximityEnter()
 	{
 		base.enabled = true;
@@ -64,7 +64,7 @@ public class ProximityEnabled : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000D03 RID: 3331 RVA: 0x00048F2C File Offset: 0x0004712C
+	// Token: 0x06000B38 RID: 2872 RVA: 0x00037EA8 File Offset: 0x000360A8
 	private void OnProximityExit()
 	{
 		base.enabled = false;
@@ -75,12 +75,12 @@ public class ProximityEnabled : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x0400115D RID: 4445
+	// Token: 0x04000EF7 RID: 3831
 	public Renderer[] renderers;
 
-	// Token: 0x0400115E RID: 4446
+	// Token: 0x04000EF8 RID: 3832
 	public Collider collider;
 
-	// Token: 0x0400115F RID: 4447
+	// Token: 0x04000EF9 RID: 3833
 	private int stepsSinceProximity;
 }

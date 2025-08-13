@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000159 RID: 345
+// Token: 0x02000105 RID: 261
 public class Sun : MonoBehaviour
 {
-	// Token: 0x06000668 RID: 1640 RVA: 0x00006A1F File Offset: 0x00004C1F
+	// Token: 0x06000556 RID: 1366 RVA: 0x0001C5F3 File Offset: 0x0001A7F3
 	private void Awake()
 	{
 		Sun.s = this;
 		this.rotation = base.transform.rotation;
 	}
 
-	// Token: 0x06000669 RID: 1641 RVA: 0x00030B20 File Offset: 0x0002ED20
+	// Token: 0x06000557 RID: 1367 RVA: 0x0001C60C File Offset: 0x0001A80C
 	private void Update()
 	{
 		Quaternion quaternion = this.rotation;
@@ -27,12 +27,12 @@ public class Sun : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040008A1 RID: 2209
+	// Token: 0x04000756 RID: 1878
 	public static List<SunOverride> overrides = new List<SunOverride>();
 
-	// Token: 0x040008A2 RID: 2210
+	// Token: 0x04000757 RID: 1879
 	public static Sun s;
 
-	// Token: 0x040008A3 RID: 2211
+	// Token: 0x04000758 RID: 1880
 	private Quaternion rotation;
 }

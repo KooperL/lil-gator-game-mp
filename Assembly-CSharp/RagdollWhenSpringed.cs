@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000244 RID: 580
+// Token: 0x020001C2 RID: 450
 public class RagdollWhenSpringed : MonoBehaviour
 {
-	// Token: 0x06000AE0 RID: 2784 RVA: 0x0000A5C0 File Offset: 0x000087C0
+	// Token: 0x06000949 RID: 2377 RVA: 0x0002C157 File Offset: 0x0002A357
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 		this.joint = base.GetComponent<SpringJoint>();
 	}
 
-	// Token: 0x06000AE1 RID: 2785 RVA: 0x0003E2F8 File Offset: 0x0003C4F8
+	// Token: 0x0600094A RID: 2378 RVA: 0x0002C174 File Offset: 0x0002A374
 	private void FixedUpdate()
 	{
 		Vector3 vector = this.rigidbody.position + this.rigidbody.rotation * this.joint.anchor;
@@ -23,9 +23,9 @@ public class RagdollWhenSpringed : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000DCC RID: 3532
+	// Token: 0x04000BA9 RID: 2985
 	private Rigidbody rigidbody;
 
-	// Token: 0x04000DCD RID: 3533
+	// Token: 0x04000BAA RID: 2986
 	private SpringJoint joint;
 }

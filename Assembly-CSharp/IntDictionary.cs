@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// Token: 0x0200017D RID: 381
+// Token: 0x02000124 RID: 292
 [Serializable]
 public class IntDictionary : SerializableDictionary<string, int>
 {
-	// Token: 0x0600073F RID: 1855 RVA: 0x0003393C File Offset: 0x00031B3C
+	// Token: 0x0600061B RID: 1563 RVA: 0x0001FDE8 File Offset: 0x0001DFE8
 	public IntDictionary Clone()
 	{
 		IntDictionary intDictionary = new IntDictionary();

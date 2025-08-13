@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000D0 RID: 208
+// Token: 0x020000A6 RID: 166
 public interface IActorMover
 {
-	// Token: 0x06000372 RID: 882
+	// Token: 0x0600032D RID: 813
 	void SetMark(Vector3[] positions, Quaternion rotation, float speed, UnityEvent onReachMark, bool skipToStart = false, bool disableInteractionWhileMoving = true, bool playFootsteps = true);
 
-	// Token: 0x06000373 RID: 883
+	// Token: 0x0600032E RID: 814
 	void CancelMove();
 }

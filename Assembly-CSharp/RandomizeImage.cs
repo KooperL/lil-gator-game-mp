@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200036D RID: 877
+// Token: 0x02000293 RID: 659
 public class RandomizeImage : MonoBehaviour
 {
-	// Token: 0x060010D4 RID: 4308 RVA: 0x00055C34 File Offset: 0x00053E34
+	// Token: 0x06000E0C RID: 3596 RVA: 0x00043DB0 File Offset: 0x00041FB0
 	public void Start()
 	{
 		Sprite sprite = this.randomSprites.RandomValue<Sprite>();
@@ -16,9 +16,9 @@ public class RandomizeImage : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040015DC RID: 5596
+	// Token: 0x0400127E RID: 4734
 	public Image[] images;
 
-	// Token: 0x040015DD RID: 5597
+	// Token: 0x0400127F RID: 4735
 	public Sprite[] randomSprites;
 }

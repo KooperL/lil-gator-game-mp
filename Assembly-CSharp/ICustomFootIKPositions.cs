@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000171 RID: 369
+// Token: 0x02000119 RID: 281
 public interface ICustomFootIKPositions
 {
-	// Token: 0x060006F3 RID: 1779
+	// Token: 0x060005CD RID: 1485
 	Vector3 GetLeftFootTarget(Vector3 currentPosition);
 
-	// Token: 0x060006F4 RID: 1780
+	// Token: 0x060005CE RID: 1486
 	Vector3 GetRightFootTarget(Vector3 currentPosition);
 }

@@ -1,32 +1,50 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Token: 0x0200036E RID: 878
+// Token: 0x02000294 RID: 660
 public class SelectOptions : Selectable
 {
-	// Token: 0x060010D6 RID: 4310 RVA: 0x0000E742 File Offset: 0x0000C942
+	// Token: 0x06000E0E RID: 3598 RVA: 0x00043DF0 File Offset: 0x00041FF0
+	public static void ForceRefresh()
+	{
+		foreach (SelectOptions selectOptions in SelectOptions.active)
+		{
+			selectOptions.Refresh();
+		}
+	}
+
+	// Token: 0x06000E0F RID: 3599 RVA: 0x00043E40 File Offset: 0x00042040
 	protected override void OnEnable()
 	{
 		base.OnEnable();
 		this.UpdateDisplay();
+		SelectOptions.active.Add(this);
 	}
 
-	// Token: 0x060010D7 RID: 4311 RVA: 0x00055C6C File Offset: 0x00053E6C
+	// Token: 0x06000E10 RID: 3600 RVA: 0x00043E59 File Offset: 0x00042059
+	protected override void OnDisable()
+	{
+		base.OnDisable();
+		SelectOptions.active.Remove(this);
+	}
+
+	// Token: 0x06000E11 RID: 3601 RVA: 0x00043E70 File Offset: 0x00042070
 	public override void OnMove(AxisEventData eventData)
 	{
 		switch (eventData.moveDir)
 		{
-		case 0:
+		case MoveDirection.Left:
 			this.MoveLeft();
 			return;
-		case 1:
-		case 3:
+		case MoveDirection.Up:
+		case MoveDirection.Down:
 			base.OnMove(eventData);
 			return;
-		case 2:
+		case MoveDirection.Right:
 			this.MoveRight();
 			return;
 		default:
@@ -34,7 +52,7 @@ public class SelectOptions : Selectable
 		}
 	}
 
-	// Token: 0x060010D8 RID: 4312 RVA: 0x0000E750 File Offset: 0x0000C950
+	// Token: 0x06000E12 RID: 3602 RVA: 0x00043EB0 File Offset: 0x000420B0
 	public void MoveRight()
 	{
 		this.selectedOption++;
@@ -46,7 +64,7 @@ public class SelectOptions : Selectable
 		this.UpdateDisplay();
 	}
 
-	// Token: 0x060010D9 RID: 4313 RVA: 0x0000E78E File Offset: 0x0000C98E
+	// Token: 0x06000E13 RID: 3603 RVA: 0x00043EEE File Offset: 0x000420EE
 	public void MoveLeft()
 	{
 		this.selectedOption--;
@@ -58,7 +76,7 @@ public class SelectOptions : Selectable
 		this.UpdateDisplay();
 	}
 
-	// Token: 0x060010DA RID: 4314 RVA: 0x00055CAC File Offset: 0x00053EAC
+	// Token: 0x06000E14 RID: 3604 RVA: 0x00043F2E File Offset: 0x0004212E
 	private void UpdateDisplay()
 	{
 		if (this.selectedOptionDisplay == null || this.options.Length == 0)
@@ -66,15 +84,21 @@ public class SelectOptions : Selectable
 			return;
 		}
 		this.selectedOption = Mathf.Clamp(this.selectedOption, 0, this.options.Length - 1);
+		this.Refresh();
+	}
+
+	// Token: 0x06000E15 RID: 3605 RVA: 0x00043F6C File Offset: 0x0004216C
+	public void Refresh()
+	{
 		if (this.document == null)
 		{
 			this.selectedOptionDisplay.text = this.options[this.selectedOption];
 			return;
 		}
-		this.selectedOptionDisplay.text = this.document.FetchString(this.options[this.selectedOption], Language.English);
+		this.selectedOptionDisplay.text = this.document.FetchString(this.options[this.selectedOption], Language.Auto);
 	}
 
-	// Token: 0x060010DB RID: 4315 RVA: 0x0000E7CE File Offset: 0x0000C9CE
+	// Token: 0x06000E16 RID: 3606 RVA: 0x00043FC5 File Offset: 0x000421C5
 	public void SetSelection(int newSelection, bool doCallback = true)
 	{
 		this.selectedOption = Mathf.Clamp(newSelection, 0, this.options.Length - 1);
@@ -85,20 +109,23 @@ public class SelectOptions : Selectable
 		this.UpdateDisplay();
 	}
 
-	// Token: 0x040015DE RID: 5598
+	// Token: 0x04001280 RID: 4736
+	public static List<SelectOptions> active = new List<SelectOptions>();
+
+	// Token: 0x04001281 RID: 4737
 	[Header("Select Options")]
 	public MultilingualTextDocument document;
 
-	// Token: 0x040015DF RID: 5599
+	// Token: 0x04001282 RID: 4738
 	[TextLookup("document")]
 	public string[] options;
 
-	// Token: 0x040015E0 RID: 5600
+	// Token: 0x04001283 RID: 4739
 	public int selectedOption;
 
-	// Token: 0x040015E1 RID: 5601
+	// Token: 0x04001284 RID: 4740
 	public Text selectedOptionDisplay;
 
-	// Token: 0x040015E2 RID: 5602
+	// Token: 0x04001285 RID: 4741
 	public UnityEvent<int> onSelectionChange;
 }

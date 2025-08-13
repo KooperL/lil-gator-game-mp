@@ -2,28 +2,28 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200008A RID: 138
+// Token: 0x0200006A RID: 106
 public class Ach_CheckSpecifics : MonoBehaviour
 {
-	// Token: 0x060001D6 RID: 470 RVA: 0x000037EB File Offset: 0x000019EB
+	// Token: 0x060001A0 RID: 416 RVA: 0x0000969B File Offset: 0x0000789B
 	private void Start()
 	{
 		this.CheckItems();
 	}
 
-	// Token: 0x060001D7 RID: 471 RVA: 0x000037F3 File Offset: 0x000019F3
+	// Token: 0x060001A1 RID: 417 RVA: 0x000096A3 File Offset: 0x000078A3
 	private void OnEnable()
 	{
 		PlayerItemManager.onItemRefresh.AddListener(new UnityAction(this.CheckItems));
 	}
 
-	// Token: 0x060001D8 RID: 472 RVA: 0x0000380B File Offset: 0x00001A0B
+	// Token: 0x060001A2 RID: 418 RVA: 0x000096BB File Offset: 0x000078BB
 	private void OnDisable()
 	{
 		PlayerItemManager.onItemRefresh.RemoveListener(new UnityAction(this.CheckItems));
 	}
 
-	// Token: 0x060001D9 RID: 473 RVA: 0x0001D7D8 File Offset: 0x0001B9D8
+	// Token: 0x060001A3 RID: 419 RVA: 0x000096D4 File Offset: 0x000078D4
 	private void CheckItems()
 	{
 		if (!this.braceletsGet)
@@ -56,18 +56,18 @@ public class Ach_CheckSpecifics : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040002C1 RID: 705
+	// Token: 0x0400023D RID: 573
 	public Achievement bracelets;
 
-	// Token: 0x040002C2 RID: 706
+	// Token: 0x0400023E RID: 574
 	private bool braceletsGet;
 
-	// Token: 0x040002C3 RID: 707
+	// Token: 0x0400023F RID: 575
 	public Achievement allItems;
 
-	// Token: 0x040002C4 RID: 708
+	// Token: 0x04000240 RID: 576
 	public ItemObject[] items;
 
-	// Token: 0x040002C5 RID: 709
+	// Token: 0x04000241 RID: 577
 	private bool allItemsGet;
 }

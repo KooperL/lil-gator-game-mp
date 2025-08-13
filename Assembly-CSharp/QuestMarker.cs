@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002C8 RID: 712
+// Token: 0x02000219 RID: 537
 public class QuestMarker : MonoBehaviour
 {
-	// Token: 0x06000DF5 RID: 3573 RVA: 0x0004B42C File Offset: 0x0004962C
+	// Token: 0x06000BA0 RID: 2976 RVA: 0x00038A50 File Offset: 0x00036C50
 	private void OnValidate()
 	{
 		if (this.attachedActor == null)
@@ -18,7 +18,7 @@ public class QuestMarker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DF6 RID: 3574 RVA: 0x0004B480 File Offset: 0x00049680
+	// Token: 0x06000BA1 RID: 2977 RVA: 0x00038AA4 File Offset: 0x00036CA4
 	private void Awake()
 	{
 		if (this.uiElementParent == null)
@@ -33,7 +33,7 @@ public class QuestMarker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DF7 RID: 3575 RVA: 0x0000C7CD File Offset: 0x0000A9CD
+	// Token: 0x06000BA2 RID: 2978 RVA: 0x00038AFC File Offset: 0x00036CFC
 	private void OnDisable()
 	{
 		if (this.isUIActivated)
@@ -42,7 +42,7 @@ public class QuestMarker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DF8 RID: 3576 RVA: 0x0000C7DD File Offset: 0x0000A9DD
+	// Token: 0x06000BA3 RID: 2979 RVA: 0x00038B0C File Offset: 0x00036D0C
 	private void OnTriggerExit(Collider other)
 	{
 		if (this.isUIActivated)
@@ -52,21 +52,21 @@ public class QuestMarker : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x06000DF9 RID: 3577 RVA: 0x0000C7F4 File Offset: 0x0000A9F4
+	// Token: 0x06000BA4 RID: 2980 RVA: 0x00038B23 File Offset: 0x00036D23
 	private void OnTriggerEnter(Collider other)
 	{
 		this.stepsSinceTriggered = 0;
 		base.enabled = true;
 	}
 
-	// Token: 0x06000DFA RID: 3578 RVA: 0x0000C7F4 File Offset: 0x0000A9F4
+	// Token: 0x06000BA5 RID: 2981 RVA: 0x00038B33 File Offset: 0x00036D33
 	private void OnTriggerStay(Collider other)
 	{
 		this.stepsSinceTriggered = 0;
 		base.enabled = true;
 	}
 
-	// Token: 0x06000DFB RID: 3579 RVA: 0x0004B4D8 File Offset: 0x000496D8
+	// Token: 0x06000BA6 RID: 2982 RVA: 0x00038B44 File Offset: 0x00036D44
 	private void FixedUpdate()
 	{
 		this.stepsSinceTriggered++;
@@ -94,14 +94,14 @@ public class QuestMarker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DFC RID: 3580 RVA: 0x0000C804 File Offset: 0x0000AA04
+	// Token: 0x06000BA7 RID: 2983 RVA: 0x00038BB7 File Offset: 0x00036DB7
 	private void DeactivateUI()
 	{
 		this.isUIActivated = false;
 		Object.Destroy(this.currentUIElement);
 	}
 
-	// Token: 0x06000DFD RID: 3581 RVA: 0x0000C818 File Offset: 0x0000AA18
+	// Token: 0x06000BA8 RID: 2984 RVA: 0x00038BCB File Offset: 0x00036DCB
 	private void ActivateUI()
 	{
 		this.isUIActivated = true;
@@ -109,24 +109,24 @@ public class QuestMarker : MonoBehaviour
 		this.currentUIElement.GetComponent<UIFollow>().followTarget = base.transform;
 	}
 
-	// Token: 0x04001230 RID: 4656
+	// Token: 0x04000F6D RID: 3949
 	public static Transform globalUiElementParent;
 
-	// Token: 0x04001231 RID: 4657
+	// Token: 0x04000F6E RID: 3950
 	public DialogueActor attachedActor;
 
-	// Token: 0x04001232 RID: 4658
+	// Token: 0x04000F6F RID: 3951
 	public GameObject uiElementPrefab;
 
-	// Token: 0x04001233 RID: 4659
+	// Token: 0x04000F70 RID: 3952
 	public Transform uiElementParent;
 
-	// Token: 0x04001234 RID: 4660
+	// Token: 0x04000F71 RID: 3953
 	public GameObject currentUIElement;
 
-	// Token: 0x04001235 RID: 4661
+	// Token: 0x04000F72 RID: 3954
 	private bool isUIActivated;
 
-	// Token: 0x04001236 RID: 4662
+	// Token: 0x04000F73 RID: 3955
 	private int stepsSinceTriggered;
 }

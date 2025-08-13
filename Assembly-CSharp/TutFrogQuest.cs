@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020002E4 RID: 740
+// Token: 0x0200022B RID: 555
 public class TutFrogQuest : MonoBehaviour
 {
-	// Token: 0x170001A5 RID: 421
-	// (get) Token: 0x06000E88 RID: 3720 RVA: 0x0000CCBE File Offset: 0x0000AEBE
+	// Token: 0x170000CC RID: 204
+	// (get) Token: 0x06000BFB RID: 3067 RVA: 0x000395FA File Offset: 0x000377FA
 	private string StateID
 	{
 		get
@@ -15,7 +15,7 @@ public class TutFrogQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E89 RID: 3721 RVA: 0x0004C714 File Offset: 0x0004A914
+	// Token: 0x06000BFC RID: 3068 RVA: 0x00039604 File Offset: 0x00037804
 	private void Start()
 	{
 		int num = GameData.g.ReadInt(this.StateID, 0);
@@ -23,13 +23,13 @@ public class TutFrogQuest : MonoBehaviour
 		this.frog.SetActive(num != 0);
 	}
 
-	// Token: 0x06000E8A RID: 3722 RVA: 0x0000CCC5 File Offset: 0x0000AEC5
+	// Token: 0x06000BFD RID: 3069 RVA: 0x00039641 File Offset: 0x00037841
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000E8B RID: 3723 RVA: 0x0000CCD4 File Offset: 0x0000AED4
+	// Token: 0x06000BFE RID: 3070 RVA: 0x00039650 File Offset: 0x00037850
 	private IEnumerator RunConversation()
 	{
 		Game.DialogueDepth++;
@@ -63,18 +63,18 @@ public class TutFrogQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x040012AA RID: 4778
+	// Token: 0x04000FC4 RID: 4036
 	public DialogueActor[] earlyActors;
 
-	// Token: 0x040012AB RID: 4779
+	// Token: 0x04000FC5 RID: 4037
 	public DialogueActor[] actors;
 
-	// Token: 0x040012AC RID: 4780
+	// Token: 0x04000FC6 RID: 4038
 	public GameObject earlyFrog;
 
-	// Token: 0x040012AD RID: 4781
+	// Token: 0x04000FC7 RID: 4039
 	public GameObject frog;
 
-	// Token: 0x040012AE RID: 4782
+	// Token: 0x04000FC8 RID: 4040
 	public GameObject camera1;
 }

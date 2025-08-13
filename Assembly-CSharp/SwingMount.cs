@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200010B RID: 267
+// Token: 0x020000C5 RID: 197
 public class SwingMount : ActorMount
 {
-	// Token: 0x06000520 RID: 1312 RVA: 0x0002CE2C File Offset: 0x0002B02C
+	// Token: 0x06000449 RID: 1097 RVA: 0x0001873C File Offset: 0x0001693C
 	protected override void HandlePlayerInput(Vector3 input, ref float animationIndex)
 	{
 		if (!Game.HasControl)
@@ -20,7 +20,7 @@ public class SwingMount : ActorMount
 		this.swing.AddForce(this.swingForce * input);
 	}
 
-	// Token: 0x06000521 RID: 1313 RVA: 0x0002CEBC File Offset: 0x0002B0BC
+	// Token: 0x0600044A RID: 1098 RVA: 0x000187CC File Offset: 0x000169CC
 	protected override void GetIntoMount(bool skipToMount)
 	{
 		base.GetIntoMount(skipToMount);
@@ -48,7 +48,7 @@ public class SwingMount : ActorMount
 		this.onGottenInto.AddListener(new UnityAction(this.OnGetIntoSwing));
 	}
 
-	// Token: 0x06000522 RID: 1314 RVA: 0x0002CFEC File Offset: 0x0002B1EC
+	// Token: 0x0600044B RID: 1099 RVA: 0x000188FC File Offset: 0x00016AFC
 	private void OnGetIntoSwing()
 	{
 		if (!this.ignoreSwingPhysics)
@@ -62,7 +62,7 @@ public class SwingMount : ActorMount
 		}
 	}
 
-	// Token: 0x06000523 RID: 1315 RVA: 0x0002D048 File Offset: 0x0002B248
+	// Token: 0x0600044C RID: 1100 RVA: 0x00018958 File Offset: 0x00016B58
 	public override void GetOut()
 	{
 		base.GetOut();
@@ -79,7 +79,7 @@ public class SwingMount : ActorMount
 		}
 	}
 
-	// Token: 0x06000524 RID: 1316 RVA: 0x0002D0BC File Offset: 0x0002B2BC
+	// Token: 0x0600044D RID: 1101 RVA: 0x000189CC File Offset: 0x00016BCC
 	public override void Cancel()
 	{
 		if (this == null || this.swing == null)
@@ -100,7 +100,7 @@ public class SwingMount : ActorMount
 		base.Cancel();
 	}
 
-	// Token: 0x06000525 RID: 1317 RVA: 0x0002D148 File Offset: 0x0002B348
+	// Token: 0x0600044E RID: 1102 RVA: 0x00018A58 File Offset: 0x00016C58
 	public override void CancelMount()
 	{
 		if (!this.actor.isPlayer && !this.ignoreSwingPhysics)
@@ -117,25 +117,25 @@ public class SwingMount : ActorMount
 		base.CancelMount();
 	}
 
-	// Token: 0x04000716 RID: 1814
+	// Token: 0x040005FD RID: 1533
 	[Space]
 	public HitSwing swing;
 
-	// Token: 0x04000717 RID: 1815
+	// Token: 0x040005FE RID: 1534
 	public float swingForce = 50f;
 
-	// Token: 0x04000718 RID: 1816
+	// Token: 0x040005FF RID: 1535
 	public float swingWidth = 0.4f;
 
-	// Token: 0x04000719 RID: 1817
+	// Token: 0x04000600 RID: 1536
 	private ActorHandIK handIK;
 
-	// Token: 0x0400071A RID: 1818
+	// Token: 0x04000601 RID: 1537
 	public bool ignoreSwingPhysics;
 
-	// Token: 0x0400071B RID: 1819
+	// Token: 0x04000602 RID: 1538
 	private float smoothDirectionality;
 
-	// Token: 0x0400071C RID: 1820
+	// Token: 0x04000603 RID: 1539
 	private float directionalityVelocity;
 }

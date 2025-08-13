@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Token: 0x020001AB RID: 427
+// Token: 0x02000147 RID: 327
 public interface SpeedInterface
 {
-	// Token: 0x060007F0 RID: 2032
+	// Token: 0x060006B2 RID: 1714
 	float GetSpeed();
 }

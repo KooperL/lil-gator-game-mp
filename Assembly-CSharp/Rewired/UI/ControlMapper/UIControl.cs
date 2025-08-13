@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x02000478 RID: 1144
+	// Token: 0x0200032D RID: 813
 	[AddComponentMenu("")]
 	public class UIControl : MonoBehaviour
 	{
-		// Token: 0x170005E4 RID: 1508
-		// (get) Token: 0x06001C26 RID: 7206 RVA: 0x000158AF File Offset: 0x00013AAF
+		// Token: 0x1700040B RID: 1035
+		// (get) Token: 0x0600169F RID: 5791 RVA: 0x0005ED67 File Offset: 0x0005CF67
 		public int id
 		{
 			get
@@ -18,15 +18,15 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001C27 RID: 7207 RVA: 0x000158B7 File Offset: 0x00013AB7
+		// Token: 0x060016A0 RID: 5792 RVA: 0x0005ED6F File Offset: 0x0005CF6F
 		private void Awake()
 		{
 			this._id = UIControl.GetNextUid();
 		}
 
-		// Token: 0x170005E5 RID: 1509
-		// (get) Token: 0x06001C28 RID: 7208 RVA: 0x000158C4 File Offset: 0x00013AC4
-		// (set) Token: 0x06001C29 RID: 7209 RVA: 0x000158CC File Offset: 0x00013ACC
+		// Token: 0x1700040C RID: 1036
+		// (get) Token: 0x060016A1 RID: 5793 RVA: 0x0005ED7C File Offset: 0x0005CF7C
+		// (set) Token: 0x060016A2 RID: 5794 RVA: 0x0005ED84 File Offset: 0x0005CF84
 		public bool showTitle
 		{
 			get
@@ -44,12 +44,12 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001C2A RID: 7210 RVA: 0x00002229 File Offset: 0x00000429
+		// Token: 0x060016A3 RID: 5795 RVA: 0x0005EDAD File Offset: 0x0005CFAD
 		public virtual void SetCancelCallback(Action cancelCallback)
 		{
 		}
 
-		// Token: 0x06001C2B RID: 7211 RVA: 0x000158F5 File Offset: 0x00013AF5
+		// Token: 0x060016A4 RID: 5796 RVA: 0x0005EDAF File Offset: 0x0005CFAF
 		private static int GetNextUid()
 		{
 			if (UIControl._uidCounter == 2147483647)
@@ -61,16 +61,16 @@ namespace Rewired.UI.ControlMapper
 			return uidCounter;
 		}
 
-		// Token: 0x04001DFB RID: 7675
+		// Token: 0x040018D5 RID: 6357
 		public Text title;
 
-		// Token: 0x04001DFC RID: 7676
+		// Token: 0x040018D6 RID: 6358
 		private int _id;
 
-		// Token: 0x04001DFD RID: 7677
+		// Token: 0x040018D7 RID: 6359
 		private bool _showTitle;
 
-		// Token: 0x04001DFE RID: 7678
+		// Token: 0x040018D8 RID: 6360
 		private static int _uidCounter;
 	}
 }

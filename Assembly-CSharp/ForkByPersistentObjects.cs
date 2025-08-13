@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020001C6 RID: 454
+// Token: 0x0200015C RID: 348
 public class ForkByPersistentObjects : MonoBehaviour
 {
-	// Token: 0x0600088D RID: 2189 RVA: 0x000086AF File Offset: 0x000068AF
+	// Token: 0x06000743 RID: 1859 RVA: 0x00024454 File Offset: 0x00022654
 	[ContextMenu("Collect Objects")]
 	public void CollectObjects()
 	{
@@ -16,7 +16,7 @@ public class ForkByPersistentObjects : MonoBehaviour
 		this.targets = this.parent.GetComponentsInChildren<PersistentObject>();
 	}
 
-	// Token: 0x0600088E RID: 2190 RVA: 0x0003771C File Offset: 0x0003591C
+	// Token: 0x06000744 RID: 1860 RVA: 0x00024484 File Offset: 0x00022684
 	public void ForkLogic()
 	{
 		int num = 0;
@@ -36,18 +36,18 @@ public class ForkByPersistentObjects : MonoBehaviour
 		this.lessThanTarget.Invoke();
 	}
 
-	// Token: 0x04000B22 RID: 2850
+	// Token: 0x04000982 RID: 2434
 	public Transform parent;
 
-	// Token: 0x04000B23 RID: 2851
+	// Token: 0x04000983 RID: 2435
 	public PersistentObject[] targets;
 
-	// Token: 0x04000B24 RID: 2852
+	// Token: 0x04000984 RID: 2436
 	public int desiredTargetCount;
 
-	// Token: 0x04000B25 RID: 2853
+	// Token: 0x04000985 RID: 2437
 	public UnityEvent lessThanTarget;
 
-	// Token: 0x04000B26 RID: 2854
+	// Token: 0x04000986 RID: 2438
 	public UnityEvent atLeastTarget;
 }

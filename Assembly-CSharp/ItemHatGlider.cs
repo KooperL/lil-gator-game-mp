@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200024E RID: 590
+// Token: 0x020001CB RID: 459
 public class ItemHatGlider : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x06000B12 RID: 2834 RVA: 0x0000A7E1 File Offset: 0x000089E1
+	// Token: 0x0600097B RID: 2427 RVA: 0x0002CC2E File Offset: 0x0002AE2E
 	private void Start()
 	{
 		this.movement = Player.movement;
@@ -13,12 +13,12 @@ public class ItemHatGlider : MonoBehaviour, IItemBehaviour
 		this.glider.SetActive(false);
 	}
 
-	// Token: 0x06000B13 RID: 2835 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x0600097C RID: 2428 RVA: 0x0002CC6E File Offset: 0x0002AE6E
 	public void Input(bool isDown, bool isHeld)
 	{
 	}
 
-	// Token: 0x06000B14 RID: 2836 RVA: 0x0003EB60 File Offset: 0x0003CD60
+	// Token: 0x0600097D RID: 2429 RVA: 0x0002CC70 File Offset: 0x0002AE70
 	public void SetEquipped(bool isEquipped)
 	{
 		if (this.itemManager == null)
@@ -37,7 +37,7 @@ public class ItemHatGlider : MonoBehaviour, IItemBehaviour
 		this.itemManager.bareHead.SetActive(isEquipped);
 	}
 
-	// Token: 0x06000B15 RID: 2837 RVA: 0x0000A821 File Offset: 0x00008A21
+	// Token: 0x0600097E RID: 2430 RVA: 0x0002CCE9 File Offset: 0x0002AEE9
 	public void OnRemove()
 	{
 		if (this.glider != null)
@@ -47,25 +47,25 @@ public class ItemHatGlider : MonoBehaviour, IItemBehaviour
 		this.itemManager.bareHead.SetActive(false);
 	}
 
-	// Token: 0x06000B16 RID: 2838 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x0600097F RID: 2431 RVA: 0x0002CD15 File Offset: 0x0002AF15
 	public void Cancel()
 	{
 	}
 
-	// Token: 0x06000B17 RID: 2839 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000980 RID: 2432 RVA: 0x0002CD17 File Offset: 0x0002AF17
 	public void SetIndex(int index)
 	{
 	}
 
-	// Token: 0x04000E05 RID: 3589
+	// Token: 0x04000BDF RID: 3039
 	public GameObject gliderPrefab;
 
-	// Token: 0x04000E06 RID: 3590
+	// Token: 0x04000BE0 RID: 3040
 	private GameObject glider;
 
-	// Token: 0x04000E07 RID: 3591
+	// Token: 0x04000BE1 RID: 3041
 	private PlayerMovement movement;
 
-	// Token: 0x04000E08 RID: 3592
+	// Token: 0x04000BE2 RID: 3042
 	private PlayerItemManager itemManager;
 }

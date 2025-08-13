@@ -3,29 +3,29 @@ using Rewired;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Token: 0x020003C9 RID: 969
+// Token: 0x020002DD RID: 733
 public class UIScrollSelected : MonoBehaviour
 {
-	// Token: 0x0600128D RID: 4749 RVA: 0x0000FB84 File Offset: 0x0000DD84
+	// Token: 0x06000F79 RID: 3961 RVA: 0x0004A3F5 File Offset: 0x000485F5
 	private void Awake()
 	{
 		this.scrollToSelected = base.GetComponentInParent<UIScrollToSelected>();
 	}
 
-	// Token: 0x0600128E RID: 4750 RVA: 0x0000FB92 File Offset: 0x0000DD92
+	// Token: 0x06000F7A RID: 3962 RVA: 0x0004A403 File Offset: 0x00048603
 	public void OnEnable()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.ScrollInput), 0, 38, ReInput.mapping.GetActionId("UIScroll"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.ScrollInput), UpdateLoopType.Update, InputActionEventType.AxisRawActiveOrJustInactive, ReInput.mapping.GetActionId("UIScroll"));
 	}
 
-	// Token: 0x0600128F RID: 4751 RVA: 0x0000FBCE File Offset: 0x0000DDCE
+	// Token: 0x06000F7B RID: 3963 RVA: 0x0004A43F File Offset: 0x0004863F
 	private void OnDisable()
 	{
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.ScrollInput));
 	}
 
-	// Token: 0x06001290 RID: 4752 RVA: 0x0005B7A0 File Offset: 0x000599A0
+	// Token: 0x06000F7C RID: 3964 RVA: 0x0004A458 File Offset: 0x00048658
 	private void ScrollInput(InputActionEventData obj)
 	{
 		if (Time.frameCount - this.scrollFrame < 3)
@@ -42,15 +42,34 @@ public class UIScrollSelected : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001291 RID: 4753 RVA: 0x0005B814 File Offset: 0x00059A14
+	// Token: 0x06000F7D RID: 3965 RVA: 0x0004A4CC File Offset: 0x000486CC
 	private void Scroll(int direction)
 	{
 		EventSystem current = EventSystem.current;
 		GameObject gameObject = current.currentSelectedGameObject;
 		GameObject gameObject2 = gameObject;
 		bool flag = false;
-		int num = gameObject.transform.GetSiblingIndex() + direction;
+		int num = gameObject.transform.GetSiblingIndex();
 		Transform parent = gameObject.transform.parent;
+		if (this.isGrid)
+		{
+			int num2 = Mathf.FloorToInt(((float)num + 0.001f) / (float)this.gridWidth);
+			int num3 = Mathf.CeilToInt(((float)parent.childCount + 0.001f) / (float)this.gridWidth);
+			if (direction == -1 && num2 == 0)
+			{
+				return;
+			}
+			if (direction == 1 && num2 == num3 - 1)
+			{
+				return;
+			}
+			num += direction * this.gridWidth;
+			num = Mathf.Clamp(num, 0, parent.childCount - 1);
+		}
+		else
+		{
+			num += direction;
+		}
 		while (!flag && num >= 0 && num < parent.childCount)
 		{
 			gameObject = parent.GetChild(num).gameObject;
@@ -67,21 +86,27 @@ public class UIScrollSelected : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040017ED RID: 6125
+	// Token: 0x04001448 RID: 5192
 	private const float scrollThreshold = 0.2f;
 
-	// Token: 0x040017EE RID: 6126
+	// Token: 0x04001449 RID: 5193
 	private float scroll;
 
-	// Token: 0x040017EF RID: 6127
+	// Token: 0x0400144A RID: 5194
 	private int scrollFrame = -1;
 
-	// Token: 0x040017F0 RID: 6128
+	// Token: 0x0400144B RID: 5195
 	private const int scrollFrameGap = 3;
 
-	// Token: 0x040017F1 RID: 6129
-	private Player rePlayer;
+	// Token: 0x0400144C RID: 5196
+	private global::Rewired.Player rePlayer;
 
-	// Token: 0x040017F2 RID: 6130
+	// Token: 0x0400144D RID: 5197
 	private UIScrollToSelected scrollToSelected;
+
+	// Token: 0x0400144E RID: 5198
+	public bool isGrid;
+
+	// Token: 0x0400144F RID: 5199
+	public int gridWidth = 3;
 }

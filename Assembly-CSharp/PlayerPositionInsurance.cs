@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200028F RID: 655
+// Token: 0x020001FD RID: 509
 public class PlayerPositionInsurance : MonoBehaviour
 {
-	// Token: 0x06000CDA RID: 3290 RVA: 0x000485B0 File Offset: 0x000467B0
+	// Token: 0x06000B15 RID: 2837 RVA: 0x000375B4 File Offset: 0x000357B4
 	private void LateUpdate()
 	{
 		if (base.transform.position.IsNaN())
@@ -30,9 +30,9 @@ public class PlayerPositionInsurance : MonoBehaviour
 		this.lastValidCameraPosition = MainCamera.t.position;
 	}
 
-	// Token: 0x04001127 RID: 4391
+	// Token: 0x04000EC8 RID: 3784
 	private Vector3 lastValidPosition;
 
-	// Token: 0x04001128 RID: 4392
+	// Token: 0x04000EC9 RID: 3785
 	private Vector3 lastValidCameraPosition;
 }

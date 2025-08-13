@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Rewired.Demos
 {
-	// Token: 0x020004A3 RID: 1187
+	// Token: 0x02000344 RID: 836
 	[AddComponentMenu("")]
 	public class PressStartToJoinExample_Assigner : MonoBehaviour
 	{
-		// Token: 0x06001D86 RID: 7558 RVA: 0x00073A54 File Offset: 0x00071C54
+		// Token: 0x0600179B RID: 6043 RVA: 0x000646DC File Offset: 0x000628DC
 		public static Player GetRewiredPlayer(int gamePlayerId)
 		{
 			if (!ReInput.isReady)
@@ -30,14 +30,14 @@ namespace Rewired.Demos
 			return null;
 		}
 
-		// Token: 0x06001D87 RID: 7559 RVA: 0x0001691D File Offset: 0x00014B1D
+		// Token: 0x0600179C RID: 6044 RVA: 0x0006475E File Offset: 0x0006295E
 		private void Awake()
 		{
 			this.playerMap = new List<PressStartToJoinExample_Assigner.PlayerMap>();
 			PressStartToJoinExample_Assigner.instance = this;
 		}
 
-		// Token: 0x06001D88 RID: 7560 RVA: 0x00073AD8 File Offset: 0x00071CD8
+		// Token: 0x0600179D RID: 6045 RVA: 0x00064774 File Offset: 0x00062974
 		private void Update()
 		{
 			for (int i = 0; i < ReInput.players.playerCount; i++)
@@ -49,7 +49,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D89 RID: 7561 RVA: 0x00073B18 File Offset: 0x00071D18
+		// Token: 0x0600179E RID: 6046 RVA: 0x000647B4 File Offset: 0x000629B4
 		private void AssignNextPlayer(int rewiredPlayerId)
 		{
 			if (this.playerMap.Count >= this.maxPlayers)
@@ -65,7 +65,7 @@ namespace Rewired.Demos
 			Debug.Log("Added Rewired Player id " + rewiredPlayerId.ToString() + " to game player " + nextGamePlayerId.ToString());
 		}
 
-		// Token: 0x06001D8A RID: 7562 RVA: 0x00073BB8 File Offset: 0x00071DB8
+		// Token: 0x0600179F RID: 6047 RVA: 0x00064854 File Offset: 0x00062A54
 		private int GetNextGamePlayerId()
 		{
 			int num = this.gamePlayerIdCounter;
@@ -73,32 +73,32 @@ namespace Rewired.Demos
 			return num;
 		}
 
-		// Token: 0x04001ED7 RID: 7895
+		// Token: 0x04001962 RID: 6498
 		private static PressStartToJoinExample_Assigner instance;
 
-		// Token: 0x04001ED8 RID: 7896
+		// Token: 0x04001963 RID: 6499
 		public int maxPlayers = 4;
 
-		// Token: 0x04001ED9 RID: 7897
+		// Token: 0x04001964 RID: 6500
 		private List<PressStartToJoinExample_Assigner.PlayerMap> playerMap;
 
-		// Token: 0x04001EDA RID: 7898
+		// Token: 0x04001965 RID: 6501
 		private int gamePlayerIdCounter;
 
-		// Token: 0x020004A4 RID: 1188
+		// Token: 0x020004AD RID: 1197
 		private class PlayerMap
 		{
-			// Token: 0x06001D8C RID: 7564 RVA: 0x0001693F File Offset: 0x00014B3F
+			// Token: 0x06001E07 RID: 7687 RVA: 0x00078F6A File Offset: 0x0007716A
 			public PlayerMap(int rewiredPlayerId, int gamePlayerId)
 			{
 				this.rewiredPlayerId = rewiredPlayerId;
 				this.gamePlayerId = gamePlayerId;
 			}
 
-			// Token: 0x04001EDB RID: 7899
+			// Token: 0x04001F79 RID: 8057
 			public int rewiredPlayerId;
 
-			// Token: 0x04001EDC RID: 7900
+			// Token: 0x04001F7A RID: 8058
 			public int gamePlayerId;
 		}
 	}

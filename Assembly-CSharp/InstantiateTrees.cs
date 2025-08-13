@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200034D RID: 845
+// Token: 0x0200027F RID: 639
 public class InstantiateTrees : MonoBehaviour
 {
-	// Token: 0x06001060 RID: 4192 RVA: 0x00054568 File Offset: 0x00052768
+	// Token: 0x06000DA4 RID: 3492 RVA: 0x0004219C File Offset: 0x0004039C
 	private void OnValidate()
 	{
 		for (int i = 0; i < this.prefabs.Length; i++)
@@ -38,7 +38,7 @@ public class InstantiateTrees : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001061 RID: 4193 RVA: 0x00054670 File Offset: 0x00052870
+	// Token: 0x06000DA5 RID: 3493 RVA: 0x000422A4 File Offset: 0x000404A4
 	private Vector3 TerrainToWorld(Vector3 position)
 	{
 		Vector3 zero = Vector3.zero;
@@ -51,7 +51,7 @@ public class InstantiateTrees : MonoBehaviour
 		return zero;
 	}
 
-	// Token: 0x06001062 RID: 4194 RVA: 0x000546D4 File Offset: 0x000528D4
+	// Token: 0x06000DA6 RID: 3494 RVA: 0x00042308 File Offset: 0x00040508
 	private void Start()
 	{
 		if (this.lodParent != null && this.lodParent.gameObject.activeSelf)
@@ -79,37 +79,37 @@ public class InstantiateTrees : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001539 RID: 5433
+	// Token: 0x040011F9 RID: 4601
 	public InstantiateTrees.TreePrefab[] prefabs;
 
-	// Token: 0x0400153A RID: 5434
+	// Token: 0x040011FA RID: 4602
 	public Terrain terrain;
 
-	// Token: 0x0400153B RID: 5435
+	// Token: 0x040011FB RID: 4603
 	public Transform lodParent;
 
-	// Token: 0x0400153C RID: 5436
+	// Token: 0x040011FC RID: 4604
 	public GameObject[] lodObjects;
 
-	// Token: 0x0200034E RID: 846
+	// Token: 0x0200042C RID: 1068
 	[Serializable]
 	public struct TreePrefab
 	{
-		// Token: 0x0400153D RID: 5437
+		// Token: 0x04001D74 RID: 7540
 		[HideInInspector]
 		public string name;
 
-		// Token: 0x0400153E RID: 5438
+		// Token: 0x04001D75 RID: 7541
 		public GameObject prototype;
 
-		// Token: 0x0400153F RID: 5439
+		// Token: 0x04001D76 RID: 7542
 		[ReadOnly]
 		public int index;
 
-		// Token: 0x04001540 RID: 5440
+		// Token: 0x04001D77 RID: 7543
 		public GameObject prefab;
 
-		// Token: 0x04001541 RID: 5441
+		// Token: 0x04001D78 RID: 7544
 		public GameObject lodPrefab;
 	}
 }

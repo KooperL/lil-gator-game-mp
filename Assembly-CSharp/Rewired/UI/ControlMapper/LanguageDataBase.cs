@@ -3,259 +3,259 @@ using UnityEngine;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x02000464 RID: 1124
+	// Token: 0x02000326 RID: 806
 	[Serializable]
 	public abstract class LanguageDataBase : ScriptableObject
 	{
-		// Token: 0x06001B31 RID: 6961
+		// Token: 0x06001601 RID: 5633
 		public abstract void Initialize();
 
-		// Token: 0x06001B32 RID: 6962
+		// Token: 0x06001602 RID: 5634
 		public abstract string GetCustomEntry(string key);
 
-		// Token: 0x06001B33 RID: 6963
+		// Token: 0x06001603 RID: 5635
 		public abstract bool ContainsCustomEntryKey(string key);
 
-		// Token: 0x1700055B RID: 1371
-		// (get) Token: 0x06001B34 RID: 6964
+		// Token: 0x170003B0 RID: 944
+		// (get) Token: 0x06001604 RID: 5636
 		public abstract string yes { get; }
 
-		// Token: 0x1700055C RID: 1372
-		// (get) Token: 0x06001B35 RID: 6965
+		// Token: 0x170003B1 RID: 945
+		// (get) Token: 0x06001605 RID: 5637
 		public abstract string no { get; }
 
-		// Token: 0x1700055D RID: 1373
-		// (get) Token: 0x06001B36 RID: 6966
+		// Token: 0x170003B2 RID: 946
+		// (get) Token: 0x06001606 RID: 5638
 		public abstract string add { get; }
 
-		// Token: 0x1700055E RID: 1374
-		// (get) Token: 0x06001B37 RID: 6967
+		// Token: 0x170003B3 RID: 947
+		// (get) Token: 0x06001607 RID: 5639
 		public abstract string replace { get; }
 
-		// Token: 0x1700055F RID: 1375
-		// (get) Token: 0x06001B38 RID: 6968
+		// Token: 0x170003B4 RID: 948
+		// (get) Token: 0x06001608 RID: 5640
 		public abstract string remove { get; }
 
-		// Token: 0x17000560 RID: 1376
-		// (get) Token: 0x06001B39 RID: 6969
+		// Token: 0x170003B5 RID: 949
+		// (get) Token: 0x06001609 RID: 5641
 		public abstract string swap { get; }
 
-		// Token: 0x17000561 RID: 1377
-		// (get) Token: 0x06001B3A RID: 6970
+		// Token: 0x170003B6 RID: 950
+		// (get) Token: 0x0600160A RID: 5642
 		public abstract string cancel { get; }
 
-		// Token: 0x17000562 RID: 1378
-		// (get) Token: 0x06001B3B RID: 6971
+		// Token: 0x170003B7 RID: 951
+		// (get) Token: 0x0600160B RID: 5643
 		public abstract string none { get; }
 
-		// Token: 0x17000563 RID: 1379
-		// (get) Token: 0x06001B3C RID: 6972
+		// Token: 0x170003B8 RID: 952
+		// (get) Token: 0x0600160C RID: 5644
 		public abstract string okay { get; }
 
-		// Token: 0x17000564 RID: 1380
-		// (get) Token: 0x06001B3D RID: 6973
+		// Token: 0x170003B9 RID: 953
+		// (get) Token: 0x0600160D RID: 5645
 		public abstract string done { get; }
 
-		// Token: 0x17000565 RID: 1381
-		// (get) Token: 0x06001B3E RID: 6974
+		// Token: 0x170003BA RID: 954
+		// (get) Token: 0x0600160E RID: 5646
 		public abstract string default_ { get; }
 
-		// Token: 0x17000566 RID: 1382
-		// (get) Token: 0x06001B3F RID: 6975
+		// Token: 0x170003BB RID: 955
+		// (get) Token: 0x0600160F RID: 5647
 		public abstract string assignControllerWindowTitle { get; }
 
-		// Token: 0x17000567 RID: 1383
-		// (get) Token: 0x06001B40 RID: 6976
+		// Token: 0x170003BC RID: 956
+		// (get) Token: 0x06001610 RID: 5648
 		public abstract string assignControllerWindowMessage { get; }
 
-		// Token: 0x17000568 RID: 1384
-		// (get) Token: 0x06001B41 RID: 6977
+		// Token: 0x170003BD RID: 957
+		// (get) Token: 0x06001611 RID: 5649
 		public abstract string controllerAssignmentConflictWindowTitle { get; }
 
-		// Token: 0x17000569 RID: 1385
-		// (get) Token: 0x06001B42 RID: 6978
+		// Token: 0x170003BE RID: 958
+		// (get) Token: 0x06001612 RID: 5650
 		public abstract string elementAssignmentPrePollingWindowMessage { get; }
 
-		// Token: 0x1700056A RID: 1386
-		// (get) Token: 0x06001B43 RID: 6979
+		// Token: 0x170003BF RID: 959
+		// (get) Token: 0x06001613 RID: 5651
 		public abstract string elementAssignmentConflictWindowMessage { get; }
 
-		// Token: 0x1700056B RID: 1387
-		// (get) Token: 0x06001B44 RID: 6980
+		// Token: 0x170003C0 RID: 960
+		// (get) Token: 0x06001614 RID: 5652
 		public abstract string elementAssignmentReplacementWindowMessage { get; }
 
-		// Token: 0x1700056C RID: 1388
-		// (get) Token: 0x06001B45 RID: 6981
+		// Token: 0x170003C1 RID: 961
+		// (get) Token: 0x06001615 RID: 5653
 		public abstract string mouseAssignmentConflictWindowTitle { get; }
 
-		// Token: 0x1700056D RID: 1389
-		// (get) Token: 0x06001B46 RID: 6982
+		// Token: 0x170003C2 RID: 962
+		// (get) Token: 0x06001616 RID: 5654
 		public abstract string calibrateControllerWindowTitle { get; }
 
-		// Token: 0x1700056E RID: 1390
-		// (get) Token: 0x06001B47 RID: 6983
+		// Token: 0x170003C3 RID: 963
+		// (get) Token: 0x06001617 RID: 5655
 		public abstract string calibrateAxisStep1WindowTitle { get; }
 
-		// Token: 0x1700056F RID: 1391
-		// (get) Token: 0x06001B48 RID: 6984
+		// Token: 0x170003C4 RID: 964
+		// (get) Token: 0x06001618 RID: 5656
 		public abstract string calibrateAxisStep2WindowTitle { get; }
 
-		// Token: 0x17000570 RID: 1392
-		// (get) Token: 0x06001B49 RID: 6985
+		// Token: 0x170003C5 RID: 965
+		// (get) Token: 0x06001619 RID: 5657
 		public abstract string inputBehaviorSettingsWindowTitle { get; }
 
-		// Token: 0x17000571 RID: 1393
-		// (get) Token: 0x06001B4A RID: 6986
+		// Token: 0x170003C6 RID: 966
+		// (get) Token: 0x0600161A RID: 5658
 		public abstract string restoreDefaultsWindowTitle { get; }
 
-		// Token: 0x17000572 RID: 1394
-		// (get) Token: 0x06001B4B RID: 6987
+		// Token: 0x170003C7 RID: 967
+		// (get) Token: 0x0600161B RID: 5659
 		public abstract string actionColumnLabel { get; }
 
-		// Token: 0x17000573 RID: 1395
-		// (get) Token: 0x06001B4C RID: 6988
+		// Token: 0x170003C8 RID: 968
+		// (get) Token: 0x0600161C RID: 5660
 		public abstract string keyboardColumnLabel { get; }
 
-		// Token: 0x17000574 RID: 1396
-		// (get) Token: 0x06001B4D RID: 6989
+		// Token: 0x170003C9 RID: 969
+		// (get) Token: 0x0600161D RID: 5661
 		public abstract string mouseColumnLabel { get; }
 
-		// Token: 0x17000575 RID: 1397
-		// (get) Token: 0x06001B4E RID: 6990
+		// Token: 0x170003CA RID: 970
+		// (get) Token: 0x0600161E RID: 5662
 		public abstract string controllerColumnLabel { get; }
 
-		// Token: 0x17000576 RID: 1398
-		// (get) Token: 0x06001B4F RID: 6991
+		// Token: 0x170003CB RID: 971
+		// (get) Token: 0x0600161F RID: 5663
 		public abstract string removeControllerButtonLabel { get; }
 
-		// Token: 0x17000577 RID: 1399
-		// (get) Token: 0x06001B50 RID: 6992
+		// Token: 0x170003CC RID: 972
+		// (get) Token: 0x06001620 RID: 5664
 		public abstract string calibrateControllerButtonLabel { get; }
 
-		// Token: 0x17000578 RID: 1400
-		// (get) Token: 0x06001B51 RID: 6993
+		// Token: 0x170003CD RID: 973
+		// (get) Token: 0x06001621 RID: 5665
 		public abstract string assignControllerButtonLabel { get; }
 
-		// Token: 0x17000579 RID: 1401
-		// (get) Token: 0x06001B52 RID: 6994
+		// Token: 0x170003CE RID: 974
+		// (get) Token: 0x06001622 RID: 5666
 		public abstract string inputBehaviorSettingsButtonLabel { get; }
 
-		// Token: 0x1700057A RID: 1402
-		// (get) Token: 0x06001B53 RID: 6995
+		// Token: 0x170003CF RID: 975
+		// (get) Token: 0x06001623 RID: 5667
 		public abstract string doneButtonLabel { get; }
 
-		// Token: 0x1700057B RID: 1403
-		// (get) Token: 0x06001B54 RID: 6996
+		// Token: 0x170003D0 RID: 976
+		// (get) Token: 0x06001624 RID: 5668
 		public abstract string restoreDefaultsButtonLabel { get; }
 
-		// Token: 0x1700057C RID: 1404
-		// (get) Token: 0x06001B55 RID: 6997
+		// Token: 0x170003D1 RID: 977
+		// (get) Token: 0x06001625 RID: 5669
 		public abstract string controllerSettingsGroupLabel { get; }
 
-		// Token: 0x1700057D RID: 1405
-		// (get) Token: 0x06001B56 RID: 6998
+		// Token: 0x170003D2 RID: 978
+		// (get) Token: 0x06001626 RID: 5670
 		public abstract string playersGroupLabel { get; }
 
-		// Token: 0x1700057E RID: 1406
-		// (get) Token: 0x06001B57 RID: 6999
+		// Token: 0x170003D3 RID: 979
+		// (get) Token: 0x06001627 RID: 5671
 		public abstract string assignedControllersGroupLabel { get; }
 
-		// Token: 0x1700057F RID: 1407
-		// (get) Token: 0x06001B58 RID: 7000
+		// Token: 0x170003D4 RID: 980
+		// (get) Token: 0x06001628 RID: 5672
 		public abstract string settingsGroupLabel { get; }
 
-		// Token: 0x17000580 RID: 1408
-		// (get) Token: 0x06001B59 RID: 7001
+		// Token: 0x170003D5 RID: 981
+		// (get) Token: 0x06001629 RID: 5673
 		public abstract string mapCategoriesGroupLabel { get; }
 
-		// Token: 0x17000581 RID: 1409
-		// (get) Token: 0x06001B5A RID: 7002
+		// Token: 0x170003D6 RID: 982
+		// (get) Token: 0x0600162A RID: 5674
 		public abstract string restoreDefaultsWindowMessage { get; }
 
-		// Token: 0x17000582 RID: 1410
-		// (get) Token: 0x06001B5B RID: 7003
+		// Token: 0x170003D7 RID: 983
+		// (get) Token: 0x0600162B RID: 5675
 		public abstract string calibrateWindow_deadZoneSliderLabel { get; }
 
-		// Token: 0x17000583 RID: 1411
-		// (get) Token: 0x06001B5C RID: 7004
+		// Token: 0x170003D8 RID: 984
+		// (get) Token: 0x0600162C RID: 5676
 		public abstract string calibrateWindow_zeroSliderLabel { get; }
 
-		// Token: 0x17000584 RID: 1412
-		// (get) Token: 0x06001B5D RID: 7005
+		// Token: 0x170003D9 RID: 985
+		// (get) Token: 0x0600162D RID: 5677
 		public abstract string calibrateWindow_sensitivitySliderLabel { get; }
 
-		// Token: 0x17000585 RID: 1413
-		// (get) Token: 0x06001B5E RID: 7006
+		// Token: 0x170003DA RID: 986
+		// (get) Token: 0x0600162E RID: 5678
 		public abstract string calibrateWindow_invertToggleLabel { get; }
 
-		// Token: 0x17000586 RID: 1414
-		// (get) Token: 0x06001B5F RID: 7007
+		// Token: 0x170003DB RID: 987
+		// (get) Token: 0x0600162F RID: 5679
 		public abstract string calibrateWindow_calibrateButtonLabel { get; }
 
-		// Token: 0x06001B60 RID: 7008
+		// Token: 0x06001630 RID: 5680
 		public abstract string GetControllerAssignmentConflictWindowMessage(string joystickName, string otherPlayerName, string currentPlayerName);
 
-		// Token: 0x06001B61 RID: 7009
+		// Token: 0x06001631 RID: 5681
 		public abstract string GetJoystickElementAssignmentPollingWindowMessage(string actionName);
 
-		// Token: 0x06001B62 RID: 7010
+		// Token: 0x06001632 RID: 5682
 		public abstract string GetJoystickElementAssignmentPollingWindowMessage_FullAxisFieldOnly(string actionName);
 
-		// Token: 0x06001B63 RID: 7011
+		// Token: 0x06001633 RID: 5683
 		public abstract string GetKeyboardElementAssignmentPollingWindowMessage(string actionName);
 
-		// Token: 0x06001B64 RID: 7012
+		// Token: 0x06001634 RID: 5684
 		public abstract string GetMouseElementAssignmentPollingWindowMessage(string actionName);
 
-		// Token: 0x06001B65 RID: 7013
+		// Token: 0x06001635 RID: 5685
 		public abstract string GetMouseElementAssignmentPollingWindowMessage_FullAxisFieldOnly(string actionName);
 
-		// Token: 0x06001B66 RID: 7014
+		// Token: 0x06001636 RID: 5686
 		public abstract string GetElementAlreadyInUseBlocked(string elementName);
 
-		// Token: 0x06001B67 RID: 7015
+		// Token: 0x06001637 RID: 5687
 		public abstract string GetElementAlreadyInUseCanReplace(string elementName, bool allowConflicts);
 
-		// Token: 0x06001B68 RID: 7016
+		// Token: 0x06001638 RID: 5688
 		public abstract string GetMouseAssignmentConflictWindowMessage(string otherPlayerName, string thisPlayerName);
 
-		// Token: 0x06001B69 RID: 7017
+		// Token: 0x06001639 RID: 5689
 		public abstract string GetCalibrateAxisStep1WindowMessage(string axisName);
 
-		// Token: 0x06001B6A RID: 7018
+		// Token: 0x0600163A RID: 5690
 		public abstract string GetCalibrateAxisStep2WindowMessage(string axisName);
 
-		// Token: 0x06001B6B RID: 7019
+		// Token: 0x0600163B RID: 5691
 		public abstract string GetPlayerName(int playerId);
 
-		// Token: 0x06001B6C RID: 7020
+		// Token: 0x0600163C RID: 5692
 		public abstract string GetControllerName(Controller controller);
 
-		// Token: 0x06001B6D RID: 7021
+		// Token: 0x0600163D RID: 5693
 		public abstract string GetElementIdentifierName(ActionElementMap actionElementMap);
 
-		// Token: 0x06001B6E RID: 7022
+		// Token: 0x0600163E RID: 5694
 		public abstract string GetElementIdentifierName(Controller controller, int elementIdentifierId, AxisRange axisRange);
 
-		// Token: 0x06001B6F RID: 7023
+		// Token: 0x0600163F RID: 5695
 		public abstract string GetElementIdentifierName(KeyCode keyCode, ModifierKeyFlags modifierKeyFlags);
 
-		// Token: 0x06001B70 RID: 7024
+		// Token: 0x06001640 RID: 5696
 		public abstract string GetActionName(int actionId);
 
-		// Token: 0x06001B71 RID: 7025
+		// Token: 0x06001641 RID: 5697
 		public abstract string GetActionName(int actionId, AxisRange axisRange);
 
-		// Token: 0x06001B72 RID: 7026
+		// Token: 0x06001642 RID: 5698
 		public abstract string GetMapCategoryName(int id);
 
-		// Token: 0x06001B73 RID: 7027
+		// Token: 0x06001643 RID: 5699
 		public abstract string GetActionCategoryName(int id);
 
-		// Token: 0x06001B74 RID: 7028
+		// Token: 0x06001644 RID: 5700
 		public abstract string GetLayoutName(ControllerType controllerType, int id);
 
-		// Token: 0x06001B75 RID: 7029
+		// Token: 0x06001645 RID: 5701
 		public abstract string ModifierKeyFlagsToString(ModifierKeyFlags flags);
 	}
 }

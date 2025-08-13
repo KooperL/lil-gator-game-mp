@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020001C4 RID: 452
+// Token: 0x0200015B RID: 347
 public class ForkByAmountBroken : MonoBehaviour
 {
-	// Token: 0x0600088B RID: 2187 RVA: 0x00037670 File Offset: 0x00035870
+	// Token: 0x06000741 RID: 1857 RVA: 0x000243A0 File Offset: 0x000225A0
 	public void Fork()
 	{
 		int num = 0;
@@ -30,20 +30,20 @@ public class ForkByAmountBroken : MonoBehaviour
 		this.forkDirections[num2].onFork.Invoke();
 	}
 
-	// Token: 0x04000B1E RID: 2846
+	// Token: 0x04000980 RID: 2432
 	public ForkByAmountBroken.ForkDirection[] forkDirections;
 
-	// Token: 0x04000B1F RID: 2847
+	// Token: 0x04000981 RID: 2433
 	public BreakableObject[] breakableObjects;
 
-	// Token: 0x020001C5 RID: 453
+	// Token: 0x020003C0 RID: 960
 	[Serializable]
 	public struct ForkDirection
 	{
-		// Token: 0x04000B20 RID: 2848
+		// Token: 0x04001BBA RID: 7098
 		public int minAmount;
 
-		// Token: 0x04000B21 RID: 2849
+		// Token: 0x04001BBB RID: 7099
 		public UnityEvent onFork;
 	}
 }

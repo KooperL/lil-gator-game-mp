@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020000AE RID: 174
+// Token: 0x02000088 RID: 136
 public class CameraCutDetector : MonoBehaviour
 {
-	// Token: 0x0600028A RID: 650 RVA: 0x0002023C File Offset: 0x0001E43C
+	// Token: 0x06000240 RID: 576 RVA: 0x0000C340 File Offset: 0x0000A540
 	private void Update()
 	{
 		Vector3 vector = base.transform.position;
@@ -16,7 +16,7 @@ public class CameraCutDetector : MonoBehaviour
 		this.position = vector;
 	}
 
-	// Token: 0x0600028B RID: 651 RVA: 0x00020278 File Offset: 0x0001E478
+	// Token: 0x06000241 RID: 577 RVA: 0x0000C37C File Offset: 0x0000A57C
 	private void UpdateSubscribers()
 	{
 		foreach (ICameraCut cameraCut in CameraCutDetector.subscribers)
@@ -25,12 +25,12 @@ public class CameraCutDetector : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000395 RID: 917
+	// Token: 0x040002FC RID: 764
 	public static List<ICameraCut> subscribers = new List<ICameraCut>();
 
-	// Token: 0x04000396 RID: 918
+	// Token: 0x040002FD RID: 765
 	private Vector3 position;
 
-	// Token: 0x04000397 RID: 919
+	// Token: 0x040002FE RID: 766
 	private Quaternion rotation;
 }

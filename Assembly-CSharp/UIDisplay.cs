@@ -3,16 +3,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000364 RID: 868
+// Token: 0x0200028B RID: 651
 public class UIDisplay : MonoBehaviour
 {
-	// Token: 0x060010A7 RID: 4263 RVA: 0x0000E4E9 File Offset: 0x0000C6E9
+	// Token: 0x06000DE4 RID: 3556 RVA: 0x00043504 File Offset: 0x00041704
 	private void Awake()
 	{
 		this.waitForDelay = new WaitForSeconds(this.promptDelay);
 	}
 
-	// Token: 0x060010A8 RID: 4264 RVA: 0x0000E4FC File Offset: 0x0000C6FC
+	// Token: 0x06000DE5 RID: 3557 RVA: 0x00043517 File Offset: 0x00041717
 	public IEnumerator RunDisplay()
 	{
 		this.buttonPrompt.gameObject.SetActive(false);
@@ -29,18 +29,18 @@ public class UIDisplay : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x040015AD RID: 5549
+	// Token: 0x04001250 RID: 4688
 	public float promptDelay = 1f;
 
-	// Token: 0x040015AE RID: 5550
+	// Token: 0x04001251 RID: 4689
 	private WaitForSeconds waitForDelay;
 
-	// Token: 0x040015AF RID: 5551
+	// Token: 0x04001252 RID: 4690
 	public UIButtonPrompt buttonPrompt;
 
-	// Token: 0x040015B0 RID: 5552
+	// Token: 0x04001253 RID: 4691
 	public bool deactivateAfterPrompt = true;
 
-	// Token: 0x040015B1 RID: 5553
+	// Token: 0x04001254 RID: 4692
 	public UnityEvent afterPrompt;
 }

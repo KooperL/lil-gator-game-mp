@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000348 RID: 840
+// Token: 0x0200027B RID: 635
 public class TerrainTreeProximity : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06001050 RID: 4176 RVA: 0x00053F4C File Offset: 0x0005214C
+	// Token: 0x06000D94 RID: 3476 RVA: 0x00041AD8 File Offset: 0x0003FCD8
 	public void OnValidate()
 	{
 		if (this.terrainData != null && this.trees != null)
@@ -16,7 +16,7 @@ public class TerrainTreeProximity : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06001051 RID: 4177 RVA: 0x00053FBC File Offset: 0x000521BC
+	// Token: 0x06000D95 RID: 3477 RVA: 0x00041B48 File Offset: 0x0003FD48
 	private void OnEnable()
 	{
 		this.treeInstances = this.terrainData.treeInstances;
@@ -31,13 +31,13 @@ public class TerrainTreeProximity : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEvery4.Add(this);
 	}
 
-	// Token: 0x06001052 RID: 4178 RVA: 0x0000266A File Offset: 0x0000086A
+	// Token: 0x06000D96 RID: 3478 RVA: 0x00041BFA File Offset: 0x0003FDFA
 	private void OnDisable()
 	{
 		FastUpdateManager.updateEvery4.Remove(this);
 	}
 
-	// Token: 0x06001053 RID: 4179 RVA: 0x00054070 File Offset: 0x00052270
+	// Token: 0x06000D97 RID: 3479 RVA: 0x00041C08 File Offset: 0x0003FE08
 	public void ManagedUpdate()
 	{
 		for (int i = 0; i < this.trees.Length; i++)
@@ -73,50 +73,50 @@ public class TerrainTreeProximity : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x04001523 RID: 5411
+	// Token: 0x040011E7 RID: 4583
 	public Terrain terrain;
 
-	// Token: 0x04001524 RID: 5412
+	// Token: 0x040011E8 RID: 4584
 	public TerrainData terrainData;
 
-	// Token: 0x04001525 RID: 5413
+	// Token: 0x040011E9 RID: 4585
 	public TerrainTreeProximity.TreeProximityType[] trees;
 
-	// Token: 0x04001526 RID: 5414
+	// Token: 0x040011EA RID: 4586
 	public float strengthMultiplier = 0.2f;
 
-	// Token: 0x04001527 RID: 5415
+	// Token: 0x040011EB RID: 4587
 	public float maxDistance = 20f;
 
-	// Token: 0x04001528 RID: 5416
+	// Token: 0x040011EC RID: 4588
 	public float minDistance = 20f;
 
-	// Token: 0x04001529 RID: 5417
+	// Token: 0x040011ED RID: 4589
 	private float maxDistanceSqr;
 
-	// Token: 0x0400152A RID: 5418
+	// Token: 0x040011EE RID: 4590
 	private int currentStep;
 
-	// Token: 0x0400152B RID: 5419
+	// Token: 0x040011EF RID: 4591
 	public Transform anchor;
 
-	// Token: 0x0400152C RID: 5420
+	// Token: 0x040011F0 RID: 4592
 	private TreeInstance[] treeInstances;
 
-	// Token: 0x02000349 RID: 841
+	// Token: 0x0200042B RID: 1067
 	[Serializable]
 	public struct TreeProximityType
 	{
-		// Token: 0x0400152D RID: 5421
+		// Token: 0x04001D70 RID: 7536
 		public string name;
 
-		// Token: 0x0400152E RID: 5422
+		// Token: 0x04001D71 RID: 7537
 		public float strength;
 
-		// Token: 0x0400152F RID: 5423
+		// Token: 0x04001D72 RID: 7538
 		public ParticleSystem particleSystem;
 
-		// Token: 0x04001530 RID: 5424
+		// Token: 0x04001D73 RID: 7539
 		public float totalStrength;
 	}
 }

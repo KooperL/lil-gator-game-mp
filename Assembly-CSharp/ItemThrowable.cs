@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000260 RID: 608
+// Token: 0x020001D9 RID: 473
 public class ItemThrowable : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x06000B89 RID: 2953 RVA: 0x0000ADB5 File Offset: 0x00008FB5
+	// Token: 0x060009E0 RID: 2528 RVA: 0x0002DF7A File Offset: 0x0002C17A
 	public static bool AimSolver(float speed, Vector3 direction, out Vector3 velocity, float maxSolveDistance = 20f, float failedSolveDistance = 15f, float gravityFactor = 1f)
 	{
 		return ItemThrowable.AimSolver(speed, direction, out velocity, Player.itemManager.thrownSpawnPoint.position, maxSolveDistance, failedSolveDistance, gravityFactor);
 	}
 
-	// Token: 0x06000B8A RID: 2954 RVA: 0x0003FD58 File Offset: 0x0003DF58
+	// Token: 0x060009E1 RID: 2529 RVA: 0x0002DF98 File Offset: 0x0002C198
 	public static bool AimSolver(float speed, Vector3 direction, out Vector3 velocity, Vector3 spawnPoint, float maxSolveDistance = 20f, float failedSolveDistance = 15f, float gravityFactor = 1f)
 	{
 		bool flag = false;
 		RaycastHit raycastHit;
 		Vector3 vector;
-		if (Physics.SphereCast(MainCamera.c.ViewportPointToRay(new Vector3(0.5f, 0.5f, 1f)), 0.1f, ref raycastHit, maxSolveDistance, LayerUtil.HitLayers, 2) && PhysUtil.SolveProjectileVelocity(raycastHit.point - spawnPoint, speed, out vector, gravityFactor))
+		if (Physics.SphereCast(MainCamera.c.ViewportPointToRay(new Vector3(0.5f, 0.5f, 1f)), 0.1f, out raycastHit, maxSolveDistance, LayerUtil.HitLayers, QueryTriggerInteraction.Collide) && PhysUtil.SolveProjectileVelocity(raycastHit.point - spawnPoint, speed, out vector, gravityFactor))
 		{
 			velocity = vector;
 			return true;
@@ -31,8 +31,8 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		return false;
 	}
 
-	// Token: 0x17000110 RID: 272
-	// (get) Token: 0x06000B8B RID: 2955 RVA: 0x0000ADD3 File Offset: 0x00008FD3
+	// Token: 0x17000082 RID: 130
+	// (get) Token: 0x060009E2 RID: 2530 RVA: 0x0002E043 File Offset: 0x0002C243
 	protected PlayerItemManager.EquippedState EquippedState
 	{
 		get
@@ -45,7 +45,7 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B8C RID: 2956 RVA: 0x0000ADE0 File Offset: 0x00008FE0
+	// Token: 0x060009E3 RID: 2531 RVA: 0x0002E050 File Offset: 0x0002C250
 	private void Awake()
 	{
 		this.itemManager = Player.itemManager;
@@ -54,13 +54,13 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		this.reaction = Player.reaction;
 	}
 
-	// Token: 0x06000B8D RID: 2957 RVA: 0x0000AE14 File Offset: 0x00009014
+	// Token: 0x060009E4 RID: 2532 RVA: 0x0002E084 File Offset: 0x0002C284
 	protected virtual bool CanStartThrow(bool isDown, bool isHeld)
 	{
 		return Time.time - this.lastHeldTime > 0.5f || isDown;
 	}
 
-	// Token: 0x06000B8E RID: 2958 RVA: 0x0003FE04 File Offset: 0x0003E004
+	// Token: 0x060009E5 RID: 2533 RVA: 0x0002E09C File Offset: 0x0002C29C
 	public virtual void Input(bool isDown, bool isHeld)
 	{
 		if (Game.HasControl)
@@ -127,13 +127,13 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B8F RID: 2959 RVA: 0x0000A3D6 File Offset: 0x000085D6
+	// Token: 0x060009E6 RID: 2534 RVA: 0x0002E29E File Offset: 0x0002C49E
 	public virtual float GetSolveSpeed(float charge = 1f)
 	{
 		return 30f;
 	}
 
-	// Token: 0x06000B90 RID: 2960 RVA: 0x00040008 File Offset: 0x0003E208
+	// Token: 0x060009E7 RID: 2535 RVA: 0x0002E2A8 File Offset: 0x0002C4A8
 	public virtual void Throw(float charge, Vector3 direction)
 	{
 		if (this.throwSound != null)
@@ -145,7 +145,7 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		this.animator.SetTrigger(ItemThrowable._ThrowBody);
 	}
 
-	// Token: 0x06000B91 RID: 2961 RVA: 0x0000AE2B File Offset: 0x0000902B
+	// Token: 0x060009E8 RID: 2536 RVA: 0x0002E2F5 File Offset: 0x0002C4F5
 	public virtual void LateUpdate()
 	{
 		if (!this.charging)
@@ -158,14 +158,14 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B92 RID: 2962 RVA: 0x0000AE63 File Offset: 0x00009063
+	// Token: 0x060009E9 RID: 2537 RVA: 0x0002E32D File Offset: 0x0002C52D
 	public virtual void Cancel()
 	{
 		this.SetCharging(false);
 		Player.itemManager.IsAiming = false;
 	}
 
-	// Token: 0x06000B93 RID: 2963 RVA: 0x00040058 File Offset: 0x0003E258
+	// Token: 0x060009EA RID: 2538 RVA: 0x0002E344 File Offset: 0x0002C544
 	public virtual void SetCharging(bool isCharging)
 	{
 		if (UIMenus.reticle != null)
@@ -185,7 +185,7 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		this.charging = isCharging;
 	}
 
-	// Token: 0x06000B94 RID: 2964 RVA: 0x000400C4 File Offset: 0x0003E2C4
+	// Token: 0x060009EB RID: 2539 RVA: 0x0002E3B0 File Offset: 0x0002C5B0
 	public virtual void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (isEquipped ? this.itemManager.leftHandAnchor : (this.isOnRight ? this.itemManager.hipAnchor_r : this.itemManager.hipAnchor));
@@ -199,13 +199,13 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B95 RID: 2965 RVA: 0x0000A70E File Offset: 0x0000890E
+	// Token: 0x060009EC RID: 2540 RVA: 0x0002E417 File Offset: 0x0002C617
 	public virtual void OnRemove()
 	{
 		Player.itemManager.IsAiming = false;
 	}
 
-	// Token: 0x06000B96 RID: 2966 RVA: 0x0004012C File Offset: 0x0003E32C
+	// Token: 0x060009ED RID: 2541 RVA: 0x0002E424 File Offset: 0x0002C624
 	public void SetIndex(int index)
 	{
 		if (index == 1)
@@ -213,85 +213,85 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 			this.isOnRight = true;
 		}
 		SpawnExtraItemObject spawnExtraItemObject;
-		if (base.TryGetComponent<SpawnExtraItemObject>(ref spawnExtraItemObject))
+		if (base.TryGetComponent<SpawnExtraItemObject>(out spawnExtraItemObject))
 		{
 			spawnExtraItemObject.isOnRight = this.isOnRight;
 		}
 	}
 
-	// Token: 0x04000E66 RID: 3686
+	// Token: 0x04000C2E RID: 3118
 	protected PlayerItemManager itemManager;
 
-	// Token: 0x04000E67 RID: 3687
+	// Token: 0x04000C2F RID: 3119
 	protected PlayerMovement movement;
 
-	// Token: 0x04000E68 RID: 3688
+	// Token: 0x04000C30 RID: 3120
 	protected Transform mainCamera;
 
-	// Token: 0x04000E69 RID: 3689
+	// Token: 0x04000C31 RID: 3121
 	protected Animator animator;
 
-	// Token: 0x04000E6A RID: 3690
+	// Token: 0x04000C32 RID: 3122
 	protected CharacterReactionController reaction;
 
-	// Token: 0x04000E6B RID: 3691
+	// Token: 0x04000C33 RID: 3123
 	public float chargeTime = 0.5f;
 
-	// Token: 0x04000E6C RID: 3692
+	// Token: 0x04000C34 RID: 3124
 	protected bool charging;
 
-	// Token: 0x04000E6D RID: 3693
+	// Token: 0x04000C35 RID: 3125
 	private float chargeStartTime = -1f;
 
-	// Token: 0x04000E6E RID: 3694
+	// Token: 0x04000C36 RID: 3126
 	public AudioSourceVariance chargeSound;
 
-	// Token: 0x04000E6F RID: 3695
+	// Token: 0x04000C37 RID: 3127
 	public AudioSourceVariance throwSound;
 
-	// Token: 0x04000E70 RID: 3696
+	// Token: 0x04000C38 RID: 3128
 	[Space]
 	public bool aimSolver;
 
-	// Token: 0x04000E71 RID: 3697
+	// Token: 0x04000C39 RID: 3129
 	[ConditionalHide("aimSolver", true)]
 	public bool solveRaycast = true;
 
-	// Token: 0x04000E72 RID: 3698
+	// Token: 0x04000C3A RID: 3130
 	[ConditionalHide("aimSolver", true, ConditionalSourceField2 = "solveRaycast")]
 	public float maxSolveDistance = 40f;
 
-	// Token: 0x04000E73 RID: 3699
+	// Token: 0x04000C3B RID: 3131
 	[ConditionalHide("aimSolver", true)]
 	public float failedSolveDistance = 20f;
 
-	// Token: 0x04000E74 RID: 3700
+	// Token: 0x04000C3C RID: 3132
 	public float gravityFactor = 1f;
 
-	// Token: 0x04000E75 RID: 3701
+	// Token: 0x04000C3D RID: 3133
 	private static readonly int _Throwing = Animator.StringToHash("Throwing");
 
-	// Token: 0x04000E76 RID: 3702
+	// Token: 0x04000C3E RID: 3134
 	private static readonly int _Throw = Animator.StringToHash("Throw");
 
-	// Token: 0x04000E77 RID: 3703
+	// Token: 0x04000C3F RID: 3135
 	private static readonly int _ThrowBody = Animator.StringToHash("ThrowBody");
 
-	// Token: 0x04000E78 RID: 3704
+	// Token: 0x04000C40 RID: 3136
 	public bool allowStartOnHold = true;
 
-	// Token: 0x04000E79 RID: 3705
+	// Token: 0x04000C41 RID: 3137
 	public float startOnHoldDelay;
 
-	// Token: 0x04000E7A RID: 3706
+	// Token: 0x04000C42 RID: 3138
 	private float startOnHoldCounter;
 
-	// Token: 0x04000E7B RID: 3707
+	// Token: 0x04000C43 RID: 3139
 	private float lastHeldTime = -10f;
 
-	// Token: 0x04000E7C RID: 3708
+	// Token: 0x04000C44 RID: 3140
 	private bool ensureThrowingState;
 
-	// Token: 0x04000E7D RID: 3709
+	// Token: 0x04000C45 RID: 3141
 	protected bool isOnRight;
 }

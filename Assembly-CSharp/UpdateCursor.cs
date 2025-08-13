@@ -2,10 +2,10 @@
 using Rewired;
 using UnityEngine;
 
-// Token: 0x0200028B RID: 651
+// Token: 0x020001FA RID: 506
 public class UpdateCursor : MonoBehaviour
 {
-	// Token: 0x06000CC1 RID: 3265 RVA: 0x00048194 File Offset: 0x00046394
+	// Token: 0x06000B02 RID: 2818 RVA: 0x00037170 File Offset: 0x00035370
 	private void Start()
 	{
 		this.isApplicationFocused = true;
@@ -14,43 +14,43 @@ public class UpdateCursor : MonoBehaviour
 		{
 			this.rePlayer = ReInput.players.GetPlayer(0);
 		}
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMouseClick), 0, 3, ReInput.mapping.GetActionId("OnMouseClick"));
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMouseClick), 0, 4, ReInput.mapping.GetActionId("OnMouseClick"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMouseClick), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("OnMouseClick"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMouseClick), UpdateLoopType.Update, InputActionEventType.ButtonJustReleased, ReInput.mapping.GetActionId("OnMouseClick"));
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000CC2 RID: 3266 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B03 RID: 2819 RVA: 0x000371FA File Offset: 0x000353FA
 	private void OnDestroy()
 	{
 	}
 
-	// Token: 0x06000CC3 RID: 3267 RVA: 0x0000BEA9 File Offset: 0x0000A0A9
+	// Token: 0x06000B04 RID: 2820 RVA: 0x000371FC File Offset: 0x000353FC
 	private void Update()
 	{
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000CC4 RID: 3268 RVA: 0x0000BEB1 File Offset: 0x0000A0B1
+	// Token: 0x06000B05 RID: 2821 RVA: 0x00037204 File Offset: 0x00035404
 	private void OnApplicationFocus(bool focus)
 	{
 		this.isApplicationFocused = focus;
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000CC5 RID: 3269 RVA: 0x0000BEC0 File Offset: 0x0000A0C0
+	// Token: 0x06000B06 RID: 2822 RVA: 0x00037213 File Offset: 0x00035413
 	private void OnApplicationPause(bool pause)
 	{
 		this.isApplicationPaused = pause;
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000CC6 RID: 3270 RVA: 0x0000BECF File Offset: 0x0000A0CF
+	// Token: 0x06000B07 RID: 2823 RVA: 0x00037222 File Offset: 0x00035422
 	private void OnApplicationQuit()
 	{
 		this.SetCursorState(false);
 	}
 
-	// Token: 0x06000CC7 RID: 3271 RVA: 0x00048220 File Offset: 0x00046420
+	// Token: 0x06000B08 RID: 2824 RVA: 0x0003722C File Offset: 0x0003542C
 	private void UpdateCursorState()
 	{
 		bool flag = true;
@@ -65,7 +65,7 @@ public class UpdateCursor : MonoBehaviour
 		this.SetCursorState(flag);
 	}
 
-	// Token: 0x06000CC8 RID: 3272 RVA: 0x0000BED8 File Offset: 0x0000A0D8
+	// Token: 0x06000B09 RID: 2825 RVA: 0x0003725E File Offset: 0x0003545E
 	private void SetCursorState(bool isLocked)
 	{
 		UpdateCursor.isCurrentlyLocked = isLocked;
@@ -73,32 +73,32 @@ public class UpdateCursor : MonoBehaviour
 		{
 			this.isActuallyLocked = false;
 		}
-		Cursor.lockState = (isLocked ? (this.isActuallyLocked ? 1 : 2) : 0);
+		Cursor.lockState = (isLocked ? (this.isActuallyLocked ? CursorLockMode.Locked : CursorLockMode.Confined) : CursorLockMode.None);
 		Cursor.visible = !isLocked;
 	}
 
-	// Token: 0x06000CC9 RID: 3273 RVA: 0x0000BF0A File Offset: 0x0000A10A
+	// Token: 0x06000B0A RID: 2826 RVA: 0x00037290 File Offset: 0x00035490
 	private void OnMouseClick(InputActionEventData obj)
 	{
 		if (UpdateCursor.isCurrentlyLocked && !this.isActuallyLocked)
 		{
 			this.isActuallyLocked = true;
-			Cursor.lockState = 1;
+			Cursor.lockState = CursorLockMode.Locked;
 		}
 	}
 
-	// Token: 0x0400110B RID: 4363
+	// Token: 0x04000EB0 RID: 3760
 	public static bool isCurrentlyLocked;
 
-	// Token: 0x0400110C RID: 4364
+	// Token: 0x04000EB1 RID: 3761
 	private bool isActuallyLocked;
 
-	// Token: 0x0400110D RID: 4365
+	// Token: 0x04000EB2 RID: 3762
 	private bool isApplicationFocused;
 
-	// Token: 0x0400110E RID: 4366
+	// Token: 0x04000EB3 RID: 3763
 	private bool isApplicationPaused;
 
-	// Token: 0x0400110F RID: 4367
-	private Player rePlayer;
+	// Token: 0x04000EB4 RID: 3764
+	private global::Rewired.Player rePlayer;
 }

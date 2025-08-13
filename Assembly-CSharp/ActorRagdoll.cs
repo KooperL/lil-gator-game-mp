@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000D1 RID: 209
+// Token: 0x020000A7 RID: 167
 public class ActorRagdoll : MonoBehaviour
 {
-	// Token: 0x06000374 RID: 884 RVA: 0x00026198 File Offset: 0x00024398
+	// Token: 0x0600032F RID: 815 RVA: 0x00012E18 File Offset: 0x00011018
 	private void OnValidate()
 	{
 		if (this.dialogueActor == null)
@@ -21,7 +21,7 @@ public class ActorRagdoll : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000375 RID: 885 RVA: 0x000261E8 File Offset: 0x000243E8
+	// Token: 0x06000330 RID: 816 RVA: 0x00012E68 File Offset: 0x00011068
 	private void Start()
 	{
 		Rigidbody[] array = this.ragdollBodies;
@@ -31,7 +31,7 @@ public class ActorRagdoll : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000376 RID: 886 RVA: 0x00004A68 File Offset: 0x00002C68
+	// Token: 0x06000331 RID: 817 RVA: 0x00012E93 File Offset: 0x00011093
 	[ContextMenu("Gather Rigidbodies")]
 	private void GatherRigidbodies()
 	{
@@ -40,7 +40,7 @@ public class ActorRagdoll : MonoBehaviour
 		this.rootRigidbody = ((componentInChildren != null) ? componentInChildren.transform : null);
 	}
 
-	// Token: 0x06000377 RID: 887 RVA: 0x00026214 File Offset: 0x00024414
+	// Token: 0x06000332 RID: 818 RVA: 0x00012EBC File Offset: 0x000110BC
 	[ContextMenu("Enable Rigidbody")]
 	public void EnableRagdoll()
 	{
@@ -55,7 +55,7 @@ public class ActorRagdoll : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000378 RID: 888 RVA: 0x0002627C File Offset: 0x0002447C
+	// Token: 0x06000333 RID: 819 RVA: 0x00012F24 File Offset: 0x00011124
 	[ContextMenu("Disable Rigidbody")]
 	public void DisableRagdoll()
 	{
@@ -73,21 +73,21 @@ public class ActorRagdoll : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000500 RID: 1280
+	// Token: 0x04000462 RID: 1122
 	public DialogueActor dialogueActor;
 
-	// Token: 0x04000501 RID: 1281
+	// Token: 0x04000463 RID: 1123
 	public Animator animator;
 
-	// Token: 0x04000502 RID: 1282
+	// Token: 0x04000464 RID: 1124
 	public Rigidbody[] ragdollBodies;
 
-	// Token: 0x04000503 RID: 1283
+	// Token: 0x04000465 RID: 1125
 	public Transform rootRigidbody;
 
-	// Token: 0x04000504 RID: 1284
+	// Token: 0x04000466 RID: 1126
 	public bool applyTransform;
 
-	// Token: 0x04000505 RID: 1285
+	// Token: 0x04000467 RID: 1127
 	public Vector3 initialPush = Vector3.back;
 }

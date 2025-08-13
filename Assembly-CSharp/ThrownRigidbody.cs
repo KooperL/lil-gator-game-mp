@@ -2,16 +2,16 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x0200015B RID: 347
+// Token: 0x02000107 RID: 263
 public class ThrownRigidbody : MonoBehaviour
 {
-	// Token: 0x06000670 RID: 1648 RVA: 0x00006A65 File Offset: 0x00004C65
+	// Token: 0x0600055E RID: 1374 RVA: 0x0001C762 File Offset: 0x0001A962
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x06000671 RID: 1649 RVA: 0x00030C38 File Offset: 0x0002EE38
+	// Token: 0x0600055F RID: 1375 RVA: 0x0001C770 File Offset: 0x0001A970
 	private void OnDrawGizmosSelected()
 	{
 		float num = 0.1f;
@@ -27,14 +27,14 @@ public class ThrownRigidbody : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000672 RID: 1650 RVA: 0x00006A73 File Offset: 0x00004C73
+	// Token: 0x06000560 RID: 1376 RVA: 0x0001C7EA File Offset: 0x0001A9EA
 	[ContextMenu("PrepareToThrow")]
 	public void PrepareToThrow()
 	{
 		this.willThrow = true;
 	}
 
-	// Token: 0x06000673 RID: 1651 RVA: 0x00006A7C File Offset: 0x00004C7C
+	// Token: 0x06000561 RID: 1377 RVA: 0x0001C7F3 File Offset: 0x0001A9F3
 	private void Start()
 	{
 		if (this.willThrow)
@@ -45,7 +45,7 @@ public class ThrownRigidbody : MonoBehaviour
 		this.Land(false);
 	}
 
-	// Token: 0x06000674 RID: 1652 RVA: 0x00006A9A File Offset: 0x00004C9A
+	// Token: 0x06000562 RID: 1378 RVA: 0x0001C811 File Offset: 0x0001AA11
 	[ContextMenu("Copy To Intended")]
 	private void CopyToIntended()
 	{
@@ -53,7 +53,7 @@ public class ThrownRigidbody : MonoBehaviour
 		this.intendedRotation = base.transform.rotation;
 	}
 
-	// Token: 0x06000675 RID: 1653 RVA: 0x00006ABE File Offset: 0x00004CBE
+	// Token: 0x06000563 RID: 1379 RVA: 0x0001C835 File Offset: 0x0001AA35
 	private IEnumerator ThrowCoroutine()
 	{
 		float t = 0f;
@@ -104,7 +104,7 @@ public class ThrownRigidbody : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000676 RID: 1654 RVA: 0x00030CB4 File Offset: 0x0002EEB4
+	// Token: 0x06000564 RID: 1380 RVA: 0x0001C844 File Offset: 0x0001AA44
 	private void Land(bool playEffects = true)
 	{
 		base.transform.position = this.intendedPosition;
@@ -125,36 +125,36 @@ public class ThrownRigidbody : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040008A7 RID: 2215
+	// Token: 0x0400075C RID: 1884
 	private Rigidbody rigidbody;
 
-	// Token: 0x040008A8 RID: 2216
+	// Token: 0x0400075D RID: 1885
 	public Vector3 thrownVelocity;
 
-	// Token: 0x040008A9 RID: 2217
+	// Token: 0x0400075E RID: 1886
 	public Vector3 thrownAngularVelocity;
 
-	// Token: 0x040008AA RID: 2218
+	// Token: 0x0400075F RID: 1887
 	public Vector3 intendedPosition;
 
-	// Token: 0x040008AB RID: 2219
+	// Token: 0x04000760 RID: 1888
 	public Quaternion intendedRotation;
 
-	// Token: 0x040008AC RID: 2220
+	// Token: 0x04000761 RID: 1889
 	public float preconfiguredThrowTime = -1f;
 
-	// Token: 0x040008AD RID: 2221
+	// Token: 0x04000762 RID: 1890
 	private float throwTime;
 
-	// Token: 0x040008AE RID: 2222
+	// Token: 0x04000763 RID: 1891
 	private bool isThrown;
 
-	// Token: 0x040008AF RID: 2223
+	// Token: 0x04000764 RID: 1892
 	private float distance = 1000f;
 
-	// Token: 0x040008B0 RID: 2224
+	// Token: 0x04000765 RID: 1893
 	public TrailRenderer trail;
 
-	// Token: 0x040008B1 RID: 2225
+	// Token: 0x04000766 RID: 1894
 	private bool willThrow;
 }

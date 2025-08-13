@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200005A RID: 90
+// Token: 0x02000047 RID: 71
 public class WaterPumpWrench : MonoBehaviour, Interaction
 {
-	// Token: 0x0600013E RID: 318 RVA: 0x0001B498 File Offset: 0x00019698
+	// Token: 0x06000119 RID: 281 RVA: 0x00006DCC File Offset: 0x00004FCC
 	public void Interact()
 	{
 		if (DialogueManager.d.IsInImportantDialogue)
@@ -24,7 +24,7 @@ public class WaterPumpWrench : MonoBehaviour, Interaction
 		DialogueManager.d.Bubble("Cool_Pump_Wrench2", this.actors, 0f, false, true, true);
 	}
 
-	// Token: 0x0600013F RID: 319 RVA: 0x0000316A File Offset: 0x0000136A
+	// Token: 0x0600011A RID: 282 RVA: 0x00006E61 File Offset: 0x00005061
 	public void OnHit()
 	{
 		if (!this.waterPump.activated && ItemManager.i.GetPrimaryID() == "Sword_Wrench")
@@ -33,9 +33,9 @@ public class WaterPumpWrench : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x040001D3 RID: 467
+	// Token: 0x04000189 RID: 393
 	public WaterPump waterPump;
 
-	// Token: 0x040001D4 RID: 468
+	// Token: 0x0400018A RID: 394
 	public DialogueActor[] actors;
 }

@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200025A RID: 602
+// Token: 0x020001D3 RID: 467
 public class ItemShieldFloaty : MonoBehaviour
 {
-	// Token: 0x06000B6C RID: 2924 RVA: 0x0000AC28 File Offset: 0x00008E28
+	// Token: 0x060009C3 RID: 2499 RVA: 0x0002D705 File Offset: 0x0002B905
 	private void Start()
 	{
 		Player.movement.sledAlwaysFloats = true;
 		base.GetComponent<ItemShield>().onRemove.AddListener(new UnityAction(this.OnRemove));
 	}
 
-	// Token: 0x06000B6D RID: 2925 RVA: 0x0000AC51 File Offset: 0x00008E51
+	// Token: 0x060009C4 RID: 2500 RVA: 0x0002D72E File Offset: 0x0002B92E
 	private void OnRemove()
 	{
 		Player.movement.sledAlwaysFloats = false;

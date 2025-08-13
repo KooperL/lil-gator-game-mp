@@ -2,16 +2,16 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000048 RID: 72
+// Token: 0x02000038 RID: 56
 public class PaintProjectile : MonoBehaviour
 {
-	// Token: 0x060000F6 RID: 246 RVA: 0x00002CA6 File Offset: 0x00000EA6
+	// Token: 0x060000DD RID: 221 RVA: 0x000062E4 File Offset: 0x000044E4
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x060000F7 RID: 247 RVA: 0x00002CB4 File Offset: 0x00000EB4
+	// Token: 0x060000DE RID: 222 RVA: 0x000062F2 File Offset: 0x000044F2
 	private void Start()
 	{
 		this.spawnTime = Time.time;
@@ -23,7 +23,7 @@ public class PaintProjectile : MonoBehaviour
 		this.UpdateDecal();
 	}
 
-	// Token: 0x060000F8 RID: 248 RVA: 0x0001AC68 File Offset: 0x00018E68
+	// Token: 0x060000DF RID: 223 RVA: 0x00006330 File Offset: 0x00004530
 	private void UpdateDecal()
 	{
 		Color color = this.color;
@@ -35,7 +35,7 @@ public class PaintProjectile : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000F9 RID: 249 RVA: 0x00002CF1 File Offset: 0x00000EF1
+	// Token: 0x060000E0 RID: 224 RVA: 0x00006380 File Offset: 0x00004580
 	private void OnCollisionEnter(Collision collision)
 	{
 		if (!this.isSpawning)
@@ -44,7 +44,7 @@ public class PaintProjectile : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000FA RID: 250 RVA: 0x0001ACB8 File Offset: 0x00018EB8
+	// Token: 0x060000E1 RID: 225 RVA: 0x000063B0 File Offset: 0x000045B0
 	private void OnTriggerEnter(Collider other)
 	{
 		if (!this.isSpawning)
@@ -53,14 +53,14 @@ public class PaintProjectile : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000FB RID: 251 RVA: 0x00002D1E File Offset: 0x00000F1E
+	// Token: 0x060000E2 RID: 226 RVA: 0x000063E5 File Offset: 0x000045E5
 	public IEnumerator Spawn(Vector3 direction)
 	{
 		this.isSpawning = true;
 		yield return PaintProjectile.waitForEndOfFrame;
 		RaycastHit raycastHit;
 		GameObject gameObject;
-		if (Physics.SphereCast(base.transform.position - 0.5f * direction, 0.25f, direction, ref raycastHit, 1.25f, this.raycastLayers, 1))
+		if (Physics.SphereCast(base.transform.position - 0.5f * direction, 0.25f, direction, out raycastHit, 1.25f, this.raycastLayers, QueryTriggerInteraction.Ignore))
 		{
 			gameObject = Object.Instantiate<GameObject>(this.paintsplatPrefab, raycastHit.point + 0.1f * Random.insideUnitSphere, Random.rotation);
 			gameObject.transform.rotation = Quaternion.FromToRotation(gameObject.transform.up, raycastHit.normal) * gameObject.transform.rotation;
@@ -78,7 +78,7 @@ public class PaintProjectile : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060000FC RID: 252 RVA: 0x00002D34 File Offset: 0x00000F34
+	// Token: 0x060000E3 RID: 227 RVA: 0x000063FB File Offset: 0x000045FB
 	private IEnumerator DestroyNextFrame()
 	{
 		yield return new WaitForFixedUpdate();
@@ -87,39 +87,39 @@ public class PaintProjectile : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0400016E RID: 366
+	// Token: 0x0400012E RID: 302
 	public Renderer renderer;
 
-	// Token: 0x0400016F RID: 367
+	// Token: 0x0400012F RID: 303
 	public ParticleSystem[] particleSystems;
 
-	// Token: 0x04000170 RID: 368
+	// Token: 0x04000130 RID: 304
 	public GameObject paintsplatPrefab;
 
-	// Token: 0x04000171 RID: 369
+	// Token: 0x04000131 RID: 305
 	public LayerMask raycastLayers;
 
-	// Token: 0x04000172 RID: 370
+	// Token: 0x04000132 RID: 306
 	public bool isRandomized = true;
 
-	// Token: 0x04000173 RID: 371
+	// Token: 0x04000133 RID: 307
 	public Gradient randomColor;
 
-	// Token: 0x04000174 RID: 372
+	// Token: 0x04000134 RID: 308
 	public Color color;
 
-	// Token: 0x04000175 RID: 373
+	// Token: 0x04000135 RID: 309
 	private SetDecal setDecal;
 
-	// Token: 0x04000176 RID: 374
+	// Token: 0x04000136 RID: 310
 	private float spawnTime;
 
-	// Token: 0x04000177 RID: 375
+	// Token: 0x04000137 RID: 311
 	private Rigidbody rigidbody;
 
-	// Token: 0x04000178 RID: 376
+	// Token: 0x04000138 RID: 312
 	private static readonly WaitForEndOfFrame waitForEndOfFrame = new WaitForEndOfFrame();
 
-	// Token: 0x04000179 RID: 377
+	// Token: 0x04000139 RID: 313
 	private bool isSpawning;
 }

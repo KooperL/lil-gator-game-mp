@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000215 RID: 533
+// Token: 0x02000199 RID: 409
 public static class MathUtils
 {
-	// Token: 0x060009FA RID: 2554 RVA: 0x00009A03 File Offset: 0x00007C03
+	// Token: 0x06000877 RID: 2167 RVA: 0x000280D5 File Offset: 0x000262D5
 	public static Quaternion ShortestRotation(Quaternion a, Quaternion b)
 	{
 		if (Quaternion.Dot(a, b) < 0f)
@@ -14,19 +14,19 @@ public static class MathUtils
 		return a * Quaternion.Inverse(b);
 	}
 
-	// Token: 0x060009FB RID: 2555 RVA: 0x00009A36 File Offset: 0x00007C36
+	// Token: 0x06000878 RID: 2168 RVA: 0x00028108 File Offset: 0x00026308
 	public static Quaternion Multiply(Quaternion input, float scalar)
 	{
 		return new Quaternion(input.x * scalar, input.y * scalar, input.z * scalar, input.w * scalar);
 	}
 
-	// Token: 0x060009FC RID: 2556 RVA: 0x00009A5D File Offset: 0x00007C5D
+	// Token: 0x06000879 RID: 2169 RVA: 0x0002812F File Offset: 0x0002632F
 	public static float SmoothDampAngleAcc(float current, float target, ref float currentVelocity, float smoothTime, float acceleration)
 	{
 		return MathUtils.SmoothDampAngleAcc(current, target, ref currentVelocity, smoothTime, acceleration, Time.deltaTime);
 	}
 
-	// Token: 0x060009FD RID: 2557 RVA: 0x0003AE8C File Offset: 0x0003908C
+	// Token: 0x0600087A RID: 2170 RVA: 0x00028144 File Offset: 0x00026344
 	public static float SmoothDampAngleAcc(float current, float target, ref float currentVelocity, float smoothTime, float acceleration, float deltaTime)
 	{
 		float num = currentVelocity;
@@ -39,7 +39,7 @@ public static class MathUtils
 		return num2;
 	}
 
-	// Token: 0x060009FE RID: 2558 RVA: 0x0003AED0 File Offset: 0x000390D0
+	// Token: 0x0600087B RID: 2171 RVA: 0x00028188 File Offset: 0x00026388
 	public static Vector3 SmoothDampAcc(Vector3 current, Vector3 target, ref Vector3 currentVelocity, float smoothTime, float acceleration)
 	{
 		Vector3 vector = currentVelocity;
@@ -52,14 +52,14 @@ public static class MathUtils
 		return vector2;
 	}
 
-	// Token: 0x060009FF RID: 2559 RVA: 0x00009A6F File Offset: 0x00007C6F
+	// Token: 0x0600087C RID: 2172 RVA: 0x000281F3 File Offset: 0x000263F3
 	public static float SmoothDampAngle(float current, float target, ref float currentVelocity, float smoothTime, float maxSpeed, float deltaTime)
 	{
 		target = current + Mathf.DeltaAngle(current, target);
 		return MathUtils.SmoothDamp(current, target, ref currentVelocity, smoothTime, maxSpeed, deltaTime);
 	}
 
-	// Token: 0x06000A00 RID: 2560 RVA: 0x0003AF3C File Offset: 0x0003913C
+	// Token: 0x0600087D RID: 2173 RVA: 0x00028210 File Offset: 0x00026410
 	public static float SmoothDamp(float current, float target, ref float currentVelocity, float smoothTime, float maxSpeed, float deltaTime)
 	{
 		smoothTime = Mathf.Max(0.0001f, smoothTime);
@@ -74,7 +74,7 @@ public static class MathUtils
 		return current - num4 + (num4 + num6) * num3;
 	}
 
-	// Token: 0x06000A01 RID: 2561 RVA: 0x0003AFC0 File Offset: 0x000391C0
+	// Token: 0x0600087E RID: 2174 RVA: 0x00028294 File Offset: 0x00026494
 	public static Vector3 SlerpFlat(Vector3 from, Vector3 to, float t, bool perfectMagnitudes = false)
 	{
 		from.Normalize();
@@ -88,7 +88,7 @@ public static class MathUtils
 		return Vector3.Slerp(vector, to, t * 2f - 1f);
 	}
 
-	// Token: 0x06000A02 RID: 2562 RVA: 0x0003B048 File Offset: 0x00039248
+	// Token: 0x0600087F RID: 2175 RVA: 0x0002831C File Offset: 0x0002651C
 	public static Quaternion SlerpFlat(Quaternion from, Quaternion to, float t)
 	{
 		Quaternion quaternion = Quaternion.Slerp(from, to, 0.5f);
@@ -102,13 +102,13 @@ public static class MathUtils
 		return Quaternion.Slerp(quaternion, to, t * 2f - 1f);
 	}
 
-	// Token: 0x06000A03 RID: 2563 RVA: 0x00009A89 File Offset: 0x00007C89
+	// Token: 0x06000880 RID: 2176 RVA: 0x000283A5 File Offset: 0x000265A5
 	public static Vector3 ClosestAlongLine(Vector3 point, Vector3 a, Vector3 b)
 	{
 		return Vector3.Lerp(a, b, MathUtils.InverseLerp(point, a, b));
 	}
 
-	// Token: 0x06000A04 RID: 2564 RVA: 0x0003B0D4 File Offset: 0x000392D4
+	// Token: 0x06000881 RID: 2177 RVA: 0x000283B8 File Offset: 0x000265B8
 	public static float InverseLerp(Vector3 point, Vector3 a, Vector3 b)
 	{
 		Vector3 vector = point - a;

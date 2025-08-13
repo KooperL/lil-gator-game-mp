@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000017 RID: 23
+// Token: 0x02000019 RID: 25
 public class FadeOverTime : MonoBehaviour
 {
-	// Token: 0x0600004A RID: 74 RVA: 0x00017E84 File Offset: 0x00016084
+	// Token: 0x06000051 RID: 81 RVA: 0x0000345C File Offset: 0x0000165C
 	public void OnEnable()
 	{
 		this.fade = this.initialFadeLevel;
@@ -14,7 +14,7 @@ public class FadeOverTime : MonoBehaviour
 		this.image.color = this.color;
 	}
 
-	// Token: 0x0600004B RID: 75 RVA: 0x00017ED0 File Offset: 0x000160D0
+	// Token: 0x06000052 RID: 82 RVA: 0x000034A8 File Offset: 0x000016A8
 	private void Update()
 	{
 		this.fade = Mathf.MoveTowards(this.fade, this.targetFadeLevel, Time.deltaTime * this.fadeSpeed);
@@ -22,21 +22,21 @@ public class FadeOverTime : MonoBehaviour
 		this.image.color = this.color;
 	}
 
-	// Token: 0x04000063 RID: 99
+	// Token: 0x04000079 RID: 121
 	public float fadeSpeed = 0.2f;
 
-	// Token: 0x04000064 RID: 100
+	// Token: 0x0400007A RID: 122
 	public float initialFadeLevel = 1f;
 
-	// Token: 0x04000065 RID: 101
+	// Token: 0x0400007B RID: 123
 	public float targetFadeLevel = 0.5f;
 
-	// Token: 0x04000066 RID: 102
+	// Token: 0x0400007C RID: 124
 	private float fade;
 
-	// Token: 0x04000067 RID: 103
+	// Token: 0x0400007D RID: 125
 	public Image image;
 
-	// Token: 0x04000068 RID: 104
+	// Token: 0x0400007E RID: 126
 	private Color color;
 }

@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x0200047B RID: 1147
+	// Token: 0x0200032F RID: 815
 	[AddComponentMenu("")]
 	public abstract class UIElementInfo : MonoBehaviour, ISelectHandler, IEventSystemHandler
 	{
 		// Token: 0x14000019 RID: 25
-		// (add) Token: 0x06001C35 RID: 7221 RVA: 0x0006EBFC File Offset: 0x0006CDFC
-		// (remove) Token: 0x06001C36 RID: 7222 RVA: 0x0006EC34 File Offset: 0x0006CE34
+		// (add) Token: 0x060016AB RID: 5803 RVA: 0x0005EF7C File Offset: 0x0005D17C
+		// (remove) Token: 0x060016AC RID: 5804 RVA: 0x0005EFB4 File Offset: 0x0005D1B4
 		public event Action<GameObject> OnSelectedEvent;
 
-		// Token: 0x06001C37 RID: 7223 RVA: 0x00015968 File Offset: 0x00013B68
+		// Token: 0x060016AD RID: 5805 RVA: 0x0005EFE9 File Offset: 0x0005D1E9
 		public void OnSelect(BaseEventData eventData)
 		{
 			if (this.OnSelectedEvent != null)
@@ -23,13 +23,13 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x04001E04 RID: 7684
+		// Token: 0x040018DB RID: 6363
 		public string identifier;
 
-		// Token: 0x04001E05 RID: 7685
+		// Token: 0x040018DC RID: 6364
 		public int intData;
 
-		// Token: 0x04001E06 RID: 7686
+		// Token: 0x040018DD RID: 6365
 		public Text text;
 	}
 }

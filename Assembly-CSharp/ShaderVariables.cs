@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002FA RID: 762
+// Token: 0x02000239 RID: 569
 [ExecuteInEditMode]
 public class ShaderVariables : MonoBehaviour
 {
-	// Token: 0x06000F0D RID: 3853 RVA: 0x0000D1DF File Offset: 0x0000B3DF
+	// Token: 0x06000C67 RID: 3175 RVA: 0x0003C1C4 File Offset: 0x0003A3C4
 	private void Awake()
 	{
 		this.skybox = RenderSettings.skybox;
 	}
 
-	// Token: 0x06000F0E RID: 3854 RVA: 0x0000D1EC File Offset: 0x0000B3EC
+	// Token: 0x06000C68 RID: 3176 RVA: 0x0003C1D1 File Offset: 0x0003A3D1
 	public void OnEnable()
 	{
 		ShaderVariables.s = this;
@@ -20,19 +20,19 @@ public class ShaderVariables : MonoBehaviour
 		this.UpdateVariables();
 	}
 
-	// Token: 0x06000F0F RID: 3855 RVA: 0x0000D225 File Offset: 0x0000B425
+	// Token: 0x06000C69 RID: 3177 RVA: 0x0003C20A File Offset: 0x0003A40A
 	public void OnDisable()
 	{
 		this.UpdateVariables();
 	}
 
-	// Token: 0x06000F10 RID: 3856 RVA: 0x0000D225 File Offset: 0x0000B425
+	// Token: 0x06000C6A RID: 3178 RVA: 0x0003C212 File Offset: 0x0003A412
 	private void OnValidate()
 	{
 		this.UpdateVariables();
 	}
 
-	// Token: 0x06000F11 RID: 3857 RVA: 0x0004F38C File Offset: 0x0004D58C
+	// Token: 0x06000C6B RID: 3179 RVA: 0x0003C21C File Offset: 0x0003A41C
 	public void UpdateVariables()
 	{
 		Texture2D fogTexture = this.fogFactor;
@@ -120,12 +120,12 @@ public class ShaderVariables : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F12 RID: 3858 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000C6C RID: 3180 RVA: 0x0003C550 File Offset: 0x0003A750
 	public void SetFog(bool isUnderwater)
 	{
 	}
 
-	// Token: 0x06000F13 RID: 3859 RVA: 0x0004F6C0 File Offset: 0x0004D8C0
+	// Token: 0x06000C6D RID: 3181 RVA: 0x0003C554 File Offset: 0x0003A754
 	private void LateUpdate()
 	{
 		if (Player.transform != null)
@@ -150,160 +150,160 @@ public class ShaderVariables : MonoBehaviour
 		}
 		if (Game.g != null)
 		{
-			bool flag = Game.State != GameState.Dialogue && !ItemCamera.isActive;
+			bool flag = Game.State == GameState.Play && !ItemCamera.isActive;
 			ShaderVariables.proximityFade = Mathf.MoveTowards(ShaderVariables.proximityFade, flag ? 1f : 0f, Time.deltaTime * 2f);
 			Shader.SetGlobalFloat(ShaderVariables._ProximityFade, 1f - ShaderVariables.proximityFade);
 		}
 	}
 
-	// Token: 0x04001336 RID: 4918
+	// Token: 0x0400102E RID: 4142
 	public static ShaderVariables s;
 
-	// Token: 0x04001337 RID: 4919
+	// Token: 0x0400102F RID: 4143
 	public Material skybox;
 
-	// Token: 0x04001338 RID: 4920
+	// Token: 0x04001030 RID: 4144
 	public Material[] waterMaterials = new Material[0];
 
-	// Token: 0x04001339 RID: 4921
+	// Token: 0x04001031 RID: 4145
 	public Texture2D fogFactor;
 
-	// Token: 0x0400133A RID: 4922
+	// Token: 0x04001032 RID: 4146
 	public Texture2D underwaterFogFactor;
 
-	// Token: 0x0400133B RID: 4923
+	// Token: 0x04001033 RID: 4147
 	public Texture2D secondaryFogFactor;
 
-	// Token: 0x0400133C RID: 4924
+	// Token: 0x04001034 RID: 4148
 	[Range(0f, 1f)]
 	public float fogLerp;
 
-	// Token: 0x0400133D RID: 4925
+	// Token: 0x04001035 RID: 4149
 	public Texture2D waterFogFactor;
 
-	// Token: 0x0400133E RID: 4926
+	// Token: 0x04001036 RID: 4150
 	public Texture2D ditherPattern;
 
-	// Token: 0x0400133F RID: 4927
+	// Token: 0x04001037 RID: 4151
 	public Color shadedColor;
 
-	// Token: 0x04001340 RID: 4928
+	// Token: 0x04001038 RID: 4152
 	public Color highlightColor;
 
-	// Token: 0x04001341 RID: 4929
+	// Token: 0x04001039 RID: 4153
 	[Range(0f, 1f)]
 	public float shadowStrength;
 
-	// Token: 0x04001342 RID: 4930
+	// Token: 0x0400103A RID: 4154
 	[Range(0f, 1f)]
 	public float shadedBrightness;
 
-	// Token: 0x04001343 RID: 4931
+	// Token: 0x0400103B RID: 4155
 	[Range(0f, 1f)]
 	public float shadedDarkest;
 
-	// Token: 0x04001344 RID: 4932
+	// Token: 0x0400103C RID: 4156
 	public Color cartoonShadedColor;
 
-	// Token: 0x04001345 RID: 4933
+	// Token: 0x0400103D RID: 4157
 	[Range(0f, 1f)]
 	public float cartoonBrightness;
 
-	// Token: 0x04001346 RID: 4934
+	// Token: 0x0400103E RID: 4158
 	[Range(0f, 1f)]
 	public float cartoonShadowStrength;
 
-	// Token: 0x04001347 RID: 4935
+	// Token: 0x0400103F RID: 4159
 	public float cartoonFogDistance = 55f;
 
-	// Token: 0x04001348 RID: 4936
+	// Token: 0x04001040 RID: 4160
 	public float cartoonFogFadeDistance = 10f;
 
-	// Token: 0x04001349 RID: 4937
+	// Token: 0x04001041 RID: 4161
 	private Vector3 playerPosition;
 
-	// Token: 0x0400134A RID: 4938
+	// Token: 0x04001042 RID: 4162
 	private Vector3 playerPositionVelocity;
 
-	// Token: 0x0400134B RID: 4939
+	// Token: 0x04001043 RID: 4163
 	private Vector4 randomVector;
 
-	// Token: 0x0400134C RID: 4940
+	// Token: 0x04001044 RID: 4164
 	public Vector4 randomVectorChangeDelay;
 
-	// Token: 0x0400134D RID: 4941
+	// Token: 0x04001045 RID: 4165
 	private Vector4 randomVectorChangeTime;
 
-	// Token: 0x0400134E RID: 4942
+	// Token: 0x04001046 RID: 4166
 	[HideInInspector]
 	public bool allowNXMode = true;
 
-	// Token: 0x0400134F RID: 4943
+	// Token: 0x04001047 RID: 4167
 	private bool dynamicEnvironment;
 
-	// Token: 0x04001350 RID: 4944
+	// Token: 0x04001048 RID: 4168
 	private static readonly int cartoonFogFactor = Shader.PropertyToID("cartoonFogFactor");
 
-	// Token: 0x04001351 RID: 4945
+	// Token: 0x04001049 RID: 4169
 	private static readonly int cartoonFogFactor2 = Shader.PropertyToID("cartoonFogFactor2");
 
-	// Token: 0x04001352 RID: 4946
+	// Token: 0x0400104A RID: 4170
 	private static readonly int cartoonFogLerp = Shader.PropertyToID("cartoonFogLerp");
 
-	// Token: 0x04001353 RID: 4947
+	// Token: 0x0400104B RID: 4171
 	private static readonly int _FogTex = Shader.PropertyToID("_FogTex");
 
-	// Token: 0x04001354 RID: 4948
+	// Token: 0x0400104C RID: 4172
 	private static readonly int _WaterFogTex = Shader.PropertyToID("_WaterFogTex");
 
-	// Token: 0x04001355 RID: 4949
+	// Token: 0x0400104D RID: 4173
 	private static readonly int _ShadedColor = Shader.PropertyToID("_ShadedColor");
 
-	// Token: 0x04001356 RID: 4950
+	// Token: 0x0400104E RID: 4174
 	private static readonly int _HighlightColor = Shader.PropertyToID("_HighlightColor");
 
-	// Token: 0x04001357 RID: 4951
+	// Token: 0x0400104F RID: 4175
 	private static readonly int _ShadedBrightness = Shader.PropertyToID("_ShadedBrightness");
 
-	// Token: 0x04001358 RID: 4952
+	// Token: 0x04001050 RID: 4176
 	private static readonly int _ShadedDarkest = Shader.PropertyToID("_ShadedDarkest");
 
-	// Token: 0x04001359 RID: 4953
+	// Token: 0x04001051 RID: 4177
 	private static readonly int _ShadowStrength = Shader.PropertyToID("_ShadowStrength");
 
-	// Token: 0x0400135A RID: 4954
+	// Token: 0x04001052 RID: 4178
 	private static readonly int _CartoonShadedColor = Shader.PropertyToID("_CartoonShadedColor");
 
-	// Token: 0x0400135B RID: 4955
+	// Token: 0x04001053 RID: 4179
 	private static readonly int _CartoonBrightness = Shader.PropertyToID("_CartoonBrightness");
 
-	// Token: 0x0400135C RID: 4956
+	// Token: 0x04001054 RID: 4180
 	private static readonly int _CartoonShadowStrength = Shader.PropertyToID("_CartoonShadowStrength");
 
-	// Token: 0x0400135D RID: 4957
+	// Token: 0x04001055 RID: 4181
 	private static readonly int _SolidFogStart = Shader.PropertyToID("_SolidFogStart");
 
-	// Token: 0x0400135E RID: 4958
+	// Token: 0x04001056 RID: 4182
 	private static readonly int _SolidFogEnd = Shader.PropertyToID("_SolidFogEnd");
 
-	// Token: 0x0400135F RID: 4959
+	// Token: 0x04001057 RID: 4183
 	private static readonly int _SolidFogScale = Shader.PropertyToID("_SolidFogScale");
 
-	// Token: 0x04001360 RID: 4960
+	// Token: 0x04001058 RID: 4184
 	private static readonly int _PlayerPosition = Shader.PropertyToID("_PlayerPosition");
 
-	// Token: 0x04001361 RID: 4961
+	// Token: 0x04001059 RID: 4185
 	private static readonly int _PlayerPositionView = Shader.PropertyToID("_PlayerPositionView");
 
-	// Token: 0x04001362 RID: 4962
+	// Token: 0x0400105A RID: 4186
 	private static readonly int _RandomVector = Shader.PropertyToID("_RandomVector");
 
-	// Token: 0x04001363 RID: 4963
+	// Token: 0x0400105B RID: 4187
 	private static readonly int _ProximityFade = Shader.PropertyToID("_ProximityFade");
 
-	// Token: 0x04001364 RID: 4964
+	// Token: 0x0400105C RID: 4188
 	private static bool isProximityFadeIgnored = false;
 
-	// Token: 0x04001365 RID: 4965
+	// Token: 0x0400105D RID: 4189
 	private static float proximityFade = 0f;
 }

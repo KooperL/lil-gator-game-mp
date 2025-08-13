@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000227 RID: 551
+// Token: 0x020001AC RID: 428
 [Serializable]
 public class SoundEffect
 {
-	// Token: 0x170000FE RID: 254
-	// (get) Token: 0x06000A5A RID: 2650 RVA: 0x00009F47 File Offset: 0x00008147
+	// Token: 0x1700007C RID: 124
+	// (get) Token: 0x060008D3 RID: 2259 RVA: 0x00029948 File Offset: 0x00027B48
 	public float Volume
 	{
 		get
@@ -15,8 +15,8 @@ public class SoundEffect
 		}
 	}
 
-	// Token: 0x170000FF RID: 255
-	// (get) Token: 0x06000A5B RID: 2651 RVA: 0x00009F5F File Offset: 0x0000815F
+	// Token: 0x1700007D RID: 125
+	// (get) Token: 0x060008D4 RID: 2260 RVA: 0x00029960 File Offset: 0x00027B60
 	public float Pitch
 	{
 		get
@@ -25,18 +25,18 @@ public class SoundEffect
 		}
 	}
 
-	// Token: 0x04000CEA RID: 3306
+	// Token: 0x04000AE6 RID: 2790
 	public AudioClip audioClip;
 
-	// Token: 0x04000CEB RID: 3307
+	// Token: 0x04000AE7 RID: 2791
 	public float maxVolume = 1f;
 
-	// Token: 0x04000CEC RID: 3308
+	// Token: 0x04000AE8 RID: 2792
 	public float minVolume = 1f;
 
-	// Token: 0x04000CED RID: 3309
+	// Token: 0x04000AE9 RID: 2793
 	public float maxPitch = 1f;
 
-	// Token: 0x04000CEE RID: 3310
+	// Token: 0x04000AEA RID: 2794
 	public float minPitch = 1f;
 }

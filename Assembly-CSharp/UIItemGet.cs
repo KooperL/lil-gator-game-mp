@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020003AE RID: 942
+// Token: 0x020002CC RID: 716
 public class UIItemGet : MonoBehaviour
 {
-	// Token: 0x060011DD RID: 4573 RVA: 0x0000F3E0 File Offset: 0x0000D5E0
+	// Token: 0x06000F05 RID: 3845 RVA: 0x00048080 File Offset: 0x00046280
 	public IEnumerator RunSequence(Sprite itemSprite, string displayName, DialogueChunk dialogueChunk, DialogueActor[] actors = null)
 	{
 		Game.DialogueDepth++;
@@ -23,7 +23,7 @@ public class UIItemGet : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060011DE RID: 4574 RVA: 0x0000F40C File Offset: 0x0000D60C
+	// Token: 0x06000F06 RID: 3846 RVA: 0x000480AC File Offset: 0x000462AC
 	public IEnumerator RunSequence(Sprite itemSprite, string displayName, string dialogue, DialogueActor[] actors = null)
 	{
 		Game.DialogueDepth++;
@@ -40,7 +40,7 @@ public class UIItemGet : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060011DF RID: 4575 RVA: 0x00059258 File Offset: 0x00057458
+	// Token: 0x06000F07 RID: 3847 RVA: 0x000480D8 File Offset: 0x000462D8
 	public void Activate(Sprite itemSprite, string displayName = "Item")
 	{
 		this.itemImage.sprite = ((itemSprite != null) ? itemSprite : this.defaultItemSprite);
@@ -63,34 +63,34 @@ public class UIItemGet : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011E0 RID: 4576 RVA: 0x0000F438 File Offset: 0x0000D638
+	// Token: 0x06000F08 RID: 3848 RVA: 0x00048184 File Offset: 0x00046384
 	public void Deactivate()
 	{
 		base.gameObject.SetActive(false);
 		MusicStateManager.m.CancelDuck();
 	}
 
-	// Token: 0x04001713 RID: 5907
+	// Token: 0x0400139D RID: 5021
 	public Image itemImage;
 
-	// Token: 0x04001714 RID: 5908
+	// Token: 0x0400139E RID: 5022
 	public Text displayText;
 
-	// Token: 0x04001715 RID: 5909
+	// Token: 0x0400139F RID: 5023
 	public Sprite defaultItemSprite;
 
-	// Token: 0x04001716 RID: 5910
+	// Token: 0x040013A0 RID: 5024
 	public AudioSource jingleSource;
 
-	// Token: 0x04001717 RID: 5911
+	// Token: 0x040013A1 RID: 5025
 	public AudioClip fallbackClip;
 
-	// Token: 0x04001718 RID: 5912
+	// Token: 0x040013A2 RID: 5026
 	public RememberMusic musicSource;
 
-	// Token: 0x04001719 RID: 5913
+	// Token: 0x040013A3 RID: 5027
 	private WaitForSeconds waitForPause;
 
-	// Token: 0x0400171A RID: 5914
+	// Token: 0x040013A4 RID: 5028
 	private const float jingleDelay = 0.2f;
 }

@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000248 RID: 584
+// Token: 0x020001C5 RID: 453
 public class StickToSurface : MonoBehaviour
 {
-	// Token: 0x06000AEB RID: 2795 RVA: 0x0000A5F5 File Offset: 0x000087F5
+	// Token: 0x06000954 RID: 2388 RVA: 0x0002C4FF File Offset: 0x0002A6FF
 	private void OnCollisionEnter(Collision collision)
 	{
 		if (this.isStuck)
@@ -19,7 +19,7 @@ public class StickToSurface : MonoBehaviour
 		this.Stick(collision);
 	}
 
-	// Token: 0x06000AEC RID: 2796 RVA: 0x0003E658 File Offset: 0x0003C858
+	// Token: 0x06000955 RID: 2389 RVA: 0x0002C530 File Offset: 0x0002A730
 	private void Stick(Collision collision)
 	{
 		this.isStuck = true;
@@ -46,20 +46,20 @@ public class StickToSurface : MonoBehaviour
 		this.onStick.Invoke();
 	}
 
-	// Token: 0x06000AED RID: 2797 RVA: 0x0000A623 File Offset: 0x00008823
+	// Token: 0x06000956 RID: 2390 RVA: 0x0002C67F File Offset: 0x0002A87F
 	private void Unstick()
 	{
 		this.isStuck = false;
 		this.rigidbody.isKinematic = false;
 	}
 
-	// Token: 0x06000AEE RID: 2798 RVA: 0x0003E7A8 File Offset: 0x0003C9A8
+	// Token: 0x06000957 RID: 2391 RVA: 0x0002C694 File Offset: 0x0002A894
 	private bool ShouldUnstick()
 	{
 		return this.stuckCollider == null || this.stuckObject == null || !this.stuckObject.activeInHierarchy || (this.stuckRigidbody != null && !this.stuckRigidbody.isKinematic);
 	}
 
-	// Token: 0x06000AEF RID: 2799 RVA: 0x0003E804 File Offset: 0x0003CA04
+	// Token: 0x06000958 RID: 2392 RVA: 0x0002C6F0 File Offset: 0x0002A8F0
 	private void Update()
 	{
 		if (this.isStuck)
@@ -77,42 +77,42 @@ public class StickToSurface : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000DE0 RID: 3552
+	// Token: 0x04000BBA RID: 3002
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000DE1 RID: 3553
+	// Token: 0x04000BBB RID: 3003
 	public UnityEvent onStick;
 
-	// Token: 0x04000DE2 RID: 3554
+	// Token: 0x04000BBC RID: 3004
 	public UnityEvent onUnstick;
 
-	// Token: 0x04000DE3 RID: 3555
+	// Token: 0x04000BBD RID: 3005
 	public Vector3 stickNormal = Vector3.up;
 
-	// Token: 0x04000DE4 RID: 3556
+	// Token: 0x04000BBE RID: 3006
 	public float stickDistance = 0.1f;
 
-	// Token: 0x04000DE5 RID: 3557
+	// Token: 0x04000BBF RID: 3007
 	private bool isStuck;
 
-	// Token: 0x04000DE6 RID: 3558
+	// Token: 0x04000BC0 RID: 3008
 	private Collider stuckCollider;
 
-	// Token: 0x04000DE7 RID: 3559
+	// Token: 0x04000BC1 RID: 3009
 	private GameObject stuckObject;
 
-	// Token: 0x04000DE8 RID: 3560
+	// Token: 0x04000BC2 RID: 3010
 	private Rigidbody stuckRigidbody;
 
-	// Token: 0x04000DE9 RID: 3561
+	// Token: 0x04000BC3 RID: 3011
 	private bool isStuckToMovingCollider;
 
-	// Token: 0x04000DEA RID: 3562
+	// Token: 0x04000BC4 RID: 3012
 	private Transform stuckTransform;
 
-	// Token: 0x04000DEB RID: 3563
+	// Token: 0x04000BC5 RID: 3013
 	private Vector3 stuckLocalPosition;
 
-	// Token: 0x04000DEC RID: 3564
+	// Token: 0x04000BC6 RID: 3014
 	private Quaternion stuckLocalRotation;
 }

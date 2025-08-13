@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000222 RID: 546
+// Token: 0x020001A8 RID: 424
 public class WaterPhysics : MonoBehaviour
 {
-	// Token: 0x06000A3D RID: 2621 RVA: 0x00009D64 File Offset: 0x00007F64
+	// Token: 0x060008BC RID: 2236 RVA: 0x000292D7 File Offset: 0x000274D7
 	private void Awake()
 	{
 		if (this.rigidbody == null)
@@ -15,7 +15,7 @@ public class WaterPhysics : MonoBehaviour
 		this.initialAngularDrag = this.rigidbody.angularDrag;
 	}
 
-	// Token: 0x06000A3E RID: 2622 RVA: 0x00009DA2 File Offset: 0x00007FA2
+	// Token: 0x060008BD RID: 2237 RVA: 0x00029315 File Offset: 0x00027515
 	private void Start()
 	{
 		if (this.accurateCollider == null || !this.accurateCollider.enabled)
@@ -25,26 +25,26 @@ public class WaterPhysics : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x06000A3F RID: 2623 RVA: 0x00009DD2 File Offset: 0x00007FD2
+	// Token: 0x060008BE RID: 2238 RVA: 0x00029345 File Offset: 0x00027545
 	private void OnDisable()
 	{
 		this.waterPlaneHeight = -100f;
 		this.rigidbody.drag = this.initialDrag;
 	}
 
-	// Token: 0x06000A40 RID: 2624 RVA: 0x00009DF0 File Offset: 0x00007FF0
+	// Token: 0x060008BF RID: 2239 RVA: 0x00029363 File Offset: 0x00027563
 	private void OnTriggerEnter(Collider other)
 	{
 		this.WaterTrigger(other);
 	}
 
-	// Token: 0x06000A41 RID: 2625 RVA: 0x00009DF0 File Offset: 0x00007FF0
+	// Token: 0x060008C0 RID: 2240 RVA: 0x0002936C File Offset: 0x0002756C
 	private void OnTriggerStay(Collider other)
 	{
 		this.WaterTrigger(other);
 	}
 
-	// Token: 0x06000A42 RID: 2626 RVA: 0x0003BC04 File Offset: 0x00039E04
+	// Token: 0x060008C1 RID: 2241 RVA: 0x00029378 File Offset: 0x00027578
 	private void WaterTrigger(Collider collider)
 	{
 		if (collider.gameObject.layer != 4)
@@ -71,7 +71,7 @@ public class WaterPhysics : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x06000A43 RID: 2627 RVA: 0x0003BC94 File Offset: 0x00039E94
+	// Token: 0x060008C2 RID: 2242 RVA: 0x00029408 File Offset: 0x00027608
 	private void FixedUpdate()
 	{
 		this.stepsSinceTriggered++;
@@ -114,68 +114,68 @@ public class WaterPhysics : MonoBehaviour
 		}
 		else if (!this.rigidbody.IsSleeping())
 		{
-			this.rigidbody.AddForceAtPosition(this.buoyancy * num * -Physics.gravity, base.transform.TransformPoint(this.centerOfBuoyancy), 5);
+			this.rigidbody.AddForceAtPosition(this.buoyancy * num * -Physics.gravity, base.transform.TransformPoint(this.centerOfBuoyancy), ForceMode.Acceleration);
 		}
 	}
 
-	// Token: 0x04000CC0 RID: 3264
+	// Token: 0x04000AC0 RID: 2752
 	public const int waterLayer = 4;
 
-	// Token: 0x04000CC1 RID: 3265
+	// Token: 0x04000AC1 RID: 2753
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000CC2 RID: 3266
+	// Token: 0x04000AC2 RID: 2754
 	public Collider collider;
 
-	// Token: 0x04000CC3 RID: 3267
+	// Token: 0x04000AC3 RID: 2755
 	public Collider accurateCollider;
 
-	// Token: 0x04000CC4 RID: 3268
+	// Token: 0x04000AC4 RID: 2756
 	public bool activateAutomatically = true;
 
-	// Token: 0x04000CC5 RID: 3269
+	// Token: 0x04000AC5 RID: 2757
 	[Range(0f, 2f)]
 	public float buoyancy = 1.1f;
 
-	// Token: 0x04000CC6 RID: 3270
+	// Token: 0x04000AC6 RID: 2758
 	public Vector3 buoyancyOffset = Vector3.up;
 
-	// Token: 0x04000CC7 RID: 3271
+	// Token: 0x04000AC7 RID: 2759
 	[ReadOnly]
 	public Vector3 centerOfBuoyancy;
 
-	// Token: 0x04000CC8 RID: 3272
+	// Token: 0x04000AC8 RID: 2760
 	private float initialDrag;
 
-	// Token: 0x04000CC9 RID: 3273
+	// Token: 0x04000AC9 RID: 2761
 	[Range(0f, 5f)]
 	public float drag = 2f;
 
-	// Token: 0x04000CCA RID: 3274
+	// Token: 0x04000ACA RID: 2762
 	private float initialAngularDrag;
 
-	// Token: 0x04000CCB RID: 3275
+	// Token: 0x04000ACB RID: 2763
 	[Range(0f, 5f)]
 	public float angularDrag = 1f;
 
-	// Token: 0x04000CCC RID: 3276
+	// Token: 0x04000ACC RID: 2764
 	private Water water;
 
-	// Token: 0x04000CCD RID: 3277
+	// Token: 0x04000ACD RID: 2765
 	private float waterPlaneHeight;
 
-	// Token: 0x04000CCE RID: 3278
+	// Token: 0x04000ACE RID: 2766
 	public float rippleRate = 2f;
 
-	// Token: 0x04000CCF RID: 3279
+	// Token: 0x04000ACF RID: 2767
 	private int stepsSinceTriggered;
 
-	// Token: 0x04000CD0 RID: 3280
+	// Token: 0x04000AD0 RID: 2768
 	private int stepsSinceSubmerged;
 
-	// Token: 0x04000CD1 RID: 3281
+	// Token: 0x04000AD1 RID: 2769
 	private float rippleCount;
 
-	// Token: 0x04000CD2 RID: 3282
+	// Token: 0x04000AD2 RID: 2770
 	private float splashTime = -1f;
 }

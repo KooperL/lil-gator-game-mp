@@ -1,12 +1,11 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-// Token: 0x02000033 RID: 51
+// Token: 0x02000029 RID: 41
 public class OverriddenMusic : MonoBehaviour
 {
-	// Token: 0x060000B0 RID: 176 RVA: 0x000199D0 File Offset: 0x00017BD0
+	// Token: 0x060000A4 RID: 164 RVA: 0x00005178 File Offset: 0x00003378
 	private void OnEnable()
 	{
 		OverriddenMusic.isOverridden = true;
@@ -14,16 +13,16 @@ public class OverriddenMusic : MonoBehaviour
 		base.transform.parent = null;
 		Object.DontDestroyOnLoad(base.gameObject);
 		this.nativeScene = SceneManager.GetActiveScene();
-		SceneManager.sceneUnloaded += new UnityAction<Scene>(this.OnSceneUnload);
+		SceneManager.sceneUnloaded += this.OnSceneUnload;
 	}
 
-	// Token: 0x060000B1 RID: 177 RVA: 0x000029CC File Offset: 0x00000BCC
+	// Token: 0x060000A5 RID: 165 RVA: 0x000051C9 File Offset: 0x000033C9
 	private void OnDisable()
 	{
 		OverriddenMusic.isOverridden = false;
 	}
 
-	// Token: 0x060000B2 RID: 178 RVA: 0x000029D4 File Offset: 0x00000BD4
+	// Token: 0x060000A6 RID: 166 RVA: 0x000051D1 File Offset: 0x000033D1
 	private void OnSceneUnload(Scene scene)
 	{
 		if (scene == this.nativeScene)
@@ -36,13 +35,13 @@ public class OverriddenMusic : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000B3 RID: 179 RVA: 0x00002A03 File Offset: 0x00000C03
+	// Token: 0x060000A7 RID: 167 RVA: 0x00005200 File Offset: 0x00003400
 	public void StopMusic()
 	{
 		this.isStopped = true;
 	}
 
-	// Token: 0x060000B4 RID: 180 RVA: 0x00019A24 File Offset: 0x00017C24
+	// Token: 0x060000A8 RID: 168 RVA: 0x0000520C File Offset: 0x0000340C
 	private void Update()
 	{
 		if (this.isUnloading || this.isStopped)
@@ -62,7 +61,7 @@ public class OverriddenMusic : MonoBehaviour
 			if (!this.isUnloading)
 			{
 				SceneManager.MoveGameObjectToScene(base.gameObject, SceneManager.GetActiveScene());
-				SceneManager.sceneUnloaded -= new UnityAction<Scene>(this.OnSceneUnload);
+				SceneManager.sceneUnloaded -= this.OnSceneUnload;
 				base.gameObject.SetActive(false);
 				return;
 			}
@@ -70,27 +69,27 @@ public class OverriddenMusic : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000100 RID: 256
+	// Token: 0x040000D9 RID: 217
 	public static bool isOverridden;
 
-	// Token: 0x04000101 RID: 257
+	// Token: 0x040000DA RID: 218
 	public AudioSource audioSource;
 
-	// Token: 0x04000102 RID: 258
+	// Token: 0x040000DB RID: 219
 	private float timer = -1f;
 
-	// Token: 0x04000103 RID: 259
+	// Token: 0x040000DC RID: 220
 	public float endDelay = 3f;
 
-	// Token: 0x04000104 RID: 260
+	// Token: 0x040000DD RID: 221
 	public float fadeSpeed = 0.3f;
 
-	// Token: 0x04000105 RID: 261
+	// Token: 0x040000DE RID: 222
 	private bool isUnloading;
 
-	// Token: 0x04000106 RID: 262
+	// Token: 0x040000DF RID: 223
 	private Scene nativeScene;
 
-	// Token: 0x04000107 RID: 263
+	// Token: 0x040000E0 RID: 224
 	private bool isStopped;
 }

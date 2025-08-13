@@ -2,11 +2,11 @@
 
 namespace Rewired
 {
-	// Token: 0x02000405 RID: 1029
+	// Token: 0x0200030C RID: 780
 	public sealed class FlightPedalsTemplate : ControllerTemplate, IFlightPedalsTemplate, IControllerTemplate
 	{
-		// Token: 0x170003C6 RID: 966
-		// (get) Token: 0x0600153B RID: 5435 RVA: 0x000108B5 File Offset: 0x0000EAB5
+		// Token: 0x170002B7 RID: 695
+		// (get) Token: 0x0600120C RID: 4620 RVA: 0x0004E6C7 File Offset: 0x0004C8C7
 		IControllerTemplateAxis IFlightPedalsTemplate.leftPedal
 		{
 			get
@@ -15,8 +15,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003C7 RID: 967
-		// (get) Token: 0x0600153C RID: 5436 RVA: 0x000108BE File Offset: 0x0000EABE
+		// Token: 0x170002B8 RID: 696
+		// (get) Token: 0x0600120D RID: 4621 RVA: 0x0004E6D0 File Offset: 0x0004C8D0
 		IControllerTemplateAxis IFlightPedalsTemplate.rightPedal
 		{
 			get
@@ -25,8 +25,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003C8 RID: 968
-		// (get) Token: 0x0600153D RID: 5437 RVA: 0x000108C7 File Offset: 0x0000EAC7
+		// Token: 0x170002B9 RID: 697
+		// (get) Token: 0x0600120E RID: 4622 RVA: 0x0004E6D9 File Offset: 0x0004C8D9
 		IControllerTemplateAxis IFlightPedalsTemplate.slide
 		{
 			get
@@ -35,22 +35,22 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x0600153E RID: 5438 RVA: 0x0001089B File Offset: 0x0000EA9B
+		// Token: 0x0600120F RID: 4623 RVA: 0x0004E6E2 File Offset: 0x0004C8E2
 		public FlightPedalsTemplate(object payload)
 			: base(payload)
 		{
 		}
 
-		// Token: 0x04001A98 RID: 6808
+		// Token: 0x040016CB RID: 5835
 		public static readonly Guid typeGuid = new Guid("f6fe76f8-be2a-4db2-b853-9e3652075913");
 
-		// Token: 0x04001A99 RID: 6809
+		// Token: 0x040016CC RID: 5836
 		public const int elementId_leftPedal = 0;
 
-		// Token: 0x04001A9A RID: 6810
+		// Token: 0x040016CD RID: 5837
 		public const int elementId_rightPedal = 1;
 
-		// Token: 0x04001A9B RID: 6811
+		// Token: 0x040016CE RID: 5838
 		public const int elementId_slide = 2;
 	}
 }

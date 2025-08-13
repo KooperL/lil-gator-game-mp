@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200023C RID: 572
+// Token: 0x020001BB RID: 443
 public class ChangeMovementSpeed : MonoBehaviour
 {
-	// Token: 0x06000ACD RID: 2765 RVA: 0x0000A460 File Offset: 0x00008660
+	// Token: 0x06000936 RID: 2358 RVA: 0x0002BDE5 File Offset: 0x00029FE5
 	public void Start()
 	{
 		Player.movement.overriddenSpeed = this.speed;
 		Player.movement.overrideSpeed = true;
 	}
 
-	// Token: 0x06000ACE RID: 2766 RVA: 0x0000A47D File Offset: 0x0000867D
+	// Token: 0x06000937 RID: 2359 RVA: 0x0002BE02 File Offset: 0x0002A002
 	private void OnDestroy()
 	{
 		if (Player.movement == null)
@@ -21,6 +21,6 @@ public class ChangeMovementSpeed : MonoBehaviour
 		Player.movement.overrideSpeed = false;
 	}
 
-	// Token: 0x04000DB2 RID: 3506
+	// Token: 0x04000B96 RID: 2966
 	public float speed = 5.5f;
 }

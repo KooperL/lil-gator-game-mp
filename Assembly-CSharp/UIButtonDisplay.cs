@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-// Token: 0x02000396 RID: 918
+// Token: 0x020002B7 RID: 695
 public class UIButtonDisplay : MonoBehaviour
 {
-	// Token: 0x0600116E RID: 4462 RVA: 0x0000EEED File Offset: 0x0000D0ED
+	// Token: 0x06000E9C RID: 3740 RVA: 0x00045CD3 File Offset: 0x00043ED3
 	public void OnEnable()
 	{
 		if (this.updateAutomatically)
@@ -18,7 +18,7 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600116F RID: 4463 RVA: 0x0000EF13 File Offset: 0x0000D113
+	// Token: 0x06000E9D RID: 3741 RVA: 0x00045CF9 File Offset: 0x00043EF9
 	private void OnDisable()
 	{
 		if (this.updateAutomatically)
@@ -27,7 +27,7 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001170 RID: 4464 RVA: 0x0000EF33 File Offset: 0x0000D133
+	// Token: 0x06000E9E RID: 3742 RVA: 0x00045D19 File Offset: 0x00043F19
 	public void ClearButtonDisplay()
 	{
 		if (this.currentButtonDisplay != null)
@@ -36,7 +36,7 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001171 RID: 4465 RVA: 0x00057328 File Offset: 0x00055528
+	// Token: 0x06000E9F RID: 3743 RVA: 0x00045D34 File Offset: 0x00043F34
 	[ContextMenu("Update Button Display")]
 	public void UpdateButtonDisplay()
 	{
@@ -48,9 +48,9 @@ public class UIButtonDisplay : MonoBehaviour
 		else
 		{
 			ControllerType lastActiveControllerType = InputHelper.lastActiveControllerType;
-			if (lastActiveControllerType > 1)
+			if (lastActiveControllerType > ControllerType.Mouse)
 			{
-				if (lastActiveControllerType == 2 && !this.showForGamepad)
+				if (lastActiveControllerType == ControllerType.Joystick && !this.showForGamepad)
 				{
 					return;
 				}
@@ -84,8 +84,7 @@ public class UIButtonDisplay : MonoBehaviour
 			RectTransform rectTransform2 = base.transform as RectTransform;
 			rectTransform.ForceUpdateRectTransforms();
 			LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
-			Vector2 vector;
-			vector..ctor(rectTransform.rect.width, rectTransform.rect.height);
+			Vector2 vector = new Vector2(rectTransform.rect.width, rectTransform.rect.height);
 			vector += this.buttonDisplaySettings.padding;
 			float num = Mathf.Min(rectTransform2.rect.size.x / vector.x, rectTransform2.rect.size.y / vector.y);
 			if (num < 1f)
@@ -99,11 +98,10 @@ public class UIButtonDisplay : MonoBehaviour
 			RectTransform rectTransform4 = base.transform as RectTransform;
 			rectTransform3.ForceUpdateRectTransforms();
 			LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform3);
-			Vector2 vector2;
-			vector2..ctor(rectTransform3.rect.width, rectTransform3.rect.height);
+			Vector2 vector2 = new Vector2(rectTransform3.rect.width, rectTransform3.rect.height);
 			vector2 += this.buttonDisplaySettings.padding;
-			rectTransform4.SetSizeWithCurrentAnchors(0, vector2.x);
-			rectTransform4.SetSizeWithCurrentAnchors(1, vector2.y);
+			rectTransform4.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, vector2.x);
+			rectTransform4.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, vector2.y);
 			if (this.applyToLayoutElement && this.layoutElement != null)
 			{
 				this.layoutElement.minWidth = vector2.x;
@@ -112,45 +110,45 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001673 RID: 5747
+	// Token: 0x04001307 RID: 4871
 	public bool updateAutomatically = true;
 
-	// Token: 0x04001674 RID: 5748
+	// Token: 0x04001308 RID: 4872
 	public UIButtonDisplaySettings settings;
 
-	// Token: 0x04001675 RID: 5749
-	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
+	// Token: 0x04001309 RID: 4873
+	[ActionIdProperty(typeof(Action))]
 	public int action;
 
-	// Token: 0x04001676 RID: 5750
+	// Token: 0x0400130A RID: 4874
 	[HideInInspector]
 	public Controller controller;
 
-	// Token: 0x04001677 RID: 5751
+	// Token: 0x0400130B RID: 4875
 	private GameObject currentButtonDisplay;
 
-	// Token: 0x04001678 RID: 5752
+	// Token: 0x0400130C RID: 4876
 	private ButtonDisplaySettings buttonDisplaySettings;
 
-	// Token: 0x04001679 RID: 5753
+	// Token: 0x0400130D RID: 4877
 	public bool matchSizeOfDisplay;
 
-	// Token: 0x0400167A RID: 5754
+	// Token: 0x0400130E RID: 4878
 	public bool constrainDisplay;
 
-	// Token: 0x0400167B RID: 5755
+	// Token: 0x0400130F RID: 4879
 	public bool applyToLayoutElement = true;
 
-	// Token: 0x0400167C RID: 5756
+	// Token: 0x04001310 RID: 4880
 	public bool disableMasking;
 
-	// Token: 0x0400167D RID: 5757
+	// Token: 0x04001311 RID: 4881
 	public LayoutElement layoutElement;
 
-	// Token: 0x0400167E RID: 5758
+	// Token: 0x04001312 RID: 4882
 	[Header("Conditional display settings")]
 	public bool showForKbM = true;
 
-	// Token: 0x0400167F RID: 5759
+	// Token: 0x04001313 RID: 4883
 	public bool showForGamepad = true;
 }

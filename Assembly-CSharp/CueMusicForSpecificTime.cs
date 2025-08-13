@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200001B RID: 27
+// Token: 0x0200001D RID: 29
 public class CueMusicForSpecificTime : MonoBehaviour
 {
-	// Token: 0x06000057 RID: 87 RVA: 0x00002421 File Offset: 0x00000621
+	// Token: 0x0600005E RID: 94 RVA: 0x0000367B File Offset: 0x0000187B
 	private void OnEnable()
 	{
 		if (this.musicSystem != null)
@@ -14,7 +14,7 @@ public class CueMusicForSpecificTime : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000058 RID: 88 RVA: 0x0000244E File Offset: 0x0000064E
+	// Token: 0x0600005F RID: 95 RVA: 0x000036A8 File Offset: 0x000018A8
 	private void OnDisable()
 	{
 		if (this.musicSystem != null)
@@ -23,9 +23,9 @@ public class CueMusicForSpecificTime : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000070 RID: 112
+	// Token: 0x04000086 RID: 134
 	public MusicSystem musicSystem;
 
-	// Token: 0x04000071 RID: 113
+	// Token: 0x04000087 RID: 135
 	public float delayFromEnable = 14.76923f;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001EF RID: 495
+// Token: 0x02000179 RID: 377
 public class MatchRotation : MonoBehaviour
 {
-	// Token: 0x06000929 RID: 2345 RVA: 0x000390C4 File Offset: 0x000372C4
+	// Token: 0x060007C7 RID: 1991 RVA: 0x00025F48 File Offset: 0x00024148
 	private void OnEnable()
 	{
 		this.angle = this.target.rotation.eulerAngles.y;
@@ -12,22 +12,22 @@ public class MatchRotation : MonoBehaviour
 		base.transform.rotation = Quaternion.Euler(0f, this.angle, 0f);
 	}
 
-	// Token: 0x0600092A RID: 2346 RVA: 0x0003911C File Offset: 0x0003731C
+	// Token: 0x060007C8 RID: 1992 RVA: 0x00025FA0 File Offset: 0x000241A0
 	private void LateUpdate()
 	{
 		this.angle = MathUtils.SmoothDampAngle(this.angle, this.target.rotation.eulerAngles.y, ref this.velocity, this.smoothTime, 1000f, Time.deltaTime);
 		base.transform.rotation = Quaternion.Euler(0f, this.angle, 0f);
 	}
 
-	// Token: 0x04000BD5 RID: 3029
+	// Token: 0x040009F9 RID: 2553
 	public Transform target;
 
-	// Token: 0x04000BD6 RID: 3030
+	// Token: 0x040009FA RID: 2554
 	public float smoothTime = 0.25f;
 
-	// Token: 0x04000BD7 RID: 3031
+	// Token: 0x040009FB RID: 2555
 	private float angle;
 
-	// Token: 0x04000BD8 RID: 3032
+	// Token: 0x040009FC RID: 2556
 	private float velocity;
 }

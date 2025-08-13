@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200003A RID: 58
+// Token: 0x02000030 RID: 48
 public class SyncAnimationToMusic : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x060000CB RID: 203 RVA: 0x00019CC4 File Offset: 0x00017EC4
+	// Token: 0x060000BF RID: 191 RVA: 0x00005610 File Offset: 0x00003810
 	private float GetMultForBpm(MusicSystem musicSystem, float animationLength, int beatsInAnimation, float minSpeed, float maxSpeed, out float beatMult)
 	{
 		float num = musicSystem.bpm * animationLength / 60f / (float)beatsInAnimation;
@@ -22,12 +22,12 @@ public class SyncAnimationToMusic : MonoBehaviour, IManagedUpdate
 		return num * musicSystem.beatSyncMultiplier;
 	}
 
-	// Token: 0x060000CC RID: 204 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x060000C0 RID: 192 RVA: 0x00005677 File Offset: 0x00003877
 	public void ManagedUpdate()
 	{
 	}
 
-	// Token: 0x060000CD RID: 205 RVA: 0x00019D2C File Offset: 0x00017F2C
+	// Token: 0x060000C1 RID: 193 RVA: 0x0000567C File Offset: 0x0000387C
 	private void Update()
 	{
 		MusicSystem musicSystem = null;
@@ -110,92 +110,92 @@ public class SyncAnimationToMusic : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x04000110 RID: 272
+	// Token: 0x040000E9 RID: 233
 	public MusicSystem[] musicToIgnore;
 
-	// Token: 0x04000111 RID: 273
+	// Token: 0x040000EA RID: 234
 	public float sittingLength = 1.6667f;
 
-	// Token: 0x04000112 RID: 274
+	// Token: 0x040000EB RID: 235
 	public float standingLength = 2.5f;
 
-	// Token: 0x04000113 RID: 275
+	// Token: 0x040000EC RID: 236
 	public Animator animator;
 
-	// Token: 0x04000114 RID: 276
+	// Token: 0x040000ED RID: 237
 	private readonly int standingMultID = Animator.StringToHash("StandingSpeedMult");
 
-	// Token: 0x04000115 RID: 277
+	// Token: 0x040000EE RID: 238
 	private readonly int sittingMultID = Animator.StringToHash("SittingSpeedMult");
 
-	// Token: 0x04000116 RID: 278
+	// Token: 0x040000EF RID: 239
 	private MusicSystem currentMusicSystem;
 
-	// Token: 0x04000117 RID: 279
+	// Token: 0x040000F0 RID: 240
 	private bool isTransitioning;
 
-	// Token: 0x04000118 RID: 280
+	// Token: 0x040000F1 RID: 241
 	private float bpm;
 
-	// Token: 0x04000119 RID: 281
+	// Token: 0x040000F2 RID: 242
 	private float standingMult = 1f;
 
-	// Token: 0x0400011A RID: 282
+	// Token: 0x040000F3 RID: 243
 	private float standingMultTarget = 1f;
 
-	// Token: 0x0400011B RID: 283
+	// Token: 0x040000F4 RID: 244
 	private float standingBeatMult = 1f;
 
-	// Token: 0x0400011C RID: 284
+	// Token: 0x040000F5 RID: 245
 	private float sittingMult = 1f;
 
-	// Token: 0x0400011D RID: 285
+	// Token: 0x040000F6 RID: 246
 	private float sittingMultTarget = 1f;
 
-	// Token: 0x0400011E RID: 286
+	// Token: 0x040000F7 RID: 247
 	private float sittingBeatMult = 1f;
 
-	// Token: 0x0400011F RID: 287
+	// Token: 0x040000F8 RID: 248
 	private bool isSynchronizing;
 
-	// Token: 0x04000120 RID: 288
+	// Token: 0x040000F9 RID: 249
 	private bool isSynchronized;
 
-	// Token: 0x04000121 RID: 289
+	// Token: 0x040000FA RID: 250
 	private const float minimumMult = 0.74f;
 
-	// Token: 0x04000122 RID: 290
+	// Token: 0x040000FB RID: 251
 	private const float maximumMult = 1.5f;
 
-	// Token: 0x04000123 RID: 291
+	// Token: 0x040000FC RID: 252
 	private readonly int standingHash = Animator.StringToHash("Happy");
 
-	// Token: 0x04000124 RID: 292
+	// Token: 0x040000FD RID: 253
 	private readonly int sittingHash = Animator.StringToHash("Sitting|Happy");
 
-	// Token: 0x04000125 RID: 293
+	// Token: 0x040000FE RID: 254
 	[Range(0f, 1f)]
 	public float animationBeatT;
 
-	// Token: 0x04000126 RID: 294
+	// Token: 0x040000FF RID: 255
 	[Range(0f, 1f)]
 	public float musicBeatT;
 
-	// Token: 0x04000127 RID: 295
+	// Token: 0x04000100 RID: 256
 	public float syncMult;
 
-	// Token: 0x04000128 RID: 296
+	// Token: 0x04000101 RID: 257
 	public float currentBeatOffset;
 
-	// Token: 0x04000129 RID: 297
+	// Token: 0x04000102 RID: 258
 	private const float minSync = 0.025f;
 
-	// Token: 0x0400012A RID: 298
+	// Token: 0x04000103 RID: 259
 	private const float maxSync = 0.25f;
 
-	// Token: 0x0400012B RID: 299
+	// Token: 0x04000104 RID: 260
 	private const float underSyncMult = 1.1f;
 
-	// Token: 0x0400012C RID: 300
+	// Token: 0x04000105 RID: 261
 	private const float overSyncMult = 0.9f;
 }

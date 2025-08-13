@@ -1,34 +1,34 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002EB RID: 747
+// Token: 0x0200022D RID: 557
 public class RandomizePhysics : MonoBehaviour
 {
-	// Token: 0x06000EB8 RID: 3768 RVA: 0x0000CE43 File Offset: 0x0000B043
+	// Token: 0x06000C0D RID: 3085 RVA: 0x0003979D File Offset: 0x0003799D
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x06000EB9 RID: 3769 RVA: 0x0004CFFC File Offset: 0x0004B1FC
+	// Token: 0x06000C0E RID: 3086 RVA: 0x000397AC File Offset: 0x000379AC
 	private void Start()
 	{
 		this.rigidbody.velocity += this.velocityMagnitude * Random.insideUnitSphere + this.verticalOffset * Vector3.up + base.transform.rotation * this.directionalPush;
 		this.rigidbody.angularVelocity += this.angularVelocityMagnitude * Random.insideUnitSphere;
 	}
 
-	// Token: 0x040012CD RID: 4813
+	// Token: 0x04000FD6 RID: 4054
 	private Rigidbody rigidbody;
 
-	// Token: 0x040012CE RID: 4814
+	// Token: 0x04000FD7 RID: 4055
 	public float velocityMagnitude = 7f;
 
-	// Token: 0x040012CF RID: 4815
+	// Token: 0x04000FD8 RID: 4056
 	public float angularVelocityMagnitude = 120f;
 
-	// Token: 0x040012D0 RID: 4816
+	// Token: 0x04000FD9 RID: 4057
 	public float verticalOffset;
 
-	// Token: 0x040012D1 RID: 4817
+	// Token: 0x04000FDA RID: 4058
 	public Vector3 directionalPush = Vector3.zero;
 }

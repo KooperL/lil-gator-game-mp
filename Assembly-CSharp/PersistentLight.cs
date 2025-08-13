@@ -1,23 +1,23 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000144 RID: 324
+// Token: 0x020000F2 RID: 242
 public class PersistentLight : PersistentObject
 {
-	// Token: 0x06000614 RID: 1556 RVA: 0x0000659F File Offset: 0x0000479F
+	// Token: 0x06000502 RID: 1282 RVA: 0x0001AE14 File Offset: 0x00019014
 	public override void Load(bool state)
 	{
 		this.SetState(state);
 	}
 
-	// Token: 0x06000615 RID: 1557 RVA: 0x000065A8 File Offset: 0x000047A8
+	// Token: 0x06000503 RID: 1283 RVA: 0x0001AE1D File Offset: 0x0001901D
 	public void Activate()
 	{
 		this.SetState(true);
 		this.SaveTrue();
 	}
 
-	// Token: 0x06000616 RID: 1558 RVA: 0x0002F820 File Offset: 0x0002DA20
+	// Token: 0x06000504 RID: 1284 RVA: 0x0001AE2C File Offset: 0x0001902C
 	private void SetState(bool state)
 	{
 		if (state)
@@ -34,20 +34,20 @@ public class PersistentLight : PersistentObject
 		}
 	}
 
-	// Token: 0x04000828 RID: 2088
+	// Token: 0x040006E3 RID: 1763
 	public PersistentLight.LightSetting[] lightSettings;
 
-	// Token: 0x04000829 RID: 2089
+	// Token: 0x040006E4 RID: 1764
 	public GameObject[] activateObjects;
 
-	// Token: 0x02000145 RID: 325
+	// Token: 0x020003AA RID: 938
 	[Serializable]
 	public struct LightSetting
 	{
-		// Token: 0x0400082A RID: 2090
+		// Token: 0x04001B5F RID: 7007
 		public FogLight light;
 
-		// Token: 0x0400082B RID: 2091
+		// Token: 0x04001B60 RID: 7008
 		[Range(0f, 1f)]
 		public float strength;
 	}

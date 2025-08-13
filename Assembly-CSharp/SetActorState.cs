@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000FA RID: 250
+// Token: 0x020000BB RID: 187
 public class SetActorState : MonoBehaviour
 {
-	// Token: 0x060004BB RID: 1211 RVA: 0x0002B9D0 File Offset: 0x00029BD0
+	// Token: 0x06000407 RID: 1031 RVA: 0x00017850 File Offset: 0x00015A50
 	private void OnValidate()
 	{
 		if (this.actor == null)
@@ -17,7 +17,7 @@ public class SetActorState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004BC RID: 1212 RVA: 0x0002BA24 File Offset: 0x00029C24
+	// Token: 0x06000408 RID: 1032 RVA: 0x000178A4 File Offset: 0x00015AA4
 	[ContextMenu("ApplyState")]
 	private void OnEnable()
 	{
@@ -128,12 +128,12 @@ public class SetActorState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004BD RID: 1213 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000409 RID: 1033 RVA: 0x00017B6D File Offset: 0x00015D6D
 	public void SetOverrides()
 	{
 	}
 
-	// Token: 0x060004BE RID: 1214 RVA: 0x00005750 File Offset: 0x00003950
+	// Token: 0x0600040A RID: 1034 RVA: 0x00017B6F File Offset: 0x00015D6F
 	private void OnDisable()
 	{
 		if (this.resetTransformOnDisable)
@@ -143,113 +143,113 @@ public class SetActorState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004BF RID: 1215 RVA: 0x0002BCF0 File Offset: 0x00029EF0
+	// Token: 0x0600040B RID: 1035 RVA: 0x00017B9C File Offset: 0x00015D9C
 	[ContextMenu("Snap To Floor")]
 	public void SnapToFloor()
 	{
 		RaycastHit raycastHit;
-		if (Physics.Raycast(base.transform.position + Vector3.up, Vector3.down, ref raycastHit, 3f))
+		if (Physics.Raycast(base.transform.position + Vector3.up, Vector3.down, out raycastHit, 3f))
 		{
 			base.transform.position = raycastHit.point;
 		}
 	}
 
-	// Token: 0x040006A3 RID: 1699
+	// Token: 0x04000591 RID: 1425
 	public bool actorIsPlayer;
 
-	// Token: 0x040006A4 RID: 1700
+	// Token: 0x04000592 RID: 1426
 	[ConditionalHide("actorIsPlayer", true, Inverse = true)]
 	public DialogueActor actor;
 
-	// Token: 0x040006A5 RID: 1701
+	// Token: 0x04000593 RID: 1427
 	public ActorPosition position;
 
-	// Token: 0x040006A6 RID: 1702
+	// Token: 0x04000594 RID: 1428
 	public ActorState state;
 
-	// Token: 0x040006A7 RID: 1703
+	// Token: 0x04000595 RID: 1429
 	public bool skipTransition;
 
-	// Token: 0x040006A8 RID: 1704
+	// Token: 0x04000596 RID: 1430
 	public string emote = "";
 
-	// Token: 0x040006A9 RID: 1705
+	// Token: 0x04000597 RID: 1431
 	public bool holdEmote;
 
-	// Token: 0x040006AA RID: 1706
+	// Token: 0x04000598 RID: 1432
 	public bool stopEmote;
 
-	// Token: 0x040006AB RID: 1707
+	// Token: 0x04000599 RID: 1433
 	public bool applyTransform;
 
-	// Token: 0x040006AC RID: 1708
+	// Token: 0x0400059A RID: 1434
 	[HideInInspector]
 	public Transform actorTransform;
 
-	// Token: 0x040006AD RID: 1709
+	// Token: 0x0400059B RID: 1435
 	[ConditionalHide("applyTransform", true)]
 	public bool snapToFloor;
 
-	// Token: 0x040006AE RID: 1710
+	// Token: 0x0400059C RID: 1436
 	public bool replaceDefaultPose;
 
-	// Token: 0x040006AF RID: 1711
+	// Token: 0x0400059D RID: 1437
 	[ConditionalHide("replaceDefaultPose", true)]
 	public AnimationClip newDefaultPose;
 
-	// Token: 0x040006B0 RID: 1712
+	// Token: 0x0400059E RID: 1438
 	private static AnimationClip defaultPose;
 
-	// Token: 0x040006B1 RID: 1713
+	// Token: 0x0400059F RID: 1439
 	public bool replaceWalkAnimation;
 
-	// Token: 0x040006B2 RID: 1714
+	// Token: 0x040005A0 RID: 1440
 	[ConditionalHide("replaceWalkAnimation", true)]
 	public AnimationClip newWalkAnimation;
 
-	// Token: 0x040006B3 RID: 1715
+	// Token: 0x040005A1 RID: 1441
 	private static AnimationClip walkAnimation;
 
-	// Token: 0x040006B4 RID: 1716
+	// Token: 0x040005A2 RID: 1442
 	public bool replaceRunAnimation;
 
-	// Token: 0x040006B5 RID: 1717
+	// Token: 0x040005A3 RID: 1443
 	[ConditionalHide("replaceRunAnimation", true)]
 	public AnimationClip newRunAnimation;
 
-	// Token: 0x040006B6 RID: 1718
+	// Token: 0x040005A4 RID: 1444
 	private static AnimationClip runAnimation;
 
-	// Token: 0x040006B7 RID: 1719
+	// Token: 0x040005A5 RID: 1445
 	public bool customActionAnimation;
 
-	// Token: 0x040006B8 RID: 1720
+	// Token: 0x040005A6 RID: 1446
 	[ConditionalHide("customActionAnimation", true)]
 	public AnimationClip newActionAnimation;
 
-	// Token: 0x040006B9 RID: 1721
+	// Token: 0x040005A7 RID: 1447
 	[ConditionalHide("customActionAnimation", true)]
 	public bool setActionEmote;
 
-	// Token: 0x040006BA RID: 1722
+	// Token: 0x040005A8 RID: 1448
 	[ConditionalHide("customActionAnimation", true)]
 	public bool isLoopAction;
 
-	// Token: 0x040006BB RID: 1723
+	// Token: 0x040005A9 RID: 1449
 	public AnimationOverride[] animationOverrides;
 
-	// Token: 0x040006BC RID: 1724
+	// Token: 0x040005AA RID: 1450
 	public bool resetTransformOnDisable;
 
-	// Token: 0x040006BD RID: 1725
+	// Token: 0x040005AB RID: 1451
 	private Vector3 initialPosition;
 
-	// Token: 0x040006BE RID: 1726
+	// Token: 0x040005AC RID: 1452
 	private Quaternion initialRotation;
 
-	// Token: 0x040006BF RID: 1727
+	// Token: 0x040005AD RID: 1453
 	private int stateID = Animator.StringToHash("State");
 
-	// Token: 0x040006C0 RID: 1728
+	// Token: 0x040005AE RID: 1454
 	private int positionID = Animator.StringToHash("Position");
 }

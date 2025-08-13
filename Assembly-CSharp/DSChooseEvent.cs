@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000119 RID: 281
+// Token: 0x020000CF RID: 207
 [AddComponentMenu("Dialogue Sequence/Choose Event")]
 public class DSChooseEvent : DialogueSequence
 {
-	// Token: 0x0600055A RID: 1370 RVA: 0x0002D998 File Offset: 0x0002BB98
+	// Token: 0x06000472 RID: 1138 RVA: 0x00018F34 File Offset: 0x00017134
 	public override YieldInstruction Run()
 	{
 		UnityEvent unityEvent = this.choices[DialogueManager.optionChosen];
@@ -17,6 +17,6 @@ public class DSChooseEvent : DialogueSequence
 		return null;
 	}
 
-	// Token: 0x0400075E RID: 1886
+	// Token: 0x0400063C RID: 1596
 	public UnityEvent[] choices;
 }

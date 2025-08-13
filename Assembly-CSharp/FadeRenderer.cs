@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000167 RID: 359
+// Token: 0x02000110 RID: 272
 public class FadeRenderer : MonoBehaviour
 {
-	// Token: 0x060006B8 RID: 1720 RVA: 0x00006DB8 File Offset: 0x00004FB8
+	// Token: 0x06000594 RID: 1428 RVA: 0x0001D509 File Offset: 0x0001B709
 	private void OnEnable()
 	{
 		if (FadeRenderer.propertyBlock == null)
@@ -13,13 +13,13 @@ public class FadeRenderer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006B9 RID: 1721 RVA: 0x00006DCB File Offset: 0x00004FCB
+	// Token: 0x06000595 RID: 1429 RVA: 0x0001D51C File Offset: 0x0001B71C
 	private void Start()
 	{
 		this.SetFade(this.fade);
 	}
 
-	// Token: 0x060006BA RID: 1722 RVA: 0x00006DD9 File Offset: 0x00004FD9
+	// Token: 0x06000596 RID: 1430 RVA: 0x0001D52A File Offset: 0x0001B72A
 	public virtual void OnValidate()
 	{
 		if (this.mainRenderer == null)
@@ -32,7 +32,7 @@ public class FadeRenderer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006BB RID: 1723 RVA: 0x00006E12 File Offset: 0x00005012
+	// Token: 0x06000597 RID: 1431 RVA: 0x0001D563 File Offset: 0x0001B763
 	public void UpdateFade()
 	{
 		if (this.materialToFade == null)
@@ -42,7 +42,7 @@ public class FadeRenderer : MonoBehaviour
 		this.SetFade(this.fade);
 	}
 
-	// Token: 0x060006BC RID: 1724 RVA: 0x000319E0 File Offset: 0x0002FBE0
+	// Token: 0x06000598 RID: 1432 RVA: 0x0001D580 File Offset: 0x0001B780
 	public virtual void SetFade(float fade)
 	{
 		this.fade = fade;
@@ -63,26 +63,26 @@ public class FadeRenderer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040008FF RID: 2303
+	// Token: 0x040007A5 RID: 1957
 	[Range(0f, 1f)]
 	public float fade = 1f;
 
-	// Token: 0x04000900 RID: 2304
+	// Token: 0x040007A6 RID: 1958
 	public Renderer mainRenderer;
 
-	// Token: 0x04000901 RID: 2305
+	// Token: 0x040007A7 RID: 1959
 	public SpriteRenderer[] eyes;
 
-	// Token: 0x04000902 RID: 2306
+	// Token: 0x040007A8 RID: 1960
 	public bool useSharedMaterial;
 
-	// Token: 0x04000903 RID: 2307
+	// Token: 0x040007A9 RID: 1961
 	[ConditionalHide("useSharedMaterial", true)]
 	public Material materialToFade;
 
-	// Token: 0x04000904 RID: 2308
+	// Token: 0x040007AA RID: 1962
 	private int fadeID = Shader.PropertyToID("_Fade");
 
-	// Token: 0x04000905 RID: 2309
+	// Token: 0x040007AB RID: 1963
 	private static MaterialPropertyBlock propertyBlock;
 }

@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 
-// Token: 0x02000202 RID: 514
+// Token: 0x0200018B RID: 395
 public class MainMenuToGameplay : MonoBehaviour
 {
-	// Token: 0x06000989 RID: 2441 RVA: 0x000093B6 File Offset: 0x000075B6
+	// Token: 0x06000819 RID: 2073
 	private void Start()
 	{
 		Game.State = GameState.Menu;
@@ -20,9 +20,14 @@ public class MainMenuToGameplay : MonoBehaviour
 		{
 			SpeedrunData.ResetRun();
 		}
+		MultiplayerConfigLoader config = MultiplayerConfigLoader.Load("config.ini");
+		Debug.Log("Session Key: " + config.SessionKey);
+		Debug.Log("Display Name: " + config.DisplayName);
+		Debug.Log("Server Host: " + config.ServerHost);
+		base.gameObject.AddComponent<InjectButtonToMainMenu>();
 	}
 
-	// Token: 0x0600098A RID: 2442 RVA: 0x000093F3 File Offset: 0x000075F3
+	// Token: 0x0600081A RID: 2074 RVA: 0x00026EA6 File Offset: 0x000250A6
 	public void StartFreshNewGame(int index = 0)
 	{
 		GameData.g.SetSaveFile(index);
@@ -30,7 +35,14 @@ public class MainMenuToGameplay : MonoBehaviour
 		this.StartNewGame();
 	}
 
-	// Token: 0x0600098B RID: 2443 RVA: 0x00039EB4 File Offset: 0x000380B4
+	// Token: 0x0600081B RID: 2075 RVA: 0x00026ECE File Offset: 0x000250CE
+	public void StartNewGamePlus(int index = 0)
+	{
+		GameData.g.LoadSaveFile(index);
+		this.StartNewGame();
+	}
+
+	// Token: 0x0600081C RID: 2076 RVA: 0x00026EE4 File Offset: 0x000250E4
 	public void StartNewGame()
 	{
 		this.game.enabled = true;
@@ -38,6 +50,7 @@ public class MainMenuToGameplay : MonoBehaviour
 		GameData.g.save = true;
 		Game.State = GameState.Play;
 		this.mainMenuObject.SetActive(false);
+		Object.Destroy(this.mainMenuSettings);
 		this.introSequence.StartSequence();
 		this.gameplayObject.SetActive(true);
 		if (SpeedrunData.IsSpeedrunMode)
@@ -46,7 +59,7 @@ public class MainMenuToGameplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600098C RID: 2444 RVA: 0x00039F1C File Offset: 0x0003811C
+	// Token: 0x0600081D RID: 2077 RVA: 0x00026F54 File Offset: 0x00025154
 	public void LoadGameplay()
 	{
 		this.game.enabled = true;
@@ -63,53 +76,56 @@ public class MainMenuToGameplay : MonoBehaviour
 		this.gameplayObject.SetActive(true);
 	}
 
-	// Token: 0x0600098D RID: 2445 RVA: 0x0000941B File Offset: 0x0000761B
+	// Token: 0x0600081E RID: 2078 RVA: 0x00026FD1 File Offset: 0x000251D1
 	[ContextMenu("Start Slideshow")]
 	public void StartSlideshow()
 	{
 		Object.Instantiate<GameObject>(this.slideshow);
 	}
 
-	// Token: 0x0600098E RID: 2446 RVA: 0x00009429 File Offset: 0x00007629
+	// Token: 0x0600081F RID: 2079 RVA: 0x00026FDF File Offset: 0x000251DF
 	[ContextMenu("Start Indieland Slideshow")]
 	public void StartILSlideshow()
 	{
 		Object.Instantiate<GameObject>(this.ilSlideshow);
 	}
 
-	// Token: 0x04000C30 RID: 3120
+	// Token: 0x04000A43 RID: 2627
 	public Game game;
 
-	// Token: 0x04000C31 RID: 3121
+	// Token: 0x04000A44 RID: 2628
 	public GameObject mainMenuObject;
 
-	// Token: 0x04000C32 RID: 3122
+	// Token: 0x04000A45 RID: 2629
 	public GameObject gameplayObject;
 
-	// Token: 0x04000C33 RID: 3123
+	// Token: 0x04000A46 RID: 2630
 	public GameObject playerObject;
 
-	// Token: 0x04000C34 RID: 3124
+	// Token: 0x04000A47 RID: 2631
 	public AssetReference mainScene;
 
-	// Token: 0x04000C35 RID: 3125
+	// Token: 0x04000A48 RID: 2632
 	public bool preloadMainScene = true;
 
-	// Token: 0x04000C36 RID: 3126
+	// Token: 0x04000A49 RID: 2633
 	public DialogueSequencer introSequence;
 
-	// Token: 0x04000C37 RID: 3127
+	// Token: 0x04000A4A RID: 2634
 	public GameObject slideshow;
 
-	// Token: 0x04000C38 RID: 3128
+	// Token: 0x04000A4B RID: 2635
 	public GameSaveWrapper newGameData;
 
-	// Token: 0x04000C39 RID: 3129
+	// Token: 0x04000A4C RID: 2636
 	public GameObject ilSlideshow;
 
-	// Token: 0x04000C3A RID: 3130
+	// Token: 0x04000A4D RID: 2637
 	public GameSaveWrapper newILGameData;
 
-	// Token: 0x04000C3B RID: 3131
+	// Token: 0x04000A4E RID: 2638
 	public UnityEvent onILStart;
+
+	// Token: 0x04000A4F RID: 2639
+	public GameObject mainMenuSettings;
 }

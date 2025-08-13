@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200021B RID: 539
+// Token: 0x0200019F RID: 415
 public class Parser
 {
-	// Token: 0x06000A0A RID: 2570 RVA: 0x00009AC5 File Offset: 0x00007CC5
+	// Token: 0x06000887 RID: 2183 RVA: 0x00028434 File Offset: 0x00026634
 	public Parser(string t)
 	{
 		this.text = t;
@@ -13,7 +13,7 @@ public class Parser
 		this.length = this.text.Length;
 	}
 
-	// Token: 0x06000A0B RID: 2571 RVA: 0x00009AEC File Offset: 0x00007CEC
+	// Token: 0x06000888 RID: 2184 RVA: 0x0002845B File Offset: 0x0002665B
 	private string nextCharacter()
 	{
 		if (this.index == this.length)
@@ -25,13 +25,13 @@ public class Parser
 		return text;
 	}
 
-	// Token: 0x06000A0C RID: 2572 RVA: 0x0003B110 File Offset: 0x00039310
+	// Token: 0x06000889 RID: 2185 RVA: 0x00028494 File Offset: 0x00026694
 	private bool isWhitespace(string cha)
 	{
 		return cha.Equals(" ") || cha.Equals("\t") || cha.Equals("\n") || cha.Equals("\r") || cha.Equals("\v") || cha.Equals("");
 	}
 
-	// Token: 0x06000A0D RID: 2573 RVA: 0x0003B170 File Offset: 0x00039370
+	// Token: 0x0600088A RID: 2186 RVA: 0x000284F4 File Offset: 0x000266F4
 	private string nextLexeme()
 	{
 		string text = this.nextCharacter();
@@ -74,7 +74,7 @@ public class Parser
 		return text;
 	}
 
-	// Token: 0x06000A0E RID: 2574 RVA: 0x0003B240 File Offset: 0x00039440
+	// Token: 0x0600088B RID: 2187 RVA: 0x000285C4 File Offset: 0x000267C4
 	private DialogueChunk nextDialogueChunk()
 	{
 		string text = this.nextLexeme();
@@ -129,7 +129,7 @@ public class Parser
 				}
 				text3 = this.nextLexeme();
 			}
-			dialogueLine.english = this.clean(text3);
+			dialogueLine.english[0] = this.clean(text3);
 			dialogueLine.lookTarget = num;
 			dialogueLine.state = num2;
 			dialogueLine.position = num3;
@@ -153,12 +153,12 @@ public class Parser
 		dialogueChunk.mlOptions = new MultilingualString[dialogueChunk.options.Length];
 		for (int i = 0; i < dialogueChunk.options.Length; i++)
 		{
-			dialogueChunk.mlOptions[i].english = dialogueChunk.options[i];
+			dialogueChunk.mlOptions[i].english[0] = dialogueChunk.options[i];
 		}
 		return dialogueChunk;
 	}
 
-	// Token: 0x06000A0F RID: 2575 RVA: 0x00009B22 File Offset: 0x00007D22
+	// Token: 0x0600088C RID: 2188 RVA: 0x00028823 File Offset: 0x00026A23
 	private string clean(string text)
 	{
 		if (text.Length - 2 < 0)
@@ -168,7 +168,7 @@ public class Parser
 		return text.Substring(1, text.Length - 2);
 	}
 
-	// Token: 0x06000A10 RID: 2576 RVA: 0x0003B49C File Offset: 0x0003969C
+	// Token: 0x0600088D RID: 2189 RVA: 0x00028848 File Offset: 0x00026A48
 	public List<DialogueChunk> getChunks()
 	{
 		List<DialogueChunk> list = new List<DialogueChunk>();
@@ -179,15 +179,15 @@ public class Parser
 		return list;
 	}
 
-	// Token: 0x04000C96 RID: 3222
+	// Token: 0x04000A91 RID: 2705
 	private const string defaultEmote = "None";
 
-	// Token: 0x04000C97 RID: 3223
+	// Token: 0x04000A92 RID: 2706
 	private string text;
 
-	// Token: 0x04000C98 RID: 3224
+	// Token: 0x04000A93 RID: 2707
 	private int index;
 
-	// Token: 0x04000C99 RID: 3225
+	// Token: 0x04000A94 RID: 2708
 	private int length;
 }

@@ -3,11 +3,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Token: 0x020000F0 RID: 240
+// Token: 0x020000B2 RID: 178
 public class DialogueOptions : MonoBehaviour
 {
-	// Token: 0x17000070 RID: 112
-	// (get) Token: 0x06000482 RID: 1154 RVA: 0x0000544D File Offset: 0x0000364D
+	// Token: 0x17000037 RID: 55
+	// (get) Token: 0x060003D5 RID: 981 RVA: 0x000169A1 File Offset: 0x00014BA1
 	protected static DialogueOptions Instance
 	{
 		get
@@ -20,8 +20,8 @@ public class DialogueOptions : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000071 RID: 113
-	// (get) Token: 0x06000483 RID: 1155 RVA: 0x0000546C File Offset: 0x0000366C
+	// Token: 0x17000038 RID: 56
+	// (get) Token: 0x060003D6 RID: 982 RVA: 0x000169C0 File Offset: 0x00014BC0
 	public static int CurrentlySelectedIndex
 	{
 		get
@@ -30,7 +30,7 @@ public class DialogueOptions : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000484 RID: 1156 RVA: 0x0002ADE8 File Offset: 0x00028FE8
+	// Token: 0x060003D7 RID: 983 RVA: 0x000169CC File Offset: 0x00014BCC
 	public WaitUntil SetOptions(string[] options)
 	{
 		this.isTriggered = false;
@@ -61,7 +61,7 @@ public class DialogueOptions : MonoBehaviour
 		return this.waitUntilTriggered;
 	}
 
-	// Token: 0x06000485 RID: 1157 RVA: 0x00005478 File Offset: 0x00003678
+	// Token: 0x060003D8 RID: 984 RVA: 0x00016B0E File Offset: 0x00014D0E
 	public void Clear()
 	{
 		this.selectorPosition = this.optionBoxes[0].rectTransform.anchoredPosition;
@@ -70,14 +70,14 @@ public class DialogueOptions : MonoBehaviour
 		this.isTriggered = false;
 	}
 
-	// Token: 0x06000486 RID: 1158 RVA: 0x0002AF2C File Offset: 0x0002912C
+	// Token: 0x060003D9 RID: 985 RVA: 0x00016B44 File Offset: 0x00014D44
 	private void Update()
 	{
 		this.selectorPosition = Vector2.Lerp(this.selectorPosition, this.optionBoxes[this.selectedOption].rectTransform.anchoredPosition, 10f * Time.deltaTime);
 		this.selector.anchoredPosition = new Vector2(Mathf.Round(this.selectorPosition.x), Mathf.Round(this.selectorPosition.y));
 	}
 
-	// Token: 0x06000487 RID: 1159 RVA: 0x0002AF9C File Offset: 0x0002919C
+	// Token: 0x060003DA RID: 986 RVA: 0x00016BB4 File Offset: 0x00014DB4
 	public void UpdateSelectedOption(float axis)
 	{
 		if (axis > 0f)
@@ -99,51 +99,51 @@ public class DialogueOptions : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000488 RID: 1160 RVA: 0x000054AC File Offset: 0x000036AC
+	// Token: 0x060003DB RID: 987 RVA: 0x00016C1A File Offset: 0x00014E1A
 	public void Submit()
 	{
 		this.isTriggered = true;
 	}
 
-	// Token: 0x06000489 RID: 1161 RVA: 0x000054B5 File Offset: 0x000036B5
+	// Token: 0x060003DC RID: 988 RVA: 0x00016C23 File Offset: 0x00014E23
 	public void SetSelected(int index)
 	{
 		this.selectedOption = index;
 	}
 
-	// Token: 0x0400065F RID: 1631
+	// Token: 0x04000550 RID: 1360
 	private static DialogueOptions instance;
 
-	// Token: 0x04000660 RID: 1632
+	// Token: 0x04000551 RID: 1361
 	public int selectedOption = -1;
 
-	// Token: 0x04000661 RID: 1633
+	// Token: 0x04000552 RID: 1362
 	private int optionCount;
 
-	// Token: 0x04000662 RID: 1634
+	// Token: 0x04000553 RID: 1363
 	public DialogueBox[] optionBoxes;
 
-	// Token: 0x04000663 RID: 1635
+	// Token: 0x04000554 RID: 1364
 	public Button[] optionButtons;
 
-	// Token: 0x04000664 RID: 1636
+	// Token: 0x04000555 RID: 1365
 	public RectTransform selector;
 
-	// Token: 0x04000665 RID: 1637
+	// Token: 0x04000556 RID: 1366
 	public Color selectedColor;
 
-	// Token: 0x04000666 RID: 1638
+	// Token: 0x04000557 RID: 1367
 	public Color unselectedColor;
 
-	// Token: 0x04000667 RID: 1639
+	// Token: 0x04000558 RID: 1368
 	private Vector2 selectorPosition;
 
-	// Token: 0x04000668 RID: 1640
+	// Token: 0x04000559 RID: 1369
 	public UIButtonPrompt buttonPrompt;
 
-	// Token: 0x04000669 RID: 1641
+	// Token: 0x0400055A RID: 1370
 	private bool isTriggered;
 
-	// Token: 0x0400066A RID: 1642
+	// Token: 0x0400055B RID: 1371
 	private WaitUntil waitUntilTriggered;
 }

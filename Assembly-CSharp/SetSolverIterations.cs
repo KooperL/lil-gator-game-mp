@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200032F RID: 815
+// Token: 0x02000267 RID: 615
 public class SetSolverIterations : MonoBehaviour
 {
-	// Token: 0x06000FF8 RID: 4088 RVA: 0x0000DCE8 File Offset: 0x0000BEE8
+	// Token: 0x06000D4A RID: 3402 RVA: 0x000406BE File Offset: 0x0003E8BE
 	private void OnEnable()
 	{
 		if (this.rigidbody == null)
@@ -15,12 +15,12 @@ public class SetSolverIterations : MonoBehaviour
 		this.rigidbody.solverVelocityIterations = this.solverVelocityIterations;
 	}
 
-	// Token: 0x040014B6 RID: 5302
+	// Token: 0x04001190 RID: 4496
 	private Rigidbody rigidbody;
 
-	// Token: 0x040014B7 RID: 5303
+	// Token: 0x04001191 RID: 4497
 	public int solverIterations = 20;
 
-	// Token: 0x040014B8 RID: 5304
+	// Token: 0x04001192 RID: 4498
 	public int solverVelocityIterations = 20;
 }

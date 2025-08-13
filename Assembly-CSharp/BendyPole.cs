@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000B9 RID: 185
+// Token: 0x02000093 RID: 147
 [AddComponentMenu("Contextual/Bendy Beam")]
 public class BendyPole : MonoBehaviour
 {
-	// Token: 0x060002E3 RID: 739 RVA: 0x00022388 File Offset: 0x00020588
+	// Token: 0x06000299 RID: 665 RVA: 0x0000E7CC File Offset: 0x0000C9CC
 	private void Awake()
 	{
 		this.balanceBeam.onEnable.AddListener(new UnityAction(this.OnBalanceBeamEnabled));
@@ -23,13 +23,13 @@ public class BendyPole : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x060002E4 RID: 740 RVA: 0x000043EB File Offset: 0x000025EB
+	// Token: 0x0600029A RID: 666 RVA: 0x0000E8D7 File Offset: 0x0000CAD7
 	private void OnBalanceBeamEnabled()
 	{
 		base.enabled = true;
 	}
 
-	// Token: 0x060002E5 RID: 741 RVA: 0x00022494 File Offset: 0x00020694
+	// Token: 0x0600029B RID: 667 RVA: 0x0000E8E0 File Offset: 0x0000CAE0
 	private void OnEnable()
 	{
 		this.staticRenderer.enabled = false;
@@ -44,7 +44,7 @@ public class BendyPole : MonoBehaviour
 		this.onEnable.Invoke();
 	}
 
-	// Token: 0x060002E6 RID: 742 RVA: 0x000224F8 File Offset: 0x000206F8
+	// Token: 0x0600029C RID: 668 RVA: 0x0000E944 File Offset: 0x0000CB44
 	private void LateUpdate()
 	{
 		if (this.balanceBeam.enabled)
@@ -106,7 +106,7 @@ public class BendyPole : MonoBehaviour
 		this.UpdateAnchor();
 	}
 
-	// Token: 0x060002E7 RID: 743 RVA: 0x00022750 File Offset: 0x00020950
+	// Token: 0x0600029D RID: 669 RVA: 0x0000EB9C File Offset: 0x0000CD9C
 	private Vector3 AlongLine(Vector3 point)
 	{
 		Vector3 vector = this.balanceBeam.ClosestPointOnPath(point);
@@ -114,21 +114,21 @@ public class BendyPole : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x060002E8 RID: 744 RVA: 0x00022778 File Offset: 0x00020978
+	// Token: 0x0600029E RID: 670 RVA: 0x0000EBC4 File Offset: 0x0000CDC4
 	public Vector3 ClosestPointOnPath(Vector3 point)
 	{
 		float closestInterpolated = this.balanceBeam.GetClosestInterpolated(point);
 		return this.GetPointOnPath(closestInterpolated);
 	}
 
-	// Token: 0x060002E9 RID: 745 RVA: 0x0002279C File Offset: 0x0002099C
+	// Token: 0x0600029F RID: 671 RVA: 0x0000EBE8 File Offset: 0x0000CDE8
 	public Vector3 GetPointOnPath(float t)
 	{
 		Vector3 vector = Vector3.Lerp(this.initialPositions[Mathf.FloorToInt(t)], this.initialPositions[Mathf.CeilToInt(t)], t - Mathf.Floor(t));
 		return base.transform.TransformPoint(vector);
 	}
 
-	// Token: 0x060002EA RID: 746 RVA: 0x000227E8 File Offset: 0x000209E8
+	// Token: 0x060002A0 RID: 672 RVA: 0x0000EC34 File Offset: 0x0000CE34
 	private void UpdateAnchor()
 	{
 		float closestInterpolated = this.balanceBeam.GetClosestInterpolated(this.weightPoint);
@@ -143,73 +143,73 @@ public class BendyPole : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000402 RID: 1026
+	// Token: 0x04000369 RID: 873
 	public BalanceBeam balanceBeam;
 
-	// Token: 0x04000403 RID: 1027
+	// Token: 0x0400036A RID: 874
 	public BendyClimbingPole attachedPole;
 
-	// Token: 0x04000404 RID: 1028
+	// Token: 0x0400036B RID: 875
 	private Vector3 attachedPosition;
 
-	// Token: 0x04000405 RID: 1029
+	// Token: 0x0400036C RID: 876
 	private Quaternion attachedRotation;
 
-	// Token: 0x04000406 RID: 1030
+	// Token: 0x0400036D RID: 877
 	public Renderer staticRenderer;
 
-	// Token: 0x04000407 RID: 1031
+	// Token: 0x0400036E RID: 878
 	public Renderer dynamicRenderer;
 
-	// Token: 0x04000408 RID: 1032
+	// Token: 0x0400036F RID: 879
 	public Transform dynamicPivot;
 
-	// Token: 0x04000409 RID: 1033
+	// Token: 0x04000370 RID: 880
 	public Vector3[] initialPositions;
 
-	// Token: 0x0400040A RID: 1034
+	// Token: 0x04000371 RID: 881
 	private Quaternion initialRotation;
 
-	// Token: 0x0400040B RID: 1035
+	// Token: 0x04000372 RID: 882
 	public bool lockToVertical;
 
-	// Token: 0x0400040C RID: 1036
+	// Token: 0x04000373 RID: 883
 	private Vector3 weightPoint;
 
-	// Token: 0x0400040D RID: 1037
+	// Token: 0x04000374 RID: 884
 	private float weightPointOnPath;
 
-	// Token: 0x0400040E RID: 1038
+	// Token: 0x04000375 RID: 885
 	private Vector3 pivotPoint;
 
-	// Token: 0x0400040F RID: 1039
+	// Token: 0x04000376 RID: 886
 	private Vector3 endPoint;
 
-	// Token: 0x04000410 RID: 1040
+	// Token: 0x04000377 RID: 887
 	private float totalLength;
 
-	// Token: 0x04000411 RID: 1041
+	// Token: 0x04000378 RID: 888
 	public float springStrength = 4f;
 
-	// Token: 0x04000412 RID: 1042
+	// Token: 0x04000379 RID: 889
 	public float damperStrength = 0.5f;
 
-	// Token: 0x04000413 RID: 1043
+	// Token: 0x0400037A RID: 890
 	private Vector3 velocity;
 
-	// Token: 0x04000414 RID: 1044
+	// Token: 0x0400037B RID: 891
 	[Range(0.0001f, 1f)]
 	public float stiffness = 0.5f;
 
-	// Token: 0x04000415 RID: 1045
+	// Token: 0x0400037C RID: 892
 	private float bendAmount;
 
-	// Token: 0x04000416 RID: 1046
+	// Token: 0x0400037D RID: 893
 	public UnityEvent onEnable;
 
-	// Token: 0x04000417 RID: 1047
+	// Token: 0x0400037E RID: 894
 	private bool isPlayerOnBalanceBeam;
 
-	// Token: 0x04000418 RID: 1048
+	// Token: 0x0400037F RID: 895
 	private bool lockToTightrope;
 }

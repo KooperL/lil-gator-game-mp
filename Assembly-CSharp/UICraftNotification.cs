@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020003A2 RID: 930
+// Token: 0x020002C0 RID: 704
 public class UICraftNotification : MonoBehaviour
 {
-	// Token: 0x060011A3 RID: 4515 RVA: 0x00058064 File Offset: 0x00056264
+	// Token: 0x06000ECB RID: 3787 RVA: 0x00046B30 File Offset: 0x00044D30
 	public void LoadItems(ItemObject[] items)
 	{
 		this.ResetThing();
@@ -16,7 +16,7 @@ public class UICraftNotification : MonoBehaviour
 		this.onLoad.Invoke();
 	}
 
-	// Token: 0x060011A4 RID: 4516 RVA: 0x0000F0CF File Offset: 0x0000D2CF
+	// Token: 0x06000ECC RID: 3788 RVA: 0x00046B7C File Offset: 0x00044D7C
 	public void LoadItem(ItemObject item)
 	{
 		this.ResetThing();
@@ -25,14 +25,14 @@ public class UICraftNotification : MonoBehaviour
 		this.onLoad.Invoke();
 	}
 
-	// Token: 0x060011A5 RID: 4517 RVA: 0x0000F0F5 File Offset: 0x0000D2F5
+	// Token: 0x06000ECD RID: 3789 RVA: 0x00046BA2 File Offset: 0x00044DA2
 	private void ResetThing()
 	{
 		this.hideBehavior.Show();
 		this.hideTime = Time.time + this.hideDelay;
 	}
 
-	// Token: 0x060011A6 RID: 4518 RVA: 0x000580B0 File Offset: 0x000562B0
+	// Token: 0x06000ECE RID: 3790 RVA: 0x00046BC4 File Offset: 0x00044DC4
 	private void Update()
 	{
 		if (this.items != null && this.items.Length > 1 && Time.time > this.nextItemTime)
@@ -51,30 +51,30 @@ public class UICraftNotification : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040016BB RID: 5819
+	// Token: 0x04001345 RID: 4933
 	public UIItemDisplay itemDisplay;
 
-	// Token: 0x040016BC RID: 5820
+	// Token: 0x04001346 RID: 4934
 	public UIHideBehavior hideBehavior;
 
-	// Token: 0x040016BD RID: 5821
+	// Token: 0x04001347 RID: 4935
 	public float hideDelay = 5f;
 
-	// Token: 0x040016BE RID: 5822
+	// Token: 0x04001348 RID: 4936
 	private float hideTime;
 
-	// Token: 0x040016BF RID: 5823
+	// Token: 0x04001349 RID: 4937
 	private ItemObject[] items;
 
-	// Token: 0x040016C0 RID: 5824
+	// Token: 0x0400134A RID: 4938
 	private int itemIndex;
 
-	// Token: 0x040016C1 RID: 5825
+	// Token: 0x0400134B RID: 4939
 	private float nextItemTime = -1f;
 
-	// Token: 0x040016C2 RID: 5826
+	// Token: 0x0400134C RID: 4940
 	public float itemSlideshowDelay = 0.75f;
 
-	// Token: 0x040016C3 RID: 5827
+	// Token: 0x0400134D RID: 4941
 	public UnityEvent onLoad = new UnityEvent();
 }

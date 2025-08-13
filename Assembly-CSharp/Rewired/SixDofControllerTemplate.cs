@@ -2,11 +2,11 @@
 
 namespace Rewired
 {
-	// Token: 0x02000406 RID: 1030
+	// Token: 0x0200030D RID: 781
 	public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofControllerTemplate, IControllerTemplate
 	{
-		// Token: 0x170003C9 RID: 969
-		// (get) Token: 0x06001540 RID: 5440 RVA: 0x00010D91 File Offset: 0x0000EF91
+		// Token: 0x170002BA RID: 698
+		// (get) Token: 0x06001211 RID: 4625 RVA: 0x0004E6FC File Offset: 0x0004C8FC
 		IControllerTemplateAxis ISixDofControllerTemplate.extraAxis1
 		{
 			get
@@ -15,8 +15,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003CA RID: 970
-		// (get) Token: 0x06001541 RID: 5441 RVA: 0x00010D9A File Offset: 0x0000EF9A
+		// Token: 0x170002BB RID: 699
+		// (get) Token: 0x06001212 RID: 4626 RVA: 0x0004E705 File Offset: 0x0004C905
 		IControllerTemplateAxis ISixDofControllerTemplate.extraAxis2
 		{
 			get
@@ -25,8 +25,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003CB RID: 971
-		// (get) Token: 0x06001542 RID: 5442 RVA: 0x00010DA4 File Offset: 0x0000EFA4
+		// Token: 0x170002BC RID: 700
+		// (get) Token: 0x06001213 RID: 4627 RVA: 0x0004E70F File Offset: 0x0004C90F
 		IControllerTemplateAxis ISixDofControllerTemplate.extraAxis3
 		{
 			get
@@ -35,8 +35,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003CC RID: 972
-		// (get) Token: 0x06001543 RID: 5443 RVA: 0x00010841 File Offset: 0x0000EA41
+		// Token: 0x170002BD RID: 701
+		// (get) Token: 0x06001214 RID: 4628 RVA: 0x0004E719 File Offset: 0x0004C919
 		IControllerTemplateAxis ISixDofControllerTemplate.extraAxis4
 		{
 			get
@@ -45,8 +45,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003CD RID: 973
-		// (get) Token: 0x06001544 RID: 5444 RVA: 0x0001084B File Offset: 0x0000EA4B
+		// Token: 0x170002BE RID: 702
+		// (get) Token: 0x06001215 RID: 4629 RVA: 0x0004E723 File Offset: 0x0004C923
 		IControllerTemplateButton ISixDofControllerTemplate.button1
 		{
 			get
@@ -55,8 +55,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003CE RID: 974
-		// (get) Token: 0x06001545 RID: 5445 RVA: 0x000108E3 File Offset: 0x0000EAE3
+		// Token: 0x170002BF RID: 703
+		// (get) Token: 0x06001216 RID: 4630 RVA: 0x0004E72D File Offset: 0x0004C92D
 		IControllerTemplateButton ISixDofControllerTemplate.button2
 		{
 			get
@@ -65,8 +65,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003CF RID: 975
-		// (get) Token: 0x06001546 RID: 5446 RVA: 0x0001085F File Offset: 0x0000EA5F
+		// Token: 0x170002C0 RID: 704
+		// (get) Token: 0x06001217 RID: 4631 RVA: 0x0004E737 File Offset: 0x0004C937
 		IControllerTemplateButton ISixDofControllerTemplate.button3
 		{
 			get
@@ -75,8 +75,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003D0 RID: 976
-		// (get) Token: 0x06001547 RID: 5447 RVA: 0x00010869 File Offset: 0x0000EA69
+		// Token: 0x170002C1 RID: 705
+		// (get) Token: 0x06001218 RID: 4632 RVA: 0x0004E741 File Offset: 0x0004C941
 		IControllerTemplateButton ISixDofControllerTemplate.button4
 		{
 			get
@@ -85,8 +85,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003D1 RID: 977
-		// (get) Token: 0x06001548 RID: 5448 RVA: 0x00010873 File Offset: 0x0000EA73
+		// Token: 0x170002C2 RID: 706
+		// (get) Token: 0x06001219 RID: 4633 RVA: 0x0004E74B File Offset: 0x0004C94B
 		IControllerTemplateButton ISixDofControllerTemplate.button5
 		{
 			get
@@ -95,8 +95,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003D2 RID: 978
-		// (get) Token: 0x06001549 RID: 5449 RVA: 0x000108ED File Offset: 0x0000EAED
+		// Token: 0x170002C3 RID: 707
+		// (get) Token: 0x0600121A RID: 4634 RVA: 0x0004E755 File Offset: 0x0004C955
 		IControllerTemplateButton ISixDofControllerTemplate.button6
 		{
 			get
@@ -105,8 +105,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003D3 RID: 979
-		// (get) Token: 0x0600154A RID: 5450 RVA: 0x000108F7 File Offset: 0x0000EAF7
+		// Token: 0x170002C4 RID: 708
+		// (get) Token: 0x0600121B RID: 4635 RVA: 0x0004E75F File Offset: 0x0004C95F
 		IControllerTemplateButton ISixDofControllerTemplate.button7
 		{
 			get
@@ -115,8 +115,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003D4 RID: 980
-		// (get) Token: 0x0600154B RID: 5451 RVA: 0x00010901 File Offset: 0x0000EB01
+		// Token: 0x170002C5 RID: 709
+		// (get) Token: 0x0600121C RID: 4636 RVA: 0x0004E769 File Offset: 0x0004C969
 		IControllerTemplateButton ISixDofControllerTemplate.button8
 		{
 			get
@@ -125,8 +125,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003D5 RID: 981
-		// (get) Token: 0x0600154C RID: 5452 RVA: 0x0001090B File Offset: 0x0000EB0B
+		// Token: 0x170002C6 RID: 710
+		// (get) Token: 0x0600121D RID: 4637 RVA: 0x0004E773 File Offset: 0x0004C973
 		IControllerTemplateButton ISixDofControllerTemplate.button9
 		{
 			get
@@ -135,8 +135,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003D6 RID: 982
-		// (get) Token: 0x0600154D RID: 5453 RVA: 0x00010915 File Offset: 0x0000EB15
+		// Token: 0x170002C7 RID: 711
+		// (get) Token: 0x0600121E RID: 4638 RVA: 0x0004E77D File Offset: 0x0004C97D
 		IControllerTemplateButton ISixDofControllerTemplate.button10
 		{
 			get
@@ -145,8 +145,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003D7 RID: 983
-		// (get) Token: 0x0600154E RID: 5454 RVA: 0x0001091F File Offset: 0x0000EB1F
+		// Token: 0x170002C8 RID: 712
+		// (get) Token: 0x0600121F RID: 4639 RVA: 0x0004E787 File Offset: 0x0004C987
 		IControllerTemplateButton ISixDofControllerTemplate.button11
 		{
 			get
@@ -155,8 +155,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003D8 RID: 984
-		// (get) Token: 0x0600154F RID: 5455 RVA: 0x00010929 File Offset: 0x0000EB29
+		// Token: 0x170002C9 RID: 713
+		// (get) Token: 0x06001220 RID: 4640 RVA: 0x0004E791 File Offset: 0x0004C991
 		IControllerTemplateButton ISixDofControllerTemplate.button12
 		{
 			get
@@ -165,8 +165,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003D9 RID: 985
-		// (get) Token: 0x06001550 RID: 5456 RVA: 0x00010933 File Offset: 0x0000EB33
+		// Token: 0x170002CA RID: 714
+		// (get) Token: 0x06001221 RID: 4641 RVA: 0x0004E79B File Offset: 0x0004C99B
 		IControllerTemplateButton ISixDofControllerTemplate.button13
 		{
 			get
@@ -175,8 +175,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003DA RID: 986
-		// (get) Token: 0x06001551 RID: 5457 RVA: 0x0001093D File Offset: 0x0000EB3D
+		// Token: 0x170002CB RID: 715
+		// (get) Token: 0x06001222 RID: 4642 RVA: 0x0004E7A5 File Offset: 0x0004C9A5
 		IControllerTemplateButton ISixDofControllerTemplate.button14
 		{
 			get
@@ -185,8 +185,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003DB RID: 987
-		// (get) Token: 0x06001552 RID: 5458 RVA: 0x00010947 File Offset: 0x0000EB47
+		// Token: 0x170002CC RID: 716
+		// (get) Token: 0x06001223 RID: 4643 RVA: 0x0004E7AF File Offset: 0x0004C9AF
 		IControllerTemplateButton ISixDofControllerTemplate.button15
 		{
 			get
@@ -195,8 +195,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003DC RID: 988
-		// (get) Token: 0x06001553 RID: 5459 RVA: 0x00010951 File Offset: 0x0000EB51
+		// Token: 0x170002CD RID: 717
+		// (get) Token: 0x06001224 RID: 4644 RVA: 0x0004E7B9 File Offset: 0x0004C9B9
 		IControllerTemplateButton ISixDofControllerTemplate.button16
 		{
 			get
@@ -205,8 +205,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003DD RID: 989
-		// (get) Token: 0x06001554 RID: 5460 RVA: 0x0001095B File Offset: 0x0000EB5B
+		// Token: 0x170002CE RID: 718
+		// (get) Token: 0x06001225 RID: 4645 RVA: 0x0004E7C3 File Offset: 0x0004C9C3
 		IControllerTemplateButton ISixDofControllerTemplate.button17
 		{
 			get
@@ -215,8 +215,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003DE RID: 990
-		// (get) Token: 0x06001555 RID: 5461 RVA: 0x00010965 File Offset: 0x0000EB65
+		// Token: 0x170002CF RID: 719
+		// (get) Token: 0x06001226 RID: 4646 RVA: 0x0004E7CD File Offset: 0x0004C9CD
 		IControllerTemplateButton ISixDofControllerTemplate.button18
 		{
 			get
@@ -225,8 +225,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003DF RID: 991
-		// (get) Token: 0x06001556 RID: 5462 RVA: 0x0001096F File Offset: 0x0000EB6F
+		// Token: 0x170002D0 RID: 720
+		// (get) Token: 0x06001227 RID: 4647 RVA: 0x0004E7D7 File Offset: 0x0004C9D7
 		IControllerTemplateButton ISixDofControllerTemplate.button19
 		{
 			get
@@ -235,8 +235,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003E0 RID: 992
-		// (get) Token: 0x06001557 RID: 5463 RVA: 0x00010979 File Offset: 0x0000EB79
+		// Token: 0x170002D1 RID: 721
+		// (get) Token: 0x06001228 RID: 4648 RVA: 0x0004E7E1 File Offset: 0x0004C9E1
 		IControllerTemplateButton ISixDofControllerTemplate.button20
 		{
 			get
@@ -245,8 +245,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003E1 RID: 993
-		// (get) Token: 0x06001558 RID: 5464 RVA: 0x00010A6E File Offset: 0x0000EC6E
+		// Token: 0x170002D2 RID: 722
+		// (get) Token: 0x06001229 RID: 4649 RVA: 0x0004E7EB File Offset: 0x0004C9EB
 		IControllerTemplateButton ISixDofControllerTemplate.button21
 		{
 			get
@@ -255,8 +255,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003E2 RID: 994
-		// (get) Token: 0x06001559 RID: 5465 RVA: 0x00010A78 File Offset: 0x0000EC78
+		// Token: 0x170002D3 RID: 723
+		// (get) Token: 0x0600122A RID: 4650 RVA: 0x0004E7F5 File Offset: 0x0004C9F5
 		IControllerTemplateButton ISixDofControllerTemplate.button22
 		{
 			get
@@ -265,8 +265,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003E3 RID: 995
-		// (get) Token: 0x0600155A RID: 5466 RVA: 0x00010A82 File Offset: 0x0000EC82
+		// Token: 0x170002D4 RID: 724
+		// (get) Token: 0x0600122B RID: 4651 RVA: 0x0004E7FF File Offset: 0x0004C9FF
 		IControllerTemplateButton ISixDofControllerTemplate.button23
 		{
 			get
@@ -275,8 +275,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003E4 RID: 996
-		// (get) Token: 0x0600155B RID: 5467 RVA: 0x00010A8C File Offset: 0x0000EC8C
+		// Token: 0x170002D5 RID: 725
+		// (get) Token: 0x0600122C RID: 4652 RVA: 0x0004E809 File Offset: 0x0004CA09
 		IControllerTemplateButton ISixDofControllerTemplate.button24
 		{
 			get
@@ -285,8 +285,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003E5 RID: 997
-		// (get) Token: 0x0600155C RID: 5468 RVA: 0x00010A96 File Offset: 0x0000EC96
+		// Token: 0x170002D6 RID: 726
+		// (get) Token: 0x0600122D RID: 4653 RVA: 0x0004E813 File Offset: 0x0004CA13
 		IControllerTemplateButton ISixDofControllerTemplate.button25
 		{
 			get
@@ -295,8 +295,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003E6 RID: 998
-		// (get) Token: 0x0600155D RID: 5469 RVA: 0x00010AA0 File Offset: 0x0000ECA0
+		// Token: 0x170002D7 RID: 727
+		// (get) Token: 0x0600122E RID: 4654 RVA: 0x0004E81D File Offset: 0x0004CA1D
 		IControllerTemplateButton ISixDofControllerTemplate.button26
 		{
 			get
@@ -305,8 +305,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003E7 RID: 999
-		// (get) Token: 0x0600155E RID: 5470 RVA: 0x00010AAA File Offset: 0x0000ECAA
+		// Token: 0x170002D8 RID: 728
+		// (get) Token: 0x0600122F RID: 4655 RVA: 0x0004E827 File Offset: 0x0004CA27
 		IControllerTemplateButton ISixDofControllerTemplate.button27
 		{
 			get
@@ -315,8 +315,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003E8 RID: 1000
-		// (get) Token: 0x0600155F RID: 5471 RVA: 0x00010AB4 File Offset: 0x0000ECB4
+		// Token: 0x170002D9 RID: 729
+		// (get) Token: 0x06001230 RID: 4656 RVA: 0x0004E831 File Offset: 0x0004CA31
 		IControllerTemplateButton ISixDofControllerTemplate.button28
 		{
 			get
@@ -325,8 +325,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003E9 RID: 1001
-		// (get) Token: 0x06001560 RID: 5472 RVA: 0x00010ABE File Offset: 0x0000ECBE
+		// Token: 0x170002DA RID: 730
+		// (get) Token: 0x06001231 RID: 4657 RVA: 0x0004E83B File Offset: 0x0004CA3B
 		IControllerTemplateButton ISixDofControllerTemplate.button29
 		{
 			get
@@ -335,8 +335,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003EA RID: 1002
-		// (get) Token: 0x06001561 RID: 5473 RVA: 0x00010AC8 File Offset: 0x0000ECC8
+		// Token: 0x170002DB RID: 731
+		// (get) Token: 0x06001232 RID: 4658 RVA: 0x0004E845 File Offset: 0x0004CA45
 		IControllerTemplateButton ISixDofControllerTemplate.button30
 		{
 			get
@@ -345,8 +345,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003EB RID: 1003
-		// (get) Token: 0x06001562 RID: 5474 RVA: 0x00010AD2 File Offset: 0x0000ECD2
+		// Token: 0x170002DC RID: 732
+		// (get) Token: 0x06001233 RID: 4659 RVA: 0x0004E84F File Offset: 0x0004CA4F
 		IControllerTemplateButton ISixDofControllerTemplate.button31
 		{
 			get
@@ -355,8 +355,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003EC RID: 1004
-		// (get) Token: 0x06001563 RID: 5475 RVA: 0x00010ADC File Offset: 0x0000ECDC
+		// Token: 0x170002DD RID: 733
+		// (get) Token: 0x06001234 RID: 4660 RVA: 0x0004E859 File Offset: 0x0004CA59
 		IControllerTemplateButton ISixDofControllerTemplate.button32
 		{
 			get
@@ -365,8 +365,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003ED RID: 1005
-		// (get) Token: 0x06001564 RID: 5476 RVA: 0x00010DAE File Offset: 0x0000EFAE
+		// Token: 0x170002DE RID: 734
+		// (get) Token: 0x06001235 RID: 4661 RVA: 0x0004E863 File Offset: 0x0004CA63
 		IControllerTemplateHat ISixDofControllerTemplate.hat1
 		{
 			get
@@ -375,8 +375,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003EE RID: 1006
-		// (get) Token: 0x06001565 RID: 5477 RVA: 0x00010DB8 File Offset: 0x0000EFB8
+		// Token: 0x170002DF RID: 735
+		// (get) Token: 0x06001236 RID: 4662 RVA: 0x0004E86D File Offset: 0x0004CA6D
 		IControllerTemplateHat ISixDofControllerTemplate.hat2
 		{
 			get
@@ -385,8 +385,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003EF RID: 1007
-		// (get) Token: 0x06001566 RID: 5478 RVA: 0x00010DC2 File Offset: 0x0000EFC2
+		// Token: 0x170002E0 RID: 736
+		// (get) Token: 0x06001237 RID: 4663 RVA: 0x0004E877 File Offset: 0x0004CA77
 		IControllerTemplateThrottle ISixDofControllerTemplate.throttle1
 		{
 			get
@@ -395,8 +395,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003F0 RID: 1008
-		// (get) Token: 0x06001567 RID: 5479 RVA: 0x00010DCC File Offset: 0x0000EFCC
+		// Token: 0x170002E1 RID: 737
+		// (get) Token: 0x06001238 RID: 4664 RVA: 0x0004E881 File Offset: 0x0004CA81
 		IControllerTemplateThrottle ISixDofControllerTemplate.throttle2
 		{
 			get
@@ -405,8 +405,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003F1 RID: 1009
-		// (get) Token: 0x06001568 RID: 5480 RVA: 0x00010DD6 File Offset: 0x0000EFD6
+		// Token: 0x170002E2 RID: 738
+		// (get) Token: 0x06001239 RID: 4665 RVA: 0x0004E88B File Offset: 0x0004CA8B
 		IControllerTemplateStick6D ISixDofControllerTemplate.stick
 		{
 			get
@@ -415,214 +415,214 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x06001569 RID: 5481 RVA: 0x0001089B File Offset: 0x0000EA9B
+		// Token: 0x0600123A RID: 4666 RVA: 0x0004E895 File Offset: 0x0004CA95
 		public SixDofControllerTemplate(object payload)
 			: base(payload)
 		{
 		}
 
-		// Token: 0x04001A9C RID: 6812
+		// Token: 0x040016CF RID: 5839
 		public static readonly Guid typeGuid = new Guid("2599beb3-522b-43dd-a4ef-93fd60e5eafa");
 
-		// Token: 0x04001A9D RID: 6813
+		// Token: 0x040016D0 RID: 5840
 		public const int elementId_positionX = 1;
 
-		// Token: 0x04001A9E RID: 6814
+		// Token: 0x040016D1 RID: 5841
 		public const int elementId_positionY = 2;
 
-		// Token: 0x04001A9F RID: 6815
+		// Token: 0x040016D2 RID: 5842
 		public const int elementId_positionZ = 0;
 
-		// Token: 0x04001AA0 RID: 6816
+		// Token: 0x040016D3 RID: 5843
 		public const int elementId_rotationX = 3;
 
-		// Token: 0x04001AA1 RID: 6817
+		// Token: 0x040016D4 RID: 5844
 		public const int elementId_rotationY = 5;
 
-		// Token: 0x04001AA2 RID: 6818
+		// Token: 0x040016D5 RID: 5845
 		public const int elementId_rotationZ = 4;
 
-		// Token: 0x04001AA3 RID: 6819
+		// Token: 0x040016D6 RID: 5846
 		public const int elementId_throttle1Axis = 6;
 
-		// Token: 0x04001AA4 RID: 6820
+		// Token: 0x040016D7 RID: 5847
 		public const int elementId_throttle1MinDetent = 50;
 
-		// Token: 0x04001AA5 RID: 6821
+		// Token: 0x040016D8 RID: 5848
 		public const int elementId_throttle2Axis = 7;
 
-		// Token: 0x04001AA6 RID: 6822
+		// Token: 0x040016D9 RID: 5849
 		public const int elementId_throttle2MinDetent = 51;
 
-		// Token: 0x04001AA7 RID: 6823
+		// Token: 0x040016DA RID: 5850
 		public const int elementId_extraAxis1 = 8;
 
-		// Token: 0x04001AA8 RID: 6824
+		// Token: 0x040016DB RID: 5851
 		public const int elementId_extraAxis2 = 9;
 
-		// Token: 0x04001AA9 RID: 6825
+		// Token: 0x040016DC RID: 5852
 		public const int elementId_extraAxis3 = 10;
 
-		// Token: 0x04001AAA RID: 6826
+		// Token: 0x040016DD RID: 5853
 		public const int elementId_extraAxis4 = 11;
 
-		// Token: 0x04001AAB RID: 6827
+		// Token: 0x040016DE RID: 5854
 		public const int elementId_button1 = 12;
 
-		// Token: 0x04001AAC RID: 6828
+		// Token: 0x040016DF RID: 5855
 		public const int elementId_button2 = 13;
 
-		// Token: 0x04001AAD RID: 6829
+		// Token: 0x040016E0 RID: 5856
 		public const int elementId_button3 = 14;
 
-		// Token: 0x04001AAE RID: 6830
+		// Token: 0x040016E1 RID: 5857
 		public const int elementId_button4 = 15;
 
-		// Token: 0x04001AAF RID: 6831
+		// Token: 0x040016E2 RID: 5858
 		public const int elementId_button5 = 16;
 
-		// Token: 0x04001AB0 RID: 6832
+		// Token: 0x040016E3 RID: 5859
 		public const int elementId_button6 = 17;
 
-		// Token: 0x04001AB1 RID: 6833
+		// Token: 0x040016E4 RID: 5860
 		public const int elementId_button7 = 18;
 
-		// Token: 0x04001AB2 RID: 6834
+		// Token: 0x040016E5 RID: 5861
 		public const int elementId_button8 = 19;
 
-		// Token: 0x04001AB3 RID: 6835
+		// Token: 0x040016E6 RID: 5862
 		public const int elementId_button9 = 20;
 
-		// Token: 0x04001AB4 RID: 6836
+		// Token: 0x040016E7 RID: 5863
 		public const int elementId_button10 = 21;
 
-		// Token: 0x04001AB5 RID: 6837
+		// Token: 0x040016E8 RID: 5864
 		public const int elementId_button11 = 22;
 
-		// Token: 0x04001AB6 RID: 6838
+		// Token: 0x040016E9 RID: 5865
 		public const int elementId_button12 = 23;
 
-		// Token: 0x04001AB7 RID: 6839
+		// Token: 0x040016EA RID: 5866
 		public const int elementId_button13 = 24;
 
-		// Token: 0x04001AB8 RID: 6840
+		// Token: 0x040016EB RID: 5867
 		public const int elementId_button14 = 25;
 
-		// Token: 0x04001AB9 RID: 6841
+		// Token: 0x040016EC RID: 5868
 		public const int elementId_button15 = 26;
 
-		// Token: 0x04001ABA RID: 6842
+		// Token: 0x040016ED RID: 5869
 		public const int elementId_button16 = 27;
 
-		// Token: 0x04001ABB RID: 6843
+		// Token: 0x040016EE RID: 5870
 		public const int elementId_button17 = 28;
 
-		// Token: 0x04001ABC RID: 6844
+		// Token: 0x040016EF RID: 5871
 		public const int elementId_button18 = 29;
 
-		// Token: 0x04001ABD RID: 6845
+		// Token: 0x040016F0 RID: 5872
 		public const int elementId_button19 = 30;
 
-		// Token: 0x04001ABE RID: 6846
+		// Token: 0x040016F1 RID: 5873
 		public const int elementId_button20 = 31;
 
-		// Token: 0x04001ABF RID: 6847
+		// Token: 0x040016F2 RID: 5874
 		public const int elementId_button21 = 55;
 
-		// Token: 0x04001AC0 RID: 6848
+		// Token: 0x040016F3 RID: 5875
 		public const int elementId_button22 = 56;
 
-		// Token: 0x04001AC1 RID: 6849
+		// Token: 0x040016F4 RID: 5876
 		public const int elementId_button23 = 57;
 
-		// Token: 0x04001AC2 RID: 6850
+		// Token: 0x040016F5 RID: 5877
 		public const int elementId_button24 = 58;
 
-		// Token: 0x04001AC3 RID: 6851
+		// Token: 0x040016F6 RID: 5878
 		public const int elementId_button25 = 59;
 
-		// Token: 0x04001AC4 RID: 6852
+		// Token: 0x040016F7 RID: 5879
 		public const int elementId_button26 = 60;
 
-		// Token: 0x04001AC5 RID: 6853
+		// Token: 0x040016F8 RID: 5880
 		public const int elementId_button27 = 61;
 
-		// Token: 0x04001AC6 RID: 6854
+		// Token: 0x040016F9 RID: 5881
 		public const int elementId_button28 = 62;
 
-		// Token: 0x04001AC7 RID: 6855
+		// Token: 0x040016FA RID: 5882
 		public const int elementId_button29 = 63;
 
-		// Token: 0x04001AC8 RID: 6856
+		// Token: 0x040016FB RID: 5883
 		public const int elementId_button30 = 64;
 
-		// Token: 0x04001AC9 RID: 6857
+		// Token: 0x040016FC RID: 5884
 		public const int elementId_button31 = 65;
 
-		// Token: 0x04001ACA RID: 6858
+		// Token: 0x040016FD RID: 5885
 		public const int elementId_button32 = 66;
 
-		// Token: 0x04001ACB RID: 6859
+		// Token: 0x040016FE RID: 5886
 		public const int elementId_hat1Up = 32;
 
-		// Token: 0x04001ACC RID: 6860
+		// Token: 0x040016FF RID: 5887
 		public const int elementId_hat1UpRight = 33;
 
-		// Token: 0x04001ACD RID: 6861
+		// Token: 0x04001700 RID: 5888
 		public const int elementId_hat1Right = 34;
 
-		// Token: 0x04001ACE RID: 6862
+		// Token: 0x04001701 RID: 5889
 		public const int elementId_hat1DownRight = 35;
 
-		// Token: 0x04001ACF RID: 6863
+		// Token: 0x04001702 RID: 5890
 		public const int elementId_hat1Down = 36;
 
-		// Token: 0x04001AD0 RID: 6864
+		// Token: 0x04001703 RID: 5891
 		public const int elementId_hat1DownLeft = 37;
 
-		// Token: 0x04001AD1 RID: 6865
+		// Token: 0x04001704 RID: 5892
 		public const int elementId_hat1Left = 38;
 
-		// Token: 0x04001AD2 RID: 6866
+		// Token: 0x04001705 RID: 5893
 		public const int elementId_hat1UpLeft = 39;
 
-		// Token: 0x04001AD3 RID: 6867
+		// Token: 0x04001706 RID: 5894
 		public const int elementId_hat2Up = 40;
 
-		// Token: 0x04001AD4 RID: 6868
+		// Token: 0x04001707 RID: 5895
 		public const int elementId_hat2UpRight = 41;
 
-		// Token: 0x04001AD5 RID: 6869
+		// Token: 0x04001708 RID: 5896
 		public const int elementId_hat2Right = 42;
 
-		// Token: 0x04001AD6 RID: 6870
+		// Token: 0x04001709 RID: 5897
 		public const int elementId_hat2DownRight = 43;
 
-		// Token: 0x04001AD7 RID: 6871
+		// Token: 0x0400170A RID: 5898
 		public const int elementId_hat2Down = 44;
 
-		// Token: 0x04001AD8 RID: 6872
+		// Token: 0x0400170B RID: 5899
 		public const int elementId_hat2DownLeft = 45;
 
-		// Token: 0x04001AD9 RID: 6873
+		// Token: 0x0400170C RID: 5900
 		public const int elementId_hat2Left = 46;
 
-		// Token: 0x04001ADA RID: 6874
+		// Token: 0x0400170D RID: 5901
 		public const int elementId_hat2UpLeft = 47;
 
-		// Token: 0x04001ADB RID: 6875
+		// Token: 0x0400170E RID: 5902
 		public const int elementId_hat1 = 48;
 
-		// Token: 0x04001ADC RID: 6876
+		// Token: 0x0400170F RID: 5903
 		public const int elementId_hat2 = 49;
 
-		// Token: 0x04001ADD RID: 6877
+		// Token: 0x04001710 RID: 5904
 		public const int elementId_throttle1 = 52;
 
-		// Token: 0x04001ADE RID: 6878
+		// Token: 0x04001711 RID: 5905
 		public const int elementId_throttle2 = 53;
 
-		// Token: 0x04001ADF RID: 6879
+		// Token: 0x04001712 RID: 5906
 		public const int elementId_stick = 54;
 	}
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020002CE RID: 718
+// Token: 0x0200021F RID: 543
 public class QuestRewardItem : QuestReward
 {
-	// Token: 0x06000E0B RID: 3595 RVA: 0x0000C884 File Offset: 0x0000AA84
+	// Token: 0x06000BB6 RID: 2998 RVA: 0x00038D67 File Offset: 0x00036F67
 	public override void GiveReward()
 	{
 		if (this.itemObject != null)
@@ -14,9 +14,9 @@ public class QuestRewardItem : QuestReward
 		ItemManager.i.UnlockItem(this.item);
 	}
 
-	// Token: 0x0400123F RID: 4671
+	// Token: 0x04000F7C RID: 3964
 	public string item;
 
-	// Token: 0x04001240 RID: 4672
+	// Token: 0x04000F7D RID: 3965
 	public ItemObject itemObject;
 }

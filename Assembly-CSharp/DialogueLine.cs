@@ -1,71 +1,104 @@
 ﻿using System;
 
-// Token: 0x02000012 RID: 18
+// Token: 0x02000013 RID: 19
 [Serializable]
 public struct DialogueLine
 {
-	// Token: 0x0600002E RID: 46 RVA: 0x000022A4 File Offset: 0x000004A4
+	// Token: 0x06000032 RID: 50 RVA: 0x00002A66 File Offset: 0x00000C66
 	public bool HasText()
 	{
-		return !string.IsNullOrEmpty(this.english);
+		return this.english != null && this.english.Length != 0 && !string.IsNullOrEmpty(this.english[0]);
 	}
 
-	// Token: 0x0600002F RID: 47 RVA: 0x00017724 File Offset: 0x00015924
-	public string GetText(Language language = Language.English)
+	// Token: 0x06000033 RID: 51 RVA: 0x00002A8C File Offset: 0x00000C8C
+	public string GetText(Language language = Language.Auto)
 	{
-		string text;
-		if (language == Language.English)
+		if (language == Language.Auto)
 		{
-			text = this.english;
+			language = Settings.language;
 		}
-		else
+		string[] array = this.english;
+		switch (language)
 		{
-			text = "Language unsupported";
+		case Language.French:
+			array = this.french;
+			break;
+		case Language.Spanish:
+			array = this.spanish;
+			break;
+		case Language.German:
+			array = this.german;
+			break;
+		case Language.BrazilianPortuguese:
+			array = this.brazilianPortuguese;
+			break;
+		}
+		string text = "";
+		if (array != null && array.Length != 0)
+		{
+			text = array[0];
+		}
+		if (string.IsNullOrEmpty(text) && this.english != null && this.english.Length != 0)
+		{
+			text = this.english[0];
 		}
 		if (text.Contains("["))
 		{
 			text = text.Replace("[0]", MultilingualTextDocument.placeholders[0]);
 			text = text.Replace("[playername]", GameData.PlayerName);
+			text = text.Replace("[Playername]", GameData.PlayerName);
 		}
 		return text;
 	}
 
-	// Token: 0x04000030 RID: 48
+	// Token: 0x0400003A RID: 58
 	public string descriptor;
 
-	// Token: 0x04000031 RID: 49
+	// Token: 0x0400003B RID: 59
 	public string comments;
 
-	// Token: 0x04000032 RID: 50
-	public string english;
+	// Token: 0x0400003C RID: 60
+	public string[] english;
 
-	// Token: 0x04000033 RID: 51
+	// Token: 0x0400003D RID: 61
+	public string[] spanish;
+
+	// Token: 0x0400003E RID: 62
+	public string[] french;
+
+	// Token: 0x0400003F RID: 63
+	public string[] german;
+
+	// Token: 0x04000040 RID: 64
+	public string[] brazilianPortuguese;
+
+	// Token: 0x04000041 RID: 65
 	public int actorIndex;
 
-	// Token: 0x04000034 RID: 52
+	// Token: 0x04000042 RID: 66
 	public int emote;
 
-	// Token: 0x04000035 RID: 53
+	// Token: 0x04000043 RID: 67
 	public bool cue;
 
-	// Token: 0x04000036 RID: 54
+	// Token: 0x04000044 RID: 68
 	public int lookTarget;
 
-	// Token: 0x04000037 RID: 55
+	// Token: 0x04000045 RID: 69
 	public int[] look;
 
-	// Token: 0x04000038 RID: 56
+	// Token: 0x04000046 RID: 70
 	public bool holdEmote;
 
-	// Token: 0x04000039 RID: 57
+	// Token: 0x04000047 RID: 71
 	public float waitTime;
 
-	// Token: 0x0400003A RID: 58
+	// Token: 0x04000048 RID: 72
 	public bool noInput;
 
-	// Token: 0x0400003B RID: 59
+	// Token: 0x04000049 RID: 73
 	public int state;
 
-	// Token: 0x0400003C RID: 60
+	// Token: 0x0400004A RID: 74
 	public int position;
 }

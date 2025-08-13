@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-// Token: 0x020000D6 RID: 214
+// Token: 0x020000AB RID: 171
 [CreateAssetMenu]
 public class CharacterProfile : ScriptableObject
 {
-	// Token: 0x1700003A RID: 58
-	// (get) Token: 0x0600038B RID: 907 RVA: 0x00004B1B File Offset: 0x00002D1B
-	// (set) Token: 0x0600038C RID: 908 RVA: 0x00004B38 File Offset: 0x00002D38
+	// Token: 0x17000021 RID: 33
+	// (get) Token: 0x06000340 RID: 832 RVA: 0x00013087 File Offset: 0x00011287
+	// (set) Token: 0x06000341 RID: 833 RVA: 0x000130A4 File Offset: 0x000112A4
 	public bool IsUnlocked
 	{
 		get
@@ -26,8 +26,8 @@ public class CharacterProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x1700003B RID: 59
-	// (get) Token: 0x0600038D RID: 909 RVA: 0x00004B61 File Offset: 0x00002D61
+	// Token: 0x17000022 RID: 34
+	// (get) Token: 0x06000342 RID: 834 RVA: 0x000130CD File Offset: 0x000112CD
 	public string Name
 	{
 		get
@@ -36,18 +36,22 @@ public class CharacterProfile : ScriptableObject
 			{
 				return GameData.PlayerName;
 			}
+			if (this.document != null)
+			{
+				return this.document.FetchString(this.name, Language.Auto);
+			}
 			return this.name;
 		}
 	}
 
 	// Token: 0x14000001 RID: 1
-	// (add) Token: 0x0600038E RID: 910 RVA: 0x00026394 File Offset: 0x00024594
-	// (remove) Token: 0x0600038F RID: 911 RVA: 0x000263CC File Offset: 0x000245CC
+	// (add) Token: 0x06000343 RID: 835 RVA: 0x00013108 File Offset: 0x00011308
+	// (remove) Token: 0x06000344 RID: 836 RVA: 0x00013140 File Offset: 0x00011340
 	public event EventHandler<bool> OnChange = delegate
 	{
 	};
 
-	// Token: 0x06000390 RID: 912 RVA: 0x00004B77 File Offset: 0x00002D77
+	// Token: 0x06000345 RID: 837 RVA: 0x00013175 File Offset: 0x00011375
 	public Color GetColor(CharacterProfile.CharacterColor colorType)
 	{
 		switch (colorType)
@@ -63,7 +67,7 @@ public class CharacterProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x06000391 RID: 913 RVA: 0x00004BA7 File Offset: 0x00002DA7
+	// Token: 0x06000346 RID: 838 RVA: 0x000131A5 File Offset: 0x000113A5
 	private void OnValidate()
 	{
 		if (this.midColor == Color.white)
@@ -72,59 +76,73 @@ public class CharacterProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x06000392 RID: 914 RVA: 0x00004BC7 File Offset: 0x00002DC7
+	// Token: 0x06000347 RID: 839 RVA: 0x000131C5 File Offset: 0x000113C5
 	public void SetName(string nameID, MultilingualTextDocument document)
 	{
-		this.name = document.FetchString(nameID, Language.English);
+		this.name = document.FetchString(nameID, Language.Auto);
 		UINameplate.UpdateNameplates(this);
 	}
 
-	// Token: 0x0400050C RID: 1292
+	// Token: 0x06000348 RID: 840 RVA: 0x000131DC File Offset: 0x000113DC
+	[ContextMenu("Add Name To Document")]
+	public void AddNameToDocument()
+	{
+		if (!this.document.HasString(this.name))
+		{
+			this.document.AddStringEntry(this.name, this.name);
+		}
+	}
+
+	// Token: 0x0400046C RID: 1132
 	public string id;
 
-	// Token: 0x0400050D RID: 1293
+	// Token: 0x0400046D RID: 1133
 	public bool startsUnlocked;
 
-	// Token: 0x0400050E RID: 1294
-	public string name;
+	// Token: 0x0400046E RID: 1134
+	public MultilingualTextDocument document;
 
-	// Token: 0x0400050F RID: 1295
+	// Token: 0x0400046F RID: 1135
+	[TextLookup("document")]
+	public new string name;
+
+	// Token: 0x04000470 RID: 1136
 	[HideInInspector]
 	public Sprite nameplate;
 
-	// Token: 0x04000510 RID: 1296
+	// Token: 0x04000471 RID: 1137
 	[HideInInspector]
 	public Sprite picture;
 
-	// Token: 0x04000511 RID: 1297
+	// Token: 0x04000472 RID: 1138
 	[FormerlySerializedAs("color")]
 	public Color brightColor = Color.white;
 
-	// Token: 0x04000512 RID: 1298
+	// Token: 0x04000473 RID: 1139
 	public Color midColor = Color.grey;
 
-	// Token: 0x04000513 RID: 1299
+	// Token: 0x04000474 RID: 1140
 	[FormerlySerializedAs("backgroundColor")]
 	public Color darkColor = Color.black;
 
-	// Token: 0x04000514 RID: 1300
+	// Token: 0x04000475 RID: 1141
 	[HideInInspector]
 	public Sprite dialogueDecoration;
 
-	// Token: 0x04000515 RID: 1301
+	// Token: 0x04000476 RID: 1142
 	public Sprite pattern;
 
-	// Token: 0x04000516 RID: 1302
+	// Token: 0x04000477 RID: 1143
 	public bool isPlayer;
 
-	// Token: 0x020000D7 RID: 215
+	// Token: 0x02000381 RID: 897
 	public enum CharacterColor
 	{
-		// Token: 0x04000519 RID: 1305
+		// Token: 0x04001AA0 RID: 6816
 		Bright,
-		// Token: 0x0400051A RID: 1306
+		// Token: 0x04001AA1 RID: 6817
 		Mid,
-		// Token: 0x0400051B RID: 1307
+		// Token: 0x04001AA2 RID: 6818
 		Dark
 	}
 }

@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000054 RID: 84
+// Token: 0x02000041 RID: 65
 public class StaminaDrainItem : MonoBehaviour
 {
-	// Token: 0x0600012C RID: 300 RVA: 0x00003035 File Offset: 0x00001235
+	// Token: 0x06000107 RID: 263 RVA: 0x00006B2D File Offset: 0x00004D2D
 	private void OnEnable()
 	{
 		Player.movement.Stamina -= this.initialStaminaDrain;
 	}
 
-	// Token: 0x0600012D RID: 301 RVA: 0x0000304E File Offset: 0x0000124E
+	// Token: 0x06000108 RID: 264 RVA: 0x00006B46 File Offset: 0x00004D46
 	public void FixedUpdate()
 	{
 		Player.movement.Stamina -= Time.deltaTime * this.drainSpeed;
@@ -20,9 +20,9 @@ public class StaminaDrainItem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040001BA RID: 442
+	// Token: 0x04000170 RID: 368
 	public float initialStaminaDrain;
 
-	// Token: 0x040001BB RID: 443
+	// Token: 0x04000171 RID: 369
 	public float drainSpeed = 0.2f;
 }

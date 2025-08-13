@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020002E1 RID: 737
+// Token: 0x0200022A RID: 554
 public class TutDogDialogue : MonoBehaviour
 {
-	// Token: 0x1700019F RID: 415
-	// (get) Token: 0x06000E71 RID: 3697 RVA: 0x0000CC1F File Offset: 0x0000AE1F
+	// Token: 0x170000CA RID: 202
+	// (get) Token: 0x06000BF0 RID: 3056 RVA: 0x000393B1 File Offset: 0x000375B1
 	private string StateID
 	{
 		get
@@ -15,9 +15,9 @@ public class TutDogDialogue : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170001A0 RID: 416
-	// (get) Token: 0x06000E72 RID: 3698 RVA: 0x0000CC26 File Offset: 0x0000AE26
-	// (set) Token: 0x06000E73 RID: 3699 RVA: 0x0000CC39 File Offset: 0x0000AE39
+	// Token: 0x170000CB RID: 203
+	// (get) Token: 0x06000BF1 RID: 3057 RVA: 0x000393B8 File Offset: 0x000375B8
+	// (set) Token: 0x06000BF2 RID: 3058 RVA: 0x000393CB File Offset: 0x000375CB
 	private int State
 	{
 		get
@@ -30,13 +30,13 @@ public class TutDogDialogue : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E74 RID: 3700 RVA: 0x0000CC4C File Offset: 0x0000AE4C
+	// Token: 0x06000BF3 RID: 3059 RVA: 0x000393DE File Offset: 0x000375DE
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000E75 RID: 3701 RVA: 0x0004C164 File Offset: 0x0004A364
+	// Token: 0x06000BF4 RID: 3060 RVA: 0x000393E8 File Offset: 0x000375E8
 	private void UpdateState()
 	{
 		int state = this.State;
@@ -53,19 +53,19 @@ public class TutDogDialogue : MonoBehaviour
 		this.helpDialogue.SetActive(state == 3);
 	}
 
-	// Token: 0x06000E76 RID: 3702 RVA: 0x0000CC54 File Offset: 0x0000AE54
+	// Token: 0x06000BF5 RID: 3061 RVA: 0x000394B6 File Offset: 0x000376B6
 	public void InteractDog()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000E77 RID: 3703 RVA: 0x0000CC63 File Offset: 0x0000AE63
+	// Token: 0x06000BF6 RID: 3062 RVA: 0x000394C5 File Offset: 0x000376C5
 	public void InteractSword()
 	{
 		base.StartCoroutine(this.FindSword());
 	}
 
-	// Token: 0x06000E78 RID: 3704 RVA: 0x0000CC72 File Offset: 0x0000AE72
+	// Token: 0x06000BF7 RID: 3063 RVA: 0x000394D4 File Offset: 0x000376D4
 	private IEnumerator RunConversation()
 	{
 		Game.DialogueDepth++;
@@ -113,7 +113,7 @@ public class TutDogDialogue : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000E79 RID: 3705 RVA: 0x0000CC81 File Offset: 0x0000AE81
+	// Token: 0x06000BF8 RID: 3064 RVA: 0x000394E3 File Offset: 0x000376E3
 	private IEnumerator FindSword()
 	{
 		this.sword.SetActive(false);
@@ -123,7 +123,7 @@ public class TutDogDialogue : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000E7A RID: 3706 RVA: 0x0004C234 File Offset: 0x0004A434
+	// Token: 0x06000BF9 RID: 3065 RVA: 0x000394F4 File Offset: 0x000376F4
 	public void DefeatEnemy()
 	{
 		int num = 0;
@@ -166,36 +166,36 @@ public class TutDogDialogue : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001299 RID: 4761
+	// Token: 0x04000FB9 RID: 4025
 	public GameObject groveWithSword;
 
-	// Token: 0x0400129A RID: 4762
+	// Token: 0x04000FBA RID: 4026
 	public GameObject groveNoSword;
 
-	// Token: 0x0400129B RID: 4763
+	// Token: 0x04000FBB RID: 4027
 	public GameObject dogStudying;
 
-	// Token: 0x0400129C RID: 4764
+	// Token: 0x04000FBC RID: 4028
 	public DialogueActor[] dogStudyingActors;
 
-	// Token: 0x0400129D RID: 4765
+	// Token: 0x04000FBD RID: 4029
 	public GameObject dogFantasy;
 
-	// Token: 0x0400129E RID: 4766
+	// Token: 0x04000FBE RID: 4030
 	public DialogueActor[] dogFantasyActors;
 
-	// Token: 0x0400129F RID: 4767
+	// Token: 0x04000FBF RID: 4031
 	public GameObject dogAttacked;
 
-	// Token: 0x040012A0 RID: 4768
+	// Token: 0x04000FC0 RID: 4032
 	public DialogueActor[] dogAttackedActors;
 
-	// Token: 0x040012A1 RID: 4769
+	// Token: 0x04000FC1 RID: 4033
 	public GameObject sword;
 
-	// Token: 0x040012A2 RID: 4770
+	// Token: 0x04000FC2 RID: 4034
 	public GameObject helpDialogue;
 
-	// Token: 0x040012A3 RID: 4771
+	// Token: 0x04000FC3 RID: 4035
 	public BreakableObject[] enemies;
 }

@@ -3,11 +3,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Token: 0x02000388 RID: 904
+// Token: 0x020002AB RID: 683
 [AddComponentMenu("Layout - Use Other Transforms")]
 public class LayoutUse : UIBehaviour, ILayoutSelfController, ILayoutController
 {
-	// Token: 0x0600113D RID: 4413 RVA: 0x0000EC6A File Offset: 0x0000CE6A
+	// Token: 0x06000E6D RID: 3693 RVA: 0x00045087 File Offset: 0x00043287
 	public void SetLayoutHorizontal()
 	{
 		if (this.useHorizontal == null)
@@ -17,7 +17,7 @@ public class LayoutUse : UIBehaviour, ILayoutSelfController, ILayoutController
 		this.UpdateRectTransform();
 	}
 
-	// Token: 0x0600113E RID: 4414 RVA: 0x0000EC81 File Offset: 0x0000CE81
+	// Token: 0x06000E6E RID: 3694 RVA: 0x0004509E File Offset: 0x0004329E
 	public void SetLayoutVertical()
 	{
 		if (this.useVertical == null)
@@ -27,13 +27,13 @@ public class LayoutUse : UIBehaviour, ILayoutSelfController, ILayoutController
 		this.UpdateRectTransform();
 	}
 
-	// Token: 0x0600113F RID: 4415 RVA: 0x0000EC98 File Offset: 0x0000CE98
+	// Token: 0x06000E6F RID: 3695 RVA: 0x000450B5 File Offset: 0x000432B5
 	protected override void OnRectTransformDimensionsChange()
 	{
 		this.UpdateRectTransform();
 	}
 
-	// Token: 0x06001140 RID: 4416 RVA: 0x00056988 File Offset: 0x00054B88
+	// Token: 0x06000E70 RID: 3696 RVA: 0x000450C0 File Offset: 0x000432C0
 	private void UpdateRectTransform()
 	{
 		if (this.rectTransform == null)
@@ -42,20 +42,20 @@ public class LayoutUse : UIBehaviour, ILayoutSelfController, ILayoutController
 		}
 		if (this.useVertical != null)
 		{
-			this.rectTransform.SetSizeWithCurrentAnchors(1, this.useVertical.rect.height);
+			this.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, this.useVertical.rect.height);
 		}
 		if (this.useHorizontal != null)
 		{
-			this.rectTransform.SetSizeWithCurrentAnchors(0, this.useHorizontal.rect.height);
+			this.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, this.useHorizontal.rect.height);
 		}
 	}
 
-	// Token: 0x0400162C RID: 5676
+	// Token: 0x040012C4 RID: 4804
 	private RectTransform rectTransform;
 
-	// Token: 0x0400162D RID: 5677
+	// Token: 0x040012C5 RID: 4805
 	public RectTransform useHorizontal;
 
-	// Token: 0x0400162E RID: 5678
+	// Token: 0x040012C6 RID: 4806
 	public RectTransform useVertical;
 }

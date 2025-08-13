@@ -2,10 +2,10 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000040 RID: 64
+// Token: 0x02000034 RID: 52
 public class JunkShop : MonoBehaviour
 {
-	// Token: 0x060000DC RID: 220 RVA: 0x0001A204 File Offset: 0x00018404
+	// Token: 0x060000C9 RID: 201 RVA: 0x00005B40 File Offset: 0x00003D40
 	private void OnValidate()
 	{
 		if (this.itemGet == null)
@@ -25,20 +25,20 @@ public class JunkShop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000DD RID: 221 RVA: 0x00002B92 File Offset: 0x00000D92
+	// Token: 0x060000CA RID: 202 RVA: 0x00005BCD File Offset: 0x00003DCD
 	private void Start()
 	{
 		this.displayedItems = new int[] { -1, -1, -1 };
 		this.UpdateInventory();
 	}
 
-	// Token: 0x060000DE RID: 222 RVA: 0x00002BB1 File Offset: 0x00000DB1
+	// Token: 0x060000CB RID: 203 RVA: 0x00005BEC File Offset: 0x00003DEC
 	public void RunShopDialogue()
 	{
 		CoroutineUtil.Start(this.RunShopDialogueSequence());
 	}
 
-	// Token: 0x060000DF RID: 223 RVA: 0x00002BBF File Offset: 0x00000DBF
+	// Token: 0x060000CC RID: 204 RVA: 0x00005BFA File Offset: 0x00003DFA
 	private IEnumerator RunShopDialogueSequence()
 	{
 		Game.DialogueDepth++;
@@ -118,19 +118,19 @@ public class JunkShop : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060000E0 RID: 224 RVA: 0x0001A294 File Offset: 0x00018494
+	// Token: 0x060000CD RID: 205 RVA: 0x00005C0C File Offset: 0x00003E0C
 	private string[] GetChoiceList()
 	{
 		string[] array = new string[this.displayedItemCount + 1];
-		array[0] = this.document.FetchString(this.cancelChoice, Language.English);
+		array[0] = this.document.FetchString(this.cancelChoice, Language.Auto);
 		for (int i = 0; i < this.displayedItemCount; i++)
 		{
-			array[i + 1] = this.document.FetchString(this.shopItems[this.displayedItems[i]].choiceDisplay, Language.English);
+			array[i + 1] = this.document.FetchString(this.shopItems[this.displayedItems[i]].choiceDisplay, Language.Auto);
 		}
 		return array;
 	}
 
-	// Token: 0x060000E1 RID: 225 RVA: 0x0001A300 File Offset: 0x00018500
+	// Token: 0x060000CE RID: 206 RVA: 0x00005C7C File Offset: 0x00003E7C
 	private void UpdateInventory()
 	{
 		for (int i = 0; i < this.displayedItemCount; i++)
@@ -172,87 +172,87 @@ public class JunkShop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400013C RID: 316
+	// Token: 0x0400010F RID: 271
 	public MultilingualTextDocument document;
 
-	// Token: 0x0400013D RID: 317
+	// Token: 0x04000110 RID: 272
 	public JunkShop.ShopItem[] shopItems;
 
-	// Token: 0x0400013E RID: 318
+	// Token: 0x04000111 RID: 273
 	public Transform[] itemSlots;
 
-	// Token: 0x0400013F RID: 319
+	// Token: 0x04000112 RID: 274
 	private int[] displayedItems;
 
-	// Token: 0x04000140 RID: 320
+	// Token: 0x04000113 RID: 275
 	private int displayedItemCount;
 
-	// Token: 0x04000141 RID: 321
+	// Token: 0x04000114 RID: 276
 	[ChunkLookup("document")]
 	public string shopIntro;
 
-	// Token: 0x04000142 RID: 322
+	// Token: 0x04000115 RID: 277
 	[TextLookup("document")]
 	public string cancelChoice;
 
-	// Token: 0x04000143 RID: 323
+	// Token: 0x04000116 RID: 278
 	[ChunkLookup("document")]
 	public string cancelDialogue;
 
-	// Token: 0x04000144 RID: 324
+	// Token: 0x04000117 RID: 279
 	[ChunkLookup("document")]
 	public string notEnoughDialogue;
 
-	// Token: 0x04000145 RID: 325
+	// Token: 0x04000118 RID: 280
 	[ChunkLookup("document")]
 	public string soldOutDialogue;
 
-	// Token: 0x04000146 RID: 326
+	// Token: 0x04000119 RID: 281
 	public QuestStates stateMachine;
 
-	// Token: 0x04000147 RID: 327
+	// Token: 0x0400011A RID: 282
 	public DialogueActor[] actors;
 
-	// Token: 0x04000148 RID: 328
+	// Token: 0x0400011B RID: 283
 	public ItemResource itemResource;
 
-	// Token: 0x04000149 RID: 329
+	// Token: 0x0400011C RID: 284
 	public UIItemResource uiItemResource;
 
-	// Token: 0x0400014A RID: 330
+	// Token: 0x0400011D RID: 285
 	public UIItemGet itemGet;
 
-	// Token: 0x0400014B RID: 331
+	// Token: 0x0400011E RID: 286
 	public GameObject[] shopStateObjects;
 
-	// Token: 0x0400014C RID: 332
+	// Token: 0x0400011F RID: 287
 	public GameObject[] cameras;
 
-	// Token: 0x02000041 RID: 65
+	// Token: 0x0200035B RID: 859
 	[Serializable]
 	public struct ShopItem
 	{
-		// Token: 0x0400014D RID: 333
+		// Token: 0x040019FF RID: 6655
 		[TextLookup("document")]
 		public string choiceDisplay;
 
-		// Token: 0x0400014E RID: 334
+		// Token: 0x04001A00 RID: 6656
 		public ItemObject item;
 
-		// Token: 0x0400014F RID: 335
+		// Token: 0x04001A01 RID: 6657
 		public int cost;
 
-		// Token: 0x04000150 RID: 336
+		// Token: 0x04001A02 RID: 6658
 		public int priority;
 
-		// Token: 0x04000151 RID: 337
+		// Token: 0x04001A03 RID: 6659
 		public GameObject gameObject;
 
-		// Token: 0x04000152 RID: 338
+		// Token: 0x04001A04 RID: 6660
 		[ChunkLookup("document")]
 		public string unlockChunk;
 
-		// Token: 0x04000153 RID: 339
+		// Token: 0x04001A05 RID: 6661
 		public bool isHidden;
 	}
 }

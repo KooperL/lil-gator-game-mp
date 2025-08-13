@@ -2,16 +2,16 @@
 using Rewired;
 using UnityEngine;
 
-// Token: 0x020001AF RID: 431
+// Token: 0x0200014B RID: 331
 public class JunkContainer : MonoBehaviour
 {
-	// Token: 0x060007F9 RID: 2041 RVA: 0x00007E80 File Offset: 0x00006080
+	// Token: 0x060006BB RID: 1723 RVA: 0x000222A3 File Offset: 0x000204A3
 	private void Awake()
 	{
 		this.mainCamera = Camera.main;
 	}
 
-	// Token: 0x060007FA RID: 2042 RVA: 0x00007E8D File Offset: 0x0000608D
+	// Token: 0x060006BC RID: 1724 RVA: 0x000222B0 File Offset: 0x000204B0
 	private void OnEnable()
 	{
 		this.interactionCollider.enabled = false;
@@ -22,19 +22,19 @@ public class JunkContainer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007FB RID: 2043 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x060006BD RID: 1725 RVA: 0x000222E3 File Offset: 0x000204E3
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x060007FC RID: 2044 RVA: 0x00007EC0 File Offset: 0x000060C0
+	// Token: 0x060006BE RID: 1726 RVA: 0x000222E5 File Offset: 0x000204E5
 	private void Start()
 	{
 		this.ActivateChildren();
 		this.SetSelected(this.contents.GetChild(Mathf.FloorToInt(Random.value * (float)this.contents.childCount)));
 	}
 
-	// Token: 0x060007FD RID: 2045 RVA: 0x00035B60 File Offset: 0x00033D60
+	// Token: 0x060006BF RID: 1727 RVA: 0x00022318 File Offset: 0x00020518
 	private void Update()
 	{
 		foreach (object obj in this.contents)
@@ -63,7 +63,7 @@ public class JunkContainer : MonoBehaviour
 		this.lastPosition = this.selected.position;
 	}
 
-	// Token: 0x060007FE RID: 2046 RVA: 0x00035C58 File Offset: 0x00033E58
+	// Token: 0x060006C0 RID: 1728 RVA: 0x00022410 File Offset: 0x00020610
 	private void ActivateChildren()
 	{
 		foreach (object obj in this.contents)
@@ -76,7 +76,7 @@ public class JunkContainer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007FF RID: 2047 RVA: 0x00007EF0 File Offset: 0x000060F0
+	// Token: 0x060006C1 RID: 1729 RVA: 0x00022490 File Offset: 0x00020690
 	private void SetSelected(Transform newSelection)
 	{
 		this.selected = newSelection;
@@ -86,7 +86,7 @@ public class JunkContainer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000800 RID: 2048 RVA: 0x00035CD8 File Offset: 0x00033ED8
+	// Token: 0x060006C2 RID: 1730 RVA: 0x000224C4 File Offset: 0x000206C4
 	private Transform FindClosest(Vector3 position)
 	{
 		Transform transform = null;
@@ -104,7 +104,7 @@ public class JunkContainer : MonoBehaviour
 		return transform;
 	}
 
-	// Token: 0x06000801 RID: 2049 RVA: 0x00035D58 File Offset: 0x00033F58
+	// Token: 0x060006C3 RID: 1731 RVA: 0x00022544 File Offset: 0x00020744
 	private Transform FindClosestDirectional(Vector3 position, Vector3 direction)
 	{
 		Transform transform = null;
@@ -146,59 +146,59 @@ public class JunkContainer : MonoBehaviour
 		return transform2;
 	}
 
-	// Token: 0x06000802 RID: 2050 RVA: 0x00007F22 File Offset: 0x00006122
+	// Token: 0x060006C4 RID: 1732 RVA: 0x0002263C File Offset: 0x0002083C
 	public void Deactivate()
 	{
 		base.enabled = false;
 		this.camera.SetActive(false);
 	}
 
-	// Token: 0x04000A9B RID: 2715
+	// Token: 0x04000913 RID: 2323
 	public Collider interactionCollider;
 
-	// Token: 0x04000A9C RID: 2716
+	// Token: 0x04000914 RID: 2324
 	public GameObject camera;
 
-	// Token: 0x04000A9D RID: 2717
+	// Token: 0x04000915 RID: 2325
 	public Transform contents;
 
-	// Token: 0x04000A9E RID: 2718
+	// Token: 0x04000916 RID: 2326
 	public LayerMask contentLayerMask;
 
-	// Token: 0x04000A9F RID: 2719
+	// Token: 0x04000917 RID: 2327
 	private Transform selected;
 
-	// Token: 0x04000AA0 RID: 2720
+	// Token: 0x04000918 RID: 2328
 	private Vector3 lastPosition;
 
-	// Token: 0x04000AA1 RID: 2721
+	// Token: 0x04000919 RID: 2329
 	private GameObject player;
 
-	// Token: 0x04000AA2 RID: 2722
-	private Player rePlayer;
+	// Token: 0x0400091A RID: 2330
+	private global::Rewired.Player rePlayer;
 
-	// Token: 0x04000AA3 RID: 2723
+	// Token: 0x0400091B RID: 2331
 	private Camera mainCamera;
 
-	// Token: 0x04000AA4 RID: 2724
+	// Token: 0x0400091C RID: 2332
 	public Bounds bounds;
 
-	// Token: 0x04000AA5 RID: 2725
+	// Token: 0x0400091D RID: 2333
 	[Header("Grab Velocity")]
 	public float randomness = 10f;
 
-	// Token: 0x04000AA6 RID: 2726
+	// Token: 0x0400091E RID: 2334
 	public Vector3 cameraVelocity = Vector3.back;
 
-	// Token: 0x04000AA7 RID: 2727
+	// Token: 0x0400091F RID: 2335
 	public Vector3 worldVelocity = Vector3.up;
 
-	// Token: 0x04000AA8 RID: 2728
+	// Token: 0x04000920 RID: 2336
 	public float angularVelocity = 360f;
 
-	// Token: 0x04000AA9 RID: 2729
+	// Token: 0x04000921 RID: 2337
 	public ItemResource itemResource;
 
-	// Token: 0x04000AAA RID: 2730
+	// Token: 0x04000922 RID: 2338
 	public GameObject junkItemPrefab;
 }

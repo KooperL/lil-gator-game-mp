@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000080 RID: 128
+// Token: 0x02000064 RID: 100
 public class QuestDependency : MonoBehaviour
 {
-	// Token: 0x060001A3 RID: 419 RVA: 0x0001CBD8 File Offset: 0x0001ADD8
+	// Token: 0x06000177 RID: 375 RVA: 0x0000899C File Offset: 0x00006B9C
 	private void Start()
 	{
 		QuestProfile[] array = this.quests;
@@ -16,13 +16,13 @@ public class QuestDependency : MonoBehaviour
 		this.CheckQuests(true);
 	}
 
-	// Token: 0x060001A4 RID: 420 RVA: 0x000035F7 File Offset: 0x000017F7
+	// Token: 0x06000178 RID: 376 RVA: 0x000089DE File Offset: 0x00006BDE
 	private void CheckQuests()
 	{
 		this.CheckQuests(false);
 	}
 
-	// Token: 0x060001A5 RID: 421 RVA: 0x0001CC1C File Offset: 0x0001AE1C
+	// Token: 0x06000179 RID: 377 RVA: 0x000089E8 File Offset: 0x00006BE8
 	private void CheckQuests(bool isInitial)
 	{
 		bool flag = true;
@@ -58,15 +58,15 @@ public class QuestDependency : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000292 RID: 658
+	// Token: 0x04000220 RID: 544
 	public QuestProfile[] quests;
 
-	// Token: 0x04000293 RID: 659
+	// Token: 0x04000221 RID: 545
 	public GameObject[] activateObjects;
 
-	// Token: 0x04000294 RID: 660
+	// Token: 0x04000222 RID: 546
 	public UnityEvent onAllComplete;
 
-	// Token: 0x04000295 RID: 661
+	// Token: 0x04000223 RID: 547
 	public int totalCompletedDependencies;
 }

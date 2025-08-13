@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000250 RID: 592
+// Token: 0x020001CD RID: 461
 public class ItemRagdoll : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x17000108 RID: 264
-	// (get) Token: 0x06000B22 RID: 2850 RVA: 0x0000A8AF File Offset: 0x00008AAF
+	// Token: 0x17000080 RID: 128
+	// (get) Token: 0x0600098B RID: 2443 RVA: 0x0002CEA0 File Offset: 0x0002B0A0
 	private PlayerItemManager.EquippedState EquippedState
 	{
 		get
@@ -18,14 +18,14 @@ public class ItemRagdoll : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B23 RID: 2851 RVA: 0x0000A8BC File Offset: 0x00008ABC
+	// Token: 0x0600098C RID: 2444 RVA: 0x0002CEAD File Offset: 0x0002B0AD
 	private void Awake()
 	{
 		this.itemManager = Player.itemManager;
 		this.movement = Player.movement;
 	}
 
-	// Token: 0x06000B24 RID: 2852 RVA: 0x0000A8D4 File Offset: 0x00008AD4
+	// Token: 0x0600098D RID: 2445 RVA: 0x0002CEC5 File Offset: 0x0002B0C5
 	public void Input(bool isDown, bool isHeld)
 	{
 		if (isDown)
@@ -34,7 +34,7 @@ public class ItemRagdoll : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B25 RID: 2853 RVA: 0x0000A8E8 File Offset: 0x00008AE8
+	// Token: 0x0600098E RID: 2446 RVA: 0x0002CED9 File Offset: 0x0002B0D9
 	private void LateUpdate()
 	{
 		if (this.isActivated && (!this.movement.isRagdolling || Player.itemManager.itemInUse != this))
@@ -43,13 +43,13 @@ public class ItemRagdoll : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B26 RID: 2854 RVA: 0x0000A913 File Offset: 0x00008B13
+	// Token: 0x0600098F RID: 2447 RVA: 0x0002CF04 File Offset: 0x0002B104
 	public void Cancel()
 	{
 		this.SetState(false);
 	}
 
-	// Token: 0x06000B27 RID: 2855 RVA: 0x0003ECEC File Offset: 0x0003CEEC
+	// Token: 0x06000990 RID: 2448 RVA: 0x0002CF10 File Offset: 0x0002B110
 	private void SetState(bool isActive)
 	{
 		this.isActivated = isActive;
@@ -67,7 +67,7 @@ public class ItemRagdoll : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B28 RID: 2856 RVA: 0x0003ED4C File Offset: 0x0003CF4C
+	// Token: 0x06000991 RID: 2449 RVA: 0x0002CF70 File Offset: 0x0002B170
 	public void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (this.isOnRight ? this.itemManager.hipAnchor_r : this.itemManager.hipAnchor);
@@ -80,12 +80,12 @@ public class ItemRagdoll : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B29 RID: 2857 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000992 RID: 2450 RVA: 0x0002CFED File Offset: 0x0002B1ED
 	public void OnRemove()
 	{
 	}
 
-	// Token: 0x06000B2A RID: 2858 RVA: 0x0000A91C File Offset: 0x00008B1C
+	// Token: 0x06000993 RID: 2451 RVA: 0x0002CFEF File Offset: 0x0002B1EF
 	public void SetIndex(int index)
 	{
 		if (index == 1)
@@ -94,15 +94,15 @@ public class ItemRagdoll : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x04000E10 RID: 3600
+	// Token: 0x04000BEA RID: 3050
 	private PlayerItemManager itemManager;
 
-	// Token: 0x04000E11 RID: 3601
+	// Token: 0x04000BEB RID: 3051
 	private PlayerMovement movement;
 
-	// Token: 0x04000E12 RID: 3602
+	// Token: 0x04000BEC RID: 3052
 	private bool isActivated;
 
-	// Token: 0x04000E13 RID: 3603
+	// Token: 0x04000BED RID: 3053
 	private bool isOnRight;
 }

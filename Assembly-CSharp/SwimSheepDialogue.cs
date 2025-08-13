@@ -2,12 +2,12 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000109 RID: 265
+// Token: 0x020000C4 RID: 196
 public class SwimSheepDialogue : MonoBehaviour, Interaction
 {
-	// Token: 0x17000083 RID: 131
-	// (get) Token: 0x06000515 RID: 1301 RVA: 0x00005AD2 File Offset: 0x00003CD2
-	// (set) Token: 0x06000516 RID: 1302 RVA: 0x00005AE4 File Offset: 0x00003CE4
+	// Token: 0x1700003F RID: 63
+	// (get) Token: 0x06000444 RID: 1092 RVA: 0x000186F0 File Offset: 0x000168F0
+	// (set) Token: 0x06000445 RID: 1093 RVA: 0x00018702 File Offset: 0x00016902
 	private int State
 	{
 		get
@@ -20,13 +20,13 @@ public class SwimSheepDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000517 RID: 1303 RVA: 0x00005B6A File Offset: 0x00003D6A
+	// Token: 0x06000446 RID: 1094 RVA: 0x00018714 File Offset: 0x00016914
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunDialogue());
 	}
 
-	// Token: 0x06000518 RID: 1304 RVA: 0x00005B79 File Offset: 0x00003D79
+	// Token: 0x06000447 RID: 1095 RVA: 0x00018723 File Offset: 0x00016923
 	private IEnumerator RunDialogue()
 	{
 		switch (this.State)
@@ -54,12 +54,12 @@ public class SwimSheepDialogue : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x04000710 RID: 1808
+	// Token: 0x040005FA RID: 1530
 	public DialogueActor[] actors;
 
-	// Token: 0x04000711 RID: 1809
+	// Token: 0x040005FB RID: 1531
 	public GameObject virtualCamera;
 
-	// Token: 0x04000712 RID: 1810
+	// Token: 0x040005FC RID: 1532
 	private const string key = "NPCSwimBull";
 }

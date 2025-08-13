@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200015F RID: 351
+// Token: 0x0200010A RID: 266
 public class Wooshing : MonoBehaviour
 {
-	// Token: 0x0600068B RID: 1675 RVA: 0x00006BC5 File Offset: 0x00004DC5
+	// Token: 0x06000573 RID: 1395 RVA: 0x0001CD77 File Offset: 0x0001AF77
 	private void OnEnable()
 	{
 		this.speed = 0f;
@@ -12,7 +12,7 @@ public class Wooshing : MonoBehaviour
 		this.oldPosition = base.transform.position;
 	}
 
-	// Token: 0x0600068C RID: 1676 RVA: 0x00031364 File Offset: 0x0002F564
+	// Token: 0x06000574 RID: 1396 RVA: 0x0001CDA0 File Offset: 0x0001AFA0
 	private void Update()
 	{
 		Vector3 position = base.transform.position;
@@ -36,33 +36,33 @@ public class Wooshing : MonoBehaviour
 		this.oldPosition = position;
 	}
 
-	// Token: 0x040008D1 RID: 2257
+	// Token: 0x0400077D RID: 1917
 	public AudioSource audioSource;
 
-	// Token: 0x040008D2 RID: 2258
+	// Token: 0x0400077E RID: 1918
 	public float minSpeed = 5f;
 
-	// Token: 0x040008D3 RID: 2259
+	// Token: 0x0400077F RID: 1919
 	public float maxSpeed = 15f;
 
-	// Token: 0x040008D4 RID: 2260
+	// Token: 0x04000780 RID: 1920
 	public float maxVolume = 0.5f;
 
-	// Token: 0x040008D5 RID: 2261
+	// Token: 0x04000781 RID: 1921
 	public float minPitch = 0.95f;
 
-	// Token: 0x040008D6 RID: 2262
+	// Token: 0x04000782 RID: 1922
 	public float maxPitch = 1.1f;
 
-	// Token: 0x040008D7 RID: 2263
+	// Token: 0x04000783 RID: 1923
 	private float volumeVelocity;
 
-	// Token: 0x040008D8 RID: 2264
+	// Token: 0x04000784 RID: 1924
 	private Vector3 oldPosition;
 
-	// Token: 0x040008D9 RID: 2265
+	// Token: 0x04000785 RID: 1925
 	private float speed;
 
-	// Token: 0x040008DA RID: 2266
+	// Token: 0x04000786 RID: 1926
 	private float speedVelocity;
 }

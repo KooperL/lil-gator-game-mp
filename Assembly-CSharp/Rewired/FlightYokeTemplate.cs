@@ -2,11 +2,11 @@
 
 namespace Rewired
 {
-	// Token: 0x02000404 RID: 1028
+	// Token: 0x0200030B RID: 779
 	public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate, IControllerTemplate
 	{
-		// Token: 0x17000395 RID: 917
-		// (get) Token: 0x06001508 RID: 5384 RVA: 0x00010A96 File Offset: 0x0000EC96
+		// Token: 0x17000286 RID: 646
+		// (get) Token: 0x060011D9 RID: 4569 RVA: 0x0004E4C5 File Offset: 0x0004C6C5
 		IControllerTemplateButton IFlightYokeTemplate.leftPaddle
 		{
 			get
@@ -15,8 +15,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x17000396 RID: 918
-		// (get) Token: 0x06001509 RID: 5385 RVA: 0x00010AA0 File Offset: 0x0000ECA0
+		// Token: 0x17000287 RID: 647
+		// (get) Token: 0x060011DA RID: 4570 RVA: 0x0004E4CF File Offset: 0x0004C6CF
 		IControllerTemplateButton IFlightYokeTemplate.rightPaddle
 		{
 			get
@@ -25,8 +25,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x17000397 RID: 919
-		// (get) Token: 0x0600150A RID: 5386 RVA: 0x0001081B File Offset: 0x0000EA1B
+		// Token: 0x17000288 RID: 648
+		// (get) Token: 0x060011DB RID: 4571 RVA: 0x0004E4D9 File Offset: 0x0004C6D9
 		IControllerTemplateButton IFlightYokeTemplate.leftGripButton1
 		{
 			get
@@ -35,8 +35,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x17000398 RID: 920
-		// (get) Token: 0x0600150B RID: 5387 RVA: 0x00010824 File Offset: 0x0000EA24
+		// Token: 0x17000289 RID: 649
+		// (get) Token: 0x060011DC RID: 4572 RVA: 0x0004E4E2 File Offset: 0x0004C6E2
 		IControllerTemplateButton IFlightYokeTemplate.leftGripButton2
 		{
 			get
@@ -45,8 +45,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x17000399 RID: 921
-		// (get) Token: 0x0600150C RID: 5388 RVA: 0x0001082D File Offset: 0x0000EA2D
+		// Token: 0x1700028A RID: 650
+		// (get) Token: 0x060011DD RID: 4573 RVA: 0x0004E4EB File Offset: 0x0004C6EB
 		IControllerTemplateButton IFlightYokeTemplate.leftGripButton3
 		{
 			get
@@ -55,8 +55,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x1700039A RID: 922
-		// (get) Token: 0x0600150D RID: 5389 RVA: 0x00010837 File Offset: 0x0000EA37
+		// Token: 0x1700028B RID: 651
+		// (get) Token: 0x060011DE RID: 4574 RVA: 0x0004E4F5 File Offset: 0x0004C6F5
 		IControllerTemplateButton IFlightYokeTemplate.leftGripButton4
 		{
 			get
@@ -65,8 +65,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x1700039B RID: 923
-		// (get) Token: 0x0600150E RID: 5390 RVA: 0x000108D9 File Offset: 0x0000EAD9
+		// Token: 0x1700028C RID: 652
+		// (get) Token: 0x060011DF RID: 4575 RVA: 0x0004E4FF File Offset: 0x0004C6FF
 		IControllerTemplateButton IFlightYokeTemplate.leftGripButton5
 		{
 			get
@@ -75,8 +75,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x1700039C RID: 924
-		// (get) Token: 0x0600150F RID: 5391 RVA: 0x0001084B File Offset: 0x0000EA4B
+		// Token: 0x1700028D RID: 653
+		// (get) Token: 0x060011E0 RID: 4576 RVA: 0x0004E509 File Offset: 0x0004C709
 		IControllerTemplateButton IFlightYokeTemplate.leftGripButton6
 		{
 			get
@@ -85,8 +85,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x1700039D RID: 925
-		// (get) Token: 0x06001510 RID: 5392 RVA: 0x000108E3 File Offset: 0x0000EAE3
+		// Token: 0x1700028E RID: 654
+		// (get) Token: 0x060011E1 RID: 4577 RVA: 0x0004E513 File Offset: 0x0004C713
 		IControllerTemplateButton IFlightYokeTemplate.rightGripButton1
 		{
 			get
@@ -95,8 +95,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x1700039E RID: 926
-		// (get) Token: 0x06001511 RID: 5393 RVA: 0x0001085F File Offset: 0x0000EA5F
+		// Token: 0x1700028F RID: 655
+		// (get) Token: 0x060011E2 RID: 4578 RVA: 0x0004E51D File Offset: 0x0004C71D
 		IControllerTemplateButton IFlightYokeTemplate.rightGripButton2
 		{
 			get
@@ -105,8 +105,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x1700039F RID: 927
-		// (get) Token: 0x06001512 RID: 5394 RVA: 0x00010869 File Offset: 0x0000EA69
+		// Token: 0x17000290 RID: 656
+		// (get) Token: 0x060011E3 RID: 4579 RVA: 0x0004E527 File Offset: 0x0004C727
 		IControllerTemplateButton IFlightYokeTemplate.rightGripButton3
 		{
 			get
@@ -115,8 +115,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003A0 RID: 928
-		// (get) Token: 0x06001513 RID: 5395 RVA: 0x00010873 File Offset: 0x0000EA73
+		// Token: 0x17000291 RID: 657
+		// (get) Token: 0x060011E4 RID: 4580 RVA: 0x0004E531 File Offset: 0x0004C731
 		IControllerTemplateButton IFlightYokeTemplate.rightGripButton4
 		{
 			get
@@ -125,8 +125,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003A1 RID: 929
-		// (get) Token: 0x06001514 RID: 5396 RVA: 0x000108ED File Offset: 0x0000EAED
+		// Token: 0x17000292 RID: 658
+		// (get) Token: 0x060011E5 RID: 4581 RVA: 0x0004E53B File Offset: 0x0004C73B
 		IControllerTemplateButton IFlightYokeTemplate.rightGripButton5
 		{
 			get
@@ -135,8 +135,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003A2 RID: 930
-		// (get) Token: 0x06001515 RID: 5397 RVA: 0x000108F7 File Offset: 0x0000EAF7
+		// Token: 0x17000293 RID: 659
+		// (get) Token: 0x060011E6 RID: 4582 RVA: 0x0004E545 File Offset: 0x0004C745
 		IControllerTemplateButton IFlightYokeTemplate.rightGripButton6
 		{
 			get
@@ -145,8 +145,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003A3 RID: 931
-		// (get) Token: 0x06001516 RID: 5398 RVA: 0x00010901 File Offset: 0x0000EB01
+		// Token: 0x17000294 RID: 660
+		// (get) Token: 0x060011E7 RID: 4583 RVA: 0x0004E54F File Offset: 0x0004C74F
 		IControllerTemplateButton IFlightYokeTemplate.centerButton1
 		{
 			get
@@ -155,8 +155,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003A4 RID: 932
-		// (get) Token: 0x06001517 RID: 5399 RVA: 0x0001090B File Offset: 0x0000EB0B
+		// Token: 0x17000295 RID: 661
+		// (get) Token: 0x060011E8 RID: 4584 RVA: 0x0004E559 File Offset: 0x0004C759
 		IControllerTemplateButton IFlightYokeTemplate.centerButton2
 		{
 			get
@@ -165,8 +165,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003A5 RID: 933
-		// (get) Token: 0x06001518 RID: 5400 RVA: 0x00010915 File Offset: 0x0000EB15
+		// Token: 0x17000296 RID: 662
+		// (get) Token: 0x060011E9 RID: 4585 RVA: 0x0004E563 File Offset: 0x0004C763
 		IControllerTemplateButton IFlightYokeTemplate.centerButton3
 		{
 			get
@@ -175,8 +175,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003A6 RID: 934
-		// (get) Token: 0x06001519 RID: 5401 RVA: 0x0001091F File Offset: 0x0000EB1F
+		// Token: 0x17000297 RID: 663
+		// (get) Token: 0x060011EA RID: 4586 RVA: 0x0004E56D File Offset: 0x0004C76D
 		IControllerTemplateButton IFlightYokeTemplate.centerButton4
 		{
 			get
@@ -185,8 +185,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003A7 RID: 935
-		// (get) Token: 0x0600151A RID: 5402 RVA: 0x00010929 File Offset: 0x0000EB29
+		// Token: 0x17000298 RID: 664
+		// (get) Token: 0x060011EB RID: 4587 RVA: 0x0004E577 File Offset: 0x0004C777
 		IControllerTemplateButton IFlightYokeTemplate.centerButton5
 		{
 			get
@@ -195,8 +195,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003A8 RID: 936
-		// (get) Token: 0x0600151B RID: 5403 RVA: 0x00010933 File Offset: 0x0000EB33
+		// Token: 0x17000299 RID: 665
+		// (get) Token: 0x060011EC RID: 4588 RVA: 0x0004E581 File Offset: 0x0004C781
 		IControllerTemplateButton IFlightYokeTemplate.centerButton6
 		{
 			get
@@ -205,8 +205,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003A9 RID: 937
-		// (get) Token: 0x0600151C RID: 5404 RVA: 0x0001093D File Offset: 0x0000EB3D
+		// Token: 0x1700029A RID: 666
+		// (get) Token: 0x060011ED RID: 4589 RVA: 0x0004E58B File Offset: 0x0004C78B
 		IControllerTemplateButton IFlightYokeTemplate.centerButton7
 		{
 			get
@@ -215,8 +215,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003AA RID: 938
-		// (get) Token: 0x0600151D RID: 5405 RVA: 0x00010947 File Offset: 0x0000EB47
+		// Token: 0x1700029B RID: 667
+		// (get) Token: 0x060011EE RID: 4590 RVA: 0x0004E595 File Offset: 0x0004C795
 		IControllerTemplateButton IFlightYokeTemplate.centerButton8
 		{
 			get
@@ -225,8 +225,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003AB RID: 939
-		// (get) Token: 0x0600151E RID: 5406 RVA: 0x00010A5A File Offset: 0x0000EC5A
+		// Token: 0x1700029C RID: 668
+		// (get) Token: 0x060011EF RID: 4591 RVA: 0x0004E59F File Offset: 0x0004C79F
 		IControllerTemplateButton IFlightYokeTemplate.wheel1Up
 		{
 			get
@@ -235,8 +235,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003AC RID: 940
-		// (get) Token: 0x0600151F RID: 5407 RVA: 0x00010A64 File Offset: 0x0000EC64
+		// Token: 0x1700029D RID: 669
+		// (get) Token: 0x060011F0 RID: 4592 RVA: 0x0004E5A9 File Offset: 0x0004C7A9
 		IControllerTemplateButton IFlightYokeTemplate.wheel1Down
 		{
 			get
@@ -245,8 +245,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003AD RID: 941
-		// (get) Token: 0x06001520 RID: 5408 RVA: 0x00010A6E File Offset: 0x0000EC6E
+		// Token: 0x1700029E RID: 670
+		// (get) Token: 0x060011F1 RID: 4593 RVA: 0x0004E5B3 File Offset: 0x0004C7B3
 		IControllerTemplateButton IFlightYokeTemplate.wheel1Press
 		{
 			get
@@ -255,8 +255,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003AE RID: 942
-		// (get) Token: 0x06001521 RID: 5409 RVA: 0x00010A78 File Offset: 0x0000EC78
+		// Token: 0x1700029F RID: 671
+		// (get) Token: 0x060011F2 RID: 4594 RVA: 0x0004E5BD File Offset: 0x0004C7BD
 		IControllerTemplateButton IFlightYokeTemplate.wheel2Up
 		{
 			get
@@ -265,8 +265,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003AF RID: 943
-		// (get) Token: 0x06001522 RID: 5410 RVA: 0x00010A82 File Offset: 0x0000EC82
+		// Token: 0x170002A0 RID: 672
+		// (get) Token: 0x060011F3 RID: 4595 RVA: 0x0004E5C7 File Offset: 0x0004C7C7
 		IControllerTemplateButton IFlightYokeTemplate.wheel2Down
 		{
 			get
@@ -275,8 +275,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003B0 RID: 944
-		// (get) Token: 0x06001523 RID: 5411 RVA: 0x00010A8C File Offset: 0x0000EC8C
+		// Token: 0x170002A1 RID: 673
+		// (get) Token: 0x060011F4 RID: 4596 RVA: 0x0004E5D1 File Offset: 0x0004C7D1
 		IControllerTemplateButton IFlightYokeTemplate.wheel2Press
 		{
 			get
@@ -285,8 +285,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003B1 RID: 945
-		// (get) Token: 0x06001524 RID: 5412 RVA: 0x000109D3 File Offset: 0x0000EBD3
+		// Token: 0x170002A2 RID: 674
+		// (get) Token: 0x060011F5 RID: 4597 RVA: 0x0004E5DB File Offset: 0x0004C7DB
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton1
 		{
 			get
@@ -295,8 +295,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003B2 RID: 946
-		// (get) Token: 0x06001525 RID: 5413 RVA: 0x000109AB File Offset: 0x0000EBAB
+		// Token: 0x170002A3 RID: 675
+		// (get) Token: 0x060011F6 RID: 4598 RVA: 0x0004E5E5 File Offset: 0x0004C7E5
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton2
 		{
 			get
@@ -305,8 +305,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003B3 RID: 947
-		// (get) Token: 0x06001526 RID: 5414 RVA: 0x00010A28 File Offset: 0x0000EC28
+		// Token: 0x170002A4 RID: 676
+		// (get) Token: 0x060011F7 RID: 4599 RVA: 0x0004E5EF File Offset: 0x0004C7EF
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton3
 		{
 			get
@@ -315,8 +315,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003B4 RID: 948
-		// (get) Token: 0x06001527 RID: 5415 RVA: 0x00010A32 File Offset: 0x0000EC32
+		// Token: 0x170002A5 RID: 677
+		// (get) Token: 0x060011F8 RID: 4600 RVA: 0x0004E5F9 File Offset: 0x0004C7F9
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton4
 		{
 			get
@@ -325,8 +325,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003B5 RID: 949
-		// (get) Token: 0x06001528 RID: 5416 RVA: 0x00010D01 File Offset: 0x0000EF01
+		// Token: 0x170002A6 RID: 678
+		// (get) Token: 0x060011F9 RID: 4601 RVA: 0x0004E603 File Offset: 0x0004C803
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton5
 		{
 			get
@@ -335,8 +335,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003B6 RID: 950
-		// (get) Token: 0x06001529 RID: 5417 RVA: 0x00010D0B File Offset: 0x0000EF0B
+		// Token: 0x170002A7 RID: 679
+		// (get) Token: 0x060011FA RID: 4602 RVA: 0x0004E60D File Offset: 0x0004C80D
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton6
 		{
 			get
@@ -345,8 +345,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003B7 RID: 951
-		// (get) Token: 0x0600152A RID: 5418 RVA: 0x00010D15 File Offset: 0x0000EF15
+		// Token: 0x170002A8 RID: 680
+		// (get) Token: 0x060011FB RID: 4603 RVA: 0x0004E617 File Offset: 0x0004C817
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton7
 		{
 			get
@@ -355,8 +355,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003B8 RID: 952
-		// (get) Token: 0x0600152B RID: 5419 RVA: 0x00010A3C File Offset: 0x0000EC3C
+		// Token: 0x170002A9 RID: 681
+		// (get) Token: 0x060011FC RID: 4604 RVA: 0x0004E621 File Offset: 0x0004C821
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton8
 		{
 			get
@@ -365,8 +365,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003B9 RID: 953
-		// (get) Token: 0x0600152C RID: 5420 RVA: 0x00010A46 File Offset: 0x0000EC46
+		// Token: 0x170002AA RID: 682
+		// (get) Token: 0x060011FD RID: 4605 RVA: 0x0004E62B File Offset: 0x0004C82B
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton9
 		{
 			get
@@ -375,8 +375,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003BA RID: 954
-		// (get) Token: 0x0600152D RID: 5421 RVA: 0x00010A50 File Offset: 0x0000EC50
+		// Token: 0x170002AB RID: 683
+		// (get) Token: 0x060011FE RID: 4606 RVA: 0x0004E635 File Offset: 0x0004C835
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton10
 		{
 			get
@@ -385,8 +385,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003BB RID: 955
-		// (get) Token: 0x0600152E RID: 5422 RVA: 0x00010AAA File Offset: 0x0000ECAA
+		// Token: 0x170002AC RID: 684
+		// (get) Token: 0x060011FF RID: 4607 RVA: 0x0004E63F File Offset: 0x0004C83F
 		IControllerTemplateButton IFlightYokeTemplate.mode1
 		{
 			get
@@ -395,8 +395,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003BC RID: 956
-		// (get) Token: 0x0600152F RID: 5423 RVA: 0x00010AB4 File Offset: 0x0000ECB4
+		// Token: 0x170002AD RID: 685
+		// (get) Token: 0x06001200 RID: 4608 RVA: 0x0004E649 File Offset: 0x0004C849
 		IControllerTemplateButton IFlightYokeTemplate.mode2
 		{
 			get
@@ -405,8 +405,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003BD RID: 957
-		// (get) Token: 0x06001530 RID: 5424 RVA: 0x00010ABE File Offset: 0x0000ECBE
+		// Token: 0x170002AE RID: 686
+		// (get) Token: 0x06001201 RID: 4609 RVA: 0x0004E653 File Offset: 0x0004C853
 		IControllerTemplateButton IFlightYokeTemplate.mode3
 		{
 			get
@@ -415,8 +415,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003BE RID: 958
-		// (get) Token: 0x06001531 RID: 5425 RVA: 0x00010D1F File Offset: 0x0000EF1F
+		// Token: 0x170002AF RID: 687
+		// (get) Token: 0x06001202 RID: 4610 RVA: 0x0004E65D File Offset: 0x0004C85D
 		IControllerTemplateYoke IFlightYokeTemplate.yoke
 		{
 			get
@@ -425,8 +425,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003BF RID: 959
-		// (get) Token: 0x06001532 RID: 5426 RVA: 0x00010D29 File Offset: 0x0000EF29
+		// Token: 0x170002B0 RID: 688
+		// (get) Token: 0x06001203 RID: 4611 RVA: 0x0004E667 File Offset: 0x0004C867
 		IControllerTemplateThrottle IFlightYokeTemplate.lever1
 		{
 			get
@@ -435,8 +435,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003C0 RID: 960
-		// (get) Token: 0x06001533 RID: 5427 RVA: 0x00010D33 File Offset: 0x0000EF33
+		// Token: 0x170002B1 RID: 689
+		// (get) Token: 0x06001204 RID: 4612 RVA: 0x0004E671 File Offset: 0x0004C871
 		IControllerTemplateThrottle IFlightYokeTemplate.lever2
 		{
 			get
@@ -445,8 +445,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003C1 RID: 961
-		// (get) Token: 0x06001534 RID: 5428 RVA: 0x00010D3D File Offset: 0x0000EF3D
+		// Token: 0x170002B2 RID: 690
+		// (get) Token: 0x06001205 RID: 4613 RVA: 0x0004E67B File Offset: 0x0004C87B
 		IControllerTemplateThrottle IFlightYokeTemplate.lever3
 		{
 			get
@@ -455,8 +455,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003C2 RID: 962
-		// (get) Token: 0x06001535 RID: 5429 RVA: 0x00010D47 File Offset: 0x0000EF47
+		// Token: 0x170002B3 RID: 691
+		// (get) Token: 0x06001206 RID: 4614 RVA: 0x0004E685 File Offset: 0x0004C885
 		IControllerTemplateThrottle IFlightYokeTemplate.lever4
 		{
 			get
@@ -465,8 +465,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003C3 RID: 963
-		// (get) Token: 0x06001536 RID: 5430 RVA: 0x00010D51 File Offset: 0x0000EF51
+		// Token: 0x170002B4 RID: 692
+		// (get) Token: 0x06001207 RID: 4615 RVA: 0x0004E68F File Offset: 0x0004C88F
 		IControllerTemplateThrottle IFlightYokeTemplate.lever5
 		{
 			get
@@ -475,8 +475,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003C4 RID: 964
-		// (get) Token: 0x06001537 RID: 5431 RVA: 0x00010D5B File Offset: 0x0000EF5B
+		// Token: 0x170002B5 RID: 693
+		// (get) Token: 0x06001208 RID: 4616 RVA: 0x0004E699 File Offset: 0x0004C899
 		IControllerTemplateHat IFlightYokeTemplate.leftGripHat
 		{
 			get
@@ -485,8 +485,8 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x170003C5 RID: 965
-		// (get) Token: 0x06001538 RID: 5432 RVA: 0x00010D65 File Offset: 0x0000EF65
+		// Token: 0x170002B6 RID: 694
+		// (get) Token: 0x06001209 RID: 4617 RVA: 0x0004E6A3 File Offset: 0x0004C8A3
 		IControllerTemplateHat IFlightYokeTemplate.rightGripHat
 		{
 			get
@@ -495,244 +495,244 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x06001539 RID: 5433 RVA: 0x0001089B File Offset: 0x0000EA9B
+		// Token: 0x0600120A RID: 4618 RVA: 0x0004E6AD File Offset: 0x0004C8AD
 		public FlightYokeTemplate(object payload)
 			: base(payload)
 		{
 		}
 
-		// Token: 0x04001A4A RID: 6730
+		// Token: 0x0400167D RID: 5757
 		public static readonly Guid typeGuid = new Guid("f311fa16-0ccc-41c0-ac4b-50f7100bb8ff");
 
-		// Token: 0x04001A4B RID: 6731
+		// Token: 0x0400167E RID: 5758
 		public const int elementId_rotateYoke = 0;
 
-		// Token: 0x04001A4C RID: 6732
+		// Token: 0x0400167F RID: 5759
 		public const int elementId_yokeZ = 1;
 
-		// Token: 0x04001A4D RID: 6733
+		// Token: 0x04001680 RID: 5760
 		public const int elementId_leftPaddle = 59;
 
-		// Token: 0x04001A4E RID: 6734
+		// Token: 0x04001681 RID: 5761
 		public const int elementId_rightPaddle = 60;
 
-		// Token: 0x04001A4F RID: 6735
+		// Token: 0x04001682 RID: 5762
 		public const int elementId_lever1Axis = 2;
 
-		// Token: 0x04001A50 RID: 6736
+		// Token: 0x04001683 RID: 5763
 		public const int elementId_lever1MinDetent = 64;
 
-		// Token: 0x04001A51 RID: 6737
+		// Token: 0x04001684 RID: 5764
 		public const int elementId_lever2Axis = 3;
 
-		// Token: 0x04001A52 RID: 6738
+		// Token: 0x04001685 RID: 5765
 		public const int elementId_lever2MinDetent = 65;
 
-		// Token: 0x04001A53 RID: 6739
+		// Token: 0x04001686 RID: 5766
 		public const int elementId_lever3Axis = 4;
 
-		// Token: 0x04001A54 RID: 6740
+		// Token: 0x04001687 RID: 5767
 		public const int elementId_lever3MinDetent = 66;
 
-		// Token: 0x04001A55 RID: 6741
+		// Token: 0x04001688 RID: 5768
 		public const int elementId_lever4Axis = 5;
 
-		// Token: 0x04001A56 RID: 6742
+		// Token: 0x04001689 RID: 5769
 		public const int elementId_lever4MinDetent = 67;
 
-		// Token: 0x04001A57 RID: 6743
+		// Token: 0x0400168A RID: 5770
 		public const int elementId_lever5Axis = 6;
 
-		// Token: 0x04001A58 RID: 6744
+		// Token: 0x0400168B RID: 5771
 		public const int elementId_lever5MinDetent = 68;
 
-		// Token: 0x04001A59 RID: 6745
+		// Token: 0x0400168C RID: 5772
 		public const int elementId_leftGripButton1 = 7;
 
-		// Token: 0x04001A5A RID: 6746
+		// Token: 0x0400168D RID: 5773
 		public const int elementId_leftGripButton2 = 8;
 
-		// Token: 0x04001A5B RID: 6747
+		// Token: 0x0400168E RID: 5774
 		public const int elementId_leftGripButton3 = 9;
 
-		// Token: 0x04001A5C RID: 6748
+		// Token: 0x0400168F RID: 5775
 		public const int elementId_leftGripButton4 = 10;
 
-		// Token: 0x04001A5D RID: 6749
+		// Token: 0x04001690 RID: 5776
 		public const int elementId_leftGripButton5 = 11;
 
-		// Token: 0x04001A5E RID: 6750
+		// Token: 0x04001691 RID: 5777
 		public const int elementId_leftGripButton6 = 12;
 
-		// Token: 0x04001A5F RID: 6751
+		// Token: 0x04001692 RID: 5778
 		public const int elementId_rightGripButton1 = 13;
 
-		// Token: 0x04001A60 RID: 6752
+		// Token: 0x04001693 RID: 5779
 		public const int elementId_rightGripButton2 = 14;
 
-		// Token: 0x04001A61 RID: 6753
+		// Token: 0x04001694 RID: 5780
 		public const int elementId_rightGripButton3 = 15;
 
-		// Token: 0x04001A62 RID: 6754
+		// Token: 0x04001695 RID: 5781
 		public const int elementId_rightGripButton4 = 16;
 
-		// Token: 0x04001A63 RID: 6755
+		// Token: 0x04001696 RID: 5782
 		public const int elementId_rightGripButton5 = 17;
 
-		// Token: 0x04001A64 RID: 6756
+		// Token: 0x04001697 RID: 5783
 		public const int elementId_rightGripButton6 = 18;
 
-		// Token: 0x04001A65 RID: 6757
+		// Token: 0x04001698 RID: 5784
 		public const int elementId_centerButton1 = 19;
 
-		// Token: 0x04001A66 RID: 6758
+		// Token: 0x04001699 RID: 5785
 		public const int elementId_centerButton2 = 20;
 
-		// Token: 0x04001A67 RID: 6759
+		// Token: 0x0400169A RID: 5786
 		public const int elementId_centerButton3 = 21;
 
-		// Token: 0x04001A68 RID: 6760
+		// Token: 0x0400169B RID: 5787
 		public const int elementId_centerButton4 = 22;
 
-		// Token: 0x04001A69 RID: 6761
+		// Token: 0x0400169C RID: 5788
 		public const int elementId_centerButton5 = 23;
 
-		// Token: 0x04001A6A RID: 6762
+		// Token: 0x0400169D RID: 5789
 		public const int elementId_centerButton6 = 24;
 
-		// Token: 0x04001A6B RID: 6763
+		// Token: 0x0400169E RID: 5790
 		public const int elementId_centerButton7 = 25;
 
-		// Token: 0x04001A6C RID: 6764
+		// Token: 0x0400169F RID: 5791
 		public const int elementId_centerButton8 = 26;
 
-		// Token: 0x04001A6D RID: 6765
+		// Token: 0x040016A0 RID: 5792
 		public const int elementId_wheel1Up = 53;
 
-		// Token: 0x04001A6E RID: 6766
+		// Token: 0x040016A1 RID: 5793
 		public const int elementId_wheel1Down = 54;
 
-		// Token: 0x04001A6F RID: 6767
+		// Token: 0x040016A2 RID: 5794
 		public const int elementId_wheel1Press = 55;
 
-		// Token: 0x04001A70 RID: 6768
+		// Token: 0x040016A3 RID: 5795
 		public const int elementId_wheel2Up = 56;
 
-		// Token: 0x04001A71 RID: 6769
+		// Token: 0x040016A4 RID: 5796
 		public const int elementId_wheel2Down = 57;
 
-		// Token: 0x04001A72 RID: 6770
+		// Token: 0x040016A5 RID: 5797
 		public const int elementId_wheel2Press = 58;
 
-		// Token: 0x04001A73 RID: 6771
+		// Token: 0x040016A6 RID: 5798
 		public const int elementId_leftGripHatUp = 27;
 
-		// Token: 0x04001A74 RID: 6772
+		// Token: 0x040016A7 RID: 5799
 		public const int elementId_leftGripHatUpRight = 28;
 
-		// Token: 0x04001A75 RID: 6773
+		// Token: 0x040016A8 RID: 5800
 		public const int elementId_leftGripHatRight = 29;
 
-		// Token: 0x04001A76 RID: 6774
+		// Token: 0x040016A9 RID: 5801
 		public const int elementId_leftGripHatDownRight = 30;
 
-		// Token: 0x04001A77 RID: 6775
+		// Token: 0x040016AA RID: 5802
 		public const int elementId_leftGripHatDown = 31;
 
-		// Token: 0x04001A78 RID: 6776
+		// Token: 0x040016AB RID: 5803
 		public const int elementId_leftGripHatDownLeft = 32;
 
-		// Token: 0x04001A79 RID: 6777
+		// Token: 0x040016AC RID: 5804
 		public const int elementId_leftGripHatLeft = 33;
 
-		// Token: 0x04001A7A RID: 6778
+		// Token: 0x040016AD RID: 5805
 		public const int elementId_leftGripHatUpLeft = 34;
 
-		// Token: 0x04001A7B RID: 6779
+		// Token: 0x040016AE RID: 5806
 		public const int elementId_rightGripHatUp = 35;
 
-		// Token: 0x04001A7C RID: 6780
+		// Token: 0x040016AF RID: 5807
 		public const int elementId_rightGripHatUpRight = 36;
 
-		// Token: 0x04001A7D RID: 6781
+		// Token: 0x040016B0 RID: 5808
 		public const int elementId_rightGripHatRight = 37;
 
-		// Token: 0x04001A7E RID: 6782
+		// Token: 0x040016B1 RID: 5809
 		public const int elementId_rightGripHatDownRight = 38;
 
-		// Token: 0x04001A7F RID: 6783
+		// Token: 0x040016B2 RID: 5810
 		public const int elementId_rightGripHatDown = 39;
 
-		// Token: 0x04001A80 RID: 6784
+		// Token: 0x040016B3 RID: 5811
 		public const int elementId_rightGripHatDownLeft = 40;
 
-		// Token: 0x04001A81 RID: 6785
+		// Token: 0x040016B4 RID: 5812
 		public const int elementId_rightGripHatLeft = 41;
 
-		// Token: 0x04001A82 RID: 6786
+		// Token: 0x040016B5 RID: 5813
 		public const int elementId_rightGripHatUpLeft = 42;
 
-		// Token: 0x04001A83 RID: 6787
+		// Token: 0x040016B6 RID: 5814
 		public const int elementId_consoleButton1 = 43;
 
-		// Token: 0x04001A84 RID: 6788
+		// Token: 0x040016B7 RID: 5815
 		public const int elementId_consoleButton2 = 44;
 
-		// Token: 0x04001A85 RID: 6789
+		// Token: 0x040016B8 RID: 5816
 		public const int elementId_consoleButton3 = 45;
 
-		// Token: 0x04001A86 RID: 6790
+		// Token: 0x040016B9 RID: 5817
 		public const int elementId_consoleButton4 = 46;
 
-		// Token: 0x04001A87 RID: 6791
+		// Token: 0x040016BA RID: 5818
 		public const int elementId_consoleButton5 = 47;
 
-		// Token: 0x04001A88 RID: 6792
+		// Token: 0x040016BB RID: 5819
 		public const int elementId_consoleButton6 = 48;
 
-		// Token: 0x04001A89 RID: 6793
+		// Token: 0x040016BC RID: 5820
 		public const int elementId_consoleButton7 = 49;
 
-		// Token: 0x04001A8A RID: 6794
+		// Token: 0x040016BD RID: 5821
 		public const int elementId_consoleButton8 = 50;
 
-		// Token: 0x04001A8B RID: 6795
+		// Token: 0x040016BE RID: 5822
 		public const int elementId_consoleButton9 = 51;
 
-		// Token: 0x04001A8C RID: 6796
+		// Token: 0x040016BF RID: 5823
 		public const int elementId_consoleButton10 = 52;
 
-		// Token: 0x04001A8D RID: 6797
+		// Token: 0x040016C0 RID: 5824
 		public const int elementId_mode1 = 61;
 
-		// Token: 0x04001A8E RID: 6798
+		// Token: 0x040016C1 RID: 5825
 		public const int elementId_mode2 = 62;
 
-		// Token: 0x04001A8F RID: 6799
+		// Token: 0x040016C2 RID: 5826
 		public const int elementId_mode3 = 63;
 
-		// Token: 0x04001A90 RID: 6800
+		// Token: 0x040016C3 RID: 5827
 		public const int elementId_yoke = 69;
 
-		// Token: 0x04001A91 RID: 6801
+		// Token: 0x040016C4 RID: 5828
 		public const int elementId_lever1 = 70;
 
-		// Token: 0x04001A92 RID: 6802
+		// Token: 0x040016C5 RID: 5829
 		public const int elementId_lever2 = 71;
 
-		// Token: 0x04001A93 RID: 6803
+		// Token: 0x040016C6 RID: 5830
 		public const int elementId_lever3 = 72;
 
-		// Token: 0x04001A94 RID: 6804
+		// Token: 0x040016C7 RID: 5831
 		public const int elementId_lever4 = 73;
 
-		// Token: 0x04001A95 RID: 6805
+		// Token: 0x040016C8 RID: 5832
 		public const int elementId_lever5 = 74;
 
-		// Token: 0x04001A96 RID: 6806
+		// Token: 0x040016C9 RID: 5833
 		public const int elementId_leftGripHat = 75;
 
-		// Token: 0x04001A97 RID: 6807
+		// Token: 0x040016CA RID: 5834
 		public const int elementId_rightGripHat = 76;
 	}
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200011F RID: 287
+// Token: 0x020000D3 RID: 211
 public interface ICueable
 {
-	// Token: 0x0600056D RID: 1389
+	// Token: 0x0600047C RID: 1148
 	void SetCamera(GameObject camera);
 }

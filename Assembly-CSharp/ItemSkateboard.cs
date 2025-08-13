@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200025C RID: 604
+// Token: 0x020001D5 RID: 469
 public class ItemSkateboard : ItemShield
 {
-	// Token: 0x06000B72 RID: 2930 RVA: 0x0000ACA0 File Offset: 0x00008EA0
+	// Token: 0x060009C9 RID: 2505 RVA: 0x0002D803 File Offset: 0x0002BA03
 	public override Transform GetParent(bool isEquipped, bool isSledding)
 	{
 		if (isEquipped && isSledding)

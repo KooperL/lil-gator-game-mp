@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000B7 RID: 183
+// Token: 0x02000091 RID: 145
 public class BalancePoint : MonoBehaviour, ICustomPlayerMovement, ICustomFootIKPositions
 {
-	// Token: 0x060002D2 RID: 722 RVA: 0x00004357 File Offset: 0x00002557
+	// Token: 0x06000288 RID: 648 RVA: 0x0000DEB5 File Offset: 0x0000C0B5
 	private void OnValidate()
 	{
 		if (!Application.isPlaying)
@@ -14,14 +14,14 @@ public class BalancePoint : MonoBehaviour, ICustomPlayerMovement, ICustomFootIKP
 		}
 	}
 
-	// Token: 0x060002D3 RID: 723 RVA: 0x00021AF0 File Offset: 0x0001FCF0
+	// Token: 0x06000289 RID: 649 RVA: 0x0000DEC8 File Offset: 0x0000C0C8
 	private bool IsEligible()
 	{
 		Vector3 rawPosition = Player.RawPosition;
 		return Vector3.SqrMagnitude(base.transform.position - rawPosition) <= this.distanceAllowance * this.distanceAllowance && Player.rigidbody.velocity.y <= 0f;
 	}
 
-	// Token: 0x060002D4 RID: 724 RVA: 0x00021B44 File Offset: 0x0001FD44
+	// Token: 0x0600028A RID: 650 RVA: 0x0000DF1C File Offset: 0x0000C11C
 	private void OnTriggerStay(Collider other)
 	{
 		if (base.enabled || Time.time - this.lastEnabled < 0.5f || Player.movement.JustCanceled)
@@ -67,7 +67,7 @@ public class BalancePoint : MonoBehaviour, ICustomPlayerMovement, ICustomFootIKP
 		}
 	}
 
-	// Token: 0x060002D5 RID: 725 RVA: 0x00021C38 File Offset: 0x0001FE38
+	// Token: 0x0600028B RID: 651 RVA: 0x0000E010 File Offset: 0x0000C210
 	private void OnEnable()
 	{
 		Player.movement.isModified = true;
@@ -93,7 +93,7 @@ public class BalancePoint : MonoBehaviour, ICustomPlayerMovement, ICustomFootIKP
 		this.onEnable.Invoke();
 	}
 
-	// Token: 0x060002D6 RID: 726 RVA: 0x00021D38 File Offset: 0x0001FF38
+	// Token: 0x0600028C RID: 652 RVA: 0x0000E110 File Offset: 0x0000C310
 	private void OnDisable()
 	{
 		if (Player.footIK.customIKPositions == this)
@@ -116,7 +116,7 @@ public class BalancePoint : MonoBehaviour, ICustomPlayerMovement, ICustomFootIKP
 		this.lastEnabled = Time.time;
 	}
 
-	// Token: 0x060002D7 RID: 727 RVA: 0x00021DE0 File Offset: 0x0001FFE0
+	// Token: 0x0600028D RID: 653 RVA: 0x0000E1B8 File Offset: 0x0000C3B8
 	public void MovementUpdate(Vector3 input, ref Vector3 position, ref Vector3 velocity, ref Vector3 direction, ref Vector3 up, ref float animationIndex)
 	{
 		Vector3 position2 = base.transform.position;
@@ -146,66 +146,66 @@ public class BalancePoint : MonoBehaviour, ICustomPlayerMovement, ICustomFootIKP
 		}
 	}
 
-	// Token: 0x060002D8 RID: 728 RVA: 0x000043C9 File Offset: 0x000025C9
+	// Token: 0x0600028E RID: 654 RVA: 0x0000E2B6 File Offset: 0x0000C4B6
 	public void Cancel()
 	{
 		base.enabled = false;
 	}
 
-	// Token: 0x060002D9 RID: 729 RVA: 0x000043D2 File Offset: 0x000025D2
+	// Token: 0x0600028F RID: 655 RVA: 0x0000E2BF File Offset: 0x0000C4BF
 	public Vector3 GetLeftFootTarget(Vector3 currentPosition)
 	{
 		return Vector3.Lerp(currentPosition, base.transform.position, this.lerpToPosition);
 	}
 
-	// Token: 0x060002DA RID: 730 RVA: 0x000043D2 File Offset: 0x000025D2
+	// Token: 0x06000290 RID: 656 RVA: 0x0000E2D8 File Offset: 0x0000C4D8
 	public Vector3 GetRightFootTarget(Vector3 currentPosition)
 	{
 		return Vector3.Lerp(currentPosition, base.transform.position, this.lerpToPosition);
 	}
 
-	// Token: 0x040003E0 RID: 992
+	// Token: 0x04000347 RID: 839
 	private float lastEnabled = -1f;
 
-	// Token: 0x040003E1 RID: 993
+	// Token: 0x04000348 RID: 840
 	public float distanceAllowance = 0.5f;
 
-	// Token: 0x040003E2 RID: 994
+	// Token: 0x04000349 RID: 841
 	[HideInInspector]
 	public float lerpToPosition;
 
-	// Token: 0x040003E3 RID: 995
+	// Token: 0x0400034A RID: 842
 	public float lerpSpeed = 5f;
 
-	// Token: 0x040003E4 RID: 996
+	// Token: 0x0400034B RID: 843
 	public AnimationSet animationSet;
 
-	// Token: 0x040003E5 RID: 997
+	// Token: 0x0400034C RID: 844
 	public UnityEvent onEnable;
 
-	// Token: 0x040003E6 RID: 998
+	// Token: 0x0400034D RID: 845
 	private const float walkOffTime = 0.25f;
 
-	// Token: 0x040003E7 RID: 999
+	// Token: 0x0400034E RID: 846
 	private float walkOffCounter;
 
-	// Token: 0x040003E8 RID: 1000
+	// Token: 0x0400034F RID: 847
 	public float rotationSpeed = 30f;
 
-	// Token: 0x040003E9 RID: 1001
+	// Token: 0x04000350 RID: 848
 	public SurfaceMaterial beamMaterial;
 
-	// Token: 0x040003EA RID: 1002
+	// Token: 0x04000351 RID: 849
 	public bool playJumpSound = true;
 
-	// Token: 0x040003EB RID: 1003
+	// Token: 0x04000352 RID: 850
 	[ConditionalHide("playJumpSound", true)]
 	public AudioSourceVariance jumpSoundEffect;
 
-	// Token: 0x040003EC RID: 1004
+	// Token: 0x04000353 RID: 851
 	public bool playLandSound = true;
 
-	// Token: 0x040003ED RID: 1005
+	// Token: 0x04000354 RID: 852
 	[ConditionalHide("playLandSound", true)]
 	public AudioSourceVariance landSoundEffect;
 }

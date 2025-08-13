@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000373 RID: 883
+// Token: 0x02000299 RID: 665
 public class SettingSlider : MonoBehaviour
 {
-	// Token: 0x060010EB RID: 4331 RVA: 0x0000E8B1 File Offset: 0x0000CAB1
+	// Token: 0x06000E27 RID: 3623 RVA: 0x000443A6 File Offset: 0x000425A6
 	private void OnValidate()
 	{
 		if (this.slider == null)
@@ -14,14 +14,14 @@ public class SettingSlider : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010EC RID: 4332 RVA: 0x0000E8CD File Offset: 0x0000CACD
+	// Token: 0x06000E28 RID: 3624 RVA: 0x000443C2 File Offset: 0x000425C2
 	private void OnEnable()
 	{
 		this.slider.value = Settings.s.ReadFloat(this.key, this.slider.value);
 		this.setInitialSetting = true;
 	}
 
-	// Token: 0x060010ED RID: 4333 RVA: 0x0000E8FC File Offset: 0x0000CAFC
+	// Token: 0x06000E29 RID: 3625 RVA: 0x000443F1 File Offset: 0x000425F1
 	public void OnSliderChange(float value)
 	{
 		if (!this.setInitialSetting)
@@ -32,12 +32,12 @@ public class SettingSlider : MonoBehaviour
 		Settings.s.LoadSettings();
 	}
 
-	// Token: 0x040015EC RID: 5612
+	// Token: 0x0400128F RID: 4751
 	public string key;
 
-	// Token: 0x040015ED RID: 5613
+	// Token: 0x04001290 RID: 4752
 	public Slider slider;
 
-	// Token: 0x040015EE RID: 5614
+	// Token: 0x04001291 RID: 4753
 	private bool setInitialSetting;
 }

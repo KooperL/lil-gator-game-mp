@@ -5,27 +5,27 @@ using UnityEngine.UI;
 
 namespace Rewired.Demos
 {
-	// Token: 0x02000498 RID: 1176
+	// Token: 0x0200033B RID: 827
 	[AddComponentMenu("")]
 	[RequireComponent(typeof(Image))]
 	public class TouchJoystickExample : MonoBehaviour, IPointerDownHandler, IEventSystemHandler, IPointerUpHandler, IDragHandler
 	{
-		// Token: 0x17000616 RID: 1558
-		// (get) Token: 0x06001D35 RID: 7477 RVA: 0x000165C9 File Offset: 0x000147C9
-		// (set) Token: 0x06001D36 RID: 7478 RVA: 0x000165D1 File Offset: 0x000147D1
+		// Token: 0x1700041F RID: 1055
+		// (get) Token: 0x0600174D RID: 5965 RVA: 0x00062CD9 File Offset: 0x00060ED9
+		// (set) Token: 0x0600174E RID: 5966 RVA: 0x00062CE1 File Offset: 0x00060EE1
 		public Vector2 position { get; private set; }
 
-		// Token: 0x06001D37 RID: 7479 RVA: 0x000165DA File Offset: 0x000147DA
+		// Token: 0x0600174F RID: 5967 RVA: 0x00062CEA File Offset: 0x00060EEA
 		private void Start()
 		{
-			if (SystemInfo.deviceType == 1)
+			if (SystemInfo.deviceType == DeviceType.Handheld)
 			{
 				this.allowMouseControl = false;
 			}
 			this.StoreOrigValues();
 		}
 
-		// Token: 0x06001D38 RID: 7480 RVA: 0x000723BC File Offset: 0x000705BC
+		// Token: 0x06001750 RID: 5968 RVA: 0x00062D04 File Offset: 0x00060F04
 		private void Update()
 		{
 			if ((float)Screen.width != this.origScreenResolution.x || (float)Screen.height != this.origScreenResolution.y || Screen.orientation != this.origScreenOrientation)
@@ -35,7 +35,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D39 RID: 7481 RVA: 0x000165F1 File Offset: 0x000147F1
+		// Token: 0x06001751 RID: 5969 RVA: 0x00062D50 File Offset: 0x00060F50
 		private void Restart()
 		{
 			this.hasFinger = false;
@@ -43,7 +43,7 @@ namespace Rewired.Demos
 			this.position = Vector2.zero;
 		}
 
-		// Token: 0x06001D3A RID: 7482 RVA: 0x00072408 File Offset: 0x00070608
+		// Token: 0x06001752 RID: 5970 RVA: 0x00062D7C File Offset: 0x00060F7C
 		private void StoreOrigValues()
 		{
 			this.origAnchoredPosition = (base.transform as RectTransform).anchoredPosition;
@@ -52,7 +52,7 @@ namespace Rewired.Demos
 			this.origScreenOrientation = Screen.orientation;
 		}
 
-		// Token: 0x06001D3B RID: 7483 RVA: 0x00072460 File Offset: 0x00070660
+		// Token: 0x06001753 RID: 5971 RVA: 0x00062DD4 File Offset: 0x00060FD4
 		private void UpdateValue(Vector3 value)
 		{
 			Vector3 vector = this.origWorldPosition - value;
@@ -61,7 +61,7 @@ namespace Rewired.Demos
 			this.position = new Vector2(-vector.x, vector.y);
 		}
 
-		// Token: 0x06001D3C RID: 7484 RVA: 0x0001661B File Offset: 0x0001481B
+		// Token: 0x06001754 RID: 5972 RVA: 0x00062E22 File Offset: 0x00061022
 		void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
 		{
 			if (this.hasFinger)
@@ -76,7 +76,7 @@ namespace Rewired.Demos
 			this.lastFingerId = eventData.pointerId;
 		}
 
-		// Token: 0x06001D3D RID: 7485 RVA: 0x0001664F File Offset: 0x0001484F
+		// Token: 0x06001755 RID: 5973 RVA: 0x00062E56 File Offset: 0x00061056
 		void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
 		{
 			if (eventData.pointerId != this.lastFingerId)
@@ -90,50 +90,49 @@ namespace Rewired.Demos
 			this.Restart();
 		}
 
-		// Token: 0x06001D3E RID: 7486 RVA: 0x000724B0 File Offset: 0x000706B0
+		// Token: 0x06001756 RID: 5974 RVA: 0x00062E84 File Offset: 0x00061084
 		void IDragHandler.OnDrag(PointerEventData eventData)
 		{
 			if (!this.hasFinger || eventData.pointerId != this.lastFingerId)
 			{
 				return;
 			}
-			Vector3 vector;
-			vector..ctor(eventData.position.x - this.origWorldPosition.x, eventData.position.y - this.origWorldPosition.y);
+			Vector3 vector = new Vector3(eventData.position.x - this.origWorldPosition.x, eventData.position.y - this.origWorldPosition.y);
 			vector = Vector3.ClampMagnitude(vector, (float)this.radius);
 			Vector3 vector2 = this.origWorldPosition + vector;
 			base.transform.position = vector2;
 			this.UpdateValue(vector2);
 		}
 
-		// Token: 0x06001D3F RID: 7487 RVA: 0x000165A8 File Offset: 0x000147A8
+		// Token: 0x06001757 RID: 5975 RVA: 0x00062F0B File Offset: 0x0006110B
 		private static bool IsMousePointerId(int id)
 		{
 			return id == -1 || id == -2 || id == -3;
 		}
 
-		// Token: 0x04001E97 RID: 7831
+		// Token: 0x04001925 RID: 6437
 		public bool allowMouseControl = true;
 
-		// Token: 0x04001E98 RID: 7832
+		// Token: 0x04001926 RID: 6438
 		public int radius = 50;
 
-		// Token: 0x04001E99 RID: 7833
+		// Token: 0x04001927 RID: 6439
 		private Vector2 origAnchoredPosition;
 
-		// Token: 0x04001E9A RID: 7834
+		// Token: 0x04001928 RID: 6440
 		private Vector3 origWorldPosition;
 
-		// Token: 0x04001E9B RID: 7835
+		// Token: 0x04001929 RID: 6441
 		private Vector2 origScreenResolution;
 
-		// Token: 0x04001E9C RID: 7836
+		// Token: 0x0400192A RID: 6442
 		private ScreenOrientation origScreenOrientation;
 
-		// Token: 0x04001E9D RID: 7837
+		// Token: 0x0400192B RID: 6443
 		[NonSerialized]
 		private bool hasFinger;
 
-		// Token: 0x04001E9E RID: 7838
+		// Token: 0x0400192C RID: 6444
 		[NonSerialized]
 		private int lastFingerId;
 	}

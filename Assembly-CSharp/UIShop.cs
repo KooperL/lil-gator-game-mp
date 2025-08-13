@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020003D0 RID: 976
+// Token: 0x020002E2 RID: 738
 public class UIShop : MonoBehaviour
 {
-	// Token: 0x060012C4 RID: 4804 RVA: 0x0005C354 File Offset: 0x0005A554
+	// Token: 0x06000FA4 RID: 4004 RVA: 0x0004AF98 File Offset: 0x00049198
 	public void Load(Shop.ShopItem loadedItem, Shop sourceShop)
 	{
 		this.shopItem = loadedItem;
@@ -27,7 +27,7 @@ public class UIShop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012C5 RID: 4805 RVA: 0x0000FE13 File Offset: 0x0000E013
+	// Token: 0x06000FA5 RID: 4005 RVA: 0x0004B083 File Offset: 0x00049283
 	public void Deactivate()
 	{
 		this.itemResource.ForceShow = false;
@@ -35,7 +35,7 @@ public class UIShop : MonoBehaviour
 		this.description.Clear(false);
 	}
 
-	// Token: 0x060012C6 RID: 4806 RVA: 0x0000FE39 File Offset: 0x0000E039
+	// Token: 0x06000FA6 RID: 4006 RVA: 0x0004B0A9 File Offset: 0x000492A9
 	public void SetDescription(string descriptionText)
 	{
 		this.description.Clear(false);
@@ -45,54 +45,54 @@ public class UIShop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012C7 RID: 4807 RVA: 0x0000FE68 File Offset: 0x0000E068
+	// Token: 0x06000FA7 RID: 4007 RVA: 0x0004B0D8 File Offset: 0x000492D8
 	public void Buy()
 	{
 		this.shop.Buy();
 	}
 
-	// Token: 0x060012C8 RID: 4808 RVA: 0x0000FE75 File Offset: 0x0000E075
+	// Token: 0x06000FA8 RID: 4008 RVA: 0x0004B0E5 File Offset: 0x000492E5
 	public void Exit()
 	{
 		this.shop.Deactivate();
 	}
 
-	// Token: 0x060012C9 RID: 4809 RVA: 0x0000FE82 File Offset: 0x0000E082
+	// Token: 0x06000FA9 RID: 4009 RVA: 0x0004B0F2 File Offset: 0x000492F2
 	public void MoveRight()
 	{
 		this.shop.MoveSelection(true);
 	}
 
-	// Token: 0x060012CA RID: 4810 RVA: 0x0000FE90 File Offset: 0x0000E090
+	// Token: 0x06000FAA RID: 4010 RVA: 0x0004B100 File Offset: 0x00049300
 	public void MoveLeft()
 	{
 		this.shop.MoveSelection(false);
 	}
 
-	// Token: 0x0400182B RID: 6187
+	// Token: 0x04001479 RID: 5241
 	private Shop.ShopItem shopItem;
 
-	// Token: 0x0400182C RID: 6188
+	// Token: 0x0400147A RID: 5242
 	private Shop shop;
 
-	// Token: 0x0400182D RID: 6189
+	// Token: 0x0400147B RID: 5243
 	public DialogueBox description;
 
-	// Token: 0x0400182E RID: 6190
+	// Token: 0x0400147C RID: 5244
 	public ItemResource itemResource;
 
-	// Token: 0x0400182F RID: 6191
+	// Token: 0x0400147D RID: 5245
 	public Text costText;
 
-	// Token: 0x04001830 RID: 6192
+	// Token: 0x0400147E RID: 5246
 	public DialogueActor actor;
 
-	// Token: 0x04001831 RID: 6193
+	// Token: 0x0400147F RID: 5247
 	public Image costIcon;
 
-	// Token: 0x04001832 RID: 6194
+	// Token: 0x04001480 RID: 5248
 	public Text nameText;
 
-	// Token: 0x04001833 RID: 6195
+	// Token: 0x04001481 RID: 5249
 	public Button confirmButton;
 }

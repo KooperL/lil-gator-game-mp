@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020001DB RID: 475
+// Token: 0x0200016A RID: 362
 [AddComponentMenu("Logic/State Machine")]
 public class QuestStates : MonoBehaviour
 {
-	// Token: 0x170000D7 RID: 215
-	// (get) Token: 0x060008CB RID: 2251 RVA: 0x000088FC File Offset: 0x00006AFC
-	// (set) Token: 0x060008CC RID: 2252 RVA: 0x00008928 File Offset: 0x00006B28
+	// Token: 0x17000067 RID: 103
+	// (get) Token: 0x06000773 RID: 1907 RVA: 0x00024E8F File Offset: 0x0002308F
+	// (set) Token: 0x06000774 RID: 1908 RVA: 0x00024EBB File Offset: 0x000230BB
 	public int StateID
 	{
 		get
@@ -31,14 +31,14 @@ public class QuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008CD RID: 2253 RVA: 0x00008954 File Offset: 0x00006B54
+	// Token: 0x06000775 RID: 1909 RVA: 0x00024EE7 File Offset: 0x000230E7
 	[ContextMenu("Debug State")]
 	public void DebugState()
 	{
 		Debug.Log(this.StateID);
 	}
 
-	// Token: 0x060008CE RID: 2254 RVA: 0x00008966 File Offset: 0x00006B66
+	// Token: 0x06000776 RID: 1910 RVA: 0x00024EF9 File Offset: 0x000230F9
 	private void OnEnable()
 	{
 		if (this.isShared)
@@ -48,7 +48,7 @@ public class QuestStates : MonoBehaviour
 		this.SetState(this.StateID, true, false);
 	}
 
-	// Token: 0x060008CF RID: 2255 RVA: 0x00008989 File Offset: 0x00006B89
+	// Token: 0x06000777 RID: 1911 RVA: 0x00024F1C File Offset: 0x0002311C
 	private void OnDisable()
 	{
 		if (this.isShared)
@@ -57,20 +57,20 @@ public class QuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008D0 RID: 2256 RVA: 0x0000899F File Offset: 0x00006B9F
+	// Token: 0x06000778 RID: 1912 RVA: 0x00024F32 File Offset: 0x00023132
 	[ContextMenu("Progress State")]
 	public void JustProgressState()
 	{
 		this.ProgressState(-1);
 	}
 
-	// Token: 0x060008D1 RID: 2257 RVA: 0x000089A9 File Offset: 0x00006BA9
+	// Token: 0x06000779 RID: 1913 RVA: 0x00024F3C File Offset: 0x0002313C
 	public void ProgressToState(int nextStateID)
 	{
 		this.ProgressState(nextStateID);
 	}
 
-	// Token: 0x060008D2 RID: 2258 RVA: 0x000383B8 File Offset: 0x000365B8
+	// Token: 0x0600077A RID: 1914 RVA: 0x00024F48 File Offset: 0x00023148
 	public YieldInstruction ProgressState(int nextStateID = -1)
 	{
 		if (nextStateID == -1)
@@ -89,14 +89,14 @@ public class QuestStates : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x060008D3 RID: 2259 RVA: 0x000089B3 File Offset: 0x00006BB3
+	// Token: 0x0600077B RID: 1915 RVA: 0x00024F9F File Offset: 0x0002319F
 	[ContextMenu("Progress To End")]
 	public void ProgressToEnd()
 	{
 		this.ProgressState(this.states.Length - 1);
 	}
 
-	// Token: 0x060008D4 RID: 2260 RVA: 0x000089C6 File Offset: 0x00006BC6
+	// Token: 0x0600077C RID: 1916 RVA: 0x00024FB2 File Offset: 0x000231B2
 	private IEnumerator RunFadeTransition(int nextStateID)
 	{
 		Game.DialogueDepth++;
@@ -107,7 +107,7 @@ public class QuestStates : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060008D5 RID: 2261 RVA: 0x00038410 File Offset: 0x00036610
+	// Token: 0x0600077D RID: 1917 RVA: 0x00024FC8 File Offset: 0x000231C8
 	private void SetState(int stateID, bool initial = false, bool fromShared = false)
 	{
 		int num = -1;
@@ -201,66 +201,66 @@ public class QuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000B6D RID: 2925
+	// Token: 0x040009AC RID: 2476
 	private static List<QuestStates> shared = new List<QuestStates>();
 
-	// Token: 0x04000B6E RID: 2926
+	// Token: 0x040009AD RID: 2477
 	public QuestStates.QuestState[] states;
 
-	// Token: 0x04000B6F RID: 2927
+	// Token: 0x040009AE RID: 2478
 	[HideInInspector]
 	public QuestStates.StateChangeEvent onStateChange = new QuestStates.StateChangeEvent();
 
-	// Token: 0x04000B70 RID: 2928
+	// Token: 0x040009AF RID: 2479
 	public string id;
 
-	// Token: 0x04000B71 RID: 2929
+	// Token: 0x040009B0 RID: 2480
 	private int localState;
 
-	// Token: 0x04000B72 RID: 2930
+	// Token: 0x040009B1 RID: 2481
 	public bool giveRewardsOnLastState;
 
-	// Token: 0x04000B73 RID: 2931
+	// Token: 0x040009B2 RID: 2482
 	public bool isShared;
 
-	// Token: 0x020001DC RID: 476
+	// Token: 0x020003C8 RID: 968
 	[Serializable]
 	public struct QuestState
 	{
-		// Token: 0x04000B74 RID: 2932
+		// Token: 0x04001BDE RID: 7134
 		public string name;
 
-		// Token: 0x04000B75 RID: 2933
+		// Token: 0x04001BDF RID: 7135
 		public bool fadeOnTransition;
 
-		// Token: 0x04000B76 RID: 2934
+		// Token: 0x04001BE0 RID: 7136
 		[Tooltip("Objects active on this state")]
 		public GameObject[] stateObjects;
 
-		// Token: 0x04000B77 RID: 2935
+		// Token: 0x04001BE1 RID: 7137
 		[Tooltip("Objects active on states other than this state")]
 		public GameObject[] nonStateObjects;
 
-		// Token: 0x04000B78 RID: 2936
+		// Token: 0x04001BE2 RID: 7138
 		[Tooltip("Objects active on this state and future states\n(This is the FIRST state this object is active)")]
 		public GameObject[] firstStateObjects;
 
-		// Token: 0x04000B79 RID: 2937
+		// Token: 0x04001BE3 RID: 7139
 		[Tooltip("Objects active on this state and previous states\n(This is the LAST state this object is active)")]
 		public GameObject[] lastStateObjects;
 
-		// Token: 0x04000B7A RID: 2938
+		// Token: 0x04001BE4 RID: 7140
 		[Space]
 		public UnityEvent onActivate;
 
-		// Token: 0x04000B7B RID: 2939
+		// Token: 0x04001BE5 RID: 7141
 		public UnityEvent onProgress;
 
-		// Token: 0x04000B7C RID: 2940
+		// Token: 0x04001BE6 RID: 7142
 		public UnityEvent onDeactivate;
 	}
 
-	// Token: 0x020001DD RID: 477
+	// Token: 0x020003C9 RID: 969
 	[Serializable]
 	public class StateChangeEvent : UnityEvent<int>
 	{

@@ -1,30 +1,30 @@
 ﻿using System;
 
-// Token: 0x02000303 RID: 771
+// Token: 0x0200023F RID: 575
 public enum SpeedrunCueTime
 {
-	// Token: 0x040013AA RID: 5034
+	// Token: 0x04001094 RID: 4244
 	Credits_LastInput,
-	// Token: 0x040013AB RID: 5035
+	// Token: 0x04001095 RID: 4245
 	Credits = 2,
-	// Token: 0x040013AC RID: 5036
+	// Token: 0x04001096 RID: 4246
 	ThanksForPlaying_LastInput = 10,
-	// Token: 0x040013AD RID: 5037
+	// Token: 0x04001097 RID: 4247
 	ThanksForPlaying,
-	// Token: 0x040013AE RID: 5038
+	// Token: 0x04001098 RID: 4248
 	TutorialEnd_LastInput = 20,
-	// Token: 0x040013AF RID: 5039
+	// Token: 0x04001099 RID: 4249
 	TutorialEnd,
-	// Token: 0x040013B0 RID: 5040
+	// Token: 0x0400109A RID: 4250
 	JillQuestComplete = 30,
-	// Token: 0x040013B1 RID: 5041
+	// Token: 0x0400109B RID: 4251
 	MartinQuestComplete = 40,
-	// Token: 0x040013B2 RID: 5042
+	// Token: 0x0400109C RID: 4252
 	AveryQuestComplete = 50,
-	// Token: 0x040013B3 RID: 5043
+	// Token: 0x0400109D RID: 4253
 	ShowTownToSis = 55,
-	// Token: 0x040013B4 RID: 5044
+	// Token: 0x0400109E RID: 4254
 	FlashbackSequence = 60,
-	// Token: 0x040013B5 RID: 5045
+	// Token: 0x0400109F RID: 4255
 	None = 100
 }

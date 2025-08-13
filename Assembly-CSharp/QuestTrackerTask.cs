@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000368 RID: 872
+// Token: 0x0200028E RID: 654
 public class QuestTrackerTask : MonoBehaviour
 {
-	// Token: 0x060010B9 RID: 4281 RVA: 0x0000E585 File Offset: 0x0000C785
+	// Token: 0x06000DF0 RID: 3568 RVA: 0x000438E6 File Offset: 0x00041AE6
 	public void Load(QuestProfile.QuestTask task)
 	{
 		if (this.taskText != null)
@@ -14,6 +14,6 @@ public class QuestTrackerTask : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040015C4 RID: 5572
+	// Token: 0x04001264 RID: 4708
 	public Text taskText;
 }

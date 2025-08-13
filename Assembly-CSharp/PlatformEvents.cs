@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000223 RID: 547
+// Token: 0x020001A9 RID: 425
 public class PlatformEvents : MonoBehaviour
 {
-	// Token: 0x06000A45 RID: 2629 RVA: 0x00009DF9 File Offset: 0x00007FF9
+	// Token: 0x060008C4 RID: 2244 RVA: 0x0002969C File Offset: 0x0002789C
 	private void Start()
 	{
 		if (this.pcEvent != null)
@@ -14,12 +14,12 @@ public class PlatformEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000CD3 RID: 3283
+	// Token: 0x04000AD3 RID: 2771
 	public UnityEvent debugEvent;
 
-	// Token: 0x04000CD4 RID: 3284
+	// Token: 0x04000AD4 RID: 2772
 	public UnityEvent nxEvent;
 
-	// Token: 0x04000CD5 RID: 3285
+	// Token: 0x04000AD5 RID: 2773
 	public UnityEvent pcEvent;
 }

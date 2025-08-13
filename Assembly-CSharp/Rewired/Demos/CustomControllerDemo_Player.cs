@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace Rewired.Demos
 {
-	// Token: 0x02000496 RID: 1174
+	// Token: 0x02000339 RID: 825
 	[AddComponentMenu("")]
 	[RequireComponent(typeof(CharacterController))]
 	public class CustomControllerDemo_Player : MonoBehaviour
 	{
-		// Token: 0x17000614 RID: 1556
-		// (get) Token: 0x06001D29 RID: 7465 RVA: 0x000164ED File Offset: 0x000146ED
+		// Token: 0x1700041D RID: 1053
+		// (get) Token: 0x06001741 RID: 5953 RVA: 0x00062AAE File Offset: 0x00060CAE
 		private Player player
 		{
 			get
@@ -22,21 +22,20 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D2A RID: 7466 RVA: 0x00016513 File Offset: 0x00014713
+		// Token: 0x06001742 RID: 5954 RVA: 0x00062AD4 File Offset: 0x00060CD4
 		private void Awake()
 		{
 			this.cc = base.GetComponent<CharacterController>();
 		}
 
-		// Token: 0x06001D2B RID: 7467 RVA: 0x0007226C File Offset: 0x0007046C
+		// Token: 0x06001743 RID: 5955 RVA: 0x00062AE4 File Offset: 0x00060CE4
 		private void Update()
 		{
 			if (!ReInput.isReady)
 			{
 				return;
 			}
-			Vector2 vector;
-			vector..ctor(this.player.GetAxis("Move Horizontal"), this.player.GetAxis("Move Vertical"));
+			Vector2 vector = new Vector2(this.player.GetAxis("Move Horizontal"), this.player.GetAxis("Move Vertical"));
 			this.cc.Move(vector * this.speed * Time.deltaTime);
 			if (this.player.GetButtonDown("Fire"))
 			{
@@ -52,22 +51,22 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x04001E8F RID: 7823
+		// Token: 0x0400191D RID: 6429
 		public int playerId;
 
-		// Token: 0x04001E90 RID: 7824
+		// Token: 0x0400191E RID: 6430
 		public float speed = 1f;
 
-		// Token: 0x04001E91 RID: 7825
+		// Token: 0x0400191F RID: 6431
 		public float bulletSpeed = 20f;
 
-		// Token: 0x04001E92 RID: 7826
+		// Token: 0x04001920 RID: 6432
 		public GameObject bulletPrefab;
 
-		// Token: 0x04001E93 RID: 7827
+		// Token: 0x04001921 RID: 6433
 		private Player _player;
 
-		// Token: 0x04001E94 RID: 7828
+		// Token: 0x04001922 RID: 6434
 		private CharacterController cc;
 	}
 }

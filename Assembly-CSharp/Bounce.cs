@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000A8 RID: 168
+// Token: 0x02000085 RID: 133
 public class Bounce : MonoBehaviour
 {
-	// Token: 0x06000261 RID: 609 RVA: 0x0001F71C File Offset: 0x0001D91C
+	// Token: 0x06000229 RID: 553 RVA: 0x0000BE18 File Offset: 0x0000A018
 	public void OnTriggerStay(Collider other)
 	{
 		if (Time.time - this.lastBounce < this.cooldown)
@@ -16,7 +16,7 @@ public class Bounce : MonoBehaviour
 		if (attachedRigidbody != null)
 		{
 			Vector3 vector = attachedRigidbody.velocity;
-			Vector3 vector2 = base.transform.TransformDirection(this.bounceVelocity);
+			Vector3 vector2 = Vector3.Slerp(base.transform.TransformDirection(this.bounceVelocity), this.bounceVelocity, this.straightenBounceVelocity);
 			float num = Vector3.Dot(vector, vector2.normalized);
 			if (Player.movement.IsClimbing)
 			{
@@ -45,21 +45,24 @@ public class Bounce : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000363 RID: 867
+	// Token: 0x040002D3 RID: 723
 	public Vector3 bounceVelocity;
 
-	// Token: 0x04000364 RID: 868
+	// Token: 0x040002D4 RID: 724
+	public float straightenBounceVelocity;
+
+	// Token: 0x040002D5 RID: 725
 	public Vector3 dustOffset;
 
-	// Token: 0x04000365 RID: 869
+	// Token: 0x040002D6 RID: 726
 	public UnityEvent onBounce;
 
-	// Token: 0x04000366 RID: 870
+	// Token: 0x040002D7 RID: 727
 	public bool bounceWhileGrounded;
 
-	// Token: 0x04000367 RID: 871
+	// Token: 0x040002D8 RID: 728
 	private float cooldown = 0.5f;
 
-	// Token: 0x04000368 RID: 872
+	// Token: 0x040002D9 RID: 729
 	private float lastBounce = -1f;
 }

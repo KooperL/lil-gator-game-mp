@@ -2,11 +2,11 @@
 
 namespace Rewired.Internal
 {
-	// Token: 0x0200041F RID: 1055
+	// Token: 0x02000313 RID: 787
 	public static class ControllerTemplateFactory
 	{
-		// Token: 0x17000429 RID: 1065
-		// (get) Token: 0x060016F2 RID: 5874 RVA: 0x00011B28 File Offset: 0x0000FD28
+		// Token: 0x170002FA RID: 762
+		// (get) Token: 0x06001349 RID: 4937 RVA: 0x00051E02 File Offset: 0x00050002
 		public static Type[] templateTypes
 		{
 			get
@@ -15,8 +15,8 @@ namespace Rewired.Internal
 			}
 		}
 
-		// Token: 0x1700042A RID: 1066
-		// (get) Token: 0x060016F3 RID: 5875 RVA: 0x00011B2F File Offset: 0x0000FD2F
+		// Token: 0x170002FB RID: 763
+		// (get) Token: 0x0600134A RID: 4938 RVA: 0x00051E09 File Offset: 0x00050009
 		public static Type[] templateInterfaceTypes
 		{
 			get
@@ -25,7 +25,7 @@ namespace Rewired.Internal
 			}
 		}
 
-		// Token: 0x060016F4 RID: 5876 RVA: 0x00061E94 File Offset: 0x00060094
+		// Token: 0x0600134B RID: 4939 RVA: 0x00051E10 File Offset: 0x00050010
 		public static IControllerTemplate Create(Guid typeGuid, object payload)
 		{
 			if (typeGuid == GamepadTemplate.typeGuid)
@@ -55,7 +55,7 @@ namespace Rewired.Internal
 			return null;
 		}
 
-		// Token: 0x04001B47 RID: 6983
+		// Token: 0x04001742 RID: 5954
 		private static readonly Type[] _defaultTemplateTypes = new Type[]
 		{
 			typeof(GamepadTemplate),
@@ -66,7 +66,7 @@ namespace Rewired.Internal
 			typeof(SixDofControllerTemplate)
 		};
 
-		// Token: 0x04001B48 RID: 6984
+		// Token: 0x04001743 RID: 5955
 		private static readonly Type[] _defaultTemplateInterfaceTypes = new Type[]
 		{
 			typeof(IGamepadTemplate),

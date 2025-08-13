@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020003E0 RID: 992
+// Token: 0x020002EE RID: 750
 public class UIItemDisplay : MonoBehaviour
 {
-	// Token: 0x06001320 RID: 4896 RVA: 0x0001040C File Offset: 0x0000E60C
+	// Token: 0x06000FF3 RID: 4083 RVA: 0x0004C29B File Offset: 0x0004A49B
 	private void OnValidate()
 	{
 		if (this.rectTransform == null)
@@ -14,7 +14,7 @@ public class UIItemDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001321 RID: 4897 RVA: 0x0005D608 File Offset: 0x0005B808
+	// Token: 0x06000FF4 RID: 4084 RVA: 0x0004C2B8 File Offset: 0x0004A4B8
 	public void LoadItem(ItemObject item)
 	{
 		if (!base.gameObject.activeSelf)
@@ -65,7 +65,7 @@ public class UIItemDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001322 RID: 4898 RVA: 0x0005D778 File Offset: 0x0005B978
+	// Token: 0x06000FF5 RID: 4085 RVA: 0x0004C428 File Offset: 0x0004A628
 	public void ClearItem()
 	{
 		if (this.spriteDisplay != null)
@@ -82,7 +82,7 @@ public class UIItemDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001323 RID: 4899 RVA: 0x000103D3 File Offset: 0x0000E5D3
+	// Token: 0x06000FF6 RID: 4086 RVA: 0x0004C48B File Offset: 0x0004A68B
 	private void SetText(Text textObject, string textString)
 	{
 		if (!string.IsNullOrEmpty(textString))
@@ -94,33 +94,33 @@ public class UIItemDisplay : MonoBehaviour
 		textObject.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0400189C RID: 6300
+	// Token: 0x040014DD RID: 5341
 	public RectTransform rectTransform;
 
-	// Token: 0x0400189D RID: 6301
+	// Token: 0x040014DE RID: 5342
 	public Image spriteDisplay;
 
-	// Token: 0x0400189E RID: 6302
+	// Token: 0x040014DF RID: 5343
 	public Image alternateDisplay;
 
-	// Token: 0x0400189F RID: 6303
+	// Token: 0x040014E0 RID: 5344
 	public Text nameDisplay;
 
-	// Token: 0x040018A0 RID: 6304
+	// Token: 0x040014E1 RID: 5345
 	public Text description;
 
-	// Token: 0x040018A1 RID: 6305
+	// Token: 0x040014E2 RID: 5346
 	public GameObject unpurchasedOject;
 
-	// Token: 0x040018A2 RID: 6306
+	// Token: 0x040014E3 RID: 5347
 	public GameObject purchasedObject;
 
-	// Token: 0x040018A3 RID: 6307
+	// Token: 0x040014E4 RID: 5348
 	public GameObject equippedObject;
 
-	// Token: 0x040018A4 RID: 6308
+	// Token: 0x040014E5 RID: 5349
 	public GameObject equippedAltObject;
 
-	// Token: 0x040018A5 RID: 6309
+	// Token: 0x040014E6 RID: 5350
 	public bool showPurchasedWhenEquipped;
 }

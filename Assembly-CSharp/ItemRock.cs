@@ -1,26 +1,26 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000251 RID: 593
+// Token: 0x020001CE RID: 462
 public class ItemRock : ItemThrowable
 {
-	// Token: 0x06000B2C RID: 2860 RVA: 0x0000A929 File Offset: 0x00008B29
+	// Token: 0x06000995 RID: 2453 RVA: 0x0002D004 File Offset: 0x0002B204
 	public override float GetSolveSpeed(float charge = 1f)
 	{
 		return this.maxThrowSpeed;
 	}
 
-	// Token: 0x06000B2D RID: 2861 RVA: 0x0003EDCC File Offset: 0x0003CFCC
+	// Token: 0x06000996 RID: 2454 RVA: 0x0002D00C File Offset: 0x0002B20C
 	public override void Throw(float charge, Vector3 direction)
 	{
 		Rigidbody component = Object.Instantiate<GameObject>(this.thrownPrefab, Player.itemManager.thrownSpawnPoint.position, base.transform.rotation).GetComponent<Rigidbody>();
 		Vector3 vector = Mathf.Lerp(this.minThrowSpeed, this.maxThrowSpeed, charge) * direction;
 		component.velocity = vector;
-		component.AddRelativeTorque(this.thrownAngularVelocity, 2);
+		component.AddRelativeTorque(this.thrownAngularVelocity, ForceMode.VelocityChange);
 		base.Throw(charge, direction);
 	}
 
-	// Token: 0x06000B2E RID: 2862 RVA: 0x0003EE38 File Offset: 0x0003D038
+	// Token: 0x06000997 RID: 2455 RVA: 0x0002D078 File Offset: 0x0002B278
 	public override void SetEquipped(bool isEquipped)
 	{
 		(this.isOnRight ? Player.itemManager.hipSatchel_r : Player.itemManager.hipSatchel).SetActive(true);
@@ -40,34 +40,34 @@ public class ItemRock : ItemThrowable
 		}
 	}
 
-	// Token: 0x06000B2F RID: 2863 RVA: 0x0000A931 File Offset: 0x00008B31
+	// Token: 0x06000998 RID: 2456 RVA: 0x0002D125 File Offset: 0x0002B325
 	public override void OnRemove()
 	{
 		(this.isOnRight ? Player.itemManager.hipSatchel_r : Player.itemManager.hipSatchel).SetActive(false);
 		base.OnRemove();
 	}
 
-	// Token: 0x04000E14 RID: 3604
+	// Token: 0x04000BEE RID: 3054
 	public Vector3 heldPosition;
 
-	// Token: 0x04000E15 RID: 3605
+	// Token: 0x04000BEF RID: 3055
 	public Quaternion heldRotation;
 
-	// Token: 0x04000E16 RID: 3606
+	// Token: 0x04000BF0 RID: 3056
 	public Renderer heldRock;
 
-	// Token: 0x04000E17 RID: 3607
+	// Token: 0x04000BF1 RID: 3057
 	public GameObject thrownPrefab;
 
-	// Token: 0x04000E18 RID: 3608
+	// Token: 0x04000BF2 RID: 3058
 	public float maxAngleVariance = 10f;
 
-	// Token: 0x04000E19 RID: 3609
+	// Token: 0x04000BF3 RID: 3059
 	public float minThrowSpeed = 5f;
 
-	// Token: 0x04000E1A RID: 3610
+	// Token: 0x04000BF4 RID: 3060
 	public float maxThrowSpeed = 15f;
 
-	// Token: 0x04000E1B RID: 3611
+	// Token: 0x04000BF5 RID: 3061
 	public Vector3 thrownAngularVelocity;
 }

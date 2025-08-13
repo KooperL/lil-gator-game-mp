@@ -3,12 +3,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000133 RID: 307
+// Token: 0x020000E4 RID: 228
 [AddComponentMenu("Dialogue Sequence/Sequencer", 0)]
 public class DialogueSequencer : MonoBehaviour
 {
-	// Token: 0x17000096 RID: 150
-	// (get) Token: 0x060005B8 RID: 1464 RVA: 0x00006152 File Offset: 0x00004352
+	// Token: 0x17000040 RID: 64
+	// (get) Token: 0x060004B5 RID: 1205 RVA: 0x00019E35 File Offset: 0x00018035
 	public static bool IsInSequence
 	{
 		get
@@ -17,13 +17,13 @@ public class DialogueSequencer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005B9 RID: 1465 RVA: 0x0000615C File Offset: 0x0000435C
+	// Token: 0x060004B6 RID: 1206 RVA: 0x00019E3F File Offset: 0x0001803F
 	public void JustStartSequence()
 	{
 		this.StartSequence();
 	}
 
-	// Token: 0x060005BA RID: 1466 RVA: 0x0002E914 File Offset: 0x0002CB14
+	// Token: 0x060004B7 RID: 1207 RVA: 0x00019E48 File Offset: 0x00018048
 	[ContextMenu("Start Sequence")]
 	public Coroutine StartSequence()
 	{
@@ -42,7 +42,7 @@ public class DialogueSequencer : MonoBehaviour
 		return CoroutineUtil.Start(this.RunSequence());
 	}
 
-	// Token: 0x060005BB RID: 1467 RVA: 0x00006165 File Offset: 0x00004365
+	// Token: 0x060004B8 RID: 1208 RVA: 0x00019E9A File Offset: 0x0001809A
 	protected virtual IEnumerator RunSequence()
 	{
 		this.runningSequence = true;
@@ -123,7 +123,7 @@ public class DialogueSequencer : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060005BC RID: 1468 RVA: 0x00006174 File Offset: 0x00004374
+	// Token: 0x060004B9 RID: 1209 RVA: 0x00019EA9 File Offset: 0x000180A9
 	private void OnDisable()
 	{
 		if (this.runningSequence)
@@ -134,7 +134,7 @@ public class DialogueSequencer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005BD RID: 1469 RVA: 0x00006174 File Offset: 0x00004374
+	// Token: 0x060004BA RID: 1210 RVA: 0x00019ED2 File Offset: 0x000180D2
 	private void OnDestroy()
 	{
 		if (this.runningSequence)
@@ -145,42 +145,42 @@ public class DialogueSequencer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040007BE RID: 1982
+	// Token: 0x04000684 RID: 1668
 	private static int depth;
 
-	// Token: 0x040007BF RID: 1983
+	// Token: 0x04000685 RID: 1669
 	private DialogueSequence[] sequence;
 
-	// Token: 0x040007C0 RID: 1984
+	// Token: 0x04000686 RID: 1670
 	public bool saveBeforeSequence;
 
-	// Token: 0x040007C1 RID: 1985
+	// Token: 0x04000687 RID: 1671
 	public UnityEvent beforeSequence;
 
-	// Token: 0x040007C2 RID: 1986
+	// Token: 0x04000688 RID: 1672
 	public UnityEvent afterSequence;
 
-	// Token: 0x040007C3 RID: 1987
+	// Token: 0x04000689 RID: 1673
 	public GameObject[] sequenceObjects;
 
-	// Token: 0x040007C4 RID: 1988
+	// Token: 0x0400068A RID: 1674
 	public DialogueSequencer chainedSequence;
 
-	// Token: 0x040007C5 RID: 1989
+	// Token: 0x0400068B RID: 1675
 	public UnityEvent afterChainedSequence;
 
-	// Token: 0x040007C6 RID: 1990
+	// Token: 0x0400068C RID: 1676
 	public UnityEvent asControlRegained;
 
-	// Token: 0x040007C7 RID: 1991
+	// Token: 0x0400068D RID: 1677
 	private bool runningSequence;
 
-	// Token: 0x040007C8 RID: 1992
+	// Token: 0x0400068E RID: 1678
 	public bool waitUntilReady;
 
-	// Token: 0x040007C9 RID: 1993
+	// Token: 0x0400068F RID: 1679
 	public bool waitForOtherSequencesToFinish;
 
-	// Token: 0x040007CA RID: 1994
+	// Token: 0x04000690 RID: 1680
 	private Coroutine fading;
 }

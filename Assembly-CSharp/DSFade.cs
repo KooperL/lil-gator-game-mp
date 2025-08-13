@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000127 RID: 295
+// Token: 0x020000DB RID: 219
 [AddComponentMenu("Dialogue Sequence/Fade")]
 public class DSFade : DialogueSequence
 {
-	// Token: 0x06000584 RID: 1412 RVA: 0x00005F54 File Offset: 0x00004154
+	// Token: 0x06000493 RID: 1171 RVA: 0x000199F1 File Offset: 0x00017BF1
 	public override YieldInstruction Run()
 	{
 		if (this.fadeIn && !this.fadeOut)
@@ -20,7 +20,7 @@ public class DSFade : DialogueSequence
 		return base.StartCoroutine(this.RunFade());
 	}
 
-	// Token: 0x06000585 RID: 1413 RVA: 0x00005F8E File Offset: 0x0000418E
+	// Token: 0x06000494 RID: 1172 RVA: 0x00019A2B File Offset: 0x00017C2B
 	private IEnumerator RunFade()
 	{
 		yield return Blackout.FadeIn();
@@ -35,12 +35,12 @@ public class DSFade : DialogueSequence
 		yield break;
 	}
 
-	// Token: 0x04000794 RID: 1940
+	// Token: 0x04000663 RID: 1635
 	public bool fadeIn = true;
 
-	// Token: 0x04000795 RID: 1941
+	// Token: 0x04000664 RID: 1636
 	public bool fadeOut = true;
 
-	// Token: 0x04000796 RID: 1942
+	// Token: 0x04000665 RID: 1637
 	public bool waitForFadeOut;
 }

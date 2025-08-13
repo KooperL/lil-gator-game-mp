@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001E9 RID: 489
+// Token: 0x02000175 RID: 373
 public class DynamicResolutionScaler : MonoBehaviour
 {
-	// Token: 0x06000906 RID: 2310 RVA: 0x00008CF6 File Offset: 0x00006EF6
+	// Token: 0x060007A8 RID: 1960 RVA: 0x000256D4 File Offset: 0x000238D4
 	private void Start()
 	{
 		this.frameTimings = new FrameTiming[10];
 	}
 
-	// Token: 0x06000907 RID: 2311 RVA: 0x00008D05 File Offset: 0x00006F05
+	// Token: 0x060007A9 RID: 1961 RVA: 0x000256E3 File Offset: 0x000238E3
 	private void OnEnable()
 	{
 		this.updateCounter = 0;
 	}
 
-	// Token: 0x06000908 RID: 2312 RVA: 0x00008D0E File Offset: 0x00006F0E
+	// Token: 0x060007AA RID: 1962 RVA: 0x000256EC File Offset: 0x000238EC
 	private void Update()
 	{
 		FrameTimingManager.CaptureFrameTimings();
@@ -28,7 +28,7 @@ public class DynamicResolutionScaler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000909 RID: 2313 RVA: 0x00038870 File Offset: 0x00036A70
+	// Token: 0x060007AB RID: 1963 RVA: 0x00025718 File Offset: 0x00023918
 	private void CheckPerformance()
 	{
 		uint latestTimings = FrameTimingManager.GetLatestTimings(10U, this.frameTimings);
@@ -68,7 +68,7 @@ public class DynamicResolutionScaler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600090A RID: 2314 RVA: 0x000389A4 File Offset: 0x00036BA4
+	// Token: 0x060007AC RID: 1964 RVA: 0x0002584C File Offset: 0x00023A4C
 	[ContextMenu("Calculate Intervals")]
 	private void CalculateIntervals()
 	{
@@ -85,54 +85,54 @@ public class DynamicResolutionScaler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000B9F RID: 2975
+	// Token: 0x040009D1 RID: 2513
 	private const float target = 60f;
 
-	// Token: 0x04000BA0 RID: 2976
+	// Token: 0x040009D2 RID: 2514
 	private int updateCounter;
 
-	// Token: 0x04000BA1 RID: 2977
+	// Token: 0x040009D3 RID: 2515
 	private const int updateInterval = 10;
 
-	// Token: 0x04000BA2 RID: 2978
+	// Token: 0x040009D4 RID: 2516
 	private FrameTiming[] frameTimings;
 
-	// Token: 0x04000BA3 RID: 2979
+	// Token: 0x040009D5 RID: 2517
 	private const int frameTimingCount = 10;
 
-	// Token: 0x04000BA4 RID: 2980
+	// Token: 0x040009D6 RID: 2518
 	[Range(0f, 1f)]
 	public float scale = 1f;
 
-	// Token: 0x04000BA5 RID: 2981
+	// Token: 0x040009D7 RID: 2519
 	private float scaleVel;
 
-	// Token: 0x04000BA6 RID: 2982
+	// Token: 0x040009D8 RID: 2520
 	public float scalingSpeed = 0.1f;
 
-	// Token: 0x04000BA7 RID: 2983
+	// Token: 0x040009D9 RID: 2521
 	private const float minScale = 0.65f;
 
-	// Token: 0x04000BA8 RID: 2984
+	// Token: 0x040009DA RID: 2522
 	private const float maxScale = 1f;
 
-	// Token: 0x04000BA9 RID: 2985
+	// Token: 0x040009DB RID: 2523
 	private const int scaleIntervalCount = 10;
 
-	// Token: 0x04000BAA RID: 2986
+	// Token: 0x040009DC RID: 2524
 	private Vector2Int currentResolution = Vector2Int.zero;
 
-	// Token: 0x04000BAB RID: 2987
+	// Token: 0x040009DD RID: 2525
 	private float currentPixelCount;
 
-	// Token: 0x04000BAC RID: 2988
+	// Token: 0x040009DE RID: 2526
 	public DynamicResolutionScaler.ScaleInterval[] intervals;
 
-	// Token: 0x020001EA RID: 490
+	// Token: 0x020003CB RID: 971
 	[Serializable]
 	public struct ScaleInterval
 	{
-		// Token: 0x0600090C RID: 2316 RVA: 0x00008D63 File Offset: 0x00006F63
+		// Token: 0x06001992 RID: 6546 RVA: 0x0006D5FE File Offset: 0x0006B7FE
 		public ScaleInterval(float scale, float unscaledPixelCount)
 		{
 			this.scale = scale;
@@ -140,13 +140,13 @@ public class DynamicResolutionScaler : MonoBehaviour
 			this.perPixelBudget = 1.0 / ((double)this.pixelCount * 60.0);
 		}
 
-		// Token: 0x04000BAD RID: 2989
+		// Token: 0x04001BEB RID: 7147
 		public float scale;
 
-		// Token: 0x04000BAE RID: 2990
+		// Token: 0x04001BEC RID: 7148
 		public float pixelCount;
 
-		// Token: 0x04000BAF RID: 2991
+		// Token: 0x04001BED RID: 7149
 		public double perPixelBudget;
 	}
 }

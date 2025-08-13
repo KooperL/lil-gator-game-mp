@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000A7 RID: 167
+// Token: 0x02000084 RID: 132
 public class BoneSetter : MonoBehaviour
 {
-	// Token: 0x0600025E RID: 606 RVA: 0x0001F644 File Offset: 0x0001D844
+	// Token: 0x06000226 RID: 550 RVA: 0x0000BD38 File Offset: 0x00009F38
 	[ContextMenu("GetBoneNames()")]
 	public void GetBoneNames()
 	{
@@ -21,7 +21,7 @@ public class BoneSetter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600025F RID: 607 RVA: 0x0001F698 File Offset: 0x0001D898
+	// Token: 0x06000227 RID: 551 RVA: 0x0000BD8C File Offset: 0x00009F8C
 	[ContextMenu("SetBones()")]
 	public void SetBones()
 	{
@@ -40,14 +40,14 @@ public class BoneSetter : MonoBehaviour
 		component.rootBone = this.skeletonRoot;
 	}
 
-	// Token: 0x04000360 RID: 864
+	// Token: 0x040002D0 RID: 720
 	public Transform skeletonRoot;
 
-	// Token: 0x04000361 RID: 865
+	// Token: 0x040002D1 RID: 721
 	[SerializeField]
 	private string[] boneNames;
 
-	// Token: 0x04000362 RID: 866
+	// Token: 0x040002D2 RID: 722
 	[SerializeField]
 	private Transform[] bones;
 }

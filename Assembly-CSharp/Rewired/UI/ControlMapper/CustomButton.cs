@@ -7,13 +7,13 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x02000455 RID: 1109
+	// Token: 0x0200031E RID: 798
 	[AddComponentMenu("")]
 	public class CustomButton : Button, ICustomSelectable, ICancelHandler, IEventSystemHandler
 	{
-		// Token: 0x17000506 RID: 1286
-		// (get) Token: 0x06001A3F RID: 6719 RVA: 0x0001465A File Offset: 0x0001285A
-		// (set) Token: 0x06001A40 RID: 6720 RVA: 0x00014662 File Offset: 0x00012862
+		// Token: 0x1700035F RID: 863
+		// (get) Token: 0x06001523 RID: 5411 RVA: 0x0005BD32 File Offset: 0x00059F32
+		// (set) Token: 0x06001524 RID: 5412 RVA: 0x0005BD3A File Offset: 0x00059F3A
 		public Sprite disabledHighlightedSprite
 		{
 			get
@@ -26,9 +26,9 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x17000507 RID: 1287
-		// (get) Token: 0x06001A41 RID: 6721 RVA: 0x0001466B File Offset: 0x0001286B
-		// (set) Token: 0x06001A42 RID: 6722 RVA: 0x00014673 File Offset: 0x00012873
+		// Token: 0x17000360 RID: 864
+		// (get) Token: 0x06001525 RID: 5413 RVA: 0x0005BD43 File Offset: 0x00059F43
+		// (set) Token: 0x06001526 RID: 5414 RVA: 0x0005BD4B File Offset: 0x00059F4B
 		public Color disabledHighlightedColor
 		{
 			get
@@ -41,9 +41,9 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x17000508 RID: 1288
-		// (get) Token: 0x06001A43 RID: 6723 RVA: 0x0001467C File Offset: 0x0001287C
-		// (set) Token: 0x06001A44 RID: 6724 RVA: 0x00014684 File Offset: 0x00012884
+		// Token: 0x17000361 RID: 865
+		// (get) Token: 0x06001527 RID: 5415 RVA: 0x0005BD54 File Offset: 0x00059F54
+		// (set) Token: 0x06001528 RID: 5416 RVA: 0x0005BD5C File Offset: 0x00059F5C
 		public string disabledHighlightedTrigger
 		{
 			get
@@ -56,9 +56,9 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x17000509 RID: 1289
-		// (get) Token: 0x06001A45 RID: 6725 RVA: 0x0001468D File Offset: 0x0001288D
-		// (set) Token: 0x06001A46 RID: 6726 RVA: 0x00014695 File Offset: 0x00012895
+		// Token: 0x17000362 RID: 866
+		// (get) Token: 0x06001529 RID: 5417 RVA: 0x0005BD65 File Offset: 0x00059F65
+		// (set) Token: 0x0600152A RID: 5418 RVA: 0x0005BD6D File Offset: 0x00059F6D
 		public bool autoNavUp
 		{
 			get
@@ -71,9 +71,9 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x1700050A RID: 1290
-		// (get) Token: 0x06001A47 RID: 6727 RVA: 0x0001469E File Offset: 0x0001289E
-		// (set) Token: 0x06001A48 RID: 6728 RVA: 0x000146A6 File Offset: 0x000128A6
+		// Token: 0x17000363 RID: 867
+		// (get) Token: 0x0600152B RID: 5419 RVA: 0x0005BD76 File Offset: 0x00059F76
+		// (set) Token: 0x0600152C RID: 5420 RVA: 0x0005BD7E File Offset: 0x00059F7E
 		public bool autoNavDown
 		{
 			get
@@ -86,9 +86,9 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x1700050B RID: 1291
-		// (get) Token: 0x06001A49 RID: 6729 RVA: 0x000146AF File Offset: 0x000128AF
-		// (set) Token: 0x06001A4A RID: 6730 RVA: 0x000146B7 File Offset: 0x000128B7
+		// Token: 0x17000364 RID: 868
+		// (get) Token: 0x0600152D RID: 5421 RVA: 0x0005BD87 File Offset: 0x00059F87
+		// (set) Token: 0x0600152E RID: 5422 RVA: 0x0005BD8F File Offset: 0x00059F8F
 		public bool autoNavLeft
 		{
 			get
@@ -101,9 +101,9 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x1700050C RID: 1292
-		// (get) Token: 0x06001A4B RID: 6731 RVA: 0x000146C0 File Offset: 0x000128C0
-		// (set) Token: 0x06001A4C RID: 6732 RVA: 0x000146C8 File Offset: 0x000128C8
+		// Token: 0x17000365 RID: 869
+		// (get) Token: 0x0600152F RID: 5423 RVA: 0x0005BD98 File Offset: 0x00059F98
+		// (set) Token: 0x06001530 RID: 5424 RVA: 0x0005BDA0 File Offset: 0x00059FA0
 		public bool autoNavRight
 		{
 			get
@@ -116,8 +116,8 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x1700050D RID: 1293
-		// (get) Token: 0x06001A4D RID: 6733 RVA: 0x000146D1 File Offset: 0x000128D1
+		// Token: 0x17000366 RID: 870
+		// (get) Token: 0x06001531 RID: 5425 RVA: 0x0005BDA9 File Offset: 0x00059FA9
 		private bool isDisabled
 		{
 			get
@@ -127,13 +127,13 @@ namespace Rewired.UI.ControlMapper
 		}
 
 		// Token: 0x14000012 RID: 18
-		// (add) Token: 0x06001A4E RID: 6734 RVA: 0x0006C3D4 File Offset: 0x0006A5D4
-		// (remove) Token: 0x06001A4F RID: 6735 RVA: 0x0006C40C File Offset: 0x0006A60C
+		// (add) Token: 0x06001532 RID: 5426 RVA: 0x0005BDB4 File Offset: 0x00059FB4
+		// (remove) Token: 0x06001533 RID: 5427 RVA: 0x0005BDEC File Offset: 0x00059FEC
 		private event UnityAction _CancelEvent;
 
 		// Token: 0x14000013 RID: 19
-		// (add) Token: 0x06001A50 RID: 6736 RVA: 0x000146DC File Offset: 0x000128DC
-		// (remove) Token: 0x06001A51 RID: 6737 RVA: 0x000146E5 File Offset: 0x000128E5
+		// (add) Token: 0x06001534 RID: 5428 RVA: 0x0005BE21 File Offset: 0x0005A021
+		// (remove) Token: 0x06001535 RID: 5429 RVA: 0x0005BE2A File Offset: 0x0005A02A
 		public event UnityAction CancelEvent
 		{
 			add
@@ -146,47 +146,47 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001A52 RID: 6738 RVA: 0x0006C444 File Offset: 0x0006A644
+		// Token: 0x06001536 RID: 5430 RVA: 0x0005BE34 File Offset: 0x0005A034
 		public override Selectable FindSelectableOnLeft()
 		{
-			if ((base.navigation.mode & 1) != null || this._autoNavLeft)
+			if ((base.navigation.mode & Navigation.Mode.Horizontal) != Navigation.Mode.None || this._autoNavLeft)
 			{
 				return UISelectionUtility.FindNextSelectable(this, base.transform, Vector3.left);
 			}
 			return base.FindSelectableOnLeft();
 		}
 
-		// Token: 0x06001A53 RID: 6739 RVA: 0x0006C484 File Offset: 0x0006A684
+		// Token: 0x06001537 RID: 5431 RVA: 0x0005BE74 File Offset: 0x0005A074
 		public override Selectable FindSelectableOnRight()
 		{
-			if ((base.navigation.mode & 1) != null || this._autoNavRight)
+			if ((base.navigation.mode & Navigation.Mode.Horizontal) != Navigation.Mode.None || this._autoNavRight)
 			{
 				return UISelectionUtility.FindNextSelectable(this, base.transform, Vector3.right);
 			}
 			return base.FindSelectableOnRight();
 		}
 
-		// Token: 0x06001A54 RID: 6740 RVA: 0x0006C4C4 File Offset: 0x0006A6C4
+		// Token: 0x06001538 RID: 5432 RVA: 0x0005BEB4 File Offset: 0x0005A0B4
 		public override Selectable FindSelectableOnUp()
 		{
-			if ((base.navigation.mode & 2) != null || this._autoNavUp)
+			if ((base.navigation.mode & Navigation.Mode.Vertical) != Navigation.Mode.None || this._autoNavUp)
 			{
 				return UISelectionUtility.FindNextSelectable(this, base.transform, Vector3.up);
 			}
 			return base.FindSelectableOnUp();
 		}
 
-		// Token: 0x06001A55 RID: 6741 RVA: 0x0006C504 File Offset: 0x0006A704
+		// Token: 0x06001539 RID: 5433 RVA: 0x0005BEF4 File Offset: 0x0005A0F4
 		public override Selectable FindSelectableOnDown()
 		{
-			if ((base.navigation.mode & 2) != null || this._autoNavDown)
+			if ((base.navigation.mode & Navigation.Mode.Vertical) != Navigation.Mode.None || this._autoNavDown)
 			{
 				return UISelectionUtility.FindNextSelectable(this, base.transform, Vector3.down);
 			}
 			return base.FindSelectableOnDown();
 		}
 
-		// Token: 0x06001A56 RID: 6742 RVA: 0x000146EE File Offset: 0x000128EE
+		// Token: 0x0600153A RID: 5434 RVA: 0x0005BF33 File Offset: 0x0005A133
 		protected override void OnCanvasGroupChanged()
 		{
 			base.OnCanvasGroupChanged();
@@ -197,7 +197,7 @@ namespace Rewired.UI.ControlMapper
 			this.EvaluateHightlightDisabled(EventSystem.current.currentSelectedGameObject == base.gameObject);
 		}
 
-		// Token: 0x06001A57 RID: 6743 RVA: 0x0006C544 File Offset: 0x0006A744
+		// Token: 0x0600153B RID: 5435 RVA: 0x0005BF64 File Offset: 0x0005A164
 		protected override void DoStateTransition(Selectable.SelectionState state, bool instant)
 		{
 			if (this.isHighlightDisabled)
@@ -209,13 +209,13 @@ namespace Rewired.UI.ControlMapper
 				{
 					switch (base.transition)
 					{
-					case 1:
+					case Selectable.Transition.ColorTint:
 						this.StartColorTween(disabledHighlightedColor * base.colors.colorMultiplier, instant);
 						return;
-					case 2:
+					case Selectable.Transition.SpriteSwap:
 						this.DoSpriteSwap(disabledHighlightedSprite);
 						return;
-					case 3:
+					case Selectable.Transition.Animation:
 						this.TriggerAnimation(disabledHighlightedTrigger);
 						return;
 					default:
@@ -229,7 +229,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001A58 RID: 6744 RVA: 0x0006C5CC File Offset: 0x0006A7CC
+		// Token: 0x0600153C RID: 5436 RVA: 0x0005BFEC File Offset: 0x0005A1EC
 		private void StartColorTween(Color targetColor, bool instant)
 		{
 			if (base.targetGraphic == null)
@@ -239,7 +239,7 @@ namespace Rewired.UI.ControlMapper
 			base.targetGraphic.CrossFadeColor(targetColor, instant ? 0f : base.colors.fadeDuration, true, true);
 		}
 
-		// Token: 0x06001A59 RID: 6745 RVA: 0x0001471F File Offset: 0x0001291F
+		// Token: 0x0600153D RID: 5437 RVA: 0x0005C02E File Offset: 0x0005A22E
 		private void DoSpriteSwap(Sprite newSprite)
 		{
 			if (base.image == null)
@@ -249,7 +249,7 @@ namespace Rewired.UI.ControlMapper
 			base.image.overrideSprite = newSprite;
 		}
 
-		// Token: 0x06001A5A RID: 6746 RVA: 0x0006C610 File Offset: 0x0006A810
+		// Token: 0x0600153E RID: 5438 RVA: 0x0005C04C File Offset: 0x0005A24C
 		private void TriggerAnimation(string triggername)
 		{
 			if (base.animator == null || !base.animator.enabled || !base.animator.isActiveAndEnabled || base.animator.runtimeAnimatorController == null || string.IsNullOrEmpty(triggername))
@@ -260,21 +260,21 @@ namespace Rewired.UI.ControlMapper
 			base.animator.SetTrigger(triggername);
 		}
 
-		// Token: 0x06001A5B RID: 6747 RVA: 0x0001473C File Offset: 0x0001293C
+		// Token: 0x0600153F RID: 5439 RVA: 0x0005C0BA File Offset: 0x0005A2BA
 		public override void OnSelect(BaseEventData eventData)
 		{
 			base.OnSelect(eventData);
 			this.EvaluateHightlightDisabled(true);
 		}
 
-		// Token: 0x06001A5C RID: 6748 RVA: 0x0001474C File Offset: 0x0001294C
+		// Token: 0x06001540 RID: 5440 RVA: 0x0005C0CA File Offset: 0x0005A2CA
 		public override void OnDeselect(BaseEventData eventData)
 		{
 			base.OnDeselect(eventData);
 			this.EvaluateHightlightDisabled(false);
 		}
 
-		// Token: 0x06001A5D RID: 6749 RVA: 0x0001475C File Offset: 0x0001295C
+		// Token: 0x06001541 RID: 5441 RVA: 0x0005C0DA File Offset: 0x0005A2DA
 		private void Press()
 		{
 			if (!this.IsActive() || !this.IsInteractable())
@@ -284,14 +284,14 @@ namespace Rewired.UI.ControlMapper
 			base.onClick.Invoke();
 		}
 
-		// Token: 0x06001A5E RID: 6750 RVA: 0x0006C680 File Offset: 0x0006A880
+		// Token: 0x06001542 RID: 5442 RVA: 0x0005C0F8 File Offset: 0x0005A2F8
 		public override void OnPointerClick(PointerEventData eventData)
 		{
 			if (!this.IsActive() || !this.IsInteractable())
 			{
 				return;
 			}
-			if (eventData.button != null)
+			if (eventData.button != PointerEventData.InputButton.Left)
 			{
 				return;
 			}
@@ -299,25 +299,25 @@ namespace Rewired.UI.ControlMapper
 			if (!this.IsActive() || !this.IsInteractable())
 			{
 				this.isHighlightDisabled = true;
-				this.DoStateTransition(4, false);
+				this.DoStateTransition(Selectable.SelectionState.Disabled, false);
 			}
 		}
 
-		// Token: 0x06001A5F RID: 6751 RVA: 0x0001477A File Offset: 0x0001297A
+		// Token: 0x06001543 RID: 5443 RVA: 0x0005C144 File Offset: 0x0005A344
 		public override void OnSubmit(BaseEventData eventData)
 		{
 			this.Press();
 			if (!this.IsActive() || !this.IsInteractable())
 			{
 				this.isHighlightDisabled = true;
-				this.DoStateTransition(4, false);
+				this.DoStateTransition(Selectable.SelectionState.Disabled, false);
 				return;
 			}
-			this.DoStateTransition(2, false);
+			this.DoStateTransition(Selectable.SelectionState.Pressed, false);
 			base.StartCoroutine(this.OnFinishSubmit());
 		}
 
-		// Token: 0x06001A60 RID: 6752 RVA: 0x000147B7 File Offset: 0x000129B7
+		// Token: 0x06001544 RID: 5444 RVA: 0x0005C181 File Offset: 0x0005A381
 		private IEnumerator OnFinishSubmit()
 		{
 			float fadeTime = base.colors.fadeDuration;
@@ -331,7 +331,7 @@ namespace Rewired.UI.ControlMapper
 			yield break;
 		}
 
-		// Token: 0x06001A61 RID: 6753 RVA: 0x0006C6CC File Offset: 0x0006A8CC
+		// Token: 0x06001545 RID: 5445 RVA: 0x0005C190 File Offset: 0x0005A390
 		private void EvaluateHightlightDisabled(bool isSelected)
 		{
 			if (!isSelected)
@@ -339,7 +339,7 @@ namespace Rewired.UI.ControlMapper
 				if (this.isHighlightDisabled)
 				{
 					this.isHighlightDisabled = false;
-					Selectable.SelectionState selectionState = (this.isDisabled ? 4 : base.currentSelectionState);
+					Selectable.SelectionState selectionState = (this.isDisabled ? Selectable.SelectionState.Disabled : base.currentSelectionState);
 					this.DoStateTransition(selectionState, false);
 					return;
 				}
@@ -351,48 +351,48 @@ namespace Rewired.UI.ControlMapper
 					return;
 				}
 				this.isHighlightDisabled = true;
-				this.DoStateTransition(4, false);
+				this.DoStateTransition(Selectable.SelectionState.Disabled, false);
 			}
 		}
 
-		// Token: 0x06001A62 RID: 6754 RVA: 0x000147C6 File Offset: 0x000129C6
+		// Token: 0x06001546 RID: 5446 RVA: 0x0005C1E2 File Offset: 0x0005A3E2
 		public void OnCancel(BaseEventData eventData)
 		{
 			if (this._CancelEvent != null)
 			{
-				this._CancelEvent.Invoke();
+				this._CancelEvent();
 			}
 		}
 
-		// Token: 0x04001CE2 RID: 7394
+		// Token: 0x04001811 RID: 6161
 		[SerializeField]
 		private Sprite _disabledHighlightedSprite;
 
-		// Token: 0x04001CE3 RID: 7395
+		// Token: 0x04001812 RID: 6162
 		[SerializeField]
 		private Color _disabledHighlightedColor;
 
-		// Token: 0x04001CE4 RID: 7396
+		// Token: 0x04001813 RID: 6163
 		[SerializeField]
 		private string _disabledHighlightedTrigger;
 
-		// Token: 0x04001CE5 RID: 7397
+		// Token: 0x04001814 RID: 6164
 		[SerializeField]
 		private bool _autoNavUp = true;
 
-		// Token: 0x04001CE6 RID: 7398
+		// Token: 0x04001815 RID: 6165
 		[SerializeField]
 		private bool _autoNavDown = true;
 
-		// Token: 0x04001CE7 RID: 7399
+		// Token: 0x04001816 RID: 6166
 		[SerializeField]
 		private bool _autoNavLeft = true;
 
-		// Token: 0x04001CE8 RID: 7400
+		// Token: 0x04001817 RID: 6167
 		[SerializeField]
 		private bool _autoNavRight = true;
 
-		// Token: 0x04001CE9 RID: 7401
+		// Token: 0x04001818 RID: 6168
 		private bool isHighlightDisabled;
 	}
 }

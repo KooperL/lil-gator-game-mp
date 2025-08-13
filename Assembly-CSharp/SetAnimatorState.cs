@@ -1,14 +1,14 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000FB RID: 251
+// Token: 0x020000BC RID: 188
 public class SetAnimatorState : MonoBehaviour
 {
-	// Token: 0x060004C1 RID: 1217 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x0600040D RID: 1037 RVA: 0x00017C16 File Offset: 0x00015E16
 	private void OnEnable()
 	{
 	}
 
-	// Token: 0x040006C1 RID: 1729
+	// Token: 0x040005AF RID: 1455
 	public string animatorState;
 }

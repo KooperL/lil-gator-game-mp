@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000367 RID: 871
+// Token: 0x0200028D RID: 653
 public class QuestTrackerPopup : MonoBehaviour
 {
-	// Token: 0x060010B1 RID: 4273 RVA: 0x0005565C File Offset: 0x0005385C
+	// Token: 0x06000DE8 RID: 3560 RVA: 0x00043548 File Offset: 0x00041748
 	private void Awake()
 	{
 		this.instantiateTime = Time.time;
@@ -22,19 +22,19 @@ public class QuestTrackerPopup : MonoBehaviour
 		this.hideBehavior.Hide();
 	}
 
-	// Token: 0x060010B2 RID: 4274 RVA: 0x0000E544 File Offset: 0x0000C744
+	// Token: 0x06000DE9 RID: 3561 RVA: 0x00043597 File Offset: 0x00041797
 	private void OnEnable()
 	{
 		QuestTrackerPopup.q = this;
 	}
 
-	// Token: 0x060010B3 RID: 4275 RVA: 0x0000E54C File Offset: 0x0000C74C
+	// Token: 0x06000DEA RID: 3562 RVA: 0x0004359F File Offset: 0x0004179F
 	private void OnDisable()
 	{
 		this == null;
 	}
 
-	// Token: 0x060010B4 RID: 4276 RVA: 0x000556AC File Offset: 0x000538AC
+	// Token: 0x06000DEB RID: 3563 RVA: 0x000435AC File Offset: 0x000417AC
 	public void QuestUpdated(QuestProfile profile)
 	{
 		if (profile == null || profile.tasks == null || profile.tasks.Length == 0 || Time.time - 1f < this.instantiateTime)
@@ -64,7 +64,7 @@ public class QuestTrackerPopup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010B5 RID: 4277 RVA: 0x00055750 File Offset: 0x00053950
+	// Token: 0x06000DEC RID: 3564 RVA: 0x00043650 File Offset: 0x00041850
 	private void DisplayQuest(QuestProfile profile)
 	{
 		profile.WasDisplayed();
@@ -105,7 +105,7 @@ public class QuestTrackerPopup : MonoBehaviour
 				gameObject2.SetActive(true);
 				this.displayedTasks.Add(gameObject2);
 				QuestTrackerTask questTrackerTask;
-				if (gameObject2.TryGetComponent<QuestTrackerTask>(ref questTrackerTask))
+				if (gameObject2.TryGetComponent<QuestTrackerTask>(out questTrackerTask))
 				{
 					questTrackerTask.Load(questTask);
 				}
@@ -113,8 +113,8 @@ public class QuestTrackerPopup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170001CE RID: 462
-	// (get) Token: 0x060010B6 RID: 4278 RVA: 0x0000E556 File Offset: 0x0000C756
+	// Token: 0x170000DF RID: 223
+	// (get) Token: 0x06000DED RID: 3565 RVA: 0x000437AC File Offset: 0x000419AC
 	private bool CanDisplay
 	{
 		get
@@ -123,7 +123,7 @@ public class QuestTrackerPopup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010B7 RID: 4279 RVA: 0x000558AC File Offset: 0x00053AAC
+	// Token: 0x06000DEE RID: 3566 RVA: 0x000437C0 File Offset: 0x000419C0
 	private void Update()
 	{
 		if (!this.hideBehavior.gameObject.activeSelf && this.profileQueue.Count == 0)
@@ -151,45 +151,45 @@ public class QuestTrackerPopup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040015B6 RID: 5558
+	// Token: 0x04001256 RID: 4694
 	public static QuestTrackerPopup q;
 
-	// Token: 0x040015B7 RID: 5559
+	// Token: 0x04001257 RID: 4695
 	public UIHideBehavior hideBehavior;
 
-	// Token: 0x040015B8 RID: 5560
+	// Token: 0x04001258 RID: 4696
 	public Text questTitle;
 
-	// Token: 0x040015B9 RID: 5561
+	// Token: 0x04001259 RID: 4697
 	public Text questTask;
 
-	// Token: 0x040015BA RID: 5562
+	// Token: 0x0400125A RID: 4698
 	private Queue<QuestProfile> profileQueue = new Queue<QuestProfile>();
 
-	// Token: 0x040015BB RID: 5563
+	// Token: 0x0400125B RID: 4699
 	private QuestProfile displayedProfile;
 
-	// Token: 0x040015BC RID: 5564
+	// Token: 0x0400125C RID: 4700
 	public Transform taskParent;
 
-	// Token: 0x040015BD RID: 5565
+	// Token: 0x0400125D RID: 4701
 	public GameObject visibleTask;
 
-	// Token: 0x040015BE RID: 5566
+	// Token: 0x0400125E RID: 4702
 	public GameObject completedTask;
 
-	// Token: 0x040015BF RID: 5567
+	// Token: 0x0400125F RID: 4703
 	private List<GameObject> displayedTasks;
 
-	// Token: 0x040015C0 RID: 5568
+	// Token: 0x04001260 RID: 4704
 	public float completePopupTime;
 
-	// Token: 0x040015C1 RID: 5569
+	// Token: 0x04001261 RID: 4705
 	public float incompletePopupTime;
 
-	// Token: 0x040015C2 RID: 5570
+	// Token: 0x04001262 RID: 4706
 	private float instantiateTime = -1f;
 
-	// Token: 0x040015C3 RID: 5571
+	// Token: 0x04001263 RID: 4707
 	public bool isShowingActiveQuest;
 }

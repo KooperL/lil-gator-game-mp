@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200025D RID: 605
+// Token: 0x020001D6 RID: 470
 public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x1700010F RID: 271
-	// (get) Token: 0x06000B74 RID: 2932 RVA: 0x0000ACD3 File Offset: 0x00008ED3
+	// Token: 0x17000081 RID: 129
+	// (get) Token: 0x060009CB RID: 2507 RVA: 0x0002D836 File Offset: 0x0002BA36
 	private PlayerItemManager.EquippedState EquippedState
 	{
 		get
@@ -18,7 +18,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B75 RID: 2933 RVA: 0x0003F6F4 File Offset: 0x0003D8F4
+	// Token: 0x060009CC RID: 2508 RVA: 0x0002D844 File Offset: 0x0002BA44
 	public void Input(bool isDown, bool isHeld)
 	{
 		if (isDown)
@@ -48,7 +48,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B76 RID: 2934 RVA: 0x0003F7E8 File Offset: 0x0003D9E8
+	// Token: 0x060009CD RID: 2509 RVA: 0x0002D938 File Offset: 0x0002BB38
 	private void LateUpdate()
 	{
 		if (this.spawnedObject != null)
@@ -80,7 +80,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B77 RID: 2935 RVA: 0x0003F870 File Offset: 0x0003DA70
+	// Token: 0x060009CE RID: 2510 RVA: 0x0002D9C0 File Offset: 0x0002BBC0
 	public void Cancel()
 	{
 		Player.movement.isModified = false;
@@ -103,7 +103,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B78 RID: 2936 RVA: 0x0003F918 File Offset: 0x0003DB18
+	// Token: 0x060009CF RID: 2511 RVA: 0x0002DA68 File Offset: 0x0002BC68
 	public void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (this.isOnRight ? Player.itemManager.hipAnchor_r : Player.itemManager.hipAnchor);
@@ -121,13 +121,13 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B79 RID: 2937 RVA: 0x0000ACE0 File Offset: 0x00008EE0
+	// Token: 0x060009D0 RID: 2512 RVA: 0x0002DADA File Offset: 0x0002BCDA
 	public void OnRemove()
 	{
 		this.Cancel();
 	}
 
-	// Token: 0x06000B7A RID: 2938 RVA: 0x0000ACE8 File Offset: 0x00008EE8
+	// Token: 0x060009D1 RID: 2513 RVA: 0x0002DAE2 File Offset: 0x0002BCE2
 	public void SetIndex(int index)
 	{
 		if (index == 1)
@@ -136,36 +136,36 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x04000E4B RID: 3659
+	// Token: 0x04000C13 RID: 3091
 	public Renderer unequippedRenderer;
 
-	// Token: 0x04000E4C RID: 3660
+	// Token: 0x04000C14 RID: 3092
 	public GameObject spawnedObjectPrefab;
 
-	// Token: 0x04000E4D RID: 3661
+	// Token: 0x04000C15 RID: 3093
 	private GameObject spawnedObject;
 
-	// Token: 0x04000E4E RID: 3662
+	// Token: 0x04000C16 RID: 3094
 	public Vector3 spawnedObjectPosition;
 
-	// Token: 0x04000E4F RID: 3663
+	// Token: 0x04000C17 RID: 3095
 	public Vector3 spawnedObjectVelocity;
 
-	// Token: 0x04000E50 RID: 3664
+	// Token: 0x04000C18 RID: 3096
 	public bool ragdollWhenSpawning;
 
-	// Token: 0x04000E51 RID: 3665
+	// Token: 0x04000C19 RID: 3097
 	private bool hasRagdolled;
 
-	// Token: 0x04000E52 RID: 3666
+	// Token: 0x04000C1A RID: 3098
 	public bool showItemBefore;
 
-	// Token: 0x04000E53 RID: 3667
+	// Token: 0x04000C1B RID: 3099
 	public float minimumStamina = -1f;
 
-	// Token: 0x04000E54 RID: 3668
+	// Token: 0x04000C1C RID: 3100
 	public GameObject despawnPrefab;
 
-	// Token: 0x04000E55 RID: 3669
+	// Token: 0x04000C1D RID: 3101
 	private bool isOnRight;
 }

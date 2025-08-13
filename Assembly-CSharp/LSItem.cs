@@ -3,11 +3,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020001CE RID: 462
+// Token: 0x02000161 RID: 353
 [AddComponentMenu("Logic/LogicState - Items")]
 public class LSItem : LogicState
 {
-	// Token: 0x0600089B RID: 2203 RVA: 0x00037858 File Offset: 0x00035A58
+	// Token: 0x0600074F RID: 1871 RVA: 0x00024688 File Offset: 0x00022888
 	public override void CheckLogic()
 	{
 		bool flag = true;
@@ -30,7 +30,7 @@ public class LSItem : LogicState
 		}
 	}
 
-	// Token: 0x0600089C RID: 2204 RVA: 0x0000879B File Offset: 0x0000699B
+	// Token: 0x06000750 RID: 1872 RVA: 0x000246F0 File Offset: 0x000228F0
 	private IEnumerator CompleteWhenInGameplay()
 	{
 		yield return null;
@@ -42,6 +42,6 @@ public class LSItem : LogicState
 		yield break;
 	}
 
-	// Token: 0x04000B36 RID: 2870
+	// Token: 0x04000992 RID: 2450
 	public ItemObject[] items;
 }

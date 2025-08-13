@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000221 RID: 545
+// Token: 0x020001A7 RID: 423
 [RequireComponent(typeof(Collider))]
 public class Skipper : MonoBehaviour
 {
-	// Token: 0x06000A36 RID: 2614 RVA: 0x0003B9C4 File Offset: 0x00039BC4
+	// Token: 0x060008B5 RID: 2229 RVA: 0x00029018 File Offset: 0x00027218
 	private void OnValidate()
 	{
 		if (this.rigidbody == null)
@@ -20,14 +20,14 @@ public class Skipper : MonoBehaviour
 		this.waterLayer = LayerMask.NameToLayer("Water");
 	}
 
-	// Token: 0x06000A37 RID: 2615 RVA: 0x00009CE4 File Offset: 0x00007EE4
+	// Token: 0x060008B6 RID: 2230 RVA: 0x00029069 File Offset: 0x00027269
 	private void Start()
 	{
 		this.randomSkipFactor = Random.Range(0.75f, 1f);
 		this.randomFriction = Random.value;
 	}
 
-	// Token: 0x06000A38 RID: 2616 RVA: 0x0003BA18 File Offset: 0x00039C18
+	// Token: 0x060008B7 RID: 2231 RVA: 0x0002908C File Offset: 0x0002728C
 	private void OnTriggerEnter(Collider other)
 	{
 		this.stayCount = 0;
@@ -68,7 +68,7 @@ public class Skipper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A39 RID: 2617 RVA: 0x00009D06 File Offset: 0x00007F06
+	// Token: 0x060008B8 RID: 2232 RVA: 0x0002920B File Offset: 0x0002740B
 	private void OnTriggerStay(Collider other)
 	{
 		this.stayCount++;
@@ -78,13 +78,13 @@ public class Skipper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A3A RID: 2618 RVA: 0x00009D3C File Offset: 0x00007F3C
+	// Token: 0x060008B9 RID: 2233 RVA: 0x00029241 File Offset: 0x00027441
 	private void OnTriggerExit(Collider other)
 	{
 		this.stayCount = 0;
 	}
 
-	// Token: 0x06000A3B RID: 2619 RVA: 0x00009D45 File Offset: 0x00007F45
+	// Token: 0x060008BA RID: 2234 RVA: 0x0002924A File Offset: 0x0002744A
 	private void Sink()
 	{
 		this.waterPhysics.activateAutomatically = true;
@@ -92,58 +92,58 @@ public class Skipper : MonoBehaviour
 		Object.Destroy(this);
 	}
 
-	// Token: 0x04000CAE RID: 3246
+	// Token: 0x04000AAE RID: 2734
 	public static int bestSkip;
 
-	// Token: 0x04000CAF RID: 3247
+	// Token: 0x04000AAF RID: 2735
 	public static bool isPartOfQuest;
 
-	// Token: 0x04000CB0 RID: 3248
+	// Token: 0x04000AB0 RID: 2736
 	[ReadOnly]
 	public int waterLayer;
 
-	// Token: 0x04000CB1 RID: 3249
+	// Token: 0x04000AB1 RID: 2737
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000CB2 RID: 3250
+	// Token: 0x04000AB2 RID: 2738
 	public WaterPhysics waterPhysics;
 
-	// Token: 0x04000CB3 RID: 3251
+	// Token: 0x04000AB3 RID: 2739
 	public float spin = 10f;
 
-	// Token: 0x04000CB4 RID: 3252
+	// Token: 0x04000AB4 RID: 2740
 	private const float maxBounceSpeed = 6f;
 
-	// Token: 0x04000CB5 RID: 3253
+	// Token: 0x04000AB5 RID: 2741
 	public float minSkipSpeed = 3f;
 
-	// Token: 0x04000CB6 RID: 3254
+	// Token: 0x04000AB6 RID: 2742
 	public float minSkipFriction = 0.7f;
 
-	// Token: 0x04000CB7 RID: 3255
+	// Token: 0x04000AB7 RID: 2743
 	public float maxSkipFriction = 0.95f;
 
-	// Token: 0x04000CB8 RID: 3256
+	// Token: 0x04000AB8 RID: 2744
 	public float minBounceFriction = 0.7f;
 
-	// Token: 0x04000CB9 RID: 3257
+	// Token: 0x04000AB9 RID: 2745
 	public float maxBounceFriction = 1f;
 
-	// Token: 0x04000CBA RID: 3258
+	// Token: 0x04000ABA RID: 2746
 	public GameObject skipEffect;
 
-	// Token: 0x04000CBB RID: 3259
+	// Token: 0x04000ABB RID: 2747
 	public UnityEvent onSink;
 
-	// Token: 0x04000CBC RID: 3260
+	// Token: 0x04000ABC RID: 2748
 	private int skipCount;
 
-	// Token: 0x04000CBD RID: 3261
+	// Token: 0x04000ABD RID: 2749
 	private float randomSkipFactor = 1f;
 
-	// Token: 0x04000CBE RID: 3262
+	// Token: 0x04000ABE RID: 2750
 	private float randomFriction = 1f;
 
-	// Token: 0x04000CBF RID: 3263
+	// Token: 0x04000ABF RID: 2751
 	private int stayCount;
 }

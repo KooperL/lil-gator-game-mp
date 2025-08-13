@@ -1,10 +1,10 @@
 ﻿using System;
 
-// Token: 0x02000178 RID: 376
+// Token: 0x0200011F RID: 287
 [Serializable]
 public struct GameSaveDataInfo
 {
-	// Token: 0x06000715 RID: 1813 RVA: 0x00032FE8 File Offset: 0x000311E8
+	// Token: 0x060005F1 RID: 1521 RVA: 0x0001F1E4 File Offset: 0x0001D3E4
 	public GameSaveDataInfo(GameSaveData saveData)
 	{
 		this.v = saveData.v;
@@ -13,6 +13,11 @@ public struct GameSaveDataInfo
 		this.sword = (this.shield = (this.hat = (this.item = (this.itemR = -1))));
 		this.percentObjects = (this.percentCharacters = (this.percentItems = 0));
 		this.collectedCraftingMaterials = false;
+		this.newGameIndex = 0;
+		if (saveData.ints != null)
+		{
+			saveData.ints.TryGetValue("NewGameIndex", out this.newGameIndex);
+		}
 		if (this.isStarted)
 		{
 			this.playerName = saveData.playerName;
@@ -112,63 +117,66 @@ public struct GameSaveDataInfo
 		}
 	}
 
-	// Token: 0x04000988 RID: 2440
+	// Token: 0x04000828 RID: 2088
 	public int v;
 
-	// Token: 0x04000989 RID: 2441
+	// Token: 0x04000829 RID: 2089
 	public bool isStarted;
 
-	// Token: 0x0400098A RID: 2442
+	// Token: 0x0400082A RID: 2090
 	public string playerName;
 
-	// Token: 0x0400098B RID: 2443
+	// Token: 0x0400082B RID: 2091
 	public int craftingMaterials;
 
-	// Token: 0x0400098C RID: 2444
+	// Token: 0x0400082C RID: 2092
 	public int population;
 
-	// Token: 0x0400098D RID: 2445
+	// Token: 0x0400082D RID: 2093
 	public bool collectedCraftingMaterials;
 
-	// Token: 0x0400098E RID: 2446
+	// Token: 0x0400082E RID: 2094
 	public int bracelets;
 
-	// Token: 0x0400098F RID: 2447
+	// Token: 0x0400082F RID: 2095
 	public bool martin;
 
-	// Token: 0x04000990 RID: 2448
+	// Token: 0x04000830 RID: 2096
 	public bool jill;
 
-	// Token: 0x04000991 RID: 2449
+	// Token: 0x04000831 RID: 2097
 	public bool avery;
 
-	// Token: 0x04000992 RID: 2450
+	// Token: 0x04000832 RID: 2098
 	public bool sis;
 
-	// Token: 0x04000993 RID: 2451
+	// Token: 0x04000833 RID: 2099
 	public bool tom;
 
-	// Token: 0x04000994 RID: 2452
+	// Token: 0x04000834 RID: 2100
 	public int sword;
 
-	// Token: 0x04000995 RID: 2453
+	// Token: 0x04000835 RID: 2101
 	public int shield;
 
-	// Token: 0x04000996 RID: 2454
+	// Token: 0x04000836 RID: 2102
 	public int hat;
 
-	// Token: 0x04000997 RID: 2455
+	// Token: 0x04000837 RID: 2103
 	public int item;
 
-	// Token: 0x04000998 RID: 2456
+	// Token: 0x04000838 RID: 2104
 	public int itemR;
 
-	// Token: 0x04000999 RID: 2457
+	// Token: 0x04000839 RID: 2105
 	public int percentObjects;
 
-	// Token: 0x0400099A RID: 2458
+	// Token: 0x0400083A RID: 2106
 	public int percentCharacters;
 
-	// Token: 0x0400099B RID: 2459
+	// Token: 0x0400083B RID: 2107
 	public int percentItems;
+
+	// Token: 0x0400083C RID: 2108
+	public int newGameIndex;
 }

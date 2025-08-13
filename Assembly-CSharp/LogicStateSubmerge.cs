@@ -1,9 +1,9 @@
 ﻿using System;
 
-// Token: 0x020001E1 RID: 481
+// Token: 0x0200016D RID: 365
 public class LogicStateSubmerge : LogicState
 {
-	// Token: 0x060008E8 RID: 2280 RVA: 0x00008AC3 File Offset: 0x00006CC3
+	// Token: 0x06000789 RID: 1929 RVA: 0x00025346 File Offset: 0x00023546
 	private void FixedUpdate()
 	{
 		if (Player.movement.IsSwimming)
@@ -20,6 +20,6 @@ public class LogicStateSubmerge : LogicState
 		}
 	}
 
-	// Token: 0x04000B84 RID: 2948
+	// Token: 0x040009B6 RID: 2486
 	private int swimmingCounter;
 }

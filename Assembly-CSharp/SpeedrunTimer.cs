@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000306 RID: 774
+// Token: 0x02000242 RID: 578
 public class SpeedrunTimer : MonoBehaviour
 {
-	// Token: 0x06000F43 RID: 3907 RVA: 0x0000D44A File Offset: 0x0000B64A
+	// Token: 0x06000C97 RID: 3223 RVA: 0x0003D289 File Offset: 0x0003B489
 	public static void CreateSpeedrunTimer()
 	{
 		if (SpeedrunTimer.instance != null)
@@ -15,7 +15,7 @@ public class SpeedrunTimer : MonoBehaviour
 		Object.Instantiate<GameObject>(Prefabs.p.speedrunTimer);
 	}
 
-	// Token: 0x06000F44 RID: 3908 RVA: 0x0000D46A File Offset: 0x0000B66A
+	// Token: 0x06000C98 RID: 3224 RVA: 0x0003D2A9 File Offset: 0x0003B4A9
 	public static void DestroySpeedrunTimer()
 	{
 		if (SpeedrunTimer.instance == null)
@@ -26,7 +26,7 @@ public class SpeedrunTimer : MonoBehaviour
 		SpeedrunTimer.instance = null;
 	}
 
-	// Token: 0x06000F45 RID: 3909 RVA: 0x0000D48F File Offset: 0x0000B68F
+	// Token: 0x06000C99 RID: 3225 RVA: 0x0003D2CE File Offset: 0x0003B4CE
 	private void Awake()
 	{
 		SpeedrunTimer.instance = this;
@@ -34,13 +34,13 @@ public class SpeedrunTimer : MonoBehaviour
 		this.lastFrameTime = Time.realtimeSinceStartupAsDouble;
 	}
 
-	// Token: 0x06000F46 RID: 3910 RVA: 0x0000D4AD File Offset: 0x0000B6AD
+	// Token: 0x06000C9A RID: 3226 RVA: 0x0003D2EC File Offset: 0x0003B4EC
 	private void Start()
 	{
 		this.UpdateIconColor(SpeedrunData.state);
 	}
 
-	// Token: 0x06000F47 RID: 3911 RVA: 0x00050240 File Offset: 0x0004E440
+	// Token: 0x06000C9B RID: 3227 RVA: 0x0003D2FC File Offset: 0x0003B4FC
 	private void Update()
 	{
 		double realtimeSinceStartupAsDouble = Time.realtimeSinceStartupAsDouble;
@@ -58,7 +58,7 @@ public class SpeedrunTimer : MonoBehaviour
 		this.wasTimerRunning = SpeedrunData.IsTimerRunning;
 	}
 
-	// Token: 0x06000F48 RID: 3912 RVA: 0x000502C8 File Offset: 0x0004E4C8
+	// Token: 0x06000C9C RID: 3228 RVA: 0x0003D384 File Offset: 0x0003B584
 	public static string TimerFormat(float time)
 	{
 		float num = (float)Mathf.FloorToInt(time / 3600f);
@@ -67,7 +67,7 @@ public class SpeedrunTimer : MonoBehaviour
 		return string.Format("{0:00}:{1:00}:{2:00.00}", num, num2, num3);
 	}
 
-	// Token: 0x06000F49 RID: 3913 RVA: 0x0005031C File Offset: 0x0004E51C
+	// Token: 0x06000C9D RID: 3229 RVA: 0x0003D3D8 File Offset: 0x0003B5D8
 	public void UpdateIconColor(RunState runState)
 	{
 		switch (runState)
@@ -86,7 +86,7 @@ public class SpeedrunTimer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F4A RID: 3914 RVA: 0x0000D4BA File Offset: 0x0000B6BA
+	// Token: 0x06000C9E RID: 3230 RVA: 0x0003D42D File Offset: 0x0003B62D
 	public void Split()
 	{
 		if (!SpeedrunData.IsRunning)
@@ -97,36 +97,36 @@ public class SpeedrunTimer : MonoBehaviour
 		this.splitHide.Show();
 	}
 
-	// Token: 0x040013C0 RID: 5056
+	// Token: 0x040010AA RID: 4266
 	public const bool displaySplits = true;
 
-	// Token: 0x040013C1 RID: 5057
+	// Token: 0x040010AB RID: 4267
 	public static SpeedrunTimer instance;
 
-	// Token: 0x040013C2 RID: 5058
+	// Token: 0x040010AC RID: 4268
 	private double lastFrameTime = -1.0;
 
-	// Token: 0x040013C3 RID: 5059
+	// Token: 0x040010AD RID: 4269
 	public Color runNotStarted;
 
-	// Token: 0x040013C4 RID: 5060
+	// Token: 0x040010AE RID: 4270
 	public Color runStarted;
 
-	// Token: 0x040013C5 RID: 5061
+	// Token: 0x040010AF RID: 4271
 	public Color runEnded;
 
-	// Token: 0x040013C6 RID: 5062
+	// Token: 0x040010B0 RID: 4272
 	public Image icon;
 
-	// Token: 0x040013C7 RID: 5063
+	// Token: 0x040010B1 RID: 4273
 	public Text timerDisplay;
 
-	// Token: 0x040013C8 RID: 5064
+	// Token: 0x040010B2 RID: 4274
 	public UIHideBehavior splitHide;
 
-	// Token: 0x040013C9 RID: 5065
+	// Token: 0x040010B3 RID: 4275
 	public Text splitDisplay;
 
-	// Token: 0x040013CA RID: 5066
+	// Token: 0x040010B4 RID: 4276
 	private bool wasTimerRunning;
 }

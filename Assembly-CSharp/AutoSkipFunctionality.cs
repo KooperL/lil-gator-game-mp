@@ -1,12 +1,12 @@
 ﻿using System;
 
-// Token: 0x02000304 RID: 772
+// Token: 0x02000240 RID: 576
 public enum AutoSkipFunctionality
 {
-	// Token: 0x040013B7 RID: 5047
+	// Token: 0x040010A1 RID: 4257
 	None,
-	// Token: 0x040013B8 RID: 5048
+	// Token: 0x040010A2 RID: 4258
 	DuringRun,
-	// Token: 0x040013B9 RID: 5049
+	// Token: 0x040010A3 RID: 4259
 	Always
 }

@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001B3 RID: 435
+// Token: 0x0200014F RID: 335
 public class SusieDialogue : MonoBehaviour, Interaction
 {
-	// Token: 0x0600081D RID: 2077 RVA: 0x000080C4 File Offset: 0x000062C4
+	// Token: 0x060006DF RID: 1759 RVA: 0x00022BD5 File Offset: 0x00020DD5
 	private void Awake()
 	{
 		this.boxCollider = base.GetComponent<BoxCollider>();
 	}
 
-	// Token: 0x0600081E RID: 2078 RVA: 0x000080D2 File Offset: 0x000062D2
+	// Token: 0x060006E0 RID: 1760 RVA: 0x00022BE3 File Offset: 0x00020DE3
 	private void OnEnable()
 	{
 		this.speedInterface = base.transform.parent.GetComponent<SpeedInterface>();
 	}
 
-	// Token: 0x0600081F RID: 2079 RVA: 0x00036244 File Offset: 0x00034444
+	// Token: 0x060006E1 RID: 1761 RVA: 0x00022BFC File Offset: 0x00020DFC
 	public void Interact()
 	{
 		if (this.isSpeedTriggered)
@@ -43,7 +43,7 @@ public class SusieDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000820 RID: 2080 RVA: 0x00036348 File Offset: 0x00034548
+	// Token: 0x060006E2 RID: 1762 RVA: 0x00022D00 File Offset: 0x00020F00
 	private void FixedUpdate()
 	{
 		float speed = this.speedInterface.GetSpeed();
@@ -53,39 +53,39 @@ public class SusieDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x04000AC3 RID: 2755
+	// Token: 0x0400093B RID: 2363
 	public DialogueActor actor;
 
-	// Token: 0x04000AC4 RID: 2756
+	// Token: 0x0400093C RID: 2364
 	public string dialogueChunkName;
 
-	// Token: 0x04000AC5 RID: 2757
+	// Token: 0x0400093D RID: 2365
 	public int dialogueCount = 1;
 
-	// Token: 0x04000AC6 RID: 2758
+	// Token: 0x0400093E RID: 2366
 	private int dialogueIndex;
 
-	// Token: 0x04000AC7 RID: 2759
+	// Token: 0x0400093F RID: 2367
 	public string dialogueAfterChunkName;
 
-	// Token: 0x04000AC8 RID: 2760
+	// Token: 0x04000940 RID: 2368
 	public int dialogueAfterCount = 2;
 
-	// Token: 0x04000AC9 RID: 2761
+	// Token: 0x04000941 RID: 2369
 	private int dialogueAfterIndex;
 
-	// Token: 0x04000ACA RID: 2762
+	// Token: 0x04000942 RID: 2370
 	private SpeedInterface speedInterface;
 
-	// Token: 0x04000ACB RID: 2763
+	// Token: 0x04000943 RID: 2371
 	private bool isSpeedTriggered;
 
-	// Token: 0x04000ACC RID: 2764
+	// Token: 0x04000944 RID: 2372
 	public float speedThreshold = 30f;
 
-	// Token: 0x04000ACD RID: 2765
+	// Token: 0x04000945 RID: 2373
 	public int moneyReward = 5;
 
-	// Token: 0x04000ACE RID: 2766
+	// Token: 0x04000946 RID: 2374
 	private BoxCollider boxCollider;
 }

@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000266 RID: 614
+// Token: 0x020001DD RID: 477
 public class KeepUpright : MonoBehaviour
 {
-	// Token: 0x06000BBA RID: 3002 RVA: 0x0000B040 File Offset: 0x00009240
+	// Token: 0x06000A05 RID: 2565 RVA: 0x0002E7B8 File Offset: 0x0002C9B8
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x06000BBB RID: 3003 RVA: 0x0004047C File Offset: 0x0003E67C
+	// Token: 0x06000A06 RID: 2566 RVA: 0x0002E7C8 File Offset: 0x0002C9C8
 	private Vector3 GetForward()
 	{
 		Vector3 vector = Quaternion.FromToRotation(this.referenceRigidbody.rotation * this.referenceUp, Vector3.up) * this.referenceRigidbody.rotation * this.referenceForward;
@@ -22,7 +22,7 @@ public class KeepUpright : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x06000BBC RID: 3004 RVA: 0x0000B04E File Offset: 0x0000924E
+	// Token: 0x06000A07 RID: 2567 RVA: 0x0002E832 File Offset: 0x0002CA32
 	public static Quaternion ShortestRotation(Quaternion a, Quaternion b)
 	{
 		if (Quaternion.Dot(a, b) < 0f)
@@ -32,13 +32,13 @@ public class KeepUpright : MonoBehaviour
 		return a * Quaternion.Inverse(b);
 	}
 
-	// Token: 0x06000BBD RID: 3005 RVA: 0x00009A36 File Offset: 0x00007C36
+	// Token: 0x06000A08 RID: 2568 RVA: 0x0002E865 File Offset: 0x0002CA65
 	public static Quaternion Multiply(Quaternion input, float scalar)
 	{
 		return new Quaternion(input.x * scalar, input.y * scalar, input.z * scalar, input.w * scalar);
 	}
 
-	// Token: 0x06000BBE RID: 3006 RVA: 0x000404E8 File Offset: 0x0003E6E8
+	// Token: 0x06000A09 RID: 2569 RVA: 0x0002E88C File Offset: 0x0002CA8C
 	private void FixedUpdate()
 	{
 		if (this.rigidbody.isKinematic)
@@ -48,34 +48,34 @@ public class KeepUpright : MonoBehaviour
 		Vector3 vector = this.rigidbody.rotation * this.forwardDirection;
 		float num;
 		Vector3 vector2;
-		KeepUpright.ShortestRotation(Quaternion.LookRotation(this.GetForward()), Quaternion.LookRotation(vector)).ToAngleAxis(ref num, ref vector2);
+		KeepUpright.ShortestRotation(Quaternion.LookRotation(this.GetForward()), Quaternion.LookRotation(vector)).ToAngleAxis(out num, out vector2);
 		vector2.Normalize();
 		Vector3 vector3 = num * 0.017453292f * this.uprightSpringStrength * vector2 - this.uprightSpringDamper * this.rigidbody.angularVelocity;
 		vector3 = Vector3.ClampMagnitude(vector3, this.maxTorque);
 		this.rigidbody.AddTorque(vector3);
 	}
 
-	// Token: 0x04000E98 RID: 3736
+	// Token: 0x04000C5A RID: 3162
 	private Rigidbody rigidbody;
 
-	// Token: 0x04000E99 RID: 3737
+	// Token: 0x04000C5B RID: 3163
 	public float uprightSpringStrength;
 
-	// Token: 0x04000E9A RID: 3738
+	// Token: 0x04000C5C RID: 3164
 	public float uprightSpringDamper;
 
-	// Token: 0x04000E9B RID: 3739
+	// Token: 0x04000C5D RID: 3165
 	public float maxTorque = 90f;
 
-	// Token: 0x04000E9C RID: 3740
+	// Token: 0x04000C5E RID: 3166
 	public Rigidbody referenceRigidbody;
 
-	// Token: 0x04000E9D RID: 3741
+	// Token: 0x04000C5F RID: 3167
 	public Vector3 referenceForward = Vector3.forward;
 
-	// Token: 0x04000E9E RID: 3742
+	// Token: 0x04000C60 RID: 3168
 	public Vector3 referenceUp = Vector3.up;
 
-	// Token: 0x04000E9F RID: 3743
+	// Token: 0x04000C61 RID: 3169
 	public Vector3 forwardDirection = Vector3.forward;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000204 RID: 516
+// Token: 0x0200018D RID: 397
 public class PersistentAudioListener : MonoBehaviour
 {
-	// Token: 0x06000993 RID: 2451 RVA: 0x0000945B File Offset: 0x0000765B
+	// Token: 0x06000824 RID: 2084 RVA: 0x000270A2 File Offset: 0x000252A2
 	private void Start()
 	{
 		if (PersistentAudioListener.persistentInstance == null)
@@ -17,7 +17,7 @@ public class PersistentAudioListener : MonoBehaviour
 		Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000994 RID: 2452 RVA: 0x00009493 File Offset: 0x00007693
+	// Token: 0x06000825 RID: 2085 RVA: 0x000270DA File Offset: 0x000252DA
 	private void LateUpdate()
 	{
 		if (this.parent == null)
@@ -30,12 +30,12 @@ public class PersistentAudioListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000C3C RID: 3132
+	// Token: 0x04000A50 RID: 2640
 	public static PersistentAudioListener persistentInstance;
 
-	// Token: 0x04000C3D RID: 3133
+	// Token: 0x04000A51 RID: 2641
 	private Transform parent;
 
-	// Token: 0x04000C3E RID: 3134
+	// Token: 0x04000A52 RID: 2642
 	public AudioListener audioListener;
 }

@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000099 RID: 153
+// Token: 0x02000078 RID: 120
 public class AnimationEvents : MonoBehaviour
 {
-	// Token: 0x06000226 RID: 550 RVA: 0x00003C6D File Offset: 0x00001E6D
+	// Token: 0x060001EF RID: 495 RVA: 0x0000A99F File Offset: 0x00008B9F
 	private void Awake()
 	{
 		this.footsteps = base.GetComponent<Footsteps>();
 		this.actor = base.GetComponent<DialogueActor>();
 	}
 
-	// Token: 0x06000227 RID: 551 RVA: 0x0001E61C File Offset: 0x0001C81C
+	// Token: 0x060001F0 RID: 496 RVA: 0x0000A9BC File Offset: 0x00008BBC
 	public void LeftStep()
 	{
 		if (this.lastStep > 0f && Time.time - this.lastStep < 0.5f)
@@ -32,7 +32,7 @@ public class AnimationEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000228 RID: 552 RVA: 0x0001E6B8 File Offset: 0x0001C8B8
+	// Token: 0x060001F1 RID: 497 RVA: 0x0000AA58 File Offset: 0x00008C58
 	public void RightStep()
 	{
 		if (this.lastStep < 0f && Time.time - -this.lastStep < 0.5f)
@@ -52,7 +52,7 @@ public class AnimationEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000229 RID: 553 RVA: 0x0001E758 File Offset: 0x0001C958
+	// Token: 0x060001F2 RID: 498 RVA: 0x0000AAF8 File Offset: 0x00008CF8
 	public void PlaySound(AnimationEvent animEvent)
 	{
 		if (animEvent.objectReferenceParameter == null)
@@ -72,7 +72,7 @@ public class AnimationEvents : MonoBehaviour
 		PlayAudio.p.PlayAtPoint(audioClip, base.transform.position, num, 1f, 128);
 	}
 
-	// Token: 0x0600022A RID: 554 RVA: 0x0001E7C0 File Offset: 0x0001C9C0
+	// Token: 0x060001F3 RID: 499 RVA: 0x0000AB60 File Offset: 0x00008D60
 	public void PlayEffect(AnimationEvent animEvent)
 	{
 		int intParameter = animEvent.intParameter;
@@ -111,7 +111,7 @@ public class AnimationEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600022B RID: 555 RVA: 0x0001E8E0 File Offset: 0x0001CAE0
+	// Token: 0x060001F4 RID: 500 RVA: 0x0000AC80 File Offset: 0x00008E80
 	public void PlayContinuousSound(AnimationEvent animEvent)
 	{
 		if (Vector3.Distance(base.transform.position, MainCamera.t.position) > 30f)
@@ -143,7 +143,7 @@ public class AnimationEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600022C RID: 556 RVA: 0x0001E9E8 File Offset: 0x0001CBE8
+	// Token: 0x060001F5 RID: 501 RVA: 0x0000AD88 File Offset: 0x00008F88
 	private void ClearContinuousSound()
 	{
 		this.hasContinousHook = false;
@@ -154,7 +154,7 @@ public class AnimationEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600022D RID: 557 RVA: 0x00003C87 File Offset: 0x00001E87
+	// Token: 0x060001F6 RID: 502 RVA: 0x0000ADE9 File Offset: 0x00008FE9
 	public void StartTransition(float duration)
 	{
 		if (this.transitionReciever != null)
@@ -163,33 +163,33 @@ public class AnimationEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000319 RID: 793
+	// Token: 0x04000293 RID: 659
 	private DialogueActor actor;
 
-	// Token: 0x0400031A RID: 794
+	// Token: 0x04000294 RID: 660
 	private Footsteps footsteps;
 
-	// Token: 0x0400031B RID: 795
+	// Token: 0x04000295 RID: 661
 	private float lastStep;
 
-	// Token: 0x0400031C RID: 796
+	// Token: 0x04000296 RID: 662
 	private bool isPlayingContinuous;
 
-	// Token: 0x0400031D RID: 797
+	// Token: 0x04000297 RID: 663
 	private const float continuousTimeout = 0.5f;
 
-	// Token: 0x0400031E RID: 798
+	// Token: 0x04000298 RID: 664
 	private const float maxContinuousDistance = 30f;
 
-	// Token: 0x0400031F RID: 799
+	// Token: 0x04000299 RID: 665
 	private AudioSource continuousSound;
 
-	// Token: 0x04000320 RID: 800
+	// Token: 0x0400029A RID: 666
 	private DestroyUnlessPinged continuousPing;
 
-	// Token: 0x04000321 RID: 801
+	// Token: 0x0400029B RID: 667
 	private bool hasContinousHook;
 
-	// Token: 0x04000322 RID: 802
+	// Token: 0x0400029C RID: 668
 	public ITransitionReciever transitionReciever;
 }

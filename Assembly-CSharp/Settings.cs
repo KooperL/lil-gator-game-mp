@@ -5,37 +5,37 @@ using Steamworks;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 using UnityEngine.Rendering.PostProcessing;
 
-// Token: 0x020002F7 RID: 759
+// Token: 0x02000238 RID: 568
 public class Settings : MonoBehaviour
 {
-	// Token: 0x06000EEB RID: 3819 RVA: 0x0000CFCB File Offset: 0x0000B1CB
+	// Token: 0x06000C4C RID: 3148 RVA: 0x0003B1CC File Offset: 0x000393CC
 	public static float NormalizedAudioVolume(float flatVolume)
 	{
 		return Mathf.Log10(Mathf.Max(flatVolume, 1E-05f)) * 20f;
 	}
 
-	// Token: 0x06000EEC RID: 3820 RVA: 0x00007385 File Offset: 0x00005585
+	// Token: 0x06000C4D RID: 3149 RVA: 0x0003B1E4 File Offset: 0x000393E4
 	public static int FloatToInt(float f)
 	{
 		return Mathf.FloorToInt(f * 1000f);
 	}
 
-	// Token: 0x06000EED RID: 3821 RVA: 0x00007393 File Offset: 0x00005593
+	// Token: 0x06000C4E RID: 3150 RVA: 0x0003B1F2 File Offset: 0x000393F2
 	public static float IntToFloat(int i)
 	{
 		return (float)i / 1000f;
 	}
 
-	// Token: 0x170001B3 RID: 435
-	// (get) Token: 0x06000EEE RID: 3822 RVA: 0x0004E61C File Offset: 0x0004C81C
+	// Token: 0x170000D0 RID: 208
+	// (get) Token: 0x06000C4F RID: 3151 RVA: 0x0003B1FC File Offset: 0x000393FC
 	public static int CurrentResolutionIndex
 	{
 		get
 		{
-			Vector2Int vector2Int;
-			vector2Int..ctor(Screen.currentResolution.width, Screen.currentResolution.height);
+			Vector2Int vector2Int = new Vector2Int(Screen.currentResolution.width, Screen.currentResolution.height);
 			int num;
 			if (Settings.pixelResolutions.TryFindIndex(vector2Int, out num))
 			{
@@ -45,9 +45,9 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170001B4 RID: 436
-	// (get) Token: 0x06000EEF RID: 3823 RVA: 0x0004E65C File Offset: 0x0004C85C
-	// (set) Token: 0x06000EF0 RID: 3824 RVA: 0x0000CFE3 File Offset: 0x0000B1E3
+	// Token: 0x170000D1 RID: 209
+	// (get) Token: 0x06000C50 RID: 3152 RVA: 0x0003B23C File Offset: 0x0003943C
+	// (set) Token: 0x06000C51 RID: 3153 RVA: 0x0003B288 File Offset: 0x00039488
 	public static Settings s
 	{
 		get
@@ -68,7 +68,7 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EF1 RID: 3825 RVA: 0x0004E6A8 File Offset: 0x0004C8A8
+	// Token: 0x06000C52 RID: 3154 RVA: 0x0003B290 File Offset: 0x00039490
 	private void Initialize()
 	{
 		if (this.initialized)
@@ -94,8 +94,7 @@ public class Settings : MonoBehaviour
 		SteamManager.ForceInitialize();
 		if (SteamUtils.IsSteamRunningOnSteamDeck())
 		{
-			Vector2Int vector2Int2;
-			vector2Int2..ctor(1280, 800);
+			Vector2Int vector2Int2 = new Vector2Int(1280, 800);
 			if (!list.Contains(vector2Int2))
 			{
 				list.Add(vector2Int2);
@@ -115,19 +114,19 @@ public class Settings : MonoBehaviour
 		this.ReadFromDisk();
 	}
 
-	// Token: 0x06000EF2 RID: 3826 RVA: 0x0000CFEB File Offset: 0x0000B1EB
+	// Token: 0x06000C53 RID: 3155 RVA: 0x0003B3C2 File Offset: 0x000395C2
 	private void OnEnable()
 	{
 		this.LoadSettings();
 	}
 
-	// Token: 0x06000EF3 RID: 3827 RVA: 0x0000CFEB File Offset: 0x0000B1EB
+	// Token: 0x06000C54 RID: 3156 RVA: 0x0003B3CA File Offset: 0x000395CA
 	private void Start()
 	{
 		this.LoadSettings();
 	}
 
-	// Token: 0x06000EF4 RID: 3828 RVA: 0x0000CFF3 File Offset: 0x0000B1F3
+	// Token: 0x06000C55 RID: 3157 RVA: 0x0003B3D2 File Offset: 0x000395D2
 	private void OnDisable()
 	{
 		if (Settings.instance == this)
@@ -136,7 +135,7 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EF5 RID: 3829 RVA: 0x0000CFF3 File Offset: 0x0000B1F3
+	// Token: 0x06000C56 RID: 3158 RVA: 0x0003B3E7 File Offset: 0x000395E7
 	private void OnApplicationQuit()
 	{
 		if (Settings.instance == this)
@@ -145,7 +144,7 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EF6 RID: 3830 RVA: 0x0004E7DC File Offset: 0x0004C9DC
+	// Token: 0x06000C57 RID: 3159 RVA: 0x0003B3FC File Offset: 0x000395FC
 	public void ReadFromDisk()
 	{
 		if (Settings.hasCachedData)
@@ -164,14 +163,14 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EF7 RID: 3831 RVA: 0x0000D008 File Offset: 0x0000B208
+	// Token: 0x06000C58 RID: 3160 RVA: 0x0003B449 File Offset: 0x00039649
 	public void WriteToDisk()
 	{
 		this.settingsData.v = 12;
 		FileUtil.WriteSettingsData(this.settingsData);
 	}
 
-	// Token: 0x06000EF8 RID: 3832 RVA: 0x0000D022 File Offset: 0x0000B222
+	// Token: 0x06000C59 RID: 3161 RVA: 0x0003B463 File Offset: 0x00039663
 	private IEnumerator LoadSettingsNextFrame()
 	{
 		yield return null;
@@ -180,7 +179,7 @@ public class Settings : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000EF9 RID: 3833 RVA: 0x0004E82C File Offset: 0x0004CA2C
+	// Token: 0x06000C5A RID: 3162 RVA: 0x0003B474 File Offset: 0x00039674
 	public void LoadSettings()
 	{
 		if (!this.initialized)
@@ -190,26 +189,25 @@ public class Settings : MonoBehaviour
 		bool flag = false;
 		bool flag2 = this.ReadInt("PixelFilter", 0) != 0;
 		ItemGlasses.SetPixelFilterEnabled(flag2);
-		FullScreenMode fullScreenMode = 1;
+		FullScreenMode fullScreenMode = FullScreenMode.FullScreenWindow;
 		switch (this.ReadInt("Fullscreen", 1))
 		{
 		case 0:
-			fullScreenMode = 0;
+			fullScreenMode = FullScreenMode.ExclusiveFullScreen;
 			break;
 		case 1:
-			fullScreenMode = 1;
+			fullScreenMode = FullScreenMode.FullScreenWindow;
 			break;
 		case 2:
-			fullScreenMode = 3;
+			fullScreenMode = FullScreenMode.Windowed;
 			break;
 		}
 		if (SteamUtils.IsSteamRunningOnSteamDeck())
 		{
-			fullScreenMode = 1;
+			fullScreenMode = FullScreenMode.FullScreenWindow;
 		}
 		Vector2Int vector2Int = Screen.currentResolution.PixelSize();
-		Vector2Int vector2Int2;
-		vector2Int2..ctor(this.ReadInt("ResolutionX", vector2Int.x), this.ReadInt("ResolutionY", vector2Int.y));
+		Vector2Int vector2Int2 = new Vector2Int(this.ReadInt("ResolutionX", vector2Int.x), this.ReadInt("ResolutionY", vector2Int.y));
 		if (!Settings.pixelResolutions.Contains(vector2Int2))
 		{
 			int num = (vector2Int2 - Settings.pixelResolutions[0]).sqrMagnitude;
@@ -281,14 +279,14 @@ public class Settings : MonoBehaviour
 		case 0:
 			if (this.sunLight != null)
 			{
-				this.sunLight.shadows = 0;
+				this.sunLight.shadows = LightShadows.None;
 			}
 			break;
 		case 1:
 			if (this.sunLight != null)
 			{
-				this.sunLight.shadows = 2;
-				this.sunLight.shadowResolution = 0;
+				this.sunLight.shadows = LightShadows.Soft;
+				this.sunLight.shadowResolution = LightShadowResolution.Low;
 				this.sunLight.shadowBias = 0.02f;
 				this.sunLight.shadowNormalBias = 0.05f;
 			}
@@ -296,8 +294,8 @@ public class Settings : MonoBehaviour
 		case 2:
 			if (this.sunLight != null)
 			{
-				this.sunLight.shadows = 2;
-				this.sunLight.shadowResolution = 1;
+				this.sunLight.shadows = LightShadows.Soft;
+				this.sunLight.shadowResolution = LightShadowResolution.Medium;
 				this.sunLight.shadowBias = 0.025f;
 				this.sunLight.shadowNormalBias = 0.1f;
 			}
@@ -305,8 +303,8 @@ public class Settings : MonoBehaviour
 		case 3:
 			if (this.sunLight != null)
 			{
-				this.sunLight.shadows = 2;
-				this.sunLight.shadowResolution = 2;
+				this.sunLight.shadows = LightShadows.Soft;
+				this.sunLight.shadowResolution = LightShadowResolution.High;
 				this.sunLight.shadowBias = 0.025f;
 				this.sunLight.shadowNormalBias = 0.2f;
 			}
@@ -314,16 +312,16 @@ public class Settings : MonoBehaviour
 		case 4:
 			if (this.sunLight != null)
 			{
-				this.sunLight.shadows = 2;
-				this.sunLight.shadowResolution = 3;
+				this.sunLight.shadows = LightShadows.Soft;
+				this.sunLight.shadowResolution = LightShadowResolution.VeryHigh;
 				this.sunLight.shadowBias = 0.02f;
 				this.sunLight.shadowNormalBias = 0.3f;
 			}
 			break;
 		}
-		if (this.sunLight != null && this.sunLight.shadows != null)
+		if (this.sunLight != null && this.sunLight.shadows != LightShadows.None)
 		{
-			this.sunLight.shadows = (this.ReadBool("ShadowSoft", true) ? 2 : 1);
+			this.sunLight.shadows = (this.ReadBool("ShadowSoft", true) ? LightShadows.Soft : LightShadows.Hard);
 		}
 		if (SpecialSettingsZone.specialSettings != null && SpecialSettingsZone.specialSettings.shadowCascades != -1)
 		{
@@ -551,6 +549,75 @@ public class Settings : MonoBehaviour
 		SpeedrunData.split_flashbackEnd = this.ReadBool("Split_FlashbackEnd", true);
 		SpeedrunData.split_credits = this.ReadBool("Split_Credits", false);
 		SpeedrunData.split_goHome = this.ReadBool("Split_GoHome", true);
+		int num15 = this.ReadInt("Language", 0);
+		if (!this.ReadBool("CheckLanguage", false))
+		{
+			int num16 = 0;
+			SystemLanguage systemLanguage = Application.systemLanguage;
+			if (systemLanguage <= SystemLanguage.French)
+			{
+				if (systemLanguage != SystemLanguage.English)
+				{
+					if (systemLanguage == SystemLanguage.French)
+					{
+						num16 = 1;
+					}
+				}
+				else
+				{
+					num16 = 0;
+				}
+			}
+			else if (systemLanguage != SystemLanguage.German)
+			{
+				if (systemLanguage != SystemLanguage.Portuguese)
+				{
+					if (systemLanguage == SystemLanguage.Spanish)
+					{
+						num16 = 2;
+					}
+				}
+				else
+				{
+					num16 = 4;
+				}
+			}
+			else
+			{
+				num16 = 3;
+			}
+			num15 = num16;
+			this.Write("Language", num15);
+			this.Write("CheckLanguage", true);
+		}
+		Language language;
+		switch (num15)
+		{
+		case 0:
+			language = Language.English;
+			break;
+		case 1:
+			language = Language.French;
+			break;
+		case 2:
+			language = Language.Spanish;
+			break;
+		case 3:
+			language = Language.German;
+			break;
+		case 4:
+			language = Language.BrazilianPortuguese;
+			break;
+		default:
+			language = Settings.language;
+			break;
+		}
+		if (Settings.language != language)
+		{
+			Settings.language = language;
+			MLText.ForceRefresh();
+			SetActorName.ForceRefresh();
+		}
 		Settings.cachedSettingsData = this.settingsData;
 		Settings.hasCachedData = true;
 		if (this.shaderVariables != null)
@@ -559,13 +626,13 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EFA RID: 3834 RVA: 0x0000D031 File Offset: 0x0000B231
+	// Token: 0x06000C5B RID: 3163 RVA: 0x0003BFEA File Offset: 0x0003A1EA
 	private Vector2Int FindClosestResolution()
 	{
 		return new Vector2Int(0, 0);
 	}
 
-	// Token: 0x06000EFB RID: 3835 RVA: 0x0000D03A File Offset: 0x0000B23A
+	// Token: 0x06000C5C RID: 3164 RVA: 0x0003BFF3 File Offset: 0x0003A1F3
 	public void Write(string key, bool value)
 	{
 		if (this.settingsData.bools.ContainsKey(key))
@@ -576,7 +643,7 @@ public class Settings : MonoBehaviour
 		this.settingsData.bools.Add(key, value);
 	}
 
-	// Token: 0x06000EFC RID: 3836 RVA: 0x0004F2CC File Offset: 0x0004D4CC
+	// Token: 0x06000C5D RID: 3165 RVA: 0x0003C030 File Offset: 0x0003A230
 	public bool ReadBool(string key, bool defaultValue = false)
 	{
 		bool flag;
@@ -588,7 +655,7 @@ public class Settings : MonoBehaviour
 		return defaultValue;
 	}
 
-	// Token: 0x06000EFD RID: 3837 RVA: 0x0000D074 File Offset: 0x0000B274
+	// Token: 0x06000C5E RID: 3166 RVA: 0x0003C067 File Offset: 0x0003A267
 	public void Write(string key, int value)
 	{
 		if (this.settingsData.ints.ContainsKey(key))
@@ -599,7 +666,7 @@ public class Settings : MonoBehaviour
 		this.settingsData.ints.Add(key, value);
 	}
 
-	// Token: 0x06000EFE RID: 3838 RVA: 0x0004F304 File Offset: 0x0004D504
+	// Token: 0x06000C5F RID: 3167 RVA: 0x0003C0A4 File Offset: 0x0003A2A4
 	public int ReadInt(string key, int defaultValue = 0)
 	{
 		int num;
@@ -611,19 +678,19 @@ public class Settings : MonoBehaviour
 		return defaultValue;
 	}
 
-	// Token: 0x06000EFF RID: 3839 RVA: 0x0000D0AE File Offset: 0x0000B2AE
+	// Token: 0x06000C60 RID: 3168 RVA: 0x0003C0DB File Offset: 0x0003A2DB
 	public void Write(string key, float value)
 	{
 		this.Write(key, Settings.FloatToInt(value));
 	}
 
-	// Token: 0x06000F00 RID: 3840 RVA: 0x0000D0BD File Offset: 0x0000B2BD
+	// Token: 0x06000C61 RID: 3169 RVA: 0x0003C0EA File Offset: 0x0003A2EA
 	public float ReadFloat(string key, float defaultValue = 0f)
 	{
 		return Settings.IntToFloat(this.ReadInt(key, Settings.FloatToInt(defaultValue)));
 	}
 
-	// Token: 0x06000F01 RID: 3841 RVA: 0x0000D0D1 File Offset: 0x0000B2D1
+	// Token: 0x06000C62 RID: 3170 RVA: 0x0003C0FE File Offset: 0x0003A2FE
 	public void Write(string key, string value)
 	{
 		if (this.settingsData.strings.ContainsKey(key))
@@ -634,7 +701,7 @@ public class Settings : MonoBehaviour
 		this.settingsData.strings.Add(key, value);
 	}
 
-	// Token: 0x06000F02 RID: 3842 RVA: 0x0000D10B File Offset: 0x0000B30B
+	// Token: 0x06000C63 RID: 3171 RVA: 0x0003C138 File Offset: 0x0003A338
 	public string ReadString(string key)
 	{
 		if (!this.settingsData.strings.ContainsKey(key))
@@ -644,125 +711,128 @@ public class Settings : MonoBehaviour
 		return this.settingsData.strings[key];
 	}
 
-	// Token: 0x06000F03 RID: 3843 RVA: 0x0000D137 File Offset: 0x0000B337
+	// Token: 0x06000C64 RID: 3172 RVA: 0x0003C164 File Offset: 0x0003A364
 	public bool HasString(string key)
 	{
 		return this.settingsData.strings.ContainsKey(key);
 	}
 
-	// Token: 0x0400130E RID: 4878
+	// Token: 0x0400100D RID: 4109
+	public static Language language;
+
+	// Token: 0x0400100E RID: 4110
 	public static float gameVolume;
 
-	// Token: 0x0400130F RID: 4879
+	// Token: 0x0400100F RID: 4111
 	private float heightmapPixelError = -1f;
 
-	// Token: 0x04001310 RID: 4880
+	// Token: 0x04001010 RID: 4112
 	public static bool hasMusic;
 
-	// Token: 0x04001311 RID: 4881
+	// Token: 0x04001011 RID: 4113
 	public static UnityEvent onHasMusicChanged = new UnityEvent();
 
-	// Token: 0x04001312 RID: 4882
+	// Token: 0x04001012 RID: 4114
 	private const float floatToIntScale = 1000f;
 
-	// Token: 0x04001313 RID: 4883
+	// Token: 0x04001013 RID: 4115
 	public static Vector2Int[] pixelResolutions;
 
-	// Token: 0x04001314 RID: 4884
+	// Token: 0x04001014 RID: 4116
 	public static int[] refreshRates;
 
-	// Token: 0x04001315 RID: 4885
+	// Token: 0x04001015 RID: 4117
 	public static Settings.SettingsData cachedSettingsData;
 
-	// Token: 0x04001316 RID: 4886
+	// Token: 0x04001016 RID: 4118
 	public static bool hasCachedData = false;
 
-	// Token: 0x04001317 RID: 4887
+	// Token: 0x04001017 RID: 4119
 	public Settings.SettingsData settingsData;
 
-	// Token: 0x04001318 RID: 4888
+	// Token: 0x04001018 RID: 4120
 	private static Settings instance;
 
-	// Token: 0x04001319 RID: 4889
+	// Token: 0x04001019 RID: 4121
 	public static float mouseSensitivity = 1f;
 
-	// Token: 0x0400131A RID: 4890
+	// Token: 0x0400101A RID: 4122
 	public static bool mouseInvertHorizontal = false;
 
-	// Token: 0x0400131B RID: 4891
+	// Token: 0x0400101B RID: 4123
 	public static bool mouseInvertVertical = false;
 
-	// Token: 0x0400131C RID: 4892
+	// Token: 0x0400101C RID: 4124
 	public static bool reCenterCameraIsToggle = false;
 
-	// Token: 0x0400131D RID: 4893
+	// Token: 0x0400101D RID: 4125
 	public AudioMixer volumeMixer;
 
-	// Token: 0x0400131E RID: 4894
+	// Token: 0x0400101E RID: 4126
 	public Terrain[] terrains = new Terrain[0];
 
-	// Token: 0x0400131F RID: 4895
+	// Token: 0x0400101F RID: 4127
 	public Light sunLight;
 
-	// Token: 0x04001320 RID: 4896
+	// Token: 0x04001020 RID: 4128
 	public GameObject postProcessVolumes;
 
-	// Token: 0x04001321 RID: 4897
+	// Token: 0x04001021 RID: 4129
 	public PostProcessProfile postProcessProfile;
 
-	// Token: 0x04001322 RID: 4898
+	// Token: 0x04001022 RID: 4130
 	private AmbientOcclusion ambientOcclusionSetting;
 
-	// Token: 0x04001323 RID: 4899
+	// Token: 0x04001023 RID: 4131
 	public GameObject fpsCounter;
 
-	// Token: 0x04001324 RID: 4900
+	// Token: 0x04001024 RID: 4132
 	public ShaderVariables shaderVariables;
 
-	// Token: 0x04001325 RID: 4901
+	// Token: 0x04001025 RID: 4133
 	public CameraLayerCullDistances cameraLayerCullDistances;
 
-	// Token: 0x04001326 RID: 4902
+	// Token: 0x04001026 RID: 4134
 	public GameObject skybox;
 
-	// Token: 0x04001327 RID: 4903
+	// Token: 0x04001027 RID: 4135
 	public Material[] leafMaterials;
 
-	// Token: 0x04001328 RID: 4904
+	// Token: 0x04001028 RID: 4136
 	public Material[] queueMaterials;
 
-	// Token: 0x04001329 RID: 4905
+	// Token: 0x04001029 RID: 4137
 	public Material[] instancingMaterials;
 
-	// Token: 0x0400132A RID: 4906
+	// Token: 0x0400102A RID: 4138
 	public Texture2D[] terrainTextures;
 
-	// Token: 0x0400132B RID: 4907
+	// Token: 0x0400102B RID: 4139
 	public DynamicResolutionScaler dynamicResolutionScaler;
 
-	// Token: 0x0400132C RID: 4908
+	// Token: 0x0400102C RID: 4140
 	protected bool initialized;
 
-	// Token: 0x0400132D RID: 4909
+	// Token: 0x0400102D RID: 4141
 	private bool willUpdateSettings;
 
-	// Token: 0x020002F8 RID: 760
+	// Token: 0x0200041D RID: 1053
 	[Serializable]
 	public class SettingsData
 	{
-		// Token: 0x0400132E RID: 4910
+		// Token: 0x04001D33 RID: 7475
 		public const int currentVersion = 12;
 
-		// Token: 0x0400132F RID: 4911
+		// Token: 0x04001D34 RID: 7476
 		public int v = 12;
 
-		// Token: 0x04001330 RID: 4912
+		// Token: 0x04001D35 RID: 7477
 		public BoolDictionary bools = new BoolDictionary();
 
-		// Token: 0x04001331 RID: 4913
+		// Token: 0x04001D36 RID: 7478
 		public IntDictionary ints = new IntDictionary();
 
-		// Token: 0x04001332 RID: 4914
+		// Token: 0x04001D37 RID: 7479
 		public StringDictionary strings = new StringDictionary();
 	}
 }

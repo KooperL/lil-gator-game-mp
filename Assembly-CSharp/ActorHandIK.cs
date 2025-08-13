@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000CB RID: 203
+// Token: 0x020000A1 RID: 161
 public class ActorHandIK : MonoBehaviour
 {
-	// Token: 0x06000348 RID: 840 RVA: 0x00024E54 File Offset: 0x00023054
+	// Token: 0x06000303 RID: 771 RVA: 0x00011928 File Offset: 0x0000FB28
 	private void Awake()
 	{
 		this.actor = base.GetComponent<DialogueActor>();
@@ -20,7 +20,7 @@ public class ActorHandIK : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000349 RID: 841 RVA: 0x00024EB4 File Offset: 0x000230B4
+	// Token: 0x06000304 RID: 772 RVA: 0x00011988 File Offset: 0x0000FB88
 	private void Update()
 	{
 		this.rightWeight = Mathf.MoveTowards(this.rightWeight, (!this.isRemoving && this.hasRightIK) ? 1f : 0f, 2f * Time.deltaTime);
@@ -31,18 +31,18 @@ public class ActorHandIK : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600034A RID: 842 RVA: 0x00024F5C File Offset: 0x0002315C
+	// Token: 0x06000305 RID: 773 RVA: 0x00011A30 File Offset: 0x0000FC30
 	private void OnAnimatorIK()
 	{
 		float num = this.rightWeight * this.animator.GetFloat(ActorHandIK.RightHandID);
 		float num2 = this.leftWeight * this.animator.GetFloat(ActorHandIK.LeftHandID);
-		this.animator.SetIKPositionWeight(3, Mathf.SmoothStep(0f, 1f, num));
-		this.animator.SetIKPositionWeight(2, Mathf.SmoothStep(0f, 1f, num2));
-		this.animator.SetIKPosition(3, this.GetIKPosition(false));
-		this.animator.SetIKPosition(2, this.GetIKPosition(true));
+		this.animator.SetIKPositionWeight(AvatarIKGoal.RightHand, Mathf.SmoothStep(0f, 1f, num));
+		this.animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, Mathf.SmoothStep(0f, 1f, num2));
+		this.animator.SetIKPosition(AvatarIKGoal.RightHand, this.GetIKPosition(false));
+		this.animator.SetIKPosition(AvatarIKGoal.LeftHand, this.GetIKPosition(true));
 	}
 
-	// Token: 0x0600034B RID: 843 RVA: 0x00024FF8 File Offset: 0x000231F8
+	// Token: 0x06000306 RID: 774 RVA: 0x00011ACC File Offset: 0x0000FCCC
 	public Vector3 GetIKPosition(bool isLeft)
 	{
 		Transform transform = (isLeft ? this.leftAnchor : this.rightAnchor);
@@ -63,7 +63,7 @@ public class ActorHandIK : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x0600034C RID: 844 RVA: 0x00025090 File Offset: 0x00023290
+	// Token: 0x06000307 RID: 775 RVA: 0x00011B64 File Offset: 0x0000FD64
 	public void SetHandIK(bool isLeft, Vector3 position, Transform anchor = null, bool allowYAxis = false)
 	{
 		if (this.actor == null)
@@ -92,7 +92,7 @@ public class ActorHandIK : MonoBehaviour
 		this.isRemoving = false;
 	}
 
-	// Token: 0x0600034D RID: 845 RVA: 0x000048D5 File Offset: 0x00002AD5
+	// Token: 0x06000308 RID: 776 RVA: 0x00011BFB File Offset: 0x0000FDFB
 	public void ClearAndRemove()
 	{
 		this.isRemoving = true;
@@ -106,48 +106,48 @@ public class ActorHandIK : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040004B9 RID: 1209
+	// Token: 0x0400041B RID: 1051
 	private static readonly int RightHandID = Animator.StringToHash("RightHand");
 
-	// Token: 0x040004BA RID: 1210
+	// Token: 0x0400041C RID: 1052
 	private static readonly int LeftHandID = Animator.StringToHash("LeftHand");
 
-	// Token: 0x040004BB RID: 1211
+	// Token: 0x0400041D RID: 1053
 	private DialogueActor actor;
 
-	// Token: 0x040004BC RID: 1212
+	// Token: 0x0400041E RID: 1054
 	private Animator animator;
 
-	// Token: 0x040004BD RID: 1213
+	// Token: 0x0400041F RID: 1055
 	private bool hasLeftIK;
 
-	// Token: 0x040004BE RID: 1214
+	// Token: 0x04000420 RID: 1056
 	private float leftWeight;
 
-	// Token: 0x040004BF RID: 1215
+	// Token: 0x04000421 RID: 1057
 	private Transform leftAnchor;
 
-	// Token: 0x040004C0 RID: 1216
+	// Token: 0x04000422 RID: 1058
 	private Vector3 leftPosition;
 
-	// Token: 0x040004C1 RID: 1217
+	// Token: 0x04000423 RID: 1059
 	private bool allowLeftYAxis;
 
-	// Token: 0x040004C2 RID: 1218
+	// Token: 0x04000424 RID: 1060
 	private bool hasRightIK;
 
-	// Token: 0x040004C3 RID: 1219
+	// Token: 0x04000425 RID: 1061
 	private float rightWeight;
 
-	// Token: 0x040004C4 RID: 1220
+	// Token: 0x04000426 RID: 1062
 	private Transform rightAnchor;
 
-	// Token: 0x040004C5 RID: 1221
+	// Token: 0x04000427 RID: 1063
 	private Vector3 rightPosition;
 
-	// Token: 0x040004C6 RID: 1222
+	// Token: 0x04000428 RID: 1064
 	private bool allowRightYAxis;
 
-	// Token: 0x040004C7 RID: 1223
+	// Token: 0x04000429 RID: 1065
 	private bool isRemoving;
 }

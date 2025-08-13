@@ -3,12 +3,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020002BE RID: 702
+// Token: 0x02000213 RID: 531
 public class DestroyQuest : MonoBehaviour
 {
-	// Token: 0x17000179 RID: 377
-	// (get) Token: 0x06000DB9 RID: 3513 RVA: 0x0000C5CD File Offset: 0x0000A7CD
-	// (set) Token: 0x06000DBA RID: 3514 RVA: 0x0000C5E0 File Offset: 0x0000A7E0
+	// Token: 0x170000BB RID: 187
+	// (get) Token: 0x06000B7C RID: 2940 RVA: 0x0003859C File Offset: 0x0003679C
+	// (set) Token: 0x06000B7D RID: 2941 RVA: 0x000385AF File Offset: 0x000367AF
 	public bool State
 	{
 		get
@@ -21,20 +21,20 @@ public class DestroyQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DBB RID: 3515 RVA: 0x0000C5F3 File Offset: 0x0000A7F3
+	// Token: 0x06000B7E RID: 2942 RVA: 0x000385C2 File Offset: 0x000367C2
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000DBC RID: 3516 RVA: 0x0000C5FB File Offset: 0x0000A7FB
+	// Token: 0x06000B7F RID: 2943 RVA: 0x000385CA File Offset: 0x000367CA
 	[ContextMenu("DebugState")]
 	public void DebugState()
 	{
 		Debug.Log(this.State);
 	}
 
-	// Token: 0x06000DBD RID: 3517 RVA: 0x0004AAAC File Offset: 0x00048CAC
+	// Token: 0x06000B80 RID: 2944 RVA: 0x000385DC File Offset: 0x000367DC
 	[ContextMenu("UpdateState")]
 	private void UpdateState()
 	{
@@ -66,7 +66,7 @@ public class DestroyQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DBE RID: 3518 RVA: 0x0004AB68 File Offset: 0x00048D68
+	// Token: 0x06000B81 RID: 2945 RVA: 0x00038698 File Offset: 0x00036898
 	public void TargetDestroyed()
 	{
 		this.UpdateState();
@@ -83,13 +83,13 @@ public class DestroyQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DBF RID: 3519 RVA: 0x0000C60D File Offset: 0x0000A80D
+	// Token: 0x06000B82 RID: 2946 RVA: 0x000386F7 File Offset: 0x000368F7
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000DC0 RID: 3520 RVA: 0x0000C61C File Offset: 0x0000A81C
+	// Token: 0x06000B83 RID: 2947 RVA: 0x00038706 File Offset: 0x00036906
 	public IEnumerator RunConversation()
 	{
 		DialogueManager.d.CancelBubble();
@@ -125,45 +125,45 @@ public class DestroyQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x040011EE RID: 4590
+	// Token: 0x04000F3A RID: 3898
 	public string id;
 
-	// Token: 0x040011EF RID: 4591
+	// Token: 0x04000F3B RID: 3899
 	public BreakableObject[] targets;
 
-	// Token: 0x040011F0 RID: 4592
+	// Token: 0x04000F3C RID: 3900
 	public DialogueActor[] actors;
 
-	// Token: 0x040011F1 RID: 4593
+	// Token: 0x04000F3D RID: 3901
 	public GameObject crier;
 
-	// Token: 0x040011F2 RID: 4594
+	// Token: 0x04000F3E RID: 3902
 	public string completeCry;
 
-	// Token: 0x040011F3 RID: 4595
+	// Token: 0x04000F3F RID: 3903
 	public string beforeText;
 
-	// Token: 0x040011F4 RID: 4596
+	// Token: 0x04000F40 RID: 3904
 	public string beforeState;
 
-	// Token: 0x040011F5 RID: 4597
+	// Token: 0x04000F41 RID: 3905
 	public UnityEvent onBefore;
 
-	// Token: 0x040011F6 RID: 4598
+	// Token: 0x04000F42 RID: 3906
 	public string rewardText;
 
-	// Token: 0x040011F7 RID: 4599
+	// Token: 0x04000F43 RID: 3907
 	public UnityEvent onReward;
 
-	// Token: 0x040011F8 RID: 4600
+	// Token: 0x04000F44 RID: 3908
 	public string afterText;
 
-	// Token: 0x040011F9 RID: 4601
+	// Token: 0x04000F45 RID: 3909
 	public string afterState;
 
-	// Token: 0x040011FA RID: 4602
+	// Token: 0x04000F46 RID: 3910
 	public UnityEvent onAfter;
 
-	// Token: 0x040011FB RID: 4603
+	// Token: 0x04000F47 RID: 3911
 	private int aliveEnemies;
 }

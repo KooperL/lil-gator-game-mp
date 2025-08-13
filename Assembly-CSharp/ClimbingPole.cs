@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000BA RID: 186
+// Token: 0x02000094 RID: 148
 [AddComponentMenu("Contextual/Climbing Pole")]
 public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPositions, ICustomHandIKPositions
 {
-	// Token: 0x060002EC RID: 748 RVA: 0x00004446 File Offset: 0x00002646
+	// Token: 0x060002A2 RID: 674 RVA: 0x0000ED3E File Offset: 0x0000CF3E
 	private void OnValidate()
 	{
 		if (!Application.isPlaying && base.enabled)
@@ -15,7 +15,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		}
 	}
 
-	// Token: 0x060002ED RID: 749 RVA: 0x000228CC File Offset: 0x00020ACC
+	// Token: 0x060002A3 RID: 675 RVA: 0x0000ED58 File Offset: 0x0000CF58
 	private void OnDrawGizmosSelected()
 	{
 		for (int i = 0; i < this.positions.Length; i++)
@@ -25,7 +25,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		}
 	}
 
-	// Token: 0x060002EE RID: 750 RVA: 0x00022934 File Offset: 0x00020B34
+	// Token: 0x060002A4 RID: 676 RVA: 0x0000EDC0 File Offset: 0x0000CFC0
 	[ContextMenu("Fit Capsule To Beam")]
 	public void FitCapsule()
 	{
@@ -36,7 +36,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		component.height = Mathf.Abs(vector.y - vector2.y) + 1f;
 	}
 
-	// Token: 0x060002EF RID: 751 RVA: 0x000229A0 File Offset: 0x00020BA0
+	// Token: 0x060002A5 RID: 677 RVA: 0x0000EE2C File Offset: 0x0000D02C
 	private void Initialize()
 	{
 		this.topHeldT = base.MoveAlongPath((float)(this.positions.Length - 1), -0.75f);
@@ -47,7 +47,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 				Vector3 vector = base.GetPosition(i - 1) - base.GetPosition(i);
 				float magnitude = vector.magnitude;
 				RaycastHit raycastHit;
-				if (Physics.SphereCast(base.GetPosition(i), 0.1f, vector, ref raycastHit, magnitude, LayerUtil.GroundLayersMinusPlayer))
+				if (Physics.SphereCast(base.GetPosition(i), 0.1f, vector, out raycastHit, magnitude, LayerUtil.GroundLayersMinusPlayer))
 				{
 					this.groundT = (float)i - raycastHit.distance / magnitude;
 					return;
@@ -57,7 +57,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		this.groundT = 0f;
 	}
 
-	// Token: 0x060002F0 RID: 752 RVA: 0x00022A44 File Offset: 0x00020C44
+	// Token: 0x060002A6 RID: 678 RVA: 0x0000EED0 File Offset: 0x0000D0D0
 	private bool IsEligible()
 	{
 		this.t = base.GetClosestInterpolated(Player.RawPosition);
@@ -65,7 +65,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		return this.IsEligible(this.t, vector);
 	}
 
-	// Token: 0x060002F1 RID: 753 RVA: 0x00022A7C File Offset: 0x00020C7C
+	// Token: 0x060002A7 RID: 679 RVA: 0x0000EF08 File Offset: 0x0000D108
 	private bool IsEligible(float t, Vector3 direction)
 	{
 		if (PlayerInput.RawInput.y < 0f)
@@ -152,7 +152,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		return true;
 	}
 
-	// Token: 0x060002F2 RID: 754 RVA: 0x00022C50 File Offset: 0x00020E50
+	// Token: 0x060002A8 RID: 680 RVA: 0x0000F0DC File Offset: 0x0000D2DC
 	private void OnTriggerStay(Collider other)
 	{
 		if (this.groundT < -0.5f)
@@ -195,7 +195,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		}
 	}
 
-	// Token: 0x060002F3 RID: 755 RVA: 0x00022D2C File Offset: 0x00020F2C
+	// Token: 0x060002A9 RID: 681 RVA: 0x0000F1B8 File Offset: 0x0000D3B8
 	private void OnEnable()
 	{
 		Player.movement.isModified = true;
@@ -251,7 +251,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		Player.movement.modNoStaminaRecovery = true;
 	}
 
-	// Token: 0x060002F4 RID: 756 RVA: 0x00022F58 File Offset: 0x00021158
+	// Token: 0x060002AA RID: 682 RVA: 0x0000F3E4 File Offset: 0x0000D5E4
 	private void OnDisable()
 	{
 		Player.footIK.ClearOverrides();
@@ -283,13 +283,13 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		this.lastEnabled = Time.time;
 	}
 
-	// Token: 0x060002F5 RID: 757 RVA: 0x0000445E File Offset: 0x0000265E
+	// Token: 0x060002AB RID: 683 RVA: 0x0000F4FA File Offset: 0x0000D6FA
 	public float GetOffset(float t)
 	{
 		return (this.thickness.Evaluate(t / (float)(this.positions.Length - 1)) + 0f) * -1f * base.transform.lossyScale.x;
 	}
 
-	// Token: 0x060002F6 RID: 758 RVA: 0x00023070 File Offset: 0x00021270
+	// Token: 0x060002AC RID: 684 RVA: 0x0000F534 File Offset: 0x0000D734
 	public void MovementUpdate(Vector3 input, ref Vector3 position, ref Vector3 velocity, ref Vector3 direction, ref Vector3 up, ref float animationIndex)
 	{
 		this.t = Mathf.Clamp(this.t, 0f, (float)(this.positions.Length - 1));
@@ -405,7 +405,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		position = vector2;
 	}
 
-	// Token: 0x060002F7 RID: 759 RVA: 0x00004495 File Offset: 0x00002695
+	// Token: 0x060002AD RID: 685 RVA: 0x0000FA88 File Offset: 0x0000DC88
 	public void Cancel()
 	{
 		if (this == null)
@@ -415,31 +415,31 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		base.enabled = false;
 	}
 
-	// Token: 0x060002F8 RID: 760 RVA: 0x000044A8 File Offset: 0x000026A8
+	// Token: 0x060002AE RID: 686 RVA: 0x0000FA9B File Offset: 0x0000DC9B
 	public Vector3 GetLeftFootTarget(Vector3 currentPosition)
 	{
 		return this.GetTargetPoint(currentPosition, this.isOnTop ? Vector3.left : new Vector3(-1f, 0f, -1f));
 	}
 
-	// Token: 0x060002F9 RID: 761 RVA: 0x000044D4 File Offset: 0x000026D4
+	// Token: 0x060002AF RID: 687 RVA: 0x0000FAC7 File Offset: 0x0000DCC7
 	public Vector3 GetRightFootTarget(Vector3 currentPosition)
 	{
 		return this.GetTargetPoint(currentPosition, this.isOnTop ? Vector3.right : new Vector3(1f, 0f, -1f));
 	}
 
-	// Token: 0x060002FA RID: 762 RVA: 0x00004500 File Offset: 0x00002700
+	// Token: 0x060002B0 RID: 688 RVA: 0x0000FAF3 File Offset: 0x0000DCF3
 	public Vector3 GetLeftHandTarget(Vector3 currentPosition)
 	{
 		return this.GetTargetPoint(currentPosition, new Vector3(-1f, 0f, -1f));
 	}
 
-	// Token: 0x060002FB RID: 763 RVA: 0x0000451D File Offset: 0x0000271D
+	// Token: 0x060002B1 RID: 689 RVA: 0x0000FB10 File Offset: 0x0000DD10
 	public Vector3 GetRightHandTarget(Vector3 currentPosition)
 	{
 		return this.GetTargetPoint(currentPosition, new Vector3(1f, 0f, -1f));
 	}
 
-	// Token: 0x060002FC RID: 764 RVA: 0x000235C4 File Offset: 0x000217C4
+	// Token: 0x060002B2 RID: 690 RVA: 0x0000FB30 File Offset: 0x0000DD30
 	private Vector3 GetTargetPoint(Vector3 currentPosition, Vector3 offsetDirection)
 	{
 		float closestInterpolated = base.GetClosestInterpolated(currentPosition);
@@ -452,135 +452,135 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		return vector + -this.GetOffset(closestInterpolated) * normalized;
 	}
 
-	// Token: 0x04000419 RID: 1049
+	// Token: 0x04000380 RID: 896
 	private static LayerMask playerTriggerMask = 0;
 
-	// Token: 0x0400041A RID: 1050
+	// Token: 0x04000381 RID: 897
 	private static Collider[] sphereTestResults = new Collider[10];
 
-	// Token: 0x0400041B RID: 1051
+	// Token: 0x04000382 RID: 898
 	private const float climbSpeed = 3f;
 
-	// Token: 0x0400041C RID: 1052
+	// Token: 0x04000383 RID: 899
 	private const float slideSpeed = 4f;
 
-	// Token: 0x0400041D RID: 1053
+	// Token: 0x04000384 RID: 900
 	private const float acceleration = 20f;
 
-	// Token: 0x0400041E RID: 1054
+	// Token: 0x04000385 RID: 901
 	private const float staminaDrainSpeed = 0.5f;
 
-	// Token: 0x0400041F RID: 1055
+	// Token: 0x04000386 RID: 902
 	private const float rotationSpeed = -120f;
 
-	// Token: 0x04000420 RID: 1056
+	// Token: 0x04000387 RID: 903
 	private const float offset = 0f;
 
-	// Token: 0x04000421 RID: 1057
+	// Token: 0x04000388 RID: 904
 	private const float handHeight = 0.75f;
 
-	// Token: 0x04000422 RID: 1058
+	// Token: 0x04000389 RID: 905
 	private const float lerpToTopSpeed = 2f;
 
-	// Token: 0x04000423 RID: 1059
+	// Token: 0x0400038A RID: 906
 	private Rigidbody rigidbody;
 
-	// Token: 0x04000424 RID: 1060
+	// Token: 0x0400038B RID: 907
 	public AnimationCurve thickness = new AnimationCurve(new Keyframe[]
 	{
 		new Keyframe(0f, 0.1f),
 		new Keyframe(1f, 0.1f)
 	});
 
-	// Token: 0x04000425 RID: 1061
+	// Token: 0x0400038C RID: 908
 	[HideInInspector]
 	public float t;
 
-	// Token: 0x04000426 RID: 1062
+	// Token: 0x0400038D RID: 909
 	private Vector3 velocity;
 
-	// Token: 0x04000427 RID: 1063
+	// Token: 0x0400038E RID: 910
 	private float speed;
 
-	// Token: 0x04000428 RID: 1064
+	// Token: 0x0400038F RID: 911
 	private float lastEnabled = -1f;
 
-	// Token: 0x04000429 RID: 1065
+	// Token: 0x04000390 RID: 912
 	[HideInInspector]
 	public Vector3 direction;
 
-	// Token: 0x0400042A RID: 1066
+	// Token: 0x04000391 RID: 913
 	private float rotation;
 
-	// Token: 0x0400042B RID: 1067
+	// Token: 0x04000392 RID: 914
 	public float distanceAllowance = 0.5f;
 
-	// Token: 0x0400042C RID: 1068
+	// Token: 0x04000393 RID: 915
 	public bool raycastForGround = true;
 
-	// Token: 0x0400042D RID: 1069
+	// Token: 0x04000394 RID: 916
 	private float groundT = -1f;
 
-	// Token: 0x0400042E RID: 1070
+	// Token: 0x04000395 RID: 917
 	private float topHeldT = -1f;
 
-	// Token: 0x0400042F RID: 1071
+	// Token: 0x04000396 RID: 918
 	[HideInInspector]
 	public float lerpToPosition;
 
-	// Token: 0x04000430 RID: 1072
+	// Token: 0x04000397 RID: 919
 	public float lerpSpeed = 5f;
 
-	// Token: 0x04000431 RID: 1073
+	// Token: 0x04000398 RID: 920
 	private float lerpToTop;
 
-	// Token: 0x04000432 RID: 1074
+	// Token: 0x04000399 RID: 921
 	private bool isOnTop;
 
-	// Token: 0x04000433 RID: 1075
+	// Token: 0x0400039A RID: 922
 	public AnimationSet animationSet;
 
-	// Token: 0x04000434 RID: 1076
+	// Token: 0x0400039B RID: 923
 	public UnityEvent onEnable;
 
-	// Token: 0x04000435 RID: 1077
+	// Token: 0x0400039C RID: 924
 	private bool checkedForConnectedBeams;
 
-	// Token: 0x04000436 RID: 1078
+	// Token: 0x0400039D RID: 925
 	private BalanceBeam[] backBeams;
 
-	// Token: 0x04000437 RID: 1079
+	// Token: 0x0400039E RID: 926
 	private BalanceBeam[] forwardBeams;
 
-	// Token: 0x04000438 RID: 1080
+	// Token: 0x0400039F RID: 927
 	private Vector3[] backBeamDirections;
 
-	// Token: 0x04000439 RID: 1081
+	// Token: 0x040003A0 RID: 928
 	private Vector3[] forwardBeamDirections;
 
-	// Token: 0x0400043A RID: 1082
+	// Token: 0x040003A1 RID: 929
 	public SurfaceMaterial material;
 
-	// Token: 0x0400043B RID: 1083
+	// Token: 0x040003A2 RID: 930
 	public bool playJumpSound = true;
 
-	// Token: 0x0400043C RID: 1084
+	// Token: 0x040003A3 RID: 931
 	[ConditionalHide("playJumpSound", true)]
 	public AudioSourceVariance jumpSoundEffect;
 
-	// Token: 0x0400043D RID: 1085
+	// Token: 0x040003A4 RID: 932
 	public bool playLandSound = true;
 
-	// Token: 0x0400043E RID: 1086
+	// Token: 0x040003A5 RID: 933
 	[ConditionalHide("playLandSound", true)]
 	public AudioSourceVariance landSoundEffect;
 
-	// Token: 0x0400043F RID: 1087
+	// Token: 0x040003A6 RID: 934
 	public bool requiresStamina = true;
 
-	// Token: 0x04000440 RID: 1088
+	// Token: 0x040003A7 RID: 935
 	public float staminaMultiplier = 1f;
 
-	// Token: 0x04000441 RID: 1089
+	// Token: 0x040003A8 RID: 936
 	public bool isAggressive;
 }

@@ -1,28 +1,28 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200014F RID: 335
+// Token: 0x020000FC RID: 252
 public class RippleSpawner : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06000640 RID: 1600 RVA: 0x0000681B File Offset: 0x00004A1B
+	// Token: 0x0600052E RID: 1326 RVA: 0x0001BCF8 File Offset: 0x00019EF8
 	private void Start()
 	{
 		this.nextTime = Time.time + Random.value / this.speed;
 	}
 
-	// Token: 0x06000641 RID: 1601 RVA: 0x00002ADC File Offset: 0x00000CDC
+	// Token: 0x0600052F RID: 1327 RVA: 0x0001BD12 File Offset: 0x00019F12
 	private void OnEnable()
 	{
 		FastUpdateManager.updateEveryNonFixed.Add(this);
 	}
 
-	// Token: 0x06000642 RID: 1602 RVA: 0x0000285D File Offset: 0x00000A5D
+	// Token: 0x06000530 RID: 1328 RVA: 0x0001BD1F File Offset: 0x00019F1F
 	private void OnDisable()
 	{
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x06000643 RID: 1603 RVA: 0x00030460 File Offset: 0x0002E660
+	// Token: 0x06000531 RID: 1329 RVA: 0x0001BD30 File Offset: 0x00019F30
 	public void ManagedUpdate()
 	{
 		if (this.nextTime <= Time.time)
@@ -32,9 +32,9 @@ public class RippleSpawner : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x04000869 RID: 2153
+	// Token: 0x04000722 RID: 1826
 	public float speed;
 
-	// Token: 0x0400086A RID: 2154
+	// Token: 0x04000723 RID: 1827
 	private float nextTime;
 }

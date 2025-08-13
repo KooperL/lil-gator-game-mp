@@ -1,24 +1,24 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200023D RID: 573
+// Token: 0x020001BC RID: 444
 public class GravityModifier : MonoBehaviour
 {
-	// Token: 0x06000AD0 RID: 2768 RVA: 0x0000A4AB File Offset: 0x000086AB
+	// Token: 0x06000939 RID: 2361 RVA: 0x0002BE30 File Offset: 0x0002A030
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x06000AD1 RID: 2769 RVA: 0x0000A4B9 File Offset: 0x000086B9
+	// Token: 0x0600093A RID: 2362 RVA: 0x0002BE3E File Offset: 0x0002A03E
 	private void FixedUpdate()
 	{
-		this.rigidbody.AddForce(this.gravityMod * Physics.gravity, 5);
+		this.rigidbody.AddForce(this.gravityMod * Physics.gravity, ForceMode.Acceleration);
 	}
 
-	// Token: 0x04000DB3 RID: 3507
+	// Token: 0x04000B97 RID: 2967
 	public float gravityMod = 1f;
 
-	// Token: 0x04000DB4 RID: 3508
+	// Token: 0x04000B98 RID: 2968
 	private Rigidbody rigidbody;
 }

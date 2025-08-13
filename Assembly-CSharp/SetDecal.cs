@@ -1,23 +1,23 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200004C RID: 76
+// Token: 0x0200003A RID: 58
 public class SetDecal : MonoBehaviour
 {
-	// Token: 0x06000110 RID: 272 RVA: 0x00002E39 File Offset: 0x00001039
+	// Token: 0x060000EB RID: 235 RVA: 0x00006528 File Offset: 0x00004728
 	public void OnValidate()
 	{
 		this.UpdatePropertyBlock();
 	}
 
-	// Token: 0x06000111 RID: 273 RVA: 0x00002E41 File Offset: 0x00001041
+	// Token: 0x060000EC RID: 236 RVA: 0x00006530 File Offset: 0x00004730
 	public void SetColor(Color color)
 	{
 		this.color = color;
 		this.UpdatePropertyBlock();
 	}
 
-	// Token: 0x06000112 RID: 274 RVA: 0x0001AF3C File Offset: 0x0001913C
+	// Token: 0x060000ED RID: 237 RVA: 0x00006540 File Offset: 0x00004740
 	public void UpdatePropertyBlock()
 	{
 		if (this.properties == null)
@@ -33,15 +33,15 @@ public class SetDecal : MonoBehaviour
 		this.renderer.SetPropertyBlock(this.properties);
 	}
 
-	// Token: 0x04000189 RID: 393
+	// Token: 0x04000142 RID: 322
 	public Color color;
 
-	// Token: 0x0400018A RID: 394
+	// Token: 0x04000143 RID: 323
 	private int colorID;
 
-	// Token: 0x0400018B RID: 395
+	// Token: 0x04000144 RID: 324
 	private MaterialPropertyBlock properties;
 
-	// Token: 0x0400018C RID: 396
+	// Token: 0x04000145 RID: 325
 	public Renderer renderer;
 }

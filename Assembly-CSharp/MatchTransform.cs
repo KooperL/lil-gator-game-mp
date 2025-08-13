@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001F0 RID: 496
+// Token: 0x0200017A RID: 378
 public class MatchTransform : MonoBehaviour
 {
-	// Token: 0x0600092C RID: 2348 RVA: 0x00008F3D File Offset: 0x0000713D
+	// Token: 0x060007CA RID: 1994 RVA: 0x0002601F File Offset: 0x0002421F
 	public void OnValidate()
 	{
 		if (this.matchPlayer)
@@ -13,19 +13,19 @@ public class MatchTransform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600092D RID: 2349 RVA: 0x00008F5C File Offset: 0x0000715C
+	// Token: 0x060007CB RID: 1995 RVA: 0x0002603E File Offset: 0x0002423E
 	private void Start()
 	{
 		this.Match();
 	}
 
-	// Token: 0x0600092E RID: 2350 RVA: 0x00008F5C File Offset: 0x0000715C
+	// Token: 0x060007CC RID: 1996 RVA: 0x00026046 File Offset: 0x00024246
 	private void LateUpdate()
 	{
 		this.Match();
 	}
 
-	// Token: 0x0600092F RID: 2351 RVA: 0x00039188 File Offset: 0x00037388
+	// Token: 0x060007CD RID: 1997 RVA: 0x00026050 File Offset: 0x00024250
 	[ContextMenu("Match")]
 	private void Match()
 	{
@@ -43,16 +43,16 @@ public class MatchTransform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000BD9 RID: 3033
+	// Token: 0x040009FD RID: 2557
 	public bool matchPlayer = true;
 
-	// Token: 0x04000BDA RID: 3034
+	// Token: 0x040009FE RID: 2558
 	[ConditionalHide("matchPlayer", true, Inverse = true)]
 	public Transform transformTarget;
 
-	// Token: 0x04000BDB RID: 3035
+	// Token: 0x040009FF RID: 2559
 	public bool matchPosition = true;
 
-	// Token: 0x04000BDC RID: 3036
+	// Token: 0x04000A00 RID: 2560
 	public bool matchRotation = true;
 }

@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200012E RID: 302
+// Token: 0x020000E0 RID: 224
 [AddComponentMenu("Dialogue Sequence/Nested Sequence")]
 public class DSSequence : DialogueSequence
 {
-	// Token: 0x060005A1 RID: 1441 RVA: 0x0000609F File Offset: 0x0000429F
+	// Token: 0x060004A4 RID: 1188 RVA: 0x00019BBF File Offset: 0x00017DBF
 	public override YieldInstruction Run()
 	{
 		return this.nestedSequence.StartSequence();
 	}
 
-	// Token: 0x040007AE RID: 1966
+	// Token: 0x04000677 RID: 1655
 	public DialogueSequencer nestedSequence;
 }

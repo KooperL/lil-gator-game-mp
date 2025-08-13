@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020001F4 RID: 500
+// Token: 0x0200017E RID: 382
 public class MoneyManager : MonoBehaviour
 {
-	// Token: 0x06000940 RID: 2368 RVA: 0x00009047 File Offset: 0x00007247
+	// Token: 0x060007DE RID: 2014 RVA: 0x00026468 File Offset: 0x00024668
 	private static void Split(int cents, out int dollars, out int dimes, out int pennies)
 	{
 		dollars = Mathf.FloorToInt((float)cents / 100f);
@@ -15,9 +15,9 @@ public class MoneyManager : MonoBehaviour
 		pennies = cents;
 	}
 
-	// Token: 0x170000E2 RID: 226
-	// (get) Token: 0x06000941 RID: 2369 RVA: 0x0000907C File Offset: 0x0000727C
-	// (set) Token: 0x06000942 RID: 2370 RVA: 0x0000908E File Offset: 0x0000728E
+	// Token: 0x1700006E RID: 110
+	// (get) Token: 0x060007DF RID: 2015 RVA: 0x0002649D File Offset: 0x0002469D
+	// (set) Token: 0x060007E0 RID: 2016 RVA: 0x000264AF File Offset: 0x000246AF
 	public int CollectedCents
 	{
 		get
@@ -31,40 +31,40 @@ public class MoneyManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000943 RID: 2371 RVA: 0x000090AC File Offset: 0x000072AC
+	// Token: 0x060007E1 RID: 2017 RVA: 0x000264CD File Offset: 0x000246CD
 	private void OnEnable()
 	{
 		MoneyManager.m = this;
 	}
 
-	// Token: 0x04000BED RID: 3053
+	// Token: 0x04000A11 RID: 2577
 	public static MoneyManager m;
 
-	// Token: 0x04000BEE RID: 3054
+	// Token: 0x04000A12 RID: 2578
 	public Text text;
 
-	// Token: 0x04000BEF RID: 3055
+	// Token: 0x04000A13 RID: 2579
 	public UINumberToSprite uiDisplay;
 
-	// Token: 0x04000BF0 RID: 3056
+	// Token: 0x04000A14 RID: 2580
 	public GameObject dollarPrefab;
 
-	// Token: 0x04000BF1 RID: 3057
+	// Token: 0x04000A15 RID: 2581
 	public GameObject dimePrefab;
 
-	// Token: 0x04000BF2 RID: 3058
+	// Token: 0x04000A16 RID: 2582
 	public GameObject pennyPrefab;
 
-	// Token: 0x04000BF3 RID: 3059
+	// Token: 0x04000A17 RID: 2583
 	[Space]
 	public AudioClip collectSound;
 
-	// Token: 0x04000BF4 RID: 3060
+	// Token: 0x04000A18 RID: 2584
 	public float volume = 0.5f;
 
-	// Token: 0x04000BF5 RID: 3061
+	// Token: 0x04000A19 RID: 2585
 	public float maxPitch = 1.2f;
 
-	// Token: 0x04000BF6 RID: 3062
+	// Token: 0x04000A1A RID: 2586
 	public float minPitch = 0.8f;
 }

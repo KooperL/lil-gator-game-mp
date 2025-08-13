@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace Rewired.Demos
 {
-	// Token: 0x02000499 RID: 1177
+	// Token: 0x0200033C RID: 828
 	[AddComponentMenu("")]
 	public class DualShock4SpecialFeaturesExample : MonoBehaviour
 	{
-		// Token: 0x17000617 RID: 1559
-		// (get) Token: 0x06001D41 RID: 7489 RVA: 0x00016693 File Offset: 0x00014893
+		// Token: 0x17000420 RID: 1056
+		// (get) Token: 0x06001759 RID: 5977 RVA: 0x00062F34 File Offset: 0x00061134
 		private Player player
 		{
 			get
@@ -19,13 +19,13 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D42 RID: 7490 RVA: 0x000166A5 File Offset: 0x000148A5
+		// Token: 0x0600175A RID: 5978 RVA: 0x00062F46 File Offset: 0x00061146
 		private void Awake()
 		{
 			this.InitializeTouchObjects();
 		}
 
-		// Token: 0x06001D43 RID: 7491 RVA: 0x00072538 File Offset: 0x00070738
+		// Token: 0x0600175B RID: 5979 RVA: 0x00062F50 File Offset: 0x00061150
 		private void Update()
 		{
 			if (!ReInput.isReady)
@@ -70,7 +70,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D44 RID: 7492 RVA: 0x00072648 File Offset: 0x00070848
+		// Token: 0x0600175C RID: 5980 RVA: 0x00063060 File Offset: 0x00061260
 		private void OnGUI()
 		{
 			if (this.textStyle == null)
@@ -86,27 +86,27 @@ namespace Rewired.Demos
 			GUILayout.BeginArea(new Rect(200f, 100f, (float)Screen.width - 400f, (float)Screen.height - 200f));
 			GUILayout.Label("Rotate the Dual Shock 4 to see the model rotate in sync.", this.textStyle, Array.Empty<GUILayoutOption>());
 			GUILayout.Label("Touch the touchpad to see them appear on the model.", this.textStyle, Array.Empty<GUILayoutOption>());
-			ActionElementMap actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(2, "ResetOrientation", true);
+			ActionElementMap actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(ControllerType.Joystick, "ResetOrientation", true);
 			if (actionElementMap != null)
 			{
 				GUILayout.Label("Press " + actionElementMap.elementIdentifierName + " to reset the orientation. Hold the gamepad facing the screen with sticks pointing up and press the button.", this.textStyle, Array.Empty<GUILayoutOption>());
 			}
-			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(2, "CycleLight", true);
+			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(ControllerType.Joystick, "CycleLight", true);
 			if (actionElementMap != null)
 			{
 				GUILayout.Label("Press " + actionElementMap.elementIdentifierName + " to change the light color.", this.textStyle, Array.Empty<GUILayoutOption>());
 			}
-			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(2, "ToggleLightFlash", true);
+			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(ControllerType.Joystick, "ToggleLightFlash", true);
 			if (actionElementMap != null)
 			{
 				GUILayout.Label("Press " + actionElementMap.elementIdentifierName + " to start or stop the light flashing.", this.textStyle, Array.Empty<GUILayoutOption>());
 			}
-			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(2, "VibrateLeft", true);
+			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(ControllerType.Joystick, "VibrateLeft", true);
 			if (actionElementMap != null)
 			{
 				GUILayout.Label("Press " + actionElementMap.elementIdentifierName + " vibrate the left motor.", this.textStyle, Array.Empty<GUILayoutOption>());
 			}
-			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(2, "VibrateRight", true);
+			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(ControllerType.Joystick, "VibrateRight", true);
 			if (actionElementMap != null)
 			{
 				GUILayout.Label("Press " + actionElementMap.elementIdentifierName + " vibrate the right motor.", this.textStyle, Array.Empty<GUILayoutOption>());
@@ -114,7 +114,7 @@ namespace Rewired.Demos
 			GUILayout.EndArea();
 		}
 
-		// Token: 0x06001D45 RID: 7493 RVA: 0x00072850 File Offset: 0x00070A50
+		// Token: 0x0600175D RID: 5981 RVA: 0x00063268 File Offset: 0x00061468
 		private void ResetOrientation()
 		{
 			IDualShock4Extension firstDS = this.GetFirstDS4(this.player);
@@ -124,20 +124,19 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D46 RID: 7494 RVA: 0x00072874 File Offset: 0x00070A74
+		// Token: 0x0600175E RID: 5982 RVA: 0x0006328C File Offset: 0x0006148C
 		private void SetRandomLightColor()
 		{
 			IDualShock4Extension firstDS = this.GetFirstDS4(this.player);
 			if (firstDS != null)
 			{
-				Color color;
-				color..ctor(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
+				Color color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
 				firstDS.SetLightColor(color);
 				this.lightObject.GetComponent<MeshRenderer>().material.color = color;
 			}
 		}
 
-		// Token: 0x06001D47 RID: 7495 RVA: 0x000728E8 File Offset: 0x00070AE8
+		// Token: 0x0600175F RID: 5983 RVA: 0x00063300 File Offset: 0x00061500
 		private void StartLightFlash()
 		{
 			DualShock4Extension dualShock4Extension = this.GetFirstDS4(this.player) as DualShock4Extension;
@@ -147,7 +146,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D48 RID: 7496 RVA: 0x0007291C File Offset: 0x00070B1C
+		// Token: 0x06001760 RID: 5984 RVA: 0x00063334 File Offset: 0x00061534
 		private void StopLightFlash()
 		{
 			DualShock4Extension dualShock4Extension = this.GetFirstDS4(this.player) as DualShock4Extension;
@@ -157,7 +156,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D49 RID: 7497 RVA: 0x00072944 File Offset: 0x00070B44
+		// Token: 0x06001761 RID: 5985 RVA: 0x0006335C File Offset: 0x0006155C
 		private IDualShock4Extension GetFirstDS4(Player player)
 		{
 			foreach (Joystick joystick in player.controllers.Joysticks)
@@ -171,7 +170,7 @@ namespace Rewired.Demos
 			return null;
 		}
 
-		// Token: 0x06001D4A RID: 7498 RVA: 0x000729A0 File Offset: 0x00070BA0
+		// Token: 0x06001762 RID: 5986 RVA: 0x000633B8 File Offset: 0x000615B8
 		private void InitializeTouchObjects()
 		{
 			this.touches = new List<DualShock4SpecialFeaturesExample.Touch>(2);
@@ -179,7 +178,7 @@ namespace Rewired.Demos
 			for (int i = 0; i < 2; i++)
 			{
 				DualShock4SpecialFeaturesExample.Touch touch = new DualShock4SpecialFeaturesExample.Touch();
-				touch.go = GameObject.CreatePrimitive(0);
+				touch.go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 				touch.go.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 				touch.go.transform.SetParent(this.touchpadTransform, true);
 				touch.go.GetComponent<MeshRenderer>().material.color = ((i == 0) ? Color.red : Color.green);
@@ -188,7 +187,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D4B RID: 7499 RVA: 0x00072A60 File Offset: 0x00070C60
+		// Token: 0x06001763 RID: 5987 RVA: 0x00063478 File Offset: 0x00061678
 		private void HandleTouchpad(IDualShock4Extension ds4)
 		{
 			for (int i = this.touches.Count - 1; i >= 0; i--)
@@ -215,46 +214,46 @@ namespace Rewired.Demos
 					touch2.touchId = touchId;
 					touch2.go.SetActive(true);
 					Vector2 vector;
-					ds4.GetTouchPosition(j, ref vector);
+					ds4.GetTouchPosition(j, out vector);
 					touch2.go.transform.localPosition = new Vector3(vector.x - 0.5f, 0.5f + touch2.go.transform.localScale.y * 0.5f, vector.y - 0.5f);
 				}
 			}
 		}
 
-		// Token: 0x04001EA0 RID: 7840
+		// Token: 0x0400192E RID: 6446
 		private const int maxTouches = 2;
 
-		// Token: 0x04001EA1 RID: 7841
+		// Token: 0x0400192F RID: 6447
 		public int playerId;
 
-		// Token: 0x04001EA2 RID: 7842
+		// Token: 0x04001930 RID: 6448
 		public Transform touchpadTransform;
 
-		// Token: 0x04001EA3 RID: 7843
+		// Token: 0x04001931 RID: 6449
 		public GameObject lightObject;
 
-		// Token: 0x04001EA4 RID: 7844
+		// Token: 0x04001932 RID: 6450
 		public Transform accelerometerTransform;
 
-		// Token: 0x04001EA5 RID: 7845
+		// Token: 0x04001933 RID: 6451
 		private List<DualShock4SpecialFeaturesExample.Touch> touches;
 
-		// Token: 0x04001EA6 RID: 7846
+		// Token: 0x04001934 RID: 6452
 		private Queue<DualShock4SpecialFeaturesExample.Touch> unusedTouches;
 
-		// Token: 0x04001EA7 RID: 7847
+		// Token: 0x04001935 RID: 6453
 		private bool isFlashing;
 
-		// Token: 0x04001EA8 RID: 7848
+		// Token: 0x04001936 RID: 6454
 		private GUIStyle textStyle;
 
-		// Token: 0x0200049A RID: 1178
+		// Token: 0x020004AB RID: 1195
 		private class Touch
 		{
-			// Token: 0x04001EA9 RID: 7849
+			// Token: 0x04001F76 RID: 8054
 			public GameObject go;
 
-			// Token: 0x04001EAA RID: 7850
+			// Token: 0x04001F77 RID: 8055
 			public int touchId = -1;
 		}
 	}

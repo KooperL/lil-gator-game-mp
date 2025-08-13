@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000261 RID: 609
+// Token: 0x020001DA RID: 474
 public class PickupQuickly : MonoBehaviour
 {
-	// Token: 0x06000B99 RID: 2969 RVA: 0x0000AEA6 File Offset: 0x000090A6
+	// Token: 0x060009F0 RID: 2544 RVA: 0x0002E4E6 File Offset: 0x0002C6E6
 	public void OnHit()
 	{
 		TriggerPickup.TriggerQuickPickup();

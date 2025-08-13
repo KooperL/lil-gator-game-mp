@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000F7 RID: 247
+// Token: 0x020000B8 RID: 184
 public class PutActorInMount : MonoBehaviour
 {
-	// Token: 0x060004AE RID: 1198 RVA: 0x00005630 File Offset: 0x00003830
+	// Token: 0x060003FA RID: 1018 RVA: 0x00017727 File Offset: 0x00015927
 	private void OnEnable()
 	{
 		if (this.inviteOnEnable)
@@ -13,13 +13,13 @@ public class PutActorInMount : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004AF RID: 1199 RVA: 0x00005640 File Offset: 0x00003840
+	// Token: 0x060003FB RID: 1019 RVA: 0x00017737 File Offset: 0x00015937
 	public void Invite()
 	{
 		this.mount.InviteActor(this.actor, this.skipToMount, false);
 	}
 
-	// Token: 0x060004B0 RID: 1200 RVA: 0x0000565A File Offset: 0x0000385A
+	// Token: 0x060003FC RID: 1020 RVA: 0x00017751 File Offset: 0x00015951
 	private void OnDisable()
 	{
 		if (this.getOutOnDisable)
@@ -28,7 +28,7 @@ public class PutActorInMount : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004B1 RID: 1201 RVA: 0x0000566A File Offset: 0x0000386A
+	// Token: 0x060003FD RID: 1021 RVA: 0x00017761 File Offset: 0x00015961
 	public void GetOut()
 	{
 		if (this.mount.actor == this.actor)
@@ -37,18 +37,18 @@ public class PutActorInMount : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000698 RID: 1688
+	// Token: 0x04000586 RID: 1414
 	public DialogueActor actor;
 
-	// Token: 0x04000699 RID: 1689
+	// Token: 0x04000587 RID: 1415
 	public ActorMount mount;
 
-	// Token: 0x0400069A RID: 1690
+	// Token: 0x04000588 RID: 1416
 	public bool skipToMount;
 
-	// Token: 0x0400069B RID: 1691
+	// Token: 0x04000589 RID: 1417
 	public bool inviteOnEnable = true;
 
-	// Token: 0x0400069C RID: 1692
+	// Token: 0x0400058A RID: 1418
 	public bool getOutOnDisable;
 }

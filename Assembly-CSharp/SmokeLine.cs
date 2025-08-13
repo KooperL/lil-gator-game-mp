@@ -1,25 +1,25 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000155 RID: 341
+// Token: 0x02000102 RID: 258
 [RequireComponent(typeof(LineRenderer))]
 public class SmokeLine : MonoBehaviour
 {
-	// Token: 0x0600065E RID: 1630 RVA: 0x00006956 File Offset: 0x00004B56
+	// Token: 0x0600054C RID: 1356 RVA: 0x0001C344 File Offset: 0x0001A544
 	private void Awake()
 	{
 		this.lineRenderer = base.GetComponent<LineRenderer>();
 		this.seed = Random.value * 100f;
 	}
 
-	// Token: 0x0600065F RID: 1631 RVA: 0x00006975 File Offset: 0x00004B75
+	// Token: 0x0600054D RID: 1357 RVA: 0x0001C363 File Offset: 0x0001A563
 	private void Start()
 	{
 		this.positions = new Vector3[this.lineRenderer.positionCount];
 		this.lineRenderer.GetPositions(this.positions);
 	}
 
-	// Token: 0x06000660 RID: 1632 RVA: 0x0003093C File Offset: 0x0002EB3C
+	// Token: 0x0600054E RID: 1358 RVA: 0x0001C390 File Offset: 0x0001A590
 	private void Update()
 	{
 		this.t += Time.deltaTime * this.speed;
@@ -38,27 +38,27 @@ public class SmokeLine : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400088B RID: 2187
+	// Token: 0x04000744 RID: 1860
 	private float seed;
 
-	// Token: 0x0400088C RID: 2188
+	// Token: 0x04000745 RID: 1861
 	public float speed;
 
-	// Token: 0x0400088D RID: 2189
+	// Token: 0x04000746 RID: 1862
 	private float t;
 
-	// Token: 0x0400088E RID: 2190
+	// Token: 0x04000747 RID: 1863
 	public float height = 50f;
 
-	// Token: 0x0400088F RID: 2191
+	// Token: 0x04000748 RID: 1864
 	private LineRenderer lineRenderer;
 
-	// Token: 0x04000890 RID: 2192
+	// Token: 0x04000749 RID: 1865
 	public float scale = 1f;
 
-	// Token: 0x04000891 RID: 2193
+	// Token: 0x0400074A RID: 1866
 	public AnimationCurve displacementCurve;
 
-	// Token: 0x04000892 RID: 2194
+	// Token: 0x0400074B RID: 1867
 	private Vector3[] positions;
 }

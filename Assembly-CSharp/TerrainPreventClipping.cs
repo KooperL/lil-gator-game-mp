@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000346 RID: 838
+// Token: 0x02000279 RID: 633
 public class TerrainPreventClipping : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06001049 RID: 4169 RVA: 0x0000E0C5 File Offset: 0x0000C2C5
+	// Token: 0x06000D8D RID: 3469 RVA: 0x000418E0 File Offset: 0x0003FAE0
 	private void OnValidate()
 	{
 		if (this.terrain == null)
@@ -13,30 +13,29 @@ public class TerrainPreventClipping : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x0600104A RID: 4170 RVA: 0x00053DB0 File Offset: 0x00051FB0
+	// Token: 0x06000D8E RID: 3470 RVA: 0x000418FC File Offset: 0x0003FAFC
 	private void Start()
 	{
 		this.offset = base.transform.position.y;
 		Vector3 size = this.terrain.terrainData.size;
-		Vector2 vector;
-		vector..ctor(size.x, size.z);
+		Vector2 vector = new Vector2(size.x, size.z);
 		this.terrainCenter = new Vector2(base.transform.position.x, base.transform.position.z) + 0.5f * vector;
 		this.terrainRadius = (0.5f * vector).magnitude;
 	}
 
-	// Token: 0x0600104B RID: 4171 RVA: 0x000085DF File Offset: 0x000067DF
+	// Token: 0x06000D8F RID: 3471 RVA: 0x00041997 File Offset: 0x0003FB97
 	private void OnEnable()
 	{
 		FastUpdateManager.fixedUpdate8.Add(this);
 	}
 
-	// Token: 0x0600104C RID: 4172 RVA: 0x000085EC File Offset: 0x000067EC
+	// Token: 0x06000D90 RID: 3472 RVA: 0x000419A4 File Offset: 0x0003FBA4
 	private void OnDisable()
 	{
 		FastUpdateManager.fixedUpdate8.Remove(this);
 	}
 
-	// Token: 0x0600104D RID: 4173 RVA: 0x00053E4C File Offset: 0x0005204C
+	// Token: 0x06000D91 RID: 3473 RVA: 0x000419B4 File Offset: 0x0003FBB4
 	public void ManagedUpdate()
 	{
 		if (Player.movement == null)
@@ -69,21 +68,21 @@ public class TerrainPreventClipping : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x0400151D RID: 5405
+	// Token: 0x040011E1 RID: 4577
 	public float clippingThreshold = 1f;
 
-	// Token: 0x0400151E RID: 5406
+	// Token: 0x040011E2 RID: 4578
 	public float cameraClippingThreshold = 0.25f;
 
-	// Token: 0x0400151F RID: 5407
+	// Token: 0x040011E3 RID: 4579
 	private float offset;
 
-	// Token: 0x04001520 RID: 5408
+	// Token: 0x040011E4 RID: 4580
 	public Terrain terrain;
 
-	// Token: 0x04001521 RID: 5409
+	// Token: 0x040011E5 RID: 4581
 	private Vector2 terrainCenter;
 
-	// Token: 0x04001522 RID: 5410
+	// Token: 0x040011E6 RID: 4582
 	private float terrainRadius;
 }

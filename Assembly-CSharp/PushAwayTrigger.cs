@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200029E RID: 670
+// Token: 0x0200020B RID: 523
 public class PushAwayTrigger : MonoBehaviour
 {
-	// Token: 0x06000D05 RID: 3333 RVA: 0x0000C083 File Offset: 0x0000A283
+	// Token: 0x06000B3A RID: 2874 RVA: 0x00037EE2 File Offset: 0x000360E2
 	private void Awake()
 	{
 		this.collider = base.GetComponent<CapsuleCollider>();
 	}
 
-	// Token: 0x06000D06 RID: 3334 RVA: 0x00048F60 File Offset: 0x00047160
+	// Token: 0x06000B3B RID: 2875 RVA: 0x00037EF0 File Offset: 0x000360F0
 	private void OnTriggerStay(Collider other)
 	{
 		Rigidbody attachedRigidbody = other.attachedRigidbody;
@@ -26,12 +26,12 @@ public class PushAwayTrigger : MonoBehaviour
 		Player.movement.recoveringControl = Mathf.Min(Player.movement.recoveringControl, this.control);
 	}
 
-	// Token: 0x04001160 RID: 4448
+	// Token: 0x04000EFA RID: 3834
 	private CapsuleCollider collider;
 
-	// Token: 0x04001161 RID: 4449
+	// Token: 0x04000EFB RID: 3835
 	public float pushAmount = 2f;
 
-	// Token: 0x04001162 RID: 4450
+	// Token: 0x04000EFC RID: 3836
 	public float control = 0.2f;
 }

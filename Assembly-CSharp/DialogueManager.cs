@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020000E4 RID: 228
+// Token: 0x020000B0 RID: 176
 public class DialogueManager : MonoBehaviour
 {
-	// Token: 0x17000058 RID: 88
-	// (get) Token: 0x0600041F RID: 1055 RVA: 0x00005094 File Offset: 0x00003294
+	// Token: 0x17000031 RID: 49
+	// (get) Token: 0x060003A8 RID: 936 RVA: 0x00015AAA File Offset: 0x00013CAA
 	public bool IsInAmbientDialogue
 	{
 		get
@@ -16,8 +16,8 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000059 RID: 89
-	// (get) Token: 0x06000420 RID: 1056 RVA: 0x000050A9 File Offset: 0x000032A9
+	// Token: 0x17000032 RID: 50
+	// (get) Token: 0x060003A9 RID: 937 RVA: 0x00015ABF File Offset: 0x00013CBF
 	public bool IsInImportantDialogue
 	{
 		get
@@ -26,8 +26,8 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700005A RID: 90
-	// (get) Token: 0x06000421 RID: 1057 RVA: 0x000050C3 File Offset: 0x000032C3
+	// Token: 0x17000033 RID: 51
+	// (get) Token: 0x060003AA RID: 938 RVA: 0x00015AD9 File Offset: 0x00013CD9
 	public bool CanAcceptBubbleDialogue
 	{
 		get
@@ -36,8 +36,8 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700005B RID: 91
-	// (get) Token: 0x06000422 RID: 1058 RVA: 0x000050C6 File Offset: 0x000032C6
+	// Token: 0x17000034 RID: 52
+	// (get) Token: 0x060003AB RID: 939 RVA: 0x00015ADC File Offset: 0x00013CDC
 	internal bool IsPlayerReady
 	{
 		get
@@ -46,8 +46,8 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700005C RID: 92
-	// (get) Token: 0x06000423 RID: 1059 RVA: 0x000050EC File Offset: 0x000032EC
+	// Token: 0x17000035 RID: 53
+	// (get) Token: 0x060003AC RID: 940 RVA: 0x00015B02 File Offset: 0x00013D02
 	public bool HasFocusPoint
 	{
 		get
@@ -56,8 +56,8 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700005D RID: 93
-	// (get) Token: 0x06000424 RID: 1060 RVA: 0x00028F54 File Offset: 0x00027154
+	// Token: 0x17000036 RID: 54
+	// (get) Token: 0x060003AD RID: 941 RVA: 0x00015B24 File Offset: 0x00013D24
 	public Vector3 DialogueFocusPoint
 	{
 		get
@@ -90,7 +90,7 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000425 RID: 1061 RVA: 0x00029068 File Offset: 0x00027268
+	// Token: 0x060003AE RID: 942 RVA: 0x00015C38 File Offset: 0x00013E38
 	private void OnEnable()
 	{
 		DialogueManager.d = this;
@@ -123,20 +123,20 @@ public class DialogueManager : MonoBehaviour
 		this.waitUntilCue = new WaitUntil(() => this.cue);
 	}
 
-	// Token: 0x06000426 RID: 1062 RVA: 0x0000510B File Offset: 0x0000330B
+	// Token: 0x060003AF RID: 943 RVA: 0x00015DCC File Offset: 0x00013FCC
 	private void OnDisable()
 	{
 		this.CancelBubble();
 	}
 
-	// Token: 0x06000427 RID: 1063 RVA: 0x00005113 File Offset: 0x00003313
+	// Token: 0x060003B0 RID: 944 RVA: 0x00015DD4 File Offset: 0x00013FD4
 	public IEnumerator LoadChunk(string chunkName, DialogueActor other, DialogueManager.DialogueBoxBackground background = DialogueManager.DialogueBoxBackground.Standard, bool cancelBubble = true)
 	{
 		this.temporaryActor[0] = other;
 		return this.LoadChunk(chunkName, this.temporaryActor, background, cancelBubble);
 	}
 
-	// Token: 0x06000428 RID: 1064 RVA: 0x0000512E File Offset: 0x0000332E
+	// Token: 0x060003B1 RID: 945 RVA: 0x00015DEF File Offset: 0x00013FEF
 	public IEnumerator WaitForPlayer()
 	{
 		Player.movement.ClearMods();
@@ -146,7 +146,7 @@ public class DialogueManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000429 RID: 1065 RVA: 0x0000513D File Offset: 0x0000333D
+	// Token: 0x060003B2 RID: 946 RVA: 0x00015DFE File Offset: 0x00013FFE
 	public IEnumerator LoadChunk(string chunkName, DialogueActor[] actors = null, DialogueManager.DialogueBoxBackground background = DialogueManager.DialogueBoxBackground.Standard, bool cancelBubble = true)
 	{
 		if (!this.chunkDic.ContainsKey(chunkName))
@@ -158,7 +158,7 @@ public class DialogueManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600042A RID: 1066 RVA: 0x000291FC File Offset: 0x000273FC
+	// Token: 0x060003B3 RID: 947 RVA: 0x00015E2C File Offset: 0x0001402C
 	public IEnumerator LoadChunk(DialogueChunk chunk, DialogueActor[] actors = null, DialogueManager.DialogueBoxBackground background = DialogueManager.DialogueBoxBackground.Standard, bool cancelBubble = true, bool setDialogueCamera = true, bool skipWaits = false, bool skipWaitForPlayer = false)
 	{
 		this.isInNormalDialogue = true;
@@ -200,6 +200,10 @@ public class DialogueManager : MonoBehaviour
 		DialogueBox workingDialogueBox = this.dialogueBox;
 		DialogueActor primaryLookTarget = null;
 		DialogueActor secondaryLookTarget = null;
+		if (DialogueDocumentInfo.d != null)
+		{
+			DialogueDocumentInfo.d.LoadDocumentInfo(chunk);
+		}
 		switch (background)
 		{
 		case DialogueManager.DialogueBoxBackground.Wooden:
@@ -232,7 +236,7 @@ public class DialogueManager : MonoBehaviour
 			{
 				if (chunk.lines[i].actorIndex - 1 >= actors.Length)
 				{
-					Debug.LogError("Warning: Not enough actors for line " + chunk.lines[i].GetText(Language.English));
+					Debug.LogError("Warning: Not enough actors for line " + chunk.lines[i].GetText(Language.Auto));
 					int num = actors.Length;
 				}
 				currentActor = actors[chunk.lines[i].actorIndex - 1];
@@ -292,7 +296,7 @@ public class DialogueManager : MonoBehaviour
 			}
 			if (chunk.lines[i].HasText())
 			{
-				yield return workingDialogueBox.Load(chunk.lines[i].GetText(Language.English), currentActor, skipWaits || !chunk.lines[i].noInput, skipWaits ? 0f : chunk.lines[i].waitTime);
+				yield return workingDialogueBox.Load(chunk.lines[i].GetText(Language.Auto), currentActor, skipWaits || !chunk.lines[i].noInput, skipWaits ? 0f : chunk.lines[i].waitTime);
 			}
 			else if (chunk.lines[i].waitTime != 0f && !skipWaits)
 			{
@@ -333,7 +337,7 @@ public class DialogueManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600042B RID: 1067 RVA: 0x00005169 File Offset: 0x00003369
+	// Token: 0x060003B4 RID: 948 RVA: 0x00015E7B File Offset: 0x0001407B
 	private IEnumerator ClearDialogueDelayed(DialogueBox dialogueBox)
 	{
 		yield return null;
@@ -345,18 +349,18 @@ public class DialogueManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600042C RID: 1068 RVA: 0x0002924C File Offset: 0x0002744C
+	// Token: 0x060003B5 RID: 949 RVA: 0x00015E8C File Offset: 0x0001408C
 	public IEnumerator RunDialogueOptions(MultilingualString[] options)
 	{
 		string[] array = new string[options.Length];
 		for (int i = 0; i < array.Length; i++)
 		{
-			array[i] = options[i].GetText(Language.English);
+			array[i] = options[i].GetText(Language.Auto);
 		}
 		return this.RunDialogueOptions(array);
 	}
 
-	// Token: 0x0600042D RID: 1069 RVA: 0x00005178 File Offset: 0x00003378
+	// Token: 0x060003B6 RID: 950 RVA: 0x00015EC8 File Offset: 0x000140C8
 	public IEnumerator RunDialogueOptions(string[] options)
 	{
 		yield return this.dialogueOptions.SetOptions(options);
@@ -365,7 +369,7 @@ public class DialogueManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600042E RID: 1070 RVA: 0x0000518E File Offset: 0x0000338E
+	// Token: 0x060003B7 RID: 951 RVA: 0x00015EDE File Offset: 0x000140DE
 	public void SetDialogueCamera(DialogueActor[] actors = null)
 	{
 		if (actors == null)
@@ -375,13 +379,13 @@ public class DialogueManager : MonoBehaviour
 		this.actorFocuses = actors;
 	}
 
-	// Token: 0x0600042F RID: 1071 RVA: 0x000051A2 File Offset: 0x000033A2
+	// Token: 0x060003B8 RID: 952 RVA: 0x00015EF2 File Offset: 0x000140F2
 	public void ClearDialogueCamera()
 	{
 		this.actorFocuses = null;
 	}
 
-	// Token: 0x06000430 RID: 1072 RVA: 0x000051AB File Offset: 0x000033AB
+	// Token: 0x060003B9 RID: 953 RVA: 0x00015EFB File Offset: 0x000140FB
 	public IEnumerator LoadChunkPhone(string chunkName, CharacterProfile[] characters, bool clearAfter = true, bool displayNames = true, Sprite[] images = null)
 	{
 		if (!this.chunkDic.ContainsKey(chunkName))
@@ -393,7 +397,7 @@ public class DialogueManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000431 RID: 1073 RVA: 0x000051DF File Offset: 0x000033DF
+	// Token: 0x060003BA RID: 954 RVA: 0x00015F2F File Offset: 0x0001412F
 	public IEnumerator LoadChunkPhone(DialogueChunk chunk, CharacterProfile[] characters, bool clearAfter = true, bool displayNames = true, Sprite[] images = null)
 	{
 		this.isInNormalDialogue = true;
@@ -411,6 +415,10 @@ public class DialogueManager : MonoBehaviour
 		CharacterProfile player = playerActor.profile;
 		Player.itemManager.EquipPhone();
 		playerActor.SetEmote(this.textingEmote, false);
+		if (DialogueDocumentInfo.d != null)
+		{
+			DialogueDocumentInfo.d.LoadDocumentInfo(chunk);
+		}
 		CharacterProfile character = null;
 		int num2;
 		for (int i = 0; i < chunk.lines.Length; i = num2 + 1)
@@ -427,7 +435,7 @@ public class DialogueManager : MonoBehaviour
 			{
 				if (chunk.lines[i].actorIndex - 1 >= characters.Length)
 				{
-					Debug.LogError("Warning: Not enough actors for line " + chunk.lines[i].GetText(Language.English));
+					Debug.LogError("Warning: Not enough actors for line " + chunk.lines[i].GetText(Language.Auto));
 					int num = characters.Length;
 				}
 				character = characters[chunk.lines[i].actorIndex - 1];
@@ -442,7 +450,7 @@ public class DialogueManager : MonoBehaviour
 			}
 			if (chunk.lines[i].HasText())
 			{
-				yield return base.StartCoroutine(this.scrollingPhoneDisplay.DisplayTextMessage(chunk.lines[i].GetText(Language.English), character, displayNames));
+				yield return base.StartCoroutine(this.scrollingPhoneDisplay.DisplayTextMessage(chunk.lines[i].GetText(Language.Auto), character, displayNames));
 			}
 			num2 = i;
 		}
@@ -456,7 +464,7 @@ public class DialogueManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000432 RID: 1074 RVA: 0x00029288 File Offset: 0x00027488
+	// Token: 0x060003BB RID: 955 RVA: 0x00015F64 File Offset: 0x00014164
 	public YieldInstruction Bubble(string chunkName, DialogueActor[] actors = null, float delay = 0f, bool isImportant = false, bool hasInput = true, bool canInterrupt = true)
 	{
 		if (!this.chunkDic.ContainsKey(chunkName))
@@ -468,7 +476,7 @@ public class DialogueManager : MonoBehaviour
 		return this.Bubble(dialogueChunk, actors, delay, isImportant, hasInput, canInterrupt);
 	}
 
-	// Token: 0x06000433 RID: 1075 RVA: 0x000292D4 File Offset: 0x000274D4
+	// Token: 0x060003BC RID: 956 RVA: 0x00015FB0 File Offset: 0x000141B0
 	public YieldInstruction Bubble(DialogueChunk chunk, DialogueActor[] actors = null, float delay = 0f, bool isImportant = false, bool hasInput = false, bool canInterrupt = true)
 	{
 		if (this.bubbleCoroutine != null && canInterrupt)
@@ -484,7 +492,7 @@ public class DialogueManager : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06000434 RID: 1076 RVA: 0x00029328 File Offset: 0x00027528
+	// Token: 0x060003BD RID: 957 RVA: 0x00016004 File Offset: 0x00014204
 	public void CancelBubble()
 	{
 		if (this.bubbleCoroutine != null)
@@ -511,7 +519,7 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000435 RID: 1077 RVA: 0x00005213 File Offset: 0x00003413
+	// Token: 0x060003BE RID: 958 RVA: 0x0001608C File Offset: 0x0001428C
 	private IEnumerator LoadChunkBubble(DialogueChunk chunk, DialogueActor[] actors, float delay, bool isImportant, bool hasInput = true)
 	{
 		this.bubbleIsImportant = isImportant;
@@ -529,6 +537,10 @@ public class DialogueManager : MonoBehaviour
 		DialogueActor dialogueActor = player;
 		DialogueActor previousActor = dialogueActor;
 		bool doingAnimation = false;
+		if (DialogueDocumentInfo.d != null)
+		{
+			DialogueDocumentInfo.d.LoadDocumentInfo(chunk);
+		}
 		if (delay > 0f)
 		{
 			yield return new WaitForSeconds(delay);
@@ -547,7 +559,7 @@ public class DialogueManager : MonoBehaviour
 			{
 				if (chunk.lines[i].actorIndex - 1 >= actors.Length)
 				{
-					Debug.LogError("Warning: Not enough actors for line " + chunk.lines[i].GetText(Language.English));
+					Debug.LogError("Warning: Not enough actors for line " + chunk.lines[i].GetText(Language.Auto));
 					int num = actors.Length;
 				}
 				dialogueActor = actors[chunk.lines[i].actorIndex - 1];
@@ -583,7 +595,7 @@ public class DialogueManager : MonoBehaviour
 			previousActor = dialogueActor;
 			if (chunk.lines[i].HasText())
 			{
-				yield return this.dialogueBoxBubble.Load(chunk.lines[i].GetText(Language.English), dialogueActor, hasInput, 0f);
+				yield return this.dialogueBoxBubble.Load(chunk.lines[i].GetText(Language.Auto), dialogueActor, hasInput, 0f);
 			}
 			DialogueManager.currentlySpeakingBubbleActor = null;
 			j = i;
@@ -607,7 +619,7 @@ public class DialogueManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000436 RID: 1078 RVA: 0x00005247 File Offset: 0x00003447
+	// Token: 0x060003BF RID: 959 RVA: 0x000160C0 File Offset: 0x000142C0
 	public YieldInstruction SmallPhone(string chunkName, CharacterProfile[] characters, bool isImportant = false)
 	{
 		this.CancelSmallPhone();
@@ -619,7 +631,7 @@ public class DialogueManager : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06000437 RID: 1079 RVA: 0x00005274 File Offset: 0x00003474
+	// Token: 0x060003C0 RID: 960 RVA: 0x000160ED File Offset: 0x000142ED
 	public void CancelSmallPhone()
 	{
 		if (this.smallPhoneCoroutine != null)
@@ -630,7 +642,7 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000438 RID: 1080 RVA: 0x00005298 File Offset: 0x00003498
+	// Token: 0x060003C1 RID: 961 RVA: 0x00016111 File Offset: 0x00014311
 	private IEnumerator LoadChunkSmallPhone(string chunkName, CharacterProfile[] characters, bool isImportant)
 	{
 		if (!this.chunkDic.ContainsKey(chunkName))
@@ -654,12 +666,12 @@ public class DialogueManager : MonoBehaviour
 			{
 				if (chunk.lines[i].actorIndex - 1 >= characters.Length)
 				{
-					Debug.LogError("Warning: Not enough actors for line " + chunk.lines[i].GetText(Language.English));
+					Debug.LogError("Warning: Not enough actors for line " + chunk.lines[i].GetText(Language.Auto));
 					int num = characters.Length;
 				}
 				character = characters[chunk.lines[i].actorIndex - 1];
 			}
-			yield return base.StartCoroutine(this.smallPhoneDialogue.DisplayMessage(chunk.lines[i].GetText(Language.English), character));
+			yield return base.StartCoroutine(this.smallPhoneDialogue.DisplayMessage(chunk.lines[i].GetText(Language.Auto), character));
 			num2 = i;
 		}
 		this.smallPhoneDialogue.Clear();
@@ -668,7 +680,7 @@ public class DialogueManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000439 RID: 1081 RVA: 0x000052BC File Offset: 0x000034BC
+	// Token: 0x060003C2 RID: 962 RVA: 0x00016135 File Offset: 0x00014335
 	private void ClearActorEmote(DialogueActor actor, bool overrideHoldEmote = false)
 	{
 		if (actor != null)
@@ -677,7 +689,7 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600043A RID: 1082 RVA: 0x000052CF File Offset: 0x000034CF
+	// Token: 0x060003C3 RID: 963 RVA: 0x00016148 File Offset: 0x00014348
 	private void SetActorEmote(DialogueActor actor, int emoteHash = 0)
 	{
 		if (actor != null)
@@ -696,7 +708,7 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600043B RID: 1083 RVA: 0x000052FB File Offset: 0x000034FB
+	// Token: 0x060003C4 RID: 964 RVA: 0x00016174 File Offset: 0x00014374
 	private void SetStateAndPosition(DialogueActor actor, int state, int position)
 	{
 		if (actor != null)
@@ -705,7 +717,7 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600043C RID: 1084 RVA: 0x000293B0 File Offset: 0x000275B0
+	// Token: 0x060003C5 RID: 965 RVA: 0x0001618C File Offset: 0x0001438C
 	private void SetLookTarget(DialogueActor actor, int lookIndex, DialogueActor primaryLookTarget, DialogueActor secondaryLookTarget, DialogueActor player, DialogueActor[] actors, bool isFirstLine)
 	{
 		DialogueActor dialogueActor = null;
@@ -728,7 +740,7 @@ public class DialogueManager : MonoBehaviour
 		actor.SetActorLookTarget(dialogueActor, isFirstLine);
 	}
 
-	// Token: 0x0600043D RID: 1085 RVA: 0x000293FC File Offset: 0x000275FC
+	// Token: 0x060003C6 RID: 966 RVA: 0x000161D8 File Offset: 0x000143D8
 	[ContextMenu("Estimate Word Count")]
 	public void EstimateWordCount()
 	{
@@ -740,33 +752,68 @@ public class DialogueManager : MonoBehaviour
 			{
 				foreach (DialogueLine dialogueLine in dialogueChunk.lines)
 				{
-					num += dialogueLine.english.Split(new char[] { ' ' }).Length;
+					num += dialogueLine.english[0].Split(new char[] { ' ' }).Length;
 				}
 				foreach (MultilingualString multilingualString in dialogueChunk.mlOptions)
 				{
-					num += multilingualString.english.Split(new char[] { ' ' }).Length;
+					num += multilingualString.english[0].Split(new char[] { ' ' }).Length;
 				}
 			}
 		}
-		MultilingualTextDocument[] array5 = this.documents;
-		for (int i = 0; i < array5.Length; i++)
+		List<int> list = new List<int>();
+		List<string> list2 = new List<string>();
+		foreach (MultilingualTextDocument multilingualTextDocument in this.documents)
 		{
-			foreach (DialogueChunk dialogueChunk2 in array5[i].chunks)
+			int num2 = 0;
+			foreach (DialogueChunk dialogueChunk2 in multilingualTextDocument.chunks)
 			{
 				foreach (DialogueLine dialogueLine2 in dialogueChunk2.lines)
 				{
-					num += dialogueLine2.english.Split(new char[] { ' ' }).Length;
+					if (!string.IsNullOrEmpty(dialogueLine2.english[0]))
+					{
+						num2 += dialogueLine2.english[0].Split(new char[] { ' ' }).Length;
+					}
 				}
 				foreach (MultilingualString multilingualString2 in dialogueChunk2.mlOptions)
 				{
-					num += multilingualString2.english.Split(new char[] { ' ' }).Length;
+					if (!string.IsNullOrEmpty(multilingualString2.english[0]))
+					{
+						num2 += multilingualString2.english[0].Split(new char[] { ' ' }).Length;
+					}
 				}
 			}
+			foreach (MultilingualString multilingualString3 in multilingualTextDocument.mlStrings)
+			{
+				if (!string.IsNullOrEmpty(multilingualString3.english[0]))
+				{
+					num2 += multilingualString3.english[0].Split(new char[] { ' ' }).Length;
+				}
+			}
+			int num3 = 0;
+			while (num3 < list.Count && list[num3] < num2)
+			{
+				num3++;
+			}
+			list.Insert(num3, num2);
+			list2.Insert(num3, multilingualTextDocument.name);
+			num += num2;
 		}
-		Debug.Log("Estimated word count of " + num.ToString());
+		string text = "Estimated word count of " + num.ToString();
+		for (int l = 0; l < list.Count; l++)
+		{
+			text = string.Concat(new string[]
+			{
+				text,
+				"\n",
+				list2[l],
+				": ",
+				list[l].ToString()
+			});
+		}
+		Debug.Log(text);
 	}
 
-	// Token: 0x0600043E RID: 1086 RVA: 0x000295B4 File Offset: 0x000277B4
+	// Token: 0x060003C7 RID: 967 RVA: 0x000164D0 File Offset: 0x000146D0
 	[ContextMenu("Search Documents For Capitals")]
 	public void SearchDocumentsForCapitals()
 	{
@@ -778,19 +825,19 @@ public class DialogueManager : MonoBehaviour
 				{
 					bool flag = false;
 					bool flag2 = false;
-					string english = dialogueChunk.lines[k].english;
-					for (int l = 0; l < english.Length; l++)
+					string text = dialogueChunk.lines[k].english[0];
+					for (int l = 0; l < text.Length; l++)
 					{
-						if (char.IsLetter(english[l]))
+						if (char.IsLetter(text[l]))
 						{
-							bool flag3 = l == 0 || char.IsWhiteSpace(english[l - 1]);
-							if (!flag3 || !char.IsUpper(english[l]) || l >= english.Length - 1 || !char.IsLetter(english[l + 1]) || !char.IsUpper(english[l + 1]))
+							bool flag3 = l == 0 || char.IsWhiteSpace(text[l - 1]);
+							if (!flag3 || !char.IsUpper(text[l]) || l >= text.Length - 1 || !char.IsLetter(text[l + 1]) || !char.IsUpper(text[l + 1]))
 							{
-								bool flag4 = flag3 && (l == 0 || (l > 4 && english[l - 2] == '.' && char.IsLetter(english[l - 3])));
-								bool flag5 = char.ToUpper(english[l]) == 'I' && (l == 0 || char.IsWhiteSpace(english[l - 1])) && (l == english.Length - 1 || !char.IsLetter(english[l + 1]));
+								bool flag4 = flag3 && (l == 0 || (l > 4 && text[l - 2] == '.' && char.IsLetter(text[l - 3])));
+								bool flag5 = char.ToUpper(text[l]) == 'I' && (l == 0 || char.IsWhiteSpace(text[l - 1])) && (l == text.Length - 1 || !char.IsLetter(text[l + 1]));
 								if (flag4 || flag5)
 								{
-									if (char.IsUpper(english[l]))
+									if (char.IsUpper(text[l]))
 									{
 										flag = true;
 									}
@@ -804,14 +851,14 @@ public class DialogueManager : MonoBehaviour
 					}
 					if (flag && flag2)
 					{
-						Debug.Log(string.Format("Found possible inconsistency in document \"{0}\", chunk \"{1}\", line {2:0}: \"{3}\"", new object[] { multilingualTextDocument.name, dialogueChunk.name, k, english }), multilingualTextDocument);
+						Debug.Log(string.Format("Found possible inconsistency in document \"{0}\", chunk \"{1}\", line {2:0}: \"{3}\"", new object[] { multilingualTextDocument.name, dialogueChunk.name, k, text }), multilingualTextDocument);
 					}
 				}
 			}
 		}
 	}
 
-	// Token: 0x0600043F RID: 1087 RVA: 0x000297B0 File Offset: 0x000279B0
+	// Token: 0x060003C8 RID: 968 RVA: 0x000166D0 File Offset: 0x000148D0
 	[ContextMenu("Search Documents For Lil Gator")]
 	public void SearchDocumentsForLilGator()
 	{
@@ -821,7 +868,7 @@ public class DialogueManager : MonoBehaviour
 			{
 				for (int k = 0; k < dialogueChunk.lines.Length; k++)
 				{
-					string text = dialogueChunk.lines[k].english.ToLower();
+					string text = dialogueChunk.lines[k].english[0].ToLower();
 					if (text.Contains("lil gator") || text.Contains("gator"))
 					{
 						Debug.Log(string.Format("Found lil gator in document \"{0}\", chunk \"{1}\", line {2:0}: \"{3}\"", new object[] { multilingualTextDocument.name, dialogueChunk.name, k, text }), multilingualTextDocument);
@@ -831,7 +878,7 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000440 RID: 1088 RVA: 0x00029890 File Offset: 0x00027A90
+	// Token: 0x060003C9 RID: 969 RVA: 0x000167B0 File Offset: 0x000149B0
 	[ContextMenu("Search Documents For Amphitheater")]
 	public void SearchDocumentsForAmphitheater()
 	{
@@ -841,7 +888,7 @@ public class DialogueManager : MonoBehaviour
 			{
 				for (int k = 0; k < dialogueChunk.lines.Length; k++)
 				{
-					string text = dialogueChunk.lines[k].english.ToLower();
+					string text = dialogueChunk.lines[k].english[0].ToLower();
 					if (text.Contains("ampetheater") || text.Contains("ampetheater") || text.Contains("amphitheater") || text.Contains("amphitheatre") || text.Contains("theatre"))
 					{
 						Debug.Log(string.Format("Found in document \"{0}\", chunk \"{1}\", line {2:0}: \"{3}\"", new object[] { multilingualTextDocument.name, dialogueChunk.name, k, text }), multilingualTextDocument);
@@ -851,148 +898,148 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040005E0 RID: 1504
+	// Token: 0x04000523 RID: 1315
 	public static DialogueManager d;
 
-	// Token: 0x040005E1 RID: 1505
+	// Token: 0x04000524 RID: 1316
 	public static int optionChosen;
 
-	// Token: 0x040005E2 RID: 1506
+	// Token: 0x04000525 RID: 1317
 	public DialogueBox dialogueBox;
 
-	// Token: 0x040005E3 RID: 1507
+	// Token: 0x04000526 RID: 1318
 	public DialogueOptions dialogueOptions;
 
-	// Token: 0x040005E4 RID: 1508
+	// Token: 0x04000527 RID: 1319
 	public UIPhoneDialogue phoneDialogue;
 
-	// Token: 0x040005E5 RID: 1509
+	// Token: 0x04000528 RID: 1320
 	public DialogueBox dialogueBoxBubble;
 
-	// Token: 0x040005E6 RID: 1510
+	// Token: 0x04000529 RID: 1321
 	public DialogueBox dialogueBoxBigBubble;
 
-	// Token: 0x040005E7 RID: 1511
+	// Token: 0x0400052A RID: 1322
 	public UIPhoneDialogue smallPhoneDialogue;
 
-	// Token: 0x040005E8 RID: 1512
+	// Token: 0x0400052B RID: 1323
 	public UIScrollingPhoneDisplay scrollingPhoneDisplay;
 
-	// Token: 0x040005E9 RID: 1513
+	// Token: 0x0400052C RID: 1324
 	public DialogueBox dialogueBoxWooden;
 
-	// Token: 0x040005EA RID: 1514
+	// Token: 0x0400052D RID: 1325
 	public DialogueBox dialogueBoxNarration;
 
-	// Token: 0x040005EB RID: 1515
+	// Token: 0x0400052E RID: 1326
 	[Header("Database")]
 	public ScriptObject[] scripts;
 
-	// Token: 0x040005EC RID: 1516
+	// Token: 0x0400052F RID: 1327
 	public MultilingualTextDocument[] documents;
 
-	// Token: 0x040005ED RID: 1517
+	// Token: 0x04000530 RID: 1328
 	public Dictionary<string, DialogueChunk> chunkDic;
 
-	// Token: 0x040005EE RID: 1518
+	// Token: 0x04000531 RID: 1329
 	private bool advanceInput;
 
-	// Token: 0x040005EF RID: 1519
+	// Token: 0x04000532 RID: 1330
 	private bool skipInput;
 
-	// Token: 0x040005F0 RID: 1520
+	// Token: 0x04000533 RID: 1331
 	public float bubbleDelay = 3f;
 
-	// Token: 0x040005F1 RID: 1521
+	// Token: 0x04000534 RID: 1332
 	public float smallPhoneDelay = 3f;
 
-	// Token: 0x040005F2 RID: 1522
+	// Token: 0x04000535 RID: 1333
 	private WaitForSeconds waitForBubbleDelay;
 
-	// Token: 0x040005F3 RID: 1523
+	// Token: 0x04000536 RID: 1334
 	private WaitForSeconds waitForSmallPhoneDelay;
 
-	// Token: 0x040005F4 RID: 1524
+	// Token: 0x04000537 RID: 1335
 	internal WaitUntil waitUntilBubbleFinish;
 
-	// Token: 0x040005F5 RID: 1525
+	// Token: 0x04000538 RID: 1336
 	internal WaitUntil waitUntilButtonPress;
 
-	// Token: 0x040005F6 RID: 1526
+	// Token: 0x04000539 RID: 1337
 	internal WaitUntil waitUntilPlayerReady;
 
-	// Token: 0x040005F7 RID: 1527
+	// Token: 0x0400053A RID: 1338
 	private bool isInNormalDialogue;
 
-	// Token: 0x040005F8 RID: 1528
+	// Token: 0x0400053B RID: 1339
 	public bool isInBubbleDialogue;
 
-	// Token: 0x040005F9 RID: 1529
+	// Token: 0x0400053C RID: 1340
 	private IEnumerator bubbleCoroutine;
 
-	// Token: 0x040005FA RID: 1530
+	// Token: 0x0400053D RID: 1341
 	private IEnumerator smallPhoneCoroutine;
 
-	// Token: 0x040005FB RID: 1531
+	// Token: 0x0400053E RID: 1342
 	private DialogueActor[] bubbleActors;
 
-	// Token: 0x040005FC RID: 1532
+	// Token: 0x0400053F RID: 1343
 	private bool bubbleIsImportant;
 
-	// Token: 0x040005FD RID: 1533
+	// Token: 0x04000540 RID: 1344
 	private bool smallPhoneIsImportant;
 
-	// Token: 0x040005FE RID: 1534
+	// Token: 0x04000541 RID: 1345
 	public bool isWaitingForPlayer;
 
-	// Token: 0x040005FF RID: 1535
+	// Token: 0x04000542 RID: 1346
 	public static DialogueActor currentlySpeakingActor;
 
-	// Token: 0x04000600 RID: 1536
+	// Token: 0x04000543 RID: 1347
 	public static DialogueActor currentlySpeakingBubbleActor;
 
-	// Token: 0x04000601 RID: 1537
+	// Token: 0x04000544 RID: 1348
 	public static int currentlySpeakingActorIndex;
 
-	// Token: 0x04000602 RID: 1538
+	// Token: 0x04000545 RID: 1349
 	public bool cue;
 
-	// Token: 0x04000603 RID: 1539
+	// Token: 0x04000546 RID: 1350
 	public WaitUntil waitUntilCue;
 
-	// Token: 0x04000604 RID: 1540
+	// Token: 0x04000547 RID: 1351
 	private static readonly int defaultEmote;
 
-	// Token: 0x04000605 RID: 1541
+	// Token: 0x04000548 RID: 1352
 	private DialogueActor[] actorFocuses;
 
-	// Token: 0x04000606 RID: 1542
+	// Token: 0x04000549 RID: 1353
 	private Vector3 cameraFocusPoint;
 
-	// Token: 0x04000607 RID: 1543
+	// Token: 0x0400054A RID: 1354
 	private float validCameraFocusPointTime = -1f;
 
-	// Token: 0x04000608 RID: 1544
+	// Token: 0x0400054B RID: 1355
 	private DialogueActor[] temporaryActor = new DialogueActor[1];
 
-	// Token: 0x04000609 RID: 1545
+	// Token: 0x0400054C RID: 1356
 	private readonly int textingEmote = Animator.StringToHash("E_Texting");
 
-	// Token: 0x0400060A RID: 1546
+	// Token: 0x0400054D RID: 1357
 	private int stateID = Animator.StringToHash("State");
 
-	// Token: 0x020000E5 RID: 229
+	// Token: 0x0200038A RID: 906
 	public enum DialogueBoxBackground
 	{
-		// Token: 0x0400060C RID: 1548
+		// Token: 0x04001ABE RID: 6846
 		Standard,
-		// Token: 0x0400060D RID: 1549
+		// Token: 0x04001ABF RID: 6847
 		Wooden,
-		// Token: 0x0400060E RID: 1550
+		// Token: 0x04001AC0 RID: 6848
 		Narration,
-		// Token: 0x0400060F RID: 1551
+		// Token: 0x04001AC1 RID: 6849
 		Bubble,
-		// Token: 0x04000610 RID: 1552
+		// Token: 0x04001AC2 RID: 6850
 		BigBubble
 	}
 }

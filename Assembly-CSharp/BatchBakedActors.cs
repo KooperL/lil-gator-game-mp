@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000A4 RID: 164
+// Token: 0x02000082 RID: 130
 public class BatchBakedActors : MonoBehaviour
 {
-	// Token: 0x06000259 RID: 601 RVA: 0x00003F5A File Offset: 0x0000215A
+	// Token: 0x06000221 RID: 545 RVA: 0x0000BC9F File Offset: 0x00009E9F
 	private Vector2 Remap(Vector2 uv, Vector2 min, Vector2 max)
 	{
 		uv.x = Mathf.Lerp(min.x, max.x, uv.x);
@@ -12,26 +12,26 @@ public class BatchBakedActors : MonoBehaviour
 		return uv;
 	}
 
-	// Token: 0x0400035A RID: 858
+	// Token: 0x040002CE RID: 718
 	public BatchBakedActors.BatchedBakedActor[] actors;
 
-	// Token: 0x0400035B RID: 859
+	// Token: 0x040002CF RID: 719
 	public Material combinedMaterial;
 
-	// Token: 0x020000A5 RID: 165
+	// Token: 0x02000373 RID: 883
 	[Serializable]
 	public struct BatchedBakedActor
 	{
-		// Token: 0x0400035C RID: 860
+		// Token: 0x04001A6A RID: 6762
 		public BakeActor bakedActor;
 
-		// Token: 0x0400035D RID: 861
+		// Token: 0x04001A6B RID: 6763
 		public int materialIndex;
 
-		// Token: 0x0400035E RID: 862
+		// Token: 0x04001A6C RID: 6764
 		public Vector2 min;
 
-		// Token: 0x0400035F RID: 863
+		// Token: 0x04001A6D RID: 6765
 		public Vector2 max;
 	}
 }

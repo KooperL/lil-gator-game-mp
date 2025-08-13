@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001C2 RID: 450
+// Token: 0x02000159 RID: 345
 public class LinkJointToParent : MonoBehaviour
 {
-	// Token: 0x06000887 RID: 2183 RVA: 0x00037624 File Offset: 0x00035824
+	// Token: 0x0600073D RID: 1853 RVA: 0x00024330 File Offset: 0x00022530
 	private void Start()
 	{
 		Joint component = base.GetComponent<Joint>();

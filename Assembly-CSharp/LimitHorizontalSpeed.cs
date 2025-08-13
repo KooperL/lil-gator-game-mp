@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200023F RID: 575
+// Token: 0x020001BE RID: 446
 public class LimitHorizontalSpeed : MonoBehaviour
 {
-	// Token: 0x06000AD5 RID: 2773 RVA: 0x0003E100 File Offset: 0x0003C300
+	// Token: 0x0600093E RID: 2366 RVA: 0x0002BE98 File Offset: 0x0002A098
 	public void FixedUpdate()
 	{
 		Vector3 vector = this.rigidbody.velocity.Flat();
@@ -14,19 +14,19 @@ public class LimitHorizontalSpeed : MonoBehaviour
 			float num = magnitude - this.maxSpeed;
 			Vector3 vector2 = -1f * this.dragForce * num * vector;
 			vector2 = Vector3.ClampMagnitude(vector2, this.maxForce);
-			this.rigidbody.AddForce(vector2, 5);
+			this.rigidbody.AddForce(vector2, ForceMode.Acceleration);
 		}
 	}
 
-	// Token: 0x04000DB7 RID: 3511
+	// Token: 0x04000B9B RID: 2971
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000DB8 RID: 3512
+	// Token: 0x04000B9C RID: 2972
 	public float maxSpeed = 0.5f;
 
-	// Token: 0x04000DB9 RID: 3513
+	// Token: 0x04000B9D RID: 2973
 	public float dragForce = 20f;
 
-	// Token: 0x04000DBA RID: 3514
+	// Token: 0x04000B9E RID: 2974
 	public float maxForce = 100f;
 }

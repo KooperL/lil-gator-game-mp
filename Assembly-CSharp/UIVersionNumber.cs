@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020003DB RID: 987
+// Token: 0x020002EA RID: 746
 public class UIVersionNumber : MonoBehaviour
 {
-	// Token: 0x06001303 RID: 4867 RVA: 0x00010240 File Offset: 0x0000E440
+	// Token: 0x06000FD7 RID: 4055 RVA: 0x0004B9BC File Offset: 0x00049BBC
 	private void Start()
 	{
-		base.GetComponent<Text>().text = "1.0.2";
+		base.GetComponent<Text>().text = "1.0.3";
 	}
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200004B RID: 75
+// Token: 0x02000039 RID: 57
 public class Paintsplat : MonoBehaviour
 {
-	// Token: 0x0600010B RID: 267 RVA: 0x00002D8C File Offset: 0x00000F8C
+	// Token: 0x060000E6 RID: 230 RVA: 0x00006425 File Offset: 0x00004625
 	public void SetColor(Color color)
 	{
 		this.color = color;
@@ -14,7 +14,7 @@ public class Paintsplat : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600010C RID: 268 RVA: 0x00002DA9 File Offset: 0x00000FA9
+	// Token: 0x060000E7 RID: 231 RVA: 0x00006442 File Offset: 0x00004642
 	private void Start()
 	{
 		if (this.isRandomized)
@@ -26,7 +26,7 @@ public class Paintsplat : MonoBehaviour
 		this.UpdateDecal();
 	}
 
-	// Token: 0x0600010D RID: 269 RVA: 0x00002DE6 File Offset: 0x00000FE6
+	// Token: 0x060000E8 RID: 232 RVA: 0x0000647F File Offset: 0x0000467F
 	private void Update()
 	{
 		this.t += Time.deltaTime * this.curveSpeed;
@@ -37,7 +37,7 @@ public class Paintsplat : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600010E RID: 270 RVA: 0x0001AEE4 File Offset: 0x000190E4
+	// Token: 0x060000E9 RID: 233 RVA: 0x000064B8 File Offset: 0x000046B8
 	private void UpdateDecal()
 	{
 		Color color = this.color;
@@ -46,27 +46,27 @@ public class Paintsplat : MonoBehaviour
 		this.particleSystem.main.startColor = this.color;
 	}
 
-	// Token: 0x04000181 RID: 385
+	// Token: 0x0400013A RID: 314
 	public bool isRandomized = true;
 
-	// Token: 0x04000182 RID: 386
+	// Token: 0x0400013B RID: 315
 	public Gradient randomColor;
 
-	// Token: 0x04000183 RID: 387
+	// Token: 0x0400013C RID: 316
 	public Color color;
 
-	// Token: 0x04000184 RID: 388
+	// Token: 0x0400013D RID: 317
 	private SetDecal setDecal;
 
-	// Token: 0x04000185 RID: 389
+	// Token: 0x0400013E RID: 318
 	public AnimationCurve alphaCurve;
 
-	// Token: 0x04000186 RID: 390
+	// Token: 0x0400013F RID: 319
 	public float curveSpeed = 0.25f;
 
-	// Token: 0x04000187 RID: 391
+	// Token: 0x04000140 RID: 320
 	private float t;
 
-	// Token: 0x04000188 RID: 392
+	// Token: 0x04000141 RID: 321
 	public ParticleSystem particleSystem;
 }

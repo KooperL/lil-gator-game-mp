@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000384 RID: 900
+// Token: 0x020002A7 RID: 679
 [ExecuteInEditMode]
 public class CanvasMesh : Graphic
 {
-	// Token: 0x06001133 RID: 4403 RVA: 0x00056650 File Offset: 0x00054850
+	// Token: 0x06000E63 RID: 3683 RVA: 0x00044CE0 File Offset: 0x00042EE0
 	protected override void OnPopulateMesh(VertexHelper vh)
 	{
 		vh.Clear();
@@ -37,7 +37,7 @@ public class CanvasMesh : Graphic
 		}
 	}
 
-	// Token: 0x06001134 RID: 4404 RVA: 0x000567BC File Offset: 0x000549BC
+	// Token: 0x06000E64 RID: 3684 RVA: 0x00044E4C File Offset: 0x0004304C
 	public Vector3 TransformVertex(Vector3 vertex)
 	{
 		Vector2 vector;
@@ -47,7 +47,7 @@ public class CanvasMesh : Graphic
 		return base.transform.TransformPoint(vector);
 	}
 
-	// Token: 0x06001135 RID: 4405 RVA: 0x00056884 File Offset: 0x00054A84
+	// Token: 0x06000E65 RID: 3685 RVA: 0x00044F14 File Offset: 0x00043114
 	public Vector3 InverseTransformVertex(Vector3 vertex)
 	{
 		Vector2 vector = base.transform.InverseTransformPoint(vertex);
@@ -60,6 +60,6 @@ public class CanvasMesh : Graphic
 		return vector;
 	}
 
-	// Token: 0x04001624 RID: 5668
+	// Token: 0x040012BC RID: 4796
 	public Mesh Mesh;
 }

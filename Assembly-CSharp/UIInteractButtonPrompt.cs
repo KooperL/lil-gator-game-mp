@@ -3,17 +3,17 @@ using Rewired;
 using RewiredConsts;
 using UnityEngine;
 
-// Token: 0x020003AC RID: 940
+// Token: 0x020002CA RID: 714
 public class UIInteractButtonPrompt : MonoBehaviour
 {
-	// Token: 0x060011D3 RID: 4563 RVA: 0x0000F36D File Offset: 0x0000D56D
+	// Token: 0x06000EFB RID: 3835 RVA: 0x00047F26 File Offset: 0x00046126
 	private void Awake()
 	{
 		this.buttonDisplay = base.GetComponent<UIButtonDisplay>();
 		this.buttonDisplay.updateAutomatically = false;
 	}
 
-	// Token: 0x060011D4 RID: 4564 RVA: 0x00059180 File Offset: 0x00057380
+	// Token: 0x06000EFC RID: 3836 RVA: 0x00047F40 File Offset: 0x00046140
 	private void OnEnable()
 	{
 		if (UIInteractButtonPrompt.showPrompt)
@@ -38,21 +38,21 @@ public class UIInteractButtonPrompt : MonoBehaviour
 		this.buttonDisplay.ClearButtonDisplay();
 	}
 
-	// Token: 0x0400170B RID: 5899
+	// Token: 0x04001395 RID: 5013
 	public static bool showPrompt = true;
 
-	// Token: 0x0400170C RID: 5900
+	// Token: 0x04001396 RID: 5014
 	private UIButtonDisplay buttonDisplay;
 
-	// Token: 0x0400170D RID: 5901
-	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
+	// Token: 0x04001397 RID: 5015
+	[ActionIdProperty(typeof(Action))]
 	public int interact;
 
-	// Token: 0x0400170E RID: 5902
-	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
+	// Token: 0x04001398 RID: 5016
+	[ActionIdProperty(typeof(Action))]
 	public int primary;
 
-	// Token: 0x0400170F RID: 5903
-	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
+	// Token: 0x04001399 RID: 5017
+	[ActionIdProperty(typeof(Action))]
 	public int jump;
 }

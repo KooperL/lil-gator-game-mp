@@ -3,12 +3,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020002DA RID: 730
+// Token: 0x02000228 RID: 552
 public class SimpleQuest : MonoBehaviour
 {
-	// Token: 0x17000192 RID: 402
-	// (get) Token: 0x06000E3F RID: 3647 RVA: 0x0000CA89 File Offset: 0x0000AC89
-	// (set) Token: 0x06000E40 RID: 3648 RVA: 0x0000CA9C File Offset: 0x0000AC9C
+	// Token: 0x170000C7 RID: 199
+	// (get) Token: 0x06000BDC RID: 3036 RVA: 0x000391B9 File Offset: 0x000373B9
+	// (set) Token: 0x06000BDD RID: 3037 RVA: 0x000391CC File Offset: 0x000373CC
 	private bool State
 	{
 		get
@@ -21,13 +21,13 @@ public class SimpleQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E41 RID: 3649 RVA: 0x0000CAAF File Offset: 0x0000ACAF
+	// Token: 0x06000BDE RID: 3038 RVA: 0x000391DF File Offset: 0x000373DF
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000E42 RID: 3650 RVA: 0x0004BD74 File Offset: 0x00049F74
+	// Token: 0x06000BDF RID: 3039 RVA: 0x000391E8 File Offset: 0x000373E8
 	private void UpdateState()
 	{
 		bool state = this.State;
@@ -51,13 +51,13 @@ public class SimpleQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E43 RID: 3651 RVA: 0x0000CAB7 File Offset: 0x0000ACB7
+	// Token: 0x06000BE0 RID: 3040 RVA: 0x00039269 File Offset: 0x00037469
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000E44 RID: 3652 RVA: 0x0000CAC6 File Offset: 0x0000ACC6
+	// Token: 0x06000BE1 RID: 3041 RVA: 0x00039278 File Offset: 0x00037478
 	private IEnumerator RunConversation()
 	{
 		DialogueManager.d.CancelBubble();
@@ -83,31 +83,31 @@ public class SimpleQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0400127C RID: 4732
+	// Token: 0x04000FAB RID: 4011
 	public string id;
 
-	// Token: 0x0400127D RID: 4733
+	// Token: 0x04000FAC RID: 4012
 	[Space]
 	public DialogueActor[] actors;
 
-	// Token: 0x0400127E RID: 4734
+	// Token: 0x04000FAD RID: 4013
 	public GameObject crier;
 
-	// Token: 0x0400127F RID: 4735
+	// Token: 0x04000FAE RID: 4014
 	public string beforeState;
 
-	// Token: 0x04001280 RID: 4736
+	// Token: 0x04000FAF RID: 4015
 	public string beforeText;
 
-	// Token: 0x04001281 RID: 4737
+	// Token: 0x04000FB0 RID: 4016
 	public UnityEvent onReward;
 
-	// Token: 0x04001282 RID: 4738
+	// Token: 0x04000FB1 RID: 4017
 	public string afterState;
 
-	// Token: 0x04001283 RID: 4739
+	// Token: 0x04000FB2 RID: 4018
 	public string afterText;
 
-	// Token: 0x04001284 RID: 4740
+	// Token: 0x04000FB3 RID: 4019
 	public UnityEvent onAfter;
 }

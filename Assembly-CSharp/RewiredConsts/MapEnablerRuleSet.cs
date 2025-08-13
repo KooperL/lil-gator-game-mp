@@ -2,7 +2,7 @@
 
 namespace RewiredConsts
 {
-	// Token: 0x020003FA RID: 1018
+	// Token: 0x02000301 RID: 769
 	public static class MapEnablerRuleSet
 	{
 	}

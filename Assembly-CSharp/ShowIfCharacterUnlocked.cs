@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000FD RID: 253
+// Token: 0x020000BE RID: 190
 public class ShowIfCharacterUnlocked : MonoBehaviour
 {
-	// Token: 0x060004C6 RID: 1222 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000412 RID: 1042 RVA: 0x00017D69 File Offset: 0x00015F69
 	[ContextMenu("fix Profiles")]
 	private void FixProfiles()
 	{
 	}
 
-	// Token: 0x060004C7 RID: 1223 RVA: 0x0002BE54 File Offset: 0x0002A054
+	// Token: 0x06000413 RID: 1043 RVA: 0x00017D6C File Offset: 0x00015F6C
 	private void Start()
 	{
 		if (!this.IsUnlocked())
@@ -32,7 +32,7 @@ public class ShowIfCharacterUnlocked : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004C8 RID: 1224 RVA: 0x000057DE File Offset: 0x000039DE
+	// Token: 0x06000414 RID: 1044 RVA: 0x00017DEA File Offset: 0x00015FEA
 	private void OnDestroy()
 	{
 		if (this.hasListener)
@@ -41,7 +41,7 @@ public class ShowIfCharacterUnlocked : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004C9 RID: 1225 RVA: 0x0002BED4 File Offset: 0x0002A0D4
+	// Token: 0x06000415 RID: 1045 RVA: 0x00017DFC File Offset: 0x00015FFC
 	private bool IsUnlocked()
 	{
 		if (this.characterProfile != null && !this.characterProfile.IsUnlocked)
@@ -62,7 +62,7 @@ public class ShowIfCharacterUnlocked : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x060004CA RID: 1226 RVA: 0x000057EE File Offset: 0x000039EE
+	// Token: 0x06000416 RID: 1046 RVA: 0x00017E50 File Offset: 0x00016050
 	private void OnCharacterChange(object sender, bool isUnlocked)
 	{
 		if (this.IsUnlocked())
@@ -72,7 +72,7 @@ public class ShowIfCharacterUnlocked : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004CB RID: 1227 RVA: 0x0002BF28 File Offset: 0x0002A128
+	// Token: 0x06000417 RID: 1047 RVA: 0x00017E6C File Offset: 0x0001606C
 	private void RemoveListeners()
 	{
 		if (this.characterProfile != null)
@@ -90,12 +90,12 @@ public class ShowIfCharacterUnlocked : MonoBehaviour
 		this.hasListener = false;
 	}
 
-	// Token: 0x040006C9 RID: 1737
+	// Token: 0x040005B7 RID: 1463
 	public CharacterProfile characterProfile;
 
-	// Token: 0x040006CA RID: 1738
+	// Token: 0x040005B8 RID: 1464
 	public CharacterProfile[] moreCharacters;
 
-	// Token: 0x040006CB RID: 1739
+	// Token: 0x040005B9 RID: 1465
 	private bool hasListener;
 }

@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002CC RID: 716
+// Token: 0x0200021D RID: 541
 public class QuestRewardConfetti : QuestReward
 {
-	// Token: 0x06000E05 RID: 3589 RVA: 0x0000C84E File Offset: 0x0000AA4E
+	// Token: 0x06000BB0 RID: 2992 RVA: 0x00038C27 File Offset: 0x00036E27
 	public override void GiveReward()
 	{
 		this.GiveReward(this.amount);
 	}
 
-	// Token: 0x06000E06 RID: 3590 RVA: 0x0004B54C File Offset: 0x0004974C
+	// Token: 0x06000BB1 RID: 2993 RVA: 0x00038C38 File Offset: 0x00036E38
 	public void GiveReward(int amount)
 	{
 		Vector3 vector = base.transform.position;
@@ -34,24 +34,24 @@ public class QuestRewardConfetti : QuestReward
 		component.main.maxParticles = Mathf.RoundToInt((float)amount / component.GetComponent<ParticlePickup>().rewardPerPickup);
 	}
 
-	// Token: 0x04001237 RID: 4663
+	// Token: 0x04000F74 RID: 3956
 	private static readonly int throwConfettiEmote = Animator.StringToHash("E_ThrowConfetti");
 
-	// Token: 0x04001238 RID: 4664
+	// Token: 0x04000F75 RID: 3957
 	private static readonly int throwConfettiUpperbodyEmote = Animator.StringToHash("E_ThrowConfettiUpperbody");
 
-	// Token: 0x04001239 RID: 4665
+	// Token: 0x04000F76 RID: 3958
 	public int amount;
 
-	// Token: 0x0400123A RID: 4666
+	// Token: 0x04000F77 RID: 3959
 	public DialogueActor actor;
 
-	// Token: 0x0400123B RID: 4667
+	// Token: 0x04000F78 RID: 3960
 	public bool forceUpperbodyOnly;
 
-	// Token: 0x0400123C RID: 4668
+	// Token: 0x04000F79 RID: 3961
 	public Transform source;
 
-	// Token: 0x0400123D RID: 4669
+	// Token: 0x04000F7A RID: 3962
 	public GameObject prefab;
 }

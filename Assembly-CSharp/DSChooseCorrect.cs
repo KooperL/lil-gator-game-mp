@@ -3,17 +3,17 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000115 RID: 277
+// Token: 0x020000CD RID: 205
 [AddComponentMenu("Dialogue Sequence/Choose Correct Choice")]
 public class DSChooseCorrect : DialogueSequence
 {
-	// Token: 0x0600054F RID: 1359 RVA: 0x00005D4E File Offset: 0x00003F4E
+	// Token: 0x0600046D RID: 1133 RVA: 0x00018EBA File Offset: 0x000170BA
 	public override YieldInstruction Run()
 	{
 		return CoroutineUtil.Start(this.RunChoiceLoop());
 	}
 
-	// Token: 0x06000550 RID: 1360 RVA: 0x00005D5B File Offset: 0x00003F5B
+	// Token: 0x0600046E RID: 1134 RVA: 0x00018EC7 File Offset: 0x000170C7
 	private IEnumerator RunChoiceLoop()
 	{
 		if (this.showPrompt)
@@ -69,49 +69,49 @@ public class DSChooseCorrect : DialogueSequence
 		yield break;
 	}
 
-	// Token: 0x0400074A RID: 1866
+	// Token: 0x0400062F RID: 1583
 	public MultilingualTextDocument document;
 
-	// Token: 0x0400074B RID: 1867
+	// Token: 0x04000630 RID: 1584
 	public bool showPrompt = true;
 
-	// Token: 0x0400074C RID: 1868
+	// Token: 0x04000631 RID: 1585
 	public bool showPromptAfterWrongChoices = true;
 
-	// Token: 0x0400074D RID: 1869
+	// Token: 0x04000632 RID: 1586
 	public bool showCorrectDialogue;
 
-	// Token: 0x0400074E RID: 1870
+	// Token: 0x04000633 RID: 1587
 	[ChunkLookup("document")]
 	public string prompt;
 
-	// Token: 0x0400074F RID: 1871
+	// Token: 0x04000634 RID: 1588
 	public DSChooseCorrect.Choice[] choices;
 
-	// Token: 0x04000750 RID: 1872
+	// Token: 0x04000635 RID: 1589
 	public DialogueActor[] actors;
 
-	// Token: 0x04000751 RID: 1873
+	// Token: 0x04000636 RID: 1590
 	public UnityEvent onChooseCorrectFirst;
 
-	// Token: 0x04000752 RID: 1874
+	// Token: 0x04000637 RID: 1591
 	public UnityEvent onChooseCorrectNotFirst;
 
-	// Token: 0x04000753 RID: 1875
+	// Token: 0x04000638 RID: 1592
 	private bool hasChosenIncorrectly;
 
-	// Token: 0x02000116 RID: 278
+	// Token: 0x020003A0 RID: 928
 	[Serializable]
 	public struct Choice
 	{
-		// Token: 0x04000754 RID: 1876
+		// Token: 0x04001B35 RID: 6965
 		public bool isCorrect;
 
-		// Token: 0x04000755 RID: 1877
+		// Token: 0x04001B36 RID: 6966
 		[ChunkLookup("document")]
 		public string dialogue;
 
-		// Token: 0x04000756 RID: 1878
+		// Token: 0x04001B37 RID: 6967
 		public bool isCancel;
 	}
 }

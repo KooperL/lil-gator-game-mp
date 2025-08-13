@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020001C7 RID: 455
+// Token: 0x0200015D RID: 349
 public class ForkEventByChoice : MonoBehaviour
 {
-	// Token: 0x06000890 RID: 2192 RVA: 0x000086DC File Offset: 0x000068DC
+	// Token: 0x06000746 RID: 1862 RVA: 0x000244DE File Offset: 0x000226DE
 	public void Fork()
 	{
 		if (DialogueManager.optionChosen >= 0 && DialogueManager.optionChosen < this.choices.Length)
@@ -14,20 +14,20 @@ public class ForkEventByChoice : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000B27 RID: 2855
+	// Token: 0x04000987 RID: 2439
 	public ForkEventByChoice.ChoiceEvent[] choices;
 
-	// Token: 0x020001C8 RID: 456
+	// Token: 0x020003C1 RID: 961
 	[Serializable]
 	public struct ChoiceEvent
 	{
-		// Token: 0x06000892 RID: 2194 RVA: 0x0000870A File Offset: 0x0000690A
+		// Token: 0x0600197D RID: 6525 RVA: 0x0006D017 File Offset: 0x0006B217
 		public void Execute()
 		{
 			this.onChoose.Invoke();
 		}
 
-		// Token: 0x04000B28 RID: 2856
+		// Token: 0x04001BBC RID: 7100
 		public UnityEvent onChoose;
 	}
 }

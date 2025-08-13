@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200020C RID: 524
+// Token: 0x02000194 RID: 404
 public class TerrainCleanupManager : MonoBehaviour
 {
-	// Token: 0x060009B0 RID: 2480 RVA: 0x0003A33C File Offset: 0x0003853C
+	// Token: 0x06000839 RID: 2105 RVA: 0x00027430 File Offset: 0x00025630
 	private void Awake()
 	{
 		if (TerrainCleanupManager.t != null || TerrainCleanupManager.hasInstance)
@@ -27,7 +27,7 @@ public class TerrainCleanupManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009B1 RID: 2481 RVA: 0x0003A3CC File Offset: 0x000385CC
+	// Token: 0x0600083A RID: 2106 RVA: 0x000274C0 File Offset: 0x000256C0
 	private void AddTerrain(TerrainData sourceData, int id)
 	{
 		TerrainCleanupManager.CleanData cleanData = new TerrainCleanupManager.CleanData
@@ -45,7 +45,7 @@ public class TerrainCleanupManager : MonoBehaviour
 		this.cleanDataDic.Add(id, cleanData);
 	}
 
-	// Token: 0x060009B2 RID: 2482 RVA: 0x0003A470 File Offset: 0x00038670
+	// Token: 0x0600083B RID: 2107 RVA: 0x00027564 File Offset: 0x00025764
 	public TerrainData GetCleanData(TerrainData sourceData, int id)
 	{
 		if (!this.cleanDataDic.ContainsKey(id))
@@ -61,7 +61,7 @@ public class TerrainCleanupManager : MonoBehaviour
 		return cleanData.terrainData;
 	}
 
-	// Token: 0x060009B3 RID: 2483 RVA: 0x0000961D File Offset: 0x0000781D
+	// Token: 0x0600083C RID: 2108 RVA: 0x000275D5 File Offset: 0x000257D5
 	public float[,,] GetAlphamaps(TerrainData sourceData, int id)
 	{
 		if (!this.cleanDataDic.ContainsKey(id))
@@ -71,7 +71,7 @@ public class TerrainCleanupManager : MonoBehaviour
 		return this.cleanDataDic[id].alphamaps;
 	}
 
-	// Token: 0x060009B4 RID: 2484 RVA: 0x00009646 File Offset: 0x00007846
+	// Token: 0x0600083D RID: 2109 RVA: 0x000275FE File Offset: 0x000257FE
 	public int[][,] GetDetails(TerrainData sourceData, int id)
 	{
 		if (!this.cleanDataDic.ContainsKey(id))
@@ -81,31 +81,31 @@ public class TerrainCleanupManager : MonoBehaviour
 		return this.cleanDataDic[id].details;
 	}
 
-	// Token: 0x04000C54 RID: 3156
+	// Token: 0x04000A62 RID: 2658
 	public static TerrainCleanupManager t;
 
-	// Token: 0x04000C55 RID: 3157
+	// Token: 0x04000A63 RID: 2659
 	public static bool hasInstance;
 
-	// Token: 0x04000C56 RID: 3158
+	// Token: 0x04000A64 RID: 2660
 	public TerrainData[] preloadedTerrainData;
 
-	// Token: 0x04000C57 RID: 3159
+	// Token: 0x04000A65 RID: 2661
 	private Dictionary<int, TerrainCleanupManager.CleanData> cleanDataDic;
 
-	// Token: 0x0200020D RID: 525
+	// Token: 0x020003D2 RID: 978
 	private struct CleanData
 	{
-		// Token: 0x04000C58 RID: 3160
+		// Token: 0x04001C18 RID: 7192
 		public bool isClean;
 
-		// Token: 0x04000C59 RID: 3161
+		// Token: 0x04001C19 RID: 7193
 		public int[][,] details;
 
-		// Token: 0x04000C5A RID: 3162
+		// Token: 0x04001C1A RID: 7194
 		public float[,,] alphamaps;
 
-		// Token: 0x04000C5B RID: 3163
+		// Token: 0x04001C1B RID: 7195
 		public TerrainData terrainData;
 	}
 }

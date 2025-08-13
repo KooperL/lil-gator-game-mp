@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000A1 RID: 161
+// Token: 0x0200007F RID: 127
 public class SharedAudioSource : MonoBehaviour, ISharedAudioSource
 {
-	// Token: 0x06000240 RID: 576 RVA: 0x00003D89 File Offset: 0x00001F89
+	// Token: 0x06000208 RID: 520 RVA: 0x0000B445 File Offset: 0x00009645
 	private void OnValidate()
 	{
 		if (this.sphereTrigger == null)
@@ -14,19 +14,19 @@ public class SharedAudioSource : MonoBehaviour, ISharedAudioSource
 		this.UpdateRadius();
 	}
 
-	// Token: 0x06000241 RID: 577 RVA: 0x00003DAB File Offset: 0x00001FAB
+	// Token: 0x06000209 RID: 521 RVA: 0x0000B467 File Offset: 0x00009667
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.DrawSphere(base.transform.position, this.profile.radius * this.radiusMultiplier * 0.5f);
 	}
 
-	// Token: 0x06000242 RID: 578 RVA: 0x00003DD5 File Offset: 0x00001FD5
+	// Token: 0x0600020A RID: 522 RVA: 0x0000B491 File Offset: 0x00009691
 	private void Start()
 	{
 		this.cachedPosition = base.transform.position;
 	}
 
-	// Token: 0x06000243 RID: 579 RVA: 0x0001EF88 File Offset: 0x0001D188
+	// Token: 0x0600020B RID: 523 RVA: 0x0000B4A4 File Offset: 0x000096A4
 	[ContextMenu("Update Radius")]
 	private void UpdateRadius()
 	{
@@ -47,7 +47,7 @@ public class SharedAudioSource : MonoBehaviour, ISharedAudioSource
 		}
 	}
 
-	// Token: 0x06000244 RID: 580 RVA: 0x00003DE8 File Offset: 0x00001FE8
+	// Token: 0x0600020C RID: 524 RVA: 0x0000B54F File Offset: 0x0000974F
 	private void OnTriggerStay(Collider collider)
 	{
 		if (!SharedAudioManager.nearbyAudioSources.Contains(this))
@@ -57,7 +57,7 @@ public class SharedAudioSource : MonoBehaviour, ISharedAudioSource
 		}
 	}
 
-	// Token: 0x06000245 RID: 581 RVA: 0x00003E0E File Offset: 0x0000200E
+	// Token: 0x0600020D RID: 525 RVA: 0x0000B575 File Offset: 0x00009775
 	public void WasRemoved()
 	{
 		if (this.sphereTrigger != null)
@@ -66,7 +66,7 @@ public class SharedAudioSource : MonoBehaviour, ISharedAudioSource
 		}
 	}
 
-	// Token: 0x06000246 RID: 582 RVA: 0x0001F034 File Offset: 0x0001D234
+	// Token: 0x0600020E RID: 526 RVA: 0x0000B594 File Offset: 0x00009794
 	public void GetAudioData(Vector3 positionReference, out SharedAudioProfile profile, out Vector3 direction, out float strength)
 	{
 		profile = this.profile;
@@ -81,16 +81,16 @@ public class SharedAudioSource : MonoBehaviour, ISharedAudioSource
 		strength = 0f;
 	}
 
-	// Token: 0x04000337 RID: 823
+	// Token: 0x040002AB RID: 683
 	private Vector3 cachedPosition;
 
-	// Token: 0x04000338 RID: 824
+	// Token: 0x040002AC RID: 684
 	public SharedAudioProfile profile;
 
-	// Token: 0x04000339 RID: 825
+	// Token: 0x040002AD RID: 685
 	public SphereCollider sphereTrigger;
 
-	// Token: 0x0400033A RID: 826
+	// Token: 0x040002AE RID: 686
 	[Range(0f, 5f)]
 	public float radiusMultiplier = 1f;
 }

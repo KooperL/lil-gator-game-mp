@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000275 RID: 629
+// Token: 0x020001EA RID: 490
 public class PlayerItemManager : MonoBehaviour
 {
-	// Token: 0x1700011C RID: 284
-	// (get) Token: 0x06000C12 RID: 3090 RVA: 0x0000B5B1 File Offset: 0x000097B1
+	// Token: 0x1700008A RID: 138
+	// (get) Token: 0x06000A5D RID: 2653 RVA: 0x00030E9E File Offset: 0x0002F09E
 	public bool PrimaryInUse
 	{
 		get
@@ -15,8 +15,8 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700011D RID: 285
-	// (get) Token: 0x06000C13 RID: 3091 RVA: 0x0000B5CB File Offset: 0x000097CB
+	// Token: 0x1700008B RID: 139
+	// (get) Token: 0x06000A5E RID: 2654 RVA: 0x00030EB8 File Offset: 0x0002F0B8
 	public bool SecondaryInUse
 	{
 		get
@@ -25,8 +25,8 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700011E RID: 286
-	// (get) Token: 0x06000C14 RID: 3092 RVA: 0x0000B5E5 File Offset: 0x000097E5
+	// Token: 0x1700008C RID: 140
+	// (get) Token: 0x06000A5F RID: 2655 RVA: 0x00030ED2 File Offset: 0x0002F0D2
 	public bool IsAnyItemInUse
 	{
 		get
@@ -35,8 +35,8 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700011F RID: 287
-	// (get) Token: 0x06000C15 RID: 3093 RVA: 0x0000B5E5 File Offset: 0x000097E5
+	// Token: 0x1700008D RID: 141
+	// (get) Token: 0x06000A60 RID: 2656 RVA: 0x00030EEC File Offset: 0x0002F0EC
 	public bool IsItemInUse
 	{
 		get
@@ -45,8 +45,8 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000120 RID: 288
-	// (get) Token: 0x06000C16 RID: 3094 RVA: 0x0000B5FF File Offset: 0x000097FF
+	// Token: 0x1700008E RID: 142
+	// (get) Token: 0x06000A61 RID: 2657 RVA: 0x00030F06 File Offset: 0x0002F106
 	public bool IsItemInUse_R
 	{
 		get
@@ -55,7 +55,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C17 RID: 3095 RVA: 0x0000B619 File Offset: 0x00009819
+	// Token: 0x06000A62 RID: 2658 RVA: 0x00030F20 File Offset: 0x0002F120
 	public void SetItemInUse(IItemBehaviour item, bool isInUse)
 	{
 		if (isInUse)
@@ -76,8 +76,8 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000121 RID: 289
-	// (get) Token: 0x06000C18 RID: 3096 RVA: 0x0000B652 File Offset: 0x00009852
+	// Token: 0x1700008F RID: 143
+	// (get) Token: 0x06000A63 RID: 2659 RVA: 0x00030F59 File Offset: 0x0002F159
 	public bool RightHandBusy
 	{
 		get
@@ -86,8 +86,8 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000122 RID: 290
-	// (get) Token: 0x06000C19 RID: 3097 RVA: 0x0000B652 File Offset: 0x00009852
+	// Token: 0x17000090 RID: 144
+	// (get) Token: 0x06000A64 RID: 2660 RVA: 0x00030F79 File Offset: 0x0002F179
 	public bool LeftHandBusy
 	{
 		get
@@ -96,9 +96,9 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000123 RID: 291
-	// (get) Token: 0x06000C1A RID: 3098 RVA: 0x0000B672 File Offset: 0x00009872
-	// (set) Token: 0x06000C1B RID: 3099 RVA: 0x0000B67A File Offset: 0x0000987A
+	// Token: 0x17000091 RID: 145
+	// (get) Token: 0x06000A65 RID: 2661 RVA: 0x00030F99 File Offset: 0x0002F199
+	// (set) Token: 0x06000A66 RID: 2662 RVA: 0x00030FA1 File Offset: 0x0002F1A1
 	public bool IsAiming
 	{
 		get
@@ -112,13 +112,13 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C1C RID: 3100 RVA: 0x0000B68E File Offset: 0x0000988E
+	// Token: 0x06000A67 RID: 2663 RVA: 0x00030FB5 File Offset: 0x0002F1B5
 	private void Awake()
 	{
 		this.movement = base.GetComponent<PlayerMovement>();
 	}
 
-	// Token: 0x06000C1D RID: 3101 RVA: 0x0000B69C File Offset: 0x0000989C
+	// Token: 0x06000A68 RID: 2664 RVA: 0x00030FC3 File Offset: 0x0002F1C3
 	private void OnEnable()
 	{
 		PlayerItemManager.p = this;
@@ -126,14 +126,14 @@ public class PlayerItemManager : MonoBehaviour
 		this.framesUntilRefresh = 2;
 	}
 
-	// Token: 0x06000C1E RID: 3102 RVA: 0x0000B6B1 File Offset: 0x000098B1
+	// Token: 0x06000A69 RID: 2665 RVA: 0x00030FD8 File Offset: 0x0002F1D8
 	private void Start()
 	{
 		this.bareHead.SetActive(false);
 		this.framesUntilRefresh = 2;
 	}
 
-	// Token: 0x06000C1F RID: 3103 RVA: 0x00042594 File Offset: 0x00040794
+	// Token: 0x06000A6A RID: 2666 RVA: 0x00030FF0 File Offset: 0x0002F1F0
 	public void Refresh()
 	{
 		if (ItemManager.i == null)
@@ -203,7 +203,7 @@ public class PlayerItemManager : MonoBehaviour
 		PlayerItemManager.onItemRefresh.Invoke();
 	}
 
-	// Token: 0x06000C20 RID: 3104 RVA: 0x000428E4 File Offset: 0x00040AE4
+	// Token: 0x06000A6B RID: 2667 RVA: 0x00031340 File Offset: 0x0002F540
 	private void RefreshVariant(ref GameObject item, ref string itemID, ref IItemBehaviour itemBehaviour, string newID, GameObject newPrefab, Transform anchor, bool active, int index = 0)
 	{
 		if (newPrefab != null != (item != null) || item == null || itemID != newID)
@@ -239,7 +239,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C21 RID: 3105 RVA: 0x000429CC File Offset: 0x00040BCC
+	// Token: 0x06000A6C RID: 2668 RVA: 0x00031428 File Offset: 0x0002F628
 	public void SetEquippedState(PlayerItemManager.EquippedState newEquippedState, bool force = false)
 	{
 		if (newEquippedState == this.equippedState && !force)
@@ -273,7 +273,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C22 RID: 3106 RVA: 0x00042A8C File Offset: 0x00040C8C
+	// Token: 0x06000A6D RID: 2669 RVA: 0x000314E8 File Offset: 0x0002F6E8
 	private void FixedUpdate()
 	{
 		if (this.framesUntilRefresh > 0)
@@ -335,7 +335,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C23 RID: 3107 RVA: 0x00042BC4 File Offset: 0x00040DC4
+	// Token: 0x06000A6E RID: 2670 RVA: 0x00031620 File Offset: 0x0002F820
 	public void EquipLeft(GameObject itemObject)
 	{
 		if (this.leftHandHeld != itemObject)
@@ -352,7 +352,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C24 RID: 3108 RVA: 0x0000B6C6 File Offset: 0x000098C6
+	// Token: 0x06000A6F RID: 2671 RVA: 0x00031676 File Offset: 0x0002F876
 	private void ClearLeft()
 	{
 		if (this.leftHandHeld != null)
@@ -362,11 +362,11 @@ public class PlayerItemManager : MonoBehaviour
 		this.leftHandHeld = null;
 	}
 
-	// Token: 0x06000C25 RID: 3109 RVA: 0x00042C1C File Offset: 0x00040E1C
+	// Token: 0x06000A70 RID: 2672 RVA: 0x0003169C File Offset: 0x0002F89C
 	public void CutGrass()
 	{
 		RaycastHit raycastHit;
-		if (Physics.Raycast(base.transform.TransformPoint(this.grassOffset), Vector3.down, ref raycastHit, 2f, this.grassLayerMask))
+		if (Physics.Raycast(base.transform.TransformPoint(this.grassOffset), Vector3.down, out raycastHit, 2f, this.grassLayerMask))
 		{
 			TerrainDetails component = raycastHit.collider.GetComponent<TerrainDetails>();
 			if (component != null)
@@ -376,13 +376,13 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C26 RID: 3110 RVA: 0x0000B6E9 File Offset: 0x000098E9
+	// Token: 0x06000A71 RID: 2673 RVA: 0x0003171D File Offset: 0x0002F91D
 	public void EquipPhone()
 	{
 		this.SetEquippedState(PlayerItemManager.EquippedState.Phone, false);
 	}
 
-	// Token: 0x06000C27 RID: 3111 RVA: 0x00042CA0 File Offset: 0x00040EA0
+	// Token: 0x06000A72 RID: 2674 RVA: 0x00031728 File Offset: 0x0002F928
 	public void OnPrimary(bool isDown, bool isHeld)
 	{
 		if (this.primaryBehaviour == null || !this.movement.CanUsePrimary)
@@ -411,7 +411,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C28 RID: 3112 RVA: 0x00042D20 File Offset: 0x00040F20
+	// Token: 0x06000A73 RID: 2675 RVA: 0x000317A8 File Offset: 0x0002F9A8
 	public void OnSecondary(bool isDown, bool isHeld)
 	{
 		if (this.secondaryBehaviour == null || !this.movement.CanUseSecondary)
@@ -440,7 +440,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C29 RID: 3113 RVA: 0x00042DA0 File Offset: 0x00040FA0
+	// Token: 0x06000A74 RID: 2676 RVA: 0x00031828 File Offset: 0x0002FA28
 	public void OnUseItem(bool isDown, bool isHeld)
 	{
 		if (this.itemBehaviour == null || !this.movement.CanUseItem)
@@ -469,7 +469,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C2A RID: 3114 RVA: 0x00042E20 File Offset: 0x00041020
+	// Token: 0x06000A75 RID: 2677 RVA: 0x000318A8 File Offset: 0x0002FAA8
 	public void OnUseItem_R(bool isDown, bool isHeld)
 	{
 		if (this.itemBehaviour_r == null || !this.movement.CanUseItem)
@@ -498,256 +498,256 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000F5C RID: 3932
+	// Token: 0x04000D17 RID: 3351
 	public static PlayerItemManager p;
 
-	// Token: 0x04000F5D RID: 3933
+	// Token: 0x04000D18 RID: 3352
 	public static UnityEvent onItemRefresh = new UnityEvent();
 
-	// Token: 0x04000F5E RID: 3934
+	// Token: 0x04000D19 RID: 3353
 	public Animator animator;
 
-	// Token: 0x04000F5F RID: 3935
+	// Token: 0x04000D1A RID: 3354
 	private PlayerMovement movement;
 
-	// Token: 0x04000F60 RID: 3936
+	// Token: 0x04000D1B RID: 3355
 	public bool handsPreoccupied;
 
-	// Token: 0x04000F61 RID: 3937
+	// Token: 0x04000D1C RID: 3356
 	public GameObject aimingCamera;
 
-	// Token: 0x04000F62 RID: 3938
+	// Token: 0x04000D1D RID: 3357
 	public GameObject menuCamera;
 
-	// Token: 0x04000F63 RID: 3939
+	// Token: 0x04000D1E RID: 3358
 	public bool usePersistentItems = true;
 
-	// Token: 0x04000F64 RID: 3940
+	// Token: 0x04000D1F RID: 3359
 	[ConditionalHide("usePersistentItems", true, Inverse = true)]
 	public ItemObject nonPersistentHat;
 
-	// Token: 0x04000F65 RID: 3941
+	// Token: 0x04000D20 RID: 3360
 	[ConditionalHide("usePersistentItems", true, Inverse = true)]
 	public ItemObject nonPersistentPrimary;
 
-	// Token: 0x04000F66 RID: 3942
+	// Token: 0x04000D21 RID: 3361
 	[ConditionalHide("usePersistentItems", true, Inverse = true)]
 	public ItemObject nonPersistentSecondary;
 
-	// Token: 0x04000F67 RID: 3943
+	// Token: 0x04000D22 RID: 3362
 	[ConditionalHide("usePersistentItems", true, Inverse = true)]
 	public ItemObject nonPersistentItem;
 
-	// Token: 0x04000F68 RID: 3944
+	// Token: 0x04000D23 RID: 3363
 	[ConditionalHide("usePersistentItems", true, Inverse = true)]
 	public int nonPersistentBraceletCount;
 
-	// Token: 0x04000F69 RID: 3945
+	// Token: 0x04000D24 RID: 3364
 	public ItemObject nonPersistentItem_r;
 
-	// Token: 0x04000F6A RID: 3946
+	// Token: 0x04000D25 RID: 3365
 	[Header("Equipped Items")]
 	public GameObject primaryObject;
 
-	// Token: 0x04000F6B RID: 3947
+	// Token: 0x04000D26 RID: 3366
 	public IItemBehaviour primaryBehaviour;
 
-	// Token: 0x04000F6C RID: 3948
+	// Token: 0x04000D27 RID: 3367
 	private string primaryID;
 
-	// Token: 0x04000F6D RID: 3949
+	// Token: 0x04000D28 RID: 3368
 	public GameObject secondaryObject;
 
-	// Token: 0x04000F6E RID: 3950
+	// Token: 0x04000D29 RID: 3369
 	public IItemBehaviour secondaryBehaviour;
 
-	// Token: 0x04000F6F RID: 3951
+	// Token: 0x04000D2A RID: 3370
 	private string secondaryID;
 
-	// Token: 0x04000F70 RID: 3952
+	// Token: 0x04000D2B RID: 3371
 	public GameObject hatObject;
 
-	// Token: 0x04000F71 RID: 3953
+	// Token: 0x04000D2C RID: 3372
 	public IItemBehaviour hatBehaviour;
 
-	// Token: 0x04000F72 RID: 3954
+	// Token: 0x04000D2D RID: 3373
 	private string hatID;
 
-	// Token: 0x04000F73 RID: 3955
+	// Token: 0x04000D2E RID: 3374
 	public GameObject itemObject;
 
-	// Token: 0x04000F74 RID: 3956
+	// Token: 0x04000D2F RID: 3375
 	public IItemBehaviour itemBehaviour;
 
-	// Token: 0x04000F75 RID: 3957
+	// Token: 0x04000D30 RID: 3376
 	private string itemID;
 
-	// Token: 0x04000F76 RID: 3958
+	// Token: 0x04000D31 RID: 3377
 	public GameObject itemObject_r;
 
-	// Token: 0x04000F77 RID: 3959
+	// Token: 0x04000D32 RID: 3378
 	public IItemBehaviour itemBehaviour_r;
 
-	// Token: 0x04000F78 RID: 3960
+	// Token: 0x04000D33 RID: 3379
 	private string itemID_r;
 
-	// Token: 0x04000F79 RID: 3961
+	// Token: 0x04000D34 RID: 3380
 	public IItemBehaviour itemInUse;
 
-	// Token: 0x04000F7A RID: 3962
+	// Token: 0x04000D35 RID: 3381
 	private GameObject leftHandHeld;
 
-	// Token: 0x04000F7B RID: 3963
+	// Token: 0x04000D36 RID: 3382
 	private GameObject rightHandHeld;
 
-	// Token: 0x04000F7C RID: 3964
+	// Token: 0x04000D37 RID: 3383
 	[Header("Anchors")]
 	public Transform leftHandAnchor;
 
-	// Token: 0x04000F7D RID: 3965
+	// Token: 0x04000D38 RID: 3384
 	[Header("Anchors")]
 	public Transform rightHandAnchor;
 
-	// Token: 0x04000F7E RID: 3966
+	// Token: 0x04000D39 RID: 3385
 	public Transform shieldArmAnchor;
 
-	// Token: 0x04000F7F RID: 3967
+	// Token: 0x04000D3A RID: 3386
 	public Transform shieldSledAnchor;
 
-	// Token: 0x04000F80 RID: 3968
+	// Token: 0x04000D3B RID: 3387
 	public Transform shieldUnderArmAnchor;
 
-	// Token: 0x04000F81 RID: 3969
+	// Token: 0x04000D3C RID: 3388
 	public Transform shieldSkateAnchor;
 
-	// Token: 0x04000F82 RID: 3970
+	// Token: 0x04000D3D RID: 3389
 	public Transform shieldSledBellyAnchor;
 
-	// Token: 0x04000F83 RID: 3971
+	// Token: 0x04000D3E RID: 3390
 	public Transform hatAnchor;
 
-	// Token: 0x04000F84 RID: 3972
+	// Token: 0x04000D3F RID: 3391
 	public Transform gliderAnchor;
 
-	// Token: 0x04000F85 RID: 3973
+	// Token: 0x04000D40 RID: 3392
 	public Transform swordUnequippedAnchor;
 
-	// Token: 0x04000F86 RID: 3974
+	// Token: 0x04000D41 RID: 3393
 	public Transform shieldUnequippedAnchor;
 
-	// Token: 0x04000F87 RID: 3975
+	// Token: 0x04000D42 RID: 3394
 	public Transform thrownSpawnPoint;
 
-	// Token: 0x04000F88 RID: 3976
+	// Token: 0x04000D43 RID: 3395
 	public Transform hipAnchor;
 
-	// Token: 0x04000F89 RID: 3977
+	// Token: 0x04000D44 RID: 3396
 	public Transform satchelAnchor;
 
-	// Token: 0x04000F8A RID: 3978
+	// Token: 0x04000D45 RID: 3397
 	public Transform holsterAnchor;
 
-	// Token: 0x04000F8B RID: 3979
+	// Token: 0x04000D46 RID: 3398
 	public Transform hipAnchor_r;
 
-	// Token: 0x04000F8C RID: 3980
+	// Token: 0x04000D47 RID: 3399
 	public Transform satchelAnchor_r;
 
-	// Token: 0x04000F8D RID: 3981
+	// Token: 0x04000D48 RID: 3400
 	public Transform holsterAnchor_r;
 
-	// Token: 0x04000F8E RID: 3982
+	// Token: 0x04000D49 RID: 3401
 	public Transform chestAnchor;
 
-	// Token: 0x04000F8F RID: 3983
+	// Token: 0x04000D4A RID: 3402
 	public Transform hipsAnchor;
 
-	// Token: 0x04000F90 RID: 3984
+	// Token: 0x04000D4B RID: 3403
 	public Transform lowerSpineAnchor;
 
-	// Token: 0x04000F91 RID: 3985
+	// Token: 0x04000D4C RID: 3404
 	public Transform shoulderAnchor;
 
-	// Token: 0x04000F92 RID: 3986
+	// Token: 0x04000D4D RID: 3405
 	[Header("Weapon")]
 	public Vector3 grassOffset;
 
-	// Token: 0x04000F93 RID: 3987
+	// Token: 0x04000D4E RID: 3406
 	public LayerMask grassLayerMask;
 
-	// Token: 0x04000F94 RID: 3988
+	// Token: 0x04000D4F RID: 3407
 	[Header("Accessories")]
 	public ItemObject gliderItem;
 
-	// Token: 0x04000F95 RID: 3989
+	// Token: 0x04000D50 RID: 3408
 	public GameObject moonShoes;
 
-	// Token: 0x04000F96 RID: 3990
+	// Token: 0x04000D51 RID: 3409
 	public float moonShoesHeight;
 
-	// Token: 0x04000F97 RID: 3991
+	// Token: 0x04000D52 RID: 3410
 	public GameObject phone;
 
-	// Token: 0x04000F98 RID: 3992
+	// Token: 0x04000D53 RID: 3411
 	public GameObject[] bracelets;
 
-	// Token: 0x04000F99 RID: 3993
+	// Token: 0x04000D54 RID: 3412
 	public GameObject hipSatchel;
 
-	// Token: 0x04000F9A RID: 3994
+	// Token: 0x04000D55 RID: 3413
 	public GameObject hipSatchel_r;
 
-	// Token: 0x04000F9B RID: 3995
+	// Token: 0x04000D56 RID: 3414
 	public GameObject bareHead;
 
-	// Token: 0x04000F9C RID: 3996
+	// Token: 0x04000D57 RID: 3415
 	[Header("Misc")]
 	public Rigidbody armRigidbody;
 
-	// Token: 0x04000F9D RID: 3997
+	// Token: 0x04000D58 RID: 3416
 	public Rigidbody chestRigidbody;
 
-	// Token: 0x04000F9E RID: 3998
+	// Token: 0x04000D59 RID: 3417
 	public Rigidbody headRigidbody;
 
-	// Token: 0x04000F9F RID: 3999
+	// Token: 0x04000D5A RID: 3418
 	public ButtonTutorial primaryButtonTutorial;
 
-	// Token: 0x04000FA0 RID: 4000
+	// Token: 0x04000D5B RID: 3419
 	public ButtonTutorial secondaryButtonTutorial;
 
-	// Token: 0x04000FA1 RID: 4001
+	// Token: 0x04000D5C RID: 3420
 	public ButtonTutorial itemButtonTutorial;
 
-	// Token: 0x04000FA2 RID: 4002
+	// Token: 0x04000D5D RID: 3421
 	public ButtonTutorial itemButtonTutorial_r;
 
-	// Token: 0x04000FA3 RID: 4003
+	// Token: 0x04000D5E RID: 3422
 	private bool isAiming;
 
-	// Token: 0x04000FA4 RID: 4004
+	// Token: 0x04000D5F RID: 3423
 	[ReadOnly]
 	public PlayerItemManager.EquippedState equippedState;
 
-	// Token: 0x04000FA5 RID: 4005
+	// Token: 0x04000D60 RID: 3424
 	private int framesUntilRefresh;
 
-	// Token: 0x02000276 RID: 630
+	// Token: 0x020003E8 RID: 1000
 	public enum EquippedState
 	{
-		// Token: 0x04000FA7 RID: 4007
+		// Token: 0x04001C72 RID: 7282
 		None,
-		// Token: 0x04000FA8 RID: 4008
+		// Token: 0x04001C73 RID: 7283
 		SwordAndShield,
-		// Token: 0x04000FA9 RID: 4009
+		// Token: 0x04001C74 RID: 7284
 		ShieldSled,
-		// Token: 0x04000FAA RID: 4010
+		// Token: 0x04001C75 RID: 7285
 		Item,
-		// Token: 0x04000FAB RID: 4011
+		// Token: 0x04001C76 RID: 7286
 		Phone,
-		// Token: 0x04000FAC RID: 4012
+		// Token: 0x04001C77 RID: 7287
 		Gliding,
-		// Token: 0x04000FAD RID: 4013
+		// Token: 0x04001C78 RID: 7288
 		ItemR
 	}
 }

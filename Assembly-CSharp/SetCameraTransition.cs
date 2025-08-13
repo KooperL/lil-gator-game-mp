@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002F2 RID: 754
+// Token: 0x02000234 RID: 564
 public class SetCameraTransition : MonoBehaviour
 {
-	// Token: 0x06000EE0 RID: 3808 RVA: 0x0004E458 File Offset: 0x0004C658
+	// Token: 0x06000C41 RID: 3137 RVA: 0x0003AF98 File Offset: 0x00039198
 	private string GetTransitionName(SetCameraTransition.Transition transition)
 	{
 		switch (transition)
@@ -24,7 +24,7 @@ public class SetCameraTransition : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EE1 RID: 3809 RVA: 0x0000CF7B File Offset: 0x0000B17B
+	// Token: 0x06000C42 RID: 3138 RVA: 0x0003AFE4 File Offset: 0x000391E4
 	private void Awake()
 	{
 		if (string.IsNullOrEmpty(this.transition))
@@ -34,25 +34,25 @@ public class SetCameraTransition : MonoBehaviour
 		base.gameObject.name = this.transition;
 	}
 
-	// Token: 0x040012F8 RID: 4856
+	// Token: 0x04000FFD RID: 4093
 	[ReadOnly]
 	public string transition;
 
-	// Token: 0x040012F9 RID: 4857
+	// Token: 0x04000FFE RID: 4094
 	public SetCameraTransition.Transition selectedTransition;
 
-	// Token: 0x020002F3 RID: 755
+	// Token: 0x0200041C RID: 1052
 	public enum Transition
 	{
-		// Token: 0x040012FB RID: 4859
+		// Token: 0x04001D2E RID: 7470
 		Cut,
-		// Token: 0x040012FC RID: 4860
+		// Token: 0x04001D2F RID: 7471
 		Ease,
-		// Token: 0x040012FD RID: 4861
+		// Token: 0x04001D30 RID: 7472
 		EaseSlow,
-		// Token: 0x040012FE RID: 4862
+		// Token: 0x04001D31 RID: 7473
 		EaseVerySlow,
-		// Token: 0x040012FF RID: 4863
+		// Token: 0x04001D32 RID: 7474
 		EaseMedium
 	}
 }

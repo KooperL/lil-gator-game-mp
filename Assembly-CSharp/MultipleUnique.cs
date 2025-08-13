@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020001F6 RID: 502
+// Token: 0x02000180 RID: 384
 public class MultipleUnique : MonoBehaviour
 {
-	// Token: 0x06000948 RID: 2376 RVA: 0x0000911F File Offset: 0x0000731F
+	// Token: 0x060007E6 RID: 2022 RVA: 0x00026540 File Offset: 0x00024740
 	public void Awake()
 	{
 		MultipleUnique.allUnique.Add(this);
 		this.Load();
 	}
 
-	// Token: 0x06000949 RID: 2377 RVA: 0x00009132 File Offset: 0x00007332
+	// Token: 0x060007E7 RID: 2023 RVA: 0x00026553 File Offset: 0x00024753
 	private void OnDestroy()
 	{
 		MultipleUnique.allUnique.Remove(this);
 	}
 
-	// Token: 0x0600094A RID: 2378 RVA: 0x000394B0 File Offset: 0x000376B0
+	// Token: 0x060007E8 RID: 2024 RVA: 0x00026564 File Offset: 0x00024764
 	public void Load()
 	{
 		int num = GameData.g.ReadInt(this.key, -1);
@@ -33,7 +33,7 @@ public class MultipleUnique : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600094B RID: 2379 RVA: 0x00039508 File Offset: 0x00037708
+	// Token: 0x060007E9 RID: 2025 RVA: 0x000265BC File Offset: 0x000247BC
 	public void MarkThisOne()
 	{
 		GameData.g.Write(this.key, this.id);
@@ -46,15 +46,15 @@ public class MultipleUnique : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000BFB RID: 3067
+	// Token: 0x04000A1F RID: 2591
 	public static List<MultipleUnique> allUnique = new List<MultipleUnique>();
 
-	// Token: 0x04000BFC RID: 3068
+	// Token: 0x04000A20 RID: 2592
 	public string key;
 
-	// Token: 0x04000BFD RID: 3069
+	// Token: 0x04000A21 RID: 2593
 	public int id;
 
-	// Token: 0x04000BFE RID: 3070
+	// Token: 0x04000A22 RID: 2594
 	public GameObject[] alsoDisable;
 }

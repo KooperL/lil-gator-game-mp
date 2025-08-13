@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200008B RID: 139
+// Token: 0x0200006B RID: 107
 public class Ach_ItemSet : MonoBehaviour
 {
-	// Token: 0x060001DB RID: 475 RVA: 0x0001D85C File Offset: 0x0001BA5C
+	// Token: 0x060001A5 RID: 421 RVA: 0x00009760 File Offset: 0x00007960
 	private void Initialize()
 	{
 		this.hasInitialized = true;
@@ -37,25 +37,25 @@ public class Ach_ItemSet : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001DC RID: 476 RVA: 0x00003823 File Offset: 0x00001A23
+	// Token: 0x060001A6 RID: 422 RVA: 0x00009866 File Offset: 0x00007A66
 	private void Start()
 	{
 		this.CheckItems();
 	}
 
-	// Token: 0x060001DD RID: 477 RVA: 0x0000382B File Offset: 0x00001A2B
+	// Token: 0x060001A7 RID: 423 RVA: 0x0000986E File Offset: 0x00007A6E
 	private void OnEnable()
 	{
 		PlayerItemManager.onItemRefresh.AddListener(new UnityAction(this.CheckItems));
 	}
 
-	// Token: 0x060001DE RID: 478 RVA: 0x00003843 File Offset: 0x00001A43
+	// Token: 0x060001A8 RID: 424 RVA: 0x00009886 File Offset: 0x00007A86
 	private void OnDisable()
 	{
 		PlayerItemManager.onItemRefresh.RemoveListener(new UnityAction(this.CheckItems));
 	}
 
-	// Token: 0x060001DF RID: 479 RVA: 0x0001D964 File Offset: 0x0001BB64
+	// Token: 0x060001A9 RID: 425 RVA: 0x000098A0 File Offset: 0x00007AA0
 	private void CheckItems()
 	{
 		if (!this.hasInitialized)
@@ -85,27 +85,27 @@ public class Ach_ItemSet : MonoBehaviour
 		this.achievement.UnlockAchievement();
 	}
 
-	// Token: 0x040002C6 RID: 710
+	// Token: 0x04000242 RID: 578
 	public Achievement achievement;
 
-	// Token: 0x040002C7 RID: 711
+	// Token: 0x04000243 RID: 579
 	public ItemObject[] items;
 
-	// Token: 0x040002C8 RID: 712
+	// Token: 0x04000244 RID: 580
 	private int hatIndex;
 
-	// Token: 0x040002C9 RID: 713
+	// Token: 0x04000245 RID: 581
 	private int swordIndex;
 
-	// Token: 0x040002CA RID: 714
+	// Token: 0x04000246 RID: 582
 	private int shieldIndex;
 
-	// Token: 0x040002CB RID: 715
+	// Token: 0x04000247 RID: 583
 	private int item1Index;
 
-	// Token: 0x040002CC RID: 716
+	// Token: 0x04000248 RID: 584
 	private int item2Index;
 
-	// Token: 0x040002CD RID: 717
+	// Token: 0x04000249 RID: 585
 	private bool hasInitialized;
 }

@@ -2,24 +2,24 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-// Token: 0x020001F8 RID: 504
+// Token: 0x02000182 RID: 386
 public class NavMeshGoal : MonoBehaviour
 {
-	// Token: 0x06000955 RID: 2389 RVA: 0x0000917C File Offset: 0x0000737C
+	// Token: 0x060007F3 RID: 2035 RVA: 0x000267B0 File Offset: 0x000249B0
 	private void Awake()
 	{
 		this.agent = base.GetComponent<NavMeshAgent>();
 	}
 
-	// Token: 0x06000956 RID: 2390 RVA: 0x0000918A File Offset: 0x0000738A
+	// Token: 0x060007F4 RID: 2036 RVA: 0x000267BE File Offset: 0x000249BE
 	private void FixedUpdate()
 	{
 		this.agent.SetDestination(this.goal.position);
 	}
 
-	// Token: 0x04000C01 RID: 3073
+	// Token: 0x04000A25 RID: 2597
 	public Transform goal;
 
-	// Token: 0x04000C02 RID: 3074
+	// Token: 0x04000A26 RID: 2598
 	private NavMeshAgent agent;
 }

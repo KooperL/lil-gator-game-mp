@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000377 RID: 887
+// Token: 0x0200029D RID: 669
 public class ButtonDisplayModifierTemplate : MonoBehaviour
 {
-	// Token: 0x060010F6 RID: 4342 RVA: 0x00056014 File Offset: 0x00054214
+	// Token: 0x06000E32 RID: 3634 RVA: 0x000444C4 File Offset: 0x000426C4
 	public void LoadModifierAndText(string[] modifiers, string name)
 	{
 		foreach (string text in modifiers)
@@ -15,6 +15,6 @@ public class ButtonDisplayModifierTemplate : MonoBehaviour
 		this.buttonTemplate.nameText.text = name;
 	}
 
-	// Token: 0x040015F3 RID: 5619
+	// Token: 0x04001296 RID: 4758
 	public ButtonDisplayTemplate buttonTemplate;
 }

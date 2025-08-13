@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020001D3 RID: 467
+// Token: 0x02000164 RID: 356
 [AddComponentMenu("Logic/LogicState - Quests")]
 public class LSQuests : LogicState
 {
-	// Token: 0x060008AB RID: 2219 RVA: 0x00037A24 File Offset: 0x00035C24
+	// Token: 0x06000759 RID: 1881 RVA: 0x00024840 File Offset: 0x00022A40
 	public override void CheckLogic()
 	{
 		QuestProfile[] array = this.quests;
@@ -18,7 +18,7 @@ public class LSQuests : LogicState
 		this.CheckQuests();
 	}
 
-	// Token: 0x060008AC RID: 2220 RVA: 0x00037A6C File Offset: 0x00035C6C
+	// Token: 0x0600075A RID: 1882 RVA: 0x00024888 File Offset: 0x00022A88
 	private void OnDestroy()
 	{
 		if (this.addedListeners)
@@ -32,7 +32,7 @@ public class LSQuests : LogicState
 		this.addedListeners = false;
 	}
 
-	// Token: 0x060008AD RID: 2221 RVA: 0x00037AB8 File Offset: 0x00035CB8
+	// Token: 0x0600075B RID: 1883 RVA: 0x000248D4 File Offset: 0x00022AD4
 	private void CheckQuests()
 	{
 		bool flag = true;
@@ -61,17 +61,17 @@ public class LSQuests : LogicState
 		}
 	}
 
-	// Token: 0x04000B43 RID: 2883
+	// Token: 0x04000999 RID: 2457
 	[Space]
 	public QuestProfile[] quests;
 
-	// Token: 0x04000B44 RID: 2884
+	// Token: 0x0400099A RID: 2458
 	public bool requireAll = true;
 
-	// Token: 0x04000B45 RID: 2885
+	// Token: 0x0400099B RID: 2459
 	[ConditionalHide("requireAll", true, Inverse = true)]
 	public int requiredCount;
 
-	// Token: 0x04000B46 RID: 2886
+	// Token: 0x0400099C RID: 2460
 	private bool addedListeners;
 }

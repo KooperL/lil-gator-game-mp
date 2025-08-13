@@ -3,16 +3,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000294 RID: 660
+// Token: 0x02000202 RID: 514
 public class ProofReadDialogue : MonoBehaviour, Interaction
 {
-	// Token: 0x06000CE8 RID: 3304 RVA: 0x0000C004 File Offset: 0x0000A204
+	// Token: 0x06000B23 RID: 2851 RVA: 0x00037B3B File Offset: 0x00035D3B
 	public void Interact()
 	{
 		base.StartCoroutine(this.ProofReadDocuments());
 	}
 
-	// Token: 0x06000CE9 RID: 3305 RVA: 0x0000C013 File Offset: 0x0000A213
+	// Token: 0x06000B24 RID: 2852 RVA: 0x00037B4A File Offset: 0x00035D4A
 	private IEnumerator ProofReadDocuments()
 	{
 		Game.DialogueDepth++;
@@ -44,22 +44,22 @@ public class ProofReadDialogue : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x04001145 RID: 4421
+	// Token: 0x04000EE6 RID: 3814
 	public MultilingualTextDocument[] documents;
 
-	// Token: 0x04001146 RID: 4422
+	// Token: 0x04000EE7 RID: 3815
 	public DialogueActor[] actors;
 
-	// Token: 0x04001147 RID: 4423
+	// Token: 0x04000EE8 RID: 3816
 	public GameObject setPlayer;
 
-	// Token: 0x04001148 RID: 4424
+	// Token: 0x04000EE9 RID: 3817
 	[Header("UI")]
 	public GameObject uiRoot;
 
-	// Token: 0x04001149 RID: 4425
+	// Token: 0x04000EEA RID: 3818
 	public Text documentTitle;
 
-	// Token: 0x0400114A RID: 4426
+	// Token: 0x04000EEB RID: 3819
 	public Text chunkName;
 }

@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200007A RID: 122
+// Token: 0x0200005D RID: 93
 public class SaveFileScreen1 : MonoBehaviour
 {
-	// Token: 0x0600018F RID: 399 RVA: 0x00003528 File Offset: 0x00001728
+	// Token: 0x0600015F RID: 351 RVA: 0x0000863C File Offset: 0x0000683C
 	private void OnEnable()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000190 RID: 400 RVA: 0x00003530 File Offset: 0x00001730
+	// Token: 0x06000160 RID: 352 RVA: 0x00008644 File Offset: 0x00006844
 	public void PressSaveFileButton(int index)
 	{
 		GameData.g.SetSaveFile(index);
@@ -18,7 +18,7 @@ public class SaveFileScreen1 : MonoBehaviour
 		this.toGameplay.LoadGameplay();
 	}
 
-	// Token: 0x06000191 RID: 401 RVA: 0x0001CA00 File Offset: 0x0001AC00
+	// Token: 0x06000161 RID: 353 RVA: 0x0000866C File Offset: 0x0000686C
 	private void UpdateState()
 	{
 		for (int i = 0; i < this.displays.Length; i++)
@@ -27,9 +27,9 @@ public class SaveFileScreen1 : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400027B RID: 635
+	// Token: 0x0400020C RID: 524
 	public MainMenuToGameplay toGameplay;
 
-	// Token: 0x0400027C RID: 636
+	// Token: 0x0400020D RID: 525
 	public SaveFileDisplay[] displays;
 }

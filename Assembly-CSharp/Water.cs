@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000353 RID: 851
+// Token: 0x02000283 RID: 643
 public class Water : MonoBehaviour
 {
-	// Token: 0x06001072 RID: 4210 RVA: 0x0000E229 File Offset: 0x0000C429
+	// Token: 0x06000DB6 RID: 3510 RVA: 0x00042723 File Offset: 0x00040923
 	private void OnValidate()
 	{
 		if (this.collider == null)
@@ -13,13 +13,13 @@ public class Water : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001073 RID: 4211 RVA: 0x0000E245 File Offset: 0x0000C445
+	// Token: 0x06000DB7 RID: 3511 RVA: 0x0004273F File Offset: 0x0004093F
 	public virtual float GetWaterPlaneHeight(Vector3 referencePosition)
 	{
 		return base.transform.TransformPoint(Vector3.up * this.heightOffset).y;
 	}
 
-	// Token: 0x06001074 RID: 4212 RVA: 0x0000E267 File Offset: 0x0000C467
+	// Token: 0x06000DB8 RID: 3512 RVA: 0x00042761 File Offset: 0x00040961
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.layer == 8)
@@ -28,7 +28,7 @@ public class Water : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001075 RID: 4213 RVA: 0x0000E267 File Offset: 0x0000C467
+	// Token: 0x06000DB9 RID: 3513 RVA: 0x00042782 File Offset: 0x00040982
 	private void OnTriggerStay(Collider other)
 	{
 		if (other.gameObject.layer == 8)
@@ -37,12 +37,12 @@ public class Water : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001551 RID: 5457
+	// Token: 0x0400120A RID: 4618
 	private const int playerLayer = 8;
 
-	// Token: 0x04001552 RID: 5458
+	// Token: 0x0400120B RID: 4619
 	public Collider collider;
 
-	// Token: 0x04001553 RID: 5459
+	// Token: 0x0400120C RID: 4620
 	public float heightOffset;
 }

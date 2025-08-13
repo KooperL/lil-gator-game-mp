@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 namespace Rewired.Demos
 {
-	// Token: 0x020004A7 RID: 1191
+	// Token: 0x02000347 RID: 839
 	[AddComponentMenu("")]
 	public class SimpleCombinedKeyboardMouseRemapping : MonoBehaviour
 	{
-		// Token: 0x1700061B RID: 1563
-		// (get) Token: 0x06001D96 RID: 7574 RVA: 0x00016A0A File Offset: 0x00014C0A
+		// Token: 0x17000424 RID: 1060
+		// (get) Token: 0x060017AA RID: 6058 RVA: 0x00064A45 File Offset: 0x00062C45
 		private Player player
 		{
 			get
@@ -20,7 +20,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D97 RID: 7575 RVA: 0x00073CE8 File Offset: 0x00071EE8
+		// Token: 0x060017AB RID: 6059 RVA: 0x00064A54 File Offset: 0x00062C54
 		private void OnEnable()
 		{
 			if (!ReInput.isReady)
@@ -40,7 +40,7 @@ namespace Rewired.Demos
 			this.InitializeUI();
 		}
 
-		// Token: 0x06001D98 RID: 7576 RVA: 0x00016A17 File Offset: 0x00014C17
+		// Token: 0x060017AC RID: 6060 RVA: 0x00064B39 File Offset: 0x00062D39
 		private void OnDisable()
 		{
 			this.inputMapper_keyboard.Stop();
@@ -49,7 +49,7 @@ namespace Rewired.Demos
 			this.inputMapper_mouse.RemoveAllEventListeners();
 		}
 
-		// Token: 0x06001D99 RID: 7577 RVA: 0x00073DD0 File Offset: 0x00071FD0
+		// Token: 0x060017AD RID: 6061 RVA: 0x00064B68 File Offset: 0x00062D68
 		private void RedrawUI()
 		{
 			this.controllerNameUIText.text = "Keyboard/Mouse";
@@ -61,7 +61,7 @@ namespace Rewired.Demos
 				int actionElementMapId = -1;
 				for (int j = 0; j < 2; j++)
 				{
-					ControllerType controllerType = ((j == 0) ? 0 : 1);
+					ControllerType controllerType = ((j == 0) ? ControllerType.Keyboard : ControllerType.Mouse);
 					foreach (ActionElementMap actionElementMap in this.player.controllers.maps.GetMap(controllerType, 0, "Default", "Default").ElementMapsWithAction(action.id))
 					{
 						if (actionElementMap.ShowInField(row.actionRange))
@@ -86,7 +86,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D9A RID: 7578 RVA: 0x00073F3C File Offset: 0x0007213C
+		// Token: 0x060017AE RID: 6062 RVA: 0x00064CD4 File Offset: 0x00062ED4
 		private void ClearUI()
 		{
 			this.controllerNameUIText.text = string.Empty;
@@ -96,7 +96,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D9B RID: 7579 RVA: 0x00073F8C File Offset: 0x0007218C
+		// Token: 0x060017AF RID: 6063 RVA: 0x00064D24 File Offset: 0x00062F24
 		private void InitializeUI()
 		{
 			foreach (object obj in this.actionGroupTransform)
@@ -109,21 +109,21 @@ namespace Rewired.Demos
 			}
 			foreach (InputAction inputAction in ReInput.mapping.ActionsInCategory("Default"))
 			{
-				if (inputAction.type == null)
+				if (inputAction.type == InputActionType.Axis)
 				{
-					this.CreateUIRow(inputAction, 0, inputAction.descriptiveName);
-					this.CreateUIRow(inputAction, 1, (!string.IsNullOrEmpty(inputAction.positiveDescriptiveName)) ? inputAction.positiveDescriptiveName : (inputAction.descriptiveName + " +"));
-					this.CreateUIRow(inputAction, 2, (!string.IsNullOrEmpty(inputAction.negativeDescriptiveName)) ? inputAction.negativeDescriptiveName : (inputAction.descriptiveName + " -"));
+					this.CreateUIRow(inputAction, AxisRange.Full, inputAction.descriptiveName);
+					this.CreateUIRow(inputAction, AxisRange.Positive, (!string.IsNullOrEmpty(inputAction.positiveDescriptiveName)) ? inputAction.positiveDescriptiveName : (inputAction.descriptiveName + " +"));
+					this.CreateUIRow(inputAction, AxisRange.Negative, (!string.IsNullOrEmpty(inputAction.negativeDescriptiveName)) ? inputAction.negativeDescriptiveName : (inputAction.descriptiveName + " -"));
 				}
-				else if (inputAction.type == 1)
+				else if (inputAction.type == InputActionType.Button)
 				{
-					this.CreateUIRow(inputAction, 1, inputAction.descriptiveName);
+					this.CreateUIRow(inputAction, AxisRange.Positive, inputAction.descriptiveName);
 				}
 			}
 			this.RedrawUI();
 		}
 
-		// Token: 0x06001D9C RID: 7580 RVA: 0x00074104 File Offset: 0x00072304
+		// Token: 0x060017B0 RID: 6064 RVA: 0x00064E9C File Offset: 0x0006309C
 		private void CreateUIRow(InputAction action, AxisRange actionRange, string label)
 		{
 			GameObject gameObject = Object.Instantiate<GameObject>(this.textPrefab);
@@ -142,15 +142,15 @@ namespace Rewired.Demos
 			});
 		}
 
-		// Token: 0x06001D9D RID: 7581 RVA: 0x000741A4 File Offset: 0x000723A4
+		// Token: 0x060017B1 RID: 6065 RVA: 0x00064F3C File Offset: 0x0006313C
 		private void OnInputFieldClicked(int index, int actionElementMapToReplaceId)
 		{
 			if (index < 0 || index >= this.rows.Count)
 			{
 				return;
 			}
-			ControllerMap map = this.player.controllers.maps.GetMap(0, 0, "Default", "Default");
-			ControllerMap map2 = this.player.controllers.maps.GetMap(1, 0, "Default", "Default");
+			ControllerMap map = this.player.controllers.maps.GetMap(ControllerType.Keyboard, 0, "Default", "Default");
+			ControllerMap map2 = this.player.controllers.maps.GetMap(ControllerType.Mouse, 0, "Default", "Default");
 			ControllerMap controllerMap;
 			if (map.ContainsElementMap(actionElementMapToReplaceId))
 			{
@@ -172,7 +172,7 @@ namespace Rewired.Demos
 			base.StartCoroutine(this.StartListeningDelayed(index, map, map2, actionElementMapToReplaceId));
 		}
 
-		// Token: 0x06001D9E RID: 7582 RVA: 0x00016A45 File Offset: 0x00014C45
+		// Token: 0x060017B2 RID: 6066 RVA: 0x00064FEC File Offset: 0x000631EC
 		private IEnumerator StartListeningDelayed(int index, ControllerMap keyboardMap, ControllerMap mouseMap, int actionElementMapToReplaceId)
 		{
 			yield return new WaitForSeconds(0.1f);
@@ -195,7 +195,7 @@ namespace Rewired.Demos
 			yield break;
 		}
 
-		// Token: 0x06001D9F RID: 7583 RVA: 0x00074254 File Offset: 0x00072454
+		// Token: 0x060017B3 RID: 6067 RVA: 0x00065018 File Offset: 0x00063218
 		private void OnInputMapped(InputMapper.InputMappedEventData data)
 		{
 			this.inputMapper_keyboard.Stop();
@@ -207,75 +207,75 @@ namespace Rewired.Demos
 			this.RedrawUI();
 		}
 
-		// Token: 0x06001DA0 RID: 7584 RVA: 0x00016A71 File Offset: 0x00014C71
+		// Token: 0x060017B4 RID: 6068 RVA: 0x00065082 File Offset: 0x00063282
 		private void OnStopped(InputMapper.StoppedEventData data)
 		{
 			this.statusUIText.text = string.Empty;
 			this.player.controllers.maps.SetMapsEnabled(true, "UI");
 		}
 
-		// Token: 0x04001EE7 RID: 7911
+		// Token: 0x04001970 RID: 6512
 		private const string category = "Default";
 
-		// Token: 0x04001EE8 RID: 7912
+		// Token: 0x04001971 RID: 6513
 		private const string layout = "Default";
 
-		// Token: 0x04001EE9 RID: 7913
+		// Token: 0x04001972 RID: 6514
 		private const string uiCategory = "UI";
 
-		// Token: 0x04001EEA RID: 7914
+		// Token: 0x04001973 RID: 6515
 		private InputMapper inputMapper_keyboard = new InputMapper();
 
-		// Token: 0x04001EEB RID: 7915
+		// Token: 0x04001974 RID: 6516
 		private InputMapper inputMapper_mouse = new InputMapper();
 
-		// Token: 0x04001EEC RID: 7916
+		// Token: 0x04001975 RID: 6517
 		public GameObject buttonPrefab;
 
-		// Token: 0x04001EED RID: 7917
+		// Token: 0x04001976 RID: 6518
 		public GameObject textPrefab;
 
-		// Token: 0x04001EEE RID: 7918
+		// Token: 0x04001977 RID: 6519
 		public RectTransform fieldGroupTransform;
 
-		// Token: 0x04001EEF RID: 7919
+		// Token: 0x04001978 RID: 6520
 		public RectTransform actionGroupTransform;
 
-		// Token: 0x04001EF0 RID: 7920
+		// Token: 0x04001979 RID: 6521
 		public Text controllerNameUIText;
 
-		// Token: 0x04001EF1 RID: 7921
+		// Token: 0x0400197A RID: 6522
 		public Text statusUIText;
 
-		// Token: 0x04001EF2 RID: 7922
+		// Token: 0x0400197B RID: 6523
 		private List<SimpleCombinedKeyboardMouseRemapping.Row> rows = new List<SimpleCombinedKeyboardMouseRemapping.Row>();
 
-		// Token: 0x04001EF3 RID: 7923
+		// Token: 0x0400197C RID: 6524
 		private SimpleCombinedKeyboardMouseRemapping.TargetMapping _replaceTargetMapping;
 
-		// Token: 0x020004A8 RID: 1192
+		// Token: 0x020004AE RID: 1198
 		private class Row
 		{
-			// Token: 0x04001EF4 RID: 7924
+			// Token: 0x04001F7B RID: 8059
 			public InputAction action;
 
-			// Token: 0x04001EF5 RID: 7925
+			// Token: 0x04001F7C RID: 8060
 			public AxisRange actionRange;
 
-			// Token: 0x04001EF6 RID: 7926
+			// Token: 0x04001F7D RID: 8061
 			public Button button;
 
-			// Token: 0x04001EF7 RID: 7927
+			// Token: 0x04001F7E RID: 8062
 			public Text text;
 		}
 
-		// Token: 0x020004A9 RID: 1193
+		// Token: 0x020004AF RID: 1199
 		private struct TargetMapping
 		{
-			// Token: 0x04001EF8 RID: 7928
+			// Token: 0x04001F7F RID: 8063
 			public ControllerMap controllerMap;
 
-			// Token: 0x04001EF9 RID: 7929
+			// Token: 0x04001F80 RID: 8064
 			public int actionElementMapId;
 		}
 	}

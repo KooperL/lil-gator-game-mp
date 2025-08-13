@@ -6,22 +6,22 @@ using RewiredConsts;
 using Steamworks;
 using UnityEngine;
 
-// Token: 0x02000397 RID: 919
+// Token: 0x020002B8 RID: 696
 [CreateAssetMenu(menuName = "Rewired/Button Display Settings")]
 public class UIButtonDisplaySettings : ScriptableObject
 {
-	// Token: 0x06001173 RID: 4467 RVA: 0x000575EC File Offset: 0x000557EC
+	// Token: 0x06000EA1 RID: 3745 RVA: 0x0004601C File Offset: 0x0004421C
 	public GameObject GetDisplay(InputAction action)
 	{
 		global::Rewired.Player player = ReInput.players.GetPlayer(0);
 		ControllerType controllerType = InputHelper.lastActiveControllerType;
-		if (controllerType != null)
+		if (controllerType != ControllerType.Keyboard)
 		{
-			if (controllerType == 1)
+			if (controllerType == ControllerType.Mouse)
 			{
 				if (player.controllers.maps.GetFirstElementMapWithAction(controllerType, action.id, true) == null && player.controllers.hasKeyboard)
 				{
-					controllerType = 0;
+					controllerType = ControllerType.Keyboard;
 				}
 			}
 		}
@@ -31,19 +31,19 @@ public class UIButtonDisplaySettings : ScriptableObject
 			{
 				if (action.id == num)
 				{
-					controllerType = 1;
+					controllerType = ControllerType.Mouse;
 					break;
 				}
 			}
 			if (player.controllers.maps.GetFirstElementMapWithAction(controllerType, action.id, true) == null && player.controllers.hasMouse)
 			{
-				controllerType = 1;
+				controllerType = ControllerType.Mouse;
 			}
 		}
 		return this.GetDisplay(player.controllers.maps.GetFirstElementMapWithAction(controllerType, InputHelper.lastActiveControllerID, action.id, true), true);
 	}
 
-	// Token: 0x06001174 RID: 4468 RVA: 0x000576B4 File Offset: 0x000558B4
+	// Token: 0x06000EA2 RID: 3746 RVA: 0x000460E4 File Offset: 0x000442E4
 	public GameObject GetDisplay(InputAction action, Controller controller)
 	{
 		global::Rewired.Player player = ReInput.players.GetPlayer(0);
@@ -59,14 +59,14 @@ public class UIButtonDisplaySettings : ScriptableObject
 		return this.GetDisplay(firstElementMapWithAction, true);
 	}
 
-	// Token: 0x06001175 RID: 4469 RVA: 0x000576F8 File Offset: 0x000558F8
+	// Token: 0x06000EA3 RID: 3747 RVA: 0x00046128 File Offset: 0x00044328
 	public GameObject GetDisplay(ActionElementMap map, bool showUnbound = false)
 	{
 		if (map == null)
 		{
 			if (showUnbound)
 			{
-				return this.GenerateTextButton(this.document.FetchString(this.unboundText, Language.English), 2);
+				return this.GenerateTextButton(this.document.FetchString(this.unboundText, Language.Auto), ControllerType.Joystick);
 			}
 			return null;
 		}
@@ -76,20 +76,20 @@ public class UIButtonDisplaySettings : ScriptableObject
 			Controller controller = map.controllerMap.controller;
 			ControllerType controllerType = map.controllerMap.controllerType;
 			Guid guid = default(Guid);
-			if (controllerType == 2)
+			if (controllerType == ControllerType.Joystick)
 			{
 				guid = (controller as Joystick).hardwareTypeGuid;
 			}
-			if (controllerType != 1)
+			if (controllerType != ControllerType.Mouse)
 			{
-				if (controllerType == 2)
+				if (controllerType == ControllerType.Joystick)
 				{
 					if (SteamManager.Initialized && SteamUtils.IsSteamRunningOnSteamDeck() && this.steamOverrideController.Guid == guid)
 					{
 						sprite = this.steamDeckController.GetGlyph(map.elementIdentifierId, map.axisRange);
 						if (sprite != null)
 						{
-							goto IL_014F;
+							goto IL_0150;
 						}
 					}
 					UIButtonDisplaySettings.ControllerEntry controllerEntry = this.GetControllerEntry(guid);
@@ -98,7 +98,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 						sprite = controllerEntry.GetGlyph(map.elementIdentifierId, map.axisRange);
 						if (sprite != null)
 						{
-							goto IL_014F;
+							goto IL_0150;
 						}
 					}
 					if (controller.templateCount != 0)
@@ -120,7 +120,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 			{
 				sprite = this.GetMouseGlyph(map.elementIdentifierId, map.axisRange);
 			}
-			IL_014F:
+			IL_0150:
 			if (sprite != null)
 			{
 				return this.GenerateButtonSprite(sprite);
@@ -136,7 +136,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		}
 	}
 
-	// Token: 0x06001176 RID: 4470 RVA: 0x0000EF72 File Offset: 0x0000D172
+	// Token: 0x06000EA4 RID: 3748 RVA: 0x000462BE File Offset: 0x000444BE
 	private GameObject GenerateButtonSprite(Sprite sprite)
 	{
 		ButtonDisplayTemplate component = Object.Instantiate<GameObject>(this.spriteButtonTemplate).GetComponent<ButtonDisplayTemplate>();
@@ -145,13 +145,13 @@ public class UIButtonDisplaySettings : ScriptableObject
 		return component.gameObject;
 	}
 
-	// Token: 0x06001177 RID: 4471 RVA: 0x00057890 File Offset: 0x00055A90
+	// Token: 0x06000EA5 RID: 3749 RVA: 0x000462EC File Offset: 0x000444EC
 	private GameObject GenerateTextButton(string name, ControllerType controllerType)
 	{
 		GameObject gameObject;
-		if (controllerType != null)
+		if (controllerType != ControllerType.Keyboard)
 		{
-			if (controllerType == 2)
+			if (controllerType == ControllerType.Joystick)
 			{
 				gameObject = this.buttonTemplate;
 			}
@@ -169,7 +169,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		return component.gameObject;
 	}
 
-	// Token: 0x06001178 RID: 4472 RVA: 0x0000EFA0 File Offset: 0x0000D1A0
+	// Token: 0x06000EA6 RID: 3750 RVA: 0x00046337 File Offset: 0x00044537
 	private GameObject GenerateModifiedTextButton(string name, string[] modifiers)
 	{
 		ButtonDisplayModifierTemplate component = Object.Instantiate<GameObject>(this.keyWithModifierTemplate).GetComponent<ButtonDisplayModifierTemplate>();
@@ -177,7 +177,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		return component.gameObject;
 	}
 
-	// Token: 0x06001179 RID: 4473 RVA: 0x000578DC File Offset: 0x00055ADC
+	// Token: 0x06000EA7 RID: 3751 RVA: 0x00046358 File Offset: 0x00044558
 	private UIButtonDisplaySettings.ControllerEntry GetControllerEntry(Guid joystickGuid)
 	{
 		for (int i = 0; i < this.controllers.Length; i++)
@@ -190,7 +190,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		return null;
 	}
 
-	// Token: 0x0600117A RID: 4474 RVA: 0x00057940 File Offset: 0x00055B40
+	// Token: 0x06000EA8 RID: 3752 RVA: 0x000463BC File Offset: 0x000445BC
 	private UIButtonDisplaySettings.ControllerTemplateEntry GetControllerTemplateEntry(Guid templateGuid)
 	{
 		for (int i = 0; i < this.templates.Length; i++)
@@ -203,7 +203,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		return null;
 	}
 
-	// Token: 0x0600117B RID: 4475 RVA: 0x000579A4 File Offset: 0x00055BA4
+	// Token: 0x06000EA9 RID: 3753 RVA: 0x00046420 File Offset: 0x00044620
 	private Sprite GetMouseGlyph(int elementIdentifierId, AxisRange axisRange)
 	{
 		if (this.mouseGlyphs == null)
@@ -220,7 +220,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		return null;
 	}
 
-	// Token: 0x0600117C RID: 4476 RVA: 0x000579F8 File Offset: 0x00055BF8
+	// Token: 0x06000EAA RID: 3754 RVA: 0x00046474 File Offset: 0x00044674
 	public void GetElementIdentifierName(ActionElementMap actionElementMap, out string name, out string[] modifier)
 	{
 		name = "";
@@ -229,7 +229,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		{
 			throw new ArgumentNullException("actionElementMap");
 		}
-		if (actionElementMap.controllerMap.controllerType == null)
+		if (actionElementMap.controllerMap.controllerType == ControllerType.Keyboard)
 		{
 			this.GetElementIdentifierName(actionElementMap.keyCode, actionElementMap.modifierKeyFlags, out name, out modifier);
 		}
@@ -239,11 +239,11 @@ public class UIButtonDisplaySettings : ScriptableObject
 		}
 		if (this.document.HasString(name))
 		{
-			name = this.document.FetchString(name, Language.English);
+			name = this.document.FetchString(name, Language.Auto);
 		}
 	}
 
-	// Token: 0x0600117D RID: 4477 RVA: 0x00057A80 File Offset: 0x00055C80
+	// Token: 0x06000EAB RID: 3755 RVA: 0x000464FC File Offset: 0x000446FC
 	public string GetElementIdentifierName(Controller controller, int elementIdentifierId, AxisRange axisRange)
 	{
 		if (controller == null)
@@ -261,21 +261,21 @@ public class UIButtonDisplaySettings : ScriptableObject
 			return string.Empty;
 		}
 		ControllerElementType type = elementById.type;
-		if (type == null)
+		if (type == ControllerElementType.Axis)
 		{
 			return elementIdentifierById.GetDisplayName(elementById.type, axisRange);
 		}
-		if (type != 1)
+		if (type != ControllerElementType.Button)
 		{
 			return elementIdentifierById.name;
 		}
 		return elementIdentifierById.name;
 	}
 
-	// Token: 0x0600117E RID: 4478 RVA: 0x0000EFBF File Offset: 0x0000D1BF
+	// Token: 0x06000EAC RID: 3756 RVA: 0x00046575 File Offset: 0x00044775
 	public void GetElementIdentifierName(KeyCode keyCode, ModifierKeyFlags modifierKeyFlags, out string name, out string[] modifier)
 	{
-		if (modifierKeyFlags != null)
+		if (modifierKeyFlags != ModifierKeyFlags.None)
 		{
 			modifier = this.ModifierKeyFlagsToString(modifierKeyFlags);
 		}
@@ -286,106 +286,106 @@ public class UIButtonDisplaySettings : ScriptableObject
 		name = Keyboard.GetKeyName(keyCode);
 	}
 
-	// Token: 0x0600117F RID: 4479 RVA: 0x00057AFC File Offset: 0x00055CFC
+	// Token: 0x06000EAD RID: 3757 RVA: 0x00046594 File Offset: 0x00044794
 	public string[] ModifierKeyFlagsToString(ModifierKeyFlags flags)
 	{
 		int num = 0;
 		string empty = string.Empty;
 		List<string> list = new List<string>();
-		if (Keyboard.ModifierKeyFlagsContain(flags, 1))
+		if (Keyboard.ModifierKeyFlagsContain(flags, ModifierKey.Control))
 		{
-			list.Add(this.document.FetchString("Control", Language.English));
+			list.Add(this.document.FetchString("Control", Language.Auto));
 			num++;
 		}
-		if (Keyboard.ModifierKeyFlagsContain(flags, 4))
+		if (Keyboard.ModifierKeyFlagsContain(flags, ModifierKey.Command))
 		{
-			list.Add(this.document.FetchString("Command", Language.English));
+			list.Add(this.document.FetchString("Command", Language.Auto));
 			num++;
 		}
-		if (Keyboard.ModifierKeyFlagsContain(flags, 2))
+		if (Keyboard.ModifierKeyFlagsContain(flags, ModifierKey.Alt))
 		{
-			list.Add(this.document.FetchString("Alt", Language.English));
+			list.Add(this.document.FetchString("Alt", Language.Auto));
 			num++;
 		}
-		if (Keyboard.ModifierKeyFlagsContain(flags, 3))
+		if (Keyboard.ModifierKeyFlagsContain(flags, ModifierKey.Shift))
 		{
-			list.Add(this.document.FetchString("Shift", Language.English));
+			list.Add(this.document.FetchString("Shift", Language.Auto));
 			num++;
 		}
 		return list.ToArray();
 	}
 
-	// Token: 0x04001680 RID: 5760
+	// Token: 0x04001314 RID: 4884
 	public MultilingualTextDocument document;
 
-	// Token: 0x04001681 RID: 5761
+	// Token: 0x04001315 RID: 4885
 	[SerializeField]
 	private UIButtonDisplaySettings.GlyphEntry[] mouseGlyphs;
 
-	// Token: 0x04001682 RID: 5762
+	// Token: 0x04001316 RID: 4886
 	[SerializeField]
 	private UIButtonDisplaySettings.ControllerEntry[] controllers;
 
-	// Token: 0x04001683 RID: 5763
+	// Token: 0x04001317 RID: 4887
 	[SerializeField]
 	private UIButtonDisplaySettings.ControllerTemplateEntry[] templates;
 
-	// Token: 0x04001684 RID: 5764
+	// Token: 0x04001318 RID: 4888
 	[Space]
 	public HardwareJoystickMap steamOverrideController;
 
-	// Token: 0x04001685 RID: 5765
+	// Token: 0x04001319 RID: 4889
 	[SerializeField]
 	private UIButtonDisplaySettings.ControllerEntry steamController;
 
-	// Token: 0x04001686 RID: 5766
+	// Token: 0x0400131A RID: 4890
 	[SerializeField]
 	private UIButtonDisplaySettings.ControllerEntry steamDeckController;
 
-	// Token: 0x04001687 RID: 5767
+	// Token: 0x0400131B RID: 4891
 	public GameObject spriteButtonTemplate;
 
-	// Token: 0x04001688 RID: 5768
+	// Token: 0x0400131C RID: 4892
 	public GameObject keyTemplate;
 
-	// Token: 0x04001689 RID: 5769
+	// Token: 0x0400131D RID: 4893
 	public GameObject keyWithModifierTemplate;
 
-	// Token: 0x0400168A RID: 5770
+	// Token: 0x0400131E RID: 4894
 	public GameObject buttonTemplate;
 
-	// Token: 0x0400168B RID: 5771
+	// Token: 0x0400131F RID: 4895
 	public GameObject genericTemplate;
 
-	// Token: 0x0400168C RID: 5772
+	// Token: 0x04001320 RID: 4896
 	[TextLookup("document")]
 	public string unboundText;
 
-	// Token: 0x0400168D RID: 5773
+	// Token: 0x04001321 RID: 4897
 	private List<ControllerTemplateElementTarget> _tempTemplateElementTargets = new List<ControllerTemplateElementTarget>();
 
-	// Token: 0x0400168E RID: 5774
-	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
+	// Token: 0x04001322 RID: 4898
+	[ActionIdProperty(typeof(Action))]
 	public int[] ignoreKeyboardActions;
 
-	// Token: 0x02000398 RID: 920
+	// Token: 0x0200043D RID: 1085
 	[Serializable]
 	private class GlyphEntry
 	{
-		// Token: 0x06001181 RID: 4481 RVA: 0x00057BB0 File Offset: 0x00055DB0
+		// Token: 0x06001B25 RID: 6949 RVA: 0x000731A4 File Offset: 0x000713A4
 		public Sprite GetGlyph(AxisRange axisRange)
 		{
 			switch (axisRange)
 			{
-			case 0:
+			case AxisRange.Full:
 				return this.glyph;
-			case 1:
+			case AxisRange.Positive:
 				if (!(this.glyphPos != null))
 				{
 					return this.glyph;
 				}
 				return this.glyphPos;
-			case 2:
+			case AxisRange.Negative:
 				if (!(this.glyphNeg != null))
 				{
 					return this.glyph;
@@ -396,24 +396,24 @@ public class UIButtonDisplaySettings : ScriptableObject
 			}
 		}
 
-		// Token: 0x0400168F RID: 5775
+		// Token: 0x04001DA6 RID: 7590
 		public int elementIdentifierId;
 
-		// Token: 0x04001690 RID: 5776
+		// Token: 0x04001DA7 RID: 7591
 		public Sprite glyph;
 
-		// Token: 0x04001691 RID: 5777
+		// Token: 0x04001DA8 RID: 7592
 		public Sprite glyphPos;
 
-		// Token: 0x04001692 RID: 5778
+		// Token: 0x04001DA9 RID: 7593
 		public Sprite glyphNeg;
 	}
 
-	// Token: 0x02000399 RID: 921
+	// Token: 0x0200043E RID: 1086
 	[Serializable]
 	private class ControllerEntry
 	{
-		// Token: 0x06001183 RID: 4483 RVA: 0x00057C14 File Offset: 0x00055E14
+		// Token: 0x06001B27 RID: 6951 RVA: 0x00073210 File Offset: 0x00071410
 		public Sprite GetGlyph(int elementIdentifierId, AxisRange axisRange)
 		{
 			if (this.glyphs == null)
@@ -430,21 +430,21 @@ public class UIButtonDisplaySettings : ScriptableObject
 			return null;
 		}
 
-		// Token: 0x04001693 RID: 5779
+		// Token: 0x04001DAA RID: 7594
 		public string name;
 
-		// Token: 0x04001694 RID: 5780
+		// Token: 0x04001DAB RID: 7595
 		public HardwareJoystickMap joystick;
 
-		// Token: 0x04001695 RID: 5781
+		// Token: 0x04001DAC RID: 7596
 		public UIButtonDisplaySettings.GlyphEntry[] glyphs;
 	}
 
-	// Token: 0x0200039A RID: 922
+	// Token: 0x0200043F RID: 1087
 	[Serializable]
 	private class ControllerTemplateEntry
 	{
-		// Token: 0x06001185 RID: 4485 RVA: 0x00057C68 File Offset: 0x00055E68
+		// Token: 0x06001B29 RID: 6953 RVA: 0x0007326C File Offset: 0x0007146C
 		public Sprite GetGlyph(int elementIdentifierId, AxisRange axisRange)
 		{
 			if (this.glyphs == null)
@@ -461,13 +461,13 @@ public class UIButtonDisplaySettings : ScriptableObject
 			return null;
 		}
 
-		// Token: 0x04001696 RID: 5782
+		// Token: 0x04001DAD RID: 7597
 		public string name;
 
-		// Token: 0x04001697 RID: 5783
+		// Token: 0x04001DAE RID: 7598
 		public HardwareControllerTemplateMap template;
 
-		// Token: 0x04001698 RID: 5784
+		// Token: 0x04001DAF RID: 7599
 		public UIButtonDisplaySettings.GlyphEntry[] glyphs;
 	}
 }

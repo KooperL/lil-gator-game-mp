@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001F7 RID: 503
+// Token: 0x02000181 RID: 385
 public class NPCPlayerProximity : MonoBehaviour
 {
-	// Token: 0x0600094E RID: 2382 RVA: 0x00039590 File Offset: 0x00037790
+	// Token: 0x060007EC RID: 2028 RVA: 0x00026658 File Offset: 0x00024858
 	private void OnValidate()
 	{
 		if (this.dialogueActor == null && base.transform.parent != null)
@@ -17,19 +17,19 @@ public class NPCPlayerProximity : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600094F RID: 2383 RVA: 0x0000914C File Offset: 0x0000734C
+	// Token: 0x060007ED RID: 2029 RVA: 0x000266D3 File Offset: 0x000248D3
 	private void OnTriggerEnter(Collider other)
 	{
 		this.OnTrigger();
 	}
 
-	// Token: 0x06000950 RID: 2384 RVA: 0x0000914C File Offset: 0x0000734C
+	// Token: 0x060007EE RID: 2030 RVA: 0x000266DB File Offset: 0x000248DB
 	private void OnTriggerStay(Collider other)
 	{
 		this.OnTrigger();
 	}
 
-	// Token: 0x06000951 RID: 2385 RVA: 0x0003960C File Offset: 0x0003780C
+	// Token: 0x060007EF RID: 2031 RVA: 0x000266E4 File Offset: 0x000248E4
 	private void OnTrigger()
 	{
 		this.dialogueActor.LookAt = true;
@@ -46,7 +46,7 @@ public class NPCPlayerProximity : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000952 RID: 2386 RVA: 0x00009154 File Offset: 0x00007354
+	// Token: 0x060007F0 RID: 2032 RVA: 0x00026758 File Offset: 0x00024958
 	private void OnTriggerExit(Collider other)
 	{
 		this.dialogueActor.LookAt = false;
@@ -56,7 +56,7 @@ public class NPCPlayerProximity : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000953 RID: 2387 RVA: 0x00009154 File Offset: 0x00007354
+	// Token: 0x060007F1 RID: 2033 RVA: 0x00026780 File Offset: 0x00024980
 	private void OnDisable()
 	{
 		this.dialogueActor.LookAt = false;
@@ -66,9 +66,9 @@ public class NPCPlayerProximity : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000BFF RID: 3071
+	// Token: 0x04000A23 RID: 2595
 	public DialogueActor dialogueActor;
 
-	// Token: 0x04000C00 RID: 3072
+	// Token: 0x04000A24 RID: 2596
 	public ActorPathFollower pathFollower;
 }

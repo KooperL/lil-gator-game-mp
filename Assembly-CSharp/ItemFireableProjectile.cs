@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200024B RID: 587
+// Token: 0x020001C8 RID: 456
 public class ItemFireableProjectile : ItemFireable
 {
-	// Token: 0x06000B00 RID: 2816 RVA: 0x0000A75E File Offset: 0x0000895E
+	// Token: 0x06000969 RID: 2409 RVA: 0x0002CA8B File Offset: 0x0002AC8B
 	public override Vector3 GetSpawnPoint()
 	{
 		return this.projectileLaunchPoint.position;
 	}
 
-	// Token: 0x06000B01 RID: 2817 RVA: 0x0003EA60 File Offset: 0x0003CC60
+	// Token: 0x0600096A RID: 2410 RVA: 0x0002CA98 File Offset: 0x0002AC98
 	public override void Fire(Vector3 direction)
 	{
 		GameObject gameObject = Object.Instantiate<GameObject>(this.projectile);
@@ -20,9 +20,9 @@ public class ItemFireableProjectile : ItemFireable
 		base.Fire(direction);
 	}
 
-	// Token: 0x04000DFF RID: 3583
+	// Token: 0x04000BD9 RID: 3033
 	public GameObject projectile;
 
-	// Token: 0x04000E00 RID: 3584
+	// Token: 0x04000BDA RID: 3034
 	public Transform projectileLaunchPoint;
 }

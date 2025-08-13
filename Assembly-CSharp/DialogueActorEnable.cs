@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000DD RID: 221
+// Token: 0x020000AD RID: 173
 public class DialogueActorEnable : MonoBehaviour
 {
-	// Token: 0x060003E7 RID: 999 RVA: 0x00004E7E File Offset: 0x0000307E
+	// Token: 0x06000388 RID: 904 RVA: 0x00014EFC File Offset: 0x000130FC
 	private void OnEnable()
 	{
 		if (this.dialogueActor != null)
@@ -13,6 +13,6 @@ public class DialogueActorEnable : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400058F RID: 1423
+	// Token: 0x040004E2 RID: 1250
 	public DialogueActor dialogueActor;
 }

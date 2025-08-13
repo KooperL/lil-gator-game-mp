@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000020 RID: 32
+// Token: 0x02000022 RID: 34
 public class MusicManager : MonoBehaviour
 {
 }

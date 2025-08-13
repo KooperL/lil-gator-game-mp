@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020001FF RID: 511
+// Token: 0x02000189 RID: 393
 public class HideDebug : MonoBehaviour
 {
-	// Token: 0x0600097B RID: 2427 RVA: 0x00039D7C File Offset: 0x00037F7C
+	// Token: 0x06000811 RID: 2065 RVA: 0x00026D80 File Offset: 0x00024F80
 	public static void ToggleHidden()
 	{
 		HideDebug.isHidden = !HideDebug.isHidden;
@@ -19,20 +19,20 @@ public class HideDebug : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600097C RID: 2428 RVA: 0x00009344 File Offset: 0x00007544
+	// Token: 0x06000812 RID: 2066 RVA: 0x00026E04 File Offset: 0x00025004
 	private void Start()
 	{
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600097D RID: 2429 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000813 RID: 2067 RVA: 0x00026E12 File Offset: 0x00025012
 	private void OnDestroy()
 	{
 	}
 
-	// Token: 0x04000C26 RID: 3110
+	// Token: 0x04000A3D RID: 2621
 	public static bool isHidden = false;
 
-	// Token: 0x04000C27 RID: 3111
+	// Token: 0x04000A3E RID: 2622
 	public static List<HideDebug> allHideDebugs = new List<HideDebug>();
 }

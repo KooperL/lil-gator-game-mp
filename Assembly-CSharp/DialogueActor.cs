@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000D9 RID: 217
+// Token: 0x020000AC RID: 172
 public class DialogueActor : MonoBehaviour
 {
-	// Token: 0x06000397 RID: 919 RVA: 0x00026460 File Offset: 0x00024660
+	// Token: 0x0600034A RID: 842 RVA: 0x00013264 File Offset: 0x00011464
 	private static string PositionString(ActorPosition position)
 	{
 		switch (position)
@@ -29,7 +29,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000398 RID: 920 RVA: 0x000264B8 File Offset: 0x000246B8
+	// Token: 0x0600034B RID: 843 RVA: 0x000132BC File Offset: 0x000114BC
 	private static string StateString(ActorState state)
 	{
 		switch (state)
@@ -61,7 +61,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000399 RID: 921 RVA: 0x00026540 File Offset: 0x00024740
+	// Token: 0x0600034C RID: 844 RVA: 0x00013344 File Offset: 0x00011544
 	private static int GetPositionStateHash(int position, int state, Animator animator, int stateLayer)
 	{
 		if (DialogueActor.positionStateHashes[position, state] != 0)
@@ -77,7 +77,7 @@ public class DialogueActor : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x0600039A RID: 922 RVA: 0x000265B0 File Offset: 0x000247B0
+	// Token: 0x0600034D RID: 845 RVA: 0x000133B4 File Offset: 0x000115B4
 	private static string GetTransitionName(int oldPosition, int newPosition)
 	{
 		if (oldPosition == 0 && newPosition == 1)
@@ -111,7 +111,7 @@ public class DialogueActor : MonoBehaviour
 		return "";
 	}
 
-	// Token: 0x0600039B RID: 923 RVA: 0x00026624 File Offset: 0x00024824
+	// Token: 0x0600034E RID: 846 RVA: 0x00013428 File Offset: 0x00011628
 	private static int GetTransitionHash(int oldPosition, int newPosition)
 	{
 		if (DialogueActor.transitionHashes[oldPosition, newPosition] == 0)
@@ -129,7 +129,7 @@ public class DialogueActor : MonoBehaviour
 		return DialogueActor.transitionHashes[oldPosition, newPosition];
 	}
 
-	// Token: 0x0600039C RID: 924 RVA: 0x00004BE9 File Offset: 0x00002DE9
+	// Token: 0x0600034F RID: 847 RVA: 0x00013480 File Offset: 0x00011680
 	private static GameObject GetStateEffect(ActorState state)
 	{
 		if (state == ActorState.S_Nervous)
@@ -139,8 +139,8 @@ public class DialogueActor : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x1700003C RID: 60
-	// (get) Token: 0x0600039D RID: 925 RVA: 0x00004BFC File Offset: 0x00002DFC
+	// Token: 0x17000023 RID: 35
+	// (get) Token: 0x06000350 RID: 848 RVA: 0x00013493 File Offset: 0x00011693
 	public Transform DialogueAnchor
 	{
 		get
@@ -157,8 +157,8 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700003D RID: 61
-	// (get) Token: 0x0600039E RID: 926 RVA: 0x00004C28 File Offset: 0x00002E28
+	// Token: 0x17000024 RID: 36
+	// (get) Token: 0x06000351 RID: 849 RVA: 0x000134BF File Offset: 0x000116BF
 	public Vector3 FocusPosition
 	{
 		get
@@ -167,9 +167,9 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700003E RID: 62
-	// (get) Token: 0x0600039F RID: 927 RVA: 0x00004C3B File Offset: 0x00002E3B
-	// (set) Token: 0x060003A0 RID: 928 RVA: 0x00004C43 File Offset: 0x00002E43
+	// Token: 0x17000025 RID: 37
+	// (get) Token: 0x06000352 RID: 850 RVA: 0x000134D2 File Offset: 0x000116D2
+	// (set) Token: 0x06000353 RID: 851 RVA: 0x000134DA File Offset: 0x000116DA
 	public bool LookAt
 	{
 		get
@@ -186,9 +186,9 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700003F RID: 63
-	// (get) Token: 0x060003A1 RID: 929 RVA: 0x00004C56 File Offset: 0x00002E56
-	// (set) Token: 0x060003A2 RID: 930 RVA: 0x00004C5E File Offset: 0x00002E5E
+	// Token: 0x17000026 RID: 38
+	// (get) Token: 0x06000354 RID: 852 RVA: 0x000134ED File Offset: 0x000116ED
+	// (set) Token: 0x06000355 RID: 853 RVA: 0x000134F5 File Offset: 0x000116F5
 	public bool LookAtDialogue
 	{
 		get
@@ -210,14 +210,14 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003A3 RID: 931 RVA: 0x00004C86 File Offset: 0x00002E86
+	// Token: 0x06000356 RID: 854 RVA: 0x0001351D File Offset: 0x0001171D
 	public void ProximityTrigger()
 	{
 		this.lastProximityTime = Time.time;
 	}
 
-	// Token: 0x17000040 RID: 64
-	// (get) Token: 0x060003A4 RID: 932 RVA: 0x00004C93 File Offset: 0x00002E93
+	// Token: 0x17000027 RID: 39
+	// (get) Token: 0x06000357 RID: 855 RVA: 0x0001352A File Offset: 0x0001172A
 	public bool IsInDialogue
 	{
 		get
@@ -226,9 +226,9 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000041 RID: 65
-	// (get) Token: 0x060003A5 RID: 933 RVA: 0x00004CA5 File Offset: 0x00002EA5
-	// (set) Token: 0x060003A6 RID: 934 RVA: 0x00004CAD File Offset: 0x00002EAD
+	// Token: 0x17000028 RID: 40
+	// (get) Token: 0x06000358 RID: 856 RVA: 0x0001353C File Offset: 0x0001173C
+	// (set) Token: 0x06000359 RID: 857 RVA: 0x00013544 File Offset: 0x00011744
 	public bool IsInStandardDialogue
 	{
 		get
@@ -253,9 +253,9 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000042 RID: 66
-	// (get) Token: 0x060003A7 RID: 935 RVA: 0x00004CEC File Offset: 0x00002EEC
-	// (set) Token: 0x060003A8 RID: 936 RVA: 0x00004CF4 File Offset: 0x00002EF4
+	// Token: 0x17000029 RID: 41
+	// (get) Token: 0x0600035A RID: 858 RVA: 0x00013583 File Offset: 0x00011783
+	// (set) Token: 0x0600035B RID: 859 RVA: 0x0001358B File Offset: 0x0001178B
 	public bool IsInBubbleDialogue
 	{
 		get
@@ -280,24 +280,24 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003A9 RID: 937 RVA: 0x0002667C File Offset: 0x0002487C
+	// Token: 0x0600035C RID: 860 RVA: 0x000135CC File Offset: 0x000117CC
 	[ContextMenu("Snap To Floor")]
 	public void SnapToFloor()
 	{
 		RaycastHit raycastHit;
-		if (Physics.Raycast(base.transform.position + Vector3.up, Vector3.down, ref raycastHit, 3f, LayerMask.GetMask(new string[] { "Terrain", "Default" })))
+		if (Physics.Raycast(base.transform.position + Vector3.up, Vector3.down, out raycastHit, 3f, LayerMask.GetMask(new string[] { "Terrain", "Default" })))
 		{
 			base.transform.position = raycastHit.point;
 		}
 	}
 
-	// Token: 0x060003AA RID: 938 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x0600035D RID: 861 RVA: 0x0001362E File Offset: 0x0001182E
 	[ContextMenu("Reset Bones")]
 	public void ResetBones()
 	{
 	}
 
-	// Token: 0x060003AB RID: 939 RVA: 0x000266E0 File Offset: 0x000248E0
+	// Token: 0x0600035E RID: 862 RVA: 0x00013630 File Offset: 0x00011830
 	private void Awake()
 	{
 		this.awakeTime = Time.time;
@@ -341,7 +341,7 @@ public class DialogueActor : MonoBehaviour
 		base.gameObject.AddComponent<DialogueActorEnable>().dialogueActor = this;
 	}
 
-	// Token: 0x060003AC RID: 940 RVA: 0x0002680C File Offset: 0x00024A0C
+	// Token: 0x0600035F RID: 863 RVA: 0x0001375C File Offset: 0x0001195C
 	private void OnEnable()
 	{
 		if (this.animatorIKHook != null)
@@ -375,7 +375,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003AD RID: 941 RVA: 0x00004D33 File Offset: 0x00002F33
+	// Token: 0x06000360 RID: 864 RVA: 0x000138D7 File Offset: 0x00011AD7
 	private void OnProfileUnlockedChanged(object sender, bool isUnlocked)
 	{
 		if (isUnlocked && this.npcMarker != null)
@@ -384,7 +384,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003AE RID: 942 RVA: 0x00004D51 File Offset: 0x00002F51
+	// Token: 0x06000361 RID: 865 RVA: 0x000138F5 File Offset: 0x00011AF5
 	private void OnDisable()
 	{
 		if (this.animatorIKHook != null)
@@ -393,7 +393,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003AF RID: 943 RVA: 0x00004D6D File Offset: 0x00002F6D
+	// Token: 0x06000362 RID: 866 RVA: 0x00013911 File Offset: 0x00011B11
 	private void OnDestroy()
 	{
 		if (DialogueActor.questNPCs.Contains(this))
@@ -406,7 +406,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003B0 RID: 944 RVA: 0x00026988 File Offset: 0x00024B88
+	// Token: 0x06000363 RID: 867 RVA: 0x00013948 File Offset: 0x00011B48
 	private void GetAnimatorLayers()
 	{
 		if (this.animator != null)
@@ -417,8 +417,8 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000043 RID: 67
-	// (get) Token: 0x060003B1 RID: 945 RVA: 0x000269E8 File Offset: 0x00024BE8
+	// Token: 0x1700002A RID: 42
+	// (get) Token: 0x06000364 RID: 868 RVA: 0x000139A8 File Offset: 0x00011BA8
 	private bool IsEmoting
 	{
 		get
@@ -432,8 +432,8 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000044 RID: 68
-	// (get) Token: 0x060003B2 RID: 946 RVA: 0x00026A48 File Offset: 0x00024C48
+	// Token: 0x1700002B RID: 43
+	// (get) Token: 0x06000365 RID: 869 RVA: 0x00013A08 File Offset: 0x00011C08
 	public bool IsCurrentlyEmoting
 	{
 		get
@@ -453,8 +453,8 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000045 RID: 69
-	// (get) Token: 0x060003B3 RID: 947 RVA: 0x00026AC4 File Offset: 0x00024CC4
+	// Token: 0x1700002C RID: 44
+	// (get) Token: 0x06000366 RID: 870 RVA: 0x00013A84 File Offset: 0x00011C84
 	public int CurrentEmoteHash
 	{
 		get
@@ -472,7 +472,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003B4 RID: 948 RVA: 0x00026B18 File Offset: 0x00024D18
+	// Token: 0x06000367 RID: 871 RVA: 0x00013AD8 File Offset: 0x00011CD8
 	public void SetEmote(int emoteHash, bool skipTransition = false)
 	{
 		if (this.onChangeStateOrEmote != null)
@@ -528,13 +528,13 @@ public class DialogueActor : MonoBehaviour
 		this.isUpperBodyEmote = flag2;
 	}
 
-	// Token: 0x060003B5 RID: 949 RVA: 0x00004DA1 File Offset: 0x00002FA1
+	// Token: 0x06000368 RID: 872 RVA: 0x00013C4C File Offset: 0x00011E4C
 	public void HoldEmote()
 	{
 		this.holdEmote = true;
 	}
 
-	// Token: 0x060003B6 RID: 950 RVA: 0x00026C8C File Offset: 0x00024E8C
+	// Token: 0x06000369 RID: 873 RVA: 0x00013C58 File Offset: 0x00011E58
 	public void ClearEmote(bool overrideHoldEmote = false, bool ignoreHoldEmote = false)
 	{
 		if (this.animator == null || !this.IsEmoting || (this.holdEmote && !overrideHoldEmote && !ignoreHoldEmote))
@@ -560,9 +560,9 @@ public class DialogueActor : MonoBehaviour
 		this.currentEmoteHash = 0;
 	}
 
-	// Token: 0x17000046 RID: 70
-	// (get) Token: 0x060003B7 RID: 951 RVA: 0x00004DAA File Offset: 0x00002FAA
-	// (set) Token: 0x060003B8 RID: 952 RVA: 0x00004DB2 File Offset: 0x00002FB2
+	// Token: 0x1700002D RID: 45
+	// (get) Token: 0x0600036A RID: 874 RVA: 0x00013CF8 File Offset: 0x00011EF8
+	// (set) Token: 0x0600036B RID: 875 RVA: 0x00013D00 File Offset: 0x00011F00
 	public int State
 	{
 		get
@@ -575,9 +575,9 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000047 RID: 71
-	// (get) Token: 0x060003B9 RID: 953 RVA: 0x00004DBE File Offset: 0x00002FBE
-	// (set) Token: 0x060003BA RID: 954 RVA: 0x00004DC6 File Offset: 0x00002FC6
+	// Token: 0x1700002E RID: 46
+	// (get) Token: 0x0600036C RID: 876 RVA: 0x00013D0C File Offset: 0x00011F0C
+	// (set) Token: 0x0600036D RID: 877 RVA: 0x00013D14 File Offset: 0x00011F14
 	public int Position
 	{
 		get
@@ -590,7 +590,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003BB RID: 955 RVA: 0x00026D2C File Offset: 0x00024F2C
+	// Token: 0x0600036E RID: 878 RVA: 0x00013D20 File Offset: 0x00011F20
 	public void SetStateString(string stateName)
 	{
 		ActorState actorState;
@@ -600,7 +600,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003BC RID: 956 RVA: 0x00026D50 File Offset: 0x00024F50
+	// Token: 0x0600036F RID: 879 RVA: 0x00013D44 File Offset: 0x00011F44
 	public void SetStateAndPosition(int newState, int newPosition, bool skipTransition = false, bool immediate = false)
 	{
 		if (this.animator == null)
@@ -658,7 +658,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003BD RID: 957 RVA: 0x00026E78 File Offset: 0x00025078
+	// Token: 0x06000370 RID: 880 RVA: 0x00013E6C File Offset: 0x0001206C
 	private bool DoPositionTransitions(int from, int to)
 	{
 		if (Time.time - this.lastEmoteStart <= 0.25f)
@@ -674,7 +674,7 @@ public class DialogueActor : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060003BE RID: 958 RVA: 0x00004DD2 File Offset: 0x00002FD2
+	// Token: 0x06000371 RID: 881 RVA: 0x00013EA5 File Offset: 0x000120A5
 	private IEnumerator UpdateActorStateDelayed()
 	{
 		if (DialogueActor.waitForEmoteDelay == null)
@@ -686,7 +686,7 @@ public class DialogueActor : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060003BF RID: 959 RVA: 0x00026EB4 File Offset: 0x000250B4
+	// Token: 0x06000372 RID: 882 RVA: 0x00013EB4 File Offset: 0x000120B4
 	private void UpdateActorState(float transitionTime = 0.25f)
 	{
 		if (this.animator == null || this.stateLayer == -1)
@@ -718,7 +718,7 @@ public class DialogueActor : MonoBehaviour
 		this.UpdateEyeState();
 	}
 
-	// Token: 0x060003C0 RID: 960 RVA: 0x00026F88 File Offset: 0x00025188
+	// Token: 0x06000373 RID: 883 RVA: 0x00013F88 File Offset: 0x00012188
 	public void SetActorLookTarget(DialogueActor lookTarget, bool immediate = false)
 	{
 		if (!base.gameObject.activeInHierarchy)
@@ -763,7 +763,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003C1 RID: 961 RVA: 0x00004DE1 File Offset: 0x00002FE1
+	// Token: 0x06000374 RID: 884 RVA: 0x0001405D File Offset: 0x0001225D
 	public IEnumerator SetActorLookTargetDelayed()
 	{
 		yield return new WaitForSeconds(Random.Range(1f, 0.2f));
@@ -772,7 +772,7 @@ public class DialogueActor : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060003C2 RID: 962 RVA: 0x00027060 File Offset: 0x00025260
+	// Token: 0x06000375 RID: 885 RVA: 0x0001406C File Offset: 0x0001226C
 	private void FinishSetActorLookTargetDelayed()
 	{
 		if (this.delayedSetLookTarget == null || this.delayedSetLookTarget == this)
@@ -788,7 +788,7 @@ public class DialogueActor : MonoBehaviour
 		this.delayedSetLookTarget = null;
 	}
 
-	// Token: 0x060003C3 RID: 963 RVA: 0x000270C0 File Offset: 0x000252C0
+	// Token: 0x06000376 RID: 886 RVA: 0x000140CC File Offset: 0x000122CC
 	protected virtual void Start()
 	{
 		if (this.animator != null && this.animator.gameObject != base.gameObject)
@@ -803,27 +803,27 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003C4 RID: 964 RVA: 0x00004DF0 File Offset: 0x00002FF0
+	// Token: 0x06000377 RID: 887 RVA: 0x0001415B File Offset: 0x0001235B
 	[ContextMenu("Generate Eyes")]
 	public void GenerateEyes()
 	{
 		base.StartCoroutine(this.GenerateEyesAsync());
 	}
 
-	// Token: 0x060003C5 RID: 965 RVA: 0x00004DFF File Offset: 0x00002FFF
+	// Token: 0x06000378 RID: 888 RVA: 0x0001416A File Offset: 0x0001236A
 	public IEnumerator GenerateEyesAsync()
 	{
 		yield return null;
 		yield break;
 	}
 
-	// Token: 0x060003C6 RID: 966 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000379 RID: 889 RVA: 0x00014172 File Offset: 0x00012372
 	[ContextMenu("Copy Right Eye To Left")]
 	public void CopyRightEyeToLeft()
 	{
 	}
 
-	// Token: 0x060003C7 RID: 967 RVA: 0x00027150 File Offset: 0x00025350
+	// Token: 0x0600037A RID: 890 RVA: 0x00014174 File Offset: 0x00012374
 	[ContextMenu("Auto Populate Fields")]
 	public void AutoPopulateFields()
 	{
@@ -861,7 +861,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003C8 RID: 968 RVA: 0x0002726C File Offset: 0x0002546C
+	// Token: 0x0600037B RID: 891 RVA: 0x00014290 File Offset: 0x00012490
 	[ContextMenu("Populate LOD Group")]
 	public void PopulateLODGroup()
 	{
@@ -880,7 +880,7 @@ public class DialogueActor : MonoBehaviour
 		component.SetLODs(lods);
 	}
 
-	// Token: 0x060003C9 RID: 969 RVA: 0x00027300 File Offset: 0x00025500
+	// Token: 0x0600037C RID: 892 RVA: 0x00014324 File Offset: 0x00012524
 	private void UpdateLookAtRotation(bool includeGlobal = false, bool readAnimatorValues = true)
 	{
 		if (this.isRagdolling)
@@ -921,7 +921,7 @@ public class DialogueActor : MonoBehaviour
 		this.headLookAtWeight = Mathf.SmoothDamp(this.headLookAtWeight, num3, ref this.headLookAtVelocity, 0.25f);
 	}
 
-	// Token: 0x060003CA RID: 970 RVA: 0x0002749C File Offset: 0x0002569C
+	// Token: 0x0600037D RID: 893 RVA: 0x000144C0 File Offset: 0x000126C0
 	public void OnAnimatorIK()
 	{
 		if (this.lookAtLerp > 0.01f && this.head != null && this.animator.enabled)
@@ -938,7 +938,7 @@ public class DialogueActor : MonoBehaviour
 		this.lookAtLerp = 0f;
 	}
 
-	// Token: 0x060003CB RID: 971 RVA: 0x0002758C File Offset: 0x0002578C
+	// Token: 0x0600037E RID: 894 RVA: 0x000145B0 File Offset: 0x000127B0
 	public virtual void LateUpdate()
 	{
 		this.wasHeadRotatedThisFrame = false;
@@ -1051,13 +1051,13 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003CC RID: 972 RVA: 0x00004E07 File Offset: 0x00003007
+	// Token: 0x0600037F RID: 895 RVA: 0x00014940 File Offset: 0x00012B40
 	public Vector3 GetDialoguePosition()
 	{
 		return this.DialogueAnchor.position;
 	}
 
-	// Token: 0x060003CD RID: 973 RVA: 0x0002791C File Offset: 0x00025B1C
+	// Token: 0x06000380 RID: 896 RVA: 0x00014950 File Offset: 0x00012B50
 	private void UpdateEyeState()
 	{
 		if (this.leftEye == null && this.rightEye == null)
@@ -1081,7 +1081,7 @@ public class DialogueActor : MonoBehaviour
 		this.leftEye.flipX = this.rightEye.flipX == flag;
 	}
 
-	// Token: 0x060003CE RID: 974 RVA: 0x00004E14 File Offset: 0x00003014
+	// Token: 0x06000381 RID: 897 RVA: 0x00014A28 File Offset: 0x00012C28
 	public void MouthClose()
 	{
 		if (this.mouthOpen || this.mouthControl > 0f)
@@ -1091,7 +1091,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003CF RID: 975 RVA: 0x000279F4 File Offset: 0x00025BF4
+	// Token: 0x06000382 RID: 898 RVA: 0x00014A50 File Offset: 0x00012C50
 	public virtual void MouthOpen()
 	{
 		PlayAudio.p.PlayVoice((this.head != null) ? this.head.position : base.transform.position, this.voicePitchMultiplier, this.voiceVarianceMultiplier);
@@ -1104,7 +1104,7 @@ public class DialogueActor : MonoBehaviour
 		this.mouthOpenTime = Time.time;
 	}
 
-	// Token: 0x060003D0 RID: 976 RVA: 0x00027A74 File Offset: 0x00025C74
+	// Token: 0x06000383 RID: 899 RVA: 0x00014AD0 File Offset: 0x00012CD0
 	protected virtual void UpdateMouthFlap()
 	{
 		float num = Mathf.SmoothStep(0f, 1f, this.mouthControl);
@@ -1132,7 +1132,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003D1 RID: 977 RVA: 0x00027BAC File Offset: 0x00025DAC
+	// Token: 0x06000384 RID: 900 RVA: 0x00014C08 File Offset: 0x00012E08
 	public void SetJawOpen(float openAmount)
 	{
 		if (this.jaw == null)
@@ -1143,7 +1143,7 @@ public class DialogueActor : MonoBehaviour
 		this.jaw.localRotation = this.jawClosed * quaternion;
 	}
 
-	// Token: 0x060003D2 RID: 978 RVA: 0x00027C00 File Offset: 0x00025E00
+	// Token: 0x06000385 RID: 901 RVA: 0x00014C5C File Offset: 0x00012E5C
 	public void DoManualLookAtRotations()
 	{
 		if (this.isRagdolling)
@@ -1169,338 +1169,338 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400051E RID: 1310
+	// Token: 0x04000479 RID: 1145
 	public static List<DialogueActor> questNPCs = new List<DialogueActor>();
 
-	// Token: 0x0400051F RID: 1311
+	// Token: 0x0400047A RID: 1146
 	private static readonly int defaultEmote = Animator.StringToHash("None");
 
-	// Token: 0x04000520 RID: 1312
+	// Token: 0x0400047B RID: 1147
 	private static int[,] positionStateHashes = new int[10, 20];
 
-	// Token: 0x04000521 RID: 1313
+	// Token: 0x0400047C RID: 1148
 	private static int[,] transitionHashes = new int[10, 10];
 
-	// Token: 0x04000522 RID: 1314
+	// Token: 0x0400047D RID: 1149
 	public static DialogueActor playerActor;
 
-	// Token: 0x04000523 RID: 1315
+	// Token: 0x0400047E RID: 1150
 	private static readonly int headTrackingID = Animator.StringToHash("HeadTracking");
 
-	// Token: 0x04000524 RID: 1316
+	// Token: 0x0400047F RID: 1151
 	private static readonly int shoulderTrackingID = Animator.StringToHash("ShoulderTracking");
 
-	// Token: 0x04000525 RID: 1317
+	// Token: 0x04000480 RID: 1152
 	public bool isPlayer;
 
-	// Token: 0x04000526 RID: 1318
+	// Token: 0x04000481 RID: 1153
 	public CharacterProfile profile;
 
-	// Token: 0x04000527 RID: 1319
+	// Token: 0x04000482 RID: 1154
 	public bool ignoreUnlock;
 
-	// Token: 0x04000528 RID: 1320
+	// Token: 0x04000483 RID: 1155
 	public bool showNpcMarker = true;
 
-	// Token: 0x04000529 RID: 1321
+	// Token: 0x04000484 RID: 1156
 	[HideInInspector]
 	public UnityEvent onChangeStateOrEmote;
 
-	// Token: 0x0400052A RID: 1322
+	// Token: 0x04000485 RID: 1157
 	public Animator animator;
 
-	// Token: 0x0400052B RID: 1323
+	// Token: 0x04000486 RID: 1158
 	public bool customAnchorPoint;
 
-	// Token: 0x0400052C RID: 1324
+	// Token: 0x04000487 RID: 1159
 	[ConditionalHide("customAnchorPoint", true)]
 	public Transform customAnchorTransform;
 
-	// Token: 0x0400052D RID: 1325
+	// Token: 0x04000488 RID: 1160
 	[Header("Eyes")]
 	public SpriteRenderer leftEye;
 
-	// Token: 0x0400052E RID: 1326
+	// Token: 0x04000489 RID: 1161
 	public SpriteRenderer rightEye;
 
-	// Token: 0x0400052F RID: 1327
+	// Token: 0x0400048A RID: 1162
 	public bool doBlinks = true;
 
-	// Token: 0x04000530 RID: 1328
+	// Token: 0x0400048B RID: 1163
 	private int stateID = Animator.StringToHash("State");
 
-	// Token: 0x04000531 RID: 1329
+	// Token: 0x0400048C RID: 1164
 	private int state;
 
-	// Token: 0x04000532 RID: 1330
+	// Token: 0x0400048D RID: 1165
 	[ConditionalHide("doBlinks", true)]
 	public Sprite blinkSprite;
 
-	// Token: 0x04000533 RID: 1331
+	// Token: 0x0400048E RID: 1166
 	private Sprite eyeSprite;
 
-	// Token: 0x04000534 RID: 1332
+	// Token: 0x0400048F RID: 1167
 	public Sprite[] eyeSprites;
 
-	// Token: 0x04000535 RID: 1333
+	// Token: 0x04000490 RID: 1168
 	public EyeProfile eyeProfile;
 
-	// Token: 0x04000536 RID: 1334
+	// Token: 0x04000491 RID: 1169
 	[ConditionalHide("doBlinks", true)]
 	public float blinkTime = 2f;
 
-	// Token: 0x04000537 RID: 1335
+	// Token: 0x04000492 RID: 1170
 	private const float blinkLength = 0.15f;
 
-	// Token: 0x04000538 RID: 1336
+	// Token: 0x04000493 RID: 1171
 	private float nextBlinkTime;
 
-	// Token: 0x04000539 RID: 1337
+	// Token: 0x04000494 RID: 1172
 	private bool isBlinking;
 
-	// Token: 0x0400053A RID: 1338
+	// Token: 0x04000495 RID: 1173
 	[Header("Bones")]
 	public Transform head;
 
-	// Token: 0x0400053B RID: 1339
+	// Token: 0x04000496 RID: 1174
 	public Transform jaw;
 
-	// Token: 0x0400053C RID: 1340
+	// Token: 0x04000497 RID: 1175
 	public Transform lowerSpine;
 
-	// Token: 0x0400053D RID: 1341
+	// Token: 0x04000498 RID: 1176
 	public Transform chest;
 
-	// Token: 0x0400053E RID: 1342
+	// Token: 0x04000499 RID: 1177
 	public Transform leftHand;
 
-	// Token: 0x0400053F RID: 1343
+	// Token: 0x0400049A RID: 1178
 	public Transform rightHand;
 
-	// Token: 0x04000540 RID: 1344
+	// Token: 0x0400049B RID: 1179
 	private Quaternion modifiedChestRotation;
 
-	// Token: 0x04000541 RID: 1345
+	// Token: 0x0400049C RID: 1180
 	[Header("Mouth Flaps")]
 	[Range(-2f, 3f)]
 	public float headRotationMod = 1f;
 
-	// Token: 0x04000542 RID: 1346
+	// Token: 0x0400049D RID: 1181
 	[Range(-2f, 3f)]
 	public float jawRotationMod = 1f;
 
-	// Token: 0x04000543 RID: 1347
+	// Token: 0x0400049E RID: 1182
 	public bool alwaysWriteJaw;
 
-	// Token: 0x04000544 RID: 1348
+	// Token: 0x0400049F RID: 1183
 	public Quaternion jawClosed = Quaternion.Euler(90f, 0f, 0f);
 
-	// Token: 0x04000545 RID: 1349
+	// Token: 0x040004A0 RID: 1184
 	private const float headRotation = -5f;
 
-	// Token: 0x04000546 RID: 1350
+	// Token: 0x040004A1 RID: 1185
 	private const float jawRotation = 20f;
 
-	// Token: 0x04000547 RID: 1351
+	// Token: 0x040004A2 RID: 1186
 	protected bool mouthOpen;
 
-	// Token: 0x04000548 RID: 1352
+	// Token: 0x040004A3 RID: 1187
 	protected bool mouthClose;
 
-	// Token: 0x04000549 RID: 1353
+	// Token: 0x040004A4 RID: 1188
 	protected float mouth;
 
-	// Token: 0x0400054A RID: 1354
+	// Token: 0x040004A5 RID: 1189
 	protected float mouthVel;
 
-	// Token: 0x0400054B RID: 1355
+	// Token: 0x040004A6 RID: 1190
 	protected float mouthControl;
 
-	// Token: 0x0400054C RID: 1356
+	// Token: 0x040004A7 RID: 1191
 	protected float mouthOpenTime = -1f;
 
-	// Token: 0x0400054D RID: 1357
+	// Token: 0x040004A8 RID: 1192
 	private Quaternion initialHeadRotation;
 
-	// Token: 0x0400054E RID: 1358
+	// Token: 0x040004A9 RID: 1193
 	private Quaternion initialJawRotation;
 
-	// Token: 0x0400054F RID: 1359
+	// Token: 0x040004AA RID: 1194
 	private Quaternion initialLowerSpineRotation;
 
-	// Token: 0x04000550 RID: 1360
+	// Token: 0x040004AB RID: 1195
 	private Quaternion initialChestRotation;
 
-	// Token: 0x04000551 RID: 1361
+	// Token: 0x040004AC RID: 1196
 	[Header("Voice")]
 	[Range(0.2f, 2f)]
 	public float voicePitchMultiplier = 1f;
 
-	// Token: 0x04000552 RID: 1362
+	// Token: 0x040004AD RID: 1197
 	[Range(0f, 2f)]
 	public float voiceVarianceMultiplier = 1f;
 
-	// Token: 0x04000553 RID: 1363
+	// Token: 0x040004AE RID: 1198
 	[Header("Lookin'")]
 	[Range(0f, 1f)]
 	public float lookAtAmount = 1f;
 
-	// Token: 0x04000554 RID: 1364
+	// Token: 0x040004AF RID: 1199
 	[Range(0f, 1f)]
 	public float shoulderLookAmount = 0.5f;
 
-	// Token: 0x04000555 RID: 1365
+	// Token: 0x040004B0 RID: 1200
 	public bool customFocus;
 
-	// Token: 0x04000556 RID: 1366
+	// Token: 0x040004B1 RID: 1201
 	[ConditionalHide("customFocus", true)]
 	public Vector3 customFocusPosition;
 
-	// Token: 0x04000557 RID: 1367
+	// Token: 0x040004B2 RID: 1202
 	private Vector3 localFocusPosition;
 
-	// Token: 0x04000558 RID: 1368
+	// Token: 0x040004B3 RID: 1203
 	private bool lookAt;
 
-	// Token: 0x04000559 RID: 1369
+	// Token: 0x040004B4 RID: 1204
 	private bool lookAtDialogue;
 
-	// Token: 0x0400055A RID: 1370
+	// Token: 0x040004B5 RID: 1205
 	private float lastProximityTime = -1f;
 
-	// Token: 0x0400055B RID: 1371
+	// Token: 0x040004B6 RID: 1206
 	[HideInInspector]
 	public UnityEvent onEnterDialogue;
 
-	// Token: 0x0400055C RID: 1372
+	// Token: 0x040004B7 RID: 1207
 	[HideInInspector]
 	public UnityEvent onExitDialogue;
 
-	// Token: 0x0400055D RID: 1373
+	// Token: 0x040004B8 RID: 1208
 	[HideInInspector]
 	public UnityEvent onEnable;
 
-	// Token: 0x0400055E RID: 1374
+	// Token: 0x040004B9 RID: 1209
 	private bool isInStandardDialogue;
 
-	// Token: 0x0400055F RID: 1375
+	// Token: 0x040004BA RID: 1210
 	private bool isInBubbleDialogue;
 
-	// Token: 0x04000560 RID: 1376
+	// Token: 0x040004BB RID: 1211
 	private float lookAtLerp;
 
-	// Token: 0x04000561 RID: 1377
+	// Token: 0x040004BC RID: 1212
 	private float lookAtLerpVelocity;
 
-	// Token: 0x04000562 RID: 1378
+	// Token: 0x040004BD RID: 1213
 	public Vector3 lookAtTarget;
 
-	// Token: 0x04000563 RID: 1379
+	// Token: 0x040004BE RID: 1214
 	public Vector3 lookAtDialogueTarget;
 
-	// Token: 0x04000564 RID: 1380
+	// Token: 0x040004BF RID: 1215
 	private DialogueActor lookAtActor;
 
-	// Token: 0x04000565 RID: 1381
+	// Token: 0x040004C0 RID: 1216
 	public Quaternion lookAtRotation = Quaternion.identity;
 
-	// Token: 0x04000566 RID: 1382
+	// Token: 0x040004C1 RID: 1217
 	public float globalLookAtWeight;
 
-	// Token: 0x04000567 RID: 1383
+	// Token: 0x040004C2 RID: 1218
 	public float headLookAtWeight;
 
-	// Token: 0x04000568 RID: 1384
+	// Token: 0x040004C3 RID: 1219
 	public float shoulderLookAtWeight;
 
-	// Token: 0x04000569 RID: 1385
+	// Token: 0x040004C4 RID: 1220
 	private float globalLookAtVelocity;
 
-	// Token: 0x0400056A RID: 1386
+	// Token: 0x040004C5 RID: 1221
 	private float headLookAtVelocity;
 
-	// Token: 0x0400056B RID: 1387
+	// Token: 0x040004C6 RID: 1222
 	private float shoulderLookAtVelocity;
 
-	// Token: 0x0400056C RID: 1388
+	// Token: 0x040004C7 RID: 1223
 	private GameObject stateEffect;
 
-	// Token: 0x0400056D RID: 1389
+	// Token: 0x040004C8 RID: 1224
 	public bool forceDisable;
 
-	// Token: 0x0400056E RID: 1390
+	// Token: 0x040004C9 RID: 1225
 	public bool isRagdolling;
 
-	// Token: 0x0400056F RID: 1391
+	// Token: 0x040004CA RID: 1226
 	private WaitForEndOfFrame waitForEndOfFrame;
 
-	// Token: 0x04000570 RID: 1392
+	// Token: 0x040004CB RID: 1227
 	public UnityBoolEvent onLoad;
 
-	// Token: 0x04000571 RID: 1393
+	// Token: 0x040004CC RID: 1228
 	[ReadOnly]
 	public GameObject npcMarker;
 
-	// Token: 0x04000572 RID: 1394
+	// Token: 0x040004CD RID: 1229
 	private float awakeTime = -1f;
 
-	// Token: 0x04000573 RID: 1395
+	// Token: 0x040004CE RID: 1230
 	private bool isAnimatorEnabled;
 
-	// Token: 0x04000574 RID: 1396
+	// Token: 0x040004CF RID: 1231
 	private int upperBodyLayer = -1;
 
-	// Token: 0x04000575 RID: 1397
+	// Token: 0x040004D0 RID: 1232
 	private int fullBodyLayer = -1;
 
-	// Token: 0x04000576 RID: 1398
+	// Token: 0x040004D1 RID: 1233
 	private int stateLayer = -1;
 
-	// Token: 0x04000577 RID: 1399
+	// Token: 0x040004D2 RID: 1234
 	private const float emoteCrossFadeLength = 0.25f;
 
-	// Token: 0x04000578 RID: 1400
+	// Token: 0x040004D3 RID: 1235
 	private bool isEmoting;
 
-	// Token: 0x04000579 RID: 1401
+	// Token: 0x040004D4 RID: 1236
 	private bool isCurrentlyEmoting;
 
-	// Token: 0x0400057A RID: 1402
+	// Token: 0x040004D5 RID: 1237
 	private bool isUpperBodyEmote = true;
 
-	// Token: 0x0400057B RID: 1403
+	// Token: 0x040004D6 RID: 1238
 	private int currentEmoteHash = -1;
 
-	// Token: 0x0400057C RID: 1404
+	// Token: 0x040004D7 RID: 1239
 	private bool holdEmote;
 
-	// Token: 0x0400057D RID: 1405
+	// Token: 0x040004D8 RID: 1240
 	private float lastEmoteStart = -1f;
 
-	// Token: 0x0400057E RID: 1406
+	// Token: 0x040004D9 RID: 1241
 	private int currentState;
 
-	// Token: 0x0400057F RID: 1407
+	// Token: 0x040004DA RID: 1242
 	private int currentPosition;
 
-	// Token: 0x04000580 RID: 1408
+	// Token: 0x040004DB RID: 1243
 	private static WaitForSeconds waitForEmoteDelay;
 
-	// Token: 0x04000581 RID: 1409
+	// Token: 0x040004DC RID: 1244
 	private IEnumerator delayedSetLookCoroutine;
 
-	// Token: 0x04000582 RID: 1410
+	// Token: 0x040004DD RID: 1245
 	private DialogueActor delayedSetLookTarget;
 
-	// Token: 0x04000583 RID: 1411
+	// Token: 0x040004DE RID: 1246
 	private OnAnimatorIKHook animatorIKHook;
 
-	// Token: 0x04000584 RID: 1412
+	// Token: 0x040004DF RID: 1247
 	private float startTime = -1f;
 
-	// Token: 0x04000585 RID: 1413
+	// Token: 0x040004E0 RID: 1248
 	private EyeProfile.EyeState eyeState;
 
-	// Token: 0x04000586 RID: 1414
+	// Token: 0x040004E1 RID: 1249
 	private bool wasHeadRotatedThisFrame;
 }

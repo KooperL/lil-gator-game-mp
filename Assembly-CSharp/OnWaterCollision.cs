@@ -2,22 +2,22 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200021D RID: 541
+// Token: 0x020001A3 RID: 419
 public class OnWaterCollision : MonoBehaviour
 {
-	// Token: 0x06000A17 RID: 2583 RVA: 0x00009B8D File Offset: 0x00007D8D
+	// Token: 0x06000896 RID: 2198 RVA: 0x0002894D File Offset: 0x00026B4D
 	private void OnTriggerEnter(Collider other)
 	{
 		this.WaterTrigger(other);
 	}
 
-	// Token: 0x06000A18 RID: 2584 RVA: 0x00009B8D File Offset: 0x00007D8D
+	// Token: 0x06000897 RID: 2199 RVA: 0x00028956 File Offset: 0x00026B56
 	private void OnTriggerStay(Collider other)
 	{
 		this.WaterTrigger(other);
 	}
 
-	// Token: 0x06000A19 RID: 2585 RVA: 0x0003B548 File Offset: 0x00039748
+	// Token: 0x06000898 RID: 2200 RVA: 0x00028960 File Offset: 0x00026B60
 	private void WaterTrigger(Collider collider)
 	{
 		if (collider.gameObject.layer != 4)
@@ -36,9 +36,9 @@ public class OnWaterCollision : MonoBehaviour
 		this.onWaterCollision.Invoke();
 	}
 
-	// Token: 0x04000C9E RID: 3230
+	// Token: 0x04000A9E RID: 2718
 	private const int waterLayer = 4;
 
-	// Token: 0x04000C9F RID: 3231
+	// Token: 0x04000A9F RID: 2719
 	public UnityEvent onWaterCollision;
 }

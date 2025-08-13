@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000390 RID: 912
+// Token: 0x020002B3 RID: 691
 public class UIBar : MonoBehaviour
 {
-	// Token: 0x0600115E RID: 4446 RVA: 0x00056E7C File Offset: 0x0005507C
+	// Token: 0x06000E8E RID: 3726 RVA: 0x00045738 File Offset: 0x00043938
 	private void Enable()
 	{
 		this.leftEdge = base.transform.InverseTransformPoint(base.transform.parent.TransformPoint(new Vector2(this.rectTransform.rect.xMin, 0f)));
@@ -14,12 +14,12 @@ public class UIBar : MonoBehaviour
 		this.leftEdge.y = (this.rightEdge.y = 0f);
 	}
 
-	// Token: 0x0600115F RID: 4447 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000E8F RID: 3727 RVA: 0x000457E9 File Offset: 0x000439E9
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x06001160 RID: 4448 RVA: 0x00056F30 File Offset: 0x00055130
+	// Token: 0x06000E90 RID: 3728 RVA: 0x000457EC File Offset: 0x000439EC
 	public void Load(UIBar.UIBarChunk[] chunks, ItemResource newResource, UIBar.Callbacks newCallbackObject)
 	{
 		base.gameObject.SetActive(true);
@@ -87,81 +87,81 @@ public class UIBar : MonoBehaviour
 			num4 += chunks[j].cost;
 			this.dividers[j].rectTransform.anchoredPosition = Vector3.Lerp(this.leftEdge, this.rightEdge, (float)num4 / (float)num);
 		}
-		this.purchasedFill.SetInsetAndSizeFromParentEdge(1, this.rectTransform.rect.width * (float)(num - num2) / (float)num, this.rectTransform.rect.width);
-		this.lockedFill.SetInsetAndSizeFromParentEdge(0, this.rectTransform.rect.width * (float)num3 / (float)num, this.rectTransform.rect.width);
+		this.purchasedFill.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Right, this.rectTransform.rect.width * (float)(num - num2) / (float)num, this.rectTransform.rect.width);
+		this.lockedFill.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, this.rectTransform.rect.width * (float)num3 / (float)num, this.rectTransform.rect.width);
 	}
 
-	// Token: 0x06001161 RID: 4449 RVA: 0x0000EE0E File Offset: 0x0000D00E
+	// Token: 0x06000E91 RID: 3729 RVA: 0x00045B54 File Offset: 0x00043D54
 	public void Buy()
 	{
 		base.gameObject.SetActive(false);
 		this.callbackObject.Buy();
 	}
 
-	// Token: 0x06001162 RID: 4450 RVA: 0x0000EE27 File Offset: 0x0000D027
+	// Token: 0x06000E92 RID: 3730 RVA: 0x00045B6D File Offset: 0x00043D6D
 	public void Cancel()
 	{
 		base.gameObject.SetActive(false);
 		this.callbackObject.Cancel();
 	}
 
-	// Token: 0x04001658 RID: 5720
+	// Token: 0x040012F0 RID: 4848
 	public UIBar.UIBarChunk[] chunks;
 
-	// Token: 0x04001659 RID: 5721
+	// Token: 0x040012F1 RID: 4849
 	public GameObject dividerPrefab;
 
-	// Token: 0x0400165A RID: 5722
+	// Token: 0x040012F2 RID: 4850
 	private List<UIBarDivider> dividers = new List<UIBarDivider>();
 
-	// Token: 0x0400165B RID: 5723
+	// Token: 0x040012F3 RID: 4851
 	public RectTransform purchasedFill;
 
-	// Token: 0x0400165C RID: 5724
+	// Token: 0x040012F4 RID: 4852
 	public RectTransform lockedFill;
 
-	// Token: 0x0400165D RID: 5725
+	// Token: 0x040012F5 RID: 4853
 	private RectTransform rectTransform;
 
-	// Token: 0x0400165E RID: 5726
+	// Token: 0x040012F6 RID: 4854
 	private Vector3 leftEdge;
 
-	// Token: 0x0400165F RID: 5727
+	// Token: 0x040012F7 RID: 4855
 	private Vector3 rightEdge;
 
-	// Token: 0x04001660 RID: 5728
+	// Token: 0x040012F8 RID: 4856
 	private bool isPurchasable;
 
-	// Token: 0x04001661 RID: 5729
+	// Token: 0x040012F9 RID: 4857
 	private UIBar.Callbacks callbackObject;
 
-	// Token: 0x04001662 RID: 5730
+	// Token: 0x040012FA RID: 4858
 	private ItemResource upgradeResource;
 
-	// Token: 0x02000391 RID: 913
+	// Token: 0x0200043B RID: 1083
 	[Serializable]
 	public struct UIBarChunk
 	{
-		// Token: 0x04001663 RID: 5731
+		// Token: 0x04001DA2 RID: 7586
 		public int unlockCost;
 
-		// Token: 0x04001664 RID: 5732
+		// Token: 0x04001DA3 RID: 7587
 		public bool isUnlocked;
 
-		// Token: 0x04001665 RID: 5733
+		// Token: 0x04001DA4 RID: 7588
 		public int cost;
 
-		// Token: 0x04001666 RID: 5734
+		// Token: 0x04001DA5 RID: 7589
 		public bool isPurchased;
 	}
 
-	// Token: 0x02000392 RID: 914
+	// Token: 0x0200043C RID: 1084
 	public interface Callbacks
 	{
-		// Token: 0x06001164 RID: 4452
+		// Token: 0x06001B23 RID: 6947
 		void Buy();
 
-		// Token: 0x06001165 RID: 4453
+		// Token: 0x06001B24 RID: 6948
 		void Cancel();
 	}
 }

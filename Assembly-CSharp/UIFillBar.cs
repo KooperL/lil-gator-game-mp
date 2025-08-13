@@ -1,25 +1,25 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003A4 RID: 932
+// Token: 0x020002C2 RID: 706
 public class UIFillBar : MonoBehaviour
 {
-	// Token: 0x060011AE RID: 4526 RVA: 0x0000F1A9 File Offset: 0x0000D3A9
+	// Token: 0x06000ED6 RID: 3798 RVA: 0x00046EF2 File Offset: 0x000450F2
 	private void Awake()
 	{
 		this.rectTransform = base.transform as RectTransform;
 		this.SetFillPercentage(0f);
 	}
 
-	// Token: 0x060011AF RID: 4527 RVA: 0x00058340 File Offset: 0x00056540
+	// Token: 0x06000ED7 RID: 3799 RVA: 0x00046F10 File Offset: 0x00045110
 	public void SetFillPercentage(float fillPercentage)
 	{
-		this.fillTransform.SetInsetAndSizeFromParentEdge(1, this.rectTransform.rect.width * (1f - fillPercentage), this.rectTransform.rect.width * fillPercentage);
+		this.fillTransform.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Right, this.rectTransform.rect.width * (1f - fillPercentage), this.rectTransform.rect.width * fillPercentage);
 	}
 
-	// Token: 0x040016D2 RID: 5842
+	// Token: 0x0400135C RID: 4956
 	private RectTransform rectTransform;
 
-	// Token: 0x040016D3 RID: 5843
+	// Token: 0x0400135D RID: 4957
 	public RectTransform fillTransform;
 }

@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020001DF RID: 479
+// Token: 0x0200016B RID: 363
 public class SetActorByState : MonoBehaviour
 {
-	// Token: 0x060008DF RID: 2271 RVA: 0x00008A12 File Offset: 0x00006C12
+	// Token: 0x06000780 RID: 1920 RVA: 0x0002528B File Offset: 0x0002348B
 	private void OnValidate()
 	{
 		if (this.stateMachine == null)
@@ -14,23 +14,23 @@ public class SetActorByState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008E0 RID: 2272 RVA: 0x00008A2E File Offset: 0x00006C2E
+	// Token: 0x06000781 RID: 1921 RVA: 0x000252A7 File Offset: 0x000234A7
 	private void Awake()
 	{
 		this.stateMachine.onStateChange.AddListener(new UnityAction<int>(this.UpdateState));
 	}
 
-	// Token: 0x060008E1 RID: 2273 RVA: 0x00008A4C File Offset: 0x00006C4C
+	// Token: 0x06000782 RID: 1922 RVA: 0x000252C5 File Offset: 0x000234C5
 	private void Start()
 	{
 		this.UpdateState(this.stateMachine.StateID);
 	}
 
-	// Token: 0x060008E2 RID: 2274 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000783 RID: 1923 RVA: 0x000252D8 File Offset: 0x000234D8
 	private void UpdateState(int newState)
 	{
 	}
 
-	// Token: 0x04000B81 RID: 2945
+	// Token: 0x040009B3 RID: 2483
 	public QuestStates stateMachine;
 }

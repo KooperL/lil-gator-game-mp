@@ -201,11 +201,6 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001EB4 RID: 7860
-	private void Update()
-	{
-	}
-
 	// Token: 0x0400080E RID: 2062
 	public const string versionID = "1.0.3";
 

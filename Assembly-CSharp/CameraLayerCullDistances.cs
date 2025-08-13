@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000B2 RID: 178
+// Token: 0x0200008C RID: 140
 [RequireComponent(typeof(Camera))]
 public class CameraLayerCullDistances : MonoBehaviour
 {
-	// Token: 0x06000297 RID: 663 RVA: 0x000203A8 File Offset: 0x0001E5A8
+	// Token: 0x0600024D RID: 589 RVA: 0x0000C534 File Offset: 0x0000A734
 	private void OnValidate()
 	{
 		if (this.shadowCaster == null)
@@ -35,7 +35,7 @@ public class CameraLayerCullDistances : MonoBehaviour
 		this.SetFogDistance(this.fogDistance, this.fogDistance, 0f);
 	}
 
-	// Token: 0x06000298 RID: 664 RVA: 0x000041B4 File Offset: 0x000023B4
+	// Token: 0x0600024E RID: 590 RVA: 0x0000C5DF File Offset: 0x0000A7DF
 	private void Start()
 	{
 		this.camera.layerCullDistances = this.layerCullDistances;
@@ -46,7 +46,7 @@ public class CameraLayerCullDistances : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000299 RID: 665 RVA: 0x00020454 File Offset: 0x0001E654
+	// Token: 0x0600024F RID: 591 RVA: 0x0000C620 File Offset: 0x0000A820
 	public void SetFogDistance(float fogDistance, float shadowDistance, float offset = 0f)
 	{
 		this.fogDistance = fogDistance;
@@ -79,32 +79,32 @@ public class CameraLayerCullDistances : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400039B RID: 923
+	// Token: 0x04000302 RID: 770
 	public Camera camera;
 
-	// Token: 0x0400039C RID: 924
+	// Token: 0x04000303 RID: 771
 	public Light shadowCaster;
 
-	// Token: 0x0400039D RID: 925
+	// Token: 0x04000304 RID: 772
 	public float fogDistance = 55f;
 
-	// Token: 0x0400039E RID: 926
+	// Token: 0x04000305 RID: 773
 	public float[] layerFogMultipliers;
 
-	// Token: 0x0400039F RID: 927
+	// Token: 0x04000306 RID: 774
 	[ReadOnly]
 	public float[] layerCullDistances;
 
-	// Token: 0x040003A0 RID: 928
+	// Token: 0x04000307 RID: 775
 	public float[] layerShadowMultipliers;
 
-	// Token: 0x040003A1 RID: 929
+	// Token: 0x04000308 RID: 776
 	[ReadOnly]
 	public float[] layerShadowCullDistances;
 
-	// Token: 0x040003A2 RID: 930
+	// Token: 0x04000309 RID: 777
 	public bool layerCullSpherical = true;
 
-	// Token: 0x040003A3 RID: 931
+	// Token: 0x0400030A RID: 778
 	private const int layerCount = 32;
 }

@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x0200046A RID: 1130
+	// Token: 0x0200032A RID: 810
 	[Serializable]
 	public class ThemeSettings : ScriptableObject
 	{
-		// Token: 0x06001BC8 RID: 7112 RVA: 0x0006E170 File Offset: 0x0006C370
+		// Token: 0x06001694 RID: 5780 RVA: 0x0005E820 File Offset: 0x0005CA20
 		public void Apply(ThemedElement.ElementInfo[] elementInfo)
 		{
 			if (elementInfo == null)
@@ -24,7 +24,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001BC9 RID: 7113 RVA: 0x0006E1AC File Offset: 0x0006C3AC
+		// Token: 0x06001695 RID: 5781 RVA: 0x0005E85C File Offset: 0x0005CA5C
 		private void Apply(string themeClass, Component component)
 		{
 			if (component as Selectable != null)
@@ -49,7 +49,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001BCA RID: 7114 RVA: 0x0006E22C File Offset: 0x0006C42C
+		// Token: 0x06001696 RID: 5782 RVA: 0x0005E8DC File Offset: 0x0005CADC
 		private void Apply(string themeClass, Selectable item)
 		{
 			if (item == null)
@@ -94,7 +94,7 @@ namespace Rewired.UI.ControlMapper
 			selectableSettings_Base.Apply(item);
 		}
 
-		// Token: 0x06001BCB RID: 7115 RVA: 0x0006E2E0 File Offset: 0x0006C4E0
+		// Token: 0x06001697 RID: 5783 RVA: 0x0005E990 File Offset: 0x0005CB90
 		private void Apply(string themeClass, Image item)
 		{
 			if (item == null)
@@ -287,7 +287,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001BCC RID: 7116 RVA: 0x0006E578 File Offset: 0x0006C778
+		// Token: 0x06001698 RID: 5784 RVA: 0x0005EC28 File Offset: 0x0005CE28
 		private void Apply(string themeClass, Text item)
 		{
 			if (item == null)
@@ -328,7 +328,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001BCD RID: 7117 RVA: 0x000155AC File Offset: 0x000137AC
+		// Token: 0x06001699 RID: 5785 RVA: 0x0005ED0E File Offset: 0x0005CF0E
 		private void Apply(string themeClass, UIImageHelper item)
 		{
 			if (item == null)
@@ -340,94 +340,94 @@ namespace Rewired.UI.ControlMapper
 			item.Refresh();
 		}
 
-		// Token: 0x06001BCE RID: 7118 RVA: 0x000155DB File Offset: 0x000137DB
+		// Token: 0x0600169A RID: 5786 RVA: 0x0005ED3D File Offset: 0x0005CF3D
 		private static FontStyle GetFontStyle(ThemeSettings.FontStyleOverride style)
 		{
-			return style - ThemeSettings.FontStyleOverride.Normal;
+			return (FontStyle)(style - 1);
 		}
 
-		// Token: 0x04001DB3 RID: 7603
+		// Token: 0x040018C1 RID: 6337
 		[SerializeField]
 		private ThemeSettings.ImageSettings _mainWindowBackground;
 
-		// Token: 0x04001DB4 RID: 7604
+		// Token: 0x040018C2 RID: 6338
 		[SerializeField]
 		private ThemeSettings.ImageSettings _popupWindowBackground;
 
-		// Token: 0x04001DB5 RID: 7605
+		// Token: 0x040018C3 RID: 6339
 		[SerializeField]
 		private ThemeSettings.ImageSettings _areaBackground;
 
-		// Token: 0x04001DB6 RID: 7606
+		// Token: 0x040018C4 RID: 6340
 		[SerializeField]
 		private ThemeSettings.SelectableSettings _selectableSettings;
 
-		// Token: 0x04001DB7 RID: 7607
+		// Token: 0x040018C5 RID: 6341
 		[SerializeField]
 		private ThemeSettings.SelectableSettings _buttonSettings;
 
-		// Token: 0x04001DB8 RID: 7608
+		// Token: 0x040018C6 RID: 6342
 		[SerializeField]
 		private ThemeSettings.SelectableSettings _inputGridFieldSettings;
 
-		// Token: 0x04001DB9 RID: 7609
+		// Token: 0x040018C7 RID: 6343
 		[SerializeField]
 		private ThemeSettings.ScrollbarSettings _scrollbarSettings;
 
-		// Token: 0x04001DBA RID: 7610
+		// Token: 0x040018C8 RID: 6344
 		[SerializeField]
 		private ThemeSettings.SliderSettings _sliderSettings;
 
-		// Token: 0x04001DBB RID: 7611
+		// Token: 0x040018C9 RID: 6345
 		[SerializeField]
 		private ThemeSettings.ImageSettings _invertToggle;
 
-		// Token: 0x04001DBC RID: 7612
+		// Token: 0x040018CA RID: 6346
 		[SerializeField]
 		private Color _invertToggleDisabledColor;
 
-		// Token: 0x04001DBD RID: 7613
+		// Token: 0x040018CB RID: 6347
 		[SerializeField]
 		private ThemeSettings.ImageSettings _calibrationBackground;
 
-		// Token: 0x04001DBE RID: 7614
+		// Token: 0x040018CC RID: 6348
 		[SerializeField]
 		private ThemeSettings.ImageSettings _calibrationValueMarker;
 
-		// Token: 0x04001DBF RID: 7615
+		// Token: 0x040018CD RID: 6349
 		[SerializeField]
 		private ThemeSettings.ImageSettings _calibrationRawValueMarker;
 
-		// Token: 0x04001DC0 RID: 7616
+		// Token: 0x040018CE RID: 6350
 		[SerializeField]
 		private ThemeSettings.ImageSettings _calibrationZeroMarker;
 
-		// Token: 0x04001DC1 RID: 7617
+		// Token: 0x040018CF RID: 6351
 		[SerializeField]
 		private ThemeSettings.ImageSettings _calibrationCalibratedZeroMarker;
 
-		// Token: 0x04001DC2 RID: 7618
+		// Token: 0x040018D0 RID: 6352
 		[SerializeField]
 		private ThemeSettings.ImageSettings _calibrationDeadzone;
 
-		// Token: 0x04001DC3 RID: 7619
+		// Token: 0x040018D1 RID: 6353
 		[SerializeField]
 		private ThemeSettings.TextSettings _textSettings;
 
-		// Token: 0x04001DC4 RID: 7620
+		// Token: 0x040018D2 RID: 6354
 		[SerializeField]
 		private ThemeSettings.TextSettings _buttonTextSettings;
 
-		// Token: 0x04001DC5 RID: 7621
+		// Token: 0x040018D3 RID: 6355
 		[SerializeField]
 		private ThemeSettings.TextSettings _inputGridFieldTextSettings;
 
-		// Token: 0x0200046B RID: 1131
+		// Token: 0x02000490 RID: 1168
 		[Serializable]
 		private abstract class SelectableSettings_Base
 		{
-			// Token: 0x170005B6 RID: 1462
-			// (get) Token: 0x06001BD0 RID: 7120 RVA: 0x000155E0 File Offset: 0x000137E0
+			// Token: 0x170005DB RID: 1499
+			// (get) Token: 0x06001D50 RID: 7504 RVA: 0x000780D9 File Offset: 0x000762D9
 			public Selectable.Transition transition
 			{
 				get
@@ -436,8 +436,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005B7 RID: 1463
-			// (get) Token: 0x06001BD1 RID: 7121 RVA: 0x000155E8 File Offset: 0x000137E8
+			// Token: 0x170005DC RID: 1500
+			// (get) Token: 0x06001D51 RID: 7505 RVA: 0x000780E1 File Offset: 0x000762E1
 			public ThemeSettings.CustomColorBlock selectableColors
 			{
 				get
@@ -446,8 +446,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005B8 RID: 1464
-			// (get) Token: 0x06001BD2 RID: 7122 RVA: 0x000155F0 File Offset: 0x000137F0
+			// Token: 0x170005DD RID: 1501
+			// (get) Token: 0x06001D52 RID: 7506 RVA: 0x000780E9 File Offset: 0x000762E9
 			public ThemeSettings.CustomSpriteState spriteState
 			{
 				get
@@ -456,8 +456,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005B9 RID: 1465
-			// (get) Token: 0x06001BD3 RID: 7123 RVA: 0x000155F8 File Offset: 0x000137F8
+			// Token: 0x170005DE RID: 1502
+			// (get) Token: 0x06001D53 RID: 7507 RVA: 0x000780F1 File Offset: 0x000762F1
 			public ThemeSettings.CustomAnimationTriggers animationTriggers
 			{
 				get
@@ -466,14 +466,14 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x06001BD4 RID: 7124 RVA: 0x0006E660 File Offset: 0x0006C860
+			// Token: 0x06001D54 RID: 7508 RVA: 0x000780FC File Offset: 0x000762FC
 			public virtual void Apply(Selectable item)
 			{
 				Selectable.Transition transition = this._transition;
 				bool flag = item.transition != transition;
 				item.transition = transition;
 				ICustomSelectable customSelectable = item as ICustomSelectable;
-				if (transition == 1)
+				if (transition == Selectable.Transition.ColorTint)
 				{
 					ThemeSettings.CustomColorBlock colors = this._colors;
 					colors.fadeDuration = 0f;
@@ -485,7 +485,7 @@ namespace Rewired.UI.ControlMapper
 						customSelectable.disabledHighlightedColor = colors.disabledHighlightedColor;
 					}
 				}
-				else if (transition == 2)
+				else if (transition == Selectable.Transition.SpriteSwap)
 				{
 					item.spriteState = this._spriteState;
 					if (customSelectable != null)
@@ -493,7 +493,7 @@ namespace Rewired.UI.ControlMapper
 						customSelectable.disabledHighlightedSprite = this._spriteState.disabledHighlightedSprite;
 					}
 				}
-				else if (transition == 3)
+				else if (transition == Selectable.Transition.Animation)
 				{
 					item.animationTriggers.disabledTrigger = this._animationTriggers.disabledTrigger;
 					item.animationTriggers.highlightedTrigger = this._animationTriggers.highlightedTrigger;
@@ -510,29 +510,29 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x04001DC6 RID: 7622
+			// Token: 0x04001F01 RID: 7937
 			[SerializeField]
 			protected Selectable.Transition _transition;
 
-			// Token: 0x04001DC7 RID: 7623
+			// Token: 0x04001F02 RID: 7938
 			[SerializeField]
 			protected ThemeSettings.CustomColorBlock _colors;
 
-			// Token: 0x04001DC8 RID: 7624
+			// Token: 0x04001F03 RID: 7939
 			[SerializeField]
 			protected ThemeSettings.CustomSpriteState _spriteState;
 
-			// Token: 0x04001DC9 RID: 7625
+			// Token: 0x04001F04 RID: 7940
 			[SerializeField]
 			protected ThemeSettings.CustomAnimationTriggers _animationTriggers;
 		}
 
-		// Token: 0x0200046C RID: 1132
+		// Token: 0x02000491 RID: 1169
 		[Serializable]
 		private class SelectableSettings : ThemeSettings.SelectableSettings_Base
 		{
-			// Token: 0x170005BA RID: 1466
-			// (get) Token: 0x06001BD6 RID: 7126 RVA: 0x00015600 File Offset: 0x00013800
+			// Token: 0x170005DF RID: 1503
+			// (get) Token: 0x06001D56 RID: 7510 RVA: 0x00078248 File Offset: 0x00076448
 			public ThemeSettings.ImageSettings imageSettings
 			{
 				get
@@ -541,7 +541,7 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x06001BD7 RID: 7127 RVA: 0x00015608 File Offset: 0x00013808
+			// Token: 0x06001D57 RID: 7511 RVA: 0x00078250 File Offset: 0x00076450
 			public override void Apply(Selectable item)
 			{
 				if (item == null)
@@ -555,17 +555,17 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x04001DCA RID: 7626
+			// Token: 0x04001F05 RID: 7941
 			[SerializeField]
 			private ThemeSettings.ImageSettings _imageSettings;
 		}
 
-		// Token: 0x0200046D RID: 1133
+		// Token: 0x02000492 RID: 1170
 		[Serializable]
 		private class SliderSettings : ThemeSettings.SelectableSettings_Base
 		{
-			// Token: 0x170005BB RID: 1467
-			// (get) Token: 0x06001BD9 RID: 7129 RVA: 0x00015641 File Offset: 0x00013841
+			// Token: 0x170005E0 RID: 1504
+			// (get) Token: 0x06001D59 RID: 7513 RVA: 0x00078289 File Offset: 0x00076489
 			public ThemeSettings.ImageSettings handleImageSettings
 			{
 				get
@@ -574,8 +574,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005BC RID: 1468
-			// (get) Token: 0x06001BDA RID: 7130 RVA: 0x00015649 File Offset: 0x00013849
+			// Token: 0x170005E1 RID: 1505
+			// (get) Token: 0x06001D5A RID: 7514 RVA: 0x00078291 File Offset: 0x00076491
 			public ThemeSettings.ImageSettings fillImageSettings
 			{
 				get
@@ -584,8 +584,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005BD RID: 1469
-			// (get) Token: 0x06001BDB RID: 7131 RVA: 0x00015651 File Offset: 0x00013851
+			// Token: 0x170005E2 RID: 1506
+			// (get) Token: 0x06001D5B RID: 7515 RVA: 0x00078299 File Offset: 0x00076499
 			public ThemeSettings.ImageSettings backgroundImageSettings
 			{
 				get
@@ -594,7 +594,7 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x06001BDC RID: 7132 RVA: 0x0006E7A4 File Offset: 0x0006C9A4
+			// Token: 0x06001D5C RID: 7516 RVA: 0x000782A4 File Offset: 0x000764A4
 			private void Apply(Slider item)
 			{
 				if (item == null)
@@ -623,32 +623,32 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x06001BDD RID: 7133 RVA: 0x00015659 File Offset: 0x00013859
+			// Token: 0x06001D5D RID: 7517 RVA: 0x00078335 File Offset: 0x00076535
 			public override void Apply(Selectable item)
 			{
 				base.Apply(item);
 				this.Apply(item as Slider);
 			}
 
-			// Token: 0x04001DCB RID: 7627
+			// Token: 0x04001F06 RID: 7942
 			[SerializeField]
 			private ThemeSettings.ImageSettings _handleImageSettings;
 
-			// Token: 0x04001DCC RID: 7628
+			// Token: 0x04001F07 RID: 7943
 			[SerializeField]
 			private ThemeSettings.ImageSettings _fillImageSettings;
 
-			// Token: 0x04001DCD RID: 7629
+			// Token: 0x04001F08 RID: 7944
 			[SerializeField]
 			private ThemeSettings.ImageSettings _backgroundImageSettings;
 		}
 
-		// Token: 0x0200046E RID: 1134
+		// Token: 0x02000493 RID: 1171
 		[Serializable]
 		private class ScrollbarSettings : ThemeSettings.SelectableSettings_Base
 		{
-			// Token: 0x170005BE RID: 1470
-			// (get) Token: 0x06001BDF RID: 7135 RVA: 0x0001566E File Offset: 0x0001386E
+			// Token: 0x170005E3 RID: 1507
+			// (get) Token: 0x06001D5F RID: 7519 RVA: 0x00078352 File Offset: 0x00076552
 			public ThemeSettings.ImageSettings handle
 			{
 				get
@@ -657,8 +657,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005BF RID: 1471
-			// (get) Token: 0x06001BE0 RID: 7136 RVA: 0x00015676 File Offset: 0x00013876
+			// Token: 0x170005E4 RID: 1508
+			// (get) Token: 0x06001D60 RID: 7520 RVA: 0x0007835A File Offset: 0x0007655A
 			public ThemeSettings.ImageSettings background
 			{
 				get
@@ -667,7 +667,7 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x06001BE1 RID: 7137 RVA: 0x0006E838 File Offset: 0x0006CA38
+			// Token: 0x06001D61 RID: 7521 RVA: 0x00078364 File Offset: 0x00076564
 			private void Apply(Scrollbar item)
 			{
 				if (item == null)
@@ -684,28 +684,28 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x06001BE2 RID: 7138 RVA: 0x0001567E File Offset: 0x0001387E
+			// Token: 0x06001D62 RID: 7522 RVA: 0x000783B2 File Offset: 0x000765B2
 			public override void Apply(Selectable item)
 			{
 				base.Apply(item);
 				this.Apply(item as Scrollbar);
 			}
 
-			// Token: 0x04001DCE RID: 7630
+			// Token: 0x04001F09 RID: 7945
 			[SerializeField]
 			private ThemeSettings.ImageSettings _handleImageSettings;
 
-			// Token: 0x04001DCF RID: 7631
+			// Token: 0x04001F0A RID: 7946
 			[SerializeField]
 			private ThemeSettings.ImageSettings _backgroundImageSettings;
 		}
 
-		// Token: 0x0200046F RID: 1135
+		// Token: 0x02000494 RID: 1172
 		[Serializable]
 		private class ImageSettings
 		{
-			// Token: 0x170005C0 RID: 1472
-			// (get) Token: 0x06001BE4 RID: 7140 RVA: 0x00015693 File Offset: 0x00013893
+			// Token: 0x170005E5 RID: 1509
+			// (get) Token: 0x06001D64 RID: 7524 RVA: 0x000783CF File Offset: 0x000765CF
 			public Color color
 			{
 				get
@@ -714,8 +714,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005C1 RID: 1473
-			// (get) Token: 0x06001BE5 RID: 7141 RVA: 0x0001569B File Offset: 0x0001389B
+			// Token: 0x170005E6 RID: 1510
+			// (get) Token: 0x06001D65 RID: 7525 RVA: 0x000783D7 File Offset: 0x000765D7
 			public Sprite sprite
 			{
 				get
@@ -724,8 +724,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005C2 RID: 1474
-			// (get) Token: 0x06001BE6 RID: 7142 RVA: 0x000156A3 File Offset: 0x000138A3
+			// Token: 0x170005E7 RID: 1511
+			// (get) Token: 0x06001D66 RID: 7526 RVA: 0x000783DF File Offset: 0x000765DF
 			public Material materal
 			{
 				get
@@ -734,8 +734,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005C3 RID: 1475
-			// (get) Token: 0x06001BE7 RID: 7143 RVA: 0x000156AB File Offset: 0x000138AB
+			// Token: 0x170005E8 RID: 1512
+			// (get) Token: 0x06001D67 RID: 7527 RVA: 0x000783E7 File Offset: 0x000765E7
 			public Image.Type type
 			{
 				get
@@ -744,8 +744,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005C4 RID: 1476
-			// (get) Token: 0x06001BE8 RID: 7144 RVA: 0x000156B3 File Offset: 0x000138B3
+			// Token: 0x170005E9 RID: 1513
+			// (get) Token: 0x06001D68 RID: 7528 RVA: 0x000783EF File Offset: 0x000765EF
 			public bool preserveAspect
 			{
 				get
@@ -754,8 +754,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005C5 RID: 1477
-			// (get) Token: 0x06001BE9 RID: 7145 RVA: 0x000156BB File Offset: 0x000138BB
+			// Token: 0x170005EA RID: 1514
+			// (get) Token: 0x06001D69 RID: 7529 RVA: 0x000783F7 File Offset: 0x000765F7
 			public bool fillCenter
 			{
 				get
@@ -764,8 +764,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005C6 RID: 1478
-			// (get) Token: 0x06001BEA RID: 7146 RVA: 0x000156C3 File Offset: 0x000138C3
+			// Token: 0x170005EB RID: 1515
+			// (get) Token: 0x06001D6A RID: 7530 RVA: 0x000783FF File Offset: 0x000765FF
 			public Image.FillMethod fillMethod
 			{
 				get
@@ -774,8 +774,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005C7 RID: 1479
-			// (get) Token: 0x06001BEB RID: 7147 RVA: 0x000156CB File Offset: 0x000138CB
+			// Token: 0x170005EC RID: 1516
+			// (get) Token: 0x06001D6B RID: 7531 RVA: 0x00078407 File Offset: 0x00076607
 			public float fillAmout
 			{
 				get
@@ -784,8 +784,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005C8 RID: 1480
-			// (get) Token: 0x06001BEC RID: 7148 RVA: 0x000156D3 File Offset: 0x000138D3
+			// Token: 0x170005ED RID: 1517
+			// (get) Token: 0x06001D6C RID: 7532 RVA: 0x0007840F File Offset: 0x0007660F
 			public bool fillClockwise
 			{
 				get
@@ -794,8 +794,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005C9 RID: 1481
-			// (get) Token: 0x06001BED RID: 7149 RVA: 0x000156DB File Offset: 0x000138DB
+			// Token: 0x170005EE RID: 1518
+			// (get) Token: 0x06001D6D RID: 7533 RVA: 0x00078417 File Offset: 0x00076617
 			public int fillOrigin
 			{
 				get
@@ -804,7 +804,7 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x06001BEE RID: 7150 RVA: 0x0006E888 File Offset: 0x0006CA88
+			// Token: 0x06001D6E RID: 7534 RVA: 0x00078420 File Offset: 0x00076620
 			public virtual void CopyTo(Image image)
 			{
 				if (image == null)
@@ -823,54 +823,54 @@ namespace Rewired.UI.ControlMapper
 				image.fillOrigin = this._fillOrigin;
 			}
 
-			// Token: 0x04001DD0 RID: 7632
+			// Token: 0x04001F0B RID: 7947
 			[SerializeField]
 			private Color _color = Color.white;
 
-			// Token: 0x04001DD1 RID: 7633
+			// Token: 0x04001F0C RID: 7948
 			[SerializeField]
 			private Sprite _sprite;
 
-			// Token: 0x04001DD2 RID: 7634
+			// Token: 0x04001F0D RID: 7949
 			[SerializeField]
 			private Material _materal;
 
-			// Token: 0x04001DD3 RID: 7635
+			// Token: 0x04001F0E RID: 7950
 			[SerializeField]
 			private Image.Type _type;
 
-			// Token: 0x04001DD4 RID: 7636
+			// Token: 0x04001F0F RID: 7951
 			[SerializeField]
 			private bool _preserveAspect;
 
-			// Token: 0x04001DD5 RID: 7637
+			// Token: 0x04001F10 RID: 7952
 			[SerializeField]
 			private bool _fillCenter;
 
-			// Token: 0x04001DD6 RID: 7638
+			// Token: 0x04001F11 RID: 7953
 			[SerializeField]
 			private Image.FillMethod _fillMethod;
 
-			// Token: 0x04001DD7 RID: 7639
+			// Token: 0x04001F12 RID: 7954
 			[SerializeField]
 			private float _fillAmout;
 
-			// Token: 0x04001DD8 RID: 7640
+			// Token: 0x04001F13 RID: 7955
 			[SerializeField]
 			private bool _fillClockwise;
 
-			// Token: 0x04001DD9 RID: 7641
+			// Token: 0x04001F14 RID: 7956
 			[SerializeField]
 			private int _fillOrigin;
 		}
 
-		// Token: 0x02000470 RID: 1136
+		// Token: 0x02000495 RID: 1173
 		[Serializable]
 		private struct CustomColorBlock
 		{
-			// Token: 0x170005CA RID: 1482
-			// (get) Token: 0x06001BF0 RID: 7152 RVA: 0x000156F6 File Offset: 0x000138F6
-			// (set) Token: 0x06001BF1 RID: 7153 RVA: 0x000156FE File Offset: 0x000138FE
+			// Token: 0x170005EF RID: 1519
+			// (get) Token: 0x06001D70 RID: 7536 RVA: 0x000784C2 File Offset: 0x000766C2
+			// (set) Token: 0x06001D71 RID: 7537 RVA: 0x000784CA File Offset: 0x000766CA
 			public float colorMultiplier
 			{
 				get
@@ -883,9 +883,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005CB RID: 1483
-			// (get) Token: 0x06001BF2 RID: 7154 RVA: 0x00015707 File Offset: 0x00013907
-			// (set) Token: 0x06001BF3 RID: 7155 RVA: 0x0001570F File Offset: 0x0001390F
+			// Token: 0x170005F0 RID: 1520
+			// (get) Token: 0x06001D72 RID: 7538 RVA: 0x000784D3 File Offset: 0x000766D3
+			// (set) Token: 0x06001D73 RID: 7539 RVA: 0x000784DB File Offset: 0x000766DB
 			public Color disabledColor
 			{
 				get
@@ -898,9 +898,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005CC RID: 1484
-			// (get) Token: 0x06001BF4 RID: 7156 RVA: 0x00015718 File Offset: 0x00013918
-			// (set) Token: 0x06001BF5 RID: 7157 RVA: 0x00015720 File Offset: 0x00013920
+			// Token: 0x170005F1 RID: 1521
+			// (get) Token: 0x06001D74 RID: 7540 RVA: 0x000784E4 File Offset: 0x000766E4
+			// (set) Token: 0x06001D75 RID: 7541 RVA: 0x000784EC File Offset: 0x000766EC
 			public float fadeDuration
 			{
 				get
@@ -913,9 +913,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005CD RID: 1485
-			// (get) Token: 0x06001BF6 RID: 7158 RVA: 0x00015729 File Offset: 0x00013929
-			// (set) Token: 0x06001BF7 RID: 7159 RVA: 0x00015731 File Offset: 0x00013931
+			// Token: 0x170005F2 RID: 1522
+			// (get) Token: 0x06001D76 RID: 7542 RVA: 0x000784F5 File Offset: 0x000766F5
+			// (set) Token: 0x06001D77 RID: 7543 RVA: 0x000784FD File Offset: 0x000766FD
 			public Color highlightedColor
 			{
 				get
@@ -928,9 +928,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005CE RID: 1486
-			// (get) Token: 0x06001BF8 RID: 7160 RVA: 0x0001573A File Offset: 0x0001393A
-			// (set) Token: 0x06001BF9 RID: 7161 RVA: 0x00015742 File Offset: 0x00013942
+			// Token: 0x170005F3 RID: 1523
+			// (get) Token: 0x06001D78 RID: 7544 RVA: 0x00078506 File Offset: 0x00076706
+			// (set) Token: 0x06001D79 RID: 7545 RVA: 0x0007850E File Offset: 0x0007670E
 			public Color normalColor
 			{
 				get
@@ -943,9 +943,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005CF RID: 1487
-			// (get) Token: 0x06001BFA RID: 7162 RVA: 0x0001574B File Offset: 0x0001394B
-			// (set) Token: 0x06001BFB RID: 7163 RVA: 0x00015753 File Offset: 0x00013953
+			// Token: 0x170005F4 RID: 1524
+			// (get) Token: 0x06001D7A RID: 7546 RVA: 0x00078517 File Offset: 0x00076717
+			// (set) Token: 0x06001D7B RID: 7547 RVA: 0x0007851F File Offset: 0x0007671F
 			public Color pressedColor
 			{
 				get
@@ -958,9 +958,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005D0 RID: 1488
-			// (get) Token: 0x06001BFC RID: 7164 RVA: 0x0001575C File Offset: 0x0001395C
-			// (set) Token: 0x06001BFD RID: 7165 RVA: 0x00015764 File Offset: 0x00013964
+			// Token: 0x170005F5 RID: 1525
+			// (get) Token: 0x06001D7C RID: 7548 RVA: 0x00078528 File Offset: 0x00076728
+			// (set) Token: 0x06001D7D RID: 7549 RVA: 0x00078530 File Offset: 0x00076730
 			public Color selectedColor
 			{
 				get
@@ -973,9 +973,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005D1 RID: 1489
-			// (get) Token: 0x06001BFE RID: 7166 RVA: 0x0001576D File Offset: 0x0001396D
-			// (set) Token: 0x06001BFF RID: 7167 RVA: 0x00015775 File Offset: 0x00013975
+			// Token: 0x170005F6 RID: 1526
+			// (get) Token: 0x06001D7E RID: 7550 RVA: 0x00078539 File Offset: 0x00076739
+			// (set) Token: 0x06001D7F RID: 7551 RVA: 0x00078541 File Offset: 0x00076741
 			public Color disabledHighlightedColor
 			{
 				get
@@ -988,60 +988,61 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x06001C00 RID: 7168 RVA: 0x0006E918 File Offset: 0x0006CB18
+			// Token: 0x06001D80 RID: 7552 RVA: 0x0007854C File Offset: 0x0007674C
 			public static implicit operator ColorBlock(ThemeSettings.CustomColorBlock item)
 			{
-				ColorBlock colorBlock = default(ColorBlock);
-				colorBlock.selectedColor = item.m_SelectedColor;
-				colorBlock.colorMultiplier = item.m_ColorMultiplier;
-				colorBlock.disabledColor = item.m_DisabledColor;
-				colorBlock.fadeDuration = item.m_FadeDuration;
-				colorBlock.highlightedColor = item.m_HighlightedColor;
-				colorBlock.normalColor = item.m_NormalColor;
-				colorBlock.pressedColor = item.m_PressedColor;
-				return colorBlock;
+				return new ColorBlock
+				{
+					selectedColor = item.m_SelectedColor,
+					colorMultiplier = item.m_ColorMultiplier,
+					disabledColor = item.m_DisabledColor,
+					fadeDuration = item.m_FadeDuration,
+					highlightedColor = item.m_HighlightedColor,
+					normalColor = item.m_NormalColor,
+					pressedColor = item.m_PressedColor
+				};
 			}
 
-			// Token: 0x04001DDA RID: 7642
+			// Token: 0x04001F15 RID: 7957
 			[SerializeField]
 			private float m_ColorMultiplier;
 
-			// Token: 0x04001DDB RID: 7643
+			// Token: 0x04001F16 RID: 7958
 			[SerializeField]
 			private Color m_DisabledColor;
 
-			// Token: 0x04001DDC RID: 7644
+			// Token: 0x04001F17 RID: 7959
 			[SerializeField]
 			private float m_FadeDuration;
 
-			// Token: 0x04001DDD RID: 7645
+			// Token: 0x04001F18 RID: 7960
 			[SerializeField]
 			private Color m_HighlightedColor;
 
-			// Token: 0x04001DDE RID: 7646
+			// Token: 0x04001F19 RID: 7961
 			[SerializeField]
 			private Color m_NormalColor;
 
-			// Token: 0x04001DDF RID: 7647
+			// Token: 0x04001F1A RID: 7962
 			[SerializeField]
 			private Color m_PressedColor;
 
-			// Token: 0x04001DE0 RID: 7648
+			// Token: 0x04001F1B RID: 7963
 			[SerializeField]
 			private Color m_SelectedColor;
 
-			// Token: 0x04001DE1 RID: 7649
+			// Token: 0x04001F1C RID: 7964
 			[SerializeField]
 			private Color m_DisabledHighlightedColor;
 		}
 
-		// Token: 0x02000471 RID: 1137
+		// Token: 0x02000496 RID: 1174
 		[Serializable]
 		private struct CustomSpriteState
 		{
-			// Token: 0x170005D2 RID: 1490
-			// (get) Token: 0x06001C01 RID: 7169 RVA: 0x0001577E File Offset: 0x0001397E
-			// (set) Token: 0x06001C02 RID: 7170 RVA: 0x00015786 File Offset: 0x00013986
+			// Token: 0x170005F7 RID: 1527
+			// (get) Token: 0x06001D81 RID: 7553 RVA: 0x000785BD File Offset: 0x000767BD
+			// (set) Token: 0x06001D82 RID: 7554 RVA: 0x000785C5 File Offset: 0x000767C5
 			public Sprite disabledSprite
 			{
 				get
@@ -1054,9 +1055,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005D3 RID: 1491
-			// (get) Token: 0x06001C03 RID: 7171 RVA: 0x0001578F File Offset: 0x0001398F
-			// (set) Token: 0x06001C04 RID: 7172 RVA: 0x00015797 File Offset: 0x00013997
+			// Token: 0x170005F8 RID: 1528
+			// (get) Token: 0x06001D83 RID: 7555 RVA: 0x000785CE File Offset: 0x000767CE
+			// (set) Token: 0x06001D84 RID: 7556 RVA: 0x000785D6 File Offset: 0x000767D6
 			public Sprite highlightedSprite
 			{
 				get
@@ -1069,9 +1070,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005D4 RID: 1492
-			// (get) Token: 0x06001C05 RID: 7173 RVA: 0x000157A0 File Offset: 0x000139A0
-			// (set) Token: 0x06001C06 RID: 7174 RVA: 0x000157A8 File Offset: 0x000139A8
+			// Token: 0x170005F9 RID: 1529
+			// (get) Token: 0x06001D85 RID: 7557 RVA: 0x000785DF File Offset: 0x000767DF
+			// (set) Token: 0x06001D86 RID: 7558 RVA: 0x000785E7 File Offset: 0x000767E7
 			public Sprite pressedSprite
 			{
 				get
@@ -1084,9 +1085,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005D5 RID: 1493
-			// (get) Token: 0x06001C07 RID: 7175 RVA: 0x000157B1 File Offset: 0x000139B1
-			// (set) Token: 0x06001C08 RID: 7176 RVA: 0x000157B9 File Offset: 0x000139B9
+			// Token: 0x170005FA RID: 1530
+			// (get) Token: 0x06001D87 RID: 7559 RVA: 0x000785F0 File Offset: 0x000767F0
+			// (set) Token: 0x06001D88 RID: 7560 RVA: 0x000785F8 File Offset: 0x000767F8
 			public Sprite selectedSprite
 			{
 				get
@@ -1099,9 +1100,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005D6 RID: 1494
-			// (get) Token: 0x06001C09 RID: 7177 RVA: 0x000157C2 File Offset: 0x000139C2
-			// (set) Token: 0x06001C0A RID: 7178 RVA: 0x000157CA File Offset: 0x000139CA
+			// Token: 0x170005FB RID: 1531
+			// (get) Token: 0x06001D89 RID: 7561 RVA: 0x00078601 File Offset: 0x00076801
+			// (set) Token: 0x06001D8A RID: 7562 RVA: 0x00078609 File Offset: 0x00076809
 			public Sprite disabledHighlightedSprite
 			{
 				get
@@ -1114,43 +1115,44 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x06001C0B RID: 7179 RVA: 0x0006E98C File Offset: 0x0006CB8C
+			// Token: 0x06001D8B RID: 7563 RVA: 0x00078614 File Offset: 0x00076814
 			public static implicit operator SpriteState(ThemeSettings.CustomSpriteState item)
 			{
-				SpriteState spriteState = default(SpriteState);
-				spriteState.selectedSprite = item.m_SelectedSprite;
-				spriteState.disabledSprite = item.m_DisabledSprite;
-				spriteState.highlightedSprite = item.m_HighlightedSprite;
-				spriteState.pressedSprite = item.m_PressedSprite;
-				return spriteState;
+				return new SpriteState
+				{
+					selectedSprite = item.m_SelectedSprite,
+					disabledSprite = item.m_DisabledSprite,
+					highlightedSprite = item.m_HighlightedSprite,
+					pressedSprite = item.m_PressedSprite
+				};
 			}
 
-			// Token: 0x04001DE2 RID: 7650
+			// Token: 0x04001F1D RID: 7965
 			[SerializeField]
 			private Sprite m_DisabledSprite;
 
-			// Token: 0x04001DE3 RID: 7651
+			// Token: 0x04001F1E RID: 7966
 			[SerializeField]
 			private Sprite m_HighlightedSprite;
 
-			// Token: 0x04001DE4 RID: 7652
+			// Token: 0x04001F1F RID: 7967
 			[SerializeField]
 			private Sprite m_PressedSprite;
 
-			// Token: 0x04001DE5 RID: 7653
+			// Token: 0x04001F20 RID: 7968
 			[SerializeField]
 			private Sprite m_SelectedSprite;
 
-			// Token: 0x04001DE6 RID: 7654
+			// Token: 0x04001F21 RID: 7969
 			[SerializeField]
 			private Sprite m_DisabledHighlightedSprite;
 		}
 
-		// Token: 0x02000472 RID: 1138
+		// Token: 0x02000497 RID: 1175
 		[Serializable]
 		private class CustomAnimationTriggers
 		{
-			// Token: 0x06001C0C RID: 7180 RVA: 0x0006E9D8 File Offset: 0x0006CBD8
+			// Token: 0x06001D8C RID: 7564 RVA: 0x00078660 File Offset: 0x00076860
 			public CustomAnimationTriggers()
 			{
 				this.m_DisabledTrigger = string.Empty;
@@ -1161,9 +1163,9 @@ namespace Rewired.UI.ControlMapper
 				this.m_DisabledHighlightedTrigger = string.Empty;
 			}
 
-			// Token: 0x170005D7 RID: 1495
-			// (get) Token: 0x06001C0D RID: 7181 RVA: 0x000157D3 File Offset: 0x000139D3
-			// (set) Token: 0x06001C0E RID: 7182 RVA: 0x000157DB File Offset: 0x000139DB
+			// Token: 0x170005FC RID: 1532
+			// (get) Token: 0x06001D8D RID: 7565 RVA: 0x000786B5 File Offset: 0x000768B5
+			// (set) Token: 0x06001D8E RID: 7566 RVA: 0x000786BD File Offset: 0x000768BD
 			public string disabledTrigger
 			{
 				get
@@ -1176,9 +1178,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005D8 RID: 1496
-			// (get) Token: 0x06001C0F RID: 7183 RVA: 0x000157E4 File Offset: 0x000139E4
-			// (set) Token: 0x06001C10 RID: 7184 RVA: 0x000157EC File Offset: 0x000139EC
+			// Token: 0x170005FD RID: 1533
+			// (get) Token: 0x06001D8F RID: 7567 RVA: 0x000786C6 File Offset: 0x000768C6
+			// (set) Token: 0x06001D90 RID: 7568 RVA: 0x000786CE File Offset: 0x000768CE
 			public string highlightedTrigger
 			{
 				get
@@ -1191,9 +1193,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005D9 RID: 1497
-			// (get) Token: 0x06001C11 RID: 7185 RVA: 0x000157F5 File Offset: 0x000139F5
-			// (set) Token: 0x06001C12 RID: 7186 RVA: 0x000157FD File Offset: 0x000139FD
+			// Token: 0x170005FE RID: 1534
+			// (get) Token: 0x06001D91 RID: 7569 RVA: 0x000786D7 File Offset: 0x000768D7
+			// (set) Token: 0x06001D92 RID: 7570 RVA: 0x000786DF File Offset: 0x000768DF
 			public string normalTrigger
 			{
 				get
@@ -1206,9 +1208,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005DA RID: 1498
-			// (get) Token: 0x06001C13 RID: 7187 RVA: 0x00015806 File Offset: 0x00013A06
-			// (set) Token: 0x06001C14 RID: 7188 RVA: 0x0001580E File Offset: 0x00013A0E
+			// Token: 0x170005FF RID: 1535
+			// (get) Token: 0x06001D93 RID: 7571 RVA: 0x000786E8 File Offset: 0x000768E8
+			// (set) Token: 0x06001D94 RID: 7572 RVA: 0x000786F0 File Offset: 0x000768F0
 			public string pressedTrigger
 			{
 				get
@@ -1221,9 +1223,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005DB RID: 1499
-			// (get) Token: 0x06001C15 RID: 7189 RVA: 0x00015817 File Offset: 0x00013A17
-			// (set) Token: 0x06001C16 RID: 7190 RVA: 0x0001581F File Offset: 0x00013A1F
+			// Token: 0x17000600 RID: 1536
+			// (get) Token: 0x06001D95 RID: 7573 RVA: 0x000786F9 File Offset: 0x000768F9
+			// (set) Token: 0x06001D96 RID: 7574 RVA: 0x00078701 File Offset: 0x00076901
 			public string selectedTrigger
 			{
 				get
@@ -1236,9 +1238,9 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005DC RID: 1500
-			// (get) Token: 0x06001C17 RID: 7191 RVA: 0x00015828 File Offset: 0x00013A28
-			// (set) Token: 0x06001C18 RID: 7192 RVA: 0x00015830 File Offset: 0x00013A30
+			// Token: 0x17000601 RID: 1537
+			// (get) Token: 0x06001D97 RID: 7575 RVA: 0x0007870A File Offset: 0x0007690A
+			// (set) Token: 0x06001D98 RID: 7576 RVA: 0x00078712 File Offset: 0x00076912
 			public string disabledHighlightedTrigger
 			{
 				get
@@ -1251,7 +1253,7 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x06001C19 RID: 7193 RVA: 0x0006EA30 File Offset: 0x0006CC30
+			// Token: 0x06001D99 RID: 7577 RVA: 0x0007871C File Offset: 0x0007691C
 			public static implicit operator AnimationTriggers(ThemeSettings.CustomAnimationTriggers item)
 			{
 				return new AnimationTriggers
@@ -1264,37 +1266,37 @@ namespace Rewired.UI.ControlMapper
 				};
 			}
 
-			// Token: 0x04001DE7 RID: 7655
+			// Token: 0x04001F22 RID: 7970
 			[SerializeField]
 			private string m_DisabledTrigger;
 
-			// Token: 0x04001DE8 RID: 7656
+			// Token: 0x04001F23 RID: 7971
 			[SerializeField]
 			private string m_HighlightedTrigger;
 
-			// Token: 0x04001DE9 RID: 7657
+			// Token: 0x04001F24 RID: 7972
 			[SerializeField]
 			private string m_NormalTrigger;
 
-			// Token: 0x04001DEA RID: 7658
+			// Token: 0x04001F25 RID: 7973
 			[SerializeField]
 			private string m_PressedTrigger;
 
-			// Token: 0x04001DEB RID: 7659
+			// Token: 0x04001F26 RID: 7974
 			[SerializeField]
 			private string m_SelectedTrigger;
 
-			// Token: 0x04001DEC RID: 7660
+			// Token: 0x04001F27 RID: 7975
 			[SerializeField]
 			private string m_DisabledHighlightedTrigger;
 		}
 
-		// Token: 0x02000473 RID: 1139
+		// Token: 0x02000498 RID: 1176
 		[Serializable]
 		private class TextSettings
 		{
-			// Token: 0x170005DD RID: 1501
-			// (get) Token: 0x06001C1A RID: 7194 RVA: 0x00015839 File Offset: 0x00013A39
+			// Token: 0x17000602 RID: 1538
+			// (get) Token: 0x06001D9A RID: 7578 RVA: 0x0007876A File Offset: 0x0007696A
 			public Color color
 			{
 				get
@@ -1303,8 +1305,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005DE RID: 1502
-			// (get) Token: 0x06001C1B RID: 7195 RVA: 0x00015841 File Offset: 0x00013A41
+			// Token: 0x17000603 RID: 1539
+			// (get) Token: 0x06001D9B RID: 7579 RVA: 0x00078772 File Offset: 0x00076972
 			public Font font
 			{
 				get
@@ -1313,8 +1315,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005DF RID: 1503
-			// (get) Token: 0x06001C1C RID: 7196 RVA: 0x00015849 File Offset: 0x00013A49
+			// Token: 0x17000604 RID: 1540
+			// (get) Token: 0x06001D9C RID: 7580 RVA: 0x0007877A File Offset: 0x0007697A
 			public ThemeSettings.FontStyleOverride style
 			{
 				get
@@ -1323,8 +1325,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005E0 RID: 1504
-			// (get) Token: 0x06001C1D RID: 7197 RVA: 0x00015851 File Offset: 0x00013A51
+			// Token: 0x17000605 RID: 1541
+			// (get) Token: 0x06001D9D RID: 7581 RVA: 0x00078782 File Offset: 0x00076982
 			public float sizeMultiplier
 			{
 				get
@@ -1333,8 +1335,8 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x170005E1 RID: 1505
-			// (get) Token: 0x06001C1E RID: 7198 RVA: 0x00015859 File Offset: 0x00013A59
+			// Token: 0x17000606 RID: 1542
+			// (get) Token: 0x06001D9E RID: 7582 RVA: 0x0007878A File Offset: 0x0007698A
 			public float lineSpacing
 			{
 				get
@@ -1343,39 +1345,39 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x04001DED RID: 7661
+			// Token: 0x04001F28 RID: 7976
 			[SerializeField]
 			private Color _color = Color.white;
 
-			// Token: 0x04001DEE RID: 7662
+			// Token: 0x04001F29 RID: 7977
 			[SerializeField]
 			private Font _font;
 
-			// Token: 0x04001DEF RID: 7663
+			// Token: 0x04001F2A RID: 7978
 			[SerializeField]
 			private ThemeSettings.FontStyleOverride _style;
 
-			// Token: 0x04001DF0 RID: 7664
+			// Token: 0x04001F2B RID: 7979
 			[SerializeField]
 			private float _sizeMultiplier = 1f;
 
-			// Token: 0x04001DF1 RID: 7665
+			// Token: 0x04001F2C RID: 7980
 			[SerializeField]
 			private float _lineSpacing = 1f;
 		}
 
-		// Token: 0x02000474 RID: 1140
+		// Token: 0x02000499 RID: 1177
 		private enum FontStyleOverride
 		{
-			// Token: 0x04001DF3 RID: 7667
+			// Token: 0x04001F2E RID: 7982
 			Default,
-			// Token: 0x04001DF4 RID: 7668
+			// Token: 0x04001F2F RID: 7983
 			Normal,
-			// Token: 0x04001DF5 RID: 7669
+			// Token: 0x04001F30 RID: 7984
 			Bold,
-			// Token: 0x04001DF6 RID: 7670
+			// Token: 0x04001F31 RID: 7985
 			Italic,
-			// Token: 0x04001DF7 RID: 7671
+			// Token: 0x04001F32 RID: 7986
 			BoldAndItalic
 		}
 	}

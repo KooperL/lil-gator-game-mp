@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003CE RID: 974
+// Token: 0x020002E0 RID: 736
 public class UISetUnlockedItems : MonoBehaviour
 {
-	// Token: 0x060012B6 RID: 4790 RVA: 0x0005C1F0 File Offset: 0x0005A3F0
+	// Token: 0x06000F96 RID: 3990 RVA: 0x0004AD90 File Offset: 0x00048F90
 	public void Set()
 	{
 		foreach (ItemObject itemObject in ItemManager.i.items)
@@ -14,9 +14,9 @@ public class UISetUnlockedItems : MonoBehaviour
 		Player.itemManager.Refresh();
 	}
 
-	// Token: 0x04001825 RID: 6181
+	// Token: 0x04001473 RID: 5235
 	public ItemObject[] unlockedItems;
 
-	// Token: 0x04001826 RID: 6182
+	// Token: 0x04001474 RID: 5236
 	public int braceletCount = 1;
 }

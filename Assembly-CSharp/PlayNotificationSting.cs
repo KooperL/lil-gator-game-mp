@@ -1,23 +1,23 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200038A RID: 906
+// Token: 0x020002AD RID: 685
 public class PlayNotificationSting : MonoBehaviour
 {
-	// Token: 0x06001144 RID: 4420 RVA: 0x0000ECB5 File Offset: 0x0000CEB5
+	// Token: 0x06000E74 RID: 3700 RVA: 0x0004515E File Offset: 0x0004335E
 	public void ResetSting()
 	{
 		this.isTriggered = false;
 		base.enabled = true;
 	}
 
-	// Token: 0x06001145 RID: 4421 RVA: 0x0000ECC5 File Offset: 0x0000CEC5
+	// Token: 0x06000E75 RID: 3701 RVA: 0x0004516E File Offset: 0x0004336E
 	private void OnDisable()
 	{
 		this.timer = 0f;
 	}
 
-	// Token: 0x06001146 RID: 4422 RVA: 0x0000ECD2 File Offset: 0x0000CED2
+	// Token: 0x06000E76 RID: 3702 RVA: 0x0004517B File Offset: 0x0004337B
 	private void Update()
 	{
 		this.timer += Time.deltaTime;
@@ -29,9 +29,9 @@ public class PlayNotificationSting : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001630 RID: 5680
+	// Token: 0x040012C8 RID: 4808
 	private bool isTriggered = true;
 
-	// Token: 0x04001631 RID: 5681
+	// Token: 0x040012C9 RID: 4809
 	private float timer;
 }

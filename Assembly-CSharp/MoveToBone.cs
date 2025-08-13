@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000241 RID: 577
+// Token: 0x020001C0 RID: 448
 public class MoveToBone : MonoBehaviour
 {
-	// Token: 0x06000ADA RID: 2778 RVA: 0x0003E168 File Offset: 0x0003C368
+	// Token: 0x06000943 RID: 2371 RVA: 0x0002BF84 File Offset: 0x0002A184
 	private void Start()
 	{
 		this.originalParent = base.transform.parent;
@@ -40,7 +40,7 @@ public class MoveToBone : MonoBehaviour
 		base.transform.localScale = this.localScale;
 	}
 
-	// Token: 0x06000ADB RID: 2779 RVA: 0x0000A584 File Offset: 0x00008784
+	// Token: 0x06000944 RID: 2372 RVA: 0x0002C0A6 File Offset: 0x0002A2A6
 	private void LateUpdate()
 	{
 		if (this.originalParent == null)
@@ -49,43 +49,43 @@ public class MoveToBone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000DBC RID: 3516
+	// Token: 0x04000BA0 RID: 2976
 	public MoveToBone.PlayerBone attachedBone;
 
-	// Token: 0x04000DBD RID: 3517
+	// Token: 0x04000BA1 RID: 2977
 	private Transform attachedTransform;
 
-	// Token: 0x04000DBE RID: 3518
+	// Token: 0x04000BA2 RID: 2978
 	public bool useInitialTransform;
 
-	// Token: 0x04000DBF RID: 3519
+	// Token: 0x04000BA3 RID: 2979
 	[ConditionalHide("useInitialTransform", true, Inverse = true)]
 	public Vector3 localPosition;
 
-	// Token: 0x04000DC0 RID: 3520
+	// Token: 0x04000BA4 RID: 2980
 	[ConditionalHide("useInitialTransform", true, Inverse = true)]
 	public Quaternion localRotation;
 
-	// Token: 0x04000DC1 RID: 3521
+	// Token: 0x04000BA5 RID: 2981
 	public Vector3 localScale = Vector3.one;
 
-	// Token: 0x04000DC2 RID: 3522
+	// Token: 0x04000BA6 RID: 2982
 	private Transform originalParent;
 
-	// Token: 0x02000242 RID: 578
+	// Token: 0x020003DE RID: 990
 	public enum PlayerBone
 	{
-		// Token: 0x04000DC4 RID: 3524
+		// Token: 0x04001C48 RID: 7240
 		Head,
-		// Token: 0x04000DC5 RID: 3525
+		// Token: 0x04001C49 RID: 7241
 		Hand,
-		// Token: 0x04000DC6 RID: 3526
+		// Token: 0x04001C4A RID: 7242
 		Chest,
-		// Token: 0x04000DC7 RID: 3527
+		// Token: 0x04001C4B RID: 7243
 		Hips,
-		// Token: 0x04000DC8 RID: 3528
+		// Token: 0x04001C4C RID: 7244
 		LowerSpine,
-		// Token: 0x04000DC9 RID: 3529
+		// Token: 0x04001C4D RID: 7245
 		Shoulder
 	}
 }

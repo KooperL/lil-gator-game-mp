@@ -5,12 +5,12 @@ using RewiredConsts;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200018C RID: 396
+// Token: 0x02000131 RID: 305
 public class InputHelper : MonoBehaviour
 {
-	// Token: 0x170000B8 RID: 184
-	// (get) Token: 0x0600076E RID: 1902 RVA: 0x00007744 File Offset: 0x00005944
-	// (set) Token: 0x0600076F RID: 1903 RVA: 0x00007762 File Offset: 0x00005962
+	// Token: 0x17000058 RID: 88
+	// (get) Token: 0x06000649 RID: 1609 RVA: 0x000206F5 File Offset: 0x0001E8F5
+	// (set) Token: 0x0600064A RID: 1610 RVA: 0x00020713 File Offset: 0x0001E913
 	public static InputHelper i
 	{
 		get
@@ -27,26 +27,26 @@ public class InputHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000770 RID: 1904 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x0600064B RID: 1611 RVA: 0x0002071B File Offset: 0x0001E91B
 	private void Awake()
 	{
 	}
 
-	// Token: 0x06000771 RID: 1905 RVA: 0x0000776A File Offset: 0x0000596A
+	// Token: 0x0600064C RID: 1612 RVA: 0x0002071D File Offset: 0x0001E91D
 	private void OnEnable()
 	{
 		InputHelper.i = this;
 	}
 
-	// Token: 0x06000772 RID: 1906 RVA: 0x00034040 File Offset: 0x00032240
+	// Token: 0x0600064D RID: 1613 RVA: 0x00020728 File Offset: 0x0001E928
 	private void Start()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnAnyInput), 0, 3);
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnAnyInput), 0, 19);
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnAnyInput), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed);
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnAnyInput), UpdateLoopType.Update, InputActionEventType.NegativeButtonJustPressed);
 	}
 
-	// Token: 0x06000773 RID: 1907 RVA: 0x00034094 File Offset: 0x00032294
+	// Token: 0x0600064E RID: 1614 RVA: 0x0002077C File Offset: 0x0001E97C
 	private void OnAnyInput(InputActionEventData obj)
 	{
 		if (this.ignoreActions.Contains(obj.actionId))
@@ -57,30 +57,30 @@ public class InputHelper : MonoBehaviour
 		{
 			switch (InputHelper.lastActiveControllerType)
 			{
-			case 0:
-				if (obj.IsCurrentInputSource(1))
+			case ControllerType.Keyboard:
+				if (obj.IsCurrentInputSource(ControllerType.Mouse))
 				{
 					return;
 				}
 				break;
-			case 1:
-				if (obj.IsCurrentInputSource(0))
+			case ControllerType.Mouse:
+				if (obj.IsCurrentInputSource(ControllerType.Keyboard))
 				{
 					return;
 				}
 				break;
-			case 2:
-				if (obj.IsCurrentInputSource(0))
+			case ControllerType.Joystick:
+				if (obj.IsCurrentInputSource(ControllerType.Keyboard))
 				{
 					InputHelper.lastActiveControllerID = 0;
-					InputHelper.lastActiveControllerType = 0;
+					InputHelper.lastActiveControllerType = ControllerType.Keyboard;
 					InputHelper.onLastActiveControllerChanged.Invoke();
 					return;
 				}
-				if (obj.IsCurrentInputSource(1))
+				if (obj.IsCurrentInputSource(ControllerType.Mouse))
 				{
 					InputHelper.lastActiveControllerID = 0;
-					InputHelper.lastActiveControllerType = 1;
+					InputHelper.lastActiveControllerType = ControllerType.Mouse;
 					InputHelper.onLastActiveControllerChanged.Invoke();
 					return;
 				}
@@ -88,10 +88,10 @@ public class InputHelper : MonoBehaviour
 			}
 			foreach (Joystick joystick in this.rePlayer.controllers.Joysticks)
 			{
-				if (obj.IsCurrentInputSource(2, joystick.id))
+				if (obj.IsCurrentInputSource(ControllerType.Joystick, joystick.id))
 				{
 					InputHelper.lastActiveControllerID = joystick.id;
-					InputHelper.lastActiveControllerType = 2;
+					InputHelper.lastActiveControllerType = ControllerType.Joystick;
 					InputHelper.onLastActiveControllerChanged.Invoke();
 					break;
 				}
@@ -99,52 +99,52 @@ public class InputHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000774 RID: 1908 RVA: 0x00007772 File Offset: 0x00005972
+	// Token: 0x0600064F RID: 1615 RVA: 0x00020898 File Offset: 0x0001EA98
 	public void UpdateInput()
 	{
 		InputHelper.onLastActiveControllerChanged.Invoke();
 	}
 
-	// Token: 0x040009DC RID: 2524
-	public static ControllerType lastActiveControllerType = 0;
+	// Token: 0x04000872 RID: 2162
+	public static ControllerType lastActiveControllerType = ControllerType.Keyboard;
 
-	// Token: 0x040009DD RID: 2525
+	// Token: 0x04000873 RID: 2163
 	public static int lastActiveControllerID = 0;
 
-	// Token: 0x040009DE RID: 2526
+	// Token: 0x04000874 RID: 2164
 	public static UnityEvent onLastActiveControllerChanged = new UnityEvent();
 
-	// Token: 0x040009DF RID: 2527
+	// Token: 0x04000875 RID: 2165
 	private static InputHelper instance;
 
-	// Token: 0x040009E0 RID: 2528
+	// Token: 0x04000876 RID: 2166
 	public static int inputMode = 1;
 
-	// Token: 0x040009E1 RID: 2529
+	// Token: 0x04000877 RID: 2167
 	private Guid controllerGuid;
 
-	// Token: 0x040009E2 RID: 2530
+	// Token: 0x04000878 RID: 2168
 	public static List<UIButtonObject> activeButtonObjects = new List<UIButtonObject>();
 
-	// Token: 0x040009E3 RID: 2531
+	// Token: 0x04000879 RID: 2169
 	public static List<UIButtonDisplay> activeButtonDisplays = new List<UIButtonDisplay>();
 
-	// Token: 0x040009E4 RID: 2532
+	// Token: 0x0400087A RID: 2170
 	private global::Rewired.Player rePlayer;
 
-	// Token: 0x040009E5 RID: 2533
-	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
+	// Token: 0x0400087B RID: 2171
+	[ActionIdProperty(typeof(Action))]
 	public int[] ignoreActions;
 
-	// Token: 0x040009E6 RID: 2534
+	// Token: 0x0400087C RID: 2172
 	private Guid dualShock2 = new Guid("c3ad3cad-c7cf-4ca8-8c2e-e3df8d9960bb");
 
-	// Token: 0x040009E7 RID: 2535
+	// Token: 0x0400087D RID: 2173
 	private Guid dualShock3 = new Guid("71dfe6c8-9e81-428f-a58e-c7e664b7fbed");
 
-	// Token: 0x040009E8 RID: 2536
+	// Token: 0x0400087E RID: 2174
 	private Guid dualShock4 = new Guid("cd9718bf-a87a-44bc-8716-60a0def28a9f");
 
-	// Token: 0x040009E9 RID: 2537
+	// Token: 0x0400087F RID: 2175
 	private Guid dualSense = new Guid("5286706d-19b4-4a45-b635-207ce78d8394");
 }

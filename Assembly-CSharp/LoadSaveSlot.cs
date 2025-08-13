@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000071 RID: 113
+// Token: 0x02000057 RID: 87
 public class LoadSaveSlot : MonoBehaviour
 {
-	// Token: 0x0600016D RID: 365 RVA: 0x00003370 File Offset: 0x00001570
+	// Token: 0x06000142 RID: 322 RVA: 0x00007BCA File Offset: 0x00005DCA
 	public void LoadSlot()
 	{
 		GameData.g.LoadSaveFile(this.index);
 	}
 
-	// Token: 0x04000228 RID: 552
+	// Token: 0x040001C1 RID: 449
 	public int index;
 
-	// Token: 0x04000229 RID: 553
+	// Token: 0x040001C2 RID: 450
 	public MainMenuToGameplay toGameplay;
 }

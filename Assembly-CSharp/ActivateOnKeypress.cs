@@ -2,16 +2,16 @@
 using Cinemachine;
 using UnityEngine;
 
-// Token: 0x02000068 RID: 104
+// Token: 0x0200004F RID: 79
 public class ActivateOnKeypress : MonoBehaviour
 {
-	// Token: 0x06000153 RID: 339 RVA: 0x0000322E File Offset: 0x0000142E
+	// Token: 0x0600012E RID: 302 RVA: 0x00007597 File Offset: 0x00005797
 	private void Start()
 	{
 		this.vcam = base.GetComponent<CinemachineVirtualCameraBase>();
 	}
 
-	// Token: 0x06000154 RID: 340 RVA: 0x0001BB70 File Offset: 0x00019D70
+	// Token: 0x0600012F RID: 303 RVA: 0x000075A8 File Offset: 0x000057A8
 	private void Update()
 	{
 		if (this.vcam != null)
@@ -36,18 +36,18 @@ public class ActivateOnKeypress : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000208 RID: 520
-	public KeyCode ActivationKey = 306;
+	// Token: 0x040001A4 RID: 420
+	public KeyCode ActivationKey = KeyCode.LeftControl;
 
-	// Token: 0x04000209 RID: 521
+	// Token: 0x040001A5 RID: 421
 	public int PriorityBoostAmount = 10;
 
-	// Token: 0x0400020A RID: 522
+	// Token: 0x040001A6 RID: 422
 	public GameObject Reticle;
 
-	// Token: 0x0400020B RID: 523
+	// Token: 0x040001A7 RID: 423
 	private CinemachineVirtualCameraBase vcam;
 
-	// Token: 0x0400020C RID: 524
+	// Token: 0x040001A8 RID: 424
 	private bool boosted;
 }

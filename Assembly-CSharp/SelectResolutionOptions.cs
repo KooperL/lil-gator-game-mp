@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200036F RID: 879
+// Token: 0x02000295 RID: 661
 public class SelectResolutionOptions : SelectOptions
 {
-	// Token: 0x060010DD RID: 4317 RVA: 0x00055D38 File Offset: 0x00053F38
+	// Token: 0x06000E19 RID: 3609 RVA: 0x0004400C File Offset: 0x0004220C
 	protected override void OnEnable()
 	{
 		this.options = new string[Screen.resolutions.Length];
@@ -16,9 +16,9 @@ public class SelectResolutionOptions : SelectOptions
 		base.OnEnable();
 	}
 
-	// Token: 0x040015E3 RID: 5603
+	// Token: 0x04001286 RID: 4742
 	private Resolution[] resolutions;
 
-	// Token: 0x040015E4 RID: 5604
+	// Token: 0x04001287 RID: 4743
 	public UnityEvent<int, int> onChangeResolution;
 }

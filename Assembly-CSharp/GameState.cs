@@ -1,14 +1,14 @@
 ﻿using System;
 
-// Token: 0x02000176 RID: 374
+// Token: 0x0200011D RID: 285
 public enum GameState
 {
-	// Token: 0x0400097E RID: 2430
+	// Token: 0x0400081E RID: 2078
 	Play,
-	// Token: 0x0400097F RID: 2431
+	// Token: 0x0400081F RID: 2079
 	Dialogue,
-	// Token: 0x04000980 RID: 2432
+	// Token: 0x04000820 RID: 2080
 	Menu,
-	// Token: 0x04000981 RID: 2433
+	// Token: 0x04000821 RID: 2081
 	ItemMenu
 }

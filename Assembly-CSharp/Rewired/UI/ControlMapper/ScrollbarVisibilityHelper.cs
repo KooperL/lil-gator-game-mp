@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x02000469 RID: 1129
+	// Token: 0x02000329 RID: 809
 	[AddComponentMenu("")]
 	public class ScrollbarVisibilityHelper : MonoBehaviour
 	{
-		// Token: 0x04001DB2 RID: 7602
+		// Token: 0x040018C0 RID: 6336
 		public ScrollRect scrollRect;
 	}
 }

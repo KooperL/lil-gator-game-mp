@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200031E RID: 798
+// Token: 0x02000258 RID: 600
 public class UnParentChildren : MonoBehaviour
 {
-	// Token: 0x06000FA0 RID: 4000 RVA: 0x0000D975 File Offset: 0x0000BB75
+	// Token: 0x06000CF3 RID: 3315 RVA: 0x0003E981 File Offset: 0x0003CB81
 	public void OnValidate()
 	{
 		if (this.children == null || this.children.Length == 0)
@@ -18,7 +18,7 @@ public class UnParentChildren : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FA1 RID: 4001 RVA: 0x000513E0 File Offset: 0x0004F5E0
+	// Token: 0x06000CF4 RID: 3316 RVA: 0x0003E9AC File Offset: 0x0003CBAC
 	[ContextMenu("Get Children")]
 	public void GetChildren()
 	{
@@ -34,7 +34,7 @@ public class UnParentChildren : MonoBehaviour
 		this.children = list.ToArray();
 	}
 
-	// Token: 0x06000FA2 RID: 4002 RVA: 0x0005143C File Offset: 0x0004F63C
+	// Token: 0x06000CF5 RID: 3317 RVA: 0x0003EA08 File Offset: 0x0003CC08
 	private void OnEnable()
 	{
 		Transform[] array = this.children;
@@ -44,7 +44,7 @@ public class UnParentChildren : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FA3 RID: 4003 RVA: 0x00051468 File Offset: 0x0004F668
+	// Token: 0x06000CF6 RID: 3318 RVA: 0x0003EA34 File Offset: 0x0003CC34
 	private void OnDisable()
 	{
 		foreach (Transform transform in this.children)
@@ -60,6 +60,6 @@ public class UnParentChildren : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400142A RID: 5162
+	// Token: 0x0400110E RID: 4366
 	public Transform[] children;
 }

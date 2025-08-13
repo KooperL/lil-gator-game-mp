@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020003BC RID: 956
+// Token: 0x020002D3 RID: 723
 public class UINumberToSprite : MonoBehaviour
 {
-	// Token: 0x06001249 RID: 4681 RVA: 0x0005AB68 File Offset: 0x00058D68
+	// Token: 0x06000F47 RID: 3911 RVA: 0x0004984C File Offset: 0x00047A4C
 	private void Start()
 	{
 		if (this.hideAtStart)
@@ -26,7 +26,7 @@ public class UINumberToSprite : MonoBehaviour
 		this.SetNumber(0);
 	}
 
-	// Token: 0x0600124A RID: 4682 RVA: 0x0005ABE0 File Offset: 0x00058DE0
+	// Token: 0x06000F48 RID: 3912 RVA: 0x000498C4 File Offset: 0x00047AC4
 	public void SetNumber(int number)
 	{
 		if (this.unitImage != null && !this.unitImage.enabled)
@@ -55,24 +55,24 @@ public class UINumberToSprite : MonoBehaviour
 		this.hundredsImage.sprite = this.numbers[num];
 	}
 
-	// Token: 0x040017A8 RID: 6056
+	// Token: 0x04001416 RID: 5142
 	public Image unitImage;
 
-	// Token: 0x040017A9 RID: 6057
+	// Token: 0x04001417 RID: 5143
 	public Sprite[] numbers;
 
-	// Token: 0x040017AA RID: 6058
+	// Token: 0x04001418 RID: 5144
 	public Image zerosImage;
 
-	// Token: 0x040017AB RID: 6059
+	// Token: 0x04001419 RID: 5145
 	public Image tensImage;
 
-	// Token: 0x040017AC RID: 6060
+	// Token: 0x0400141A RID: 5146
 	public Image hundredsImage;
 
-	// Token: 0x040017AD RID: 6061
+	// Token: 0x0400141B RID: 5147
 	public bool hideIfZero = true;
 
-	// Token: 0x040017AE RID: 6062
+	// Token: 0x0400141C RID: 5148
 	public bool hideAtStart = true;
 }

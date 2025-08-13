@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000194 RID: 404
+// Token: 0x02000138 RID: 312
 public class HitPhysics : MonoBehaviour, IHit
 {
-	// Token: 0x06000790 RID: 1936 RVA: 0x0000792F File Offset: 0x00005B2F
+	// Token: 0x0600066B RID: 1643 RVA: 0x0002119D File Offset: 0x0001F39D
 	private void OnValidate()
 	{
 		if (this.rigidbody == null)
@@ -17,7 +17,7 @@ public class HitPhysics : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x06000791 RID: 1937 RVA: 0x00007965 File Offset: 0x00005B65
+	// Token: 0x0600066C RID: 1644 RVA: 0x000211D3 File Offset: 0x0001F3D3
 	private void Awake()
 	{
 		if (this.rigidbody == null)
@@ -26,28 +26,28 @@ public class HitPhysics : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x06000792 RID: 1938 RVA: 0x000348E4 File Offset: 0x00032AE4
+	// Token: 0x0600066D RID: 1645 RVA: 0x000211F0 File Offset: 0x0001F3F0
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		if (this.randomizeForcePoint)
 		{
 			Bounds bounds = this.collider.bounds;
 			Vector3 vector = bounds.center + bounds.extents.magnitude * Random.insideUnitSphere;
-			this.rigidbody.AddForceAtPosition(this.forceMultiplier * velocity, vector, 1);
+			this.rigidbody.AddForceAtPosition(this.forceMultiplier * velocity, vector, ForceMode.Impulse);
 			return;
 		}
-		this.rigidbody.AddForce(this.forceMultiplier * velocity, 1);
+		this.rigidbody.AddForce(this.forceMultiplier * velocity, ForceMode.Impulse);
 	}
 
-	// Token: 0x04000A10 RID: 2576
+	// Token: 0x040008A4 RID: 2212
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000A11 RID: 2577
+	// Token: 0x040008A5 RID: 2213
 	public Collider collider;
 
-	// Token: 0x04000A12 RID: 2578
+	// Token: 0x040008A6 RID: 2214
 	public float forceMultiplier = 3f;
 
-	// Token: 0x04000A13 RID: 2579
+	// Token: 0x040008A7 RID: 2215
 	public bool randomizeForcePoint = true;
 }

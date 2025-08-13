@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Token: 0x020000EF RID: 239
+// Token: 0x020000B1 RID: 177
 public class DialogueOption : MonoBehaviour, ISelectHandler, IEventSystemHandler, ISubmitHandler, IPointerClickHandler
 {
-	// Token: 0x0600047D RID: 1149 RVA: 0x00005411 File Offset: 0x00003611
+	// Token: 0x060003D0 RID: 976 RVA: 0x00016950 File Offset: 0x00014B50
 	public void OnValidate()
 	{
 		if (this.options == null)
@@ -14,27 +14,27 @@ public class DialogueOption : MonoBehaviour, ISelectHandler, IEventSystemHandler
 		}
 	}
 
-	// Token: 0x0600047E RID: 1150 RVA: 0x0000542D File Offset: 0x0000362D
+	// Token: 0x060003D1 RID: 977 RVA: 0x0001696C File Offset: 0x00014B6C
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		this.options.Submit();
 	}
 
-	// Token: 0x0600047F RID: 1151 RVA: 0x0000543A File Offset: 0x0000363A
+	// Token: 0x060003D2 RID: 978 RVA: 0x00016979 File Offset: 0x00014B79
 	public void OnSelect(BaseEventData eventData)
 	{
 		this.options.SetSelected(this.index);
 	}
 
-	// Token: 0x06000480 RID: 1152 RVA: 0x0000542D File Offset: 0x0000362D
+	// Token: 0x060003D3 RID: 979 RVA: 0x0001698C File Offset: 0x00014B8C
 	public void OnSubmit(BaseEventData eventData)
 	{
 		this.options.Submit();
 	}
 
-	// Token: 0x0400065D RID: 1629
+	// Token: 0x0400054E RID: 1358
 	public int index;
 
-	// Token: 0x0400065E RID: 1630
+	// Token: 0x0400054F RID: 1359
 	public DialogueOptions options;
 }

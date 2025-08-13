@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.U2D;
 
-// Token: 0x02000292 RID: 658
+// Token: 0x02000200 RID: 512
 public class PowerLine : MonoBehaviour
 {
-	// Token: 0x06000CE0 RID: 3296 RVA: 0x0004867C File Offset: 0x0004687C
+	// Token: 0x06000B1B RID: 2843 RVA: 0x000376FC File Offset: 0x000358FC
 	private void Awake()
 	{
 		if (this.lineRenderers != null && this.lineRenderers.Length != 0)
@@ -22,14 +22,14 @@ public class PowerLine : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CE1 RID: 3297 RVA: 0x0000BFE6 File Offset: 0x0000A1E6
+	// Token: 0x06000B1C RID: 2844 RVA: 0x000377B1 File Offset: 0x000359B1
 	private void Start()
 	{
 		this.mainCamera = Camera.main;
 		this.pixelCamera = this.mainCamera.GetComponent<PixelPerfectCamera>();
 	}
 
-	// Token: 0x06000CE2 RID: 3298 RVA: 0x00048734 File Offset: 0x00046934
+	// Token: 0x06000B1D RID: 2845 RVA: 0x000377D0 File Offset: 0x000359D0
 	public void FastLateUpdate()
 	{
 		if (this.lineRenderers != null && this.lineRenderers.Length != 0)
@@ -42,7 +42,7 @@ public class PowerLine : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CE3 RID: 3299 RVA: 0x0004879C File Offset: 0x0004699C
+	// Token: 0x06000B1E RID: 2846 RVA: 0x00037838 File Offset: 0x00035A38
 	private void UpdateLineRenderer(LineRenderer lineRenderer, Vector3 endPoint, float seed, int index)
 	{
 		if (!lineRenderer.isVisible)
@@ -79,14 +79,14 @@ public class PowerLine : MonoBehaviour
 		lineRenderer.SetPositions(this.positions);
 	}
 
-	// Token: 0x06000CE4 RID: 3300 RVA: 0x00048970 File Offset: 0x00046B70
+	// Token: 0x06000B1F RID: 2847 RVA: 0x00037A0C File Offset: 0x00035C0C
 	public float ScaleForWorldPosition(Vector3 position)
 	{
 		float num = (this.mainCamera.WorldToScreenPoint(position) - this.mainCamera.WorldToScreenPoint(position + this.mainCamera.transform.up / 1000f)).magnitude * 1000f;
 		return (float)this.pixelCamera.pixelRatio / num;
 	}
 
-	// Token: 0x06000CE5 RID: 3301 RVA: 0x000489D8 File Offset: 0x00046BD8
+	// Token: 0x06000B20 RID: 2848 RVA: 0x00037A74 File Offset: 0x00035C74
 	public Vector3 GetPointPosition(Vector3 start, Vector3 end, float t, Vector3 sway)
 	{
 		Vector3 vector = Vector3.Lerp(start, end, t);
@@ -96,66 +96,66 @@ public class PowerLine : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x0400112C RID: 4396
+	// Token: 0x04000ECD RID: 3789
 	public Transform[] anchorPoints;
 
-	// Token: 0x0400112D RID: 4397
+	// Token: 0x04000ECE RID: 3790
 	public LineRenderer[] lineRenderers;
 
-	// Token: 0x0400112E RID: 4398
+	// Token: 0x04000ECF RID: 3791
 	private AnimationCurve[] widthCurves;
 
-	// Token: 0x0400112F RID: 4399
+	// Token: 0x04000ED0 RID: 3792
 	private bool toggleWidthCurve;
 
-	// Token: 0x04001130 RID: 4400
+	// Token: 0x04000ED1 RID: 3793
 	public PowerLine linkedPowerLine;
 
-	// Token: 0x04001131 RID: 4401
+	// Token: 0x04000ED2 RID: 3794
 	public int positionCount = 6;
 
-	// Token: 0x04001132 RID: 4402
+	// Token: 0x04000ED3 RID: 3795
 	public Material lineMaterial;
 
-	// Token: 0x04001133 RID: 4403
+	// Token: 0x04000ED4 RID: 3796
 	public float sag = -4f;
 
-	// Token: 0x04001134 RID: 4404
+	// Token: 0x04000ED5 RID: 3797
 	public float catA = 1f;
 
-	// Token: 0x04001135 RID: 4405
+	// Token: 0x04000ED6 RID: 3798
 	public float windMovement = 1f;
 
-	// Token: 0x04001136 RID: 4406
+	// Token: 0x04000ED7 RID: 3799
 	public float windSpeed = 1f;
 
-	// Token: 0x04001137 RID: 4407
+	// Token: 0x04000ED8 RID: 3800
 	public float[] seeds;
 
-	// Token: 0x04001138 RID: 4408
+	// Token: 0x04000ED9 RID: 3801
 	public bool pixelSpaceWidth = true;
 
-	// Token: 0x04001139 RID: 4409
+	// Token: 0x04000EDA RID: 3802
 	public float pixelWidth = 1f;
 
-	// Token: 0x0400113A RID: 4410
+	// Token: 0x04000EDB RID: 3803
 	public float worldWidth = 0.05f;
 
-	// Token: 0x0400113B RID: 4411
+	// Token: 0x04000EDC RID: 3804
 	private Camera mainCamera;
 
-	// Token: 0x0400113C RID: 4412
+	// Token: 0x04000EDD RID: 3805
 	private PixelPerfectCamera pixelCamera;
 
-	// Token: 0x0400113D RID: 4413
+	// Token: 0x04000EDE RID: 3806
 	private Vector3[] positions;
 
-	// Token: 0x0400113E RID: 4414
+	// Token: 0x04000EDF RID: 3807
 	private float time;
 
-	// Token: 0x0400113F RID: 4415
+	// Token: 0x04000EE0 RID: 3808
 	private Keyframe[] keys;
 
-	// Token: 0x04001140 RID: 4416
+	// Token: 0x04000EE1 RID: 3809
 	private AnimationCurve widthCurve;
 }

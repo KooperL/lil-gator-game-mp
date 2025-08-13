@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000090 RID: 144
+// Token: 0x02000070 RID: 112
 public class Ach_StickyComboTracker : MonoBehaviour
 {
-	// Token: 0x060001EE RID: 494 RVA: 0x00003924 File Offset: 0x00001B24
+	// Token: 0x060001B8 RID: 440 RVA: 0x00009AC6 File Offset: 0x00007CC6
 	public static void Stick()
 	{
 		if (Ach_StickyComboTracker.instance == null)
@@ -14,13 +14,13 @@ public class Ach_StickyComboTracker : MonoBehaviour
 		Ach_StickyComboTracker.instance.OnStick();
 	}
 
-	// Token: 0x060001EF RID: 495 RVA: 0x0000393E File Offset: 0x00001B3E
+	// Token: 0x060001B9 RID: 441 RVA: 0x00009AE0 File Offset: 0x00007CE0
 	private void Awake()
 	{
 		Ach_StickyComboTracker.instance = this;
 	}
 
-	// Token: 0x060001F0 RID: 496 RVA: 0x00003946 File Offset: 0x00001B46
+	// Token: 0x060001BA RID: 442 RVA: 0x00009AE8 File Offset: 0x00007CE8
 	private void OnDestroy()
 	{
 		if (Ach_StickyComboTracker.instance == this)
@@ -29,7 +29,7 @@ public class Ach_StickyComboTracker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001F1 RID: 497 RVA: 0x0001DAA0 File Offset: 0x0001BCA0
+	// Token: 0x060001BB RID: 443 RVA: 0x00009B00 File Offset: 0x00007D00
 	private void FixedUpdate()
 	{
 		if ((Player.movement.IsGrounded && Player.movement.stepsSinceLastClimbing > 10) || Player.movement.IsSwimming || (Player.movement.HasGroundContact && Player.movement.isSledding))
@@ -47,7 +47,7 @@ public class Ach_StickyComboTracker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001F2 RID: 498 RVA: 0x0000395B File Offset: 0x00001B5B
+	// Token: 0x060001BC RID: 444 RVA: 0x00009B7A File Offset: 0x00007D7A
 	public void OnStick()
 	{
 		this.invalidCounter = 0;
@@ -59,18 +59,18 @@ public class Ach_StickyComboTracker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040002DD RID: 733
+	// Token: 0x04000259 RID: 601
 	public static Ach_StickyComboTracker instance;
 
-	// Token: 0x040002DE RID: 734
+	// Token: 0x0400025A RID: 602
 	public Achievement achievement;
 
-	// Token: 0x040002DF RID: 735
+	// Token: 0x0400025B RID: 603
 	public int requiredCombo = 10;
 
-	// Token: 0x040002E0 RID: 736
+	// Token: 0x0400025C RID: 604
 	public int stickCombo;
 
-	// Token: 0x040002E1 RID: 737
+	// Token: 0x0400025D RID: 605
 	private int invalidCounter;
 }

@@ -4,11 +4,12 @@ using Rewired;
 using RewiredConsts;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-// Token: 0x02000362 RID: 866
+// Token: 0x02000289 RID: 649
 public class ItemGrid : MonoBehaviour
 {
-	// Token: 0x06001098 RID: 4248 RVA: 0x0000E3E5 File Offset: 0x0000C5E5
+	// Token: 0x06000DD5 RID: 3541 RVA: 0x000430A9 File Offset: 0x000412A9
 	private void OnValidate()
 	{
 		if (this.preventDeselection == null)
@@ -21,7 +22,7 @@ public class ItemGrid : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001099 RID: 4249 RVA: 0x00055288 File Offset: 0x00053488
+	// Token: 0x06000DD6 RID: 3542 RVA: 0x000430E0 File Offset: 0x000412E0
 	public void LoadElements(ItemObject[] itemData, int selectedIndex = 0)
 	{
 		this.items = itemData;
@@ -47,9 +48,20 @@ public class ItemGrid : MonoBehaviour
 			i++;
 		}
 		this.SelectIndex(selectedIndex);
+		if (this.scrollRect != null)
+		{
+			bool flag = itemData.Length > 12;
+			this.scrollRect.enabled = flag;
+			this.scrollToSelected.enabled = flag;
+			this.scrollSelected.enabled = flag;
+			if (!flag)
+			{
+				base.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+			}
+		}
 	}
 
-	// Token: 0x0600109A RID: 4250 RVA: 0x0005535C File Offset: 0x0005355C
+	// Token: 0x06000DD7 RID: 3543 RVA: 0x00043204 File Offset: 0x00041404
 	public void LoadElements(ItemObject[] itemData, int[] selectedIndices)
 	{
 		this.items = itemData;
@@ -86,7 +98,7 @@ public class ItemGrid : MonoBehaviour
 		this.SelectIndex(num);
 	}
 
-	// Token: 0x0600109B RID: 4251 RVA: 0x00055454 File Offset: 0x00053654
+	// Token: 0x06000DD8 RID: 3544 RVA: 0x000432FC File Offset: 0x000414FC
 	public void RefreshElements()
 	{
 		for (int i = 0; i < this.items.Length; i++)
@@ -99,13 +111,13 @@ public class ItemGrid : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600109C RID: 4252 RVA: 0x0000E41B File Offset: 0x0000C61B
+	// Token: 0x06000DD9 RID: 3545 RVA: 0x0004335E File Offset: 0x0004155E
 	private void OnEnable()
 	{
 		this.SelectIndex(this.selectedIndex);
 	}
 
-	// Token: 0x0600109D RID: 4253 RVA: 0x000554B8 File Offset: 0x000536B8
+	// Token: 0x06000DDA RID: 3546 RVA: 0x0004336C File Offset: 0x0004156C
 	public void SelectIndex(int index)
 	{
 		if (this.selectedIndex >= this.items.Length)
@@ -124,7 +136,7 @@ public class ItemGrid : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600109E RID: 4254 RVA: 0x00055550 File Offset: 0x00053750
+	// Token: 0x06000DDB RID: 3547 RVA: 0x00043404 File Offset: 0x00041604
 	public void UpdateSelectedIndex(ItemObject newSelectedItem)
 	{
 		for (int i = 0; i < this.items.Length; i++)
@@ -137,35 +149,45 @@ public class ItemGrid : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400159F RID: 5535
+	// Token: 0x0400123F RID: 4671
 	public GameObject elementPrefab;
 
-	// Token: 0x040015A0 RID: 5536
+	// Token: 0x04001240 RID: 4672
 	public Transform elementParent;
 
-	// Token: 0x040015A1 RID: 5537
+	// Token: 0x04001241 RID: 4673
 	public int selectedIndex;
 
-	// Token: 0x040015A2 RID: 5538
+	// Token: 0x04001242 RID: 4674
 	public ItemObject[] items;
 
-	// Token: 0x040015A3 RID: 5539
+	// Token: 0x04001243 RID: 4675
 	public List<SelectableItem> elements;
 
-	// Token: 0x040015A4 RID: 5540
+	// Token: 0x04001244 RID: 4676
 	public UISwapItemsMenu itemsMenu;
 
-	// Token: 0x040015A5 RID: 5541
+	// Token: 0x04001245 RID: 4677
 	public UIPreventDeselection preventDeselection;
 
-	// Token: 0x040015A6 RID: 5542
+	// Token: 0x04001246 RID: 4678
 	[Header("Multiple")]
 	public bool hasMultipleSelected;
 
-	// Token: 0x040015A7 RID: 5543
+	// Token: 0x04001247 RID: 4679
 	public int[] selectedIndices;
 
-	// Token: 0x040015A8 RID: 5544
-	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
+	// Token: 0x04001248 RID: 4680
+	[ActionIdProperty(typeof(Action))]
 	public int[] prompts;
+
+	// Token: 0x04001249 RID: 4681
+	[Header("Scrolling")]
+	public ScrollRect scrollRect;
+
+	// Token: 0x0400124A RID: 4682
+	public UIScrollToSelected scrollToSelected;
+
+	// Token: 0x0400124B RID: 4683
+	public UIScrollSelected scrollSelected;
 }

@@ -2,12 +2,12 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000107 RID: 263
+// Token: 0x020000C3 RID: 195
 public class SwimBullDialogue : MonoBehaviour, Interaction
 {
-	// Token: 0x17000080 RID: 128
-	// (get) Token: 0x06000508 RID: 1288 RVA: 0x00005AD2 File Offset: 0x00003CD2
-	// (set) Token: 0x06000509 RID: 1289 RVA: 0x00005AE4 File Offset: 0x00003CE4
+	// Token: 0x1700003E RID: 62
+	// (get) Token: 0x0600043D RID: 1085 RVA: 0x00018667 File Offset: 0x00016867
+	// (set) Token: 0x0600043E RID: 1086 RVA: 0x00018679 File Offset: 0x00016879
 	private int State
 	{
 		get
@@ -20,7 +20,7 @@ public class SwimBullDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x0600050A RID: 1290 RVA: 0x00005AF6 File Offset: 0x00003CF6
+	// Token: 0x0600043F RID: 1087 RVA: 0x0001868B File Offset: 0x0001688B
 	private void Start()
 	{
 		if (this.State == 3)
@@ -30,13 +30,13 @@ public class SwimBullDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x0600050B RID: 1291 RVA: 0x00005B19 File Offset: 0x00003D19
+	// Token: 0x06000440 RID: 1088 RVA: 0x000186AE File Offset: 0x000168AE
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunDialogue());
 	}
 
-	// Token: 0x0600050C RID: 1292 RVA: 0x00005B28 File Offset: 0x00003D28
+	// Token: 0x06000441 RID: 1089 RVA: 0x000186BD File Offset: 0x000168BD
 	private IEnumerator RunDialogue()
 	{
 		this.virtualCamera.SetActive(true);
@@ -64,30 +64,30 @@ public class SwimBullDialogue : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x0600050D RID: 1293 RVA: 0x00005B37 File Offset: 0x00003D37
+	// Token: 0x06000442 RID: 1090 RVA: 0x000186CC File Offset: 0x000168CC
 	public void Splash()
 	{
 		EffectsManager.e.Splash(this.splashPosition.position, 0.8f);
 	}
 
-	// Token: 0x04000706 RID: 1798
+	// Token: 0x040005F3 RID: 1523
 	public DialogueActor[] actors;
 
-	// Token: 0x04000707 RID: 1799
+	// Token: 0x040005F4 RID: 1524
 	public Animator bullAnimator;
 
-	// Token: 0x04000708 RID: 1800
+	// Token: 0x040005F5 RID: 1525
 	public GameObject bullFloofy;
 
-	// Token: 0x04000709 RID: 1801
+	// Token: 0x040005F6 RID: 1526
 	public TownNPC[] townNpcs;
 
-	// Token: 0x0400070A RID: 1802
+	// Token: 0x040005F7 RID: 1527
 	public GameObject virtualCamera;
 
-	// Token: 0x0400070B RID: 1803
+	// Token: 0x040005F8 RID: 1528
 	public Transform splashPosition;
 
-	// Token: 0x0400070C RID: 1804
+	// Token: 0x040005F9 RID: 1529
 	private const string key = "NPCSwimBull";
 }

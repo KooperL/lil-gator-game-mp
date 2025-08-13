@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000188 RID: 392
+// Token: 0x0200012D RID: 301
 public class HeadController : MonoBehaviour
 {
-	// Token: 0x0600075F RID: 1887 RVA: 0x0000768B File Offset: 0x0000588B
+	// Token: 0x0600063A RID: 1594 RVA: 0x00020457 File Offset: 0x0001E657
 	private void Start()
 	{
 		this.forward = this.neck.forward;
 		this.velocityForward = this.forward;
 	}
 
-	// Token: 0x06000760 RID: 1888 RVA: 0x00033E78 File Offset: 0x00032078
+	// Token: 0x0600063B RID: 1595 RVA: 0x00020478 File Offset: 0x0001E678
 	private void FixedUpdate()
 	{
 		float magnitude = this.rigidbody.velocity.magnitude;
@@ -29,30 +29,30 @@ public class HeadController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000761 RID: 1889 RVA: 0x000076AA File Offset: 0x000058AA
+	// Token: 0x0600063C RID: 1596 RVA: 0x0002051D File Offset: 0x0001E71D
 	private void LateUpdate()
 	{
 		this.neck.forward = this.forward;
 	}
 
-	// Token: 0x040009CF RID: 2511
+	// Token: 0x04000865 RID: 2149
 	public Transform body;
 
-	// Token: 0x040009D0 RID: 2512
+	// Token: 0x04000866 RID: 2150
 	public Transform neck;
 
-	// Token: 0x040009D1 RID: 2513
+	// Token: 0x04000867 RID: 2151
 	public Transform head;
 
-	// Token: 0x040009D2 RID: 2514
+	// Token: 0x04000868 RID: 2152
 	public Rigidbody rigidbody;
 
-	// Token: 0x040009D3 RID: 2515
+	// Token: 0x04000869 RID: 2153
 	public float rotationSpeed = 2f;
 
-	// Token: 0x040009D4 RID: 2516
+	// Token: 0x0400086A RID: 2154
 	private Vector3 velocityForward;
 
-	// Token: 0x040009D5 RID: 2517
+	// Token: 0x0400086B RID: 2155
 	private Vector3 forward;
 }

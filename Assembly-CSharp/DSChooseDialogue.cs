@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000118 RID: 280
+// Token: 0x020000CE RID: 206
 [AddComponentMenu("Dialogue Sequence/Choose Dialogue")]
 public class DSChooseDialogue : DSDialogue
 {
-	// Token: 0x06000558 RID: 1368 RVA: 0x0002D958 File Offset: 0x0002BB58
+	// Token: 0x06000470 RID: 1136 RVA: 0x00018EEC File Offset: 0x000170EC
 	public override YieldInstruction Run()
 	{
 		int optionChosen = DialogueManager.optionChosen;
@@ -17,14 +17,14 @@ public class DSChooseDialogue : DSDialogue
 		return base.Run();
 	}
 
-	// Token: 0x0400075B RID: 1883
+	// Token: 0x04000639 RID: 1593
 	[ChunkLookup("document")]
 	public string[] choices;
 
-	// Token: 0x0400075C RID: 1884
+	// Token: 0x0400063A RID: 1594
 	public bool saveChoice;
 
-	// Token: 0x0400075D RID: 1885
+	// Token: 0x0400063B RID: 1595
 	[ConditionalHide("saveChoice", true)]
 	public string saveChoiceID;
 }

@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000195 RID: 405
+// Token: 0x02000139 RID: 313
 public class HitTrigger : MonoBehaviour
 {
-	// Token: 0x06000794 RID: 1940 RVA: 0x0000799B File Offset: 0x00005B9B
+	// Token: 0x0600066F RID: 1647 RVA: 0x00021283 File Offset: 0x0001F483
 	public void OnTriggerStay(Collider other)
 	{
 		if (this.hitOnStay)
@@ -14,13 +14,13 @@ public class HitTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000795 RID: 1941 RVA: 0x000079AC File Offset: 0x00005BAC
+	// Token: 0x06000670 RID: 1648 RVA: 0x00021294 File Offset: 0x0001F494
 	private void OnTriggerEnter(Collider other)
 	{
 		this.HitCollider(other);
 	}
 
-	// Token: 0x06000796 RID: 1942 RVA: 0x00034960 File Offset: 0x00032B60
+	// Token: 0x06000671 RID: 1649 RVA: 0x000212A0 File Offset: 0x0001F4A0
 	private void HitCollider(Collider other)
 	{
 		if (this.onHit != null)
@@ -28,7 +28,7 @@ public class HitTrigger : MonoBehaviour
 			this.onHit.Invoke();
 		}
 		IHit hit;
-		if (other == null || !other.TryGetComponent<IHit>(ref hit))
+		if (other == null || !other.TryGetComponent<IHit>(out hit))
 		{
 			return;
 		}
@@ -58,50 +58,50 @@ public class HitTrigger : MonoBehaviour
 		hit.Hit(vector, this.isHeavy);
 	}
 
-	// Token: 0x04000A14 RID: 2580
+	// Token: 0x040008A8 RID: 2216
 	public static Vector3 currentHitPoint = Vector3.zero;
 
-	// Token: 0x04000A15 RID: 2581
+	// Token: 0x040008A9 RID: 2217
 	public HitTrigger.VelocitySource velocitySource;
 
-	// Token: 0x04000A16 RID: 2582
+	// Token: 0x040008AA RID: 2218
 	public float velocityMultiplier = 1f;
 
-	// Token: 0x04000A17 RID: 2583
+	// Token: 0x040008AB RID: 2219
 	public Vector3 velocityOffset = Vector3.zero;
 
-	// Token: 0x04000A18 RID: 2584
+	// Token: 0x040008AC RID: 2220
 	public Vector3 localDirection;
 
-	// Token: 0x04000A19 RID: 2585
+	// Token: 0x040008AD RID: 2221
 	public Rigidbody rigidbodySource;
 
-	// Token: 0x04000A1A RID: 2586
+	// Token: 0x040008AE RID: 2222
 	public float radius;
 
-	// Token: 0x04000A1B RID: 2587
+	// Token: 0x040008AF RID: 2223
 	public UnityEvent onHit;
 
-	// Token: 0x04000A1C RID: 2588
+	// Token: 0x040008B0 RID: 2224
 	public bool ignoreHitPhysics;
 
-	// Token: 0x04000A1D RID: 2589
+	// Token: 0x040008B1 RID: 2225
 	public Vector3 hitPosition;
 
-	// Token: 0x04000A1E RID: 2590
+	// Token: 0x040008B2 RID: 2226
 	public bool isHeavy;
 
-	// Token: 0x04000A1F RID: 2591
+	// Token: 0x040008B3 RID: 2227
 	public bool hitOnStay;
 
-	// Token: 0x02000196 RID: 406
+	// Token: 0x020003B3 RID: 947
 	public enum VelocitySource
 	{
-		// Token: 0x04000A21 RID: 2593
+		// Token: 0x04001B88 RID: 7048
 		Direction,
-		// Token: 0x04000A22 RID: 2594
+		// Token: 0x04001B89 RID: 7049
 		Rigidbody,
-		// Token: 0x04000A23 RID: 2595
+		// Token: 0x04001B8A RID: 7050
 		Radial
 	}
 }

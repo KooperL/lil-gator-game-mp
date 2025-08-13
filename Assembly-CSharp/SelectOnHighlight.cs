@@ -3,17 +3,17 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Token: 0x0200038C RID: 908
+// Token: 0x020002AF RID: 687
 [RequireComponent(typeof(Selectable))]
 public class SelectOnHighlight : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler
 {
-	// Token: 0x0600114B RID: 4427 RVA: 0x0000ED2D File Offset: 0x0000CF2D
+	// Token: 0x06000E7B RID: 3707 RVA: 0x000452BC File Offset: 0x000434BC
 	private void Awake()
 	{
 		this.selectable = base.GetComponent<Selectable>();
 	}
 
-	// Token: 0x0600114C RID: 4428 RVA: 0x00056AF4 File Offset: 0x00054CF4
+	// Token: 0x06000E7C RID: 3708 RVA: 0x000452CC File Offset: 0x000434CC
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		if (EventSystem.current.alreadySelecting)
@@ -31,6 +31,6 @@ public class SelectOnHighlight : MonoBehaviour, IPointerEnterHandler, IEventSyst
 		EventSystem.current.SetSelectedGameObject(base.gameObject);
 	}
 
-	// Token: 0x04001639 RID: 5689
+	// Token: 0x040012D1 RID: 4817
 	private Selectable selectable;
 }

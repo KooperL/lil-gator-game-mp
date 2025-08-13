@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000019 RID: 25
+// Token: 0x0200001B RID: 27
 public class LimitInstanceCount : MonoBehaviour
 {
-	// Token: 0x0600004F RID: 79 RVA: 0x00017FBC File Offset: 0x000161BC
+	// Token: 0x06000056 RID: 86 RVA: 0x000035C4 File Offset: 0x000017C4
 	private static void AddInstance(LimitInstanceCount instance)
 	{
 		LimitInstanceCount.instances.Add(instance);
@@ -17,7 +17,7 @@ public class LimitInstanceCount : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000050 RID: 80 RVA: 0x000023CB File Offset: 0x000005CB
+	// Token: 0x06000057 RID: 87 RVA: 0x00003615 File Offset: 0x00001815
 	private static void RemoveInstance(LimitInstanceCount instance)
 	{
 		if (LimitInstanceCount.instances.Contains(instance))
@@ -26,21 +26,21 @@ public class LimitInstanceCount : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000051 RID: 81 RVA: 0x000023E6 File Offset: 0x000005E6
+	// Token: 0x06000058 RID: 88 RVA: 0x00003630 File Offset: 0x00001830
 	private void OnEnable()
 	{
 		LimitInstanceCount.AddInstance(this);
 	}
 
-	// Token: 0x06000052 RID: 82 RVA: 0x000023EE File Offset: 0x000005EE
+	// Token: 0x06000059 RID: 89 RVA: 0x00003638 File Offset: 0x00001838
 	private void OnDisable()
 	{
 		LimitInstanceCount.RemoveInstance(this);
 	}
 
-	// Token: 0x0400006A RID: 106
+	// Token: 0x04000080 RID: 128
 	private static List<LimitInstanceCount> instances = new List<LimitInstanceCount>();
 
-	// Token: 0x0400006B RID: 107
+	// Token: 0x04000081 RID: 129
 	private const int instanceLimit = 15;
 }

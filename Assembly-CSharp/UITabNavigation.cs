@@ -3,10 +3,10 @@ using Rewired;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020003D8 RID: 984
+// Token: 0x020002E7 RID: 743
 public class UITabNavigation : MonoBehaviour
 {
-	// Token: 0x060012F1 RID: 4849 RVA: 0x00010163 File Offset: 0x0000E363
+	// Token: 0x06000FC5 RID: 4037 RVA: 0x0004B73B File Offset: 0x0004993B
 	private void OnValidate()
 	{
 		if (this.tabs == null || this.tabs.Length < base.transform.childCount)
@@ -15,25 +15,25 @@ public class UITabNavigation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012F2 RID: 4850 RVA: 0x0005CD6C File Offset: 0x0005AF6C
+	// Token: 0x06000FC6 RID: 4038 RVA: 0x0004B768 File Offset: 0x00049968
 	private void OnEnable()
 	{
 		if (this.rePlayer == null)
 		{
 			this.rePlayer = ReInput.players.GetPlayer(0);
 		}
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnTabRight), 0, 3, ReInput.mapping.GetActionId("UITabRight"));
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnTabLeft), 0, 3, ReInput.mapping.GetActionId("UITabLeft"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnTabRight), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("UITabRight"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnTabLeft), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("UITabLeft"));
 	}
 
-	// Token: 0x060012F3 RID: 4851 RVA: 0x0001018E File Offset: 0x0000E38E
+	// Token: 0x06000FC7 RID: 4039 RVA: 0x0004B7DE File Offset: 0x000499DE
 	private void OnDisable()
 	{
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnTabRight));
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnTabLeft));
 	}
 
-	// Token: 0x060012F4 RID: 4852 RVA: 0x000101BE File Offset: 0x0000E3BE
+	// Token: 0x06000FC8 RID: 4040 RVA: 0x0004B80E File Offset: 0x00049A0E
 	private void OnTabLeft(InputActionEventData obj)
 	{
 		if (Time.time - UITabNavigation.bufferTime < 0.1f)
@@ -43,7 +43,7 @@ public class UITabNavigation : MonoBehaviour
 		this.OnTabLeft();
 	}
 
-	// Token: 0x060012F5 RID: 4853 RVA: 0x0005CDE4 File Offset: 0x0005AFE4
+	// Token: 0x06000FC9 RID: 4041 RVA: 0x0004B82C File Offset: 0x00049A2C
 	private void OnTabLeft()
 	{
 		int num = this.FindCurrentlySelectedTab();
@@ -55,7 +55,7 @@ public class UITabNavigation : MonoBehaviour
 		this.tabs[num].isOn = true;
 	}
 
-	// Token: 0x060012F6 RID: 4854 RVA: 0x000101D9 File Offset: 0x0000E3D9
+	// Token: 0x06000FCA RID: 4042 RVA: 0x0004B861 File Offset: 0x00049A61
 	private void OnTabRight(InputActionEventData obj)
 	{
 		if (Time.time - UITabNavigation.bufferTime < 0.1f)
@@ -65,7 +65,7 @@ public class UITabNavigation : MonoBehaviour
 		this.OnTabRight();
 	}
 
-	// Token: 0x060012F7 RID: 4855 RVA: 0x0005CE1C File Offset: 0x0005B01C
+	// Token: 0x06000FCB RID: 4043 RVA: 0x0004B87C File Offset: 0x00049A7C
 	private void OnTabRight()
 	{
 		int num = this.FindCurrentlySelectedTab();
@@ -77,7 +77,7 @@ public class UITabNavigation : MonoBehaviour
 		this.tabs[num].isOn = true;
 	}
 
-	// Token: 0x060012F8 RID: 4856 RVA: 0x0005CE50 File Offset: 0x0005B050
+	// Token: 0x06000FCC RID: 4044 RVA: 0x0004B8B0 File Offset: 0x00049AB0
 	private int FindCurrentlySelectedTab()
 	{
 		for (int i = 0; i < this.tabs.Length; i++)
@@ -90,12 +90,12 @@ public class UITabNavigation : MonoBehaviour
 		return 0;
 	}
 
-	// Token: 0x0400186D RID: 6253
+	// Token: 0x040014AE RID: 5294
 	public static float bufferTime = -1f;
 
-	// Token: 0x0400186E RID: 6254
+	// Token: 0x040014AF RID: 5295
 	public Toggle[] tabs;
 
-	// Token: 0x0400186F RID: 6255
-	private Player rePlayer;
+	// Token: 0x040014B0 RID: 5296
+	private global::Rewired.Player rePlayer;
 }

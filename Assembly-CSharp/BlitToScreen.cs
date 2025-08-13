@@ -2,18 +2,18 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x0200037C RID: 892
+// Token: 0x020002A2 RID: 674
 [RequireComponent(typeof(Camera))]
 public class BlitToScreen : MonoBehaviour
 {
-	// Token: 0x060010FF RID: 4351 RVA: 0x0000E9FF File Offset: 0x0000CBFF
+	// Token: 0x06000E3B RID: 3643 RVA: 0x000445A2 File Offset: 0x000427A2
 	private void Awake()
 	{
 		this.camera = base.GetComponent<Camera>();
 		this.LoadScreen(new Vector2(384f, 216f));
 	}
 
-	// Token: 0x06001100 RID: 4352 RVA: 0x00056078 File Offset: 0x00054278
+	// Token: 0x06000E3C RID: 3644 RVA: 0x000445C8 File Offset: 0x000427C8
 	public void LoadScreen(Vector2 screenSize)
 	{
 		if (this.screenTexture != null)
@@ -24,8 +24,8 @@ public class BlitToScreen : MonoBehaviour
 			}
 			this.screenTexture.Release();
 		}
-		this.screenTexture = new RenderTexture(Mathf.FloorToInt(screenSize.x), Mathf.FloorToInt(screenSize.y), 24, 0);
-		this.screenTexture.filterMode = 0;
+		this.screenTexture = new RenderTexture(Mathf.FloorToInt(screenSize.x), Mathf.FloorToInt(screenSize.y), 24, RenderTextureFormat.ARGB32);
+		this.screenTexture.filterMode = FilterMode.Point;
 		this.screenTexture.Create();
 		this.material.mainTexture = this.screenTexture;
 		this.commandBuffer = new CommandBuffer();
@@ -33,7 +33,7 @@ public class BlitToScreen : MonoBehaviour
 		this.commandBuffer.SetRenderTarget(null);
 		this.commandBuffer.ClearRenderTarget(false, true, Color.black);
 		this.commandBuffer.Blit(this.screenTexture, null, this.material);
-		this.camera.AddCommandBuffer(20, this.commandBuffer);
+		this.camera.AddCommandBuffer(CameraEvent.AfterEverything, this.commandBuffer);
 		this.camera.targetTexture = this.screenTexture;
 		HighlightsFX component = base.GetComponent<HighlightsFX>();
 		if (component)
@@ -42,27 +42,27 @@ public class BlitToScreen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001101 RID: 4353 RVA: 0x0000EA22 File Offset: 0x0000CC22
+	// Token: 0x06000E3D RID: 3645 RVA: 0x00044704 File Offset: 0x00042904
 	private void OnPreRender()
 	{
 		this.camera.targetTexture = this.screenTexture;
 	}
 
-	// Token: 0x06001102 RID: 4354 RVA: 0x0000EA35 File Offset: 0x0000CC35
+	// Token: 0x06000E3E RID: 3646 RVA: 0x00044717 File Offset: 0x00042917
 	private void OnPostRender()
 	{
 		this.camera.targetTexture = null;
 	}
 
-	// Token: 0x040015FA RID: 5626
+	// Token: 0x0400129D RID: 4765
 	private Camera camera;
 
-	// Token: 0x040015FB RID: 5627
+	// Token: 0x0400129E RID: 4766
 	private CommandBuffer commandBuffer;
 
-	// Token: 0x040015FC RID: 5628
+	// Token: 0x0400129F RID: 4767
 	public Material material;
 
-	// Token: 0x040015FD RID: 5629
+	// Token: 0x040012A0 RID: 4768
 	public RenderTexture screenTexture;
 }

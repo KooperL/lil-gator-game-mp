@@ -2,10 +2,10 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020003BD RID: 957
+// Token: 0x020002D4 RID: 724
 public class UIPhone : MonoBehaviour
 {
-	// Token: 0x0600124C RID: 4684 RVA: 0x0000F7CA File Offset: 0x0000D9CA
+	// Token: 0x06000F4A RID: 3914 RVA: 0x000499D6 File Offset: 0x00047BD6
 	private void OnValidate()
 	{
 		if (this.animator == null)
@@ -18,7 +18,7 @@ public class UIPhone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600124D RID: 4685 RVA: 0x0000F800 File Offset: 0x0000DA00
+	// Token: 0x06000F4B RID: 3915 RVA: 0x00049A0C File Offset: 0x00047C0C
 	[ContextMenu("Activate")]
 	public void Activate()
 	{
@@ -26,7 +26,7 @@ public class UIPhone : MonoBehaviour
 		this.rootGameObject.SetActive(true);
 	}
 
-	// Token: 0x0600124E RID: 4686 RVA: 0x0000F820 File Offset: 0x0000DA20
+	// Token: 0x06000F4C RID: 3916 RVA: 0x00049A2C File Offset: 0x00047C2C
 	[ContextMenu("Deactivate")]
 	public void Deactivate()
 	{
@@ -34,7 +34,7 @@ public class UIPhone : MonoBehaviour
 		base.StartCoroutine(this.DelayedDeactivate());
 	}
 
-	// Token: 0x0600124F RID: 4687 RVA: 0x0000F841 File Offset: 0x0000DA41
+	// Token: 0x06000F4D RID: 3917 RVA: 0x00049A4D File Offset: 0x00047C4D
 	private IEnumerator DelayedDeactivate()
 	{
 		yield return new WaitForSeconds(this.deactivateDelay);
@@ -42,15 +42,15 @@ public class UIPhone : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x040017AF RID: 6063
+	// Token: 0x0400141D RID: 5149
 	public Animator animator;
 
-	// Token: 0x040017B0 RID: 6064
+	// Token: 0x0400141E RID: 5150
 	private int isRaisedID = Animator.StringToHash("IsRaised");
 
-	// Token: 0x040017B1 RID: 6065
+	// Token: 0x0400141F RID: 5151
 	public float deactivateDelay = 1f;
 
-	// Token: 0x040017B2 RID: 6066
+	// Token: 0x04001420 RID: 5152
 	public GameObject rootGameObject;
 }

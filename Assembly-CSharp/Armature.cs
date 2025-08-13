@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200009C RID: 156
+// Token: 0x0200007B RID: 123
 public class Armature : MonoBehaviour
 {
-	// Token: 0x06000233 RID: 563 RVA: 0x00003CBE File Offset: 0x00001EBE
+	// Token: 0x060001FC RID: 508 RVA: 0x0000AE28 File Offset: 0x00009028
 	public void OnValidate()
 	{
 		if (this.transforms == null || (float)this.transforms.Length == 0f)
@@ -13,6 +13,6 @@ public class Armature : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000324 RID: 804
+	// Token: 0x0400029E RID: 670
 	public Transform[] transforms;
 }

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using Steamworks;
 using UnityEngine;
 
-// Token: 0x02000092 RID: 146
+// Token: 0x02000072 RID: 114
 public class AchievementManager : MonoBehaviour
 {
-	// Token: 0x060001F9 RID: 505 RVA: 0x000039C3 File Offset: 0x00001BC3
+	// Token: 0x060001C3 RID: 451 RVA: 0x00009BEA File Offset: 0x00007DEA
 	public static void MarkAchievementToUnlock(Achievement achievement)
 	{
 		if (AchievementManager.achievementsToUnlock.Contains(achievement))
@@ -16,7 +16,7 @@ public class AchievementManager : MonoBehaviour
 		AchievementManager.achievementsToUnlock.Add(achievement);
 	}
 
-	// Token: 0x060001FA RID: 506 RVA: 0x0001DB1C File Offset: 0x0001BD1C
+	// Token: 0x060001C4 RID: 452 RVA: 0x00009C08 File Offset: 0x00007E08
 	public static void MarkAchievementProgress(Achievement achievement, int progress)
 	{
 		for (int i = 0; i < AchievementManager.achievementProgress.Count; i++)
@@ -30,8 +30,8 @@ public class AchievementManager : MonoBehaviour
 		AchievementManager.achievementProgress.Add(new AchievementManager.AchievementProgress(achievement, progress));
 	}
 
-	// Token: 0x17000023 RID: 35
-	// (get) Token: 0x060001FB RID: 507 RVA: 0x000039DE File Offset: 0x00001BDE
+	// Token: 0x17000012 RID: 18
+	// (get) Token: 0x060001C5 RID: 453 RVA: 0x00009C66 File Offset: 0x00007E66
 	public static AchievementManager a
 	{
 		get
@@ -48,7 +48,7 @@ public class AchievementManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001FC RID: 508 RVA: 0x00003A1A File Offset: 0x00001C1A
+	// Token: 0x060001C6 RID: 454 RVA: 0x00009CA2 File Offset: 0x00007EA2
 	private void Awake()
 	{
 		if (AchievementManager.instance == null)
@@ -58,7 +58,7 @@ public class AchievementManager : MonoBehaviour
 		AchievementManager.instance != this;
 	}
 
-	// Token: 0x060001FD RID: 509 RVA: 0x00003A3B File Offset: 0x00001C3B
+	// Token: 0x060001C7 RID: 455 RVA: 0x00009CC3 File Offset: 0x00007EC3
 	private void Start()
 	{
 		if (AchievementManager.instance != this)
@@ -68,7 +68,7 @@ public class AchievementManager : MonoBehaviour
 		this.m_UserStatsReceived = Callback<UserStatsReceived_t>.Create(new Callback<UserStatsReceived_t>.DispatchDelegate(this.OnUserStatsReceived));
 	}
 
-	// Token: 0x060001FE RID: 510 RVA: 0x0001DB7C File Offset: 0x0001BD7C
+	// Token: 0x060001C8 RID: 456 RVA: 0x00009CEC File Offset: 0x00007EEC
 	private void Update()
 	{
 		if (!SteamManager.Initialized)
@@ -111,17 +111,17 @@ public class AchievementManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001FF RID: 511 RVA: 0x000039A2 File Offset: 0x00001BA2
+	// Token: 0x060001C9 RID: 457 RVA: 0x00009DC5 File Offset: 0x00007FC5
 	private bool SetAchievementProgress(Achievement achievement, int progress)
 	{
 		return false;
 	}
 
-	// Token: 0x06000200 RID: 512 RVA: 0x0001DC58 File Offset: 0x0001BE58
+	// Token: 0x060001CA RID: 458 RVA: 0x00009DC8 File Offset: 0x00007FC8
 	private bool UnlockAchievement(Achievement achievement)
 	{
 		bool flag;
-		if (SteamUserStats.GetAchievement(achievement.steamID, ref flag) && flag)
+		if (SteamUserStats.GetAchievement(achievement.steamID, out flag) && flag)
 		{
 			return false;
 		}
@@ -129,7 +129,7 @@ public class AchievementManager : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000201 RID: 513 RVA: 0x00003A62 File Offset: 0x00001C62
+	// Token: 0x060001CB RID: 459 RVA: 0x00009DF6 File Offset: 0x00007FF6
 	internal void LockAchievement(Achievement achievement)
 	{
 		if (!this.statsRecieved)
@@ -140,7 +140,7 @@ public class AchievementManager : MonoBehaviour
 		this.Commit();
 	}
 
-	// Token: 0x06000202 RID: 514 RVA: 0x00003A7F File Offset: 0x00001C7F
+	// Token: 0x060001CC RID: 460 RVA: 0x00009E13 File Offset: 0x00008013
 	private void Commit()
 	{
 		if (SteamUserStats.StoreStats())
@@ -149,12 +149,12 @@ public class AchievementManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000203 RID: 515 RVA: 0x0001DC88 File Offset: 0x0001BE88
+	// Token: 0x060001CD RID: 461 RVA: 0x00009E24 File Offset: 0x00008024
 	private void OnUserStatsReceived(UserStatsReceived_t pCallback)
 	{
 		if (1586800UL == pCallback.m_nGameID)
 		{
-			if (1 == pCallback.m_eResult)
+			if (EResult.k_EResultOK == pCallback.m_eResult)
 			{
 				Debug.Log("Received stats and achievements from Steam\n");
 				this.statsRecieved = true;
@@ -164,44 +164,44 @@ public class AchievementManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040002E5 RID: 741
+	// Token: 0x04000261 RID: 609
 	public const bool hasAchievements = true;
 
-	// Token: 0x040002E6 RID: 742
+	// Token: 0x04000262 RID: 610
 	private static List<Achievement> achievementsToUnlock = new List<Achievement>();
 
-	// Token: 0x040002E7 RID: 743
+	// Token: 0x04000263 RID: 611
 	private static List<AchievementManager.AchievementProgress> achievementProgress = new List<AchievementManager.AchievementProgress>();
 
-	// Token: 0x040002E8 RID: 744
+	// Token: 0x04000264 RID: 612
 	private static AchievementManager instance;
 
-	// Token: 0x040002E9 RID: 745
+	// Token: 0x04000265 RID: 613
 	private bool requestedStats;
 
-	// Token: 0x040002EA RID: 746
+	// Token: 0x04000266 RID: 614
 	private bool statsRecieved;
 
-	// Token: 0x040002EB RID: 747
+	// Token: 0x04000267 RID: 615
 	protected Callback<UserStatsReceived_t> m_UserStatsReceived;
 
-	// Token: 0x040002EC RID: 748
+	// Token: 0x04000268 RID: 616
 	private bool needToCommit;
 
-	// Token: 0x02000093 RID: 147
+	// Token: 0x02000371 RID: 881
 	private struct AchievementProgress
 	{
-		// Token: 0x06000206 RID: 518 RVA: 0x00003AA5 File Offset: 0x00001CA5
+		// Token: 0x06001836 RID: 6198 RVA: 0x00067678 File Offset: 0x00065878
 		public AchievementProgress(Achievement achievement, int progress)
 		{
 			this.achievement = achievement;
 			this.progress = progress;
 		}
 
-		// Token: 0x040002ED RID: 749
+		// Token: 0x04001A62 RID: 6754
 		public Achievement achievement;
 
-		// Token: 0x040002EE RID: 750
+		// Token: 0x04001A63 RID: 6755
 		public int progress;
 	}
 }

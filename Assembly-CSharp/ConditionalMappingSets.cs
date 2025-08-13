@@ -2,10 +2,10 @@
 using Rewired.UI.ControlMapper;
 using UnityEngine;
 
-// Token: 0x02000386 RID: 902
+// Token: 0x020002A9 RID: 681
 public class ConditionalMappingSets : MonoBehaviour
 {
-	// Token: 0x06001138 RID: 4408 RVA: 0x00056968 File Offset: 0x00054B68
+	// Token: 0x06000E68 RID: 3688 RVA: 0x00045008 File Offset: 0x00043208
 	[ContextMenu("Copy mapping sets")]
 	public void CopyMappingSets()
 	{
@@ -13,7 +13,7 @@ public class ConditionalMappingSets : MonoBehaviour
 		this.copiedMappingSets = component._mappingSets;
 	}
 
-	// Token: 0x06001139 RID: 4409 RVA: 0x0000EC13 File Offset: 0x0000CE13
+	// Token: 0x06000E69 RID: 3689 RVA: 0x00045028 File Offset: 0x00043228
 	[ContextMenu("Set mapping set")]
 	public void SetMappingSet()
 	{
@@ -22,15 +22,15 @@ public class ConditionalMappingSets : MonoBehaviour
 		component.Reset();
 	}
 
-	// Token: 0x04001628 RID: 5672
+	// Token: 0x040012C0 RID: 4800
 	public ControlMapper.MappingSet[] copiedMappingSets = new ControlMapper.MappingSet[] { ControlMapper.MappingSet.Default };
 
-	// Token: 0x04001629 RID: 5673
+	// Token: 0x040012C1 RID: 4801
 	public ControlMapper.MappingSet[] usualMappingSets;
 
-	// Token: 0x0400162A RID: 5674
+	// Token: 0x040012C2 RID: 4802
 	public ControlMapper.MappingSet[] merge1;
 
-	// Token: 0x0400162B RID: 5675
+	// Token: 0x040012C3 RID: 4803
 	public ControlMapper.MappingSet[] merge2;
 }

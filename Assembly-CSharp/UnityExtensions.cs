@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000213 RID: 531
+// Token: 0x02000197 RID: 407
 public static class UnityExtensions
 {
-	// Token: 0x060009E0 RID: 2528 RVA: 0x0003AAB4 File Offset: 0x00038CB4
+	// Token: 0x0600085D RID: 2141 RVA: 0x00027B94 File Offset: 0x00025D94
 	public static T GetOrAddComponent<T>(this GameObject gameObject) where T : Component
 	{
 		T t;
-		if (gameObject.TryGetComponent<T>(ref t))
+		if (gameObject.TryGetComponent<T>(out t))
 		{
 			return t;
 		}
 		return gameObject.AddComponent<T>();
 	}
 
-	// Token: 0x060009E1 RID: 2529 RVA: 0x00009892 File Offset: 0x00007A92
+	// Token: 0x0600085E RID: 2142 RVA: 0x00027BB3 File Offset: 0x00025DB3
 	public static bool Contains(this LayerMask mask, int layer)
 	{
 		return mask == (mask | (1 << layer));
 	}
 
-	// Token: 0x060009E2 RID: 2530 RVA: 0x000098A9 File Offset: 0x00007AA9
+	// Token: 0x0600085F RID: 2143 RVA: 0x00027BCA File Offset: 0x00025DCA
 	public static Color SetAlpha(this Color color, float alpha)
 	{
 		return new Color(color.r, color.g, color.b, alpha);
 	}
 
-	// Token: 0x060009E3 RID: 2531 RVA: 0x000098C3 File Offset: 0x00007AC3
+	// Token: 0x06000860 RID: 2144 RVA: 0x00027BE4 File Offset: 0x00025DE4
 	public static Transform ApplyTransform(this Transform transform, Transform sourceTransform)
 	{
 		transform.position = sourceTransform.position;
@@ -37,7 +37,7 @@ public static class UnityExtensions
 		return transform;
 	}
 
-	// Token: 0x060009E4 RID: 2532 RVA: 0x000098DE File Offset: 0x00007ADE
+	// Token: 0x06000861 RID: 2145 RVA: 0x00027BFF File Offset: 0x00025DFF
 	public static Transform ApplyTransformLocal(this Transform transform, Transform sourceTransform)
 	{
 		transform.localPosition = sourceTransform.localPosition;
@@ -45,7 +45,7 @@ public static class UnityExtensions
 		return transform;
 	}
 
-	// Token: 0x060009E5 RID: 2533 RVA: 0x000098F9 File Offset: 0x00007AF9
+	// Token: 0x06000862 RID: 2146 RVA: 0x00027C1A File Offset: 0x00025E1A
 	public static Transform ApplyParent(this Transform transform, Transform newParent)
 	{
 		transform.parent = newParent;
@@ -55,13 +55,13 @@ public static class UnityExtensions
 		return transform;
 	}
 
-	// Token: 0x060009E6 RID: 2534 RVA: 0x0003AAD4 File Offset: 0x00038CD4
+	// Token: 0x06000863 RID: 2147 RVA: 0x00027C48 File Offset: 0x00025E48
 	public static T GetComponentUpHeirarchy<T>(this Transform transform) where T : Component
 	{
 		while (transform != null)
 		{
 			T t;
-			if (transform.TryGetComponent<T>(ref t))
+			if (transform.TryGetComponent<T>(out t))
 			{
 				return t;
 			}
@@ -70,7 +70,7 @@ public static class UnityExtensions
 		return default(T);
 	}
 
-	// Token: 0x060009E7 RID: 2535 RVA: 0x0003AB0C File Offset: 0x00038D0C
+	// Token: 0x06000864 RID: 2148 RVA: 0x00027C80 File Offset: 0x00025E80
 	public static int GetDepth(this Transform transform)
 	{
 		int num = 0;
@@ -82,13 +82,13 @@ public static class UnityExtensions
 		return num;
 	}
 
-	// Token: 0x060009E8 RID: 2536 RVA: 0x00009924 File Offset: 0x00007B24
+	// Token: 0x06000865 RID: 2149 RVA: 0x00027CB1 File Offset: 0x00025EB1
 	public static Quaternion Inverse(this Quaternion quaternion)
 	{
 		return Quaternion.Inverse(quaternion);
 	}
 
-	// Token: 0x060009E9 RID: 2537 RVA: 0x0003AB40 File Offset: 0x00038D40
+	// Token: 0x06000866 RID: 2150 RVA: 0x00027CBC File Offset: 0x00025EBC
 	public static void ApplyState(this Animator animator, string state)
 	{
 		ActorState actorState;
@@ -98,13 +98,13 @@ public static class UnityExtensions
 		}
 	}
 
-	// Token: 0x060009EA RID: 2538 RVA: 0x0000992C File Offset: 0x00007B2C
+	// Token: 0x06000867 RID: 2151 RVA: 0x00027CDA File Offset: 0x00025EDA
 	public static void ApplyState(this Animator animator, int state)
 	{
 		animator.SetInteger(UnityExtensions.stateID, state);
 	}
 
-	// Token: 0x060009EB RID: 2539 RVA: 0x0003AB60 File Offset: 0x00038D60
+	// Token: 0x06000868 RID: 2152 RVA: 0x00027CE8 File Offset: 0x00025EE8
 	public static void ApplyPosition(this Animator animator, string position)
 	{
 		ActorPosition actorPosition;
@@ -114,13 +114,13 @@ public static class UnityExtensions
 		}
 	}
 
-	// Token: 0x060009EC RID: 2540 RVA: 0x0000993A File Offset: 0x00007B3A
+	// Token: 0x06000869 RID: 2153 RVA: 0x00027D06 File Offset: 0x00025F06
 	public static void ApplyPosition(this Animator animator, int position)
 	{
 		animator.SetInteger(UnityExtensions.positionID, position);
 	}
 
-	// Token: 0x060009ED RID: 2541 RVA: 0x0003AB80 File Offset: 0x00038D80
+	// Token: 0x0600086A RID: 2154 RVA: 0x00027D14 File Offset: 0x00025F14
 	public static bool TryFindIndex<T>(this IEnumerable<T> array, T target, out int index)
 	{
 		index = 0;
@@ -146,7 +146,7 @@ public static class UnityExtensions
 		return false;
 	}
 
-	// Token: 0x060009EE RID: 2542 RVA: 0x0003AC00 File Offset: 0x00038E00
+	// Token: 0x0600086B RID: 2155 RVA: 0x00027D94 File Offset: 0x00025F94
 	public static bool HasPersistentTarget(this UnityEvent unityEvent, Object target)
 	{
 		int persistentEventCount = unityEvent.GetPersistentEventCount();
@@ -160,7 +160,7 @@ public static class UnityExtensions
 		return false;
 	}
 
-	// Token: 0x060009EF RID: 2543 RVA: 0x0003AC34 File Offset: 0x00038E34
+	// Token: 0x0600086C RID: 2156 RVA: 0x00027DC8 File Offset: 0x00025FC8
 	public static bool Contains<T>(this T[] array, T target)
 	{
 		foreach (T t in array)
@@ -173,7 +173,7 @@ public static class UnityExtensions
 		return false;
 	}
 
-	// Token: 0x060009F0 RID: 2544 RVA: 0x00009948 File Offset: 0x00007B48
+	// Token: 0x0600086D RID: 2157 RVA: 0x00027DFE File Offset: 0x00025FFE
 	public static T[] Remove<T>(this T[] array, T elementToRemove)
 	{
 		List<T> list = new List<T>(array);
@@ -182,7 +182,7 @@ public static class UnityExtensions
 		return array;
 	}
 
-	// Token: 0x060009F1 RID: 2545 RVA: 0x00009960 File Offset: 0x00007B60
+	// Token: 0x0600086E RID: 2158 RVA: 0x00027E16 File Offset: 0x00026016
 	public static T[] Add<T>(this T[] array, T newElement)
 	{
 		Array.Resize<T>(ref array, array.Length + 1);
@@ -190,7 +190,7 @@ public static class UnityExtensions
 		return array;
 	}
 
-	// Token: 0x060009F2 RID: 2546 RVA: 0x0003AC6C File Offset: 0x00038E6C
+	// Token: 0x0600086F RID: 2159 RVA: 0x00027E34 File Offset: 0x00026034
 	public static T RandomValue<T>(this T[] array)
 	{
 		int num = Mathf.FloorToInt(Random.value * (float)array.Length);
@@ -202,43 +202,43 @@ public static class UnityExtensions
 		return array[num];
 	}
 
-	// Token: 0x060009F3 RID: 2547 RVA: 0x0000997B File Offset: 0x00007B7B
+	// Token: 0x06000870 RID: 2160 RVA: 0x00027E6E File Offset: 0x0002606E
 	public static Vector4 ToVector4(this Quaternion quaternion)
 	{
 		return new Vector4(quaternion.x, quaternion.y, quaternion.z, quaternion.w);
 	}
 
-	// Token: 0x060009F4 RID: 2548 RVA: 0x0000999A File Offset: 0x00007B9A
+	// Token: 0x06000871 RID: 2161 RVA: 0x00027E8D File Offset: 0x0002608D
 	public static Quaternion ToQuaternion(this Vector4 vector4)
 	{
 		return new Quaternion(vector4.x, vector4.y, vector4.z, vector4.w);
 	}
 
-	// Token: 0x060009F5 RID: 2549 RVA: 0x000099B9 File Offset: 0x00007BB9
+	// Token: 0x06000872 RID: 2162 RVA: 0x00027EAC File Offset: 0x000260AC
 	public static Vector2Int PixelSize(this Resolution res)
 	{
 		return new Vector2Int(res.width, res.height);
 	}
 
-	// Token: 0x060009F6 RID: 2550 RVA: 0x000099CE File Offset: 0x00007BCE
+	// Token: 0x06000873 RID: 2163 RVA: 0x00027EC1 File Offset: 0x000260C1
 	public static Vector3 Flat(this Vector3 vector3)
 	{
 		vector3.y = 0f;
 		return vector3;
 	}
 
-	// Token: 0x060009F7 RID: 2551 RVA: 0x0003ACA8 File Offset: 0x00038EA8
+	// Token: 0x06000874 RID: 2164 RVA: 0x00027ED0 File Offset: 0x000260D0
 	public static bool IsNaN(this Vector3 vector3)
 	{
 		return float.IsNaN(vector3.x) || float.IsPositiveInfinity(vector3.x) || float.IsNegativeInfinity(vector3.x) || (float.IsNaN(vector3.y) || float.IsPositiveInfinity(vector3.y) || float.IsNegativeInfinity(vector3.y)) || (float.IsNaN(vector3.z) || float.IsPositiveInfinity(vector3.z) || float.IsNegativeInfinity(vector3.z));
 	}
 
-	// Token: 0x04000C7D RID: 3197
+	// Token: 0x04000A78 RID: 2680
 	public static int stateID = Animator.StringToHash("State");
 
-	// Token: 0x04000C7E RID: 3198
+	// Token: 0x04000A79 RID: 2681
 	public static int positionID = Animator.StringToHash("Position");
 
-	// Token: 0x04000C7F RID: 3199
+	// Token: 0x04000A7A RID: 2682
 	private static int lastRandomIndex = -1;
 }

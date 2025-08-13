@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000165 RID: 357
+// Token: 0x0200010E RID: 270
 public class FadeParticlesProximity : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x060006AD RID: 1709 RVA: 0x00006D0F File Offset: 0x00004F0F
+	// Token: 0x06000589 RID: 1417 RVA: 0x0001D327 File Offset: 0x0001B527
 	public void OnValidate()
 	{
 		if (this.particleSystem == null)
@@ -14,25 +14,25 @@ public class FadeParticlesProximity : MonoBehaviour, IManagedUpdate
 		this.maxSqrDistance = this.maxDistance * this.maxDistance;
 	}
 
-	// Token: 0x060006AE RID: 1710 RVA: 0x00006D3E File Offset: 0x00004F3E
+	// Token: 0x0600058A RID: 1418 RVA: 0x0001D356 File Offset: 0x0001B556
 	private void Start()
 	{
 		this.SetFade(0f);
 	}
 
-	// Token: 0x060006AF RID: 1711 RVA: 0x0000265D File Offset: 0x0000085D
+	// Token: 0x0600058B RID: 1419 RVA: 0x0001D363 File Offset: 0x0001B563
 	private void OnEnable()
 	{
 		FastUpdateManager.updateEvery4.Add(this);
 	}
 
-	// Token: 0x060006B0 RID: 1712 RVA: 0x0000266A File Offset: 0x0000086A
+	// Token: 0x0600058C RID: 1420 RVA: 0x0001D370 File Offset: 0x0001B570
 	private void OnDisable()
 	{
 		FastUpdateManager.updateEvery4.Remove(this);
 	}
 
-	// Token: 0x060006B1 RID: 1713 RVA: 0x000318C4 File Offset: 0x0002FAC4
+	// Token: 0x0600058D RID: 1421 RVA: 0x0001D380 File Offset: 0x0001B580
 	public void ManagedUpdate()
 	{
 		if (this.proximityTransform == null)
@@ -48,7 +48,7 @@ public class FadeParticlesProximity : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060006B2 RID: 1714 RVA: 0x00031938 File Offset: 0x0002FB38
+	// Token: 0x0600058E RID: 1422 RVA: 0x0001D3F4 File Offset: 0x0001B5F4
 	private void OnTriggerStay(Collider other)
 	{
 		if (base.enabled)
@@ -65,31 +65,31 @@ public class FadeParticlesProximity : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060006B3 RID: 1715 RVA: 0x000319B8 File Offset: 0x0002FBB8
+	// Token: 0x0600058F RID: 1423 RVA: 0x0001D474 File Offset: 0x0001B674
 	private void SetFade(float fadeAmount)
 	{
 		this.particleSystem.emission.rateOverTimeMultiplier = fadeAmount * this.maxRate;
 	}
 
-	// Token: 0x040008F5 RID: 2293
+	// Token: 0x0400079B RID: 1947
 	public float maxDistance = 20f;
 
-	// Token: 0x040008F6 RID: 2294
+	// Token: 0x0400079C RID: 1948
 	[ReadOnly]
 	public float maxSqrDistance;
 
-	// Token: 0x040008F7 RID: 2295
+	// Token: 0x0400079D RID: 1949
 	public float minDistance = 8f;
 
-	// Token: 0x040008F8 RID: 2296
+	// Token: 0x0400079E RID: 1950
 	private Transform proximityTransform;
 
-	// Token: 0x040008F9 RID: 2297
+	// Token: 0x0400079F RID: 1951
 	public bool keepEnabled;
 
-	// Token: 0x040008FA RID: 2298
+	// Token: 0x040007A0 RID: 1952
 	public ParticleSystem particleSystem;
 
-	// Token: 0x040008FB RID: 2299
+	// Token: 0x040007A1 RID: 1953
 	public float maxRate = 80f;
 }

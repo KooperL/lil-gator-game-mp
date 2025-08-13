@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200006D RID: 109
+// Token: 0x02000054 RID: 84
 public class FallbackAudioListener : MonoBehaviour
 {
-	// Token: 0x06000160 RID: 352 RVA: 0x00003322 File Offset: 0x00001522
+	// Token: 0x0600013B RID: 315 RVA: 0x00007B2D File Offset: 0x00005D2D
 	private void Start()
 	{
 		this.audioListener = Object.FindObjectOfType<AudioListener>(false);
 	}
 
-	// Token: 0x06000161 RID: 353 RVA: 0x0001C014 File Offset: 0x0001A214
+	// Token: 0x0600013C RID: 316 RVA: 0x00007B3C File Offset: 0x00005D3C
 	private void LateUpdate()
 	{
 		if (this.audioListener == null)
@@ -24,9 +24,9 @@ public class FallbackAudioListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400021E RID: 542
+	// Token: 0x040001BA RID: 442
 	private AudioListener audioListener;
 
-	// Token: 0x0400021F RID: 543
+	// Token: 0x040001BB RID: 443
 	public GameObject fallback;
 }

@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200021F RID: 543
+// Token: 0x020001A5 RID: 421
 [ExecuteInEditMode]
 public class ProjectileTest : MonoBehaviour
 {
-	// Token: 0x06000A1F RID: 2591 RVA: 0x0003B6E0 File Offset: 0x000398E0
+	// Token: 0x0600089E RID: 2206 RVA: 0x00028BA4 File Offset: 0x00026DA4
 	[ContextMenu("Launch")]
 	public void LaunchProjectile()
 	{
@@ -20,12 +20,12 @@ public class ProjectileTest : MonoBehaviour
 		Debug.Log("Impossible projectile");
 	}
 
-	// Token: 0x04000CA0 RID: 3232
+	// Token: 0x04000AA0 RID: 2720
 	public GameObject projectile;
 
-	// Token: 0x04000CA1 RID: 3233
+	// Token: 0x04000AA1 RID: 2721
 	public float projectileSpeed = 30f;
 
-	// Token: 0x04000CA2 RID: 3234
+	// Token: 0x04000AA2 RID: 2722
 	public Transform target;
 }

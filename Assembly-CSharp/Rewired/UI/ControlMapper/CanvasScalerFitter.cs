@@ -1,14 +1,15 @@
 ﻿using System;
 using Rewired.Utils;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x0200042F RID: 1071
+	// Token: 0x0200031C RID: 796
 	[RequireComponent(typeof(CanvasScalerExt))]
 	public class CanvasScalerFitter : MonoBehaviour
 	{
-		// Token: 0x060017CA RID: 6090 RVA: 0x00012582 File Offset: 0x00010782
+		// Token: 0x060013FF RID: 5119 RVA: 0x000554EF File Offset: 0x000536EF
 		private void OnEnable()
 		{
 			this.canvasScaler = base.GetComponent<CanvasScalerExt>();
@@ -16,7 +17,7 @@ namespace Rewired.UI.ControlMapper
 			this.canvasScaler.ForceRefresh();
 		}
 
-		// Token: 0x060017CB RID: 6091 RVA: 0x000125A1 File Offset: 0x000107A1
+		// Token: 0x06001400 RID: 5120 RVA: 0x0005550E File Offset: 0x0005370E
 		private void Update()
 		{
 			if (Screen.width != this.screenWidth || Screen.height != this.screenHeight)
@@ -27,10 +28,10 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x060017CC RID: 6092 RVA: 0x00064E28 File Offset: 0x00063028
+		// Token: 0x06001401 RID: 5121 RVA: 0x00055548 File Offset: 0x00053748
 		private void UpdateSize()
 		{
-			if (this.canvasScaler.uiScaleMode != 1)
+			if (this.canvasScaler.uiScaleMode != CanvasScaler.ScaleMode.ScaleWithScreenSize)
 			{
 				return;
 			}
@@ -53,35 +54,35 @@ namespace Rewired.UI.ControlMapper
 			this.canvasScaler.referenceResolution = this.breakPoints[num3].referenceResolution;
 		}
 
-		// Token: 0x04001BB8 RID: 7096
+		// Token: 0x040017A1 RID: 6049
 		[SerializeField]
 		private CanvasScalerFitter.BreakPoint[] breakPoints;
 
-		// Token: 0x04001BB9 RID: 7097
+		// Token: 0x040017A2 RID: 6050
 		private CanvasScalerExt canvasScaler;
 
-		// Token: 0x04001BBA RID: 7098
+		// Token: 0x040017A3 RID: 6051
 		private int screenWidth;
 
-		// Token: 0x04001BBB RID: 7099
+		// Token: 0x040017A4 RID: 6052
 		private int screenHeight;
 
-		// Token: 0x04001BBC RID: 7100
+		// Token: 0x040017A5 RID: 6053
 		private Action ScreenSizeChanged;
 
-		// Token: 0x02000430 RID: 1072
+		// Token: 0x0200046D RID: 1133
 		[Serializable]
 		private class BreakPoint
 		{
-			// Token: 0x04001BBD RID: 7101
+			// Token: 0x04001E46 RID: 7750
 			[SerializeField]
 			public string name;
 
-			// Token: 0x04001BBE RID: 7102
+			// Token: 0x04001E47 RID: 7751
 			[SerializeField]
 			public float screenAspectRatio;
 
-			// Token: 0x04001BBF RID: 7103
+			// Token: 0x04001E48 RID: 7752
 			[SerializeField]
 			public Vector2 referenceResolution;
 		}

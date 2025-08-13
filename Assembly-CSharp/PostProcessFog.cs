@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-// Token: 0x02000146 RID: 326
+// Token: 0x020000F3 RID: 243
 public class PostProcessFog : MonoBehaviour
 {
-	// Token: 0x06000618 RID: 1560 RVA: 0x0002F880 File Offset: 0x0002DA80
+	// Token: 0x06000506 RID: 1286 RVA: 0x0001AE94 File Offset: 0x00019094
 	private void OnEnable()
 	{
 		if (!this.isInitialized)
@@ -20,21 +20,21 @@ public class PostProcessFog : MonoBehaviour
 			this.beforeEverythingBuffer.DisableShaderKeyword("FOG_EXP");
 		}
 		this.UpdateCommandBuffer();
-		this.camera.AddCommandBuffer(10, this.beforeEverythingBuffer);
-		this.camera.AddCommandBuffer(14, this.commandBuffer);
+		this.camera.AddCommandBuffer(CameraEvent.BeforeForwardOpaque, this.beforeEverythingBuffer);
+		this.camera.AddCommandBuffer(CameraEvent.BeforeSkybox, this.commandBuffer);
 	}
 
-	// Token: 0x06000619 RID: 1561 RVA: 0x000065BF File Offset: 0x000047BF
+	// Token: 0x06000507 RID: 1287 RVA: 0x0001AF31 File Offset: 0x00019131
 	private void OnDisable()
 	{
 		if (this.camera != null)
 		{
-			this.camera.RemoveCommandBuffer(10, this.beforeEverythingBuffer);
-			this.camera.RemoveCommandBuffer(14, this.commandBuffer);
+			this.camera.RemoveCommandBuffer(CameraEvent.BeforeForwardOpaque, this.beforeEverythingBuffer);
+			this.camera.RemoveCommandBuffer(CameraEvent.BeforeSkybox, this.commandBuffer);
 		}
 	}
 
-	// Token: 0x0600061A RID: 1562 RVA: 0x000065F5 File Offset: 0x000047F5
+	// Token: 0x06000508 RID: 1288 RVA: 0x0001AF67 File Offset: 0x00019167
 	private void LateUpdate()
 	{
 		if (MainCamera.c != null)
@@ -44,12 +44,12 @@ public class PostProcessFog : MonoBehaviour
 		this.UpdateCommandBuffer();
 	}
 
-	// Token: 0x0600061B RID: 1563 RVA: 0x0002F920 File Offset: 0x0002DB20
+	// Token: 0x06000509 RID: 1289 RVA: 0x0001AF98 File Offset: 0x00019198
 	private void UpdateCommandBuffer()
 	{
 		this.commandBuffer.Clear();
-		this.commandBuffer.SetGlobalTexture(PostProcessFog._CameraDepthTexture, 3);
-		this.commandBuffer.GetTemporaryRT(PostProcessFog.fogBufferRTID, -1, -1, 0, 0, 28, 0, 1, false, 0, true);
+		this.commandBuffer.SetGlobalTexture(PostProcessFog._CameraDepthTexture, BuiltinRenderTextureType.Depth);
+		this.commandBuffer.GetTemporaryRT(PostProcessFog.fogBufferRTID, -1, -1, 0, FilterMode.Point, RenderTextureFormat.R16, RenderTextureReadWrite.Default, 1, false, RenderTextureMemoryless.None, true);
 		this.commandBuffer.SetRenderTarget(PostProcessFog.fogBufferRTID);
 		this.commandBuffer.ClearRenderTarget(false, true, Color.clear);
 		GeometryUtility.CalculateFrustumPlanes(MainCamera.c, this.cameraFrustumPlanes);
@@ -73,62 +73,62 @@ public class PostProcessFog : MonoBehaviour
 		this.commandBuffer.DrawMeshInstanced(this.lightMesh, 0, this.lightMaterial, 0, this.matrices, num, this.block);
 		this.fogLightCountPreview = num;
 		this.commandBuffer.EnableShaderKeyword("FOG_EXP");
-		this.commandBuffer.Blit(PostProcessFog.fogBufferRTID, 2, this.postFogMaterial);
+		this.commandBuffer.Blit(PostProcessFog.fogBufferRTID, BuiltinRenderTextureType.CameraTarget, this.postFogMaterial);
 		this.commandBuffer.ReleaseTemporaryRT(PostProcessFog.backBufferRTID);
 		this.commandBuffer.ReleaseTemporaryRT(PostProcessFog.fogBufferRTID);
 	}
 
-	// Token: 0x0400082C RID: 2092
+	// Token: 0x040006E5 RID: 1765
 	public static List<FogLight> fogLights = new List<FogLight>();
 
-	// Token: 0x0400082D RID: 2093
+	// Token: 0x040006E6 RID: 1766
 	private Camera camera;
 
-	// Token: 0x0400082E RID: 2094
+	// Token: 0x040006E7 RID: 1767
 	private CommandBuffer commandBuffer;
 
-	// Token: 0x0400082F RID: 2095
+	// Token: 0x040006E8 RID: 1768
 	public Material postFogMaterial;
 
-	// Token: 0x04000830 RID: 2096
+	// Token: 0x040006E9 RID: 1769
 	public Material lightMaterial;
 
-	// Token: 0x04000831 RID: 2097
+	// Token: 0x040006EA RID: 1770
 	public Mesh lightMesh;
 
-	// Token: 0x04000832 RID: 2098
+	// Token: 0x040006EB RID: 1771
 	private static readonly int fogBufferRTID = Shader.PropertyToID("_FogBuffer");
 
-	// Token: 0x04000833 RID: 2099
+	// Token: 0x040006EC RID: 1772
 	private static readonly int backBufferRTID = Shader.PropertyToID("_BackBuffer");
 
-	// Token: 0x04000834 RID: 2100
+	// Token: 0x040006ED RID: 1773
 	private bool isInitialized;
 
-	// Token: 0x04000835 RID: 2101
+	// Token: 0x040006EE RID: 1774
 	private static readonly int _LightData = Shader.PropertyToID("_LightData");
 
-	// Token: 0x04000836 RID: 2102
+	// Token: 0x040006EF RID: 1775
 	private MaterialPropertyBlock block;
 
-	// Token: 0x04000837 RID: 2103
+	// Token: 0x040006F0 RID: 1776
 	private Vector4[] lightData = new Vector4[30];
 
-	// Token: 0x04000838 RID: 2104
+	// Token: 0x040006F1 RID: 1777
 	private Matrix4x4[] matrices = new Matrix4x4[30];
 
-	// Token: 0x04000839 RID: 2105
+	// Token: 0x040006F2 RID: 1778
 	private CommandBuffer beforeEverythingBuffer;
 
-	// Token: 0x0400083A RID: 2106
+	// Token: 0x040006F3 RID: 1779
 	private Plane[] cameraFrustumPlanes = new Plane[6];
 
-	// Token: 0x0400083B RID: 2107
+	// Token: 0x040006F4 RID: 1780
 	private static readonly int _InverseView = Shader.PropertyToID("_InverseView");
 
-	// Token: 0x0400083C RID: 2108
+	// Token: 0x040006F5 RID: 1781
 	public int fogLightCountPreview;
 
-	// Token: 0x0400083D RID: 2109
+	// Token: 0x040006F6 RID: 1782
 	private static readonly int _CameraDepthTexture = Shader.PropertyToID("_CameraDepthTexture");
 }

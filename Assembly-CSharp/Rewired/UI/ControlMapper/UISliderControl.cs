@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x02000480 RID: 1152
+	// Token: 0x02000333 RID: 819
 	[AddComponentMenu("")]
 	public class UISliderControl : UIControl
 	{
-		// Token: 0x170005E9 RID: 1513
-		// (get) Token: 0x06001C47 RID: 7239 RVA: 0x00015A2C File Offset: 0x00013C2C
-		// (set) Token: 0x06001C48 RID: 7240 RVA: 0x00015A34 File Offset: 0x00013C34
+		// Token: 0x17000410 RID: 1040
+		// (get) Token: 0x060016BB RID: 5819 RVA: 0x0005F355 File Offset: 0x0005D555
+		// (set) Token: 0x060016BC RID: 5820 RVA: 0x0005F35D File Offset: 0x0005D55D
 		public bool showIcon
 		{
 			get
@@ -30,9 +30,9 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x170005EA RID: 1514
-		// (get) Token: 0x06001C49 RID: 7241 RVA: 0x00015A5D File Offset: 0x00013C5D
-		// (set) Token: 0x06001C4A RID: 7242 RVA: 0x00015A65 File Offset: 0x00013C65
+		// Token: 0x17000411 RID: 1041
+		// (get) Token: 0x060016BD RID: 5821 RVA: 0x0005F386 File Offset: 0x0005D586
+		// (set) Token: 0x060016BE RID: 5822 RVA: 0x0005F38E File Offset: 0x0005D58E
 		public bool showSlider
 		{
 			get
@@ -50,7 +50,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001C4B RID: 7243 RVA: 0x0006EF14 File Offset: 0x0006D114
+		// Token: 0x060016BF RID: 5823 RVA: 0x0005F3B8 File Offset: 0x0005D5B8
 		public override void SetCancelCallback(Action cancelCallback)
 		{
 			base.SetCancelCallback(cancelCallback);
@@ -73,7 +73,7 @@ namespace Rewired.UI.ControlMapper
 			}
 			EventTrigger.Entry entry = new EventTrigger.Entry();
 			entry.callback = new EventTrigger.TriggerEvent();
-			entry.eventID = 16;
+			entry.eventID = EventTriggerType.Cancel;
 			entry.callback.AddListener(delegate(BaseEventData data)
 			{
 				cancelCallback();
@@ -85,16 +85,16 @@ namespace Rewired.UI.ControlMapper
 			eventTrigger.triggers.Add(entry);
 		}
 
-		// Token: 0x04001E0F RID: 7695
+		// Token: 0x040018E5 RID: 6373
 		public Image iconImage;
 
-		// Token: 0x04001E10 RID: 7696
+		// Token: 0x040018E6 RID: 6374
 		public Slider slider;
 
-		// Token: 0x04001E11 RID: 7697
+		// Token: 0x040018E7 RID: 6375
 		private bool _showIcon;
 
-		// Token: 0x04001E12 RID: 7698
+		// Token: 0x040018E8 RID: 6376
 		private bool _showSlider;
 	}
 }

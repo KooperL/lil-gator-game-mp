@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000369 RID: 873
+// Token: 0x0200028F RID: 655
 public class UIRaceIcon : MonoBehaviour
 {
-	// Token: 0x060010BB RID: 4283 RVA: 0x000559B4 File Offset: 0x00053BB4
+	// Token: 0x06000DF2 RID: 3570 RVA: 0x00043910 File Offset: 0x00041B10
 	public static string TimerFormat(float time)
 	{
 		float num = (float)Mathf.FloorToInt(time / 60f);
@@ -13,7 +13,7 @@ public class UIRaceIcon : MonoBehaviour
 		return string.Format("{0:0}:{1:00.00}", num, num2);
 	}
 
-	// Token: 0x060010BC RID: 4284 RVA: 0x000559F0 File Offset: 0x00053BF0
+	// Token: 0x06000DF3 RID: 3571 RVA: 0x0004394C File Offset: 0x00041B4C
 	public void LoadRace(float raceLength, Transform finishLine, float previousBest = -1f)
 	{
 		this.isEnd = false;
@@ -39,7 +39,7 @@ public class UIRaceIcon : MonoBehaviour
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x060010BD RID: 4285 RVA: 0x00055ACC File Offset: 0x00053CCC
+	// Token: 0x06000DF4 RID: 3572 RVA: 0x00043A28 File Offset: 0x00041C28
 	public void LoadEnd(Transform finishLine, float previousBest, float newTime)
 	{
 		this.isEnd = true;
@@ -55,13 +55,13 @@ public class UIRaceIcon : MonoBehaviour
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x060010BE RID: 4286 RVA: 0x00009344 File Offset: 0x00007544
+	// Token: 0x06000DF5 RID: 3573 RVA: 0x00043AE2 File Offset: 0x00041CE2
 	public void Clear()
 	{
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060010BF RID: 4287 RVA: 0x0000E5A7 File Offset: 0x0000C7A7
+	// Token: 0x06000DF6 RID: 3574 RVA: 0x00043AF0 File Offset: 0x00041CF0
 	private void Update()
 	{
 		if (!this.isEnd)
@@ -75,7 +75,7 @@ public class UIRaceIcon : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010C0 RID: 4288 RVA: 0x00055B88 File Offset: 0x00053D88
+	// Token: 0x06000DF7 RID: 3575 RVA: 0x00043B28 File Offset: 0x00041D28
 	private void UpdateDisplay()
 	{
 		this.progress.fillAmount = Mathf.InverseLerp(this.raceEndTime, this.raceStartTime, Time.time);
@@ -85,42 +85,42 @@ public class UIRaceIcon : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040015C5 RID: 5573
+	// Token: 0x04001265 RID: 4709
 	public UIFollow uiFollow;
 
-	// Token: 0x040015C6 RID: 5574
+	// Token: 0x04001266 RID: 4710
 	private float raceStartTime;
 
-	// Token: 0x040015C7 RID: 5575
+	// Token: 0x04001267 RID: 4711
 	private float raceEndTime;
 
-	// Token: 0x040015C8 RID: 5576
+	// Token: 0x04001268 RID: 4712
 	public Image progress;
 
-	// Token: 0x040015C9 RID: 5577
+	// Token: 0x04001269 RID: 4713
 	private bool showTimer;
 
-	// Token: 0x040015CA RID: 5578
+	// Token: 0x0400126A RID: 4714
 	public GameObject timer;
 
-	// Token: 0x040015CB RID: 5579
+	// Token: 0x0400126B RID: 4715
 	public Text previousBestDisplay;
 
-	// Token: 0x040015CC RID: 5580
+	// Token: 0x0400126C RID: 4716
 	public Text currentTimeDisplay;
 
-	// Token: 0x040015CD RID: 5581
+	// Token: 0x0400126D RID: 4717
 	public Color betterColor;
 
-	// Token: 0x040015CE RID: 5582
+	// Token: 0x0400126E RID: 4718
 	public Color worseColor;
 
-	// Token: 0x040015CF RID: 5583
+	// Token: 0x0400126F RID: 4719
 	public UIButtonPrompt buttonPrompt;
 
-	// Token: 0x040015D0 RID: 5584
+	// Token: 0x04001270 RID: 4720
 	private bool isEnd;
 
-	// Token: 0x040015D1 RID: 5585
+	// Token: 0x04001271 RID: 4721
 	private float endTimeout = -10f;
 }

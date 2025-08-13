@@ -1,23 +1,23 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000309 RID: 777
+// Token: 0x02000245 RID: 581
 public class SpriteFadeout : MonoBehaviour
 {
-	// Token: 0x06000F54 RID: 3924 RVA: 0x0000D587 File Offset: 0x0000B787
+	// Token: 0x06000CA8 RID: 3240 RVA: 0x0003D605 File Offset: 0x0003B805
 	private void Awake()
 	{
 		this.spriteRenderer = base.GetComponent<SpriteRenderer>();
 	}
 
-	// Token: 0x06000F55 RID: 3925 RVA: 0x0000D595 File Offset: 0x0000B795
+	// Token: 0x06000CA9 RID: 3241 RVA: 0x0003D613 File Offset: 0x0003B813
 	private void Start()
 	{
 		this.color = this.spriteRenderer.color;
 		this.alpha = this.color.a;
 	}
 
-	// Token: 0x06000F56 RID: 3926 RVA: 0x00050478 File Offset: 0x0004E678
+	// Token: 0x06000CAA RID: 3242 RVA: 0x0003D638 File Offset: 0x0003B838
 	private void Update()
 	{
 		this.t += Time.deltaTime;
@@ -29,18 +29,18 @@ public class SpriteFadeout : MonoBehaviour
 		this.spriteRenderer.color = this.color;
 	}
 
-	// Token: 0x040013D4 RID: 5076
+	// Token: 0x040010BE RID: 4286
 	private SpriteRenderer spriteRenderer;
 
-	// Token: 0x040013D5 RID: 5077
+	// Token: 0x040010BF RID: 4287
 	public float fadeTime = 1f;
 
-	// Token: 0x040013D6 RID: 5078
+	// Token: 0x040010C0 RID: 4288
 	private float t;
 
-	// Token: 0x040013D7 RID: 5079
+	// Token: 0x040010C1 RID: 4289
 	private Color color;
 
-	// Token: 0x040013D8 RID: 5080
+	// Token: 0x040010C2 RID: 4290
 	private float alpha;
 }

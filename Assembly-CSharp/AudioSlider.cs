@@ -2,21 +2,21 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-// Token: 0x02000334 RID: 820
+// Token: 0x0200026C RID: 620
 public class AudioSlider : MonoBehaviour
 {
-	// Token: 0x06001002 RID: 4098 RVA: 0x0000DD64 File Offset: 0x0000BF64
+	// Token: 0x06000D54 RID: 3412 RVA: 0x000407B9 File Offset: 0x0003E9B9
 	private void LateUpdate()
 	{
 		this.mixer.SetFloat(this.mixerVariable, this.variableValue);
 	}
 
-	// Token: 0x040014BB RID: 5307
+	// Token: 0x04001195 RID: 4501
 	public AudioMixer mixer;
 
-	// Token: 0x040014BC RID: 5308
+	// Token: 0x04001196 RID: 4502
 	public string mixerVariable;
 
-	// Token: 0x040014BD RID: 5309
+	// Token: 0x04001197 RID: 4503
 	public float variableValue;
 }

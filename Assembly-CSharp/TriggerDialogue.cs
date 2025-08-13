@@ -2,10 +2,10 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x0200010D RID: 269
+// Token: 0x020000C7 RID: 199
 public class TriggerDialogue : MonoBehaviour
 {
-	// Token: 0x06000529 RID: 1321 RVA: 0x00005BBD File Offset: 0x00003DBD
+	// Token: 0x06000452 RID: 1106 RVA: 0x00018B85 File Offset: 0x00016D85
 	private void OnTriggerEnter(Collider other)
 	{
 		if (this.onEnter)
@@ -14,7 +14,7 @@ public class TriggerDialogue : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600052A RID: 1322 RVA: 0x00005BD4 File Offset: 0x00003DD4
+	// Token: 0x06000453 RID: 1107 RVA: 0x00018B9C File Offset: 0x00016D9C
 	private void OnTriggerExit(Collider other)
 	{
 		if (this.onExit)
@@ -23,7 +23,7 @@ public class TriggerDialogue : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600052B RID: 1323 RVA: 0x00005BEB File Offset: 0x00003DEB
+	// Token: 0x06000454 RID: 1108 RVA: 0x00018BB3 File Offset: 0x00016DB3
 	private IEnumerator RunDialogue()
 	{
 		yield return base.StartCoroutine(DialogueManager.d.LoadChunk(this.dialogueChunkName, this.actors, DialogueManager.DialogueBoxBackground.Standard, true));
@@ -34,18 +34,18 @@ public class TriggerDialogue : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04000724 RID: 1828
+	// Token: 0x0400060B RID: 1547
 	public bool onEnter;
 
-	// Token: 0x04000725 RID: 1829
+	// Token: 0x0400060C RID: 1548
 	public bool onExit;
 
-	// Token: 0x04000726 RID: 1830
+	// Token: 0x0400060D RID: 1549
 	public bool deactivateAfterward = true;
 
-	// Token: 0x04000727 RID: 1831
+	// Token: 0x0400060E RID: 1550
 	public DialogueActor[] actors;
 
-	// Token: 0x04000728 RID: 1832
+	// Token: 0x0400060F RID: 1551
 	public string dialogueChunkName;
 }

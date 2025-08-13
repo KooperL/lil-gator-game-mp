@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200018D RID: 397
+// Token: 0x02000132 RID: 306
 public class Breakable : PersistentObject, IHit
 {
-	// Token: 0x06000777 RID: 1911 RVA: 0x000077B0 File Offset: 0x000059B0
+	// Token: 0x06000652 RID: 1618 RVA: 0x00020929 File Offset: 0x0001EB29
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		Object.Instantiate<GameObject>(this.broken, base.transform.position, Quaternion.identity);
@@ -16,7 +16,7 @@ public class Breakable : PersistentObject, IHit
 		Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000778 RID: 1912 RVA: 0x000077EE File Offset: 0x000059EE
+	// Token: 0x06000653 RID: 1619 RVA: 0x00020967 File Offset: 0x0001EB67
 	public void SpawnMoney()
 	{
 		int num = this.cents;
@@ -26,15 +26,15 @@ public class Breakable : PersistentObject, IHit
 		}
 	}
 
-	// Token: 0x040009EA RID: 2538
+	// Token: 0x04000880 RID: 2176
 	public GameObject broken;
 
-	// Token: 0x040009EB RID: 2539
+	// Token: 0x04000881 RID: 2177
 	public int cents;
 
-	// Token: 0x040009EC RID: 2540
+	// Token: 0x04000882 RID: 2178
 	public int minCents;
 
-	// Token: 0x040009ED RID: 2541
+	// Token: 0x04000883 RID: 2179
 	public Vector3 offset;
 }

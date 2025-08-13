@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-// Token: 0x020000C8 RID: 200
+// Token: 0x020000A0 RID: 160
 public class ActorAnimationOverrides : MonoBehaviour
 {
-	// Token: 0x0600033E RID: 830 RVA: 0x00024C54 File Offset: 0x00022E54
+	// Token: 0x060002FB RID: 763 RVA: 0x000116CC File Offset: 0x0000F8CC
 	private void Awake()
 	{
 		if (!this.hasActiveSceneHook)
 		{
-			SceneManager.activeSceneChanged += new UnityAction<Scene, Scene>(ActorAnimationOverrides.OnActiveSceneChanged);
+			SceneManager.activeSceneChanged += ActorAnimationOverrides.OnActiveSceneChanged;
 		}
 		if (this.actor == null)
 		{
@@ -25,13 +24,13 @@ public class ActorAnimationOverrides : MonoBehaviour
 		this.overrideController.GetOverrides(this.overrides);
 	}
 
-	// Token: 0x0600033F RID: 831 RVA: 0x00004867 File Offset: 0x00002A67
+	// Token: 0x060002FC RID: 764 RVA: 0x0001176B File Offset: 0x0000F96B
 	private static void OnActiveSceneChanged(Scene arg0, Scene arg1)
 	{
 		ActorAnimationOverrides.standardAnimations = null;
 	}
 
-	// Token: 0x06000340 RID: 832 RVA: 0x00024CF4 File Offset: 0x00022EF4
+	// Token: 0x060002FD RID: 765 RVA: 0x00011774 File Offset: 0x0000F974
 	public void SetAnimations(AnimationOverride[] animationOverrides)
 	{
 		foreach (AnimationOverride animationOverride in animationOverrides)
@@ -41,7 +40,7 @@ public class ActorAnimationOverrides : MonoBehaviour
 		this.overrideController.ApplyOverrides(this.overrides);
 	}
 
-	// Token: 0x06000341 RID: 833 RVA: 0x0000486F File Offset: 0x00002A6F
+	// Token: 0x060002FE RID: 766 RVA: 0x000117B2 File Offset: 0x0000F9B2
 	public void SetAnimation(AnimationOverride animationOverride, bool applyOverrides = true)
 	{
 		this.overrides.Set(animationOverride);
@@ -51,14 +50,14 @@ public class ActorAnimationOverrides : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000342 RID: 834 RVA: 0x00004891 File Offset: 0x00002A91
+	// Token: 0x060002FF RID: 767 RVA: 0x000117D4 File Offset: 0x0000F9D4
 	public void SetStandardAnimation(ActorAnimationOverrides.StandardAnimation standardAnimation, AnimationClip animationOverride)
 	{
 		this.overrides.Set(ActorAnimationOverrides.GetStandardAnimation(standardAnimation, this.overrides), animationOverride);
 		this.overrideController.ApplyOverrides(this.overrides);
 	}
 
-	// Token: 0x06000343 RID: 835 RVA: 0x00024D34 File Offset: 0x00022F34
+	// Token: 0x06000300 RID: 768 RVA: 0x00011800 File Offset: 0x0000FA00
 	public static AnimationClip GetStandardAnimation(ActorAnimationOverrides.StandardAnimation standardAnimation, AnimationClipOverrides overrides)
 	{
 		if (ActorAnimationOverrides.standardAnimations == null || (float)ActorAnimationOverrides.standardAnimations.Length == 0f)
@@ -86,7 +85,7 @@ public class ActorAnimationOverrides : MonoBehaviour
 		return ActorAnimationOverrides.standardAnimations[(int)standardAnimation];
 	}
 
-	// Token: 0x06000344 RID: 836 RVA: 0x00024E08 File Offset: 0x00023008
+	// Token: 0x06000301 RID: 769 RVA: 0x000118D4 File Offset: 0x0000FAD4
 	public static string GetStandardAnimationName(ActorAnimationOverrides.StandardAnimation standardAnimation)
 	{
 		switch (standardAnimation)
@@ -106,38 +105,38 @@ public class ActorAnimationOverrides : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040004AB RID: 1195
+	// Token: 0x04000415 RID: 1045
 	public DialogueActor actor;
 
-	// Token: 0x040004AC RID: 1196
+	// Token: 0x04000416 RID: 1046
 	public Animator animator;
 
-	// Token: 0x040004AD RID: 1197
+	// Token: 0x04000417 RID: 1047
 	private AnimatorOverrideController overrideController;
 
-	// Token: 0x040004AE RID: 1198
+	// Token: 0x04000418 RID: 1048
 	private AnimationClipOverrides overrides;
 
-	// Token: 0x040004AF RID: 1199
+	// Token: 0x04000419 RID: 1049
 	private static AnimationClip[] standardAnimations;
 
-	// Token: 0x040004B0 RID: 1200
+	// Token: 0x0400041A RID: 1050
 	private bool hasActiveSceneHook;
 
-	// Token: 0x020000C9 RID: 201
+	// Token: 0x0200037E RID: 894
 	public enum StandardAnimation
 	{
-		// Token: 0x040004B2 RID: 1202
+		// Token: 0x04001A96 RID: 6806
 		Stand,
-		// Token: 0x040004B3 RID: 1203
+		// Token: 0x04001A97 RID: 6807
 		Walk,
-		// Token: 0x040004B4 RID: 1204
+		// Token: 0x04001A98 RID: 6808
 		Run,
-		// Token: 0x040004B5 RID: 1205
+		// Token: 0x04001A99 RID: 6809
 		Action,
-		// Token: 0x040004B6 RID: 1206
+		// Token: 0x04001A9A RID: 6810
 		LoopAction,
-		// Token: 0x040004B7 RID: 1207
+		// Token: 0x04001A9B RID: 6811
 		RaiseArms
 	}
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000216 RID: 534
+// Token: 0x0200019A RID: 410
 public class Note : MonoBehaviour
 {
-	// Token: 0x04000C80 RID: 3200
+	// Token: 0x04000A7B RID: 2683
 	public string noteText;
 }

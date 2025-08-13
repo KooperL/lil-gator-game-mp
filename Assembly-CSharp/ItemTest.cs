@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200025E RID: 606
+// Token: 0x020001D7 RID: 471
 public class ItemTest : ItemThrowable
 {
-	// Token: 0x06000B7C RID: 2940 RVA: 0x0003F98C File Offset: 0x0003DB8C
+	// Token: 0x060009D3 RID: 2515 RVA: 0x0002DB04 File Offset: 0x0002BD04
 	public override void Throw(float charge, Vector3 direction)
 	{
 		Player.movement.Ragdoll(charge * this.speed * (direction + Vector3.up));
@@ -16,7 +16,7 @@ public class ItemTest : ItemThrowable
 		{
 			Vector3 vector = base.transform.position + 5f * direction + 3f * Vector3.up;
 			RaycastHit raycastHit;
-			if (this.projectSpring && Physics.Raycast(MainCamera.t.position, direction, ref raycastHit, this.maxProjectDistance, this.springProjectLayers))
+			if (this.projectSpring && Physics.Raycast(MainCamera.t.position, direction, out raycastHit, this.maxProjectDistance, this.springProjectLayers))
 			{
 				vector = raycastHit.point;
 			}
@@ -27,7 +27,7 @@ public class ItemTest : ItemThrowable
 		}
 	}
 
-	// Token: 0x06000B7D RID: 2941 RVA: 0x0000AD08 File Offset: 0x00008F08
+	// Token: 0x060009D4 RID: 2516 RVA: 0x0002DC0A File Offset: 0x0002BE0A
 	public override void LateUpdate()
 	{
 		if (this.springObject != null && !Player.movement.isRagdolling)
@@ -37,24 +37,24 @@ public class ItemTest : ItemThrowable
 		base.LateUpdate();
 	}
 
-	// Token: 0x04000E56 RID: 3670
+	// Token: 0x04000C1E RID: 3102
 	public float speed = 10f;
 
-	// Token: 0x04000E57 RID: 3671
+	// Token: 0x04000C1F RID: 3103
 	public bool attachSpring = true;
 
-	// Token: 0x04000E58 RID: 3672
+	// Token: 0x04000C20 RID: 3104
 	public bool projectSpring;
 
-	// Token: 0x04000E59 RID: 3673
+	// Token: 0x04000C21 RID: 3105
 	public GameObject springObjectPrefab;
 
-	// Token: 0x04000E5A RID: 3674
+	// Token: 0x04000C22 RID: 3106
 	private GameObject springObject;
 
-	// Token: 0x04000E5B RID: 3675
+	// Token: 0x04000C23 RID: 3107
 	public LayerMask springProjectLayers;
 
-	// Token: 0x04000E5C RID: 3676
+	// Token: 0x04000C24 RID: 3108
 	public float maxProjectDistance = 40f;
 }

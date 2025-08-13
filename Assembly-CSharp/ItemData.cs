@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000249 RID: 585
+// Token: 0x020001C6 RID: 454
 [CreateAssetMenu]
 public class ItemData : ScriptableObject
 {
-	// Token: 0x04000DED RID: 3565
+	// Token: 0x04000BC7 RID: 3015
 	public string id;
 
-	// Token: 0x04000DEE RID: 3566
+	// Token: 0x04000BC8 RID: 3016
 	public GameObject prefab;
 
-	// Token: 0x04000DEF RID: 3567
+	// Token: 0x04000BC9 RID: 3017
 	public ItemManager.ItemType itemType;
 }

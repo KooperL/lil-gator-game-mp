@@ -1,17 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000B3 RID: 179
+// Token: 0x0200008D RID: 141
 public class CameraUnderwater : MonoBehaviour
 {
-	// Token: 0x0600029B RID: 667 RVA: 0x0000420C File Offset: 0x0000240C
+	// Token: 0x06000251 RID: 593 RVA: 0x0000C6FC File Offset: 0x0000A8FC
 	private void Start()
 	{
 		this.shaderVariables = ShaderVariables.s;
 		base.enabled = false;
 	}
 
-	// Token: 0x0600029C RID: 668 RVA: 0x00004220 File Offset: 0x00002420
+	// Token: 0x06000252 RID: 594 RVA: 0x0000C710 File Offset: 0x0000A910
 	private void FixedUpdate()
 	{
 		if (this.stepsSinceWater > 3)
@@ -22,23 +22,23 @@ public class CameraUnderwater : MonoBehaviour
 		this.stepsSinceWater++;
 	}
 
-	// Token: 0x0600029D RID: 669 RVA: 0x0000424C File Offset: 0x0000244C
+	// Token: 0x06000253 RID: 595 RVA: 0x0000C73C File Offset: 0x0000A93C
 	private void OnTriggerEnter(Collider other)
 	{
 		this.ProcessTrigger(other);
 	}
 
-	// Token: 0x0600029E RID: 670 RVA: 0x0000424C File Offset: 0x0000244C
+	// Token: 0x06000254 RID: 596 RVA: 0x0000C745 File Offset: 0x0000A945
 	private void OnTriggerStay(Collider other)
 	{
 		this.ProcessTrigger(other);
 	}
 
-	// Token: 0x0600029F RID: 671 RVA: 0x00020518 File Offset: 0x0001E718
+	// Token: 0x06000255 RID: 597 RVA: 0x0000C750 File Offset: 0x0000A950
 	private void ProcessTrigger(Collider other)
 	{
 		Water water;
-		if (other.TryGetComponent<Water>(ref water) && base.transform.position.y > water.GetWaterPlaneHeight(base.transform.position))
+		if (other.TryGetComponent<Water>(out water) && base.transform.position.y > water.GetWaterPlaneHeight(base.transform.position))
 		{
 			return;
 		}
@@ -50,12 +50,12 @@ public class CameraUnderwater : MonoBehaviour
 		this.stepsSinceWater = 0;
 	}
 
-	// Token: 0x040003A4 RID: 932
+	// Token: 0x0400030B RID: 779
 	private ShaderVariables shaderVariables;
 
-	// Token: 0x040003A5 RID: 933
+	// Token: 0x0400030C RID: 780
 	private int stepsSinceWater = 100;
 
-	// Token: 0x040003A6 RID: 934
+	// Token: 0x0400030D RID: 781
 	public GameObject underwaterEffects;
 }

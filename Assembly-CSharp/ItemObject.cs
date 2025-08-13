@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200004F RID: 79
+// Token: 0x0200003D RID: 61
 [CreateAssetMenu]
 public class ItemObject : ScriptableObject
 {
-	// Token: 0x17000012 RID: 18
-	// (get) Token: 0x0600011A RID: 282 RVA: 0x00002E97 File Offset: 0x00001097
+	// Token: 0x17000007 RID: 7
+	// (get) Token: 0x060000F5 RID: 245 RVA: 0x00006781 File Offset: 0x00004981
 	public string DisplayName
 	{
 		get
@@ -16,19 +16,18 @@ public class ItemObject : ScriptableObject
 		}
 	}
 
-	// Token: 0x17000013 RID: 19
-	// (get) Token: 0x0600011B RID: 283 RVA: 0x00002E9F File Offset: 0x0000109F
-	// (set) Token: 0x0600011C RID: 284 RVA: 0x0001B13C File Offset: 0x0001933C
+	// Token: 0x17000008 RID: 8
+	// (get) Token: 0x060000F6 RID: 246 RVA: 0x00006789 File Offset: 0x00004989
+	// (set) Token: 0x060000F7 RID: 247 RVA: 0x000067A8 File Offset: 0x000049A8
 	public bool IsUnlocked
 	{
 		get
 		{
-			GameData.g.Write(this.id, true);
-			return true;
+			return this.unlockedAtStart || GameData.g.ReadBool(this.id, false);
 		}
 		set
 		{
-			GameData.g.Write(this.id, true);
+			GameData.g.Write(this.id, value);
 			if (value && this.onItemUnlocked != null)
 			{
 				this.onItemUnlocked.Invoke();
@@ -44,9 +43,9 @@ public class ItemObject : ScriptableObject
 		}
 	}
 
-	// Token: 0x17000014 RID: 20
-	// (get) Token: 0x0600011D RID: 285 RVA: 0x00002EB3 File Offset: 0x000010B3
-	// (set) Token: 0x0600011E RID: 286 RVA: 0x00002EDA File Offset: 0x000010DA
+	// Token: 0x17000009 RID: 9
+	// (get) Token: 0x060000F8 RID: 248 RVA: 0x00006811 File Offset: 0x00004A11
+	// (set) Token: 0x060000F9 RID: 249 RVA: 0x00006838 File Offset: 0x00004A38
 	public bool IsShopUnlocked
 	{
 		get
@@ -62,88 +61,88 @@ public class ItemObject : ScriptableObject
 		}
 	}
 
-	// Token: 0x17000015 RID: 21
-	// (get) Token: 0x0600011F RID: 287 RVA: 0x00002EF5 File Offset: 0x000010F5
+	// Token: 0x1700000A RID: 10
+	// (get) Token: 0x060000FA RID: 250 RVA: 0x00006853 File Offset: 0x00004A53
 	public string Name
 	{
 		get
 		{
 			if (this.document != null)
 			{
-				return this.document.FetchString(this.nameID, Language.English);
+				return this.document.FetchString(this.nameID, Language.Auto);
 			}
 			return this.nameID;
 		}
 	}
 
-	// Token: 0x17000016 RID: 22
-	// (get) Token: 0x06000120 RID: 288 RVA: 0x00002F1E File Offset: 0x0000111E
+	// Token: 0x1700000B RID: 11
+	// (get) Token: 0x060000FB RID: 251 RVA: 0x0000687D File Offset: 0x00004A7D
 	public string Description
 	{
 		get
 		{
 			if (this.document != null)
 			{
-				return this.document.FetchString(this.descriptionID, Language.English);
+				return this.document.FetchString(this.descriptionID, Language.Auto);
 			}
 			return this.descriptionID;
 		}
 	}
 
-	// Token: 0x04000195 RID: 405
+	// Token: 0x0400014E RID: 334
 	public MultilingualTextDocument document;
 
-	// Token: 0x04000196 RID: 406
+	// Token: 0x0400014F RID: 335
 	[HideInInspector]
 	public string displayName;
 
-	// Token: 0x04000197 RID: 407
+	// Token: 0x04000150 RID: 336
 	[TextLookup("document")]
 	public string nameID;
 
-	// Token: 0x04000198 RID: 408
+	// Token: 0x04000151 RID: 337
 	[TextLookup("document")]
 	public string descriptionID;
 
-	// Token: 0x04000199 RID: 409
+	// Token: 0x04000152 RID: 338
 	public GameObject prefab;
 
-	// Token: 0x0400019A RID: 410
+	// Token: 0x04000153 RID: 339
 	public Sprite sprite;
 
-	// Token: 0x0400019B RID: 411
-	public bool unlockedAtStart = true;
+	// Token: 0x04000154 RID: 340
+	public bool unlockedAtStart;
 
-	// Token: 0x0400019C RID: 412
+	// Token: 0x04000155 RID: 341
 	[Header("ID")]
 	public bool automaticID = true;
 
-	// Token: 0x0400019D RID: 413
+	// Token: 0x04000156 RID: 342
 	public int intID = -1;
 
-	// Token: 0x0400019E RID: 414
+	// Token: 0x04000157 RID: 343
 	public string id;
 
-	// Token: 0x0400019F RID: 415
+	// Token: 0x04000158 RID: 344
 	[Header("Shop")]
 	public bool hasShopEntry = true;
 
-	// Token: 0x040001A0 RID: 416
+	// Token: 0x04000159 RID: 345
 	public bool shopUnlockedAtStart;
 
-	// Token: 0x040001A1 RID: 417
+	// Token: 0x0400015A RID: 346
 	public string shopID;
 
-	// Token: 0x040001A2 RID: 418
+	// Token: 0x0400015B RID: 347
 	public int shopCost;
 
-	// Token: 0x040001A3 RID: 419
+	// Token: 0x0400015C RID: 348
 	public ItemManager.ItemType itemType;
 
-	// Token: 0x040001A4 RID: 420
+	// Token: 0x0400015D RID: 349
 	[HideInInspector]
 	public UnityEvent onItemUnlocked;
 
-	// Token: 0x040001A5 RID: 421
+	// Token: 0x0400015E RID: 350
 	public bool ignoreUnlockAll;
 }

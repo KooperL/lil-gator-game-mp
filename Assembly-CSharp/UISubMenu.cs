@@ -2,22 +2,22 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020003D7 RID: 983
+// Token: 0x020002E6 RID: 742
 public class UISubMenu : MonoBehaviour
 {
-	// Token: 0x060012E7 RID: 4839 RVA: 0x00010025 File Offset: 0x0000E225
+	// Token: 0x06000FBB RID: 4027 RVA: 0x0004B5FD File Offset: 0x000497FD
 	private void OnValidate()
 	{
 		this.transformDepth = base.transform.GetDepth();
 	}
 
-	// Token: 0x060012E8 RID: 4840 RVA: 0x00010038 File Offset: 0x0000E238
+	// Token: 0x06000FBC RID: 4028 RVA: 0x0004B610 File Offset: 0x00049810
 	private void Awake()
 	{
 		this.checkCancel = base.GetComponent<ICheckCancel>();
 	}
 
-	// Token: 0x060012E9 RID: 4841 RVA: 0x00010046 File Offset: 0x0000E246
+	// Token: 0x06000FBD RID: 4029 RVA: 0x0004B61E File Offset: 0x0004981E
 	private void OnEnable()
 	{
 		UIRootMenu.u.AddMenu(this);
@@ -27,7 +27,7 @@ public class UISubMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012EA RID: 4842 RVA: 0x00010061 File Offset: 0x0000E261
+	// Token: 0x06000FBE RID: 4030 RVA: 0x0004B639 File Offset: 0x00049839
 	private void OnDisable()
 	{
 		UIRootMenu.u.RemoveMenu(this);
@@ -37,7 +37,7 @@ public class UISubMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012EB RID: 4843 RVA: 0x0001007C File Offset: 0x0000E27C
+	// Token: 0x06000FBF RID: 4031 RVA: 0x0004B654 File Offset: 0x00049854
 	public void Activate()
 	{
 		this.isActivated = true;
@@ -49,7 +49,7 @@ public class UISubMenu : MonoBehaviour
 		this.onActivate.Invoke();
 	}
 
-	// Token: 0x060012EC RID: 4844 RVA: 0x000100B6 File Offset: 0x0000E2B6
+	// Token: 0x06000FC0 RID: 4032 RVA: 0x0004B68E File Offset: 0x0004988E
 	public void Deactivate()
 	{
 		this.isActivated = false;
@@ -57,7 +57,7 @@ public class UISubMenu : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060012ED RID: 4845 RVA: 0x000100D6 File Offset: 0x0000E2D6
+	// Token: 0x06000FC1 RID: 4033 RVA: 0x0004B6AE File Offset: 0x000498AE
 	public void OnLoseProminence()
 	{
 		if (this.prominentObject != null)
@@ -67,7 +67,7 @@ public class UISubMenu : MonoBehaviour
 		this.onLoseProminence.Invoke();
 	}
 
-	// Token: 0x060012EE RID: 4846 RVA: 0x000100FD File Offset: 0x0000E2FD
+	// Token: 0x06000FC2 RID: 4034 RVA: 0x0004B6D5 File Offset: 0x000498D5
 	public void OnRegainProminence()
 	{
 		if (this.prominentObject != null)
@@ -77,7 +77,7 @@ public class UISubMenu : MonoBehaviour
 		this.onRegainProminence.Invoke();
 	}
 
-	// Token: 0x060012EF RID: 4847 RVA: 0x00010124 File Offset: 0x0000E324
+	// Token: 0x06000FC3 RID: 4035 RVA: 0x0004B6FC File Offset: 0x000498FC
 	public void OnCancel()
 	{
 		if (this.deactivateOnCancel && (this.checkCancel == null || this.checkCancel.TryCancel()))
@@ -87,34 +87,34 @@ public class UISubMenu : MonoBehaviour
 		this.onCancel.Invoke();
 	}
 
-	// Token: 0x04001863 RID: 6243
+	// Token: 0x040014A4 RID: 5284
 	[ReadOnly]
 	public int transformDepth;
 
-	// Token: 0x04001864 RID: 6244
+	// Token: 0x040014A5 RID: 5285
 	public UnityEvent onActivate;
 
-	// Token: 0x04001865 RID: 6245
+	// Token: 0x040014A6 RID: 5286
 	public UnityEvent onDeactivate;
 
-	// Token: 0x04001866 RID: 6246
+	// Token: 0x040014A7 RID: 5287
 	public GameObject prominentObject;
 
-	// Token: 0x04001867 RID: 6247
+	// Token: 0x040014A8 RID: 5288
 	public UnityEvent onLoseProminence;
 
-	// Token: 0x04001868 RID: 6248
+	// Token: 0x040014A9 RID: 5289
 	public UnityEvent onRegainProminence;
 
-	// Token: 0x04001869 RID: 6249
+	// Token: 0x040014AA RID: 5290
 	public bool deactivateOnCancel = true;
 
-	// Token: 0x0400186A RID: 6250
+	// Token: 0x040014AB RID: 5291
 	public UnityEvent onCancel;
 
-	// Token: 0x0400186B RID: 6251
+	// Token: 0x040014AC RID: 5292
 	public bool isActivated;
 
-	// Token: 0x0400186C RID: 6252
+	// Token: 0x040014AD RID: 5293
 	private ICheckCancel checkCancel;
 }

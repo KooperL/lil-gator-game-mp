@@ -1,18 +1,18 @@
 ﻿using System;
 
-// Token: 0x02000219 RID: 537
+// Token: 0x0200019D RID: 413
 public enum ActorPosition
 {
-	// Token: 0x04000C84 RID: 3204
+	// Token: 0x04000A7F RID: 2687
 	P_Standing,
-	// Token: 0x04000C85 RID: 3205
+	// Token: 0x04000A80 RID: 2688
 	P_Sitting,
-	// Token: 0x04000C86 RID: 3206
+	// Token: 0x04000A81 RID: 2689
 	P_Seated,
-	// Token: 0x04000C87 RID: 3207
+	// Token: 0x04000A82 RID: 2690
 	P_Laying,
-	// Token: 0x04000C88 RID: 3208
+	// Token: 0x04000A83 RID: 2691
 	P_Prone,
-	// Token: 0x04000C89 RID: 3209
+	// Token: 0x04000A84 RID: 2692
 	P_InSwing
 }

@@ -7,10 +7,10 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
-// Token: 0x02000073 RID: 115
+// Token: 0x02000059 RID: 89
 public class LoadSceneSequence : MonoBehaviour
 {
-	// Token: 0x06000172 RID: 370 RVA: 0x000033A8 File Offset: 0x000015A8
+	// Token: 0x06000147 RID: 327 RVA: 0x00007C90 File Offset: 0x00005E90
 	public static void LoadScene(int buildIndex, LoadSceneSequence.LoadType loadType = LoadSceneSequence.LoadType.LoadingScreen)
 	{
 		LoadSceneSequence.isSceneAsset = false;
@@ -18,7 +18,7 @@ public class LoadSceneSequence : MonoBehaviour
 		LoadSceneSequence.LoadScene(loadType);
 	}
 
-	// Token: 0x06000173 RID: 371 RVA: 0x000033BC File Offset: 0x000015BC
+	// Token: 0x06000148 RID: 328 RVA: 0x00007CA4 File Offset: 0x00005EA4
 	public static void LoadScene(AssetReference sceneAsset, LoadSceneSequence.LoadType loadType = LoadSceneSequence.LoadType.LoadingScreen)
 	{
 		LoadSceneSequence.isSceneAsset = true;
@@ -26,15 +26,15 @@ public class LoadSceneSequence : MonoBehaviour
 		LoadSceneSequence.LoadScene(loadType);
 	}
 
-	// Token: 0x06000174 RID: 372 RVA: 0x000033D0 File Offset: 0x000015D0
+	// Token: 0x06000149 RID: 329 RVA: 0x00007CB8 File Offset: 0x00005EB8
 	public static void StartPreloadScene(AssetReference sceneAsset)
 	{
 		LoadSceneSequence.hasPreloadedScene = true;
-		LoadSceneSequence.preloadedSceneHandle = Addressables.LoadSceneAsync(sceneAsset, 0, false, 100);
+		LoadSceneSequence.preloadedSceneHandle = Addressables.LoadSceneAsync(sceneAsset, LoadSceneMode.Single, false, 100);
 		LoadSceneSequence.preloadedScene = sceneAsset;
 	}
 
-	// Token: 0x06000175 RID: 373 RVA: 0x000033ED File Offset: 0x000015ED
+	// Token: 0x0600014A RID: 330 RVA: 0x00007CD5 File Offset: 0x00005ED5
 	private static void LoadScene(LoadSceneSequence.LoadType loadType)
 	{
 		LoadSceneSequence.loadType = loadType;
@@ -47,13 +47,13 @@ public class LoadSceneSequence : MonoBehaviour
 		Object.Instantiate<GameObject>(Prefabs.p.loadingSequence);
 	}
 
-	// Token: 0x06000176 RID: 374 RVA: 0x00003424 File Offset: 0x00001624
+	// Token: 0x0600014B RID: 331 RVA: 0x00007D0C File Offset: 0x00005F0C
 	private void Start()
 	{
 		base.StartCoroutine(this.LoadSceneAsync());
 	}
 
-	// Token: 0x06000177 RID: 375 RVA: 0x00003433 File Offset: 0x00001633
+	// Token: 0x0600014C RID: 332 RVA: 0x00007D1B File Offset: 0x00005F1B
 	public IEnumerator LoadSceneAsync()
 	{
 		Object.DontDestroyOnLoad(base.gameObject);
@@ -83,7 +83,7 @@ public class LoadSceneSequence : MonoBehaviour
 			}
 			else
 			{
-				handle = Addressables.LoadSceneAsync(LoadSceneSequence.sceneAssetReference, 0, false, 100);
+				handle = Addressables.LoadSceneAsync(LoadSceneSequence.sceneAssetReference, LoadSceneMode.Single, false, 100);
 			}
 			yield return handle;
 			yield return handle.Result.ActivateAsync();
@@ -91,7 +91,7 @@ public class LoadSceneSequence : MonoBehaviour
 		}
 		else
 		{
-			AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(LoadSceneSequence.sceneBuildIndex, 0);
+			AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(LoadSceneSequence.sceneBuildIndex, LoadSceneMode.Single);
 			yield return asyncOperation;
 		}
 		SpeedrunData.isLoading = false;
@@ -107,45 +107,45 @@ public class LoadSceneSequence : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04000232 RID: 562
+	// Token: 0x040001CB RID: 459
 	private static Scene oldScene;
 
-	// Token: 0x04000233 RID: 563
+	// Token: 0x040001CC RID: 460
 	private static bool isSceneAsset;
 
-	// Token: 0x04000234 RID: 564
+	// Token: 0x040001CD RID: 461
 	private static int sceneBuildIndex;
 
-	// Token: 0x04000235 RID: 565
+	// Token: 0x040001CE RID: 462
 	private static AssetReference sceneAssetReference;
 
-	// Token: 0x04000236 RID: 566
+	// Token: 0x040001CF RID: 463
 	private static LoadSceneSequence.LoadType loadType;
 
-	// Token: 0x04000237 RID: 567
+	// Token: 0x040001D0 RID: 464
 	private static bool hasPreloadedScene;
 
-	// Token: 0x04000238 RID: 568
+	// Token: 0x040001D1 RID: 465
 	private static AsyncOperationHandle<SceneInstance> preloadedSceneHandle;
 
-	// Token: 0x04000239 RID: 569
+	// Token: 0x040001D2 RID: 466
 	private static AssetReference preloadedScene;
 
-	// Token: 0x0400023A RID: 570
+	// Token: 0x040001D3 RID: 467
 	public AssetReference mainMenuScene;
 
-	// Token: 0x0400023B RID: 571
+	// Token: 0x040001D4 RID: 468
 	public Animator animator;
 
-	// Token: 0x0400023C RID: 572
+	// Token: 0x040001D5 RID: 469
 	public bool isReadyToShowScene = true;
 
-	// Token: 0x02000074 RID: 116
+	// Token: 0x02000369 RID: 873
 	public enum LoadType
 	{
-		// Token: 0x0400023E RID: 574
+		// Token: 0x04001A3A RID: 6714
 		LoadingScreen,
-		// Token: 0x0400023F RID: 575
+		// Token: 0x04001A3B RID: 6715
 		Fade
 	}
 }

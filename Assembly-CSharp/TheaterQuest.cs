@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020002DC RID: 732
+// Token: 0x02000229 RID: 553
 public class TheaterQuest : MonoBehaviour
 {
-	// Token: 0x17000195 RID: 405
-	// (get) Token: 0x06000E4C RID: 3660 RVA: 0x0000CAEC File Offset: 0x0000ACEC
+	// Token: 0x170000C8 RID: 200
+	// (get) Token: 0x06000BE3 RID: 3043 RVA: 0x0003928F File Offset: 0x0003748F
 	private string StateID
 	{
 		get
@@ -15,9 +15,9 @@ public class TheaterQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000196 RID: 406
-	// (get) Token: 0x06000E4D RID: 3661 RVA: 0x0000CAF3 File Offset: 0x0000ACF3
-	// (set) Token: 0x06000E4E RID: 3662 RVA: 0x0000CB06 File Offset: 0x0000AD06
+	// Token: 0x170000C9 RID: 201
+	// (get) Token: 0x06000BE4 RID: 3044 RVA: 0x00039296 File Offset: 0x00037496
+	// (set) Token: 0x06000BE5 RID: 3045 RVA: 0x000392A9 File Offset: 0x000374A9
 	public int State
 	{
 		get
@@ -30,13 +30,13 @@ public class TheaterQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E4F RID: 3663 RVA: 0x0000CB19 File Offset: 0x0000AD19
+	// Token: 0x06000BE6 RID: 3046 RVA: 0x000392BC File Offset: 0x000374BC
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000E50 RID: 3664 RVA: 0x0004BF04 File Offset: 0x0004A104
+	// Token: 0x06000BE7 RID: 3047 RVA: 0x000392C4 File Offset: 0x000374C4
 	private void UpdateState()
 	{
 		int state = this.State;
@@ -45,7 +45,7 @@ public class TheaterQuest : MonoBehaviour
 		this.aCousin.SetActive(state < 10);
 	}
 
-	// Token: 0x06000E51 RID: 3665 RVA: 0x0000CB21 File Offset: 0x0000AD21
+	// Token: 0x06000BE8 RID: 3048 RVA: 0x00039307 File Offset: 0x00037507
 	public void TextAlert()
 	{
 		base.StartCoroutine(DialogueManager.d.LoadChunkPhone("Theater_TextAlert", this.frogProfiles, true, true, null));
@@ -53,13 +53,13 @@ public class TheaterQuest : MonoBehaviour
 		this.UpdateState();
 	}
 
-	// Token: 0x06000E52 RID: 3666 RVA: 0x0000CB4F File Offset: 0x0000AD4F
+	// Token: 0x06000BE9 RID: 3049 RVA: 0x00039335 File Offset: 0x00037535
 	public void Trigger()
 	{
 		int state = this.State;
 	}
 
-	// Token: 0x06000E53 RID: 3667 RVA: 0x0000CB58 File Offset: 0x0000AD58
+	// Token: 0x06000BEA RID: 3050 RVA: 0x0003933E File Offset: 0x0003753E
 	public IEnumerator RunConversationA()
 	{
 		this.aRamble.SetActive(false);
@@ -72,7 +72,7 @@ public class TheaterQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000E54 RID: 3668 RVA: 0x0000CB67 File Offset: 0x0000AD67
+	// Token: 0x06000BEB RID: 3051 RVA: 0x0003934D File Offset: 0x0003754D
 	public void CheckSubQuests()
 	{
 		base.StartCoroutine(DialogueManager.d.LoadChunkPhone("Theater_B_Finish", this.frogProfiles, true, true, null));
@@ -80,7 +80,7 @@ public class TheaterQuest : MonoBehaviour
 		this.UpdateState();
 	}
 
-	// Token: 0x06000E55 RID: 3669 RVA: 0x0000CB96 File Offset: 0x0000AD96
+	// Token: 0x06000BEC RID: 3052 RVA: 0x0003937C File Offset: 0x0003757C
 	private IEnumerator RunConversationC()
 	{
 		yield return base.StartCoroutine(DialogueManager.d.LoadChunk("Theater_C1", this.aActors, DialogueManager.DialogueBoxBackground.Standard, true));
@@ -89,7 +89,7 @@ public class TheaterQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000E56 RID: 3670 RVA: 0x0000CBA5 File Offset: 0x0000ADA5
+	// Token: 0x06000BED RID: 3053 RVA: 0x0003938B File Offset: 0x0003758B
 	private IEnumerator RunConversationD()
 	{
 		yield return base.StartCoroutine(DialogueManager.d.LoadChunk("Theater_D1", this.aActors, DialogueManager.DialogueBoxBackground.Standard, true));
@@ -98,7 +98,7 @@ public class TheaterQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000E57 RID: 3671 RVA: 0x0000CBB4 File Offset: 0x0000ADB4
+	// Token: 0x06000BEE RID: 3054 RVA: 0x0003939A File Offset: 0x0003759A
 	private IEnumerator RunConversationE()
 	{
 		yield return base.StartCoroutine(DialogueManager.d.LoadChunk("Theater_E1", this.aActors, DialogueManager.DialogueBoxBackground.Standard, true));
@@ -107,19 +107,19 @@ public class TheaterQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04001288 RID: 4744
+	// Token: 0x04000FB4 RID: 4020
 	public CharacterProfile[] frogProfiles;
 
-	// Token: 0x04001289 RID: 4745
+	// Token: 0x04000FB5 RID: 4021
 	[Header("State A")]
 	public GameObject aTextAlert;
 
-	// Token: 0x0400128A RID: 4746
+	// Token: 0x04000FB6 RID: 4022
 	public GameObject aRamble;
 
-	// Token: 0x0400128B RID: 4747
+	// Token: 0x04000FB7 RID: 4023
 	public GameObject aCousin;
 
-	// Token: 0x0400128C RID: 4748
+	// Token: 0x04000FB8 RID: 4024
 	public DialogueActor[] aActors;
 }

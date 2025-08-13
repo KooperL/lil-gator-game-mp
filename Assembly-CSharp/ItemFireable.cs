@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200024A RID: 586
+// Token: 0x020001C7 RID: 455
 public class ItemFireable : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x17000107 RID: 263
-	// (get) Token: 0x06000AF2 RID: 2802 RVA: 0x0000A656 File Offset: 0x00008856
+	// Token: 0x1700007F RID: 127
+	// (get) Token: 0x0600095B RID: 2395 RVA: 0x0002C787 File Offset: 0x0002A987
 	private PlayerItemManager.EquippedState EquippedState
 	{
 		get
@@ -18,7 +18,7 @@ public class ItemFireable : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000AF3 RID: 2803 RVA: 0x0000A663 File Offset: 0x00008863
+	// Token: 0x0600095C RID: 2396 RVA: 0x0002C794 File Offset: 0x0002A994
 	private void Awake()
 	{
 		this.itemManager = Player.itemManager;
@@ -27,7 +27,7 @@ public class ItemFireable : MonoBehaviour, IItemBehaviour
 		this.reaction = Player.reaction;
 	}
 
-	// Token: 0x06000AF4 RID: 2804 RVA: 0x0003E878 File Offset: 0x0003CA78
+	// Token: 0x0600095D RID: 2397 RVA: 0x0002C7C8 File Offset: 0x0002A9C8
 	public virtual void Input(bool isDown, bool isHeld)
 	{
 		if (Game.HasControl)
@@ -69,13 +69,13 @@ public class ItemFireable : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000AF5 RID: 2805 RVA: 0x0000A3C5 File Offset: 0x000085C5
+	// Token: 0x0600095E RID: 2398 RVA: 0x0002C8CE File Offset: 0x0002AACE
 	public virtual Vector3 GetSpawnPoint()
 	{
 		return Player.itemManager.thrownSpawnPoint.position;
 	}
 
-	// Token: 0x06000AF6 RID: 2806 RVA: 0x0003E980 File Offset: 0x0003CB80
+	// Token: 0x0600095F RID: 2399 RVA: 0x0002C8E0 File Offset: 0x0002AAE0
 	private void SetAiming(bool isAiming)
 	{
 		this.isAiming = isAiming;
@@ -95,7 +95,7 @@ public class ItemFireable : MonoBehaviour, IItemBehaviour
 		this.animator.SetBool(ItemFireable._Aiming, isAiming);
 	}
 
-	// Token: 0x06000AF7 RID: 2807 RVA: 0x0000A697 File Offset: 0x00008897
+	// Token: 0x06000960 RID: 2400 RVA: 0x0002C955 File Offset: 0x0002AB55
 	public virtual void Fire(Vector3 direction)
 	{
 		if (this.fireSound != null)
@@ -105,13 +105,13 @@ public class ItemFireable : MonoBehaviour, IItemBehaviour
 		this.animator.SetTrigger("Fire");
 	}
 
-	// Token: 0x06000AF8 RID: 2808 RVA: 0x0000A3D6 File Offset: 0x000085D6
+	// Token: 0x06000961 RID: 2401 RVA: 0x0002C980 File Offset: 0x0002AB80
 	public virtual float GetSpeed(float charge = 1f)
 	{
 		return 30f;
 	}
 
-	// Token: 0x06000AF9 RID: 2809 RVA: 0x0000A6C2 File Offset: 0x000088C2
+	// Token: 0x06000962 RID: 2402 RVA: 0x0002C987 File Offset: 0x0002AB87
 	public virtual void LateUpdate()
 	{
 		if (!this.isAiming)
@@ -124,14 +124,14 @@ public class ItemFireable : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000AFA RID: 2810 RVA: 0x0000A6FA File Offset: 0x000088FA
+	// Token: 0x06000963 RID: 2403 RVA: 0x0002C9BF File Offset: 0x0002ABBF
 	public virtual void Cancel()
 	{
 		this.SetAiming(false);
 		Player.itemManager.IsAiming = false;
 	}
 
-	// Token: 0x06000AFB RID: 2811 RVA: 0x0003E9F8 File Offset: 0x0003CBF8
+	// Token: 0x06000964 RID: 2404 RVA: 0x0002C9D4 File Offset: 0x0002ABD4
 	public virtual void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (isEquipped ? this.itemManager.leftHandAnchor : (this.isOnRight ? this.itemManager.holsterAnchor_r : this.itemManager.holsterAnchor));
@@ -145,13 +145,13 @@ public class ItemFireable : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000AFC RID: 2812 RVA: 0x0000A70E File Offset: 0x0000890E
+	// Token: 0x06000965 RID: 2405 RVA: 0x0002CA3B File Offset: 0x0002AC3B
 	public virtual void OnRemove()
 	{
 		Player.itemManager.IsAiming = false;
 	}
 
-	// Token: 0x06000AFD RID: 2813 RVA: 0x0000A71B File Offset: 0x0000891B
+	// Token: 0x06000966 RID: 2406 RVA: 0x0002CA48 File Offset: 0x0002AC48
 	public void SetIndex(int index)
 	{
 		if (index == 1)
@@ -160,49 +160,49 @@ public class ItemFireable : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x04000DF0 RID: 3568
+	// Token: 0x04000BCA RID: 3018
 	protected PlayerItemManager itemManager;
 
-	// Token: 0x04000DF1 RID: 3569
+	// Token: 0x04000BCB RID: 3019
 	protected PlayerMovement movement;
 
-	// Token: 0x04000DF2 RID: 3570
+	// Token: 0x04000BCC RID: 3020
 	protected Transform mainCamera;
 
-	// Token: 0x04000DF3 RID: 3571
+	// Token: 0x04000BCD RID: 3021
 	protected Animator animator;
 
-	// Token: 0x04000DF4 RID: 3572
+	// Token: 0x04000BCE RID: 3022
 	protected CharacterReactionController reaction;
 
-	// Token: 0x04000DF5 RID: 3573
+	// Token: 0x04000BCF RID: 3023
 	private float nextAllowedFireTime = -1f;
 
-	// Token: 0x04000DF6 RID: 3574
+	// Token: 0x04000BD0 RID: 3024
 	public float minFireTime = 0.1f;
 
-	// Token: 0x04000DF7 RID: 3575
+	// Token: 0x04000BD1 RID: 3025
 	private bool isAiming;
 
-	// Token: 0x04000DF8 RID: 3576
+	// Token: 0x04000BD2 RID: 3026
 	public bool hasAmmo;
 
-	// Token: 0x04000DF9 RID: 3577
+	// Token: 0x04000BD3 RID: 3027
 	[ConditionalHide("hasAmmo", true)]
 	public int ammo = 6;
 
-	// Token: 0x04000DFA RID: 3578
+	// Token: 0x04000BD4 RID: 3028
 	private int currentAmmo;
 
-	// Token: 0x04000DFB RID: 3579
+	// Token: 0x04000BD5 RID: 3029
 	public AudioSourceVariance aimSound;
 
-	// Token: 0x04000DFC RID: 3580
+	// Token: 0x04000BD6 RID: 3030
 	public AudioSourceVariance fireSound;
 
-	// Token: 0x04000DFD RID: 3581
+	// Token: 0x04000BD7 RID: 3031
 	private static readonly int _Aiming = Animator.StringToHash("Aiming");
 
-	// Token: 0x04000DFE RID: 3582
+	// Token: 0x04000BD8 RID: 3032
 	private bool isOnRight;
 }

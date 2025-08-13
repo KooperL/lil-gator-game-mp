@@ -3,10 +3,10 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000062 RID: 98
+// Token: 0x0200004B RID: 75
 public class FlyingBugTrigger : MonoBehaviour
 {
-	// Token: 0x06000148 RID: 328 RVA: 0x000031C3 File Offset: 0x000013C3
+	// Token: 0x06000123 RID: 291 RVA: 0x00007241 File Offset: 0x00005441
 	private void OnValidate()
 	{
 		if (this.cart == null)
@@ -15,13 +15,13 @@ public class FlyingBugTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000149 RID: 329 RVA: 0x000031DF File Offset: 0x000013DF
+	// Token: 0x06000124 RID: 292 RVA: 0x0000725D File Offset: 0x0000545D
 	private void Awake()
 	{
 		this.maxPos = this.cart.m_Path.MaxUnit(this.cart.m_PositionUnits);
 	}
 
-	// Token: 0x0600014A RID: 330 RVA: 0x00003202 File Offset: 0x00001402
+	// Token: 0x06000125 RID: 293 RVA: 0x00007280 File Offset: 0x00005480
 	private void OnTriggerStay(Collider other)
 	{
 		if (base.enabled)
@@ -30,7 +30,7 @@ public class FlyingBugTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600014B RID: 331 RVA: 0x0001B89C File Offset: 0x00019A9C
+	// Token: 0x06000126 RID: 294 RVA: 0x00007294 File Offset: 0x00005494
 	private void FixedUpdate()
 	{
 		bool flag = this.stepsSinceTriggered < 2;
@@ -67,48 +67,48 @@ public class FlyingBugTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040001F7 RID: 503
+	// Token: 0x04000199 RID: 409
 	public CinemachineDollyCart cart;
 
-	// Token: 0x040001F8 RID: 504
+	// Token: 0x0400019A RID: 410
 	public float acceleration;
 
-	// Token: 0x040001F9 RID: 505
+	// Token: 0x0400019B RID: 411
 	public float deceleration;
 
-	// Token: 0x040001FA RID: 506
+	// Token: 0x0400019C RID: 412
 	public float speed = 5f;
 
-	// Token: 0x040001FB RID: 507
+	// Token: 0x0400019D RID: 413
 	private int stepsSinceTriggered;
 
-	// Token: 0x040001FC RID: 508
+	// Token: 0x0400019E RID: 414
 	private const float timeUntilReverse = 10f;
 
-	// Token: 0x040001FD RID: 509
+	// Token: 0x0400019F RID: 415
 	private float maxPos;
 
-	// Token: 0x040001FE RID: 510
+	// Token: 0x040001A0 RID: 416
 	public UnityEvent onReachEnd;
 
-	// Token: 0x040001FF RID: 511
+	// Token: 0x040001A1 RID: 417
 	public MultilingualTextDocument document;
 
-	// Token: 0x04000200 RID: 512
+	// Token: 0x040001A2 RID: 418
 	public FlyingBugTrigger.ChaseShout[] chaseShouts;
 
-	// Token: 0x02000063 RID: 99
+	// Token: 0x02000366 RID: 870
 	[Serializable]
 	public struct ChaseShout
 	{
-		// Token: 0x04000201 RID: 513
+		// Token: 0x04001A30 RID: 6704
 		[ChunkLookup("document")]
 		public string shoutID;
 
-		// Token: 0x04000202 RID: 514
+		// Token: 0x04001A31 RID: 6705
 		public float distanceTrigger;
 
-		// Token: 0x04000203 RID: 515
+		// Token: 0x04001A32 RID: 6706
 		public bool triggered;
 	}
 }

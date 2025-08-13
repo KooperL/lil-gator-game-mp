@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x0200042E RID: 1070
+	// Token: 0x0200031B RID: 795
 	[AddComponentMenu("")]
 	public class CanvasScalerExt : CanvasScaler
 	{
-		// Token: 0x060017C8 RID: 6088 RVA: 0x00012572 File Offset: 0x00010772
+		// Token: 0x060013FD RID: 5117 RVA: 0x000554DF File Offset: 0x000536DF
 		public void ForceRefresh()
 		{
 			this.Handle();

@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-// Token: 0x0200022C RID: 556
+// Token: 0x020001B0 RID: 432
 public class Footsteps : MonoBehaviour
 {
-	// Token: 0x06000A76 RID: 2678 RVA: 0x0000A0E4 File Offset: 0x000082E4
+	// Token: 0x060008EF RID: 2287 RVA: 0x0002AC53 File Offset: 0x00028E53
 	public void ClearOverride()
 	{
 		this.overrideSettings = false;
@@ -14,13 +14,13 @@ public class Footsteps : MonoBehaviour
 		this.overrideHasFootstepDust = true;
 	}
 
-	// Token: 0x06000A77 RID: 2679 RVA: 0x0000A102 File Offset: 0x00008302
+	// Token: 0x060008F0 RID: 2288 RVA: 0x0002AC71 File Offset: 0x00028E71
 	public void DoStep(bool isLeft)
 	{
 		this.Step(isLeft ? this.leftFoot : this.rightFoot, isLeft);
 	}
 
-	// Token: 0x06000A78 RID: 2680 RVA: 0x0003D250 File Offset: 0x0003B450
+	// Token: 0x060008F1 RID: 2289 RVA: 0x0002AC8C File Offset: 0x00028E8C
 	private void Step(Transform footTransform, bool isLeft)
 	{
 		if (Time.time - this.minFootstepDelay < this.lastFootstep)
@@ -55,7 +55,7 @@ public class Footsteps : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A79 RID: 2681 RVA: 0x0003D36C File Offset: 0x0003B56C
+	// Token: 0x060008F2 RID: 2290 RVA: 0x0002ADA8 File Offset: 0x00028FA8
 	private void PlayFootstep(SurfaceMaterial surface, Vector3 position, bool isLeft)
 	{
 		float num = this.footstepVolume;
@@ -63,7 +63,7 @@ public class Footsteps : MonoBehaviour
 		surface.PlayFootstep(position, num, isLeft ? this.leftFootPitch : 1f);
 	}
 
-	// Token: 0x06000A7A RID: 2682 RVA: 0x0003D3C0 File Offset: 0x0003B5C0
+	// Token: 0x060008F3 RID: 2291 RVA: 0x0002ADFC File Offset: 0x00028FFC
 	private void MakeFootprint(SurfaceMaterial surface, Vector3 position, Quaternion rotation)
 	{
 		Color color = Color.white;
@@ -80,7 +80,7 @@ public class Footsteps : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A7B RID: 2683 RVA: 0x0003D420 File Offset: 0x0003B620
+	// Token: 0x060008F4 RID: 2292 RVA: 0x0002AE5C File Offset: 0x0002905C
 	private void MakeFootstepDust(SurfaceMaterial surface, Vector3 position)
 	{
 		if (Player.rigidbody.velocity.sqrMagnitude < this.minDustSpeed * this.minDustSpeed)
@@ -91,54 +91,54 @@ public class Footsteps : MonoBehaviour
 		EffectsManager.e.Dust(position, num, base.transform.TransformVector(new Vector3(0f, 1f, -4f)), 0f);
 	}
 
-	// Token: 0x04000D32 RID: 3378
+	// Token: 0x04000B2A RID: 2858
 	public AudioClip[] defaultFootsteps;
 
-	// Token: 0x04000D33 RID: 3379
+	// Token: 0x04000B2B RID: 2859
 	private int footstepIndex;
 
-	// Token: 0x04000D34 RID: 3380
+	// Token: 0x04000B2C RID: 2860
 	public float footstepVolume = 0.1f;
 
-	// Token: 0x04000D35 RID: 3381
+	// Token: 0x04000B2D RID: 2861
 	public float leftFootPitch = 0.9f;
 
-	// Token: 0x04000D36 RID: 3382
+	// Token: 0x04000B2E RID: 2862
 	public Transform leftFoot;
 
-	// Token: 0x04000D37 RID: 3383
+	// Token: 0x04000B2F RID: 2863
 	public Transform rightFoot;
 
-	// Token: 0x04000D38 RID: 3384
+	// Token: 0x04000B30 RID: 2864
 	public LayerMask layerMask;
 
-	// Token: 0x04000D39 RID: 3385
+	// Token: 0x04000B31 RID: 2865
 	private AudioSource audioSource;
 
-	// Token: 0x04000D3A RID: 3386
+	// Token: 0x04000B32 RID: 2866
 	public GameObject footprint;
 
-	// Token: 0x04000D3B RID: 3387
+	// Token: 0x04000B33 RID: 2867
 	public AudioMixerGroup mixerGroup;
 
-	// Token: 0x04000D3C RID: 3388
+	// Token: 0x04000B34 RID: 2868
 	public float minFootstepDelay = 0.1f;
 
-	// Token: 0x04000D3D RID: 3389
+	// Token: 0x04000B35 RID: 2869
 	private float lastFootstep = -1f;
 
-	// Token: 0x04000D3E RID: 3390
+	// Token: 0x04000B36 RID: 2870
 	public float minDustSpeed = 4.5f;
 
-	// Token: 0x04000D3F RID: 3391
+	// Token: 0x04000B37 RID: 2871
 	public bool overrideSettings;
 
-	// Token: 0x04000D40 RID: 3392
+	// Token: 0x04000B38 RID: 2872
 	public SurfaceMaterial overrideFootstepMaterial;
 
-	// Token: 0x04000D41 RID: 3393
+	// Token: 0x04000B39 RID: 2873
 	public bool overrideHasVisualFootsteps = true;
 
-	// Token: 0x04000D42 RID: 3394
+	// Token: 0x04000B3A RID: 2874
 	public bool overrideHasFootstepDust = true;
 }

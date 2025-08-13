@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x0200047F RID: 1151
+	// Token: 0x02000332 RID: 818
 	public static class UISelectionUtility
 	{
-		// Token: 0x06001C45 RID: 7237 RVA: 0x0006ED04 File Offset: 0x0006CF04
+		// Token: 0x060016B9 RID: 5817 RVA: 0x0005F138 File Offset: 0x0005D338
 		public static Selectable FindNextSelectable(Selectable selectable, Transform transform, Vector3 direction)
 		{
 			RectTransform rectTransform = transform as RectTransform;
@@ -35,14 +35,14 @@ namespace Rewired.UI.ControlMapper
 			for (int i = 0; i < num; i++)
 			{
 				Selectable selectable4 = list[i];
-				if (!(selectable4 == selectable) && !(selectable4 == null) && selectable4.navigation.mode != null && (selectable4.IsInteractable() || ReflectionTools.GetPrivateField<Selectable, bool>(selectable4, "m_GroupsAllowInteraction")))
+				if (!(selectable4 == selectable) && !(selectable4 == null) && selectable4.navigation.mode != Navigation.Mode.None && (selectable4.IsInteractable() || ReflectionTools.GetPrivateField<Selectable, bool>(selectable4, "m_GroupsAllowInteraction")))
 				{
 					RectTransform rectTransform2 = selectable4.transform as RectTransform;
 					if (!(rectTransform2 == null))
 					{
 						Rect rect = UITools.InvertY(UITools.TransformRectTo(rectTransform2, transform, rectTransform2.rect));
 						float num4;
-						if (MathTools.LineIntersectsRect(vector2, vector3, rect, ref num4))
+						if (MathTools.LineIntersectsRect(vector2, vector3, rect, out num4))
 						{
 							if (flag)
 							{
@@ -79,7 +79,7 @@ namespace Rewired.UI.ControlMapper
 			return selectable3;
 		}
 
-		// Token: 0x04001E0E RID: 7694
+		// Token: 0x040018E4 RID: 6372
 		private static Selectable[] s_reusableAllSelectables = new Selectable[0];
 	}
 }

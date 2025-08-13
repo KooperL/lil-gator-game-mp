@@ -1,21 +1,21 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002F5 RID: 757
+// Token: 0x02000236 RID: 566
 public class SetWorldState : MonoBehaviour
 {
-	// Token: 0x06000EE6 RID: 3814 RVA: 0x0000CFAD File Offset: 0x0000B1AD
+	// Token: 0x06000C47 RID: 3143 RVA: 0x0003B115 File Offset: 0x00039315
 	private void OnEnable()
 	{
 		Game.g.SetWorldState(this.worldState, this.forceChange, this.delaySceneChange);
 	}
 
-	// Token: 0x04001307 RID: 4871
+	// Token: 0x04001006 RID: 4102
 	public WorldState worldState;
 
-	// Token: 0x04001308 RID: 4872
+	// Token: 0x04001007 RID: 4103
 	public bool forceChange;
 
-	// Token: 0x04001309 RID: 4873
+	// Token: 0x04001008 RID: 4104
 	public bool delaySceneChange;
 }

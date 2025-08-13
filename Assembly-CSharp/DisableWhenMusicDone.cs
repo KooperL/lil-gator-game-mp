@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200001C RID: 28
+// Token: 0x0200001E RID: 30
 public class DisableWhenMusicDone : MonoBehaviour
 {
-	// Token: 0x0600005A RID: 90 RVA: 0x0000247D File Offset: 0x0000067D
+	// Token: 0x06000061 RID: 97 RVA: 0x000036D7 File Offset: 0x000018D7
 	private void Update()
 	{
 		if (this.audioSource.isPlaying)
@@ -14,6 +14,6 @@ public class DisableWhenMusicDone : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04000072 RID: 114
+	// Token: 0x04000088 RID: 136
 	public AudioSource audioSource;
 }

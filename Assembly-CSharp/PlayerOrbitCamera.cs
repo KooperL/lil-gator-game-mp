@@ -2,11 +2,11 @@
 using Cinemachine;
 using UnityEngine;
 
-// Token: 0x0200027D RID: 637
+// Token: 0x020001F0 RID: 496
 public class PlayerOrbitCamera : MonoBehaviour
 {
-	// Token: 0x1700013A RID: 314
-	// (get) Token: 0x06000C72 RID: 3186 RVA: 0x0000BA2E File Offset: 0x00009C2E
+	// Token: 0x170000A8 RID: 168
+	// (get) Token: 0x06000ABD RID: 2749 RVA: 0x00034C76 File Offset: 0x00032E76
 	public float CameraSmoothing
 	{
 		get
@@ -15,8 +15,8 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700013B RID: 315
-	// (get) Token: 0x06000C73 RID: 3187 RVA: 0x00045E9C File Offset: 0x0004409C
+	// Token: 0x170000A9 RID: 169
+	// (get) Token: 0x06000ABE RID: 2750 RVA: 0x00034C84 File Offset: 0x00032E84
 	private Vector3 CenterPoint
 	{
 		get
@@ -33,8 +33,8 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700013C RID: 316
-	// (get) Token: 0x06000C74 RID: 3188 RVA: 0x0000BA3C File Offset: 0x00009C3C
+	// Token: 0x170000AA RID: 170
+	// (get) Token: 0x06000ABF RID: 2751 RVA: 0x00034D16 File Offset: 0x00032F16
 	private Vector3 CameraOffset
 	{
 		get
@@ -43,8 +43,8 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700013D RID: 317
-	// (get) Token: 0x06000C75 RID: 3189 RVA: 0x00045F30 File Offset: 0x00044130
+	// Token: 0x170000AB RID: 171
+	// (get) Token: 0x06000AC0 RID: 2752 RVA: 0x00034D34 File Offset: 0x00032F34
 	public float DistanceMultiplier
 	{
 		get
@@ -75,8 +75,8 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700013E RID: 318
-	// (get) Token: 0x06000C76 RID: 3190 RVA: 0x0000BA59 File Offset: 0x00009C59
+	// Token: 0x170000AC RID: 172
+	// (get) Token: 0x06000AC1 RID: 2753 RVA: 0x00034DE0 File Offset: 0x00032FE0
 	public bool IsAutoCameraActive
 	{
 		get
@@ -85,13 +85,13 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C77 RID: 3191 RVA: 0x0000BA68 File Offset: 0x00009C68
+	// Token: 0x06000AC2 RID: 2754 RVA: 0x00034DEF File Offset: 0x00032FEF
 	public void ForceAutoCamera()
 	{
 		this.autoCameraActiveTime = -1f;
 	}
 
-	// Token: 0x06000C78 RID: 3192 RVA: 0x00045FDC File Offset: 0x000441DC
+	// Token: 0x06000AC3 RID: 2755 RVA: 0x00034DFC File Offset: 0x00032FFC
 	public void SetCameraMode(PlayerOrbitCamera.CameraMode cameraMode)
 	{
 		if (CameraCollidePlayer.c != null)
@@ -116,13 +116,13 @@ public class PlayerOrbitCamera : MonoBehaviour
 		this.cameraMode = cameraMode;
 	}
 
-	// Token: 0x06000C79 RID: 3193 RVA: 0x0000BA75 File Offset: 0x00009C75
+	// Token: 0x06000AC4 RID: 2756 RVA: 0x00034E6D File Offset: 0x0003306D
 	private void OnEnable()
 	{
 		PlayerOrbitCamera.active = this;
 	}
 
-	// Token: 0x06000C7A RID: 3194 RVA: 0x00046050 File Offset: 0x00044250
+	// Token: 0x06000AC5 RID: 2757 RVA: 0x00034E78 File Offset: 0x00033078
 	private void Start()
 	{
 		this.virtualCamera = base.GetComponent<CinemachineVirtualCamera>();
@@ -148,13 +148,13 @@ public class PlayerOrbitCamera : MonoBehaviour
 		this.autoCameraActiveTime = Time.time + this.autoCameraInputDelay;
 	}
 
-	// Token: 0x06000C7B RID: 3195 RVA: 0x0000BA7D File Offset: 0x00009C7D
+	// Token: 0x06000AC6 RID: 2758 RVA: 0x00034FAD File Offset: 0x000331AD
 	private void FixedUpdate()
 	{
 		this.framesSinceTrigger++;
 	}
 
-	// Token: 0x06000C7C RID: 3196 RVA: 0x0000BA8D File Offset: 0x00009C8D
+	// Token: 0x06000AC7 RID: 2759 RVA: 0x00034FBD File Offset: 0x000331BD
 	public void ReCenterCamera(bool justEnabled = false)
 	{
 		if (justEnabled)
@@ -164,14 +164,14 @@ public class PlayerOrbitCamera : MonoBehaviour
 		this.reCenterCameraTime = Time.time + 0.5f;
 	}
 
-	// Token: 0x06000C7D RID: 3197 RVA: 0x0000BAAE File Offset: 0x00009CAE
+	// Token: 0x06000AC8 RID: 2760 RVA: 0x00034FDE File Offset: 0x000331DE
 	public void CancelReCenterCamera()
 	{
 		this.autoCameraActiveTime = Time.time + this.autoCameraInputDelay;
 		this.reCenterCameraTime = -1f;
 	}
 
-	// Token: 0x06000C7E RID: 3198 RVA: 0x00046188 File Offset: 0x00044388
+	// Token: 0x06000AC9 RID: 2761 RVA: 0x00035000 File Offset: 0x00033200
 	private void LateUpdate()
 	{
 		if ((this.brain.ActiveVirtualCamera != null && !(this.brain.ActiveVirtualCamera.VirtualCameraGameObject != base.gameObject)) || Time.timeSinceLevelLoad <= 1f)
@@ -440,7 +440,7 @@ public class PlayerOrbitCamera : MonoBehaviour
 				});
 			}
 			RaycastHit raycastHit;
-			if (Game.State == GameState.Dialogue && Physics.SphereCast(vector7 + Vector3.up, this.sphereCastRadius, Vector3.down, ref raycastHit, 1f, this.recoveryLayerMask, 2))
+			if (Game.State == GameState.Dialogue && Physics.SphereCast(vector7 + Vector3.up, this.sphereCastRadius, Vector3.down, out raycastHit, 1f, this.recoveryLayerMask, QueryTriggerInteraction.Collide))
 			{
 				vector7 += (1f - raycastHit.distance) * Vector3.up;
 			}
@@ -475,7 +475,7 @@ public class PlayerOrbitCamera : MonoBehaviour
 				{
 					Vector3 vector10 = vector9 - this.smoothedCenterPoint;
 					float magnitude2 = vector10.magnitude;
-					if (Physics.SphereCast(this.smoothedCenterPoint, this.sphereCastRadius, vector10, ref PlayerOrbitCamera.raycastHit, magnitude2, this.recoveryLayerMask, 2))
+					if (Physics.SphereCast(this.smoothedCenterPoint, this.sphereCastRadius, vector10, out PlayerOrbitCamera.raycastHit, magnitude2, this.recoveryLayerMask, QueryTriggerInteraction.Collide))
 					{
 						num7 = PlayerOrbitCamera.raycastHit.distance / magnitude2;
 					}
@@ -530,13 +530,13 @@ public class PlayerOrbitCamera : MonoBehaviour
 		this.lastFramePosition = base.transform.position;
 	}
 
-	// Token: 0x06000C7F RID: 3199 RVA: 0x0000BACD File Offset: 0x00009CCD
+	// Token: 0x06000ACA RID: 2762 RVA: 0x00035D54 File Offset: 0x00033F54
 	public Quaternion GetRotation()
 	{
 		return Quaternion.Euler(this.smoothRotation);
 	}
 
-	// Token: 0x06000C80 RID: 3200 RVA: 0x00046EDC File Offset: 0x000450DC
+	// Token: 0x06000ACB RID: 2763 RVA: 0x00035D64 File Offset: 0x00033F64
 	public void GetOrientationFromCamera()
 	{
 		if (this.mainCamera == null)
@@ -566,8 +566,8 @@ public class PlayerOrbitCamera : MonoBehaviour
 		this.hasControl = 0f;
 	}
 
-	// Token: 0x1700013F RID: 319
-	// (get) Token: 0x06000C81 RID: 3201 RVA: 0x0000BADA File Offset: 0x00009CDA
+	// Token: 0x170000AD RID: 173
+	// (get) Token: 0x06000ACC RID: 2764 RVA: 0x00035F06 File Offset: 0x00034106
 	private float HighAngle
 	{
 		get
@@ -584,8 +584,8 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000140 RID: 320
-	// (get) Token: 0x06000C82 RID: 3202 RVA: 0x0000BB0A File Offset: 0x00009D0A
+	// Token: 0x170000AE RID: 174
+	// (get) Token: 0x06000ACD RID: 2765 RVA: 0x00035F36 File Offset: 0x00034136
 	private float LowAngle
 	{
 		get
@@ -602,8 +602,8 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000141 RID: 321
-	// (get) Token: 0x06000C83 RID: 3203 RVA: 0x0000BB3A File Offset: 0x00009D3A
+	// Token: 0x170000AF RID: 175
+	// (get) Token: 0x06000ACE RID: 2766 RVA: 0x00035F66 File Offset: 0x00034166
 	private float LowDistance
 	{
 		get
@@ -620,8 +620,8 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000142 RID: 322
-	// (get) Token: 0x06000C84 RID: 3204 RVA: 0x0000BB6A File Offset: 0x00009D6A
+	// Token: 0x170000B0 RID: 176
+	// (get) Token: 0x06000ACF RID: 2767 RVA: 0x00035F96 File Offset: 0x00034196
 	private float MiddleDistance
 	{
 		get
@@ -638,8 +638,8 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000143 RID: 323
-	// (get) Token: 0x06000C85 RID: 3205 RVA: 0x0000BB9A File Offset: 0x00009D9A
+	// Token: 0x170000B1 RID: 177
+	// (get) Token: 0x06000AD0 RID: 2768 RVA: 0x00035FC6 File Offset: 0x000341C6
 	private float HighDistance
 	{
 		get
@@ -656,7 +656,7 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C86 RID: 3206 RVA: 0x00047080 File Offset: 0x00045280
+	// Token: 0x06000AD1 RID: 2769 RVA: 0x00035FF8 File Offset: 0x000341F8
 	private float DistanceFromFocalPoint()
 	{
 		float num = this.HighAngle;
@@ -673,324 +673,324 @@ public class PlayerOrbitCamera : MonoBehaviour
 		return this.smoothDistanceMultiplier * Mathf.Lerp(num4, num3, Mathf.InverseLerp(0f, num2, this.smoothRotation.x));
 	}
 
-	// Token: 0x06000C87 RID: 3207 RVA: 0x0000BBCA File Offset: 0x00009DCA
+	// Token: 0x06000AD2 RID: 2770 RVA: 0x000360C6 File Offset: 0x000342C6
 	private void OnTriggerEnter(Collider other)
 	{
 		this.framesSinceTrigger = 0;
 	}
 
-	// Token: 0x06000C88 RID: 3208 RVA: 0x0000BBCA File Offset: 0x00009DCA
+	// Token: 0x06000AD3 RID: 2771 RVA: 0x000360CF File Offset: 0x000342CF
 	private void OnTriggerStay(Collider other)
 	{
 		this.framesSinceTrigger = 0;
 	}
 
-	// Token: 0x06000C89 RID: 3209 RVA: 0x0000BBD3 File Offset: 0x00009DD3
+	// Token: 0x06000AD4 RID: 2772 RVA: 0x000360D8 File Offset: 0x000342D8
 	public void ForceRecovery()
 	{
 		this.framesSinceTrigger = 0;
 		this.recovered = false;
 	}
 
-	// Token: 0x06000C8A RID: 3210 RVA: 0x0000BBE3 File Offset: 0x00009DE3
+	// Token: 0x06000AD5 RID: 2773 RVA: 0x000360E8 File Offset: 0x000342E8
 	public void ResetPosition()
 	{
 		this.smoothedCenterPoint = this.CenterPoint;
 		this.smoothedCenterPointVelocity = Vector3.zero;
 	}
 
-	// Token: 0x0400105B RID: 4187
+	// Token: 0x04000E0A RID: 3594
 	private static RaycastHit raycastHit;
 
-	// Token: 0x0400105C RID: 4188
+	// Token: 0x04000E0B RID: 3595
 	public static float gameplayDistanceMultiplier = 1f;
 
-	// Token: 0x0400105D RID: 4189
+	// Token: 0x04000E0C RID: 3596
 	public static PlayerOrbitCamera active;
 
-	// Token: 0x0400105E RID: 4190
+	// Token: 0x04000E0D RID: 3597
 	public static float cameraSmoothingFactor;
 
-	// Token: 0x0400105F RID: 4191
+	// Token: 0x04000E0E RID: 3598
 	private PlayerInput playerInput;
 
-	// Token: 0x04001060 RID: 4192
+	// Token: 0x04000E0F RID: 3599
 	private PlayerMovement playerMovement;
 
-	// Token: 0x04001061 RID: 4193
+	// Token: 0x04000E10 RID: 3600
 	private Transform playerTransform;
 
-	// Token: 0x04001062 RID: 4194
+	// Token: 0x04000E11 RID: 3601
 	public bool persistentRotation;
 
-	// Token: 0x04001063 RID: 4195
+	// Token: 0x04000E12 RID: 3602
 	[ConditionalHide("persistentRotation", true)]
 	public string rotationKey = "CameraRotation";
 
-	// Token: 0x04001064 RID: 4196
+	// Token: 0x04000E13 RID: 3603
 	[Space]
 	public Vector2 lookAxis;
 
-	// Token: 0x04001065 RID: 4197
+	// Token: 0x04000E14 RID: 3604
 	public Vector2 speed;
 
-	// Token: 0x04001066 RID: 4198
+	// Token: 0x04000E15 RID: 3605
 	public float cameraSmoothing;
 
-	// Token: 0x04001067 RID: 4199
+	// Token: 0x04000E16 RID: 3606
 	private Vector3 cameraSmoothingVelocity;
 
-	// Token: 0x04001068 RID: 4200
+	// Token: 0x04000E17 RID: 3607
 	private Vector3 smoothRotation;
 
-	// Token: 0x04001069 RID: 4201
+	// Token: 0x04000E18 RID: 3608
 	private CinemachineVirtualCamera virtualCamera;
 
-	// Token: 0x0400106A RID: 4202
+	// Token: 0x04000E19 RID: 3609
 	private CinemachineBasicMultiChannelPerlin virtualCameraNoise;
 
-	// Token: 0x0400106B RID: 4203
+	// Token: 0x04000E1A RID: 3610
 	private LensSettings virtualCameraLens;
 
-	// Token: 0x0400106C RID: 4204
+	// Token: 0x04000E1B RID: 3611
 	public Transform ragdollCenter;
 
-	// Token: 0x0400106D RID: 4205
+	// Token: 0x04000E1C RID: 3612
 	public Vector3 centerPoint = Vector3.up * 0.6f;
 
-	// Token: 0x0400106E RID: 4206
+	// Token: 0x04000E1D RID: 3613
 	public Vector3 c_centerPoint = Vector3.up * 0.6f;
 
-	// Token: 0x0400106F RID: 4207
+	// Token: 0x04000E1E RID: 3614
 	public Vector3 b_centerPoint = Vector3.up * 0.6f;
 
-	// Token: 0x04001070 RID: 4208
+	// Token: 0x04000E1F RID: 3615
 	public Vector3 cameraOffset = Vector3.zero;
 
-	// Token: 0x04001071 RID: 4209
+	// Token: 0x04000E20 RID: 3616
 	public Vector3 aimCameraOffset = Vector3.zero;
 
-	// Token: 0x04001072 RID: 4210
+	// Token: 0x04000E21 RID: 3617
 	public float leanAmount = 0.75f;
 
-	// Token: 0x04001073 RID: 4211
+	// Token: 0x04000E22 RID: 3618
 	public float leanPushSpeed = 0.5f;
 
-	// Token: 0x04001074 RID: 4212
+	// Token: 0x04000E23 RID: 3619
 	private float currentLean;
 
-	// Token: 0x04001075 RID: 4213
+	// Token: 0x04000E24 RID: 3620
 	private float leanDesire;
 
-	// Token: 0x04001076 RID: 4214
+	// Token: 0x04000E25 RID: 3621
 	private float currentLeanVelocity;
 
-	// Token: 0x04001077 RID: 4215
+	// Token: 0x04000E26 RID: 3622
 	public float leanTransitionTime = 0.5f;
 
-	// Token: 0x04001078 RID: 4216
+	// Token: 0x04000E27 RID: 3623
 	private Vector3 smoothedCenterPoint;
 
-	// Token: 0x04001079 RID: 4217
+	// Token: 0x04000E28 RID: 3624
 	private Vector3 smoothedCenterPointVelocity;
 
-	// Token: 0x0400107A RID: 4218
+	// Token: 0x04000E29 RID: 3625
 	public float centerPointSmoothing = 0.1f;
 
-	// Token: 0x0400107B RID: 4219
+	// Token: 0x04000E2A RID: 3626
 	public float c_centerPointSmoothing = 0.025f;
 
-	// Token: 0x0400107C RID: 4220
+	// Token: 0x04000E2B RID: 3627
 	public float smoothedCenterPointDrag = 1f;
 
-	// Token: 0x0400107D RID: 4221
+	// Token: 0x04000E2C RID: 3628
 	private Vector3 rotation;
 
-	// Token: 0x0400107E RID: 4222
+	// Token: 0x04000E2D RID: 3629
 	public float lowAngle;
 
-	// Token: 0x0400107F RID: 4223
+	// Token: 0x04000E2E RID: 3630
 	public float highAngle;
 
-	// Token: 0x04001080 RID: 4224
+	// Token: 0x04000E2F RID: 3631
 	public float lowDistance;
 
-	// Token: 0x04001081 RID: 4225
+	// Token: 0x04000E30 RID: 3632
 	public float middleDistance;
 
-	// Token: 0x04001082 RID: 4226
+	// Token: 0x04000E31 RID: 3633
 	public float highDistance;
 
-	// Token: 0x04001083 RID: 4227
+	// Token: 0x04000E32 RID: 3634
 	public float c_lowAngle;
 
-	// Token: 0x04001084 RID: 4228
+	// Token: 0x04000E33 RID: 3635
 	public float c_highAngle;
 
-	// Token: 0x04001085 RID: 4229
+	// Token: 0x04000E34 RID: 3636
 	public float c_lowDistance;
 
-	// Token: 0x04001086 RID: 4230
+	// Token: 0x04000E35 RID: 3637
 	public float c_middleDistance;
 
-	// Token: 0x04001087 RID: 4231
+	// Token: 0x04000E36 RID: 3638
 	public float c_highDistance;
 
-	// Token: 0x04001088 RID: 4232
+	// Token: 0x04000E37 RID: 3639
 	public float b_lowAngle;
 
-	// Token: 0x04001089 RID: 4233
+	// Token: 0x04000E38 RID: 3640
 	public float b_highAngle;
 
-	// Token: 0x0400108A RID: 4234
+	// Token: 0x04000E39 RID: 3641
 	public float b_lowDistance;
 
-	// Token: 0x0400108B RID: 4235
+	// Token: 0x04000E3A RID: 3642
 	public float b_middleDistance;
 
-	// Token: 0x0400108C RID: 4236
+	// Token: 0x04000E3B RID: 3643
 	public float b_highDistance;
 
-	// Token: 0x0400108D RID: 4237
+	// Token: 0x04000E3C RID: 3644
 	public float distanceMultiplier = 1f;
 
-	// Token: 0x0400108E RID: 4238
+	// Token: 0x04000E3D RID: 3645
 	public float aimDistanceMultiplier = 0.5f;
 
-	// Token: 0x0400108F RID: 4239
+	// Token: 0x04000E3E RID: 3646
 	public float mostRecentDistanceMultiplier = 1f;
 
-	// Token: 0x04001090 RID: 4240
+	// Token: 0x04000E3F RID: 3647
 	private float smoothDistanceMultiplier = 0.75f;
 
-	// Token: 0x04001091 RID: 4241
+	// Token: 0x04000E40 RID: 3648
 	private float distanceMultiplierVel;
 
-	// Token: 0x04001092 RID: 4242
+	// Token: 0x04000E41 RID: 3649
 	private float smoothIsDialogue;
 
-	// Token: 0x04001093 RID: 4243
+	// Token: 0x04000E42 RID: 3650
 	private Transform mainCamera;
 
-	// Token: 0x04001094 RID: 4244
+	// Token: 0x04000E43 RID: 3651
 	private CinemachineBrain brain;
 
-	// Token: 0x04001095 RID: 4245
+	// Token: 0x04000E44 RID: 3652
 	[Header("Collision Detection")]
 	public float sphereCastRadius = 0.25f;
 
-	// Token: 0x04001096 RID: 4246
+	// Token: 0x04000E45 RID: 3653
 	public LayerMask recoveryLayerMask;
 
-	// Token: 0x04001097 RID: 4247
+	// Token: 0x04000E46 RID: 3654
 	private int framesSinceTrigger = 5;
 
-	// Token: 0x04001098 RID: 4248
+	// Token: 0x04000E47 RID: 3655
 	private float adaptedDistance;
 
-	// Token: 0x04001099 RID: 4249
+	// Token: 0x04000E48 RID: 3656
 	private float adaptedT;
 
-	// Token: 0x0400109A RID: 4250
+	// Token: 0x04000E49 RID: 3657
 	private bool recovered = true;
 
-	// Token: 0x0400109B RID: 4251
+	// Token: 0x04000E4A RID: 3658
 	public float recoveryTime = 0.3f;
 
-	// Token: 0x0400109C RID: 4252
+	// Token: 0x04000E4B RID: 3659
 	private float recoveryVelocity;
 
-	// Token: 0x0400109D RID: 4253
+	// Token: 0x04000E4C RID: 3660
 	[Header("Feelers")]
 	public float feelerAngle = 30f;
 
-	// Token: 0x0400109E RID: 4254
+	// Token: 0x04000E4D RID: 3661
 	public int feelerCount = 5;
 
-	// Token: 0x0400109F RID: 4255
+	// Token: 0x04000E4E RID: 3662
 	[Header("Auto Camera")]
 	public float autoCameraInputDelay = 2f;
 
-	// Token: 0x040010A0 RID: 4256
+	// Token: 0x04000E4F RID: 3663
 	private float autoCameraActiveTime = -1f;
 
-	// Token: 0x040010A1 RID: 4257
+	// Token: 0x04000E50 RID: 3664
 	private float reCenterCameraTime = -1f;
 
-	// Token: 0x040010A2 RID: 4258
+	// Token: 0x04000E51 RID: 3665
 	public float autoCameraSmoothing = 5f;
 
-	// Token: 0x040010A3 RID: 4259
+	// Token: 0x04000E52 RID: 3666
 	public float autoCameraPullThreshold = 1f;
 
-	// Token: 0x040010A4 RID: 4260
+	// Token: 0x04000E53 RID: 3667
 	public float autoCameraClimbingSmoothing = 1.5f;
 
-	// Token: 0x040010A5 RID: 4261
+	// Token: 0x04000E54 RID: 3668
 	public float autoCameraSleddingSmoothing = 0.25f;
 
-	// Token: 0x040010A6 RID: 4262
+	// Token: 0x04000E55 RID: 3669
 	public GameObject smoothForwardDirection;
 
-	// Token: 0x040010A7 RID: 4263
+	// Token: 0x04000E56 RID: 3670
 	[Header("Transition Handling")]
 	public float transitionTime = 1f;
 
-	// Token: 0x040010A8 RID: 4264
+	// Token: 0x04000E57 RID: 3671
 	private float hasControl = 1f;
 
-	// Token: 0x040010A9 RID: 4265
+	// Token: 0x04000E58 RID: 3672
 	private float originalFov;
 
-	// Token: 0x040010AA RID: 4266
+	// Token: 0x04000E59 RID: 3673
 	private float brainFov;
 
-	// Token: 0x040010AB RID: 4267
+	// Token: 0x04000E5A RID: 3674
 	private float noiseAmplitude;
 
-	// Token: 0x040010AC RID: 4268
+	// Token: 0x04000E5B RID: 3675
 	private int stepsSinceStart;
 
-	// Token: 0x040010AD RID: 4269
+	// Token: 0x04000E5C RID: 3676
 	private Vector3 lastFramePosition;
 
-	// Token: 0x040010AE RID: 4270
+	// Token: 0x04000E5D RID: 3677
 	private Vector3 velocity;
 
-	// Token: 0x040010AF RID: 4271
+	// Token: 0x04000E5E RID: 3678
 	private const float playerHideDistance = 0.7f;
 
-	// Token: 0x040010B0 RID: 4272
+	// Token: 0x04000E5F RID: 3679
 	private Camera camera;
 
-	// Token: 0x040010B1 RID: 4273
+	// Token: 0x04000E60 RID: 3680
 	public LayerMask defaultMask;
 
-	// Token: 0x040010B2 RID: 4274
+	// Token: 0x04000E61 RID: 3681
 	public LayerMask playerExcludedMask;
 
-	// Token: 0x040010B3 RID: 4275
+	// Token: 0x04000E62 RID: 3682
 	private bool isPlayerHidden;
 
-	// Token: 0x040010B4 RID: 4276
+	// Token: 0x04000E63 RID: 3683
 	public PlayerOrbitCamera.CameraMode cameraMode;
 
-	// Token: 0x040010B5 RID: 4277
+	// Token: 0x04000E64 RID: 3684
 	public Vector3 backwardsCameraRotation;
 
-	// Token: 0x040010B6 RID: 4278
+	// Token: 0x04000E65 RID: 3685
 	private readonly int _AimAngle = Animator.StringToHash("AimAngle");
 
-	// Token: 0x0200027E RID: 638
+	// Token: 0x020003EA RID: 1002
 	public enum CameraMode
 	{
-		// Token: 0x040010B8 RID: 4280
+		// Token: 0x04001C7E RID: 7294
 		Off,
-		// Token: 0x040010B9 RID: 4281
+		// Token: 0x04001C7F RID: 7295
 		Forward,
-		// Token: 0x040010BA RID: 4282
+		// Token: 0x04001C80 RID: 7296
 		Backward,
-		// Token: 0x040010BB RID: 4283
+		// Token: 0x04001C81 RID: 7297
 		Static
 	}
 }

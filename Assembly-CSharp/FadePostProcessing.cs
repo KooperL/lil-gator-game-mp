@@ -1,27 +1,27 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000166 RID: 358
+// Token: 0x0200010F RID: 271
 public class FadePostProcessing : MonoBehaviour
 {
-	// Token: 0x060006B5 RID: 1717 RVA: 0x00006D74 File Offset: 0x00004F74
+	// Token: 0x06000591 RID: 1425 RVA: 0x0001D4C5 File Offset: 0x0001B6C5
 	public void OnEnable()
 	{
 		SmoothPostProcessing.FadeInLayer(this.layer, this.fadeInSpeed);
 	}
 
-	// Token: 0x060006B6 RID: 1718 RVA: 0x00006D87 File Offset: 0x00004F87
+	// Token: 0x06000592 RID: 1426 RVA: 0x0001D4D8 File Offset: 0x0001B6D8
 	public void OnDisable()
 	{
 		SmoothPostProcessing.FadeOutLayer(this.layer, this.fadeOutSpeed);
 	}
 
-	// Token: 0x040008FC RID: 2300
+	// Token: 0x040007A2 RID: 1954
 	public SmoothPostProcessing.PostProcessLayer layer;
 
-	// Token: 0x040008FD RID: 2301
+	// Token: 0x040007A3 RID: 1955
 	public float fadeInSpeed = 1f;
 
-	// Token: 0x040008FE RID: 2302
+	// Token: 0x040007A4 RID: 1956
 	public float fadeOutSpeed = 1f;
 }

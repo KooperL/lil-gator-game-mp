@@ -3,21 +3,21 @@ using System.Collections;
 using Rewired;
 using UnityEngine;
 
-// Token: 0x02000130 RID: 304
+// Token: 0x020000E2 RID: 226
 [AddComponentMenu("Dialogue Sequence/Wait For Input")]
 public class DSWaitForInput : DialogueSequence
 {
-	// Token: 0x060005A5 RID: 1445 RVA: 0x0002E6FC File Offset: 0x0002C8FC
+	// Token: 0x060004A8 RID: 1192 RVA: 0x00019C08 File Offset: 0x00017E08
 	public override void Activate()
 	{
 		if (this.player == null)
 		{
 			this.player = ReInput.players.GetPlayer(0);
 		}
-		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMove), 0, 3, ReInput.mapping.GetActionId("Move Horizontal"));
-		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMove), 0, 3, ReInput.mapping.GetActionId("Move Vertical"));
-		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnInteract), 0, 3, ReInput.mapping.GetActionId("Interact"));
-		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.Jump), 0, 3, ReInput.mapping.GetActionId("Jump"));
+		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMove), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("Move Horizontal"));
+		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMove), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("Move Vertical"));
+		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnInteract), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("Interact"));
+		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.Jump), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("Jump"));
 		if (this.waitUntilTriggered == null)
 		{
 			this.waitUntilTriggered = new WaitUntil(() => this.isTriggered);
@@ -25,7 +25,7 @@ public class DSWaitForInput : DialogueSequence
 		base.Activate();
 	}
 
-	// Token: 0x060005A6 RID: 1446 RVA: 0x0002E7E8 File Offset: 0x0002C9E8
+	// Token: 0x060004A9 RID: 1193 RVA: 0x00019CF4 File Offset: 0x00017EF4
 	public override void Deactivate()
 	{
 		this.player.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnMove));
@@ -34,13 +34,13 @@ public class DSWaitForInput : DialogueSequence
 		base.Deactivate();
 	}
 
-	// Token: 0x060005A7 RID: 1447 RVA: 0x000060E0 File Offset: 0x000042E0
+	// Token: 0x060004AA RID: 1194 RVA: 0x00019D4C File Offset: 0x00017F4C
 	public override YieldInstruction Run()
 	{
 		return base.StartCoroutine(this.WaitUntilTriggered());
 	}
 
-	// Token: 0x060005A8 RID: 1448 RVA: 0x000060EE File Offset: 0x000042EE
+	// Token: 0x060004AB RID: 1195 RVA: 0x00019D5A File Offset: 0x00017F5A
 	private IEnumerator WaitUntilTriggered()
 	{
 		this.isTriggered = false;
@@ -51,7 +51,7 @@ public class DSWaitForInput : DialogueSequence
 		yield break;
 	}
 
-	// Token: 0x060005A9 RID: 1449 RVA: 0x000060FD File Offset: 0x000042FD
+	// Token: 0x060004AC RID: 1196 RVA: 0x00019D69 File Offset: 0x00017F69
 	private void OnInteract(InputActionEventData obj)
 	{
 		if (this.waitForInteract)
@@ -60,7 +60,7 @@ public class DSWaitForInput : DialogueSequence
 		}
 	}
 
-	// Token: 0x060005AA RID: 1450 RVA: 0x0000610E File Offset: 0x0000430E
+	// Token: 0x060004AD RID: 1197 RVA: 0x00019D7A File Offset: 0x00017F7A
 	private void Jump(InputActionEventData obj)
 	{
 		if (this.waitForJump)
@@ -69,7 +69,7 @@ public class DSWaitForInput : DialogueSequence
 		}
 	}
 
-	// Token: 0x060005AB RID: 1451 RVA: 0x0000611F File Offset: 0x0000431F
+	// Token: 0x060004AE RID: 1198 RVA: 0x00019D8B File Offset: 0x00017F8B
 	private void OnMove(InputActionEventData obj)
 	{
 		if (this.waitForMove)
@@ -78,21 +78,21 @@ public class DSWaitForInput : DialogueSequence
 		}
 	}
 
-	// Token: 0x040007B1 RID: 1969
-	private Player player;
+	// Token: 0x0400067A RID: 1658
+	private global::Rewired.Player player;
 
-	// Token: 0x040007B2 RID: 1970
+	// Token: 0x0400067B RID: 1659
 	public bool waitForMove;
 
-	// Token: 0x040007B3 RID: 1971
+	// Token: 0x0400067C RID: 1660
 	public bool waitForInteract;
 
-	// Token: 0x040007B4 RID: 1972
+	// Token: 0x0400067D RID: 1661
 	public bool waitForJump;
 
-	// Token: 0x040007B5 RID: 1973
+	// Token: 0x0400067E RID: 1662
 	private bool isTriggered;
 
-	// Token: 0x040007B6 RID: 1974
+	// Token: 0x0400067F RID: 1663
 	private WaitUntil waitUntilTriggered;
 }

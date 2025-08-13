@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000277 RID: 631
+// Token: 0x020001EB RID: 491
 public interface IHit
 {
-	// Token: 0x06000C2D RID: 3117
+	// Token: 0x06000A78 RID: 2680
 	void Hit(Vector3 velocity, bool isHeavy = false);
 }

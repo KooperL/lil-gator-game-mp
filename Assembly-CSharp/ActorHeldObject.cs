@@ -2,10 +2,10 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020001F9 RID: 505
+// Token: 0x02000185 RID: 389
 public class ActorHeldObject : MonoBehaviour
 {
-	// Token: 0x06000958 RID: 2392 RVA: 0x00039680 File Offset: 0x00037880
+	// Token: 0x060007FA RID: 2042 RVA: 0x0002688C File Offset: 0x00024A8C
 	[ContextMenu("Get Held Transform")]
 	public void GetHeldTransform()
 	{
@@ -19,7 +19,7 @@ public class ActorHeldObject : MonoBehaviour
 		this.heldRotation = this.heldAnchor.rotation.Inverse() * base.transform.rotation;
 	}
 
-	// Token: 0x06000959 RID: 2393 RVA: 0x000091A3 File Offset: 0x000073A3
+	// Token: 0x060007FB RID: 2043 RVA: 0x00026916 File Offset: 0x00024B16
 	[ContextMenu("Get Dropped Transform")]
 	public void GetDroppedTransform()
 	{
@@ -27,7 +27,7 @@ public class ActorHeldObject : MonoBehaviour
 		this.droppedRotation = base.transform.rotation;
 	}
 
-	// Token: 0x0600095A RID: 2394 RVA: 0x000091C7 File Offset: 0x000073C7
+	// Token: 0x060007FC RID: 2044 RVA: 0x0002693A File Offset: 0x00024B3A
 	[ContextMenu("Pick Up")]
 	public void PickUp()
 	{
@@ -38,7 +38,7 @@ public class ActorHeldObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600095B RID: 2395 RVA: 0x000091E4 File Offset: 0x000073E4
+	// Token: 0x060007FD RID: 2045 RVA: 0x00026957 File Offset: 0x00024B57
 	private IEnumerator PickUpCoroutine()
 	{
 		float t = 0f;
@@ -56,7 +56,7 @@ public class ActorHeldObject : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600095C RID: 2396 RVA: 0x000091F3 File Offset: 0x000073F3
+	// Token: 0x060007FE RID: 2046 RVA: 0x00026966 File Offset: 0x00024B66
 	[ContextMenu("Drop")]
 	public void Drop()
 	{
@@ -67,7 +67,7 @@ public class ActorHeldObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600095D RID: 2397 RVA: 0x0003970C File Offset: 0x0003790C
+	// Token: 0x060007FF RID: 2047 RVA: 0x00026984 File Offset: 0x00024B84
 	public static float SolveQuadratic(float a, float b, float c)
 	{
 		if (b * b - 4f * a * c < 0f)
@@ -87,7 +87,7 @@ public class ActorHeldObject : MonoBehaviour
 		return 0f;
 	}
 
-	// Token: 0x0600095E RID: 2398 RVA: 0x00039794 File Offset: 0x00037994
+	// Token: 0x06000800 RID: 2048 RVA: 0x00026A0C File Offset: 0x00024C0C
 	[ContextMenu("Debug Drop")]
 	public void DebugDrop()
 	{
@@ -112,7 +112,7 @@ public class ActorHeldObject : MonoBehaviour
 		Debug.Log("velocity = " + ((vector - position2) / num7).ToString());
 	}
 
-	// Token: 0x0600095F RID: 2399 RVA: 0x00009210 File Offset: 0x00007410
+	// Token: 0x06000801 RID: 2049 RVA: 0x00026B1B File Offset: 0x00024D1B
 	private IEnumerator DropCoroutine()
 	{
 		float t = 0f;
@@ -157,24 +157,24 @@ public class ActorHeldObject : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04000C03 RID: 3075
+	// Token: 0x04000A2B RID: 2603
 	public bool isHeld;
 
-	// Token: 0x04000C04 RID: 3076
+	// Token: 0x04000A2C RID: 2604
 	public Transform heldAnchor;
 
-	// Token: 0x04000C05 RID: 3077
+	// Token: 0x04000A2D RID: 2605
 	public Vector3 heldPosition;
 
-	// Token: 0x04000C06 RID: 3078
+	// Token: 0x04000A2E RID: 2606
 	public Quaternion heldRotation;
 
-	// Token: 0x04000C07 RID: 3079
+	// Token: 0x04000A2F RID: 2607
 	public Transform droppedAnchor;
 
-	// Token: 0x04000C08 RID: 3080
+	// Token: 0x04000A30 RID: 2608
 	public Vector3 droppedPosition;
 
-	// Token: 0x04000C09 RID: 3081
+	// Token: 0x04000A31 RID: 2609
 	public Quaternion droppedRotation;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001F5 RID: 501
+// Token: 0x0200017F RID: 383
 public class MoneySpawner : MonoBehaviour
 {
-	// Token: 0x06000945 RID: 2373 RVA: 0x000090DD File Offset: 0x000072DD
+	// Token: 0x060007E3 RID: 2019 RVA: 0x000264FE File Offset: 0x000246FE
 	private void Start()
 	{
 		if (this.spawnOnAwake)
@@ -13,7 +13,7 @@ public class MoneySpawner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000946 RID: 2374 RVA: 0x000090ED File Offset: 0x000072ED
+	// Token: 0x060007E4 RID: 2020 RVA: 0x0002650E File Offset: 0x0002470E
 	public void SpawnMoney()
 	{
 		int num = this.cents;
@@ -23,15 +23,15 @@ public class MoneySpawner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000BF7 RID: 3063
+	// Token: 0x04000A1B RID: 2587
 	public int cents;
 
-	// Token: 0x04000BF8 RID: 3064
+	// Token: 0x04000A1C RID: 2588
 	public int minCents;
 
-	// Token: 0x04000BF9 RID: 3065
+	// Token: 0x04000A1D RID: 2589
 	public bool spawnOnAwake = true;
 
-	// Token: 0x04000BFA RID: 3066
+	// Token: 0x04000A1E RID: 2590
 	public Vector3 offset;
 }

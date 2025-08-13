@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200036A RID: 874
+// Token: 0x02000290 RID: 656
 public class UIRacePreview : MonoBehaviour
 {
-	// Token: 0x060010C2 RID: 4290 RVA: 0x0000E5F2 File Offset: 0x0000C7F2
+	// Token: 0x06000DF9 RID: 3577 RVA: 0x00043B8D File Offset: 0x00041D8D
 	public void Load(Transform anchor, float previousBest)
 	{
 		this.uiFollow.followTarget = anchor;
@@ -13,13 +13,13 @@ public class UIRacePreview : MonoBehaviour
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x060010C3 RID: 4291 RVA: 0x00009344 File Offset: 0x00007544
+	// Token: 0x06000DFA RID: 3578 RVA: 0x00043BB8 File Offset: 0x00041DB8
 	public void Clear()
 	{
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x060010C4 RID: 4292 RVA: 0x0000E61D File Offset: 0x0000C81D
+	// Token: 0x06000DFB RID: 3579 RVA: 0x00043BC6 File Offset: 0x00041DC6
 	private void Update()
 	{
 		if (Vector3.Distance(this.uiFollow.followTarget.position, Player.Position) > 10f)
@@ -28,9 +28,9 @@ public class UIRacePreview : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040015D2 RID: 5586
+	// Token: 0x04001272 RID: 4722
 	public UIFollow uiFollow;
 
-	// Token: 0x040015D3 RID: 5587
+	// Token: 0x04001273 RID: 4723
 	public Text previousBestDisplay;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200025F RID: 607
+// Token: 0x020001D8 RID: 472
 public class ItemThrowObject : ItemThrowable
 {
-	// Token: 0x06000B7F RID: 2943 RVA: 0x0000AD5A File Offset: 0x00008F5A
+	// Token: 0x060009D6 RID: 2518 RVA: 0x0002DC5C File Offset: 0x0002BE5C
 	public override void Input(bool isDown, bool isHeld)
 	{
 		if (this.spawnedObject != null && isDown)
@@ -15,7 +15,7 @@ public class ItemThrowObject : ItemThrowable
 		base.Input(isDown, isHeld);
 	}
 
-	// Token: 0x06000B80 RID: 2944 RVA: 0x0003FA94 File Offset: 0x0003DC94
+	// Token: 0x060009D7 RID: 2519 RVA: 0x0002DC80 File Offset: 0x0002BE80
 	public override void LateUpdate()
 	{
 		if (this.spawnedObject != null)
@@ -48,7 +48,7 @@ public class ItemThrowObject : ItemThrowable
 		}
 	}
 
-	// Token: 0x06000B81 RID: 2945 RVA: 0x0003FB08 File Offset: 0x0003DD08
+	// Token: 0x060009D8 RID: 2520 RVA: 0x0002DCF4 File Offset: 0x0002BEF4
 	public override void SetCharging(bool isCharging)
 	{
 		if (UIMenus.reticle != null)
@@ -71,14 +71,14 @@ public class ItemThrowObject : ItemThrowable
 		this.charging = isCharging;
 	}
 
-	// Token: 0x06000B82 RID: 2946 RVA: 0x0000AD7E File Offset: 0x00008F7E
+	// Token: 0x060009D9 RID: 2521 RVA: 0x0002DD60 File Offset: 0x0002BF60
 	public override void Cancel()
 	{
 		base.Cancel();
 		this.ClearStuff();
 	}
 
-	// Token: 0x06000B83 RID: 2947 RVA: 0x0003FB74 File Offset: 0x0003DD74
+	// Token: 0x060009DA RID: 2522 RVA: 0x0002DD70 File Offset: 0x0002BF70
 	public override void SetEquipped(bool isEquipped)
 	{
 		this.isEquipped = isEquipped;
@@ -108,14 +108,14 @@ public class ItemThrowObject : ItemThrowable
 		this.unequippedRenderer.enabled = this.spawnedObject == null;
 	}
 
-	// Token: 0x06000B84 RID: 2948 RVA: 0x0000AD8C File Offset: 0x00008F8C
+	// Token: 0x060009DB RID: 2523 RVA: 0x0002DE26 File Offset: 0x0002C026
 	public override void OnRemove()
 	{
 		base.OnRemove();
 		this.ClearStuff();
 	}
 
-	// Token: 0x06000B85 RID: 2949 RVA: 0x0003FC2C File Offset: 0x0003DE2C
+	// Token: 0x060009DC RID: 2524 RVA: 0x0002DE34 File Offset: 0x0002C034
 	private void ClearStuff()
 	{
 		if (Player.itemManager.itemInUse == this)
@@ -136,13 +136,13 @@ public class ItemThrowObject : ItemThrowable
 		this.SetEquipped(this.isEquipped);
 	}
 
-	// Token: 0x06000B86 RID: 2950 RVA: 0x0000AD9A File Offset: 0x00008F9A
+	// Token: 0x060009DD RID: 2525 RVA: 0x0002DEAF File Offset: 0x0002C0AF
 	public override float GetSolveSpeed(float charge = 1f)
 	{
 		return this.spawnedObjectSpeed;
 	}
 
-	// Token: 0x06000B87 RID: 2951 RVA: 0x0003FCA8 File Offset: 0x0003DEA8
+	// Token: 0x060009DE RID: 2526 RVA: 0x0002DEB8 File Offset: 0x0002C0B8
 	public override void Throw(float charge, Vector3 direction)
 	{
 		base.Throw(charge, direction);
@@ -163,30 +163,30 @@ public class ItemThrowObject : ItemThrowable
 		this.SetEquipped(this.isEquipped);
 	}
 
-	// Token: 0x04000E5D RID: 3677
+	// Token: 0x04000C25 RID: 3109
 	public Renderer unequippedRenderer;
 
-	// Token: 0x04000E5E RID: 3678
+	// Token: 0x04000C26 RID: 3110
 	public GameObject spawnedObjectPrefab;
 
-	// Token: 0x04000E5F RID: 3679
+	// Token: 0x04000C27 RID: 3111
 	private GameObject spawnedObject;
 
-	// Token: 0x04000E60 RID: 3680
+	// Token: 0x04000C28 RID: 3112
 	public Vector3 spawnedObjectPosition;
 
-	// Token: 0x04000E61 RID: 3681
+	// Token: 0x04000C29 RID: 3113
 	public float spawnedObjectSpeed = 10f;
 
-	// Token: 0x04000E62 RID: 3682
+	// Token: 0x04000C2A RID: 3114
 	public bool ragdollWhenSpawning;
 
-	// Token: 0x04000E63 RID: 3683
+	// Token: 0x04000C2B RID: 3115
 	private bool hasRagdolled;
 
-	// Token: 0x04000E64 RID: 3684
+	// Token: 0x04000C2C RID: 3116
 	public bool showItemBefore;
 
-	// Token: 0x04000E65 RID: 3685
+	// Token: 0x04000C2D RID: 3117
 	private bool isEquipped;
 }

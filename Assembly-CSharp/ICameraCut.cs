@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Token: 0x020000AF RID: 175
+// Token: 0x02000089 RID: 137
 public interface ICameraCut
 {
-	// Token: 0x0600028E RID: 654
+	// Token: 0x06000244 RID: 580
 	void OnCameraCut();
 }

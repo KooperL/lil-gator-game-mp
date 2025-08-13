@@ -1,13 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000314 RID: 788
+// Token: 0x0200024F RID: 591
 [CreateAssetMenu]
 [Serializable]
 public class SurfaceMaterial : ScriptableObject
 {
-	// Token: 0x170001C2 RID: 450
-	// (get) Token: 0x06000F73 RID: 3955 RVA: 0x0000D6C6 File Offset: 0x0000B8C6
+	// Token: 0x170000DB RID: 219
+	// (get) Token: 0x06000CC7 RID: 3271 RVA: 0x0003DBE6 File Offset: 0x0003BDE6
 	public bool HasFootstep
 	{
 		get
@@ -16,8 +16,8 @@ public class SurfaceMaterial : ScriptableObject
 		}
 	}
 
-	// Token: 0x170001C3 RID: 451
-	// (get) Token: 0x06000F74 RID: 3956 RVA: 0x000508EC File Offset: 0x0004EAEC
+	// Token: 0x170000DC RID: 220
+	// (get) Token: 0x06000CC8 RID: 3272 RVA: 0x0003DBFC File Offset: 0x0003BDFC
 	public AudioClip Footstep
 	{
 		get
@@ -36,8 +36,8 @@ public class SurfaceMaterial : ScriptableObject
 		}
 	}
 
-	// Token: 0x170001C4 RID: 452
-	// (get) Token: 0x06000F75 RID: 3957 RVA: 0x0000D6DC File Offset: 0x0000B8DC
+	// Token: 0x170000DD RID: 221
+	// (get) Token: 0x06000CC9 RID: 3273 RVA: 0x0003DC63 File Offset: 0x0003BE63
 	public bool HasImpact
 	{
 		get
@@ -46,8 +46,8 @@ public class SurfaceMaterial : ScriptableObject
 		}
 	}
 
-	// Token: 0x170001C5 RID: 453
-	// (get) Token: 0x06000F76 RID: 3958 RVA: 0x00050954 File Offset: 0x0004EB54
+	// Token: 0x170000DE RID: 222
+	// (get) Token: 0x06000CCA RID: 3274 RVA: 0x0003DC7C File Offset: 0x0003BE7C
 	public AudioClip Impact
 	{
 		get
@@ -66,7 +66,7 @@ public class SurfaceMaterial : ScriptableObject
 		}
 	}
 
-	// Token: 0x06000F77 RID: 3959 RVA: 0x000509D0 File Offset: 0x0004EBD0
+	// Token: 0x06000CCB RID: 3275 RVA: 0x0003DCF8 File Offset: 0x0003BEF8
 	public void PlayFootstep(Vector3 position, float volumeMod = 1f, float pitchMod = 1f)
 	{
 		if (!this.HasFootstep)
@@ -80,7 +80,7 @@ public class SurfaceMaterial : ScriptableObject
 		}
 	}
 
-	// Token: 0x06000F78 RID: 3960 RVA: 0x00050A38 File Offset: 0x0004EC38
+	// Token: 0x06000CCC RID: 3276 RVA: 0x0003DD60 File Offset: 0x0003BF60
 	public void PlayImpact(Vector3 position, float volumeMod = 1f, float pitchMod = 1f)
 	{
 		if (!this.HasImpact)
@@ -94,43 +94,43 @@ public class SurfaceMaterial : ScriptableObject
 		}
 	}
 
-	// Token: 0x040013FC RID: 5116
+	// Token: 0x040010E3 RID: 4323
 	public AudioClip[] footsteps;
 
-	// Token: 0x040013FD RID: 5117
+	// Token: 0x040010E4 RID: 4324
 	public AudioClip[] impacts;
 
-	// Token: 0x040013FE RID: 5118
+	// Token: 0x040010E5 RID: 4325
 	public AudioClip scraping;
 
-	// Token: 0x040013FF RID: 5119
+	// Token: 0x040010E6 RID: 4326
 	public Color color;
 
-	// Token: 0x04001400 RID: 5120
+	// Token: 0x040010E7 RID: 4327
 	private int lastFootstepIndex;
 
-	// Token: 0x04001401 RID: 5121
+	// Token: 0x040010E8 RID: 4328
 	private int lastImpactIndex;
 
-	// Token: 0x04001402 RID: 5122
+	// Token: 0x040010E9 RID: 4329
 	public GameObject footstepEffect;
 
-	// Token: 0x04001403 RID: 5123
+	// Token: 0x040010EA RID: 4330
 	public GameObject impactEffect;
 
-	// Token: 0x04001404 RID: 5124
+	// Token: 0x040010EB RID: 4331
 	[Range(0f, 1f)]
 	public float footstepVolume = 0.8f;
 
-	// Token: 0x04001405 RID: 5125
+	// Token: 0x040010EC RID: 4332
 	[Range(0.25f, 2f)]
 	public float footstepPitch = 1f;
 
-	// Token: 0x04001406 RID: 5126
+	// Token: 0x040010ED RID: 4333
 	[Range(0f, 1f)]
 	public float impactVolume = 0.8f;
 
-	// Token: 0x04001407 RID: 5127
+	// Token: 0x040010EE RID: 4334
 	[Range(0.25f, 2f)]
 	public float impactPitch = 1f;
 }

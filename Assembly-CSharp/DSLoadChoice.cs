@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200012B RID: 299
+// Token: 0x020000DD RID: 221
 [AddComponentMenu("Dialogue Sequence/Load Choice")]
 public class DSLoadChoice : DSDialogue
 {
-	// Token: 0x0600059A RID: 1434 RVA: 0x0002E6C8 File Offset: 0x0002C8C8
+	// Token: 0x0600049D RID: 1181 RVA: 0x00019B28 File Offset: 0x00017D28
 	public override YieldInstruction Run()
 	{
 		int num = GameData.g.ReadInt(this.savedChoice, 0);
@@ -13,10 +13,10 @@ public class DSLoadChoice : DSDialogue
 		return base.Run();
 	}
 
-	// Token: 0x040007AA RID: 1962
+	// Token: 0x04000673 RID: 1651
 	[ChunkLookup("document")]
 	public string[] choices;
 
-	// Token: 0x040007AB RID: 1963
+	// Token: 0x04000674 RID: 1652
 	public string savedChoice;
 }

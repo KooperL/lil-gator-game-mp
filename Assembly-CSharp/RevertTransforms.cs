@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000064 RID: 100
+// Token: 0x0200004C RID: 76
 public class RevertTransforms : MonoBehaviour
 {
-	// Token: 0x0600014D RID: 333 RVA: 0x0001BA68 File Offset: 0x00019C68
+	// Token: 0x06000128 RID: 296 RVA: 0x00007470 File Offset: 0x00005670
 	[ContextMenu("Get Initial Transform")]
 	public void GetInitialTransforms()
 	{
@@ -18,13 +18,13 @@ public class RevertTransforms : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600014E RID: 334 RVA: 0x00003226 File Offset: 0x00001426
+	// Token: 0x06000129 RID: 297 RVA: 0x000074F0 File Offset: 0x000056F0
 	private void OnDisable()
 	{
 		this.Revert();
 	}
 
-	// Token: 0x0600014F RID: 335 RVA: 0x0001BAE8 File Offset: 0x00019CE8
+	// Token: 0x0600012A RID: 298 RVA: 0x000074F8 File Offset: 0x000056F8
 	[ContextMenu("Revert Transforms")]
 	public void Revert()
 	{
@@ -38,20 +38,20 @@ public class RevertTransforms : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000204 RID: 516
+	// Token: 0x040001A3 RID: 419
 	public RevertTransforms.InitialTransform[] initialTransforms;
 
-	// Token: 0x02000065 RID: 101
+	// Token: 0x02000367 RID: 871
 	[Serializable]
 	public struct InitialTransform
 	{
-		// Token: 0x04000205 RID: 517
+		// Token: 0x04001A33 RID: 6707
 		public Transform transform;
 
-		// Token: 0x04000206 RID: 518
+		// Token: 0x04001A34 RID: 6708
 		public Vector3 position;
 
-		// Token: 0x04000207 RID: 519
+		// Token: 0x04001A35 RID: 6709
 		public Quaternion rotation;
 	}
 }

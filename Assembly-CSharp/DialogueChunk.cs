@@ -1,23 +1,23 @@
 ﻿using System;
 using UnityEngine.Serialization;
 
-// Token: 0x02000011 RID: 17
+// Token: 0x02000012 RID: 18
 [Serializable]
 public class DialogueChunk
 {
-	// Token: 0x0400002B RID: 43
+	// Token: 0x04000035 RID: 53
 	[FormerlySerializedAs("idString")]
 	public string name;
 
-	// Token: 0x0400002C RID: 44
+	// Token: 0x04000036 RID: 54
 	public int id;
 
-	// Token: 0x0400002D RID: 45
+	// Token: 0x04000037 RID: 55
 	public DialogueLine[] lines;
 
-	// Token: 0x0400002E RID: 46
+	// Token: 0x04000038 RID: 56
 	public string[] options;
 
-	// Token: 0x0400002F RID: 47
+	// Token: 0x04000039 RID: 57
 	public MultilingualString[] mlOptions;
 }

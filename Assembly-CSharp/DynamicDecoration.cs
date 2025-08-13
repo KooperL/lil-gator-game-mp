@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000043 RID: 67
+// Token: 0x02000035 RID: 53
 public class DynamicDecoration : MonoBehaviour
 {
-	// Token: 0x1700000C RID: 12
-	// (get) Token: 0x060000E9 RID: 233 RVA: 0x00002BE5 File Offset: 0x00000DE5
-	// (set) Token: 0x060000EA RID: 234 RVA: 0x00002BED File Offset: 0x00000DED
+	// Token: 0x17000005 RID: 5
+	// (get) Token: 0x060000D0 RID: 208 RVA: 0x00005DF6 File Offset: 0x00003FF6
+	// (set) Token: 0x060000D1 RID: 209 RVA: 0x00005DFE File Offset: 0x00003FFE
 	public bool IsStatic
 	{
 		get
@@ -23,9 +23,9 @@ public class DynamicDecoration : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700000D RID: 13
-	// (get) Token: 0x060000EB RID: 235 RVA: 0x00002C05 File Offset: 0x00000E05
-	// (set) Token: 0x060000EC RID: 236 RVA: 0x00002C0D File Offset: 0x00000E0D
+	// Token: 0x17000006 RID: 6
+	// (get) Token: 0x060000D2 RID: 210 RVA: 0x00005E16 File Offset: 0x00004016
+	// (set) Token: 0x060000D3 RID: 211 RVA: 0x00005E1E File Offset: 0x0000401E
 	public bool IsAwake
 	{
 		get
@@ -42,32 +42,32 @@ public class DynamicDecoration : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000ED RID: 237 RVA: 0x00002C25 File Offset: 0x00000E25
+	// Token: 0x060000D4 RID: 212 RVA: 0x00005E36 File Offset: 0x00004036
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x060000EE RID: 238 RVA: 0x0001A844 File Offset: 0x00018A44
+	// Token: 0x060000D5 RID: 213 RVA: 0x00005E40 File Offset: 0x00004040
 	[ContextMenu("Snap to ground")]
 	public void SnapToGround()
 	{
 		this.staticRoot.SetActive(false);
 		RaycastHit raycastHit;
-		if (this.physics.rigidbody.SweepTest(Vector3.down, ref raycastHit, 1f))
+		if (this.physics.rigidbody.SweepTest(Vector3.down, out raycastHit, 1f))
 		{
 			base.transform.position += raycastHit.distance * Vector3.down;
 		}
 		this.staticRoot.SetActive(true);
 	}
 
-	// Token: 0x060000EF RID: 239 RVA: 0x0001A8B0 File Offset: 0x00018AB0
+	// Token: 0x060000D6 RID: 214 RVA: 0x00005EAC File Offset: 0x000040AC
 	public void Settle()
 	{
 		this.staticRoot.SetActive(false);
 		for (int i = 0; i < 1; i++)
 		{
-			RaycastHit[] array = this.physics.rigidbody.SweepTestAll(Vector3.down, 1f, 1);
+			RaycastHit[] array = this.physics.rigidbody.SweepTestAll(Vector3.down, 1f, QueryTriggerInteraction.Ignore);
 			if (array.Length == 0)
 			{
 				return;
@@ -131,7 +131,7 @@ public class DynamicDecoration : MonoBehaviour
 				base.transform.rotation *= Quaternion.FromToRotation(vector5, normalized);
 				this.physics.rigidbody.rotation = base.transform.rotation;
 				RaycastHit raycastHit5;
-				if (this.physics.rigidbody.SweepTest(Vector3.down, ref raycastHit5, 1f))
+				if (this.physics.rigidbody.SweepTest(Vector3.down, out raycastHit5, 1f))
 				{
 					num2 = raycastHit5.distance;
 				}
@@ -146,7 +146,7 @@ public class DynamicDecoration : MonoBehaviour
 		this.staticRoot.SetActive(true);
 	}
 
-	// Token: 0x060000F0 RID: 240 RVA: 0x0001ABC0 File Offset: 0x00018DC0
+	// Token: 0x060000D7 RID: 215 RVA: 0x000061BC File Offset: 0x000043BC
 	[ContextMenu("Update State")]
 	private void UpdateState()
 	{
@@ -178,65 +178,65 @@ public class DynamicDecoration : MonoBehaviour
 		this.physicsRoot.SetActive(!flag2);
 	}
 
-	// Token: 0x04000158 RID: 344
+	// Token: 0x04000120 RID: 288
 	public DynamicDecoration.Importance importance = DynamicDecoration.Importance.Medium;
 
-	// Token: 0x04000159 RID: 345
+	// Token: 0x04000121 RID: 289
 	[SerializeField]
 	private bool isStatic;
 
-	// Token: 0x0400015A RID: 346
+	// Token: 0x04000122 RID: 290
 	[SerializeField]
 	[ReadOnly]
 	private bool isAwake;
 
-	// Token: 0x0400015B RID: 347
+	// Token: 0x04000123 RID: 291
 	[Space]
 	public GameObject physicsRoot;
 
-	// Token: 0x0400015C RID: 348
+	// Token: 0x04000124 RID: 292
 	public Renderer physicsRenderer;
 
-	// Token: 0x0400015D RID: 349
+	// Token: 0x04000125 RID: 293
 	public DynamicDecorationPhysics physics;
 
-	// Token: 0x0400015E RID: 350
+	// Token: 0x04000126 RID: 294
 	[Space]
 	public GameObject staticRoot;
 
-	// Token: 0x0400015F RID: 351
+	// Token: 0x04000127 RID: 295
 	public Renderer staticRenderer;
 
-	// Token: 0x04000160 RID: 352
+	// Token: 0x04000128 RID: 296
 	public Collider[] staticColliders;
 
-	// Token: 0x04000161 RID: 353
+	// Token: 0x04000129 RID: 297
 	[Space]
 	[ReadOnly]
 	public DynamicDecoration.DynamicDecorationState state;
 
-	// Token: 0x04000162 RID: 354
+	// Token: 0x0400012A RID: 298
 	private const int settleIterations = 1;
 
-	// Token: 0x02000044 RID: 68
+	// Token: 0x0200035D RID: 861
 	public enum Importance
 	{
-		// Token: 0x04000164 RID: 356
+		// Token: 0x04001A0B RID: 6667
 		High = 2,
-		// Token: 0x04000165 RID: 357
+		// Token: 0x04001A0C RID: 6668
 		Medium = 1,
-		// Token: 0x04000166 RID: 358
+		// Token: 0x04001A0D RID: 6669
 		Low = 0
 	}
 
-	// Token: 0x02000045 RID: 69
+	// Token: 0x0200035E RID: 862
 	public enum DynamicDecorationState
 	{
-		// Token: 0x04000168 RID: 360
+		// Token: 0x04001A0F RID: 6671
 		Static,
-		// Token: 0x04000169 RID: 361
+		// Token: 0x04001A10 RID: 6672
 		Asleep,
-		// Token: 0x0400016A RID: 362
+		// Token: 0x04001A11 RID: 6673
 		Awake
 	}
 }

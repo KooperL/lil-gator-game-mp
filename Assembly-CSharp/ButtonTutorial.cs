@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001FC RID: 508
+// Token: 0x02000186 RID: 390
 [CreateAssetMenu]
 public class ButtonTutorial : ScriptableObject
 {
-	// Token: 0x170000E7 RID: 231
-	// (get) Token: 0x0600096D RID: 2413 RVA: 0x0000924D File Offset: 0x0000744D
+	// Token: 0x1700006F RID: 111
+	// (get) Token: 0x06000803 RID: 2051 RVA: 0x00026B32 File Offset: 0x00024D32
 	public bool HasBeenPressed
 	{
 		get
@@ -15,8 +15,8 @@ public class ButtonTutorial : ScriptableObject
 		}
 	}
 
-	// Token: 0x170000E8 RID: 232
-	// (get) Token: 0x0600096E RID: 2414 RVA: 0x0000925C File Offset: 0x0000745C
+	// Token: 0x17000070 RID: 112
+	// (get) Token: 0x06000804 RID: 2052 RVA: 0x00026B41 File Offset: 0x00024D41
 	public bool HasBeenPressedRecently
 	{
 		get
@@ -25,24 +25,24 @@ public class ButtonTutorial : ScriptableObject
 		}
 	}
 
-	// Token: 0x0600096F RID: 2415 RVA: 0x00009271 File Offset: 0x00007471
+	// Token: 0x06000805 RID: 2053 RVA: 0x00026B56 File Offset: 0x00024D56
 	private void OnEnable()
 	{
 		this.lastButtonPress = -100f;
 	}
 
-	// Token: 0x06000970 RID: 2416 RVA: 0x0000927E File Offset: 0x0000747E
+	// Token: 0x06000806 RID: 2054 RVA: 0x00026B63 File Offset: 0x00024D63
 	public void Press()
 	{
 		this.lastButtonPress = Time.time;
 	}
 
-	// Token: 0x04000C1B RID: 3099
+	// Token: 0x04000A32 RID: 2610
 	public UIButtonObject buttonObject;
 
-	// Token: 0x04000C1C RID: 3100
+	// Token: 0x04000A33 RID: 2611
 	public float lastButtonPress = -100f;
 
-	// Token: 0x04000C1D RID: 3101
+	// Token: 0x04000A34 RID: 2612
 	private const float recentThreshold = 10f;
 }

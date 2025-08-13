@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001D2 RID: 466
+// Token: 0x02000163 RID: 355
 public class LSPickups : MonoBehaviour
 {
-	// Token: 0x060008A8 RID: 2216 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000756 RID: 1878 RVA: 0x00024832 File Offset: 0x00022A32
 	private void Start()
 	{
 	}
 
-	// Token: 0x060008A9 RID: 2217 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000757 RID: 1879 RVA: 0x00024834 File Offset: 0x00022A34
 	private void Update()
 	{
 	}

@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200007F RID: 127
+// Token: 0x02000063 RID: 99
 [CreateAssetMenu]
 public class ItemResource : ScriptableObject
 {
-	// Token: 0x1700001C RID: 28
-	// (get) Token: 0x0600019C RID: 412 RVA: 0x00003557 File Offset: 0x00001757
-	// (set) Token: 0x0600019D RID: 413 RVA: 0x0000355F File Offset: 0x0000175F
+	// Token: 0x1700000D RID: 13
+	// (get) Token: 0x06000170 RID: 368 RVA: 0x00008875 File Offset: 0x00006A75
+	// (set) Token: 0x06000171 RID: 369 RVA: 0x0000887D File Offset: 0x00006A7D
 	public bool ForceShow
 	{
 		get
@@ -29,9 +29,9 @@ public class ItemResource : ScriptableObject
 		}
 	}
 
-	// Token: 0x1700001D RID: 29
-	// (get) Token: 0x0600019E RID: 414 RVA: 0x0000359B File Offset: 0x0000179B
-	// (set) Token: 0x0600019F RID: 415 RVA: 0x0001CB5C File Offset: 0x0001AD5C
+	// Token: 0x1700000E RID: 14
+	// (get) Token: 0x06000172 RID: 370 RVA: 0x000088B9 File Offset: 0x00006AB9
+	// (set) Token: 0x06000173 RID: 371 RVA: 0x000088DC File Offset: 0x00006ADC
 	public int Amount
 	{
 		get
@@ -60,51 +60,51 @@ public class ItemResource : ScriptableObject
 		}
 	}
 
-	// Token: 0x060001A0 RID: 416 RVA: 0x000035BD File Offset: 0x000017BD
+	// Token: 0x06000174 RID: 372 RVA: 0x00008957 File Offset: 0x00006B57
 	public bool HasBeenCollected()
 	{
 		return GameData.g.ReadBool(this.itemGetID, false) || this.Amount > 0;
 	}
 
-	// Token: 0x060001A1 RID: 417 RVA: 0x000035DD File Offset: 0x000017DD
+	// Token: 0x06000175 RID: 373 RVA: 0x00008977 File Offset: 0x00006B77
 	public void SetAmountSecret(int newAmount)
 	{
 		this.lastChangeHidden = true;
 		GameData.g.Write(this.id, newAmount);
 	}
 
-	// Token: 0x04000287 RID: 647
+	// Token: 0x04000215 RID: 533
 	public Sprite sprite;
 
-	// Token: 0x04000288 RID: 648
+	// Token: 0x04000216 RID: 534
 	public string id;
 
-	// Token: 0x04000289 RID: 649
+	// Token: 0x04000217 RID: 535
 	public bool lastChangeHidden;
 
-	// Token: 0x0400028A RID: 650
+	// Token: 0x04000218 RID: 536
 	public UnityEvent<int> onAmountChanged;
 
-	// Token: 0x0400028B RID: 651
+	// Token: 0x04000219 RID: 537
 	private bool forceShow;
 
-	// Token: 0x0400028C RID: 652
+	// Token: 0x0400021A RID: 538
 	[ReadOnly]
 	public int amountPreview;
 
-	// Token: 0x0400028D RID: 653
+	// Token: 0x0400021B RID: 539
 	public GameObject collectSoundEffect;
 
-	// Token: 0x0400028E RID: 654
+	// Token: 0x0400021C RID: 540
 	public Color color;
 
-	// Token: 0x0400028F RID: 655
+	// Token: 0x0400021D RID: 541
 	[Header("Item Get")]
 	public bool showItemGet;
 
-	// Token: 0x04000290 RID: 656
+	// Token: 0x0400021E RID: 542
 	public string itemGetID;
 
-	// Token: 0x04000291 RID: 657
+	// Token: 0x0400021F RID: 543
 	public GameObject itemGetObject;
 }

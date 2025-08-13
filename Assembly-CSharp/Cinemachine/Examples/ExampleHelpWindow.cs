@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Cinemachine.Examples
 {
-	// Token: 0x020003EC RID: 1004
+	// Token: 0x020002F9 RID: 761
 	[AddComponentMenu("")]
 	public class ExampleHelpWindow : MonoBehaviour
 	{
-		// Token: 0x0600135F RID: 4959 RVA: 0x0005EB28 File Offset: 0x0005CD28
+		// Token: 0x06001032 RID: 4146 RVA: 0x0004DBB0 File Offset: 0x0004BDB0
 		private void OnGUI()
 		{
 			if (this.mShowingHelpWindow)
@@ -17,8 +17,7 @@ namespace Cinemachine.Examples
 				float maxWidth = Mathf.Min((float)Screen.width - 40f, vector.x);
 				float num = (float)Screen.width * 0.5f - maxWidth * 0.5f;
 				float num2 = (float)Screen.height * 0.4f - vector2.y;
-				Rect rect;
-				rect..ctor(num, num2, maxWidth, vector.y);
+				Rect rect = new Rect(num, num2, maxWidth, vector.y);
 				GUILayout.Window(400, rect, delegate(int id)
 				{
 					this.DrawWindow(id, maxWidth);
@@ -26,7 +25,7 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x06001360 RID: 4960 RVA: 0x0005EBFC File Offset: 0x0005CDFC
+		// Token: 0x06001033 RID: 4147 RVA: 0x0004DC84 File Offset: 0x0004BE84
 		private void DrawWindow(int id, float maxWidth)
 		{
 			GUILayout.BeginVertical(GUI.skin.box, Array.Empty<GUILayoutOption>());
@@ -38,17 +37,17 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x04001909 RID: 6409
+		// Token: 0x04001546 RID: 5446
 		public string m_Title;
 
-		// Token: 0x0400190A RID: 6410
+		// Token: 0x04001547 RID: 5447
 		[Multiline]
 		public string m_Description;
 
-		// Token: 0x0400190B RID: 6411
+		// Token: 0x04001548 RID: 5448
 		private bool mShowingHelpWindow = true;
 
-		// Token: 0x0400190C RID: 6412
+		// Token: 0x04001549 RID: 5449
 		private const float kPadding = 40f;
 	}
 }

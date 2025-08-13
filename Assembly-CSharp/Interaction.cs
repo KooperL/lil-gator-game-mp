@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Token: 0x02000272 RID: 626
+// Token: 0x020001E7 RID: 487
 public interface Interaction
 {
-	// Token: 0x06000C0C RID: 3084
+	// Token: 0x06000A57 RID: 2647
 	void Interact();
 }

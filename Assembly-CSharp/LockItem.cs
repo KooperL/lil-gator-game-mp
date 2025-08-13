@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001D5 RID: 469
+// Token: 0x02000166 RID: 358
 public class LockItem : MonoBehaviour
 {
-	// Token: 0x060008B2 RID: 2226 RVA: 0x0000881B File Offset: 0x00006A1B
+	// Token: 0x06000760 RID: 1888 RVA: 0x00024A43 File Offset: 0x00022C43
 	public void LockItemNowPlease()
 	{
 		this.item.IsUnlocked = false;
@@ -12,6 +12,6 @@ public class LockItem : MonoBehaviour
 		Player.itemManager.Refresh();
 	}
 
-	// Token: 0x04000B49 RID: 2889
+	// Token: 0x0400099F RID: 2463
 	public ItemObject item;
 }

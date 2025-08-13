@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020003DF RID: 991
+// Token: 0x020002ED RID: 749
 public class UICharacterDisplay : MonoBehaviour
 {
-	// Token: 0x0600131B RID: 4891 RVA: 0x00010397 File Offset: 0x0000E597
+	// Token: 0x06000FEE RID: 4078 RVA: 0x0004C163 File Offset: 0x0004A363
 	private void OnValidate()
 	{
 		if (this.rectTransform == null)
@@ -14,7 +14,7 @@ public class UICharacterDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600131C RID: 4892 RVA: 0x0005D544 File Offset: 0x0005B744
+	// Token: 0x06000FEF RID: 4079 RVA: 0x0004C180 File Offset: 0x0004A380
 	public void Load(CharacterProfile profile)
 	{
 		if (!base.gameObject.activeSelf)
@@ -43,7 +43,7 @@ public class UICharacterDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600131D RID: 4893 RVA: 0x000103B3 File Offset: 0x0000E5B3
+	// Token: 0x06000FF0 RID: 4080 RVA: 0x0004C242 File Offset: 0x0004A442
 	public void ClearItem()
 	{
 		if (this.nameDisplay != null)
@@ -52,7 +52,7 @@ public class UICharacterDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600131E RID: 4894 RVA: 0x000103D3 File Offset: 0x0000E5D3
+	// Token: 0x06000FF1 RID: 4081 RVA: 0x0004C262 File Offset: 0x0004A462
 	private void SetText(Text textObject, string textString)
 	{
 		if (!string.IsNullOrEmpty(textString))
@@ -64,26 +64,26 @@ public class UICharacterDisplay : MonoBehaviour
 		textObject.gameObject.SetActive(false);
 	}
 
-	// Token: 0x04001895 RID: 6293
+	// Token: 0x040014D6 RID: 5334
 	public RectTransform rectTransform;
 
-	// Token: 0x04001896 RID: 6294
+	// Token: 0x040014D7 RID: 5335
 	public Text nameDisplay;
 
-	// Token: 0x04001897 RID: 6295
+	// Token: 0x040014D8 RID: 5336
 	public bool coloredName = true;
 
-	// Token: 0x04001898 RID: 6296
+	// Token: 0x040014D9 RID: 5337
 	[ConditionalHide("nameCharacterColor", true)]
 	public CharacterProfile.CharacterColor nameColor;
 
-	// Token: 0x04001899 RID: 6297
+	// Token: 0x040014DA RID: 5338
 	[Space]
 	public Image darkColor;
 
-	// Token: 0x0400189A RID: 6298
+	// Token: 0x040014DB RID: 5339
 	public Image midColor;
 
-	// Token: 0x0400189B RID: 6299
+	// Token: 0x040014DC RID: 5340
 	public Image brightColor;
 }

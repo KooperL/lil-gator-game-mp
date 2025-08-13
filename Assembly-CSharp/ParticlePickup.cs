@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200014B RID: 331
+// Token: 0x020000F8 RID: 248
 public class ParticlePickup : MonoBehaviour, IOnTimeout
 {
-	// Token: 0x06000631 RID: 1585 RVA: 0x00006770 File Offset: 0x00004970
+	// Token: 0x0600051F RID: 1311 RVA: 0x0001B69F File Offset: 0x0001989F
 	private void OnValidate()
 	{
 		if (this.particleSystem == null)
@@ -17,7 +17,7 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x06000632 RID: 1586 RVA: 0x0002FECC File Offset: 0x0002E0CC
+	// Token: 0x06000520 RID: 1312 RVA: 0x0001B6D8 File Offset: 0x000198D8
 	private void Start()
 	{
 		this.particles = new ParticleSystem.Particle[this.particleSystem.main.maxParticles];
@@ -27,7 +27,7 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 		this.autoPickupTime = Time.time + this.autoPickupDelay;
 	}
 
-	// Token: 0x06000633 RID: 1587 RVA: 0x0002FF4C File Offset: 0x0002E14C
+	// Token: 0x06000521 RID: 1313 RVA: 0x0001B758 File Offset: 0x00019958
 	private void Update()
 	{
 		if (!this.isQuick && Time.time - TriggerPickup.quickPickupTime < 0.1f)
@@ -117,66 +117,66 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x06000634 RID: 1588 RVA: 0x000302D0 File Offset: 0x0002E4D0
+	// Token: 0x06000522 RID: 1314 RVA: 0x0001BADC File Offset: 0x00019CDC
 	public void OnTimeout()
 	{
 		this.resource.SetAmountSecret(this.resource.Amount + Mathf.RoundToInt(this.rewardPerPickup * (float)this.particleSystem.main.maxParticles) - this.rewardGiven);
 	}
 
-	// Token: 0x0400084D RID: 2125
+	// Token: 0x04000706 RID: 1798
 	public ParticleSystem particleSystem;
 
-	// Token: 0x0400084E RID: 2126
+	// Token: 0x04000707 RID: 1799
 	public ParticleSystemRenderer particleSystemRenderer;
 
-	// Token: 0x0400084F RID: 2127
+	// Token: 0x04000708 RID: 1800
 	public float pickupRadius = 0.5f;
 
-	// Token: 0x04000850 RID: 2128
+	// Token: 0x04000709 RID: 1801
 	private float pickupRadiusSqr;
 
-	// Token: 0x04000851 RID: 2129
+	// Token: 0x0400070A RID: 1802
 	public float rewardPerPickup = 0.5f;
 
-	// Token: 0x04000852 RID: 2130
+	// Token: 0x0400070B RID: 1803
 	private float rewardOwed;
 
-	// Token: 0x04000853 RID: 2131
+	// Token: 0x0400070C RID: 1804
 	private int rewardGiven;
 
-	// Token: 0x04000854 RID: 2132
+	// Token: 0x0400070D RID: 1805
 	public ItemResource resource;
 
-	// Token: 0x04000855 RID: 2133
+	// Token: 0x0400070E RID: 1806
 	private ParticleSystem.Particle[] particles;
 
-	// Token: 0x04000856 RID: 2134
+	// Token: 0x0400070F RID: 1807
 	private bool[] isPickingUp;
 
-	// Token: 0x04000857 RID: 2135
+	// Token: 0x04000710 RID: 1808
 	public float delay = 0.5f;
 
-	// Token: 0x04000858 RID: 2136
+	// Token: 0x04000711 RID: 1809
 	private float delayTime = -1f;
 
-	// Token: 0x04000859 RID: 2137
+	// Token: 0x04000712 RID: 1810
 	public bool autoPickup = true;
 
-	// Token: 0x0400085A RID: 2138
+	// Token: 0x04000713 RID: 1811
 	public float autoPickupDelay = 3f;
 
-	// Token: 0x0400085B RID: 2139
+	// Token: 0x04000714 RID: 1812
 	private float autoPickupTime = -1f;
 
-	// Token: 0x0400085C RID: 2140
+	// Token: 0x04000715 RID: 1813
 	public float pickupAcc = 30f;
 
-	// Token: 0x0400085D RID: 2141
+	// Token: 0x04000716 RID: 1814
 	public AudioSourceVariance audioSourceVariance;
 
-	// Token: 0x0400085E RID: 2142
+	// Token: 0x04000717 RID: 1815
 	public PersistentObject persistentObject;
 
-	// Token: 0x0400085F RID: 2143
+	// Token: 0x04000718 RID: 1816
 	private bool isQuick;
 }

@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000217 RID: 535
+// Token: 0x0200019B RID: 411
 public class OffsetAtRuntime : MonoBehaviour
 {
-	// Token: 0x06000A06 RID: 2566 RVA: 0x00009A9A File Offset: 0x00007C9A
+	// Token: 0x06000883 RID: 2179 RVA: 0x000283F9 File Offset: 0x000265F9
 	private void Start()
 	{
 		base.transform.position += this.worldOffset;
 	}
 
-	// Token: 0x04000C81 RID: 3201
+	// Token: 0x04000A7C RID: 2684
 	public Vector3 worldOffset;
 }

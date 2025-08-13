@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200012D RID: 301
+// Token: 0x020000DF RID: 223
 [AddComponentMenu("Dialogue Sequence/Picture Display")]
 public class DSPictureDisplay : DialogueSequence
 {
-	// Token: 0x0600059E RID: 1438 RVA: 0x0000605A File Offset: 0x0000425A
+	// Token: 0x060004A1 RID: 1185 RVA: 0x00019B72 File Offset: 0x00017D72
 	private void OnValidate()
 	{
 		if (this.pictureDisplay == null)
@@ -14,17 +14,17 @@ public class DSPictureDisplay : DialogueSequence
 		}
 	}
 
-	// Token: 0x0600059F RID: 1439 RVA: 0x00006076 File Offset: 0x00004276
+	// Token: 0x060004A2 RID: 1186 RVA: 0x00019B8E File Offset: 0x00017D8E
 	public override YieldInstruction Run()
 	{
 		this.pictureDisplay.pictureImage.sprite = this.picture;
 		return base.StartCoroutine(this.pictureDisplay.RunDisplay());
 	}
 
-	// Token: 0x040007AC RID: 1964
+	// Token: 0x04000675 RID: 1653
 	[ReadOnly]
 	public UIPictureDisplay pictureDisplay;
 
-	// Token: 0x040007AD RID: 1965
+	// Token: 0x04000676 RID: 1654
 	public Sprite picture;
 }

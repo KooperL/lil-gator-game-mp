@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200005B RID: 91
+// Token: 0x02000048 RID: 72
 public class Pipe : MonoBehaviour
 {
-	// Token: 0x06000141 RID: 321 RVA: 0x0001B530 File Offset: 0x00019730
+	// Token: 0x0600011C RID: 284 RVA: 0x00006E9C File Offset: 0x0000509C
 	public void SetWater(bool hasWater)
 	{
 		GameObject[] array = this.waterObjects;
@@ -14,6 +14,6 @@ public class Pipe : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040001D5 RID: 469
+	// Token: 0x0400018B RID: 395
 	public GameObject[] waterObjects;
 }

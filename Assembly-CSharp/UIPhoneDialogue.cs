@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020003BF RID: 959
+// Token: 0x020002D5 RID: 725
 public class UIPhoneDialogue : MonoBehaviour
 {
-	// Token: 0x06001257 RID: 4695 RVA: 0x0000F88A File Offset: 0x0000DA8A
+	// Token: 0x06000F4F RID: 3919 RVA: 0x00049A7F File Offset: 0x00047C7F
 	public IEnumerator DisplayMessage(string text, CharacterProfile character)
 	{
 		if (this.oldMessages == null)
@@ -74,7 +74,7 @@ public class UIPhoneDialogue : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001258 RID: 4696 RVA: 0x0000F8A7 File Offset: 0x0000DAA7
+	// Token: 0x06000F50 RID: 3920 RVA: 0x00049A9C File Offset: 0x00047C9C
 	private IEnumerator ShiftMessages(float height)
 	{
 		float offset = 0f;
@@ -91,7 +91,7 @@ public class UIPhoneDialogue : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001259 RID: 4697 RVA: 0x0005AD38 File Offset: 0x00058F38
+	// Token: 0x06000F51 RID: 3921 RVA: 0x00049AB4 File Offset: 0x00047CB4
 	public void Clear()
 	{
 		for (int i = 0; i < this.messagesParent.childCount; i++)
@@ -101,45 +101,45 @@ public class UIPhoneDialogue : MonoBehaviour
 		this.oldMessages = new List<Transform>();
 	}
 
-	// Token: 0x040017B6 RID: 6070
+	// Token: 0x04001421 RID: 5153
 	public GameObject textMessageElement;
 
-	// Token: 0x040017B7 RID: 6071
+	// Token: 0x04001422 RID: 5154
 	public GameObject playerTextMessageElement;
 
-	// Token: 0x040017B8 RID: 6072
+	// Token: 0x04001423 RID: 5155
 	public GameObject systemTextMessageElement;
 
-	// Token: 0x040017B9 RID: 6073
+	// Token: 0x04001424 RID: 5156
 	public GameObject nameplateElement;
 
-	// Token: 0x040017BA RID: 6074
+	// Token: 0x04001425 RID: 5157
 	private UINameplate lastNameplate;
 
-	// Token: 0x040017BB RID: 6075
+	// Token: 0x04001426 RID: 5158
 	public float messageMoveSpeed = 3f;
 
-	// Token: 0x040017BC RID: 6076
+	// Token: 0x04001427 RID: 5159
 	public float messageDelay = 0.5f;
 
-	// Token: 0x040017BD RID: 6077
+	// Token: 0x04001428 RID: 5160
 	public float messageGap = 5f;
 
-	// Token: 0x040017BE RID: 6078
+	// Token: 0x04001429 RID: 5161
 	public float differentCharacterGap = 50f;
 
-	// Token: 0x040017BF RID: 6079
+	// Token: 0x0400142A RID: 5162
 	private List<Transform> oldMessages;
 
-	// Token: 0x040017C0 RID: 6080
+	// Token: 0x0400142B RID: 5163
 	public UIButtonPrompt leftButtonPrompt;
 
-	// Token: 0x040017C1 RID: 6081
+	// Token: 0x0400142C RID: 5164
 	public UIButtonPrompt rightButtonPrompt;
 
-	// Token: 0x040017C2 RID: 6082
+	// Token: 0x0400142D RID: 5165
 	public Vector2 buttonPromptOffset;
 
-	// Token: 0x040017C3 RID: 6083
+	// Token: 0x0400142E RID: 5166
 	public Transform messagesParent;
 }

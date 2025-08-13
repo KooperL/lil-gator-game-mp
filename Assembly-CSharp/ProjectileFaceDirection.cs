@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000243 RID: 579
+// Token: 0x020001C1 RID: 449
 public class ProjectileFaceDirection : MonoBehaviour
 {
-	// Token: 0x06000ADD RID: 2781 RVA: 0x0000A5B2 File Offset: 0x000087B2
+	// Token: 0x06000946 RID: 2374 RVA: 0x0002C0D4 File Offset: 0x0002A2D4
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x06000ADE RID: 2782 RVA: 0x0003E28C File Offset: 0x0003C48C
+	// Token: 0x06000947 RID: 2375 RVA: 0x0002C0E4 File Offset: 0x0002A2E4
 	public void FixedUpdate()
 	{
 		float magnitude = this.rigidbody.velocity.magnitude;
@@ -21,9 +21,9 @@ public class ProjectileFaceDirection : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000DCA RID: 3530
+	// Token: 0x04000BA7 RID: 2983
 	public Vector3 localDirection;
 
-	// Token: 0x04000DCB RID: 3531
+	// Token: 0x04000BA8 RID: 2984
 	private Rigidbody rigidbody;
 }

@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020003A9 RID: 937
+// Token: 0x020002C7 RID: 711
 public class UIImageBox : MonoBehaviour
 {
-	// Token: 0x060011CA RID: 4554 RVA: 0x00058EE4 File Offset: 0x000570E4
+	// Token: 0x06000EF2 RID: 3826 RVA: 0x00047C24 File Offset: 0x00045E24
 	public void SetImage(Sprite image)
 	{
 		if (this.resizeToFit)
@@ -20,8 +20,8 @@ public class UIImageBox : MonoBehaviour
 			{
 				num = Mathf.Min(num, this.maxHeight / vector.y);
 			}
-			this.resizeTransform.SetSizeWithCurrentAnchors(0, num * vector.x);
-			this.resizeTransform.SetSizeWithCurrentAnchors(1, num * vector.y);
+			this.resizeTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, num * vector.x);
+			this.resizeTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, num * vector.y);
 		}
 		if (this.invisibleImage != null)
 		{
@@ -30,33 +30,33 @@ public class UIImageBox : MonoBehaviour
 		this.displayImage.sprite = image;
 	}
 
-	// Token: 0x060011CB RID: 4555 RVA: 0x0000F319 File Offset: 0x0000D519
+	// Token: 0x06000EF3 RID: 3827 RVA: 0x00047CE8 File Offset: 0x00045EE8
 	public void SetColor(Color color)
 	{
 		this.coloredImage.color = color;
 	}
 
-	// Token: 0x040016FE RID: 5886
+	// Token: 0x04001388 RID: 5000
 	public Image invisibleImage;
 
-	// Token: 0x040016FF RID: 5887
+	// Token: 0x04001389 RID: 5001
 	public Image displayImage;
 
-	// Token: 0x04001700 RID: 5888
+	// Token: 0x0400138A RID: 5002
 	public Image coloredImage;
 
-	// Token: 0x04001701 RID: 5889
+	// Token: 0x0400138B RID: 5003
 	public bool resizeToFit = true;
 
-	// Token: 0x04001702 RID: 5890
+	// Token: 0x0400138C RID: 5004
 	[ConditionalHide("resizeToFit", true)]
 	public RectTransform resizeTransform;
 
-	// Token: 0x04001703 RID: 5891
+	// Token: 0x0400138D RID: 5005
 	[ConditionalHide("resizeToFit", true)]
 	public float maxWidth = 1000f;
 
-	// Token: 0x04001704 RID: 5892
+	// Token: 0x0400138E RID: 5006
 	[ConditionalHide("resizeToFit", true)]
 	public float maxHeight = 1000f;
 }

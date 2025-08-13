@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000308 RID: 776
+// Token: 0x02000244 RID: 580
 public class SpriteAnimation : MonoBehaviour
 {
-	// Token: 0x06000F4F RID: 3919 RVA: 0x0000D514 File Offset: 0x0000B714
+	// Token: 0x06000CA3 RID: 3235 RVA: 0x0003D4DE File Offset: 0x0003B6DE
 	private void OnValidate()
 	{
 		if (this.spriteRenderer == null)
@@ -14,7 +14,7 @@ public class SpriteAnimation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F50 RID: 3920 RVA: 0x0000D530 File Offset: 0x0000B730
+	// Token: 0x06000CA4 RID: 3236 RVA: 0x0003D4FA File Offset: 0x0003B6FA
 	private void OnEnable()
 	{
 		this.nextFrameTime = Time.time + 1f / this.fps;
@@ -25,7 +25,7 @@ public class SpriteAnimation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F51 RID: 3921 RVA: 0x000503C4 File Offset: 0x0004E5C4
+	// Token: 0x06000CA5 RID: 3237 RVA: 0x0003D538 File Offset: 0x0003B738
 	private void Update()
 	{
 		if (Time.time >= this.nextFrameTime)
@@ -40,7 +40,7 @@ public class SpriteAnimation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F52 RID: 3922 RVA: 0x00050428 File Offset: 0x0004E628
+	// Token: 0x06000CA6 RID: 3238 RVA: 0x0003D59C File Offset: 0x0003B79C
 	private void SetSpriteIndex(int index)
 	{
 		if (this.spriteRenderer != null)
@@ -53,24 +53,24 @@ public class SpriteAnimation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040013CD RID: 5069
+	// Token: 0x040010B7 RID: 4279
 	public SpriteRenderer spriteRenderer;
 
-	// Token: 0x040013CE RID: 5070
+	// Token: 0x040010B8 RID: 4280
 	public Image image;
 
-	// Token: 0x040013CF RID: 5071
+	// Token: 0x040010B9 RID: 4281
 	public Sprite[] sprites;
 
-	// Token: 0x040013D0 RID: 5072
+	// Token: 0x040010BA RID: 4282
 	private int index;
 
-	// Token: 0x040013D1 RID: 5073
+	// Token: 0x040010BB RID: 4283
 	public float fps = 12f;
 
-	// Token: 0x040013D2 RID: 5074
+	// Token: 0x040010BC RID: 4284
 	private float nextFrameTime;
 
-	// Token: 0x040013D3 RID: 5075
+	// Token: 0x040010BD RID: 4285
 	public bool resetIndexOnEnable = true;
 }

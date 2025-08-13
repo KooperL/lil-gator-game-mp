@@ -2,17 +2,17 @@
 using UnityEngine;
 using UnityEngine.U2D;
 
-// Token: 0x020001C0 RID: 448
+// Token: 0x02000157 RID: 343
 [RequireComponent(typeof(LineRenderer))]
 public class LineConstantPixelWidth : MonoBehaviour
 {
-	// Token: 0x0600087F RID: 2175 RVA: 0x00008627 File Offset: 0x00006827
+	// Token: 0x06000735 RID: 1845 RVA: 0x000240C5 File Offset: 0x000222C5
 	private void Awake()
 	{
 		this.lineRenderer = base.GetComponent<LineRenderer>();
 	}
 
-	// Token: 0x06000880 RID: 2176 RVA: 0x0003742C File Offset: 0x0003562C
+	// Token: 0x06000736 RID: 1846 RVA: 0x000240D4 File Offset: 0x000222D4
 	private void Start()
 	{
 		this.mainCamera = Camera.main;
@@ -26,13 +26,13 @@ public class LineConstantPixelWidth : MonoBehaviour
 		{
 			this.keys[i].time = (float)i / (float)(this.keys.Length - 1);
 			this.keys[i].value = 1f;
-			this.keys[i].weightedMode = 0;
+			this.keys[i].weightedMode = WeightedMode.None;
 		}
 		this.widthCurve.keys = this.keys;
 		this.lineRenderer.widthCurve = this.widthCurve;
 	}
 
-	// Token: 0x06000881 RID: 2177 RVA: 0x00037528 File Offset: 0x00035728
+	// Token: 0x06000737 RID: 1847 RVA: 0x000241D0 File Offset: 0x000223D0
 	private void LateUpdate()
 	{
 		if (!this.lineRenderer.isVisible)
@@ -53,40 +53,40 @@ public class LineConstantPixelWidth : MonoBehaviour
 		this.lineRenderer.widthCurve = this.widthCurve;
 	}
 
-	// Token: 0x06000882 RID: 2178 RVA: 0x000375CC File Offset: 0x000357CC
+	// Token: 0x06000738 RID: 1848 RVA: 0x00024274 File Offset: 0x00022474
 	public float ScaleForWorldPosition(Vector3 position)
 	{
 		float num = (this.mainCamera.WorldToScreenPoint(position) - this.mainCamera.WorldToScreenPoint(position + Vector3.up / 1000f)).magnitude * 1000f;
 		return this.pixelRatio / num;
 	}
 
-	// Token: 0x04000B12 RID: 2834
+	// Token: 0x04000974 RID: 2420
 	private LineRenderer lineRenderer;
 
-	// Token: 0x04000B13 RID: 2835
+	// Token: 0x04000975 RID: 2421
 	public float pixelWidth = 1f;
 
-	// Token: 0x04000B14 RID: 2836
+	// Token: 0x04000976 RID: 2422
 	private Camera mainCamera;
 
-	// Token: 0x04000B15 RID: 2837
+	// Token: 0x04000977 RID: 2423
 	private Vector3 start;
 
-	// Token: 0x04000B16 RID: 2838
+	// Token: 0x04000978 RID: 2424
 	private Vector3 end;
 
-	// Token: 0x04000B17 RID: 2839
+	// Token: 0x04000979 RID: 2425
 	private AnimationCurve widthCurve;
 
-	// Token: 0x04000B18 RID: 2840
+	// Token: 0x0400097A RID: 2426
 	private Keyframe[] keys;
 
-	// Token: 0x04000B19 RID: 2841
+	// Token: 0x0400097B RID: 2427
 	private float pixelRatio;
 
-	// Token: 0x04000B1A RID: 2842
+	// Token: 0x0400097C RID: 2428
 	public int referenceHeight;
 
-	// Token: 0x04000B1B RID: 2843
+	// Token: 0x0400097D RID: 2429
 	private PixelPerfectCamera pixelCamera;
 }

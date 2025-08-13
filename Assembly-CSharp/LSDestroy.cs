@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020001CB RID: 459
+// Token: 0x0200015F RID: 351
 [AddComponentMenu("Logic/LogicState - Destroy")]
 public class LSDestroy : LogicState
 {
-	// Token: 0x06000896 RID: 2198 RVA: 0x00008757 File Offset: 0x00006957
+	// Token: 0x0600074A RID: 1866 RVA: 0x0002455B File Offset: 0x0002275B
 	[ContextMenu("Collect Breakables")]
 	public void CollectBreakables()
 	{
@@ -17,7 +17,7 @@ public class LSDestroy : LogicState
 		this.targets = this.parent.GetComponentsInChildren<BreakableObject>();
 	}
 
-	// Token: 0x06000897 RID: 2199 RVA: 0x00037770 File Offset: 0x00035970
+	// Token: 0x0600074B RID: 1867 RVA: 0x00024588 File Offset: 0x00022788
 	public override void Start()
 	{
 		if (!this.addedListeners)
@@ -30,7 +30,7 @@ public class LSDestroy : LogicState
 		}
 	}
 
-	// Token: 0x06000898 RID: 2200 RVA: 0x000377B4 File Offset: 0x000359B4
+	// Token: 0x0600074C RID: 1868 RVA: 0x000245CC File Offset: 0x000227CC
 	public override void CheckLogic()
 	{
 		if (!base.enabled)
@@ -62,36 +62,36 @@ public class LSDestroy : LogicState
 		this.lastAliveTargets = num;
 	}
 
-	// Token: 0x04000B2D RID: 2861
+	// Token: 0x0400098C RID: 2444
 	[Space]
 	public Transform parent;
 
-	// Token: 0x04000B2E RID: 2862
+	// Token: 0x0400098D RID: 2445
 	public BreakableObject[] targets;
 
-	// Token: 0x04000B2F RID: 2863
+	// Token: 0x0400098E RID: 2446
 	public int desiredUnbrokenTargets;
 
-	// Token: 0x04000B30 RID: 2864
+	// Token: 0x0400098F RID: 2447
 	private int lastAliveTargets = -1;
 
-	// Token: 0x04000B31 RID: 2865
+	// Token: 0x04000990 RID: 2448
 	private bool addedListeners;
 
-	// Token: 0x04000B32 RID: 2866
+	// Token: 0x04000991 RID: 2449
 	public LSDestroy.DestroyEvent[] events;
 
-	// Token: 0x020001CC RID: 460
+	// Token: 0x020003C3 RID: 963
 	[Serializable]
 	public struct DestroyEvent
 	{
-		// Token: 0x04000B33 RID: 2867
+		// Token: 0x04001BBE RID: 7102
 		public bool disableOnAwake;
 
-		// Token: 0x04000B34 RID: 2868
+		// Token: 0x04001BBF RID: 7103
 		public UnityEvent onReachCount;
 
-		// Token: 0x04000B35 RID: 2869
+		// Token: 0x04001BC0 RID: 7104
 		public int aliveTargetCount;
 	}
 }

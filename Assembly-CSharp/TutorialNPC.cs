@@ -2,16 +2,16 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x0200010F RID: 271
+// Token: 0x020000C8 RID: 200
 public class TutorialNPC : MonoBehaviour, Interaction
 {
-	// Token: 0x06000533 RID: 1331 RVA: 0x00005C20 File Offset: 0x00003E20
+	// Token: 0x06000456 RID: 1110 RVA: 0x00018BD1 File Offset: 0x00016DD1
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000534 RID: 1332 RVA: 0x00005C2F File Offset: 0x00003E2F
+	// Token: 0x06000457 RID: 1111 RVA: 0x00018BE0 File Offset: 0x00016DE0
 	private IEnumerator RunConversation()
 	{
 		TutorialNPC.tutorialCount = GameData.g.ReadInt("TutorialsSpokenTo", 0);
@@ -58,36 +58,36 @@ public class TutorialNPC : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x0400072C RID: 1836
+	// Token: 0x04000610 RID: 1552
 	private static int tutorialCount;
 
-	// Token: 0x0400072D RID: 1837
+	// Token: 0x04000611 RID: 1553
 	public string dialogueChunkPreface;
 
-	// Token: 0x0400072E RID: 1838
+	// Token: 0x04000612 RID: 1554
 	public DialogueActor[] actors;
 
-	// Token: 0x0400072F RID: 1839
+	// Token: 0x04000613 RID: 1555
 	public string dialogueChunkName;
 
-	// Token: 0x04000730 RID: 1840
+	// Token: 0x04000614 RID: 1556
 	public int dialogueCount = 1;
 
-	// Token: 0x04000731 RID: 1841
+	// Token: 0x04000615 RID: 1557
 	private int dialogueIndex;
 
-	// Token: 0x04000732 RID: 1842
+	// Token: 0x04000616 RID: 1558
 	public string dialogueChunkCompletedName;
 
-	// Token: 0x04000733 RID: 1843
+	// Token: 0x04000617 RID: 1559
 	public int dialogueAfterCount = 1;
 
-	// Token: 0x04000734 RID: 1844
+	// Token: 0x04000618 RID: 1560
 	private int dialogueAfterIndex;
 
-	// Token: 0x04000735 RID: 1845
+	// Token: 0x04000619 RID: 1561
 	public string fetchItemName;
 
-	// Token: 0x04000736 RID: 1846
+	// Token: 0x0400061A RID: 1562
 	public bool giveFreeItem;
 }

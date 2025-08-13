@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002EC RID: 748
+// Token: 0x0200022E RID: 558
 public class ReplaceMaterials : MonoBehaviour
 {
-	// Token: 0x040012D2 RID: 4818
+	// Token: 0x04000FDB RID: 4059
 	public Material[] sourceMaterials;
 
-	// Token: 0x040012D3 RID: 4819
+	// Token: 0x04000FDC RID: 4060
 	public Material[] newMaterials;
 }

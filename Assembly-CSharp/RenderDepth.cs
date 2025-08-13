@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000149 RID: 329
+// Token: 0x020000F6 RID: 246
 [ExecuteInEditMode]
 public class RenderDepth : MonoBehaviour
 {
-	// Token: 0x1700009D RID: 157
-	// (get) Token: 0x06000628 RID: 1576 RVA: 0x0002FE38 File Offset: 0x0002E038
+	// Token: 0x17000043 RID: 67
+	// (get) Token: 0x06000516 RID: 1302 RVA: 0x0001B528 File Offset: 0x00019728
 	private Shader shader
 	{
 		get
@@ -19,8 +19,8 @@ public class RenderDepth : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700009E RID: 158
-	// (get) Token: 0x06000629 RID: 1577 RVA: 0x00006692 File Offset: 0x00004892
+	// Token: 0x17000044 RID: 68
+	// (get) Token: 0x06000517 RID: 1303 RVA: 0x0001B55D File Offset: 0x0001975D
 	private Material material
 	{
 		get
@@ -28,19 +28,19 @@ public class RenderDepth : MonoBehaviour
 			if (this._material == null)
 			{
 				this._material = new Material(this.shader);
-				this._material.hideFlags = 61;
+				this._material.hideFlags = HideFlags.HideAndDontSave;
 			}
 			return this._material;
 		}
 	}
 
-	// Token: 0x0600062A RID: 1578 RVA: 0x000066C6 File Offset: 0x000048C6
+	// Token: 0x06000518 RID: 1304 RVA: 0x0001B591 File Offset: 0x00019791
 	private void Awake()
 	{
 		this.camera = base.GetComponent<Camera>();
 	}
 
-	// Token: 0x0600062B RID: 1579 RVA: 0x0002FE70 File Offset: 0x0002E070
+	// Token: 0x06000519 RID: 1305 RVA: 0x0001B5A0 File Offset: 0x000197A0
 	private void Start()
 	{
 		if (this.shader == null || !this.shader.isSupported)
@@ -49,10 +49,10 @@ public class RenderDepth : MonoBehaviour
 			MonoBehaviour.print("Shader " + this.shader.name + " is not supported");
 			return;
 		}
-		this.camera.depthTextureMode = 1;
+		this.camera.depthTextureMode = DepthTextureMode.Depth;
 	}
 
-	// Token: 0x0600062C RID: 1580 RVA: 0x000066D4 File Offset: 0x000048D4
+	// Token: 0x0600051A RID: 1306 RVA: 0x0001B5FB File Offset: 0x000197FB
 	private void OnDisable()
 	{
 		if (this._material != null)
@@ -61,7 +61,7 @@ public class RenderDepth : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600062D RID: 1581 RVA: 0x000066EF File Offset: 0x000048EF
+	// Token: 0x0600051B RID: 1307 RVA: 0x0001B616 File Offset: 0x00019816
 	private void OnRenderImage(RenderTexture src, RenderTexture dest)
 	{
 		if (this.shader != null)
@@ -73,16 +73,16 @@ public class RenderDepth : MonoBehaviour
 		Graphics.Blit(src, dest);
 	}
 
-	// Token: 0x04000848 RID: 2120
+	// Token: 0x04000701 RID: 1793
 	[Range(0f, 3f)]
 	public float depthLevel = 0.5f;
 
-	// Token: 0x04000849 RID: 2121
+	// Token: 0x04000702 RID: 1794
 	private Shader _shader;
 
-	// Token: 0x0400084A RID: 2122
+	// Token: 0x04000703 RID: 1795
 	private Material _material;
 
-	// Token: 0x0400084B RID: 2123
+	// Token: 0x04000704 RID: 1796
 	private Camera camera;
 }

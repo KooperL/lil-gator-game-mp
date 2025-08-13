@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000021 RID: 33
+// Token: 0x02000023 RID: 35
 [AddComponentMenu("Music/MusicObject")]
 public class MusicObject : MonoBehaviour
 {
-	// Token: 0x06000066 RID: 102 RVA: 0x0000258C File Offset: 0x0000078C
+	// Token: 0x0600006D RID: 109 RVA: 0x0000385D File Offset: 0x00001A5D
 	private void OnValidate()
 	{
 		if (this.musicStateManager == null)
@@ -15,7 +15,7 @@ public class MusicObject : MonoBehaviour
 		this.hasState = !string.IsNullOrEmpty(this.state);
 	}
 
-	// Token: 0x06000067 RID: 103 RVA: 0x000025BB File Offset: 0x000007BB
+	// Token: 0x0600006E RID: 110 RVA: 0x0000388C File Offset: 0x00001A8C
 	private void OnEnable()
 	{
 		if (this.hasState)
@@ -28,7 +28,7 @@ public class MusicObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000068 RID: 104 RVA: 0x000025EF File Offset: 0x000007EF
+	// Token: 0x0600006F RID: 111 RVA: 0x000038C0 File Offset: 0x00001AC0
 	private void OnDisable()
 	{
 		if (this.hasState)
@@ -41,18 +41,18 @@ public class MusicObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400007D RID: 125
+	// Token: 0x04000093 RID: 147
 	[HideInInspector]
 	public MusicStateManager musicStateManager;
 
-	// Token: 0x0400007E RID: 126
+	// Token: 0x04000094 RID: 148
 	[MusicStateLookup("musicStateManager")]
 	public string state;
 
-	// Token: 0x0400007F RID: 127
+	// Token: 0x04000095 RID: 149
 	[ReadOnly]
 	public bool hasState;
 
-	// Token: 0x04000080 RID: 128
+	// Token: 0x04000096 RID: 150
 	public MusicSystem musicSystem;
 }

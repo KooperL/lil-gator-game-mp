@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000143 RID: 323
+// Token: 0x020000F1 RID: 241
 public class LightPower : MonoBehaviour
 {
-	// Token: 0x06000610 RID: 1552 RVA: 0x00006539 File Offset: 0x00004739
+	// Token: 0x060004FE RID: 1278 RVA: 0x0001AD76 File Offset: 0x00018F76
 	private void OnValidate()
 	{
 		if (this.fogLight == null)
@@ -14,29 +14,29 @@ public class LightPower : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000611 RID: 1553 RVA: 0x00006555 File Offset: 0x00004755
+	// Token: 0x060004FF RID: 1279 RVA: 0x0001AD92 File Offset: 0x00018F92
 	private void OnEnable()
 	{
 		this.lightResource.onAmountChanged.AddListener(new UnityAction<int>(this.LightPowerChanged));
 		this.LightPowerChanged(this.lightResource.Amount);
 	}
 
-	// Token: 0x06000612 RID: 1554 RVA: 0x0002F7E8 File Offset: 0x0002D9E8
+	// Token: 0x06000500 RID: 1280 RVA: 0x0001ADC4 File Offset: 0x00018FC4
 	private void LightPowerChanged(int lightPower)
 	{
 		float num = Mathf.Lerp(this.unpoweredStrength, 1f, (float)lightPower / (float)this.maxLightPower);
 		this.fogLight.SetStrength(num, false);
 	}
 
-	// Token: 0x04000824 RID: 2084
+	// Token: 0x040006DF RID: 1759
 	public ItemResource lightResource;
 
-	// Token: 0x04000825 RID: 2085
+	// Token: 0x040006E0 RID: 1760
 	private FogLight fogLight;
 
-	// Token: 0x04000826 RID: 2086
+	// Token: 0x040006E1 RID: 1761
 	public float unpoweredStrength = 0.25f;
 
-	// Token: 0x04000827 RID: 2087
+	// Token: 0x040006E2 RID: 1762
 	public int maxLightPower = 20;
 }

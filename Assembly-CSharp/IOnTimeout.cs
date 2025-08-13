@@ -1,8 +1,8 @@
 ﻿using System;
 
-// Token: 0x0200013A RID: 314
+// Token: 0x020000E9 RID: 233
 public interface IOnTimeout
 {
-	// Token: 0x060005DB RID: 1499
+	// Token: 0x060004CF RID: 1231
 	void OnTimeout();
 }

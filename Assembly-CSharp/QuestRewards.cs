@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002D1 RID: 721
+// Token: 0x02000222 RID: 546
 public class QuestRewards : MonoBehaviour
 {
-	// Token: 0x06000E11 RID: 3601 RVA: 0x0004B6B0 File Offset: 0x000498B0
+	// Token: 0x06000BBC RID: 3004 RVA: 0x00038E38 File Offset: 0x00037038
 	public void GiveAllRewards()
 	{
 		QuestReward[] components = base.GetComponents<QuestReward>();

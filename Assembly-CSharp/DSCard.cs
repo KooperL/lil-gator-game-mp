@@ -2,31 +2,31 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000112 RID: 274
+// Token: 0x020000CB RID: 203
 [AddComponentMenu("Dialogue Sequence/Title Card")]
 public class DSCard : DialogueSequence
 {
-	// Token: 0x06000542 RID: 1346 RVA: 0x00005CAD File Offset: 0x00003EAD
+	// Token: 0x06000466 RID: 1126 RVA: 0x00018E30 File Offset: 0x00017030
 	public override void Activate()
 	{
 		this.titleCard.SetActive(true);
 		base.Activate();
 	}
 
-	// Token: 0x06000543 RID: 1347 RVA: 0x00005CC1 File Offset: 0x00003EC1
+	// Token: 0x06000467 RID: 1127 RVA: 0x00018E44 File Offset: 0x00017044
 	public override YieldInstruction Run()
 	{
 		return new WaitForSeconds(this.waitTime);
 	}
 
-	// Token: 0x06000544 RID: 1348 RVA: 0x00005CCE File Offset: 0x00003ECE
+	// Token: 0x06000468 RID: 1128 RVA: 0x00018E51 File Offset: 0x00017051
 	public override void Deactivate()
 	{
 		base.Deactivate();
 		base.StartCoroutine(this.DelayedDisable());
 	}
 
-	// Token: 0x06000545 RID: 1349 RVA: 0x00005CE3 File Offset: 0x00003EE3
+	// Token: 0x06000469 RID: 1129 RVA: 0x00018E66 File Offset: 0x00017066
 	private IEnumerator DelayedDisable()
 	{
 		yield return new WaitForSecondsRealtime(this.deactivateTime);
@@ -34,12 +34,12 @@ public class DSCard : DialogueSequence
 		yield break;
 	}
 
-	// Token: 0x04000743 RID: 1859
+	// Token: 0x0400062B RID: 1579
 	public GameObject titleCard;
 
-	// Token: 0x04000744 RID: 1860
+	// Token: 0x0400062C RID: 1580
 	public float waitTime = 1f;
 
-	// Token: 0x04000745 RID: 1861
+	// Token: 0x0400062D RID: 1581
 	public float deactivateTime = 5f;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000053 RID: 83
+// Token: 0x02000040 RID: 64
 public class MeshVariants : MonoBehaviour
 {
-	// Token: 0x0600012A RID: 298 RVA: 0x00003015 File Offset: 0x00001215
+	// Token: 0x06000105 RID: 261 RVA: 0x00006B05 File Offset: 0x00004D05
 	private void Start()
 	{
 		if (this.variants != null)
@@ -13,9 +13,9 @@ public class MeshVariants : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040001B8 RID: 440
+	// Token: 0x0400016E RID: 366
 	public Mesh[] variants;
 
-	// Token: 0x040001B9 RID: 441
+	// Token: 0x0400016F RID: 367
 	public MeshFilter meshFilter;
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020003E5 RID: 997
+// Token: 0x020002F2 RID: 754
 public class UIStickerMenu : MonoBehaviour
 {
-	// Token: 0x06001342 RID: 4930 RVA: 0x0005E20C File Offset: 0x0005C40C
+	// Token: 0x06001015 RID: 4117 RVA: 0x0004D0D4 File Offset: 0x0004B2D4
 	private void Awake()
 	{
 		this.stickerDictionary = new Dictionary<string, StickerObject>();
@@ -15,19 +15,19 @@ public class UIStickerMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001343 RID: 4931 RVA: 0x000105F5 File Offset: 0x0000E7F5
+	// Token: 0x06001016 RID: 4118 RVA: 0x0004D11F File Offset: 0x0004B31F
 	private void Start()
 	{
 		this.LoadStickers();
 	}
 
-	// Token: 0x06001344 RID: 4932 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06001017 RID: 4119 RVA: 0x0004D127 File Offset: 0x0004B327
 	[ContextMenu("Load Stickers")]
 	private void LoadStickers()
 	{
 	}
 
-	// Token: 0x06001345 RID: 4933 RVA: 0x0005E258 File Offset: 0x0005C458
+	// Token: 0x06001018 RID: 4120 RVA: 0x0004D12C File Offset: 0x0004B32C
 	[ContextMenu("Place All Stickers")]
 	public void PlaceAllStickers()
 	{
@@ -37,7 +37,7 @@ public class UIStickerMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001346 RID: 4934 RVA: 0x0005E28C File Offset: 0x0005C48C
+	// Token: 0x06001019 RID: 4121 RVA: 0x0004D160 File Offset: 0x0004B360
 	[ContextMenu("Rebuild Sticker List")]
 	public void RebuildStickerList()
 	{
@@ -49,7 +49,7 @@ public class UIStickerMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001347 RID: 4935 RVA: 0x0005E2D8 File Offset: 0x0005C4D8
+	// Token: 0x0600101A RID: 4122 RVA: 0x0004D1AC File Offset: 0x0004B3AC
 	private void PlaceSticker(StickerObject stickerObject, Vector2 position, bool isInteractable = true)
 	{
 		UISticker component = Object.Instantiate<GameObject>(this.placedStickerPrefab, this.placedStickersParent).GetComponent<UISticker>();
@@ -59,7 +59,7 @@ public class UIStickerMenu : MonoBehaviour
 		this.placedStickers.Add(component);
 	}
 
-	// Token: 0x06001348 RID: 4936 RVA: 0x0005E32C File Offset: 0x0005C52C
+	// Token: 0x0600101B RID: 4123 RVA: 0x0004D200 File Offset: 0x0004B400
 	private void ToggleInteractability(bool isInteractable)
 	{
 		foreach (UISticker uisticker in this.placedStickers)
@@ -68,18 +68,18 @@ public class UIStickerMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040018DD RID: 6365
+	// Token: 0x0400151A RID: 5402
 	public StickerObject[] allStickers;
 
-	// Token: 0x040018DE RID: 6366
+	// Token: 0x0400151B RID: 5403
 	private Dictionary<string, StickerObject> stickerDictionary;
 
-	// Token: 0x040018DF RID: 6367
+	// Token: 0x0400151C RID: 5404
 	public GameObject placedStickerPrefab;
 
-	// Token: 0x040018E0 RID: 6368
+	// Token: 0x0400151D RID: 5405
 	private List<UISticker> placedStickers = new List<UISticker>();
 
-	// Token: 0x040018E1 RID: 6369
+	// Token: 0x0400151E RID: 5406
 	public RectTransform placedStickersParent;
 }

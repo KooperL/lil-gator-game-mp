@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000269 RID: 617
+// Token: 0x020001E0 RID: 480
 public class Player : MonoBehaviour
 {
-	// Token: 0x17000116 RID: 278
-	// (get) Token: 0x06000BC6 RID: 3014 RVA: 0x0000B11C File Offset: 0x0000931C
+	// Token: 0x17000084 RID: 132
+	// (get) Token: 0x06000A11 RID: 2577 RVA: 0x0002EA83 File Offset: 0x0002CC83
 	public static Vector3 RawPosition
 	{
 		get
@@ -14,8 +14,8 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000117 RID: 279
-	// (get) Token: 0x06000BC7 RID: 3015 RVA: 0x0000B128 File Offset: 0x00009328
+	// Token: 0x17000085 RID: 133
+	// (get) Token: 0x06000A12 RID: 2578 RVA: 0x0002EA8F File Offset: 0x0002CC8F
 	public static Vector3 Position
 	{
 		get
@@ -24,8 +24,8 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000118 RID: 280
-	// (get) Token: 0x06000BC8 RID: 3016 RVA: 0x0000B143 File Offset: 0x00009343
+	// Token: 0x17000086 RID: 134
+	// (get) Token: 0x06000A13 RID: 2579 RVA: 0x0002EAAA File Offset: 0x0002CCAA
 	public static Vector3 Forward
 	{
 		get
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000BC9 RID: 3017 RVA: 0x0000B14F File Offset: 0x0000934F
+	// Token: 0x06000A14 RID: 2580 RVA: 0x0002EAB6 File Offset: 0x0002CCB6
 	private void OnValidate()
 	{
 		if (this.pHandIK == null)
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000BCA RID: 3018 RVA: 0x0004063C File Offset: 0x0003E83C
+	// Token: 0x06000A15 RID: 2581 RVA: 0x0002EAEC File Offset: 0x0002CCEC
 	private void OnEnable()
 	{
 		Player.player = this;
@@ -71,108 +71,108 @@ public class Player : MonoBehaviour
 		Player.gameObject = base.gameObject;
 	}
 
-	// Token: 0x04000EA6 RID: 3750
+	// Token: 0x04000C68 RID: 3176
 	public static Player player;
 
-	// Token: 0x04000EA7 RID: 3751
+	// Token: 0x04000C69 RID: 3177
 	public static PlayerInput input;
 
-	// Token: 0x04000EA8 RID: 3752
+	// Token: 0x04000C6A RID: 3178
 	public static PlayerMovement movement;
 
-	// Token: 0x04000EA9 RID: 3753
+	// Token: 0x04000C6B RID: 3179
 	public static PlayerItemManager itemManager;
 
-	// Token: 0x04000EAA RID: 3754
-	public static Transform transform;
+	// Token: 0x04000C6C RID: 3180
+	public new static Transform transform;
 
-	// Token: 0x04000EAB RID: 3755
+	// Token: 0x04000C6D RID: 3181
 	public static Transform rawTransform;
 
-	// Token: 0x04000EAC RID: 3756
+	// Token: 0x04000C6E RID: 3182
 	public static Animator animator;
 
-	// Token: 0x04000EAD RID: 3757
+	// Token: 0x04000C6F RID: 3183
 	public static Rigidbody rigidbody;
 
-	// Token: 0x04000EAE RID: 3758
-	public static GameObject gameObject;
+	// Token: 0x04000C70 RID: 3184
+	public new static GameObject gameObject;
 
-	// Token: 0x04000EAF RID: 3759
+	// Token: 0x04000C71 RID: 3185
 	public static CharacterReactionController reaction;
 
-	// Token: 0x04000EB0 RID: 3760
+	// Token: 0x04000C72 RID: 3186
 	public static PlayerOverrideAnimations overrideAnimations;
 
-	// Token: 0x04000EB1 RID: 3761
+	// Token: 0x04000C73 RID: 3187
 	public static FootIKSmooth footIK;
 
-	// Token: 0x04000EB2 RID: 3762
+	// Token: 0x04000C74 RID: 3188
 	public static Footsteps footsteps;
 
-	// Token: 0x04000EB3 RID: 3763
+	// Token: 0x04000C75 RID: 3189
 	public static GameObject uiItemCamera;
 
-	// Token: 0x04000EB4 RID: 3764
+	// Token: 0x04000C76 RID: 3190
 	public static DialogueActor actor;
 
-	// Token: 0x04000EB5 RID: 3765
+	// Token: 0x04000C77 RID: 3191
 	public static HandIK handIK;
 
-	// Token: 0x04000EB6 RID: 3766
+	// Token: 0x04000C78 RID: 3192
 	public static PlayerEffects effects;
 
-	// Token: 0x04000EB7 RID: 3767
+	// Token: 0x04000C79 RID: 3193
 	public static RagdollController ragdollController;
 
-	// Token: 0x04000EB8 RID: 3768
+	// Token: 0x04000C7A RID: 3194
 	public static PlayerActorStates actorStates;
 
-	// Token: 0x04000EB9 RID: 3769
+	// Token: 0x04000C7B RID: 3195
 	public PlayerInput pInput;
 
-	// Token: 0x04000EBA RID: 3770
+	// Token: 0x04000C7C RID: 3196
 	public PlayerMovement pMovement;
 
-	// Token: 0x04000EBB RID: 3771
+	// Token: 0x04000C7D RID: 3197
 	public PlayerItemManager pItemManager;
 
-	// Token: 0x04000EBC RID: 3772
+	// Token: 0x04000C7E RID: 3198
 	public Transform pTransform;
 
-	// Token: 0x04000EBD RID: 3773
+	// Token: 0x04000C7F RID: 3199
 	public Animator pAnimator;
 
-	// Token: 0x04000EBE RID: 3774
+	// Token: 0x04000C80 RID: 3200
 	public Rigidbody pRigidbody;
 
-	// Token: 0x04000EBF RID: 3775
+	// Token: 0x04000C81 RID: 3201
 	public CharacterReactionController pReaction;
 
-	// Token: 0x04000EC0 RID: 3776
+	// Token: 0x04000C82 RID: 3202
 	public PlayerOverrideAnimations pOverrideAnimations;
 
-	// Token: 0x04000EC1 RID: 3777
+	// Token: 0x04000C83 RID: 3203
 	public FootIKSmooth pFootIK;
 
-	// Token: 0x04000EC2 RID: 3778
+	// Token: 0x04000C84 RID: 3204
 	public Footsteps pFootsteps;
 
-	// Token: 0x04000EC3 RID: 3779
+	// Token: 0x04000C85 RID: 3205
 	public GameObject pUiItemCamera;
 
-	// Token: 0x04000EC4 RID: 3780
+	// Token: 0x04000C86 RID: 3206
 	public DialogueActor pActor;
 
-	// Token: 0x04000EC5 RID: 3781
+	// Token: 0x04000C87 RID: 3207
 	public HandIK pHandIK;
 
-	// Token: 0x04000EC6 RID: 3782
+	// Token: 0x04000C88 RID: 3208
 	public PlayerEffects pEffects;
 
-	// Token: 0x04000EC7 RID: 3783
+	// Token: 0x04000C89 RID: 3209
 	public RagdollController pRagdollController;
 
-	// Token: 0x04000EC8 RID: 3784
+	// Token: 0x04000C8A RID: 3210
 	public PlayerActorStates pActorStates;
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000168 RID: 360
+// Token: 0x02000111 RID: 273
 public class FadeRendererProximity : FadeRenderer
 {
-	// Token: 0x060006BE RID: 1726 RVA: 0x00006E52 File Offset: 0x00005052
+	// Token: 0x0600059A RID: 1434 RVA: 0x0001D61F File Offset: 0x0001B81F
 	public override void OnValidate()
 	{
 		this.maxSqrDistance = this.maxDistance * this.maxDistance;
@@ -16,7 +16,7 @@ public class FadeRendererProximity : FadeRenderer
 		}
 	}
 
-	// Token: 0x060006BF RID: 1727 RVA: 0x00031A5C File Offset: 0x0002FC5C
+	// Token: 0x0600059B RID: 1435 RVA: 0x0001D660 File Offset: 0x0001B860
 	private void LateUpdate()
 	{
 		if (this.usePlayerTransform)
@@ -32,7 +32,7 @@ public class FadeRendererProximity : FadeRenderer
 		}
 	}
 
-	// Token: 0x060006C0 RID: 1728 RVA: 0x00031AD4 File Offset: 0x0002FCD4
+	// Token: 0x0600059C RID: 1436 RVA: 0x0001D6D8 File Offset: 0x0001B8D8
 	private void OnTriggerStay(Collider other)
 	{
 		if (base.enabled)
@@ -49,25 +49,25 @@ public class FadeRendererProximity : FadeRenderer
 		}
 	}
 
-	// Token: 0x04000906 RID: 2310
+	// Token: 0x040007AC RID: 1964
 	public float maxDistance = 20f;
 
-	// Token: 0x04000907 RID: 2311
+	// Token: 0x040007AD RID: 1965
 	[ReadOnly]
 	public float maxSqrDistance;
 
-	// Token: 0x04000908 RID: 2312
+	// Token: 0x040007AE RID: 1966
 	public float minDistance = 8f;
 
-	// Token: 0x04000909 RID: 2313
+	// Token: 0x040007AF RID: 1967
 	public float maxFade = 0.8f;
 
-	// Token: 0x0400090A RID: 2314
+	// Token: 0x040007B0 RID: 1968
 	public bool usePlayerTransform = true;
 
-	// Token: 0x0400090B RID: 2315
+	// Token: 0x040007B1 RID: 1969
 	public Transform proximityTransform;
 
-	// Token: 0x0400090C RID: 2316
+	// Token: 0x040007B2 RID: 1970
 	public bool keepEnabled;
 }

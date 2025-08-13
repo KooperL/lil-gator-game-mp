@@ -1,28 +1,28 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001BE RID: 446
+// Token: 0x02000155 RID: 341
 public class KeepWithinDistance : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06000878 RID: 2168 RVA: 0x000085D7 File Offset: 0x000067D7
+	// Token: 0x0600072E RID: 1838 RVA: 0x00023F0D File Offset: 0x0002210D
 	private void Start()
 	{
 		this.ManagedUpdate();
 	}
 
-	// Token: 0x06000879 RID: 2169 RVA: 0x000085DF File Offset: 0x000067DF
+	// Token: 0x0600072F RID: 1839 RVA: 0x00023F15 File Offset: 0x00022115
 	private void OnEnable()
 	{
 		FastUpdateManager.fixedUpdate8.Add(this);
 	}
 
-	// Token: 0x0600087A RID: 2170 RVA: 0x000085EC File Offset: 0x000067EC
+	// Token: 0x06000730 RID: 1840 RVA: 0x00023F22 File Offset: 0x00022122
 	private void OnDisable()
 	{
 		FastUpdateManager.fixedUpdate8.Remove(this);
 	}
 
-	// Token: 0x0600087B RID: 2171 RVA: 0x000372C0 File Offset: 0x000354C0
+	// Token: 0x06000731 RID: 1841 RVA: 0x00023F30 File Offset: 0x00022130
 	public void ManagedUpdate()
 	{
 		if (this.rigidbody == null || this.target == null)
@@ -40,15 +40,15 @@ public class KeepWithinDistance : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x04000B0C RID: 2828
+	// Token: 0x0400096E RID: 2414
 	public float maxDistance = 5f;
 
-	// Token: 0x04000B0D RID: 2829
+	// Token: 0x0400096F RID: 2415
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000B0E RID: 2830
+	// Token: 0x04000970 RID: 2416
 	public Rigidbody target;
 
-	// Token: 0x04000B0F RID: 2831
+	// Token: 0x04000971 RID: 2417
 	public bool cancelVelocity = true;
 }

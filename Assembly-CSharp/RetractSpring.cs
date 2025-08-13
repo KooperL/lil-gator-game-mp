@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000245 RID: 581
+// Token: 0x020001C3 RID: 451
 public class RetractSpring : MonoBehaviour
 {
-	// Token: 0x06000AE3 RID: 2787 RVA: 0x0003E3A0 File Offset: 0x0003C5A0
+	// Token: 0x0600094C RID: 2380 RVA: 0x0002C224 File Offset: 0x0002A424
 	private void OnEnable()
 	{
 		if (this.adapt)
@@ -18,7 +18,7 @@ public class RetractSpring : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AE4 RID: 2788 RVA: 0x0003E40C File Offset: 0x0003C60C
+	// Token: 0x0600094D RID: 2381 RVA: 0x0002C290 File Offset: 0x0002A490
 	private Vector3 GetCurrentDelta()
 	{
 		Vector3 vector = this.rigidbody.position + this.rigidbody.rotation * this.joint.anchor;
@@ -26,7 +26,7 @@ public class RetractSpring : MonoBehaviour
 		return vector - vector2;
 	}
 
-	// Token: 0x06000AE5 RID: 2789 RVA: 0x0003E480 File Offset: 0x0003C680
+	// Token: 0x0600094E RID: 2382 RVA: 0x0002C304 File Offset: 0x0002A504
 	private float GetCurrentDistance()
 	{
 		Vector3 vector = this.rigidbody.position + this.rigidbody.rotation * this.joint.anchor;
@@ -34,7 +34,7 @@ public class RetractSpring : MonoBehaviour
 		return Vector3.Distance(vector, vector2);
 	}
 
-	// Token: 0x06000AE6 RID: 2790 RVA: 0x0003E4F4 File Offset: 0x0003C6F4
+	// Token: 0x0600094F RID: 2383 RVA: 0x0002C378 File Offset: 0x0002A578
 	private void FixedUpdate()
 	{
 		float num = this.jointLength - this.reelSpeed * Time.deltaTime;
@@ -53,36 +53,36 @@ public class RetractSpring : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000DCE RID: 3534
+	// Token: 0x04000BAB RID: 2987
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000DCF RID: 3535
+	// Token: 0x04000BAC RID: 2988
 	public SpringJoint joint;
 
-	// Token: 0x04000DD0 RID: 3536
+	// Token: 0x04000BAD RID: 2989
 	public SpringJoint extendedJoint;
 
-	// Token: 0x04000DD1 RID: 3537
+	// Token: 0x04000BAE RID: 2990
 	public float extendedJointDistance = 0.5f;
 
-	// Token: 0x04000DD2 RID: 3538
+	// Token: 0x04000BAF RID: 2991
 	private float jointLength;
 
-	// Token: 0x04000DD3 RID: 3539
+	// Token: 0x04000BB0 RID: 2992
 	private float jointLengthVel;
 
-	// Token: 0x04000DD4 RID: 3540
+	// Token: 0x04000BB1 RID: 2993
 	public float reelSpeed = 0.25f;
 
-	// Token: 0x04000DD5 RID: 3541
+	// Token: 0x04000BB2 RID: 2994
 	public bool adapt = true;
 
-	// Token: 0x04000DD6 RID: 3542
+	// Token: 0x04000BB3 RID: 2995
 	public float adaptDistance = 1f;
 
-	// Token: 0x04000DD7 RID: 3543
+	// Token: 0x04000BB4 RID: 2996
 	public float maxAdaptSpeed = 10f;
 
-	// Token: 0x04000DD8 RID: 3544
+	// Token: 0x04000BB5 RID: 2997
 	public float minDistance = 1f;
 }

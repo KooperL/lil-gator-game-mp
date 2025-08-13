@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200010C RID: 268
+// Token: 0x020000C6 RID: 198
 public class TriggerBubble : MonoBehaviour
 {
-	// Token: 0x06000527 RID: 1319 RVA: 0x0002D1C8 File Offset: 0x0002B3C8
+	// Token: 0x06000450 RID: 1104 RVA: 0x00018AF8 File Offset: 0x00016CF8
 	public void Interact()
 	{
 		if (this.document != null)
@@ -15,25 +15,25 @@ public class TriggerBubble : MonoBehaviour
 		DialogueManager.d.Bubble(this.text, this.actors, this.delay, this.isImportant, this.hasInput, this.canInterrupt);
 	}
 
-	// Token: 0x0400071D RID: 1821
+	// Token: 0x04000604 RID: 1540
 	public DialogueActor[] actors;
 
-	// Token: 0x0400071E RID: 1822
+	// Token: 0x04000605 RID: 1541
 	public MultilingualTextDocument document;
 
-	// Token: 0x0400071F RID: 1823
+	// Token: 0x04000606 RID: 1542
 	[ChunkLookup("document")]
 	public string text;
 
-	// Token: 0x04000720 RID: 1824
+	// Token: 0x04000607 RID: 1543
 	public float delay;
 
-	// Token: 0x04000721 RID: 1825
+	// Token: 0x04000608 RID: 1544
 	public bool isImportant;
 
-	// Token: 0x04000722 RID: 1826
+	// Token: 0x04000609 RID: 1545
 	public bool hasInput;
 
-	// Token: 0x04000723 RID: 1827
+	// Token: 0x0400060A RID: 1546
 	public bool canInterrupt;
 }

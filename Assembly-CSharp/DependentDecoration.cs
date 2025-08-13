@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020000C6 RID: 198
+// Token: 0x0200009E RID: 158
 public class DependentDecoration : MonoBehaviour
 {
-	// Token: 0x06000335 RID: 821 RVA: 0x00024B8C File Offset: 0x00022D8C
+	// Token: 0x060002F2 RID: 754 RVA: 0x0001159C File Offset: 0x0000F79C
 	public static void ActivateAll()
 	{
 		foreach (DependentDecoration dependentDecoration in DependentDecoration.dependentDecorations)
@@ -14,14 +14,14 @@ public class DependentDecoration : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000336 RID: 822 RVA: 0x00004808 File Offset: 0x00002A08
+	// Token: 0x060002F3 RID: 755 RVA: 0x000115EC File Offset: 0x0000F7EC
 	private void OnEnable()
 	{
 		DependentDecoration.dependentDecorations.Add(this);
 		this.ActivateDecorations();
 	}
 
-	// Token: 0x06000337 RID: 823 RVA: 0x00024BDC File Offset: 0x00022DDC
+	// Token: 0x060002F4 RID: 756 RVA: 0x00011600 File Offset: 0x0000F800
 	private void OnDisable()
 	{
 		if (DependentDecoration.dependentDecorations.Contains(this))
@@ -36,7 +36,7 @@ public class DependentDecoration : MonoBehaviour
 		BuildingUpgradeStation.UpdateAllActive();
 	}
 
-	// Token: 0x06000338 RID: 824 RVA: 0x00024C28 File Offset: 0x00022E28
+	// Token: 0x060002F5 RID: 757 RVA: 0x0001164C File Offset: 0x0000F84C
 	public void ActivateDecorations()
 	{
 		GameObject[] array = this.decorations;
@@ -46,9 +46,9 @@ public class DependentDecoration : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040004A7 RID: 1191
+	// Token: 0x04000411 RID: 1041
 	public static List<DependentDecoration> dependentDecorations = new List<DependentDecoration>();
 
-	// Token: 0x040004A8 RID: 1192
+	// Token: 0x04000412 RID: 1042
 	public GameObject[] decorations;
 }

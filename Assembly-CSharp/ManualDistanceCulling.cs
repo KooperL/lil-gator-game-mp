@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020001EC RID: 492
+// Token: 0x02000177 RID: 375
 public class ManualDistanceCulling : MonoBehaviour
 {
-	// Token: 0x06000916 RID: 2326 RVA: 0x00038AD0 File Offset: 0x00036CD0
+	// Token: 0x060007B7 RID: 1975 RVA: 0x000259FC File Offset: 0x00023BFC
 	private static Vector2Int IndexToCoordinate(int index, int chunkDivisions)
 	{
 		Vector2Int zero = Vector2Int.zero;
@@ -14,20 +14,20 @@ public class ManualDistanceCulling : MonoBehaviour
 		return zero;
 	}
 
-	// Token: 0x06000917 RID: 2327 RVA: 0x00038B00 File Offset: 0x00036D00
+	// Token: 0x060007B8 RID: 1976 RVA: 0x00025A2C File Offset: 0x00023C2C
 	private static float InterpolateCenterAxis(int coordinate, int chunkDivisions, float lowEdge, float highEdge)
 	{
 		float num = (2f * (float)coordinate + 1f) / (2f * (float)chunkDivisions);
 		return Mathf.Lerp(lowEdge, highEdge, num);
 	}
 
-	// Token: 0x06000918 RID: 2328 RVA: 0x00038B30 File Offset: 0x00036D30
+	// Token: 0x060007B9 RID: 1977 RVA: 0x00025A5C File Offset: 0x00023C5C
 	private static Vector3 GetCenterForCoordinate(Vector2Int coordinate, int chunkDivisions, Bounds bounds)
 	{
 		return new Vector3(ManualDistanceCulling.InterpolateCenterAxis(coordinate.x, chunkDivisions, bounds.min.x, bounds.max.x), 0f, ManualDistanceCulling.InterpolateCenterAxis(coordinate.y, chunkDivisions, bounds.min.z, bounds.max.z));
 	}
 
-	// Token: 0x06000919 RID: 2329 RVA: 0x00038B94 File Offset: 0x00036D94
+	// Token: 0x060007BA RID: 1978 RVA: 0x00025AC0 File Offset: 0x00023CC0
 	[ContextMenu("1. Collect Culled Objects")]
 	private void CollectCulledObjects()
 	{
@@ -67,20 +67,20 @@ public class ManualDistanceCulling : MonoBehaviour
 		this.expensiveCulledObjects = list2.ToArray();
 	}
 
-	// Token: 0x0600091A RID: 2330 RVA: 0x00008DEE File Offset: 0x00006FEE
+	// Token: 0x060007BB RID: 1979 RVA: 0x00025BDD File Offset: 0x00023DDD
 	private Bounds ExpandEdgeBounds(Bounds bounds, Vector3 direction)
 	{
 		bounds.Encapsulate(bounds.center + 200f * direction);
 		return bounds;
 	}
 
-	// Token: 0x0600091B RID: 2331 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x060007BC RID: 1980 RVA: 0x00025BFE File Offset: 0x00023DFE
 	[ContextMenu("2. Sort Culled Objects Into Chunks")]
 	private void SortCulledObjectsIntoChunks()
 	{
 	}
 
-	// Token: 0x0600091C RID: 2332 RVA: 0x00038CB4 File Offset: 0x00036EB4
+	// Token: 0x060007BD RID: 1981 RVA: 0x00025C00 File Offset: 0x00023E00
 	private void VerifyObjectsAreSorted()
 	{
 		int num = 0;
@@ -91,14 +91,14 @@ public class ManualDistanceCulling : MonoBehaviour
 		Debug.Log("Total chunk objects: " + num.ToString() + " Culled Objects: " + this.culledObjects.Length.ToString());
 	}
 
-	// Token: 0x0600091D RID: 2333 RVA: 0x00008E0F File Offset: 0x0000700F
+	// Token: 0x060007BE RID: 1982 RVA: 0x00025C62 File Offset: 0x00023E62
 	private void OnValidate()
 	{
 		this.totalChunks = this.chunkDivisions * this.chunkDivisions;
 		this.chunkWidth = this.bounds.extents.x / (float)this.chunkDivisions;
 	}
 
-	// Token: 0x0600091E RID: 2334 RVA: 0x00008E42 File Offset: 0x00007042
+	// Token: 0x060007BF RID: 1983 RVA: 0x00025C95 File Offset: 0x00023E95
 	private void LateUpdate()
 	{
 		if (Game.WorldState == WorldState.Flashback)
@@ -116,7 +116,7 @@ public class ManualDistanceCulling : MonoBehaviour
 		this.UpdateChunkObjects();
 	}
 
-	// Token: 0x0600091F RID: 2335 RVA: 0x00038D18 File Offset: 0x00036F18
+	// Token: 0x060007C0 RID: 1984 RVA: 0x00025CCC File Offset: 0x00023ECC
 	private void UpdateChunkVisibility()
 	{
 		Vector3 position = MainCamera.t.position;
@@ -157,7 +157,7 @@ public class ManualDistanceCulling : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000920 RID: 2336 RVA: 0x00038E74 File Offset: 0x00037074
+	// Token: 0x060007C1 RID: 1985 RVA: 0x00025E28 File Offset: 0x00024028
 	private void UpdateChunkObjects()
 	{
 		bool flag = true;
@@ -170,7 +170,7 @@ public class ManualDistanceCulling : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000921 RID: 2337 RVA: 0x00038ED0 File Offset: 0x000370D0
+	// Token: 0x060007C2 RID: 1986 RVA: 0x00025E84 File Offset: 0x00024084
 	private void UpdateUrgentChunkObjects()
 	{
 		for (int i = 0; i < this.chunks.Length; i++)
@@ -182,68 +182,68 @@ public class ManualDistanceCulling : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000BB8 RID: 3000
+	// Token: 0x040009E7 RID: 2535
 	public Transform[] culledObjectParents;
 
-	// Token: 0x04000BB9 RID: 3001
+	// Token: 0x040009E8 RID: 2536
 	public Transform[] expensiveCulledObjectParents;
 
-	// Token: 0x04000BBA RID: 3002
+	// Token: 0x040009E9 RID: 2537
 	public GameObject[] extraCulledObjects;
 
-	// Token: 0x04000BBB RID: 3003
+	// Token: 0x040009EA RID: 2538
 	public GameObject[] extraExpensiveCulledObjects;
 
-	// Token: 0x04000BBC RID: 3004
+	// Token: 0x040009EB RID: 2539
 	public GameObject[] culledObjects;
 
-	// Token: 0x04000BBD RID: 3005
+	// Token: 0x040009EC RID: 2540
 	public GameObject[] expensiveCulledObjects;
 
-	// Token: 0x04000BBE RID: 3006
+	// Token: 0x040009ED RID: 2541
 	public Bounds bounds;
 
-	// Token: 0x04000BBF RID: 3007
+	// Token: 0x040009EE RID: 2542
 	public int chunkDivisions = 4;
 
-	// Token: 0x04000BC0 RID: 3008
+	// Token: 0x040009EF RID: 2543
 	[ReadOnly]
 	public int totalChunks;
 
-	// Token: 0x04000BC1 RID: 3009
+	// Token: 0x040009F0 RID: 2544
 	[ReadOnly]
 	public float chunkWidth;
 
-	// Token: 0x04000BC2 RID: 3010
+	// Token: 0x040009F1 RID: 2545
 	private const float beginCullingDistance = 120f;
 
-	// Token: 0x04000BC3 RID: 3011
+	// Token: 0x040009F2 RID: 2546
 	private const float stopCullingDistance = 110f;
 
-	// Token: 0x04000BC4 RID: 3012
+	// Token: 0x040009F3 RID: 2547
 	private const float fogDistance = 55f;
 
-	// Token: 0x04000BC5 RID: 3013
+	// Token: 0x040009F4 RID: 2548
 	public ManualDistanceCulling.CulledObjectChunk[] chunks;
 
-	// Token: 0x04000BC6 RID: 3014
+	// Token: 0x040009F5 RID: 2549
 	private int chunksNeedingChanges;
 
-	// Token: 0x04000BC7 RID: 3015
+	// Token: 0x040009F6 RID: 2550
 	private int chunksNeedingUrgentChanges;
 
-	// Token: 0x04000BC8 RID: 3016
+	// Token: 0x040009F7 RID: 2551
 	private const int setActiveAllowance = 10;
 
-	// Token: 0x04000BC9 RID: 3017
+	// Token: 0x040009F8 RID: 2552
 	private const int setActiveUrgentAllowance = 200;
 
-	// Token: 0x020001ED RID: 493
+	// Token: 0x020003CC RID: 972
 	[Serializable]
 	public struct CulledObjectChunk
 	{
-		// Token: 0x170000DF RID: 223
-		// (get) Token: 0x06000923 RID: 2339 RVA: 0x00008E87 File Offset: 0x00007087
+		// Token: 0x170004A9 RID: 1193
+		// (get) Token: 0x06001993 RID: 6547 RVA: 0x0006D633 File Offset: 0x0006B833
 		public bool IsEverythingVisible
 		{
 			get
@@ -252,8 +252,8 @@ public class ManualDistanceCulling : MonoBehaviour
 			}
 		}
 
-		// Token: 0x170000E0 RID: 224
-		// (get) Token: 0x06000924 RID: 2340 RVA: 0x00008EA4 File Offset: 0x000070A4
+		// Token: 0x170004AA RID: 1194
+		// (get) Token: 0x06001994 RID: 6548 RVA: 0x0006D650 File Offset: 0x0006B850
 		public bool IsEverythingCulled
 		{
 			get
@@ -262,7 +262,7 @@ public class ManualDistanceCulling : MonoBehaviour
 			}
 		}
 
-		// Token: 0x06000925 RID: 2341 RVA: 0x00038F28 File Offset: 0x00037128
+		// Token: 0x06001995 RID: 6549 RVA: 0x0006D684 File Offset: 0x0006B884
 		public bool UpdateObjectVisibility(int allowance, bool allowExpensive)
 		{
 			while (allowance > 0)
@@ -320,38 +320,38 @@ public class ManualDistanceCulling : MonoBehaviour
 			return true;
 		}
 
-		// Token: 0x04000BCA RID: 3018
+		// Token: 0x04001BEE RID: 7150
 		public Vector2Int coordinate;
 
-		// Token: 0x04000BCB RID: 3019
+		// Token: 0x04001BEF RID: 7151
 		public GameObject[] chunkObjects;
 
-		// Token: 0x04000BCC RID: 3020
+		// Token: 0x04001BF0 RID: 7152
 		public GameObject[] expensiveChunkObjects;
 
-		// Token: 0x04000BCD RID: 3021
+		// Token: 0x04001BF1 RID: 7153
 		public ResistCulling[] resistantObjects;
 
-		// Token: 0x04000BCE RID: 3022
+		// Token: 0x04001BF2 RID: 7154
 		public Bounds bounds;
 
-		// Token: 0x04000BCF RID: 3023
+		// Token: 0x04001BF3 RID: 7155
 		[Space]
 		public bool isVisible;
 
-		// Token: 0x04000BD0 RID: 3024
+		// Token: 0x04001BF4 RID: 7156
 		public int visibilityIndex;
 
-		// Token: 0x04000BD1 RID: 3025
+		// Token: 0x04001BF5 RID: 7157
 		public int expensiveVisibilityIndex;
 
-		// Token: 0x04000BD2 RID: 3026
+		// Token: 0x04001BF6 RID: 7158
 		public int resistantIndex;
 
-		// Token: 0x04000BD3 RID: 3027
+		// Token: 0x04001BF7 RID: 7159
 		public bool needsUpdate;
 
-		// Token: 0x04000BD4 RID: 3028
+		// Token: 0x04001BF8 RID: 7160
 		public bool needsUrgentUpdate;
 	}
 }

@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200031A RID: 794
+// Token: 0x02000254 RID: 596
 public class Seesaw : MonoBehaviour
 {
-	// Token: 0x06000F88 RID: 3976 RVA: 0x0000D7D8 File Offset: 0x0000B9D8
+	// Token: 0x06000CDB RID: 3291 RVA: 0x0003E2BA File Offset: 0x0003C4BA
 	private float ClosestStaticAngle(float dynamicAngle)
 	{
 		if (dynamicAngle < 0f)
@@ -15,7 +15,7 @@ public class Seesaw : MonoBehaviour
 		return this.angle2;
 	}
 
-	// Token: 0x06000F89 RID: 3977 RVA: 0x00050EC4 File Offset: 0x0004F0C4
+	// Token: 0x06000CDC RID: 3292 RVA: 0x0003E2D4 File Offset: 0x0003C4D4
 	private void Start()
 	{
 		this.angle1 = this.static1.transform.localRotation.eulerAngles.z;
@@ -46,13 +46,13 @@ public class Seesaw : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x06000F8A RID: 3978 RVA: 0x00051030 File Offset: 0x0004F230
+	// Token: 0x06000CDD RID: 3293 RVA: 0x0003E440 File Offset: 0x0003C640
 	private void OnDisable()
 	{
 		this.prevAngularVelocity = (this.angularVelocity = 0f);
 	}
 
-	// Token: 0x06000F8B RID: 3979 RVA: 0x0000D7EF File Offset: 0x0000B9EF
+	// Token: 0x06000CDE RID: 3294 RVA: 0x0003E461 File Offset: 0x0003C661
 	private void TrySqueakEffect()
 	{
 		if (this.squeakEffect != null && Time.time - this.lastSqueakEffectTime > 0.5f)
@@ -62,35 +62,35 @@ public class Seesaw : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F8C RID: 3980 RVA: 0x0000D828 File Offset: 0x0000BA28
+	// Token: 0x06000CDF RID: 3295 RVA: 0x0003E49A File Offset: 0x0003C69A
 	public void OnBeamEnabled()
 	{
 		this.DoInitialPush(Player.RawPosition);
 		base.enabled = true;
 	}
 
-	// Token: 0x06000F8D RID: 3981 RVA: 0x0000D83C File Offset: 0x0000BA3C
+	// Token: 0x06000CE0 RID: 3296 RVA: 0x0003E4AE File Offset: 0x0003C6AE
 	public void OnMount1Enabled()
 	{
 		this.DoInitialPush(this.mount1.transform.position);
 		base.enabled = true;
 	}
 
-	// Token: 0x06000F8E RID: 3982 RVA: 0x0000D85B File Offset: 0x0000BA5B
+	// Token: 0x06000CE1 RID: 3297 RVA: 0x0003E4CD File Offset: 0x0003C6CD
 	public void OnMount2Enabled()
 	{
 		this.DoInitialPush(this.mount2.transform.position);
 		base.enabled = true;
 	}
 
-	// Token: 0x06000F8F RID: 3983 RVA: 0x00051054 File Offset: 0x0004F254
+	// Token: 0x06000CE2 RID: 3298 RVA: 0x0003E4EC File Offset: 0x0003C6EC
 	private void DoInitialPush(Vector3 position)
 	{
 		float positionOnBeam = this.GetPositionOnBeam(position);
 		this.angularVelocity -= positionOnBeam * this.initialPush;
 	}
 
-	// Token: 0x06000F90 RID: 3984 RVA: 0x00051080 File Offset: 0x0004F280
+	// Token: 0x06000CE3 RID: 3299 RVA: 0x0003E518 File Offset: 0x0003C718
 	private float GetPositionOnBeam(Vector3 position)
 	{
 		Vector3 position2 = this.balanceBeam.GetPosition(0f);
@@ -102,19 +102,19 @@ public class Seesaw : MonoBehaviour
 		return Mathf.Clamp(Vector3.Dot(position - vector, vector2) / magnitude, -1f, 1f);
 	}
 
-	// Token: 0x06000F91 RID: 3985 RVA: 0x0000D87A File Offset: 0x0000BA7A
+	// Token: 0x06000CE4 RID: 3300 RVA: 0x0003E588 File Offset: 0x0003C788
 	private void AddPushForPosition(Vector3 position)
 	{
 		this.AddPushForPosition(this.GetPositionOnBeam(Player.RawPosition));
 	}
 
-	// Token: 0x06000F92 RID: 3986 RVA: 0x0000D88D File Offset: 0x0000BA8D
+	// Token: 0x06000CE5 RID: 3301 RVA: 0x0003E59B File Offset: 0x0003C79B
 	private void AddPushForPosition(float position)
 	{
 		this.angularVelocity -= Time.deltaTime * position * this.acceleration;
 	}
 
-	// Token: 0x06000F93 RID: 3987 RVA: 0x000510F0 File Offset: 0x0004F2F0
+	// Token: 0x06000CE6 RID: 3302 RVA: 0x0003E5B8 File Offset: 0x0003C7B8
 	private void Update()
 	{
 		bool flag = false;
@@ -146,7 +146,7 @@ public class Seesaw : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F94 RID: 3988 RVA: 0x000511C8 File Offset: 0x0004F3C8
+	// Token: 0x06000CE7 RID: 3303 RVA: 0x0003E690 File Offset: 0x0003C890
 	private void UpdateState()
 	{
 		this.angle = Mathf.Clamp(this.angle, this.angle1, this.angle2);
@@ -175,48 +175,48 @@ public class Seesaw : MonoBehaviour
 		this.dynamic.transform.localRotation = Quaternion.Euler(0f, 0f, this.angle);
 	}
 
-	// Token: 0x04001416 RID: 5142
+	// Token: 0x040010FA RID: 4346
 	public BalanceBeam balanceBeam;
 
-	// Token: 0x04001417 RID: 5143
+	// Token: 0x040010FB RID: 4347
 	public ActorMount mount1;
 
-	// Token: 0x04001418 RID: 5144
+	// Token: 0x040010FC RID: 4348
 	public ActorMount mount2;
 
-	// Token: 0x04001419 RID: 5145
+	// Token: 0x040010FD RID: 4349
 	public Renderer dynamic;
 
-	// Token: 0x0400141A RID: 5146
+	// Token: 0x040010FE RID: 4350
 	public Renderer static1;
 
-	// Token: 0x0400141B RID: 5147
+	// Token: 0x040010FF RID: 4351
 	public Renderer static2;
 
-	// Token: 0x0400141C RID: 5148
+	// Token: 0x04001100 RID: 4352
 	private float angle1;
 
-	// Token: 0x0400141D RID: 5149
+	// Token: 0x04001101 RID: 4353
 	private float angle2;
 
-	// Token: 0x0400141E RID: 5150
+	// Token: 0x04001102 RID: 4354
 	private float angle;
 
-	// Token: 0x0400141F RID: 5151
+	// Token: 0x04001103 RID: 4355
 	private float angularVelocity;
 
-	// Token: 0x04001420 RID: 5152
+	// Token: 0x04001104 RID: 4356
 	private float prevAngularVelocity;
 
-	// Token: 0x04001421 RID: 5153
+	// Token: 0x04001105 RID: 4357
 	public float acceleration = 70f;
 
-	// Token: 0x04001422 RID: 5154
+	// Token: 0x04001106 RID: 4358
 	public float initialPush = 30f;
 
-	// Token: 0x04001423 RID: 5155
+	// Token: 0x04001107 RID: 4359
 	public AudioSourceVariance squeakEffect;
 
-	// Token: 0x04001424 RID: 5156
+	// Token: 0x04001108 RID: 4360
 	private float lastSqueakEffectTime = -1f;
 }

@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200007B RID: 123
+// Token: 0x0200005E RID: 94
 public class SetSceneToLoad : MonoBehaviour
 {
-	// Token: 0x06000193 RID: 403 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000163 RID: 355 RVA: 0x000086AD File Offset: 0x000068AD
 	private void Start()
 	{
 	}
 
-	// Token: 0x06000194 RID: 404 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000164 RID: 356 RVA: 0x000086AF File Offset: 0x000068AF
 	private void Update()
 	{
 	}

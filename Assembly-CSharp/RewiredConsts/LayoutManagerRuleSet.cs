@@ -2,7 +2,7 @@
 
 namespace RewiredConsts
 {
-	// Token: 0x020003F9 RID: 1017
+	// Token: 0x02000300 RID: 768
 	public static class LayoutManagerRuleSet
 	{
 	}

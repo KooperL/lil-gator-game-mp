@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000374 RID: 884
+// Token: 0x0200029A RID: 666
 public class SettingToggle : MonoBehaviour
 {
-	// Token: 0x060010EF RID: 4335 RVA: 0x0000E922 File Offset: 0x0000CB22
+	// Token: 0x06000E2B RID: 3627 RVA: 0x0004441F File Offset: 0x0004261F
 	private void OnValidate()
 	{
 		if (this.toggle == null)
@@ -14,14 +14,14 @@ public class SettingToggle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010F0 RID: 4336 RVA: 0x0000E93E File Offset: 0x0000CB3E
+	// Token: 0x06000E2C RID: 3628 RVA: 0x0004443B File Offset: 0x0004263B
 	private void OnEnable()
 	{
 		this.toggle.isOn = Settings.s.ReadBool(this.key, this.toggle.isOn);
 		this.setInitialSetting = true;
 	}
 
-	// Token: 0x060010F1 RID: 4337 RVA: 0x0000E96D File Offset: 0x0000CB6D
+	// Token: 0x06000E2D RID: 3629 RVA: 0x0004446A File Offset: 0x0004266A
 	public void OnToggle(bool isOn)
 	{
 		if (!this.setInitialSetting)
@@ -32,12 +32,12 @@ public class SettingToggle : MonoBehaviour
 		Settings.s.LoadSettings();
 	}
 
-	// Token: 0x040015EF RID: 5615
+	// Token: 0x04001292 RID: 4754
 	public string key;
 
-	// Token: 0x040015F0 RID: 5616
+	// Token: 0x04001293 RID: 4755
 	public Toggle toggle;
 
-	// Token: 0x040015F1 RID: 5617
+	// Token: 0x04001294 RID: 4756
 	private bool setInitialSetting;
 }

@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000F2 RID: 242
+// Token: 0x020000B4 RID: 180
 public class InteractDialogueGeneric : MonoBehaviour, Interaction
 {
-	// Token: 0x06000492 RID: 1170 RVA: 0x0002B2E8 File Offset: 0x000294E8
+	// Token: 0x060003E5 RID: 997 RVA: 0x00016F64 File Offset: 0x00015164
 	private void OnValidate()
 	{
 		if (this.actors == null || this.actors.Length == 0)
@@ -19,13 +19,13 @@ public class InteractDialogueGeneric : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000493 RID: 1171 RVA: 0x00005511 File Offset: 0x00003711
+	// Token: 0x060003E6 RID: 998 RVA: 0x00016FA2 File Offset: 0x000151A2
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000494 RID: 1172 RVA: 0x00005520 File Offset: 0x00003720
+	// Token: 0x060003E7 RID: 999 RVA: 0x00016FB1 File Offset: 0x000151B1
 	private IEnumerator RunConversation()
 	{
 		yield return base.StartCoroutine(DialogueManager.d.LoadChunk(this.dialogueChunkName, this.actors, this.background, true));
@@ -33,15 +33,15 @@ public class InteractDialogueGeneric : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x0400067C RID: 1660
+	// Token: 0x0400056D RID: 1389
 	public DialogueActor[] actors;
 
-	// Token: 0x0400067D RID: 1661
+	// Token: 0x0400056E RID: 1390
 	public string dialogueChunkName;
 
-	// Token: 0x0400067E RID: 1662
+	// Token: 0x0400056F RID: 1391
 	public DialogueManager.DialogueBoxBackground background;
 
-	// Token: 0x0400067F RID: 1663
+	// Token: 0x04000570 RID: 1392
 	public UnityEvent afterDialogue;
 }

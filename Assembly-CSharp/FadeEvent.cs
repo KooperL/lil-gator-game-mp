@@ -3,10 +3,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000160 RID: 352
+// Token: 0x0200010B RID: 267
 public class FadeEvent : MonoBehaviour
 {
-	// Token: 0x0600068E RID: 1678 RVA: 0x00006C2D File Offset: 0x00004E2D
+	// Token: 0x06000576 RID: 1398 RVA: 0x0001CED3 File Offset: 0x0001B0D3
 	private void OnEnable()
 	{
 		if (this.triggerOnEnable)
@@ -15,13 +15,13 @@ public class FadeEvent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600068F RID: 1679 RVA: 0x00006C3D File Offset: 0x00004E3D
+	// Token: 0x06000577 RID: 1399 RVA: 0x0001CEE3 File Offset: 0x0001B0E3
 	private void StartFade()
 	{
 		CoroutineUtil.Start(this.DoFade());
 	}
 
-	// Token: 0x06000690 RID: 1680 RVA: 0x00006C4B File Offset: 0x00004E4B
+	// Token: 0x06000578 RID: 1400 RVA: 0x0001CEF1 File Offset: 0x0001B0F1
 	private IEnumerator DoFade()
 	{
 		yield return Blackout.FadeIn();
@@ -30,9 +30,9 @@ public class FadeEvent : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x040008DB RID: 2267
+	// Token: 0x04000787 RID: 1927
 	public bool triggerOnEnable = true;
 
-	// Token: 0x040008DC RID: 2268
+	// Token: 0x04000788 RID: 1928
 	public UnityEvent onFade;
 }

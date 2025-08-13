@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000A9 RID: 169
+// Token: 0x02000086 RID: 134
 public class BuildingUpgradeStation : MonoBehaviour, Interaction
 {
-	// Token: 0x06000263 RID: 611 RVA: 0x0001F83C File Offset: 0x0001DA3C
+	// Token: 0x0600022B RID: 555 RVA: 0x0000BF68 File Offset: 0x0000A168
 	public static void UpdateAllActive()
 	{
 		foreach (BuildingUpgradeStation buildingUpgradeStation in BuildingUpgradeStation.upgradedStations)
@@ -16,9 +16,9 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x17000027 RID: 39
-	// (get) Token: 0x06000264 RID: 612 RVA: 0x00003FD5 File Offset: 0x000021D5
-	// (set) Token: 0x06000265 RID: 613 RVA: 0x00003FE8 File Offset: 0x000021E8
+	// Token: 0x17000016 RID: 22
+	// (get) Token: 0x0600022C RID: 556 RVA: 0x0000BFB8 File Offset: 0x0000A1B8
+	// (set) Token: 0x0600022D RID: 557 RVA: 0x0000BFCB File Offset: 0x0000A1CB
 	public bool IsUpgraded
 	{
 		get
@@ -31,9 +31,9 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x17000028 RID: 40
-	// (get) Token: 0x06000266 RID: 614 RVA: 0x00003FFB File Offset: 0x000021FB
-	// (set) Token: 0x06000267 RID: 615 RVA: 0x00004031 File Offset: 0x00002231
+	// Token: 0x17000017 RID: 23
+	// (get) Token: 0x0600022E RID: 558 RVA: 0x0000BFDE File Offset: 0x0000A1DE
+	// (set) Token: 0x0600022F RID: 559 RVA: 0x0000C014 File Offset: 0x0000A214
 	public bool HasPrompted
 	{
 		get
@@ -54,14 +54,14 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000268 RID: 616 RVA: 0x00004067 File Offset: 0x00002267
+	// Token: 0x06000230 RID: 560 RVA: 0x0000C04A File Offset: 0x0000A24A
 	private void Awake()
 	{
 		this.waitUpgradeStep = new WaitForSeconds(0.4f);
 		this.waitUpgradePost = new WaitForSeconds(1f);
 	}
 
-	// Token: 0x06000269 RID: 617 RVA: 0x0001F88C File Offset: 0x0001DA8C
+	// Token: 0x06000231 RID: 561 RVA: 0x0000C06C File Offset: 0x0000A26C
 	private void OnValidate()
 	{
 		if (this.uiCurrency == null || (this.upgradeCurrency != null && this.uiCurrency.itemResource != this.upgradeCurrency))
@@ -77,7 +77,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x0600026A RID: 618 RVA: 0x0001F900 File Offset: 0x0001DB00
+	// Token: 0x06000232 RID: 562 RVA: 0x0000C0E0 File Offset: 0x0000A2E0
 	[ContextMenu("Get Objects")]
 	public void GetObjects()
 	{
@@ -99,13 +99,13 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		this.upgradeObjects = list.ToArray();
 	}
 
-	// Token: 0x0600026B RID: 619 RVA: 0x00004089 File Offset: 0x00002289
+	// Token: 0x06000233 RID: 563 RVA: 0x0000C17C File Offset: 0x0000A37C
 	public void Interact()
 	{
 		CoroutineUtil.Start(this.RunInteraction());
 	}
 
-	// Token: 0x0600026C RID: 620 RVA: 0x00004097 File Offset: 0x00002297
+	// Token: 0x06000234 RID: 564 RVA: 0x0000C18A File Offset: 0x0000A38A
 	public void SetActive(bool isActive)
 	{
 		base.gameObject.SetActive(isActive);
@@ -117,7 +117,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x0600026D RID: 621 RVA: 0x0001F99C File Offset: 0x0001DB9C
+	// Token: 0x06000235 RID: 565 RVA: 0x0000C1C0 File Offset: 0x0000A3C0
 	[ContextMenu("Update State")]
 	public void UpdateState()
 	{
@@ -131,7 +131,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		DependentDecoration.ActivateAll();
 	}
 
-	// Token: 0x0600026E RID: 622 RVA: 0x0001F9E8 File Offset: 0x0001DBE8
+	// Token: 0x06000236 RID: 566 RVA: 0x0000C20C File Offset: 0x0000A40C
 	private void UpdateCharacters(bool isUpgraded, bool isUnlocked)
 	{
 		bool flag = true;
@@ -153,7 +153,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x0600026F RID: 623 RVA: 0x000040CA File Offset: 0x000022CA
+	// Token: 0x06000237 RID: 567 RVA: 0x0000C2BB File Offset: 0x0000A4BB
 	public IEnumerator RunUnlockSequence()
 	{
 		this.UpdateCharacters(false, true);
@@ -163,7 +163,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x06000270 RID: 624 RVA: 0x000040D9 File Offset: 0x000022D9
+	// Token: 0x06000238 RID: 568 RVA: 0x0000C2CA File Offset: 0x0000A4CA
 	private IEnumerator RunInteraction()
 	{
 		Game.DialogueDepth++;
@@ -256,7 +256,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x06000271 RID: 625 RVA: 0x000040E8 File Offset: 0x000022E8
+	// Token: 0x06000239 RID: 569 RVA: 0x0000C2D9 File Offset: 0x0000A4D9
 	private IEnumerator UpgradeAnimation()
 	{
 		yield return null;
@@ -300,7 +300,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x06000272 RID: 626 RVA: 0x0001FA98 File Offset: 0x0001DC98
+	// Token: 0x0600023A RID: 570 RVA: 0x0000C2E8 File Offset: 0x0000A4E8
 	public void UpdateActive()
 	{
 		foreach (GameObject gameObject in this.upgradeObjects)
@@ -312,113 +312,113 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x04000369 RID: 873
+	// Token: 0x040002DA RID: 730
 	public static List<BuildingUpgradeStation> upgradedStations = new List<BuildingUpgradeStation>();
 
-	// Token: 0x0400036A RID: 874
+	// Token: 0x040002DB RID: 731
 	public GameObject previewCamera;
 
-	// Token: 0x0400036B RID: 875
+	// Token: 0x040002DC RID: 732
 	public GameObject previewCanvas;
 
-	// Token: 0x0400036C RID: 876
+	// Token: 0x040002DD RID: 733
 	public GameObject upgradeEffectCamera;
 
-	// Token: 0x0400036D RID: 877
+	// Token: 0x040002DE RID: 734
 	public UnityEvent onStartUpgrade;
 
-	// Token: 0x0400036E RID: 878
+	// Token: 0x040002DF RID: 735
 	public GameObject bulletinBoard;
 
-	// Token: 0x0400036F RID: 879
+	// Token: 0x040002E0 RID: 736
 	public GameObject backToGameCamera;
 
-	// Token: 0x04000370 RID: 880
+	// Token: 0x040002E1 RID: 737
 	public int cost;
 
-	// Token: 0x04000371 RID: 881
+	// Token: 0x040002E2 RID: 738
 	public ItemResource upgradeCurrency;
 
-	// Token: 0x04000372 RID: 882
+	// Token: 0x040002E3 RID: 739
 	public UIItemResource uiCurrency;
 
-	// Token: 0x04000373 RID: 883
+	// Token: 0x040002E4 RID: 740
 	public Transform[] upgradeParents;
 
-	// Token: 0x04000374 RID: 884
+	// Token: 0x040002E5 RID: 741
 	public GameObject[] upgradeObjects;
 
-	// Token: 0x04000375 RID: 885
+	// Token: 0x040002E6 RID: 742
 	public GameObject[] smokePuffObjects;
 
-	// Token: 0x04000376 RID: 886
+	// Token: 0x040002E7 RID: 743
 	public UnityEvent onUpgraded;
 
-	// Token: 0x04000377 RID: 887
+	// Token: 0x040002E8 RID: 744
 	private WaitForSeconds waitUpgradeStep;
 
-	// Token: 0x04000378 RID: 888
+	// Token: 0x040002E9 RID: 745
 	private WaitForSeconds waitUpgradePost;
 
-	// Token: 0x04000379 RID: 889
+	// Token: 0x040002EA RID: 746
 	public MultilingualTextDocument document;
 
-	// Token: 0x0400037A RID: 890
+	// Token: 0x040002EB RID: 747
 	[ChunkLookup("document")]
 	public string firstPrompt;
 
-	// Token: 0x0400037B RID: 891
+	// Token: 0x040002EC RID: 748
 	[ChunkLookup("document")]
 	public string notReady;
 
-	// Token: 0x0400037C RID: 892
+	// Token: 0x040002ED RID: 749
 	[ChunkLookup("document")]
 	public string lezgo;
 
-	// Token: 0x0400037D RID: 893
+	// Token: 0x040002EE RID: 750
 	[ChunkLookup("document")]
 	public string repeatPrompt;
 
-	// Token: 0x0400037E RID: 894
+	// Token: 0x040002EF RID: 751
 	[ChunkLookup("document")]
 	public string upgradePrompt;
 
-	// Token: 0x0400037F RID: 895
+	// Token: 0x040002F0 RID: 752
 	[ChunkLookup("document")]
 	public string notEnough;
 
-	// Token: 0x04000380 RID: 896
+	// Token: 0x040002F1 RID: 753
 	[ChunkLookup("document")]
 	public string complete;
 
-	// Token: 0x04000381 RID: 897
+	// Token: 0x040002F2 RID: 754
 	[ChunkLookup("document")]
 	public string completeRepeat;
 
-	// Token: 0x04000382 RID: 898
+	// Token: 0x040002F3 RID: 755
 	public DialogueActor[] preUnlockActors;
 
-	// Token: 0x04000383 RID: 899
+	// Token: 0x040002F4 RID: 756
 	public DialogueActor[] actors;
 
-	// Token: 0x04000384 RID: 900
+	// Token: 0x040002F5 RID: 757
 	public DialogueActor[] upgradedActors;
 
-	// Token: 0x04000385 RID: 901
+	// Token: 0x040002F6 RID: 758
 	public GameObject preUnlockCharacter;
 
-	// Token: 0x04000386 RID: 902
+	// Token: 0x040002F7 RID: 759
 	public GameObject preUpdateCharacter;
 
-	// Token: 0x04000387 RID: 903
+	// Token: 0x040002F8 RID: 760
 	public GameObject postUpgradeCharacter;
 
-	// Token: 0x04000388 RID: 904
+	// Token: 0x040002F9 RID: 761
 	public DialogueSequencer unlockSequence;
 
-	// Token: 0x04000389 RID: 905
+	// Token: 0x040002FA RID: 762
 	public string id;
 
-	// Token: 0x0400038A RID: 906
+	// Token: 0x040002FB RID: 763
 	private string promptedID;
 }

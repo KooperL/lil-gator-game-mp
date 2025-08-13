@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Cinemachine.Examples
 {
-	// Token: 0x020003E9 RID: 1001
+	// Token: 0x020002F6 RID: 758
 	[AddComponentMenu("")]
 	public class CharacterMovement2D : MonoBehaviour
 	{
-		// Token: 0x06001355 RID: 4949 RVA: 0x000106E8 File Offset: 0x0000E8E8
+		// Token: 0x06001028 RID: 4136 RVA: 0x0004D827 File Offset: 0x0004BA27
 		private void Start()
 		{
 			this.anim = base.GetComponent<Animator>();
@@ -15,7 +15,7 @@ namespace Cinemachine.Examples
 			this.targetrot = base.transform.rotation;
 		}
 
-		// Token: 0x06001356 RID: 4950 RVA: 0x0005E85C File Offset: 0x0005CA5C
+		// Token: 0x06001029 RID: 4137 RVA: 0x0004D854 File Offset: 0x0004BA54
 		private void FixedUpdate()
 		{
 			this.input.x = Input.GetAxis("Horizontal");
@@ -50,55 +50,55 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x06001357 RID: 4951 RVA: 0x00010713 File Offset: 0x0000E913
+		// Token: 0x0600102A RID: 4138 RVA: 0x0004DA59 File Offset: 0x0004BC59
 		public bool isGrounded()
 		{
 			return !this.checkGroundForJump || Physics.Raycast(base.transform.position, Vector3.down, this.groundTolerance);
 		}
 
-		// Token: 0x040018F5 RID: 6389
-		public KeyCode sprintJoystick = 332;
+		// Token: 0x04001532 RID: 5426
+		public KeyCode sprintJoystick = KeyCode.JoystickButton2;
 
-		// Token: 0x040018F6 RID: 6390
-		public KeyCode jumpJoystick = 330;
+		// Token: 0x04001533 RID: 5427
+		public KeyCode jumpJoystick = KeyCode.JoystickButton0;
 
-		// Token: 0x040018F7 RID: 6391
-		public KeyCode sprintKeyboard = 304;
+		// Token: 0x04001534 RID: 5428
+		public KeyCode sprintKeyboard = KeyCode.LeftShift;
 
-		// Token: 0x040018F8 RID: 6392
-		public KeyCode jumpKeyboard = 32;
+		// Token: 0x04001535 RID: 5429
+		public KeyCode jumpKeyboard = KeyCode.Space;
 
-		// Token: 0x040018F9 RID: 6393
+		// Token: 0x04001536 RID: 5430
 		public float jumpVelocity = 7f;
 
-		// Token: 0x040018FA RID: 6394
+		// Token: 0x04001537 RID: 5431
 		public float groundTolerance = 0.2f;
 
-		// Token: 0x040018FB RID: 6395
+		// Token: 0x04001538 RID: 5432
 		public bool checkGroundForJump = true;
 
-		// Token: 0x040018FC RID: 6396
+		// Token: 0x04001539 RID: 5433
 		private float speed;
 
-		// Token: 0x040018FD RID: 6397
+		// Token: 0x0400153A RID: 5434
 		private bool isSprinting;
 
-		// Token: 0x040018FE RID: 6398
+		// Token: 0x0400153B RID: 5435
 		private Animator anim;
 
-		// Token: 0x040018FF RID: 6399
+		// Token: 0x0400153C RID: 5436
 		private Vector2 input;
 
-		// Token: 0x04001900 RID: 6400
+		// Token: 0x0400153D RID: 5437
 		private float velocity;
 
-		// Token: 0x04001901 RID: 6401
+		// Token: 0x0400153E RID: 5438
 		private bool headingleft;
 
-		// Token: 0x04001902 RID: 6402
+		// Token: 0x0400153F RID: 5439
 		private Quaternion targetrot;
 
-		// Token: 0x04001903 RID: 6403
+		// Token: 0x04001540 RID: 5440
 		private Rigidbody rigbody;
 	}
 }

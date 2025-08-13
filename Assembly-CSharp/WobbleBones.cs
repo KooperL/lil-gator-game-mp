@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000323 RID: 803
+// Token: 0x0200025D RID: 605
 public class WobbleBones : MonoBehaviour
 {
-	// Token: 0x06000FAF RID: 4015 RVA: 0x0000DA7C File Offset: 0x0000BC7C
+	// Token: 0x06000D02 RID: 3330 RVA: 0x0003EB72 File Offset: 0x0003CD72
 	private void Start()
 	{
 		this.parent = base.transform.parent;
 		this.LoadBones();
 	}
 
-	// Token: 0x06000FB0 RID: 4016 RVA: 0x000514B0 File Offset: 0x0004F6B0
+	// Token: 0x06000D03 RID: 3331 RVA: 0x0003EB8C File Offset: 0x0003CD8C
 	private void LoadBones()
 	{
 		List<WobbleBones.Bone> list = new List<WobbleBones.Bone>();
@@ -24,7 +24,7 @@ public class WobbleBones : MonoBehaviour
 		this.bones = list.ToArray();
 	}
 
-	// Token: 0x06000FB1 RID: 4017 RVA: 0x000514F0 File Offset: 0x0004F6F0
+	// Token: 0x06000D04 RID: 3332 RVA: 0x0003EBCC File Offset: 0x0003CDCC
 	private void LateUpdate()
 	{
 		for (int i = 0; i < this.bones.Length; i++)
@@ -33,29 +33,29 @@ public class WobbleBones : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FB2 RID: 4018 RVA: 0x00051520 File Offset: 0x0004F720
+	// Token: 0x06000D05 RID: 3333 RVA: 0x0003EBFC File Offset: 0x0003CDFC
 	private void UpdateBone(WobbleBones.Bone bone)
 	{
 		bone.position = Vector3.SmoothDamp(bone.position, bone.transform.parent.TransformPoint(bone.tLocalPosition), ref bone.velocity, 0.05f);
 		bone.transform.position = bone.position;
 	}
 
-	// Token: 0x04001434 RID: 5172
+	// Token: 0x04001118 RID: 4376
 	public float gravityFactor;
 
-	// Token: 0x04001435 RID: 5173
+	// Token: 0x04001119 RID: 4377
 	public float springiness = 1f;
 
-	// Token: 0x04001436 RID: 5174
+	// Token: 0x0400111A RID: 4378
 	private Transform parent;
 
-	// Token: 0x04001437 RID: 5175
+	// Token: 0x0400111B RID: 4379
 	public WobbleBones.Bone[] bones;
 
-	// Token: 0x02000324 RID: 804
+	// Token: 0x02000424 RID: 1060
 	public class Bone
 	{
-		// Token: 0x06000FB4 RID: 4020 RVA: 0x00051570 File Offset: 0x0004F770
+		// Token: 0x06001AFB RID: 6907 RVA: 0x00072B9C File Offset: 0x00070D9C
 		public Bone(Transform transform)
 		{
 			this.transform = transform;
@@ -66,25 +66,25 @@ public class WobbleBones : MonoBehaviour
 			this.length = transform.localPosition.magnitude;
 		}
 
-		// Token: 0x04001438 RID: 5176
+		// Token: 0x04001D50 RID: 7504
 		public Transform transform;
 
-		// Token: 0x04001439 RID: 5177
+		// Token: 0x04001D51 RID: 7505
 		public Vector3 tLocalPosition;
 
-		// Token: 0x0400143A RID: 5178
+		// Token: 0x04001D52 RID: 7506
 		public float length;
 
-		// Token: 0x0400143B RID: 5179
+		// Token: 0x04001D53 RID: 7507
 		public Quaternion tLocalRotation;
 
-		// Token: 0x0400143C RID: 5180
+		// Token: 0x04001D54 RID: 7508
 		public Vector3 position;
 
-		// Token: 0x0400143D RID: 5181
+		// Token: 0x04001D55 RID: 7509
 		public Quaternion rotation;
 
-		// Token: 0x0400143E RID: 5182
+		// Token: 0x04001D56 RID: 7510
 		public Vector3 velocity;
 	}
 }

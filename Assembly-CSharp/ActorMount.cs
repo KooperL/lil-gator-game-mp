@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000CE RID: 206
+// Token: 0x020000A4 RID: 164
 public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionReciever
 {
-	// Token: 0x17000036 RID: 54
-	// (get) Token: 0x06000357 RID: 855 RVA: 0x00004952 File Offset: 0x00002B52
+	// Token: 0x1700001F RID: 31
+	// (get) Token: 0x06000312 RID: 786 RVA: 0x00011E12 File Offset: 0x00010012
 	public bool isMounted
 	{
 		get
@@ -15,8 +15,8 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x17000037 RID: 55
-	// (get) Token: 0x06000358 RID: 856 RVA: 0x0000496B File Offset: 0x00002B6B
+	// Token: 0x17000020 RID: 32
+	// (get) Token: 0x06000313 RID: 787 RVA: 0x00011E2B File Offset: 0x0001002B
 	public bool isFilled
 	{
 		get
@@ -25,14 +25,14 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x06000359 RID: 857 RVA: 0x00004998 File Offset: 0x00002B98
+	// Token: 0x06000314 RID: 788 RVA: 0x00011E58 File Offset: 0x00010058
 	public void StartTransition(float duration)
 	{
 		this.lerp = 0f;
 		this.transitionSpeed = 1f / duration;
 	}
 
-	// Token: 0x0600035A RID: 858 RVA: 0x000252A8 File Offset: 0x000234A8
+	// Token: 0x06000315 RID: 789 RVA: 0x00011E74 File Offset: 0x00010074
 	private void Update()
 	{
 		if (this.mountedActor == null)
@@ -51,7 +51,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x0600035B RID: 859 RVA: 0x00025308 File Offset: 0x00023508
+	// Token: 0x06000316 RID: 790 RVA: 0x00011ED4 File Offset: 0x000100D4
 	public virtual void MovementUpdate(Vector3 input, ref Vector3 position, ref Vector3 velocity, ref Vector3 direction, ref Vector3 up, ref float animationIndex)
 	{
 		Vector3 vector;
@@ -67,7 +67,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		this.HandlePlayerInput(input, ref animationIndex);
 	}
 
-	// Token: 0x0600035C RID: 860 RVA: 0x00025398 File Offset: 0x00023598
+	// Token: 0x06000317 RID: 791 RVA: 0x00011F64 File Offset: 0x00010164
 	protected virtual void HandlePlayerInput(Vector3 input, ref float animationIndex)
 	{
 		animationIndex = -1f;
@@ -86,7 +86,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x0600035D RID: 861 RVA: 0x00025400 File Offset: 0x00023600
+	// Token: 0x06000318 RID: 792 RVA: 0x00011FCC File Offset: 0x000101CC
 	private void UpdateTransform(out Vector3 position, out Quaternion rotation, out Vector3 nextPosition)
 	{
 		Transform transform = (this.gettingIntoPosition ? this.mountAnchor : this.standingAnchor);
@@ -122,7 +122,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x0600035E RID: 862 RVA: 0x00025524 File Offset: 0x00023724
+	// Token: 0x06000319 RID: 793 RVA: 0x000120F0 File Offset: 0x000102F0
 	private Vector3 GetPosition(Transform target, float lerp)
 	{
 		float num = Mathf.Abs(lerp - 0.5f) * 2f;
@@ -130,7 +130,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		return Vector3.Lerp(this.initialPosition, target.position, lerp) + 0.5f * num2 * Vector3.up;
 	}
 
-	// Token: 0x0600035F RID: 863 RVA: 0x00025578 File Offset: 0x00023778
+	// Token: 0x0600031A RID: 794 RVA: 0x00012144 File Offset: 0x00010344
 	public void InviteActor(DialogueActor actor, bool skipToMount = false, bool skipWalk = false)
 	{
 		if (this.isFilled)
@@ -179,13 +179,13 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		base.enabled = false;
 	}
 
-	// Token: 0x06000360 RID: 864 RVA: 0x000049B2 File Offset: 0x00002BB2
+	// Token: 0x0600031B RID: 795 RVA: 0x00012290 File Offset: 0x00010490
 	private void GetIntoMount()
 	{
 		this.GetIntoMount(false);
 	}
 
-	// Token: 0x06000361 RID: 865 RVA: 0x000256C4 File Offset: 0x000238C4
+	// Token: 0x0600031C RID: 796 RVA: 0x0001229C File Offset: 0x0001049C
 	protected virtual void GetIntoMount(bool skipToMount)
 	{
 		this.mountedActor = this.actor.gameObject.AddComponent<MountedActor>();
@@ -259,7 +259,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x06000362 RID: 866 RVA: 0x00025940 File Offset: 0x00023B40
+	// Token: 0x0600031D RID: 797 RVA: 0x00012518 File Offset: 0x00010718
 	public virtual void GetOut()
 	{
 		if (this.mountedActor == null || !this.gettingIntoPosition)
@@ -273,7 +273,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		this.gettingIntoPosition = false;
 	}
 
-	// Token: 0x06000363 RID: 867 RVA: 0x000259B0 File Offset: 0x00023BB0
+	// Token: 0x0600031E RID: 798 RVA: 0x00012588 File Offset: 0x00010788
 	private void GottenOut()
 	{
 		if (this.actor.isPlayer)
@@ -299,7 +299,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		this.actor = null;
 	}
 
-	// Token: 0x06000364 RID: 868 RVA: 0x00025A34 File Offset: 0x00023C34
+	// Token: 0x0600031F RID: 799 RVA: 0x0001260C File Offset: 0x0001080C
 	public virtual void Cancel()
 	{
 		if (this == null)
@@ -317,15 +317,14 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 		Player.footsteps.ClearOverride();
 		Player.footIK.ClearOverrides();
-		Vector2 vector;
-		vector..ctor(Player.movement.velocity.x, Player.movement.velocity.z);
+		Vector2 vector = new Vector2(Player.movement.velocity.x, Player.movement.velocity.z);
 		vector = Vector2.ClampMagnitude(vector, 7f);
 		Player.movement.velocity.x = vector.x;
 		Player.movement.velocity.z = vector.y;
 		this.gettingIntoPosition = false;
 	}
 
-	// Token: 0x06000365 RID: 869 RVA: 0x00025B14 File Offset: 0x00023D14
+	// Token: 0x06000320 RID: 800 RVA: 0x000126EC File Offset: 0x000108EC
 	public virtual void CancelMount()
 	{
 		if (this.actor.isPlayer)
@@ -347,78 +346,78 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		this.gettingIntoPosition = false;
 	}
 
-	// Token: 0x040004D4 RID: 1236
+	// Token: 0x04000436 RID: 1078
 	public ActorPosition position = ActorPosition.P_Seated;
 
-	// Token: 0x040004D5 RID: 1237
+	// Token: 0x04000437 RID: 1079
 	public Transform mountAnchor;
 
-	// Token: 0x040004D6 RID: 1238
+	// Token: 0x04000438 RID: 1080
 	public Transform standingAnchor;
 
-	// Token: 0x040004D7 RID: 1239
+	// Token: 0x04000439 RID: 1081
 	private bool hasSnappedStandingAnchor;
 
-	// Token: 0x040004D8 RID: 1240
+	// Token: 0x0400043A RID: 1082
 	public GameObject filledObject;
 
-	// Token: 0x040004D9 RID: 1241
+	// Token: 0x0400043B RID: 1083
 	[ReadOnly]
 	public DialogueActor actor;
 
-	// Token: 0x040004DA RID: 1242
+	// Token: 0x0400043C RID: 1084
 	private MountedActor mountedActor;
 
-	// Token: 0x040004DB RID: 1243
+	// Token: 0x0400043D RID: 1085
 	private AnimationEvents actorEvents;
 
-	// Token: 0x040004DC RID: 1244
+	// Token: 0x0400043E RID: 1086
 	private Vector3 lastPosition;
 
-	// Token: 0x040004DD RID: 1245
+	// Token: 0x0400043F RID: 1087
 	private Vector3 lastLastPosition;
 
-	// Token: 0x040004DE RID: 1246
+	// Token: 0x04000440 RID: 1088
 	private Vector3 initialPosition;
 
-	// Token: 0x040004DF RID: 1247
+	// Token: 0x04000441 RID: 1089
 	private Quaternion initialRotation;
 
-	// Token: 0x040004E0 RID: 1248
+	// Token: 0x04000442 RID: 1090
 	private bool gettingIntoPosition;
 
-	// Token: 0x040004E1 RID: 1249
+	// Token: 0x04000443 RID: 1091
 	private float lerp;
 
-	// Token: 0x040004E2 RID: 1250
+	// Token: 0x04000444 RID: 1092
 	private const float transitionTime = 0.4f;
 
-	// Token: 0x040004E3 RID: 1251
+	// Token: 0x04000445 RID: 1093
 	private float transitionSpeed;
 
-	// Token: 0x040004E4 RID: 1252
+	// Token: 0x04000446 RID: 1094
 	[HideInInspector]
 	public UnityEvent onGottenInto;
 
-	// Token: 0x040004E5 RID: 1253
+	// Token: 0x04000447 RID: 1095
 	[HideInInspector]
 	public UnityEvent onGottenOut;
 
-	// Token: 0x040004E6 RID: 1254
+	// Token: 0x04000448 RID: 1096
 	public UnityEvent onMount;
 
-	// Token: 0x040004E7 RID: 1255
+	// Token: 0x04000449 RID: 1097
 	public UnityEvent onDismount;
 
-	// Token: 0x040004E8 RID: 1256
+	// Token: 0x0400044A RID: 1098
 	private float movementCounter;
 
-	// Token: 0x040004E9 RID: 1257
+	// Token: 0x0400044B RID: 1099
 	public AnimationSet animationSet;
 
-	// Token: 0x040004EA RID: 1258
+	// Token: 0x0400044C RID: 1100
 	public bool clearEquippedState = true;
 
-	// Token: 0x040004EB RID: 1259
+	// Token: 0x0400044D RID: 1101
 	private static readonly int TransitionID = Animator.StringToHash("Transition");
 }

@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200002F RID: 47
+// Token: 0x02000027 RID: 39
 [AddComponentMenu("Music/MusicSystem States")]
 public class MusicSystemStates : MonoBehaviour
 {
-	// Token: 0x060000A5 RID: 165 RVA: 0x000028D3 File Offset: 0x00000AD3
+	// Token: 0x0600009A RID: 154 RVA: 0x00004F4E File Offset: 0x0000314E
 	private void OnValidate()
 	{
 		this.musicSystem = base.GetComponent<MusicSystem>();
 		this.dynamicStates = base.GetComponent<MusicSystemDynamicStates>();
 	}
 
-	// Token: 0x060000A6 RID: 166 RVA: 0x00019894 File Offset: 0x00017A94
+	// Token: 0x0600009B RID: 155 RVA: 0x00004F68 File Offset: 0x00003168
 	public void SetState(string stateName)
 	{
 		if (this.dynamicStates != null)
@@ -56,7 +56,7 @@ public class MusicSystemStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000A7 RID: 167 RVA: 0x000028ED File Offset: 0x00000AED
+	// Token: 0x0600009C RID: 156 RVA: 0x000050A3 File Offset: 0x000032A3
 	private void OnEnable()
 	{
 		if (!MusicSystemStates.current.Contains(this))
@@ -65,7 +65,7 @@ public class MusicSystemStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000A8 RID: 168 RVA: 0x00002907 File Offset: 0x00000B07
+	// Token: 0x0600009D RID: 157 RVA: 0x000050BD File Offset: 0x000032BD
 	private void OnDestroy()
 	{
 		if (MusicSystemStates.current.Contains(this))
@@ -74,44 +74,44 @@ public class MusicSystemStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040000EF RID: 239
+	// Token: 0x040000CE RID: 206
 	public static List<MusicSystemStates> current = new List<MusicSystemStates>();
 
-	// Token: 0x040000F0 RID: 240
+	// Token: 0x040000CF RID: 207
 	public MusicSystem musicSystem;
 
-	// Token: 0x040000F1 RID: 241
+	// Token: 0x040000D0 RID: 208
 	public MusicSystemDynamicStates dynamicStates;
 
-	// Token: 0x040000F2 RID: 242
+	// Token: 0x040000D1 RID: 209
 	public MusicSystemStates.State[] states;
 
-	// Token: 0x02000030 RID: 48
+	// Token: 0x02000358 RID: 856
 	[Serializable]
 	public struct State
 	{
-		// Token: 0x040000F3 RID: 243
+		// Token: 0x040019F5 RID: 6645
 		public string name;
 
-		// Token: 0x040000F4 RID: 244
+		// Token: 0x040019F6 RID: 6646
 		[MusicStateLookup("musicStates")]
 		public string[] applicableStates;
 
-		// Token: 0x040000F5 RID: 245
+		// Token: 0x040019F7 RID: 6647
 		public MusicSystemStates.State.Layer[] layers;
 
-		// Token: 0x040000F6 RID: 246
+		// Token: 0x040019F8 RID: 6648
 		public bool isFallback;
 
-		// Token: 0x02000031 RID: 49
+		// Token: 0x020004BB RID: 1211
 		[Serializable]
 		public class Layer
 		{
-			// Token: 0x040000F7 RID: 247
+			// Token: 0x04001FA6 RID: 8102
 			[MusicLayerLookup("musicSystem")]
 			public string layerName;
 
-			// Token: 0x040000F8 RID: 248
+			// Token: 0x04001FA7 RID: 8103
 			[Range(0f, 1f)]
 			public float volume = 1f;
 		}

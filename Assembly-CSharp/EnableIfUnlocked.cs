@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001FE RID: 510
+// Token: 0x02000188 RID: 392
 public class EnableIfUnlocked : MonoBehaviour
 {
-	// Token: 0x06000976 RID: 2422 RVA: 0x00039D44 File Offset: 0x00037F44
+	// Token: 0x0600080C RID: 2060 RVA: 0x00026CD8 File Offset: 0x00024ED8
 	private void OnValidate()
 	{
 		if (this.profile == null)
@@ -17,7 +17,7 @@ public class EnableIfUnlocked : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000977 RID: 2423 RVA: 0x000092DC File Offset: 0x000074DC
+	// Token: 0x0600080D RID: 2061 RVA: 0x00026D0F File Offset: 0x00024F0F
 	private void Start()
 	{
 		if (!this.profile.IsUnlocked)
@@ -28,7 +28,7 @@ public class EnableIfUnlocked : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000978 RID: 2424 RVA: 0x00009315 File Offset: 0x00007515
+	// Token: 0x0600080E RID: 2062 RVA: 0x00026D48 File Offset: 0x00024F48
 	private void OnDestroy()
 	{
 		if (this.hasEvent)
@@ -37,15 +37,15 @@ public class EnableIfUnlocked : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000979 RID: 2425 RVA: 0x00009336 File Offset: 0x00007536
+	// Token: 0x0600080F RID: 2063 RVA: 0x00026D69 File Offset: 0x00024F69
 	public void OnChange(object sender, bool isUnlocked)
 	{
 		base.gameObject.SetActive(isUnlocked);
 	}
 
-	// Token: 0x04000C24 RID: 3108
+	// Token: 0x04000A3B RID: 2619
 	public CharacterProfile profile;
 
-	// Token: 0x04000C25 RID: 3109
+	// Token: 0x04000A3C RID: 2620
 	private bool hasEvent;
 }

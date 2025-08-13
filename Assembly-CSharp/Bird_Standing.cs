@@ -5,13 +5,13 @@ using UnityEngine.Events;
 // Token: 0x02000003 RID: 3
 public class Bird_Standing : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06000004 RID: 4 RVA: 0x0000209B File Offset: 0x0000029B
+	// Token: 0x06000004 RID: 4 RVA: 0x00002194 File Offset: 0x00000394
 	private void Start()
 	{
 		this.proximityTrigger.radius *= Random.Range(1f - this.proximityTriggerVariance, 1f + this.proximityTriggerVariance);
 	}
 
-	// Token: 0x06000005 RID: 5 RVA: 0x00017114 File Offset: 0x00015314
+	// Token: 0x06000005 RID: 5 RVA: 0x000021C8 File Offset: 0x000003C8
 	private void OnEnable()
 	{
 		if (this.attachedTightrope != null)
@@ -28,7 +28,7 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000006 RID: 6 RVA: 0x000171A0 File Offset: 0x000153A0
+	// Token: 0x06000006 RID: 6 RVA: 0x00002254 File Offset: 0x00000454
 	private void OnDisable()
 	{
 		if (this.attachedTightrope != null)
@@ -45,7 +45,7 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000007 RID: 7 RVA: 0x000020CC File Offset: 0x000002CC
+	// Token: 0x06000007 RID: 7 RVA: 0x000022DF File Offset: 0x000004DF
 	private void OnDestroy()
 	{
 		if (this.respawn && this.isFlying && FastUpdateManager.updateEvery8.Contains(this))
@@ -54,13 +54,13 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000008 RID: 8 RVA: 0x000020F7 File Offset: 0x000002F7
+	// Token: 0x06000008 RID: 8 RVA: 0x0000230A File Offset: 0x0000050A
 	public void OnTriggerEnter(Collider other)
 	{
 		this.BeginFlying();
 	}
 
-	// Token: 0x06000009 RID: 9 RVA: 0x0001722C File Offset: 0x0001542C
+	// Token: 0x06000009 RID: 9 RVA: 0x00002314 File Offset: 0x00000514
 	public void BeginFlying()
 	{
 		if (this.isFlying)
@@ -78,7 +78,7 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600000A RID: 10 RVA: 0x000172BC File Offset: 0x000154BC
+	// Token: 0x0600000A RID: 10 RVA: 0x000023A4 File Offset: 0x000005A4
 	public void ManagedUpdate()
 	{
 		if (this.attachedTightrope != null && this.attachedTightrope.enabled)
@@ -102,7 +102,7 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x0600000B RID: 11 RVA: 0x00017360 File Offset: 0x00015560
+	// Token: 0x0600000B RID: 11 RVA: 0x00002448 File Offset: 0x00000648
 	[ContextMenu("Snap to...")]
 	public void SnapTo()
 	{

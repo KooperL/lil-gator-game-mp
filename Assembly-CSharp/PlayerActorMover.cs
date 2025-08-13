@@ -3,16 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000F6 RID: 246
+// Token: 0x020000B7 RID: 183
 public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovement
 {
-	// Token: 0x060004A6 RID: 1190 RVA: 0x000055CA File Offset: 0x000037CA
-	private void OnDisable()
-	{
-		this.path.Clear();
-	}
-
-	// Token: 0x060004A7 RID: 1191 RVA: 0x0002B470 File Offset: 0x00029670
+	// Token: 0x060003F3 RID: 1011 RVA: 0x00017160 File Offset: 0x00015360
 	public void MovementUpdate(Vector3 input, ref Vector3 position, ref Vector3 velocity, ref Vector3 direction, ref Vector3 up, ref float animationIndex)
 	{
 		if (this.pathArray == null)
@@ -63,7 +57,7 @@ public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovemen
 		direction = vector2;
 	}
 
-	// Token: 0x060004A8 RID: 1192 RVA: 0x0002B690 File Offset: 0x00029890
+	// Token: 0x060003F4 RID: 1012 RVA: 0x00017380 File Offset: 0x00015580
 	public float MoveAlongPath(float t, float distance)
 	{
 		if (distance == 0f)
@@ -89,9 +83,13 @@ public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovemen
 		return Mathf.Clamp(t + distance * num2, 0f, (float)(this.path.Count - 1));
 	}
 
-	// Token: 0x060004A9 RID: 1193 RVA: 0x0002B748 File Offset: 0x00029948
+	// Token: 0x060003F5 RID: 1013 RVA: 0x00017438 File Offset: 0x00015638
 	public void SetMark(Vector3[] positions, Quaternion rotation, float speed, UnityEvent onReachMark, bool skipToStart, bool disableInteraction = false, bool playFootsteps = true)
 	{
+		if (this.path == null)
+		{
+			this.path = new List<Vector3>();
+		}
 		this.path.Clear();
 		if (!skipToStart)
 		{
@@ -143,7 +141,7 @@ public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovemen
 		this.mountedActor.GetOut();
 	}
 
-	// Token: 0x060004AA RID: 1194 RVA: 0x0002B8C8 File Offset: 0x00029AC8
+	// Token: 0x060003F6 RID: 1014 RVA: 0x000175C8 File Offset: 0x000157C8
 	private void StartMoving()
 	{
 		this.path[0] = (this.pathArray[0] = base.transform.position);
@@ -168,14 +166,14 @@ public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovemen
 		base.enabled = true;
 	}
 
-	// Token: 0x060004AB RID: 1195 RVA: 0x000055D7 File Offset: 0x000037D7
+	// Token: 0x060003F7 RID: 1015 RVA: 0x000176CE File Offset: 0x000158CE
 	public void Cancel()
 	{
 		this.onReachMark = new UnityEvent();
 		base.enabled = false;
 	}
 
-	// Token: 0x060004AC RID: 1196 RVA: 0x000055EB File Offset: 0x000037EB
+	// Token: 0x060003F8 RID: 1016 RVA: 0x000176E2 File Offset: 0x000158E2
 	public void CancelMove()
 	{
 		if (!base.enabled)
@@ -185,48 +183,48 @@ public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovemen
 		Player.movement.ClearMods();
 	}
 
-	// Token: 0x04000689 RID: 1673
+	// Token: 0x04000577 RID: 1399
 	private MountedActor mountedActor;
 
-	// Token: 0x0400068A RID: 1674
+	// Token: 0x04000578 RID: 1400
 	public bool snapPathToGround = true;
 
-	// Token: 0x0400068B RID: 1675
+	// Token: 0x04000579 RID: 1401
 	public bool snapMovementToGround;
 
-	// Token: 0x0400068C RID: 1676
+	// Token: 0x0400057A RID: 1402
 	public float speed = 4f;
 
-	// Token: 0x0400068D RID: 1677
+	// Token: 0x0400057B RID: 1403
 	public float acc = 15f;
 
-	// Token: 0x0400068E RID: 1678
+	// Token: 0x0400057C RID: 1404
 	private float targetSpeed;
 
-	// Token: 0x0400068F RID: 1679
+	// Token: 0x0400057D RID: 1405
 	private float smoothSpeed;
 
-	// Token: 0x04000690 RID: 1680
+	// Token: 0x0400057E RID: 1406
 	private List<Vector3> path = new List<Vector3>();
 
-	// Token: 0x04000691 RID: 1681
+	// Token: 0x0400057F RID: 1407
 	private Vector3[] pathArray;
 
-	// Token: 0x04000692 RID: 1682
+	// Token: 0x04000580 RID: 1408
 	private Quaternion markRotation;
 
-	// Token: 0x04000693 RID: 1683
+	// Token: 0x04000581 RID: 1409
 	private float t;
 
-	// Token: 0x04000694 RID: 1684
+	// Token: 0x04000582 RID: 1410
 	private const float targetRotationLerpDistance = 0.5f;
 
-	// Token: 0x04000695 RID: 1685
+	// Token: 0x04000583 RID: 1411
 	private Vector3 lastPosition;
 
-	// Token: 0x04000696 RID: 1686
+	// Token: 0x04000584 RID: 1412
 	private UnityEvent onReachMark;
 
-	// Token: 0x04000697 RID: 1687
+	// Token: 0x04000585 RID: 1413
 	private const float speedStepProbe = 0.01f;
 }

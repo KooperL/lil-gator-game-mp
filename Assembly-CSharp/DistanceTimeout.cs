@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000139 RID: 313
+// Token: 0x020000E8 RID: 232
 public class DistanceTimeout : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x17000099 RID: 153
-	// (set) Token: 0x060005D3 RID: 1491 RVA: 0x00006255 File Offset: 0x00004455
+	// Token: 0x17000041 RID: 65
+	// (set) Token: 0x060004C7 RID: 1223 RVA: 0x0001A10F File Offset: 0x0001830F
 	public bool AutomaticTimeout
 	{
 		set
@@ -14,13 +14,13 @@ public class DistanceTimeout : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060005D4 RID: 1492 RVA: 0x0000625E File Offset: 0x0000445E
+	// Token: 0x060004C8 RID: 1224 RVA: 0x0001A118 File Offset: 0x00018318
 	private void Awake()
 	{
 		this.sqrDistance = this.distance * this.distance;
 	}
 
-	// Token: 0x060005D5 RID: 1493 RVA: 0x00006273 File Offset: 0x00004473
+	// Token: 0x060004C9 RID: 1225 RVA: 0x0001A12D File Offset: 0x0001832D
 	private void OnEnable()
 	{
 		if (this.automaticTimeout)
@@ -30,13 +30,13 @@ public class DistanceTimeout : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEvery4.Add(this);
 	}
 
-	// Token: 0x060005D6 RID: 1494 RVA: 0x0000266A File Offset: 0x0000086A
+	// Token: 0x060004CA RID: 1226 RVA: 0x0001A154 File Offset: 0x00018354
 	private void OnDisable()
 	{
 		FastUpdateManager.updateEvery4.Remove(this);
 	}
 
-	// Token: 0x060005D7 RID: 1495 RVA: 0x0002EE14 File Offset: 0x0002D014
+	// Token: 0x060004CB RID: 1227 RVA: 0x0001A164 File Offset: 0x00018364
 	public void ManagedUpdate()
 	{
 		Vector3 vector = MainCamera.t.position - base.transform.position;
@@ -50,7 +50,7 @@ public class DistanceTimeout : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060005D8 RID: 1496 RVA: 0x0002EE7C File Offset: 0x0002D07C
+	// Token: 0x060004CC RID: 1228 RVA: 0x0001A1CC File Offset: 0x000183CC
 	public void Timeout()
 	{
 		if (this.callback == null && this.callbackObject != null)
@@ -75,37 +75,37 @@ public class DistanceTimeout : MonoBehaviour, IManagedUpdate
 		Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060005D9 RID: 1497 RVA: 0x0000629A File Offset: 0x0000449A
+	// Token: 0x060004CD RID: 1229 RVA: 0x0001A267 File Offset: 0x00018467
 	public void SetTimeoutTime(float timeFromNow)
 	{
 		this.automaticTimeoutTime = Time.time + timeFromNow;
 	}
 
-	// Token: 0x040007DF RID: 2015
+	// Token: 0x0400069D RID: 1693
 	public float distance = 50f;
 
-	// Token: 0x040007E0 RID: 2016
+	// Token: 0x0400069E RID: 1694
 	public bool useFlatDistance = true;
 
-	// Token: 0x040007E1 RID: 2017
+	// Token: 0x0400069F RID: 1695
 	private float sqrDistance;
 
-	// Token: 0x040007E2 RID: 2018
+	// Token: 0x040006A0 RID: 1696
 	public GameObject callbackObject;
 
-	// Token: 0x040007E3 RID: 2019
+	// Token: 0x040006A1 RID: 1697
 	public IOnTimeout callback;
 
-	// Token: 0x040007E4 RID: 2020
+	// Token: 0x040006A2 RID: 1698
 	public GameObject[] callbackObjects;
 
-	// Token: 0x040007E5 RID: 2021
+	// Token: 0x040006A3 RID: 1699
 	public bool automaticTimeout;
 
-	// Token: 0x040007E6 RID: 2022
+	// Token: 0x040006A4 RID: 1700
 	[ConditionalHide("automaticTimeout", true)]
 	public float automaticTimeoutDelay = 10f;
 
-	// Token: 0x040007E7 RID: 2023
+	// Token: 0x040006A5 RID: 1701
 	private float automaticTimeoutTime = -1f;
 }

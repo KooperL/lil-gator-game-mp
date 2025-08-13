@@ -1,28 +1,28 @@
 ﻿using System;
 
-// Token: 0x0200021A RID: 538
+// Token: 0x0200019E RID: 414
 public enum ActorState
 {
-	// Token: 0x04000C8B RID: 3211
+	// Token: 0x04000A86 RID: 2694
 	S_Neutral,
-	// Token: 0x04000C8C RID: 3212
+	// Token: 0x04000A87 RID: 2695
 	S_Happy,
-	// Token: 0x04000C8D RID: 3213
+	// Token: 0x04000A88 RID: 2696
 	S_Sad,
-	// Token: 0x04000C8E RID: 3214
+	// Token: 0x04000A89 RID: 2697
 	S_Scared,
-	// Token: 0x04000C8F RID: 3215
+	// Token: 0x04000A8A RID: 2698
 	S_Cool,
-	// Token: 0x04000C90 RID: 3216
+	// Token: 0x04000A8B RID: 2699
 	S_Excited,
-	// Token: 0x04000C91 RID: 3217
+	// Token: 0x04000A8C RID: 2700
 	S_Busy,
-	// Token: 0x04000C92 RID: 3218
+	// Token: 0x04000A8D RID: 2701
 	S_Tense,
-	// Token: 0x04000C93 RID: 3219
+	// Token: 0x04000A8E RID: 2702
 	S_Annoyed,
-	// Token: 0x04000C94 RID: 3220
+	// Token: 0x04000A8F RID: 2703
 	S_Nervous,
-	// Token: 0x04000C95 RID: 3221
+	// Token: 0x04000A90 RID: 2704
 	S_Antsy
 }

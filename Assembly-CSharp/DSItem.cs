@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000129 RID: 297
+// Token: 0x020000DC RID: 220
 [AddComponentMenu("Dialogue Sequence/Item")]
 public class DSItem : DialogueSequence
 {
-	// Token: 0x0600058D RID: 1421 RVA: 0x00005FCA File Offset: 0x000041CA
+	// Token: 0x06000496 RID: 1174 RVA: 0x00019A50 File Offset: 0x00017C50
 	private void OnValidate()
 	{
 		if (this.uiItemGet == null)
@@ -15,7 +15,7 @@ public class DSItem : DialogueSequence
 		}
 	}
 
-	// Token: 0x0600058E RID: 1422 RVA: 0x0002E4DC File Offset: 0x0002C6DC
+	// Token: 0x06000497 RID: 1175 RVA: 0x00019A6C File Offset: 0x00017C6C
 	[ContextMenu("Add Name Entry")]
 	public void AddNameEntry()
 	{
@@ -30,7 +30,7 @@ public class DSItem : DialogueSequence
 		this.document.AddStringEntry(this.itemName_ID, this.itemName);
 	}
 
-	// Token: 0x0600058F RID: 1423 RVA: 0x00005FE6 File Offset: 0x000041E6
+	// Token: 0x06000498 RID: 1176 RVA: 0x00019AC9 File Offset: 0x00017CC9
 	public override void Activate()
 	{
 		if (this.uiItemGet == null)
@@ -41,18 +41,18 @@ public class DSItem : DialogueSequence
 		DialogueManager.d.SetDialogueCamera(this.actors);
 	}
 
-	// Token: 0x06000590 RID: 1424 RVA: 0x00006018 File Offset: 0x00004218
+	// Token: 0x06000499 RID: 1177 RVA: 0x00019AFB File Offset: 0x00017CFB
 	public override YieldInstruction Run()
 	{
 		return CoroutineUtil.Start(this.RunItemSequence());
 	}
 
-	// Token: 0x06000591 RID: 1425 RVA: 0x00006025 File Offset: 0x00004225
+	// Token: 0x0600049A RID: 1178 RVA: 0x00019B08 File Offset: 0x00017D08
 	public IEnumerator RunItemSequence()
 	{
 		if ((!this.isRealItem || this.overrideName) && this.document != null && !string.IsNullOrEmpty(this.itemName_ID))
 		{
-			this.itemName = this.document.FetchString(this.itemName_ID, Language.English);
+			this.itemName = this.document.FetchString(this.itemName_ID, Language.Auto);
 		}
 		if (this.isRealItem)
 		{
@@ -88,58 +88,58 @@ public class DSItem : DialogueSequence
 		yield break;
 	}
 
-	// Token: 0x06000592 RID: 1426 RVA: 0x00006034 File Offset: 0x00004234
+	// Token: 0x0600049B RID: 1179 RVA: 0x00019B17 File Offset: 0x00017D17
 	public override void Deactivate()
 	{
 		base.Deactivate();
 	}
 
-	// Token: 0x0400079A RID: 1946
+	// Token: 0x04000666 RID: 1638
 	public UIItemGet uiItemGet;
 
-	// Token: 0x0400079B RID: 1947
+	// Token: 0x04000667 RID: 1639
 	public bool isRealItem;
 
-	// Token: 0x0400079C RID: 1948
+	// Token: 0x04000668 RID: 1640
 	[ConditionalHide("isRealItem", true)]
 	public ItemObject item;
 
-	// Token: 0x0400079D RID: 1949
+	// Token: 0x04000669 RID: 1641
 	[ConditionalHide("isRealItem", true)]
 	public bool unlockItem;
 
-	// Token: 0x0400079E RID: 1950
+	// Token: 0x0400066A RID: 1642
 	[ConditionalHide("isRealItem", true)]
 	public bool equipItem;
 
-	// Token: 0x0400079F RID: 1951
+	// Token: 0x0400066B RID: 1643
 	[ConditionalHide("isRealItem", true)]
 	public bool overrideSprite;
 
-	// Token: 0x040007A0 RID: 1952
+	// Token: 0x0400066C RID: 1644
 	[ConditionalHide("isRealItem", true, InverseCondition1 = true, ConditionalSourceField2 = "overrideSprite", UseOrLogic = true)]
 	public Sprite itemSprite;
 
-	// Token: 0x040007A1 RID: 1953
+	// Token: 0x0400066D RID: 1645
 	[ConditionalHide("isRealItem", true)]
 	public bool overrideName;
 
-	// Token: 0x040007A2 RID: 1954
+	// Token: 0x0400066E RID: 1646
 	[ConditionalHide("isRealItem", true, InverseCondition1 = true, ConditionalSourceField2 = "overrideName", UseOrLogic = true)]
 	public string itemName;
 
-	// Token: 0x040007A3 RID: 1955
+	// Token: 0x0400066F RID: 1647
 	[TextLookup("document")]
 	public string itemName_ID;
 
-	// Token: 0x040007A4 RID: 1956
+	// Token: 0x04000670 RID: 1648
 	[Space]
 	public MultilingualTextDocument document;
 
-	// Token: 0x040007A5 RID: 1957
+	// Token: 0x04000671 RID: 1649
 	[ChunkLookup("document")]
 	public string dialogue;
 
-	// Token: 0x040007A6 RID: 1958
+	// Token: 0x04000672 RID: 1650
 	public DialogueActor[] actors;
 }

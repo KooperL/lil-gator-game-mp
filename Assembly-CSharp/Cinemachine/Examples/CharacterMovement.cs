@@ -3,18 +3,18 @@ using UnityEngine;
 
 namespace Cinemachine.Examples
 {
-	// Token: 0x020003E8 RID: 1000
+	// Token: 0x020002F5 RID: 757
 	[AddComponentMenu("")]
 	public class CharacterMovement : MonoBehaviour
 	{
-		// Token: 0x06001351 RID: 4945 RVA: 0x000106A9 File Offset: 0x0000E8A9
+		// Token: 0x06001024 RID: 4132 RVA: 0x0004D477 File Offset: 0x0004B677
 		private void Start()
 		{
 			this.anim = base.GetComponent<Animator>();
 			this.mainCamera = Camera.main;
 		}
 
-		// Token: 0x06001352 RID: 4946 RVA: 0x0005E4E8 File Offset: 0x0005C6E8
+		// Token: 0x06001025 RID: 4133 RVA: 0x0004D490 File Offset: 0x0004B690
 		private void FixedUpdate()
 		{
 			this.input.x = Input.GetAxis("Horizontal");
@@ -52,13 +52,12 @@ namespace Cinemachine.Examples
 				{
 					num2 = this.freeRotation.eulerAngles.y;
 				}
-				Vector3 vector;
-				vector..ctor(0f, num2, 0f);
+				Vector3 vector = new Vector3(0f, num2, 0f);
 				base.transform.rotation = Quaternion.Slerp(base.transform.rotation, Quaternion.Euler(vector), this.turnSpeed * this.turnSpeedMultiplier * Time.deltaTime);
 			}
 		}
 
-		// Token: 0x06001353 RID: 4947 RVA: 0x0005E768 File Offset: 0x0005C968
+		// Token: 0x06001026 RID: 4134 RVA: 0x0004D710 File Offset: 0x0004B910
 		public virtual void UpdateTargetDirection()
 		{
 			if (!this.useCharacterForward)
@@ -77,49 +76,49 @@ namespace Cinemachine.Examples
 			this.targetDirection = this.input.x * vector4 + Mathf.Abs(this.input.y) * vector3;
 		}
 
-		// Token: 0x040018E6 RID: 6374
+		// Token: 0x04001523 RID: 5411
 		public bool useCharacterForward;
 
-		// Token: 0x040018E7 RID: 6375
+		// Token: 0x04001524 RID: 5412
 		public bool lockToCameraForward;
 
-		// Token: 0x040018E8 RID: 6376
+		// Token: 0x04001525 RID: 5413
 		public float turnSpeed = 10f;
 
-		// Token: 0x040018E9 RID: 6377
-		public KeyCode sprintJoystick = 332;
+		// Token: 0x04001526 RID: 5414
+		public KeyCode sprintJoystick = KeyCode.JoystickButton2;
 
-		// Token: 0x040018EA RID: 6378
-		public KeyCode sprintKeyboard = 32;
+		// Token: 0x04001527 RID: 5415
+		public KeyCode sprintKeyboard = KeyCode.Space;
 
-		// Token: 0x040018EB RID: 6379
+		// Token: 0x04001528 RID: 5416
 		private float turnSpeedMultiplier;
 
-		// Token: 0x040018EC RID: 6380
+		// Token: 0x04001529 RID: 5417
 		private float speed;
 
-		// Token: 0x040018ED RID: 6381
+		// Token: 0x0400152A RID: 5418
 		private float direction;
 
-		// Token: 0x040018EE RID: 6382
+		// Token: 0x0400152B RID: 5419
 		private bool isSprinting;
 
-		// Token: 0x040018EF RID: 6383
+		// Token: 0x0400152C RID: 5420
 		private Animator anim;
 
-		// Token: 0x040018F0 RID: 6384
+		// Token: 0x0400152D RID: 5421
 		private Vector3 targetDirection;
 
-		// Token: 0x040018F1 RID: 6385
+		// Token: 0x0400152E RID: 5422
 		private Vector2 input;
 
-		// Token: 0x040018F2 RID: 6386
+		// Token: 0x0400152F RID: 5423
 		private Quaternion freeRotation;
 
-		// Token: 0x040018F3 RID: 6387
+		// Token: 0x04001530 RID: 5424
 		private Camera mainCamera;
 
-		// Token: 0x040018F4 RID: 6388
+		// Token: 0x04001531 RID: 5425
 		private float velocity;
 	}
 }

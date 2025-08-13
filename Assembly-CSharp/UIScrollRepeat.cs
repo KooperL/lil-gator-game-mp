@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Token: 0x020003C8 RID: 968
+// Token: 0x020002DC RID: 732
 public class UIScrollRepeat : MonoBehaviour
 {
-	// Token: 0x06001289 RID: 4745 RVA: 0x0005B5CC File Offset: 0x000597CC
+	// Token: 0x06000F75 RID: 3957 RVA: 0x0004A210 File Offset: 0x00048410
 	[ContextMenu("Fit to size")]
 	public void FitToSize()
 	{
@@ -16,14 +16,14 @@ public class UIScrollRepeat : MonoBehaviour
 		component.offsetMin = -0.5f * this.tileSize;
 	}
 
-	// Token: 0x0600128A RID: 4746 RVA: 0x0005B628 File Offset: 0x00059828
+	// Token: 0x06000F76 RID: 3958 RVA: 0x0004A26C File Offset: 0x0004846C
 	private void Start()
 	{
 		Transform transform = base.transform;
 		while (this.selectableRoot == null && transform != null)
 		{
 			IEventSystemHandler eventSystemHandler;
-			if (transform.TryGetComponent<IEventSystemHandler>(ref eventSystemHandler))
+			if (transform.TryGetComponent<IEventSystemHandler>(out eventSystemHandler))
 			{
 				this.selectableRoot = transform.gameObject;
 			}
@@ -35,7 +35,7 @@ public class UIScrollRepeat : MonoBehaviour
 		this.tileSize = base.GetComponent<Image>().sprite.rect.size;
 	}
 
-	// Token: 0x0600128B RID: 4747 RVA: 0x0005B694 File Offset: 0x00059894
+	// Token: 0x06000F77 RID: 3959 RVA: 0x0004A2D8 File Offset: 0x000484D8
 	private void Update()
 	{
 		if (this.selectableRoot != null && EventSystem.current.currentSelectedGameObject != this.selectableRoot)
@@ -55,23 +55,23 @@ public class UIScrollRepeat : MonoBehaviour
 		Vector2 vector = this.position;
 		if (this.pixelPerfect)
 		{
-			vector..ctor(Mathf.Round(vector.x), Mathf.Round(vector.y));
+			vector = new Vector2(Mathf.Round(vector.x), Mathf.Round(vector.y));
 		}
 		base.transform.localPosition = this.position;
 	}
 
-	// Token: 0x040017E8 RID: 6120
+	// Token: 0x04001443 RID: 5187
 	public Vector2 scrollSpeed;
 
-	// Token: 0x040017E9 RID: 6121
+	// Token: 0x04001444 RID: 5188
 	public Vector2 tileSize = Vector2.one;
 
-	// Token: 0x040017EA RID: 6122
+	// Token: 0x04001445 RID: 5189
 	public bool pixelPerfect;
 
-	// Token: 0x040017EB RID: 6123
+	// Token: 0x04001446 RID: 5190
 	private Vector2 position;
 
-	// Token: 0x040017EC RID: 6124
+	// Token: 0x04001447 RID: 5191
 	private GameObject selectableRoot;
 }

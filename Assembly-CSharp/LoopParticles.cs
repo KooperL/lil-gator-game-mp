@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000148 RID: 328
+// Token: 0x020000F5 RID: 245
 public class LoopParticles : MonoBehaviour, IManagedUpdate, ICameraCut
 {
-	// Token: 0x06000622 RID: 1570 RVA: 0x0002FC34 File Offset: 0x0002DE34
+	// Token: 0x06000510 RID: 1296 RVA: 0x0001B2FC File Offset: 0x000194FC
 	private void OnEnable()
 	{
 		this.particleSystem = base.GetComponent<ParticleSystem>();
@@ -17,20 +17,20 @@ public class LoopParticles : MonoBehaviour, IManagedUpdate, ICameraCut
 		CameraCutDetector.subscribers.Add(this);
 	}
 
-	// Token: 0x06000623 RID: 1571 RVA: 0x00006670 File Offset: 0x00004870
+	// Token: 0x06000511 RID: 1297 RVA: 0x0001B365 File Offset: 0x00019565
 	private void OnDisable()
 	{
 		FastUpdateManager.updateEvery4.Remove(this);
 		CameraCutDetector.subscribers.Remove(this);
 	}
 
-	// Token: 0x06000624 RID: 1572 RVA: 0x0000668A File Offset: 0x0000488A
+	// Token: 0x06000512 RID: 1298 RVA: 0x0001B37F File Offset: 0x0001957F
 	public void OnCameraCut()
 	{
 		this.ManagedUpdate();
 	}
 
-	// Token: 0x06000625 RID: 1573 RVA: 0x0002FCA0 File Offset: 0x0002DEA0
+	// Token: 0x06000513 RID: 1299 RVA: 0x0001B388 File Offset: 0x00019588
 	public void ManagedUpdate()
 	{
 		int num = this.particleSystem.GetParticles(this.particles);
@@ -58,7 +58,7 @@ public class LoopParticles : MonoBehaviour, IManagedUpdate, ICameraCut
 		this.particleSystem.SetParticles(this.particles, num);
 	}
 
-	// Token: 0x06000626 RID: 1574 RVA: 0x0002FD6C File Offset: 0x0002DF6C
+	// Token: 0x06000514 RID: 1300 RVA: 0x0001B454 File Offset: 0x00019654
 	private Vector3 LoopBounds(Vector3 point)
 	{
 		for (int i = 0; i < 3; i++)
@@ -82,21 +82,21 @@ public class LoopParticles : MonoBehaviour, IManagedUpdate, ICameraCut
 		return point;
 	}
 
-	// Token: 0x04000842 RID: 2114
+	// Token: 0x040006FB RID: 1787
 	public Vector3 loopSize;
 
-	// Token: 0x04000843 RID: 2115
+	// Token: 0x040006FC RID: 1788
 	private Bounds bounds;
 
-	// Token: 0x04000844 RID: 2116
+	// Token: 0x040006FD RID: 1789
 	private ParticleSystem particleSystem;
 
-	// Token: 0x04000845 RID: 2117
+	// Token: 0x040006FE RID: 1790
 	private ParticleSystem.Particle[] particles;
 
-	// Token: 0x04000846 RID: 2118
+	// Token: 0x040006FF RID: 1791
 	public int smoothing;
 
-	// Token: 0x04000847 RID: 2119
+	// Token: 0x04000700 RID: 1792
 	private int[] smoothCounter;
 }

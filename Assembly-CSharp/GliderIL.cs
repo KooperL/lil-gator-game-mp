@@ -1,12 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200006E RID: 110
+// Token: 0x02000055 RID: 85
 public class GliderIL : MonoBehaviour
 {
-	// Token: 0x04000220 RID: 544
+	// Token: 0x040001BC RID: 444
 	public Renderer renderer;
 
-	// Token: 0x04000221 RID: 545
+	// Token: 0x040001BD RID: 445
 	public Material ilMaterial;
 }

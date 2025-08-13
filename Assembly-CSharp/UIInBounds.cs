@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003AA RID: 938
+// Token: 0x020002C8 RID: 712
 public class UIInBounds : MonoBehaviour
 {
-	// Token: 0x060011CD RID: 4557 RVA: 0x0000F34C File Offset: 0x0000D54C
+	// Token: 0x06000EF5 RID: 3829 RVA: 0x00047D1B File Offset: 0x00045F1B
 	private void Awake()
 	{
 		this.rectTransform = base.GetComponent<RectTransform>();
 	}
 
-	// Token: 0x060011CE RID: 4558 RVA: 0x0000F35A File Offset: 0x0000D55A
+	// Token: 0x06000EF6 RID: 3830 RVA: 0x00047D29 File Offset: 0x00045F29
 	private void Start()
 	{
 		this.anchor = this.rectTransform.anchoredPosition;
 	}
 
-	// Token: 0x060011CF RID: 4559 RVA: 0x00058FA8 File Offset: 0x000571A8
+	// Token: 0x06000EF7 RID: 3831 RVA: 0x00047D3C File Offset: 0x00045F3C
 	private void LateUpdate()
 	{
 		this.rectTransform.anchoredPosition = this.anchor;
@@ -67,18 +67,18 @@ public class UIInBounds : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001705 RID: 5893
+	// Token: 0x0400138F RID: 5007
 	public RectTransform boundsReference;
 
-	// Token: 0x04001706 RID: 5894
+	// Token: 0x04001390 RID: 5008
 	public RectTransform canvas;
 
-	// Token: 0x04001707 RID: 5895
+	// Token: 0x04001391 RID: 5009
 	private RectTransform rectTransform;
 
-	// Token: 0x04001708 RID: 5896
+	// Token: 0x04001392 RID: 5010
 	private Vector2 anchor;
 
-	// Token: 0x04001709 RID: 5897
+	// Token: 0x04001393 RID: 5011
 	public GameObject outOfBoundsObject;
 }

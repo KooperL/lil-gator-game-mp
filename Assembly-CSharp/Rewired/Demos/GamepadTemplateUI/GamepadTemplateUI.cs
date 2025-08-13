@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Rewired.Demos.GamepadTemplateUI
 {
-	// Token: 0x020004B5 RID: 1205
+	// Token: 0x0200034D RID: 845
 	public class GamepadTemplateUI : MonoBehaviour
 	{
-		// Token: 0x17000626 RID: 1574
-		// (get) Token: 0x06001DEC RID: 7660 RVA: 0x00016EDD File Offset: 0x000150DD
+		// Token: 0x17000429 RID: 1065
+		// (get) Token: 0x060017E8 RID: 6120 RVA: 0x00065FE6 File Offset: 0x000641E6
 		private Player player
 		{
 			get
@@ -17,7 +17,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001DED RID: 7661 RVA: 0x000750A0 File Offset: 0x000732A0
+		// Token: 0x060017E9 RID: 6121 RVA: 0x00065FF8 File Offset: 0x000641F8
 		private void Awake()
 		{
 			this._uiElementsArray = new GamepadTemplateUI.UIElement[]
@@ -59,7 +59,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			ReInput.ControllerDisconnectedEvent += this.OnControllerDisconnected;
 		}
 
-		// Token: 0x06001DEE RID: 7662 RVA: 0x00016EEF File Offset: 0x000150EF
+		// Token: 0x060017EA RID: 6122 RVA: 0x0006620D File Offset: 0x0006440D
 		private void Start()
 		{
 			if (!ReInput.isReady)
@@ -69,14 +69,14 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this.DrawLabels();
 		}
 
-		// Token: 0x06001DEF RID: 7663 RVA: 0x00016EFF File Offset: 0x000150FF
+		// Token: 0x060017EB RID: 6123 RVA: 0x0006621D File Offset: 0x0006441D
 		private void OnDestroy()
 		{
 			ReInput.ControllerConnectedEvent -= this.OnControllerConnected;
 			ReInput.ControllerDisconnectedEvent -= this.OnControllerDisconnected;
 		}
 
-		// Token: 0x06001DF0 RID: 7664 RVA: 0x00016F23 File Offset: 0x00015123
+		// Token: 0x060017EC RID: 6124 RVA: 0x00066241 File Offset: 0x00064441
 		private void Update()
 		{
 			if (!ReInput.isReady)
@@ -86,7 +86,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this.DrawActiveElements();
 		}
 
-		// Token: 0x06001DF1 RID: 7665 RVA: 0x000752B8 File Offset: 0x000734B8
+		// Token: 0x060017ED RID: 6125 RVA: 0x00066254 File Offset: 0x00064454
 		private void DrawActiveElements()
 		{
 			for (int i = 0; i < this._uiElementsArray.Length; i++)
@@ -104,7 +104,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001DF2 RID: 7666 RVA: 0x00075340 File Offset: 0x00073540
+		// Token: 0x060017EE RID: 6126 RVA: 0x000662DC File Offset: 0x000644DC
 		private void ActivateElements(Player player, int actionId)
 		{
 			float axis = player.GetAxis(actionId);
@@ -125,11 +125,11 @@ namespace Rewired.Demos.GamepadTemplateUI
 						ControllerTemplateElementTarget controllerTemplateElementTarget = this._tempTargetList[j];
 						int id = controllerTemplateElementTarget.element.id;
 						ControllerUIElement controllerUIElement = this._uiElements[id];
-						if (controllerTemplateElementTarget.elementType == null)
+						if (controllerTemplateElementTarget.elementType == ControllerTemplateElementType.Axis)
 						{
 							controllerUIElement.Activate(axis);
 						}
-						else if (controllerTemplateElementTarget.elementType == 1 && (player.GetButton(actionId) || player.GetNegativeButton(actionId)))
+						else if (controllerTemplateElementTarget.elementType == ControllerTemplateElementType.Button && (player.GetButton(actionId) || player.GetNegativeButton(actionId)))
 						{
 							controllerUIElement.Activate(1f);
 						}
@@ -143,7 +143,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001DF3 RID: 7667 RVA: 0x0007545C File Offset: 0x0007365C
+		// Token: 0x060017EF RID: 6127 RVA: 0x000663F8 File Offset: 0x000645F8
 		private void DrawLabels()
 		{
 			for (int i = 0; i < this._uiElementsArray.Length; i++)
@@ -157,7 +157,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001DF4 RID: 7668 RVA: 0x000754C0 File Offset: 0x000736C0
+		// Token: 0x060017F0 RID: 6128 RVA: 0x0006645C File Offset: 0x0006465C
 		private void DrawLabels(Player player, InputAction action)
 		{
 			Controller firstControllerWithTemplate = player.controllers.GetFirstControllerWithTemplate<IGamepadTemplate>();
@@ -180,14 +180,14 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001DF5 RID: 7669 RVA: 0x0007554C File Offset: 0x0007374C
+		// Token: 0x060017F1 RID: 6129 RVA: 0x000664E8 File Offset: 0x000646E8
 		private void DrawLabel(ControllerUIElement uiElement, InputAction action, ControllerMap controllerMap, IControllerTemplate template, IControllerTemplateElement element)
 		{
 			if (element.source == null)
 			{
 				return;
 			}
-			if (element.source.type == null)
+			if (element.source.type == ControllerTemplateElementSourceType.Axis)
 			{
 				IControllerTemplateAxisSource controllerTemplateAxisSource = element.source as IControllerTemplateAxisSource;
 				if (controllerTemplateAxisSource.splitAxis)
@@ -195,12 +195,12 @@ namespace Rewired.Demos.GamepadTemplateUI
 					ActionElementMap actionElementMap = controllerMap.GetFirstElementMapWithElementTarget(controllerTemplateAxisSource.positiveTarget, action.id, true);
 					if (actionElementMap != null)
 					{
-						uiElement.SetLabel(actionElementMap.actionDescriptiveName, 1);
+						uiElement.SetLabel(actionElementMap.actionDescriptiveName, AxisRange.Positive);
 					}
 					actionElementMap = controllerMap.GetFirstElementMapWithElementTarget(controllerTemplateAxisSource.negativeTarget, action.id, true);
 					if (actionElementMap != null)
 					{
-						uiElement.SetLabel(actionElementMap.actionDescriptiveName, 2);
+						uiElement.SetLabel(actionElementMap.actionDescriptiveName, AxisRange.Negative);
 						return;
 					}
 				}
@@ -209,39 +209,42 @@ namespace Rewired.Demos.GamepadTemplateUI
 					ActionElementMap actionElementMap = controllerMap.GetFirstElementMapWithElementTarget(controllerTemplateAxisSource.fullTarget, action.id, true);
 					if (actionElementMap != null)
 					{
-						uiElement.SetLabel(actionElementMap.actionDescriptiveName, 0);
+						uiElement.SetLabel(actionElementMap.actionDescriptiveName, AxisRange.Full);
 						return;
 					}
-					ControllerElementTarget controllerElementTarget;
-					controllerElementTarget..ctor(controllerTemplateAxisSource.fullTarget);
-					controllerElementTarget.axisRange = 1;
+					ControllerElementTarget controllerElementTarget = new ControllerElementTarget(controllerTemplateAxisSource.fullTarget)
+					{
+						axisRange = AxisRange.Positive
+					};
 					actionElementMap = controllerMap.GetFirstElementMapWithElementTarget(controllerElementTarget, action.id, true);
 					if (actionElementMap != null)
 					{
-						uiElement.SetLabel(actionElementMap.actionDescriptiveName, 1);
+						uiElement.SetLabel(actionElementMap.actionDescriptiveName, AxisRange.Positive);
 					}
-					controllerElementTarget..ctor(controllerTemplateAxisSource.fullTarget);
-					controllerElementTarget.axisRange = 2;
+					controllerElementTarget = new ControllerElementTarget(controllerTemplateAxisSource.fullTarget)
+					{
+						axisRange = AxisRange.Negative
+					};
 					actionElementMap = controllerMap.GetFirstElementMapWithElementTarget(controllerElementTarget, action.id, true);
 					if (actionElementMap != null)
 					{
-						uiElement.SetLabel(actionElementMap.actionDescriptiveName, 2);
+						uiElement.SetLabel(actionElementMap.actionDescriptiveName, AxisRange.Negative);
 						return;
 					}
 				}
 			}
-			else if (element.source.type == 1)
+			else if (element.source.type == ControllerTemplateElementSourceType.Button)
 			{
 				IControllerTemplateButtonSource controllerTemplateButtonSource = element.source as IControllerTemplateButtonSource;
 				ActionElementMap actionElementMap = controllerMap.GetFirstElementMapWithElementTarget(controllerTemplateButtonSource.target, action.id, true);
 				if (actionElementMap != null)
 				{
-					uiElement.SetLabel(actionElementMap.actionDescriptiveName, 0);
+					uiElement.SetLabel(actionElementMap.actionDescriptiveName, AxisRange.Full);
 				}
 			}
 		}
 
-		// Token: 0x06001DF6 RID: 7670 RVA: 0x000756A4 File Offset: 0x000738A4
+		// Token: 0x060017F2 RID: 6130 RVA: 0x00066640 File Offset: 0x00064840
 		private GamepadTemplateUI.Stick GetStick(int elementId)
 		{
 			for (int i = 0; i < this._sticks.Length; i++)
@@ -254,142 +257,142 @@ namespace Rewired.Demos.GamepadTemplateUI
 			return null;
 		}
 
-		// Token: 0x06001DF7 RID: 7671 RVA: 0x00016F33 File Offset: 0x00015133
+		// Token: 0x060017F3 RID: 6131 RVA: 0x0006667A File Offset: 0x0006487A
 		private void OnControllerConnected(ControllerStatusChangedEventArgs args)
 		{
 			this.DrawLabels();
 		}
 
-		// Token: 0x06001DF8 RID: 7672 RVA: 0x00016F33 File Offset: 0x00015133
+		// Token: 0x060017F4 RID: 6132 RVA: 0x00066682 File Offset: 0x00064882
 		private void OnControllerDisconnected(ControllerStatusChangedEventArgs args)
 		{
 			this.DrawLabels();
 		}
 
-		// Token: 0x04001F38 RID: 7992
+		// Token: 0x040019A2 RID: 6562
 		private const float stickRadius = 20f;
 
-		// Token: 0x04001F39 RID: 7993
+		// Token: 0x040019A3 RID: 6563
 		public int playerId;
 
-		// Token: 0x04001F3A RID: 7994
+		// Token: 0x040019A4 RID: 6564
 		[SerializeField]
 		private RectTransform leftStick;
 
-		// Token: 0x04001F3B RID: 7995
+		// Token: 0x040019A5 RID: 6565
 		[SerializeField]
 		private RectTransform rightStick;
 
-		// Token: 0x04001F3C RID: 7996
+		// Token: 0x040019A6 RID: 6566
 		[SerializeField]
 		private ControllerUIElement leftStickX;
 
-		// Token: 0x04001F3D RID: 7997
+		// Token: 0x040019A7 RID: 6567
 		[SerializeField]
 		private ControllerUIElement leftStickY;
 
-		// Token: 0x04001F3E RID: 7998
+		// Token: 0x040019A8 RID: 6568
 		[SerializeField]
 		private ControllerUIElement leftStickButton;
 
-		// Token: 0x04001F3F RID: 7999
+		// Token: 0x040019A9 RID: 6569
 		[SerializeField]
 		private ControllerUIElement rightStickX;
 
-		// Token: 0x04001F40 RID: 8000
+		// Token: 0x040019AA RID: 6570
 		[SerializeField]
 		private ControllerUIElement rightStickY;
 
-		// Token: 0x04001F41 RID: 8001
+		// Token: 0x040019AB RID: 6571
 		[SerializeField]
 		private ControllerUIElement rightStickButton;
 
-		// Token: 0x04001F42 RID: 8002
+		// Token: 0x040019AC RID: 6572
 		[SerializeField]
 		private ControllerUIElement actionBottomRow1;
 
-		// Token: 0x04001F43 RID: 8003
+		// Token: 0x040019AD RID: 6573
 		[SerializeField]
 		private ControllerUIElement actionBottomRow2;
 
-		// Token: 0x04001F44 RID: 8004
+		// Token: 0x040019AE RID: 6574
 		[SerializeField]
 		private ControllerUIElement actionBottomRow3;
 
-		// Token: 0x04001F45 RID: 8005
+		// Token: 0x040019AF RID: 6575
 		[SerializeField]
 		private ControllerUIElement actionTopRow1;
 
-		// Token: 0x04001F46 RID: 8006
+		// Token: 0x040019B0 RID: 6576
 		[SerializeField]
 		private ControllerUIElement actionTopRow2;
 
-		// Token: 0x04001F47 RID: 8007
+		// Token: 0x040019B1 RID: 6577
 		[SerializeField]
 		private ControllerUIElement actionTopRow3;
 
-		// Token: 0x04001F48 RID: 8008
+		// Token: 0x040019B2 RID: 6578
 		[SerializeField]
 		private ControllerUIElement leftShoulder;
 
-		// Token: 0x04001F49 RID: 8009
+		// Token: 0x040019B3 RID: 6579
 		[SerializeField]
 		private ControllerUIElement leftTrigger;
 
-		// Token: 0x04001F4A RID: 8010
+		// Token: 0x040019B4 RID: 6580
 		[SerializeField]
 		private ControllerUIElement rightShoulder;
 
-		// Token: 0x04001F4B RID: 8011
+		// Token: 0x040019B5 RID: 6581
 		[SerializeField]
 		private ControllerUIElement rightTrigger;
 
-		// Token: 0x04001F4C RID: 8012
+		// Token: 0x040019B6 RID: 6582
 		[SerializeField]
 		private ControllerUIElement center1;
 
-		// Token: 0x04001F4D RID: 8013
+		// Token: 0x040019B7 RID: 6583
 		[SerializeField]
 		private ControllerUIElement center2;
 
-		// Token: 0x04001F4E RID: 8014
+		// Token: 0x040019B8 RID: 6584
 		[SerializeField]
 		private ControllerUIElement center3;
 
-		// Token: 0x04001F4F RID: 8015
+		// Token: 0x040019B9 RID: 6585
 		[SerializeField]
 		private ControllerUIElement dPadUp;
 
-		// Token: 0x04001F50 RID: 8016
+		// Token: 0x040019BA RID: 6586
 		[SerializeField]
 		private ControllerUIElement dPadRight;
 
-		// Token: 0x04001F51 RID: 8017
+		// Token: 0x040019BB RID: 6587
 		[SerializeField]
 		private ControllerUIElement dPadDown;
 
-		// Token: 0x04001F52 RID: 8018
+		// Token: 0x040019BC RID: 6588
 		[SerializeField]
 		private ControllerUIElement dPadLeft;
 
-		// Token: 0x04001F53 RID: 8019
+		// Token: 0x040019BD RID: 6589
 		private GamepadTemplateUI.UIElement[] _uiElementsArray;
 
-		// Token: 0x04001F54 RID: 8020
+		// Token: 0x040019BE RID: 6590
 		private Dictionary<int, ControllerUIElement> _uiElements = new Dictionary<int, ControllerUIElement>();
 
-		// Token: 0x04001F55 RID: 8021
+		// Token: 0x040019BF RID: 6591
 		private IList<ControllerTemplateElementTarget> _tempTargetList = new List<ControllerTemplateElementTarget>(2);
 
-		// Token: 0x04001F56 RID: 8022
+		// Token: 0x040019C0 RID: 6592
 		private GamepadTemplateUI.Stick[] _sticks;
 
 		// Token: 0x020004B6 RID: 1206
 		private class Stick
 		{
-			// Token: 0x17000627 RID: 1575
-			// (get) Token: 0x06001DFA RID: 7674 RVA: 0x00016F5A File Offset: 0x0001515A
-			// (set) Token: 0x06001DFB RID: 7675 RVA: 0x00016F86 File Offset: 0x00015186
+			// Token: 0x1700062D RID: 1581
+			// (get) Token: 0x06001E20 RID: 7712 RVA: 0x000792DC File Offset: 0x000774DC
+			// (set) Token: 0x06001E21 RID: 7713 RVA: 0x00079308 File Offset: 0x00077508
 			public Vector2 position
 			{
 				get
@@ -410,7 +413,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 				}
 			}
 
-			// Token: 0x06001DFC RID: 7676 RVA: 0x000756E0 File Offset: 0x000738E0
+			// Token: 0x06001E22 RID: 7714 RVA: 0x00079330 File Offset: 0x00077530
 			public Stick(RectTransform transform, int xAxisElementId, int yAxisElementId)
 			{
 				if (transform == null)
@@ -423,7 +426,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 				this._yAxisElementId = yAxisElementId;
 			}
 
-			// Token: 0x06001DFD RID: 7677 RVA: 0x00016FAE File Offset: 0x000151AE
+			// Token: 0x06001E23 RID: 7715 RVA: 0x00079381 File Offset: 0x00077581
 			public void Reset()
 			{
 				if (this._transform == null)
@@ -433,13 +436,13 @@ namespace Rewired.Demos.GamepadTemplateUI
 				this._transform.anchoredPosition = this._origPosition;
 			}
 
-			// Token: 0x06001DFE RID: 7678 RVA: 0x00016FD0 File Offset: 0x000151D0
+			// Token: 0x06001E24 RID: 7716 RVA: 0x000793A3 File Offset: 0x000775A3
 			public bool ContainsElement(int elementId)
 			{
 				return !(this._transform == null) && (elementId == this._xAxisElementId || elementId == this._yAxisElementId);
 			}
 
-			// Token: 0x06001DFF RID: 7679 RVA: 0x00075734 File Offset: 0x00073934
+			// Token: 0x06001E25 RID: 7717 RVA: 0x000793CC File Offset: 0x000775CC
 			public void SetAxisPosition(int elementId, float value)
 			{
 				if (this._transform == null)
@@ -458,33 +461,33 @@ namespace Rewired.Demos.GamepadTemplateUI
 				this.position = position;
 			}
 
-			// Token: 0x04001F57 RID: 8023
+			// Token: 0x04001F9A RID: 8090
 			private RectTransform _transform;
 
-			// Token: 0x04001F58 RID: 8024
+			// Token: 0x04001F9B RID: 8091
 			private Vector2 _origPosition;
 
-			// Token: 0x04001F59 RID: 8025
+			// Token: 0x04001F9C RID: 8092
 			private int _xAxisElementId = -1;
 
-			// Token: 0x04001F5A RID: 8026
+			// Token: 0x04001F9D RID: 8093
 			private int _yAxisElementId = -1;
 		}
 
 		// Token: 0x020004B7 RID: 1207
 		private class UIElement
 		{
-			// Token: 0x06001E00 RID: 7680 RVA: 0x00016FF6 File Offset: 0x000151F6
+			// Token: 0x06001E26 RID: 7718 RVA: 0x0007941A File Offset: 0x0007761A
 			public UIElement(int id, ControllerUIElement element)
 			{
 				this.id = id;
 				this.element = element;
 			}
 
-			// Token: 0x04001F5B RID: 8027
+			// Token: 0x04001F9E RID: 8094
 			public int id;
 
-			// Token: 0x04001F5C RID: 8028
+			// Token: 0x04001F9F RID: 8095
 			public ControllerUIElement element;
 		}
 	}

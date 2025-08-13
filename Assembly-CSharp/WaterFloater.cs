@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000354 RID: 852
+// Token: 0x02000284 RID: 644
 public class WaterFloater : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06001077 RID: 4215 RVA: 0x00054A2C File Offset: 0x00052C2C
+	// Token: 0x06000DBB RID: 3515 RVA: 0x000427AC File Offset: 0x000409AC
 	private void Awake()
 	{
 		this.initialPosition = base.transform.position;
@@ -14,7 +14,7 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		this.height = this.initialPosition.y;
 	}
 
-	// Token: 0x06001078 RID: 4216 RVA: 0x00054AA0 File Offset: 0x00052CA0
+	// Token: 0x06000DBC RID: 3516 RVA: 0x00042820 File Offset: 0x00040A20
 	private void OnEnable()
 	{
 		this.isInRange = Vector3.Distance(MainCamera.t.position, base.transform.position) <= 55f;
@@ -26,7 +26,7 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEveryNonFixed.Add(this);
 	}
 
-	// Token: 0x06001079 RID: 4217 RVA: 0x0000E288 File Offset: 0x0000C488
+	// Token: 0x06000DBD RID: 3517 RVA: 0x00042876 File Offset: 0x00040A76
 	private void OnDisable()
 	{
 		if (this.isInRange)
@@ -37,7 +37,7 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x0600107A RID: 4218 RVA: 0x00054AF8 File Offset: 0x00052CF8
+	// Token: 0x06000DBE RID: 3518 RVA: 0x0004289C File Offset: 0x00040A9C
 	public void ManagedUpdate()
 	{
 		if (this.isInRange != Vector3.Distance(MainCamera.t.position, base.transform.position) <= 55f)
@@ -57,7 +57,7 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		this.UpdateFloatingPosition();
 	}
 
-	// Token: 0x0600107B RID: 4219 RVA: 0x00054B80 File Offset: 0x00052D80
+	// Token: 0x06000DBF RID: 3519 RVA: 0x00042924 File Offset: 0x00040B24
 	private void UpdateFloatingPosition()
 	{
 		Vector2 vector = this.positionVariance * PerlinUtil.Perlin2(this.positionSeed, Time.time * this.positionPerlinSpeed);
@@ -72,42 +72,42 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		base.transform.position = vector2;
 	}
 
-	// Token: 0x04001554 RID: 5460
+	// Token: 0x0400120D RID: 4621
 	private static Vector3[] sampledPositions = new Vector3[4];
 
-	// Token: 0x04001555 RID: 5461
+	// Token: 0x0400120E RID: 4622
 	public MovingWater water;
 
-	// Token: 0x04001556 RID: 5462
+	// Token: 0x0400120F RID: 4623
 	private bool isInRange;
 
-	// Token: 0x04001557 RID: 5463
+	// Token: 0x04001210 RID: 4624
 	public float positionVariance = 2f;
 
-	// Token: 0x04001558 RID: 5464
+	// Token: 0x04001211 RID: 4625
 	public float positionPerlinSpeed = 0.25f;
 
-	// Token: 0x04001559 RID: 5465
+	// Token: 0x04001212 RID: 4626
 	private Vector3 initialPosition;
 
-	// Token: 0x0400155A RID: 5466
+	// Token: 0x04001213 RID: 4627
 	private float positionSeed;
 
-	// Token: 0x0400155B RID: 5467
+	// Token: 0x04001214 RID: 4628
 	private Vector3 rotation;
 
-	// Token: 0x0400155C RID: 5468
+	// Token: 0x04001215 RID: 4629
 	public float rotationVariance = 40f;
 
-	// Token: 0x0400155D RID: 5469
+	// Token: 0x04001216 RID: 4630
 	public float rotationPerlinSpeed = 0.25f;
 
-	// Token: 0x0400155E RID: 5470
+	// Token: 0x04001217 RID: 4631
 	private float rotationSeed;
 
-	// Token: 0x0400155F RID: 5471
+	// Token: 0x04001218 RID: 4632
 	private float height;
 
-	// Token: 0x04001560 RID: 5472
+	// Token: 0x04001219 RID: 4633
 	private float heightVel;
 }

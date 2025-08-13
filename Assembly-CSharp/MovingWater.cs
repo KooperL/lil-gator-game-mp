@@ -2,10 +2,10 @@
 using Unity.Collections;
 using UnityEngine;
 
-// Token: 0x02000352 RID: 850
+// Token: 0x02000282 RID: 642
 public class MovingWater : Water
 {
-	// Token: 0x0600106C RID: 4204 RVA: 0x0000E1C2 File Offset: 0x0000C3C2
+	// Token: 0x06000DB0 RID: 3504 RVA: 0x0004248B File Offset: 0x0004068B
 	private void OnValidate()
 	{
 		if (this.waterMaterial == null)
@@ -16,7 +16,7 @@ public class MovingWater : Water
 		this._displacement = this.waterMaterial.GetFloat(this._Displacement);
 	}
 
-	// Token: 0x0600106D RID: 4205 RVA: 0x000547FC File Offset: 0x000529FC
+	// Token: 0x06000DB1 RID: 3505 RVA: 0x000424CC File Offset: 0x000406CC
 	private void Awake()
 	{
 		NativeArray<Color32> rawTextureData = this._derivHeightMap.GetRawTextureData<Color32>();
@@ -32,7 +32,7 @@ public class MovingWater : Water
 		}
 	}
 
-	// Token: 0x0600106E RID: 4206 RVA: 0x000548AC File Offset: 0x00052AAC
+	// Token: 0x06000DB2 RID: 3506 RVA: 0x0004257C File Offset: 0x0004077C
 	private float SamplePoint(Vector2Int pixel)
 	{
 		pixel.x = (pixel.x % this.textureResolution.x + this.textureResolution.x) % this.textureResolution.x;
@@ -40,15 +40,14 @@ public class MovingWater : Water
 		return this.heights[pixel.x, pixel.y];
 	}
 
-	// Token: 0x0600106F RID: 4207 RVA: 0x00054938 File Offset: 0x00052B38
+	// Token: 0x06000DB3 RID: 3507 RVA: 0x00042608 File Offset: 0x00040808
 	private float SampleHeight(Vector2 uv)
 	{
-		Vector2 vector;
-		vector..ctor(uv.x * (float)this.textureResolution.x, uv.y * (float)this.textureResolution.y);
+		Vector2 vector = new Vector2(uv.x * (float)this.textureResolution.x, uv.y * (float)this.textureResolution.y);
 		return 0f + this.SamplePoint(new Vector2Int(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y)));
 	}
 
-	// Token: 0x06001070 RID: 4208 RVA: 0x0005499C File Offset: 0x00052B9C
+	// Token: 0x06000DB4 RID: 3508 RVA: 0x0004266C File Offset: 0x0004086C
 	public override float GetWaterPlaneHeight(Vector3 referencePosition)
 	{
 		Vector2 vector = Time.time * this._flow.zw();
@@ -59,27 +58,27 @@ public class MovingWater : Water
 		return this._displacement * (num + num2 - 0.75f) - 0.15f;
 	}
 
-	// Token: 0x04001549 RID: 5449
+	// Token: 0x04001202 RID: 4610
 	public Material waterMaterial;
 
-	// Token: 0x0400154A RID: 5450
+	// Token: 0x04001203 RID: 4611
 	public Texture2D _derivHeightMap;
 
-	// Token: 0x0400154B RID: 5451
+	// Token: 0x04001204 RID: 4612
 	public float _displacement;
 
-	// Token: 0x0400154C RID: 5452
+	// Token: 0x04001205 RID: 4613
 	public Vector4 _flow;
 
-	// Token: 0x0400154D RID: 5453
+	// Token: 0x04001206 RID: 4614
 	private readonly int _Flow = Shader.PropertyToID("_Flow");
 
-	// Token: 0x0400154E RID: 5454
+	// Token: 0x04001207 RID: 4615
 	private readonly int _Displacement = Shader.PropertyToID("_Displacement");
 
-	// Token: 0x0400154F RID: 5455
+	// Token: 0x04001208 RID: 4616
 	private float[,] heights;
 
-	// Token: 0x04001550 RID: 5456
+	// Token: 0x04001209 RID: 4617
 	private Vector2Int textureResolution;
 }

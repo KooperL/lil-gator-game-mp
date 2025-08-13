@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020003A8 RID: 936
+// Token: 0x020002C6 RID: 710
 public class UIHideMove : UIHideBehavior
 {
-	// Token: 0x060011C4 RID: 4548 RVA: 0x0000F2CC File Offset: 0x0000D4CC
+	// Token: 0x06000EEC RID: 3820 RVA: 0x00047ABE File Offset: 0x00045CBE
 	private void OnValidate()
 	{
 		if (this.rectTransform == null)
@@ -13,13 +13,13 @@ public class UIHideMove : UIHideBehavior
 		}
 	}
 
-	// Token: 0x060011C5 RID: 4549 RVA: 0x0000F2E8 File Offset: 0x0000D4E8
+	// Token: 0x06000EED RID: 3821 RVA: 0x00047ADA File Offset: 0x00045CDA
 	private void Awake()
 	{
 		this.position = this.anchoredHidePosition;
 	}
 
-	// Token: 0x060011C6 RID: 4550 RVA: 0x0000F2F6 File Offset: 0x0000D4F6
+	// Token: 0x06000EEE RID: 3822 RVA: 0x00047AE8 File Offset: 0x00045CE8
 	[ContextMenu("Hide")]
 	public override void Hide()
 	{
@@ -27,7 +27,7 @@ public class UIHideMove : UIHideBehavior
 		base.enabled = true;
 	}
 
-	// Token: 0x060011C7 RID: 4551 RVA: 0x00058DCC File Offset: 0x00056FCC
+	// Token: 0x06000EEF RID: 3823 RVA: 0x00047AF8 File Offset: 0x00045CF8
 	[ContextMenu("Show")]
 	public override void Show()
 	{
@@ -44,7 +44,7 @@ public class UIHideMove : UIHideBehavior
 		}
 	}
 
-	// Token: 0x060011C8 RID: 4552 RVA: 0x00058E2C File Offset: 0x0005702C
+	// Token: 0x06000EF0 RID: 3824 RVA: 0x00047B58 File Offset: 0x00045D58
 	protected override void Update()
 	{
 		base.Update();
@@ -69,24 +69,24 @@ public class UIHideMove : UIHideBehavior
 		this.rectTransform.anchoredPosition = this.position;
 	}
 
-	// Token: 0x040016F7 RID: 5879
+	// Token: 0x04001381 RID: 4993
 	public RectTransform rectTransform;
 
-	// Token: 0x040016F8 RID: 5880
+	// Token: 0x04001382 RID: 4994
 	public Vector2 anchoredHidePosition;
 
-	// Token: 0x040016F9 RID: 5881
+	// Token: 0x04001383 RID: 4995
 	public Vector2 anchoredShowPosition;
 
-	// Token: 0x040016FA RID: 5882
+	// Token: 0x04001384 RID: 4996
 	private Vector2 velocity;
 
-	// Token: 0x040016FB RID: 5883
+	// Token: 0x04001385 RID: 4997
 	public float smoothTime = 0.2f;
 
-	// Token: 0x040016FC RID: 5884
+	// Token: 0x04001386 RID: 4998
 	public float hideTime;
 
-	// Token: 0x040016FD RID: 5885
+	// Token: 0x04001387 RID: 4999
 	private Vector2 position;
 }

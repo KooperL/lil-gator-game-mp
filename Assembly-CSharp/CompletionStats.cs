@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000B4 RID: 180
+// Token: 0x0200008E RID: 142
 public class CompletionStats : MonoBehaviour
 {
-	// Token: 0x1700002F RID: 47
-	// (get) Token: 0x060002A1 RID: 673 RVA: 0x00004265 File Offset: 0x00002465
+	// Token: 0x17000018 RID: 24
+	// (get) Token: 0x06000257 RID: 599 RVA: 0x0000C7BD File Offset: 0x0000A9BD
 	public static CompletionStats c
 	{
 		get
@@ -20,9 +20,9 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000030 RID: 48
-	// (get) Token: 0x060002A2 RID: 674 RVA: 0x00004284 File Offset: 0x00002484
-	// (set) Token: 0x060002A3 RID: 675 RVA: 0x00004296 File Offset: 0x00002496
+	// Token: 0x17000019 RID: 25
+	// (get) Token: 0x06000258 RID: 600 RVA: 0x0000C7DC File Offset: 0x0000A9DC
+	// (set) Token: 0x06000259 RID: 601 RVA: 0x0000C7EE File Offset: 0x0000A9EE
 	public static int PercentObjects
 	{
 		get
@@ -35,9 +35,9 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000031 RID: 49
-	// (get) Token: 0x060002A4 RID: 676 RVA: 0x000042A8 File Offset: 0x000024A8
-	// (set) Token: 0x060002A5 RID: 677 RVA: 0x000042BA File Offset: 0x000024BA
+	// Token: 0x1700001A RID: 26
+	// (get) Token: 0x0600025A RID: 602 RVA: 0x0000C800 File Offset: 0x0000AA00
+	// (set) Token: 0x0600025B RID: 603 RVA: 0x0000C812 File Offset: 0x0000AA12
 	public static int PercentCharacters
 	{
 		get
@@ -50,9 +50,9 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000032 RID: 50
-	// (get) Token: 0x060002A6 RID: 678 RVA: 0x000042CC File Offset: 0x000024CC
-	// (set) Token: 0x060002A7 RID: 679 RVA: 0x000042DE File Offset: 0x000024DE
+	// Token: 0x1700001B RID: 27
+	// (get) Token: 0x0600025C RID: 604 RVA: 0x0000C824 File Offset: 0x0000AA24
+	// (set) Token: 0x0600025D RID: 605 RVA: 0x0000C836 File Offset: 0x0000AA36
 	public static int PercentItems
 	{
 		get
@@ -65,13 +65,13 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002A8 RID: 680 RVA: 0x000042F0 File Offset: 0x000024F0
+	// Token: 0x0600025E RID: 606 RVA: 0x0000C848 File Offset: 0x0000AA48
 	private void Awake()
 	{
 		this.townStates.onStateChange.AddListener(new UnityAction<int>(this.OnStateChange));
 	}
 
-	// Token: 0x060002A9 RID: 681 RVA: 0x0000430E File Offset: 0x0000250E
+	// Token: 0x0600025F RID: 607 RVA: 0x0000C866 File Offset: 0x0000AA66
 	private void OnStateChange(int newStateIndex)
 	{
 		if (newStateIndex == 4)
@@ -80,7 +80,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002AA RID: 682 RVA: 0x00020578 File Offset: 0x0001E778
+	// Token: 0x06000260 RID: 608 RVA: 0x0000C874 File Offset: 0x0000AA74
 	public void OnEnable()
 	{
 		CompletionStats.instance = this;
@@ -96,7 +96,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002AB RID: 683 RVA: 0x0000431A File Offset: 0x0000251A
+	// Token: 0x06000261 RID: 609 RVA: 0x0000C8DE File Offset: 0x0000AADE
 	[ContextMenu("Update all")]
 	private void Start()
 	{
@@ -104,7 +104,7 @@ public class CompletionStats : MonoBehaviour
 		this.UpdateCharacters(null, true);
 	}
 
-	// Token: 0x060002AC RID: 684 RVA: 0x000205E4 File Offset: 0x0001E7E4
+	// Token: 0x06000262 RID: 610 RVA: 0x0000C8F0 File Offset: 0x0000AAF0
 	private void OnDisable()
 	{
 		if (CompletionStats.instance == this)
@@ -127,7 +127,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002AD RID: 685 RVA: 0x00020674 File Offset: 0x0001E874
+	// Token: 0x06000263 RID: 611 RVA: 0x0000C980 File Offset: 0x0000AB80
 	private void UpdateObjects()
 	{
 		if (CompletionStats.PercentObjects == 100)
@@ -157,7 +157,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002AE RID: 686 RVA: 0x0002070C File Offset: 0x0001E90C
+	// Token: 0x06000264 RID: 612 RVA: 0x0000CA18 File Offset: 0x0000AC18
 	private void UpdateCharacters(object sender, bool wasUnlocked)
 	{
 		if (!wasUnlocked)
@@ -191,7 +191,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002AF RID: 687 RVA: 0x000207A8 File Offset: 0x0001E9A8
+	// Token: 0x06000265 RID: 613 RVA: 0x0000CAB4 File Offset: 0x0000ACB4
 	public void UpdateItems()
 	{
 		if (CompletionStats.PercentItems == 100)
@@ -215,7 +215,7 @@ public class CompletionStats : MonoBehaviour
 		CompletionStats.PercentItems = num2;
 	}
 
-	// Token: 0x060002B0 RID: 688 RVA: 0x0000432A File Offset: 0x0000252A
+	// Token: 0x06000266 RID: 614 RVA: 0x0000CB21 File Offset: 0x0000AD21
 	public void CheckForFullCompletion()
 	{
 		if (CompletionStats.PercentObjects == 100 && CompletionStats.PercentCharacters == 100 && this.townStates.StateID == 4)
@@ -224,7 +224,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002B1 RID: 689 RVA: 0x00020818 File Offset: 0x0001EA18
+	// Token: 0x06000267 RID: 615 RVA: 0x0000CB50 File Offset: 0x0000AD50
 	[ContextMenu("Count")]
 	public void CountPersistentObjects()
 	{
@@ -244,7 +244,7 @@ public class CompletionStats : MonoBehaviour
 		Debug.Log("Timed Challenges: " + num.ToString() + "  Breakables: " + num2.ToString());
 	}
 
-	// Token: 0x060002B2 RID: 690 RVA: 0x0002087C File Offset: 0x0001EA7C
+	// Token: 0x06000268 RID: 616 RVA: 0x0000CBB4 File Offset: 0x0000ADB4
 	[ContextMenu("Find Non Quest Objects")]
 	public void FindNonQuestObjects()
 	{
@@ -259,7 +259,7 @@ public class CompletionStats : MonoBehaviour
 		this.completionObjects = list.ToArray();
 	}
 
-	// Token: 0x060002B3 RID: 691 RVA: 0x000209B8 File Offset: 0x0001EBB8
+	// Token: 0x06000269 RID: 617 RVA: 0x0000CCF0 File Offset: 0x0000AEF0
 	[ContextMenu("Find Completion Actors")]
 	public void FindCompletionActors()
 	{
@@ -278,7 +278,7 @@ public class CompletionStats : MonoBehaviour
 		this.completionActors = list.ToArray();
 	}
 
-	// Token: 0x060002B4 RID: 692 RVA: 0x00020B64 File Offset: 0x0001ED64
+	// Token: 0x0600026A RID: 618 RVA: 0x0000CE9C File Offset: 0x0000B09C
 	[ContextMenu("Get Profiles From Actors")]
 	public void GetProfilesFromActors()
 	{
@@ -293,7 +293,7 @@ public class CompletionStats : MonoBehaviour
 		this.completionCharacters = list.ToArray();
 	}
 
-	// Token: 0x060002B5 RID: 693 RVA: 0x00020BB8 File Offset: 0x0001EDB8
+	// Token: 0x0600026B RID: 619 RVA: 0x0000CEF0 File Offset: 0x0000B0F0
 	[ContextMenu("Break All Breakables")]
 	public void BreakAllBreakables()
 	{
@@ -306,7 +306,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002B6 RID: 694 RVA: 0x00020BF8 File Offset: 0x0001EDF8
+	// Token: 0x0600026C RID: 620 RVA: 0x0000CF30 File Offset: 0x0000B130
 	[ContextMenu("Break Most Breakables")]
 	public void BreakMostBreakables()
 	{
@@ -335,7 +335,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002B7 RID: 695 RVA: 0x00020C60 File Offset: 0x0001EE60
+	// Token: 0x0600026D RID: 621 RVA: 0x0000CF98 File Offset: 0x0000B198
 	[ContextMenu("Break ALL Breakables")]
 	public void BreakALLBreakables()
 	{
@@ -346,7 +346,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002B8 RID: 696 RVA: 0x00020C94 File Offset: 0x0001EE94
+	// Token: 0x0600026E RID: 622 RVA: 0x0000CFCC File Offset: 0x0000B1CC
 	[ContextMenu("Collect All Rewards")]
 	public void CollectAllRewards()
 	{
@@ -357,42 +357,42 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040003A7 RID: 935
+	// Token: 0x0400030E RID: 782
 	private static CompletionStats instance;
 
-	// Token: 0x040003A8 RID: 936
+	// Token: 0x0400030F RID: 783
 	public PersistentObject[] completionObjects;
 
-	// Token: 0x040003A9 RID: 937
+	// Token: 0x04000310 RID: 784
 	public CharacterProfile[] completionCharacters;
 
-	// Token: 0x040003AA RID: 938
+	// Token: 0x04000311 RID: 785
 	public DialogueActor[] completionActors;
 
-	// Token: 0x040003AB RID: 939
+	// Token: 0x04000312 RID: 786
 	public ItemObject[] completionItems;
 
-	// Token: 0x040003AC RID: 940
+	// Token: 0x04000313 RID: 787
 	private const string percentObjectKey = "Completion_Objects";
 
-	// Token: 0x040003AD RID: 941
+	// Token: 0x04000314 RID: 788
 	private const string percentCharactersKey = "Completion_Characters";
 
-	// Token: 0x040003AE RID: 942
+	// Token: 0x04000315 RID: 789
 	private const string percentItemsKey = "Completion_Items";
 
-	// Token: 0x040003AF RID: 943
+	// Token: 0x04000316 RID: 790
 	public GameObject completeObjectsDialogue;
 
-	// Token: 0x040003B0 RID: 944
+	// Token: 0x04000317 RID: 791
 	public GameObject completeCharactersDialogue;
 
-	// Token: 0x040003B1 RID: 945
+	// Token: 0x04000318 RID: 792
 	public QuestStates townStates;
 
-	// Token: 0x040003B2 RID: 946
+	// Token: 0x04000319 RID: 793
 	public Achievement objectsAchievement;
 
-	// Token: 0x040003B3 RID: 947
+	// Token: 0x0400031A RID: 794
 	public Achievement friendsAchievement;
 }

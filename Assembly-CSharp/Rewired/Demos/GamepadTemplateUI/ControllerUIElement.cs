@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 namespace Rewired.Demos.GamepadTemplateUI
 {
-	// Token: 0x020004B4 RID: 1204
+	// Token: 0x0200034C RID: 844
 	[RequireComponent(typeof(Image))]
 	public class ControllerUIElement : MonoBehaviour
 	{
-		// Token: 0x17000625 RID: 1573
-		// (get) Token: 0x06001DE4 RID: 7652 RVA: 0x00016E5C File Offset: 0x0001505C
+		// Token: 0x17000428 RID: 1064
+		// (get) Token: 0x060017E0 RID: 6112 RVA: 0x00065C9A File Offset: 0x00063E9A
 		private bool hasEffects
 		{
 			get
@@ -18,7 +18,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001DE5 RID: 7653 RVA: 0x00016E7A File Offset: 0x0001507A
+		// Token: 0x060017E1 RID: 6113 RVA: 0x00065CB8 File Offset: 0x00063EB8
 		private void Awake()
 		{
 			this._image = base.GetComponent<Image>();
@@ -27,7 +27,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this.ClearLabels();
 		}
 
-		// Token: 0x06001DE6 RID: 7654 RVA: 0x00074DD8 File Offset: 0x00072FD8
+		// Token: 0x060017E2 RID: 6114 RVA: 0x00065CEC File Offset: 0x00063EEC
 		public void Activate(float amount)
 		{
 			amount = Mathf.Clamp(amount, -1f, 1f);
@@ -65,7 +65,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001DE7 RID: 7655 RVA: 0x00074ECC File Offset: 0x000730CC
+		// Token: 0x060017E3 RID: 6115 RVA: 0x00065DE0 File Offset: 0x00063FE0
 		public void Deactivate()
 		{
 			if (!this._isActive)
@@ -96,19 +96,19 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001DE8 RID: 7656 RVA: 0x00074F74 File Offset: 0x00073174
+		// Token: 0x060017E4 RID: 6116 RVA: 0x00065E88 File Offset: 0x00064088
 		public void SetLabel(string text, AxisRange labelType)
 		{
 			Text text2;
 			switch (labelType)
 			{
-			case 0:
+			case AxisRange.Full:
 				text2 = this._label;
 				break;
-			case 1:
+			case AxisRange.Positive:
 				text2 = this._positiveLabel;
 				break;
-			case 2:
+			case AxisRange.Negative:
 				text2 = this._negativeLabel;
 				break;
 			default:
@@ -131,7 +131,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001DE9 RID: 7657 RVA: 0x00075000 File Offset: 0x00073200
+		// Token: 0x060017E5 RID: 6117 RVA: 0x00065F14 File Offset: 0x00064114
 		public void ClearLabels()
 		{
 			if (this._label != null)
@@ -158,53 +158,53 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001DEA RID: 7658 RVA: 0x00016EAB File Offset: 0x000150AB
+		// Token: 0x060017E6 RID: 6118 RVA: 0x00065FB4 File Offset: 0x000641B4
 		private void RedrawImage()
 		{
 			this._image.color = this._color;
 		}
 
-		// Token: 0x04001F2C RID: 7980
+		// Token: 0x04001996 RID: 6550
 		[SerializeField]
 		private Color _highlightColor = Color.white;
 
-		// Token: 0x04001F2D RID: 7981
+		// Token: 0x04001997 RID: 6551
 		[SerializeField]
 		private ControllerUIEffect _positiveUIEffect;
 
-		// Token: 0x04001F2E RID: 7982
+		// Token: 0x04001998 RID: 6552
 		[SerializeField]
 		private ControllerUIEffect _negativeUIEffect;
 
-		// Token: 0x04001F2F RID: 7983
+		// Token: 0x04001999 RID: 6553
 		[SerializeField]
 		private Text _label;
 
-		// Token: 0x04001F30 RID: 7984
+		// Token: 0x0400199A RID: 6554
 		[SerializeField]
 		private Text _positiveLabel;
 
-		// Token: 0x04001F31 RID: 7985
+		// Token: 0x0400199B RID: 6555
 		[SerializeField]
 		private Text _negativeLabel;
 
-		// Token: 0x04001F32 RID: 7986
+		// Token: 0x0400199C RID: 6556
 		[SerializeField]
 		private ControllerUIElement[] _childElements = new ControllerUIElement[0];
 
-		// Token: 0x04001F33 RID: 7987
+		// Token: 0x0400199D RID: 6557
 		private Image _image;
 
-		// Token: 0x04001F34 RID: 7988
+		// Token: 0x0400199E RID: 6558
 		private Color _color;
 
-		// Token: 0x04001F35 RID: 7989
+		// Token: 0x0400199F RID: 6559
 		private Color _origColor;
 
-		// Token: 0x04001F36 RID: 7990
+		// Token: 0x040019A0 RID: 6560
 		private bool _isActive;
 
-		// Token: 0x04001F37 RID: 7991
+		// Token: 0x040019A1 RID: 6561
 		private float _highlightAmount;
 	}
 }

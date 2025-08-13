@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200014A RID: 330
+// Token: 0x020000F7 RID: 247
 public class Move : MonoBehaviour
 {
-	// Token: 0x0600062F RID: 1583 RVA: 0x0000673D File Offset: 0x0000493D
+	// Token: 0x0600051D RID: 1309 RVA: 0x0001B664 File Offset: 0x00019864
 	private void Update()
 	{
 		base.transform.position += Time.deltaTime * base.transform.TransformDirection(this.velocity);
 	}
 
-	// Token: 0x0400084C RID: 2124
+	// Token: 0x04000705 RID: 1797
 	public Vector3 velocity;
 }

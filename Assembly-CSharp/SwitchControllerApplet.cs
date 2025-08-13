@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000066 RID: 102
+// Token: 0x0200004D RID: 77
 public class SwitchControllerApplet : MonoBehaviour
 {
 }

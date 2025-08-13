@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000379 RID: 889
+// Token: 0x0200029F RID: 671
 public class ButtonDisplayTemplate : MonoBehaviour
 {
-	// Token: 0x040015F6 RID: 5622
+	// Token: 0x04001299 RID: 4761
 	public Image image;
 
-	// Token: 0x040015F7 RID: 5623
+	// Token: 0x0400129A RID: 4762
 	public Text nameText;
 }

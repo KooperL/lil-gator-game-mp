@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000164 RID: 356
+// Token: 0x0200010D RID: 269
 public class FadeGroup : MonoBehaviour
 {
-	// Token: 0x060006A5 RID: 1701 RVA: 0x0003162C File Offset: 0x0002F82C
+	// Token: 0x06000581 RID: 1409 RVA: 0x0001D044 File Offset: 0x0001B244
 	[ContextMenu("Find Renderers")]
 	public void FindRenderers()
 	{
@@ -43,7 +43,7 @@ public class FadeGroup : MonoBehaviour
 		this.renderers = list.ToArray();
 	}
 
-	// Token: 0x060006A6 RID: 1702 RVA: 0x00006CC0 File Offset: 0x00004EC0
+	// Token: 0x06000582 RID: 1410 RVA: 0x0001D0F1 File Offset: 0x0001B2F1
 	private void Start()
 	{
 		this.UpdateFade();
@@ -53,7 +53,7 @@ public class FadeGroup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006A7 RID: 1703 RVA: 0x00006CDC File Offset: 0x00004EDC
+	// Token: 0x06000583 RID: 1411 RVA: 0x0001D10D File Offset: 0x0001B30D
 	public void FadeIn()
 	{
 		base.gameObject.SetActive(true);
@@ -61,14 +61,14 @@ public class FadeGroup : MonoBehaviour
 		this.UpdateFade();
 	}
 
-	// Token: 0x060006A8 RID: 1704 RVA: 0x00006CFC File Offset: 0x00004EFC
+	// Token: 0x06000584 RID: 1412 RVA: 0x0001D12D File Offset: 0x0001B32D
 	public void FadeOut()
 	{
 		this.fadeTarget = 0f;
 		this.UpdateFade();
 	}
 
-	// Token: 0x060006A9 RID: 1705 RVA: 0x000316DC File Offset: 0x0002F8DC
+	// Token: 0x06000585 RID: 1413 RVA: 0x0001D140 File Offset: 0x0001B340
 	private void Update()
 	{
 		if (this.fade != this.fadeTarget)
@@ -83,7 +83,7 @@ public class FadeGroup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006AA RID: 1706 RVA: 0x00031760 File Offset: 0x0002F960
+	// Token: 0x06000586 RID: 1414 RVA: 0x0001D1C4 File Offset: 0x0001B3C4
 	private void Initialize()
 	{
 		List<Material> list = new List<Material>();
@@ -103,7 +103,7 @@ public class FadeGroup : MonoBehaviour
 		this.isInitialized = true;
 	}
 
-	// Token: 0x060006AB RID: 1707 RVA: 0x000317EC File Offset: 0x0002F9EC
+	// Token: 0x06000587 RID: 1415 RVA: 0x0001D250 File Offset: 0x0001B450
 	private void UpdateFade()
 	{
 		if (!this.isInitialized)
@@ -122,46 +122,46 @@ public class FadeGroup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040008E7 RID: 2279
+	// Token: 0x0400078D RID: 1933
 	private static FadeGroup currentGroup;
 
-	// Token: 0x040008E8 RID: 2280
+	// Token: 0x0400078E RID: 1934
 	public FadeRenderer[] fadeRenderers;
 
-	// Token: 0x040008E9 RID: 2281
+	// Token: 0x0400078F RID: 1935
 	public Renderer[] renderers;
 
-	// Token: 0x040008EA RID: 2282
+	// Token: 0x04000790 RID: 1936
 	private Material[] dynamicMaterials;
 
-	// Token: 0x040008EB RID: 2283
+	// Token: 0x04000791 RID: 1937
 	private bool isInitialized;
 
-	// Token: 0x040008EC RID: 2284
+	// Token: 0x04000792 RID: 1938
 	public float fade;
 
-	// Token: 0x040008ED RID: 2285
+	// Token: 0x04000793 RID: 1939
 	public bool fadeOnStart;
 
-	// Token: 0x040008EE RID: 2286
+	// Token: 0x04000794 RID: 1940
 	[ConditionalHide("fadeOnStart", true)]
 	public float initialFadeTarget;
 
-	// Token: 0x040008EF RID: 2287
+	// Token: 0x04000795 RID: 1941
 	public float fadeInSpeed = 0.25f;
 
-	// Token: 0x040008F0 RID: 2288
+	// Token: 0x04000796 RID: 1942
 	public float fadeOutSpeed = 0.5f;
 
-	// Token: 0x040008F1 RID: 2289
+	// Token: 0x04000797 RID: 1943
 	private float fadeTarget;
 
-	// Token: 0x040008F2 RID: 2290
+	// Token: 0x04000798 RID: 1944
 	public float maxFade = 0.9f;
 
-	// Token: 0x040008F3 RID: 2291
+	// Token: 0x04000799 RID: 1945
 	public float maxObjectFade = 0.8f;
 
-	// Token: 0x040008F4 RID: 2292
+	// Token: 0x0400079A RID: 1946
 	private int fadeID = Shader.PropertyToID("_Fade");
 }

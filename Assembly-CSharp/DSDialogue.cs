@@ -3,17 +3,17 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000120 RID: 288
+// Token: 0x020000D4 RID: 212
 [AddComponentMenu("Dialogue Sequence/Dialogue")]
 public class DSDialogue : DialogueSequence, ICueable
 {
-	// Token: 0x0600056E RID: 1390 RVA: 0x00005E24 File Offset: 0x00004024
+	// Token: 0x0600047D RID: 1149 RVA: 0x000193A0 File Offset: 0x000175A0
 	public void SetCamera(GameObject camera)
 	{
 		this.camera = camera;
 	}
 
-	// Token: 0x0600056F RID: 1391 RVA: 0x0002DF50 File Offset: 0x0002C150
+	// Token: 0x0600047E RID: 1150 RVA: 0x000193AC File Offset: 0x000175AC
 	public override YieldInstruction Run()
 	{
 		if (string.IsNullOrEmpty(this.dialogue))
@@ -36,7 +36,7 @@ public class DSDialogue : DialogueSequence, ICueable
 		return CoroutineUtil.Start(enumerator);
 	}
 
-	// Token: 0x06000570 RID: 1392 RVA: 0x0002E010 File Offset: 0x0002C210
+	// Token: 0x0600047F RID: 1151 RVA: 0x0001946C File Offset: 0x0001766C
 	public void OnValidate()
 	{
 		if (this.document == null)
@@ -58,7 +58,7 @@ public class DSDialogue : DialogueSequence, ICueable
 		}
 	}
 
-	// Token: 0x06000571 RID: 1393 RVA: 0x0002E0C0 File Offset: 0x0002C2C0
+	// Token: 0x06000480 RID: 1152 RVA: 0x0001951C File Offset: 0x0001771C
 	[ContextMenu("Sync Cues")]
 	private void SyncCues()
 	{
@@ -71,7 +71,7 @@ public class DSDialogue : DialogueSequence, ICueable
 		this.precueFirstCue = false;
 	}
 
-	// Token: 0x06000572 RID: 1394 RVA: 0x0002E120 File Offset: 0x0002C320
+	// Token: 0x06000481 RID: 1153 RVA: 0x0001957C File Offset: 0x0001777C
 	public override void Activate()
 	{
 		if (this.presetPosition)
@@ -102,7 +102,7 @@ public class DSDialogue : DialogueSequence, ICueable
 		base.Activate();
 	}
 
-	// Token: 0x06000573 RID: 1395 RVA: 0x00005E2D File Offset: 0x0000402D
+	// Token: 0x06000482 RID: 1154 RVA: 0x0001965B File Offset: 0x0001785B
 	public override void Deactivate()
 	{
 		base.Deactivate();
@@ -116,35 +116,35 @@ public class DSDialogue : DialogueSequence, ICueable
 		}
 	}
 
-	// Token: 0x04000774 RID: 1908
+	// Token: 0x04000643 RID: 1603
 	public MultilingualTextDocument document;
 
-	// Token: 0x04000775 RID: 1909
+	// Token: 0x04000644 RID: 1604
 	[ChunkLookup("document")]
 	public string dialogue;
 
-	// Token: 0x04000776 RID: 1910
+	// Token: 0x04000645 RID: 1605
 	public DialogueActor[] actors;
 
-	// Token: 0x04000777 RID: 1911
+	// Token: 0x04000646 RID: 1606
 	[HideInInspector]
 	public UnityEvent[] cues;
 
-	// Token: 0x04000778 RID: 1912
+	// Token: 0x04000647 RID: 1607
 	public DialogueUtil.CueData[] cueData;
 
-	// Token: 0x04000779 RID: 1913
+	// Token: 0x04000648 RID: 1608
 	public bool precueFirstCue;
 
-	// Token: 0x0400077A RID: 1914
+	// Token: 0x04000649 RID: 1609
 	public bool presetPosition = true;
 
-	// Token: 0x0400077B RID: 1915
+	// Token: 0x0400064A RID: 1610
 	public DialogueManager.DialogueBoxBackground background;
 
-	// Token: 0x0400077C RID: 1916
+	// Token: 0x0400064B RID: 1611
 	public bool setDialogueCamera = true;
 
-	// Token: 0x0400077D RID: 1917
+	// Token: 0x0400064C RID: 1612
 	private GameObject camera;
 }

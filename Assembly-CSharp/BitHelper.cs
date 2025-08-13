@@ -2,22 +2,22 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020000A6 RID: 166
+// Token: 0x02000083 RID: 131
 public static class BitHelper
 {
-	// Token: 0x0600025B RID: 603 RVA: 0x00003F99 File Offset: 0x00002199
+	// Token: 0x06000223 RID: 547 RVA: 0x0000BCE6 File Offset: 0x00009EE6
 	public static bool ReadBit(int integer, int i)
 	{
 		return ((integer >> i) & 1) == 1;
 	}
 
-	// Token: 0x0600025C RID: 604 RVA: 0x00003FA6 File Offset: 0x000021A6
+	// Token: 0x06000224 RID: 548 RVA: 0x0000BCF3 File Offset: 0x00009EF3
 	public static BitArray ToBits(int integer)
 	{
 		return new BitArray(new int[] { integer });
 	}
 
-	// Token: 0x0600025D RID: 605 RVA: 0x0001F610 File Offset: 0x0001D810
+	// Token: 0x06000225 RID: 549 RVA: 0x0000BD04 File Offset: 0x00009F04
 	public static int ToInteger(BitArray bitArray)
 	{
 		if (bitArray.Length > 32)

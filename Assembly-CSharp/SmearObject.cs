@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000154 RID: 340
+// Token: 0x02000101 RID: 257
 public class SmearObject : MonoBehaviour
 {
-	// Token: 0x0600065B RID: 1627 RVA: 0x00030774 File Offset: 0x0002E974
+	// Token: 0x06000549 RID: 1353 RVA: 0x0001C16C File Offset: 0x0001A36C
 	private void Start()
 	{
 		this.initialScale = base.transform.localScale;
@@ -13,7 +13,7 @@ public class SmearObject : MonoBehaviour
 		this.lastPosition = base.transform.position;
 	}
 
-	// Token: 0x0600065C RID: 1628 RVA: 0x000307D0 File Offset: 0x0002E9D0
+	// Token: 0x0600054A RID: 1354 RVA: 0x0001C1C8 File Offset: 0x0001A3C8
 	private void LateUpdate()
 	{
 		if (Time.deltaTime == 0f)
@@ -44,30 +44,30 @@ public class SmearObject : MonoBehaviour
 		this.lastPosition = position;
 	}
 
-	// Token: 0x04000882 RID: 2178
+	// Token: 0x0400073B RID: 1851
 	private Vector3 lastPosition;
 
-	// Token: 0x04000883 RID: 2179
+	// Token: 0x0400073C RID: 1852
 	private Vector3 initialScale;
 
-	// Token: 0x04000884 RID: 2180
+	// Token: 0x0400073D RID: 1853
 	private Quaternion initialRotation;
 
-	// Token: 0x04000885 RID: 2181
+	// Token: 0x0400073E RID: 1854
 	public Transform childObject;
 
-	// Token: 0x04000886 RID: 2182
+	// Token: 0x0400073F RID: 1855
 	private Vector3 planeNormal;
 
-	// Token: 0x04000887 RID: 2183
+	// Token: 0x04000740 RID: 1856
 	public Vector3 velocity;
 
-	// Token: 0x04000888 RID: 2184
+	// Token: 0x04000741 RID: 1857
 	private Vector3 velocityVelocity;
 
-	// Token: 0x04000889 RID: 2185
+	// Token: 0x04000742 RID: 1858
 	public float referenceFramerate = 30f;
 
-	// Token: 0x0400088A RID: 2186
+	// Token: 0x04000743 RID: 1859
 	public Vector3 localVelocity;
 }

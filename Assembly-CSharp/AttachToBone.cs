@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000239 RID: 569
+// Token: 0x020001BA RID: 442
 public class AttachToBone : MonoBehaviour
 {
-	// Token: 0x06000AC9 RID: 2761 RVA: 0x0003DF68 File Offset: 0x0003C168
+	// Token: 0x06000932 RID: 2354 RVA: 0x0002BC48 File Offset: 0x00029E48
 	private void Start()
 	{
 		if (this.useInitialTransform)
@@ -28,7 +28,7 @@ public class AttachToBone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000ACA RID: 2762 RVA: 0x0003DFF0 File Offset: 0x0003C1F0
+	// Token: 0x06000933 RID: 2355 RVA: 0x0002BCD0 File Offset: 0x00029ED0
 	private Vector3 GetDirection(AttachToBone.DirectionSource source, Vector3 direction)
 	{
 		switch (source)
@@ -44,7 +44,7 @@ public class AttachToBone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000ACB RID: 2763 RVA: 0x0003E04C File Offset: 0x0003C24C
+	// Token: 0x06000934 RID: 2356 RVA: 0x0002BD2C File Offset: 0x00029F2C
 	private void LateUpdate()
 	{
 		base.transform.position = this.attachedTransform.TransformPoint(this.localPosition);
@@ -63,60 +63,60 @@ public class AttachToBone : MonoBehaviour
 		base.transform.rotation = this.attachedTransform.rotation * this.localRotation;
 	}
 
-	// Token: 0x04000D9F RID: 3487
+	// Token: 0x04000B8B RID: 2955
 	public AttachToBone.PlayerBone attachedBone;
 
-	// Token: 0x04000DA0 RID: 3488
+	// Token: 0x04000B8C RID: 2956
 	private Transform attachedTransform;
 
-	// Token: 0x04000DA1 RID: 3489
+	// Token: 0x04000B8D RID: 2957
 	public bool useInitialTransform;
 
-	// Token: 0x04000DA2 RID: 3490
+	// Token: 0x04000B8E RID: 2958
 	[ConditionalHide("useInitialTransform", true, Inverse = true)]
 	public Vector3 localPosition;
 
-	// Token: 0x04000DA3 RID: 3491
+	// Token: 0x04000B8F RID: 2959
 	[ConditionalHide("useInitialTransform", true, Inverse = true)]
 	public Quaternion localRotation;
 
-	// Token: 0x04000DA4 RID: 3492
+	// Token: 0x04000B90 RID: 2960
 	public Transform target;
 
-	// Token: 0x04000DA5 RID: 3493
+	// Token: 0x04000B91 RID: 2961
 	public AttachToBone.DirectionSource forwardSource;
 
-	// Token: 0x04000DA6 RID: 3494
+	// Token: 0x04000B92 RID: 2962
 	public Vector3 forwardDirection;
 
-	// Token: 0x04000DA7 RID: 3495
+	// Token: 0x04000B93 RID: 2963
 	public AttachToBone.DirectionSource upSource;
 
-	// Token: 0x04000DA8 RID: 3496
+	// Token: 0x04000B94 RID: 2964
 	public Vector3 upDirection;
 
-	// Token: 0x04000DA9 RID: 3497
+	// Token: 0x04000B95 RID: 2965
 	public bool giveUpPriority;
 
-	// Token: 0x0200023A RID: 570
+	// Token: 0x020003DC RID: 988
 	public enum PlayerBone
 	{
-		// Token: 0x04000DAB RID: 3499
+		// Token: 0x04001C40 RID: 7232
 		Head,
-		// Token: 0x04000DAC RID: 3500
+		// Token: 0x04001C41 RID: 7233
 		Hand,
-		// Token: 0x04000DAD RID: 3501
+		// Token: 0x04001C42 RID: 7234
 		Chest
 	}
 
-	// Token: 0x0200023B RID: 571
+	// Token: 0x020003DD RID: 989
 	public enum DirectionSource
 	{
-		// Token: 0x04000DAF RID: 3503
+		// Token: 0x04001C44 RID: 7236
 		LocalDirection,
-		// Token: 0x04000DB0 RID: 3504
+		// Token: 0x04001C45 RID: 7237
 		TargetDirection,
-		// Token: 0x04000DB1 RID: 3505
+		// Token: 0x04001C46 RID: 7238
 		Target
 	}
 }

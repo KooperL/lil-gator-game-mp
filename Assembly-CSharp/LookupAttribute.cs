@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000298 RID: 664
+// Token: 0x02000205 RID: 517
 public class LookupAttribute : PropertyAttribute
 {
-	// Token: 0x0400115C RID: 4444
+	// Token: 0x04000EF6 RID: 3830
 	public string sourceField;
 }

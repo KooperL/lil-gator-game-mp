@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200015E RID: 350
+// Token: 0x02000109 RID: 265
 public class TriggerPickup : MonoBehaviour, IOnTimeout
 {
-	// Token: 0x06000680 RID: 1664 RVA: 0x00006B1E File Offset: 0x00004D1E
+	// Token: 0x06000568 RID: 1384 RVA: 0x0001C92F File Offset: 0x0001AB2F
 	public static void TriggerQuickPickup()
 	{
 		TriggerPickup.quickPickupTime = Time.time;
 	}
 
-	// Token: 0x06000681 RID: 1665 RVA: 0x00030FC4 File Offset: 0x0002F1C4
+	// Token: 0x06000569 RID: 1385 RVA: 0x0001C93C File Offset: 0x0001AB3C
 	private void OnValidate()
 	{
 		if (this.rigidbody == null)
@@ -28,7 +28,7 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x06000682 RID: 1666 RVA: 0x00006B2A File Offset: 0x00004D2A
+	// Token: 0x0600056A RID: 1386 RVA: 0x0001C9C0 File Offset: 0x0001ABC0
 	private void Start()
 	{
 		if (!this.initialized)
@@ -37,14 +37,14 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x06000683 RID: 1667 RVA: 0x00031048 File Offset: 0x0002F248
+	// Token: 0x0600056B RID: 1387 RVA: 0x0001C9D0 File Offset: 0x0001ABD0
 	public void Initialize()
 	{
 		this.initialized = true;
 		this.initialPosition = base.transform.position;
 		this.delayTime = Time.time + this.delay + Random.Range(0f, 0.25f);
 		this.autoTime = Time.time + Random.Range(3f, 4f);
-		this.rigidbody.interpolation = 1;
+		this.rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
 		this.sphereTrigger.radius *= 1f / base.transform.parent.parent.localScale.x;
 		if (!this.allowPlayerCollision)
 		{
@@ -52,7 +52,7 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x06000684 RID: 1668 RVA: 0x00031104 File Offset: 0x0002F304
+	// Token: 0x0600056C RID: 1388 RVA: 0x0001CA8C File Offset: 0x0001AC8C
 	private void FixedUpdate()
 	{
 		if (!this.isQuick && Time.time - TriggerPickup.quickPickupTime < 0.1f)
@@ -88,12 +88,12 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 			Object.Destroy(this.rigidbody.gameObject);
 			return;
 		}
-		this.rigidbody.AddForce((this.isQuick ? 100f : 50f) / magnitude * vector, 5);
+		this.rigidbody.AddForce((this.isQuick ? 100f : 50f) / magnitude * vector, ForceMode.Acceleration);
 		this.rigidbody.angularVelocity += 20f * Vector3.one * Time.deltaTime;
 		this.rigidbody.transform.localScale = Vector3.MoveTowards(this.rigidbody.transform.localScale, 0.5f * Vector3.one, 2f * Time.deltaTime);
 	}
 
-	// Token: 0x06000685 RID: 1669 RVA: 0x00006B3A File Offset: 0x00004D3A
+	// Token: 0x0600056D RID: 1389 RVA: 0x0001CC2F File Offset: 0x0001AE2F
 	private void OnTriggerStay(Collider other)
 	{
 		if (base.enabled && !this.pickingUp && Time.time > this.delayTime)
@@ -102,13 +102,13 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x06000686 RID: 1670 RVA: 0x00006B5F File Offset: 0x00004D5F
+	// Token: 0x0600056E RID: 1390 RVA: 0x0001CC54 File Offset: 0x0001AE54
 	public void OnTimeout()
 	{
 		this.resource.SetAmountSecret(this.resource.Amount + this.resourceValue);
 	}
 
-	// Token: 0x06000687 RID: 1671 RVA: 0x000312A8 File Offset: 0x0002F4A8
+	// Token: 0x0600056F RID: 1391 RVA: 0x0001CC74 File Offset: 0x0001AE74
 	private void StartPickUp()
 	{
 		if (this.waterPhysics != null)
@@ -124,7 +124,7 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x06000688 RID: 1672 RVA: 0x00031310 File Offset: 0x0002F510
+	// Token: 0x06000570 RID: 1392 RVA: 0x0001CCDC File Offset: 0x0001AEDC
 	private void GiveReward()
 	{
 		if (this.pickingUp && this.audioSourceVariance != null)
@@ -137,66 +137,66 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x040008BC RID: 2236
+	// Token: 0x04000768 RID: 1896
 	public static float quickPickupTime = -1f;
 
-	// Token: 0x040008BD RID: 2237
+	// Token: 0x04000769 RID: 1897
 	public float delay = 0.5f;
 
-	// Token: 0x040008BE RID: 2238
+	// Token: 0x0400076A RID: 1898
 	private float delayTime = -1f;
 
-	// Token: 0x040008BF RID: 2239
+	// Token: 0x0400076B RID: 1899
 	private const float minAuto = 3f;
 
-	// Token: 0x040008C0 RID: 2240
+	// Token: 0x0400076C RID: 1900
 	private const float maxAuto = 4f;
 
-	// Token: 0x040008C1 RID: 2241
+	// Token: 0x0400076D RID: 1901
 	private float autoTime;
 
-	// Token: 0x040008C2 RID: 2242
+	// Token: 0x0400076E RID: 1902
 	public const float maxDistance = 17f;
 
-	// Token: 0x040008C3 RID: 2243
+	// Token: 0x0400076F RID: 1903
 	private bool pickingUp;
 
-	// Token: 0x040008C4 RID: 2244
+	// Token: 0x04000770 RID: 1904
 	private Vector3 initialPosition;
 
-	// Token: 0x040008C5 RID: 2245
+	// Token: 0x04000771 RID: 1905
 	public Rigidbody rigidbody;
 
-	// Token: 0x040008C6 RID: 2246
+	// Token: 0x04000772 RID: 1906
 	public Collider collider;
 
-	// Token: 0x040008C7 RID: 2247
+	// Token: 0x04000773 RID: 1907
 	public SphereCollider sphereTrigger;
 
-	// Token: 0x040008C8 RID: 2248
+	// Token: 0x04000774 RID: 1908
 	public float pickupAcc = 30f;
 
-	// Token: 0x040008C9 RID: 2249
+	// Token: 0x04000775 RID: 1909
 	public float pickupDrag = 0.7f;
 
-	// Token: 0x040008CA RID: 2250
+	// Token: 0x04000776 RID: 1910
 	public AudioSourceVariance audioSourceVariance;
 
-	// Token: 0x040008CB RID: 2251
+	// Token: 0x04000777 RID: 1911
 	public ItemResource resource;
 
-	// Token: 0x040008CC RID: 2252
+	// Token: 0x04000778 RID: 1912
 	public int resourceValue = 1;
 
-	// Token: 0x040008CD RID: 2253
+	// Token: 0x04000779 RID: 1913
 	public WaterPhysics waterPhysics;
 
-	// Token: 0x040008CE RID: 2254
+	// Token: 0x0400077A RID: 1914
 	public bool allowPlayerCollision;
 
-	// Token: 0x040008CF RID: 2255
+	// Token: 0x0400077B RID: 1915
 	private bool initialized;
 
-	// Token: 0x040008D0 RID: 2256
+	// Token: 0x0400077C RID: 1916
 	private bool isQuick;
 }

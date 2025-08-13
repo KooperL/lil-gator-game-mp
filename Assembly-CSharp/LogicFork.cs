@@ -3,16 +3,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020001D6 RID: 470
+// Token: 0x02000167 RID: 359
 [AddComponentMenu("Logic/Fork Event By State")]
 public class LogicFork : MonoBehaviour
 {
-	// Token: 0x060008B4 RID: 2228 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000762 RID: 1890 RVA: 0x00024A6F File Offset: 0x00022C6F
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x060008B5 RID: 2229 RVA: 0x00037C08 File Offset: 0x00035E08
+	// Token: 0x06000763 RID: 1891 RVA: 0x00024A74 File Offset: 0x00022C74
 	protected virtual void OnValidate()
 	{
 		if (this.stateMachine == null)
@@ -38,7 +38,7 @@ public class LogicFork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008B6 RID: 2230 RVA: 0x00037D2C File Offset: 0x00035F2C
+	// Token: 0x06000764 RID: 1892 RVA: 0x00024B98 File Offset: 0x00022D98
 	public void Action()
 	{
 		int stateID = this.stateMachine.StateID;
@@ -72,7 +72,7 @@ public class LogicFork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008B7 RID: 2231 RVA: 0x0000883F File Offset: 0x00006A3F
+	// Token: 0x06000765 RID: 1893 RVA: 0x00024C21 File Offset: 0x00022E21
 	private IEnumerator RunExecuteAction(LogicFork.StateAction action, int actionIndex)
 	{
 		action.onAction.Invoke();
@@ -181,7 +181,7 @@ public class LogicFork : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060008B8 RID: 2232 RVA: 0x00037DB8 File Offset: 0x00035FB8
+	// Token: 0x06000766 RID: 1894 RVA: 0x00024C40 File Offset: 0x00022E40
 	private YieldInstruction RunDialogueChunk(string dialogue, bool isBubble = false, bool skipWaitForPlayer = false)
 	{
 		if (this.document == null)
@@ -202,7 +202,7 @@ public class LogicFork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008B9 RID: 2233 RVA: 0x00037E58 File Offset: 0x00036058
+	// Token: 0x06000767 RID: 1895 RVA: 0x00024CE0 File Offset: 0x00022EE0
 	public void ProgressIndex()
 	{
 		int stateID = this.stateMachine.StateID;
@@ -238,80 +238,80 @@ public class LogicFork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000B4A RID: 2890
+	// Token: 0x040009A0 RID: 2464
 	public QuestStates stateMachine;
 
-	// Token: 0x04000B4B RID: 2891
+	// Token: 0x040009A1 RID: 2465
 	public DialogueActor[] actors;
 
-	// Token: 0x04000B4C RID: 2892
+	// Token: 0x040009A2 RID: 2466
 	public MultilingualTextDocument document;
 
-	// Token: 0x04000B4D RID: 2893
+	// Token: 0x040009A3 RID: 2467
 	public LogicFork.StateAction[] stateActions;
 
-	// Token: 0x020001D7 RID: 471
+	// Token: 0x020003C6 RID: 966
 	[Serializable]
 	public struct StateAction
 	{
-		// Token: 0x04000B4E RID: 2894
+		// Token: 0x04001BC7 RID: 7111
 		[ReadOnly]
 		public string stateName;
 
-		// Token: 0x04000B4F RID: 2895
+		// Token: 0x04001BC8 RID: 7112
 		[Space]
 		public int[] applicableStates;
 
-		// Token: 0x04000B50 RID: 2896
+		// Token: 0x04001BC9 RID: 7113
 		[Space]
 		public bool progressState;
 
-		// Token: 0x04000B51 RID: 2897
+		// Token: 0x04001BCA RID: 7114
 		[ConditionalHide("progressState", true)]
 		public bool overrideNewState;
 
-		// Token: 0x04000B52 RID: 2898
+		// Token: 0x04001BCB RID: 7115
 		[ConditionalHide("overrideNewState", true, ConditionalSourceField2 = "progressState")]
 		public int newState;
 
-		// Token: 0x04000B53 RID: 2899
+		// Token: 0x04001BCC RID: 7116
 		[ConditionalHide("progressState", true)]
 		public bool progressStateFirst;
 
-		// Token: 0x04000B54 RID: 2900
+		// Token: 0x04001BCD RID: 7117
 		[Space]
 		public GameObject[] actionObjects;
 
-		// Token: 0x04000B55 RID: 2901
+		// Token: 0x04001BCE RID: 7118
 		[Header("Dialogue Triggers")]
 		[ChunkLookup("document")]
 		public string dialogue;
 
-		// Token: 0x04000B56 RID: 2902
+		// Token: 0x04001BCF RID: 7119
 		[ChunkLookup("document")]
 		public string[] additionalDialogue;
 
-		// Token: 0x04000B57 RID: 2903
+		// Token: 0x04001BD0 RID: 7120
 		public bool dialogueIsBubble;
 
-		// Token: 0x04000B58 RID: 2904
+		// Token: 0x04001BD1 RID: 7121
 		public bool skipWaitForPlayer;
 
-		// Token: 0x04000B59 RID: 2905
+		// Token: 0x04001BD2 RID: 7122
 		[ReadOnly]
 		public int dialogueIndex;
 
-		// Token: 0x04000B5A RID: 2906
+		// Token: 0x04001BD3 RID: 7123
 		public bool loopDialogue;
 
-		// Token: 0x04000B5B RID: 2907
+		// Token: 0x04001BD4 RID: 7124
 		public DialogueSequencer dialogueSequencer;
 
-		// Token: 0x04000B5C RID: 2908
+		// Token: 0x04001BD5 RID: 7125
 		[Header("Event Triggers")]
 		public UnityEvent onAction;
 
-		// Token: 0x04000B5D RID: 2909
+		// Token: 0x04001BD6 RID: 7126
 		public UnityEvent afterAction;
 	}
 }

@@ -1,16 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000312 RID: 786
+// Token: 0x0200024D RID: 589
 public class SurfaceAngular : MonoBehaviour, ISurface
 {
-	// Token: 0x06000F6D RID: 3949 RVA: 0x0000D670 File Offset: 0x0000B870
+	// Token: 0x06000CC1 RID: 3265 RVA: 0x0003DB14 File Offset: 0x0003BD14
 	public SurfaceMaterial GetSurfaceMaterial(Vector3 position)
 	{
 		return this.GetSurfaceMaterial(position, Vector3.forward);
 	}
 
-	// Token: 0x06000F6E RID: 3950 RVA: 0x0000D67E File Offset: 0x0000B87E
+	// Token: 0x06000CC2 RID: 3266 RVA: 0x0003DB22 File Offset: 0x0003BD22
 	public SurfaceMaterial GetSurfaceMaterial(Vector3 position, Vector3 normal)
 	{
 		if (normal.y > 0.71f)
@@ -20,9 +20,9 @@ public class SurfaceAngular : MonoBehaviour, ISurface
 		return this.wallMaterial;
 	}
 
-	// Token: 0x040013F1 RID: 5105
+	// Token: 0x040010D8 RID: 4312
 	public SurfaceMaterial groundMaterial;
 
-	// Token: 0x040013F2 RID: 5106
+	// Token: 0x040010D9 RID: 4313
 	public SurfaceMaterial wallMaterial;
 }

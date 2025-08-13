@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.U2D;
 
-// Token: 0x0200024C RID: 588
+// Token: 0x020001C9 RID: 457
 public class ItemGlasses : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x06000B03 RID: 2819 RVA: 0x0003EAC8 File Offset: 0x0003CCC8
+	// Token: 0x0600096C RID: 2412 RVA: 0x0002CB08 File Offset: 0x0002AD08
 	public static void SetPixelFilterEnabled(bool isEnabled)
 	{
 		ItemGlasses.pixelPerfectCamera = MainCamera.p;
@@ -33,7 +33,7 @@ public class ItemGlasses : MonoBehaviour, IItemBehaviour
 		ItemGlasses.ppLayer.enabled = !isEnabled;
 	}
 
-	// Token: 0x06000B04 RID: 2820 RVA: 0x0000A773 File Offset: 0x00008973
+	// Token: 0x0600096D RID: 2413 RVA: 0x0002CBA0 File Offset: 0x0002ADA0
 	private void Start()
 	{
 		ItemGlasses.SetPixelFilterEnabled(true);
@@ -41,39 +41,39 @@ public class ItemGlasses : MonoBehaviour, IItemBehaviour
 		this.itemManager.bareHead.SetActive(true);
 	}
 
-	// Token: 0x06000B05 RID: 2821 RVA: 0x0000A797 File Offset: 0x00008997
+	// Token: 0x0600096E RID: 2414 RVA: 0x0002CBC4 File Offset: 0x0002ADC4
 	public void OnRemove()
 	{
 		ItemGlasses.SetPixelFilterEnabled(false);
 		this.itemManager.bareHead.SetActive(false);
 	}
 
-	// Token: 0x06000B06 RID: 2822 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x0600096F RID: 2415 RVA: 0x0002CBDD File Offset: 0x0002ADDD
 	public void Cancel()
 	{
 	}
 
-	// Token: 0x06000B07 RID: 2823 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000970 RID: 2416 RVA: 0x0002CBDF File Offset: 0x0002ADDF
 	public void Input(bool isDown, bool isHeld)
 	{
 	}
 
-	// Token: 0x06000B08 RID: 2824 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000971 RID: 2417 RVA: 0x0002CBE1 File Offset: 0x0002ADE1
 	public void SetEquipped(bool isEquipped)
 	{
 	}
 
-	// Token: 0x06000B09 RID: 2825 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000972 RID: 2418 RVA: 0x0002CBE3 File Offset: 0x0002ADE3
 	public void SetIndex(int index)
 	{
 	}
 
-	// Token: 0x04000E01 RID: 3585
+	// Token: 0x04000BDB RID: 3035
 	private static PixelPerfectCamera pixelPerfectCamera;
 
-	// Token: 0x04000E02 RID: 3586
+	// Token: 0x04000BDC RID: 3036
 	private static PostProcessLayer ppLayer;
 
-	// Token: 0x04000E03 RID: 3587
+	// Token: 0x04000BDD RID: 3037
 	private PlayerItemManager itemManager;
 }

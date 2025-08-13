@@ -2,17 +2,17 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000123 RID: 291
+// Token: 0x020000D7 RID: 215
 [AddComponentMenu("Dialogue Sequence/Dialogue (Phone)")]
 public class DSDialoguePhone : DialogueSequence, ICueable
 {
-	// Token: 0x06000578 RID: 1400 RVA: 0x00005E95 File Offset: 0x00004095
+	// Token: 0x06000487 RID: 1159 RVA: 0x00019751 File Offset: 0x00017951
 	public void SetCamera(GameObject camera)
 	{
 		this.camera = camera;
 	}
 
-	// Token: 0x06000579 RID: 1401 RVA: 0x0002E284 File Offset: 0x0002C484
+	// Token: 0x06000488 RID: 1160 RVA: 0x0001975C File Offset: 0x0001795C
 	public override YieldInstruction Run()
 	{
 		IEnumerator enumerator;
@@ -31,7 +31,7 @@ public class DSDialoguePhone : DialogueSequence, ICueable
 		return CoroutineUtil.Start(enumerator);
 	}
 
-	// Token: 0x0600057A RID: 1402 RVA: 0x0002E334 File Offset: 0x0002C534
+	// Token: 0x06000489 RID: 1161 RVA: 0x0001980C File Offset: 0x00017A0C
 	[ContextMenu("Sync Cues")]
 	private void SyncCues()
 	{
@@ -44,7 +44,7 @@ public class DSDialoguePhone : DialogueSequence, ICueable
 		this.precueFirstCue = false;
 	}
 
-	// Token: 0x0600057B RID: 1403 RVA: 0x0002E394 File Offset: 0x0002C594
+	// Token: 0x0600048A RID: 1162 RVA: 0x0001986C File Offset: 0x00017A6C
 	public override void Activate()
 	{
 		if (this.precueFirstCue && this.cueData.Length != 0)
@@ -71,7 +71,7 @@ public class DSDialoguePhone : DialogueSequence, ICueable
 		base.Activate();
 	}
 
-	// Token: 0x0600057C RID: 1404 RVA: 0x00005E9E File Offset: 0x0000409E
+	// Token: 0x0600048B RID: 1163 RVA: 0x00019933 File Offset: 0x00017B33
 	public override void Deactivate()
 	{
 		base.Deactivate();
@@ -81,31 +81,31 @@ public class DSDialoguePhone : DialogueSequence, ICueable
 		}
 	}
 
-	// Token: 0x04000785 RID: 1925
+	// Token: 0x04000654 RID: 1620
 	public MultilingualTextDocument document;
 
-	// Token: 0x04000786 RID: 1926
+	// Token: 0x04000655 RID: 1621
 	[ChunkLookup("document")]
 	public string dialogue;
 
-	// Token: 0x04000787 RID: 1927
+	// Token: 0x04000656 RID: 1622
 	public CharacterProfile[] characters;
 
-	// Token: 0x04000788 RID: 1928
+	// Token: 0x04000657 RID: 1623
 	public DialogueUtil.CueData[] cueData;
 
-	// Token: 0x04000789 RID: 1929
+	// Token: 0x04000658 RID: 1624
 	public bool precueFirstCue;
 
-	// Token: 0x0400078A RID: 1930
+	// Token: 0x04000659 RID: 1625
 	public bool displayNames = true;
 
-	// Token: 0x0400078B RID: 1931
+	// Token: 0x0400065A RID: 1626
 	public bool clearPhoneAfter = true;
 
-	// Token: 0x0400078C RID: 1932
+	// Token: 0x0400065B RID: 1627
 	public Sprite[] images;
 
-	// Token: 0x0400078D RID: 1933
+	// Token: 0x0400065C RID: 1628
 	private GameObject camera;
 }

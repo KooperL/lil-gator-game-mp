@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 namespace Rewired.Demos.GamepadTemplateUI
 {
-	// Token: 0x020004B3 RID: 1203
+	// Token: 0x0200034B RID: 843
 	[RequireComponent(typeof(Image))]
 	public class ControllerUIEffect : MonoBehaviour
 	{
-		// Token: 0x06001DDF RID: 7647 RVA: 0x00016DCB File Offset: 0x00014FCB
+		// Token: 0x060017DB RID: 6107 RVA: 0x00065BB1 File Offset: 0x00063DB1
 		private void Awake()
 		{
 			this._image = base.GetComponent<Image>();
@@ -16,7 +16,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this._color = this._origColor;
 		}
 
-		// Token: 0x06001DE0 RID: 7648 RVA: 0x00074D80 File Offset: 0x00072F80
+		// Token: 0x060017DC RID: 6108 RVA: 0x00065BDC File Offset: 0x00063DDC
 		public void Activate(float amount)
 		{
 			amount = Mathf.Clamp01(amount);
@@ -30,7 +30,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this.RedrawImage();
 		}
 
-		// Token: 0x06001DE1 RID: 7649 RVA: 0x00016DF6 File Offset: 0x00014FF6
+		// Token: 0x060017DD RID: 6109 RVA: 0x00065C34 File Offset: 0x00063E34
 		public void Deactivate()
 		{
 			if (!this._isActive)
@@ -43,30 +43,30 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this.RedrawImage();
 		}
 
-		// Token: 0x06001DE2 RID: 7650 RVA: 0x00016E25 File Offset: 0x00015025
+		// Token: 0x060017DE RID: 6110 RVA: 0x00065C63 File Offset: 0x00063E63
 		private void RedrawImage()
 		{
 			this._image.color = this._color;
 			this._image.enabled = this._isActive;
 		}
 
-		// Token: 0x04001F26 RID: 7974
+		// Token: 0x04001990 RID: 6544
 		[SerializeField]
 		private Color _highlightColor = Color.white;
 
-		// Token: 0x04001F27 RID: 7975
+		// Token: 0x04001991 RID: 6545
 		private Image _image;
 
-		// Token: 0x04001F28 RID: 7976
+		// Token: 0x04001992 RID: 6546
 		private Color _color;
 
-		// Token: 0x04001F29 RID: 7977
+		// Token: 0x04001993 RID: 6547
 		private Color _origColor;
 
-		// Token: 0x04001F2A RID: 7978
+		// Token: 0x04001994 RID: 6548
 		private bool _isActive;
 
-		// Token: 0x04001F2B RID: 7979
+		// Token: 0x04001995 RID: 6549
 		private float _highlightAmount;
 	}
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000138 RID: 312
+// Token: 0x020000E7 RID: 231
 public class DisableDynamicOcclusion : MonoBehaviour
 {
-	// Token: 0x060005D1 RID: 1489 RVA: 0x0002EDE8 File Offset: 0x0002CFE8
+	// Token: 0x060004C5 RID: 1221 RVA: 0x0001A0DC File Offset: 0x000182DC
 	private void Start()
 	{
 		Renderer[] array = Object.FindObjectsOfType<Renderer>(true);

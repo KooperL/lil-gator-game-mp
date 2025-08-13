@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200034B RID: 843
+// Token: 0x0200027D RID: 637
 public class SyncTreeShadows : MonoBehaviour
 {
-	// Token: 0x06001059 RID: 4185 RVA: 0x00054358 File Offset: 0x00052558
+	// Token: 0x06000D9D RID: 3485 RVA: 0x00041F44 File Offset: 0x00040144
 	private void OnValidate()
 	{
 		for (int i = 0; i < this.treeShadowIndices.Length; i++)
@@ -18,7 +18,7 @@ public class SyncTreeShadows : MonoBehaviour
 		this.UpdateTreeShadows();
 	}
 
-	// Token: 0x0600105A RID: 4186 RVA: 0x00054394 File Offset: 0x00052594
+	// Token: 0x06000D9E RID: 3486 RVA: 0x00041F80 File Offset: 0x00040180
 	[ContextMenu("Update Tree Shadows")]
 	public void UpdateTreeShadows()
 	{
@@ -46,18 +46,19 @@ public class SyncTreeShadows : MonoBehaviour
 			int num;
 			if (dictionary.TryGetValue(list[k].prototypeIndex, out num))
 			{
-				TreeInstance treeInstance = default(TreeInstance);
-				treeInstance.prototypeIndex = num;
-				treeInstance.heightScale = list[k].heightScale;
-				treeInstance.position = list[k].position;
-				treeInstance.rotation = list[k].rotation;
-				treeInstance.widthScale = list[k].widthScale;
-				list.Add(treeInstance);
+				list.Add(new TreeInstance
+				{
+					prototypeIndex = num,
+					heightScale = list[k].heightScale,
+					position = list[k].position,
+					rotation = list[k].rotation,
+					widthScale = list[k].widthScale
+				});
 			}
 		}
 		component.terrainData.SetTreeInstances(list.ToArray(), true);
 	}
 
-	// Token: 0x04001536 RID: 5430
+	// Token: 0x040011F6 RID: 4598
 	public int[] treeShadowIndices;
 }

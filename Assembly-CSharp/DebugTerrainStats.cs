@@ -1,15 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000C5 RID: 197
+// Token: 0x0200009D RID: 157
 public class DebugTerrainStats : MonoBehaviour
 {
-	// Token: 0x040004A4 RID: 1188
+	// Token: 0x0400040E RID: 1038
 	public GameObject placeholderBillboard;
 
-	// Token: 0x040004A5 RID: 1189
+	// Token: 0x0400040F RID: 1039
 	public Transform billboardParent;
 
-	// Token: 0x040004A6 RID: 1190
+	// Token: 0x04000410 RID: 1040
 	public GameObject[] placeholderBillboards;
 }

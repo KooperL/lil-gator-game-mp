@@ -1,10 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000372 RID: 882
+// Token: 0x02000298 RID: 664
 public class SettingResolution : MonoBehaviour
 {
-	// Token: 0x060010E7 RID: 4327 RVA: 0x0000E895 File Offset: 0x0000CA95
+	// Token: 0x06000E23 RID: 3619 RVA: 0x0004422E File Offset: 0x0004242E
 	private void OnValidate()
 	{
 		if (this.selectOptions != null)
@@ -13,7 +13,7 @@ public class SettingResolution : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010E8 RID: 4328 RVA: 0x00055EC0 File Offset: 0x000540C0
+	// Token: 0x06000E24 RID: 3620 RVA: 0x0004424C File Offset: 0x0004244C
 	private void OnEnable()
 	{
 		this.selectOptions.options = new string[Settings.pixelResolutions.Length];
@@ -21,8 +21,7 @@ public class SettingResolution : MonoBehaviour
 		{
 			this.selectOptions.options[i] = string.Format("{0}x{1}", Settings.pixelResolutions[i].x, Settings.pixelResolutions[i].y);
 		}
-		Vector2Int vector2Int;
-		vector2Int..ctor(Settings.s.ReadInt("ResolutionX", Screen.currentResolution.width), Settings.s.ReadInt("ResolutionY", Screen.currentResolution.height));
+		Vector2Int vector2Int = new Vector2Int(Settings.s.ReadInt("ResolutionX", Screen.currentResolution.width), Settings.s.ReadInt("ResolutionY", Screen.currentResolution.height));
 		int num;
 		if (!Settings.pixelResolutions.TryFindIndex(vector2Int, out num))
 		{
@@ -36,7 +35,7 @@ public class SettingResolution : MonoBehaviour
 		this.setInitialSetting = true;
 	}
 
-	// Token: 0x060010E9 RID: 4329 RVA: 0x00055FB4 File Offset: 0x000541B4
+	// Token: 0x06000E25 RID: 3621 RVA: 0x00044340 File Offset: 0x00042540
 	public void OnSelectionChange(int selectedOption)
 	{
 		if (!this.setInitialSetting)
@@ -48,9 +47,9 @@ public class SettingResolution : MonoBehaviour
 		Settings.s.LoadSettings();
 	}
 
-	// Token: 0x040015EA RID: 5610
+	// Token: 0x0400128D RID: 4749
 	public SelectOptions selectOptions;
 
-	// Token: 0x040015EB RID: 5611
+	// Token: 0x0400128E RID: 4750
 	private bool setInitialSetting;
 }

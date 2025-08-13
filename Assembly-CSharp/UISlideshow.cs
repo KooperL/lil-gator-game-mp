@@ -5,12 +5,13 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// Token: 0x020003D1 RID: 977
+// Token: 0x020002E3 RID: 739
 public class UISlideshow : MonoBehaviour
 {
-	// Token: 0x060012CC RID: 4812 RVA: 0x0000FE9E File Offset: 0x0000E09E
+	// Token: 0x06000FAC RID: 4012 RVA: 0x0004B116 File Offset: 0x00049316
 	public void OnEnable()
 	{
 		Game.g.SetWorldState(this.worldState, false, true);
@@ -20,14 +21,14 @@ public class UISlideshow : MonoBehaviour
 		this.StartLoad();
 	}
 
-	// Token: 0x060012CD RID: 4813 RVA: 0x0000FED0 File Offset: 0x0000E0D0
+	// Token: 0x06000FAD RID: 4013 RVA: 0x0004B148 File Offset: 0x00049348
 	private Color MoveTowardsColor(Color current, float target, float speed, int channel)
 	{
 		current[channel] = Mathf.MoveTowards(current[channel], target, speed * Time.deltaTime);
 		return current;
 	}
 
-	// Token: 0x060012CE RID: 4814 RVA: 0x0000FEF2 File Offset: 0x0000E0F2
+	// Token: 0x06000FAE RID: 4014 RVA: 0x0004B16A File Offset: 0x0004936A
 	private IEnumerator RunSlideTransition(int currentSlide)
 	{
 		Color backgroundColor = this.slides[currentSlide].backgroundColor;
@@ -92,7 +93,7 @@ public class UISlideshow : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060012CF RID: 4815 RVA: 0x0005C440 File Offset: 0x0005A640
+	// Token: 0x06000FAF RID: 4015 RVA: 0x0004B180 File Offset: 0x00049380
 	public void NextSlide()
 	{
 		this.oldBackgroundColor = this.background.color;
@@ -106,13 +107,13 @@ public class UISlideshow : MonoBehaviour
 		base.StartCoroutine(this.currentTransition);
 	}
 
-	// Token: 0x060012D0 RID: 4816 RVA: 0x0000FF08 File Offset: 0x0000E108
+	// Token: 0x06000FB0 RID: 4016 RVA: 0x0004B1FA File Offset: 0x000493FA
 	public void StartLoad()
 	{
 		base.StartCoroutine(this.LoadSceneAsync());
 	}
 
-	// Token: 0x060012D1 RID: 4817 RVA: 0x0000FF17 File Offset: 0x0000E117
+	// Token: 0x06000FB1 RID: 4017 RVA: 0x0004B209 File Offset: 0x00049409
 	public void FinishSlideshow()
 	{
 		if (!this.isLoadFinished)
@@ -123,14 +124,14 @@ public class UISlideshow : MonoBehaviour
 		this.isSlideshowFinished = true;
 	}
 
-	// Token: 0x060012D2 RID: 4818 RVA: 0x0000FF35 File Offset: 0x0000E135
+	// Token: 0x06000FB2 RID: 4018 RVA: 0x0004B227 File Offset: 0x00049427
 	public IEnumerator LoadSceneAsync()
 	{
 		Object.DontDestroyOnLoad(base.gameObject);
 		this.loadingIcon.SetActive(true);
 		FadeGameVolume.FadeOutGameVolume();
 		yield return new WaitForSeconds(1f);
-		AsyncOperationHandle<SceneInstance> handle = Addressables.LoadSceneAsync(this.mainScene, 0, false, 100);
+		AsyncOperationHandle<SceneInstance> handle = Addressables.LoadSceneAsync(this.mainScene, LoadSceneMode.Single, false, 100);
 		yield return handle;
 		this.isLoadFinished = true;
 		this.loadingIcon.SetActive(false);
@@ -149,68 +150,68 @@ public class UISlideshow : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04001834 RID: 6196
+	// Token: 0x04001482 RID: 5250
 	public DialogueSequencer sequencer;
 
-	// Token: 0x04001835 RID: 6197
+	// Token: 0x04001483 RID: 5251
 	public GameObject loadingIcon;
 
-	// Token: 0x04001836 RID: 6198
+	// Token: 0x04001484 RID: 5252
 	public Image background;
 
-	// Token: 0x04001837 RID: 6199
+	// Token: 0x04001485 RID: 5253
 	private Color oldBackgroundColor;
 
-	// Token: 0x04001838 RID: 6200
+	// Token: 0x04001486 RID: 5254
 	public Image slide;
 
-	// Token: 0x04001839 RID: 6201
+	// Token: 0x04001487 RID: 5255
 	public UISlideshow.Slide[] slides;
 
-	// Token: 0x0400183A RID: 6202
+	// Token: 0x04001488 RID: 5256
 	private int currentSlide = -1;
 
-	// Token: 0x0400183B RID: 6203
+	// Token: 0x04001489 RID: 5257
 	public float firstSlideFadeInSpeed = 0.5f;
 
-	// Token: 0x0400183C RID: 6204
+	// Token: 0x0400148A RID: 5258
 	public float slideFadeInSpeed = 0.5f;
 
-	// Token: 0x0400183D RID: 6205
+	// Token: 0x0400148B RID: 5259
 	public float slideFadeOutSpeed = 2f;
 
-	// Token: 0x0400183E RID: 6206
+	// Token: 0x0400148C RID: 5260
 	public AssetReference mainScene;
 
-	// Token: 0x0400183F RID: 6207
+	// Token: 0x0400148D RID: 5261
 	public bool useFastLoading;
 
-	// Token: 0x04001840 RID: 6208
+	// Token: 0x0400148E RID: 5262
 	public WorldState worldState = WorldState.Act1;
 
-	// Token: 0x04001841 RID: 6209
+	// Token: 0x0400148F RID: 5263
 	private IEnumerator currentTransition;
 
-	// Token: 0x04001842 RID: 6210
+	// Token: 0x04001490 RID: 5264
 	private bool isSlideshowFinished;
 
-	// Token: 0x04001843 RID: 6211
+	// Token: 0x04001491 RID: 5265
 	private bool isFastLoading;
 
-	// Token: 0x04001844 RID: 6212
+	// Token: 0x04001492 RID: 5266
 	private bool isLoadFinished;
 
-	// Token: 0x020003D2 RID: 978
+	// Token: 0x0200044C RID: 1100
 	[Serializable]
 	public struct Slide
 	{
-		// Token: 0x04001845 RID: 6213
+		// Token: 0x04001DEF RID: 7663
 		public Color backgroundColor;
 
-		// Token: 0x04001846 RID: 6214
+		// Token: 0x04001DF0 RID: 7664
 		public Sprite sprite;
 
-		// Token: 0x04001847 RID: 6215
+		// Token: 0x04001DF1 RID: 7665
 		public UnityEvent onSlideEvent;
 	}
 }

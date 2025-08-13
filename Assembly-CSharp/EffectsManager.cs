@@ -1,11 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200013B RID: 315
+// Token: 0x020000EA RID: 234
 public class EffectsManager : MonoBehaviour
 {
-	// Token: 0x1700009A RID: 154
-	// (get) Token: 0x060005DC RID: 1500 RVA: 0x000062D9 File Offset: 0x000044D9
+	// Token: 0x17000042 RID: 66
+	// (get) Token: 0x060004D0 RID: 1232 RVA: 0x0001A2A6 File Offset: 0x000184A6
 	public static EffectsManager e
 	{
 		get
@@ -18,25 +18,25 @@ public class EffectsManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005DD RID: 1501 RVA: 0x000062F7 File Offset: 0x000044F7
+	// Token: 0x060004D1 RID: 1233 RVA: 0x0001A2C4 File Offset: 0x000184C4
 	private void Awake()
 	{
 		EffectsManager.instance = this;
 	}
 
-	// Token: 0x060005DE RID: 1502 RVA: 0x000062F7 File Offset: 0x000044F7
+	// Token: 0x060004D2 RID: 1234 RVA: 0x0001A2CC File Offset: 0x000184CC
 	private void OnEnable()
 	{
 		EffectsManager.instance = this;
 	}
 
-	// Token: 0x060005DF RID: 1503 RVA: 0x000062FF File Offset: 0x000044FF
+	// Token: 0x060004D3 RID: 1235 RVA: 0x0001A2D4 File Offset: 0x000184D4
 	private float ModifyVolume(float volume, float lastSoundTime)
 	{
 		return volume * Mathf.Lerp(0.3f, 1f, Mathf.InverseLerp(0.1f, 0.25f, Time.time - lastSoundTime));
 	}
 
-	// Token: 0x060005E0 RID: 1504 RVA: 0x0002EF18 File Offset: 0x0002D118
+	// Token: 0x060004D4 RID: 1236 RVA: 0x0001A300 File Offset: 0x00018500
 	public void Splash(Vector3 position, float volume = 0.8f)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) < this.maxDistance * this.maxDistance && this.splashPrefab != null)
@@ -57,13 +57,13 @@ public class EffectsManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005E1 RID: 1505 RVA: 0x00006328 File Offset: 0x00004528
+	// Token: 0x060004D5 RID: 1237 RVA: 0x0001A39D File Offset: 0x0001859D
 	public void Ripple(Vector3 position, int count)
 	{
 		this.Ripple(position, count, Vector3.zero);
 	}
 
-	// Token: 0x060005E2 RID: 1506 RVA: 0x0002EFB8 File Offset: 0x0002D1B8
+	// Token: 0x060004D6 RID: 1238 RVA: 0x0001A3AC File Offset: 0x000185AC
 	public void Ripple(Vector3 position, int count, Vector3 direction)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) >= this.maxDistance * this.maxDistance || this.rippleSystem == null)
@@ -80,13 +80,13 @@ public class EffectsManager : MonoBehaviour
 		this.rippleSystem.Emit(emitParams, count);
 	}
 
-	// Token: 0x060005E3 RID: 1507 RVA: 0x00006337 File Offset: 0x00004537
+	// Token: 0x060004D7 RID: 1239 RVA: 0x0001A445 File Offset: 0x00018645
 	public void Dust(Vector3 position, int count)
 	{
 		this.Dust(position, count, Vector3.zero, 0f);
 	}
 
-	// Token: 0x060005E4 RID: 1508 RVA: 0x0002F054 File Offset: 0x0002D254
+	// Token: 0x060004D8 RID: 1240 RVA: 0x0001A45C File Offset: 0x0001865C
 	public void Dust(Vector3 position, int count, Vector3 velocity, float startSize = 0f)
 	{
 		if (MainCamera.t == null)
@@ -114,7 +114,7 @@ public class EffectsManager : MonoBehaviour
 		this.dustSystem.Emit(emitParams, count);
 	}
 
-	// Token: 0x060005E5 RID: 1509 RVA: 0x0002F0F0 File Offset: 0x0002D2F0
+	// Token: 0x060004D9 RID: 1241 RVA: 0x0001A4F8 File Offset: 0x000186F8
 	public void FloorDust(Vector3 position, int count, Vector3 normal)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) >= this.maxDistance * this.maxDistance || this.dustSystem == null)
@@ -131,7 +131,7 @@ public class EffectsManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005E6 RID: 1510 RVA: 0x0002F1A8 File Offset: 0x0002D3A8
+	// Token: 0x060004DA RID: 1242 RVA: 0x0001A5B0 File Offset: 0x000187B0
 	public void Bonk(Vector3 position)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) < this.maxDistance * this.maxDistance && this.bonkPrefab != null)
@@ -140,7 +140,7 @@ public class EffectsManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005E7 RID: 1511 RVA: 0x0002F1FC File Offset: 0x0002D3FC
+	// Token: 0x060004DB RID: 1243 RVA: 0x0001A604 File Offset: 0x00018804
 	public void Bonk(Vector3 position, BoxCollider box)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) < this.maxDistance * this.maxDistance && this.bonkPrefab != null)
@@ -149,12 +149,12 @@ public class EffectsManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005E8 RID: 1512 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x060004DC RID: 1244 RVA: 0x0001A65F File Offset: 0x0001885F
 	private void EmitForSystem(Vector3 position, int count, Vector3 direction, Vector3 velocity, ParticleSystem system)
 	{
 	}
 
-	// Token: 0x060005E9 RID: 1513 RVA: 0x0002F258 File Offset: 0x0002D458
+	// Token: 0x060004DD RID: 1245 RVA: 0x0001A664 File Offset: 0x00018864
 	public void Dig(Vector3 position)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) < this.maxDistance * this.maxDistance && this.digPrefab != null)
@@ -163,7 +163,7 @@ public class EffectsManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005EA RID: 1514 RVA: 0x0002F2AC File Offset: 0x0002D4AC
+	// Token: 0x060004DE RID: 1246 RVA: 0x0001A6B8 File Offset: 0x000188B8
 	public void TryToPlayHitSound(Vector3 position, Vector3 direction, float volume = 1f)
 	{
 		SurfaceMaterial surfaceMaterial = MaterialManager.m.SampleSurfaceMaterial(position, direction);
@@ -174,39 +174,39 @@ public class EffectsManager : MonoBehaviour
 		surfaceMaterial.PlayImpact(position, volume, 1f);
 	}
 
-	// Token: 0x040007E8 RID: 2024
+	// Token: 0x040006A6 RID: 1702
 	private static EffectsManager instance;
 
-	// Token: 0x040007E9 RID: 2025
+	// Token: 0x040006A7 RID: 1703
 	public GameObject splashPrefab;
 
-	// Token: 0x040007EA RID: 2026
+	// Token: 0x040006A8 RID: 1704
 	public GameObject bonkPrefab;
 
-	// Token: 0x040007EB RID: 2027
+	// Token: 0x040006A9 RID: 1705
 	public ParticleSystem rippleSystem;
 
-	// Token: 0x040007EC RID: 2028
+	// Token: 0x040006AA RID: 1706
 	public ParticleSystem dustSystem;
 
-	// Token: 0x040007ED RID: 2029
+	// Token: 0x040006AB RID: 1707
 	public GameObject sweatPrefab;
 
-	// Token: 0x040007EE RID: 2030
+	// Token: 0x040006AC RID: 1708
 	public float maxDistance = 80f;
 
-	// Token: 0x040007EF RID: 2031
+	// Token: 0x040006AD RID: 1709
 	public GameObject digPrefab;
 
-	// Token: 0x040007F0 RID: 2032
+	// Token: 0x040006AE RID: 1710
 	private const float minVolume = 0.3f;
 
-	// Token: 0x040007F1 RID: 2033
+	// Token: 0x040006AF RID: 1711
 	private const float minDelay = 0.1f;
 
-	// Token: 0x040007F2 RID: 2034
+	// Token: 0x040006B0 RID: 1712
 	private const float maxDelay = 0.25f;
 
-	// Token: 0x040007F3 RID: 2035
+	// Token: 0x040006B1 RID: 1713
 	private float lastSplashTime = -10f;
 }
