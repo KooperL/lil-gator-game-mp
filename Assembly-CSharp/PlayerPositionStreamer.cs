@@ -10,6 +10,7 @@ public class PlayerPositionStreamer : MonoBehaviour
 	// Token: 0x06001E62 RID: 7778
 	private void Start()
 	{
+		Debug.Log("Initialising multiplayer coroutine");
 		base.StartCoroutine(this.SendPositionLoop());
 	}
 
@@ -20,7 +21,7 @@ public class PlayerPositionStreamer : MonoBehaviour
 		{
 			string json = JsonUtility.ToJson(new PlayerPositionStreamer.PositionData(Player.RawPosition, Player.Forward));
 			byte[] bodyRaw = Encoding.UTF8.GetBytes(json);
-			UnityWebRequest request = new UnityWebRequest("http://192.168.8.167:8000", "POST");
+			UnityWebRequest request = new UnityWebRequest(MultiplayerConfigLoader.Instance.ServerHost, "POST");
 			request.uploadHandler = new UploadHandlerRaw(bodyRaw);
 			request.downloadHandler = new DownloadHandlerBuffer();
 			request.SetRequestHeader("Content-Type", "application/json");
@@ -29,7 +30,26 @@ public class PlayerPositionStreamer : MonoBehaviour
 			{
 				Debug.LogWarning("Failed to send position: " + request.error);
 			}
+			else
+			{
+				PlayerPositionStreamer.PositionData data = JsonUtility.FromJson<PlayerPositionStreamer.PositionData>(request.downloadHandler.text);
+				Vector3 position = new Vector3(data.x, data.y, data.z);
+				Quaternion rotation = Quaternion.LookRotation(new Vector3(data.fx, data.fy, data.fz));
+				GameObject gameObject = GameObject.CreatePrimitive(PrimitiveType.Quad);
+				gameObject.transform.position = position;
+				gameObject.transform.rotation = rotation;
+				gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+				gameObject.name = "RemotePlayer_" + data.displayName;
+				gameObject.GetComponent<Renderer>().material.color = Color.green;
+			}
 			yield return this.wait;
+			request = null;
+			request = null;
+			request = null;
+			request = null;
+			request = null;
+			request = null;
+			request = null;
 			request = null;
 			request = null;
 			request = null;
@@ -57,6 +77,9 @@ public class PlayerPositionStreamer : MonoBehaviour
 			this.fx = dir.x;
 			this.fy = dir.y;
 			this.fz = dir.z;
+			this.displayName = MultiplayerConfigLoader.Instance.DisplayName;
+			this.sessionKey = MultiplayerConfigLoader.Instance.SessionKey;
+			this.worldState = Game.WorldState;
 		}
 
 		// Token: 0x04001FED RID: 8173
@@ -76,5 +99,14 @@ public class PlayerPositionStreamer : MonoBehaviour
 
 		// Token: 0x04001FF2 RID: 8178
 		public float fz;
+
+		// Token: 0x040020A7 RID: 8359
+		public string displayName;
+
+		// Token: 0x040020A8 RID: 8360
+		public string sessionKey;
+
+		// Token: 0x04002106 RID: 8454
+		public WorldState worldState;
 	}
 }

@@ -27,7 +27,7 @@ public class MainMenuToGameplay : MonoBehaviour
 		base.gameObject.AddComponent<InjectButtonToMainMenu>();
 	}
 
-	// Token: 0x0600081A RID: 2074 RVA: 0x00026EA6 File Offset: 0x000250A6
+	// Token: 0x0600081A RID: 2074
 	public void StartFreshNewGame(int index = 0)
 	{
 		GameData.g.SetSaveFile(index);
@@ -35,14 +35,14 @@ public class MainMenuToGameplay : MonoBehaviour
 		this.StartNewGame();
 	}
 
-	// Token: 0x0600081B RID: 2075 RVA: 0x00026ECE File Offset: 0x000250CE
+	// Token: 0x0600081B RID: 2075
 	public void StartNewGamePlus(int index = 0)
 	{
 		GameData.g.LoadSaveFile(index);
 		this.StartNewGame();
 	}
 
-	// Token: 0x0600081C RID: 2076 RVA: 0x00026EE4 File Offset: 0x000250E4
+	// Token: 0x0600081C RID: 2076
 	public void StartNewGame()
 	{
 		this.game.enabled = true;
@@ -59,7 +59,7 @@ public class MainMenuToGameplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600081D RID: 2077 RVA: 0x00026F54 File Offset: 0x00025154
+	// Token: 0x0600081D RID: 2077
 	public void LoadGameplay()
 	{
 		this.game.enabled = true;
@@ -76,14 +76,14 @@ public class MainMenuToGameplay : MonoBehaviour
 		this.gameplayObject.SetActive(true);
 	}
 
-	// Token: 0x0600081E RID: 2078 RVA: 0x00026FD1 File Offset: 0x000251D1
+	// Token: 0x0600081E RID: 2078
 	[ContextMenu("Start Slideshow")]
 	public void StartSlideshow()
 	{
 		Object.Instantiate<GameObject>(this.slideshow);
 	}
 
-	// Token: 0x0600081F RID: 2079 RVA: 0x00026FDF File Offset: 0x000251DF
+	// Token: 0x0600081F RID: 2079
 	[ContextMenu("Start Indieland Slideshow")]
 	public void StartILSlideshow()
 	{
