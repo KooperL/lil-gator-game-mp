@@ -1,0 +1,109 @@
+﻿using System;
+using UnityEngine;
+
+// Token: 0x02000096 RID: 150
+public class ActorPath : GenericPath
+{
+	// Token: 0x06000216 RID: 534 RVA: 0x0001DE20 File Offset: 0x0001C020
+	public void Interpolate(ref float nodePosition, float speed, out Vector3 velocity, out Vector3 position, bool getAccurateDirection = false)
+	{
+		float num = Mathf.Ceil(nodePosition + 1E-05f);
+		float num2 = speed * Time.deltaTime;
+		Vector3 vector = this.DeltaBetweenNodes(Mathf.FloorToInt(nodePosition));
+		float magnitude = vector.magnitude;
+		Vector3 vector2 = vector / magnitude;
+		velocity = speed * vector2;
+		nodePosition += num2 / magnitude;
+		if (nodePosition >= num)
+		{
+			if (num < (float)(this.positions.Length - 1))
+			{
+				nodePosition = num;
+			}
+			else if (this.connectEnds)
+			{
+				if (num < (float)this.positions.Length)
+				{
+					nodePosition = num;
+				}
+				else
+				{
+					nodePosition = 0f;
+				}
+			}
+			else if (num < (float)(2 * (this.positions.Length - 1)))
+			{
+				nodePosition = num;
+			}
+			else
+			{
+				nodePosition = 0f;
+			}
+		}
+		position = this.GetInterpolatedPosition(nodePosition);
+	}
+
+	// Token: 0x06000217 RID: 535 RVA: 0x0001DEE0 File Offset: 0x0001C0E0
+	public void AddDistance(ref float nodePosition, float distance)
+	{
+		float num = Mathf.Ceil(nodePosition + 1E-05f);
+		Vector3 vector = this.DeltaBetweenNodes(Mathf.FloorToInt(nodePosition));
+		float magnitude = vector.magnitude;
+		vector / magnitude;
+		nodePosition += distance / magnitude;
+		bool flag = false;
+		if (this.connectEnds)
+		{
+			if (nodePosition >= (float)this.positions.Length)
+			{
+				nodePosition -= (float)this.positions.Length;
+				flag = true;
+			}
+		}
+		else if (nodePosition >= (float)(2 * (this.positions.Length - 1)))
+		{
+			nodePosition -= Mathf.Floor(nodePosition);
+			flag = true;
+		}
+		if (nodePosition > num || flag)
+		{
+			distance = (nodePosition - Mathf.Floor(nodePosition)) * magnitude;
+			nodePosition = Mathf.Floor(nodePosition);
+			this.AddDistance(ref nodePosition, distance);
+		}
+	}
+
+	// Token: 0x06000218 RID: 536 RVA: 0x0001DF94 File Offset: 0x0001C194
+	private Vector3 DeltaBetweenNodes(int node)
+	{
+		if (node < this.positions.Length - 1)
+		{
+			return base.GetPosition(node + 1) - base.GetPosition(node);
+		}
+		if (this.connectEnds)
+		{
+			return base.GetPosition(0) - base.GetPosition(node);
+		}
+		node = 2 * (this.positions.Length - 1) - node;
+		return base.GetPosition(node - 1) - base.GetPosition(node);
+	}
+
+	// Token: 0x06000219 RID: 537 RVA: 0x0001E008 File Offset: 0x0001C208
+	public Vector3 GetInterpolatedPosition(float nodePosition)
+	{
+		int num = Mathf.FloorToInt(nodePosition);
+		float num2 = nodePosition - (float)num;
+		if (num < this.positions.Length - 1)
+		{
+			return base.transform.TransformPoint(iTween.PointOnPath(this.positions, nodePosition / (float)(this.positions.Length - 1)));
+		}
+		if (this.connectEnds)
+		{
+			return Vector3.Lerp(base.GetPosition(num), base.GetPosition(0), num2);
+		}
+		return base.transform.TransformPoint(iTween.PointOnPath(this.positions, 2f - nodePosition / (float)(this.positions.Length - 1)));
+	}
+
+	// Token: 0x040002F6 RID: 758
+	public bool connectEnds;
+}
