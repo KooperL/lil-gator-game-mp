@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6E2E9A3B-A947-4A70-B85A-7BF9997DD7DD}</ProjectGuid>
+    <ProjectGuid>{92BF3E7F-EE2A-4BB8-A419-BC82719F6948}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -113,6 +113,9 @@
     </Reference>
     <Reference Include="UnityEngine.UIModule">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Lil Gator Game\Lil Gator Game_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Lil Gator Game\Lil Gator Game_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
     </Reference>
     <Reference Include="XNode">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Lil Gator Game\Lil Gator Game_Data\Managed\XNode.dll</HintPath>
@@ -502,6 +505,7 @@
     <Compile Include="MultiDestroyQuest.cs" />
     <Compile Include="MultilingualString.cs" />
     <Compile Include="MultilingualTextDocument.cs" />
+    <Compile Include="MultiplayerCommunicationService.cs" />
     <Compile Include="MultiplayerConfigLoader.cs" />
     <Compile Include="MultipleUnique.cs" />
     <Compile Include="MultiQuest.cs" />
@@ -618,6 +622,7 @@
     <Compile Include="RandomTrailColor.cs" />
     <Compile Include="ReadOnlyAttribute.cs" />
     <Compile Include="RememberMusic.cs" />
+    <Compile Include="RemotePlayerController.cs" />
     <Compile Include="RenameCharacter.cs" />
     <Compile Include="RenderDepth.cs" />
     <Compile Include="ReplaceMaterials.cs" />

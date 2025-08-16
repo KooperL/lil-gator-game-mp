@@ -2,13 +2,11 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-// Token: 0x020000AB RID: 171
 [CreateAssetMenu]
 public class CharacterProfile : ScriptableObject
 {
-	// Token: 0x17000021 RID: 33
-	// (get) Token: 0x06000340 RID: 832 RVA: 0x00013087 File Offset: 0x00011287
-	// (set) Token: 0x06000341 RID: 833 RVA: 0x000130A4 File Offset: 0x000112A4
+	// (get) Token: 0x060003B1 RID: 945 RVA: 0x00004CFF File Offset: 0x00002EFF
+	// (set) Token: 0x060003B2 RID: 946 RVA: 0x00004D1C File Offset: 0x00002F1C
 	public bool IsUnlocked
 	{
 		get
@@ -26,8 +24,7 @@ public class CharacterProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x17000022 RID: 34
-	// (get) Token: 0x06000342 RID: 834 RVA: 0x000130CD File Offset: 0x000112CD
+	// (get) Token: 0x060003B3 RID: 947 RVA: 0x00004D45 File Offset: 0x00002F45
 	public string Name
 	{
 		get
@@ -44,14 +41,13 @@ public class CharacterProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x14000001 RID: 1
-	// (add) Token: 0x06000343 RID: 835 RVA: 0x00013108 File Offset: 0x00011308
-	// (remove) Token: 0x06000344 RID: 836 RVA: 0x00013140 File Offset: 0x00011340
+	// (add) Token: 0x060003B4 RID: 948 RVA: 0x000271C4 File Offset: 0x000253C4
+	// (remove) Token: 0x060003B5 RID: 949 RVA: 0x000271FC File Offset: 0x000253FC
 	public event EventHandler<bool> OnChange = delegate
 	{
 	};
 
-	// Token: 0x06000345 RID: 837 RVA: 0x00013175 File Offset: 0x00011375
+	// Token: 0x060003B6 RID: 950 RVA: 0x00004D7D File Offset: 0x00002F7D
 	public Color GetColor(CharacterProfile.CharacterColor colorType)
 	{
 		switch (colorType)
@@ -67,7 +63,7 @@ public class CharacterProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x06000346 RID: 838 RVA: 0x000131A5 File Offset: 0x000113A5
+	// Token: 0x060003B7 RID: 951 RVA: 0x00004DAD File Offset: 0x00002FAD
 	private void OnValidate()
 	{
 		if (this.midColor == Color.white)
@@ -76,14 +72,14 @@ public class CharacterProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x06000347 RID: 839 RVA: 0x000131C5 File Offset: 0x000113C5
+	// Token: 0x060003B8 RID: 952 RVA: 0x00004DCD File Offset: 0x00002FCD
 	public void SetName(string nameID, MultilingualTextDocument document)
 	{
 		this.name = document.FetchString(nameID, Language.Auto);
 		UINameplate.UpdateNameplates(this);
 	}
 
-	// Token: 0x06000348 RID: 840 RVA: 0x000131DC File Offset: 0x000113DC
+	// Token: 0x060003B9 RID: 953 RVA: 0x00004DE4 File Offset: 0x00002FE4
 	[ContextMenu("Add Name To Document")]
 	public void AddNameToDocument()
 	{
@@ -93,56 +89,40 @@ public class CharacterProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x0400046C RID: 1132
 	public string id;
 
-	// Token: 0x0400046D RID: 1133
 	public bool startsUnlocked;
 
-	// Token: 0x0400046E RID: 1134
 	public MultilingualTextDocument document;
 
-	// Token: 0x0400046F RID: 1135
 	[TextLookup("document")]
 	public new string name;
 
-	// Token: 0x04000470 RID: 1136
 	[HideInInspector]
 	public Sprite nameplate;
 
-	// Token: 0x04000471 RID: 1137
 	[HideInInspector]
 	public Sprite picture;
 
-	// Token: 0x04000472 RID: 1138
 	[FormerlySerializedAs("color")]
 	public Color brightColor = Color.white;
 
-	// Token: 0x04000473 RID: 1139
 	public Color midColor = Color.grey;
 
-	// Token: 0x04000474 RID: 1140
 	[FormerlySerializedAs("backgroundColor")]
 	public Color darkColor = Color.black;
 
-	// Token: 0x04000475 RID: 1141
 	[HideInInspector]
 	public Sprite dialogueDecoration;
 
-	// Token: 0x04000476 RID: 1142
 	public Sprite pattern;
 
-	// Token: 0x04000477 RID: 1143
 	public bool isPlayer;
 
-	// Token: 0x02000381 RID: 897
 	public enum CharacterColor
 	{
-		// Token: 0x04001AA0 RID: 6816
 		Bright,
-		// Token: 0x04001AA1 RID: 6817
 		Mid,
-		// Token: 0x04001AA2 RID: 6818
 		Dark
 	}
 }

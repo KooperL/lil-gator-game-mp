@@ -2,11 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000165 RID: 357
 [AddComponentMenu("Logic/LogicState - State Machines")]
 public class LSStateMachines : LogicState
 {
-	// Token: 0x0600075D RID: 1885 RVA: 0x00024974 File Offset: 0x00022B74
+	// Token: 0x060008EF RID: 2287 RVA: 0x000392D8 File Offset: 0x000374D8
 	public override void Start()
 	{
 		base.Start();
@@ -19,7 +18,7 @@ public class LSStateMachines : LogicState
 		}
 	}
 
-	// Token: 0x0600075E RID: 1886 RVA: 0x000249E0 File Offset: 0x00022BE0
+	// Token: 0x060008F0 RID: 2288 RVA: 0x00039344 File Offset: 0x00037544
 	public override void CheckLogic()
 	{
 		int num = 0;
@@ -36,10 +35,8 @@ public class LSStateMachines : LogicState
 		}
 	}
 
-	// Token: 0x0400099D RID: 2461
 	[Space]
 	public QuestStates[] stateMachines;
 
-	// Token: 0x0400099E RID: 2462
 	public int endAllowance = 1;
 }

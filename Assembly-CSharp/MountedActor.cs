@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000B6 RID: 182
 public class MountedActor : MonoBehaviour
 {
-	// Token: 0x060003EE RID: 1006 RVA: 0x000170E8 File Offset: 0x000152E8
+	// Token: 0x060004C8 RID: 1224 RVA: 0x0002C420 File Offset: 0x0002A620
 	private void Awake()
 	{
 		PlayerActorStates component = base.GetComponent<PlayerActorStates>();
@@ -15,13 +14,13 @@ public class MountedActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003EF RID: 1007 RVA: 0x0001710C File Offset: 0x0001530C
+	// Token: 0x060004C9 RID: 1225 RVA: 0x000057AA File Offset: 0x000039AA
 	public void CancelMount()
 	{
 		this.mount.CancelMount();
 	}
 
-	// Token: 0x060003F0 RID: 1008 RVA: 0x00017119 File Offset: 0x00015319
+	// Token: 0x060004CA RID: 1226 RVA: 0x000057B7 File Offset: 0x000039B7
 	public void GetOut()
 	{
 		if (this.mount != null)
@@ -30,16 +29,14 @@ public class MountedActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003F1 RID: 1009 RVA: 0x00017134 File Offset: 0x00015334
+	// Token: 0x060004CB RID: 1227 RVA: 0x000057D2 File Offset: 0x000039D2
 	public void GottenOut()
 	{
 		this.onGottenOut.Invoke();
 		this.onGottenOut = new UnityEvent();
 	}
 
-	// Token: 0x04000575 RID: 1397
 	public ActorMount mount;
 
-	// Token: 0x04000576 RID: 1398
 	public UnityEvent onGottenOut = new UnityEvent();
 }

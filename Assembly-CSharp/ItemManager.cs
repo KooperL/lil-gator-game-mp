@@ -3,12 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000154 RID: 340
 public class ItemManager : MonoBehaviour
 {
-	// Token: 0x1700005D RID: 93
-	// (get) Token: 0x060006FE RID: 1790 RVA: 0x000234C4 File Offset: 0x000216C4
-	// (set) Token: 0x060006FF RID: 1791 RVA: 0x000234D8 File Offset: 0x000216D8
+	// (get) Token: 0x0600087C RID: 2172 RVA: 0x000085EC File Offset: 0x000067EC
+	// (set) Token: 0x0600087D RID: 2173 RVA: 0x00038078 File Offset: 0x00036278
 	public int BraceletsCollected
 	{
 		get
@@ -34,8 +32,7 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700005E RID: 94
-	// (get) Token: 0x06000700 RID: 1792 RVA: 0x00023547 File Offset: 0x00021747
+	// (get) Token: 0x0600087E RID: 2174 RVA: 0x000085FF File Offset: 0x000067FF
 	public static bool HasInfiniteStamina
 	{
 		get
@@ -44,8 +41,7 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700005F RID: 95
-	// (get) Token: 0x06000701 RID: 1793 RVA: 0x00023556 File Offset: 0x00021756
+	// (get) Token: 0x0600087F RID: 2175 RVA: 0x0000860E File Offset: 0x0000680E
 	public GameData gameData
 	{
 		get
@@ -54,9 +50,8 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000060 RID: 96
-	// (get) Token: 0x06000702 RID: 1794 RVA: 0x0002355D File Offset: 0x0002175D
-	// (set) Token: 0x06000703 RID: 1795 RVA: 0x00023570 File Offset: 0x00021770
+	// (get) Token: 0x06000880 RID: 2176 RVA: 0x00008615 File Offset: 0x00006815
+	// (set) Token: 0x06000881 RID: 2177 RVA: 0x00008628 File Offset: 0x00006828
 	public int PrimaryIndex
 	{
 		get
@@ -69,9 +64,8 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000061 RID: 97
-	// (get) Token: 0x06000704 RID: 1796 RVA: 0x00023583 File Offset: 0x00021783
-	// (set) Token: 0x06000705 RID: 1797 RVA: 0x00023596 File Offset: 0x00021796
+	// (get) Token: 0x06000882 RID: 2178 RVA: 0x0000863B File Offset: 0x0000683B
+	// (set) Token: 0x06000883 RID: 2179 RVA: 0x0000864E File Offset: 0x0000684E
 	public int SecondaryIndex
 	{
 		get
@@ -84,9 +78,8 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000062 RID: 98
-	// (get) Token: 0x06000706 RID: 1798 RVA: 0x000235A9 File Offset: 0x000217A9
-	// (set) Token: 0x06000707 RID: 1799 RVA: 0x000235BC File Offset: 0x000217BC
+	// (get) Token: 0x06000884 RID: 2180 RVA: 0x00008661 File Offset: 0x00006861
+	// (set) Token: 0x06000885 RID: 2181 RVA: 0x00008674 File Offset: 0x00006874
 	public int HatIndex
 	{
 		get
@@ -99,9 +92,8 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000063 RID: 99
-	// (get) Token: 0x06000708 RID: 1800 RVA: 0x000235CF File Offset: 0x000217CF
-	// (set) Token: 0x06000709 RID: 1801 RVA: 0x000235E4 File Offset: 0x000217E4
+	// (get) Token: 0x06000886 RID: 2182 RVA: 0x00008687 File Offset: 0x00006887
+	// (set) Token: 0x06000887 RID: 2183 RVA: 0x000380E8 File Offset: 0x000362E8
 	public int ItemIndex
 	{
 		get
@@ -124,9 +116,8 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000064 RID: 100
-	// (get) Token: 0x0600070A RID: 1802 RVA: 0x0002365F File Offset: 0x0002185F
-	// (set) Token: 0x0600070B RID: 1803 RVA: 0x00023674 File Offset: 0x00021874
+	// (get) Token: 0x06000888 RID: 2184 RVA: 0x0000869A File Offset: 0x0000689A
+	// (set) Token: 0x06000889 RID: 2185 RVA: 0x00038164 File Offset: 0x00036364
 	public int ItemIndex_R
 	{
 		get
@@ -149,9 +140,8 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000065 RID: 101
-	// (get) Token: 0x0600070C RID: 1804 RVA: 0x000236EF File Offset: 0x000218EF
-	// (set) Token: 0x0600070D RID: 1805 RVA: 0x00023701 File Offset: 0x00021901
+	// (get) Token: 0x0600088A RID: 2186 RVA: 0x000086AD File Offset: 0x000068AD
+	// (set) Token: 0x0600088B RID: 2187 RVA: 0x000086BF File Offset: 0x000068BF
 	private bool HasItemLeftTutorialTriggered
 	{
 		get
@@ -164,9 +154,8 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000066 RID: 102
-	// (get) Token: 0x0600070E RID: 1806 RVA: 0x00023713 File Offset: 0x00021913
-	// (set) Token: 0x0600070F RID: 1807 RVA: 0x00023725 File Offset: 0x00021925
+	// (get) Token: 0x0600088C RID: 2188 RVA: 0x000086D1 File Offset: 0x000068D1
+	// (set) Token: 0x0600088D RID: 2189 RVA: 0x000086E3 File Offset: 0x000068E3
 	private bool HasItemRightTutorialTriggered
 	{
 		get
@@ -179,7 +168,7 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000710 RID: 1808 RVA: 0x00023738 File Offset: 0x00021938
+	// Token: 0x0600088E RID: 2190 RVA: 0x000381E0 File Offset: 0x000363E0
 	[ContextMenu("Remove Duplicate Items")]
 	public void RemoveDuplicateItems()
 	{
@@ -194,7 +183,7 @@ public class ItemManager : MonoBehaviour
 		this.items = list.ToArray();
 	}
 
-	// Token: 0x06000711 RID: 1809 RVA: 0x0002378C File Offset: 0x0002198C
+	// Token: 0x0600088F RID: 2191 RVA: 0x00038234 File Offset: 0x00036434
 	private void Awake()
 	{
 		ItemManager.i = this;
@@ -205,7 +194,7 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000712 RID: 1810 RVA: 0x000237E0 File Offset: 0x000219E0
+	// Token: 0x06000890 RID: 2192 RVA: 0x00038288 File Offset: 0x00036488
 	private void OnEnable()
 	{
 		ItemManager.i = this;
@@ -219,14 +208,14 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000713 RID: 1811 RVA: 0x00023839 File Offset: 0x00021A39
+	// Token: 0x06000891 RID: 2193 RVA: 0x000086F5 File Offset: 0x000068F5
 	private void Start()
 	{
 		this.playerItemManager = Player.itemManager;
 		this.Load();
 	}
 
-	// Token: 0x06000714 RID: 1812 RVA: 0x0002384C File Offset: 0x00021A4C
+	// Token: 0x06000892 RID: 2194 RVA: 0x000382E4 File Offset: 0x000364E4
 	private void Load()
 	{
 		if (this.IsIndexInvalid(this.PrimaryIndex, ItemManager.ItemType.Primary))
@@ -251,49 +240,49 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000715 RID: 1813 RVA: 0x000238D5 File Offset: 0x00021AD5
+	// Token: 0x06000893 RID: 2195 RVA: 0x00008708 File Offset: 0x00006908
 	private bool IsIndexInvalid(int index, ItemManager.ItemType itemType)
 	{
 		return index < 0 || index >= this.items.Length || this.items[index].itemType != itemType || !this.items[index].IsUnlocked;
 	}
 
-	// Token: 0x06000716 RID: 1814 RVA: 0x0002390A File Offset: 0x00021B0A
+	// Token: 0x06000894 RID: 2196 RVA: 0x0000873D File Offset: 0x0000693D
 	public void GetPrimary(out string id, out GameObject prefab)
 	{
 		this.PrimaryIndex = this.GetItemVariant(ItemManager.ItemType.Primary, this.PrimaryIndex, out id, out prefab, -1);
 	}
 
-	// Token: 0x06000717 RID: 1815 RVA: 0x00023922 File Offset: 0x00021B22
+	// Token: 0x06000895 RID: 2197 RVA: 0x00008755 File Offset: 0x00006955
 	public string GetPrimaryID()
 	{
 		return this.items[this.PrimaryIndex].id;
 	}
 
-	// Token: 0x06000718 RID: 1816 RVA: 0x00023936 File Offset: 0x00021B36
+	// Token: 0x06000896 RID: 2198 RVA: 0x00008769 File Offset: 0x00006969
 	public void GetSecondary(out string id, out GameObject prefab)
 	{
 		this.SecondaryIndex = this.GetItemVariant(ItemManager.ItemType.Secondary, this.SecondaryIndex, out id, out prefab, -1);
 	}
 
-	// Token: 0x06000719 RID: 1817 RVA: 0x0002394E File Offset: 0x00021B4E
+	// Token: 0x06000897 RID: 2199 RVA: 0x00008781 File Offset: 0x00006981
 	public void GetHat(out string id, out GameObject prefab)
 	{
 		this.HatIndex = this.GetItemVariant(ItemManager.ItemType.Hat, this.HatIndex, out id, out prefab, -1);
 	}
 
-	// Token: 0x0600071A RID: 1818 RVA: 0x00023966 File Offset: 0x00021B66
+	// Token: 0x06000898 RID: 2200 RVA: 0x00008799 File Offset: 0x00006999
 	public void GetItem(out string id, out GameObject prefab)
 	{
 		this.ItemIndex = this.GetItemVariant(ItemManager.ItemType.Item, this.ItemIndex, out id, out prefab, 0);
 	}
 
-	// Token: 0x0600071B RID: 1819 RVA: 0x0002397E File Offset: 0x00021B7E
+	// Token: 0x06000899 RID: 2201 RVA: 0x000087B1 File Offset: 0x000069B1
 	public void GetItem_R(out string id, out GameObject prefab)
 	{
 		this.ItemIndex_R = this.GetItemVariant(ItemManager.ItemType.Item, this.ItemIndex_R, out id, out prefab, 1);
 	}
 
-	// Token: 0x0600071C RID: 1820 RVA: 0x00023998 File Offset: 0x00021B98
+	// Token: 0x0600089A RID: 2202 RVA: 0x00038370 File Offset: 0x00036570
 	public int GetItemVariant(ItemManager.ItemType itemType, int index, out string id, out GameObject prefab, int itemIndex = -1)
 	{
 		id = "";
@@ -318,7 +307,7 @@ public class ItemManager : MonoBehaviour
 		return index;
 	}
 
-	// Token: 0x0600071D RID: 1821 RVA: 0x00023A60 File Offset: 0x00021C60
+	// Token: 0x0600089B RID: 2203 RVA: 0x00038438 File Offset: 0x00036638
 	public void Cycle(ItemManager.ItemType itemType, ref int index)
 	{
 		int num = index;
@@ -340,13 +329,13 @@ public class ItemManager : MonoBehaviour
 		while (index != -1 && (!this.items[index].IsUnlocked || this.items[index].itemType != itemType) && index != num);
 	}
 
-	// Token: 0x0600071E RID: 1822 RVA: 0x00023AB9 File Offset: 0x00021CB9
+	// Token: 0x0600089C RID: 2204 RVA: 0x000087C9 File Offset: 0x000069C9
 	public bool IsItemUnlocked(string itemName)
 	{
 		return this.gameData.ReadBool(itemName, false);
 	}
 
-	// Token: 0x0600071F RID: 1823 RVA: 0x00023AC8 File Offset: 0x00021CC8
+	// Token: 0x0600089D RID: 2205 RVA: 0x000087D8 File Offset: 0x000069D8
 	public void GiveItem(ItemObject item, bool equip = true)
 	{
 		item.IsUnlocked = true;
@@ -356,7 +345,7 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000720 RID: 1824 RVA: 0x00023ADC File Offset: 0x00021CDC
+	// Token: 0x0600089E RID: 2206 RVA: 0x00038494 File Offset: 0x00036694
 	public Coroutine UnlockItem(string itemID)
 	{
 		this.EquipItem(itemID, true);
@@ -370,7 +359,7 @@ public class ItemManager : MonoBehaviour
 		return base.StartCoroutine(this.ItemGetSequence(itemID, ""));
 	}
 
-	// Token: 0x06000721 RID: 1825 RVA: 0x00023B30 File Offset: 0x00021D30
+	// Token: 0x0600089F RID: 2207 RVA: 0x000384E8 File Offset: 0x000366E8
 	public void EquipItem(string itemID, bool refreshNow = true)
 	{
 		ItemObject itemObject;
@@ -380,7 +369,7 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000722 RID: 1826 RVA: 0x00023B58 File Offset: 0x00021D58
+	// Token: 0x060008A0 RID: 2208 RVA: 0x00038510 File Offset: 0x00036710
 	public bool IsEquipped(ItemObject item)
 	{
 		int num = -1;
@@ -406,19 +395,19 @@ public class ItemManager : MonoBehaviour
 		return num >= 0 && this.items[num] == item;
 	}
 
-	// Token: 0x06000723 RID: 1827 RVA: 0x00023BC9 File Offset: 0x00021DC9
+	// Token: 0x060008A1 RID: 2209 RVA: 0x000087EB File Offset: 0x000069EB
 	public bool IsEquippedAlt(ItemObject item)
 	{
 		return item.itemType == ItemManager.ItemType.Item && (this.ItemIndex_R >= 0 && this.items[this.ItemIndex_R] == item);
 	}
 
-	// Token: 0x06000724 RID: 1828 RVA: 0x00023BF7 File Offset: 0x00021DF7
+	// Token: 0x060008A2 RID: 2210 RVA: 0x00008819 File Offset: 0x00006A19
 	public void EquipItem(ItemObject item)
 	{
 		this.EquipItem(item, true);
 	}
 
-	// Token: 0x06000725 RID: 1829 RVA: 0x00023C04 File Offset: 0x00021E04
+	// Token: 0x060008A3 RID: 2211 RVA: 0x00038584 File Offset: 0x00036784
 	public void EquipItem(ItemObject item, bool refreshNow = true)
 	{
 		if (!Player.itemManager.usePersistentItems)
@@ -499,7 +488,7 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000726 RID: 1830 RVA: 0x00023D54 File Offset: 0x00021F54
+	// Token: 0x060008A4 RID: 2212 RVA: 0x000386D4 File Offset: 0x000368D4
 	public void EquipItem(ItemObject item, int slot)
 	{
 		if (item.itemType != ItemManager.ItemType.Item)
@@ -552,7 +541,7 @@ public class ItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000727 RID: 1831 RVA: 0x00023DF0 File Offset: 0x00021FF0
+	// Token: 0x060008A5 RID: 2213 RVA: 0x00038770 File Offset: 0x00036970
 	public void SwapItemEquipSlots()
 	{
 		int itemIndex = this.ItemIndex;
@@ -561,7 +550,7 @@ public class ItemManager : MonoBehaviour
 		Player.itemManager.Refresh();
 	}
 
-	// Token: 0x06000728 RID: 1832 RVA: 0x00023E21 File Offset: 0x00022021
+	// Token: 0x060008A6 RID: 2214 RVA: 0x00008823 File Offset: 0x00006A23
 	private IEnumerator TutorialItemGet(string itemName)
 	{
 		yield return base.StartCoroutine(this.ItemGetSequence(itemName, ""));
@@ -594,7 +583,7 @@ public class ItemManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000729 RID: 1833 RVA: 0x00023E37 File Offset: 0x00022037
+	// Token: 0x060008A7 RID: 2215 RVA: 0x00008839 File Offset: 0x00006A39
 	private IEnumerator ItemGetSequence(string itemName, string dialogueName = "")
 	{
 		if (dialogueName == "")
@@ -618,13 +607,13 @@ public class ItemManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600072A RID: 1834 RVA: 0x00023E54 File Offset: 0x00022054
+	// Token: 0x060008A8 RID: 2216 RVA: 0x00008856 File Offset: 0x00006A56
 	public void SetUnlocked(string itemName)
 	{
 		this.gameData.Write(itemName, true);
 	}
 
-	// Token: 0x0600072B RID: 1835 RVA: 0x00023E64 File Offset: 0x00022064
+	// Token: 0x060008A9 RID: 2217 RVA: 0x000387A4 File Offset: 0x000369A4
 	private Coroutine GetBracelet()
 	{
 		int braceletsCollected = this.BraceletsCollected;
@@ -637,7 +626,7 @@ public class ItemManager : MonoBehaviour
 		return base.StartCoroutine(this.ItemGetSequence("Bracelet", "ItemUnlockAnotherBracelet"));
 	}
 
-	// Token: 0x0600072C RID: 1836 RVA: 0x00023EC1 File Offset: 0x000220C1
+	// Token: 0x060008AA RID: 2218 RVA: 0x00008865 File Offset: 0x00006A65
 	private Coroutine GetTrash()
 	{
 		if (!this.IsItemUnlocked("Trash"))
@@ -649,87 +638,59 @@ public class ItemManager : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x04000962 RID: 2402
 	public static ItemManager i;
 
-	// Token: 0x04000963 RID: 2403
 	private PlayerItemManager playerItemManager;
 
-	// Token: 0x04000964 RID: 2404
 	public UIItemGet uiItemGet;
 
-	// Token: 0x04000965 RID: 2405
 	public int rocksCollected = 10;
 
-	// Token: 0x04000966 RID: 2406
 	public UINumberToSprite rocksCollectedUI;
 
-	// Token: 0x04000967 RID: 2407
 	public AudioClip rockSound;
 
-	// Token: 0x04000968 RID: 2408
 	public const int totalBracelets = 4;
 
-	// Token: 0x04000969 RID: 2409
 	public ItemObject[] items;
 
-	// Token: 0x0400096A RID: 2410
 	public Dictionary<string, ItemObject> itemDic;
 
-	// Token: 0x0400096B RID: 2411
 	public ButtonTutorialUI itemTutorial_left;
 
-	// Token: 0x0400096C RID: 2412
 	public ButtonTutorialUI itemTutorial_right;
 
-	// Token: 0x0400096D RID: 2413
 	public string[] itemStrings;
 
-	// Token: 0x020003BB RID: 955
 	[Serializable]
 	public struct ItemVariant
 	{
-		// Token: 0x04001BA3 RID: 7075
 		public GameObject prefab;
 
-		// Token: 0x04001BA4 RID: 7076
 		public string id;
 
-		// Token: 0x04001BA5 RID: 7077
 		public int priority;
 	}
 
-	// Token: 0x020003BC RID: 956
 	[Serializable]
 	public struct ItemInfo
 	{
-		// Token: 0x04001BA6 RID: 7078
 		public string name;
 
-		// Token: 0x04001BA7 RID: 7079
 		public string displayName;
 
-		// Token: 0x04001BA8 RID: 7080
 		public Sprite sprite;
 
-		// Token: 0x04001BA9 RID: 7081
 		public ItemManager.ItemType type;
 	}
 
-	// Token: 0x020003BD RID: 957
 	public enum ItemType
 	{
-		// Token: 0x04001BAB RID: 7083
 		Primary = 1,
-		// Token: 0x04001BAC RID: 7084
 		Hat,
-		// Token: 0x04001BAD RID: 7085
 		Secondary,
-		// Token: 0x04001BAE RID: 7086
 		Item,
-		// Token: 0x04001BAF RID: 7087
 		Equippable,
-		// Token: 0x04001BB0 RID: 7088
 		Misc = 0
 	}
 }

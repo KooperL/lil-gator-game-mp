@@ -1,16 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200008C RID: 140
 [RequireComponent(typeof(Camera))]
 public class CameraLayerCullDistances : MonoBehaviour
 {
-	// Token: 0x0600024D RID: 589 RVA: 0x0000C534 File Offset: 0x0000A734
+	// Token: 0x060002A4 RID: 676 RVA: 0x00020C84 File Offset: 0x0001EE84
 	private void OnValidate()
 	{
 		if (this.shadowCaster == null)
 		{
-			this.shadowCaster = Object.FindObjectOfType<Light>();
+			this.shadowCaster = global::UnityEngine.Object.FindObjectOfType<Light>();
 		}
 		if (this.camera == null)
 		{
@@ -35,7 +34,7 @@ public class CameraLayerCullDistances : MonoBehaviour
 		this.SetFogDistance(this.fogDistance, this.fogDistance, 0f);
 	}
 
-	// Token: 0x0600024E RID: 590 RVA: 0x0000C5DF File Offset: 0x0000A7DF
+	// Token: 0x060002A5 RID: 677 RVA: 0x000042A0 File Offset: 0x000024A0
 	private void Start()
 	{
 		this.camera.layerCullDistances = this.layerCullDistances;
@@ -46,7 +45,7 @@ public class CameraLayerCullDistances : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600024F RID: 591 RVA: 0x0000C620 File Offset: 0x0000A820
+	// Token: 0x060002A6 RID: 678 RVA: 0x00020D30 File Offset: 0x0001EF30
 	public void SetFogDistance(float fogDistance, float shadowDistance, float offset = 0f)
 	{
 		this.fogDistance = fogDistance;
@@ -79,32 +78,23 @@ public class CameraLayerCullDistances : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000302 RID: 770
 	public Camera camera;
 
-	// Token: 0x04000303 RID: 771
 	public Light shadowCaster;
 
-	// Token: 0x04000304 RID: 772
 	public float fogDistance = 55f;
 
-	// Token: 0x04000305 RID: 773
 	public float[] layerFogMultipliers;
 
-	// Token: 0x04000306 RID: 774
 	[ReadOnly]
 	public float[] layerCullDistances;
 
-	// Token: 0x04000307 RID: 775
 	public float[] layerShadowMultipliers;
 
-	// Token: 0x04000308 RID: 776
 	[ReadOnly]
 	public float[] layerShadowCullDistances;
 
-	// Token: 0x04000309 RID: 777
 	public bool layerCullSpherical = true;
 
-	// Token: 0x0400030A RID: 778
 	private const int layerCount = 32;
 }

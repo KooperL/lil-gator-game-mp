@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000187 RID: 391
 public class ButtonTutorialUI : MonoBehaviour
 {
-	// Token: 0x06000808 RID: 2056 RVA: 0x00026B84 File Offset: 0x00024D84
+	// Token: 0x060009B8 RID: 2488 RVA: 0x0003B464 File Offset: 0x00039664
 	public void Activate()
 	{
 		if (this.allowRecentlyPressed && this.buttonTutorial.HasBeenPressedRecently)
@@ -24,14 +23,14 @@ public class ButtonTutorialUI : MonoBehaviour
 		this.showTime = Time.time + (this.buttonTutorial.HasBeenPressed ? this.hasBeenPressedDelay : this.hasntBeenPressedDelay);
 	}
 
-	// Token: 0x06000809 RID: 2057 RVA: 0x00026C02 File Offset: 0x00024E02
+	// Token: 0x060009B9 RID: 2489 RVA: 0x000095E7 File Offset: 0x000077E7
 	public void Hide()
 	{
 		base.gameObject.SetActive(false);
 		base.enabled = false;
 	}
 
-	// Token: 0x0600080A RID: 2058 RVA: 0x00026C18 File Offset: 0x00024E18
+	// Token: 0x060009BA RID: 2490 RVA: 0x0003B4E4 File Offset: 0x000396E4
 	private void Update()
 	{
 		if (Game.HasControl)
@@ -56,21 +55,15 @@ public class ButtonTutorialUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000A35 RID: 2613
 	public ButtonTutorial buttonTutorial;
 
-	// Token: 0x04000A36 RID: 2614
 	public UIHideBehavior visualUI;
 
-	// Token: 0x04000A37 RID: 2615
 	public float hasBeenPressedDelay = 10f;
 
-	// Token: 0x04000A38 RID: 2616
 	public float hasntBeenPressedDelay = 1f;
 
-	// Token: 0x04000A39 RID: 2617
 	public bool allowRecentlyPressed;
 
-	// Token: 0x04000A3A RID: 2618
 	private float showTime = -1f;
 }

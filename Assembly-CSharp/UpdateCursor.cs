@@ -2,10 +2,9 @@
 using Rewired;
 using UnityEngine;
 
-// Token: 0x020001FA RID: 506
 public class UpdateCursor : MonoBehaviour
 {
-	// Token: 0x06000B02 RID: 2818 RVA: 0x00037170 File Offset: 0x00035370
+	// Token: 0x06000D0D RID: 3341 RVA: 0x00049B88 File Offset: 0x00047D88
 	private void Start()
 	{
 		this.isApplicationFocused = true;
@@ -19,38 +18,38 @@ public class UpdateCursor : MonoBehaviour
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000B03 RID: 2819 RVA: 0x000371FA File Offset: 0x000353FA
+	// Token: 0x06000D0E RID: 3342 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnDestroy()
 	{
 	}
 
-	// Token: 0x06000B04 RID: 2820 RVA: 0x000371FC File Offset: 0x000353FC
+	// Token: 0x06000D0F RID: 3343 RVA: 0x0000C19C File Offset: 0x0000A39C
 	private void Update()
 	{
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000B05 RID: 2821 RVA: 0x00037204 File Offset: 0x00035404
+	// Token: 0x06000D10 RID: 3344 RVA: 0x0000C1A4 File Offset: 0x0000A3A4
 	private void OnApplicationFocus(bool focus)
 	{
 		this.isApplicationFocused = focus;
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000B06 RID: 2822 RVA: 0x00037213 File Offset: 0x00035413
+	// Token: 0x06000D11 RID: 3345 RVA: 0x0000C1B3 File Offset: 0x0000A3B3
 	private void OnApplicationPause(bool pause)
 	{
 		this.isApplicationPaused = pause;
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000B07 RID: 2823 RVA: 0x00037222 File Offset: 0x00035422
+	// Token: 0x06000D12 RID: 3346 RVA: 0x0000C1C2 File Offset: 0x0000A3C2
 	private void OnApplicationQuit()
 	{
 		this.SetCursorState(false);
 	}
 
-	// Token: 0x06000B08 RID: 2824 RVA: 0x0003722C File Offset: 0x0003542C
+	// Token: 0x06000D13 RID: 3347 RVA: 0x00049C14 File Offset: 0x00047E14
 	private void UpdateCursorState()
 	{
 		bool flag = true;
@@ -65,7 +64,7 @@ public class UpdateCursor : MonoBehaviour
 		this.SetCursorState(flag);
 	}
 
-	// Token: 0x06000B09 RID: 2825 RVA: 0x0003725E File Offset: 0x0003545E
+	// Token: 0x06000D14 RID: 3348 RVA: 0x0000C1CB File Offset: 0x0000A3CB
 	private void SetCursorState(bool isLocked)
 	{
 		UpdateCursor.isCurrentlyLocked = isLocked;
@@ -77,7 +76,7 @@ public class UpdateCursor : MonoBehaviour
 		Cursor.visible = !isLocked;
 	}
 
-	// Token: 0x06000B0A RID: 2826 RVA: 0x00037290 File Offset: 0x00035490
+	// Token: 0x06000D15 RID: 3349 RVA: 0x0000C1FD File Offset: 0x0000A3FD
 	private void OnMouseClick(InputActionEventData obj)
 	{
 		if (UpdateCursor.isCurrentlyLocked && !this.isActuallyLocked)
@@ -87,18 +86,13 @@ public class UpdateCursor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000EB0 RID: 3760
 	public static bool isCurrentlyLocked;
 
-	// Token: 0x04000EB1 RID: 3761
 	private bool isActuallyLocked;
 
-	// Token: 0x04000EB2 RID: 3762
 	private bool isApplicationFocused;
 
-	// Token: 0x04000EB3 RID: 3763
 	private bool isApplicationPaused;
 
-	// Token: 0x04000EB4 RID: 3764
 	private global::Rewired.Player rePlayer;
 }

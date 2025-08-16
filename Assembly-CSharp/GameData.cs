@@ -2,30 +2,28 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x02000121 RID: 289
 public class GameData : MonoBehaviour
 {
-	// Token: 0x060005F5 RID: 1525 RVA: 0x0001F62C File Offset: 0x0001D82C
+	// Token: 0x06000759 RID: 1881 RVA: 0x0000767F File Offset: 0x0000587F
 	public static int FloatToInt(float f)
 	{
 		return Mathf.FloorToInt(f * 1000f);
 	}
 
-	// Token: 0x060005F6 RID: 1526 RVA: 0x0001F63A File Offset: 0x0001D83A
+	// Token: 0x0600075A RID: 1882 RVA: 0x0000768D File Offset: 0x0000588D
 	public static float IntToFloat(int i)
 	{
 		return (float)i / 1000f;
 	}
 
-	// Token: 0x17000054 RID: 84
-	// (get) Token: 0x060005F7 RID: 1527 RVA: 0x0001F644 File Offset: 0x0001D844
+	// (get) Token: 0x0600075B RID: 1883 RVA: 0x00007697 File Offset: 0x00005897
 	public static GameData g
 	{
 		get
 		{
 			if (GameData.instance == null && Application.isPlaying)
 			{
-				GameData.instance = Object.FindObjectOfType<GameData>();
+				GameData.instance = global::UnityEngine.Object.FindObjectOfType<GameData>();
 				if (GameData.instance != null)
 				{
 					GameData.instance.Awake();
@@ -35,13 +33,11 @@ public class GameData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x14000003 RID: 3
-	// (add) Token: 0x060005F8 RID: 1528 RVA: 0x0001F680 File Offset: 0x0001D880
-	// (remove) Token: 0x060005F9 RID: 1529 RVA: 0x0001F6B8 File Offset: 0x0001D8B8
+	// (add) Token: 0x0600075C RID: 1884 RVA: 0x00034AFC File Offset: 0x00032CFC
+	// (remove) Token: 0x0600075D RID: 1885 RVA: 0x00034B34 File Offset: 0x00032D34
 	public event Action beforeSave;
 
-	// Token: 0x17000055 RID: 85
-	// (get) Token: 0x060005FA RID: 1530 RVA: 0x0001F6ED File Offset: 0x0001D8ED
+	// (get) Token: 0x0600075E RID: 1886 RVA: 0x000076D3 File Offset: 0x000058D3
 	public static string FilePath
 	{
 		get
@@ -50,8 +46,7 @@ public class GameData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000056 RID: 86
-	// (get) Token: 0x060005FB RID: 1531 RVA: 0x0001F6FE File Offset: 0x0001D8FE
+	// (get) Token: 0x0600075F RID: 1887 RVA: 0x000076E4 File Offset: 0x000058E4
 	public static string PlayerName
 	{
 		get
@@ -60,7 +55,7 @@ public class GameData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005FC RID: 1532 RVA: 0x0001F710 File Offset: 0x0001D910
+	// Token: 0x06000760 RID: 1888 RVA: 0x00034B6C File Offset: 0x00032D6C
 	protected void Awake()
 	{
 		if (GameData.instance != null && GameData.instance != this)
@@ -82,7 +77,7 @@ public class GameData : MonoBehaviour
 		this.ReadFromDisk();
 	}
 
-	// Token: 0x060005FD RID: 1533 RVA: 0x0001F7B8 File Offset: 0x0001D9B8
+	// Token: 0x06000761 RID: 1889 RVA: 0x000076F5 File Offset: 0x000058F5
 	private void OnEnable()
 	{
 		if (GameData.instance != null && GameData.instance != this)
@@ -93,13 +88,13 @@ public class GameData : MonoBehaviour
 		this.savePath = GameData.FilePath;
 	}
 
-	// Token: 0x060005FE RID: 1534 RVA: 0x0001F7E6 File Offset: 0x0001D9E6
+	// Token: 0x06000762 RID: 1890 RVA: 0x00007723 File Offset: 0x00005923
 	private void OnDestroy()
 	{
 		Game.onEnterDialogue -= this.OnEnterDialogue;
 	}
 
-	// Token: 0x060005FF RID: 1535 RVA: 0x0001F7F9 File Offset: 0x0001D9F9
+	// Token: 0x06000763 RID: 1891 RVA: 0x00007736 File Offset: 0x00005936
 	private void OnApplicationQuit()
 	{
 		FileUtil.isApplicationQuitting = true;
@@ -109,7 +104,7 @@ public class GameData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000600 RID: 1536 RVA: 0x0001F80E File Offset: 0x0001DA0E
+	// Token: 0x06000764 RID: 1892 RVA: 0x0000774B File Offset: 0x0000594B
 	private void Save()
 	{
 		if (!Game.AllowedToSave)
@@ -119,26 +114,26 @@ public class GameData : MonoBehaviour
 		this.WriteToDisk();
 	}
 
-	// Token: 0x06000601 RID: 1537 RVA: 0x0001F81E File Offset: 0x0001DA1E
+	// Token: 0x06000765 RID: 1893 RVA: 0x0000775B File Offset: 0x0000595B
 	public void SetSaveFile(int saveFileIndex)
 	{
 		this.saveFileSlot = saveFileIndex;
 	}
 
-	// Token: 0x06000602 RID: 1538 RVA: 0x0001F827 File Offset: 0x0001DA27
+	// Token: 0x06000766 RID: 1894 RVA: 0x00007764 File Offset: 0x00005964
 	public void LoadSaveFile(int saveFileIndex)
 	{
 		this.saveFileSlot = saveFileIndex;
 		this.ReadFromDisk();
 	}
 
-	// Token: 0x06000603 RID: 1539 RVA: 0x0001F836 File Offset: 0x0001DA36
+	// Token: 0x06000767 RID: 1895 RVA: 0x00007773 File Offset: 0x00005973
 	public void WriteToDisk()
 	{
 		this.WriteToDisk(false);
 	}
 
-	// Token: 0x06000604 RID: 1540 RVA: 0x0001F840 File Offset: 0x0001DA40
+	// Token: 0x06000768 RID: 1896 RVA: 0x00034C14 File Offset: 0x00032E14
 	public void WriteToDisk(bool isAutoSave)
 	{
 		if (!this.save)
@@ -153,7 +148,7 @@ public class GameData : MonoBehaviour
 		this.gameSaveWrapper.gameSaveData = this.gameSaveData;
 	}
 
-	// Token: 0x06000605 RID: 1541 RVA: 0x0001F88C File Offset: 0x0001DA8C
+	// Token: 0x06000769 RID: 1897 RVA: 0x00034C60 File Offset: 0x00032E60
 	public void ReadFromDisk()
 	{
 		GameSaveData gameSaveData = FileUtil.ReadSaveData(this.saveFileSlot, false);
@@ -169,7 +164,7 @@ public class GameData : MonoBehaviour
 		this.RefreshLoadedData();
 	}
 
-	// Token: 0x06000606 RID: 1542 RVA: 0x0001F8DC File Offset: 0x0001DADC
+	// Token: 0x0600076A RID: 1898 RVA: 0x00034CB0 File Offset: 0x00032EB0
 	private void RefreshLoadedData()
 	{
 		foreach (QuestProfile questProfile in QuestProfile.loadedQuestProfiles)
@@ -178,7 +173,7 @@ public class GameData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000607 RID: 1543 RVA: 0x0001F92C File Offset: 0x0001DB2C
+	// Token: 0x0600076B RID: 1899 RVA: 0x00034D00 File Offset: 0x00032F00
 	public void LoadSaveData(GameSaveData gameSaveData)
 	{
 		GameSaveData gameSaveData2 = gameSaveData.Clone();
@@ -188,7 +183,7 @@ public class GameData : MonoBehaviour
 		this.RefreshLoadedData();
 	}
 
-	// Token: 0x06000608 RID: 1544 RVA: 0x0001F960 File Offset: 0x0001DB60
+	// Token: 0x0600076C RID: 1900 RVA: 0x00034D34 File Offset: 0x00032F34
 	private void Update()
 	{
 		bool flag = false;
@@ -238,12 +233,12 @@ public class GameData : MonoBehaviour
 		this.canSaveCounter--;
 	}
 
-	// Token: 0x06000609 RID: 1545 RVA: 0x0001FA5C File Offset: 0x0001DC5C
+	// Token: 0x0600076D RID: 1901 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnEnterDialogue()
 	{
 	}
 
-	// Token: 0x0600060A RID: 1546 RVA: 0x0001FA5E File Offset: 0x0001DC5E
+	// Token: 0x0600076E RID: 1902 RVA: 0x0000777C File Offset: 0x0000597C
 	public void Write(string key, bool value)
 	{
 		if (this.gameSaveData.bools.ContainsKey(key))
@@ -254,7 +249,7 @@ public class GameData : MonoBehaviour
 		this.gameSaveData.bools.Add(key, value);
 	}
 
-	// Token: 0x0600060B RID: 1547 RVA: 0x0001FA98 File Offset: 0x0001DC98
+	// Token: 0x0600076F RID: 1903 RVA: 0x00034E30 File Offset: 0x00033030
 	public bool ReadBool(string key, bool defaultValue = false)
 	{
 		bool flag;
@@ -266,7 +261,7 @@ public class GameData : MonoBehaviour
 		return defaultValue;
 	}
 
-	// Token: 0x0600060C RID: 1548 RVA: 0x0001FACF File Offset: 0x0001DCCF
+	// Token: 0x06000770 RID: 1904 RVA: 0x000077B6 File Offset: 0x000059B6
 	public void Write(string key, int value)
 	{
 		if (this.gameSaveData.ints.ContainsKey(key))
@@ -277,7 +272,7 @@ public class GameData : MonoBehaviour
 		this.gameSaveData.ints.Add(key, value);
 	}
 
-	// Token: 0x0600060D RID: 1549 RVA: 0x0001FB0C File Offset: 0x0001DD0C
+	// Token: 0x06000771 RID: 1905 RVA: 0x00034E68 File Offset: 0x00033068
 	public int ReadInt(string key, int defaultValue = 0)
 	{
 		int num;
@@ -289,19 +284,19 @@ public class GameData : MonoBehaviour
 		return defaultValue;
 	}
 
-	// Token: 0x0600060E RID: 1550 RVA: 0x0001FB43 File Offset: 0x0001DD43
+	// Token: 0x06000772 RID: 1906 RVA: 0x000077F0 File Offset: 0x000059F0
 	public void Write(string key, float value)
 	{
 		this.Write(key, GameData.FloatToInt(value));
 	}
 
-	// Token: 0x0600060F RID: 1551 RVA: 0x0001FB52 File Offset: 0x0001DD52
+	// Token: 0x06000773 RID: 1907 RVA: 0x000077FF File Offset: 0x000059FF
 	public float ReadFloat(string key, float defaultValue = 0f)
 	{
 		return GameData.IntToFloat(this.ReadInt(key, GameData.FloatToInt(defaultValue)));
 	}
 
-	// Token: 0x06000610 RID: 1552 RVA: 0x0001FB68 File Offset: 0x0001DD68
+	// Token: 0x06000774 RID: 1908 RVA: 0x00034EA0 File Offset: 0x000330A0
 	public void Write(string key, Vector3 value)
 	{
 		this.Write(string.Format("{0}_X", key), value.x);
@@ -309,76 +304,58 @@ public class GameData : MonoBehaviour
 		this.Write(string.Format("{0}_Z", key), value.z);
 	}
 
-	// Token: 0x06000611 RID: 1553 RVA: 0x0001FBBA File Offset: 0x0001DDBA
+	// Token: 0x06000775 RID: 1909 RVA: 0x00007813 File Offset: 0x00005A13
 	public Vector3 ReadVector3(string key)
 	{
 		return this.ReadVector3(key, Vector3.zero);
 	}
 
-	// Token: 0x06000612 RID: 1554 RVA: 0x0001FBC8 File Offset: 0x0001DDC8
+	// Token: 0x06000776 RID: 1910 RVA: 0x00034EF4 File Offset: 0x000330F4
 	public Vector3 ReadVector3(string key, Vector3 defaultValue)
 	{
 		return new Vector3(this.ReadFloat(string.Format("{0}_X", key), defaultValue.x), this.ReadFloat(string.Format("{0}_Y", key), defaultValue.y), this.ReadFloat(string.Format("{0}_Z", key), defaultValue.z));
 	}
 
-	// Token: 0x06000613 RID: 1555 RVA: 0x0001FC1F File Offset: 0x0001DE1F
+	// Token: 0x06000777 RID: 1911 RVA: 0x00007821 File Offset: 0x00005A21
 	[ContextMenu("Debug Json Value")]
 	private void DebugJson()
 	{
 		Debug.Log(JsonUtility.ToJson(this.gameSaveData));
 	}
 
-	// Token: 0x04000843 RID: 2115
 	private const float floatToIntScale = 1000f;
 
-	// Token: 0x04000844 RID: 2116
 	public static bool hasPreloadedSave;
 
-	// Token: 0x04000845 RID: 2117
 	public static GameData instance;
 
-	// Token: 0x04000847 RID: 2119
 	public bool loadOnStart;
 
-	// Token: 0x04000848 RID: 2120
 	public bool save;
 
-	// Token: 0x04000849 RID: 2121
 	public bool isMainScene;
 
-	// Token: 0x0400084A RID: 2122
 	public GameSaveWrapper gameSaveWrapper;
 
-	// Token: 0x0400084B RID: 2123
 	public GameSaveData gameSaveData;
 
-	// Token: 0x0400084C RID: 2124
 	public int saveFileSlot;
 
-	// Token: 0x0400084D RID: 2125
 	private float lastAutoSaveTime = -100f;
 
-	// Token: 0x0400084E RID: 2126
 	private bool lastAutoSaveInControl;
 
-	// Token: 0x0400084F RID: 2127
 	private int canAutoSaveCounter;
 
-	// Token: 0x04000850 RID: 2128
 	private bool wasSaveRestricted;
 
-	// Token: 0x04000851 RID: 2129
 	private bool wasInControl;
 
-	// Token: 0x04000852 RID: 2130
 	private const float minAutoSaveInterval = 5f;
 
-	// Token: 0x04000853 RID: 2131
 	private const float maxAutoSaveInterval = 30f;
 
-	// Token: 0x04000854 RID: 2132
 	private string savePath;
 
-	// Token: 0x04000855 RID: 2133
 	private int canSaveCounter;
 }

@@ -1,17 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200008D RID: 141
 public class CameraUnderwater : MonoBehaviour
 {
-	// Token: 0x06000251 RID: 593 RVA: 0x0000C6FC File Offset: 0x0000A8FC
+	// Token: 0x060002A8 RID: 680 RVA: 0x000042F8 File Offset: 0x000024F8
 	private void Start()
 	{
 		this.shaderVariables = ShaderVariables.s;
 		base.enabled = false;
 	}
 
-	// Token: 0x06000252 RID: 594 RVA: 0x0000C710 File Offset: 0x0000A910
+	// Token: 0x060002A9 RID: 681 RVA: 0x0000430C File Offset: 0x0000250C
 	private void FixedUpdate()
 	{
 		if (this.stepsSinceWater > 3)
@@ -22,19 +21,19 @@ public class CameraUnderwater : MonoBehaviour
 		this.stepsSinceWater++;
 	}
 
-	// Token: 0x06000253 RID: 595 RVA: 0x0000C73C File Offset: 0x0000A93C
+	// Token: 0x060002AA RID: 682 RVA: 0x00004338 File Offset: 0x00002538
 	private void OnTriggerEnter(Collider other)
 	{
 		this.ProcessTrigger(other);
 	}
 
-	// Token: 0x06000254 RID: 596 RVA: 0x0000C745 File Offset: 0x0000A945
+	// Token: 0x060002AB RID: 683 RVA: 0x00004338 File Offset: 0x00002538
 	private void OnTriggerStay(Collider other)
 	{
 		this.ProcessTrigger(other);
 	}
 
-	// Token: 0x06000255 RID: 597 RVA: 0x0000C750 File Offset: 0x0000A950
+	// Token: 0x060002AC RID: 684 RVA: 0x00020DF4 File Offset: 0x0001EFF4
 	private void ProcessTrigger(Collider other)
 	{
 		Water water;
@@ -50,12 +49,9 @@ public class CameraUnderwater : MonoBehaviour
 		this.stepsSinceWater = 0;
 	}
 
-	// Token: 0x0400030B RID: 779
 	private ShaderVariables shaderVariables;
 
-	// Token: 0x0400030C RID: 780
 	private int stepsSinceWater = 100;
 
-	// Token: 0x0400030D RID: 781
 	public GameObject underwaterEffects;
 }

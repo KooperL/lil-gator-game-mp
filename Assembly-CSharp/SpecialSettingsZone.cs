@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000270 RID: 624
 public class SpecialSettingsZone : MonoBehaviour
 {
-	// Token: 0x06000D60 RID: 3424 RVA: 0x00040950 File Offset: 0x0003EB50
+	// Token: 0x0600106F RID: 4207 RVA: 0x0000E176 File Offset: 0x0000C376
 	public void OnEnable()
 	{
 		if (this.enableSpecialPCSettings)
@@ -17,7 +16,7 @@ public class SpecialSettingsZone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D61 RID: 3425 RVA: 0x0004097C File Offset: 0x0003EB7C
+	// Token: 0x06001070 RID: 4208 RVA: 0x0000E1A2 File Offset: 0x0000C3A2
 	public void OnDisable()
 	{
 		if (this.enableSpecialPCSettings)
@@ -35,34 +34,25 @@ public class SpecialSettingsZone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040011A6 RID: 4518
 	public static SpecialSettingsZone.SpecialSettings specialSettings;
 
-	// Token: 0x040011A7 RID: 4519
 	[Header("PC")]
 	public bool enableSpecialPCSettings;
 
-	// Token: 0x040011A8 RID: 4520
 	public SpecialSettingsZone.SpecialSettings specialPCSettings;
 
-	// Token: 0x040011A9 RID: 4521
 	[Header("Switch")]
 	public bool enableSpecialSwitchSettings;
 
-	// Token: 0x040011AA RID: 4522
 	public SpecialSettingsZone.SpecialSettings specialSwitchSettings;
 
-	// Token: 0x02000427 RID: 1063
 	[Serializable]
 	public class SpecialSettings
 	{
-		// Token: 0x04001D5D RID: 7517
 		public int shadowCascades = -1;
 
-		// Token: 0x04001D5E RID: 7518
 		public int shadowResolution = -1;
 
-		// Token: 0x04001D5F RID: 7519
 		public float shadowDistance = -1f;
 	}
 }

@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200029B RID: 667
 public class ShowIfSaveData : MonoBehaviour
 {
-	// Token: 0x06000E2F RID: 3631 RVA: 0x000444A2 File Offset: 0x000426A2
+	// Token: 0x06001153 RID: 4435 RVA: 0x0000ED71 File Offset: 0x0000CF71
 	private void OnEnable()
 	{
 		if (!FileUtil.HasInitializedSaveData())
@@ -13,6 +12,5 @@ public class ShowIfSaveData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001295 RID: 4757
 	public bool invert;
 }

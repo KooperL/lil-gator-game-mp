@@ -3,11 +3,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 
-// Token: 0x0200010C RID: 268
 public class FadeGameVolume : MonoBehaviour
 {
-	// Token: 0x17000048 RID: 72
-	// (get) Token: 0x0600057A RID: 1402 RVA: 0x0001CF0F File Offset: 0x0001B10F
+	// (get) Token: 0x060006D2 RID: 1746 RVA: 0x00006F46 File Offset: 0x00005146
 	public static bool IsFaded
 	{
 		get
@@ -16,7 +14,7 @@ public class FadeGameVolume : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600057B RID: 1403 RVA: 0x0001CF20 File Offset: 0x0001B120
+	// Token: 0x060006D3 RID: 1747 RVA: 0x00032A30 File Offset: 0x00030C30
 	public static void FadeOutGameVolume()
 	{
 		if (FadeGameVolume.audioMixer == null && Settings.s != null)
@@ -31,7 +29,7 @@ public class FadeGameVolume : MonoBehaviour
 		CoroutineUtil.Start(FadeGameVolume.coroutine);
 	}
 
-	// Token: 0x0600057C RID: 1404 RVA: 0x0001CF84 File Offset: 0x0001B184
+	// Token: 0x060006D4 RID: 1748 RVA: 0x00032A94 File Offset: 0x00030C94
 	public static void FadeInGameVolume()
 	{
 		if (FadeGameVolume.audioMixer == null && Settings.s != null)
@@ -46,7 +44,7 @@ public class FadeGameVolume : MonoBehaviour
 		CoroutineUtil.Start(FadeGameVolume.coroutine);
 	}
 
-	// Token: 0x0600057D RID: 1405 RVA: 0x0001CFE5 File Offset: 0x0001B1E5
+	// Token: 0x060006D5 RID: 1749 RVA: 0x00006F54 File Offset: 0x00005154
 	private static IEnumerator DoFadeGameVolume(float target)
 	{
 		while (FadeGameVolume.volumeMultiplier != target)
@@ -59,22 +57,18 @@ public class FadeGameVolume : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600057E RID: 1406 RVA: 0x0001CFF4 File Offset: 0x0001B1F4
+	// Token: 0x060006D6 RID: 1750 RVA: 0x00032AF8 File Offset: 0x00030CF8
 	public static void UpdateGameVolume()
 	{
 		float num = Mathf.Lerp(Settings.gameVolume, -80f, 1f - FadeGameVolume.volumeMultiplier);
 		FadeGameVolume.audioMixer.SetFloat("GameVolume", num);
 	}
 
-	// Token: 0x04000789 RID: 1929
 	private static float volumeMultiplier = 1f;
 
-	// Token: 0x0400078A RID: 1930
 	private static IEnumerator coroutine;
 
-	// Token: 0x0400078B RID: 1931
 	private static AudioMixer audioMixer;
 
-	// Token: 0x0400078C RID: 1932
 	private const float speed = 2f;
 }

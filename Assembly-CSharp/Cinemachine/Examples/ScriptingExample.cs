@@ -3,10 +3,9 @@ using UnityEngine;
 
 namespace Cinemachine.Examples
 {
-	// Token: 0x020002F3 RID: 755
 	public class ScriptingExample : MonoBehaviour
 	{
-		// Token: 0x0600101D RID: 4125 RVA: 0x0004D26C File Offset: 0x0004B46C
+		// Token: 0x060013AA RID: 5034 RVA: 0x00060218 File Offset: 0x0005E418
 		private void Start()
 		{
 			CinemachineBrain cinemachineBrain = GameObject.Find("Main Camera").AddComponent<CinemachineBrain>();
@@ -31,7 +30,7 @@ namespace Cinemachine.Examples
 			rig3.GetCinemachineComponent<CinemachineComposer>().m_ScreenY = 0.15f;
 		}
 
-		// Token: 0x0600101E RID: 4126 RVA: 0x0004D3CE File Offset: 0x0004B5CE
+		// Token: 0x060013AB RID: 5035 RVA: 0x000109F8 File Offset: 0x0000EBF8
 		private void Update()
 		{
 			if (Time.realtimeSinceStartup - this.lastSwapTime > 5f)
@@ -41,13 +40,10 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x0400151F RID: 5407
 		private CinemachineVirtualCamera vcam;
 
-		// Token: 0x04001520 RID: 5408
 		private CinemachineFreeLook freelook;
 
-		// Token: 0x04001521 RID: 5409
 		private float lastSwapTime;
 	}
 }

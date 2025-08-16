@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020001BD RID: 445
 public class InfiniteStaminaMod : MonoBehaviour
 {
-	// Token: 0x0600093C RID: 2364 RVA: 0x0002BE6F File Offset: 0x0002A06F
+	// Token: 0x06000B1F RID: 2847 RVA: 0x0000A809 File Offset: 0x00008A09
 	public void Start()
 	{
 		if (ItemManager.HasInfiniteStamina)
@@ -16,9 +15,7 @@ public class InfiniteStaminaMod : MonoBehaviour
 		this.ifFiniteStamina.Invoke();
 	}
 
-	// Token: 0x04000B99 RID: 2969
 	public UnityEvent ifInfiniteStamina;
 
-	// Token: 0x04000B9A RID: 2970
 	public UnityEvent ifFiniteStamina;
 }

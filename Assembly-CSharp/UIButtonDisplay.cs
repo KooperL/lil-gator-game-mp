@@ -5,10 +5,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-// Token: 0x020002B7 RID: 695
 public class UIButtonDisplay : MonoBehaviour
 {
-	// Token: 0x06000E9C RID: 3740 RVA: 0x00045CD3 File Offset: 0x00043ED3
+	// Token: 0x060011CE RID: 4558 RVA: 0x0000F2C1 File Offset: 0x0000D4C1
 	public void OnEnable()
 	{
 		if (this.updateAutomatically)
@@ -18,7 +17,7 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E9D RID: 3741 RVA: 0x00045CF9 File Offset: 0x00043EF9
+	// Token: 0x060011CF RID: 4559 RVA: 0x0000F2E7 File Offset: 0x0000D4E7
 	private void OnDisable()
 	{
 		if (this.updateAutomatically)
@@ -27,16 +26,16 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E9E RID: 3742 RVA: 0x00045D19 File Offset: 0x00043F19
+	// Token: 0x060011D0 RID: 4560 RVA: 0x0000F307 File Offset: 0x0000D507
 	public void ClearButtonDisplay()
 	{
 		if (this.currentButtonDisplay != null)
 		{
-			Object.Destroy(this.currentButtonDisplay);
+			global::UnityEngine.Object.Destroy(this.currentButtonDisplay);
 		}
 	}
 
-	// Token: 0x06000E9F RID: 3743 RVA: 0x00045D34 File Offset: 0x00043F34
+	// Token: 0x060011D1 RID: 4561 RVA: 0x00059154 File Offset: 0x00057354
 	[ContextMenu("Update Button Display")]
 	public void UpdateButtonDisplay()
 	{
@@ -110,45 +109,32 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001307 RID: 4871
 	public bool updateAutomatically = true;
 
-	// Token: 0x04001308 RID: 4872
 	public UIButtonDisplaySettings settings;
 
-	// Token: 0x04001309 RID: 4873
-	[ActionIdProperty(typeof(Action))]
+	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
 	public int action;
 
-	// Token: 0x0400130A RID: 4874
 	[HideInInspector]
 	public Controller controller;
 
-	// Token: 0x0400130B RID: 4875
 	private GameObject currentButtonDisplay;
 
-	// Token: 0x0400130C RID: 4876
 	private ButtonDisplaySettings buttonDisplaySettings;
 
-	// Token: 0x0400130D RID: 4877
 	public bool matchSizeOfDisplay;
 
-	// Token: 0x0400130E RID: 4878
 	public bool constrainDisplay;
 
-	// Token: 0x0400130F RID: 4879
 	public bool applyToLayoutElement = true;
 
-	// Token: 0x04001310 RID: 4880
 	public bool disableMasking;
 
-	// Token: 0x04001311 RID: 4881
 	public LayoutElement layoutElement;
 
-	// Token: 0x04001312 RID: 4882
 	[Header("Conditional display settings")]
 	public bool showForKbM = true;
 
-	// Token: 0x04001313 RID: 4883
 	public bool showForGamepad = true;
 }

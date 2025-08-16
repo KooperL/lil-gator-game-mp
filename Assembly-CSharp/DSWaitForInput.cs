@@ -3,11 +3,10 @@ using System.Collections;
 using Rewired;
 using UnityEngine;
 
-// Token: 0x020000E2 RID: 226
 [AddComponentMenu("Dialogue Sequence/Wait For Input")]
 public class DSWaitForInput : DialogueSequence
 {
-	// Token: 0x060004A8 RID: 1192 RVA: 0x00019C08 File Offset: 0x00017E08
+	// Token: 0x060005DF RID: 1503 RVA: 0x0002FC7C File Offset: 0x0002DE7C
 	public override void Activate()
 	{
 		if (this.player == null)
@@ -25,7 +24,7 @@ public class DSWaitForInput : DialogueSequence
 		base.Activate();
 	}
 
-	// Token: 0x060004A9 RID: 1193 RVA: 0x00019CF4 File Offset: 0x00017EF4
+	// Token: 0x060005E0 RID: 1504 RVA: 0x0002FD68 File Offset: 0x0002DF68
 	public override void Deactivate()
 	{
 		this.player.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnMove));
@@ -34,13 +33,13 @@ public class DSWaitForInput : DialogueSequence
 		base.Deactivate();
 	}
 
-	// Token: 0x060004AA RID: 1194 RVA: 0x00019D4C File Offset: 0x00017F4C
+	// Token: 0x060005E1 RID: 1505 RVA: 0x000063A6 File Offset: 0x000045A6
 	public override YieldInstruction Run()
 	{
 		return base.StartCoroutine(this.WaitUntilTriggered());
 	}
 
-	// Token: 0x060004AB RID: 1195 RVA: 0x00019D5A File Offset: 0x00017F5A
+	// Token: 0x060005E2 RID: 1506 RVA: 0x000063B4 File Offset: 0x000045B4
 	private IEnumerator WaitUntilTriggered()
 	{
 		this.isTriggered = false;
@@ -51,7 +50,7 @@ public class DSWaitForInput : DialogueSequence
 		yield break;
 	}
 
-	// Token: 0x060004AC RID: 1196 RVA: 0x00019D69 File Offset: 0x00017F69
+	// Token: 0x060005E3 RID: 1507 RVA: 0x000063C3 File Offset: 0x000045C3
 	private void OnInteract(InputActionEventData obj)
 	{
 		if (this.waitForInteract)
@@ -60,7 +59,7 @@ public class DSWaitForInput : DialogueSequence
 		}
 	}
 
-	// Token: 0x060004AD RID: 1197 RVA: 0x00019D7A File Offset: 0x00017F7A
+	// Token: 0x060005E4 RID: 1508 RVA: 0x000063D4 File Offset: 0x000045D4
 	private void Jump(InputActionEventData obj)
 	{
 		if (this.waitForJump)
@@ -69,7 +68,7 @@ public class DSWaitForInput : DialogueSequence
 		}
 	}
 
-	// Token: 0x060004AE RID: 1198 RVA: 0x00019D8B File Offset: 0x00017F8B
+	// Token: 0x060005E5 RID: 1509 RVA: 0x000063E5 File Offset: 0x000045E5
 	private void OnMove(InputActionEventData obj)
 	{
 		if (this.waitForMove)
@@ -78,21 +77,15 @@ public class DSWaitForInput : DialogueSequence
 		}
 	}
 
-	// Token: 0x0400067A RID: 1658
 	private global::Rewired.Player player;
 
-	// Token: 0x0400067B RID: 1659
 	public bool waitForMove;
 
-	// Token: 0x0400067C RID: 1660
 	public bool waitForInteract;
 
-	// Token: 0x0400067D RID: 1661
 	public bool waitForJump;
 
-	// Token: 0x0400067E RID: 1662
 	private bool isTriggered;
 
-	// Token: 0x0400067F RID: 1663
 	private WaitUntil waitUntilTriggered;
 }

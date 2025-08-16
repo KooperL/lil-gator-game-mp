@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000C2 RID: 194
 public class SpringRiderMount : ActorMount
 {
-	// Token: 0x06000436 RID: 1078 RVA: 0x00018498 File Offset: 0x00016698
+	// Token: 0x0600052E RID: 1326 RVA: 0x0002DEA4 File Offset: 0x0002C0A4
 	protected override void HandlePlayerInput(Vector3 input, ref float animationIndex)
 	{
 		animationIndex = 0f;
@@ -15,7 +14,7 @@ public class SpringRiderMount : ActorMount
 		this.spring.AddForce(this.force * input);
 	}
 
-	// Token: 0x06000437 RID: 1079 RVA: 0x00018510 File Offset: 0x00016710
+	// Token: 0x0600052F RID: 1327 RVA: 0x0002DF1C File Offset: 0x0002C11C
 	protected override void GetIntoMount(bool skipToMount)
 	{
 		base.GetIntoMount(skipToMount);
@@ -34,7 +33,7 @@ public class SpringRiderMount : ActorMount
 		this.onGottenInto.AddListener(new UnityAction(this.OnGetInto));
 	}
 
-	// Token: 0x06000438 RID: 1080 RVA: 0x0001857F File Offset: 0x0001677F
+	// Token: 0x06000530 RID: 1328 RVA: 0x00005C5F File Offset: 0x00003E5F
 	private void OnGetInto()
 	{
 		if (!this.ignoreSpringPhysics)
@@ -43,7 +42,7 @@ public class SpringRiderMount : ActorMount
 		}
 	}
 
-	// Token: 0x06000439 RID: 1081 RVA: 0x000185AA File Offset: 0x000167AA
+	// Token: 0x06000531 RID: 1329 RVA: 0x00005C8A File Offset: 0x00003E8A
 	public override void GetOut()
 	{
 		base.GetOut();
@@ -53,7 +52,7 @@ public class SpringRiderMount : ActorMount
 		}
 	}
 
-	// Token: 0x0600043A RID: 1082 RVA: 0x000185DC File Offset: 0x000167DC
+	// Token: 0x06000532 RID: 1330 RVA: 0x00005CBC File Offset: 0x00003EBC
 	public override void Cancel()
 	{
 		if (!this.ignoreSpringPhysics)
@@ -63,7 +62,7 @@ public class SpringRiderMount : ActorMount
 		base.Cancel();
 	}
 
-	// Token: 0x0600043B RID: 1083 RVA: 0x0001860C File Offset: 0x0001680C
+	// Token: 0x06000533 RID: 1331 RVA: 0x00005CEC File Offset: 0x00003EEC
 	public override void CancelMount()
 	{
 		if (!this.actor.isPlayer && !this.ignoreSpringPhysics)
@@ -73,22 +72,16 @@ public class SpringRiderMount : ActorMount
 		base.CancelMount();
 	}
 
-	// Token: 0x040005ED RID: 1517
 	[Space]
 	public HitSpring spring;
 
-	// Token: 0x040005EE RID: 1518
 	public float force = 500f;
 
-	// Token: 0x040005EF RID: 1519
 	public float impulse = 500f;
 
-	// Token: 0x040005F0 RID: 1520
 	public bool ignoreSpringPhysics;
 
-	// Token: 0x040005F1 RID: 1521
 	private float smoothDirectionality;
 
-	// Token: 0x040005F2 RID: 1522
 	private float directionalityVelocity;
 }

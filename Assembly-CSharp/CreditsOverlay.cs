@@ -3,10 +3,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x02000099 RID: 153
 public class CreditsOverlay : MonoBehaviour
 {
-	// Token: 0x060002DA RID: 730 RVA: 0x000111F8 File Offset: 0x0000F3F8
+	// Token: 0x06000331 RID: 817 RVA: 0x000047F4 File Offset: 0x000029F4
 	[ContextMenu("Start Credits")]
 	public void StartCredits()
 	{
@@ -15,7 +14,7 @@ public class CreditsOverlay : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x060002DB RID: 731 RVA: 0x00011214 File Offset: 0x0000F414
+	// Token: 0x06000332 RID: 818 RVA: 0x00025374 File Offset: 0x00023574
 	private void Update()
 	{
 		if (this.nextChunkTime < 0f)
@@ -56,7 +55,7 @@ public class CreditsOverlay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002DC RID: 732 RVA: 0x000112F7 File Offset: 0x0000F4F7
+	// Token: 0x06000333 RID: 819 RVA: 0x00004810 File Offset: 0x00002A10
 	private IEnumerator ProgressChunk()
 	{
 		this.currentChunk++;
@@ -97,7 +96,7 @@ public class CreditsOverlay : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060002DD RID: 733 RVA: 0x00011306 File Offset: 0x0000F506
+	// Token: 0x06000334 RID: 820 RVA: 0x0000481F File Offset: 0x00002A1F
 	private IEnumerator FadeIn(Text text)
 	{
 		float fade = 0f;
@@ -115,7 +114,7 @@ public class CreditsOverlay : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060002DE RID: 734 RVA: 0x0001131C File Offset: 0x0000F51C
+	// Token: 0x06000335 RID: 821 RVA: 0x00004835 File Offset: 0x00002A35
 	private IEnumerator FadeOut(Text text)
 	{
 		float fade = 0f;
@@ -130,65 +129,50 @@ public class CreditsOverlay : MonoBehaviour
 			yield return null;
 		}
 		yield return null;
-		Object.Destroy(text.gameObject);
+		global::UnityEngine.Object.Destroy(text.gameObject);
 		yield break;
 	}
 
-	// Token: 0x060002DF RID: 735 RVA: 0x00011332 File Offset: 0x0000F532
+	// Token: 0x06000336 RID: 822 RVA: 0x0000484B File Offset: 0x00002A4B
 	private Text GetInstance(GameObject prefab, string text)
 	{
-		GameObject gameObject = Object.Instantiate<GameObject>(prefab, base.transform);
+		GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(prefab, base.transform);
 		gameObject.SetActive(true);
 		Text component = gameObject.GetComponent<Text>();
 		component.text = text;
 		return component;
 	}
 
-	// Token: 0x040003F2 RID: 1010
 	public MultilingualTextDocument headerDocument;
 
-	// Token: 0x040003F3 RID: 1011
 	public CreditsOverlay.CreditsChunk[] creditsChunks;
 
-	// Token: 0x040003F4 RID: 1012
 	public GameObject headerPrefab;
 
-	// Token: 0x040003F5 RID: 1013
 	public GameObject textPrefab;
 
-	// Token: 0x040003F6 RID: 1014
 	private int currentChunk = -1;
 
-	// Token: 0x040003F7 RID: 1015
 	private Text currentHeader;
 
-	// Token: 0x040003F8 RID: 1016
 	private Text currentText;
 
-	// Token: 0x040003F9 RID: 1017
 	public float startDelay = 1.5f;
 
-	// Token: 0x040003FA RID: 1018
 	public float fadeTime = 0.5f;
 
-	// Token: 0x040003FB RID: 1019
 	public float displayTime = 7f;
 
-	// Token: 0x040003FC RID: 1020
 	private float nextChunkTime;
 
-	// Token: 0x040003FD RID: 1021
 	public float fadePositionOffset = 30f;
 
-	// Token: 0x02000379 RID: 889
 	[Serializable]
 	public struct CreditsChunk
 	{
-		// Token: 0x04001A7D RID: 6781
 		[TextLookup("headerDocument")]
 		public string header;
 
-		// Token: 0x04001A7E RID: 6782
 		[TextArea]
 		public string text;
 	}

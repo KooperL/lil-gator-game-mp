@@ -3,11 +3,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000216 RID: 534
 public class CheckInt : MonoBehaviour
 {
-	// Token: 0x170000BE RID: 190
-	// (get) Token: 0x06000B91 RID: 2961 RVA: 0x00038895 File Offset: 0x00036A95
+	// (get) Token: 0x06000E26 RID: 3622 RVA: 0x0000C9DC File Offset: 0x0000ABDC
 	private int State
 	{
 		get
@@ -16,13 +14,13 @@ public class CheckInt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B92 RID: 2962 RVA: 0x000388A8 File Offset: 0x00036AA8
+	// Token: 0x06000E27 RID: 3623 RVA: 0x0000C9EF File Offset: 0x0000ABEF
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000B93 RID: 2963 RVA: 0x000388B7 File Offset: 0x00036AB7
+	// Token: 0x06000E28 RID: 3624 RVA: 0x0000C9FE File Offset: 0x0000ABFE
 	private IEnumerator RunConversation()
 	{
 		int state = this.State;
@@ -54,30 +52,21 @@ public class CheckInt : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04000F59 RID: 3929
 	public string id;
 
-	// Token: 0x04000F5A RID: 3930
 	public int checkAgainst;
 
-	// Token: 0x04000F5B RID: 3931
 	public string ifBelowText;
 
-	// Token: 0x04000F5C RID: 3932
 	public UnityEvent ifBelow;
 
-	// Token: 0x04000F5D RID: 3933
 	public string ifEqualText;
 
-	// Token: 0x04000F5E RID: 3934
 	public UnityEvent ifEqual;
 
-	// Token: 0x04000F5F RID: 3935
 	public string ifAboveText;
 
-	// Token: 0x04000F60 RID: 3936
 	public UnityEvent ifAbove;
 
-	// Token: 0x04000F61 RID: 3937
 	public DialogueActor[] actors;
 }

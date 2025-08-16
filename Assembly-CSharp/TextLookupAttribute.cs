@@ -1,9 +1,8 @@
 ﻿using System;
 
-// Token: 0x02000209 RID: 521
 public class TextLookupAttribute : LookupAttribute
 {
-	// Token: 0x06000B31 RID: 2865 RVA: 0x00037DB8 File Offset: 0x00035FB8
+	// Token: 0x06000D48 RID: 3400 RVA: 0x00002ABF File Offset: 0x00000CBF
 	public TextLookupAttribute(string documentSourceField)
 	{
 		this.sourceField = documentSourceField;

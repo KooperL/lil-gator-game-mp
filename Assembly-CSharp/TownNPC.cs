@@ -1,11 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000195 RID: 405
 public class TownNPC : MonoBehaviour
 {
-	// Token: 0x17000073 RID: 115
-	// (get) Token: 0x06000840 RID: 2112 RVA: 0x00027631 File Offset: 0x00025831
+	// (get) Token: 0x060009FF RID: 2559 RVA: 0x0000998E File Offset: 0x00007B8E
 	private string SaveID
 	{
 		get
@@ -14,7 +12,7 @@ public class TownNPC : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000841 RID: 2113 RVA: 0x00027643 File Offset: 0x00025843
+	// Token: 0x06000A00 RID: 2560 RVA: 0x000099A0 File Offset: 0x00007BA0
 	private void Start()
 	{
 		if (this.inTown)
@@ -23,7 +21,7 @@ public class TownNPC : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000842 RID: 2114 RVA: 0x00027674 File Offset: 0x00025874
+	// Token: 0x06000A01 RID: 2561 RVA: 0x0003BDF8 File Offset: 0x00039FF8
 	[ContextMenu("Find Town Instance")]
 	public void FindTownInstance()
 	{
@@ -32,7 +30,7 @@ public class TownNPC : MonoBehaviour
 			this.townInstance = this;
 			return;
 		}
-		foreach (TownNPC townNPC in Object.FindObjectsOfType<TownNPC>())
+		foreach (TownNPC townNPC in global::UnityEngine.Object.FindObjectsOfType<TownNPC>())
 		{
 			if (townNPC != this && townNPC.id == this.id && townNPC.inTown)
 			{
@@ -42,22 +40,18 @@ public class TownNPC : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000843 RID: 2115 RVA: 0x000276D5 File Offset: 0x000258D5
+	// Token: 0x06000A02 RID: 2562 RVA: 0x000099D1 File Offset: 0x00007BD1
 	public void EnableTownInstance()
 	{
 		GameData.g.Write(this.SaveID, true);
 		this.townInstance.gameObject.SetActive(true);
 	}
 
-	// Token: 0x04000A66 RID: 2662
 	public string id;
 
-	// Token: 0x04000A67 RID: 2663
 	public bool inTown;
 
-	// Token: 0x04000A68 RID: 2664
 	public bool alwaysActive;
 
-	// Token: 0x04000A69 RID: 2665
 	public TownNPC townInstance;
 }

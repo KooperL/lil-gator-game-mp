@@ -5,47 +5,38 @@ using UnityEngine.EventSystems;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x02000321 RID: 801
 	public interface ICustomSelectable : ICancelHandler, IEventSystemHandler
 	{
-		// Token: 0x17000377 RID: 887
-		// (get) Token: 0x0600158A RID: 5514
-		// (set) Token: 0x0600158B RID: 5515
+		// (get) Token: 0x06001B0C RID: 6924
+		// (set) Token: 0x06001B0D RID: 6925
 		Sprite disabledHighlightedSprite { get; set; }
 
-		// Token: 0x17000378 RID: 888
-		// (get) Token: 0x0600158C RID: 5516
-		// (set) Token: 0x0600158D RID: 5517
+		// (get) Token: 0x06001B0E RID: 6926
+		// (set) Token: 0x06001B0F RID: 6927
 		Color disabledHighlightedColor { get; set; }
 
-		// Token: 0x17000379 RID: 889
-		// (get) Token: 0x0600158E RID: 5518
-		// (set) Token: 0x0600158F RID: 5519
+		// (get) Token: 0x06001B10 RID: 6928
+		// (set) Token: 0x06001B11 RID: 6929
 		string disabledHighlightedTrigger { get; set; }
 
-		// Token: 0x1700037A RID: 890
-		// (get) Token: 0x06001590 RID: 5520
-		// (set) Token: 0x06001591 RID: 5521
+		// (get) Token: 0x06001B12 RID: 6930
+		// (set) Token: 0x06001B13 RID: 6931
 		bool autoNavUp { get; set; }
 
-		// Token: 0x1700037B RID: 891
-		// (get) Token: 0x06001592 RID: 5522
-		// (set) Token: 0x06001593 RID: 5523
+		// (get) Token: 0x06001B14 RID: 6932
+		// (set) Token: 0x06001B15 RID: 6933
 		bool autoNavDown { get; set; }
 
-		// Token: 0x1700037C RID: 892
-		// (get) Token: 0x06001594 RID: 5524
-		// (set) Token: 0x06001595 RID: 5525
+		// (get) Token: 0x06001B16 RID: 6934
+		// (set) Token: 0x06001B17 RID: 6935
 		bool autoNavLeft { get; set; }
 
-		// Token: 0x1700037D RID: 893
-		// (get) Token: 0x06001596 RID: 5526
-		// (set) Token: 0x06001597 RID: 5527
+		// (get) Token: 0x06001B18 RID: 6936
+		// (set) Token: 0x06001B19 RID: 6937
 		bool autoNavRight { get; set; }
 
-		// Token: 0x14000018 RID: 24
-		// (add) Token: 0x06001598 RID: 5528
-		// (remove) Token: 0x06001599 RID: 5529
+		// (add) Token: 0x06001B1A RID: 6938
+		// (remove) Token: 0x06001B1B RID: 6939
 		event UnityAction CancelEvent;
 	}
 }

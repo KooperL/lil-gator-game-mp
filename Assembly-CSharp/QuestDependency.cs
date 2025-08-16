@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000064 RID: 100
 public class QuestDependency : MonoBehaviour
 {
-	// Token: 0x06000177 RID: 375 RVA: 0x0000899C File Offset: 0x00006B9C
+	// Token: 0x060001B0 RID: 432 RVA: 0x0001D49C File Offset: 0x0001B69C
 	private void Start()
 	{
 		QuestProfile[] array = this.quests;
@@ -16,13 +15,13 @@ public class QuestDependency : MonoBehaviour
 		this.CheckQuests(true);
 	}
 
-	// Token: 0x06000178 RID: 376 RVA: 0x000089DE File Offset: 0x00006BDE
+	// Token: 0x060001B1 RID: 433 RVA: 0x000036E1 File Offset: 0x000018E1
 	private void CheckQuests()
 	{
 		this.CheckQuests(false);
 	}
 
-	// Token: 0x06000179 RID: 377 RVA: 0x000089E8 File Offset: 0x00006BE8
+	// Token: 0x060001B2 RID: 434 RVA: 0x0001D4E0 File Offset: 0x0001B6E0
 	private void CheckQuests(bool isInitial)
 	{
 		bool flag = true;
@@ -58,15 +57,11 @@ public class QuestDependency : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000220 RID: 544
 	public QuestProfile[] quests;
 
-	// Token: 0x04000221 RID: 545
 	public GameObject[] activateObjects;
 
-	// Token: 0x04000222 RID: 546
 	public UnityEvent onAllComplete;
 
-	// Token: 0x04000223 RID: 547
 	public int totalCompletedDependencies;
 }

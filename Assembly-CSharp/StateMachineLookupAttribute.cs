@@ -1,9 +1,8 @@
 ﻿using System;
 
-// Token: 0x02000208 RID: 520
 public class StateMachineLookupAttribute : LookupAttribute
 {
-	// Token: 0x06000B30 RID: 2864 RVA: 0x00037DA9 File Offset: 0x00035FA9
+	// Token: 0x06000D47 RID: 3399 RVA: 0x00002ABF File Offset: 0x00000CBF
 	public StateMachineLookupAttribute(string sourceField)
 	{
 		this.sourceField = sourceField;

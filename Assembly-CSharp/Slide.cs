@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000095 RID: 149
 public class Slide : GenericPath, ICustomPlayerMovement
 {
-	// Token: 0x060002B5 RID: 693 RVA: 0x0000FC74 File Offset: 0x0000DE74
+	// Token: 0x0600030C RID: 780 RVA: 0x00023FCC File Offset: 0x000221CC
 	private void OnTriggerStay(Collider other)
 	{
 		if (!base.enabled && Time.time - this.lastEnabled > 0.5f && !Player.movement.JustCanceled)
@@ -32,7 +31,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		}
 	}
 
-	// Token: 0x060002B6 RID: 694 RVA: 0x0000FD78 File Offset: 0x0000DF78
+	// Token: 0x0600030D RID: 781 RVA: 0x000240D0 File Offset: 0x000222D0
 	private void OnEnable()
 	{
 		Player.movement.isModified = true;
@@ -72,7 +71,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		}
 	}
 
-	// Token: 0x060002B7 RID: 695 RVA: 0x0000FEF8 File Offset: 0x0000E0F8
+	// Token: 0x0600030E RID: 782 RVA: 0x0000463F File Offset: 0x0000283F
 	private void OnDisable()
 	{
 		Player.footsteps.ClearOverride();
@@ -89,7 +88,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		s.ClearOverride();
 	}
 
-	// Token: 0x060002B8 RID: 696 RVA: 0x0000FF34 File Offset: 0x0000E134
+	// Token: 0x0600030F RID: 783 RVA: 0x00024250 File Offset: 0x00022450
 	public void MovementUpdate(Vector3 input, ref Vector3 position, ref Vector3 velocity, ref Vector3 direction, ref Vector3 up, ref float animationIndex)
 	{
 		this.lastT = this.t;
@@ -108,7 +107,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		}
 	}
 
-	// Token: 0x060002B9 RID: 697 RVA: 0x00010044 File Offset: 0x0000E244
+	// Token: 0x06000310 RID: 784 RVA: 0x00024360 File Offset: 0x00022560
 	private void Update()
 	{
 		if (this.lockedCamera)
@@ -120,7 +119,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		}
 	}
 
-	// Token: 0x060002BA RID: 698 RVA: 0x000100B0 File Offset: 0x0000E2B0
+	// Token: 0x06000311 RID: 785 RVA: 0x000243CC File Offset: 0x000225CC
 	private void UpdateCameraPos()
 	{
 		this.camera.transform.position = base.GetPosition(this.lockedCameraT) + this.cameraOffset;
@@ -132,69 +131,50 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		this.camera.transform.rotation = QuaternionUtil.SmoothDamp(this.camera.transform.rotation, Quaternion.LookRotation(vector), ref this.lockedCameraRotationalVelocity, 0.3f);
 	}
 
-	// Token: 0x060002BB RID: 699 RVA: 0x00010173 File Offset: 0x0000E373
+	// Token: 0x06000312 RID: 786 RVA: 0x00004678 File Offset: 0x00002878
 	public void Cancel()
 	{
 		this.lastEnabled = Time.time;
 		base.enabled = false;
 	}
 
-	// Token: 0x040003A9 RID: 937
 	public float friction = 0.2f;
 
-	// Token: 0x040003AA RID: 938
 	public float minSpeed = 1f;
 
-	// Token: 0x040003AB RID: 939
 	private Rigidbody rigidbody;
 
-	// Token: 0x040003AC RID: 940
 	private float t;
 
-	// Token: 0x040003AD RID: 941
 	private float lastT;
 
-	// Token: 0x040003AE RID: 942
 	private Vector3 velocity;
 
-	// Token: 0x040003AF RID: 943
 	private float speed;
 
-	// Token: 0x040003B0 RID: 944
 	private float lastEnabled = -1f;
 
-	// Token: 0x040003B1 RID: 945
 	public bool jumpOff = true;
 
-	// Token: 0x040003B2 RID: 946
 	public AnimationSet animations;
 
-	// Token: 0x040003B3 RID: 947
 	public bool lockedCamera;
 
-	// Token: 0x040003B4 RID: 948
 	[ConditionalHide("lockedCamera", true)]
 	public GameObject camera;
 
-	// Token: 0x040003B5 RID: 949
 	[ConditionalHide("lockedCamera", true)]
 	public float cameraDistance = 1.5f;
 
-	// Token: 0x040003B6 RID: 950
 	public Vector3 cameraOffset = 0.5f * Vector3.up;
 
-	// Token: 0x040003B7 RID: 951
 	private float lockedCameraT;
 
-	// Token: 0x040003B8 RID: 952
 	private float lockedCameraTVelocity;
 
-	// Token: 0x040003B9 RID: 953
 	private Quaternion lockedCameraRotationalVelocity;
 
-	// Token: 0x040003BA RID: 954
 	public SurfaceMaterial surfaceMaterial;
 
-	// Token: 0x040003BB RID: 955
 	public AudioSource scrapeSource;
 }

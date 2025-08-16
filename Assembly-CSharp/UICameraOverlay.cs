@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002BB RID: 699
 public class UICameraOverlay : MonoBehaviour
 {
-	// Token: 0x06000EBC RID: 3772 RVA: 0x00046844 File Offset: 0x00044A44
+	// Token: 0x060011F4 RID: 4596 RVA: 0x00059C24 File Offset: 0x00057E24
 	public void SetState(ItemCamera.CameraMode cameraMode, bool isRightHand)
 	{
 		if (base.gameObject == null)
@@ -29,12 +28,9 @@ public class UICameraOverlay : MonoBehaviour
 		base.gameObject.SetActive(cameraMode != ItemCamera.CameraMode.Off);
 	}
 
-	// Token: 0x04001334 RID: 4916
 	public GameObject[] rightHandObjects;
 
-	// Token: 0x04001335 RID: 4917
 	public GameObject[] leftHandObjects;
 
-	// Token: 0x04001336 RID: 4918
 	public GameObject[] fullCameraModeObjects;
 }

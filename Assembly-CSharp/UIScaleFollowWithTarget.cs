@@ -1,17 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002DB RID: 731
 public class UIScaleFollowWithTarget : MonoBehaviour
 {
-	// Token: 0x06000F71 RID: 3953 RVA: 0x0004A0B1 File Offset: 0x000482B1
+	// Token: 0x060012E5 RID: 4837 RVA: 0x0000FF1F File Offset: 0x0000E11F
 	private void Awake()
 	{
-		this.highlight = Object.FindObjectOfType<HighlightsFX>();
+		this.highlight = global::UnityEngine.Object.FindObjectOfType<HighlightsFX>();
 		this.UpdateFollowTarget();
 	}
 
-	// Token: 0x06000F72 RID: 3954 RVA: 0x0004A0C4 File Offset: 0x000482C4
+	// Token: 0x060012E6 RID: 4838 RVA: 0x0000FF32 File Offset: 0x0000E132
 	private void Update()
 	{
 		if (this.followTarget != this.follow.followTarget)
@@ -20,7 +19,7 @@ public class UIScaleFollowWithTarget : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F73 RID: 3955 RVA: 0x0004A0E4 File Offset: 0x000482E4
+	// Token: 0x060012E7 RID: 4839 RVA: 0x0005D2C4 File Offset: 0x0005B4C4
 	private void UpdateFollowTarget()
 	{
 		this.followTarget = this.follow.followTarget;
@@ -40,15 +39,11 @@ public class UIScaleFollowWithTarget : MonoBehaviour
 		this.follow.localOffset = new Vector2(Mathf.Max(extents.x, extents.z), -extents.y);
 	}
 
-	// Token: 0x0400143F RID: 5183
 	private HighlightsFX highlight;
 
-	// Token: 0x04001440 RID: 5184
 	private Transform followTarget;
 
-	// Token: 0x04001441 RID: 5185
 	public UIFollow follow;
 
-	// Token: 0x04001442 RID: 5186
 	private Vector3 offset;
 }

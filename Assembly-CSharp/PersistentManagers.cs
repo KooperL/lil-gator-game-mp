@@ -1,21 +1,19 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200018E RID: 398
 public class PersistentManagers : MonoBehaviour
 {
-	// Token: 0x06000827 RID: 2087 RVA: 0x00027121 File Offset: 0x00025321
+	// Token: 0x060009DD RID: 2525 RVA: 0x000097F1 File Offset: 0x000079F1
 	private void Awake()
 	{
 		if (PersistentManagers.p != null)
 		{
-			Object.Destroy(base.gameObject);
+			global::UnityEngine.Object.Destroy(base.gameObject);
 			return;
 		}
 		PersistentManagers.p = this;
-		Object.DontDestroyOnLoad(base.gameObject);
+		global::UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
 	}
 
-	// Token: 0x04000A53 RID: 2643
 	public static PersistentManagers p;
 }

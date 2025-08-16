@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000110 RID: 272
 public class FadeRenderer : MonoBehaviour
 {
-	// Token: 0x06000594 RID: 1428 RVA: 0x0001D509 File Offset: 0x0001B709
+	// Token: 0x060006F2 RID: 1778 RVA: 0x0000707E File Offset: 0x0000527E
 	private void OnEnable()
 	{
 		if (FadeRenderer.propertyBlock == null)
@@ -13,13 +12,13 @@ public class FadeRenderer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000595 RID: 1429 RVA: 0x0001D51C File Offset: 0x0001B71C
+	// Token: 0x060006F3 RID: 1779 RVA: 0x00007091 File Offset: 0x00005291
 	private void Start()
 	{
 		this.SetFade(this.fade);
 	}
 
-	// Token: 0x06000596 RID: 1430 RVA: 0x0001D52A File Offset: 0x0001B72A
+	// Token: 0x060006F4 RID: 1780 RVA: 0x0000709F File Offset: 0x0000529F
 	public virtual void OnValidate()
 	{
 		if (this.mainRenderer == null)
@@ -32,7 +31,7 @@ public class FadeRenderer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000597 RID: 1431 RVA: 0x0001D563 File Offset: 0x0001B763
+	// Token: 0x060006F5 RID: 1781 RVA: 0x000070D8 File Offset: 0x000052D8
 	public void UpdateFade()
 	{
 		if (this.materialToFade == null)
@@ -42,7 +41,7 @@ public class FadeRenderer : MonoBehaviour
 		this.SetFade(this.fade);
 	}
 
-	// Token: 0x06000598 RID: 1432 RVA: 0x0001D580 File Offset: 0x0001B780
+	// Token: 0x060006F6 RID: 1782 RVA: 0x00032F60 File Offset: 0x00031160
 	public virtual void SetFade(float fade)
 	{
 		this.fade = fade;
@@ -63,26 +62,19 @@ public class FadeRenderer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040007A5 RID: 1957
 	[Range(0f, 1f)]
 	public float fade = 1f;
 
-	// Token: 0x040007A6 RID: 1958
 	public Renderer mainRenderer;
 
-	// Token: 0x040007A7 RID: 1959
 	public SpriteRenderer[] eyes;
 
-	// Token: 0x040007A8 RID: 1960
 	public bool useSharedMaterial;
 
-	// Token: 0x040007A9 RID: 1961
 	[ConditionalHide("useSharedMaterial", true)]
 	public Material materialToFade;
 
-	// Token: 0x040007AA RID: 1962
 	private int fadeID = Shader.PropertyToID("_Fade");
 
-	// Token: 0x040007AB RID: 1963
 	private static MaterialPropertyBlock propertyBlock;
 }

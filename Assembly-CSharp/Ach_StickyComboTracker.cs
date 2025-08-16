@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000070 RID: 112
 public class Ach_StickyComboTracker : MonoBehaviour
 {
-	// Token: 0x060001B8 RID: 440 RVA: 0x00009AC6 File Offset: 0x00007CC6
+	// Token: 0x060001FB RID: 507 RVA: 0x00003A10 File Offset: 0x00001C10
 	public static void Stick()
 	{
 		if (Ach_StickyComboTracker.instance == null)
@@ -14,13 +13,13 @@ public class Ach_StickyComboTracker : MonoBehaviour
 		Ach_StickyComboTracker.instance.OnStick();
 	}
 
-	// Token: 0x060001B9 RID: 441 RVA: 0x00009AE0 File Offset: 0x00007CE0
+	// Token: 0x060001FC RID: 508 RVA: 0x00003A2A File Offset: 0x00001C2A
 	private void Awake()
 	{
 		Ach_StickyComboTracker.instance = this;
 	}
 
-	// Token: 0x060001BA RID: 442 RVA: 0x00009AE8 File Offset: 0x00007CE8
+	// Token: 0x060001FD RID: 509 RVA: 0x00003A32 File Offset: 0x00001C32
 	private void OnDestroy()
 	{
 		if (Ach_StickyComboTracker.instance == this)
@@ -29,7 +28,7 @@ public class Ach_StickyComboTracker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001BB RID: 443 RVA: 0x00009B00 File Offset: 0x00007D00
+	// Token: 0x060001FE RID: 510 RVA: 0x0001E368 File Offset: 0x0001C568
 	private void FixedUpdate()
 	{
 		if ((Player.movement.IsGrounded && Player.movement.stepsSinceLastClimbing > 10) || Player.movement.IsSwimming || (Player.movement.HasGroundContact && Player.movement.isSledding))
@@ -47,7 +46,7 @@ public class Ach_StickyComboTracker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001BC RID: 444 RVA: 0x00009B7A File Offset: 0x00007D7A
+	// Token: 0x060001FF RID: 511 RVA: 0x00003A47 File Offset: 0x00001C47
 	public void OnStick()
 	{
 		this.invalidCounter = 0;
@@ -59,18 +58,13 @@ public class Ach_StickyComboTracker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000259 RID: 601
 	public static Ach_StickyComboTracker instance;
 
-	// Token: 0x0400025A RID: 602
 	public Achievement achievement;
 
-	// Token: 0x0400025B RID: 603
 	public int requiredCombo = 10;
 
-	// Token: 0x0400025C RID: 604
 	public int stickCombo;
 
-	// Token: 0x0400025D RID: 605
 	private int invalidCounter;
 }

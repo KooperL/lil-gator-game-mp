@@ -4,12 +4,10 @@ using UnityEngine.UI;
 
 namespace Rewired.Demos.GamepadTemplateUI
 {
-	// Token: 0x0200034C RID: 844
 	[RequireComponent(typeof(Image))]
 	public class ControllerUIElement : MonoBehaviour
 	{
-		// Token: 0x17000428 RID: 1064
-		// (get) Token: 0x060017E0 RID: 6112 RVA: 0x00065C9A File Offset: 0x00063E9A
+		// (get) Token: 0x06001E44 RID: 7748 RVA: 0x0001727D File Offset: 0x0001547D
 		private bool hasEffects
 		{
 			get
@@ -18,7 +16,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x060017E1 RID: 6113 RVA: 0x00065CB8 File Offset: 0x00063EB8
+		// Token: 0x06001E45 RID: 7749 RVA: 0x0001729B File Offset: 0x0001549B
 		private void Awake()
 		{
 			this._image = base.GetComponent<Image>();
@@ -27,7 +25,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this.ClearLabels();
 		}
 
-		// Token: 0x060017E2 RID: 6114 RVA: 0x00065CEC File Offset: 0x00063EEC
+		// Token: 0x06001E46 RID: 7750 RVA: 0x00076BF0 File Offset: 0x00074DF0
 		public void Activate(float amount)
 		{
 			amount = Mathf.Clamp(amount, -1f, 1f);
@@ -65,7 +63,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x060017E3 RID: 6115 RVA: 0x00065DE0 File Offset: 0x00063FE0
+		// Token: 0x06001E47 RID: 7751 RVA: 0x00076CE4 File Offset: 0x00074EE4
 		public void Deactivate()
 		{
 			if (!this._isActive)
@@ -96,7 +94,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x060017E4 RID: 6116 RVA: 0x00065E88 File Offset: 0x00064088
+		// Token: 0x06001E48 RID: 7752 RVA: 0x00076D8C File Offset: 0x00074F8C
 		public void SetLabel(string text, AxisRange labelType)
 		{
 			Text text2;
@@ -131,7 +129,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x060017E5 RID: 6117 RVA: 0x00065F14 File Offset: 0x00064114
+		// Token: 0x06001E49 RID: 7753 RVA: 0x00076E18 File Offset: 0x00075018
 		public void ClearLabels()
 		{
 			if (this._label != null)
@@ -158,53 +156,41 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x060017E6 RID: 6118 RVA: 0x00065FB4 File Offset: 0x000641B4
+		// Token: 0x06001E4A RID: 7754 RVA: 0x000172CC File Offset: 0x000154CC
 		private void RedrawImage()
 		{
 			this._image.color = this._color;
 		}
 
-		// Token: 0x04001996 RID: 6550
 		[SerializeField]
 		private Color _highlightColor = Color.white;
 
-		// Token: 0x04001997 RID: 6551
 		[SerializeField]
 		private ControllerUIEffect _positiveUIEffect;
 
-		// Token: 0x04001998 RID: 6552
 		[SerializeField]
 		private ControllerUIEffect _negativeUIEffect;
 
-		// Token: 0x04001999 RID: 6553
 		[SerializeField]
 		private Text _label;
 
-		// Token: 0x0400199A RID: 6554
 		[SerializeField]
 		private Text _positiveLabel;
 
-		// Token: 0x0400199B RID: 6555
 		[SerializeField]
 		private Text _negativeLabel;
 
-		// Token: 0x0400199C RID: 6556
 		[SerializeField]
 		private ControllerUIElement[] _childElements = new ControllerUIElement[0];
 
-		// Token: 0x0400199D RID: 6557
 		private Image _image;
 
-		// Token: 0x0400199E RID: 6558
 		private Color _color;
 
-		// Token: 0x0400199F RID: 6559
 		private Color _origColor;
 
-		// Token: 0x040019A0 RID: 6560
 		private bool _isActive;
 
-		// Token: 0x040019A1 RID: 6561
 		private float _highlightAmount;
 	}
 }

@@ -5,40 +5,33 @@ using UnityEngine.EventSystems;
 
 namespace Rewired.Integration.UnityUI
 {
-	// Token: 0x02000314 RID: 788
 	public class PlayerPointerEventData : PointerEventData
 	{
-		// Token: 0x170002FC RID: 764
-		// (get) Token: 0x0600134D RID: 4941 RVA: 0x00051F57 File Offset: 0x00050157
-		// (set) Token: 0x0600134E RID: 4942 RVA: 0x00051F5F File Offset: 0x0005015F
+		// (get) Token: 0x06001756 RID: 5974 RVA: 0x00011F1E File Offset: 0x0001011E
+		// (set) Token: 0x06001757 RID: 5975 RVA: 0x00011F26 File Offset: 0x00010126
 		public int playerId { get; set; }
 
-		// Token: 0x170002FD RID: 765
-		// (get) Token: 0x0600134F RID: 4943 RVA: 0x00051F68 File Offset: 0x00050168
-		// (set) Token: 0x06001350 RID: 4944 RVA: 0x00051F70 File Offset: 0x00050170
+		// (get) Token: 0x06001758 RID: 5976 RVA: 0x00011F2F File Offset: 0x0001012F
+		// (set) Token: 0x06001759 RID: 5977 RVA: 0x00011F37 File Offset: 0x00010137
 		public int inputSourceIndex { get; set; }
 
-		// Token: 0x170002FE RID: 766
-		// (get) Token: 0x06001351 RID: 4945 RVA: 0x00051F79 File Offset: 0x00050179
-		// (set) Token: 0x06001352 RID: 4946 RVA: 0x00051F81 File Offset: 0x00050181
+		// (get) Token: 0x0600175A RID: 5978 RVA: 0x00011F40 File Offset: 0x00010140
+		// (set) Token: 0x0600175B RID: 5979 RVA: 0x00011F48 File Offset: 0x00010148
 		public IMouseInputSource mouseSource { get; set; }
 
-		// Token: 0x170002FF RID: 767
-		// (get) Token: 0x06001353 RID: 4947 RVA: 0x00051F8A File Offset: 0x0005018A
-		// (set) Token: 0x06001354 RID: 4948 RVA: 0x00051F92 File Offset: 0x00050192
+		// (get) Token: 0x0600175C RID: 5980 RVA: 0x00011F51 File Offset: 0x00010151
+		// (set) Token: 0x0600175D RID: 5981 RVA: 0x00011F59 File Offset: 0x00010159
 		public ITouchInputSource touchSource { get; set; }
 
-		// Token: 0x17000300 RID: 768
-		// (get) Token: 0x06001355 RID: 4949 RVA: 0x00051F9B File Offset: 0x0005019B
-		// (set) Token: 0x06001356 RID: 4950 RVA: 0x00051FA3 File Offset: 0x000501A3
+		// (get) Token: 0x0600175E RID: 5982 RVA: 0x00011F62 File Offset: 0x00010162
+		// (set) Token: 0x0600175F RID: 5983 RVA: 0x00011F6A File Offset: 0x0001016A
 		public PointerEventType sourceType { get; set; }
 
-		// Token: 0x17000301 RID: 769
-		// (get) Token: 0x06001357 RID: 4951 RVA: 0x00051FAC File Offset: 0x000501AC
-		// (set) Token: 0x06001358 RID: 4952 RVA: 0x00051FB4 File Offset: 0x000501B4
+		// (get) Token: 0x06001760 RID: 5984 RVA: 0x00011F73 File Offset: 0x00010173
+		// (set) Token: 0x06001761 RID: 5985 RVA: 0x00011F7B File Offset: 0x0001017B
 		public int buttonIndex { get; set; }
 
-		// Token: 0x06001359 RID: 4953 RVA: 0x00051FBD File Offset: 0x000501BD
+		// Token: 0x06001762 RID: 5986 RVA: 0x00011F84 File Offset: 0x00010184
 		public PlayerPointerEventData(EventSystem eventSystem)
 			: base(eventSystem)
 		{
@@ -47,7 +40,7 @@ namespace Rewired.Integration.UnityUI
 			this.buttonIndex = -1;
 		}
 
-		// Token: 0x0600135A RID: 4954 RVA: 0x00051FDC File Offset: 0x000501DC
+		// Token: 0x06001763 RID: 5987 RVA: 0x00063E70 File Offset: 0x00062070
 		public override string ToString()
 		{
 			StringBuilder stringBuilder = new StringBuilder();

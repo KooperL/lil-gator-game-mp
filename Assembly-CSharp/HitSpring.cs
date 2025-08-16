@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000144 RID: 324
 public class HitSpring : MonoBehaviour, IHit
 {
-	// Token: 0x0600069D RID: 1693 RVA: 0x00021A02 File Offset: 0x0001FC02
+	// Token: 0x06000815 RID: 2069 RVA: 0x00007F46 File Offset: 0x00006146
 	private void Awake()
 	{
 		if (this.springTransform == null)
@@ -14,7 +13,7 @@ public class HitSpring : MonoBehaviour, IHit
 		this.initialRotation = this.springTransform.localRotation;
 	}
 
-	// Token: 0x0600069E RID: 1694 RVA: 0x00021A30 File Offset: 0x0001FC30
+	// Token: 0x06000816 RID: 2070 RVA: 0x00036B98 File Offset: 0x00034D98
 	private void OnEnable()
 	{
 		if (this.surface == null)
@@ -35,7 +34,7 @@ public class HitSpring : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x0600069F RID: 1695 RVA: 0x00021AA0 File Offset: 0x0001FCA0
+	// Token: 0x06000817 RID: 2071 RVA: 0x00036C08 File Offset: 0x00034E08
 	private void OnDisable()
 	{
 		if (this.dynamicRenderer != null)
@@ -49,14 +48,14 @@ public class HitSpring : MonoBehaviour, IHit
 		this.prevVelocity = (this.velocity = Vector2.zero);
 	}
 
-	// Token: 0x060006A0 RID: 1696 RVA: 0x00021AF8 File Offset: 0x0001FCF8
+	// Token: 0x06000818 RID: 2072 RVA: 0x00036C60 File Offset: 0x00034E60
 	private void Start()
 	{
 		this.rotation = this.springTransform.localRotation.eulerAngles.y;
 		base.enabled = false;
 	}
 
-	// Token: 0x060006A1 RID: 1697 RVA: 0x00021B2A File Offset: 0x0001FD2A
+	// Token: 0x06000819 RID: 2073 RVA: 0x00007F73 File Offset: 0x00006173
 	private void TrySqueakEffect()
 	{
 		if (this.squeakSound != null && Time.time - this.lastSqueakSoundTime > 0.25f)
@@ -66,7 +65,7 @@ public class HitSpring : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x060006A2 RID: 1698 RVA: 0x00021B64 File Offset: 0x0001FD64
+	// Token: 0x0600081A RID: 2074 RVA: 0x00036C94 File Offset: 0x00034E94
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		this.AddImpulse(100f * velocity);
@@ -90,7 +89,7 @@ public class HitSpring : MonoBehaviour, IHit
 		base.enabled = true;
 	}
 
-	// Token: 0x060006A3 RID: 1699 RVA: 0x00021C11 File Offset: 0x0001FE11
+	// Token: 0x0600081B RID: 2075 RVA: 0x00007FAC File Offset: 0x000061AC
 	public void AddImpulse(Vector3 impulse)
 	{
 		impulse = this.springTransform.InverseTransformDirection(impulse);
@@ -99,7 +98,7 @@ public class HitSpring : MonoBehaviour, IHit
 		base.enabled = true;
 	}
 
-	// Token: 0x060006A4 RID: 1700 RVA: 0x00021C4C File Offset: 0x0001FE4C
+	// Token: 0x0600081C RID: 2076 RVA: 0x00036D44 File Offset: 0x00034F44
 	public void AddForce(Vector3 force)
 	{
 		force = this.springTransform.InverseTransformDirection(force);
@@ -108,7 +107,7 @@ public class HitSpring : MonoBehaviour, IHit
 		base.enabled = true;
 	}
 
-	// Token: 0x060006A5 RID: 1701 RVA: 0x00021CA8 File Offset: 0x0001FEA8
+	// Token: 0x0600081D RID: 2077 RVA: 0x00036DA0 File Offset: 0x00034FA0
 	private void Update()
 	{
 		if (this.collider != null && !this.collider.enabled && Time.time > this.colliderEnableTime)
@@ -146,60 +145,41 @@ public class HitSpring : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x040008E4 RID: 2276
 	private Quaternion initialRotation;
 
-	// Token: 0x040008E5 RID: 2277
 	public Renderer dynamicRenderer;
 
-	// Token: 0x040008E6 RID: 2278
 	public Renderer staticRenderer;
 
-	// Token: 0x040008E7 RID: 2279
 	public Collider collider;
 
-	// Token: 0x040008E8 RID: 2280
 	public float colliderCooldown = 0.5f;
 
-	// Token: 0x040008E9 RID: 2281
 	private float colliderEnableTime = -1f;
 
-	// Token: 0x040008EA RID: 2282
 	private ISurface surface;
 
-	// Token: 0x040008EB RID: 2283
 	public Transform springTransform;
 
-	// Token: 0x040008EC RID: 2284
 	private Vector2 position = Vector2.zero;
 
-	// Token: 0x040008ED RID: 2285
 	private Vector2 velocity = Vector2.zero;
 
-	// Token: 0x040008EE RID: 2286
 	private Vector2 prevVelocity;
 
-	// Token: 0x040008EF RID: 2287
 	private const float springFactor = 150f;
 
-	// Token: 0x040008F0 RID: 2288
 	private const float drag = 2f;
 
-	// Token: 0x040008F1 RID: 2289
 	private const float hitSpeed = 100f;
 
-	// Token: 0x040008F2 RID: 2290
 	private const float maxAngle = 45f;
 
-	// Token: 0x040008F3 RID: 2291
 	public AudioSourceVariance audioSource;
 
-	// Token: 0x040008F4 RID: 2292
 	public AudioSourceVariance squeakSound;
 
-	// Token: 0x040008F5 RID: 2293
 	private float lastSqueakSoundTime = -1f;
 
-	// Token: 0x040008F6 RID: 2294
 	private float rotation;
 }

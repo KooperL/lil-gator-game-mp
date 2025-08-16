@@ -1,42 +1,40 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000EA RID: 234
 public class EffectsManager : MonoBehaviour
 {
-	// Token: 0x17000042 RID: 66
-	// (get) Token: 0x060004D0 RID: 1232 RVA: 0x0001A2A6 File Offset: 0x000184A6
+	// (get) Token: 0x06000616 RID: 1558 RVA: 0x0000659F File Offset: 0x0000479F
 	public static EffectsManager e
 	{
 		get
 		{
 			if (EffectsManager.instance == null)
 			{
-				EffectsManager.instance = Object.FindObjectOfType<EffectsManager>();
+				EffectsManager.instance = global::UnityEngine.Object.FindObjectOfType<EffectsManager>();
 			}
 			return EffectsManager.instance;
 		}
 	}
 
-	// Token: 0x060004D1 RID: 1233 RVA: 0x0001A2C4 File Offset: 0x000184C4
+	// Token: 0x06000617 RID: 1559 RVA: 0x000065BD File Offset: 0x000047BD
 	private void Awake()
 	{
 		EffectsManager.instance = this;
 	}
 
-	// Token: 0x060004D2 RID: 1234 RVA: 0x0001A2CC File Offset: 0x000184CC
+	// Token: 0x06000618 RID: 1560 RVA: 0x000065BD File Offset: 0x000047BD
 	private void OnEnable()
 	{
 		EffectsManager.instance = this;
 	}
 
-	// Token: 0x060004D3 RID: 1235 RVA: 0x0001A2D4 File Offset: 0x000184D4
+	// Token: 0x06000619 RID: 1561 RVA: 0x000065C5 File Offset: 0x000047C5
 	private float ModifyVolume(float volume, float lastSoundTime)
 	{
 		return volume * Mathf.Lerp(0.3f, 1f, Mathf.InverseLerp(0.1f, 0.25f, Time.time - lastSoundTime));
 	}
 
-	// Token: 0x060004D4 RID: 1236 RVA: 0x0001A300 File Offset: 0x00018500
+	// Token: 0x0600061A RID: 1562 RVA: 0x00030498 File Offset: 0x0002E698
 	public void Splash(Vector3 position, float volume = 0.8f)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) < this.maxDistance * this.maxDistance && this.splashPrefab != null)
@@ -47,7 +45,7 @@ public class EffectsManager : MonoBehaviour
 			{
 				return;
 			}
-			GameObject gameObject = Object.Instantiate<GameObject>(this.splashPrefab, position, Quaternion.identity);
+			GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(this.splashPrefab, position, Quaternion.identity);
 			if (volume != 1f)
 			{
 				AudioSourceVariance component = gameObject.GetComponent<AudioSourceVariance>();
@@ -57,13 +55,13 @@ public class EffectsManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004D5 RID: 1237 RVA: 0x0001A39D File Offset: 0x0001859D
+	// Token: 0x0600061B RID: 1563 RVA: 0x000065EE File Offset: 0x000047EE
 	public void Ripple(Vector3 position, int count)
 	{
 		this.Ripple(position, count, Vector3.zero);
 	}
 
-	// Token: 0x060004D6 RID: 1238 RVA: 0x0001A3AC File Offset: 0x000185AC
+	// Token: 0x0600061C RID: 1564 RVA: 0x00030538 File Offset: 0x0002E738
 	public void Ripple(Vector3 position, int count, Vector3 direction)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) >= this.maxDistance * this.maxDistance || this.rippleSystem == null)
@@ -80,13 +78,13 @@ public class EffectsManager : MonoBehaviour
 		this.rippleSystem.Emit(emitParams, count);
 	}
 
-	// Token: 0x060004D7 RID: 1239 RVA: 0x0001A445 File Offset: 0x00018645
+	// Token: 0x0600061D RID: 1565 RVA: 0x000065FD File Offset: 0x000047FD
 	public void Dust(Vector3 position, int count)
 	{
 		this.Dust(position, count, Vector3.zero, 0f);
 	}
 
-	// Token: 0x060004D8 RID: 1240 RVA: 0x0001A45C File Offset: 0x0001865C
+	// Token: 0x0600061E RID: 1566 RVA: 0x000305D4 File Offset: 0x0002E7D4
 	public void Dust(Vector3 position, int count, Vector3 velocity, float startSize = 0f)
 	{
 		if (MainCamera.t == null)
@@ -114,7 +112,7 @@ public class EffectsManager : MonoBehaviour
 		this.dustSystem.Emit(emitParams, count);
 	}
 
-	// Token: 0x060004D9 RID: 1241 RVA: 0x0001A4F8 File Offset: 0x000186F8
+	// Token: 0x0600061F RID: 1567 RVA: 0x00030670 File Offset: 0x0002E870
 	public void FloorDust(Vector3 position, int count, Vector3 normal)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) >= this.maxDistance * this.maxDistance || this.dustSystem == null)
@@ -126,44 +124,44 @@ public class EffectsManager : MonoBehaviour
 		emitParams.applyShapeToPosition = false;
 		for (int i = 0; i < count; i++)
 		{
-			emitParams.velocity = Random.Range(8f, 10f) * Vector3.ProjectOnPlane(Random.onUnitSphere, normal).normalized + 2f * Random.value * normal;
+			emitParams.velocity = global::UnityEngine.Random.Range(8f, 10f) * Vector3.ProjectOnPlane(global::UnityEngine.Random.onUnitSphere, normal).normalized + 2f * global::UnityEngine.Random.value * normal;
 			this.dustSystem.Emit(emitParams, 1);
 		}
 	}
 
-	// Token: 0x060004DA RID: 1242 RVA: 0x0001A5B0 File Offset: 0x000187B0
+	// Token: 0x06000620 RID: 1568 RVA: 0x00030728 File Offset: 0x0002E928
 	public void Bonk(Vector3 position)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) < this.maxDistance * this.maxDistance && this.bonkPrefab != null)
 		{
-			Object.Instantiate<GameObject>(this.bonkPrefab, position, Quaternion.identity);
+			global::UnityEngine.Object.Instantiate<GameObject>(this.bonkPrefab, position, Quaternion.identity);
 		}
 	}
 
-	// Token: 0x060004DB RID: 1243 RVA: 0x0001A604 File Offset: 0x00018804
+	// Token: 0x06000621 RID: 1569 RVA: 0x0003077C File Offset: 0x0002E97C
 	public void Bonk(Vector3 position, BoxCollider box)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) < this.maxDistance * this.maxDistance && this.bonkPrefab != null)
 		{
-			Object.Instantiate<GameObject>(this.bonkPrefab, position, Quaternion.identity).GetComponent<FitBounds>().Fit(box);
+			global::UnityEngine.Object.Instantiate<GameObject>(this.bonkPrefab, position, Quaternion.identity).GetComponent<FitBounds>().Fit(box);
 		}
 	}
 
-	// Token: 0x060004DC RID: 1244 RVA: 0x0001A65F File Offset: 0x0001885F
+	// Token: 0x06000622 RID: 1570 RVA: 0x00002229 File Offset: 0x00000429
 	private void EmitForSystem(Vector3 position, int count, Vector3 direction, Vector3 velocity, ParticleSystem system)
 	{
 	}
 
-	// Token: 0x060004DD RID: 1245 RVA: 0x0001A664 File Offset: 0x00018864
+	// Token: 0x06000623 RID: 1571 RVA: 0x000307D8 File Offset: 0x0002E9D8
 	public void Dig(Vector3 position)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) < this.maxDistance * this.maxDistance && this.digPrefab != null)
 		{
-			Object.Instantiate<GameObject>(this.digPrefab, position, Quaternion.identity);
+			global::UnityEngine.Object.Instantiate<GameObject>(this.digPrefab, position, Quaternion.identity);
 		}
 	}
 
-	// Token: 0x060004DE RID: 1246 RVA: 0x0001A6B8 File Offset: 0x000188B8
+	// Token: 0x06000624 RID: 1572 RVA: 0x0003082C File Offset: 0x0002EA2C
 	public void TryToPlayHitSound(Vector3 position, Vector3 direction, float volume = 1f)
 	{
 		SurfaceMaterial surfaceMaterial = MaterialManager.m.SampleSurfaceMaterial(position, direction);
@@ -174,39 +172,27 @@ public class EffectsManager : MonoBehaviour
 		surfaceMaterial.PlayImpact(position, volume, 1f);
 	}
 
-	// Token: 0x040006A6 RID: 1702
 	private static EffectsManager instance;
 
-	// Token: 0x040006A7 RID: 1703
 	public GameObject splashPrefab;
 
-	// Token: 0x040006A8 RID: 1704
 	public GameObject bonkPrefab;
 
-	// Token: 0x040006A9 RID: 1705
 	public ParticleSystem rippleSystem;
 
-	// Token: 0x040006AA RID: 1706
 	public ParticleSystem dustSystem;
 
-	// Token: 0x040006AB RID: 1707
 	public GameObject sweatPrefab;
 
-	// Token: 0x040006AC RID: 1708
 	public float maxDistance = 80f;
 
-	// Token: 0x040006AD RID: 1709
 	public GameObject digPrefab;
 
-	// Token: 0x040006AE RID: 1710
 	private const float minVolume = 0.3f;
 
-	// Token: 0x040006AF RID: 1711
 	private const float minDelay = 0.1f;
 
-	// Token: 0x040006B0 RID: 1712
 	private const float maxDelay = 0.25f;
 
-	// Token: 0x040006B1 RID: 1713
 	private float lastSplashTime = -10f;
 }

@@ -4,11 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000BF RID: 191
 public class BraceletShopDialogue : MonoBehaviour, Interaction
 {
-	// Token: 0x17000039 RID: 57
-	// (get) Token: 0x06000419 RID: 1049 RVA: 0x00017EDE File Offset: 0x000160DE
+	// (get) Token: 0x060004F3 RID: 1267 RVA: 0x00005A30 File Offset: 0x00003C30
 	public int CurrentState
 	{
 		get
@@ -17,8 +15,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x1700003A RID: 58
-	// (get) Token: 0x0600041A RID: 1050 RVA: 0x00017EF1 File Offset: 0x000160F1
+	// (get) Token: 0x060004F4 RID: 1268 RVA: 0x00005A43 File Offset: 0x00003C43
 	private string SaveID
 	{
 		get
@@ -27,8 +24,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x1700003B RID: 59
-	// (get) Token: 0x0600041B RID: 1051 RVA: 0x00017F08 File Offset: 0x00016108
+	// (get) Token: 0x060004F5 RID: 1269 RVA: 0x00005A5A File Offset: 0x00003C5A
 	private bool NGP_IntroPlayed
 	{
 		get
@@ -37,8 +33,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x1700003C RID: 60
-	// (get) Token: 0x0600041C RID: 1052 RVA: 0x00017F1A File Offset: 0x0001611A
+	// (get) Token: 0x060004F6 RID: 1270 RVA: 0x00005A6C File Offset: 0x00003C6C
 	private bool NGP_AllBraceletsPlayed
 	{
 		get
@@ -47,9 +42,8 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x1700003D RID: 61
-	// (get) Token: 0x0600041D RID: 1053 RVA: 0x00017F2C File Offset: 0x0001612C
-	// (set) Token: 0x0600041E RID: 1054 RVA: 0x00017F3E File Offset: 0x0001613E
+	// (get) Token: 0x060004F7 RID: 1271 RVA: 0x00005A7E File Offset: 0x00003C7E
+	// (set) Token: 0x060004F8 RID: 1272 RVA: 0x00005A90 File Offset: 0x00003C90
 	private int NGP_InfoGotten
 	{
 		get
@@ -62,16 +56,16 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x0600041F RID: 1055 RVA: 0x00017F50 File Offset: 0x00016150
+	// Token: 0x060004F9 RID: 1273 RVA: 0x00005AA2 File Offset: 0x00003CA2
 	private void OnValidate()
 	{
 		if (this.uiItemGet == null)
 		{
-			this.uiItemGet = Object.FindObjectOfType<UIItemGet>(true);
+			this.uiItemGet = global::UnityEngine.Object.FindObjectOfType<UIItemGet>(true);
 		}
 	}
 
-	// Token: 0x06000420 RID: 1056 RVA: 0x00017F6C File Offset: 0x0001616C
+	// Token: 0x060004FA RID: 1274 RVA: 0x00005ABE File Offset: 0x00003CBE
 	private void OnEnable()
 	{
 		this.state = this.CurrentState;
@@ -81,13 +75,13 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000421 RID: 1057 RVA: 0x00017F94 File Offset: 0x00016194
+	// Token: 0x060004FB RID: 1275 RVA: 0x00005AE6 File Offset: 0x00003CE6
 	public void Interact()
 	{
 		CoroutineUtil.Start(this.RunShop());
 	}
 
-	// Token: 0x06000422 RID: 1058 RVA: 0x00017FA2 File Offset: 0x000161A2
+	// Token: 0x060004FC RID: 1276 RVA: 0x00005AF4 File Offset: 0x00003CF4
 	private IEnumerator RunShop()
 	{
 		Game.DialogueDepth++;
@@ -237,7 +231,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x06000423 RID: 1059 RVA: 0x00017FB4 File Offset: 0x000161B4
+	// Token: 0x060004FD RID: 1277 RVA: 0x0002CF78 File Offset: 0x0002B178
 	private Coroutine LoadDialogue(string dialogue)
 	{
 		if (this.document != null)
@@ -247,7 +241,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		return base.StartCoroutine(DialogueManager.d.LoadChunk(dialogue, this.actors, DialogueManager.DialogueBoxBackground.Standard, true));
 	}
 
-	// Token: 0x06000424 RID: 1060 RVA: 0x00018010 File Offset: 0x00016210
+	// Token: 0x060004FE RID: 1278 RVA: 0x0002CFD4 File Offset: 0x0002B1D4
 	private Coroutine LoadDialogueNGP(string dialogue)
 	{
 		if (this.ngpDocument != null)
@@ -257,7 +251,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		return base.StartCoroutine(DialogueManager.d.LoadChunk(dialogue, this.actors, DialogueManager.DialogueBoxBackground.Standard, true));
 	}
 
-	// Token: 0x06000425 RID: 1061 RVA: 0x0001806C File Offset: 0x0001626C
+	// Token: 0x060004FF RID: 1279 RVA: 0x0002D030 File Offset: 0x0002B230
 	private Coroutine DoBraceletGet()
 	{
 		int num = ItemManager.i.BraceletsCollected - 1;
@@ -269,7 +263,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		return base.StartCoroutine(this.uiItemGet.RunSequence(this.braceletSprite[num], this.braceletItem.DisplayName, text, this.actors));
 	}
 
-	// Token: 0x06000426 RID: 1062 RVA: 0x00018100 File Offset: 0x00016300
+	// Token: 0x06000500 RID: 1280 RVA: 0x0002D0C4 File Offset: 0x0002B2C4
 	private void DisableActor()
 	{
 		base.GetComponent<Collider>().enabled = false;
@@ -285,7 +279,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000427 RID: 1063 RVA: 0x0001817C File Offset: 0x0001637C
+	// Token: 0x06000501 RID: 1281 RVA: 0x00005B03 File Offset: 0x00003D03
 	private IEnumerator Poof()
 	{
 		this.DisableActor();
@@ -299,12 +293,12 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x06000428 RID: 1064 RVA: 0x0001818C File Offset: 0x0001638C
+	// Token: 0x06000502 RID: 1282 RVA: 0x0002D140 File Offset: 0x0002B340
 	[ContextMenu("Assign Unique ID")]
 	public void AssignUniqueID()
 	{
 		List<int> list = new List<int>();
-		foreach (BraceletShopDialogue braceletShopDialogue in Object.FindObjectsOfType<BraceletShopDialogue>())
+		foreach (BraceletShopDialogue braceletShopDialogue in global::UnityEngine.Object.FindObjectsOfType<BraceletShopDialogue>())
 		{
 			if (braceletShopDialogue.id != -1 && braceletShopDialogue != this && !list.Contains(braceletShopDialogue.id))
 			{
@@ -321,14 +315,14 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000429 RID: 1065 RVA: 0x0001821F File Offset: 0x0001641F
+	// Token: 0x06000503 RID: 1283 RVA: 0x00005B12 File Offset: 0x00003D12
 	public void MarkSavedSecret()
 	{
 		GameData.g.Write(this.SaveID, this.braceletsInStock);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600042A RID: 1066 RVA: 0x00018244 File Offset: 0x00016444
+	// Token: 0x06000504 RID: 1284 RVA: 0x0002D1D4 File Offset: 0x0002B3D4
 	private bool CheckIfAllBraceletShops()
 	{
 		for (int i = 0; i < 4; i++)
@@ -341,134 +335,96 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		return true;
 	}
 
-	// Token: 0x040005BA RID: 1466
 	public DialogueActor[] actors;
 
-	// Token: 0x040005BB RID: 1467
 	public NPCPlayerProximity proximity;
 
-	// Token: 0x040005BC RID: 1468
 	private int state;
 
-	// Token: 0x040005BD RID: 1469
 	public int braceletsInStock = 1;
 
-	// Token: 0x040005BE RID: 1470
 	public int price = 15;
 
-	// Token: 0x040005BF RID: 1471
 	public ItemResource itemResource;
 
-	// Token: 0x040005C0 RID: 1472
 	private bool introPlayed;
 
-	// Token: 0x040005C1 RID: 1473
 	public int id;
 
-	// Token: 0x040005C2 RID: 1474
 	[Header("Dialogue")]
 	public MultilingualTextDocument document;
 
-	// Token: 0x040005C3 RID: 1475
 	[ChunkLookup("document")]
 	public string introDialogue = "BraceletShopNewLocation";
 
-	// Token: 0x040005C4 RID: 1476
 	[ChunkLookup("document")]
 	public string returnDialogue = "BraceletShopReturn";
 
-	// Token: 0x040005C5 RID: 1477
 	[ChunkLookup("document")]
 	public string promptDialogue = "BraceletShop";
 
-	// Token: 0x040005C6 RID: 1478
 	[ChunkLookup("document")]
 	public string purchaseDialogue = "BraceletShopBuy";
 
-	// Token: 0x040005C7 RID: 1479
 	[ChunkLookup("document")]
 	public string notEnoughDialogue = "BraceletShopNotEnough";
 
-	// Token: 0x040005C8 RID: 1480
 	[ChunkLookup("document")]
 	public string noPurchaseDialogue = "BraceletShopNoBuy";
 
-	// Token: 0x040005C9 RID: 1481
 	[ChunkLookup("document")]
 	public string leaveDialogue = "BraceletShopSoldOut";
 
-	// Token: 0x040005CA RID: 1482
 	[ChunkLookup("document")]
 	public string allPurchased;
 
-	// Token: 0x040005CB RID: 1483
 	[ChunkLookup("document")]
 	public string afterAllPurchased;
 
-	// Token: 0x040005CC RID: 1484
 	public QuestRewardNPCs rewardNPC;
 
-	// Token: 0x040005CD RID: 1485
 	[ChunkLookup("document")]
 	public string[] braceletGetDialogue;
 
-	// Token: 0x040005CE RID: 1486
 	public UIItemGet uiItemGet;
 
-	// Token: 0x040005CF RID: 1487
 	public ItemObject braceletItem;
 
-	// Token: 0x040005D0 RID: 1488
 	public Sprite[] braceletSprite;
 
-	// Token: 0x040005D1 RID: 1489
 	public UnityEvent onExit;
 
-	// Token: 0x040005D2 RID: 1490
 	[Header("NG+")]
 	public int ngp_price = 1000;
 
-	// Token: 0x040005D3 RID: 1491
 	public bool ngp_skipNormalIntro;
 
-	// Token: 0x040005D4 RID: 1492
 	public MultilingualTextDocument ngpDocument;
 
-	// Token: 0x040005D5 RID: 1493
 	[ChunkLookup("ngpDocument")]
 	public string ngp_intro;
 
-	// Token: 0x040005D6 RID: 1494
 	[ChunkLookup("ngpDocument")]
 	public string ngp_allBraceletsIntro;
 
-	// Token: 0x040005D7 RID: 1495
 	[ChunkLookup("ngpDocument")]
 	public string ngp_prompt;
 
-	// Token: 0x040005D8 RID: 1496
 	[ChunkLookup("ngpDocument")]
 	public string[] ngp_info;
 
-	// Token: 0x040005D9 RID: 1497
 	[TextLookup("ngpDocument")]
 	public string npg_placeholderName;
 
-	// Token: 0x040005DA RID: 1498
 	public GameObject meshObject;
 
-	// Token: 0x040005DB RID: 1499
 	public ParticleSystem ngp_sparkles;
 
-	// Token: 0x040005DC RID: 1500
 	public ParticleSystem ngp_sparkleSplash;
 
-	// Token: 0x040005DD RID: 1501
 	private const string ngpIntroPlayedKey = "BraceletShopNGPIntro";
 
-	// Token: 0x040005DE RID: 1502
 	private const string ngpAllBraceletsPlayedKey = "BraceletShopNGPAllBracelets";
 
-	// Token: 0x040005DF RID: 1503
 	private const string ngpInfoGottenKey = "BraceletShopNGPInfo";
 }

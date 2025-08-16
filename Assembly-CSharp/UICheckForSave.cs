@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000060 RID: 96
 public class UICheckForSave : MonoBehaviour
 {
-	// Token: 0x06000168 RID: 360 RVA: 0x00008708 File Offset: 0x00006908
+	// Token: 0x060001A1 RID: 417 RVA: 0x0001D300 File Offset: 0x0001B500
 	private void Awake()
 	{
 		bool flag = FileUtil.HasInitializedSaveData();
@@ -18,6 +17,5 @@ public class UICheckForSave : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400020F RID: 527
 	public bool hide;
 }

@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000018 RID: 24
 public class FadeAudio : MonoBehaviour
 {
-	// Token: 0x0600004D RID: 77 RVA: 0x00003344 File Offset: 0x00001544
+	// Token: 0x0600004E RID: 78 RVA: 0x0001848C File Offset: 0x0001668C
 	public void FadeIn()
 	{
 		base.enabled = true;
@@ -16,14 +15,14 @@ public class FadeAudio : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600004E RID: 78 RVA: 0x00003393 File Offset: 0x00001593
+	// Token: 0x0600004F RID: 79 RVA: 0x000023C9 File Offset: 0x000005C9
 	public void FadeOut()
 	{
 		base.enabled = true;
 		this.fadeTarget = 0f;
 	}
 
-	// Token: 0x0600004F RID: 79 RVA: 0x000033A8 File Offset: 0x000015A8
+	// Token: 0x06000050 RID: 80 RVA: 0x000184DC File Offset: 0x000166DC
 	private void Update()
 	{
 		this.fade = Mathf.MoveTowards(this.fade, this.fadeTarget, Time.deltaTime / ((this.fadeTarget > this.fade) ? this.fadeInTime : this.fadeOutTime));
@@ -38,21 +37,15 @@ public class FadeAudio : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000073 RID: 115
 	public AudioSource audioSource;
 
-	// Token: 0x04000074 RID: 116
 	public float volume = 1f;
 
-	// Token: 0x04000075 RID: 117
 	public float fadeInTime = 0.2f;
 
-	// Token: 0x04000076 RID: 118
 	public float fadeOutTime = 1f;
 
-	// Token: 0x04000077 RID: 119
 	private float fade;
 
-	// Token: 0x04000078 RID: 120
 	private float fadeTarget;
 }

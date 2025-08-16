@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000049 RID: 73
 public class SetPipes : MonoBehaviour
 {
-	// Token: 0x0600011E RID: 286 RVA: 0x00006ED0 File Offset: 0x000050D0
+	// Token: 0x0600014B RID: 331 RVA: 0x0001BBF4 File Offset: 0x00019DF4
 	public void SetWater(bool hasWater)
 	{
 		Pipe[] array = this.pipes;
@@ -14,6 +13,5 @@ public class SetPipes : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400018C RID: 396
 	public Pipe[] pipes;
 }

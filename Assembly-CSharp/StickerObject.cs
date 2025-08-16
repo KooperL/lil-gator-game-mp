@@ -1,13 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002F0 RID: 752
 [CreateAssetMenu]
 public class StickerObject : ScriptableObject
 {
-	// Token: 0x170000E9 RID: 233
-	// (get) Token: 0x0600100D RID: 4109 RVA: 0x0004CFB3 File Offset: 0x0004B1B3
-	// (set) Token: 0x0600100E RID: 4110 RVA: 0x0004CFC6 File Offset: 0x0004B1C6
+	// (get) Token: 0x0600139A RID: 5018 RVA: 0x0001091F File Offset: 0x0000EB1F
+	// (set) Token: 0x0600139B RID: 5019 RVA: 0x00010932 File Offset: 0x0000EB32
 	public bool IsUnlocked
 	{
 		get
@@ -20,9 +18,8 @@ public class StickerObject : ScriptableObject
 		}
 	}
 
-	// Token: 0x170000EA RID: 234
-	// (get) Token: 0x0600100F RID: 4111 RVA: 0x0004CFD9 File Offset: 0x0004B1D9
-	// (set) Token: 0x06001010 RID: 4112 RVA: 0x0004D018 File Offset: 0x0004B218
+	// (get) Token: 0x0600139C RID: 5020 RVA: 0x00010945 File Offset: 0x0000EB45
+	// (set) Token: 0x0600139D RID: 5021 RVA: 0x00060050 File Offset: 0x0005E250
 	public Vector2Int SavedPosition
 	{
 		get
@@ -36,9 +33,7 @@ public class StickerObject : ScriptableObject
 		}
 	}
 
-	// Token: 0x04001515 RID: 5397
 	public string id;
 
-	// Token: 0x04001516 RID: 5398
 	public Sprite sprite;
 }

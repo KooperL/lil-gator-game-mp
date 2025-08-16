@@ -3,10 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020001F7 RID: 503
 public class RagdollController : MonoBehaviour
 {
-	// Token: 0x06000AED RID: 2797 RVA: 0x00036644 File Offset: 0x00034844
+	// Token: 0x06000CF2 RID: 3314 RVA: 0x00048F60 File Offset: 0x00047160
 	private void OnValidate()
 	{
 		if (this.colliders == null || this.colliders.Length == 0)
@@ -20,7 +19,7 @@ public class RagdollController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AEE RID: 2798 RVA: 0x0003669C File Offset: 0x0003489C
+	// Token: 0x06000CF3 RID: 3315 RVA: 0x00048FB8 File Offset: 0x000471B8
 	private void Awake()
 	{
 		Rigidbody[] array = this.rigidbodies;
@@ -36,7 +35,7 @@ public class RagdollController : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x06000AEF RID: 2799 RVA: 0x000366EC File Offset: 0x000348EC
+	// Token: 0x06000CF4 RID: 3316 RVA: 0x00049008 File Offset: 0x00047208
 	public void OnEnable()
 	{
 		this.actor.isRagdolling = true;
@@ -54,7 +53,7 @@ public class RagdollController : MonoBehaviour
 		foreach (Rigidbody rigidbody in this.rigidbodies)
 		{
 			rigidbody.isKinematic = false;
-			rigidbody.velocity = vector + num * Random.insideUnitSphere;
+			rigidbody.velocity = vector + num * global::UnityEngine.Random.insideUnitSphere;
 		}
 		Collider[] array2 = this.colliders;
 		for (int j = 0; j < array2.Length; j++)
@@ -102,7 +101,7 @@ public class RagdollController : MonoBehaviour
 		this.enabledTime = Time.time;
 	}
 
-	// Token: 0x06000AF0 RID: 2800 RVA: 0x00036928 File Offset: 0x00034B28
+	// Token: 0x06000CF5 RID: 3317 RVA: 0x0000C022 File Offset: 0x0000A222
 	private void Update()
 	{
 		if (Player.input.cancelAction || (!Game.HasControl && !Player.movement.moddedWithoutControl))
@@ -112,7 +111,7 @@ public class RagdollController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AF1 RID: 2801 RVA: 0x00036950 File Offset: 0x00034B50
+	// Token: 0x06000CF6 RID: 3318 RVA: 0x0000C04A File Offset: 0x0000A24A
 	public void Jump()
 	{
 		this.Deactivate();
@@ -122,7 +121,7 @@ public class RagdollController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AF2 RID: 2802 RVA: 0x0003697C File Offset: 0x00034B7C
+	// Token: 0x06000CF7 RID: 3319 RVA: 0x00049244 File Offset: 0x00047444
 	private void FixedUpdate()
 	{
 		Vector3 vector = this.rigidbody.velocity;
@@ -201,7 +200,7 @@ public class RagdollController : MonoBehaviour
 		this.acceleration = vector2;
 	}
 
-	// Token: 0x06000AF3 RID: 2803 RVA: 0x00036CBF File Offset: 0x00034EBF
+	// Token: 0x06000CF8 RID: 3320 RVA: 0x0000C074 File Offset: 0x0000A274
 	public void Deactivate()
 	{
 		if (this.isDeactivating)
@@ -211,7 +210,7 @@ public class RagdollController : MonoBehaviour
 		CoroutineUtil.Start(this.BufferedDeactivate());
 	}
 
-	// Token: 0x06000AF4 RID: 2804 RVA: 0x00036CD6 File Offset: 0x00034ED6
+	// Token: 0x06000CF9 RID: 3321 RVA: 0x0000C08B File Offset: 0x0000A28B
 	private IEnumerator BufferedDeactivate()
 	{
 		this.isDeactivating = true;
@@ -280,7 +279,7 @@ public class RagdollController : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000AF5 RID: 2805 RVA: 0x00036CE5 File Offset: 0x00034EE5
+	// Token: 0x06000CFA RID: 3322 RVA: 0x0000C09A File Offset: 0x0000A29A
 	private void OnCollisionStay(Collision collision)
 	{
 		if (Time.time - this.enabledTime > 0.25f)
@@ -289,7 +288,7 @@ public class RagdollController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AF6 RID: 2806 RVA: 0x00036D08 File Offset: 0x00034F08
+	// Token: 0x06000CFB RID: 3323 RVA: 0x00049588 File Offset: 0x00047788
 	public Vector3 GetForward()
 	{
 		Vector3 vector;
@@ -309,7 +308,7 @@ public class RagdollController : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x06000AF7 RID: 2807 RVA: 0x00036DA0 File Offset: 0x00034FA0
+	// Token: 0x06000CFC RID: 3324 RVA: 0x00049620 File Offset: 0x00047820
 	public void SetPosition(Vector3 newPosition)
 	{
 		Vector3 vector = newPosition - this.rigidbodies[0].position;
@@ -320,145 +319,99 @@ public class RagdollController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000E78 RID: 3704
 	public Transform[] rigidbodyParents;
 
-	// Token: 0x04000E79 RID: 3705
 	public Rigidbody[] rigidbodies;
 
-	// Token: 0x04000E7A RID: 3706
 	public Collider[] colliders;
 
-	// Token: 0x04000E7B RID: 3707
 	public ImpactSound[] impactSounds;
 
-	// Token: 0x04000E7C RID: 3708
 	private Rigidbody rigidbody;
 
-	// Token: 0x04000E7D RID: 3709
 	public Rigidbody headRigidbody;
 
-	// Token: 0x04000E7E RID: 3710
 	public KeepUpright[] ragdollUprights;
 
-	// Token: 0x04000E7F RID: 3711
 	public KeepUpright[] flatUprights;
 
-	// Token: 0x04000E80 RID: 3712
 	public PlayerMovement movement;
 
-	// Token: 0x04000E81 RID: 3713
 	public Rigidbody movementRigidbody;
 
-	// Token: 0x04000E82 RID: 3714
 	public Animator animator;
 
-	// Token: 0x04000E83 RID: 3715
 	public RuntimeAnimatorController ragdollController;
 
-	// Token: 0x04000E84 RID: 3716
 	public RuntimeAnimatorController playerController;
 
-	// Token: 0x04000E85 RID: 3717
 	public DialogueActor actor;
 
-	// Token: 0x04000E86 RID: 3718
 	private Transform parent;
 
-	// Token: 0x04000E87 RID: 3719
 	public float force = 20f;
 
-	// Token: 0x04000E88 RID: 3720
 	public float torque = 100f;
 
-	// Token: 0x04000E89 RID: 3721
 	public RagdollToAnimator toAnimator;
 
-	// Token: 0x04000E8A RID: 3722
 	private float collisionTime;
 
-	// Token: 0x04000E8B RID: 3723
 	public GameObject hitTrigger;
 
-	// Token: 0x04000E8C RID: 3724
 	public float minHitSpeed = 2f;
 
-	// Token: 0x04000E8D RID: 3725
 	public bool isFlat = true;
 
-	// Token: 0x04000E8E RID: 3726
 	public float flatForce = 60f;
 
-	// Token: 0x04000E8F RID: 3727
 	public float maxForcedSpeed = 4f;
 
-	// Token: 0x04000E90 RID: 3728
 	[Header("Effects")]
 	public bool doDustTrail = true;
 
-	// Token: 0x04000E91 RID: 3729
 	public float minTrailSpeed = 10f;
 
-	// Token: 0x04000E92 RID: 3730
 	public float trailDistance = 0.5f;
 
-	// Token: 0x04000E93 RID: 3731
 	private float trailCounter;
 
-	// Token: 0x04000E94 RID: 3732
 	private Vector3 velocity;
 
-	// Token: 0x04000E95 RID: 3733
 	private Vector3 acceleration;
 
-	// Token: 0x04000E96 RID: 3734
 	private float speed;
 
-	// Token: 0x04000E97 RID: 3735
 	[Header("Impact")]
 	public bool doImactEffects = true;
 
-	// Token: 0x04000E98 RID: 3736
 	public float impactAccel = 5f;
 
-	// Token: 0x04000E99 RID: 3737
 	public float impactDelay = 0.25f;
 
-	// Token: 0x04000E9A RID: 3738
 	private float lastImpactTime = -1f;
 
-	// Token: 0x04000E9B RID: 3739
 	[Header("Scraping")]
 	public bool doScrapingEffect = true;
 
-	// Token: 0x04000E9C RID: 3740
 	public GameObject scrapingObject;
 
-	// Token: 0x04000E9D RID: 3741
 	public float minScrapingSpeed = 3f;
 
-	// Token: 0x04000E9E RID: 3742
 	private float mouthSmooth;
 
-	// Token: 0x04000E9F RID: 3743
 	private float mouthSmoothVel;
 
-	// Token: 0x04000EA0 RID: 3744
 	public bool lockMouth;
 
-	// Token: 0x04000EA1 RID: 3745
 	public float lockMouthOpenness;
 
-	// Token: 0x04000EA2 RID: 3746
 	[ReadOnly]
 	public bool isAttached;
 
-	// Token: 0x04000EA3 RID: 3747
 	private float enabledTime = -1f;
 
-	// Token: 0x04000EA4 RID: 3748
 	private bool isJumpingOut;
 
-	// Token: 0x04000EA5 RID: 3749
 	public bool isDeactivating;
 }

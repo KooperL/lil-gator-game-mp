@@ -3,12 +3,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000225 RID: 549
 public class ThrowObjectQuest : MonoBehaviour
 {
-	// Token: 0x170000C3 RID: 195
-	// (get) Token: 0x06000BC9 RID: 3017 RVA: 0x00038FAD File Offset: 0x000371AD
-	// (set) Token: 0x06000BCA RID: 3018 RVA: 0x00038FC0 File Offset: 0x000371C0
+	// (get) Token: 0x06000E70 RID: 3696 RVA: 0x0000CC52 File Offset: 0x0000AE52
+	// (set) Token: 0x06000E71 RID: 3697 RVA: 0x0000CC65 File Offset: 0x0000AE65
 	private int State
 	{
 		get
@@ -21,13 +19,13 @@ public class ThrowObjectQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000BCB RID: 3019 RVA: 0x00038FD3 File Offset: 0x000371D3
+	// Token: 0x06000E72 RID: 3698 RVA: 0x0000CC78 File Offset: 0x0000AE78
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000BCC RID: 3020 RVA: 0x00038FDC File Offset: 0x000371DC
+	// Token: 0x06000E73 RID: 3699 RVA: 0x0004D32C File Offset: 0x0004B52C
 	private void UpdateState()
 	{
 		int state = this.State;
@@ -44,13 +42,13 @@ public class ThrowObjectQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000BCD RID: 3021 RVA: 0x0003906C File Offset: 0x0003726C
+	// Token: 0x06000E74 RID: 3700 RVA: 0x0000CC80 File Offset: 0x0000AE80
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000BCE RID: 3022 RVA: 0x0003907B File Offset: 0x0003727B
+	// Token: 0x06000E75 RID: 3701 RVA: 0x0000CC8F File Offset: 0x0000AE8F
 	private IEnumerator RunConversation()
 	{
 		DialogueManager.d.CancelBubble();
@@ -98,7 +96,7 @@ public class ThrowObjectQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000BCF RID: 3023 RVA: 0x0003908C File Offset: 0x0003728C
+	// Token: 0x06000E76 RID: 3702 RVA: 0x0004D3BC File Offset: 0x0004B5BC
 	public void PickedUpPencil()
 	{
 		int state = this.State;
@@ -109,34 +107,25 @@ public class ThrowObjectQuest : MonoBehaviour
 		this.chunks[this.State - 1].IsItemFetched = true;
 	}
 
-	// Token: 0x04000F92 RID: 3986
 	public string id;
 
-	// Token: 0x04000F93 RID: 3987
 	public ThrowObjectQuest.QuestChunk[] chunks;
 
-	// Token: 0x04000F94 RID: 3988
 	public DialogueActor[] actors;
 
-	// Token: 0x04000F95 RID: 3989
 	public GameObject crier;
 
-	// Token: 0x04000F96 RID: 3990
 	public string rewardText;
 
-	// Token: 0x04000F97 RID: 3991
 	public UnityEvent onReward;
 
-	// Token: 0x04000F98 RID: 3992
 	public string afterText;
 
-	// Token: 0x0200040B RID: 1035
 	[Serializable]
 	public struct QuestChunk
 	{
-		// Token: 0x170004FF RID: 1279
-		// (get) Token: 0x06001A9A RID: 6810 RVA: 0x00071465 File Offset: 0x0006F665
-		// (set) Token: 0x06001A9B RID: 6811 RVA: 0x00071478 File Offset: 0x0006F678
+		// (get) Token: 0x06000E78 RID: 3704 RVA: 0x0000CC9E File Offset: 0x0000AE9E
+		// (set) Token: 0x06000E79 RID: 3705 RVA: 0x0000CCB1 File Offset: 0x0000AEB1
 		public bool IsItemFetched
 		{
 			get
@@ -149,22 +138,16 @@ public class ThrowObjectQuest : MonoBehaviour
 			}
 		}
 
-		// Token: 0x04001CEE RID: 7406
 		public string prompt;
 
-		// Token: 0x04001CEF RID: 7407
 		public string reminder;
 
-		// Token: 0x04001CF0 RID: 7408
 		public GameObject thrownObject;
 
-		// Token: 0x04001CF1 RID: 7409
 		public ItemObject item;
 
-		// Token: 0x04001CF2 RID: 7410
 		public string itemKey;
 
-		// Token: 0x04001CF3 RID: 7411
 		public GameObject cameraObject;
 	}
 }

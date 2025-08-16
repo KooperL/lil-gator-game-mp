@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200006B RID: 107
 public class Ach_ItemSet : MonoBehaviour
 {
-	// Token: 0x060001A5 RID: 421 RVA: 0x00009760 File Offset: 0x00007960
+	// Token: 0x060001E8 RID: 488 RVA: 0x0001E124 File Offset: 0x0001C324
 	private void Initialize()
 	{
 		this.hasInitialized = true;
@@ -37,25 +36,25 @@ public class Ach_ItemSet : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001A6 RID: 422 RVA: 0x00009866 File Offset: 0x00007A66
+	// Token: 0x060001E9 RID: 489 RVA: 0x0000390F File Offset: 0x00001B0F
 	private void Start()
 	{
 		this.CheckItems();
 	}
 
-	// Token: 0x060001A7 RID: 423 RVA: 0x0000986E File Offset: 0x00007A6E
+	// Token: 0x060001EA RID: 490 RVA: 0x00003917 File Offset: 0x00001B17
 	private void OnEnable()
 	{
 		PlayerItemManager.onItemRefresh.AddListener(new UnityAction(this.CheckItems));
 	}
 
-	// Token: 0x060001A8 RID: 424 RVA: 0x00009886 File Offset: 0x00007A86
+	// Token: 0x060001EB RID: 491 RVA: 0x0000392F File Offset: 0x00001B2F
 	private void OnDisable()
 	{
 		PlayerItemManager.onItemRefresh.RemoveListener(new UnityAction(this.CheckItems));
 	}
 
-	// Token: 0x060001A9 RID: 425 RVA: 0x000098A0 File Offset: 0x00007AA0
+	// Token: 0x060001EC RID: 492 RVA: 0x0001E22C File Offset: 0x0001C42C
 	private void CheckItems()
 	{
 		if (!this.hasInitialized)
@@ -85,27 +84,19 @@ public class Ach_ItemSet : MonoBehaviour
 		this.achievement.UnlockAchievement();
 	}
 
-	// Token: 0x04000242 RID: 578
 	public Achievement achievement;
 
-	// Token: 0x04000243 RID: 579
 	public ItemObject[] items;
 
-	// Token: 0x04000244 RID: 580
 	private int hatIndex;
 
-	// Token: 0x04000245 RID: 581
 	private int swordIndex;
 
-	// Token: 0x04000246 RID: 582
 	private int shieldIndex;
 
-	// Token: 0x04000247 RID: 583
 	private int item1Index;
 
-	// Token: 0x04000248 RID: 584
 	private int item2Index;
 
-	// Token: 0x04000249 RID: 585
 	private bool hasInitialized;
 }

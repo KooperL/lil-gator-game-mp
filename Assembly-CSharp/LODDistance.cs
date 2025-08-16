@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000156 RID: 342
 public class LODDistance : MonoBehaviour
 {
-	// Token: 0x06000733 RID: 1843 RVA: 0x00023FEC File Offset: 0x000221EC
+	// Token: 0x060008BD RID: 2237 RVA: 0x00038AF4 File Offset: 0x00036CF4
 	private void OnValidate()
 	{
 		if (this.lodGroup == null)
@@ -26,9 +25,7 @@ public class LODDistance : MonoBehaviour
 		this.lodGroup.SetLODs(lods);
 	}
 
-	// Token: 0x04000972 RID: 2418
 	private LODGroup lodGroup;
 
-	// Token: 0x04000973 RID: 2419
 	public float distance = 40f;
 }

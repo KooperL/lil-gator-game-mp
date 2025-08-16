@@ -2,12 +2,10 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020000C3 RID: 195
 public class SwimBullDialogue : MonoBehaviour, Interaction
 {
-	// Token: 0x1700003E RID: 62
-	// (get) Token: 0x0600043D RID: 1085 RVA: 0x00018667 File Offset: 0x00016867
-	// (set) Token: 0x0600043E RID: 1086 RVA: 0x00018679 File Offset: 0x00016879
+	// (get) Token: 0x06000535 RID: 1333 RVA: 0x00005D47 File Offset: 0x00003F47
+	// (set) Token: 0x06000536 RID: 1334 RVA: 0x00005D59 File Offset: 0x00003F59
 	private int State
 	{
 		get
@@ -20,7 +18,7 @@ public class SwimBullDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x0600043F RID: 1087 RVA: 0x0001868B File Offset: 0x0001688B
+	// Token: 0x06000537 RID: 1335 RVA: 0x00005D6B File Offset: 0x00003F6B
 	private void Start()
 	{
 		if (this.State == 3)
@@ -30,13 +28,13 @@ public class SwimBullDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000440 RID: 1088 RVA: 0x000186AE File Offset: 0x000168AE
+	// Token: 0x06000538 RID: 1336 RVA: 0x00005D8E File Offset: 0x00003F8E
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunDialogue());
 	}
 
-	// Token: 0x06000441 RID: 1089 RVA: 0x000186BD File Offset: 0x000168BD
+	// Token: 0x06000539 RID: 1337 RVA: 0x00005D9D File Offset: 0x00003F9D
 	private IEnumerator RunDialogue()
 	{
 		this.virtualCamera.SetActive(true);
@@ -64,30 +62,23 @@ public class SwimBullDialogue : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x06000442 RID: 1090 RVA: 0x000186CC File Offset: 0x000168CC
+	// Token: 0x0600053A RID: 1338 RVA: 0x00005DAC File Offset: 0x00003FAC
 	public void Splash()
 	{
 		EffectsManager.e.Splash(this.splashPosition.position, 0.8f);
 	}
 
-	// Token: 0x040005F3 RID: 1523
 	public DialogueActor[] actors;
 
-	// Token: 0x040005F4 RID: 1524
 	public Animator bullAnimator;
 
-	// Token: 0x040005F5 RID: 1525
 	public GameObject bullFloofy;
 
-	// Token: 0x040005F6 RID: 1526
 	public TownNPC[] townNpcs;
 
-	// Token: 0x040005F7 RID: 1527
 	public GameObject virtualCamera;
 
-	// Token: 0x040005F8 RID: 1528
 	public Transform splashPosition;
 
-	// Token: 0x040005F9 RID: 1529
 	private const string key = "NPCSwimBull";
 }

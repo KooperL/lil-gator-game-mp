@@ -1,25 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000243 RID: 579
 public class TimeAction : MonoBehaviour
 {
-	// Token: 0x06000CA0 RID: 3232 RVA: 0x0003D46F File Offset: 0x0003B66F
+	// Token: 0x06000FA8 RID: 4008 RVA: 0x0000D88F File Offset: 0x0000BA8F
 	public void StartTimer()
 	{
 		this.startTime = Time.unscaledTimeAsDouble;
 		this.startFrame = Time.frameCount;
 	}
 
-	// Token: 0x06000CA1 RID: 3233 RVA: 0x0003D488 File Offset: 0x0003B688
+	// Token: 0x06000FA9 RID: 4009 RVA: 0x00052104 File Offset: 0x00050304
 	public void StopTimer()
 	{
 		Debug.Log("Time: " + (Time.unscaledTimeAsDouble - this.startTime).ToString("0.0000") + "   Frames: " + (Time.frameCount - this.startFrame).ToString());
 	}
 
-	// Token: 0x040010B5 RID: 4277
 	private double startTime;
 
-	// Token: 0x040010B6 RID: 4278
 	private int startFrame;
 }

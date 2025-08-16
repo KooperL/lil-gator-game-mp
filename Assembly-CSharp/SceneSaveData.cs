@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000232 RID: 562
 public class SceneSaveData : MonoBehaviour
 {
-	// Token: 0x170000CF RID: 207
-	// (get) Token: 0x06000C2C RID: 3116 RVA: 0x0003ABB5 File Offset: 0x00038DB5
-	// (set) Token: 0x06000C2D RID: 3117 RVA: 0x0003ABD3 File Offset: 0x00038DD3
+	// (get) Token: 0x06000F27 RID: 3879 RVA: 0x0000D233 File Offset: 0x0000B433
+	// (set) Token: 0x06000F28 RID: 3880 RVA: 0x0000D251 File Offset: 0x0000B451
 	public static SceneSaveData s
 	{
 		get
 		{
 			if (SceneSaveData.instance == null)
 			{
-				SceneSaveData.instance = Object.FindObjectOfType<SceneSaveData>();
+				SceneSaveData.instance = global::UnityEngine.Object.FindObjectOfType<SceneSaveData>();
 			}
 			return SceneSaveData.instance;
 		}
@@ -24,13 +22,13 @@ public class SceneSaveData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C2E RID: 3118 RVA: 0x0003ABDB File Offset: 0x00038DDB
+	// Token: 0x06000F29 RID: 3881 RVA: 0x0000D259 File Offset: 0x0000B459
 	private void OnEnable()
 	{
 		SceneSaveData.s = this;
 	}
 
-	// Token: 0x06000C2F RID: 3119 RVA: 0x0003ABE3 File Offset: 0x00038DE3
+	// Token: 0x06000F2A RID: 3882 RVA: 0x0000D261 File Offset: 0x0000B461
 	private void OnDisable()
 	{
 		if (SceneSaveData.s == this)
@@ -39,14 +37,14 @@ public class SceneSaveData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C30 RID: 3120 RVA: 0x0003ABF8 File Offset: 0x00038DF8
+	// Token: 0x06000F2B RID: 3883 RVA: 0x0000D276 File Offset: 0x0000B476
 	private void Start()
 	{
 		this.AssignIDs();
 		this.Load();
 	}
 
-	// Token: 0x06000C31 RID: 3121 RVA: 0x0003AC08 File Offset: 0x00038E08
+	// Token: 0x06000F2C RID: 3884 RVA: 0x0004FE20 File Offset: 0x0004E020
 	private void Load()
 	{
 		if (GameData.g.gameSaveData == null || this.isLoaded)
@@ -64,7 +62,7 @@ public class SceneSaveData : MonoBehaviour
 		this.isLoaded = true;
 	}
 
-	// Token: 0x06000C32 RID: 3122 RVA: 0x0003ACA4 File Offset: 0x00038EA4
+	// Token: 0x06000F2D RID: 3885 RVA: 0x0004FEBC File Offset: 0x0004E0BC
 	public void LoadPersistentObjects()
 	{
 		for (int i = 0; i < this.persistentObjects.Length; i++)
@@ -84,7 +82,7 @@ public class SceneSaveData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C33 RID: 3123 RVA: 0x0003AD14 File Offset: 0x00038F14
+	// Token: 0x06000F2E RID: 3886 RVA: 0x0004FF2C File Offset: 0x0004E12C
 	public void SavePersistentObject(int id, bool state)
 	{
 		if (this.objectStates.Length <= id)
@@ -96,7 +94,7 @@ public class SceneSaveData : MonoBehaviour
 		this.objectStates[id] = state;
 	}
 
-	// Token: 0x06000C34 RID: 3124 RVA: 0x0003AD64 File Offset: 0x00038F64
+	// Token: 0x06000F2F RID: 3887 RVA: 0x0000D284 File Offset: 0x0000B484
 	public bool GetPersistentObject(int id)
 	{
 		if (!this.isLoaded)
@@ -106,7 +104,7 @@ public class SceneSaveData : MonoBehaviour
 		return this.objectStates != null && this.objectStates.Length > id && this.objectStates[id];
 	}
 
-	// Token: 0x06000C35 RID: 3125 RVA: 0x0003AD94 File Offset: 0x00038F94
+	// Token: 0x06000F30 RID: 3888 RVA: 0x0004FF7C File Offset: 0x0004E17C
 	public bool HasPersistentObject(PersistentObject o)
 	{
 		if (this.persistentObjects != null)
@@ -122,7 +120,7 @@ public class SceneSaveData : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000C36 RID: 3126 RVA: 0x0003ADD0 File Offset: 0x00038FD0
+	// Token: 0x06000F31 RID: 3889 RVA: 0x0004FFB8 File Offset: 0x0004E1B8
 	public void RegisterPersistentObject(PersistentObject o)
 	{
 		if (Application.isPlaying)
@@ -144,7 +142,7 @@ public class SceneSaveData : MonoBehaviour
 		o.id = this.persistentObjects.Length - 1;
 	}
 
-	// Token: 0x06000C37 RID: 3127 RVA: 0x0003AE4C File Offset: 0x0003904C
+	// Token: 0x06000F32 RID: 3890 RVA: 0x00050034 File Offset: 0x0004E234
 	[ContextMenu("Remove Null Objects")]
 	public void RemoveNullObjects()
 	{
@@ -160,14 +158,14 @@ public class SceneSaveData : MonoBehaviour
 		this.persistentObjects = list.ToArray();
 	}
 
-	// Token: 0x06000C38 RID: 3128 RVA: 0x0003AE9C File Offset: 0x0003909C
+	// Token: 0x06000F33 RID: 3891 RVA: 0x0000D2B3 File Offset: 0x0000B4B3
 	[ContextMenu("Find Persistent Objects")]
 	public void FindPersistentObjects()
 	{
 		this.AssignIDs();
 	}
 
-	// Token: 0x06000C39 RID: 3129 RVA: 0x0003AEA4 File Offset: 0x000390A4
+	// Token: 0x06000F34 RID: 3892 RVA: 0x00050084 File Offset: 0x0004E284
 	[ContextMenu("Assign IDs")]
 	public void AssignIDs()
 	{
@@ -180,18 +178,13 @@ public class SceneSaveData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000FF4 RID: 4084
 	private static SceneSaveData instance;
 
-	// Token: 0x04000FF5 RID: 4085
 	private bool isLoaded;
 
-	// Token: 0x04000FF6 RID: 4086
 	public PersistentObject[] persistentObjects;
 
-	// Token: 0x04000FF7 RID: 4087
 	private bool[] objectStates;
 
-	// Token: 0x04000FF8 RID: 4088
 	private const bool reuseExistingSlots = false;
 }

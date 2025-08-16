@@ -2,11 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000097 RID: 151
 public class TightropeAttachments : MonoBehaviour
 {
-	// Token: 0x1700001C RID: 28
-	// (get) Token: 0x060002CB RID: 715 RVA: 0x00010CC4 File Offset: 0x0000EEC4
+	// (get) Token: 0x06000322 RID: 802 RVA: 0x00024F50 File Offset: 0x00023150
 	public GameObject StaticRoot
 	{
 		get
@@ -23,8 +21,7 @@ public class TightropeAttachments : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700001D RID: 29
-	// (get) Token: 0x060002CC RID: 716 RVA: 0x00010D74 File Offset: 0x0000EF74
+	// (get) Token: 0x06000323 RID: 803 RVA: 0x00025000 File Offset: 0x00023200
 	public GameObject DynamicRoot
 	{
 		get
@@ -41,7 +38,7 @@ public class TightropeAttachments : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002CD RID: 717 RVA: 0x00010E23 File Offset: 0x0000F023
+	// Token: 0x06000324 RID: 804 RVA: 0x00004703 File Offset: 0x00002903
 	private void Awake()
 	{
 		if (this.attachments.Length != 0)
@@ -51,7 +48,7 @@ public class TightropeAttachments : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x060002CE RID: 718 RVA: 0x00010E54 File Offset: 0x0000F054
+	// Token: 0x06000325 RID: 805 RVA: 0x000250B0 File Offset: 0x000232B0
 	private void OnBalanceBeamEnabled()
 	{
 		if (this.staticRenderers == null)
@@ -63,7 +60,7 @@ public class TightropeAttachments : MonoBehaviour
 			this.dynamicObjects = new GameObject[this.attachments.Length];
 			for (int i = 0; i < this.dynamicObjects.Length; i++)
 			{
-				this.dynamicObjects[i] = Object.Instantiate<GameObject>(this.prefabs[this.attachments[i].index].dynamicPrefab);
+				this.dynamicObjects[i] = global::UnityEngine.Object.Instantiate<GameObject>(this.prefabs[this.attachments[i].index].dynamicPrefab);
 				this.dynamicObjects[i].transform.parent = this.DynamicRoot.transform;
 				this.dynamicObjects[i].transform.position = this.staticObjects[i].transform.position;
 				this.dynamicObjects[i].transform.rotation = this.staticObjects[i].transform.rotation;
@@ -84,7 +81,7 @@ public class TightropeAttachments : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x060002CF RID: 719 RVA: 0x00010FBC File Offset: 0x0000F1BC
+	// Token: 0x06000326 RID: 806 RVA: 0x00025218 File Offset: 0x00023418
 	private void OnEnable()
 	{
 		if (this.staticRenderers != null)
@@ -105,7 +102,7 @@ public class TightropeAttachments : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002D0 RID: 720 RVA: 0x00011018 File Offset: 0x0000F218
+	// Token: 0x06000327 RID: 807 RVA: 0x00025274 File Offset: 0x00023474
 	private void OnDisable()
 	{
 		if (this.staticRenderers != null)
@@ -130,7 +127,7 @@ public class TightropeAttachments : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002D1 RID: 721 RVA: 0x0001108C File Offset: 0x0000F28C
+	// Token: 0x06000328 RID: 808 RVA: 0x000252E8 File Offset: 0x000234E8
 	private void LateUpdate()
 	{
 		if (this.tightrope.enabled)
@@ -147,80 +144,57 @@ public class TightropeAttachments : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040003E1 RID: 993
 	public BalanceBeam balanceBeam;
 
-	// Token: 0x040003E2 RID: 994
 	public Tightrope tightrope;
 
-	// Token: 0x040003E3 RID: 995
 	public float disableDelay = 2f;
 
-	// Token: 0x040003E4 RID: 996
 	private float disableTime = -1f;
 
-	// Token: 0x040003E5 RID: 997
 	public GameObject staticRoot;
 
-	// Token: 0x040003E6 RID: 998
 	public GameObject dynamicRoot;
 
-	// Token: 0x040003E7 RID: 999
 	[ReadOnly]
 	public MeshRenderer staticRenderer;
 
-	// Token: 0x040003E8 RID: 1000
 	[ReadOnly]
 	public MeshFilter staticFilter;
 
-	// Token: 0x040003E9 RID: 1001
 	public TightropeAttachments.AttachmentPrefab[] prefabs;
 
-	// Token: 0x040003EA RID: 1002
 	[Space]
 	public TightropeAttachments.Attachment[] attachments;
 
-	// Token: 0x040003EB RID: 1003
 	public GameObject[] staticObjects;
 
-	// Token: 0x040003EC RID: 1004
 	private Renderer[] staticRenderers;
 
-	// Token: 0x040003ED RID: 1005
 	private GameObject[] dynamicObjects;
 
-	// Token: 0x040003EE RID: 1006
 	private Renderer[] dynamicRenderers;
 
-	// Token: 0x040003EF RID: 1007
 	private WobbleBrain wobbleBrain;
 
-	// Token: 0x040003F0 RID: 1008
 	public Vector3 offset = new Vector3(0f, -0.05f, 0f);
 
-	// Token: 0x02000377 RID: 887
 	[Serializable]
 	public struct AttachmentPrefab
 	{
-		// Token: 0x04001A78 RID: 6776
 		public GameObject staticPrefab;
 
-		// Token: 0x04001A79 RID: 6777
 		public GameObject dynamicPrefab;
 	}
 
-	// Token: 0x02000378 RID: 888
 	[Serializable]
 	public struct Attachment
 	{
-		// Token: 0x04001A7A RID: 6778
 		[Range(0f, 1f)]
 		public float t;
 
-		// Token: 0x04001A7B RID: 6779
 		public int index;
 
-		// Token: 0x04001A7C RID: 6780
 		[HideInInspector]
 		public int oldIndex;
 	}

@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200003C RID: 60
 public class BabyPlayerToggle : MonoBehaviour
 {
-	// Token: 0x060000F1 RID: 241 RVA: 0x00006711 File Offset: 0x00004911
+	// Token: 0x0600011E RID: 286 RVA: 0x00002ECE File Offset: 0x000010CE
 	public static void SetBabyMode(bool isBabyMode)
 	{
 		BabyPlayerToggle.isBabyMode = isBabyMode;
@@ -14,14 +13,14 @@ public class BabyPlayerToggle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000F2 RID: 242 RVA: 0x00006730 File Offset: 0x00004930
+	// Token: 0x0600011F RID: 287 RVA: 0x00002EED File Offset: 0x000010ED
 	private void Start()
 	{
 		BabyPlayerToggle.b = this;
 		this.UpdateBabyMode();
 	}
 
-	// Token: 0x060000F3 RID: 243 RVA: 0x0000673E File Offset: 0x0000493E
+	// Token: 0x06000120 RID: 288 RVA: 0x00002EFB File Offset: 0x000010FB
 	protected void UpdateBabyMode()
 	{
 		if (this != null && base.gameObject.activeInHierarchy)
@@ -31,15 +30,11 @@ public class BabyPlayerToggle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400014A RID: 330
 	private static bool isBabyMode;
 
-	// Token: 0x0400014B RID: 331
 	private static BabyPlayerToggle b;
 
-	// Token: 0x0400014C RID: 332
 	public GameObject playerCharacter;
 
-	// Token: 0x0400014D RID: 333
 	public GameObject babyCharacter;
 }

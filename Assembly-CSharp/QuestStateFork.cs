@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000223 RID: 547
 public class QuestStateFork : MonoBehaviour
 {
-	// Token: 0x06000BBE RID: 3006 RVA: 0x00038E6C File Offset: 0x0003706C
+	// Token: 0x06000E5F RID: 3679 RVA: 0x0004D0D0 File Offset: 0x0004B2D0
 	public void Fork()
 	{
 		if (this.stateReference == null)
@@ -20,9 +19,7 @@ public class QuestStateFork : MonoBehaviour
 		this.forkedEvents[stateID].Invoke();
 	}
 
-	// Token: 0x04000F84 RID: 3972
 	public QuestStates stateReference;
 
-	// Token: 0x04000F85 RID: 3973
 	public UnityEvent[] forkedEvents;
 }

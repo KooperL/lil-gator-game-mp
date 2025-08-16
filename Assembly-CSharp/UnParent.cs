@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000257 RID: 599
 public class UnParent : MonoBehaviour
 {
-	// Token: 0x06000CEF RID: 3311 RVA: 0x0003E8C7 File Offset: 0x0003CAC7
+	// Token: 0x06000FF7 RID: 4087 RVA: 0x0000DC9A File Offset: 0x0000BE9A
 	private void OnValidate()
 	{
 		if (this.parent == null)
@@ -13,18 +12,18 @@ public class UnParent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CF0 RID: 3312 RVA: 0x0003E8E8 File Offset: 0x0003CAE8
+	// Token: 0x06000FF8 RID: 4088 RVA: 0x0000DCBB File Offset: 0x0000BEBB
 	private void Start()
 	{
 		base.transform.parent = null;
 	}
 
-	// Token: 0x06000CF1 RID: 3313 RVA: 0x0003E8F8 File Offset: 0x0003CAF8
+	// Token: 0x06000FF9 RID: 4089 RVA: 0x000530EC File Offset: 0x000512EC
 	private void Update()
 	{
 		if (this.parent == null || this.parent.gameObject == null)
 		{
-			Object.Destroy(base.gameObject);
+			global::UnityEngine.Object.Destroy(base.gameObject);
 			return;
 		}
 		if (this.parent == base.transform.parent)
@@ -37,6 +36,5 @@ public class UnParent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400110D RID: 4365
 	public Transform parent;
 }

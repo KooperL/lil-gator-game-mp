@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020002B3 RID: 691
 public class UIBar : MonoBehaviour
 {
-	// Token: 0x06000E8E RID: 3726 RVA: 0x00045738 File Offset: 0x00043938
+	// Token: 0x060011BE RID: 4542 RVA: 0x00058CA8 File Offset: 0x00056EA8
 	private void Enable()
 	{
 		this.leftEdge = base.transform.InverseTransformPoint(base.transform.parent.TransformPoint(new Vector2(this.rectTransform.rect.xMin, 0f)));
@@ -14,12 +13,12 @@ public class UIBar : MonoBehaviour
 		this.leftEdge.y = (this.rightEdge.y = 0f);
 	}
 
-	// Token: 0x06000E8F RID: 3727 RVA: 0x000457E9 File Offset: 0x000439E9
+	// Token: 0x060011BF RID: 4543 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x06000E90 RID: 3728 RVA: 0x000457EC File Offset: 0x000439EC
+	// Token: 0x060011C0 RID: 4544 RVA: 0x00058D5C File Offset: 0x00056F5C
 	public void Load(UIBar.UIBarChunk[] chunks, ItemResource newResource, UIBar.Callbacks newCallbackObject)
 	{
 		base.gameObject.SetActive(true);
@@ -29,11 +28,11 @@ public class UIBar : MonoBehaviour
 		this.upgradeResource = newResource;
 		while (this.dividers.Count < chunks.Length)
 		{
-			this.dividers.Add(Object.Instantiate<GameObject>(this.dividerPrefab, base.transform).GetComponent<UIBarDivider>());
+			this.dividers.Add(global::UnityEngine.Object.Instantiate<GameObject>(this.dividerPrefab, base.transform).GetComponent<UIBarDivider>());
 		}
 		while (this.dividers.Count > chunks.Length)
 		{
-			Object.Destroy(this.dividers[this.dividers.Count - 1].gameObject);
+			global::UnityEngine.Object.Destroy(this.dividers[this.dividers.Count - 1].gameObject);
 			this.dividers.RemoveAt(this.dividers.Count - 1);
 		}
 		int num = 0;
@@ -91,77 +90,58 @@ public class UIBar : MonoBehaviour
 		this.lockedFill.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, this.rectTransform.rect.width * (float)num3 / (float)num, this.rectTransform.rect.width);
 	}
 
-	// Token: 0x06000E91 RID: 3729 RVA: 0x00045B54 File Offset: 0x00043D54
+	// Token: 0x060011C1 RID: 4545 RVA: 0x0000F1E2 File Offset: 0x0000D3E2
 	public void Buy()
 	{
 		base.gameObject.SetActive(false);
 		this.callbackObject.Buy();
 	}
 
-	// Token: 0x06000E92 RID: 3730 RVA: 0x00045B6D File Offset: 0x00043D6D
+	// Token: 0x060011C2 RID: 4546 RVA: 0x0000F1FB File Offset: 0x0000D3FB
 	public void Cancel()
 	{
 		base.gameObject.SetActive(false);
 		this.callbackObject.Cancel();
 	}
 
-	// Token: 0x040012F0 RID: 4848
 	public UIBar.UIBarChunk[] chunks;
 
-	// Token: 0x040012F1 RID: 4849
 	public GameObject dividerPrefab;
 
-	// Token: 0x040012F2 RID: 4850
 	private List<UIBarDivider> dividers = new List<UIBarDivider>();
 
-	// Token: 0x040012F3 RID: 4851
 	public RectTransform purchasedFill;
 
-	// Token: 0x040012F4 RID: 4852
 	public RectTransform lockedFill;
 
-	// Token: 0x040012F5 RID: 4853
 	private RectTransform rectTransform;
 
-	// Token: 0x040012F6 RID: 4854
 	private Vector3 leftEdge;
 
-	// Token: 0x040012F7 RID: 4855
 	private Vector3 rightEdge;
 
-	// Token: 0x040012F8 RID: 4856
 	private bool isPurchasable;
 
-	// Token: 0x040012F9 RID: 4857
 	private UIBar.Callbacks callbackObject;
 
-	// Token: 0x040012FA RID: 4858
 	private ItemResource upgradeResource;
 
-	// Token: 0x0200043B RID: 1083
 	[Serializable]
 	public struct UIBarChunk
 	{
-		// Token: 0x04001DA2 RID: 7586
 		public int unlockCost;
 
-		// Token: 0x04001DA3 RID: 7587
 		public bool isUnlocked;
 
-		// Token: 0x04001DA4 RID: 7588
 		public int cost;
 
-		// Token: 0x04001DA5 RID: 7589
 		public bool isPurchased;
 	}
 
-	// Token: 0x0200043C RID: 1084
 	public interface Callbacks
 	{
-		// Token: 0x06001B23 RID: 6947
 		void Buy();
 
-		// Token: 0x06001B24 RID: 6948
 		void Cancel();
 	}
 }

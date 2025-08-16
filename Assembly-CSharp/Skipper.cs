@@ -2,11 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020001A7 RID: 423
 [RequireComponent(typeof(Collider))]
 public class Skipper : MonoBehaviour
 {
-	// Token: 0x060008B5 RID: 2229 RVA: 0x00029018 File Offset: 0x00027218
+	// Token: 0x06000A80 RID: 2688 RVA: 0x0003D2DC File Offset: 0x0003B4DC
 	private void OnValidate()
 	{
 		if (this.rigidbody == null)
@@ -20,14 +19,14 @@ public class Skipper : MonoBehaviour
 		this.waterLayer = LayerMask.NameToLayer("Water");
 	}
 
-	// Token: 0x060008B6 RID: 2230 RVA: 0x00029069 File Offset: 0x00027269
+	// Token: 0x06000A81 RID: 2689 RVA: 0x0000A003 File Offset: 0x00008203
 	private void Start()
 	{
-		this.randomSkipFactor = Random.Range(0.75f, 1f);
-		this.randomFriction = Random.value;
+		this.randomSkipFactor = global::UnityEngine.Random.Range(0.75f, 1f);
+		this.randomFriction = global::UnityEngine.Random.value;
 	}
 
-	// Token: 0x060008B7 RID: 2231 RVA: 0x0002908C File Offset: 0x0002728C
+	// Token: 0x06000A82 RID: 2690 RVA: 0x0003D330 File Offset: 0x0003B530
 	private void OnTriggerEnter(Collider other)
 	{
 		this.stayCount = 0;
@@ -51,7 +50,7 @@ public class Skipper : MonoBehaviour
 				Water component = other.GetComponent<Water>();
 				Vector3 worldCenterOfMass = this.rigidbody.worldCenterOfMass;
 				worldCenterOfMass.y = component.GetWaterPlaneHeight(this.rigidbody.position);
-				Object.Instantiate<GameObject>(this.skipEffect, worldCenterOfMass, Quaternion.identity);
+				global::UnityEngine.Object.Instantiate<GameObject>(this.skipEffect, worldCenterOfMass, Quaternion.identity);
 				this.skipCount++;
 				Skipper.bestSkip = Mathf.Max(Skipper.bestSkip, this.skipCount);
 				if (Skipper.isPartOfQuest)
@@ -68,7 +67,7 @@ public class Skipper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008B8 RID: 2232 RVA: 0x0002920B File Offset: 0x0002740B
+	// Token: 0x06000A83 RID: 2691 RVA: 0x0000A025 File Offset: 0x00008225
 	private void OnTriggerStay(Collider other)
 	{
 		this.stayCount++;
@@ -78,72 +77,54 @@ public class Skipper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008B9 RID: 2233 RVA: 0x00029241 File Offset: 0x00027441
+	// Token: 0x06000A84 RID: 2692 RVA: 0x0000A05B File Offset: 0x0000825B
 	private void OnTriggerExit(Collider other)
 	{
 		this.stayCount = 0;
 	}
 
-	// Token: 0x060008BA RID: 2234 RVA: 0x0002924A File Offset: 0x0002744A
+	// Token: 0x06000A85 RID: 2693 RVA: 0x0000A064 File Offset: 0x00008264
 	private void Sink()
 	{
 		this.waterPhysics.activateAutomatically = true;
 		this.onSink.Invoke();
-		Object.Destroy(this);
+		global::UnityEngine.Object.Destroy(this);
 	}
 
-	// Token: 0x04000AAE RID: 2734
 	public static int bestSkip;
 
-	// Token: 0x04000AAF RID: 2735
 	public static bool isPartOfQuest;
 
-	// Token: 0x04000AB0 RID: 2736
 	[ReadOnly]
 	public int waterLayer;
 
-	// Token: 0x04000AB1 RID: 2737
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000AB2 RID: 2738
 	public WaterPhysics waterPhysics;
 
-	// Token: 0x04000AB3 RID: 2739
 	public float spin = 10f;
 
-	// Token: 0x04000AB4 RID: 2740
 	private const float maxBounceSpeed = 6f;
 
-	// Token: 0x04000AB5 RID: 2741
 	public float minSkipSpeed = 3f;
 
-	// Token: 0x04000AB6 RID: 2742
 	public float minSkipFriction = 0.7f;
 
-	// Token: 0x04000AB7 RID: 2743
 	public float maxSkipFriction = 0.95f;
 
-	// Token: 0x04000AB8 RID: 2744
 	public float minBounceFriction = 0.7f;
 
-	// Token: 0x04000AB9 RID: 2745
 	public float maxBounceFriction = 1f;
 
-	// Token: 0x04000ABA RID: 2746
 	public GameObject skipEffect;
 
-	// Token: 0x04000ABB RID: 2747
 	public UnityEvent onSink;
 
-	// Token: 0x04000ABC RID: 2748
 	private int skipCount;
 
-	// Token: 0x04000ABD RID: 2749
 	private float randomSkipFactor = 1f;
 
-	// Token: 0x04000ABE RID: 2750
 	private float randomFriction = 1f;
 
-	// Token: 0x04000ABF RID: 2751
 	private int stayCount;
 }

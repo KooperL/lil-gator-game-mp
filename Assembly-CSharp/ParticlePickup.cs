@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000F8 RID: 248
 public class ParticlePickup : MonoBehaviour, IOnTimeout
 {
-	// Token: 0x0600051F RID: 1311 RVA: 0x0001B69F File Offset: 0x0001989F
+	// Token: 0x0600066B RID: 1643 RVA: 0x00006A36 File Offset: 0x00004C36
 	private void OnValidate()
 	{
 		if (this.particleSystem == null)
@@ -17,7 +16,7 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x06000520 RID: 1312 RVA: 0x0001B6D8 File Offset: 0x000198D8
+	// Token: 0x0600066C RID: 1644 RVA: 0x0003144C File Offset: 0x0002F64C
 	private void Start()
 	{
 		this.particles = new ParticleSystem.Particle[this.particleSystem.main.maxParticles];
@@ -27,7 +26,7 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 		this.autoPickupTime = Time.time + this.autoPickupDelay;
 	}
 
-	// Token: 0x06000521 RID: 1313 RVA: 0x0001B758 File Offset: 0x00019958
+	// Token: 0x0600066D RID: 1645 RVA: 0x000314CC File Offset: 0x0002F6CC
 	private void Update()
 	{
 		if (!this.isQuick && Time.time - TriggerPickup.quickPickupTime < 0.1f)
@@ -50,7 +49,7 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 				{
 					this.persistentObject.SaveTrue();
 				}
-				Object.Destroy(base.gameObject);
+				global::UnityEngine.Object.Destroy(base.gameObject);
 				return;
 			}
 			if (Time.time > this.autoPickupTime && this.particleSystem.collision.enabled)
@@ -69,7 +68,7 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 		int num = this.particleSystem.GetParticles(this.particles);
 		if (num == 0)
 		{
-			Object.Destroy(base.gameObject);
+			global::UnityEngine.Object.Destroy(base.gameObject);
 			if (this.persistentObject != null)
 			{
 				this.persistentObject.SaveTrue();
@@ -117,66 +116,47 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x06000522 RID: 1314 RVA: 0x0001BADC File Offset: 0x00019CDC
+	// Token: 0x0600066E RID: 1646 RVA: 0x00031850 File Offset: 0x0002FA50
 	public void OnTimeout()
 	{
 		this.resource.SetAmountSecret(this.resource.Amount + Mathf.RoundToInt(this.rewardPerPickup * (float)this.particleSystem.main.maxParticles) - this.rewardGiven);
 	}
 
-	// Token: 0x04000706 RID: 1798
 	public ParticleSystem particleSystem;
 
-	// Token: 0x04000707 RID: 1799
 	public ParticleSystemRenderer particleSystemRenderer;
 
-	// Token: 0x04000708 RID: 1800
 	public float pickupRadius = 0.5f;
 
-	// Token: 0x04000709 RID: 1801
 	private float pickupRadiusSqr;
 
-	// Token: 0x0400070A RID: 1802
 	public float rewardPerPickup = 0.5f;
 
-	// Token: 0x0400070B RID: 1803
 	private float rewardOwed;
 
-	// Token: 0x0400070C RID: 1804
 	private int rewardGiven;
 
-	// Token: 0x0400070D RID: 1805
 	public ItemResource resource;
 
-	// Token: 0x0400070E RID: 1806
 	private ParticleSystem.Particle[] particles;
 
-	// Token: 0x0400070F RID: 1807
 	private bool[] isPickingUp;
 
-	// Token: 0x04000710 RID: 1808
 	public float delay = 0.5f;
 
-	// Token: 0x04000711 RID: 1809
 	private float delayTime = -1f;
 
-	// Token: 0x04000712 RID: 1810
 	public bool autoPickup = true;
 
-	// Token: 0x04000713 RID: 1811
 	public float autoPickupDelay = 3f;
 
-	// Token: 0x04000714 RID: 1812
 	private float autoPickupTime = -1f;
 
-	// Token: 0x04000715 RID: 1813
 	public float pickupAcc = 30f;
 
-	// Token: 0x04000716 RID: 1814
 	public AudioSourceVariance audioSourceVariance;
 
-	// Token: 0x04000717 RID: 1815
 	public PersistentObject persistentObject;
 
-	// Token: 0x04000718 RID: 1816
 	private bool isQuick;
 }

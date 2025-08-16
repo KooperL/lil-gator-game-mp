@@ -2,10 +2,9 @@
 using Cinemachine;
 using UnityEngine;
 
-// Token: 0x020000E5 RID: 229
 public class MoveDolly : MonoBehaviour
 {
-	// Token: 0x060004BC RID: 1212 RVA: 0x00019F03 File Offset: 0x00018103
+	// Token: 0x06000602 RID: 1538 RVA: 0x00006490 File Offset: 0x00004690
 	private void OnEnable()
 	{
 		if (this.virtualCamera != null)
@@ -15,7 +14,7 @@ public class MoveDolly : MonoBehaviour
 		this.dollyCart.m_PositionUnits = CinemachinePathBase.PositionUnits.PathUnits;
 	}
 
-	// Token: 0x060004BD RID: 1213 RVA: 0x00019F30 File Offset: 0x00018130
+	// Token: 0x06000603 RID: 1539 RVA: 0x00030218 File Offset: 0x0002E418
 	private void OnValidate()
 	{
 		if (this.virtualCamera != null)
@@ -28,7 +27,7 @@ public class MoveDolly : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004BE RID: 1214 RVA: 0x00019F80 File Offset: 0x00018180
+	// Token: 0x06000604 RID: 1540 RVA: 0x00030268 File Offset: 0x0002E468
 	private void Update()
 	{
 		this.position = Mathf.SmoothDamp(this.position, this.targetPosition, ref this.velocity, this.smoothTime);
@@ -43,34 +42,26 @@ public class MoveDolly : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004BF RID: 1215 RVA: 0x0001A005 File Offset: 0x00018205
+	// Token: 0x06000605 RID: 1541 RVA: 0x000064BD File Offset: 0x000046BD
 	public void SetTargetPosition(float newTargetPosition)
 	{
 		this.targetPosition = newTargetPosition;
 	}
 
-	// Token: 0x04000691 RID: 1681
 	public CinemachineVirtualCamera virtualCamera;
 
-	// Token: 0x04000692 RID: 1682
 	private CinemachineTrackedDolly trackedDolly;
 
-	// Token: 0x04000693 RID: 1683
 	public CinemachineDollyCart dollyCart;
 
-	// Token: 0x04000694 RID: 1684
 	public float smoothTime = 1f;
 
-	// Token: 0x04000695 RID: 1685
 	public float maxSpeed = 0.5f;
 
-	// Token: 0x04000696 RID: 1686
 	public float position;
 
-	// Token: 0x04000697 RID: 1687
 	[ReadOnly]
 	public float velocity;
 
-	// Token: 0x04000698 RID: 1688
 	public float targetPosition;
 }

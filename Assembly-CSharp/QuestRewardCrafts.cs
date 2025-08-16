@@ -1,9 +1,8 @@
 ﻿using System;
 
-// Token: 0x0200021E RID: 542
 public class QuestRewardCrafts : QuestReward
 {
-	// Token: 0x06000BB4 RID: 2996 RVA: 0x00038D24 File Offset: 0x00036F24
+	// Token: 0x06000E55 RID: 3669 RVA: 0x0004D004 File Offset: 0x0004B204
 	public override void GiveReward()
 	{
 		UIMenus.craftNotification.LoadItems(this.rewards);
@@ -14,6 +13,5 @@ public class QuestRewardCrafts : QuestReward
 		}
 	}
 
-	// Token: 0x04000F7B RID: 3963
 	public ItemObject[] rewards;
 }

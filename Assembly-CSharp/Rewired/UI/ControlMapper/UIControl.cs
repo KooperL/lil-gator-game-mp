@@ -4,12 +4,10 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x0200032D RID: 813
 	[AddComponentMenu("")]
 	public class UIControl : MonoBehaviour
 	{
-		// Token: 0x1700040B RID: 1035
-		// (get) Token: 0x0600169F RID: 5791 RVA: 0x0005ED67 File Offset: 0x0005CF67
+		// (get) Token: 0x06001C86 RID: 7302 RVA: 0x00015CD0 File Offset: 0x00013ED0
 		public int id
 		{
 			get
@@ -18,15 +16,14 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x060016A0 RID: 5792 RVA: 0x0005ED6F File Offset: 0x0005CF6F
+		// Token: 0x06001C87 RID: 7303 RVA: 0x00015CD8 File Offset: 0x00013ED8
 		private void Awake()
 		{
 			this._id = UIControl.GetNextUid();
 		}
 
-		// Token: 0x1700040C RID: 1036
-		// (get) Token: 0x060016A1 RID: 5793 RVA: 0x0005ED7C File Offset: 0x0005CF7C
-		// (set) Token: 0x060016A2 RID: 5794 RVA: 0x0005ED84 File Offset: 0x0005CF84
+		// (get) Token: 0x06001C88 RID: 7304 RVA: 0x00015CE5 File Offset: 0x00013EE5
+		// (set) Token: 0x06001C89 RID: 7305 RVA: 0x00015CED File Offset: 0x00013EED
 		public bool showTitle
 		{
 			get
@@ -44,12 +41,12 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x060016A3 RID: 5795 RVA: 0x0005EDAD File Offset: 0x0005CFAD
+		// Token: 0x06001C8A RID: 7306 RVA: 0x00002229 File Offset: 0x00000429
 		public virtual void SetCancelCallback(Action cancelCallback)
 		{
 		}
 
-		// Token: 0x060016A4 RID: 5796 RVA: 0x0005EDAF File Offset: 0x0005CFAF
+		// Token: 0x06001C8B RID: 7307 RVA: 0x00015D16 File Offset: 0x00013F16
 		private static int GetNextUid()
 		{
 			if (UIControl._uidCounter == 2147483647)
@@ -61,16 +58,12 @@ namespace Rewired.UI.ControlMapper
 			return uidCounter;
 		}
 
-		// Token: 0x040018D5 RID: 6357
 		public Text title;
 
-		// Token: 0x040018D6 RID: 6358
 		private int _id;
 
-		// Token: 0x040018D7 RID: 6359
 		private bool _showTitle;
 
-		// Token: 0x040018D8 RID: 6360
 		private static int _uidCounter;
 	}
 }

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020001B3 RID: 435
 public class HideUI : MonoBehaviour
 {
-	// Token: 0x06000900 RID: 2304 RVA: 0x0002B3C4 File Offset: 0x000295C4
+	// Token: 0x06000AD1 RID: 2769 RVA: 0x0003F1EC File Offset: 0x0003D3EC
 	public static void SetUIHidden(bool isHidden)
 	{
 		HideUI.isUIHidden = isHidden;
@@ -15,27 +14,27 @@ public class HideUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000901 RID: 2305 RVA: 0x0002B41C File Offset: 0x0002961C
+	// Token: 0x06000AD2 RID: 2770 RVA: 0x0000A4F0 File Offset: 0x000086F0
 	public static void Toggle()
 	{
 		HideUI.SetUIHidden(!HideUI.isUIHidden);
 	}
 
-	// Token: 0x06000902 RID: 2306 RVA: 0x0002B42B File Offset: 0x0002962B
+	// Token: 0x06000AD3 RID: 2771 RVA: 0x0000A4FF File Offset: 0x000086FF
 	private void Awake()
 	{
 		this.canvas = base.GetComponent<Canvas>();
 		this.lineRenderer = base.GetComponent<LineRenderer>();
 	}
 
-	// Token: 0x06000903 RID: 2307 RVA: 0x0002B445 File Offset: 0x00029645
+	// Token: 0x06000AD4 RID: 2772 RVA: 0x0000A519 File Offset: 0x00008719
 	private void OnEnable()
 	{
 		HideUI.allHideUI.Add(this);
 		this.SetHidden(HideUI.isUIHidden);
 	}
 
-	// Token: 0x06000904 RID: 2308 RVA: 0x0002B45D File Offset: 0x0002965D
+	// Token: 0x06000AD5 RID: 2773 RVA: 0x0000A531 File Offset: 0x00008731
 	private void OnDisable()
 	{
 		if (HideUI.allHideUI.Contains(this))
@@ -44,12 +43,12 @@ public class HideUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000905 RID: 2309 RVA: 0x0002B478 File Offset: 0x00029678
+	// Token: 0x06000AD6 RID: 2774 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnDestroy()
 	{
 	}
 
-	// Token: 0x06000906 RID: 2310 RVA: 0x0002B47A File Offset: 0x0002967A
+	// Token: 0x06000AD7 RID: 2775 RVA: 0x0000A54C File Offset: 0x0000874C
 	public void SetHidden(bool isHidden)
 	{
 		if (this.canvas != null)
@@ -62,15 +61,11 @@ public class HideUI : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000B65 RID: 2917
 	private static List<HideUI> allHideUI = new List<HideUI>();
 
-	// Token: 0x04000B66 RID: 2918
 	public static bool isUIHidden = false;
 
-	// Token: 0x04000B67 RID: 2919
 	private Canvas canvas;
 
-	// Token: 0x04000B68 RID: 2920
 	private LineRenderer lineRenderer;
 }

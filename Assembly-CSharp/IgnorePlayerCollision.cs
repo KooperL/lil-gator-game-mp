@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000130 RID: 304
 public class IgnorePlayerCollision : MonoBehaviour
 {
-	// Token: 0x06000644 RID: 1604 RVA: 0x000205A0 File Offset: 0x0001E7A0
+	// Token: 0x060007A9 RID: 1961 RVA: 0x000356A8 File Offset: 0x000338A8
 	public static void IgnoreCollider(Collider collider)
 	{
 		List<Collider> list = new List<Collider>();
@@ -31,7 +30,7 @@ public class IgnorePlayerCollision : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000645 RID: 1605 RVA: 0x0002064C File Offset: 0x0001E84C
+	// Token: 0x060007AA RID: 1962 RVA: 0x00007A12 File Offset: 0x00005C12
 	private void OnValidate()
 	{
 		if (this.colliders == null || this.colliders.Length == 0)
@@ -40,7 +39,7 @@ public class IgnorePlayerCollision : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000646 RID: 1606 RVA: 0x0002066C File Offset: 0x0001E86C
+	// Token: 0x060007AB RID: 1963 RVA: 0x00035754 File Offset: 0x00033954
 	public void Start()
 	{
 		Collider[] array = this.colliders;
@@ -66,15 +65,11 @@ public class IgnorePlayerCollision : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400086E RID: 2158
 	public static Collider[] playerColliders = new Collider[0];
 
-	// Token: 0x0400086F RID: 2159
 	public Collider[] colliders;
 
-	// Token: 0x04000870 RID: 2160
 	public bool getCollidersFromParents;
 
-	// Token: 0x04000871 RID: 2161
 	public bool getCollidersFromChildren;
 }

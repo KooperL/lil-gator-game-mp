@@ -3,10 +3,9 @@ using Rewired;
 using Rewired.UI.ControlMapper;
 using UnityEngine;
 
-// Token: 0x020002CF RID: 719
 public class UIMenus : MonoBehaviour
 {
-	// Token: 0x06000F1E RID: 3870 RVA: 0x00049030 File Offset: 0x00047230
+	// Token: 0x06001262 RID: 4706 RVA: 0x0005C070 File Offset: 0x0005A270
 	public void Awake()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
@@ -21,17 +20,17 @@ public class UIMenus : MonoBehaviour
 		Blackout.b = this.blackout;
 	}
 
-	// Token: 0x06000F1F RID: 3871 RVA: 0x000490AC File Offset: 0x000472AC
+	// Token: 0x06001263 RID: 4707 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnEnable()
 	{
 	}
 
-	// Token: 0x06000F20 RID: 3872 RVA: 0x000490AE File Offset: 0x000472AE
+	// Token: 0x06001264 RID: 4708 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x06000F21 RID: 3873 RVA: 0x000490B0 File Offset: 0x000472B0
+	// Token: 0x06001265 RID: 4709 RVA: 0x0005C0EC File Offset: 0x0005A2EC
 	private void Update()
 	{
 		if (Game.g == null || DialogueSequencer.IsInSequence)
@@ -48,7 +47,7 @@ public class UIMenus : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F22 RID: 3874 RVA: 0x00049104 File Offset: 0x00047304
+	// Token: 0x06001266 RID: 4710 RVA: 0x0005C140 File Offset: 0x0005A340
 	public void OnInventory()
 	{
 		if (ControlMapper.isActive)
@@ -77,7 +76,7 @@ public class UIMenus : MonoBehaviour
 		this.itemMenuTutorial.Press();
 	}
 
-	// Token: 0x06000F23 RID: 3875 RVA: 0x00049174 File Offset: 0x00047374
+	// Token: 0x06001267 RID: 4711 RVA: 0x0005C1B0 File Offset: 0x0005A3B0
 	public void CloseMenus()
 	{
 		if (ControlMapper.isActive)
@@ -97,7 +96,7 @@ public class UIMenus : MonoBehaviour
 		Game.State = GameState.Play;
 	}
 
-	// Token: 0x06000F24 RID: 3876 RVA: 0x000491D7 File Offset: 0x000473D7
+	// Token: 0x06001268 RID: 4712 RVA: 0x0000F966 File Offset: 0x0000DB66
 	public void SetGameplayState(bool isInGameplay, bool showNotifications)
 	{
 		this.notifications.SetActive(showNotifications);
@@ -105,7 +104,7 @@ public class UIMenus : MonoBehaviour
 		Game.State = (isInGameplay ? GameState.Play : GameState.Menu);
 	}
 
-	// Token: 0x06000F25 RID: 3877 RVA: 0x000491FD File Offset: 0x000473FD
+	// Token: 0x06001269 RID: 4713 RVA: 0x0000F98C File Offset: 0x0000DB8C
 	public void SetGameplayState(bool isInGameplay)
 	{
 		this.notifications.SetActive(isInGameplay);
@@ -113,7 +112,7 @@ public class UIMenus : MonoBehaviour
 		Game.State = (isInGameplay ? GameState.Play : GameState.Menu);
 	}
 
-	// Token: 0x06000F26 RID: 3878 RVA: 0x00049224 File Offset: 0x00047424
+	// Token: 0x0600126A RID: 4714 RVA: 0x0005C214 File Offset: 0x0005A414
 	private void OnPause()
 	{
 		if (ControlMapper.isActive)
@@ -142,72 +141,49 @@ public class UIMenus : MonoBehaviour
 		this.pauseMenu.Activate();
 	}
 
-	// Token: 0x040013E1 RID: 5089
 	public static UIMenus u;
 
-	// Token: 0x040013E2 RID: 5090
 	public static GameObject gameplay;
 
-	// Token: 0x040013E3 RID: 5091
 	public GameObject uiGameplay;
 
-	// Token: 0x040013E4 RID: 5092
 	public static UIShop shop;
 
-	// Token: 0x040013E5 RID: 5093
 	public UIShop uiShop;
 
-	// Token: 0x040013E6 RID: 5094
 	public static UIBar buildingUpgradeBar;
 
-	// Token: 0x040013E7 RID: 5095
 	public UIBar uiBuildingUpgradeBar;
 
-	// Token: 0x040013E8 RID: 5096
 	public static UICraftNotification craftNotification;
 
-	// Token: 0x040013E9 RID: 5097
 	public UICraftNotification uiCraftNotification;
 
-	// Token: 0x040013EA RID: 5098
 	public static UICharacterNotification characterNotification;
 
-	// Token: 0x040013EB RID: 5099
 	public UICharacterNotification uiCharacterNotification;
 
-	// Token: 0x040013EC RID: 5100
 	public GameObject notifications;
 
-	// Token: 0x040013ED RID: 5101
 	public static UIReticle reticle;
 
-	// Token: 0x040013EE RID: 5102
 	public UIReticle uiReticle;
 
-	// Token: 0x040013EF RID: 5103
 	public static UICameraOverlay cameraOverlay;
 
-	// Token: 0x040013F0 RID: 5104
 	public UICameraOverlay uiCameraOverlay;
 
-	// Token: 0x040013F1 RID: 5105
 	public UISubMenu itemsMenu;
 
-	// Token: 0x040013F2 RID: 5106
 	public ButtonTutorial itemMenuTutorial;
 
-	// Token: 0x040013F3 RID: 5107
 	public PlayerInventoryCamera playerInventoryCamera;
 
-	// Token: 0x040013F4 RID: 5108
 	public UISubMenu pauseMenu;
 
-	// Token: 0x040013F5 RID: 5109
 	public Blackout blackout;
 
-	// Token: 0x040013F6 RID: 5110
 	public UIRootMenu rootMenu;
 
-	// Token: 0x040013F7 RID: 5111
 	private global::Rewired.Player rePlayer;
 }

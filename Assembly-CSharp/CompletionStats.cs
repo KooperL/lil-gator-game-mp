@@ -3,26 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200008E RID: 142
 public class CompletionStats : MonoBehaviour
 {
-	// Token: 0x17000018 RID: 24
-	// (get) Token: 0x06000257 RID: 599 RVA: 0x0000C7BD File Offset: 0x0000A9BD
+	// (get) Token: 0x060002AE RID: 686 RVA: 0x00004351 File Offset: 0x00002551
 	public static CompletionStats c
 	{
 		get
 		{
 			if (CompletionStats.instance == null)
 			{
-				CompletionStats.instance = Object.FindObjectOfType<CompletionStats>(true);
+				CompletionStats.instance = global::UnityEngine.Object.FindObjectOfType<CompletionStats>(true);
 			}
 			return CompletionStats.instance;
 		}
 	}
 
-	// Token: 0x17000019 RID: 25
-	// (get) Token: 0x06000258 RID: 600 RVA: 0x0000C7DC File Offset: 0x0000A9DC
-	// (set) Token: 0x06000259 RID: 601 RVA: 0x0000C7EE File Offset: 0x0000A9EE
+	// (get) Token: 0x060002AF RID: 687 RVA: 0x00004370 File Offset: 0x00002570
+	// (set) Token: 0x060002B0 RID: 688 RVA: 0x00004382 File Offset: 0x00002582
 	public static int PercentObjects
 	{
 		get
@@ -35,9 +32,8 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700001A RID: 26
-	// (get) Token: 0x0600025A RID: 602 RVA: 0x0000C800 File Offset: 0x0000AA00
-	// (set) Token: 0x0600025B RID: 603 RVA: 0x0000C812 File Offset: 0x0000AA12
+	// (get) Token: 0x060002B1 RID: 689 RVA: 0x00004394 File Offset: 0x00002594
+	// (set) Token: 0x060002B2 RID: 690 RVA: 0x000043A6 File Offset: 0x000025A6
 	public static int PercentCharacters
 	{
 		get
@@ -50,9 +46,8 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700001B RID: 27
-	// (get) Token: 0x0600025C RID: 604 RVA: 0x0000C824 File Offset: 0x0000AA24
-	// (set) Token: 0x0600025D RID: 605 RVA: 0x0000C836 File Offset: 0x0000AA36
+	// (get) Token: 0x060002B3 RID: 691 RVA: 0x000043B8 File Offset: 0x000025B8
+	// (set) Token: 0x060002B4 RID: 692 RVA: 0x000043CA File Offset: 0x000025CA
 	public static int PercentItems
 	{
 		get
@@ -65,13 +60,13 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600025E RID: 606 RVA: 0x0000C848 File Offset: 0x0000AA48
+	// Token: 0x060002B5 RID: 693 RVA: 0x000043DC File Offset: 0x000025DC
 	private void Awake()
 	{
 		this.townStates.onStateChange.AddListener(new UnityAction<int>(this.OnStateChange));
 	}
 
-	// Token: 0x0600025F RID: 607 RVA: 0x0000C866 File Offset: 0x0000AA66
+	// Token: 0x060002B6 RID: 694 RVA: 0x000043FA File Offset: 0x000025FA
 	private void OnStateChange(int newStateIndex)
 	{
 		if (newStateIndex == 4)
@@ -80,7 +75,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000260 RID: 608 RVA: 0x0000C874 File Offset: 0x0000AA74
+	// Token: 0x060002B7 RID: 695 RVA: 0x00020E54 File Offset: 0x0001F054
 	public void OnEnable()
 	{
 		CompletionStats.instance = this;
@@ -96,7 +91,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000261 RID: 609 RVA: 0x0000C8DE File Offset: 0x0000AADE
+	// Token: 0x060002B8 RID: 696 RVA: 0x00004406 File Offset: 0x00002606
 	[ContextMenu("Update all")]
 	private void Start()
 	{
@@ -104,7 +99,7 @@ public class CompletionStats : MonoBehaviour
 		this.UpdateCharacters(null, true);
 	}
 
-	// Token: 0x06000262 RID: 610 RVA: 0x0000C8F0 File Offset: 0x0000AAF0
+	// Token: 0x060002B9 RID: 697 RVA: 0x00020EC0 File Offset: 0x0001F0C0
 	private void OnDisable()
 	{
 		if (CompletionStats.instance == this)
@@ -127,7 +122,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000263 RID: 611 RVA: 0x0000C980 File Offset: 0x0000AB80
+	// Token: 0x060002BA RID: 698 RVA: 0x00020F50 File Offset: 0x0001F150
 	private void UpdateObjects()
 	{
 		if (CompletionStats.PercentObjects == 100)
@@ -157,7 +152,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000264 RID: 612 RVA: 0x0000CA18 File Offset: 0x0000AC18
+	// Token: 0x060002BB RID: 699 RVA: 0x00020FE8 File Offset: 0x0001F1E8
 	private void UpdateCharacters(object sender, bool wasUnlocked)
 	{
 		if (!wasUnlocked)
@@ -191,7 +186,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000265 RID: 613 RVA: 0x0000CAB4 File Offset: 0x0000ACB4
+	// Token: 0x060002BC RID: 700 RVA: 0x00021084 File Offset: 0x0001F284
 	public void UpdateItems()
 	{
 		if (CompletionStats.PercentItems == 100)
@@ -215,7 +210,7 @@ public class CompletionStats : MonoBehaviour
 		CompletionStats.PercentItems = num2;
 	}
 
-	// Token: 0x06000266 RID: 614 RVA: 0x0000CB21 File Offset: 0x0000AD21
+	// Token: 0x060002BD RID: 701 RVA: 0x00004416 File Offset: 0x00002616
 	public void CheckForFullCompletion()
 	{
 		if (CompletionStats.PercentObjects == 100 && CompletionStats.PercentCharacters == 100 && this.townStates.StateID == 4)
@@ -224,7 +219,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000267 RID: 615 RVA: 0x0000CB50 File Offset: 0x0000AD50
+	// Token: 0x060002BE RID: 702 RVA: 0x000210F4 File Offset: 0x0001F2F4
 	[ContextMenu("Count")]
 	public void CountPersistentObjects()
 	{
@@ -244,12 +239,12 @@ public class CompletionStats : MonoBehaviour
 		Debug.Log("Timed Challenges: " + num.ToString() + "  Breakables: " + num2.ToString());
 	}
 
-	// Token: 0x06000268 RID: 616 RVA: 0x0000CBB4 File Offset: 0x0000ADB4
+	// Token: 0x060002BF RID: 703 RVA: 0x00021158 File Offset: 0x0001F358
 	[ContextMenu("Find Non Quest Objects")]
 	public void FindNonQuestObjects()
 	{
 		List<PersistentObject> list = new List<PersistentObject>();
-		foreach (PersistentObject persistentObject in Object.FindObjectsOfType<PersistentObject>(false))
+		foreach (PersistentObject persistentObject in global::UnityEngine.Object.FindObjectsOfType<PersistentObject>(false))
 		{
 			if (persistentObject.isPersistent && !(persistentObject.GetComponentInParent<QuestStates>() != null) && !(persistentObject.GetComponentInParent<FetchQuest>() != null) && !(persistentObject.GetComponentInParent<DestroyQuest>() != null) && !(persistentObject.GetComponentInParent<MultiDestroyQuest>() != null) && !(persistentObject.GetComponentInParent<QuestReward>() != null) && !(persistentObject.GetComponentInParent<QuestRelated>() != null) && (!(persistentObject.GetComponentInParent<TimedChallenge>() != null) || !(persistentObject.GetComponent<TimedChallenge>() == null)) && (!(persistentObject.transform.parent != null) || !(persistentObject.transform.parent.parent != null) || !(persistentObject.transform.parent.parent.gameObject.name == "Flashback Region")) && !(persistentObject.gameObject.name == "Retainer Pickup"))
 			{
@@ -259,12 +254,12 @@ public class CompletionStats : MonoBehaviour
 		this.completionObjects = list.ToArray();
 	}
 
-	// Token: 0x06000269 RID: 617 RVA: 0x0000CCF0 File Offset: 0x0000AEF0
+	// Token: 0x060002C0 RID: 704 RVA: 0x00021294 File Offset: 0x0001F494
 	[ContextMenu("Find Completion Actors")]
 	public void FindCompletionActors()
 	{
 		List<DialogueActor> list = new List<DialogueActor>();
-		foreach (DialogueActor dialogueActor in Object.FindObjectsOfType<DialogueActor>(false))
+		foreach (DialogueActor dialogueActor in global::UnityEngine.Object.FindObjectsOfType<DialogueActor>(false))
 		{
 			if (!list.Contains(dialogueActor) && !dialogueActor.isPlayer && !dialogueActor.ignoreUnlock && dialogueActor.showNpcMarker && !(dialogueActor.profile == null) && !(dialogueActor.profile.id == "") && !dialogueActor.profile.startsUnlocked)
 			{
@@ -278,7 +273,7 @@ public class CompletionStats : MonoBehaviour
 		this.completionActors = list.ToArray();
 	}
 
-	// Token: 0x0600026A RID: 618 RVA: 0x0000CE9C File Offset: 0x0000B09C
+	// Token: 0x060002C1 RID: 705 RVA: 0x00021440 File Offset: 0x0001F640
 	[ContextMenu("Get Profiles From Actors")]
 	public void GetProfilesFromActors()
 	{
@@ -293,7 +288,7 @@ public class CompletionStats : MonoBehaviour
 		this.completionCharacters = list.ToArray();
 	}
 
-	// Token: 0x0600026B RID: 619 RVA: 0x0000CEF0 File Offset: 0x0000B0F0
+	// Token: 0x060002C2 RID: 706 RVA: 0x00021494 File Offset: 0x0001F694
 	[ContextMenu("Break All Breakables")]
 	public void BreakAllBreakables()
 	{
@@ -306,7 +301,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600026C RID: 620 RVA: 0x0000CF30 File Offset: 0x0000B130
+	// Token: 0x060002C3 RID: 707 RVA: 0x000214D4 File Offset: 0x0001F6D4
 	[ContextMenu("Break Most Breakables")]
 	public void BreakMostBreakables()
 	{
@@ -335,64 +330,51 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600026D RID: 621 RVA: 0x0000CF98 File Offset: 0x0000B198
+	// Token: 0x060002C4 RID: 708 RVA: 0x0002153C File Offset: 0x0001F73C
 	[ContextMenu("Break ALL Breakables")]
 	public void BreakALLBreakables()
 	{
-		BreakableObject[] array = Object.FindObjectsOfType<BreakableObject>(false);
+		BreakableObject[] array = global::UnityEngine.Object.FindObjectsOfType<BreakableObject>(false);
 		for (int i = 0; i < array.Length; i++)
 		{
 			array[i].Break(false, Vector3.zero, true);
 		}
 	}
 
-	// Token: 0x0600026E RID: 622 RVA: 0x0000CFCC File Offset: 0x0000B1CC
+	// Token: 0x060002C5 RID: 709 RVA: 0x00021570 File Offset: 0x0001F770
 	[ContextMenu("Collect All Rewards")]
 	public void CollectAllRewards()
 	{
-		QuestReward[] array = Object.FindObjectsOfType<QuestReward>();
+		QuestReward[] array = global::UnityEngine.Object.FindObjectsOfType<QuestReward>();
 		for (int i = 0; i < array.Length; i++)
 		{
 			array[i].GiveReward();
 		}
 	}
 
-	// Token: 0x0400030E RID: 782
 	private static CompletionStats instance;
 
-	// Token: 0x0400030F RID: 783
 	public PersistentObject[] completionObjects;
 
-	// Token: 0x04000310 RID: 784
 	public CharacterProfile[] completionCharacters;
 
-	// Token: 0x04000311 RID: 785
 	public DialogueActor[] completionActors;
 
-	// Token: 0x04000312 RID: 786
 	public ItemObject[] completionItems;
 
-	// Token: 0x04000313 RID: 787
 	private const string percentObjectKey = "Completion_Objects";
 
-	// Token: 0x04000314 RID: 788
 	private const string percentCharactersKey = "Completion_Characters";
 
-	// Token: 0x04000315 RID: 789
 	private const string percentItemsKey = "Completion_Items";
 
-	// Token: 0x04000316 RID: 790
 	public GameObject completeObjectsDialogue;
 
-	// Token: 0x04000317 RID: 791
 	public GameObject completeCharactersDialogue;
 
-	// Token: 0x04000318 RID: 792
 	public QuestStates townStates;
 
-	// Token: 0x04000319 RID: 793
 	public Achievement objectsAchievement;
 
-	// Token: 0x0400031A RID: 794
 	public Achievement friendsAchievement;
 }

@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020001C5 RID: 453
 public class StickToSurface : MonoBehaviour
 {
-	// Token: 0x06000954 RID: 2388 RVA: 0x0002C4FF File Offset: 0x0002A6FF
+	// Token: 0x06000B37 RID: 2871 RVA: 0x0000A914 File Offset: 0x00008B14
 	private void OnCollisionEnter(Collision collision)
 	{
 		if (this.isStuck)
@@ -19,7 +18,7 @@ public class StickToSurface : MonoBehaviour
 		this.Stick(collision);
 	}
 
-	// Token: 0x06000955 RID: 2389 RVA: 0x0002C530 File Offset: 0x0002A730
+	// Token: 0x06000B38 RID: 2872 RVA: 0x0003FFCC File Offset: 0x0003E1CC
 	private void Stick(Collision collision)
 	{
 		this.isStuck = true;
@@ -46,20 +45,20 @@ public class StickToSurface : MonoBehaviour
 		this.onStick.Invoke();
 	}
 
-	// Token: 0x06000956 RID: 2390 RVA: 0x0002C67F File Offset: 0x0002A87F
+	// Token: 0x06000B39 RID: 2873 RVA: 0x0000A942 File Offset: 0x00008B42
 	private void Unstick()
 	{
 		this.isStuck = false;
 		this.rigidbody.isKinematic = false;
 	}
 
-	// Token: 0x06000957 RID: 2391 RVA: 0x0002C694 File Offset: 0x0002A894
+	// Token: 0x06000B3A RID: 2874 RVA: 0x0004011C File Offset: 0x0003E31C
 	private bool ShouldUnstick()
 	{
 		return this.stuckCollider == null || this.stuckObject == null || !this.stuckObject.activeInHierarchy || (this.stuckRigidbody != null && !this.stuckRigidbody.isKinematic);
 	}
 
-	// Token: 0x06000958 RID: 2392 RVA: 0x0002C6F0 File Offset: 0x0002A8F0
+	// Token: 0x06000B3B RID: 2875 RVA: 0x00040178 File Offset: 0x0003E378
 	private void Update()
 	{
 		if (this.isStuck)
@@ -77,42 +76,29 @@ public class StickToSurface : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000BBA RID: 3002
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000BBB RID: 3003
 	public UnityEvent onStick;
 
-	// Token: 0x04000BBC RID: 3004
 	public UnityEvent onUnstick;
 
-	// Token: 0x04000BBD RID: 3005
 	public Vector3 stickNormal = Vector3.up;
 
-	// Token: 0x04000BBE RID: 3006
 	public float stickDistance = 0.1f;
 
-	// Token: 0x04000BBF RID: 3007
 	private bool isStuck;
 
-	// Token: 0x04000BC0 RID: 3008
 	private Collider stuckCollider;
 
-	// Token: 0x04000BC1 RID: 3009
 	private GameObject stuckObject;
 
-	// Token: 0x04000BC2 RID: 3010
 	private Rigidbody stuckRigidbody;
 
-	// Token: 0x04000BC3 RID: 3011
 	private bool isStuckToMovingCollider;
 
-	// Token: 0x04000BC4 RID: 3012
 	private Transform stuckTransform;
 
-	// Token: 0x04000BC5 RID: 3013
 	private Vector3 stuckLocalPosition;
 
-	// Token: 0x04000BC6 RID: 3014
 	private Quaternion stuckLocalRotation;
 }

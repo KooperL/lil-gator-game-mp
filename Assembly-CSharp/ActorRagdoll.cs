@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000A7 RID: 167
 public class ActorRagdoll : MonoBehaviour
 {
-	// Token: 0x0600032F RID: 815 RVA: 0x00012E18 File Offset: 0x00011018
+	// Token: 0x0600039A RID: 922 RVA: 0x00026FC8 File Offset: 0x000251C8
 	private void OnValidate()
 	{
 		if (this.dialogueActor == null)
@@ -21,7 +20,7 @@ public class ActorRagdoll : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000330 RID: 816 RVA: 0x00012E68 File Offset: 0x00011068
+	// Token: 0x0600039B RID: 923 RVA: 0x00027018 File Offset: 0x00025218
 	private void Start()
 	{
 		Rigidbody[] array = this.ragdollBodies;
@@ -31,7 +30,7 @@ public class ActorRagdoll : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000331 RID: 817 RVA: 0x00012E93 File Offset: 0x00011093
+	// Token: 0x0600039C RID: 924 RVA: 0x00004C4C File Offset: 0x00002E4C
 	[ContextMenu("Gather Rigidbodies")]
 	private void GatherRigidbodies()
 	{
@@ -40,7 +39,7 @@ public class ActorRagdoll : MonoBehaviour
 		this.rootRigidbody = ((componentInChildren != null) ? componentInChildren.transform : null);
 	}
 
-	// Token: 0x06000332 RID: 818 RVA: 0x00012EBC File Offset: 0x000110BC
+	// Token: 0x0600039D RID: 925 RVA: 0x00027044 File Offset: 0x00025244
 	[ContextMenu("Enable Rigidbody")]
 	public void EnableRagdoll()
 	{
@@ -55,7 +54,7 @@ public class ActorRagdoll : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000333 RID: 819 RVA: 0x00012F24 File Offset: 0x00011124
+	// Token: 0x0600039E RID: 926 RVA: 0x000270AC File Offset: 0x000252AC
 	[ContextMenu("Disable Rigidbody")]
 	public void DisableRagdoll()
 	{
@@ -73,21 +72,15 @@ public class ActorRagdoll : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000462 RID: 1122
 	public DialogueActor dialogueActor;
 
-	// Token: 0x04000463 RID: 1123
 	public Animator animator;
 
-	// Token: 0x04000464 RID: 1124
 	public Rigidbody[] ragdollBodies;
 
-	// Token: 0x04000465 RID: 1125
 	public Transform rootRigidbody;
 
-	// Token: 0x04000466 RID: 1126
 	public bool applyTransform;
 
-	// Token: 0x04000467 RID: 1127
 	public Vector3 initialPush = Vector3.back;
 }

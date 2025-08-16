@@ -3,11 +3,10 @@ using UnityEngine;
 
 namespace Rewired.Demos
 {
-	// Token: 0x0200034A RID: 842
 	[AddComponentMenu("")]
 	public class TouchControls1_ManipulateCube : MonoBehaviour
 	{
-		// Token: 0x060017CE RID: 6094 RVA: 0x000657F4 File Offset: 0x000639F4
+		// Token: 0x06001E32 RID: 7730 RVA: 0x000768B4 File Offset: 0x00074AB4
 		private void OnEnable()
 		{
 			if (!ReInput.isReady)
@@ -31,7 +30,7 @@ namespace Rewired.Demos
 			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnRotationReceivedY), UpdateLoopType.Update, InputActionEventType.AxisInactive, "RotateVertical");
 		}
 
-		// Token: 0x060017CF RID: 6095 RVA: 0x0006591C File Offset: 0x00063B1C
+		// Token: 0x06001E33 RID: 7731 RVA: 0x000769DC File Offset: 0x00074BDC
 		private void OnDisable()
 		{
 			if (!ReInput.isReady)
@@ -51,49 +50,49 @@ namespace Rewired.Demos
 			player.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnRotationReceivedY));
 		}
 
-		// Token: 0x060017D0 RID: 6096 RVA: 0x000659AD File Offset: 0x00063BAD
+		// Token: 0x06001E34 RID: 7732 RVA: 0x00017110 File Offset: 0x00015310
 		private void OnMoveReceivedX(InputActionEventData data)
 		{
 			this.OnMoveReceived(new Vector2(data.GetAxis(), 0f));
 		}
 
-		// Token: 0x060017D1 RID: 6097 RVA: 0x000659C6 File Offset: 0x00063BC6
+		// Token: 0x06001E35 RID: 7733 RVA: 0x00017129 File Offset: 0x00015329
 		private void OnMoveReceivedY(InputActionEventData data)
 		{
 			this.OnMoveReceived(new Vector2(0f, data.GetAxis()));
 		}
 
-		// Token: 0x060017D2 RID: 6098 RVA: 0x000659DF File Offset: 0x00063BDF
+		// Token: 0x06001E36 RID: 7734 RVA: 0x00017142 File Offset: 0x00015342
 		private void OnRotationReceivedX(InputActionEventData data)
 		{
 			this.OnRotationReceived(new Vector2(data.GetAxis(), 0f));
 		}
 
-		// Token: 0x060017D3 RID: 6099 RVA: 0x000659F8 File Offset: 0x00063BF8
+		// Token: 0x06001E37 RID: 7735 RVA: 0x0001715B File Offset: 0x0001535B
 		private void OnRotationReceivedY(InputActionEventData data)
 		{
 			this.OnRotationReceived(new Vector2(0f, data.GetAxis()));
 		}
 
-		// Token: 0x060017D4 RID: 6100 RVA: 0x00065A11 File Offset: 0x00063C11
+		// Token: 0x06001E38 RID: 7736 RVA: 0x00017174 File Offset: 0x00015374
 		private void OnCycleColor(InputActionEventData data)
 		{
 			this.OnCycleColor();
 		}
 
-		// Token: 0x060017D5 RID: 6101 RVA: 0x00065A19 File Offset: 0x00063C19
+		// Token: 0x06001E39 RID: 7737 RVA: 0x0001717C File Offset: 0x0001537C
 		private void OnCycleColorReverse(InputActionEventData data)
 		{
 			this.OnCycleColorReverse();
 		}
 
-		// Token: 0x060017D6 RID: 6102 RVA: 0x00065A21 File Offset: 0x00063C21
+		// Token: 0x06001E3A RID: 7738 RVA: 0x00017184 File Offset: 0x00015384
 		private void OnMoveReceived(Vector2 move)
 		{
 			base.transform.Translate(move * Time.deltaTime * this.moveSpeed, Space.World);
 		}
 
-		// Token: 0x060017D7 RID: 6103 RVA: 0x00065A4A File Offset: 0x00063C4A
+		// Token: 0x06001E3B RID: 7739 RVA: 0x000171AD File Offset: 0x000153AD
 		private void OnRotationReceived(Vector2 rotate)
 		{
 			rotate *= this.rotateSpeed;
@@ -101,7 +100,7 @@ namespace Rewired.Demos
 			base.transform.Rotate(Vector3.right, rotate.y, Space.World);
 		}
 
-		// Token: 0x060017D8 RID: 6104 RVA: 0x00065A8C File Offset: 0x00063C8C
+		// Token: 0x06001E3C RID: 7740 RVA: 0x00076A70 File Offset: 0x00074C70
 		private void OnCycleColor()
 		{
 			if (this.colors.Length == 0)
@@ -116,7 +115,7 @@ namespace Rewired.Demos
 			base.GetComponent<Renderer>().material.color = this.colors[this.currentColorIndex];
 		}
 
-		// Token: 0x060017D9 RID: 6105 RVA: 0x00065AEC File Offset: 0x00063CEC
+		// Token: 0x06001E3D RID: 7741 RVA: 0x00076AD0 File Offset: 0x00074CD0
 		private void OnCycleColorReverse()
 		{
 			if (this.colors.Length == 0)
@@ -131,16 +130,12 @@ namespace Rewired.Demos
 			base.GetComponent<Renderer>().material.color = this.colors[this.currentColorIndex];
 		}
 
-		// Token: 0x0400198C RID: 6540
 		public float rotateSpeed = 1f;
 
-		// Token: 0x0400198D RID: 6541
 		public float moveSpeed = 1f;
 
-		// Token: 0x0400198E RID: 6542
 		private int currentColorIndex;
 
-		// Token: 0x0400198F RID: 6543
 		private Color[] colors = new Color[]
 		{
 			Color.white,

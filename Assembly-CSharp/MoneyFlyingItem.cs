@@ -1,11 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200017C RID: 380
 public class MoneyFlyingItem : MonoBehaviour
 {
-	// Token: 0x1700006D RID: 109
-	// (get) Token: 0x060007D6 RID: 2006 RVA: 0x00026290 File Offset: 0x00024490
+	// (get) Token: 0x06000979 RID: 2425 RVA: 0x000092FA File Offset: 0x000074FA
 	private bool IsDelayed
 	{
 		get
@@ -14,15 +12,15 @@ public class MoneyFlyingItem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007D7 RID: 2007 RVA: 0x000262A8 File Offset: 0x000244A8
+	// Token: 0x0600097A RID: 2426 RVA: 0x0003AAE0 File Offset: 0x00038CE0
 	private void Start()
 	{
-		this.velocity = (Random.insideUnitSphere + Vector3.up) * this.initialSpeed;
+		this.velocity = (global::UnityEngine.Random.insideUnitSphere + Vector3.up) * this.initialSpeed;
 		this.spawnTime = Time.time;
-		this.rotation = Random.insideUnitSphere * this.maxRotationSpeed;
+		this.rotation = global::UnityEngine.Random.insideUnitSphere * this.maxRotationSpeed;
 	}
 
-	// Token: 0x060007D8 RID: 2008 RVA: 0x000262F8 File Offset: 0x000244F8
+	// Token: 0x0600097B RID: 2427 RVA: 0x0003AB30 File Offset: 0x00038D30
 	private void Update()
 	{
 		if (!this.IsDelayed)
@@ -50,33 +48,25 @@ public class MoneyFlyingItem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007D9 RID: 2009 RVA: 0x00026408 File Offset: 0x00024608
+	// Token: 0x0600097C RID: 2428 RVA: 0x000049DF File Offset: 0x00002BDF
 	private void Collect()
 	{
-		Object.Destroy(base.gameObject);
+		global::UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x04000A08 RID: 2568
 	private const float acceleration = 20f;
 
-	// Token: 0x04000A09 RID: 2569
 	private float initialSpeed = 10f;
 
-	// Token: 0x04000A0A RID: 2570
 	private Vector3 velocity;
 
-	// Token: 0x04000A0B RID: 2571
 	public int cents;
 
-	// Token: 0x04000A0C RID: 2572
 	private float delay = 0.25f;
 
-	// Token: 0x04000A0D RID: 2573
 	private float spawnTime;
 
-	// Token: 0x04000A0E RID: 2574
 	private Vector3 rotation;
 
-	// Token: 0x04000A0F RID: 2575
 	public float maxRotationSpeed = 30f;
 }

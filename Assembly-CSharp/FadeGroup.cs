@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200010D RID: 269
 public class FadeGroup : MonoBehaviour
 {
-	// Token: 0x06000581 RID: 1409 RVA: 0x0001D044 File Offset: 0x0001B244
+	// Token: 0x060006DF RID: 1759 RVA: 0x00032BAC File Offset: 0x00030DAC
 	[ContextMenu("Find Renderers")]
 	public void FindRenderers()
 	{
@@ -43,7 +42,7 @@ public class FadeGroup : MonoBehaviour
 		this.renderers = list.ToArray();
 	}
 
-	// Token: 0x06000582 RID: 1410 RVA: 0x0001D0F1 File Offset: 0x0001B2F1
+	// Token: 0x060006E0 RID: 1760 RVA: 0x00006F86 File Offset: 0x00005186
 	private void Start()
 	{
 		this.UpdateFade();
@@ -53,7 +52,7 @@ public class FadeGroup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000583 RID: 1411 RVA: 0x0001D10D File Offset: 0x0001B30D
+	// Token: 0x060006E1 RID: 1761 RVA: 0x00006FA2 File Offset: 0x000051A2
 	public void FadeIn()
 	{
 		base.gameObject.SetActive(true);
@@ -61,14 +60,14 @@ public class FadeGroup : MonoBehaviour
 		this.UpdateFade();
 	}
 
-	// Token: 0x06000584 RID: 1412 RVA: 0x0001D12D File Offset: 0x0001B32D
+	// Token: 0x060006E2 RID: 1762 RVA: 0x00006FC2 File Offset: 0x000051C2
 	public void FadeOut()
 	{
 		this.fadeTarget = 0f;
 		this.UpdateFade();
 	}
 
-	// Token: 0x06000585 RID: 1413 RVA: 0x0001D140 File Offset: 0x0001B340
+	// Token: 0x060006E3 RID: 1763 RVA: 0x00032C5C File Offset: 0x00030E5C
 	private void Update()
 	{
 		if (this.fade != this.fadeTarget)
@@ -83,7 +82,7 @@ public class FadeGroup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000586 RID: 1414 RVA: 0x0001D1C4 File Offset: 0x0001B3C4
+	// Token: 0x060006E4 RID: 1764 RVA: 0x00032CE0 File Offset: 0x00030EE0
 	private void Initialize()
 	{
 		List<Material> list = new List<Material>();
@@ -103,7 +102,7 @@ public class FadeGroup : MonoBehaviour
 		this.isInitialized = true;
 	}
 
-	// Token: 0x06000587 RID: 1415 RVA: 0x0001D250 File Offset: 0x0001B450
+	// Token: 0x060006E5 RID: 1765 RVA: 0x00032D6C File Offset: 0x00030F6C
 	private void UpdateFade()
 	{
 		if (!this.isInitialized)
@@ -122,46 +121,32 @@ public class FadeGroup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400078D RID: 1933
 	private static FadeGroup currentGroup;
 
-	// Token: 0x0400078E RID: 1934
 	public FadeRenderer[] fadeRenderers;
 
-	// Token: 0x0400078F RID: 1935
 	public Renderer[] renderers;
 
-	// Token: 0x04000790 RID: 1936
 	private Material[] dynamicMaterials;
 
-	// Token: 0x04000791 RID: 1937
 	private bool isInitialized;
 
-	// Token: 0x04000792 RID: 1938
 	public float fade;
 
-	// Token: 0x04000793 RID: 1939
 	public bool fadeOnStart;
 
-	// Token: 0x04000794 RID: 1940
 	[ConditionalHide("fadeOnStart", true)]
 	public float initialFadeTarget;
 
-	// Token: 0x04000795 RID: 1941
 	public float fadeInSpeed = 0.25f;
 
-	// Token: 0x04000796 RID: 1942
 	public float fadeOutSpeed = 0.5f;
 
-	// Token: 0x04000797 RID: 1943
 	private float fadeTarget;
 
-	// Token: 0x04000798 RID: 1944
 	public float maxFade = 0.9f;
 
-	// Token: 0x04000799 RID: 1945
 	public float maxObjectFade = 0.8f;
 
-	// Token: 0x0400079A RID: 1946
 	private int fadeID = Shader.PropertyToID("_Fade");
 }

@@ -2,16 +2,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000134 RID: 308
 public class BreakableObjectMulti : BreakableObject
 {
-	// Token: 0x06000661 RID: 1633 RVA: 0x00020FA4 File Offset: 0x0001F1A4
+	// Token: 0x060007C6 RID: 1990 RVA: 0x00035F20 File Offset: 0x00034120
 	private void BreakStageIndex(int stageIndex)
 	{
 		BreakableObjectMulti.BreakStage breakStage = this.breakingStages[stageIndex];
 		if (breakStage.breakingPrefab != null)
 		{
-			Object.Instantiate<GameObject>(breakStage.breakingPrefab, base.transform.position, base.transform.rotation);
+			global::UnityEngine.Object.Instantiate<GameObject>(breakStage.breakingPrefab, base.transform.position, base.transform.rotation);
 		}
 		if (breakStage.staticPieces.Length != 0)
 		{
@@ -23,7 +22,7 @@ public class BreakableObjectMulti : BreakableObject
 		}
 	}
 
-	// Token: 0x06000662 RID: 1634 RVA: 0x00021018 File Offset: 0x0001F218
+	// Token: 0x060007C7 RID: 1991 RVA: 0x00035F94 File Offset: 0x00034194
 	public override void Break(bool fromAttachment, Vector3 velocity, bool isSturdy = false)
 	{
 		if (!this.isBroken)
@@ -64,23 +63,17 @@ public class BreakableObjectMulti : BreakableObject
 		}
 	}
 
-	// Token: 0x0400089B RID: 2203
 	public BreakableObjectMulti.BreakStage[] breakingStages;
 
-	// Token: 0x0400089C RID: 2204
 	public int breakingStage;
 
-	// Token: 0x0400089D RID: 2205
 	public UnityEvent onBreakPiece;
 
-	// Token: 0x020003B2 RID: 946
 	[Serializable]
 	public struct BreakStage
 	{
-		// Token: 0x04001B85 RID: 7045
 		public GameObject[] staticPieces;
 
-		// Token: 0x04001B86 RID: 7046
 		public GameObject breakingPrefab;
 	}
 }

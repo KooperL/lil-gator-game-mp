@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001A8 RID: 424
 public class WaterPhysics : MonoBehaviour
 {
-	// Token: 0x060008BC RID: 2236 RVA: 0x000292D7 File Offset: 0x000274D7
+	// Token: 0x06000A87 RID: 2695 RVA: 0x0000A083 File Offset: 0x00008283
 	private void Awake()
 	{
 		if (this.rigidbody == null)
@@ -15,7 +14,7 @@ public class WaterPhysics : MonoBehaviour
 		this.initialAngularDrag = this.rigidbody.angularDrag;
 	}
 
-	// Token: 0x060008BD RID: 2237 RVA: 0x00029315 File Offset: 0x00027515
+	// Token: 0x06000A88 RID: 2696 RVA: 0x0000A0C1 File Offset: 0x000082C1
 	private void Start()
 	{
 		if (this.accurateCollider == null || !this.accurateCollider.enabled)
@@ -25,26 +24,26 @@ public class WaterPhysics : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x060008BE RID: 2238 RVA: 0x00029345 File Offset: 0x00027545
+	// Token: 0x06000A89 RID: 2697 RVA: 0x0000A0F1 File Offset: 0x000082F1
 	private void OnDisable()
 	{
 		this.waterPlaneHeight = -100f;
 		this.rigidbody.drag = this.initialDrag;
 	}
 
-	// Token: 0x060008BF RID: 2239 RVA: 0x00029363 File Offset: 0x00027563
+	// Token: 0x06000A8A RID: 2698 RVA: 0x0000A10F File Offset: 0x0000830F
 	private void OnTriggerEnter(Collider other)
 	{
 		this.WaterTrigger(other);
 	}
 
-	// Token: 0x060008C0 RID: 2240 RVA: 0x0002936C File Offset: 0x0002756C
+	// Token: 0x06000A8B RID: 2699 RVA: 0x0000A10F File Offset: 0x0000830F
 	private void OnTriggerStay(Collider other)
 	{
 		this.WaterTrigger(other);
 	}
 
-	// Token: 0x060008C1 RID: 2241 RVA: 0x00029378 File Offset: 0x00027578
+	// Token: 0x06000A8C RID: 2700 RVA: 0x0003D51C File Offset: 0x0003B71C
 	private void WaterTrigger(Collider collider)
 	{
 		if (collider.gameObject.layer != 4)
@@ -71,7 +70,7 @@ public class WaterPhysics : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x060008C2 RID: 2242 RVA: 0x00029408 File Offset: 0x00027608
+	// Token: 0x06000A8D RID: 2701 RVA: 0x0003D5AC File Offset: 0x0003B7AC
 	private void FixedUpdate()
 	{
 		this.stepsSinceTriggered++;
@@ -118,64 +117,45 @@ public class WaterPhysics : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000AC0 RID: 2752
 	public const int waterLayer = 4;
 
-	// Token: 0x04000AC1 RID: 2753
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000AC2 RID: 2754
 	public Collider collider;
 
-	// Token: 0x04000AC3 RID: 2755
 	public Collider accurateCollider;
 
-	// Token: 0x04000AC4 RID: 2756
 	public bool activateAutomatically = true;
 
-	// Token: 0x04000AC5 RID: 2757
 	[Range(0f, 2f)]
 	public float buoyancy = 1.1f;
 
-	// Token: 0x04000AC6 RID: 2758
 	public Vector3 buoyancyOffset = Vector3.up;
 
-	// Token: 0x04000AC7 RID: 2759
 	[ReadOnly]
 	public Vector3 centerOfBuoyancy;
 
-	// Token: 0x04000AC8 RID: 2760
 	private float initialDrag;
 
-	// Token: 0x04000AC9 RID: 2761
 	[Range(0f, 5f)]
 	public float drag = 2f;
 
-	// Token: 0x04000ACA RID: 2762
 	private float initialAngularDrag;
 
-	// Token: 0x04000ACB RID: 2763
 	[Range(0f, 5f)]
 	public float angularDrag = 1f;
 
-	// Token: 0x04000ACC RID: 2764
 	private Water water;
 
-	// Token: 0x04000ACD RID: 2765
 	private float waterPlaneHeight;
 
-	// Token: 0x04000ACE RID: 2766
 	public float rippleRate = 2f;
 
-	// Token: 0x04000ACF RID: 2767
 	private int stepsSinceTriggered;
 
-	// Token: 0x04000AD0 RID: 2768
 	private int stepsSinceSubmerged;
 
-	// Token: 0x04000AD1 RID: 2769
 	private float rippleCount;
 
-	// Token: 0x04000AD2 RID: 2770
 	private float splashTime = -1f;
 }

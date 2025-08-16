@@ -3,16 +3,15 @@ using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.U2D;
 
-// Token: 0x020001C9 RID: 457
 public class ItemGlasses : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x0600096C RID: 2412 RVA: 0x0002CB08 File Offset: 0x0002AD08
+	// Token: 0x06000B4F RID: 2895 RVA: 0x0004043C File Offset: 0x0003E63C
 	public static void SetPixelFilterEnabled(bool isEnabled)
 	{
 		ItemGlasses.pixelPerfectCamera = MainCamera.p;
 		if (ItemGlasses.pixelPerfectCamera == null)
 		{
-			ItemGlasses.pixelPerfectCamera = Object.FindObjectOfType<PixelPerfectCamera>();
+			ItemGlasses.pixelPerfectCamera = global::UnityEngine.Object.FindObjectOfType<PixelPerfectCamera>();
 		}
 		ItemGlasses.pixelPerfectCamera.enabled = isEnabled;
 		CameraSpaceCanvas c = CameraSpaceCanvas.c;
@@ -33,7 +32,7 @@ public class ItemGlasses : MonoBehaviour, IItemBehaviour
 		ItemGlasses.ppLayer.enabled = !isEnabled;
 	}
 
-	// Token: 0x0600096D RID: 2413 RVA: 0x0002CBA0 File Offset: 0x0002ADA0
+	// Token: 0x06000B50 RID: 2896 RVA: 0x0000AA92 File Offset: 0x00008C92
 	private void Start()
 	{
 		ItemGlasses.SetPixelFilterEnabled(true);
@@ -41,39 +40,36 @@ public class ItemGlasses : MonoBehaviour, IItemBehaviour
 		this.itemManager.bareHead.SetActive(true);
 	}
 
-	// Token: 0x0600096E RID: 2414 RVA: 0x0002CBC4 File Offset: 0x0002ADC4
+	// Token: 0x06000B51 RID: 2897 RVA: 0x0000AAB6 File Offset: 0x00008CB6
 	public void OnRemove()
 	{
 		ItemGlasses.SetPixelFilterEnabled(false);
 		this.itemManager.bareHead.SetActive(false);
 	}
 
-	// Token: 0x0600096F RID: 2415 RVA: 0x0002CBDD File Offset: 0x0002ADDD
+	// Token: 0x06000B52 RID: 2898 RVA: 0x00002229 File Offset: 0x00000429
 	public void Cancel()
 	{
 	}
 
-	// Token: 0x06000970 RID: 2416 RVA: 0x0002CBDF File Offset: 0x0002ADDF
+	// Token: 0x06000B53 RID: 2899 RVA: 0x00002229 File Offset: 0x00000429
 	public void Input(bool isDown, bool isHeld)
 	{
 	}
 
-	// Token: 0x06000971 RID: 2417 RVA: 0x0002CBE1 File Offset: 0x0002ADE1
+	// Token: 0x06000B54 RID: 2900 RVA: 0x00002229 File Offset: 0x00000429
 	public void SetEquipped(bool isEquipped)
 	{
 	}
 
-	// Token: 0x06000972 RID: 2418 RVA: 0x0002CBE3 File Offset: 0x0002ADE3
+	// Token: 0x06000B55 RID: 2901 RVA: 0x00002229 File Offset: 0x00000429
 	public void SetIndex(int index)
 	{
 	}
 
-	// Token: 0x04000BDB RID: 3035
 	private static PixelPerfectCamera pixelPerfectCamera;
 
-	// Token: 0x04000BDC RID: 3036
 	private static PostProcessLayer ppLayer;
 
-	// Token: 0x04000BDD RID: 3037
 	private PlayerItemManager itemManager;
 }

@@ -2,27 +2,23 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002E9 RID: 745
 public class UITextSize : MonoBehaviour
 {
-	// Token: 0x06000FD4 RID: 4052 RVA: 0x0004B98E File Offset: 0x00049B8E
+	// Token: 0x06001360 RID: 4960 RVA: 0x00010604 File Offset: 0x0000E804
 	private void Awake()
 	{
 		this.text = base.GetComponent<Text>();
 		this.parentTransform = base.transform.parent as RectTransform;
 	}
 
-	// Token: 0x06000FD5 RID: 4053 RVA: 0x0004B9B2 File Offset: 0x00049BB2
+	// Token: 0x06001361 RID: 4961 RVA: 0x00002229 File Offset: 0x00000429
 	private void Start()
 	{
 	}
 
-	// Token: 0x040014B6 RID: 5302
 	private Text text;
 
-	// Token: 0x040014B7 RID: 5303
 	private RectTransform parentTransform;
 
-	// Token: 0x040014B8 RID: 5304
 	public Vector2 wrapping;
 }

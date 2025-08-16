@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001B2 RID: 434
 public class HandIK : MonoBehaviour
 {
-	// Token: 0x060008F8 RID: 2296 RVA: 0x0002AF28 File Offset: 0x00029128
+	// Token: 0x06000AC9 RID: 2761 RVA: 0x0000A43B File Offset: 0x0000863B
 	public void SetEnabled(bool isLeft, bool isEnabled)
 	{
 		if (isLeft)
@@ -15,7 +14,7 @@ public class HandIK : MonoBehaviour
 		this.isRightEnabled = isEnabled;
 	}
 
-	// Token: 0x060008F9 RID: 2297 RVA: 0x0002AF3C File Offset: 0x0002913C
+	// Token: 0x06000ACA RID: 2762 RVA: 0x0000A44F File Offset: 0x0000864F
 	public void SetOverride(bool isLeft, Vector3 position, Transform anchor)
 	{
 		if (isLeft)
@@ -30,7 +29,7 @@ public class HandIK : MonoBehaviour
 		this.overrideRightAnchor = anchor;
 	}
 
-	// Token: 0x060008FA RID: 2298 RVA: 0x0002AF6C File Offset: 0x0002916C
+	// Token: 0x06000ACB RID: 2763 RVA: 0x0000A47F File Offset: 0x0000867F
 	public void ClearOverride(bool isLeft)
 	{
 		if (isLeft)
@@ -43,13 +42,13 @@ public class HandIK : MonoBehaviour
 		this.overrideRightAnchor = null;
 	}
 
-	// Token: 0x060008FB RID: 2299 RVA: 0x0002AF8E File Offset: 0x0002918E
+	// Token: 0x06000ACC RID: 2764 RVA: 0x0000A4A1 File Offset: 0x000086A1
 	private void Awake()
 	{
 		this.animator = base.GetComponent<Animator>();
 	}
 
-	// Token: 0x060008FC RID: 2300 RVA: 0x0002AF9C File Offset: 0x0002919C
+	// Token: 0x06000ACD RID: 2765 RVA: 0x0003EE04 File Offset: 0x0003D004
 	private void OnAnimatorIK()
 	{
 		if (!this.isRightEnabled)
@@ -100,7 +99,7 @@ public class HandIK : MonoBehaviour
 		this.animator.SetIKPosition(AvatarIKGoal.LeftHand, this.leftPoint);
 	}
 
-	// Token: 0x060008FD RID: 2301 RVA: 0x0002B1D0 File Offset: 0x000293D0
+	// Token: 0x06000ACE RID: 2766 RVA: 0x0003F038 File Offset: 0x0003D238
 	private void SetHandIK(string oppositeFoot, bool isHandBusy, ref bool hasPoint, Transform handTransform, Vector3 origin, ref float counter, ref float handWeight, ref Vector3 grabPoint, float smoothWeight)
 	{
 		if (((Game.HasControl && this.movement.IsGrounded) || (this.movement.IsClimbing && this.movement.Stamina > 0f)) && this.animator.GetFloat(oppositeFoot) < 0.1f && !isHandBusy)
@@ -134,130 +133,88 @@ public class HandIK : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000B3B RID: 2875
 	private static readonly int RightHandID = Animator.StringToHash("RightHand");
 
-	// Token: 0x04000B3C RID: 2876
 	private static readonly int LeftHandID = Animator.StringToHash("LeftHand");
 
-	// Token: 0x04000B3D RID: 2877
 	private Animator animator;
 
-	// Token: 0x04000B3E RID: 2878
 	public LayerMask layerMask;
 
-	// Token: 0x04000B3F RID: 2879
 	public Transform chest;
 
-	// Token: 0x04000B40 RID: 2880
 	public Transform rightArm;
 
-	// Token: 0x04000B41 RID: 2881
 	public Transform rightHand;
 
-	// Token: 0x04000B42 RID: 2882
 	public Transform leftArm;
 
-	// Token: 0x04000B43 RID: 2883
 	public Transform leftHand;
 
-	// Token: 0x04000B44 RID: 2884
 	public Vector3 rightOrigin;
 
-	// Token: 0x04000B45 RID: 2885
 	public Vector3 leftOrigin;
 
-	// Token: 0x04000B46 RID: 2886
 	public Vector3 rightArmDirection;
 
-	// Token: 0x04000B47 RID: 2887
 	public Vector3 leftArmDirection;
 
-	// Token: 0x04000B48 RID: 2888
 	public float castLength;
 
-	// Token: 0x04000B49 RID: 2889
 	public float armCastThickness;
 
-	// Token: 0x04000B4A RID: 2890
 	private float rightHandWeight;
 
-	// Token: 0x04000B4B RID: 2891
 	private float leftHandWeight;
 
-	// Token: 0x04000B4C RID: 2892
 	private float rightCounter;
 
-	// Token: 0x04000B4D RID: 2893
 	private float leftCounter;
 
-	// Token: 0x04000B4E RID: 2894
 	public float counterThreshold = 0.5f;
 
-	// Token: 0x04000B4F RID: 2895
 	private float rightSmoothWeight;
 
-	// Token: 0x04000B50 RID: 2896
 	private float rightVelocity;
 
-	// Token: 0x04000B51 RID: 2897
 	private float leftSmoothWeight;
 
-	// Token: 0x04000B52 RID: 2898
 	private float leftVelocity;
 
-	// Token: 0x04000B53 RID: 2899
 	private RaycastHit hit;
 
-	// Token: 0x04000B54 RID: 2900
 	private RaycastHit leftHit;
 
-	// Token: 0x04000B55 RID: 2901
 	private Vector3 rightPoint;
 
-	// Token: 0x04000B56 RID: 2902
 	private bool hasRightPoint;
 
-	// Token: 0x04000B57 RID: 2903
 	private Vector3 leftPoint;
 
-	// Token: 0x04000B58 RID: 2904
 	private bool hasLeftPoint;
 
-	// Token: 0x04000B59 RID: 2905
 	public PlayerMovement movement;
 
-	// Token: 0x04000B5A RID: 2906
 	public PlayerItemManager itemManager;
 
-	// Token: 0x04000B5B RID: 2907
 	[ReadOnly]
 	public ActorHandIK actorHandIK;
 
-	// Token: 0x04000B5C RID: 2908
 	private bool overrideLeft;
 
-	// Token: 0x04000B5D RID: 2909
 	private bool overrideRight;
 
-	// Token: 0x04000B5E RID: 2910
 	private Vector3 overrideLeftPosition;
 
-	// Token: 0x04000B5F RID: 2911
 	private Vector3 overrideRightPosition;
 
-	// Token: 0x04000B60 RID: 2912
 	private Transform overrideLeftAnchor;
 
-	// Token: 0x04000B61 RID: 2913
 	private Transform overrideRightAnchor;
 
-	// Token: 0x04000B62 RID: 2914
 	private bool isLeftEnabled = true;
 
-	// Token: 0x04000B63 RID: 2915
 	private bool isRightEnabled = true;
 
-	// Token: 0x04000B64 RID: 2916
 	public ICustomHandIKPositions customIKPositions;
 }

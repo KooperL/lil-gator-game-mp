@@ -1,10 +1,9 @@
 ﻿using System;
 
-// Token: 0x0200011F RID: 287
 [Serializable]
 public struct GameSaveDataInfo
 {
-	// Token: 0x060005F1 RID: 1521 RVA: 0x0001F1E4 File Offset: 0x0001D3E4
+	// Token: 0x06000755 RID: 1877 RVA: 0x000346E4 File Offset: 0x000328E4
 	public GameSaveDataInfo(GameSaveData saveData)
 	{
 		this.v = saveData.v;
@@ -117,66 +116,45 @@ public struct GameSaveDataInfo
 		}
 	}
 
-	// Token: 0x04000828 RID: 2088
 	public int v;
 
-	// Token: 0x04000829 RID: 2089
 	public bool isStarted;
 
-	// Token: 0x0400082A RID: 2090
 	public string playerName;
 
-	// Token: 0x0400082B RID: 2091
 	public int craftingMaterials;
 
-	// Token: 0x0400082C RID: 2092
 	public int population;
 
-	// Token: 0x0400082D RID: 2093
 	public bool collectedCraftingMaterials;
 
-	// Token: 0x0400082E RID: 2094
 	public int bracelets;
 
-	// Token: 0x0400082F RID: 2095
 	public bool martin;
 
-	// Token: 0x04000830 RID: 2096
 	public bool jill;
 
-	// Token: 0x04000831 RID: 2097
 	public bool avery;
 
-	// Token: 0x04000832 RID: 2098
 	public bool sis;
 
-	// Token: 0x04000833 RID: 2099
 	public bool tom;
 
-	// Token: 0x04000834 RID: 2100
 	public int sword;
 
-	// Token: 0x04000835 RID: 2101
 	public int shield;
 
-	// Token: 0x04000836 RID: 2102
 	public int hat;
 
-	// Token: 0x04000837 RID: 2103
 	public int item;
 
-	// Token: 0x04000838 RID: 2104
 	public int itemR;
 
-	// Token: 0x04000839 RID: 2105
 	public int percentObjects;
 
-	// Token: 0x0400083A RID: 2106
 	public int percentCharacters;
 
-	// Token: 0x0400083B RID: 2107
 	public int percentItems;
 
-	// Token: 0x0400083C RID: 2108
 	public int newGameIndex;
 }

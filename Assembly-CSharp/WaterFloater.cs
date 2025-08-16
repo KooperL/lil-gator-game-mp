@@ -1,20 +1,19 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000284 RID: 644
 public class WaterFloater : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06000DBB RID: 3515 RVA: 0x000427AC File Offset: 0x000409AC
+	// Token: 0x060010D2 RID: 4306 RVA: 0x000567BC File Offset: 0x000549BC
 	private void Awake()
 	{
 		this.initialPosition = base.transform.position;
-		this.positionSeed = Random.value * 1000f;
-		this.rotationSeed = Random.value * 1000f;
-		this.rotation = new Vector3(0f, 360f * Random.value, 0f);
+		this.positionSeed = global::UnityEngine.Random.value * 1000f;
+		this.rotationSeed = global::UnityEngine.Random.value * 1000f;
+		this.rotation = new Vector3(0f, 360f * global::UnityEngine.Random.value, 0f);
 		this.height = this.initialPosition.y;
 	}
 
-	// Token: 0x06000DBC RID: 3516 RVA: 0x00042820 File Offset: 0x00040A20
+	// Token: 0x060010D3 RID: 4307 RVA: 0x00056830 File Offset: 0x00054A30
 	private void OnEnable()
 	{
 		this.isInRange = Vector3.Distance(MainCamera.t.position, base.transform.position) <= 55f;
@@ -26,7 +25,7 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEveryNonFixed.Add(this);
 	}
 
-	// Token: 0x06000DBD RID: 3517 RVA: 0x00042876 File Offset: 0x00040A76
+	// Token: 0x060010D4 RID: 4308 RVA: 0x0000E5DC File Offset: 0x0000C7DC
 	private void OnDisable()
 	{
 		if (this.isInRange)
@@ -37,7 +36,7 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x06000DBE RID: 3518 RVA: 0x0004289C File Offset: 0x00040A9C
+	// Token: 0x060010D5 RID: 4309 RVA: 0x00056888 File Offset: 0x00054A88
 	public void ManagedUpdate()
 	{
 		if (this.isInRange != Vector3.Distance(MainCamera.t.position, base.transform.position) <= 55f)
@@ -57,7 +56,7 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		this.UpdateFloatingPosition();
 	}
 
-	// Token: 0x06000DBF RID: 3519 RVA: 0x00042924 File Offset: 0x00040B24
+	// Token: 0x060010D6 RID: 4310 RVA: 0x00056910 File Offset: 0x00054B10
 	private void UpdateFloatingPosition()
 	{
 		Vector2 vector = this.positionVariance * PerlinUtil.Perlin2(this.positionSeed, Time.time * this.positionPerlinSpeed);
@@ -72,42 +71,29 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		base.transform.position = vector2;
 	}
 
-	// Token: 0x0400120D RID: 4621
 	private static Vector3[] sampledPositions = new Vector3[4];
 
-	// Token: 0x0400120E RID: 4622
 	public MovingWater water;
 
-	// Token: 0x0400120F RID: 4623
 	private bool isInRange;
 
-	// Token: 0x04001210 RID: 4624
 	public float positionVariance = 2f;
 
-	// Token: 0x04001211 RID: 4625
 	public float positionPerlinSpeed = 0.25f;
 
-	// Token: 0x04001212 RID: 4626
 	private Vector3 initialPosition;
 
-	// Token: 0x04001213 RID: 4627
 	private float positionSeed;
 
-	// Token: 0x04001214 RID: 4628
 	private Vector3 rotation;
 
-	// Token: 0x04001215 RID: 4629
 	public float rotationVariance = 40f;
 
-	// Token: 0x04001216 RID: 4630
 	public float rotationPerlinSpeed = 0.25f;
 
-	// Token: 0x04001217 RID: 4631
 	private float rotationSeed;
 
-	// Token: 0x04001218 RID: 4632
 	private float height;
 
-	// Token: 0x04001219 RID: 4633
 	private float heightVel;
 }

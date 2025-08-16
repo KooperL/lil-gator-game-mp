@@ -7,17 +7,16 @@ using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// Token: 0x02000056 RID: 86
 public class LoadLauncher : MonoBehaviour
 {
-	// Token: 0x0600013F RID: 319 RVA: 0x00007B99 File Offset: 0x00005D99
+	// Token: 0x0600016C RID: 364 RVA: 0x000033D3 File Offset: 0x000015D3
 	private void Start()
 	{
-		Object.DontDestroyOnLoad(base.gameObject);
+		global::UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
 		base.StartCoroutine(this.RunLoadLauncher());
 	}
 
-	// Token: 0x06000140 RID: 320 RVA: 0x00007BB3 File Offset: 0x00005DB3
+	// Token: 0x0600016D RID: 365 RVA: 0x000033ED File Offset: 0x000015ED
 	private IEnumerator RunLoadLauncher()
 	{
 		AsyncOperationHandle<SceneInstance> asyncOperationHandle = Addressables.LoadSceneAsync(this.sceneToLoad, LoadSceneMode.Single, true, 100);
@@ -31,16 +30,13 @@ public class LoadLauncher : MonoBehaviour
 			color.a = num;
 			this.backgroundImage.color = color;
 		}
-		Object.Destroy(base.gameObject);
+		global::UnityEngine.Object.Destroy(base.gameObject);
 		yield break;
 	}
 
-	// Token: 0x040001BE RID: 446
 	public AssetReference sceneToLoad;
 
-	// Token: 0x040001BF RID: 447
 	public Image backgroundImage;
 
-	// Token: 0x040001C0 RID: 448
 	public GameObject loadingIcon;
 }

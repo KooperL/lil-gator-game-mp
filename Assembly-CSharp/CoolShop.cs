@@ -2,20 +2,19 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000212 RID: 530
 public class CoolShop : MonoBehaviour
 {
-	// Token: 0x06000B78 RID: 2936 RVA: 0x00038581 File Offset: 0x00036781
+	// Token: 0x06000DFB RID: 3579 RVA: 0x00002229 File Offset: 0x00000429
 	public void Introduction()
 	{
 	}
 
-	// Token: 0x06000B79 RID: 2937 RVA: 0x00038583 File Offset: 0x00036783
+	// Token: 0x06000DFC RID: 3580 RVA: 0x00002229 File Offset: 0x00000429
 	public void ShopLauncher()
 	{
 	}
 
-	// Token: 0x06000B7A RID: 2938 RVA: 0x00038585 File Offset: 0x00036785
+	// Token: 0x06000DFD RID: 3581 RVA: 0x0000C89A File Offset: 0x0000AA9A
 	private IEnumerator RunConversation()
 	{
 		if (this.stateMachine.StateID == 0)
@@ -44,15 +43,11 @@ public class CoolShop : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04000F36 RID: 3894
 	public QuestStates stateMachine;
 
-	// Token: 0x04000F37 RID: 3895
 	public Shop shop;
 
-	// Token: 0x04000F38 RID: 3896
 	public DialogueActor[] dialogueActors;
 
-	// Token: 0x04000F39 RID: 3897
 	public MultilingualTextDocument document;
 }

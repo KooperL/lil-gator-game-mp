@@ -2,11 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002E8 RID: 744
 public class UITextBox : MonoBehaviour
 {
-	// Token: 0x170000E8 RID: 232
-	// (get) Token: 0x06000FCF RID: 4047 RVA: 0x0004B8F8 File Offset: 0x00049AF8
+	// (get) Token: 0x0600135B RID: 4955 RVA: 0x0005ED18 File Offset: 0x0005CF18
 	public float Height
 	{
 		get
@@ -15,13 +13,13 @@ public class UITextBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FD0 RID: 4048 RVA: 0x0004B918 File Offset: 0x00049B18
+	// Token: 0x0600135C RID: 4956 RVA: 0x000105E8 File Offset: 0x0000E7E8
 	private void Awake()
 	{
 		this.rectTransform = base.GetComponent<RectTransform>();
 	}
 
-	// Token: 0x06000FD1 RID: 4049 RVA: 0x0004B928 File Offset: 0x00049B28
+	// Token: 0x0600135D RID: 4957 RVA: 0x0005ED38 File Offset: 0x0005CF38
 	public void SetText(string newText)
 	{
 		if (this.ignoreIndents)
@@ -35,24 +33,19 @@ public class UITextBox : MonoBehaviour
 		this.visibleText.text = newText;
 	}
 
-	// Token: 0x06000FD2 RID: 4050 RVA: 0x0004B978 File Offset: 0x00049B78
+	// Token: 0x0600135E RID: 4958 RVA: 0x000105F6 File Offset: 0x0000E7F6
 	public void SetColor(Color color)
 	{
 		this.coloredImage.color = color;
 	}
 
-	// Token: 0x040014B1 RID: 5297
 	public Text invisibleText;
 
-	// Token: 0x040014B2 RID: 5298
 	public Text visibleText;
 
-	// Token: 0x040014B3 RID: 5299
 	public Image coloredImage;
 
-	// Token: 0x040014B4 RID: 5300
 	private RectTransform rectTransform;
 
-	// Token: 0x040014B5 RID: 5301
 	public bool ignoreIndents;
 }

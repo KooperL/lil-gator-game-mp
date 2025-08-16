@@ -1,18 +1,17 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001A5 RID: 421
 [ExecuteInEditMode]
 public class ProjectileTest : MonoBehaviour
 {
-	// Token: 0x0600089E RID: 2206 RVA: 0x00028BA4 File Offset: 0x00026DA4
+	// Token: 0x06000A69 RID: 2665 RVA: 0x0003CFF8 File Offset: 0x0003B1F8
 	[ContextMenu("Launch")]
 	public void LaunchProjectile()
 	{
 		Vector3 vector;
 		if (PhysUtil.SolveProjectileVelocity(this.target.position - base.transform.position, this.projectileSpeed, out vector, 1f))
 		{
-			GameObject gameObject = Object.Instantiate<GameObject>(this.projectile, base.transform.position, Quaternion.identity);
+			GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(this.projectile, base.transform.position, Quaternion.identity);
 			gameObject.SetActive(true);
 			gameObject.GetComponent<Rigidbody>().velocity = vector;
 			return;
@@ -20,12 +19,9 @@ public class ProjectileTest : MonoBehaviour
 		Debug.Log("Impossible projectile");
 	}
 
-	// Token: 0x04000AA0 RID: 2720
 	public GameObject projectile;
 
-	// Token: 0x04000AA1 RID: 2721
 	public float projectileSpeed = 30f;
 
-	// Token: 0x04000AA2 RID: 2722
 	public Transform target;
 }

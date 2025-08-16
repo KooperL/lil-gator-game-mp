@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000274 RID: 628
 public class LODTree : MonoBehaviour
 {
-	// Token: 0x06000D6E RID: 3438 RVA: 0x00040AA8 File Offset: 0x0003ECA8
+	// Token: 0x0600107E RID: 4222 RVA: 0x0000E250 File Offset: 0x0000C450
 	public static void SetTreeQualitySettings(float fogDistance, bool useHighQualityTrees)
 	{
 		if (LODTree.fogDistance != fogDistance || LODTree.useHighQualityTrees != useHighQualityTrees)
@@ -16,7 +15,7 @@ public class LODTree : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D6F RID: 3439 RVA: 0x00040ACC File Offset: 0x0003ECCC
+	// Token: 0x0600107F RID: 4223 RVA: 0x00054DA4 File Offset: 0x00052FA4
 	public static void UpdateTrees()
 	{
 		foreach (LODTree lodtree in LODTree.instances)
@@ -25,7 +24,7 @@ public class LODTree : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D70 RID: 3440 RVA: 0x00040B1C File Offset: 0x0003ED1C
+	// Token: 0x06001080 RID: 4224 RVA: 0x00054DF4 File Offset: 0x00052FF4
 	public void Initialize(GameObject high, GameObject low, GameObject billboard, GameObject cube)
 	{
 		this.lodGroup = base.GetComponent<LODGroup>();
@@ -66,14 +65,14 @@ public class LODTree : MonoBehaviour
 		this.size = cube.transform.localScale.y;
 	}
 
-	// Token: 0x06000D71 RID: 3441 RVA: 0x00040CA0 File Offset: 0x0003EEA0
+	// Token: 0x06001081 RID: 4225 RVA: 0x0000E273 File Offset: 0x0000C473
 	private void OnEnable()
 	{
 		LODTree.instances.Add(this);
 		this.SyncWithSettings();
 	}
 
-	// Token: 0x06000D72 RID: 3442 RVA: 0x00040CB3 File Offset: 0x0003EEB3
+	// Token: 0x06001082 RID: 4226 RVA: 0x0000E286 File Offset: 0x0000C486
 	private void OnDisable()
 	{
 		if (LODTree.instances.Contains(this))
@@ -82,7 +81,7 @@ public class LODTree : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D73 RID: 3443 RVA: 0x00040CCE File Offset: 0x0003EECE
+	// Token: 0x06001083 RID: 4227 RVA: 0x0000E2A1 File Offset: 0x0000C4A1
 	public void SyncWithSettings()
 	{
 		if (LODTree.useHighQualityTrees)
@@ -93,43 +92,43 @@ public class LODTree : MonoBehaviour
 		this.UpdateLODs(-1f, LODTree.fogDistance);
 	}
 
-	// Token: 0x06000D74 RID: 3444 RVA: 0x00040CF8 File Offset: 0x0003EEF8
+	// Token: 0x06001084 RID: 4228 RVA: 0x0000E2CB File Offset: 0x0000C4CB
 	[ContextMenu("Randomize")]
 	public void Randomize()
 	{
 		this.RandomizeFlat();
-		base.transform.rotation = Quaternion.RotateTowards(base.transform.rotation, Random.rotationUniform, Random.value * 4f);
+		base.transform.rotation = Quaternion.RotateTowards(base.transform.rotation, global::UnityEngine.Random.rotationUniform, global::UnityEngine.Random.value * 4f);
 	}
 
-	// Token: 0x06000D75 RID: 3445 RVA: 0x00040D2B File Offset: 0x0003EF2B
+	// Token: 0x06001085 RID: 4229 RVA: 0x0000E2FE File Offset: 0x0000C4FE
 	[ContextMenu("Randomize Flat")]
 	public void RandomizeFlat()
 	{
-		base.transform.rotation = Quaternion.LookRotation(Random.insideUnitSphere.Flat());
+		base.transform.rotation = Quaternion.LookRotation(global::UnityEngine.Random.insideUnitSphere.Flat());
 	}
 
-	// Token: 0x06000D76 RID: 3446 RVA: 0x00040D47 File Offset: 0x0003EF47
+	// Token: 0x06001086 RID: 4230 RVA: 0x0000E31A File Offset: 0x0000C51A
 	[ContextMenu("Clear Rotation")]
 	public void ClearRotation()
 	{
 		base.transform.rotation = Quaternion.identity;
 	}
 
-	// Token: 0x06000D77 RID: 3447 RVA: 0x00040D59 File Offset: 0x0003EF59
+	// Token: 0x06001087 RID: 4231 RVA: 0x0000E32C File Offset: 0x0000C52C
 	[ContextMenu("UpdateToFog")]
 	public void UpdateToFog()
 	{
 		this.UpdateLODs(60f, -1f);
 	}
 
-	// Token: 0x06000D78 RID: 3448 RVA: 0x00040D6B File Offset: 0x0003EF6B
+	// Token: 0x06001088 RID: 4232 RVA: 0x0000E33E File Offset: 0x0000C53E
 	[ContextMenu("UpdateToFogLow")]
 	public void UpdateToFogLow()
 	{
 		this.UpdateLODs(-1f, 60f);
 	}
 
-	// Token: 0x06000D79 RID: 3449 RVA: 0x00040D80 File Offset: 0x0003EF80
+	// Token: 0x06001089 RID: 4233 RVA: 0x00054F78 File Offset: 0x00053178
 	public void UpdateLODs(float highDistance, float lowDistance)
 	{
 		float num = 2f * Mathf.Tan(0.43633232f);
@@ -197,56 +196,39 @@ public class LODTree : MonoBehaviour
 		this.lodGroup.SetLODs(array);
 	}
 
-	// Token: 0x040011BC RID: 4540
 	private static Vector3[] bakedPositionData = new Vector3[8];
 
-	// Token: 0x040011BD RID: 4541
 	public static float fogDistance = 60f;
 
-	// Token: 0x040011BE RID: 4542
 	public static bool useHighQualityTrees = true;
 
-	// Token: 0x040011BF RID: 4543
 	public static List<LODTree> instances = new List<LODTree>();
 
-	// Token: 0x040011C0 RID: 4544
 	public LODGroup lodGroup;
 
-	// Token: 0x040011C1 RID: 4545
 	public Renderer[] highs;
 
-	// Token: 0x040011C2 RID: 4546
 	public Renderer[] lows;
 
-	// Token: 0x040011C3 RID: 4547
 	public Renderer[] billboards;
 
-	// Token: 0x040011C4 RID: 4548
 	public Renderer[] cubes;
 
-	// Token: 0x040011C5 RID: 4549
 	public float size;
 
-	// Token: 0x040011C6 RID: 4550
 	public MeshFilter billboardFilter;
 
-	// Token: 0x040011C7 RID: 4551
 	public Mesh localBillboardMesh;
 
-	// Token: 0x040011C8 RID: 4552
 	[ReadOnly]
 	public Vector3 bakedPosition = Vector3.zero;
 
-	// Token: 0x040011C9 RID: 4553
 	[ReadOnly]
 	public string objectName;
 
-	// Token: 0x040011CA RID: 4554
 	public bool isDuplicated;
 
-	// Token: 0x040011CB RID: 4555
 	private const float randomRotationAngle = 4f;
 
-	// Token: 0x040011CC RID: 4556
 	private const float fov = 50f;
 }

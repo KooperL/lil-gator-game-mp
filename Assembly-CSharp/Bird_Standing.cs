@@ -2,16 +2,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000003 RID: 3
 public class Bird_Standing : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06000004 RID: 4 RVA: 0x00002194 File Offset: 0x00000394
+	// Token: 0x06000004 RID: 4 RVA: 0x0000209B File Offset: 0x0000029B
 	private void Start()
 	{
-		this.proximityTrigger.radius *= Random.Range(1f - this.proximityTriggerVariance, 1f + this.proximityTriggerVariance);
+		this.proximityTrigger.radius *= global::UnityEngine.Random.Range(1f - this.proximityTriggerVariance, 1f + this.proximityTriggerVariance);
 	}
 
-	// Token: 0x06000005 RID: 5 RVA: 0x000021C8 File Offset: 0x000003C8
+	// Token: 0x06000005 RID: 5 RVA: 0x00017638 File Offset: 0x00015838
 	private void OnEnable()
 	{
 		if (this.attachedTightrope != null)
@@ -28,7 +27,7 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000006 RID: 6 RVA: 0x00002254 File Offset: 0x00000454
+	// Token: 0x06000006 RID: 6 RVA: 0x000176C4 File Offset: 0x000158C4
 	private void OnDisable()
 	{
 		if (this.attachedTightrope != null)
@@ -45,7 +44,7 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000007 RID: 7 RVA: 0x000022DF File Offset: 0x000004DF
+	// Token: 0x06000007 RID: 7 RVA: 0x000020CC File Offset: 0x000002CC
 	private void OnDestroy()
 	{
 		if (this.respawn && this.isFlying && FastUpdateManager.updateEvery8.Contains(this))
@@ -54,13 +53,13 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000008 RID: 8 RVA: 0x0000230A File Offset: 0x0000050A
+	// Token: 0x06000008 RID: 8 RVA: 0x000020F7 File Offset: 0x000002F7
 	public void OnTriggerEnter(Collider other)
 	{
 		this.BeginFlying();
 	}
 
-	// Token: 0x06000009 RID: 9 RVA: 0x00002314 File Offset: 0x00000514
+	// Token: 0x06000009 RID: 9 RVA: 0x00017750 File Offset: 0x00015950
 	public void BeginFlying()
 	{
 		if (this.isFlying)
@@ -69,7 +68,7 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		}
 		this.isFlying = true;
 		this.onBeginFlying.Invoke();
-		Object.Instantiate<GameObject>(this.flyingPrefab, base.transform.TransformPoint(this.flyingPositionOffset), base.transform.rotation).transform.localScale = base.transform.localScale;
+		global::UnityEngine.Object.Instantiate<GameObject>(this.flyingPrefab, base.transform.TransformPoint(this.flyingPositionOffset), base.transform.rotation).transform.localScale = base.transform.localScale;
 		this.onFly.Invoke();
 		if (this.respawn)
 		{
@@ -78,7 +77,7 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600000A RID: 10 RVA: 0x000023A4 File Offset: 0x000005A4
+	// Token: 0x0600000A RID: 10 RVA: 0x000177E0 File Offset: 0x000159E0
 	public void ManagedUpdate()
 	{
 		if (this.attachedTightrope != null && this.attachedTightrope.enabled)
@@ -102,7 +101,7 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x0600000B RID: 11 RVA: 0x00002448 File Offset: 0x00000648
+	// Token: 0x0600000B RID: 11 RVA: 0x00017884 File Offset: 0x00015A84
 	[ContextMenu("Snap to...")]
 	public void SnapTo()
 	{
@@ -120,36 +119,25 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x04000008 RID: 8
 	public bool respawn = true;
 
-	// Token: 0x04000009 RID: 9
 	public GameObject flyingPrefab;
 
-	// Token: 0x0400000A RID: 10
 	public Tightrope attachedTightrope;
 
-	// Token: 0x0400000B RID: 11
 	public BendyPole attachedBeam;
 
-	// Token: 0x0400000C RID: 12
 	public BendyClimbingPole attachedPole;
 
-	// Token: 0x0400000D RID: 13
 	public UnityEvent onBeginFlying;
 
-	// Token: 0x0400000E RID: 14
 	public Vector3 flyingPositionOffset;
 
-	// Token: 0x0400000F RID: 15
 	public SphereCollider proximityTrigger;
 
-	// Token: 0x04000010 RID: 16
 	public float proximityTriggerVariance = 0.25f;
 
-	// Token: 0x04000011 RID: 17
 	public UnityEvent onFly;
 
-	// Token: 0x04000012 RID: 18
 	private bool isFlying;
 }

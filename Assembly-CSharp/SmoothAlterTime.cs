@@ -1,23 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000E6 RID: 230
 public class SmoothAlterTime : MonoBehaviour
 {
-	// Token: 0x060004C1 RID: 1217 RVA: 0x0001A02C File Offset: 0x0001822C
+	// Token: 0x06000607 RID: 1543 RVA: 0x000064E4 File Offset: 0x000046E4
 	public void StartAlteredTime()
 	{
 		base.enabled = true;
 		this.isTimeAltered = true;
 	}
 
-	// Token: 0x060004C2 RID: 1218 RVA: 0x0001A03C File Offset: 0x0001823C
+	// Token: 0x06000608 RID: 1544 RVA: 0x000064F4 File Offset: 0x000046F4
 	public void StopAlteredTime()
 	{
 		this.isTimeAltered = false;
 	}
 
-	// Token: 0x060004C3 RID: 1219 RVA: 0x0001A048 File Offset: 0x00018248
+	// Token: 0x06000609 RID: 1545 RVA: 0x000302F0 File Offset: 0x0002E4F0
 	private void Update()
 	{
 		this.alteredTimeSmooth = Mathf.MoveTowards(this.alteredTimeSmooth, this.isTimeAltered ? 1f : 0f, Time.unscaledDeltaTime / this.fadeRealTime);
@@ -28,15 +27,11 @@ public class SmoothAlterTime : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000699 RID: 1689
 	private float alteredTimeSmooth;
 
-	// Token: 0x0400069A RID: 1690
 	public float fadeRealTime = 0.5f;
 
-	// Token: 0x0400069B RID: 1691
 	public float alteredTimeScale = 1f;
 
-	// Token: 0x0400069C RID: 1692
 	public bool isTimeAltered;
 }

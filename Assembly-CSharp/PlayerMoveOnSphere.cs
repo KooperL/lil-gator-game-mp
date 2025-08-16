@@ -2,10 +2,9 @@
 using Cinemachine.Utility;
 using UnityEngine;
 
-// Token: 0x02000051 RID: 81
 public class PlayerMoveOnSphere : MonoBehaviour
 {
-	// Token: 0x06000133 RID: 307 RVA: 0x000077E0 File Offset: 0x000059E0
+	// Token: 0x06000160 RID: 352 RVA: 0x0001C400 File Offset: 0x0001A600
 	private void Update()
 	{
 		Vector3 vector = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
@@ -32,15 +31,11 @@ public class PlayerMoveOnSphere : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040001AF RID: 431
 	public SphereCollider Sphere;
 
-	// Token: 0x040001B0 RID: 432
 	public float speed = 5f;
 
-	// Token: 0x040001B1 RID: 433
 	public bool rotatePlayer = true;
 
-	// Token: 0x040001B2 RID: 434
 	public float rotationDamping = 0.5f;
 }

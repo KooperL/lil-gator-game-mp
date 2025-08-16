@@ -2,11 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200006C RID: 108
 [AddComponentMenu("Achievement Tracker - QuestStates")]
 public class Ach_QuestStates : MonoBehaviour
 {
-	// Token: 0x060001AB RID: 427 RVA: 0x0000997E File Offset: 0x00007B7E
+	// Token: 0x060001EE RID: 494 RVA: 0x00003947 File Offset: 0x00001B47
 	public void Start()
 	{
 		this.hasUnlocked = false;
@@ -18,7 +17,7 @@ public class Ach_QuestStates : MonoBehaviour
 		this.questStates.onStateChange.AddListener(new UnityAction<int>(this.OnQuestStateChange));
 	}
 
-	// Token: 0x060001AC RID: 428 RVA: 0x000099BD File Offset: 0x00007BBD
+	// Token: 0x060001EF RID: 495 RVA: 0x00003986 File Offset: 0x00001B86
 	private void OnQuestStateChange(int index)
 	{
 		if (!this.hasUnlocked && index >= this.requiredIndex)
@@ -27,7 +26,7 @@ public class Ach_QuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001AD RID: 429 RVA: 0x000099D6 File Offset: 0x00007BD6
+	// Token: 0x060001F0 RID: 496 RVA: 0x0000399F File Offset: 0x00001B9F
 	private void UnlockAchievement()
 	{
 		if (this.hasUnlocked)
@@ -38,15 +37,11 @@ public class Ach_QuestStates : MonoBehaviour
 		this.hasUnlocked = true;
 	}
 
-	// Token: 0x0400024A RID: 586
 	public Achievement achievement;
 
-	// Token: 0x0400024B RID: 587
 	public QuestStates questStates;
 
-	// Token: 0x0400024C RID: 588
 	public int requiredIndex;
 
-	// Token: 0x0400024D RID: 589
 	private bool hasUnlocked;
 }

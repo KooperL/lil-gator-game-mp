@@ -2,11 +2,9 @@
 using Rewired;
 using UnityEngine;
 
-// Token: 0x020001E5 RID: 485
 public class PlayerInput : MonoBehaviour
 {
-	// Token: 0x17000087 RID: 135
-	// (get) Token: 0x06000A36 RID: 2614 RVA: 0x0002FDBD File Offset: 0x0002DFBD
+	// (get) Token: 0x06000C37 RID: 3127 RVA: 0x0000B5FC File Offset: 0x000097FC
 	public static Vector2 RawInput
 	{
 		get
@@ -15,7 +13,7 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A37 RID: 2615 RVA: 0x0002FDE4 File Offset: 0x0002DFE4
+	// Token: 0x06000C38 RID: 3128 RVA: 0x0004316C File Offset: 0x0004136C
 	private void OnEnable()
 	{
 		PlayerInput.p = this;
@@ -38,12 +36,12 @@ public class PlayerInput : MonoBehaviour
 		this.reCenterCamera = ReInput.mapping.GetActionId("ReCenterCamera");
 	}
 
-	// Token: 0x06000A38 RID: 2616 RVA: 0x0002FF0F File Offset: 0x0002E10F
+	// Token: 0x06000C39 RID: 3129 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x06000A39 RID: 2617 RVA: 0x0002FF14 File Offset: 0x0002E114
+	// Token: 0x06000C3A RID: 3130 RVA: 0x00043298 File Offset: 0x00041498
 	private void Update()
 	{
 		if (!Game.HasControl)
@@ -242,14 +240,14 @@ public class PlayerInput : MonoBehaviour
 		this.lookAxis = this.lookAxisRaw;
 	}
 
-	// Token: 0x06000A3A RID: 2618 RVA: 0x000304CB File Offset: 0x0002E6CB
+	// Token: 0x06000C3B RID: 3131 RVA: 0x0000B621 File Offset: 0x00009821
 	private void LateUpdate()
 	{
 		this.jumpDesired = false;
 		this.cancelAction = false;
 	}
 
-	// Token: 0x06000A3B RID: 2619 RVA: 0x000304DC File Offset: 0x0002E6DC
+	// Token: 0x06000C3C RID: 3132 RVA: 0x00043850 File Offset: 0x00041A50
 	private void HandlePrimary()
 	{
 		bool flag = false;
@@ -286,7 +284,7 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A3C RID: 2620 RVA: 0x0003060C File Offset: 0x0002E80C
+	// Token: 0x06000C3D RID: 3133 RVA: 0x00043980 File Offset: 0x00041B80
 	private void HandleSecondary()
 	{
 		bool flag = this.rePlayer.GetButtonDown(this.secondary);
@@ -307,7 +305,7 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A3D RID: 2621 RVA: 0x000306C8 File Offset: 0x0002E8C8
+	// Token: 0x06000C3E RID: 3134 RVA: 0x00043A3C File Offset: 0x00041C3C
 	private void HandleItem()
 	{
 		bool buttonDown = this.rePlayer.GetButtonDown(this.useItem);
@@ -322,7 +320,7 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A3E RID: 2622 RVA: 0x00030744 File Offset: 0x0002E944
+	// Token: 0x06000C3F RID: 3135 RVA: 0x00043AB8 File Offset: 0x00041CB8
 	private void HandleItem_R()
 	{
 		bool buttonDown = this.rePlayer.GetButtonDown(this.useItemR);
@@ -337,146 +335,98 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000CD7 RID: 3287
 	public static bool shouldReCenterCamera = false;
 
-	// Token: 0x04000CD8 RID: 3288
 	private const float absoluteToRelativeMul = 120f;
 
-	// Token: 0x04000CD9 RID: 3289
 	public static bool autoSword = true;
 
-	// Token: 0x04000CDA RID: 3290
 	public static bool useMovementToAim = false;
 
-	// Token: 0x04000CDB RID: 3291
 	public static PlayerInput.InteractMapping interactMapping;
 
-	// Token: 0x04000CDC RID: 3292
 	public static PlayerInput.SecondaryMapping secondaryMapping;
 
-	// Token: 0x04000CDD RID: 3293
 	public static PlayerInput p;
 
-	// Token: 0x04000CDE RID: 3294
 	private PlayerMovement movement;
 
-	// Token: 0x04000CDF RID: 3295
 	private PlayerItemManager itemManager;
 
-	// Token: 0x04000CE0 RID: 3296
 	public RagdollController ragdollController;
 
-	// Token: 0x04000CE1 RID: 3297
 	public PlayerInteract playerInteract;
 
-	// Token: 0x04000CE2 RID: 3298
 	public Transform movementAxis;
 
-	// Token: 0x04000CE3 RID: 3299
 	protected Vector3 inputDirectionRaw;
 
-	// Token: 0x04000CE4 RID: 3300
 	public Vector3 inputDirection;
 
-	// Token: 0x04000CE5 RID: 3301
 	public Vector3 smoothedInputDirection;
 
-	// Token: 0x04000CE6 RID: 3302
 	public Vector3 smoothedInputDirectionVelocity;
 
-	// Token: 0x04000CE7 RID: 3303
 	private float isClimbingSmooth;
 
-	// Token: 0x04000CE8 RID: 3304
 	public bool jumpDesired;
 
-	// Token: 0x04000CE9 RID: 3305
 	public bool cancelAction;
 
-	// Token: 0x04000CEA RID: 3306
 	private Vector2 lookAxisRaw;
 
-	// Token: 0x04000CEB RID: 3307
 	public Vector2 lookAxis;
 
-	// Token: 0x04000CEC RID: 3308
 	private global::Rewired.Player rePlayer;
 
-	// Token: 0x04000CED RID: 3309
 	private int moveHorizontal;
 
-	// Token: 0x04000CEE RID: 3310
 	private int moveVertical;
 
-	// Token: 0x04000CEF RID: 3311
 	private int jump;
 
-	// Token: 0x04000CF0 RID: 3312
 	private int interact;
 
-	// Token: 0x04000CF1 RID: 3313
 	private int lookHorizontal;
 
-	// Token: 0x04000CF2 RID: 3314
 	private int lookVertical;
 
-	// Token: 0x04000CF3 RID: 3315
 	private int primary;
 
-	// Token: 0x04000CF4 RID: 3316
 	private int secondary;
 
-	// Token: 0x04000CF5 RID: 3317
 	private int useItem;
 
-	// Token: 0x04000CF6 RID: 3318
 	private int useItemR;
 
-	// Token: 0x04000CF7 RID: 3319
 	private int interactSword;
 
-	// Token: 0x04000CF8 RID: 3320
 	private int interactSwordShield;
 
-	// Token: 0x04000CF9 RID: 3321
 	private int reCenterCamera;
 
-	// Token: 0x04000CFA RID: 3322
 	private int primaryMapping;
 
-	// Token: 0x04000CFB RID: 3323
 	private int jumpMapping;
 
-	// Token: 0x04000CFC RID: 3324
 	private float holdPrimaryCounter;
 
-	// Token: 0x04000CFD RID: 3325
 	private float holdPrimaryCounterTotal;
 
-	// Token: 0x04000CFE RID: 3326
 	private const float primaryAutoTime = 0.5f;
 
-	// Token: 0x04000CFF RID: 3327
 	private const float primaryAutoTimeFast = 0.3f;
 
-	// Token: 0x020003E6 RID: 998
 	public enum InteractMapping
 	{
-		// Token: 0x04001C6B RID: 7275
 		Self,
-		// Token: 0x04001C6C RID: 7276
 		Primary,
-		// Token: 0x04001C6D RID: 7277
 		Jump
 	}
 
-	// Token: 0x020003E7 RID: 999
 	public enum SecondaryMapping
 	{
-		// Token: 0x04001C6F RID: 7279
 		Self,
-		// Token: 0x04001C70 RID: 7280
 		Primary
 	}
 }

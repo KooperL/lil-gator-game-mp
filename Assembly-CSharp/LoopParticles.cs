@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000F5 RID: 245
 public class LoopParticles : MonoBehaviour, IManagedUpdate, ICameraCut
 {
-	// Token: 0x06000510 RID: 1296 RVA: 0x0001B2FC File Offset: 0x000194FC
+	// Token: 0x0600065C RID: 1628 RVA: 0x000311B4 File Offset: 0x0002F3B4
 	private void OnEnable()
 	{
 		this.particleSystem = base.GetComponent<ParticleSystem>();
@@ -17,20 +16,20 @@ public class LoopParticles : MonoBehaviour, IManagedUpdate, ICameraCut
 		CameraCutDetector.subscribers.Add(this);
 	}
 
-	// Token: 0x06000511 RID: 1297 RVA: 0x0001B365 File Offset: 0x00019565
+	// Token: 0x0600065D RID: 1629 RVA: 0x00006936 File Offset: 0x00004B36
 	private void OnDisable()
 	{
 		FastUpdateManager.updateEvery4.Remove(this);
 		CameraCutDetector.subscribers.Remove(this);
 	}
 
-	// Token: 0x06000512 RID: 1298 RVA: 0x0001B37F File Offset: 0x0001957F
+	// Token: 0x0600065E RID: 1630 RVA: 0x00006950 File Offset: 0x00004B50
 	public void OnCameraCut()
 	{
 		this.ManagedUpdate();
 	}
 
-	// Token: 0x06000513 RID: 1299 RVA: 0x0001B388 File Offset: 0x00019588
+	// Token: 0x0600065F RID: 1631 RVA: 0x00031220 File Offset: 0x0002F420
 	public void ManagedUpdate()
 	{
 		int num = this.particleSystem.GetParticles(this.particles);
@@ -58,7 +57,7 @@ public class LoopParticles : MonoBehaviour, IManagedUpdate, ICameraCut
 		this.particleSystem.SetParticles(this.particles, num);
 	}
 
-	// Token: 0x06000514 RID: 1300 RVA: 0x0001B454 File Offset: 0x00019654
+	// Token: 0x06000660 RID: 1632 RVA: 0x000312EC File Offset: 0x0002F4EC
 	private Vector3 LoopBounds(Vector3 point)
 	{
 		for (int i = 0; i < 3; i++)
@@ -82,21 +81,15 @@ public class LoopParticles : MonoBehaviour, IManagedUpdate, ICameraCut
 		return point;
 	}
 
-	// Token: 0x040006FB RID: 1787
 	public Vector3 loopSize;
 
-	// Token: 0x040006FC RID: 1788
 	private Bounds bounds;
 
-	// Token: 0x040006FD RID: 1789
 	private ParticleSystem particleSystem;
 
-	// Token: 0x040006FE RID: 1790
 	private ParticleSystem.Particle[] particles;
 
-	// Token: 0x040006FF RID: 1791
 	public int smoothing;
 
-	// Token: 0x04000700 RID: 1792
 	private int[] smoothCounter;
 }

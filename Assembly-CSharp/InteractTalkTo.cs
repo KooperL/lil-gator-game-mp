@@ -3,11 +3,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200013F RID: 319
 [AddComponentMenu("Interaction/Talk To NPC")]
 public class InteractTalkTo : MonoBehaviour, Interaction
 {
-	// Token: 0x06000685 RID: 1669 RVA: 0x000215F0 File Offset: 0x0001F7F0
+	// Token: 0x060007F7 RID: 2039 RVA: 0x000365F8 File Offset: 0x000347F8
 	private void OnValidate()
 	{
 		if (this.actors == null || this.actors.Length == 0)
@@ -24,13 +23,13 @@ public class InteractTalkTo : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000686 RID: 1670 RVA: 0x0002163E File Offset: 0x0001F83E
+	// Token: 0x060007F8 RID: 2040 RVA: 0x00002229 File Offset: 0x00000429
 	[ContextMenu("Move to interaction")]
 	public void MoveToInteraction()
 	{
 	}
 
-	// Token: 0x06000687 RID: 1671 RVA: 0x00021640 File Offset: 0x0001F840
+	// Token: 0x060007F9 RID: 2041 RVA: 0x00007DC9 File Offset: 0x00005FC9
 	public void Start()
 	{
 		if (this.saveDialogueIndex)
@@ -39,7 +38,7 @@ public class InteractTalkTo : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000688 RID: 1672 RVA: 0x00021661 File Offset: 0x0001F861
+	// Token: 0x060007FA RID: 2042 RVA: 0x00007DEA File Offset: 0x00005FEA
 	[ContextMenu("Fix Actors")]
 	public void FixActors()
 	{
@@ -51,13 +50,13 @@ public class InteractTalkTo : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000689 RID: 1673 RVA: 0x0002169B File Offset: 0x0001F89B
+	// Token: 0x060007FB RID: 2043 RVA: 0x00007E24 File Offset: 0x00006024
 	public void Interact()
 	{
 		CoroutineUtil.Start(this.RunDialogueChunk(this.GetDialogue()));
 	}
 
-	// Token: 0x0600068A RID: 1674 RVA: 0x000216AF File Offset: 0x0001F8AF
+	// Token: 0x060007FC RID: 2044 RVA: 0x00007E38 File Offset: 0x00006038
 	private IEnumerator RunDialogueChunk(string dialogue)
 	{
 		if (this.fadeBefore)
@@ -137,7 +136,7 @@ public class InteractTalkTo : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x0600068B RID: 1675 RVA: 0x000216C8 File Offset: 0x0001F8C8
+	// Token: 0x060007FD RID: 2045 RVA: 0x00036648 File Offset: 0x00034848
 	protected virtual string GetDialogue()
 	{
 		string text = this.dialogues[this.dialogueIndex];
@@ -160,58 +159,41 @@ public class InteractTalkTo : MonoBehaviour, Interaction
 		return text;
 	}
 
-	// Token: 0x040008CC RID: 2252
 	public DialogueActor[] actors;
 
-	// Token: 0x040008CD RID: 2253
 	public MultilingualTextDocument document;
 
-	// Token: 0x040008CE RID: 2254
 	[ChunkLookup("document")]
 	public string[] dialogues;
 
-	// Token: 0x040008CF RID: 2255
 	[ReadOnly]
 	public int dialogueIndex;
 
-	// Token: 0x040008D0 RID: 2256
 	public bool loopDialogue = true;
 
-	// Token: 0x040008D1 RID: 2257
 	public bool saveDialogueIndex;
 
-	// Token: 0x040008D2 RID: 2258
 	public string dialogueIndexKey;
 
-	// Token: 0x040008D3 RID: 2259
 	public bool isBubble;
 
-	// Token: 0x040008D4 RID: 2260
 	public bool hasInput = true;
 
-	// Token: 0x040008D5 RID: 2261
 	public GameObject[] objectsWhileTalking;
 
-	// Token: 0x040008D6 RID: 2262
 	public UnityEvent after;
 
-	// Token: 0x040008D7 RID: 2263
 	public InteractTalkTo.ChoiceResult[] choiceResults;
 
-	// Token: 0x040008D8 RID: 2264
 	public bool fadeBefore;
 
-	// Token: 0x040008D9 RID: 2265
 	public bool fadeAfter;
 
-	// Token: 0x020003B7 RID: 951
 	[Serializable]
 	public struct ChoiceResult
 	{
-		// Token: 0x04001B96 RID: 7062
 		public UnityEvent choiceEvent;
 
-		// Token: 0x04001B97 RID: 7063
 		[ChunkLookup("document")]
 		public string dialogue;
 	}

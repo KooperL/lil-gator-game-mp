@@ -6,10 +6,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Token: 0x020002EF RID: 751
 public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 {
-	// Token: 0x06000FF8 RID: 4088 RVA: 0x0004C4C0 File Offset: 0x0004A6C0
+	// Token: 0x06001385 RID: 4997 RVA: 0x0005F670 File Offset: 0x0005D870
 	public void Activate()
 	{
 		if (this.rePlayer == null)
@@ -30,7 +29,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		this.UpdateInventories();
 	}
 
-	// Token: 0x06000FF9 RID: 4089 RVA: 0x0004C580 File Offset: 0x0004A780
+	// Token: 0x06001386 RID: 4998 RVA: 0x0005F730 File Offset: 0x0005D930
 	public void Deactivate()
 	{
 		if (this == null || !Application.isPlaying)
@@ -48,25 +47,25 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnEquipRight));
 	}
 
-	// Token: 0x06000FFA RID: 4090 RVA: 0x0004C60B File Offset: 0x0004A80B
+	// Token: 0x06001387 RID: 4999 RVA: 0x00010810 File Offset: 0x0000EA10
 	private void Update()
 	{
 		this.ForceCorrectSelection();
 	}
 
-	// Token: 0x06000FFB RID: 4091 RVA: 0x0004C613 File Offset: 0x0004A813
+	// Token: 0x06001388 RID: 5000 RVA: 0x00010818 File Offset: 0x0000EA18
 	private void ForceCorrectSelection()
 	{
 		this.eventSystem.currentSelectedGameObject == null;
 	}
 
-	// Token: 0x06000FFC RID: 4092 RVA: 0x0004C627 File Offset: 0x0004A827
+	// Token: 0x06001389 RID: 5001 RVA: 0x0001082C File Offset: 0x0000EA2C
 	public void OnCancel(BaseEventData eventData)
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x06000FFD RID: 4093 RVA: 0x0004C630 File Offset: 0x0004A830
+	// Token: 0x0600138A RID: 5002 RVA: 0x0005F7BC File Offset: 0x0005D9BC
 	private void UpdateInventories()
 	{
 		List<ItemObject> list = new List<ItemObject>();
@@ -181,7 +180,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		}
 	}
 
-	// Token: 0x06000FFE RID: 4094 RVA: 0x0004C940 File Offset: 0x0004AB40
+	// Token: 0x0600138B RID: 5003 RVA: 0x0005FACC File Offset: 0x0005DCCC
 	public void SelectItem(ItemObject item)
 	{
 		this.selectedItem = item;
@@ -213,7 +212,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		this.ShowItem();
 	}
 
-	// Token: 0x06000FFF RID: 4095 RVA: 0x0004CA8E File Offset: 0x0004AC8E
+	// Token: 0x0600138C RID: 5004 RVA: 0x00010833 File Offset: 0x0000EA33
 	public void SubmitItem(ItemObject item)
 	{
 		if (item == this.placeholderItem)
@@ -229,7 +228,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		this.EquipItem();
 	}
 
-	// Token: 0x06001000 RID: 4096 RVA: 0x0004CABB File Offset: 0x0004ACBB
+	// Token: 0x0600138D RID: 5005 RVA: 0x00010860 File Offset: 0x0000EA60
 	public void HighlightItem(ItemObject item)
 	{
 		if (item == this.selectedItem)
@@ -240,7 +239,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		this.SetButtonPromptState(UISwapItemsMenu.ButtonPromptState.Select);
 	}
 
-	// Token: 0x06001001 RID: 4097 RVA: 0x0004CADC File Offset: 0x0004ACDC
+	// Token: 0x0600138E RID: 5006 RVA: 0x0005FC1C File Offset: 0x0005DE1C
 	public void PurchaseItem()
 	{
 		if (this.resource.Amount >= this.selectedItem.shopCost)
@@ -253,7 +252,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		}
 	}
 
-	// Token: 0x06001002 RID: 4098 RVA: 0x0004CB44 File Offset: 0x0004AD44
+	// Token: 0x0600138F RID: 5007 RVA: 0x0005FC84 File Offset: 0x0005DE84
 	public void EquipItem()
 	{
 		if (this.selectedItem.itemType == ItemManager.ItemType.Item)
@@ -295,19 +294,19 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		}
 	}
 
-	// Token: 0x06001003 RID: 4099 RVA: 0x0004CC43 File Offset: 0x0004AE43
+	// Token: 0x06001390 RID: 5008 RVA: 0x0001087F File Offset: 0x0000EA7F
 	private void OnEquipLeft(InputActionEventData obj)
 	{
 		this.EquipIntoSlot(0);
 	}
 
-	// Token: 0x06001004 RID: 4100 RVA: 0x0004CC4C File Offset: 0x0004AE4C
+	// Token: 0x06001391 RID: 5009 RVA: 0x00010888 File Offset: 0x0000EA88
 	private void OnEquipRight(InputActionEventData obj)
 	{
 		this.EquipIntoSlot(1);
 	}
 
-	// Token: 0x06001005 RID: 4101 RVA: 0x0004CC58 File Offset: 0x0004AE58
+	// Token: 0x06001392 RID: 5010 RVA: 0x0005FD84 File Offset: 0x0005DF84
 	public void EquipIntoSlot(int slot)
 	{
 		if (!this.isEquipWindowActive)
@@ -336,7 +335,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		this.RefreshSelectedBar();
 	}
 
-	// Token: 0x06001006 RID: 4102 RVA: 0x0004CCE0 File Offset: 0x0004AEE0
+	// Token: 0x06001393 RID: 5011 RVA: 0x0005FE0C File Offset: 0x0005E00C
 	private void SetEquipWindow(bool isActive)
 	{
 		if (this.isEquipWindowActive == isActive)
@@ -366,7 +365,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		}
 	}
 
-	// Token: 0x06001007 RID: 4103 RVA: 0x0004CD86 File Offset: 0x0004AF86
+	// Token: 0x06001394 RID: 5012 RVA: 0x00010891 File Offset: 0x0000EA91
 	public bool TryCancel()
 	{
 		if (this.isEquipWindowActive)
@@ -377,13 +376,13 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		return true;
 	}
 
-	// Token: 0x06001008 RID: 4104 RVA: 0x0004CD9A File Offset: 0x0004AF9A
+	// Token: 0x06001395 RID: 5013 RVA: 0x000108A5 File Offset: 0x0000EAA5
 	public void ShowItem()
 	{
 		this.SetShowItemState(this.selectedItem.itemType);
 	}
 
-	// Token: 0x06001009 RID: 4105 RVA: 0x0004CDB0 File Offset: 0x0004AFB0
+	// Token: 0x06001396 RID: 5014 RVA: 0x0005FEB4 File Offset: 0x0005E0B4
 	private void SetShowItemState(ItemManager.ItemType itemType)
 	{
 		if (global::Player.animator == null)
@@ -428,7 +427,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		}
 	}
 
-	// Token: 0x0600100A RID: 4106 RVA: 0x0004CE4C File Offset: 0x0004B04C
+	// Token: 0x06001397 RID: 5015 RVA: 0x0005FF50 File Offset: 0x0005E150
 	private void RefreshSelectedBar()
 	{
 		switch (this.selectedItem.itemType)
@@ -481,7 +480,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		}
 	}
 
-	// Token: 0x0600100B RID: 4107 RVA: 0x0004CF4C File Offset: 0x0004B14C
+	// Token: 0x06001398 RID: 5016 RVA: 0x000108B8 File Offset: 0x0000EAB8
 	private void SetButtonPromptState(UISwapItemsMenu.ButtonPromptState state)
 	{
 		this.buttonPromptSelect.SetActive(state == UISwapItemsMenu.ButtonPromptState.Select);
@@ -489,161 +488,111 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		this.buttonPromptEquip.SetActive(state == UISwapItemsMenu.ButtonPromptState.Equip);
 	}
 
-	// Token: 0x040014E7 RID: 5351
 	[Header("Slide Bars (Deprecated)")]
 	public SlideBar hatBar;
 
-	// Token: 0x040014E8 RID: 5352
 	public SlideBar primaryBar;
 
-	// Token: 0x040014E9 RID: 5353
 	public SlideBar secondaryBar;
 
-	// Token: 0x040014EA RID: 5354
 	public SlideBar itemBar;
 
-	// Token: 0x040014EB RID: 5355
 	[Header("Item Grids")]
 	public ItemGrid hatGrid;
 
-	// Token: 0x040014EC RID: 5356
 	public ItemGrid primaryGrid;
 
-	// Token: 0x040014ED RID: 5357
 	public ItemGrid secondaryGrid;
 
-	// Token: 0x040014EE RID: 5358
 	public ItemGrid itemGrid;
 
-	// Token: 0x040014EF RID: 5359
 	private ItemObject equippedHat;
 
-	// Token: 0x040014F0 RID: 5360
 	private ItemObject equippedPrimary;
 
-	// Token: 0x040014F1 RID: 5361
 	private ItemObject equippedSecondary;
 
-	// Token: 0x040014F2 RID: 5362
 	private ItemObject equippedItem;
 
-	// Token: 0x040014F3 RID: 5363
 	private ItemObject equippedItem_r;
 
-	// Token: 0x040014F4 RID: 5364
 	public bool showAll;
 
-	// Token: 0x040014F5 RID: 5365
 	public bool useMenuCamera;
 
-	// Token: 0x040014F6 RID: 5366
 	public Text displayName;
 
-	// Token: 0x040014F7 RID: 5367
 	public UITextBox description;
 
-	// Token: 0x040014F8 RID: 5368
 	public UIItemDisplay itemDisplay;
 
-	// Token: 0x040014F9 RID: 5369
 	[ReadOnly]
 	public ItemObject selectedItem;
 
-	// Token: 0x040014FA RID: 5370
 	public ItemObject placeholderItem;
 
-	// Token: 0x040014FB RID: 5371
 	public GameObject equipButton;
 
-	// Token: 0x040014FC RID: 5372
 	[Header("Shop")]
 	public bool isShop;
 
-	// Token: 0x040014FD RID: 5373
 	public ItemResource resource;
 
-	// Token: 0x040014FE RID: 5374
 	public GameObject purchaseButton;
 
-	// Token: 0x040014FF RID: 5375
 	public Image costIcon;
 
-	// Token: 0x04001500 RID: 5376
 	public Text costText;
 
-	// Token: 0x04001501 RID: 5377
 	public Image costColored;
 
-	// Token: 0x04001502 RID: 5378
 	[Header("Button Prompts")]
 	public GameObject buttonPrompts;
 
-	// Token: 0x04001503 RID: 5379
 	public GameObject buttonPromptSelect;
 
-	// Token: 0x04001504 RID: 5380
 	public GameObject buttonPromptCraft;
 
-	// Token: 0x04001505 RID: 5381
 	public GameObject buttonPromptEquip;
 
-	// Token: 0x04001506 RID: 5382
 	[Header("Sound Effects")]
 	public AudioSourceVariance equipSound;
 
-	// Token: 0x04001507 RID: 5383
 	[Header("Equip Sound Window Stuff")]
 	public GameObject[] hideDuringEquipWindow;
 
-	// Token: 0x04001508 RID: 5384
 	public GameObject[] showDuringEquipWindow;
 
-	// Token: 0x04001509 RID: 5385
 	public UIItemDisplay equipLeftDisplay;
 
-	// Token: 0x0400150A RID: 5386
 	public UIItemDisplay equipRightDisplay;
 
-	// Token: 0x0400150B RID: 5387
 	public UIItemDisplay toBeEquippedDisplay;
 
-	// Token: 0x0400150C RID: 5388
-	[ActionIdProperty(typeof(Action))]
+	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
 	public int equipLeftAction;
 
-	// Token: 0x0400150D RID: 5389
-	[ActionIdProperty(typeof(Action))]
+	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
 	public int equipRightAction;
 
-	// Token: 0x0400150E RID: 5390
 	private int itemMenuLayer;
 
-	// Token: 0x0400150F RID: 5391
 	private EventSystem eventSystem;
 
-	// Token: 0x04001510 RID: 5392
 	private global::Rewired.Player rePlayer;
 
-	// Token: 0x04001511 RID: 5393
 	private bool isEquipWindowActive;
 
-	// Token: 0x04001512 RID: 5394
 	private readonly int showNothingID = Animator.StringToHash("None");
 
-	// Token: 0x04001513 RID: 5395
 	private readonly int showSwordID = Animator.StringToHash("Show Sword");
 
-	// Token: 0x04001514 RID: 5396
 	private readonly int showShieldID = Animator.StringToHash("Show Shield");
 
-	// Token: 0x02000450 RID: 1104
 	private enum ButtonPromptState
 	{
-		// Token: 0x04001DFD RID: 7677
 		Select,
-		// Token: 0x04001DFE RID: 7678
 		Craft,
-		// Token: 0x04001DFF RID: 7679
 		Equip
 	}
 }

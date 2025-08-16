@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200006E RID: 110
 public class Ach_Set : MonoBehaviour
 {
-	// Token: 0x060001B3 RID: 435 RVA: 0x00009A82 File Offset: 0x00007C82
+	// Token: 0x060001F6 RID: 502 RVA: 0x000039DC File Offset: 0x00001BDC
 	private void OnEnable()
 	{
 		if (this.setOnEnable)
@@ -13,15 +12,13 @@ public class Ach_Set : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001B4 RID: 436 RVA: 0x00009A92 File Offset: 0x00007C92
+	// Token: 0x060001F7 RID: 503 RVA: 0x000039EC File Offset: 0x00001BEC
 	public void UnlockAchievement()
 	{
 		this.achievement.UnlockAchievement();
 	}
 
-	// Token: 0x04000256 RID: 598
 	public Achievement achievement;
 
-	// Token: 0x04000257 RID: 599
 	public bool setOnEnable;
 }

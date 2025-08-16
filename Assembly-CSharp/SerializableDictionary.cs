@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000122 RID: 290
 [Serializable]
 public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
 {
-	// Token: 0x06000616 RID: 1558 RVA: 0x0001FC48 File Offset: 0x0001DE48
+	// Token: 0x0600077A RID: 1914 RVA: 0x00034F4C File Offset: 0x0003314C
 	public void OnBeforeSerialize()
 	{
 		this.keys.Clear();
@@ -18,7 +17,7 @@ public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, IS
 		}
 	}
 
-	// Token: 0x06000617 RID: 1559 RVA: 0x0001FCCC File Offset: 0x0001DECC
+	// Token: 0x0600077B RID: 1915 RVA: 0x00034FD0 File Offset: 0x000331D0
 	public void OnAfterDeserialize()
 	{
 		base.Clear();
@@ -32,11 +31,9 @@ public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, IS
 		}
 	}
 
-	// Token: 0x04000856 RID: 2134
 	[SerializeField]
 	private List<TKey> keys = new List<TKey>();
 
-	// Token: 0x04000857 RID: 2135
 	[SerializeField]
 	private List<TValue> values = new List<TValue>();
 }

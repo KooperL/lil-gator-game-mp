@@ -2,48 +2,43 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020002C3 RID: 707
 public class UIFindObjectMarker : MonoBehaviour
 {
-	// Token: 0x170000E3 RID: 227
-	// (get) Token: 0x06000ED9 RID: 3801 RVA: 0x00046F61 File Offset: 0x00045161
+	// (get) Token: 0x06001211 RID: 4625 RVA: 0x0000F59B File Offset: 0x0000D79B
 	public static UIFindObjectMarker Instance
 	{
 		get
 		{
 			if (UIFindObjectMarker.instance == null)
 			{
-				UIFindObjectMarker.instance = Object.FindObjectOfType<UIFindObjectMarker>(true);
+				UIFindObjectMarker.instance = global::UnityEngine.Object.FindObjectOfType<UIFindObjectMarker>(true);
 			}
 			return UIFindObjectMarker.instance;
 		}
 	}
 
-	// Token: 0x06000EDA RID: 3802 RVA: 0x00046F80 File Offset: 0x00045180
+	// Token: 0x06001212 RID: 4626 RVA: 0x0000F5BA File Offset: 0x0000D7BA
 	public void SetTarget(Transform target)
 	{
 		this.uiFollow.followTarget = target;
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x06000EDB RID: 3803 RVA: 0x00046F9A File Offset: 0x0004519A
+	// Token: 0x06001213 RID: 4627 RVA: 0x0000968D File Offset: 0x0000788D
 	public void ClearTarget()
 	{
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000EDC RID: 3804 RVA: 0x00046FA8 File Offset: 0x000451A8
+	// Token: 0x06001214 RID: 4628 RVA: 0x0000F5D4 File Offset: 0x0000D7D4
 	public void OnPin()
 	{
 		this.onPin.Invoke();
 	}
 
-	// Token: 0x0400135E RID: 4958
 	public static UIFindObjectMarker instance;
 
-	// Token: 0x0400135F RID: 4959
 	public UIFollow uiFollow;
 
-	// Token: 0x04001360 RID: 4960
 	public UnityEvent onPin;
 }

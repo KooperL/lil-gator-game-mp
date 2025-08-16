@@ -2,15 +2,14 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000F4 RID: 244
 public class ImpactSound : MonoBehaviour
 {
-	// Token: 0x0600050C RID: 1292 RVA: 0x0001B1C2 File Offset: 0x000193C2
+	// Token: 0x06000658 RID: 1624 RVA: 0x00002229 File Offset: 0x00000429
 	private void Start()
 	{
 	}
 
-	// Token: 0x0600050D RID: 1293 RVA: 0x0001B1C4 File Offset: 0x000193C4
+	// Token: 0x06000659 RID: 1625 RVA: 0x0003109C File Offset: 0x0002F29C
 	private void OnTriggerEnter(Collider other)
 	{
 		if (!base.enabled)
@@ -29,7 +28,7 @@ public class ImpactSound : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600050E RID: 1294 RVA: 0x0001B22C File Offset: 0x0001942C
+	// Token: 0x0600065A RID: 1626 RVA: 0x00031104 File Offset: 0x0002F304
 	private void OnCollisionEnter(Collision collision)
 	{
 		if (!base.enabled)
@@ -52,15 +51,11 @@ public class ImpactSound : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040006F7 RID: 1783
 	public float volume = 1f;
 
-	// Token: 0x040006F8 RID: 1784
 	public float maxVelocityDelta = 5f;
 
-	// Token: 0x040006F9 RID: 1785
 	public Vector3 triggerPoint;
 
-	// Token: 0x040006FA RID: 1786
 	public UnityEvent onImpact;
 }

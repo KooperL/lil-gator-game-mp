@@ -2,22 +2,21 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200002A RID: 42
 public class PlaygroundMusicDynamicStates : MonoBehaviour
 {
-	// Token: 0x060000AB RID: 171 RVA: 0x0000530B File Offset: 0x0000350B
+	// Token: 0x060000BF RID: 191 RVA: 0x00002A99 File Offset: 0x00000C99
 	private void Awake()
 	{
 		this.musicSystem.rightBeforePlaying.AddListener(new UnityAction(this.UpdateMusicSystem));
 	}
 
-	// Token: 0x060000AC RID: 172 RVA: 0x00005329 File Offset: 0x00003529
+	// Token: 0x060000C0 RID: 192 RVA: 0x00002AB7 File Offset: 0x00000CB7
 	private void Start()
 	{
 		this.UpdateMusicSystem();
 	}
 
-	// Token: 0x060000AD RID: 173 RVA: 0x00005334 File Offset: 0x00003534
+	// Token: 0x060000C1 RID: 193 RVA: 0x0001A1DC File Offset: 0x000183DC
 	private void UpdateMusicSystem()
 	{
 		bool isAveryQuestFinished = this.townNPCManager.isAveryQuestFinished;
@@ -44,9 +43,7 @@ public class PlaygroundMusicDynamicStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040000E1 RID: 225
 	public MusicSystem musicSystem;
 
-	// Token: 0x040000E2 RID: 226
 	public TownNPCManager townNPCManager;
 }

@@ -2,17 +2,16 @@
 using Cinemachine;
 using UnityEngine;
 
-// Token: 0x020001AD RID: 429
 public class CMConversationCamera : MonoBehaviour
 {
-	// Token: 0x060008D6 RID: 2262 RVA: 0x000299AC File Offset: 0x00027BAC
+	// Token: 0x06000AA7 RID: 2727 RVA: 0x0000A2CA File Offset: 0x000084CA
 	private void OnEnable()
 	{
 		CMConversationCamera.c = this;
 		this.virtualCamera = base.GetComponent<CinemachineVirtualCamera>();
 	}
 
-	// Token: 0x060008D7 RID: 2263 RVA: 0x000299C0 File Offset: 0x00027BC0
+	// Token: 0x06000AA8 RID: 2728 RVA: 0x0003DA00 File Offset: 0x0003BC00
 	private void Start()
 	{
 		this.defaultFocus = this.virtualCamera.LookAt;
@@ -23,7 +22,7 @@ public class CMConversationCamera : MonoBehaviour
 		base.enabled = this.isEnabled;
 	}
 
-	// Token: 0x060008D8 RID: 2264 RVA: 0x00029A2D File Offset: 0x00027C2D
+	// Token: 0x06000AA9 RID: 2729 RVA: 0x0000A2DE File Offset: 0x000084DE
 	public void SetFocus(DialogueActor actor)
 	{
 		this.virtualCamera.LookAt = actor.DialogueAnchor;
@@ -34,7 +33,7 @@ public class CMConversationCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008D9 RID: 2265 RVA: 0x00029A5C File Offset: 0x00027C5C
+	// Token: 0x06000AAA RID: 2730 RVA: 0x0003DA70 File Offset: 0x0003BC70
 	private void Update()
 	{
 		if (Game.HasControl)
@@ -62,43 +61,34 @@ public class CMConversationCamera : MonoBehaviour
 		base.transform.position = vector3;
 	}
 
-	// Token: 0x060008DA RID: 2266 RVA: 0x00029B3B File Offset: 0x00027D3B
+	// Token: 0x06000AAB RID: 2731 RVA: 0x0000A30C File Offset: 0x0000850C
 	public void LockPosition(Vector3 position)
 	{
 		this.lockedPosition = position;
 		this.isPositionLocked = true;
 	}
 
-	// Token: 0x060008DB RID: 2267 RVA: 0x00029B4B File Offset: 0x00027D4B
+	// Token: 0x06000AAC RID: 2732 RVA: 0x0000A31C File Offset: 0x0000851C
 	public void UnlockPosition()
 	{
 		this.isPositionLocked = false;
 	}
 
-	// Token: 0x04000AEB RID: 2795
 	public static CMConversationCamera c;
 
-	// Token: 0x04000AEC RID: 2796
 	private CinemachineVirtualCamera virtualCamera;
 
-	// Token: 0x04000AED RID: 2797
 	private Transform defaultFocus;
 
-	// Token: 0x04000AEE RID: 2798
 	public LayerMask raycastMask;
 
-	// Token: 0x04000AEF RID: 2799
 	private Vector3 centerLocalPosition;
 
-	// Token: 0x04000AF0 RID: 2800
 	private float maxDistanceFromCenter;
 
-	// Token: 0x04000AF1 RID: 2801
 	private bool isEnabled;
 
-	// Token: 0x04000AF2 RID: 2802
 	private Vector3 lockedPosition;
 
-	// Token: 0x04000AF3 RID: 2803
 	private bool isPositionLocked;
 }

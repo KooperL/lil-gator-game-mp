@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000172 RID: 370
 public class LowFramerateCamera : MonoBehaviour
 {
-	// Token: 0x0600079B RID: 1947 RVA: 0x000255DA File Offset: 0x000237DA
+	// Token: 0x0600093A RID: 2362 RVA: 0x00008F2E File Offset: 0x0000712E
 	public void OnValidate()
 	{
 		if (this.camera == null)
@@ -14,13 +13,13 @@ public class LowFramerateCamera : MonoBehaviour
 		this.frameTime = 1f / this.framerate;
 	}
 
-	// Token: 0x0600079C RID: 1948 RVA: 0x00025608 File Offset: 0x00023808
+	// Token: 0x0600093B RID: 2363 RVA: 0x00008F5C File Offset: 0x0000715C
 	private void OnEnable()
 	{
 		this.nextFrameTime = Time.time;
 	}
 
-	// Token: 0x0600079D RID: 1949 RVA: 0x00025615 File Offset: 0x00023815
+	// Token: 0x0600093C RID: 2364 RVA: 0x00008F69 File Offset: 0x00007169
 	private void Update()
 	{
 		if (Time.time > this.nextFrameTime)
@@ -32,16 +31,12 @@ public class LowFramerateCamera : MonoBehaviour
 		this.camera.enabled = false;
 	}
 
-	// Token: 0x040009C5 RID: 2501
 	public float framerate = 15f;
 
-	// Token: 0x040009C6 RID: 2502
 	[ReadOnly]
 	public float frameTime;
 
-	// Token: 0x040009C7 RID: 2503
 	private float nextFrameTime = -1f;
 
-	// Token: 0x040009C8 RID: 2504
 	public Camera camera;
 }

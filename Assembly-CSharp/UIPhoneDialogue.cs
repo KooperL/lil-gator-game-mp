@@ -3,10 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020002D5 RID: 725
 public class UIPhoneDialogue : MonoBehaviour
 {
-	// Token: 0x06000F4F RID: 3919 RVA: 0x00049A7F File Offset: 0x00047C7F
+	// Token: 0x060012B7 RID: 4791 RVA: 0x0000FC6B File Offset: 0x0000DE6B
 	public IEnumerator DisplayMessage(string text, CharacterProfile character)
 	{
 		if (this.oldMessages == null)
@@ -18,16 +17,16 @@ public class UIPhoneDialogue : MonoBehaviour
 		GameObject newTextMessage;
 		if (character.isPlayer)
 		{
-			newTextMessage = Object.Instantiate<GameObject>(this.playerTextMessageElement, this.messagesParent);
+			newTextMessage = global::UnityEngine.Object.Instantiate<GameObject>(this.playerTextMessageElement, this.messagesParent);
 		}
 		else
 		{
-			newTextMessage = Object.Instantiate<GameObject>(this.textMessageElement, this.messagesParent);
+			newTextMessage = global::UnityEngine.Object.Instantiate<GameObject>(this.textMessageElement, this.messagesParent);
 			if (this.nameplateElement != null)
 			{
 				if (this.lastNameplate == null || this.lastNameplate.character != character)
 				{
-					uinameplate = Object.Instantiate<GameObject>(this.nameplateElement, this.messagesParent).GetComponent<UINameplate>();
+					uinameplate = global::UnityEngine.Object.Instantiate<GameObject>(this.nameplateElement, this.messagesParent).GetComponent<UINameplate>();
 					uinameplate.SetNameplate(character);
 				}
 				else
@@ -74,7 +73,7 @@ public class UIPhoneDialogue : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000F50 RID: 3920 RVA: 0x00049A9C File Offset: 0x00047C9C
+	// Token: 0x060012B8 RID: 4792 RVA: 0x0000FC88 File Offset: 0x0000DE88
 	private IEnumerator ShiftMessages(float height)
 	{
 		float offset = 0f;
@@ -91,55 +90,41 @@ public class UIPhoneDialogue : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000F51 RID: 3921 RVA: 0x00049AB4 File Offset: 0x00047CB4
+	// Token: 0x060012B9 RID: 4793 RVA: 0x0005CB54 File Offset: 0x0005AD54
 	public void Clear()
 	{
 		for (int i = 0; i < this.messagesParent.childCount; i++)
 		{
-			Object.Destroy(this.messagesParent.GetChild(i).gameObject);
+			global::UnityEngine.Object.Destroy(this.messagesParent.GetChild(i).gameObject);
 		}
 		this.oldMessages = new List<Transform>();
 	}
 
-	// Token: 0x04001421 RID: 5153
 	public GameObject textMessageElement;
 
-	// Token: 0x04001422 RID: 5154
 	public GameObject playerTextMessageElement;
 
-	// Token: 0x04001423 RID: 5155
 	public GameObject systemTextMessageElement;
 
-	// Token: 0x04001424 RID: 5156
 	public GameObject nameplateElement;
 
-	// Token: 0x04001425 RID: 5157
 	private UINameplate lastNameplate;
 
-	// Token: 0x04001426 RID: 5158
 	public float messageMoveSpeed = 3f;
 
-	// Token: 0x04001427 RID: 5159
 	public float messageDelay = 0.5f;
 
-	// Token: 0x04001428 RID: 5160
 	public float messageGap = 5f;
 
-	// Token: 0x04001429 RID: 5161
 	public float differentCharacterGap = 50f;
 
-	// Token: 0x0400142A RID: 5162
 	private List<Transform> oldMessages;
 
-	// Token: 0x0400142B RID: 5163
 	public UIButtonPrompt leftButtonPrompt;
 
-	// Token: 0x0400142C RID: 5164
 	public UIButtonPrompt rightButtonPrompt;
 
-	// Token: 0x0400142D RID: 5165
 	public Vector2 buttonPromptOffset;
 
-	// Token: 0x0400142E RID: 5166
 	public Transform messagesParent;
 }

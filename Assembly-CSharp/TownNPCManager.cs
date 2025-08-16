@@ -4,11 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000196 RID: 406
 public class TownNPCManager : MonoBehaviour
 {
-	// Token: 0x17000074 RID: 116
-	// (get) Token: 0x06000845 RID: 2117 RVA: 0x00027701 File Offset: 0x00025901
+	// (get) Token: 0x06000A04 RID: 2564 RVA: 0x000099F5 File Offset: 0x00007BF5
 	private bool ShowSequence
 	{
 		get
@@ -17,8 +15,7 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000075 RID: 117
-	// (get) Token: 0x06000846 RID: 2118 RVA: 0x0002770E File Offset: 0x0002590E
+	// (get) Token: 0x06000A05 RID: 2565 RVA: 0x00009A02 File Offset: 0x00007C02
 	public bool isJillQuestFinished
 	{
 		get
@@ -27,8 +24,7 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000076 RID: 118
-	// (get) Token: 0x06000847 RID: 2119 RVA: 0x0002771B File Offset: 0x0002591B
+	// (get) Token: 0x06000A06 RID: 2566 RVA: 0x00009A0F File Offset: 0x00007C0F
 	public bool isMartinQuestFinished
 	{
 		get
@@ -37,8 +33,7 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000077 RID: 119
-	// (get) Token: 0x06000848 RID: 2120 RVA: 0x00027728 File Offset: 0x00025928
+	// (get) Token: 0x06000A07 RID: 2567 RVA: 0x00009A1C File Offset: 0x00007C1C
 	public bool isAveryQuestFinished
 	{
 		get
@@ -47,9 +42,8 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000078 RID: 120
-	// (get) Token: 0x06000849 RID: 2121 RVA: 0x00027735 File Offset: 0x00025935
-	// (set) Token: 0x0600084A RID: 2122 RVA: 0x00027742 File Offset: 0x00025942
+	// (get) Token: 0x06000A08 RID: 2568 RVA: 0x00009A29 File Offset: 0x00007C29
+	// (set) Token: 0x06000A09 RID: 2569 RVA: 0x00009A36 File Offset: 0x00007C36
 	public TownNPCManager.TownState State
 	{
 		get
@@ -62,7 +56,7 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600084B RID: 2123 RVA: 0x00027750 File Offset: 0x00025950
+	// Token: 0x06000A0A RID: 2570 RVA: 0x0003BE5C File Offset: 0x0003A05C
 	private void Awake()
 	{
 		TownNPCManager.t = this;
@@ -74,21 +68,21 @@ public class TownNPCManager : MonoBehaviour
 		this.stateMachine.onStateChange.AddListener(new UnityAction<int>(this.OnStateProgressed));
 	}
 
-	// Token: 0x0600084C RID: 2124 RVA: 0x000277F5 File Offset: 0x000259F5
+	// Token: 0x06000A0B RID: 2571 RVA: 0x00009A44 File Offset: 0x00007C44
 	private void Start()
 	{
 		this.UpdateTownActors();
 		this.UpdateState();
 	}
 
-	// Token: 0x0600084D RID: 2125 RVA: 0x00027803 File Offset: 0x00025A03
+	// Token: 0x06000A0C RID: 2572 RVA: 0x00009A52 File Offset: 0x00007C52
 	[ContextMenu("Find Town Actors")]
 	public void FindTownActors()
 	{
 		this.townActors = base.transform.GetComponentsInChildren<DialogueActor>(true);
 	}
 
-	// Token: 0x0600084E RID: 2126 RVA: 0x00027818 File Offset: 0x00025A18
+	// Token: 0x06000A0D RID: 2573 RVA: 0x0003BF04 File Offset: 0x0003A104
 	public void UnlockAllNPCs()
 	{
 		foreach (DialogueActor dialogueActor in this.townActors)
@@ -101,7 +95,7 @@ public class TownNPCManager : MonoBehaviour
 		this.UpdateTownActors();
 	}
 
-	// Token: 0x0600084F RID: 2127 RVA: 0x00027868 File Offset: 0x00025A68
+	// Token: 0x06000A0E RID: 2574 RVA: 0x0003BF54 File Offset: 0x0003A154
 	public void RewardNPCsSilently(CharacterProfile[] profiles)
 	{
 		foreach (CharacterProfile characterProfile in profiles)
@@ -118,13 +112,13 @@ public class TownNPCManager : MonoBehaviour
 		this.UpdateTownActors();
 	}
 
-	// Token: 0x06000850 RID: 2128 RVA: 0x000278C7 File Offset: 0x00025AC7
+	// Token: 0x06000A0F RID: 2575 RVA: 0x00009A66 File Offset: 0x00007C66
 	public void RewardNPCs(CharacterProfile[] profiles, int count = -1)
 	{
 		CoroutineUtil.Start(this.RewardNPCsCoroutine(profiles, -1));
 	}
 
-	// Token: 0x06000851 RID: 2129 RVA: 0x000278D7 File Offset: 0x00025AD7
+	// Token: 0x06000A10 RID: 2576 RVA: 0x00009A76 File Offset: 0x00007C76
 	private IEnumerator RewardNPCsCoroutine(CharacterProfile[] profiles, int count = -1)
 	{
 		yield return null;
@@ -180,7 +174,7 @@ public class TownNPCManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000852 RID: 2130 RVA: 0x000278F4 File Offset: 0x00025AF4
+	// Token: 0x06000A11 RID: 2577 RVA: 0x0003BFB4 File Offset: 0x0003A1B4
 	public void RewardAlreadyUnlockedNPCs()
 	{
 		List<CharacterProfile> list = new List<CharacterProfile>();
@@ -198,7 +192,7 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000853 RID: 2131 RVA: 0x00027960 File Offset: 0x00025B60
+	// Token: 0x06000A12 RID: 2578 RVA: 0x0003C020 File Offset: 0x0003A220
 	private void UpdateTownActors()
 	{
 		foreach (DialogueActor dialogueActor in this.townActors)
@@ -228,7 +222,7 @@ public class TownNPCManager : MonoBehaviour
 		this.UpdateState();
 	}
 
-	// Token: 0x06000854 RID: 2132 RVA: 0x00027A0C File Offset: 0x00025C0C
+	// Token: 0x06000A13 RID: 2579 RVA: 0x0003C0CC File Offset: 0x0003A2CC
 	private void UpdateState()
 	{
 		TownNPCManager.TownState state = this.State;
@@ -239,7 +233,7 @@ public class TownNPCManager : MonoBehaviour
 		this.market.SetActive(this.martinQuest.IsComplete && state == TownNPCManager.TownState.UpgradingTown);
 	}
 
-	// Token: 0x06000855 RID: 2133 RVA: 0x00027A9B File Offset: 0x00025C9B
+	// Token: 0x06000A14 RID: 2580 RVA: 0x00009A93 File Offset: 0x00007C93
 	public void OnAveryComplete()
 	{
 		if (this.State == TownNPCManager.TownState.UpgradingTown)
@@ -250,7 +244,7 @@ public class TownNPCManager : MonoBehaviour
 		this.juiceBar.SetActive(false);
 	}
 
-	// Token: 0x06000856 RID: 2134 RVA: 0x00027AC5 File Offset: 0x00025CC5
+	// Token: 0x06000A15 RID: 2581 RVA: 0x00009ABD File Offset: 0x00007CBD
 	public void OnMartinComplete()
 	{
 		if (this.State == TownNPCManager.TownState.UpgradingTown)
@@ -261,7 +255,7 @@ public class TownNPCManager : MonoBehaviour
 		this.market.SetActive(false);
 	}
 
-	// Token: 0x06000857 RID: 2135 RVA: 0x00027AEF File Offset: 0x00025CEF
+	// Token: 0x06000A16 RID: 2582 RVA: 0x00009AE7 File Offset: 0x00007CE7
 	public void OnJillComplete()
 	{
 		if (this.State == TownNPCManager.TownState.UpgradingTown)
@@ -272,7 +266,7 @@ public class TownNPCManager : MonoBehaviour
 		this.cathedral.SetActive(false);
 	}
 
-	// Token: 0x06000858 RID: 2136 RVA: 0x00027B19 File Offset: 0x00025D19
+	// Token: 0x06000A17 RID: 2583 RVA: 0x00009B11 File Offset: 0x00007D11
 	private IEnumerator ShowAlreadyUnlockedBuildings()
 	{
 		yield return base.StartCoroutine(this.castle.RunUnlockSequence());
@@ -291,7 +285,7 @@ public class TownNPCManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000859 RID: 2137 RVA: 0x00027B28 File Offset: 0x00025D28
+	// Token: 0x06000A18 RID: 2584 RVA: 0x00009B20 File Offset: 0x00007D20
 	private void CheckBuildings()
 	{
 		if (this.castle.IsUpgraded && this.cathedral.IsUpgraded && this.juiceBar.IsUpgraded && this.market.IsUpgraded)
@@ -300,13 +294,13 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600085A RID: 2138 RVA: 0x00027B64 File Offset: 0x00025D64
+	// Token: 0x06000A19 RID: 2585 RVA: 0x00009B5C File Offset: 0x00007D5C
 	public void ProgressState()
 	{
 		this.stateMachine.ProgressState(-1);
 	}
 
-	// Token: 0x0600085B RID: 2139 RVA: 0x00027B73 File Offset: 0x00025D73
+	// Token: 0x06000A1A RID: 2586 RVA: 0x00009B6B File Offset: 0x00007D6B
 	private void OnStateProgressed(int newState)
 	{
 		if (this.State == TownNPCManager.TownState.UpgradingTown)
@@ -315,61 +309,41 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000A6A RID: 2666
 	public static TownNPCManager t;
 
-	// Token: 0x04000A6B RID: 2667
 	public QuestStates stateMachine;
 
-	// Token: 0x04000A6C RID: 2668
 	public ItemResource populationResource;
 
-	// Token: 0x04000A6D RID: 2669
 	public DialogueActor[] townActors;
 
-	// Token: 0x04000A6E RID: 2670
 	public CharacterProfile[] possibleUnlockedCharacters;
 
-	// Token: 0x04000A6F RID: 2671
 	public CharacterProfile[] allUnlockableCharacters;
 
-	// Token: 0x04000A70 RID: 2672
 	[Header("Buildings")]
 	public QuestProfile jillQuest;
 
-	// Token: 0x04000A71 RID: 2673
 	public QuestProfile martinQuest;
 
-	// Token: 0x04000A72 RID: 2674
 	public QuestProfile averyQuest;
 
-	// Token: 0x04000A73 RID: 2675
 	public BuildingUpgradeStation castle;
 
-	// Token: 0x04000A74 RID: 2676
 	public BuildingUpgradeStation cathedral;
 
-	// Token: 0x04000A75 RID: 2677
 	public BuildingUpgradeStation market;
 
-	// Token: 0x04000A76 RID: 2678
 	public BuildingUpgradeStation juiceBar;
 
-	// Token: 0x04000A77 RID: 2679
 	public BuildingUpgradeStation tutorialHouse;
 
-	// Token: 0x020003D3 RID: 979
 	public enum TownState
 	{
-		// Token: 0x04001C1D RID: 7197
 		Introduction,
-		// Token: 0x04001C1E RID: 7198
 		BuildingTutorial,
-		// Token: 0x04001C1F RID: 7199
 		UpgradingTown,
-		// Token: 0x04001C20 RID: 7200
 		TownBuilt,
-		// Token: 0x04001C21 RID: 7201
 		Postgame
 	}
 }

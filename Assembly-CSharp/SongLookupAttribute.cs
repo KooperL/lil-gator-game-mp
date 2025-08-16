@@ -1,9 +1,8 @@
 ﻿using System;
 
-// Token: 0x0200002E RID: 46
 public class SongLookupAttribute : LookupAttribute
 {
-	// Token: 0x060000B2 RID: 178 RVA: 0x00005429 File Offset: 0x00003629
+	// Token: 0x060000C6 RID: 198 RVA: 0x00002ABF File Offset: 0x00000CBF
 	public SongLookupAttribute(string sourceField)
 	{
 		this.sourceField = sourceField;

@@ -3,10 +3,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Token: 0x020002B0 RID: 688
 public class SelectProperties : MonoBehaviour, ISelectHandler, IEventSystemHandler, IDeselectHandler
 {
-	// Token: 0x06000E7E RID: 3710 RVA: 0x0004532D File Offset: 0x0004352D
+	// Token: 0x060011AE RID: 4526 RVA: 0x0000F10F File Offset: 0x0000D30F
 	private void OnEnable()
 	{
 		if (EventSystem.current.currentSelectedGameObject == base.gameObject)
@@ -15,7 +14,7 @@ public class SelectProperties : MonoBehaviour, ISelectHandler, IEventSystemHandl
 		}
 	}
 
-	// Token: 0x06000E7F RID: 3711 RVA: 0x0004534D File Offset: 0x0004354D
+	// Token: 0x060011AF RID: 4527 RVA: 0x0000F12F File Offset: 0x0000D32F
 	private void OnDisable()
 	{
 		if (this == null)
@@ -25,19 +24,19 @@ public class SelectProperties : MonoBehaviour, ISelectHandler, IEventSystemHandl
 		this.SetSelected(false);
 	}
 
-	// Token: 0x06000E80 RID: 3712 RVA: 0x00045360 File Offset: 0x00043560
+	// Token: 0x060011B0 RID: 4528 RVA: 0x0000F142 File Offset: 0x0000D342
 	public void OnSelect(BaseEventData eventData)
 	{
 		this.SetSelected(true);
 	}
 
-	// Token: 0x06000E81 RID: 3713 RVA: 0x00045369 File Offset: 0x00043569
+	// Token: 0x060011B1 RID: 4529 RVA: 0x0000F14B File Offset: 0x0000D34B
 	public void OnDeselect(BaseEventData eventData)
 	{
 		this.SetSelected(false);
 	}
 
-	// Token: 0x06000E82 RID: 3714 RVA: 0x00045374 File Offset: 0x00043574
+	// Token: 0x060011B2 RID: 4530 RVA: 0x0005897C File Offset: 0x00056B7C
 	private void SetSelected(bool isSelected)
 	{
 		if (this.modifyText)
@@ -72,7 +71,7 @@ public class SelectProperties : MonoBehaviour, ISelectHandler, IEventSystemHandl
 		}
 		if (this.randomizeSelectedRotation)
 		{
-			base.transform.rotation = Quaternion.Euler(0f, 0f, isSelected ? Random.Range(-this.randomizedAngle, this.randomizedAngle) : 0f);
+			base.transform.rotation = Quaternion.Euler(0f, 0f, isSelected ? global::UnityEngine.Random.Range(-this.randomizedAngle, this.randomizedAngle) : 0f);
 		}
 		if (this.randomizeGraphic && (this.randomizeGraphicOnlySelected || isSelected))
 		{
@@ -80,82 +79,62 @@ public class SelectProperties : MonoBehaviour, ISelectHandler, IEventSystemHandl
 		}
 	}
 
-	// Token: 0x040012D2 RID: 4818
 	public bool randomizeSelectedRotation;
 
-	// Token: 0x040012D3 RID: 4819
 	[ConditionalHide("randomizeSelectedRotation", true)]
 	public float randomizedAngle = 5f;
 
-	// Token: 0x040012D4 RID: 4820
 	[Space]
 	public bool modifyText;
 
-	// Token: 0x040012D5 RID: 4821
 	[ConditionalHide("modifyText", true)]
 	public Text text;
 
-	// Token: 0x040012D6 RID: 4822
 	[ConditionalHide("modifyText", true)]
 	public Color textUnselectedColor;
 
-	// Token: 0x040012D7 RID: 4823
 	[ConditionalHide("modifyText", true)]
 	public Color textSelectedColor;
 
-	// Token: 0x040012D8 RID: 4824
 	[Space]
 	public bool modifyMiscStuff;
 
-	// Token: 0x040012D9 RID: 4825
 	[ConditionalHide("modifyMiscStuff", true)]
 	public Image[] modifiedImages;
 
-	// Token: 0x040012DA RID: 4826
 	[ConditionalHide("modifyMiscStuff", true)]
 	public Text[] modifiedText;
 
-	// Token: 0x040012DB RID: 4827
 	[ConditionalHide("modifyMiscStuff", true)]
 	public Color modifiedUnselectedColor;
 
-	// Token: 0x040012DC RID: 4828
 	[ConditionalHide("modifyMiscStuff", true)]
 	public Color modifiedSelectedColor;
 
-	// Token: 0x040012DD RID: 4829
 	[Space]
 	public bool modifyMiscStuff2;
 
-	// Token: 0x040012DE RID: 4830
 	[ConditionalHide("modifyMiscStuff2", true)]
 	public Image[] modifiedImages2;
 
-	// Token: 0x040012DF RID: 4831
 	[ConditionalHide("modifyMiscStuff2", true)]
 	public Text[] modifiedText2;
 
-	// Token: 0x040012E0 RID: 4832
 	[ConditionalHide("modifyMiscStuff2", true)]
 	public Color modifiedUnselectedColor2;
 
-	// Token: 0x040012E1 RID: 4833
 	[ConditionalHide("modifyMiscStuff", true)]
 	public Color modifiedSelectedColor2;
 
-	// Token: 0x040012E2 RID: 4834
 	[Space]
 	public bool randomizeGraphic;
 
-	// Token: 0x040012E3 RID: 4835
 	[ConditionalHide("randomizeGraphic", true)]
 	public bool randomizeGraphicOnlySelected = true;
 
-	// Token: 0x040012E4 RID: 4836
 	[ConditionalHide("randomizeGraphic", true)]
 	public Image randomizedGraphic;
 
-	// Token: 0x040012E5 RID: 4837
 	[ConditionalHide("randomizeGraphic", true)]
 	public Sprite[] randomizedGraphicVariants;
 }

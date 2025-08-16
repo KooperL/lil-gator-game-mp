@@ -1,16 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001DD RID: 477
 public class KeepUpright : MonoBehaviour
 {
-	// Token: 0x06000A05 RID: 2565 RVA: 0x0002E7B8 File Offset: 0x0002C9B8
+	// Token: 0x06000C06 RID: 3078 RVA: 0x0000B333 File Offset: 0x00009533
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x06000A06 RID: 2566 RVA: 0x0002E7C8 File Offset: 0x0002C9C8
+	// Token: 0x06000C07 RID: 3079 RVA: 0x00041E70 File Offset: 0x00040070
 	private Vector3 GetForward()
 	{
 		Vector3 vector = Quaternion.FromToRotation(this.referenceRigidbody.rotation * this.referenceUp, Vector3.up) * this.referenceRigidbody.rotation * this.referenceForward;
@@ -22,7 +21,7 @@ public class KeepUpright : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x06000A07 RID: 2567 RVA: 0x0002E832 File Offset: 0x0002CA32
+	// Token: 0x06000C08 RID: 3080 RVA: 0x0000B341 File Offset: 0x00009541
 	public static Quaternion ShortestRotation(Quaternion a, Quaternion b)
 	{
 		if (Quaternion.Dot(a, b) < 0f)
@@ -32,13 +31,13 @@ public class KeepUpright : MonoBehaviour
 		return a * Quaternion.Inverse(b);
 	}
 
-	// Token: 0x06000A08 RID: 2568 RVA: 0x0002E865 File Offset: 0x0002CA65
+	// Token: 0x06000C09 RID: 3081 RVA: 0x00009D55 File Offset: 0x00007F55
 	public static Quaternion Multiply(Quaternion input, float scalar)
 	{
 		return new Quaternion(input.x * scalar, input.y * scalar, input.z * scalar, input.w * scalar);
 	}
 
-	// Token: 0x06000A09 RID: 2569 RVA: 0x0002E88C File Offset: 0x0002CA8C
+	// Token: 0x06000C0A RID: 3082 RVA: 0x00041EDC File Offset: 0x000400DC
 	private void FixedUpdate()
 	{
 		if (this.rigidbody.isKinematic)
@@ -55,27 +54,19 @@ public class KeepUpright : MonoBehaviour
 		this.rigidbody.AddTorque(vector3);
 	}
 
-	// Token: 0x04000C5A RID: 3162
 	private Rigidbody rigidbody;
 
-	// Token: 0x04000C5B RID: 3163
 	public float uprightSpringStrength;
 
-	// Token: 0x04000C5C RID: 3164
 	public float uprightSpringDamper;
 
-	// Token: 0x04000C5D RID: 3165
 	public float maxTorque = 90f;
 
-	// Token: 0x04000C5E RID: 3166
 	public Rigidbody referenceRigidbody;
 
-	// Token: 0x04000C5F RID: 3167
 	public Vector3 referenceForward = Vector3.forward;
 
-	// Token: 0x04000C60 RID: 3168
 	public Vector3 referenceUp = Vector3.up;
 
-	// Token: 0x04000C61 RID: 3169
 	public Vector3 forwardDirection = Vector3.forward;
 }

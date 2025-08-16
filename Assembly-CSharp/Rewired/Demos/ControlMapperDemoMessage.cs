@@ -7,11 +7,10 @@ using UnityEngine.UI;
 
 namespace Rewired.Demos
 {
-	// Token: 0x02000349 RID: 841
 	[AddComponentMenu("")]
 	public class ControlMapperDemoMessage : MonoBehaviour
 	{
-		// Token: 0x060017C7 RID: 6087 RVA: 0x0006573B File Offset: 0x0006393B
+		// Token: 0x06001E25 RID: 7717 RVA: 0x00017056 File Offset: 0x00015256
 		private void Awake()
 		{
 			if (this.controlMapper != null)
@@ -21,26 +20,26 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x060017C8 RID: 6088 RVA: 0x00065779 File Offset: 0x00063979
+		// Token: 0x06001E26 RID: 7718 RVA: 0x00017094 File Offset: 0x00015294
 		private void Start()
 		{
 			this.SelectDefault();
 		}
 
-		// Token: 0x060017C9 RID: 6089 RVA: 0x00065781 File Offset: 0x00063981
+		// Token: 0x06001E27 RID: 7719 RVA: 0x0001709C File Offset: 0x0001529C
 		private void OnControlMapperClosed()
 		{
 			base.gameObject.SetActive(true);
 			base.StartCoroutine(this.SelectDefaultDeferred());
 		}
 
-		// Token: 0x060017CA RID: 6090 RVA: 0x0006579C File Offset: 0x0006399C
+		// Token: 0x06001E28 RID: 7720 RVA: 0x0000968D File Offset: 0x0000788D
 		private void OnControlMapperOpened()
 		{
 			base.gameObject.SetActive(false);
 		}
 
-		// Token: 0x060017CB RID: 6091 RVA: 0x000657AA File Offset: 0x000639AA
+		// Token: 0x06001E29 RID: 7721 RVA: 0x000170B7 File Offset: 0x000152B7
 		private void SelectDefault()
 		{
 			if (EventSystem.current == null)
@@ -53,7 +52,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x060017CC RID: 6092 RVA: 0x000657DD File Offset: 0x000639DD
+		// Token: 0x06001E2A RID: 7722 RVA: 0x000170EA File Offset: 0x000152EA
 		private IEnumerator SelectDefaultDeferred()
 		{
 			yield return null;
@@ -61,10 +60,8 @@ namespace Rewired.Demos
 			yield break;
 		}
 
-		// Token: 0x0400198A RID: 6538
 		public ControlMapper controlMapper;
 
-		// Token: 0x0400198B RID: 6539
 		public Selectable defaultSelectable;
 	}
 }

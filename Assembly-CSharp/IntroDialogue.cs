@@ -2,10 +2,9 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020000C1 RID: 193
 public class IntroDialogue : MonoBehaviour
 {
-	// Token: 0x06000433 RID: 1075 RVA: 0x0001845E File Offset: 0x0001665E
+	// Token: 0x06000525 RID: 1317 RVA: 0x00005C18 File Offset: 0x00003E18
 	private void Start()
 	{
 		if (GameData.g.ReadInt("GlobalGameState", 0) == 0)
@@ -14,7 +13,7 @@ public class IntroDialogue : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000434 RID: 1076 RVA: 0x0001847F File Offset: 0x0001667F
+	// Token: 0x06000526 RID: 1318 RVA: 0x00005C39 File Offset: 0x00003E39
 	private IEnumerator RunConversation()
 	{
 		yield return base.StartCoroutine(DialogueManager.d.LoadChunk("Tutorial_Intro1", this.actors, DialogueManager.DialogueBoxBackground.Standard, true));
@@ -24,9 +23,7 @@ public class IntroDialogue : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x040005EB RID: 1515
 	public CharacterProfile[] profiles;
 
-	// Token: 0x040005EC RID: 1516
 	public DialogueActor[] actors;
 }

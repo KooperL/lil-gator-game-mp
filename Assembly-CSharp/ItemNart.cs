@@ -1,17 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001CC RID: 460
 public class ItemNart : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x06000982 RID: 2434 RVA: 0x0002CD21 File Offset: 0x0002AF21
+	// Token: 0x06000B65 RID: 2917 RVA: 0x0000AB6C File Offset: 0x00008D6C
 	private void Awake()
 	{
 		this.movement = Player.movement;
 		this.itemManager = Player.itemManager;
 	}
 
-	// Token: 0x06000983 RID: 2435 RVA: 0x0002CD39 File Offset: 0x0002AF39
+	// Token: 0x06000B66 RID: 2918 RVA: 0x0000AB84 File Offset: 0x00008D84
 	public void Input(bool isDown, bool isHeld)
 	{
 		if (Game.HasControl && isDown)
@@ -25,7 +24,7 @@ public class ItemNart : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000984 RID: 2436 RVA: 0x0002CD5C File Offset: 0x0002AF5C
+	// Token: 0x06000B67 RID: 2919 RVA: 0x0000ABA7 File Offset: 0x00008DA7
 	private void LateUpdate()
 	{
 		if (this.activated && !this.movement.isModified)
@@ -34,13 +33,13 @@ public class ItemNart : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000985 RID: 2437 RVA: 0x0002CD7A File Offset: 0x0002AF7A
+	// Token: 0x06000B68 RID: 2920 RVA: 0x0000ABC5 File Offset: 0x00008DC5
 	public void Cancel()
 	{
 		this.SetState(false);
 	}
 
-	// Token: 0x06000986 RID: 2438 RVA: 0x0002CD84 File Offset: 0x0002AF84
+	// Token: 0x06000B69 RID: 2921 RVA: 0x00040550 File Offset: 0x0003E750
 	private void SetState(bool isActive)
 	{
 		if (this.activated == isActive)
@@ -69,7 +68,7 @@ public class ItemNart : MonoBehaviour, IItemBehaviour
 		this.itemManager.animator.SetBool("Nart", isActive);
 	}
 
-	// Token: 0x06000987 RID: 2439 RVA: 0x0002CE1C File Offset: 0x0002B01C
+	// Token: 0x06000B6A RID: 2922 RVA: 0x000405E8 File Offset: 0x0003E7E8
 	public void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (isEquipped ? this.itemManager.leftHandAnchor : this.itemManager.hipAnchor);
@@ -82,34 +81,27 @@ public class ItemNart : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000988 RID: 2440 RVA: 0x0002CE94 File Offset: 0x0002B094
+	// Token: 0x06000B6B RID: 2923 RVA: 0x00002229 File Offset: 0x00000429
 	public void OnRemove()
 	{
 	}
 
-	// Token: 0x06000989 RID: 2441 RVA: 0x0002CE96 File Offset: 0x0002B096
+	// Token: 0x06000B6C RID: 2924 RVA: 0x00002229 File Offset: 0x00000429
 	public void SetIndex(int index)
 	{
 	}
 
-	// Token: 0x04000BE3 RID: 3043
 	private bool activated;
 
-	// Token: 0x04000BE4 RID: 3044
 	private PlayerMovement movement;
 
-	// Token: 0x04000BE5 RID: 3045
 	private PlayerItemManager itemManager;
 
-	// Token: 0x04000BE6 RID: 3046
 	public bool restrictMovement;
 
-	// Token: 0x04000BE7 RID: 3047
 	public bool restrictSpeed;
 
-	// Token: 0x04000BE8 RID: 3048
 	public bool restrictClimbing;
 
-	// Token: 0x04000BE9 RID: 3049
 	public bool restrictJumping;
 }

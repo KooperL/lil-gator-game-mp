@@ -1,11 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000168 RID: 360
 [AddComponentMenu("Logic/Fork Interaction By State")]
 public class LogicForkInteraction : LogicFork, Interaction
 {
-	// Token: 0x06000769 RID: 1897 RVA: 0x00024D74 File Offset: 0x00022F74
+	// Token: 0x06000901 RID: 2305 RVA: 0x00039AB8 File Offset: 0x00037CB8
 	protected override void OnValidate()
 	{
 		DialogueActor dialogueActor;
@@ -16,7 +15,7 @@ public class LogicForkInteraction : LogicFork, Interaction
 		base.OnValidate();
 	}
 
-	// Token: 0x0600076A RID: 1898 RVA: 0x00024DB2 File Offset: 0x00022FB2
+	// Token: 0x06000902 RID: 2306 RVA: 0x00008B87 File Offset: 0x00006D87
 	public void Interact()
 	{
 		base.Action();

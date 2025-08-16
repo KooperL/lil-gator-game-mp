@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x02000332 RID: 818
 	public static class UISelectionUtility
 	{
-		// Token: 0x060016B9 RID: 5817 RVA: 0x0005F138 File Offset: 0x0005D338
+		// Token: 0x06001CA5 RID: 7333 RVA: 0x00070B1C File Offset: 0x0006ED1C
 		public static Selectable FindNextSelectable(Selectable selectable, Transform transform, Vector3 direction)
 		{
 			RectTransform rectTransform = transform as RectTransform;
@@ -79,7 +78,6 @@ namespace Rewired.UI.ControlMapper
 			return selectable3;
 		}
 
-		// Token: 0x040018E4 RID: 6372
 		private static Selectable[] s_reusableAllSelectables = new Selectable[0];
 	}
 }

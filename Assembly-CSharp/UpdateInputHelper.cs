@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200025E RID: 606
 public class UpdateInputHelper : MonoBehaviour
 {
-	// Token: 0x06000D07 RID: 3335 RVA: 0x0003EC5F File Offset: 0x0003CE5F
+	// Token: 0x06001010 RID: 4112 RVA: 0x0000DDFC File Offset: 0x0000BFFC
 	public void DoUpdateInputHelper()
 	{
 		InputHelper.i.UpdateInput();

@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000143 RID: 323
 public class HitOre : MonoBehaviour
 {
-	// Token: 0x1700005B RID: 91
-	// (get) Token: 0x06000697 RID: 1687 RVA: 0x000218F8 File Offset: 0x0001FAF8
+	// (get) Token: 0x0600080F RID: 2063 RVA: 0x00007ED1 File Offset: 0x000060D1
 	private string saveID
 	{
 		get
@@ -15,31 +13,31 @@ public class HitOre : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000698 RID: 1688 RVA: 0x0002190F File Offset: 0x0001FB0F
+	// Token: 0x06000810 RID: 2064 RVA: 0x00007EE8 File Offset: 0x000060E8
 	private void Start()
 	{
 		this.SetState(GameData.g.ReadBool(this.saveID, false));
 	}
 
-	// Token: 0x06000699 RID: 1689 RVA: 0x00021928 File Offset: 0x0001FB28
+	// Token: 0x06000811 RID: 2065 RVA: 0x00007F01 File Offset: 0x00006101
 	public void Hit(Vector3 velocity)
 	{
 		this.SetState(true);
 	}
 
-	// Token: 0x0600069A RID: 1690 RVA: 0x00021931 File Offset: 0x0001FB31
+	// Token: 0x06000812 RID: 2066 RVA: 0x00007F0A File Offset: 0x0000610A
 	private void SetState(bool state)
 	{
 		this.renderer.material = (state ? this.oreEmptyMaterial : this.oreFullMaterial);
 		base.gameObject.SetActive(!state);
 	}
 
-	// Token: 0x0600069B RID: 1691 RVA: 0x00021960 File Offset: 0x0001FB60
+	// Token: 0x06000813 RID: 2067 RVA: 0x00036B04 File Offset: 0x00034D04
 	[ContextMenu("Assign Unique ID")]
 	public void AssignUniqueID()
 	{
 		List<int> list = new List<int>();
-		foreach (HitOre hitOre in Object.FindObjectsOfType<HitOre>())
+		foreach (HitOre hitOre in global::UnityEngine.Object.FindObjectsOfType<HitOre>())
 		{
 			if (hitOre.id != -1 && hitOre != this && !list.Contains(hitOre.id))
 			{
@@ -56,15 +54,11 @@ public class HitOre : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040008E0 RID: 2272
 	public Renderer renderer;
 
-	// Token: 0x040008E1 RID: 2273
 	public Material oreFullMaterial;
 
-	// Token: 0x040008E2 RID: 2274
 	public Material oreEmptyMaterial;
 
-	// Token: 0x040008E3 RID: 2275
 	public int id = -1;
 }

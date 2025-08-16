@@ -3,17 +3,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000CD RID: 205
 [AddComponentMenu("Dialogue Sequence/Choose Correct Choice")]
 public class DSChooseCorrect : DialogueSequence
 {
-	// Token: 0x0600046D RID: 1133 RVA: 0x00018EBA File Offset: 0x000170BA
+	// Token: 0x06000589 RID: 1417 RVA: 0x00006014 File Offset: 0x00004214
 	public override YieldInstruction Run()
 	{
 		return CoroutineUtil.Start(this.RunChoiceLoop());
 	}
 
-	// Token: 0x0600046E RID: 1134 RVA: 0x00018EC7 File Offset: 0x000170C7
+	// Token: 0x0600058A RID: 1418 RVA: 0x00006021 File Offset: 0x00004221
 	private IEnumerator RunChoiceLoop()
 	{
 		if (this.showPrompt)
@@ -69,49 +68,35 @@ public class DSChooseCorrect : DialogueSequence
 		yield break;
 	}
 
-	// Token: 0x0400062F RID: 1583
 	public MultilingualTextDocument document;
 
-	// Token: 0x04000630 RID: 1584
 	public bool showPrompt = true;
 
-	// Token: 0x04000631 RID: 1585
 	public bool showPromptAfterWrongChoices = true;
 
-	// Token: 0x04000632 RID: 1586
 	public bool showCorrectDialogue;
 
-	// Token: 0x04000633 RID: 1587
 	[ChunkLookup("document")]
 	public string prompt;
 
-	// Token: 0x04000634 RID: 1588
 	public DSChooseCorrect.Choice[] choices;
 
-	// Token: 0x04000635 RID: 1589
 	public DialogueActor[] actors;
 
-	// Token: 0x04000636 RID: 1590
 	public UnityEvent onChooseCorrectFirst;
 
-	// Token: 0x04000637 RID: 1591
 	public UnityEvent onChooseCorrectNotFirst;
 
-	// Token: 0x04000638 RID: 1592
 	private bool hasChosenIncorrectly;
 
-	// Token: 0x020003A0 RID: 928
 	[Serializable]
 	public struct Choice
 	{
-		// Token: 0x04001B35 RID: 6965
 		public bool isCorrect;
 
-		// Token: 0x04001B36 RID: 6966
 		[ChunkLookup("document")]
 		public string dialogue;
 
-		// Token: 0x04001B37 RID: 6967
 		public bool isCancel;
 	}
 }

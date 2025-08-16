@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000250 RID: 592
 public class TerrainSurfaceMaterials : MonoBehaviour, ISurface
 {
-	// Token: 0x06000CCE RID: 3278 RVA: 0x0003DDF0 File Offset: 0x0003BFF0
+	// Token: 0x06000FD6 RID: 4054 RVA: 0x00052824 File Offset: 0x00050A24
 	private void OnValidate()
 	{
 		if (this.detailMaterials != null)
@@ -17,7 +16,7 @@ public class TerrainSurfaceMaterials : MonoBehaviour, ISurface
 		}
 	}
 
-	// Token: 0x06000CCF RID: 3279 RVA: 0x0003DE50 File Offset: 0x0003C050
+	// Token: 0x06000FD7 RID: 4055 RVA: 0x00052884 File Offset: 0x00050A84
 	private void OnEnable()
 	{
 		this.terrain = base.GetComponent<Terrain>();
@@ -31,7 +30,7 @@ public class TerrainSurfaceMaterials : MonoBehaviour, ISurface
 		this.alphamaps = this.terrain.terrainData.GetAlphamaps(0, 0, this.terrain.terrainData.alphamapWidth, this.terrain.terrainData.alphamapHeight);
 	}
 
-	// Token: 0x06000CD0 RID: 3280 RVA: 0x0003DEE8 File Offset: 0x0003C0E8
+	// Token: 0x06000FD8 RID: 4056 RVA: 0x0005291C File Offset: 0x00050B1C
 	private Vector2 WorldToAlpha(Vector3 worldPosition)
 	{
 		Vector2 vector = new Vector2(worldPosition.x - base.transform.position.x, worldPosition.z - base.transform.position.z);
@@ -44,13 +43,13 @@ public class TerrainSurfaceMaterials : MonoBehaviour, ISurface
 		return new Vector2(vector.y, vector.x);
 	}
 
-	// Token: 0x06000CD1 RID: 3281 RVA: 0x0003DFC7 File Offset: 0x0003C1C7
+	// Token: 0x06000FD9 RID: 4057 RVA: 0x0000DAB9 File Offset: 0x0000BCB9
 	public SurfaceMaterial GetSurfaceMaterial(Vector3 position)
 	{
 		return this.GetSurfaceMaterial(position, Vector3.up);
 	}
 
-	// Token: 0x06000CD2 RID: 3282 RVA: 0x0003DFD8 File Offset: 0x0003C1D8
+	// Token: 0x06000FDA RID: 4058 RVA: 0x000529FC File Offset: 0x00050BFC
 	public SurfaceMaterial GetSurfaceMaterial(Vector3 position, Vector3 normal)
 	{
 		Vector2 vector = new Vector2(position.x - base.transform.position.x, position.z - base.transform.position.z);
@@ -83,7 +82,7 @@ public class TerrainSurfaceMaterials : MonoBehaviour, ISurface
 		return this.splatMaterials[num4];
 	}
 
-	// Token: 0x06000CD3 RID: 3283 RVA: 0x0003E170 File Offset: 0x0003C370
+	// Token: 0x06000FDB RID: 4059 RVA: 0x00052B94 File Offset: 0x00050D94
 	public float MultiSample(float x, float y, int z)
 	{
 		float num = 0f;
@@ -112,44 +111,31 @@ public class TerrainSurfaceMaterials : MonoBehaviour, ISurface
 		return num;
 	}
 
-	// Token: 0x040010EF RID: 4335
 	private Terrain terrain;
 
-	// Token: 0x040010F0 RID: 4336
 	public SurfaceMaterial[] splatMaterials;
 
-	// Token: 0x040010F1 RID: 4337
 	public TerrainSurfaceMaterials.DetailMaterial[] detailMaterials;
 
-	// Token: 0x040010F2 RID: 4338
 	public SurfaceMaterial treeMaterial;
 
-	// Token: 0x040010F3 RID: 4339
 	public float maxWallY;
 
-	// Token: 0x040010F4 RID: 4340
 	public SurfaceMaterial wallMaterial;
 
-	// Token: 0x040010F5 RID: 4341
 	private TerrainDetails terrainDetails;
 
-	// Token: 0x040010F6 RID: 4342
 	private float[,,] alphamaps;
 
-	// Token: 0x02000423 RID: 1059
 	[Serializable]
 	public struct DetailMaterial
 	{
-		// Token: 0x04001D4C RID: 7500
 		public string name;
 
-		// Token: 0x04001D4D RID: 7501
 		public bool overrideMaterial;
 
-		// Token: 0x04001D4E RID: 7502
 		public float minDensity;
 
-		// Token: 0x04001D4F RID: 7503
 		public SurfaceMaterial material;
 	}
 }

@@ -1,15 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200023C RID: 572
 public class AutoSplitterCue : MonoBehaviour
 {
-	// Token: 0x06000C86 RID: 3206 RVA: 0x0003CEEA File Offset: 0x0003B0EA
+	// Token: 0x06000F8E RID: 3982 RVA: 0x0000D6FD File Offset: 0x0000B8FD
 	private void Start()
 	{
 		SpeedrunData.Cue(this.cueType);
 	}
 
-	// Token: 0x04001072 RID: 4210
 	public SpeedrunCueTime cueType;
 }

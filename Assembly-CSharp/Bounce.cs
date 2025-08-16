@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000085 RID: 133
 public class Bounce : MonoBehaviour
 {
-	// Token: 0x06000229 RID: 553 RVA: 0x0000BE18 File Offset: 0x0000A018
+	// Token: 0x0600026E RID: 622 RVA: 0x0001FFE4 File Offset: 0x0001E1E4
 	public void OnTriggerStay(Collider other)
 	{
 		if (Time.time - this.lastBounce < this.cooldown)
@@ -45,24 +44,17 @@ public class Bounce : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040002D3 RID: 723
 	public Vector3 bounceVelocity;
 
-	// Token: 0x040002D4 RID: 724
 	public float straightenBounceVelocity;
 
-	// Token: 0x040002D5 RID: 725
 	public Vector3 dustOffset;
 
-	// Token: 0x040002D6 RID: 726
 	public UnityEvent onBounce;
 
-	// Token: 0x040002D7 RID: 727
 	public bool bounceWhileGrounded;
 
-	// Token: 0x040002D8 RID: 728
 	private float cooldown = 0.5f;
 
-	// Token: 0x040002D9 RID: 729
 	private float lastBounce = -1f;
 }

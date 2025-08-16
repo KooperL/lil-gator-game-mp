@@ -3,18 +3,17 @@ using UnityEngine;
 
 namespace Cinemachine.Examples
 {
-	// Token: 0x020002F5 RID: 757
 	[AddComponentMenu("")]
 	public class CharacterMovement : MonoBehaviour
 	{
-		// Token: 0x06001024 RID: 4132 RVA: 0x0004D477 File Offset: 0x0004B677
+		// Token: 0x060013B1 RID: 5041 RVA: 0x00010A91 File Offset: 0x0000EC91
 		private void Start()
 		{
 			this.anim = base.GetComponent<Animator>();
 			this.mainCamera = Camera.main;
 		}
 
-		// Token: 0x06001025 RID: 4133 RVA: 0x0004D490 File Offset: 0x0004B690
+		// Token: 0x060013B2 RID: 5042 RVA: 0x0006037C File Offset: 0x0005E57C
 		private void FixedUpdate()
 		{
 			this.input.x = Input.GetAxis("Horizontal");
@@ -57,7 +56,7 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x06001026 RID: 4134 RVA: 0x0004D710 File Offset: 0x0004B910
+		// Token: 0x060013B3 RID: 5043 RVA: 0x000605FC File Offset: 0x0005E7FC
 		public virtual void UpdateTargetDirection()
 		{
 			if (!this.useCharacterForward)
@@ -76,49 +75,34 @@ namespace Cinemachine.Examples
 			this.targetDirection = this.input.x * vector4 + Mathf.Abs(this.input.y) * vector3;
 		}
 
-		// Token: 0x04001523 RID: 5411
 		public bool useCharacterForward;
 
-		// Token: 0x04001524 RID: 5412
 		public bool lockToCameraForward;
 
-		// Token: 0x04001525 RID: 5413
 		public float turnSpeed = 10f;
 
-		// Token: 0x04001526 RID: 5414
 		public KeyCode sprintJoystick = KeyCode.JoystickButton2;
 
-		// Token: 0x04001527 RID: 5415
 		public KeyCode sprintKeyboard = KeyCode.Space;
 
-		// Token: 0x04001528 RID: 5416
 		private float turnSpeedMultiplier;
 
-		// Token: 0x04001529 RID: 5417
 		private float speed;
 
-		// Token: 0x0400152A RID: 5418
 		private float direction;
 
-		// Token: 0x0400152B RID: 5419
 		private bool isSprinting;
 
-		// Token: 0x0400152C RID: 5420
 		private Animator anim;
 
-		// Token: 0x0400152D RID: 5421
 		private Vector3 targetDirection;
 
-		// Token: 0x0400152E RID: 5422
 		private Vector2 input;
 
-		// Token: 0x0400152F RID: 5423
 		private Quaternion freeRotation;
 
-		// Token: 0x04001530 RID: 5424
 		private Camera mainCamera;
 
-		// Token: 0x04001531 RID: 5425
 		private float velocity;
 	}
 }

@@ -1,16 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001DF RID: 479
 public class LookAtCamera : MonoBehaviour
 {
-	// Token: 0x06000A0E RID: 2574 RVA: 0x0002E99A File Offset: 0x0002CB9A
+	// Token: 0x06000C0F RID: 3087 RVA: 0x0000B3D2 File Offset: 0x000095D2
 	private void Start()
 	{
 		this.mainCameraTransform = MainCamera.t;
 	}
 
-	// Token: 0x06000A0F RID: 2575 RVA: 0x0002E9A8 File Offset: 0x0002CBA8
+	// Token: 0x06000C10 RID: 3088 RVA: 0x00041F84 File Offset: 0x00040184
 	private void LateUpdate()
 	{
 		Vector3 vector = this.mainCameraTransform.position - base.transform.position;
@@ -24,18 +23,13 @@ public class LookAtCamera : MonoBehaviour
 		base.transform.rotation = Quaternion.Slerp(base.transform.rotation, quaternion * base.transform.rotation, this.lookAtWeight);
 	}
 
-	// Token: 0x04000C63 RID: 3171
 	public float lookAtWeight = 0.5f;
 
-	// Token: 0x04000C64 RID: 3172
 	private Transform mainCameraTransform;
 
-	// Token: 0x04000C65 RID: 3173
 	public Vector3 forward = Vector3.forward;
 
-	// Token: 0x04000C66 RID: 3174
 	public Vector3 up = Vector3.up;
 
-	// Token: 0x04000C67 RID: 3175
 	public bool lockUp = true;
 }

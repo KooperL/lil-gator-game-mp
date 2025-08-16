@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200016F RID: 367
 public class WaitForFlip : MonoBehaviour
 {
-	// Token: 0x06000790 RID: 1936 RVA: 0x00025404 File Offset: 0x00023604
+	// Token: 0x0600092F RID: 2351 RVA: 0x00039F40 File Offset: 0x00038140
 	public void OnTriggerStay(Collider other)
 	{
 		base.enabled = true;
@@ -20,7 +19,7 @@ public class WaitForFlip : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000791 RID: 1937 RVA: 0x0002545D File Offset: 0x0002365D
+	// Token: 0x06000930 RID: 2352 RVA: 0x00008E14 File Offset: 0x00007014
 	private void Update()
 	{
 		if (Time.time - this.lastTriggerTime > 0.25f)
@@ -30,15 +29,11 @@ public class WaitForFlip : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040009B8 RID: 2488
 	public UnityEvent onFlip;
 
-	// Token: 0x040009B9 RID: 2489
 	public bool disableOnFlip = true;
 
-	// Token: 0x040009BA RID: 2490
 	public UnityEvent onLeaveArea;
 
-	// Token: 0x040009BB RID: 2491
 	private float lastTriggerTime = -1f;
 }

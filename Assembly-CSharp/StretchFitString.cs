@@ -1,11 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000248 RID: 584
 [ExecuteInEditMode]
 public class StretchFitString : MonoBehaviour
 {
-	// Token: 0x06000CB0 RID: 3248 RVA: 0x0003D6F0 File Offset: 0x0003B8F0
+	// Token: 0x06000FB8 RID: 4024 RVA: 0x00052278 File Offset: 0x00050478
 	private void OnEnable()
 	{
 		if (this.attachTargetToPlayer)
@@ -24,7 +23,7 @@ public class StretchFitString : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CB1 RID: 3249 RVA: 0x0003D735 File Offset: 0x0003B935
+	// Token: 0x06000FB9 RID: 4025 RVA: 0x0000D984 File Offset: 0x0000BB84
 	private void Start()
 	{
 		if (base.gameObject.isStatic)
@@ -33,7 +32,7 @@ public class StretchFitString : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CB2 RID: 3250 RVA: 0x0003D74C File Offset: 0x0003B94C
+	// Token: 0x06000FBA RID: 4026 RVA: 0x000522C0 File Offset: 0x000504C0
 	private void LateUpdate()
 	{
 		if (this.anchor != null && this.target != null)
@@ -47,25 +46,18 @@ public class StretchFitString : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040010C5 RID: 4293
 	public Transform anchor;
 
-	// Token: 0x040010C6 RID: 4294
 	public Transform target;
 
-	// Token: 0x040010C7 RID: 4295
 	public bool attachTargetToPlayer;
 
-	// Token: 0x040010C8 RID: 4296
 	[ConditionalHide("attachTargetToPlayer", true)]
 	public StretchFitString.PlayerAttachmentPoint playerAttachmentPoint;
 
-	// Token: 0x02000422 RID: 1058
 	public enum PlayerAttachmentPoint
 	{
-		// Token: 0x04001D4A RID: 7498
 		Hand,
-		// Token: 0x04001D4B RID: 7499
 		Hip
 	}
 }

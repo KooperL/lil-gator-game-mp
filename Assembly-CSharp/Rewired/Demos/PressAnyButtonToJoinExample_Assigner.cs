@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace Rewired.Demos
 {
-	// Token: 0x02000342 RID: 834
 	[AddComponentMenu("")]
 	public class PressAnyButtonToJoinExample_Assigner : MonoBehaviour
 	{
-		// Token: 0x06001790 RID: 6032 RVA: 0x00064477 File Offset: 0x00062677
+		// Token: 0x06001DDB RID: 7643 RVA: 0x00016CBD File Offset: 0x00014EBD
 		private void Update()
 		{
 			if (!ReInput.isReady)
@@ -18,7 +17,7 @@ namespace Rewired.Demos
 			this.AssignJoysticksToPlayers();
 		}
 
-		// Token: 0x06001791 RID: 6033 RVA: 0x00064488 File Offset: 0x00062688
+		// Token: 0x06001DDC RID: 7644 RVA: 0x00075690 File Offset: 0x00073890
 		private void AssignJoysticksToPlayers()
 		{
 			IList<Joystick> joysticks = ReInput.controllers.Joysticks;
@@ -42,7 +41,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001792 RID: 6034 RVA: 0x0006450C File Offset: 0x0006270C
+		// Token: 0x06001DDD RID: 7645 RVA: 0x00075714 File Offset: 0x00073914
 		private Player FindPlayerWithoutJoystick()
 		{
 			IList<Player> players = ReInput.players.Players;
@@ -56,7 +55,7 @@ namespace Rewired.Demos
 			return null;
 		}
 
-		// Token: 0x06001793 RID: 6035 RVA: 0x00064552 File Offset: 0x00062752
+		// Token: 0x06001DDE RID: 7646 RVA: 0x00016CCD File Offset: 0x00014ECD
 		private bool DoAllPlayersHaveJoysticks()
 		{
 			return this.FindPlayerWithoutJoystick() == null;

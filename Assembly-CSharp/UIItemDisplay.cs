@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002EE RID: 750
 public class UIItemDisplay : MonoBehaviour
 {
-	// Token: 0x06000FF3 RID: 4083 RVA: 0x0004C29B File Offset: 0x0004A49B
+	// Token: 0x06001380 RID: 4992 RVA: 0x000107F4 File Offset: 0x0000E9F4
 	private void OnValidate()
 	{
 		if (this.rectTransform == null)
@@ -14,7 +13,7 @@ public class UIItemDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FF4 RID: 4084 RVA: 0x0004C2B8 File Offset: 0x0004A4B8
+	// Token: 0x06001381 RID: 4993 RVA: 0x0005F49C File Offset: 0x0005D69C
 	public void LoadItem(ItemObject item)
 	{
 		if (!base.gameObject.activeSelf)
@@ -65,7 +64,7 @@ public class UIItemDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FF5 RID: 4085 RVA: 0x0004C428 File Offset: 0x0004A628
+	// Token: 0x06001382 RID: 4994 RVA: 0x0005F60C File Offset: 0x0005D80C
 	public void ClearItem()
 	{
 		if (this.spriteDisplay != null)
@@ -82,7 +81,7 @@ public class UIItemDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FF6 RID: 4086 RVA: 0x0004C48B File Offset: 0x0004A68B
+	// Token: 0x06001383 RID: 4995 RVA: 0x000107BB File Offset: 0x0000E9BB
 	private void SetText(Text textObject, string textString)
 	{
 		if (!string.IsNullOrEmpty(textString))
@@ -94,33 +93,23 @@ public class UIItemDisplay : MonoBehaviour
 		textObject.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040014DD RID: 5341
 	public RectTransform rectTransform;
 
-	// Token: 0x040014DE RID: 5342
 	public Image spriteDisplay;
 
-	// Token: 0x040014DF RID: 5343
 	public Image alternateDisplay;
 
-	// Token: 0x040014E0 RID: 5344
 	public Text nameDisplay;
 
-	// Token: 0x040014E1 RID: 5345
 	public Text description;
 
-	// Token: 0x040014E2 RID: 5346
 	public GameObject unpurchasedOject;
 
-	// Token: 0x040014E3 RID: 5347
 	public GameObject purchasedObject;
 
-	// Token: 0x040014E4 RID: 5348
 	public GameObject equippedObject;
 
-	// Token: 0x040014E5 RID: 5349
 	public GameObject equippedAltObject;
 
-	// Token: 0x040014E6 RID: 5350
 	public bool showPurchasedWhenEquipped;
 }

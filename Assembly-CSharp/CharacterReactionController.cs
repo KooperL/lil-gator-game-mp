@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001AF RID: 431
 public class CharacterReactionController : MonoBehaviour
 {
-	// Token: 0x060008E4 RID: 2276 RVA: 0x00029C68 File Offset: 0x00027E68
+	// Token: 0x06000AB5 RID: 2741 RVA: 0x0000A3B2 File Offset: 0x000085B2
 	private void Awake()
 	{
 		CharacterReactionController.c = this;
@@ -13,13 +12,13 @@ public class CharacterReactionController : MonoBehaviour
 		this.animator = this.movement.animator;
 	}
 
-	// Token: 0x060008E5 RID: 2277 RVA: 0x00029C99 File Offset: 0x00027E99
+	// Token: 0x06000AB6 RID: 2742 RVA: 0x0000A3E3 File Offset: 0x000085E3
 	private void OnEnable()
 	{
 		CharacterReactionController.c = this;
 	}
 
-	// Token: 0x060008E6 RID: 2278 RVA: 0x00029CA4 File Offset: 0x00027EA4
+	// Token: 0x06000AB7 RID: 2743 RVA: 0x0003DBD0 File Offset: 0x0003BDD0
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.DrawRay(this.hips.position, this.bodyForward);
@@ -27,7 +26,7 @@ public class CharacterReactionController : MonoBehaviour
 		Gizmos.DrawRay(this.neck.position, this.neckForward);
 	}
 
-	// Token: 0x060008E7 RID: 2279 RVA: 0x00029CF4 File Offset: 0x00027EF4
+	// Token: 0x06000AB8 RID: 2744 RVA: 0x0003DC20 File Offset: 0x0003BE20
 	private void Start()
 	{
 		this.lastNeckForward = (this.nextNeckForward = (this.neckForward = this.neck.forward));
@@ -37,7 +36,7 @@ public class CharacterReactionController : MonoBehaviour
 		this.bodyDisplacement = this.body.localPosition - this.bodyRotationCenter;
 	}
 
-	// Token: 0x060008E8 RID: 2280 RVA: 0x00029DA8 File Offset: 0x00027FA8
+	// Token: 0x06000AB9 RID: 2745 RVA: 0x0003DCD4 File Offset: 0x0003BED4
 	private void UpdateReactions()
 	{
 		this.lastBodyForward = this.nextBodyForward;
@@ -172,13 +171,13 @@ public class CharacterReactionController : MonoBehaviour
 		this.lastPosition = this.body.position;
 	}
 
-	// Token: 0x060008E9 RID: 2281 RVA: 0x0002A556 File Offset: 0x00028756
+	// Token: 0x06000ABA RID: 2746 RVA: 0x0000A3EB File Offset: 0x000085EB
 	private Vector3 ClampNeckDirection(Vector3 direction)
 	{
 		return Vector3.RotateTowards(this.bodyForward, direction, 1.2217305f, 1f);
 	}
 
-	// Token: 0x060008EA RID: 2282 RVA: 0x0002A570 File Offset: 0x00028770
+	// Token: 0x06000ABB RID: 2747 RVA: 0x0003E484 File Offset: 0x0003C684
 	private void StandardNeckForward()
 	{
 		Vector3 vector = this.bodyForward;
@@ -191,7 +190,7 @@ public class CharacterReactionController : MonoBehaviour
 		this.neckForward = Vector3.Slerp(this.neckForward, vector, this.neckRotationSpeed * Time.deltaTime);
 	}
 
-	// Token: 0x060008EB RID: 2283 RVA: 0x0002A61C File Offset: 0x0002881C
+	// Token: 0x06000ABC RID: 2748 RVA: 0x0003E530 File Offset: 0x0003C730
 	private void LateUpdate()
 	{
 		this.UpdateReactions();
@@ -212,7 +211,7 @@ public class CharacterReactionController : MonoBehaviour
 		this.UpdateRotations();
 	}
 
-	// Token: 0x060008EC RID: 2284 RVA: 0x0002A6C0 File Offset: 0x000288C0
+	// Token: 0x06000ABD RID: 2749 RVA: 0x0003E5D4 File Offset: 0x0003C7D4
 	private void UpdateRotations()
 	{
 		if (this.movement == null)
@@ -301,7 +300,7 @@ public class CharacterReactionController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008ED RID: 2285 RVA: 0x0002ABA4 File Offset: 0x00028DA4
+	// Token: 0x06000ABE RID: 2750 RVA: 0x0003EAB8 File Offset: 0x0003CCB8
 	public void SetForward(Vector3 forward)
 	{
 		this.bodyForward = forward;
@@ -311,147 +310,99 @@ public class CharacterReactionController : MonoBehaviour
 		this.UpdateRotations();
 	}
 
-	// Token: 0x04000AFA RID: 2810
 	public static CharacterReactionController c;
 
-	// Token: 0x04000AFB RID: 2811
 	private Animator animator;
 
-	// Token: 0x04000AFC RID: 2812
 	private int headTrackingID = Animator.StringToHash("HeadTracking");
 
-	// Token: 0x04000AFD RID: 2813
 	private float smoothAnimatorHeadTracking;
 
-	// Token: 0x04000AFE RID: 2814
 	private PlayerInput playerInput;
 
-	// Token: 0x04000AFF RID: 2815
 	private PlayerMovement movement;
 
-	// Token: 0x04000B00 RID: 2816
 	public Transform body;
 
-	// Token: 0x04000B01 RID: 2817
 	public Transform neck;
 
-	// Token: 0x04000B02 RID: 2818
 	public Transform[] spine;
 
-	// Token: 0x04000B03 RID: 2819
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000B04 RID: 2820
 	public float rotationSpeed = 2f;
 
-	// Token: 0x04000B05 RID: 2821
 	public float neckRotationSpeed = 2f;
 
-	// Token: 0x04000B06 RID: 2822
 	public float bodyRotationSpeed = 5f;
 
-	// Token: 0x04000B07 RID: 2823
 	public float glidingRotationSpeed = 1f;
 
-	// Token: 0x04000B08 RID: 2824
 	public float sleddingBodySpeed;
 
-	// Token: 0x04000B09 RID: 2825
 	public float sleddingBodyAngling;
 
-	// Token: 0x04000B0A RID: 2826
 	public float sleddingNeckSpeed;
 
-	// Token: 0x04000B0B RID: 2827
 	public float swimmingBodySpeed;
 
-	// Token: 0x04000B0C RID: 2828
 	public float neckUprightLerp = 0.5f;
 
-	// Token: 0x04000B0D RID: 2829
 	public Vector3 localRotationCenter;
 
-	// Token: 0x04000B0E RID: 2830
 	private Vector3 bodyRotationCenter;
 
-	// Token: 0x04000B0F RID: 2831
 	private Vector3 bodyDisplacement;
 
-	// Token: 0x04000B10 RID: 2832
 	public Vector3 climbingDisplacement;
 
-	// Token: 0x04000B11 RID: 2833
 	private Vector3 neckForward;
 
-	// Token: 0x04000B12 RID: 2834
 	private Vector3 lastNeckForward;
 
-	// Token: 0x04000B13 RID: 2835
 	private Vector3 nextNeckForward;
 
-	// Token: 0x04000B14 RID: 2836
 	private Vector3 bodyForward;
 
-	// Token: 0x04000B15 RID: 2837
 	private Vector3 lastBodyForward;
 
-	// Token: 0x04000B16 RID: 2838
 	private Vector3 nextBodyForward;
 
-	// Token: 0x04000B17 RID: 2839
 	private Vector3 bodyUp;
 
-	// Token: 0x04000B18 RID: 2840
 	private Vector3 lastBodyUp;
 
-	// Token: 0x04000B19 RID: 2841
 	private Vector3 nextBodyUp;
 
-	// Token: 0x04000B1A RID: 2842
 	private Vector3 upperBodyForward;
 
-	// Token: 0x04000B1B RID: 2843
 	private Vector3 upperBodyUp;
 
-	// Token: 0x04000B1C RID: 2844
 	private float climbingMulti;
 
-	// Token: 0x04000B1D RID: 2845
 	public FootIKSmooth footIK;
 
-	// Token: 0x04000B1E RID: 2846
 	public Transform hips;
 
-	// Token: 0x04000B1F RID: 2847
 	private Vector3 lastPosition;
 
-	// Token: 0x04000B20 RID: 2848
 	public float leanAmount = 0.5f;
 
-	// Token: 0x04000B21 RID: 2849
 	public float maxLean = 30f;
 
-	// Token: 0x04000B22 RID: 2850
 	private float lean;
 
-	// Token: 0x04000B23 RID: 2851
 	public bool isAiming;
 
-	// Token: 0x04000B24 RID: 2852
 	private float isAimingSmooth;
 
-	// Token: 0x04000B25 RID: 2853
 	private float aimEndTime = -1f;
 
-	// Token: 0x04000B26 RID: 2854
 	private const float aimEndDelay = 0.5f;
 
-	// Token: 0x04000B27 RID: 2855
 	private float forceUpperBodyRotation;
 
-	// Token: 0x04000B28 RID: 2856
 	private float positionOffsetSmooth;
 
-	// Token: 0x04000B29 RID: 2857
 	private float rotationOffsetSmooth;
 }

@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x0200031C RID: 796
 	[RequireComponent(typeof(CanvasScalerExt))]
 	public class CanvasScalerFitter : MonoBehaviour
 	{
-		// Token: 0x060013FF RID: 5119 RVA: 0x000554EF File Offset: 0x000536EF
+		// Token: 0x0600182A RID: 6186 RVA: 0x0001296A File Offset: 0x00010B6A
 		private void OnEnable()
 		{
 			this.canvasScaler = base.GetComponent<CanvasScalerExt>();
@@ -17,7 +16,7 @@ namespace Rewired.UI.ControlMapper
 			this.canvasScaler.ForceRefresh();
 		}
 
-		// Token: 0x06001400 RID: 5120 RVA: 0x0005550E File Offset: 0x0005370E
+		// Token: 0x0600182B RID: 6187 RVA: 0x00012989 File Offset: 0x00010B89
 		private void Update()
 		{
 			if (Screen.width != this.screenWidth || Screen.height != this.screenHeight)
@@ -28,7 +27,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001401 RID: 5121 RVA: 0x00055548 File Offset: 0x00053748
+		// Token: 0x0600182C RID: 6188 RVA: 0x00066CBC File Offset: 0x00064EBC
 		private void UpdateSize()
 		{
 			if (this.canvasScaler.uiScaleMode != CanvasScaler.ScaleMode.ScaleWithScreenSize)
@@ -54,35 +53,26 @@ namespace Rewired.UI.ControlMapper
 			this.canvasScaler.referenceResolution = this.breakPoints[num3].referenceResolution;
 		}
 
-		// Token: 0x040017A1 RID: 6049
 		[SerializeField]
 		private CanvasScalerFitter.BreakPoint[] breakPoints;
 
-		// Token: 0x040017A2 RID: 6050
 		private CanvasScalerExt canvasScaler;
 
-		// Token: 0x040017A3 RID: 6051
 		private int screenWidth;
 
-		// Token: 0x040017A4 RID: 6052
 		private int screenHeight;
 
-		// Token: 0x040017A5 RID: 6053
 		private Action ScreenSizeChanged;
 
-		// Token: 0x0200046D RID: 1133
 		[Serializable]
 		private class BreakPoint
 		{
-			// Token: 0x04001E46 RID: 7750
 			[SerializeField]
 			public string name;
 
-			// Token: 0x04001E47 RID: 7751
 			[SerializeField]
 			public float screenAspectRatio;
 
-			// Token: 0x04001E48 RID: 7752
 			[SerializeField]
 			public Vector2 referenceResolution;
 		}

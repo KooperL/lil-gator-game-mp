@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000030 RID: 48
 public class SyncAnimationToMusic : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x060000BF RID: 191 RVA: 0x00005610 File Offset: 0x00003810
+	// Token: 0x060000D3 RID: 211 RVA: 0x0001A3A8 File Offset: 0x000185A8
 	private float GetMultForBpm(MusicSystem musicSystem, float animationLength, int beatsInAnimation, float minSpeed, float maxSpeed, out float beatMult)
 	{
 		float num = musicSystem.bpm * animationLength / 60f / (float)beatsInAnimation;
@@ -22,12 +21,12 @@ public class SyncAnimationToMusic : MonoBehaviour, IManagedUpdate
 		return num * musicSystem.beatSyncMultiplier;
 	}
 
-	// Token: 0x060000C0 RID: 192 RVA: 0x00005677 File Offset: 0x00003877
+	// Token: 0x060000D4 RID: 212 RVA: 0x00002229 File Offset: 0x00000429
 	public void ManagedUpdate()
 	{
 	}
 
-	// Token: 0x060000C1 RID: 193 RVA: 0x0000567C File Offset: 0x0000387C
+	// Token: 0x060000D5 RID: 213 RVA: 0x0001A410 File Offset: 0x00018610
 	private void Update()
 	{
 		MusicSystem musicSystem = null;
@@ -110,92 +109,63 @@ public class SyncAnimationToMusic : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x040000E9 RID: 233
 	public MusicSystem[] musicToIgnore;
 
-	// Token: 0x040000EA RID: 234
 	public float sittingLength = 1.6667f;
 
-	// Token: 0x040000EB RID: 235
 	public float standingLength = 2.5f;
 
-	// Token: 0x040000EC RID: 236
 	public Animator animator;
 
-	// Token: 0x040000ED RID: 237
 	private readonly int standingMultID = Animator.StringToHash("StandingSpeedMult");
 
-	// Token: 0x040000EE RID: 238
 	private readonly int sittingMultID = Animator.StringToHash("SittingSpeedMult");
 
-	// Token: 0x040000EF RID: 239
 	private MusicSystem currentMusicSystem;
 
-	// Token: 0x040000F0 RID: 240
 	private bool isTransitioning;
 
-	// Token: 0x040000F1 RID: 241
 	private float bpm;
 
-	// Token: 0x040000F2 RID: 242
 	private float standingMult = 1f;
 
-	// Token: 0x040000F3 RID: 243
 	private float standingMultTarget = 1f;
 
-	// Token: 0x040000F4 RID: 244
 	private float standingBeatMult = 1f;
 
-	// Token: 0x040000F5 RID: 245
 	private float sittingMult = 1f;
 
-	// Token: 0x040000F6 RID: 246
 	private float sittingMultTarget = 1f;
 
-	// Token: 0x040000F7 RID: 247
 	private float sittingBeatMult = 1f;
 
-	// Token: 0x040000F8 RID: 248
 	private bool isSynchronizing;
 
-	// Token: 0x040000F9 RID: 249
 	private bool isSynchronized;
 
-	// Token: 0x040000FA RID: 250
 	private const float minimumMult = 0.74f;
 
-	// Token: 0x040000FB RID: 251
 	private const float maximumMult = 1.5f;
 
-	// Token: 0x040000FC RID: 252
 	private readonly int standingHash = Animator.StringToHash("Happy");
 
-	// Token: 0x040000FD RID: 253
 	private readonly int sittingHash = Animator.StringToHash("Sitting|Happy");
 
-	// Token: 0x040000FE RID: 254
 	[Range(0f, 1f)]
 	public float animationBeatT;
 
-	// Token: 0x040000FF RID: 255
 	[Range(0f, 1f)]
 	public float musicBeatT;
 
-	// Token: 0x04000100 RID: 256
 	public float syncMult;
 
-	// Token: 0x04000101 RID: 257
 	public float currentBeatOffset;
 
-	// Token: 0x04000102 RID: 258
 	private const float minSync = 0.025f;
 
-	// Token: 0x04000103 RID: 259
 	private const float maxSync = 0.25f;
 
-	// Token: 0x04000104 RID: 260
 	private const float underSyncMult = 1.1f;
 
-	// Token: 0x04000105 RID: 261
 	private const float overSyncMult = 0.9f;
 }

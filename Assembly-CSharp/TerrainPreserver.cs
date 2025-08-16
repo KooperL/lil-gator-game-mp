@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000278 RID: 632
 public class TerrainPreserver : MonoBehaviour
 {
-	// Token: 0x06000D8B RID: 3467 RVA: 0x0004187C File Offset: 0x0003FA7C
+	// Token: 0x060010A2 RID: 4258 RVA: 0x00055AE8 File Offset: 0x00053CE8
 	private void Awake()
 	{
 		Terrain component = base.GetComponent<Terrain>();
@@ -12,7 +11,7 @@ public class TerrainPreserver : MonoBehaviour
 		TerrainData terrainData;
 		if (this.id == -1)
 		{
-			terrainData = Object.Instantiate<TerrainData>(component.terrainData);
+			terrainData = global::UnityEngine.Object.Instantiate<TerrainData>(component.terrainData);
 		}
 		else
 		{
@@ -22,6 +21,5 @@ public class TerrainPreserver : MonoBehaviour
 		component2.terrainData = terrainData;
 	}
 
-	// Token: 0x040011E0 RID: 4576
 	public int id = -1;
 }

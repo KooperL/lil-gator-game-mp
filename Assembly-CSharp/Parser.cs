@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200019F RID: 415
 public class Parser
 {
-	// Token: 0x06000887 RID: 2183 RVA: 0x00028434 File Offset: 0x00026634
+	// Token: 0x06000A52 RID: 2642 RVA: 0x00009DE4 File Offset: 0x00007FE4
 	public Parser(string t)
 	{
 		this.text = t;
@@ -13,7 +12,7 @@ public class Parser
 		this.length = this.text.Length;
 	}
 
-	// Token: 0x06000888 RID: 2184 RVA: 0x0002845B File Offset: 0x0002665B
+	// Token: 0x06000A53 RID: 2643 RVA: 0x00009E0B File Offset: 0x0000800B
 	private string nextCharacter()
 	{
 		if (this.index == this.length)
@@ -25,13 +24,13 @@ public class Parser
 		return text;
 	}
 
-	// Token: 0x06000889 RID: 2185 RVA: 0x00028494 File Offset: 0x00026694
+	// Token: 0x06000A54 RID: 2644 RVA: 0x0003CA24 File Offset: 0x0003AC24
 	private bool isWhitespace(string cha)
 	{
 		return cha.Equals(" ") || cha.Equals("\t") || cha.Equals("\n") || cha.Equals("\r") || cha.Equals("\v") || cha.Equals("");
 	}
 
-	// Token: 0x0600088A RID: 2186 RVA: 0x000284F4 File Offset: 0x000266F4
+	// Token: 0x06000A55 RID: 2645 RVA: 0x0003CA84 File Offset: 0x0003AC84
 	private string nextLexeme()
 	{
 		string text = this.nextCharacter();
@@ -74,7 +73,7 @@ public class Parser
 		return text;
 	}
 
-	// Token: 0x0600088B RID: 2187 RVA: 0x000285C4 File Offset: 0x000267C4
+	// Token: 0x06000A56 RID: 2646 RVA: 0x0003CB54 File Offset: 0x0003AD54
 	private DialogueChunk nextDialogueChunk()
 	{
 		string text = this.nextLexeme();
@@ -158,7 +157,7 @@ public class Parser
 		return dialogueChunk;
 	}
 
-	// Token: 0x0600088C RID: 2188 RVA: 0x00028823 File Offset: 0x00026A23
+	// Token: 0x06000A57 RID: 2647 RVA: 0x00009E41 File Offset: 0x00008041
 	private string clean(string text)
 	{
 		if (text.Length - 2 < 0)
@@ -168,7 +167,7 @@ public class Parser
 		return text.Substring(1, text.Length - 2);
 	}
 
-	// Token: 0x0600088D RID: 2189 RVA: 0x00028848 File Offset: 0x00026A48
+	// Token: 0x06000A58 RID: 2648 RVA: 0x0003CDB4 File Offset: 0x0003AFB4
 	public List<DialogueChunk> getChunks()
 	{
 		List<DialogueChunk> list = new List<DialogueChunk>();
@@ -179,15 +178,11 @@ public class Parser
 		return list;
 	}
 
-	// Token: 0x04000A91 RID: 2705
 	private const string defaultEmote = "None";
 
-	// Token: 0x04000A92 RID: 2706
 	private string text;
 
-	// Token: 0x04000A93 RID: 2707
 	private int index;
 
-	// Token: 0x04000A94 RID: 2708
 	private int length;
 }

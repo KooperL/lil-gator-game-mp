@@ -2,10 +2,9 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020000AF RID: 175
 public class DialogueBubbleTrigger : MonoBehaviour
 {
-	// Token: 0x0600039F RID: 927 RVA: 0x0001580C File Offset: 0x00013A0C
+	// Token: 0x06000437 RID: 1079 RVA: 0x00029B40 File Offset: 0x00027D40
 	private void OnValidate()
 	{
 		DialogueActor dialogueActor;
@@ -16,7 +15,7 @@ public class DialogueBubbleTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003A0 RID: 928 RVA: 0x00015849 File Offset: 0x00013A49
+	// Token: 0x06000438 RID: 1080 RVA: 0x000051E7 File Offset: 0x000033E7
 	[ContextMenu("Fix Actor")]
 	public void FixActor()
 	{
@@ -24,13 +23,13 @@ public class DialogueBubbleTrigger : MonoBehaviour
 		this.actors[0] = base.GetComponent<DialogueActor>();
 	}
 
-	// Token: 0x060003A1 RID: 929 RVA: 0x00015865 File Offset: 0x00013A65
+	// Token: 0x06000439 RID: 1081 RVA: 0x00005203 File Offset: 0x00003403
 	private void Awake()
 	{
 		this.minimumDistanceSqr = this.minimumDistance * this.minimumDistance;
 	}
 
-	// Token: 0x060003A2 RID: 930 RVA: 0x0001587A File Offset: 0x00013A7A
+	// Token: 0x0600043A RID: 1082 RVA: 0x00005218 File Offset: 0x00003418
 	private void OnTriggerEnter(Collider other)
 	{
 		if (this.onEnter)
@@ -39,7 +38,7 @@ public class DialogueBubbleTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003A3 RID: 931 RVA: 0x0001588A File Offset: 0x00013A8A
+	// Token: 0x0600043B RID: 1083 RVA: 0x00005228 File Offset: 0x00003428
 	private void OnTriggerStay(Collider other)
 	{
 		if (this.onStay)
@@ -48,7 +47,7 @@ public class DialogueBubbleTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003A4 RID: 932 RVA: 0x0001589A File Offset: 0x00013A9A
+	// Token: 0x0600043C RID: 1084 RVA: 0x00005238 File Offset: 0x00003438
 	private void OnTriggerExit(Collider other)
 	{
 		if (this.cancelOnExit && this.waitForBubble != null)
@@ -62,7 +61,7 @@ public class DialogueBubbleTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003A5 RID: 933 RVA: 0x000158D0 File Offset: 0x00013AD0
+	// Token: 0x0600043D RID: 1085 RVA: 0x00029B80 File Offset: 0x00027D80
 	[ContextMenu("Trigger")]
 	public void Trigger()
 	{
@@ -102,7 +101,7 @@ public class DialogueBubbleTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003A6 RID: 934 RVA: 0x00015A68 File Offset: 0x00013C68
+	// Token: 0x0600043E RID: 1086 RVA: 0x0000526E File Offset: 0x0000346E
 	public IEnumerator WaitForBubbleToFinish(YieldInstruction bubble)
 	{
 		while (DialogueManager.d.isInBubbleDialogue)
@@ -114,56 +113,39 @@ public class DialogueBubbleTrigger : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04000512 RID: 1298
 	public float minimumDistance;
 
-	// Token: 0x04000513 RID: 1299
 	private float minimumDistanceSqr;
 
-	// Token: 0x04000514 RID: 1300
 	public bool onEnter;
 
-	// Token: 0x04000515 RID: 1301
 	public bool onStay = true;
 
-	// Token: 0x04000516 RID: 1302
 	public bool onExit;
 
-	// Token: 0x04000517 RID: 1303
 	public bool cancelOnExit = true;
 
-	// Token: 0x04000518 RID: 1304
 	public float minMessageDelay = 4f;
 
-	// Token: 0x04000519 RID: 1305
 	private float nextMessageTime = -1f;
 
-	// Token: 0x0400051A RID: 1306
 	public bool whileInDialogue;
 
-	// Token: 0x0400051B RID: 1307
 	public bool interruptBubble;
 
-	// Token: 0x0400051C RID: 1308
 	public bool hasInput;
 
-	// Token: 0x0400051D RID: 1309
 	[Space]
 	public MultilingualTextDocument document;
 
-	// Token: 0x0400051E RID: 1310
 	[ChunkLookup("document")]
 	public string[] dialogue;
 
-	// Token: 0x0400051F RID: 1311
 	private int index;
 
-	// Token: 0x04000520 RID: 1312
 	public bool loop = true;
 
-	// Token: 0x04000521 RID: 1313
 	public DialogueActor[] actors;
 
-	// Token: 0x04000522 RID: 1314
 	private IEnumerator waitForBubble;
 }

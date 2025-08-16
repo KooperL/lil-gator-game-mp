@@ -3,12 +3,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000215 RID: 533
 public class FetchQuest : MonoBehaviour
 {
-	// Token: 0x170000BC RID: 188
-	// (get) Token: 0x06000B89 RID: 2953 RVA: 0x000387A4 File Offset: 0x000369A4
-	// (set) Token: 0x06000B8A RID: 2954 RVA: 0x000387B7 File Offset: 0x000369B7
+	// (get) Token: 0x06000E18 RID: 3608 RVA: 0x0000C966 File Offset: 0x0000AB66
+	// (set) Token: 0x06000E19 RID: 3609 RVA: 0x0000C979 File Offset: 0x0000AB79
 	private int State
 	{
 		get
@@ -21,8 +19,7 @@ public class FetchQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170000BD RID: 189
-	// (get) Token: 0x06000B8B RID: 2955 RVA: 0x000387CA File Offset: 0x000369CA
+	// (get) Token: 0x06000E1A RID: 3610 RVA: 0x0000C98C File Offset: 0x0000AB8C
 	private bool IsItemFetched
 	{
 		get
@@ -31,13 +28,13 @@ public class FetchQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B8C RID: 2956 RVA: 0x000387DD File Offset: 0x000369DD
+	// Token: 0x06000E1B RID: 3611 RVA: 0x0000C99F File Offset: 0x0000AB9F
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000B8D RID: 2957 RVA: 0x000387E8 File Offset: 0x000369E8
+	// Token: 0x06000E1C RID: 3612 RVA: 0x0004C770 File Offset: 0x0004A970
 	private void UpdateState()
 	{
 		bool isItemFetched = this.IsItemFetched;
@@ -61,13 +58,13 @@ public class FetchQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B8E RID: 2958 RVA: 0x0003886F File Offset: 0x00036A6F
+	// Token: 0x06000E1D RID: 3613 RVA: 0x0000C9A7 File Offset: 0x0000ABA7
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000B8F RID: 2959 RVA: 0x0003887E File Offset: 0x00036A7E
+	// Token: 0x06000E1E RID: 3614 RVA: 0x0000C9B6 File Offset: 0x0000ABB6
 	private IEnumerator RunConversation()
 	{
 		DialogueManager.d.CancelBubble();
@@ -108,45 +105,31 @@ public class FetchQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04000F4B RID: 3915
 	public string id;
 
-	// Token: 0x04000F4C RID: 3916
 	public string fetchItemID;
 
-	// Token: 0x04000F4D RID: 3917
 	public DialogueActor[] actors;
 
-	// Token: 0x04000F4E RID: 3918
 	public GameObject crier;
 
-	// Token: 0x04000F4F RID: 3919
 	public string completeCry;
 
-	// Token: 0x04000F50 RID: 3920
 	public string beforeText;
 
-	// Token: 0x04000F51 RID: 3921
 	public UnityEvent onBefore;
 
-	// Token: 0x04000F52 RID: 3922
 	public string repeatText;
 
-	// Token: 0x04000F53 RID: 3923
 	public string rewardText;
 
-	// Token: 0x04000F54 RID: 3924
 	public UnityEvent onReward;
 
-	// Token: 0x04000F55 RID: 3925
 	public string afterText;
 
-	// Token: 0x04000F56 RID: 3926
 	public UnityEvent onAfter;
 
-	// Token: 0x04000F57 RID: 3927
 	public string beforeState;
 
-	// Token: 0x04000F58 RID: 3928
 	public string afterState;
 }

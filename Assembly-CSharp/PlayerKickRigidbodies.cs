@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001ED RID: 493
 public class PlayerKickRigidbodies : MonoBehaviour
 {
-	// Token: 0x06000A7E RID: 2686 RVA: 0x00031944 File Offset: 0x0002FB44
+	// Token: 0x06000C7F RID: 3199 RVA: 0x00044894 File Offset: 0x00042A94
 	private void OnValidate()
 	{
 		if (this.rigidbody == null)
@@ -21,9 +20,7 @@ public class PlayerKickRigidbodies : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000D61 RID: 3425
 	public PlayerMovement playerMovement;
 
-	// Token: 0x04000D62 RID: 3426
 	public Rigidbody rigidbody;
 }

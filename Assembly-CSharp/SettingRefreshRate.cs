@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000297 RID: 663
 public class SettingRefreshRate : MonoBehaviour
 {
-	// Token: 0x06000E1F RID: 3615 RVA: 0x000440DA File Offset: 0x000422DA
+	// Token: 0x06001143 RID: 4419 RVA: 0x0000EC4D File Offset: 0x0000CE4D
 	private void OnValidate()
 	{
 		if (this.selectOptions != null)
@@ -13,7 +12,7 @@ public class SettingRefreshRate : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E20 RID: 3616 RVA: 0x000440F8 File Offset: 0x000422F8
+	// Token: 0x06001144 RID: 4420 RVA: 0x00057BBC File Offset: 0x00055DBC
 	private void OnEnable()
 	{
 		this.selectOptions.options = new string[Settings.refreshRates.Length];
@@ -32,7 +31,7 @@ public class SettingRefreshRate : MonoBehaviour
 		this.setInitialSetting = true;
 	}
 
-	// Token: 0x06000E21 RID: 3617 RVA: 0x000441C8 File Offset: 0x000423C8
+	// Token: 0x06001145 RID: 4421 RVA: 0x00057C8C File Offset: 0x00055E8C
 	public void OnSelectionChange(int selectedOption)
 	{
 		if (!this.setInitialSetting)
@@ -44,9 +43,7 @@ public class SettingRefreshRate : MonoBehaviour
 		Settings.s.LoadSettings();
 	}
 
-	// Token: 0x0400128B RID: 4747
 	public SelectOptions selectOptions;
 
-	// Token: 0x0400128C RID: 4748
 	private bool setInitialSetting;
 }

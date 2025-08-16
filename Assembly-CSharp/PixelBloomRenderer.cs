@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-// Token: 0x02000269 RID: 617
 public sealed class PixelBloomRenderer : PostProcessEffectRenderer<PixelBloom>
 {
-	// Token: 0x06000D4D RID: 3405 RVA: 0x00040734 File Offset: 0x0003E934
+	// Token: 0x06001056 RID: 4182 RVA: 0x00054AE4 File Offset: 0x00052CE4
 	public override void Render(PostProcessRenderContext context)
 	{
 		PropertySheet propertySheet = context.propertySheets.Get(Shader.Find("Hidden/Custom/PixelBloom"));

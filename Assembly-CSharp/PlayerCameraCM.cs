@@ -2,16 +2,15 @@
 using Cinemachine;
 using UnityEngine;
 
-// Token: 0x020001E2 RID: 482
 public class PlayerCameraCM : MonoBehaviour
 {
-	// Token: 0x06000A1F RID: 2591 RVA: 0x0002F0BC File Offset: 0x0002D2BC
+	// Token: 0x06000C20 RID: 3104 RVA: 0x0000B4FE File Offset: 0x000096FE
 	public void Awake()
 	{
 		this.cm = base.GetComponent<CinemachineFreeLook>();
 	}
 
-	// Token: 0x06000A20 RID: 2592 RVA: 0x0002F0CC File Offset: 0x0002D2CC
+	// Token: 0x06000C21 RID: 3105 RVA: 0x00042574 File Offset: 0x00040774
 	private void Start()
 	{
 		this.rigidbody = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
@@ -22,7 +21,7 @@ public class PlayerCameraCM : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A21 RID: 2593 RVA: 0x0002F14C File Offset: 0x0002D34C
+	// Token: 0x06000C22 RID: 3106 RVA: 0x000425F4 File Offset: 0x000407F4
 	private void LateUpdate()
 	{
 		this.yAxis = this.cm.m_YAxis.Value;
@@ -70,13 +69,13 @@ public class PlayerCameraCM : MonoBehaviour
 		this.cm.m_YAxis.Value = this.yAxis;
 	}
 
-	// Token: 0x06000A22 RID: 2594 RVA: 0x0002F3BA File Offset: 0x0002D5BA
+	// Token: 0x06000C23 RID: 3107 RVA: 0x0000B50C File Offset: 0x0000970C
 	private float AngleToYAxis(float angle)
 	{
 		return angle;
 	}
 
-	// Token: 0x06000A23 RID: 2595 RVA: 0x0002F3C0 File Offset: 0x0002D5C0
+	// Token: 0x06000C24 RID: 3108 RVA: 0x00042864 File Offset: 0x00040A64
 	private Vector3 YAxisToPosition(float yAxis)
 	{
 		yAxis = Mathf.Clamp01(yAxis);
@@ -97,48 +96,33 @@ public class PlayerCameraCM : MonoBehaviour
 		return this.rigidbody.transform.position + Quaternion.Euler(0f, this.cm.m_XAxis.Value, 0f) * vector;
 	}
 
-	// Token: 0x04000CA2 RID: 3234
 	private CinemachineFreeLook cm;
 
-	// Token: 0x04000CA3 RID: 3235
 	public PlayerMovement movement;
 
-	// Token: 0x04000CA4 RID: 3236
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000CA5 RID: 3237
 	public float defaultTarget = 0.5f;
 
-	// Token: 0x04000CA6 RID: 3238
 	public float velocitySpeed = 1f;
 
-	// Token: 0x04000CA7 RID: 3239
 	public float velocityImpact = 0.5f;
 
-	// Token: 0x04000CA8 RID: 3240
 	private float velocityModifiedTarget = 0.5f;
 
-	// Token: 0x04000CA9 RID: 3241
 	public LayerMask raycastMask;
 
-	// Token: 0x04000CAA RID: 3242
 	public float raycastStep = 0.1f;
 
-	// Token: 0x04000CAB RID: 3243
 	private float raycastVelocity;
 
-	// Token: 0x04000CAC RID: 3244
 	public float raycastAdjustTime = 0.2f;
 
-	// Token: 0x04000CAD RID: 3245
 	private bool recenteringActive;
 
-	// Token: 0x04000CAE RID: 3246
 	private float recenterVelocity;
 
-	// Token: 0x04000CAF RID: 3247
 	private Vector3[] rigPositions;
 
-	// Token: 0x04000CB0 RID: 3248
 	private float yAxis = 0.5f;
 }

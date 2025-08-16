@@ -3,12 +3,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000217 RID: 535
 public class MultiDestroyQuest : MonoBehaviour
 {
-	// Token: 0x170000BF RID: 191
-	// (get) Token: 0x06000B95 RID: 2965 RVA: 0x000388CE File Offset: 0x00036ACE
-	// (set) Token: 0x06000B96 RID: 2966 RVA: 0x000388E1 File Offset: 0x00036AE1
+	// (get) Token: 0x06000E30 RID: 3632 RVA: 0x0000CA24 File Offset: 0x0000AC24
+	// (set) Token: 0x06000E31 RID: 3633 RVA: 0x0000CA37 File Offset: 0x0000AC37
 	private bool State
 	{
 		get
@@ -21,13 +19,13 @@ public class MultiDestroyQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B97 RID: 2967 RVA: 0x000388F4 File Offset: 0x00036AF4
+	// Token: 0x06000E32 RID: 3634 RVA: 0x0000CA4A File Offset: 0x0000AC4A
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000B98 RID: 2968 RVA: 0x000388FC File Offset: 0x00036AFC
+	// Token: 0x06000E33 RID: 3635 RVA: 0x0004CB48 File Offset: 0x0004AD48
 	public void UpdateState()
 	{
 		int num = -1;
@@ -60,13 +58,13 @@ public class MultiDestroyQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B99 RID: 2969 RVA: 0x000389BC File Offset: 0x00036BBC
+	// Token: 0x06000E34 RID: 3636 RVA: 0x0000CA52 File Offset: 0x0000AC52
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000B9A RID: 2970 RVA: 0x000389CB File Offset: 0x00036BCB
+	// Token: 0x06000E35 RID: 3637 RVA: 0x0000CA61 File Offset: 0x0000AC61
 	private IEnumerator RunConversation()
 	{
 		yield return null;
@@ -107,27 +105,19 @@ public class MultiDestroyQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04000F62 RID: 3938
 	public string id;
 
-	// Token: 0x04000F63 RID: 3939
 	public DialogueActor[] actors;
 
-	// Token: 0x04000F64 RID: 3940
 	public DestroyQuest[] destroyQuests;
 
-	// Token: 0x04000F65 RID: 3941
 	public UnityEvent onFadeout;
 
-	// Token: 0x04000F66 RID: 3942
 	public float fadeoutLength = 0.5f;
 
-	// Token: 0x04000F67 RID: 3943
 	public string beforeState;
 
-	// Token: 0x04000F68 RID: 3944
 	public string afterState;
 
-	// Token: 0x04000F69 RID: 3945
 	public string afterText;
 }

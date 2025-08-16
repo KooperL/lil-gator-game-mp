@@ -3,11 +3,10 @@ using UnityEngine;
 
 namespace Rewired.Demos
 {
-	// Token: 0x02000337 RID: 823
 	[AddComponentMenu("")]
 	public class CustomControllersTiltDemo : MonoBehaviour
 	{
-		// Token: 0x06001732 RID: 5938 RVA: 0x000626A4 File Offset: 0x000608A4
+		// Token: 0x06001D7A RID: 7546 RVA: 0x00073D1C File Offset: 0x00071F1C
 		private void Awake()
 		{
 			Screen.orientation = ScreenOrientation.LandscapeLeft;
@@ -16,7 +15,7 @@ namespace Rewired.Demos
 			this.controller = (CustomController)this.player.controllers.GetControllerWithTag(ControllerType.Custom, "TiltController");
 		}
 
-		// Token: 0x06001733 RID: 5939 RVA: 0x000626FC File Offset: 0x000608FC
+		// Token: 0x06001D7B RID: 7547 RVA: 0x00073D74 File Offset: 0x00071F74
 		private void Update()
 		{
 			if (this.target == null)
@@ -34,7 +33,7 @@ namespace Rewired.Demos
 			this.target.Translate(vector * this.speed);
 		}
 
-		// Token: 0x06001734 RID: 5940 RVA: 0x00062784 File Offset: 0x00060984
+		// Token: 0x06001D7C RID: 7548 RVA: 0x00073DFC File Offset: 0x00071FFC
 		private void OnInputUpdate()
 		{
 			Vector3 acceleration = Input.acceleration;
@@ -43,16 +42,12 @@ namespace Rewired.Demos
 			this.controller.SetAxisValue(2, acceleration.z);
 		}
 
-		// Token: 0x0400190E RID: 6414
 		public Transform target;
 
-		// Token: 0x0400190F RID: 6415
 		public float speed = 10f;
 
-		// Token: 0x04001910 RID: 6416
 		private CustomController controller;
 
-		// Token: 0x04001911 RID: 6417
 		private Player player;
 	}
 }

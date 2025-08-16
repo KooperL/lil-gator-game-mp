@@ -5,16 +5,14 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x0200032F RID: 815
 	[AddComponentMenu("")]
 	public abstract class UIElementInfo : MonoBehaviour, ISelectHandler, IEventSystemHandler
 	{
-		// Token: 0x14000019 RID: 25
-		// (add) Token: 0x060016AB RID: 5803 RVA: 0x0005EF7C File Offset: 0x0005D17C
-		// (remove) Token: 0x060016AC RID: 5804 RVA: 0x0005EFB4 File Offset: 0x0005D1B4
+		// (add) Token: 0x06001C95 RID: 7317 RVA: 0x00070A14 File Offset: 0x0006EC14
+		// (remove) Token: 0x06001C96 RID: 7318 RVA: 0x00070A4C File Offset: 0x0006EC4C
 		public event Action<GameObject> OnSelectedEvent;
 
-		// Token: 0x060016AD RID: 5805 RVA: 0x0005EFE9 File Offset: 0x0005D1E9
+		// Token: 0x06001C97 RID: 7319 RVA: 0x00015D89 File Offset: 0x00013F89
 		public void OnSelect(BaseEventData eventData)
 		{
 			if (this.OnSelectedEvent != null)
@@ -23,13 +21,10 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x040018DB RID: 6363
 		public string identifier;
 
-		// Token: 0x040018DC RID: 6364
 		public int intData;
 
-		// Token: 0x040018DD RID: 6365
 		public Text text;
 	}
 }

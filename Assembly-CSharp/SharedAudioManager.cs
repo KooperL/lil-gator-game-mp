@@ -2,25 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200007C RID: 124
 public class SharedAudioManager : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x060001FE RID: 510 RVA: 0x0000AE56 File Offset: 0x00009056
+	// Token: 0x06000242 RID: 578 RVA: 0x00003DD0 File Offset: 0x00001FD0
 	private void OnEnable()
 	{
 		SharedAudioManager.nearbyAudioSources = new List<ISharedAudioSource>();
-		this.audioListener = Object.FindObjectOfType<AudioListener>();
+		this.audioListener = global::UnityEngine.Object.FindObjectOfType<AudioListener>();
 		this.activeSources = new Dictionary<SharedAudioProfile, SharedAudioManager.ActiveAudioSource>();
 		FastUpdateManager.updateEvery4.Add(this);
 	}
 
-	// Token: 0x060001FF RID: 511 RVA: 0x0000AE83 File Offset: 0x00009083
+	// Token: 0x06000243 RID: 579 RVA: 0x000026CE File Offset: 0x000008CE
 	private void OnDisable()
 	{
 		FastUpdateManager.updateEvery4.Remove(this);
 	}
 
-	// Token: 0x06000200 RID: 512 RVA: 0x0000AE94 File Offset: 0x00009094
+	// Token: 0x06000244 RID: 580 RVA: 0x0001F314 File Offset: 0x0001D514
 	public void ManagedUpdate()
 	{
 		Vector3 position = base.transform.position;
@@ -97,16 +96,16 @@ public class SharedAudioManager : MonoBehaviour, IManagedUpdate
 		}
 		foreach (SharedAudioProfile sharedAudioProfile2 in this.activeSourcesToRemove)
 		{
-			Object.Destroy(this.activeSources[sharedAudioProfile2].gameObject);
+			global::UnityEngine.Object.Destroy(this.activeSources[sharedAudioProfile2].gameObject);
 			this.activeSources.Remove(sharedAudioProfile2);
 		}
 	}
 
-	// Token: 0x06000201 RID: 513 RVA: 0x0000B30C File Offset: 0x0000950C
+	// Token: 0x06000245 RID: 581 RVA: 0x0001F78C File Offset: 0x0001D98C
 	private void AddActiveSource(SharedAudioProfile profile)
 	{
 		SharedAudioManager.ActiveAudioSource activeAudioSource = new SharedAudioManager.ActiveAudioSource();
-		activeAudioSource.gameObject = Object.Instantiate<GameObject>(this.audioSourcePrefab);
+		activeAudioSource.gameObject = global::UnityEngine.Object.Instantiate<GameObject>(this.audioSourcePrefab);
 		activeAudioSource.gameObject.name = string.Format("Shared Audio Source ({0})", profile.name);
 		activeAudioSource.transform = activeAudioSource.gameObject.transform;
 		activeAudioSource.audioSource = activeAudioSource.gameObject.GetComponent<AudioSource>();
@@ -119,43 +118,30 @@ public class SharedAudioManager : MonoBehaviour, IManagedUpdate
 		this.activeSources.Add(profile, activeAudioSource);
 	}
 
-	// Token: 0x0400029F RID: 671
 	public static List<ISharedAudioSource> nearbyAudioSources = new List<ISharedAudioSource>();
 
-	// Token: 0x040002A0 RID: 672
 	public GameObject audioSourcePrefab;
 
-	// Token: 0x040002A1 RID: 673
 	private Dictionary<SharedAudioProfile, SharedAudioManager.ActiveAudioSource> activeSources;
 
-	// Token: 0x040002A2 RID: 674
 	private AudioListener audioListener;
 
-	// Token: 0x040002A3 RID: 675
 	private List<ISharedAudioSource> outOfRangeList = new List<ISharedAudioSource>();
 
-	// Token: 0x040002A4 RID: 676
 	private List<SharedAudioProfile> activeSourcesToRemove = new List<SharedAudioProfile>();
 
-	// Token: 0x02000372 RID: 882
 	private class ActiveAudioSource
 	{
-		// Token: 0x04001A64 RID: 6756
 		public GameObject gameObject;
 
-		// Token: 0x04001A65 RID: 6757
 		public Transform transform;
 
-		// Token: 0x04001A66 RID: 6758
 		public AudioSource audioSource;
 
-		// Token: 0x04001A67 RID: 6759
 		public bool hasSource;
 
-		// Token: 0x04001A68 RID: 6760
 		public List<Vector3> directions;
 
-		// Token: 0x04001A69 RID: 6761
 		public List<float> strengths;
 	}
 }

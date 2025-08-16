@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002C4 RID: 708
 public class UIFollow : MonoBehaviour
 {
-	// Token: 0x06000EDE RID: 3806 RVA: 0x00046FC0 File Offset: 0x000451C0
+	// Token: 0x06001216 RID: 4630 RVA: 0x0005A1BC File Offset: 0x000583BC
 	private void OnValidate()
 	{
 		if (this.canvas == null)
@@ -17,13 +16,13 @@ public class UIFollow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EDF RID: 3807 RVA: 0x00047014 File Offset: 0x00045214
+	// Token: 0x06001217 RID: 4631 RVA: 0x0000F5E1 File Offset: 0x0000D7E1
 	private void Awake()
 	{
 		this.rectTransform = base.transform as RectTransform;
 	}
 
-	// Token: 0x06000EE0 RID: 3808 RVA: 0x00047028 File Offset: 0x00045228
+	// Token: 0x06001218 RID: 4632 RVA: 0x0005A210 File Offset: 0x00058410
 	private void Start()
 	{
 		if (this.canvas == null)
@@ -38,19 +37,19 @@ public class UIFollow : MonoBehaviour
 		this.mainCamera = Camera.main;
 	}
 
-	// Token: 0x06000EE1 RID: 3809 RVA: 0x000470A1 File Offset: 0x000452A1
+	// Token: 0x06001219 RID: 4633 RVA: 0x0000F5F4 File Offset: 0x0000D7F4
 	private void OnDisable()
 	{
 		this.smoothPosition = this.initialPosition;
 	}
 
-	// Token: 0x06000EE2 RID: 3810 RVA: 0x000470AF File Offset: 0x000452AF
+	// Token: 0x0600121A RID: 4634 RVA: 0x0000F602 File Offset: 0x0000D802
 	public void SetTarget(DialogueActor actor)
 	{
 		this.followTarget = actor.DialogueAnchor;
 	}
 
-	// Token: 0x06000EE3 RID: 3811 RVA: 0x000470C0 File Offset: 0x000452C0
+	// Token: 0x0600121B RID: 4635 RVA: 0x0005A28C File Offset: 0x0005848C
 	private Vector3 GetViewportPoint(Vector3 worldPosition)
 	{
 		Vector3 vector = Vector3.RotateTowards(this.mainCamera.transform.forward, worldPosition - this.mainCamera.transform.position, 1.3962634f, float.PositiveInfinity);
@@ -58,7 +57,7 @@ public class UIFollow : MonoBehaviour
 		return this.mainCamera.WorldToViewportPoint(vector2) + this.screenOffset;
 	}
 
-	// Token: 0x06000EE4 RID: 3812 RVA: 0x00047134 File Offset: 0x00045334
+	// Token: 0x0600121C RID: 4636 RVA: 0x0005A300 File Offset: 0x00058500
 	private void ClampToBoundsGood(ref Vector3 position)
 	{
 		this.rectTransform.anchoredPosition = position;
@@ -135,7 +134,7 @@ public class UIFollow : MonoBehaviour
 		this.clamped = flag;
 	}
 
-	// Token: 0x06000EE5 RID: 3813 RVA: 0x000474B4 File Offset: 0x000456B4
+	// Token: 0x0600121D RID: 4637 RVA: 0x0005A680 File Offset: 0x00058880
 	private void ClampToBoundsBad(ref Vector3 position)
 	{
 		this.rectTransform.anchoredPosition = position;
@@ -192,7 +191,7 @@ public class UIFollow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EE6 RID: 3814 RVA: 0x00047704 File Offset: 0x00045904
+	// Token: 0x0600121E RID: 4638 RVA: 0x0005A8D0 File Offset: 0x00058AD0
 	private void LateUpdate()
 	{
 		Vector3 vector = this.rectTransform.anchoredPosition;
@@ -255,100 +254,71 @@ public class UIFollow : MonoBehaviour
 		this.changedTarget = false;
 	}
 
-	// Token: 0x04001361 RID: 4961
 	private Vector2 initialPosition;
 
-	// Token: 0x04001362 RID: 4962
 	private RectTransform rectTransform;
 
-	// Token: 0x04001363 RID: 4963
 	public Transform followTarget;
 
-	// Token: 0x04001364 RID: 4964
 	public bool snapToPixel = true;
 
-	// Token: 0x04001365 RID: 4965
 	public bool keepWithinBounds;
 
-	// Token: 0x04001366 RID: 4966
 	[ConditionalHide("keepWithinBounds", true)]
 	public RectTransform boundsReference;
 
-	// Token: 0x04001367 RID: 4967
 	[ConditionalHide("keepWithinBounds", true)]
 	public RectTransform bounds;
 
-	// Token: 0x04001368 RID: 4968
 	public Vector3 offset = Vector3.up;
 
-	// Token: 0x04001369 RID: 4969
 	public Vector3 localOffset = Vector3.zero;
 
-	// Token: 0x0400136A RID: 4970
 	public Vector3 screenOffset = Vector3.zero;
 
-	// Token: 0x0400136B RID: 4971
 	private Camera mainCamera;
 
-	// Token: 0x0400136C RID: 4972
 	public Canvas canvas;
 
-	// Token: 0x0400136D RID: 4973
 	public RectTransform canvasTransform;
 
-	// Token: 0x0400136E RID: 4974
 	public Vector2 maxDistance;
 
-	// Token: 0x0400136F RID: 4975
 	public bool isSmooth;
 
-	// Token: 0x04001370 RID: 4976
 	public float smoothTime = 1f;
 
-	// Token: 0x04001371 RID: 4977
 	private Vector2 velocity;
 
-	// Token: 0x04001372 RID: 4978
 	private Vector2 smoothPosition;
 
-	// Token: 0x04001373 RID: 4979
 	private bool changedTarget = true;
 
-	// Token: 0x04001374 RID: 4980
 	public bool revertToPosition;
 
-	// Token: 0x04001375 RID: 4981
 	[ConditionalHide("revertToPosition", true)]
 	public Vector2 revertPosition;
 
-	// Token: 0x04001376 RID: 4982
 	[Header("Scale")]
 	public bool scaleWithTarget;
 
-	// Token: 0x04001377 RID: 4983
 	[ConditionalHide("scaleWithTarget", true)]
 	public float referenceDistance = 10f;
 
-	// Token: 0x04001378 RID: 4984
 	public bool scaleDownOffscreen;
 
-	// Token: 0x04001379 RID: 4985
 	[ConditionalHide("scaleDownOffscreen", true)]
 	public float offscreenScale = 0.25f;
 
-	// Token: 0x0400137A RID: 4986
 	[ConditionalHide("scaleWithTarget", true, ConditionalSourceField2 = "scaleDownOffscreen", UseOrLogic = true)]
 	public RectTransform scaleTransform;
 
-	// Token: 0x0400137B RID: 4987
 	[ConditionalHide("scaleWithTarget", true, ConditionalSourceField2 = "scaleDownOffscreen", UseOrLogic = true)]
 	public float minScale;
 
-	// Token: 0x0400137C RID: 4988
 	[ConditionalHide("scaleWithTarget", true, ConditionalSourceField2 = "scaleDownOffscreen", UseOrLogic = true)]
 	public float maxScale = 5f;
 
-	// Token: 0x0400137D RID: 4989
 	[HideInInspector]
 	public bool clamped;
 }

@@ -3,17 +3,16 @@ using UnityEngine;
 
 namespace Cinemachine.Examples
 {
-	// Token: 0x020002F8 RID: 760
 	[AddComponentMenu("")]
 	public class ActivateCameraWithDistance : MonoBehaviour
 	{
-		// Token: 0x0600102E RID: 4142 RVA: 0x0004DAFB File Offset: 0x0004BCFB
+		// Token: 0x060013BB RID: 5051 RVA: 0x00010B3C File Offset: 0x0000ED3C
 		private void Start()
 		{
 			this.SwitchCam(this.initialActiveCam);
 		}
 
-		// Token: 0x0600102F RID: 4143 RVA: 0x0004DB0C File Offset: 0x0004BD0C
+		// Token: 0x060013BC RID: 5052 RVA: 0x00060954 File Offset: 0x0005EB54
 		private void Update()
 		{
 			if (this.objectToCheck && this.switchCameraTo)
@@ -27,7 +26,7 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x06001030 RID: 4144 RVA: 0x0004DB74 File Offset: 0x0004BD74
+		// Token: 0x060013BD RID: 5053 RVA: 0x00010B4A File Offset: 0x0000ED4A
 		public void SwitchCam(CinemachineVirtualCameraBase vcam)
 		{
 			if (Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera.Name != vcam.Name)
@@ -36,16 +35,12 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x04001542 RID: 5442
 		public GameObject objectToCheck;
 
-		// Token: 0x04001543 RID: 5443
 		public float distanceToObject = 15f;
 
-		// Token: 0x04001544 RID: 5444
 		public CinemachineVirtualCameraBase initialActiveCam;
 
-		// Token: 0x04001545 RID: 5445
 		public CinemachineVirtualCameraBase switchCameraTo;
 	}
 }

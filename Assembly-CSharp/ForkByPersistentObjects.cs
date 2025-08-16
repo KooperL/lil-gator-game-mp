@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200015C RID: 348
 public class ForkByPersistentObjects : MonoBehaviour
 {
-	// Token: 0x06000743 RID: 1859 RVA: 0x00024454 File Offset: 0x00022654
+	// Token: 0x060008CD RID: 2253 RVA: 0x000089B7 File Offset: 0x00006BB7
 	[ContextMenu("Collect Objects")]
 	public void CollectObjects()
 	{
@@ -16,7 +15,7 @@ public class ForkByPersistentObjects : MonoBehaviour
 		this.targets = this.parent.GetComponentsInChildren<PersistentObject>();
 	}
 
-	// Token: 0x06000744 RID: 1860 RVA: 0x00024484 File Offset: 0x00022684
+	// Token: 0x060008CE RID: 2254 RVA: 0x00038EAC File Offset: 0x000370AC
 	public void ForkLogic()
 	{
 		int num = 0;
@@ -36,18 +35,13 @@ public class ForkByPersistentObjects : MonoBehaviour
 		this.lessThanTarget.Invoke();
 	}
 
-	// Token: 0x04000982 RID: 2434
 	public Transform parent;
 
-	// Token: 0x04000983 RID: 2435
 	public PersistentObject[] targets;
 
-	// Token: 0x04000984 RID: 2436
 	public int desiredTargetCount;
 
-	// Token: 0x04000985 RID: 2437
 	public UnityEvent lessThanTarget;
 
-	// Token: 0x04000986 RID: 2438
 	public UnityEvent atLeastTarget;
 }

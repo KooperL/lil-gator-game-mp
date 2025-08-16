@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020002BE RID: 702
 public class UICharacterNotification : MonoBehaviour
 {
-	// Token: 0x06000EC2 RID: 3778 RVA: 0x00046900 File Offset: 0x00044B00
+	// Token: 0x060011FA RID: 4602 RVA: 0x00059CB8 File Offset: 0x00057EB8
 	public void Load(CharacterProfile[] characters)
 	{
 		this.ResetThing();
@@ -18,7 +17,7 @@ public class UICharacterNotification : MonoBehaviour
 		this.onLoad.Invoke();
 	}
 
-	// Token: 0x06000EC3 RID: 3779 RVA: 0x0004693C File Offset: 0x00044B3C
+	// Token: 0x060011FB RID: 4603 RVA: 0x0000F45C File Offset: 0x0000D65C
 	public void Load(CharacterProfile character)
 	{
 		this.ResetThing();
@@ -27,15 +26,15 @@ public class UICharacterNotification : MonoBehaviour
 		this.onLoad.Invoke();
 	}
 
-	// Token: 0x06000EC4 RID: 3780 RVA: 0x00046960 File Offset: 0x00044B60
+	// Token: 0x060011FC RID: 4604 RVA: 0x00059CF4 File Offset: 0x00057EF4
 	private void AddDisplay(CharacterProfile character)
 	{
-		UICharacterDisplay component = Object.Instantiate<GameObject>(this.displayPrefab, this.displayParent).GetComponent<UICharacterDisplay>();
+		UICharacterDisplay component = global::UnityEngine.Object.Instantiate<GameObject>(this.displayPrefab, this.displayParent).GetComponent<UICharacterDisplay>();
 		component.Load(character);
 		this.displays.Add(component);
 	}
 
-	// Token: 0x06000EC5 RID: 3781 RVA: 0x00046998 File Offset: 0x00044B98
+	// Token: 0x060011FD RID: 4605 RVA: 0x00059D2C File Offset: 0x00057F2C
 	private void ResetThing()
 	{
 		this.hideBehavior.Show();
@@ -43,27 +42,21 @@ public class UICharacterNotification : MonoBehaviour
 		{
 			foreach (UICharacterDisplay uicharacterDisplay in this.displays)
 			{
-				Object.Destroy(uicharacterDisplay.gameObject);
+				global::UnityEngine.Object.Destroy(uicharacterDisplay.gameObject);
 			}
 			this.displays = new List<UICharacterDisplay>();
 		}
 	}
 
-	// Token: 0x04001338 RID: 4920
 	public GameObject displayPrefab;
 
-	// Token: 0x04001339 RID: 4921
 	public Transform displayParent;
 
-	// Token: 0x0400133A RID: 4922
 	private List<UICharacterDisplay> displays = new List<UICharacterDisplay>();
 
-	// Token: 0x0400133B RID: 4923
 	public UIHideBehavior hideBehavior;
 
-	// Token: 0x0400133C RID: 4924
 	private CharacterProfile[] characters;
 
-	// Token: 0x0400133D RID: 4925
 	public UnityEvent onLoad = new UnityEvent();
 }

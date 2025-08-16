@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000096 RID: 150
 public class Tightrope : MonoBehaviour
 {
-	// Token: 0x060002BD RID: 701 RVA: 0x000101E4 File Offset: 0x0000E3E4
+	// Token: 0x06000314 RID: 788 RVA: 0x000244EC File Offset: 0x000226EC
 	[ContextMenu("Snap to ends")]
 	public void SnapToEnds()
 	{
@@ -29,7 +28,7 @@ public class Tightrope : MonoBehaviour
 		base.transform.rotation = quaternion;
 	}
 
-	// Token: 0x060002BE RID: 702 RVA: 0x0001033C File Offset: 0x0000E53C
+	// Token: 0x06000315 RID: 789 RVA: 0x00024644 File Offset: 0x00022844
 	private void Awake()
 	{
 		this.balanceBeam.onEnable.AddListener(new UnityAction(this.OnBalanceBeamEnabled));
@@ -42,13 +41,13 @@ public class Tightrope : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x060002BF RID: 703 RVA: 0x000103FA File Offset: 0x0000E5FA
+	// Token: 0x06000316 RID: 790 RVA: 0x000044D7 File Offset: 0x000026D7
 	private void OnBalanceBeamEnabled()
 	{
 		base.enabled = true;
 	}
 
-	// Token: 0x060002C0 RID: 704 RVA: 0x00010404 File Offset: 0x0000E604
+	// Token: 0x06000317 RID: 791 RVA: 0x00024704 File Offset: 0x00022904
 	private void OnEnable()
 	{
 		this.staticRenderer.enabled = false;
@@ -75,14 +74,14 @@ public class Tightrope : MonoBehaviour
 		this.onEnable.Invoke();
 	}
 
-	// Token: 0x060002C1 RID: 705 RVA: 0x000104D8 File Offset: 0x0000E6D8
+	// Token: 0x06000318 RID: 792 RVA: 0x000247D8 File Offset: 0x000229D8
 	private float GetTForPoint(Vector3 point)
 	{
 		Vector3 vector = point - this.linePoint1;
 		return Mathf.Clamp01(Mathf.InverseLerp(0f, this.lineLength, Vector3.Dot(vector, this.lineVectorNormalized)));
 	}
 
-	// Token: 0x060002C2 RID: 706 RVA: 0x00010514 File Offset: 0x0000E714
+	// Token: 0x06000319 RID: 793 RVA: 0x00024814 File Offset: 0x00022A14
 	private void LateUpdate()
 	{
 		if (this.balanceBeam.enabled)
@@ -186,7 +185,7 @@ public class Tightrope : MonoBehaviour
 		this.updatedCenterTPoint = false;
 	}
 
-	// Token: 0x060002C3 RID: 707 RVA: 0x0001090C File Offset: 0x0000EB0C
+	// Token: 0x0600031A RID: 794 RVA: 0x00024C0C File Offset: 0x00022E0C
 	private Vector3 AlongLine(Vector3 point)
 	{
 		Vector3 vector = Vector3.Project(point - this.linePoint1, this.lineVectorNormalized) + this.linePoint1;
@@ -194,14 +193,14 @@ public class Tightrope : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x060002C4 RID: 708 RVA: 0x0001094A File Offset: 0x0000EB4A
+	// Token: 0x0600031B RID: 795 RVA: 0x0000468C File Offset: 0x0000288C
 	public Vector3 ClosestPointOnLine(Vector3 point)
 	{
 		this.UpdatePoints();
 		return MathUtils.ClosestAlongLine(point, this.linePoint1, this.linePoint2);
 	}
 
-	// Token: 0x060002C5 RID: 709 RVA: 0x00010964 File Offset: 0x0000EB64
+	// Token: 0x0600031C RID: 796 RVA: 0x00024C4C File Offset: 0x00022E4C
 	public Vector3 GetPointOnTightrope(float t)
 	{
 		Vector3 vector = this.linePoint1;
@@ -236,13 +235,13 @@ public class Tightrope : MonoBehaviour
 		return Vector3.Lerp(vector, vector2, t);
 	}
 
-	// Token: 0x060002C6 RID: 710 RVA: 0x00010AB1 File Offset: 0x0000ECB1
+	// Token: 0x0600031D RID: 797 RVA: 0x000046A6 File Offset: 0x000028A6
 	public Vector3 GetPointOnLine(float t)
 	{
 		return Vector3.Lerp(this.linePoint1, this.linePoint2, t);
 	}
 
-	// Token: 0x060002C7 RID: 711 RVA: 0x00010AC8 File Offset: 0x0000ECC8
+	// Token: 0x0600031E RID: 798 RVA: 0x00024D9C File Offset: 0x00022F9C
 	public void UpdatePoints()
 	{
 		this.linePoint1 = this.partial1.transform.position;
@@ -253,7 +252,7 @@ public class Tightrope : MonoBehaviour
 		this.lineLength = this.lineVector.magnitude;
 	}
 
-	// Token: 0x060002C8 RID: 712 RVA: 0x00010B6C File Offset: 0x0000ED6C
+	// Token: 0x0600031F RID: 799 RVA: 0x00024E40 File Offset: 0x00023040
 	private void UpdateAnchor()
 	{
 		Vector3 vector = this.centerWeightPoint - this.linePoint1;
@@ -273,116 +272,79 @@ public class Tightrope : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040003BC RID: 956
 	public BalanceBeam balanceBeam;
 
-	// Token: 0x040003BD RID: 957
 	public Renderer staticRenderer;
 
-	// Token: 0x040003BE RID: 958
 	public Renderer skinnedRenderer;
 
-	// Token: 0x040003BF RID: 959
 	public GameObject partial1;
 
-	// Token: 0x040003C0 RID: 960
 	public GameObject partial2;
 
-	// Token: 0x040003C1 RID: 961
 	public GameObject centerObj;
 
-	// Token: 0x040003C2 RID: 962
 	private Vector3 partial1Direction;
 
-	// Token: 0x040003C3 RID: 963
 	private Vector3 partial2Direction;
 
-	// Token: 0x040003C4 RID: 964
 	private Quaternion partial1Rotation;
 
-	// Token: 0x040003C5 RID: 965
 	private Quaternion partial2Rotation;
 
-	// Token: 0x040003C6 RID: 966
 	[Tooltip("0 = X, 1 = Y, 2 = Z")]
 	public int scaleAxis;
 
-	// Token: 0x040003C7 RID: 967
 	private float scaleMultiplier;
 
-	// Token: 0x040003C8 RID: 968
 	public bool lockWeightXAxis;
 
-	// Token: 0x040003C9 RID: 969
 	private Vector3 center;
 
-	// Token: 0x040003CA RID: 970
 	private Vector3 centerWeightPoint;
 
-	// Token: 0x040003CB RID: 971
 	public float centerWeightT;
 
-	// Token: 0x040003CC RID: 972
 	public float springStrength = 4f;
 
-	// Token: 0x040003CD RID: 973
 	public float damperStrength = 0.5f;
 
-	// Token: 0x040003CE RID: 974
 	private Vector3 velocity;
 
-	// Token: 0x040003CF RID: 975
 	[Space]
 	public Transform end1;
 
-	// Token: 0x040003D0 RID: 976
 	public Transform end2;
 
-	// Token: 0x040003D1 RID: 977
 	private Vector3 linePoint1;
 
-	// Token: 0x040003D2 RID: 978
 	private Vector3 linePoint2;
 
-	// Token: 0x040003D3 RID: 979
 	private Vector3 lineVector;
 
-	// Token: 0x040003D4 RID: 980
 	private Vector3 lineVectorNormalized;
 
-	// Token: 0x040003D5 RID: 981
 	private float lineLength;
 
-	// Token: 0x040003D6 RID: 982
 	public bool waitForVisibility;
 
-	// Token: 0x040003D7 RID: 983
 	public Renderer[] visibilityRenderers;
 
-	// Token: 0x040003D8 RID: 984
 	private float looseOffset = -0.5f;
 
-	// Token: 0x040003D9 RID: 985
 	public UnityEvent onEnable;
 
-	// Token: 0x040003DA RID: 986
 	private bool isPlayerOnBalanceBeam;
 
-	// Token: 0x040003DB RID: 987
 	private bool lockToTightrope;
 
-	// Token: 0x040003DC RID: 988
 	private static readonly int _leftfoot = Animator.StringToHash("leftfoot");
 
-	// Token: 0x040003DD RID: 989
 	private static readonly int _rightfoot = Animator.StringToHash("rightfoot");
 
-	// Token: 0x040003DE RID: 990
 	private bool updatedCenterTPoint;
 
-	// Token: 0x040003DF RID: 991
 	private float centerT;
 
-	// Token: 0x040003E0 RID: 992
 	private bool isPointsInverted;
 }

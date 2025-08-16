@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000183 RID: 387
 public class NGP_Materials : MonoBehaviour
 {
-	// Token: 0x060007F6 RID: 2038 RVA: 0x000267E0 File Offset: 0x000249E0
+	// Token: 0x06000999 RID: 2457 RVA: 0x0003AE10 File Offset: 0x00039010
 	private void Start()
 	{
 		foreach (NGP_Materials.MaterialAltTextures materialAltTextures in this.materialAltTextures)
@@ -13,17 +12,14 @@ public class NGP_Materials : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000A27 RID: 2599
 	public Material[] materials;
 
-	// Token: 0x04000A28 RID: 2600
 	public NGP_Materials.MaterialAltTextures[] materialAltTextures;
 
-	// Token: 0x020003CD RID: 973
 	[Serializable]
 	public struct MaterialAltTextures
 	{
-		// Token: 0x06001996 RID: 6550 RVA: 0x0006D820 File Offset: 0x0006BA20
+		// Token: 0x0600099B RID: 2459 RVA: 0x000094BF File Offset: 0x000076BF
 		public MaterialAltTextures(Material material)
 		{
 			this.name = material.name;
@@ -32,16 +28,12 @@ public class NGP_Materials : MonoBehaviour
 			this.altTexture = null;
 		}
 
-		// Token: 0x04001BF9 RID: 7161
 		public string name;
 
-		// Token: 0x04001BFA RID: 7162
 		public Material material;
 
-		// Token: 0x04001BFB RID: 7163
 		public Texture2D defaultTexture;
 
-		// Token: 0x04001BFC RID: 7164
 		public Texture2D altTexture;
 	}
 }

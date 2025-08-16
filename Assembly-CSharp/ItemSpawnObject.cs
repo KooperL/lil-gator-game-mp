@@ -1,11 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001D6 RID: 470
 public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x17000081 RID: 129
-	// (get) Token: 0x060009CB RID: 2507 RVA: 0x0002D836 File Offset: 0x0002BA36
+	// (get) Token: 0x06000BC0 RID: 3008 RVA: 0x0000AFC6 File Offset: 0x000091C6
 	private PlayerItemManager.EquippedState EquippedState
 	{
 		get
@@ -18,7 +16,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x060009CC RID: 2508 RVA: 0x0002D844 File Offset: 0x0002BA44
+	// Token: 0x06000BC1 RID: 3009 RVA: 0x000410E8 File Offset: 0x0003F2E8
 	public void Input(bool isDown, bool isHeld)
 	{
 		if (isDown)
@@ -32,7 +30,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 			{
 				Player.itemManager.SetEquippedState(this.EquippedState, false);
 				Player.itemManager.SetItemInUse(this, true);
-				this.spawnedObject = Object.Instantiate<GameObject>(this.spawnedObjectPrefab, Player.RawPosition + Player.transform.rotation * this.spawnedObjectPosition, Player.transform.rotation);
+				this.spawnedObject = global::UnityEngine.Object.Instantiate<GameObject>(this.spawnedObjectPrefab, Player.RawPosition + Player.transform.rotation * this.spawnedObjectPosition, Player.transform.rotation);
 				Vector3 vector = Player.rigidbody.velocity + Player.transform.rotation * this.spawnedObjectVelocity;
 				Rigidbody component = this.spawnedObject.GetComponent<Rigidbody>();
 				if (component != null)
@@ -48,7 +46,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x060009CD RID: 2509 RVA: 0x0002D938 File Offset: 0x0002BB38
+	// Token: 0x06000BC2 RID: 3010 RVA: 0x000411DC File Offset: 0x0003F3DC
 	private void LateUpdate()
 	{
 		if (this.spawnedObject != null)
@@ -80,7 +78,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x060009CE RID: 2510 RVA: 0x0002D9C0 File Offset: 0x0002BBC0
+	// Token: 0x06000BC3 RID: 3011 RVA: 0x00041264 File Offset: 0x0003F464
 	public void Cancel()
 	{
 		Player.movement.isModified = false;
@@ -88,9 +86,9 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		{
 			if (this.despawnPrefab != null)
 			{
-				Object.Instantiate<GameObject>(this.despawnPrefab, this.spawnedObject.transform.position, this.spawnedObject.transform.rotation);
+				global::UnityEngine.Object.Instantiate<GameObject>(this.despawnPrefab, this.spawnedObject.transform.position, this.spawnedObject.transform.rotation);
 			}
-			Object.Destroy(this.spawnedObject);
+			global::UnityEngine.Object.Destroy(this.spawnedObject);
 		}
 		this.spawnedObject = null;
 		if (Player.movement.isRagdolling)
@@ -103,7 +101,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x060009CF RID: 2511 RVA: 0x0002DA68 File Offset: 0x0002BC68
+	// Token: 0x06000BC4 RID: 3012 RVA: 0x0004130C File Offset: 0x0003F50C
 	public void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (this.isOnRight ? Player.itemManager.hipAnchor_r : Player.itemManager.hipAnchor);
@@ -121,13 +119,13 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x060009D0 RID: 2512 RVA: 0x0002DADA File Offset: 0x0002BCDA
+	// Token: 0x06000BC5 RID: 3013 RVA: 0x0000AFD3 File Offset: 0x000091D3
 	public void OnRemove()
 	{
 		this.Cancel();
 	}
 
-	// Token: 0x060009D1 RID: 2513 RVA: 0x0002DAE2 File Offset: 0x0002BCE2
+	// Token: 0x06000BC6 RID: 3014 RVA: 0x0000AFDB File Offset: 0x000091DB
 	public void SetIndex(int index)
 	{
 		if (index == 1)
@@ -136,36 +134,25 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x04000C13 RID: 3091
 	public Renderer unequippedRenderer;
 
-	// Token: 0x04000C14 RID: 3092
 	public GameObject spawnedObjectPrefab;
 
-	// Token: 0x04000C15 RID: 3093
 	private GameObject spawnedObject;
 
-	// Token: 0x04000C16 RID: 3094
 	public Vector3 spawnedObjectPosition;
 
-	// Token: 0x04000C17 RID: 3095
 	public Vector3 spawnedObjectVelocity;
 
-	// Token: 0x04000C18 RID: 3096
 	public bool ragdollWhenSpawning;
 
-	// Token: 0x04000C19 RID: 3097
 	private bool hasRagdolled;
 
-	// Token: 0x04000C1A RID: 3098
 	public bool showItemBefore;
 
-	// Token: 0x04000C1B RID: 3099
 	public float minimumStamina = -1f;
 
-	// Token: 0x04000C1C RID: 3100
 	public GameObject despawnPrefab;
 
-	// Token: 0x04000C1D RID: 3101
 	private bool isOnRight;
 }

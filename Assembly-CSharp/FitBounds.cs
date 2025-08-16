@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200001A RID: 26
 public class FitBounds : MonoBehaviour
 {
-	// Token: 0x06000054 RID: 84 RVA: 0x00003524 File Offset: 0x00001724
+	// Token: 0x06000055 RID: 85 RVA: 0x00018608 File Offset: 0x00016808
 	public void Fit(BoxCollider box)
 	{
 		base.transform.position = box.transform.TransformPoint(box.center);
@@ -20,6 +19,5 @@ public class FitBounds : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400007F RID: 127
 	public ParticleSystem[] particles;
 }

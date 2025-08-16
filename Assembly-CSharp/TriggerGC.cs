@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Scripting;
 
-// Token: 0x02000256 RID: 598
 public class TriggerGC : MonoBehaviour
 {
-	// Token: 0x06000CEA RID: 3306 RVA: 0x0003E84C File Offset: 0x0003CA4C
+	// Token: 0x06000FF2 RID: 4082 RVA: 0x0000DC27 File Offset: 0x0000BE27
 	public static void TriggerGarbageCollection(bool isImmediate = true, bool alwaysRun = false)
 	{
 		if (Time.time - TriggerGC.lastGCCollectTime < 60f && !alwaysRun)
@@ -23,13 +22,13 @@ public class TriggerGC : MonoBehaviour
 		TriggerGC.lastGCCollectTime = Time.time;
 	}
 
-	// Token: 0x06000CEB RID: 3307 RVA: 0x0003E880 File Offset: 0x0003CA80
+	// Token: 0x06000FF3 RID: 4083 RVA: 0x0000DC5B File Offset: 0x0000BE5B
 	private void OnEnable()
 	{
 		this.frameCount = 0;
 	}
 
-	// Token: 0x06000CEC RID: 3308 RVA: 0x0003E889 File Offset: 0x0003CA89
+	// Token: 0x06000FF4 RID: 4084 RVA: 0x0000DC64 File Offset: 0x0000BE64
 	private void Update()
 	{
 		if (this.frameCount >= 2)
@@ -43,15 +42,11 @@ public class TriggerGC : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001109 RID: 4361
 	public static float lastGCCollectTime = -1000f;
 
-	// Token: 0x0400110A RID: 4362
 	private const float minGCDelay = 60f;
 
-	// Token: 0x0400110B RID: 4363
 	private const int frameDelay = 2;
 
-	// Token: 0x0400110C RID: 4364
 	private int frameCount;
 }

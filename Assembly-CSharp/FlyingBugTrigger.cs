@@ -3,10 +3,9 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x0200004B RID: 75
 public class FlyingBugTrigger : MonoBehaviour
 {
-	// Token: 0x06000123 RID: 291 RVA: 0x00007241 File Offset: 0x00005441
+	// Token: 0x06000150 RID: 336 RVA: 0x00003266 File Offset: 0x00001466
 	private void OnValidate()
 	{
 		if (this.cart == null)
@@ -15,13 +14,13 @@ public class FlyingBugTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000124 RID: 292 RVA: 0x0000725D File Offset: 0x0000545D
+	// Token: 0x06000151 RID: 337 RVA: 0x00003282 File Offset: 0x00001482
 	private void Awake()
 	{
 		this.maxPos = this.cart.m_Path.MaxUnit(this.cart.m_PositionUnits);
 	}
 
-	// Token: 0x06000125 RID: 293 RVA: 0x00007280 File Offset: 0x00005480
+	// Token: 0x06000152 RID: 338 RVA: 0x000032A5 File Offset: 0x000014A5
 	private void OnTriggerStay(Collider other)
 	{
 		if (base.enabled)
@@ -30,7 +29,7 @@ public class FlyingBugTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000126 RID: 294 RVA: 0x00007294 File Offset: 0x00005494
+	// Token: 0x06000153 RID: 339 RVA: 0x0001BF34 File Offset: 0x0001A134
 	private void FixedUpdate()
 	{
 		bool flag = this.stepsSinceTriggered < 2;
@@ -67,48 +66,34 @@ public class FlyingBugTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000199 RID: 409
 	public CinemachineDollyCart cart;
 
-	// Token: 0x0400019A RID: 410
 	public float acceleration;
 
-	// Token: 0x0400019B RID: 411
 	public float deceleration;
 
-	// Token: 0x0400019C RID: 412
 	public float speed = 5f;
 
-	// Token: 0x0400019D RID: 413
 	private int stepsSinceTriggered;
 
-	// Token: 0x0400019E RID: 414
 	private const float timeUntilReverse = 10f;
 
-	// Token: 0x0400019F RID: 415
 	private float maxPos;
 
-	// Token: 0x040001A0 RID: 416
 	public UnityEvent onReachEnd;
 
-	// Token: 0x040001A1 RID: 417
 	public MultilingualTextDocument document;
 
-	// Token: 0x040001A2 RID: 418
 	public FlyingBugTrigger.ChaseShout[] chaseShouts;
 
-	// Token: 0x02000366 RID: 870
 	[Serializable]
 	public struct ChaseShout
 	{
-		// Token: 0x04001A30 RID: 6704
 		[ChunkLookup("document")]
 		public string shoutID;
 
-		// Token: 0x04001A31 RID: 6705
 		public float distanceTrigger;
 
-		// Token: 0x04001A32 RID: 6706
 		public bool triggered;
 	}
 }

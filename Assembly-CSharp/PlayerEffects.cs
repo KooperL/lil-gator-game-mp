@@ -1,30 +1,29 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001E4 RID: 484
 public class PlayerEffects : MonoBehaviour
 {
-	// Token: 0x06000A2C RID: 2604 RVA: 0x0002F563 File Offset: 0x0002D763
+	// Token: 0x06000C2D RID: 3117 RVA: 0x0000B579 File Offset: 0x00009779
 	private void Awake()
 	{
 		this.playerMaterial = this.playerRenderer.sharedMaterial;
 	}
 
-	// Token: 0x06000A2D RID: 2605 RVA: 0x0002F578 File Offset: 0x0002D778
+	// Token: 0x06000C2E RID: 3118 RVA: 0x00042994 File Offset: 0x00040B94
 	private void Start()
 	{
 		this.playerMaterial.DisableKeyword("CARTOON_SPEC");
 		this.drippingEffect.emission.enabled = false;
 	}
 
-	// Token: 0x06000A2E RID: 2606 RVA: 0x0002F5A9 File Offset: 0x0002D7A9
+	// Token: 0x06000C2F RID: 3119 RVA: 0x0000B58C File Offset: 0x0000978C
 	public void Scrape()
 	{
 		this.isScraping = true;
 		this.dustCounter += Mathf.Abs(this.rigidbody.velocity.y) * this.climbingSlideDustSpeed * Time.deltaTime;
 	}
 
-	// Token: 0x06000A2F RID: 2607 RVA: 0x0002F5E4 File Offset: 0x0002D7E4
+	// Token: 0x06000C30 RID: 3120 RVA: 0x000429C8 File Offset: 0x00040BC8
 	private void FixedUpdate()
 	{
 		SurfaceMaterial surfaceMaterial = null;
@@ -131,7 +130,7 @@ public class PlayerEffects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A30 RID: 2608 RVA: 0x0002FAE4 File Offset: 0x0002DCE4
+	// Token: 0x06000C31 RID: 3121 RVA: 0x00042EC8 File Offset: 0x000410C8
 	public void Jump()
 	{
 		SurfaceMaterial surfaceMaterial = MaterialManager.m.SampleSurfaceMaterial(base.transform.position, Vector3.down);
@@ -154,7 +153,7 @@ public class PlayerEffects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A31 RID: 2609 RVA: 0x0002FC10 File Offset: 0x0002DE10
+	// Token: 0x06000C32 RID: 3122 RVA: 0x00042FF4 File Offset: 0x000411F4
 	public void Land(SurfaceMaterial surfaceMaterial, Vector3 normal)
 	{
 		if (this.movement.isSledding)
@@ -172,7 +171,7 @@ public class PlayerEffects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A32 RID: 2610 RVA: 0x0002FC9C File Offset: 0x0002DE9C
+	// Token: 0x06000C33 RID: 3123 RVA: 0x00043080 File Offset: 0x00041280
 	public void ClimbGrab()
 	{
 		if (this.lastClimbGrab + 0.1f > Time.time)
@@ -187,13 +186,13 @@ public class PlayerEffects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A33 RID: 2611 RVA: 0x0002FD0D File Offset: 0x0002DF0D
+	// Token: 0x06000C34 RID: 3124 RVA: 0x0000B5C4 File Offset: 0x000097C4
 	public void SledTransition()
 	{
 		PlayAudio.p.PlayAtPoint(this.sledTransition, base.transform.position);
 	}
 
-	// Token: 0x06000A34 RID: 2612 RVA: 0x0002FD2A File Offset: 0x0002DF2A
+	// Token: 0x06000C35 RID: 3125 RVA: 0x0000B5E1 File Offset: 0x000097E1
 	public void PlaySwimSound()
 	{
 		if (this.swimSound != null)
@@ -202,109 +201,75 @@ public class PlayerEffects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000CB5 RID: 3253
 	public PlayerMovement movement;
 
-	// Token: 0x04000CB6 RID: 3254
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000CB7 RID: 3255
 	public Vector3 dustOffset;
 
-	// Token: 0x04000CB8 RID: 3256
 	public float minDustSpeed = 0.2f;
 
-	// Token: 0x04000CB9 RID: 3257
 	public int jumpDustCount = 15;
 
-	// Token: 0x04000CBA RID: 3258
 	public float walkDustSpeed = 1f;
 
-	// Token: 0x04000CBB RID: 3259
 	public float walkDustSize = 0.25f;
 
-	// Token: 0x04000CBC RID: 3260
 	[Header("Sled")]
 	public SoundEffect sledTransition;
 
-	// Token: 0x04000CBD RID: 3261
 	public float sledDustSpeed = 3f;
 
-	// Token: 0x04000CBE RID: 3262
 	public int sledLandDustCount = 15;
 
-	// Token: 0x04000CBF RID: 3263
 	public SoundEffect sledJump;
 
-	// Token: 0x04000CC0 RID: 3264
 	public SoundEffect sledLand;
 
-	// Token: 0x04000CC1 RID: 3265
 	public ScrapingSFX scrapingSFX;
 
-	// Token: 0x04000CC2 RID: 3266
 	[Header("Water")]
 	public SoundEffect waterJump;
 
-	// Token: 0x04000CC3 RID: 3267
 	public SoundEffect waterLand;
 
-	// Token: 0x04000CC4 RID: 3268
 	public AudioSourceVariance swimSound;
 
-	// Token: 0x04000CC5 RID: 3269
 	public Transform sledWaterEffectRoot;
 
-	// Token: 0x04000CC6 RID: 3270
 	public ParticleSystem[] sledWaterEffects;
 
-	// Token: 0x04000CC7 RID: 3271
 	public ParticleSystem drippingEffect;
 
-	// Token: 0x04000CC8 RID: 3272
 	[ReadOnly]
 	public int overrideIsWet;
 
-	// Token: 0x04000CC9 RID: 3273
 	private bool wasWet;
 
-	// Token: 0x04000CCA RID: 3274
 	private float isWetSmooth;
 
-	// Token: 0x04000CCB RID: 3275
 	public Renderer playerRenderer;
 
-	// Token: 0x04000CCC RID: 3276
 	private Material playerMaterial;
 
-	// Token: 0x04000CCD RID: 3277
 	private int _specularBrightness = Shader.PropertyToID("_SpecularBrightness");
 
-	// Token: 0x04000CCE RID: 3278
 	[Header("Climbing")]
 	public ParticleSystem climbingEffect;
 
-	// Token: 0x04000CCF RID: 3279
 	public float climbingSlideDustSpeed = 3f;
 
-	// Token: 0x04000CD0 RID: 3280
 	public Vector3 climbingDustOffset;
 
-	// Token: 0x04000CD1 RID: 3281
 	private float dustCounter;
 
-	// Token: 0x04000CD2 RID: 3282
 	private bool isScraping;
 
-	// Token: 0x04000CD3 RID: 3283
 	private float sledSwimmingCounter;
 
-	// Token: 0x04000CD4 RID: 3284
 	private const float sledSwimmingInterval = 1f;
 
-	// Token: 0x04000CD5 RID: 3285
 	private bool updateSledWaterEffects;
 
-	// Token: 0x04000CD6 RID: 3286
 	private float lastClimbGrab = -1f;
 }

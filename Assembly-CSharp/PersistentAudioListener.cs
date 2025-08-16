@@ -1,23 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200018D RID: 397
 public class PersistentAudioListener : MonoBehaviour
 {
-	// Token: 0x06000824 RID: 2084 RVA: 0x000270A2 File Offset: 0x000252A2
+	// Token: 0x060009DA RID: 2522 RVA: 0x0000977A File Offset: 0x0000797A
 	private void Start()
 	{
 		if (PersistentAudioListener.persistentInstance == null)
 		{
 			PersistentAudioListener.persistentInstance = this;
 			this.audioListener.enabled = true;
-			Object.DontDestroyOnLoad(base.gameObject);
+			global::UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
 			return;
 		}
-		Object.Destroy(base.gameObject);
+		global::UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000825 RID: 2085 RVA: 0x000270DA File Offset: 0x000252DA
+	// Token: 0x060009DB RID: 2523 RVA: 0x000097B2 File Offset: 0x000079B2
 	private void LateUpdate()
 	{
 		if (this.parent == null)
@@ -30,12 +29,9 @@ public class PersistentAudioListener : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000A50 RID: 2640
 	public static PersistentAudioListener persistentInstance;
 
-	// Token: 0x04000A51 RID: 2641
 	private Transform parent;
 
-	// Token: 0x04000A52 RID: 2642
 	public AudioListener audioListener;
 }

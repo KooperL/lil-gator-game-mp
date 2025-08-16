@@ -4,16 +4,15 @@ using Rewired;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020000AE RID: 174
 public class DialogueBox : MonoBehaviour
 {
-	// Token: 0x0600038A RID: 906 RVA: 0x00014F20 File Offset: 0x00013120
+	// Token: 0x06000410 RID: 1040 RVA: 0x000050CD File Offset: 0x000032CD
 	private static bool IsValidBreakSpot(char breakCharacter)
 	{
 		return breakCharacter == ' ';
 	}
 
-	// Token: 0x0600038B RID: 907 RVA: 0x00014F28 File Offset: 0x00013128
+	// Token: 0x06000411 RID: 1041 RVA: 0x00028DD8 File Offset: 0x00026FD8
 	public static string InsertLineBreaks(string text, TextGenerationSettings settings)
 	{
 		string text2 = text;
@@ -64,8 +63,7 @@ public class DialogueBox : MonoBehaviour
 		return text;
 	}
 
-	// Token: 0x1700002F RID: 47
-	// (get) Token: 0x0600038C RID: 908 RVA: 0x00015041 File Offset: 0x00013241
+	// (get) Token: 0x06000412 RID: 1042 RVA: 0x000050D4 File Offset: 0x000032D4
 	public bool isTypingText
 	{
 		get
@@ -74,8 +72,7 @@ public class DialogueBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000030 RID: 48
-	// (get) Token: 0x0600038D RID: 909 RVA: 0x0001504C File Offset: 0x0001324C
+	// (get) Token: 0x06000413 RID: 1043 RVA: 0x00028EF4 File Offset: 0x000270F4
 	public TextGenerationSettings TextGenerationSettings
 	{
 		get
@@ -108,7 +105,7 @@ public class DialogueBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600038E RID: 910 RVA: 0x00015110 File Offset: 0x00013310
+	// Token: 0x06000414 RID: 1044 RVA: 0x00028FB8 File Offset: 0x000271B8
 	private void Awake()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
@@ -126,18 +123,18 @@ public class DialogueBox : MonoBehaviour
 		this.waitUntilSkipOrFinish = new WaitUntil(() => this.typeTextCoroutine == null || this.progressInput || DebugButtons.IsSkipHeld);
 	}
 
-	// Token: 0x0600038F RID: 911 RVA: 0x000151D9 File Offset: 0x000133D9
+	// Token: 0x06000415 RID: 1045 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnEnable()
 	{
 	}
 
-	// Token: 0x06000390 RID: 912 RVA: 0x000151DB File Offset: 0x000133DB
+	// Token: 0x06000416 RID: 1046 RVA: 0x000050DF File Offset: 0x000032DF
 	private void Start()
 	{
 		this.defaultPosition = this.rectTransform.anchoredPosition;
 	}
 
-	// Token: 0x06000391 RID: 913 RVA: 0x000151EE File Offset: 0x000133EE
+	// Token: 0x06000417 RID: 1047 RVA: 0x000050F2 File Offset: 0x000032F2
 	private void OnDisable()
 	{
 		if (PlayerInteract.interactButtonPriority == base.gameObject)
@@ -146,7 +143,7 @@ public class DialogueBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000392 RID: 914 RVA: 0x00015208 File Offset: 0x00013408
+	// Token: 0x06000418 RID: 1048 RVA: 0x00029084 File Offset: 0x00027284
 	public YieldInstruction Load(string text, DialogueActor actor = null, bool hasInput = true, float waitTime = 0f)
 	{
 		bool flag = this.actor == actor;
@@ -173,7 +170,7 @@ public class DialogueBox : MonoBehaviour
 		return this.Load(text, color, sprite, flag, hasInput, sprite2, waitTime);
 	}
 
-	// Token: 0x06000393 RID: 915 RVA: 0x000152E0 File Offset: 0x000134E0
+	// Token: 0x06000419 RID: 1049 RVA: 0x0002915C File Offset: 0x0002735C
 	public YieldInstruction Load(string text, Color color, Sprite decoration = null, bool ignoreAnimation = false, bool hasInput = true, Sprite pattern = null, float waitTime = 0f)
 	{
 		string text2 = text;
@@ -264,7 +261,7 @@ public class DialogueBox : MonoBehaviour
 		return base.StartCoroutine(this.RunDialogue());
 	}
 
-	// Token: 0x06000394 RID: 916 RVA: 0x00015578 File Offset: 0x00013778
+	// Token: 0x0600041A RID: 1050 RVA: 0x000293F4 File Offset: 0x000275F4
 	public void SetColor(Color color)
 	{
 		if (this.coloredImage != null)
@@ -280,7 +277,7 @@ public class DialogueBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000395 RID: 917 RVA: 0x000155D4 File Offset: 0x000137D4
+	// Token: 0x0600041B RID: 1051 RVA: 0x00029450 File Offset: 0x00027650
 	public void SetDecorations(Sprite decoration)
 	{
 		if (this.decorations == null || this.decorations.Length == 0)
@@ -301,7 +298,7 @@ public class DialogueBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000396 RID: 918 RVA: 0x0001563C File Offset: 0x0001383C
+	// Token: 0x0600041C RID: 1052 RVA: 0x000294B8 File Offset: 0x000276B8
 	public void SetPattern(Sprite sprite)
 	{
 		if (this.pattern == null)
@@ -317,7 +314,7 @@ public class DialogueBox : MonoBehaviour
 		this.pattern.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000397 RID: 919 RVA: 0x00015690 File Offset: 0x00013890
+	// Token: 0x0600041D RID: 1053 RVA: 0x0000510C File Offset: 0x0000330C
 	private IEnumerator RunDialogue()
 	{
 		float dialogueStartTime = Time.time;
@@ -367,7 +364,7 @@ public class DialogueBox : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000398 RID: 920 RVA: 0x0001569F File Offset: 0x0001389F
+	// Token: 0x0600041E RID: 1054 RVA: 0x0000511B File Offset: 0x0000331B
 	private IEnumerator WaitUntilAutoAdvanceOrInput()
 	{
 		float advanceTime = Time.time + this.automaticTextAdvanceDelay;
@@ -378,7 +375,7 @@ public class DialogueBox : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000399 RID: 921 RVA: 0x000156AE File Offset: 0x000138AE
+	// Token: 0x0600041F RID: 1055 RVA: 0x0000512A File Offset: 0x0000332A
 	private IEnumerator TypeText(string text)
 	{
 		int index = 0;
@@ -442,7 +439,7 @@ public class DialogueBox : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600039A RID: 922 RVA: 0x000156C4 File Offset: 0x000138C4
+	// Token: 0x06000420 RID: 1056 RVA: 0x00005140 File Offset: 0x00003340
 	public void SkipText()
 	{
 		base.StopCoroutine(this.typeTextCoroutine);
@@ -450,7 +447,7 @@ public class DialogueBox : MonoBehaviour
 		this.visibleText.text = this.text;
 	}
 
-	// Token: 0x0600039B RID: 923 RVA: 0x000156EC File Offset: 0x000138EC
+	// Token: 0x06000421 RID: 1057 RVA: 0x0002950C File Offset: 0x0002770C
 	private void Update()
 	{
 		if (this.clearTime > 0f && this.clearTime < Time.time)
@@ -463,7 +460,7 @@ public class DialogueBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600039C RID: 924 RVA: 0x0001576C File Offset: 0x0001396C
+	// Token: 0x06000422 RID: 1058 RVA: 0x00005166 File Offset: 0x00003366
 	public void Clear(bool validate = false)
 	{
 		if (validate)
@@ -474,145 +471,98 @@ public class DialogueBox : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040004E3 RID: 1251
 	public UIFollow follow;
 
-	// Token: 0x040004E4 RID: 1252
 	public UILineFollow lineFollow;
 
-	// Token: 0x040004E5 RID: 1253
 	private Animator animator;
 
-	// Token: 0x040004E6 RID: 1254
 	private string text;
 
-	// Token: 0x040004E7 RID: 1255
 	public RectTransform rectTransform;
 
-	// Token: 0x040004E8 RID: 1256
 	public Text visibleText;
 
-	// Token: 0x040004E9 RID: 1257
 	public Text invisibleText;
 
-	// Token: 0x040004EA RID: 1258
 	public bool invisibleTextIsUnformatted;
 
-	// Token: 0x040004EB RID: 1259
 	public Vector2 defaultPosition;
 
-	// Token: 0x040004EC RID: 1260
 	public Image coloredImage;
 
-	// Token: 0x040004ED RID: 1261
 	public Image[] primaryImages;
 
-	// Token: 0x040004EE RID: 1262
 	public Image[] backgroundImages;
 
-	// Token: 0x040004EF RID: 1263
 	public Image[] decorations;
 
-	// Token: 0x040004F0 RID: 1264
 	public Image pattern;
 
-	// Token: 0x040004F1 RID: 1265
 	public bool useInvisibleText = true;
 
-	// Token: 0x040004F2 RID: 1266
 	public bool grabSizeFromBestFit;
 
-	// Token: 0x040004F3 RID: 1267
 	public bool insertLineBreaks = true;
 
-	// Token: 0x040004F4 RID: 1268
 	public float textSpeed;
 
-	// Token: 0x040004F5 RID: 1269
 	public float commaWaitTime = 0.1f;
 
-	// Token: 0x040004F6 RID: 1270
 	public float fullStopWaitTime = 0.25f;
 
-	// Token: 0x040004F7 RID: 1271
 	public float automaticTextAdvanceDelay = 4f;
 
-	// Token: 0x040004F8 RID: 1272
 	private bool overrideWaitTime;
 
-	// Token: 0x040004F9 RID: 1273
 	private float overriddenWaitTime;
 
-	// Token: 0x040004FA RID: 1274
 	public bool autoTextAdvanceWhenInput;
 
-	// Token: 0x040004FB RID: 1275
 	private YieldInstruction textWait;
 
-	// Token: 0x040004FC RID: 1276
 	private WaitForSeconds waitForTextBeforeInput;
 
-	// Token: 0x040004FD RID: 1277
 	private WaitForSeconds textWaitTime;
 
-	// Token: 0x040004FE RID: 1278
 	private WaitForSeconds commaWait;
 
-	// Token: 0x040004FF RID: 1279
 	private WaitForSeconds fullStopWait;
 
-	// Token: 0x04000500 RID: 1280
 	private WaitForSeconds waitForAutomaticTextAdvance;
 
-	// Token: 0x04000501 RID: 1281
 	private WaitForSeconds textWaitPause;
 
-	// Token: 0x04000502 RID: 1282
 	private IEnumerator typeTextCoroutine;
 
-	// Token: 0x04000503 RID: 1283
 	private WaitUntil waitUntilSkipOrFinish;
 
-	// Token: 0x04000504 RID: 1284
 	public RectTransform textArea;
 
-	// Token: 0x04000505 RID: 1285
 	public Text textTemplate;
 
-	// Token: 0x04000506 RID: 1286
 	private TextGenerationSettings textGenerationSettings;
 
-	// Token: 0x04000507 RID: 1287
 	private bool cachedTextGenerationSettings;
 
-	// Token: 0x04000508 RID: 1288
 	[Space]
 	public UINameplate nameplate;
 
-	// Token: 0x04000509 RID: 1289
 	public UIButtonPrompt buttonPrompt;
 
-	// Token: 0x0400050A RID: 1290
 	public bool listenForSkip = true;
 
-	// Token: 0x0400050B RID: 1291
 	private bool progressInput;
 
-	// Token: 0x0400050C RID: 1292
 	public bool animateMouths = true;
 
-	// Token: 0x0400050D RID: 1293
 	public bool alwaysTriggerAnimation;
 
-	// Token: 0x0400050E RID: 1294
 	private DialogueActor actor;
 
-	// Token: 0x0400050F RID: 1295
 	private bool hasInput = true;
 
-	// Token: 0x04000510 RID: 1296
 	private global::Rewired.Player rePlayer;
 
-	// Token: 0x04000511 RID: 1297
 	private float clearTime = -1f;
 }

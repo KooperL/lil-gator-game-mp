@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000075 RID: 117
 public class ActorPath : GenericPath
 {
-	// Token: 0x060001DF RID: 479 RVA: 0x0000A0EC File Offset: 0x000082EC
+	// Token: 0x06000223 RID: 547 RVA: 0x0001E6E8 File Offset: 0x0001C8E8
 	public void Interpolate(ref float nodePosition, float speed, out Vector3 velocity, out Vector3 position, bool getAccurateDirection = false)
 	{
 		float num = Mathf.Ceil(nodePosition + 1E-05f);
@@ -43,7 +42,7 @@ public class ActorPath : GenericPath
 		position = this.GetInterpolatedPosition(nodePosition);
 	}
 
-	// Token: 0x060001E0 RID: 480 RVA: 0x0000A1AC File Offset: 0x000083AC
+	// Token: 0x06000224 RID: 548 RVA: 0x0001E7A8 File Offset: 0x0001C9A8
 	public void AddDistance(ref float nodePosition, float distance)
 	{
 		float num = Mathf.Ceil(nodePosition + 1E-05f);
@@ -73,7 +72,7 @@ public class ActorPath : GenericPath
 		}
 	}
 
-	// Token: 0x060001E1 RID: 481 RVA: 0x0000A260 File Offset: 0x00008460
+	// Token: 0x06000225 RID: 549 RVA: 0x0001E85C File Offset: 0x0001CA5C
 	private Vector3 DeltaBetweenNodes(int node)
 	{
 		if (node < this.positions.Length - 1)
@@ -88,7 +87,7 @@ public class ActorPath : GenericPath
 		return base.GetPosition(node - 1) - base.GetPosition(node);
 	}
 
-	// Token: 0x060001E2 RID: 482 RVA: 0x0000A2D4 File Offset: 0x000084D4
+	// Token: 0x06000226 RID: 550 RVA: 0x0001E8D0 File Offset: 0x0001CAD0
 	public Vector3 GetInterpolatedPosition(float nodePosition)
 	{
 		int num = Mathf.FloorToInt(nodePosition);
@@ -104,6 +103,5 @@ public class ActorPath : GenericPath
 		return base.transform.TransformPoint(iTween.PointOnPath(this.positions, 2f - nodePosition / (float)(this.positions.Length - 1)));
 	}
 
-	// Token: 0x04000270 RID: 624
 	public bool connectEnds;
 }

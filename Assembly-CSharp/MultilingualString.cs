@@ -1,10 +1,9 @@
 ﻿using System;
 
-// Token: 0x02000014 RID: 20
 [Serializable]
 public struct MultilingualString
 {
-	// Token: 0x06000034 RID: 52 RVA: 0x00002B60 File Offset: 0x00000D60
+	// Token: 0x06000034 RID: 52 RVA: 0x00017D70 File Offset: 0x00015F70
 	public string GetText(Language language = Language.Auto)
 	{
 		if (language == Language.Auto)
@@ -38,24 +37,17 @@ public struct MultilingualString
 		return "Language unsupported";
 	}
 
-	// Token: 0x0400004B RID: 75
 	public int id;
 
-	// Token: 0x0400004C RID: 76
 	public string idString;
 
-	// Token: 0x0400004D RID: 77
 	public string[] english;
 
-	// Token: 0x0400004E RID: 78
 	public string[] spanish;
 
-	// Token: 0x0400004F RID: 79
 	public string[] french;
 
-	// Token: 0x04000050 RID: 80
 	public string[] german;
 
-	// Token: 0x04000051 RID: 81
 	public string[] brazilianPortuguese;
 }

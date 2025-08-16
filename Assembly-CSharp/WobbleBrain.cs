@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000264 RID: 612
 [AddComponentMenu("Wobble/Brain")]
 public class WobbleBrain : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06000D3B RID: 3387 RVA: 0x00040350 File Offset: 0x0003E550
+	// Token: 0x06001044 RID: 4164 RVA: 0x0005484C File Offset: 0x00052A4C
 	private void Start()
 	{
 		List<WobbleBoneBase> list = new List<WobbleBoneBase>();
@@ -21,7 +20,7 @@ public class WobbleBrain : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000D3C RID: 3388 RVA: 0x000403B8 File Offset: 0x0003E5B8
+	// Token: 0x06001045 RID: 4165 RVA: 0x000548B4 File Offset: 0x00052AB4
 	private void AddChildren(Transform parent, ref List<WobbleBoneBase> boneList)
 	{
 		foreach (object obj in parent)
@@ -39,20 +38,20 @@ public class WobbleBrain : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000D3D RID: 3389 RVA: 0x00040430 File Offset: 0x0003E630
+	// Token: 0x06001046 RID: 4166 RVA: 0x00002B40 File Offset: 0x00000D40
 	private void OnEnable()
 	{
 		FastUpdateManager.updateEveryNonFixed.Add(this);
 	}
 
-	// Token: 0x06000D3E RID: 3390 RVA: 0x0004043D File Offset: 0x0003E63D
+	// Token: 0x06001047 RID: 4167 RVA: 0x0000DF79 File Offset: 0x0000C179
 	private void OnDisable()
 	{
 		this.isPaused = true;
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x06000D3F RID: 3391 RVA: 0x00040454 File Offset: 0x0003E654
+	// Token: 0x06001048 RID: 4168 RVA: 0x0005492C File Offset: 0x00052B2C
 	public void ManagedUpdate()
 	{
 		float num = Mathf.Min(Time.time - this.lastManagedUpdateTime, 0.5f);
@@ -78,7 +77,7 @@ public class WobbleBrain : MonoBehaviour, IManagedUpdate
 		this.lastManagedUpdateTime = Time.time;
 	}
 
-	// Token: 0x06000D40 RID: 3392 RVA: 0x00040508 File Offset: 0x0003E708
+	// Token: 0x06001049 RID: 4169 RVA: 0x000549E0 File Offset: 0x00052BE0
 	private void LateUpdate()
 	{
 		if (this.isPaused)
@@ -100,7 +99,7 @@ public class WobbleBrain : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000D41 RID: 3393 RVA: 0x00040578 File Offset: 0x0003E778
+	// Token: 0x0600104A RID: 4170 RVA: 0x00054A50 File Offset: 0x00052C50
 	public void Reacclimate()
 	{
 		if (this.bones != null)
@@ -114,33 +113,23 @@ public class WobbleBrain : MonoBehaviour, IManagedUpdate
 		this.isPaused = false;
 	}
 
-	// Token: 0x04001182 RID: 4482
 	private WobbleBoneBase[] bones;
 
-	// Token: 0x04001183 RID: 4483
 	public const WobbleBrain.UpdateInterval updateInterval = WobbleBrain.UpdateInterval.LateUpdate;
 
-	// Token: 0x04001184 RID: 4484
 	private float lastFixedUpdateTime;
 
-	// Token: 0x04001185 RID: 4485
 	private bool isPaused;
 
-	// Token: 0x04001186 RID: 4486
 	private const float maxDistance = 50f;
 
-	// Token: 0x04001187 RID: 4487
 	private Vector3 lastPosition;
 
-	// Token: 0x04001188 RID: 4488
 	private float lastManagedUpdateTime;
 
-	// Token: 0x02000425 RID: 1061
 	public enum UpdateInterval
 	{
-		// Token: 0x04001D58 RID: 7512
 		LateUpdate,
-		// Token: 0x04001D59 RID: 7513
 		FixedUpdate
 	}
 }

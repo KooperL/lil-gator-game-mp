@@ -2,11 +2,9 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x0200020C RID: 524
 public class AcademicQuest : MonoBehaviour
 {
-	// Token: 0x170000B3 RID: 179
-	// (get) Token: 0x06000B3D RID: 2877 RVA: 0x00037FBD File Offset: 0x000361BD
+	// (get) Token: 0x06000D54 RID: 3412 RVA: 0x0000C3A2 File Offset: 0x0000A5A2
 	private string StateID
 	{
 		get
@@ -15,9 +13,8 @@ public class AcademicQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170000B4 RID: 180
-	// (get) Token: 0x06000B3E RID: 2878 RVA: 0x00037FC4 File Offset: 0x000361C4
-	// (set) Token: 0x06000B3F RID: 2879 RVA: 0x00037FD7 File Offset: 0x000361D7
+	// (get) Token: 0x06000D55 RID: 3413 RVA: 0x0000C3A9 File Offset: 0x0000A5A9
+	// (set) Token: 0x06000D56 RID: 3414 RVA: 0x0000C3BC File Offset: 0x0000A5BC
 	public int State
 	{
 		get
@@ -30,13 +27,13 @@ public class AcademicQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B40 RID: 2880 RVA: 0x00037FEA File Offset: 0x000361EA
+	// Token: 0x06000D57 RID: 3415 RVA: 0x0000C3CF File Offset: 0x0000A5CF
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000B41 RID: 2881 RVA: 0x00037FF4 File Offset: 0x000361F4
+	// Token: 0x06000D58 RID: 3416 RVA: 0x0004AA04 File Offset: 0x00048C04
 	private void UpdateState()
 	{
 		int state = this.State;
@@ -46,7 +43,7 @@ public class AcademicQuest : MonoBehaviour
 		this.dDog.SetActive(state >= 20);
 	}
 
-	// Token: 0x06000B42 RID: 2882 RVA: 0x0003804C File Offset: 0x0003624C
+	// Token: 0x06000D59 RID: 3417 RVA: 0x0004AA5C File Offset: 0x00048C5C
 	public void CheckSubQuests()
 	{
 		int num = 0;
@@ -63,7 +60,7 @@ public class AcademicQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B43 RID: 2883 RVA: 0x000380A4 File Offset: 0x000362A4
+	// Token: 0x06000D5A RID: 3418 RVA: 0x0004AAB4 File Offset: 0x00048CB4
 	public void Conversation()
 	{
 		int state = this.State;
@@ -80,7 +77,7 @@ public class AcademicQuest : MonoBehaviour
 		base.StartCoroutine(this.RunConversationE());
 	}
 
-	// Token: 0x06000B44 RID: 2884 RVA: 0x000380EB File Offset: 0x000362EB
+	// Token: 0x06000D5B RID: 3419 RVA: 0x0000C3D7 File Offset: 0x0000A5D7
 	public void TextAlert()
 	{
 		base.StartCoroutine(this.RunTextAlert());
@@ -88,14 +85,14 @@ public class AcademicQuest : MonoBehaviour
 		this.UpdateState();
 	}
 
-	// Token: 0x06000B45 RID: 2885 RVA: 0x00038107 File Offset: 0x00036307
+	// Token: 0x06000D5C RID: 3420 RVA: 0x0000C3F3 File Offset: 0x0000A5F3
 	private IEnumerator RunTextAlert()
 	{
 		yield return DialogueManager.d.SmallPhone("Academic_TextAlert", this.dogProfiles, true);
 		yield break;
 	}
 
-	// Token: 0x06000B46 RID: 2886 RVA: 0x00038116 File Offset: 0x00036316
+	// Token: 0x06000D5D RID: 3421 RVA: 0x0000C402 File Offset: 0x0000A602
 	public IEnumerator RunConversationA()
 	{
 		yield return base.StartCoroutine(DialogueManager.d.LoadChunk("Academic_A1", this.aActors, DialogueManager.DialogueBoxBackground.Standard, true));
@@ -108,7 +105,7 @@ public class AcademicQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000B47 RID: 2887 RVA: 0x00038125 File Offset: 0x00036325
+	// Token: 0x06000D5E RID: 3422 RVA: 0x0000C411 File Offset: 0x0000A611
 	private IEnumerator RunConversationC()
 	{
 		yield return base.StartCoroutine(DialogueManager.d.LoadChunk("Academic_C1", null, DialogueManager.DialogueBoxBackground.Standard, true));
@@ -119,7 +116,7 @@ public class AcademicQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000B48 RID: 2888 RVA: 0x00038134 File Offset: 0x00036334
+	// Token: 0x06000D5F RID: 3423 RVA: 0x0000C420 File Offset: 0x0000A620
 	private IEnumerator RunConversationD()
 	{
 		DialogueManager.d.CancelBubble();
@@ -130,37 +127,29 @@ public class AcademicQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000B49 RID: 2889 RVA: 0x00038143 File Offset: 0x00036343
+	// Token: 0x06000D60 RID: 3424 RVA: 0x0000C42F File Offset: 0x0000A62F
 	private IEnumerator RunConversationE()
 	{
 		yield return base.StartCoroutine(DialogueManager.d.LoadChunk("Academic_E1", this.dActors, DialogueManager.DialogueBoxBackground.Standard, true));
 		yield break;
 	}
 
-	// Token: 0x04000EFD RID: 3837
 	public CharacterProfile[] dogProfiles;
 
-	// Token: 0x04000EFE RID: 3838
 	[Header("State A")]
 	public GameObject aTextAlert;
 
-	// Token: 0x04000EFF RID: 3839
 	public GameObject aDog;
 
-	// Token: 0x04000F00 RID: 3840
 	public DialogueActor[] aActors;
 
-	// Token: 0x04000F01 RID: 3841
 	[Header("State B")]
 	public AcademicSubQuest[] academicSubQuests;
 
-	// Token: 0x04000F02 RID: 3842
 	[Header("State D")]
 	public GameObject dRambling;
 
-	// Token: 0x04000F03 RID: 3843
 	public GameObject dDog;
 
-	// Token: 0x04000F04 RID: 3844
 	public DialogueActor[] dActors;
 }

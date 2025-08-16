@@ -3,10 +3,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Token: 0x020002DC RID: 732
 public class UIScrollRepeat : MonoBehaviour
 {
-	// Token: 0x06000F75 RID: 3957 RVA: 0x0004A210 File Offset: 0x00048410
+	// Token: 0x060012E9 RID: 4841 RVA: 0x0005D3E8 File Offset: 0x0005B5E8
 	[ContextMenu("Fit to size")]
 	public void FitToSize()
 	{
@@ -16,7 +15,7 @@ public class UIScrollRepeat : MonoBehaviour
 		component.offsetMin = -0.5f * this.tileSize;
 	}
 
-	// Token: 0x06000F76 RID: 3958 RVA: 0x0004A26C File Offset: 0x0004846C
+	// Token: 0x060012EA RID: 4842 RVA: 0x0005D444 File Offset: 0x0005B644
 	private void Start()
 	{
 		Transform transform = base.transform;
@@ -35,7 +34,7 @@ public class UIScrollRepeat : MonoBehaviour
 		this.tileSize = base.GetComponent<Image>().sprite.rect.size;
 	}
 
-	// Token: 0x06000F77 RID: 3959 RVA: 0x0004A2D8 File Offset: 0x000484D8
+	// Token: 0x060012EB RID: 4843 RVA: 0x0005D4B0 File Offset: 0x0005B6B0
 	private void Update()
 	{
 		if (this.selectableRoot != null && EventSystem.current.currentSelectedGameObject != this.selectableRoot)
@@ -60,18 +59,13 @@ public class UIScrollRepeat : MonoBehaviour
 		base.transform.localPosition = this.position;
 	}
 
-	// Token: 0x04001443 RID: 5187
 	public Vector2 scrollSpeed;
 
-	// Token: 0x04001444 RID: 5188
 	public Vector2 tileSize = Vector2.one;
 
-	// Token: 0x04001445 RID: 5189
 	public bool pixelPerfect;
 
-	// Token: 0x04001446 RID: 5190
 	private Vector2 position;
 
-	// Token: 0x04001447 RID: 5191
 	private GameObject selectableRoot;
 }

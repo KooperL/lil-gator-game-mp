@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001F8 RID: 504
 public class RagdollToAnimator : MonoBehaviour
 {
-	// Token: 0x06000AF9 RID: 2809 RVA: 0x00036EAC File Offset: 0x000350AC
+	// Token: 0x06000D04 RID: 3332 RVA: 0x00049994 File Offset: 0x00047B94
 	[ContextMenu("Read Ragdoll Transforms")]
 	public void ReadRagdollTransforms()
 	{
@@ -24,14 +23,14 @@ public class RagdollToAnimator : MonoBehaviour
 		this.t = 0f;
 	}
 
-	// Token: 0x06000AFA RID: 2810 RVA: 0x00036F4F File Offset: 0x0003514F
+	// Token: 0x06000D05 RID: 3333 RVA: 0x0000C0D1 File Offset: 0x0000A2D1
 	private void Awake()
 	{
 		this.animatorPositions = new Vector3[this.transforms.Length];
 		this.animatorRotations = new Quaternion[this.transforms.Length];
 	}
 
-	// Token: 0x06000AFB RID: 2811 RVA: 0x00036F77 File Offset: 0x00035177
+	// Token: 0x06000D06 RID: 3334 RVA: 0x0000C0F9 File Offset: 0x0000A2F9
 	private void LateUpdate()
 	{
 		this.t += Time.deltaTime / this.interpolationTime;
@@ -43,14 +42,14 @@ public class RagdollToAnimator : MonoBehaviour
 		this.SetInterpolation(this.t);
 	}
 
-	// Token: 0x06000AFC RID: 2812 RVA: 0x00036FB3 File Offset: 0x000351B3
+	// Token: 0x06000D07 RID: 3335 RVA: 0x0000C135 File Offset: 0x0000A335
 	public void SkipTo(float newT = 1f)
 	{
 		this.t = newT;
 		this.SetInterpolation(this.t);
 	}
 
-	// Token: 0x06000AFD RID: 2813 RVA: 0x00036FC8 File Offset: 0x000351C8
+	// Token: 0x06000D08 RID: 3336 RVA: 0x00049A38 File Offset: 0x00047C38
 	private void SetInterpolation(float t)
 	{
 		t = Mathf.Clamp01(t);
@@ -72,27 +71,19 @@ public class RagdollToAnimator : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000EA6 RID: 3750
 	public Transform[] transforms;
 
-	// Token: 0x04000EA7 RID: 3751
 	private Vector3[] ragdollPositions;
 
-	// Token: 0x04000EA8 RID: 3752
 	private Quaternion[] ragdollRotations;
 
-	// Token: 0x04000EA9 RID: 3753
 	private Vector3[] animatorPositions;
 
-	// Token: 0x04000EAA RID: 3754
 	private Quaternion[] animatorRotations;
 
-	// Token: 0x04000EAB RID: 3755
 	public float interpolationTime = 0.25f;
 
-	// Token: 0x04000EAC RID: 3756
 	private float t;
 
-	// Token: 0x04000EAD RID: 3757
 	public Transform root;
 }

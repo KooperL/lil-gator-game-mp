@@ -2,11 +2,9 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x0200022C RID: 556
 public class TutHorseQuest : MonoBehaviour
 {
-	// Token: 0x170000CD RID: 205
-	// (get) Token: 0x06000C00 RID: 3072 RVA: 0x00039667 File Offset: 0x00037867
+	// (get) Token: 0x06000EDF RID: 3807 RVA: 0x0000CFED File Offset: 0x0000B1ED
 	private string StateID
 	{
 		get
@@ -15,9 +13,8 @@ public class TutHorseQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170000CE RID: 206
-	// (get) Token: 0x06000C01 RID: 3073 RVA: 0x0003966E File Offset: 0x0003786E
-	// (set) Token: 0x06000C02 RID: 3074 RVA: 0x00039681 File Offset: 0x00037881
+	// (get) Token: 0x06000EE0 RID: 3808 RVA: 0x0000CFF4 File Offset: 0x0000B1F4
+	// (set) Token: 0x06000EE1 RID: 3809 RVA: 0x0000D007 File Offset: 0x0000B207
 	private int State
 	{
 		get
@@ -30,7 +27,7 @@ public class TutHorseQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C03 RID: 3075 RVA: 0x00039694 File Offset: 0x00037894
+	// Token: 0x06000EE2 RID: 3810 RVA: 0x0004E328 File Offset: 0x0004C528
 	private void Start()
 	{
 		int state = this.State;
@@ -39,13 +36,13 @@ public class TutHorseQuest : MonoBehaviour
 		this.trigger3.SetActive(state == 6);
 	}
 
-	// Token: 0x06000C04 RID: 3076 RVA: 0x000396D5 File Offset: 0x000378D5
+	// Token: 0x06000EE3 RID: 3811 RVA: 0x0000D01A File Offset: 0x0000B21A
 	public void Interact()
 	{
 		base.StartCoroutine(this.InteractC());
 	}
 
-	// Token: 0x06000C05 RID: 3077 RVA: 0x000396E4 File Offset: 0x000378E4
+	// Token: 0x06000EE4 RID: 3812 RVA: 0x0000D029 File Offset: 0x0000B229
 	private IEnumerator InteractC()
 	{
 		Game.DialogueDepth++;
@@ -105,7 +102,7 @@ public class TutHorseQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000C06 RID: 3078 RVA: 0x000396F3 File Offset: 0x000378F3
+	// Token: 0x06000EE5 RID: 3813 RVA: 0x0000D038 File Offset: 0x0000B238
 	public void Trigger1()
 	{
 		this.trigger1.SetActive(false);
@@ -113,7 +110,7 @@ public class TutHorseQuest : MonoBehaviour
 		DialogueManager.d.Bubble("Tutorial_HorseQuest2_Trigger", this.actors, 0f, false, true, true);
 	}
 
-	// Token: 0x06000C07 RID: 3079 RVA: 0x00039726 File Offset: 0x00037926
+	// Token: 0x06000EE6 RID: 3814 RVA: 0x0000D06B File Offset: 0x0000B26B
 	private IEnumerator Trigger1C()
 	{
 		this.trigger1.SetActive(false);
@@ -124,7 +121,7 @@ public class TutHorseQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000C08 RID: 3080 RVA: 0x00039735 File Offset: 0x00037935
+	// Token: 0x06000EE7 RID: 3815 RVA: 0x0000D07A File Offset: 0x0000B27A
 	public void Trigger2()
 	{
 		this.trigger2.SetActive(false);
@@ -132,7 +129,7 @@ public class TutHorseQuest : MonoBehaviour
 		DialogueManager.d.Bubble("Tutorial_HorseQuest4_Trigger", this.actors, 0f, false, true, true);
 	}
 
-	// Token: 0x06000C09 RID: 3081 RVA: 0x00039768 File Offset: 0x00037968
+	// Token: 0x06000EE8 RID: 3816 RVA: 0x0000D0AD File Offset: 0x0000B2AD
 	private IEnumerator Trigger2C()
 	{
 		this.trigger2.SetActive(false);
@@ -143,13 +140,13 @@ public class TutHorseQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000C0A RID: 3082 RVA: 0x00039777 File Offset: 0x00037977
+	// Token: 0x06000EE9 RID: 3817 RVA: 0x0000D0BC File Offset: 0x0000B2BC
 	public void Trigger3()
 	{
 		base.StartCoroutine(this.Trigger3C());
 	}
 
-	// Token: 0x06000C0B RID: 3083 RVA: 0x00039786 File Offset: 0x00037986
+	// Token: 0x06000EEA RID: 3818 RVA: 0x0000D0CB File Offset: 0x0000B2CB
 	private IEnumerator Trigger3C()
 	{
 		Game.DialogueDepth++;
@@ -171,42 +168,29 @@ public class TutHorseQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04000FC9 RID: 4041
 	public DialogueActor[] actors;
 
-	// Token: 0x04000FCA RID: 4042
 	public GameObject horse;
 
-	// Token: 0x04000FCB RID: 4043
 	public GameObject camera1;
 
-	// Token: 0x04000FCC RID: 4044
 	public GameObject trigger1;
 
-	// Token: 0x04000FCD RID: 4045
 	public GameObject scene1;
 
-	// Token: 0x04000FCE RID: 4046
 	public GameObject camera2;
 
-	// Token: 0x04000FCF RID: 4047
 	public GameObject trigger2;
 
-	// Token: 0x04000FD0 RID: 4048
 	public GameObject scene2;
 
-	// Token: 0x04000FD1 RID: 4049
 	public GameObject camera3;
 
-	// Token: 0x04000FD2 RID: 4050
 	public GameObject trigger3;
 
-	// Token: 0x04000FD3 RID: 4051
 	public GameObject scene3a;
 
-	// Token: 0x04000FD4 RID: 4052
 	public GameObject scene3b;
 
-	// Token: 0x04000FD5 RID: 4053
 	public DialogueActor[] cliffActors;
 }

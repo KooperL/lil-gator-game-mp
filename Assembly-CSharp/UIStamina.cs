@@ -2,15 +2,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002E4 RID: 740
 public class UIStamina : MonoBehaviour
 {
-	// Token: 0x06000FB4 RID: 4020 RVA: 0x0004B26D File Offset: 0x0004946D
+	// Token: 0x06001340 RID: 4928 RVA: 0x00002229 File Offset: 0x00000429
 	private void Awake()
 	{
 	}
 
-	// Token: 0x06000FB5 RID: 4021 RVA: 0x0004B26F File Offset: 0x0004946F
+	// Token: 0x06001341 RID: 4929 RVA: 0x00010391 File Offset: 0x0000E591
 	private void Start()
 	{
 		if (Player.movement == null)
@@ -23,13 +22,13 @@ public class UIStamina : MonoBehaviour
 		this.UpdateStamina();
 	}
 
-	// Token: 0x06000FB6 RID: 4022 RVA: 0x0004B2AC File Offset: 0x000494AC
+	// Token: 0x06001342 RID: 4930 RVA: 0x000103CE File Offset: 0x0000E5CE
 	private void OnEnable()
 	{
 		UIStamina.u = this;
 	}
 
-	// Token: 0x06000FB7 RID: 4023 RVA: 0x0004B2B4 File Offset: 0x000494B4
+	// Token: 0x06001343 RID: 4931 RVA: 0x0005E8EC File Offset: 0x0005CAEC
 	private void LateUpdate()
 	{
 		if (Player.movement == null)
@@ -75,7 +74,7 @@ public class UIStamina : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FB8 RID: 4024 RVA: 0x0004B4B8 File Offset: 0x000496B8
+	// Token: 0x06001344 RID: 4932 RVA: 0x0005EAF0 File Offset: 0x0005CCF0
 	private void UpdateStamina()
 	{
 		for (int i = 0; i < this.braceletImages.Length; i++)
@@ -111,54 +110,37 @@ public class UIStamina : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001493 RID: 5267
 	private RectTransform rectTransform;
 
-	// Token: 0x04001494 RID: 5268
 	public static UIStamina u;
 
-	// Token: 0x04001495 RID: 5269
 	public float currentStamina;
 
-	// Token: 0x04001496 RID: 5270
 	public float shadowStamina;
 
-	// Token: 0x04001497 RID: 5271
 	private float staminaVelocity;
 
-	// Token: 0x04001498 RID: 5272
 	private float shadowVelocity;
 
-	// Token: 0x04001499 RID: 5273
 	public float maxStamina = 1f;
 
-	// Token: 0x0400149A RID: 5274
 	public float projectionAmount = 0.2f;
 
-	// Token: 0x0400149B RID: 5275
 	public Image[] braceletImages;
 
-	// Token: 0x0400149C RID: 5276
 	public Image[] shadowImages;
 
-	// Token: 0x0400149D RID: 5277
 	public Vector2 activePosition;
 
-	// Token: 0x0400149E RID: 5278
 	private Vector2 lockedPosition;
 
-	// Token: 0x0400149F RID: 5279
 	public float activeTime = 1f;
 
-	// Token: 0x040014A0 RID: 5280
 	private float deactivateTime;
 
-	// Token: 0x040014A1 RID: 5281
 	private Vector2 anchorVelocity;
 
-	// Token: 0x040014A2 RID: 5282
 	private bool isDisplaying = true;
 
-	// Token: 0x040014A3 RID: 5283
 	public bool hideWhenFull = true;
 }

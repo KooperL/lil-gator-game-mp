@@ -3,12 +3,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000228 RID: 552
 public class SimpleQuest : MonoBehaviour
 {
-	// Token: 0x170000C7 RID: 199
-	// (get) Token: 0x06000BDC RID: 3036 RVA: 0x000391B9 File Offset: 0x000373B9
-	// (set) Token: 0x06000BDD RID: 3037 RVA: 0x000391CC File Offset: 0x000373CC
+	// (get) Token: 0x06000E8B RID: 3723 RVA: 0x0000CD7C File Offset: 0x0000AF7C
+	// (set) Token: 0x06000E8C RID: 3724 RVA: 0x0000CD8F File Offset: 0x0000AF8F
 	private bool State
 	{
 		get
@@ -21,13 +19,13 @@ public class SimpleQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000BDE RID: 3038 RVA: 0x000391DF File Offset: 0x000373DF
+	// Token: 0x06000E8D RID: 3725 RVA: 0x0000CDA2 File Offset: 0x0000AFA2
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000BDF RID: 3039 RVA: 0x000391E8 File Offset: 0x000373E8
+	// Token: 0x06000E8E RID: 3726 RVA: 0x0004D768 File Offset: 0x0004B968
 	private void UpdateState()
 	{
 		bool state = this.State;
@@ -51,13 +49,13 @@ public class SimpleQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000BE0 RID: 3040 RVA: 0x00039269 File Offset: 0x00037469
+	// Token: 0x06000E8F RID: 3727 RVA: 0x0000CDAA File Offset: 0x0000AFAA
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000BE1 RID: 3041 RVA: 0x00039278 File Offset: 0x00037478
+	// Token: 0x06000E90 RID: 3728 RVA: 0x0000CDB9 File Offset: 0x0000AFB9
 	private IEnumerator RunConversation()
 	{
 		DialogueManager.d.CancelBubble();
@@ -83,31 +81,22 @@ public class SimpleQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04000FAB RID: 4011
 	public string id;
 
-	// Token: 0x04000FAC RID: 4012
 	[Space]
 	public DialogueActor[] actors;
 
-	// Token: 0x04000FAD RID: 4013
 	public GameObject crier;
 
-	// Token: 0x04000FAE RID: 4014
 	public string beforeState;
 
-	// Token: 0x04000FAF RID: 4015
 	public string beforeText;
 
-	// Token: 0x04000FB0 RID: 4016
 	public UnityEvent onReward;
 
-	// Token: 0x04000FB1 RID: 4017
 	public string afterState;
 
-	// Token: 0x04000FB2 RID: 4018
 	public string afterText;
 
-	// Token: 0x04000FB3 RID: 4019
 	public UnityEvent onAfter;
 }

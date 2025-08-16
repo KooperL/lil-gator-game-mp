@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020002DA RID: 730
 public class UISaveIcon : MonoBehaviour
 {
-	// Token: 0x06000F6A RID: 3946 RVA: 0x00049FD0 File Offset: 0x000481D0
+	// Token: 0x060012DE RID: 4830 RVA: 0x0005D268 File Offset: 0x0005B468
 	public static void ShowIcon()
 	{
 		UISaveIcon.lastSaveTime = Time.time;
@@ -15,7 +14,7 @@ public class UISaveIcon : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F6B RID: 3947 RVA: 0x0004A02C File Offset: 0x0004822C
+	// Token: 0x060012DF RID: 4831 RVA: 0x0000FEA2 File Offset: 0x0000E0A2
 	private void Awake()
 	{
 		UISaveIcon.instances.Add(this);
@@ -25,13 +24,13 @@ public class UISaveIcon : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F6C RID: 3948 RVA: 0x0004A057 File Offset: 0x00048257
+	// Token: 0x060012E0 RID: 4832 RVA: 0x0000FECD File Offset: 0x0000E0CD
 	private void OnDestroy()
 	{
 		UISaveIcon.instances.Remove(this);
 	}
 
-	// Token: 0x06000F6D RID: 3949 RVA: 0x0004A065 File Offset: 0x00048265
+	// Token: 0x060012E1 RID: 4833 RVA: 0x0000FEDB File Offset: 0x0000E0DB
 	private void Update()
 	{
 		if (Time.time > UISaveIcon.lastSaveTime + 2f)
@@ -40,15 +39,13 @@ public class UISaveIcon : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F6E RID: 3950 RVA: 0x0004A085 File Offset: 0x00048285
+	// Token: 0x060012E2 RID: 4834 RVA: 0x0000FEFB File Offset: 0x0000E0FB
 	public void Show()
 	{
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x0400143D RID: 5181
 	public static float lastSaveTime = -1f;
 
-	// Token: 0x0400143E RID: 5182
 	private static List<UISaveIcon> instances = new List<UISaveIcon>();
 }

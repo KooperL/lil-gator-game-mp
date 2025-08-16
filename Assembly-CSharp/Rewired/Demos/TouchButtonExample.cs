@@ -5,17 +5,15 @@ using UnityEngine.UI;
 
 namespace Rewired.Demos
 {
-	// Token: 0x0200033A RID: 826
 	[AddComponentMenu("")]
 	[RequireComponent(typeof(Image))]
 	public class TouchButtonExample : MonoBehaviour, IPointerDownHandler, IEventSystemHandler, IPointerUpHandler
 	{
-		// Token: 0x1700041E RID: 1054
-		// (get) Token: 0x06001745 RID: 5957 RVA: 0x00062C4F File Offset: 0x00060E4F
-		// (set) Token: 0x06001746 RID: 5958 RVA: 0x00062C57 File Offset: 0x00060E57
+		// (get) Token: 0x06001D8D RID: 7565 RVA: 0x00016960 File Offset: 0x00014B60
+		// (set) Token: 0x06001D8E RID: 7566 RVA: 0x00016968 File Offset: 0x00014B68
 		public bool isPressed { get; private set; }
 
-		// Token: 0x06001747 RID: 5959 RVA: 0x00062C60 File Offset: 0x00060E60
+		// Token: 0x06001D8F RID: 7567 RVA: 0x00016971 File Offset: 0x00014B71
 		private void Awake()
 		{
 			if (SystemInfo.deviceType == DeviceType.Handheld)
@@ -24,13 +22,13 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001748 RID: 5960 RVA: 0x00062C71 File Offset: 0x00060E71
+		// Token: 0x06001D90 RID: 7568 RVA: 0x00016982 File Offset: 0x00014B82
 		private void Restart()
 		{
 			this.isPressed = false;
 		}
 
-		// Token: 0x06001749 RID: 5961 RVA: 0x00062C7A File Offset: 0x00060E7A
+		// Token: 0x06001D91 RID: 7569 RVA: 0x0001698B File Offset: 0x00014B8B
 		void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
 		{
 			if (!this.allowMouseControl && TouchButtonExample.IsMousePointerId(eventData.pointerId))
@@ -40,7 +38,7 @@ namespace Rewired.Demos
 			this.isPressed = true;
 		}
 
-		// Token: 0x0600174A RID: 5962 RVA: 0x00062C99 File Offset: 0x00060E99
+		// Token: 0x06001D92 RID: 7570 RVA: 0x000169AA File Offset: 0x00014BAA
 		void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
 		{
 			if (!this.allowMouseControl && TouchButtonExample.IsMousePointerId(eventData.pointerId))
@@ -50,13 +48,12 @@ namespace Rewired.Demos
 			this.isPressed = false;
 		}
 
-		// Token: 0x0600174B RID: 5963 RVA: 0x00062CB8 File Offset: 0x00060EB8
+		// Token: 0x06001D93 RID: 7571 RVA: 0x000169C9 File Offset: 0x00014BC9
 		private static bool IsMousePointerId(int id)
 		{
 			return id == -1 || id == -2 || id == -3;
 		}
 
-		// Token: 0x04001923 RID: 6435
 		public bool allowMouseControl = true;
 	}
 }

@@ -4,17 +4,16 @@ using Rewired;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020002D9 RID: 729
 public class UIRootMenu : MonoBehaviour
 {
-	// Token: 0x06000F5F RID: 3935 RVA: 0x00049D67 File Offset: 0x00047F67
+	// Token: 0x060012D3 RID: 4819 RVA: 0x0000FE06 File Offset: 0x0000E006
 	private void Awake()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
 		UIRootMenu.u = this;
 	}
 
-	// Token: 0x06000F60 RID: 3936 RVA: 0x00049D80 File Offset: 0x00047F80
+	// Token: 0x060012D4 RID: 4820 RVA: 0x0005D0A0 File Offset: 0x0005B2A0
 	private void OnEnable()
 	{
 		UIRootMenu.u = this;
@@ -25,19 +24,19 @@ public class UIRootMenu : MonoBehaviour
 		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnCancelInput), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("UICancel"));
 	}
 
-	// Token: 0x06000F61 RID: 3937 RVA: 0x00049DD4 File Offset: 0x00047FD4
+	// Token: 0x060012D5 RID: 4821 RVA: 0x0000FE1F File Offset: 0x0000E01F
 	private void OnCancelInput(InputActionEventData obj)
 	{
 		this.OnCancel();
 	}
 
-	// Token: 0x06000F62 RID: 3938 RVA: 0x00049DDC File Offset: 0x00047FDC
+	// Token: 0x060012D6 RID: 4822 RVA: 0x0000FE27 File Offset: 0x0000E027
 	private void OnDisable()
 	{
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnCancelInput));
 	}
 
-	// Token: 0x06000F63 RID: 3939 RVA: 0x00049DF8 File Offset: 0x00047FF8
+	// Token: 0x060012D7 RID: 4823 RVA: 0x0005D0F4 File Offset: 0x0005B2F4
 	public void AddMenu(UISubMenu newMenu)
 	{
 		if (this.menuStack.Count == 0)
@@ -60,7 +59,7 @@ public class UIRootMenu : MonoBehaviour
 		this.menuStack.Add(newMenu);
 	}
 
-	// Token: 0x06000F64 RID: 3940 RVA: 0x00049E90 File Offset: 0x00048090
+	// Token: 0x060012D8 RID: 4824 RVA: 0x0005D18C File Offset: 0x0005B38C
 	public void RemoveMenu(UISubMenu oldMenu)
 	{
 		if (this.menuStack.Contains(oldMenu))
@@ -77,7 +76,7 @@ public class UIRootMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F65 RID: 3941 RVA: 0x00049F14 File Offset: 0x00048114
+	// Token: 0x060012D9 RID: 4825 RVA: 0x0005D210 File Offset: 0x0005B410
 	public void OnCancel()
 	{
 		if (UIRootMenu.lastInputTime == Time.time)
@@ -91,7 +90,7 @@ public class UIRootMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F66 RID: 3942 RVA: 0x00049F6B File Offset: 0x0004816B
+	// Token: 0x060012DA RID: 4826 RVA: 0x0000FE40 File Offset: 0x0000E040
 	public void OnLeaveRoot()
 	{
 		if (this.rootObject != null)
@@ -100,7 +99,7 @@ public class UIRootMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F67 RID: 3943 RVA: 0x00049F87 File Offset: 0x00048187
+	// Token: 0x060012DB RID: 4827 RVA: 0x0000FE5C File Offset: 0x0000E05C
 	public void OnReturnToRoot()
 	{
 		if (this.rootObject != null)
@@ -110,21 +109,15 @@ public class UIRootMenu : MonoBehaviour
 		this.onReturnToRoot.Invoke();
 	}
 
-	// Token: 0x04001437 RID: 5175
 	public static UIRootMenu u;
 
-	// Token: 0x04001438 RID: 5176
 	public static float lastInputTime = -1f;
 
-	// Token: 0x04001439 RID: 5177
 	public GameObject rootObject;
 
-	// Token: 0x0400143A RID: 5178
 	public UnityEvent onReturnToRoot;
 
-	// Token: 0x0400143B RID: 5179
 	public List<UISubMenu> menuStack = new List<UISubMenu>();
 
-	// Token: 0x0400143C RID: 5180
 	private global::Rewired.Player rePlayer;
 }

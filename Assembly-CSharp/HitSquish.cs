@@ -2,10 +2,9 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000145 RID: 325
 public class HitSquish : MonoBehaviour, IHit
 {
-	// Token: 0x060006A7 RID: 1703 RVA: 0x00021EDD File Offset: 0x000200DD
+	// Token: 0x0600081F RID: 2079 RVA: 0x00008025 File Offset: 0x00006225
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		if (this.squish == null)
@@ -15,7 +14,7 @@ public class HitSquish : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x060006A8 RID: 1704 RVA: 0x00021F00 File Offset: 0x00020100
+	// Token: 0x06000820 RID: 2080 RVA: 0x00008048 File Offset: 0x00006248
 	private IEnumerator Squish()
 	{
 		float time = 0f;
@@ -30,12 +29,9 @@ public class HitSquish : MonoBehaviour, IHit
 		yield break;
 	}
 
-	// Token: 0x040008F7 RID: 2295
 	private float squishAmount = 0.08f;
 
-	// Token: 0x040008F8 RID: 2296
 	private float squishTime = 0.15f;
 
-	// Token: 0x040008F9 RID: 2297
 	private IEnumerator squish;
 }

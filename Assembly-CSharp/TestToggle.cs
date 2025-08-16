@@ -2,17 +2,16 @@
 using Rewired;
 using UnityEngine;
 
-// Token: 0x0200027E RID: 638
 public class TestToggle : MonoBehaviour
 {
-	// Token: 0x06000DA0 RID: 3488 RVA: 0x000420D8 File Offset: 0x000402D8
+	// Token: 0x060010B7 RID: 4279 RVA: 0x0000E49D File Offset: 0x0000C69D
 	private void Start()
 	{
 		ReInput.players.GetPlayer(0).AddInputEventDelegate(new Action<InputActionEventData>(this.OnToggle), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("DebugToggle"));
 		this.SetToggledState(0);
 	}
 
-	// Token: 0x06000DA1 RID: 3489 RVA: 0x00042110 File Offset: 0x00040310
+	// Token: 0x060010B8 RID: 4280 RVA: 0x00056274 File Offset: 0x00054474
 	private void OnToggle(InputActionEventData obj)
 	{
 		if (!Game.HasControl)
@@ -27,7 +26,7 @@ public class TestToggle : MonoBehaviour
 		this.SetToggledState(num);
 	}
 
-	// Token: 0x06000DA2 RID: 3490 RVA: 0x00042144 File Offset: 0x00040344
+	// Token: 0x060010B9 RID: 4281 RVA: 0x000562A8 File Offset: 0x000544A8
 	private void SetToggledState(int newIndex)
 	{
 		this.index = newIndex;
@@ -40,9 +39,7 @@ public class TestToggle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040011F7 RID: 4599
 	public GameObject[] toggleObjects;
 
-	// Token: 0x040011F8 RID: 4600
 	private int index;
 }

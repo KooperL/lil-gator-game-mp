@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000296 RID: 662
 public class SettingOptions : MonoBehaviour
 {
-	// Token: 0x06000E1B RID: 3611 RVA: 0x0004406A File Offset: 0x0004226A
+	// Token: 0x0600113F RID: 4415 RVA: 0x0000EBE5 File Offset: 0x0000CDE5
 	private void OnValidate()
 	{
 		if (this.selectOptions != null)
@@ -13,14 +12,14 @@ public class SettingOptions : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E1C RID: 3612 RVA: 0x00044086 File Offset: 0x00042286
+	// Token: 0x06001140 RID: 4416 RVA: 0x0000EC01 File Offset: 0x0000CE01
 	private void OnEnable()
 	{
 		this.selectOptions.SetSelection(Settings.s.ReadInt(this.key, 0), true);
 		this.setInitialSetting = true;
 	}
 
-	// Token: 0x06000E1D RID: 3613 RVA: 0x000440AC File Offset: 0x000422AC
+	// Token: 0x06001141 RID: 4417 RVA: 0x0000EC27 File Offset: 0x0000CE27
 	public void OnSelectionChange(int selectedOption)
 	{
 		if (!this.setInitialSetting)
@@ -31,12 +30,9 @@ public class SettingOptions : MonoBehaviour
 		Settings.s.LoadSettings();
 	}
 
-	// Token: 0x04001288 RID: 4744
 	public string key;
 
-	// Token: 0x04001289 RID: 4745
 	public SelectOptions selectOptions;
 
-	// Token: 0x0400128A RID: 4746
 	private bool setInitialSetting;
 }

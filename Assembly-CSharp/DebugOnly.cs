@@ -1,12 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200009C RID: 156
 public class DebugOnly : MonoBehaviour
 {
-	// Token: 0x060002EF RID: 751 RVA: 0x0001157F File Offset: 0x0000F77F
+	// Token: 0x06000358 RID: 856 RVA: 0x000049DF File Offset: 0x00002BDF
 	private void Update()
 	{
-		Object.Destroy(base.gameObject);
+		global::UnityEngine.Object.Destroy(base.gameObject);
 	}
 }

@@ -1,19 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001FE RID: 510
 public class PoofObject : MonoBehaviour
 {
-	// Token: 0x06000B17 RID: 2839 RVA: 0x00037686 File Offset: 0x00035886
+	// Token: 0x06000D28 RID: 3368 RVA: 0x0000C273 File Offset: 0x0000A473
 	public void Poof()
 	{
-		Object.Instantiate<GameObject>(this.poofObject, base.transform.position, this.poofObject.transform.rotation);
-		Object.Destroy(this.destroyObject);
+		global::UnityEngine.Object.Instantiate<GameObject>(this.poofObject, base.transform.position, this.poofObject.transform.rotation);
+		global::UnityEngine.Object.Destroy(this.destroyObject);
 	}
 
-	// Token: 0x04000ECA RID: 3786
 	public GameObject poofObject;
 
-	// Token: 0x04000ECB RID: 3787
 	public GameObject destroyObject;
 }

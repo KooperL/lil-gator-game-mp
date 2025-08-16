@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Token: 0x02000291 RID: 657
 public class UIDescription : MonoBehaviour, ISelectHandler, IEventSystemHandler, IDeselectHandler
 {
-	// Token: 0x06000DFD RID: 3581 RVA: 0x00043BF7 File Offset: 0x00041DF7
+	// Token: 0x06001121 RID: 4385 RVA: 0x0000E99A File Offset: 0x0000CB9A
 	private void OnEnable()
 	{
 		if (EventSystem.current.currentSelectedGameObject == base.gameObject)
@@ -14,28 +13,28 @@ public class UIDescription : MonoBehaviour, ISelectHandler, IEventSystemHandler,
 		}
 	}
 
-	// Token: 0x06000DFE RID: 3582 RVA: 0x00043C16 File Offset: 0x00041E16
+	// Token: 0x06001122 RID: 4386 RVA: 0x0000E9B9 File Offset: 0x0000CBB9
 	private void OnDisable()
 	{
 		if (this.descriptionDisplay != null)
 		{
-			Object.Destroy(this.descriptionDisplay.gameObject);
+			global::UnityEngine.Object.Destroy(this.descriptionDisplay.gameObject);
 		}
 	}
 
-	// Token: 0x06000DFF RID: 3583 RVA: 0x00043C36 File Offset: 0x00041E36
+	// Token: 0x06001123 RID: 4387 RVA: 0x0000E9D9 File Offset: 0x0000CBD9
 	public void OnSelect(BaseEventData eventData)
 	{
 		this.CreateDescription();
 	}
 
-	// Token: 0x06000E00 RID: 3584 RVA: 0x00043C3E File Offset: 0x00041E3E
+	// Token: 0x06001124 RID: 4388 RVA: 0x0000E9E1 File Offset: 0x0000CBE1
 	public void OnDeselect(BaseEventData eventData)
 	{
 		this.ClearDescription();
 	}
 
-	// Token: 0x06000E01 RID: 3585 RVA: 0x00043C48 File Offset: 0x00041E48
+	// Token: 0x06001125 RID: 4389 RVA: 0x000579BC File Offset: 0x00055BBC
 	private void CreateDescription()
 	{
 		if (this.descriptionDisplay != null)
@@ -43,7 +42,7 @@ public class UIDescription : MonoBehaviour, ISelectHandler, IEventSystemHandler,
 			this.descriptionDisplay.KeepOpen();
 			return;
 		}
-		this.descriptionDisplay = Object.Instantiate<GameObject>(this.prefab, base.transform).GetComponent<UIDescriptionDisplay>();
+		this.descriptionDisplay = global::UnityEngine.Object.Instantiate<GameObject>(this.prefab, base.transform).GetComponent<UIDescriptionDisplay>();
 		if (this.document != null)
 		{
 			this.descriptionDisplay.Load(this.document.FetchString(this.descriptionID, Language.Auto), this);
@@ -52,7 +51,7 @@ public class UIDescription : MonoBehaviour, ISelectHandler, IEventSystemHandler,
 		this.descriptionDisplay.Load(this.descriptionText, this);
 	}
 
-	// Token: 0x06000E02 RID: 3586 RVA: 0x00043CCB File Offset: 0x00041ECB
+	// Token: 0x06001126 RID: 4390 RVA: 0x0000E9E9 File Offset: 0x0000CBE9
 	private void ClearDescription()
 	{
 		if (this.descriptionDisplay == null)
@@ -62,33 +61,28 @@ public class UIDescription : MonoBehaviour, ISelectHandler, IEventSystemHandler,
 		this.descriptionDisplay.Clear();
 	}
 
-	// Token: 0x06000E03 RID: 3587 RVA: 0x00043CE7 File Offset: 0x00041EE7
+	// Token: 0x06001127 RID: 4391 RVA: 0x0000EA05 File Offset: 0x0000CC05
 	public void ForgetDescription()
 	{
 		this.descriptionDisplay = null;
 	}
 
-	// Token: 0x06000E04 RID: 3588 RVA: 0x00043CF0 File Offset: 0x00041EF0
+	// Token: 0x06001128 RID: 4392 RVA: 0x0000EA0E File Offset: 0x0000CC0E
 	[ContextMenu("Add to document")]
 	public void AddToDocument()
 	{
 		this.document.AddStringEntry(this.descriptionID, this.descriptionText);
 	}
 
-	// Token: 0x04001274 RID: 4724
 	public GameObject prefab;
 
-	// Token: 0x04001275 RID: 4725
 	private UIDescriptionDisplay descriptionDisplay;
 
-	// Token: 0x04001276 RID: 4726
 	public MultilingualTextDocument document;
 
-	// Token: 0x04001277 RID: 4727
 	[TextLookup("document")]
 	public string descriptionID;
 
-	// Token: 0x04001278 RID: 4728
 	[TextArea]
 	public string descriptionText;
 }

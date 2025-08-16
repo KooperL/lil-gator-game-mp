@@ -3,16 +3,15 @@ using Cinemachine;
 using Rewired;
 using UnityEngine;
 
-// Token: 0x02000017 RID: 23
 public class EditorlikeCamera : MonoBehaviour
 {
-	// Token: 0x06000042 RID: 66 RVA: 0x00002E36 File Offset: 0x00001036
+	// Token: 0x06000043 RID: 67 RVA: 0x00002348 File Offset: 0x00000548
 	private void Awake()
 	{
 		this.virtualCamera = base.GetComponent<CinemachineVirtualCamera>();
 	}
 
-	// Token: 0x06000043 RID: 67 RVA: 0x00002E44 File Offset: 0x00001044
+	// Token: 0x06000044 RID: 68 RVA: 0x00018000 File Offset: 0x00016200
 	private void OnEnable()
 	{
 		base.transform.ApplyTransform(MainCamera.t);
@@ -33,7 +32,7 @@ public class EditorlikeCamera : MonoBehaviour
 		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnLookHorizontal), UpdateLoopType.Update, ReInput.mapping.GetActionId("Look Horizontal"));
 	}
 
-	// Token: 0x06000044 RID: 68 RVA: 0x00002FB0 File Offset: 0x000011B0
+	// Token: 0x06000045 RID: 69 RVA: 0x0001816C File Offset: 0x0001636C
 	private void OnDisable()
 	{
 		if (this.allowMovement)
@@ -47,7 +46,7 @@ public class EditorlikeCamera : MonoBehaviour
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnLookVertical));
 	}
 
-	// Token: 0x06000045 RID: 69 RVA: 0x00003050 File Offset: 0x00001250
+	// Token: 0x06000046 RID: 70 RVA: 0x0001820C File Offset: 0x0001640C
 	private void Update()
 	{
 		if (this.lookSmoothing == 0f)
@@ -83,108 +82,85 @@ public class EditorlikeCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000046 RID: 70 RVA: 0x0000325C File Offset: 0x0000145C
+	// Token: 0x06000047 RID: 71 RVA: 0x00002356 File Offset: 0x00000556
 	private void OnLookHorizontal(InputActionEventData obj)
 	{
 		this.lookInput.x = obj.GetAxis();
 	}
 
-	// Token: 0x06000047 RID: 71 RVA: 0x00003270 File Offset: 0x00001470
+	// Token: 0x06000048 RID: 72 RVA: 0x0000236A File Offset: 0x0000056A
 	private void OnLookVertical(InputActionEventData obj)
 	{
 		this.lookInput.y = obj.GetAxis();
 	}
 
-	// Token: 0x06000048 RID: 72 RVA: 0x00003284 File Offset: 0x00001484
+	// Token: 0x06000049 RID: 73 RVA: 0x0000237E File Offset: 0x0000057E
 	private void OnSpeedChange(InputActionEventData obj)
 	{
 		this.speedAdjust = obj.GetAxis();
 	}
 
-	// Token: 0x06000049 RID: 73 RVA: 0x00003293 File Offset: 0x00001493
+	// Token: 0x0600004A RID: 74 RVA: 0x0000238D File Offset: 0x0000058D
 	private void OnMoveVertical(InputActionEventData obj)
 	{
 		this.moveInput.y = obj.GetAxis();
 	}
 
-	// Token: 0x0600004A RID: 74 RVA: 0x000032A7 File Offset: 0x000014A7
+	// Token: 0x0600004B RID: 75 RVA: 0x000023A1 File Offset: 0x000005A1
 	private void OnMoveForward(InputActionEventData obj)
 	{
 		this.moveInput.z = obj.GetAxis();
 	}
 
-	// Token: 0x0600004B RID: 75 RVA: 0x000032BB File Offset: 0x000014BB
+	// Token: 0x0600004C RID: 76 RVA: 0x000023B5 File Offset: 0x000005B5
 	private void OnMoveHorizontal(InputActionEventData obj)
 	{
 		this.moveInput.x = obj.GetAxis();
 	}
 
-	// Token: 0x0400005C RID: 92
 	private CinemachineVirtualCamera virtualCamera;
 
-	// Token: 0x0400005D RID: 93
 	public Vector2 lookSensitivity;
 
-	// Token: 0x0400005E RID: 94
 	public float acceleration = 10f;
 
-	// Token: 0x0400005F RID: 95
 	public float speed = 20f;
 
-	// Token: 0x04000060 RID: 96
 	public float modifier = 5f;
 
-	// Token: 0x04000061 RID: 97
 	public float speedExp = 1f;
 
-	// Token: 0x04000062 RID: 98
 	private float speedAdjust;
 
-	// Token: 0x04000063 RID: 99
 	public float speedAdjustRate = 0.1f;
 
-	// Token: 0x04000064 RID: 100
 	public float zoomSpeed = 2f;
 
-	// Token: 0x04000065 RID: 101
 	private Vector3 velocity;
 
-	// Token: 0x04000066 RID: 102
 	private bool modifierDown;
 
-	// Token: 0x04000067 RID: 103
 	public float lookSmoothing = 0.5f;
 
-	// Token: 0x04000068 RID: 104
 	private Vector3 moveInput;
 
-	// Token: 0x04000069 RID: 105
 	private Vector2 lookInput;
 
-	// Token: 0x0400006A RID: 106
 	private Vector2 lookInputSmooth;
 
-	// Token: 0x0400006B RID: 107
 	private Vector2 lookInputVelocity;
 
-	// Token: 0x0400006C RID: 108
 	private float verticalInput;
 
-	// Token: 0x0400006D RID: 109
 	public float positionSmoothing = 0.5f;
 
-	// Token: 0x0400006E RID: 110
 	private Vector3 positionSmoothVelocity;
 
-	// Token: 0x0400006F RID: 111
 	private Vector3 position;
 
-	// Token: 0x04000070 RID: 112
 	private Quaternion rotation;
 
-	// Token: 0x04000071 RID: 113
 	private global::Rewired.Player rePlayer;
 
-	// Token: 0x04000072 RID: 114
 	public bool allowMovement = true;
 }

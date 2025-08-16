@@ -1,11 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200011A RID: 282
 public class FootIKSmooth : MonoBehaviour
 {
-	// Token: 0x1700004A RID: 74
-	// (get) Token: 0x060005CF RID: 1487 RVA: 0x0001E592 File Offset: 0x0001C792
+	// (get) Token: 0x06000733 RID: 1843 RVA: 0x0000743E File Offset: 0x0000563E
 	public float smoothDeltaY
 	{
 		get
@@ -14,7 +12,7 @@ public class FootIKSmooth : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005D0 RID: 1488 RVA: 0x0001E5B0 File Offset: 0x0001C7B0
+	// Token: 0x06000734 RID: 1844 RVA: 0x0000745C File Offset: 0x0000565C
 	public void ClearOverrides()
 	{
 		this.overrideIK = false;
@@ -22,26 +20,26 @@ public class FootIKSmooth : MonoBehaviour
 		this.overrideLock = false;
 	}
 
-	// Token: 0x060005D1 RID: 1489 RVA: 0x0001E5C7 File Offset: 0x0001C7C7
+	// Token: 0x06000735 RID: 1845 RVA: 0x00007473 File Offset: 0x00005673
 	private void Awake()
 	{
 		this.animator = base.GetComponent<Animator>();
 	}
 
-	// Token: 0x060005D2 RID: 1490 RVA: 0x0001E5D5 File Offset: 0x0001C7D5
+	// Token: 0x06000736 RID: 1846 RVA: 0x00007481 File Offset: 0x00005681
 	private void Start()
 	{
 		this.minHeightSmooth = base.transform.position.y;
 	}
 
-	// Token: 0x060005D3 RID: 1491 RVA: 0x0001E5F0 File Offset: 0x0001C7F0
+	// Token: 0x06000737 RID: 1847 RVA: 0x00033CA0 File Offset: 0x00031EA0
 	public void ResetHeight()
 	{
 		this.minHeightSmooth = base.transform.position.y;
 		this.heightVelocity = (this.heightGravityVelocity = 0f);
 	}
 
-	// Token: 0x060005D4 RID: 1492 RVA: 0x0001E628 File Offset: 0x0001C828
+	// Token: 0x06000738 RID: 1848 RVA: 0x00033CD8 File Offset: 0x00031ED8
 	private bool FootRaycast(Vector3 footPos, Vector3 rayDirection, float parentHeight, out RaycastHit hit)
 	{
 		bool flag = false;
@@ -69,7 +67,7 @@ public class FootIKSmooth : MonoBehaviour
 		return flag2 || flag;
 	}
 
-	// Token: 0x060005D5 RID: 1493 RVA: 0x0001E6E4 File Offset: 0x0001C8E4
+	// Token: 0x06000739 RID: 1849 RVA: 0x00033D94 File Offset: 0x00031F94
 	public Vector3 GetFootCenter()
 	{
 		Vector3 vector = Vector3.Lerp(this.leftPosition, this.rightPosition, 0.5f);
@@ -77,7 +75,7 @@ public class FootIKSmooth : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x060005D6 RID: 1494 RVA: 0x0001E724 File Offset: 0x0001C924
+	// Token: 0x0600073A RID: 1850 RVA: 0x00033DD4 File Offset: 0x00031FD4
 	private void OnAnimatorIK()
 	{
 		if (!this.ikActive)
@@ -215,76 +213,52 @@ public class FootIKSmooth : MonoBehaviour
 		this.minHeightSmooth = y + this.currentDeltaY;
 	}
 
-	// Token: 0x040007F4 RID: 2036
 	private const float legLength = 0.35f;
 
-	// Token: 0x040007F5 RID: 2037
 	public bool ikActive = true;
 
-	// Token: 0x040007F6 RID: 2038
 	private Animator animator;
 
-	// Token: 0x040007F7 RID: 2039
 	public Vector3 offset;
 
-	// Token: 0x040007F8 RID: 2040
 	public LayerMask RayMask;
 
-	// Token: 0x040007F9 RID: 2041
 	public Transform leftFoot;
 
-	// Token: 0x040007FA RID: 2042
 	public Transform rightFoot;
 
-	// Token: 0x040007FB RID: 2043
 	private float leftWeightSmooth;
 
-	// Token: 0x040007FC RID: 2044
 	private float leftWeightVelocity;
 
-	// Token: 0x040007FD RID: 2045
 	private Vector3 leftPosition;
 
-	// Token: 0x040007FE RID: 2046
 	private float rightWeightSmooth;
 
-	// Token: 0x040007FF RID: 2047
 	private float rightWeightVelocity;
 
-	// Token: 0x04000800 RID: 2048
 	private Vector3 rightPosition;
 
-	// Token: 0x04000801 RID: 2049
 	public float minHeightSmooth;
 
-	// Token: 0x04000802 RID: 2050
 	private float heightVelocity;
 
-	// Token: 0x04000803 RID: 2051
 	private float currentDeltaY;
 
-	// Token: 0x04000804 RID: 2052
 	public float smoothTime = 0.05f;
 
-	// Token: 0x04000805 RID: 2053
 	public float maxDelta = 0.25f;
 
-	// Token: 0x04000806 RID: 2054
 	private float heightGravityVelocity;
 
-	// Token: 0x04000807 RID: 2055
 	[Space]
 	public bool overrideIK;
 
-	// Token: 0x04000808 RID: 2056
 	public ICustomFootIKPositions customIKPositions;
 
-	// Token: 0x04000809 RID: 2057
 	public bool overrideLock;
 
-	// Token: 0x0400080A RID: 2058
 	private RaycastHit hit;
 
-	// Token: 0x0400080B RID: 2059
 	public PlayerMovement movement;
 }

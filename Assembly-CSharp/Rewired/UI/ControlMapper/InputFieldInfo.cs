@@ -3,33 +3,27 @@ using UnityEngine;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x02000323 RID: 803
 	[AddComponentMenu("")]
 	public class InputFieldInfo : UIElementInfo
 	{
-		// Token: 0x1700037E RID: 894
-		// (get) Token: 0x060015AB RID: 5547 RVA: 0x0005D038 File Offset: 0x0005B238
-		// (set) Token: 0x060015AC RID: 5548 RVA: 0x0005D040 File Offset: 0x0005B240
+		// (get) Token: 0x06001B37 RID: 6967 RVA: 0x00014F4A File Offset: 0x0001314A
+		// (set) Token: 0x06001B38 RID: 6968 RVA: 0x00014F52 File Offset: 0x00013152
 		public int actionId { get; set; }
 
-		// Token: 0x1700037F RID: 895
-		// (get) Token: 0x060015AD RID: 5549 RVA: 0x0005D049 File Offset: 0x0005B249
-		// (set) Token: 0x060015AE RID: 5550 RVA: 0x0005D051 File Offset: 0x0005B251
+		// (get) Token: 0x06001B39 RID: 6969 RVA: 0x00014F5B File Offset: 0x0001315B
+		// (set) Token: 0x06001B3A RID: 6970 RVA: 0x00014F63 File Offset: 0x00013163
 		public AxisRange axisRange { get; set; }
 
-		// Token: 0x17000380 RID: 896
-		// (get) Token: 0x060015AF RID: 5551 RVA: 0x0005D05A File Offset: 0x0005B25A
-		// (set) Token: 0x060015B0 RID: 5552 RVA: 0x0005D062 File Offset: 0x0005B262
+		// (get) Token: 0x06001B3B RID: 6971 RVA: 0x00014F6C File Offset: 0x0001316C
+		// (set) Token: 0x06001B3C RID: 6972 RVA: 0x00014F74 File Offset: 0x00013174
 		public int actionElementMapId { get; set; }
 
-		// Token: 0x17000381 RID: 897
-		// (get) Token: 0x060015B1 RID: 5553 RVA: 0x0005D06B File Offset: 0x0005B26B
-		// (set) Token: 0x060015B2 RID: 5554 RVA: 0x0005D073 File Offset: 0x0005B273
+		// (get) Token: 0x06001B3D RID: 6973 RVA: 0x00014F7D File Offset: 0x0001317D
+		// (set) Token: 0x06001B3E RID: 6974 RVA: 0x00014F85 File Offset: 0x00013185
 		public ControllerType controllerType { get; set; }
 
-		// Token: 0x17000382 RID: 898
-		// (get) Token: 0x060015B3 RID: 5555 RVA: 0x0005D07C File Offset: 0x0005B27C
-		// (set) Token: 0x060015B4 RID: 5556 RVA: 0x0005D084 File Offset: 0x0005B284
+		// (get) Token: 0x06001B3F RID: 6975 RVA: 0x00014F8E File Offset: 0x0001318E
+		// (set) Token: 0x06001B40 RID: 6976 RVA: 0x00014F96 File Offset: 0x00013196
 		public int controllerId { get; set; }
 	}
 }

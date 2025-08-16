@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000112 RID: 274
 public class FastUpdateManager : MonoBehaviour
 {
-	// Token: 0x0600059E RID: 1438 RVA: 0x0001D770 File Offset: 0x0001B970
+	// Token: 0x060006FC RID: 1788 RVA: 0x000330BC File Offset: 0x000312BC
 	private void FixedUpdate()
 	{
 		this.isFixedUpdate = true;
@@ -49,7 +48,7 @@ public class FastUpdateManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600059F RID: 1439 RVA: 0x0001D880 File Offset: 0x0001BA80
+	// Token: 0x060006FD RID: 1789 RVA: 0x000331CC File Offset: 0x000313CC
 	private void Update()
 	{
 		this.index++;
@@ -160,57 +159,39 @@ public class FastUpdateManager : MonoBehaviour
 		this.isFixedUpdate = false;
 	}
 
-	// Token: 0x040007B3 RID: 1971
 	public static List<IManagedUpdate> updateEvery1 = new List<IManagedUpdate>();
 
-	// Token: 0x040007B4 RID: 1972
 	public static List<IManagedUpdate> updateEvery4 = new List<IManagedUpdate>();
 
-	// Token: 0x040007B5 RID: 1973
 	public static List<IManagedUpdate> updateEvery8 = new List<IManagedUpdate>();
 
-	// Token: 0x040007B6 RID: 1974
 	public static List<IManagedUpdate> updateEveryNonFixed = new List<IManagedUpdate>();
 
-	// Token: 0x040007B7 RID: 1975
 	private const int maxFixedBeforeNonFixed = 25;
 
-	// Token: 0x040007B8 RID: 1976
 	private int nonFixedCounter;
 
-	// Token: 0x040007B9 RID: 1977
 	public static List<IManagedUpdate> fixedUpdate4 = new List<IManagedUpdate>();
 
-	// Token: 0x040007BA RID: 1978
 	public static List<IManagedUpdate> fixedUpdate8 = new List<IManagedUpdate>();
 
-	// Token: 0x040007BB RID: 1979
 	public static List<IManagedUpdate> fixedUpdate16 = new List<IManagedUpdate>();
 
-	// Token: 0x040007BC RID: 1980
 	public int index;
 
-	// Token: 0x040007BD RID: 1981
 	public int fixedIndex;
 
-	// Token: 0x040007BE RID: 1982
 	private bool isFixedUpdate;
 
-	// Token: 0x040007BF RID: 1983
 	private bool[] skipped8 = new bool[8];
 
-	// Token: 0x040007C0 RID: 1984
 	private bool hasSkipped8;
 
-	// Token: 0x040007C1 RID: 1985
 	private int skipped8FrameCount;
 
-	// Token: 0x040007C2 RID: 1986
 	private bool[] skipped4 = new bool[4];
 
-	// Token: 0x040007C3 RID: 1987
 	private bool hasSkipped4;
 
-	// Token: 0x040007C4 RID: 1988
 	private int skipped4FrameCount;
 }

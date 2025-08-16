@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001E1 RID: 481
 public class PlayerActorStates : MonoBehaviour
 {
-	// Token: 0x06000A17 RID: 2583 RVA: 0x0002EBCD File Offset: 0x0002CDCD
+	// Token: 0x06000C18 RID: 3096 RVA: 0x0000B478 File Offset: 0x00009678
 	private void Awake()
 	{
 		this.actor = base.GetComponent<DialogueActor>();
@@ -12,21 +11,21 @@ public class PlayerActorStates : MonoBehaviour
 		this.neutralStateInt = (int)this.neutralState;
 	}
 
-	// Token: 0x06000A18 RID: 2584 RVA: 0x0002EBF3 File Offset: 0x0002CDF3
+	// Token: 0x06000C19 RID: 3097 RVA: 0x0000B49E File Offset: 0x0000969E
 	private void Start()
 	{
 		this.movement = Player.movement;
 		this.itemManager = Player.itemManager;
 	}
 
-	// Token: 0x06000A19 RID: 2585 RVA: 0x0002EC0B File Offset: 0x0002CE0B
+	// Token: 0x06000C1A RID: 3098 RVA: 0x0000B4B6 File Offset: 0x000096B6
 	private void OnEnable()
 	{
 		this.actor.State = this.neutralStateInt;
 		this.UpdateNextFidgetTime();
 	}
 
-	// Token: 0x06000A1A RID: 2586 RVA: 0x0002EC24 File Offset: 0x0002CE24
+	// Token: 0x06000C1B RID: 3099 RVA: 0x0004210C File Offset: 0x0004030C
 	private void FixedUpdate()
 	{
 		if (Player.movement.modCustomMovement || !Game.HasControl)
@@ -118,7 +117,7 @@ public class PlayerActorStates : MonoBehaviour
 		this.UpdateFidgets();
 	}
 
-	// Token: 0x06000A1B RID: 2587 RVA: 0x0002EE70 File Offset: 0x0002D070
+	// Token: 0x06000C1C RID: 3100 RVA: 0x00042358 File Offset: 0x00040558
 	private void UpdateFidgets()
 	{
 		bool flag = !this.movement.IsClimbing && !this.movement.IsSwimming && !this.movement.isGliding;
@@ -160,7 +159,7 @@ public class PlayerActorStates : MonoBehaviour
 		}
 		if (Time.time > this.nextFidgetTime)
 		{
-			int num = Random.Range(0, this.fidgets.Length);
+			int num = global::UnityEngine.Random.Range(0, this.fidgets.Length);
 			if (num == this.lastFidgetIndex)
 			{
 				num = (num + 1) % this.fidgets.Length;
@@ -172,13 +171,13 @@ public class PlayerActorStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A1C RID: 2588 RVA: 0x0002EFC3 File Offset: 0x0002D1C3
+	// Token: 0x06000C1D RID: 3101 RVA: 0x0000B4CF File Offset: 0x000096CF
 	private void UpdateNextFidgetTime()
 	{
-		this.nextFidgetTime = Time.time + Random.Range(8f, 16f);
+		this.nextFidgetTime = Time.time + global::UnityEngine.Random.Range(8f, 16f);
 	}
 
-	// Token: 0x06000A1D RID: 2589 RVA: 0x0002EFE0 File Offset: 0x0002D1E0
+	// Token: 0x06000C1E RID: 3102 RVA: 0x0000B4EC File Offset: 0x000096EC
 	private void ClearFidget()
 	{
 		if (!this.isFidgeting)
@@ -188,50 +187,35 @@ public class PlayerActorStates : MonoBehaviour
 		this.isFidgeting = false;
 	}
 
-	// Token: 0x04000C8B RID: 3211
 	[HideInInspector]
 	public MountedActor mountedActor;
 
-	// Token: 0x04000C8C RID: 3212
 	private DialogueActor actor;
 
-	// Token: 0x04000C8D RID: 3213
 	private Animator animator;
 
-	// Token: 0x04000C8E RID: 3214
 	private PlayerMovement movement;
 
-	// Token: 0x04000C8F RID: 3215
 	private PlayerItemManager itemManager;
 
-	// Token: 0x04000C90 RID: 3216
 	public float sitDownDelay = 15f;
 
-	// Token: 0x04000C91 RID: 3217
 	private float sitDownTimer;
 
-	// Token: 0x04000C92 RID: 3218
 	private bool isSitting;
 
-	// Token: 0x04000C93 RID: 3219
 	private int stateID = Animator.StringToHash("State");
 
-	// Token: 0x04000C94 RID: 3220
 	private int positionID = Animator.StringToHash("Position");
 
-	// Token: 0x04000C95 RID: 3221
 	public ActorState neutralState = ActorState.S_Happy;
 
-	// Token: 0x04000C96 RID: 3222
 	private int neutralStateInt;
 
-	// Token: 0x04000C97 RID: 3223
 	public float neutralStateFallbackDelay = 5f;
 
-	// Token: 0x04000C98 RID: 3224
 	private float neutralStateFallbackTimer;
 
-	// Token: 0x04000C99 RID: 3225
 	private int[] fidgets = new int[]
 	{
 		Animator.StringToHash("E_FidgetFlail"),
@@ -240,7 +224,6 @@ public class PlayerActorStates : MonoBehaviour
 		Animator.StringToHash("E_FidgetLook")
 	};
 
-	// Token: 0x04000C9A RID: 3226
 	private int[] allowedEmotes = new int[]
 	{
 		0,
@@ -248,25 +231,18 @@ public class PlayerActorStates : MonoBehaviour
 		Animator.StringToHash("E_MegaphoneShout")
 	};
 
-	// Token: 0x04000C9B RID: 3227
 	private const float minFidgetDelay = 8f;
 
-	// Token: 0x04000C9C RID: 3228
 	private const float maxFidgetDelay = 16f;
 
-	// Token: 0x04000C9D RID: 3229
 	private float nextFidgetTime = -1f;
 
-	// Token: 0x04000C9E RID: 3230
 	private int lastFidgetIndex = -1;
 
-	// Token: 0x04000C9F RID: 3231
 	[ReadOnly]
 	public bool isFidgeting;
 
-	// Token: 0x04000CA0 RID: 3232
 	private bool hadControl;
 
-	// Token: 0x04000CA1 RID: 3233
 	private int state;
 }

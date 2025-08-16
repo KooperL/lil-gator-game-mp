@@ -3,10 +3,9 @@ using Rewired;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002BA RID: 698
 public class UIButtonPrompt : MonoBehaviour
 {
-	// Token: 0x06000EB5 RID: 3765 RVA: 0x000466F4 File Offset: 0x000448F4
+	// Token: 0x060011ED RID: 4589 RVA: 0x00059B3C File Offset: 0x00057D3C
 	private void Awake()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
@@ -18,7 +17,7 @@ public class UIButtonPrompt : MonoBehaviour
 		this.waitUntilTriggered = new WaitUntil(() => this.triggered);
 	}
 
-	// Token: 0x06000EB6 RID: 3766 RVA: 0x00046749 File Offset: 0x00044949
+	// Token: 0x060011EE RID: 4590 RVA: 0x0000F401 File Offset: 0x0000D601
 	private void OnEnable()
 	{
 		this.triggered = false;
@@ -26,7 +25,7 @@ public class UIButtonPrompt : MonoBehaviour
 		PlayerInteract.interactButtonPriority = base.gameObject;
 	}
 
-	// Token: 0x06000EB7 RID: 3767 RVA: 0x00046768 File Offset: 0x00044968
+	// Token: 0x060011EF RID: 4591 RVA: 0x000050F2 File Offset: 0x000032F2
 	private void OnDisable()
 	{
 		if (PlayerInteract.interactButtonPriority == base.gameObject)
@@ -35,7 +34,7 @@ public class UIButtonPrompt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EB8 RID: 3768 RVA: 0x00046784 File Offset: 0x00044984
+	// Token: 0x060011F0 RID: 4592 RVA: 0x00059B94 File Offset: 0x00057D94
 	private void Update()
 	{
 		if (this.rePlayer != null && (this.rePlayer.GetButtonDown("Interact") || (Game.State == GameState.Dialogue && (this.rePlayer.GetButtonDown("Interact Dialogue") || this.rePlayer.GetButtonDown("UISubmit"))) || (PlayerInput.interactMapping == PlayerInput.InteractMapping.Jump && this.rePlayer.GetButtonDown("Jump")) || (PlayerInput.interactMapping == PlayerInput.InteractMapping.Primary && this.rePlayer.GetButtonDown("Primary"))))
@@ -44,30 +43,21 @@ public class UIButtonPrompt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400132B RID: 4907
 	public float timeLimit;
 
-	// Token: 0x0400132C RID: 4908
 	private float startTime;
 
-	// Token: 0x0400132D RID: 4909
 	public Image backgroundImage;
 
-	// Token: 0x0400132E RID: 4910
 	public Sprite[] backgroundSprites;
 
-	// Token: 0x0400132F RID: 4911
 	public WaitUntil waitUntilTriggered;
 
-	// Token: 0x04001330 RID: 4912
 	public bool triggered;
 
-	// Token: 0x04001331 RID: 4913
 	public bool allowAlternateInputs = true;
 
-	// Token: 0x04001332 RID: 4914
 	public bool allowSkip = true;
 
-	// Token: 0x04001333 RID: 4915
 	private global::Rewired.Player rePlayer;
 }

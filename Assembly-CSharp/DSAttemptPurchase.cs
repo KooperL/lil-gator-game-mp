@@ -2,16 +2,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000CA RID: 202
 [AddComponentMenu("Dialogue Sequence/Attempt Purchase")]
 public class DSAttemptPurchase : DSDialogue
 {
-	// Token: 0x06000461 RID: 1121 RVA: 0x00018CF4 File Offset: 0x00016EF4
+	// Token: 0x06000577 RID: 1399 RVA: 0x0002EB08 File Offset: 0x0002CD08
 	private new void OnValidate()
 	{
 		if (this.uiItemResource == null || this.uiItemResource.itemResource != this.resource)
 		{
-			foreach (UIItemResource uiitemResource in Object.FindObjectsOfType<UIItemResource>(true))
+			foreach (UIItemResource uiitemResource in global::UnityEngine.Object.FindObjectsOfType<UIItemResource>(true))
 			{
 				if (uiitemResource.itemResource == this.resource)
 				{
@@ -22,14 +21,14 @@ public class DSAttemptPurchase : DSDialogue
 		}
 	}
 
-	// Token: 0x06000462 RID: 1122 RVA: 0x00018D5B File Offset: 0x00016F5B
+	// Token: 0x06000578 RID: 1400 RVA: 0x00005F31 File Offset: 0x00004131
 	public void ShowItem()
 	{
 		this.resource.ForceShow = true;
 		this.uiItemResource.SetPrice(this.cost);
 	}
 
-	// Token: 0x06000463 RID: 1123 RVA: 0x00018D7C File Offset: 0x00016F7C
+	// Token: 0x06000579 RID: 1401 RVA: 0x0002EB70 File Offset: 0x0002CD70
 	public override void Activate()
 	{
 		this.resource.ForceShow = false;
@@ -54,7 +53,7 @@ public class DSAttemptPurchase : DSDialogue
 		base.Activate();
 	}
 
-	// Token: 0x06000464 RID: 1124 RVA: 0x00018E0D File Offset: 0x0001700D
+	// Token: 0x0600057A RID: 1402 RVA: 0x00005F50 File Offset: 0x00004150
 	public override void Deactivate()
 	{
 		base.Deactivate();
@@ -64,33 +63,24 @@ public class DSAttemptPurchase : DSDialogue
 		}
 	}
 
-	// Token: 0x04000622 RID: 1570
 	public ItemResource resource;
 
-	// Token: 0x04000623 RID: 1571
 	public int cost;
 
-	// Token: 0x04000624 RID: 1572
 	public int confirmPurchaseIndex;
 
-	// Token: 0x04000625 RID: 1573
 	[ChunkLookup("document")]
 	public string successfulPurchase;
 
-	// Token: 0x04000626 RID: 1574
 	[ChunkLookup("document")]
 	public string notEnough;
 
-	// Token: 0x04000627 RID: 1575
 	[ChunkLookup("document")]
 	public string cancel;
 
-	// Token: 0x04000628 RID: 1576
 	public UnityEvent onPurchase;
 
-	// Token: 0x04000629 RID: 1577
 	private bool isPurchased;
 
-	// Token: 0x0400062A RID: 1578
 	public UIItemResource uiItemResource;
 }

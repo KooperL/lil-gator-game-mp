@@ -6,13 +6,11 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x02000328 RID: 808
 	[AddComponentMenu("")]
 	[RequireComponent(typeof(Selectable))]
 	public class ScrollRectSelectableChild : MonoBehaviour, ISelectHandler, IEventSystemHandler
 	{
-		// Token: 0x17000408 RID: 1032
-		// (get) Token: 0x0600168D RID: 5773 RVA: 0x0005E656 File Offset: 0x0005C856
+		// (get) Token: 0x06001C21 RID: 7201 RVA: 0x00015974 File Offset: 0x00013B74
 		private RectTransform parentScrollRectContentTransform
 		{
 			get
@@ -21,8 +19,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x17000409 RID: 1033
-		// (get) Token: 0x0600168E RID: 5774 RVA: 0x0005E664 File Offset: 0x0005C864
+		// (get) Token: 0x06001C22 RID: 7202 RVA: 0x0006FE1C File Offset: 0x0006E01C
 		private Selectable selectable
 		{
 			get
@@ -36,8 +33,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x1700040A RID: 1034
-		// (get) Token: 0x0600168F RID: 5775 RVA: 0x0005E68A File Offset: 0x0005C88A
+		// (get) Token: 0x06001C23 RID: 7203 RVA: 0x00015981 File Offset: 0x00013B81
 		private RectTransform rectTransform
 		{
 			get
@@ -46,7 +42,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001690 RID: 5776 RVA: 0x0005E697 File Offset: 0x0005C897
+		// Token: 0x06001C24 RID: 7204 RVA: 0x0001598E File Offset: 0x00013B8E
 		private void Start()
 		{
 			this.parentScrollRect = base.transform.GetComponentInParent<ScrollRect>();
@@ -57,7 +53,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001691 RID: 5777 RVA: 0x0005E6C4 File Offset: 0x0005C8C4
+		// Token: 0x06001C25 RID: 7205 RVA: 0x0006FE44 File Offset: 0x0006E044
 		public void OnSelect(BaseEventData eventData)
 		{
 			if (this.parentScrollRect == null)
@@ -98,16 +94,12 @@ namespace Rewired.UI.ControlMapper
 			this.parentScrollRectContentTransform.anchoredPosition = anchoredPosition;
 		}
 
-		// Token: 0x040018BC RID: 6332
 		public bool useCustomEdgePadding;
 
-		// Token: 0x040018BD RID: 6333
 		public float customEdgePadding = 50f;
 
-		// Token: 0x040018BE RID: 6334
 		private ScrollRect parentScrollRect;
 
-		// Token: 0x040018BF RID: 6335
 		private Selectable _selectable;
 	}
 }

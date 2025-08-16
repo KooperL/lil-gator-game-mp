@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002C7 RID: 711
 public class UIImageBox : MonoBehaviour
 {
-	// Token: 0x06000EF2 RID: 3826 RVA: 0x00047C24 File Offset: 0x00045E24
+	// Token: 0x0600122A RID: 4650 RVA: 0x0005AD14 File Offset: 0x00058F14
 	public void SetImage(Sprite image)
 	{
 		if (this.resizeToFit)
@@ -30,33 +29,26 @@ public class UIImageBox : MonoBehaviour
 		this.displayImage.sprite = image;
 	}
 
-	// Token: 0x06000EF3 RID: 3827 RVA: 0x00047CE8 File Offset: 0x00045EE8
+	// Token: 0x0600122B RID: 4651 RVA: 0x0000F6ED File Offset: 0x0000D8ED
 	public void SetColor(Color color)
 	{
 		this.coloredImage.color = color;
 	}
 
-	// Token: 0x04001388 RID: 5000
 	public Image invisibleImage;
 
-	// Token: 0x04001389 RID: 5001
 	public Image displayImage;
 
-	// Token: 0x0400138A RID: 5002
 	public Image coloredImage;
 
-	// Token: 0x0400138B RID: 5003
 	public bool resizeToFit = true;
 
-	// Token: 0x0400138C RID: 5004
 	[ConditionalHide("resizeToFit", true)]
 	public RectTransform resizeTransform;
 
-	// Token: 0x0400138D RID: 5005
 	[ConditionalHide("resizeToFit", true)]
 	public float maxWidth = 1000f;
 
-	// Token: 0x0400138E RID: 5006
 	[ConditionalHide("resizeToFit", true)]
 	public float maxHeight = 1000f;
 }

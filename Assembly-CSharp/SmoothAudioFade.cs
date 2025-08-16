@@ -2,16 +2,15 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x0200026E RID: 622
 public class SmoothAudioFade : MonoBehaviour
 {
-	// Token: 0x06000D5A RID: 3418 RVA: 0x00040828 File Offset: 0x0003EA28
+	// Token: 0x06001063 RID: 4195 RVA: 0x0000E11F File Offset: 0x0000C31F
 	private void Awake()
 	{
 		this.volume = this.audioSource.volume;
 	}
 
-	// Token: 0x06000D5B RID: 3419 RVA: 0x0004083C File Offset: 0x0003EA3C
+	// Token: 0x06001064 RID: 4196 RVA: 0x00054B4C File Offset: 0x00052D4C
 	private void OnEnable()
 	{
 		this.target = 1f;
@@ -27,7 +26,7 @@ public class SmoothAudioFade : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D5C RID: 3420 RVA: 0x000408A4 File Offset: 0x0003EAA4
+	// Token: 0x06001065 RID: 4197 RVA: 0x00054BB4 File Offset: 0x00052DB4
 	private void OnDisable()
 	{
 		if (this.audioSource == null)
@@ -47,7 +46,7 @@ public class SmoothAudioFade : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D5D RID: 3421 RVA: 0x0004091B File Offset: 0x0003EB1B
+	// Token: 0x06001066 RID: 4198 RVA: 0x0000E132 File Offset: 0x0000C332
 	private IEnumerator RunFade()
 	{
 		yield return null;
@@ -72,24 +71,17 @@ public class SmoothAudioFade : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0400119C RID: 4508
 	public AudioSource audioSource;
 
-	// Token: 0x0400119D RID: 4509
 	private float t;
 
-	// Token: 0x0400119E RID: 4510
 	private float target;
 
-	// Token: 0x0400119F RID: 4511
 	public float fadeInSpeed;
 
-	// Token: 0x040011A0 RID: 4512
 	public float fadeOutSpeed;
 
-	// Token: 0x040011A1 RID: 4513
 	private float volume;
 
-	// Token: 0x040011A2 RID: 4514
 	private IEnumerator currentlyRunning;
 }

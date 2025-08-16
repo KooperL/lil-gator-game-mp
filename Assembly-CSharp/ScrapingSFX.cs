@@ -1,11 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000FE RID: 254
 public class ScrapingSFX : MonoBehaviour
 {
-	// Token: 0x17000045 RID: 69
-	// (get) Token: 0x06000535 RID: 1333 RVA: 0x0001BDAB File Offset: 0x00019FAB
+	// (get) Token: 0x06000681 RID: 1665 RVA: 0x00006B18 File Offset: 0x00004D18
 	private AudioSource CurrentAudioSource
 	{
 		get
@@ -18,8 +16,7 @@ public class ScrapingSFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000046 RID: 70
-	// (get) Token: 0x06000536 RID: 1334 RVA: 0x0001BDC2 File Offset: 0x00019FC2
+	// (get) Token: 0x06000682 RID: 1666 RVA: 0x00006B2F File Offset: 0x00004D2F
 	private AudioSource OtherAudioSource
 	{
 		get
@@ -32,8 +29,7 @@ public class ScrapingSFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000047 RID: 71
-	// (get) Token: 0x06000537 RID: 1335 RVA: 0x0001BDD9 File Offset: 0x00019FD9
+	// (get) Token: 0x06000683 RID: 1667 RVA: 0x00006B46 File Offset: 0x00004D46
 	private bool isScrapingSmooth
 	{
 		get
@@ -42,13 +38,13 @@ public class ScrapingSFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000538 RID: 1336 RVA: 0x0001BDF9 File Offset: 0x00019FF9
+	// Token: 0x06000684 RID: 1668 RVA: 0x00006B66 File Offset: 0x00004D66
 	private void OnEnable()
 	{
 		ScrapingSFX.s = this;
 	}
 
-	// Token: 0x06000539 RID: 1337 RVA: 0x0001BE04 File Offset: 0x0001A004
+	// Token: 0x06000685 RID: 1669 RVA: 0x00031A30 File Offset: 0x0002FC30
 	private void LateUpdate()
 	{
 		AudioSource currentAudioSource = this.CurrentAudioSource;
@@ -87,19 +83,19 @@ public class ScrapingSFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600053A RID: 1338 RVA: 0x0001BF43 File Offset: 0x0001A143
+	// Token: 0x06000686 RID: 1670 RVA: 0x00006B6E File Offset: 0x00004D6E
 	private void OnTriggerEnter(Collider other)
 	{
 		this.HandleTrigger(other);
 	}
 
-	// Token: 0x0600053B RID: 1339 RVA: 0x0001BF4C File Offset: 0x0001A14C
+	// Token: 0x06000687 RID: 1671 RVA: 0x00006B6E File Offset: 0x00004D6E
 	private void OnTriggerStay(Collider other)
 	{
 		this.HandleTrigger(other);
 	}
 
-	// Token: 0x0600053C RID: 1340 RVA: 0x0001BF58 File Offset: 0x0001A158
+	// Token: 0x06000688 RID: 1672 RVA: 0x00031B70 File Offset: 0x0002FD70
 	private void HandleTrigger(Collider other)
 	{
 		ISurface component = other.GetComponent<ISurface>();
@@ -113,7 +109,7 @@ public class ScrapingSFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600053D RID: 1341 RVA: 0x0001BFBC File Offset: 0x0001A1BC
+	// Token: 0x06000689 RID: 1673 RVA: 0x00031BD4 File Offset: 0x0002FDD4
 	public void SetScraping(AudioClip scrapingClip, bool overridden = false)
 	{
 		if (this.isOverridden && !overridden)
@@ -127,75 +123,58 @@ public class ScrapingSFX : MonoBehaviour
 			AudioSource otherAudioSource = this.OtherAudioSource;
 			otherAudioSource.Pause();
 			otherAudioSource.clip = scrapingClip;
-			otherAudioSource.time = Random.value * scrapingClip.length;
+			otherAudioSource.time = global::UnityEngine.Random.value * scrapingClip.length;
 			otherAudioSource.volume = 0f;
 			otherAudioSource.Play();
 			this.isAudioAlternated = !this.isAudioAlternated;
 		}
 	}
 
-	// Token: 0x0600053E RID: 1342 RVA: 0x0001C03E File Offset: 0x0001A23E
+	// Token: 0x0600068A RID: 1674 RVA: 0x00006B77 File Offset: 0x00004D77
 	public void SetOverride(AudioClip scrapingClip)
 	{
 		this.isOverridden = true;
 		this.SetScraping(scrapingClip, true);
 	}
 
-	// Token: 0x0600053F RID: 1343 RVA: 0x0001C04F File Offset: 0x0001A24F
+	// Token: 0x0600068B RID: 1675 RVA: 0x00006B88 File Offset: 0x00004D88
 	public void ClearOverride()
 	{
 		this.isOverridden = false;
 	}
 
-	// Token: 0x04000725 RID: 1829
 	public static ScrapingSFX s;
 
-	// Token: 0x04000726 RID: 1830
 	public AudioSource audioSource;
 
-	// Token: 0x04000727 RID: 1831
 	public AudioSource altAudioSource;
 
-	// Token: 0x04000728 RID: 1832
 	private bool isAudioAlternated;
 
-	// Token: 0x04000729 RID: 1833
 	private float t;
 
-	// Token: 0x0400072A RID: 1834
 	public Rigidbody rigidbody;
 
-	// Token: 0x0400072B RID: 1835
 	[Range(0f, 1f)]
 	public float volume = 0.5f;
 
-	// Token: 0x0400072C RID: 1836
 	public float minSpeed = 2f;
 
-	// Token: 0x0400072D RID: 1837
 	public float maxSpeed = 5f;
 
-	// Token: 0x0400072E RID: 1838
 	public float fadeIn = 0.05f;
 
-	// Token: 0x0400072F RID: 1839
 	public float fadeOut = 0.05f;
 
-	// Token: 0x04000730 RID: 1840
 	public float strength;
 
-	// Token: 0x04000731 RID: 1841
 	public bool isScraping;
 
-	// Token: 0x04000732 RID: 1842
 	public float isScrapingAllowance = 0.05f;
 
-	// Token: 0x04000733 RID: 1843
 	private float lastScrapingTime;
 
-	// Token: 0x04000734 RID: 1844
 	private bool isOverridden;
 
-	// Token: 0x04000735 RID: 1845
 	private AudioClip overriddenClip;
 }

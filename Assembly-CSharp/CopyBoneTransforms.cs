@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200000B RID: 11
 public class CopyBoneTransforms : MonoBehaviour
 {
-	// Token: 0x0600001D RID: 29 RVA: 0x000026C0 File Offset: 0x000008C0
+	// Token: 0x0600001D RID: 29 RVA: 0x000179DC File Offset: 0x00015BDC
 	[ContextMenu("Apply Transforms From Source")]
 	public void ApplyTransformsFromSource()
 	{
@@ -18,6 +17,5 @@ public class CopyBoneTransforms : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400001B RID: 27
 	public GameObject source;
 }

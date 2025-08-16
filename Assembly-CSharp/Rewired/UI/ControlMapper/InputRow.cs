@@ -4,16 +4,14 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x02000324 RID: 804
 	[AddComponentMenu("")]
 	public class InputRow : MonoBehaviour
 	{
-		// Token: 0x17000383 RID: 899
-		// (get) Token: 0x060015B6 RID: 5558 RVA: 0x0005D095 File Offset: 0x0005B295
-		// (set) Token: 0x060015B7 RID: 5559 RVA: 0x0005D09D File Offset: 0x0005B29D
+		// (get) Token: 0x06001B42 RID: 6978 RVA: 0x00014F9F File Offset: 0x0001319F
+		// (set) Token: 0x06001B43 RID: 6979 RVA: 0x00014FA7 File Offset: 0x000131A7
 		public ButtonInfo[] buttons { get; private set; }
 
-		// Token: 0x060015B8 RID: 5560 RVA: 0x0005D0A6 File Offset: 0x0005B2A6
+		// Token: 0x06001B44 RID: 6980 RVA: 0x00014FB0 File Offset: 0x000131B0
 		public void Initialize(int rowIndex, string label, Action<int, ButtonInfo> inputFieldActivatedCallback)
 		{
 			this.rowIndex = rowIndex;
@@ -22,7 +20,7 @@ namespace Rewired.UI.ControlMapper
 			this.buttons = base.transform.GetComponentsInChildren<ButtonInfo>(true);
 		}
 
-		// Token: 0x060015B9 RID: 5561 RVA: 0x0005D0D4 File Offset: 0x0005B2D4
+		// Token: 0x06001B45 RID: 6981 RVA: 0x00014FDE File Offset: 0x000131DE
 		public void OnButtonActivated(ButtonInfo buttonInfo)
 		{
 			if (this.inputFieldActivatedCallback == null)
@@ -32,13 +30,10 @@ namespace Rewired.UI.ControlMapper
 			this.inputFieldActivatedCallback(this.rowIndex, buttonInfo);
 		}
 
-		// Token: 0x0400183E RID: 6206
 		public Text label;
 
-		// Token: 0x04001840 RID: 6208
 		private int rowIndex;
 
-		// Token: 0x04001841 RID: 6209
 		private Action<int, ButtonInfo> inputFieldActivatedCallback;
 	}
 }

@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200006F RID: 111
 public class Ach_Sticky : MonoBehaviour
 {
-	// Token: 0x060001B6 RID: 438 RVA: 0x00009AA7 File Offset: 0x00007CA7
+	// Token: 0x060001F9 RID: 505 RVA: 0x000039F9 File Offset: 0x00001BF9
 	public void OnStick()
 	{
 		if (this.hasThisAlreadyStuck)
@@ -15,6 +14,5 @@ public class Ach_Sticky : MonoBehaviour
 		Ach_StickyComboTracker.Stick();
 	}
 
-	// Token: 0x04000258 RID: 600
 	private bool hasThisAlreadyStuck;
 }

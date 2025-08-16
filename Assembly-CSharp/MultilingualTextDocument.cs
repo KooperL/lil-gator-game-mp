@@ -1,16 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000015 RID: 21
 public class MultilingualTextDocument : ScriptableObject
 {
-	// Token: 0x06000035 RID: 53 RVA: 0x00002BFF File Offset: 0x00000DFF
+	// Token: 0x06000035 RID: 53 RVA: 0x000022F7 File Offset: 0x000004F7
 	public static void SetPlaceholder(int index, string replacementText)
 	{
 		MultilingualTextDocument.placeholders[index] = replacementText;
 	}
 
-	// Token: 0x06000036 RID: 54 RVA: 0x00002C0C File Offset: 0x00000E0C
+	// Token: 0x06000036 RID: 54 RVA: 0x00017E10 File Offset: 0x00016010
 	public string FetchString(string id, Language language = Language.Auto)
 	{
 		if (string.IsNullOrEmpty(id))
@@ -27,7 +26,7 @@ public class MultilingualTextDocument : ScriptableObject
 		return id;
 	}
 
-	// Token: 0x06000037 RID: 55 RVA: 0x00002C5C File Offset: 0x00000E5C
+	// Token: 0x06000037 RID: 55 RVA: 0x00017E60 File Offset: 0x00016060
 	public string FetchString(int id, Language language = Language.Auto)
 	{
 		foreach (MultilingualString multilingualString in this.mlStrings)
@@ -40,7 +39,7 @@ public class MultilingualTextDocument : ScriptableObject
 		return "No string found";
 	}
 
-	// Token: 0x06000038 RID: 56 RVA: 0x00002CA0 File Offset: 0x00000EA0
+	// Token: 0x06000038 RID: 56 RVA: 0x00017EA4 File Offset: 0x000160A4
 	public bool HasString(string id)
 	{
 		if (string.IsNullOrEmpty(id))
@@ -58,7 +57,7 @@ public class MultilingualTextDocument : ScriptableObject
 		return false;
 	}
 
-	// Token: 0x06000039 RID: 57 RVA: 0x00002CE4 File Offset: 0x00000EE4
+	// Token: 0x06000039 RID: 57 RVA: 0x00017EE8 File Offset: 0x000160E8
 	public bool HasChunk(string id)
 	{
 		int num = Animator.StringToHash(id);
@@ -73,7 +72,7 @@ public class MultilingualTextDocument : ScriptableObject
 		return false;
 	}
 
-	// Token: 0x0600003A RID: 58 RVA: 0x00002D1C File Offset: 0x00000F1C
+	// Token: 0x0600003A RID: 58 RVA: 0x00017F20 File Offset: 0x00016120
 	public DialogueChunk FetchChunk(string id)
 	{
 		int num = Animator.StringToHash(id);
@@ -88,7 +87,7 @@ public class MultilingualTextDocument : ScriptableObject
 		return null;
 	}
 
-	// Token: 0x0600003B RID: 59 RVA: 0x00002D6C File Offset: 0x00000F6C
+	// Token: 0x0600003B RID: 59 RVA: 0x00017F70 File Offset: 0x00016170
 	internal string FindString(string text)
 	{
 		foreach (MultilingualString multilingualString in this.mlStrings)
@@ -101,26 +100,20 @@ public class MultilingualTextDocument : ScriptableObject
 		return "";
 	}
 
-	// Token: 0x0600003C RID: 60 RVA: 0x00002DB2 File Offset: 0x00000FB2
+	// Token: 0x0600003C RID: 60 RVA: 0x00002229 File Offset: 0x00000429
 	public void AddStringEntry(string entryKey, string englishText)
 	{
 	}
 
-	// Token: 0x04000052 RID: 82
 	public static string[] placeholders = new string[1];
 
-	// Token: 0x04000053 RID: 83
 	public const int currentPlatform = 0;
 
-	// Token: 0x04000054 RID: 84
 	public string[] idStrings;
 
-	// Token: 0x04000055 RID: 85
 	public MultilingualString[] mlStrings;
 
-	// Token: 0x04000056 RID: 86
 	public string[] idChunks;
 
-	// Token: 0x04000057 RID: 87
 	public DialogueChunk[] chunks;
 }

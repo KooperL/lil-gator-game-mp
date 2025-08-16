@@ -5,47 +5,45 @@ using System.Text;
 using Steamworks;
 using UnityEngine;
 
-// Token: 0x02000114 RID: 276
 public class FileUtil : MonoBehaviour
 {
-	// Token: 0x17000049 RID: 73
-	// (get) Token: 0x060005A3 RID: 1443 RVA: 0x0001DB93 File Offset: 0x0001BD93
+	// (get) Token: 0x06000701 RID: 1793 RVA: 0x000071A8 File Offset: 0x000053A8
 	private static FileUtil Instance
 	{
 		get
 		{
 			if (FileUtil.instance == null)
 			{
-				FileUtil.instance = Object.FindObjectOfType<FileUtil>();
+				FileUtil.instance = global::UnityEngine.Object.FindObjectOfType<FileUtil>();
 			}
 			return FileUtil.instance;
 		}
 	}
 
-	// Token: 0x060005A4 RID: 1444 RVA: 0x0001DBB1 File Offset: 0x0001BDB1
+	// Token: 0x06000702 RID: 1794 RVA: 0x000071C6 File Offset: 0x000053C6
 	public static bool IsSaveFileStarted(int index)
 	{
 		return FileUtil.gameSaveDataInfo[index].isStarted;
 	}
 
-	// Token: 0x060005A5 RID: 1445 RVA: 0x0001DBC3 File Offset: 0x0001BDC3
+	// Token: 0x06000703 RID: 1795 RVA: 0x000071D8 File Offset: 0x000053D8
 	public static bool IsSaveFileReal(int index)
 	{
 		return FileUtil.gameSaveDataInfo[index].isStarted || FileUtil.gameSaveDataInfo[index].newGameIndex != 0;
 	}
 
-	// Token: 0x060005A6 RID: 1446 RVA: 0x0001DBEC File Offset: 0x0001BDEC
+	// Token: 0x06000704 RID: 1796 RVA: 0x00007201 File Offset: 0x00005401
 	public static bool IsSaveFileCompleted(int index)
 	{
 		return FileUtil.gameSaveDataInfo[index].sis;
 	}
 
-	// Token: 0x060005A7 RID: 1447 RVA: 0x0001DBFE File Offset: 0x0001BDFE
+	// Token: 0x06000705 RID: 1797 RVA: 0x00002229 File Offset: 0x00000429
 	private static void WriteNewFile(string filePath, int fileSize, string contents)
 	{
 	}
 
-	// Token: 0x060005A8 RID: 1448 RVA: 0x0001DC00 File Offset: 0x0001BE00
+	// Token: 0x06000706 RID: 1798 RVA: 0x000334C0 File Offset: 0x000316C0
 	private static void CreateFilePathArrays()
 	{
 		FileUtil.saveFilePaths = new string[3];
@@ -58,7 +56,7 @@ public class FileUtil : MonoBehaviour
 		FileUtil.infoFilePaths[2] = FileUtil.infoFilePath3;
 	}
 
-	// Token: 0x060005A9 RID: 1449 RVA: 0x0001DC6C File Offset: 0x0001BE6C
+	// Token: 0x06000707 RID: 1799 RVA: 0x0003352C File Offset: 0x0003172C
 	public static void Initialize()
 	{
 		if (FileUtil.isInitialized)
@@ -87,7 +85,7 @@ public class FileUtil : MonoBehaviour
 		FileUtil.ReadGameSaveDataInfo(2);
 	}
 
-	// Token: 0x060005AA RID: 1450 RVA: 0x0001DD30 File Offset: 0x0001BF30
+	// Token: 0x06000708 RID: 1800 RVA: 0x00007213 File Offset: 0x00005413
 	private void Awake()
 	{
 		if (FileUtil.instance == null)
@@ -96,13 +94,13 @@ public class FileUtil : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005AB RID: 1451 RVA: 0x0001DD45 File Offset: 0x0001BF45
+	// Token: 0x06000709 RID: 1801 RVA: 0x00007228 File Offset: 0x00005428
 	private void Start()
 	{
 		FileUtil.Initialize();
 	}
 
-	// Token: 0x060005AC RID: 1452 RVA: 0x0001DD4C File Offset: 0x0001BF4C
+	// Token: 0x0600070A RID: 1802 RVA: 0x0000722F File Offset: 0x0000542F
 	private void OnDestroy()
 	{
 		if (this.isThisOneInitialized)
@@ -111,7 +109,7 @@ public class FileUtil : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005AD RID: 1453 RVA: 0x0001DD5C File Offset: 0x0001BF5C
+	// Token: 0x0600070B RID: 1803 RVA: 0x000335F0 File Offset: 0x000317F0
 	public static bool HasInitializedSaveData()
 	{
 		if (!FileUtil.isInitialized)
@@ -129,7 +127,7 @@ public class FileUtil : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060005AE RID: 1454 RVA: 0x0001DD9C File Offset: 0x0001BF9C
+	// Token: 0x0600070C RID: 1804 RVA: 0x00033630 File Offset: 0x00031830
 	public static bool HasCompletedSaveData()
 	{
 		if (!FileUtil.isInitialized)
@@ -147,7 +145,7 @@ public class FileUtil : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x060005AF RID: 1455 RVA: 0x0001DDDA File Offset: 0x0001BFDA
+	// Token: 0x0600070D RID: 1805 RVA: 0x0000723F File Offset: 0x0000543F
 	public static void CopyGameSaveData(int sourceIndex, int targetIndex)
 	{
 		if (!FileUtil.isInitialized)
@@ -157,7 +155,7 @@ public class FileUtil : MonoBehaviour
 		FileUtil.WriteSaveData(FileUtil.ReadSaveData(sourceIndex, false), targetIndex, false);
 	}
 
-	// Token: 0x060005B0 RID: 1456 RVA: 0x0001DDF6 File Offset: 0x0001BFF6
+	// Token: 0x0600070E RID: 1806 RVA: 0x0000725B File Offset: 0x0000545B
 	public static void EraseGameSaveData(int index)
 	{
 		if (!FileUtil.isInitialized)
@@ -167,7 +165,7 @@ public class FileUtil : MonoBehaviour
 		FileUtil.WriteSaveData(FileUtil.Instance.newGameSave.gameSaveData, index, false);
 	}
 
-	// Token: 0x060005B1 RID: 1457 RVA: 0x0001DE1C File Offset: 0x0001C01C
+	// Token: 0x0600070F RID: 1807 RVA: 0x00033670 File Offset: 0x00031870
 	public static void CreateNewGamePlusSaveData(int sourceIndex, int targetIndex)
 	{
 		if (!FileUtil.isInitialized)
@@ -218,7 +216,7 @@ public class FileUtil : MonoBehaviour
 		FileUtil.WriteSaveData(gameSaveData2, targetIndex, false);
 	}
 
-	// Token: 0x060005B2 RID: 1458 RVA: 0x0001DF58 File Offset: 0x0001C158
+	// Token: 0x06000710 RID: 1808 RVA: 0x000337AC File Offset: 0x000319AC
 	private static GameSaveDataInfo ReadGameSaveDataInfo(int index)
 	{
 		if (!FileUtil.isInitialized)
@@ -246,7 +244,7 @@ public class FileUtil : MonoBehaviour
 		return FileUtil.gameSaveDataInfo[index];
 	}
 
-	// Token: 0x060005B3 RID: 1459 RVA: 0x0001E00C File Offset: 0x0001C20C
+	// Token: 0x06000711 RID: 1809 RVA: 0x00033860 File Offset: 0x00031A60
 	public static GameSaveData ReadSaveData(int index = 0, bool forceFreshSave = false)
 	{
 		if (!FileUtil.isInitialized)
@@ -270,7 +268,7 @@ public class FileUtil : MonoBehaviour
 		return FileUtil.cachedSaveData;
 	}
 
-	// Token: 0x060005B4 RID: 1460 RVA: 0x0001E088 File Offset: 0x0001C288
+	// Token: 0x06000712 RID: 1810 RVA: 0x000338DC File Offset: 0x00031ADC
 	public static void WriteSaveData(GameSaveData saveData, int index = 0, bool overMultipleFrames = false)
 	{
 		if (FileUtil.isWritingSaveDataOverMultipleFrames)
@@ -291,7 +289,7 @@ public class FileUtil : MonoBehaviour
 		FileUtil.UpdateSaveDataInfo(saveData, index, true);
 	}
 
-	// Token: 0x060005B5 RID: 1461 RVA: 0x0001E0E3 File Offset: 0x0001C2E3
+	// Token: 0x06000713 RID: 1811 RVA: 0x0000727F File Offset: 0x0000547F
 	public static IEnumerator WriteSaveDataOverMultipleFrames(GameSaveData saveData, int index)
 	{
 		FileUtil.isWritingSaveDataOverMultipleFrames = true;
@@ -302,21 +300,21 @@ public class FileUtil : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060005B6 RID: 1462 RVA: 0x0001E0F9 File Offset: 0x0001C2F9
+	// Token: 0x06000714 RID: 1812 RVA: 0x00007295 File Offset: 0x00005495
 	public static void UpdateSaveDataInfo(GameSaveData saveData, int index, bool commit = true)
 	{
 		FileUtil.gameSaveDataInfo[index] = new GameSaveDataInfo(saveData);
 		FileUtil.Write(FileUtil.infoFilePaths[index], JsonUtility.ToJson(FileUtil.gameSaveDataInfo[index]), 1024, commit, false);
 	}
 
-	// Token: 0x060005B7 RID: 1463 RVA: 0x0001E134 File Offset: 0x0001C334
+	// Token: 0x06000715 RID: 1813 RVA: 0x000072D0 File Offset: 0x000054D0
 	public static void UpdateSaveDataInfo(int index, bool commit = true)
 	{
 		FileUtil.gameSaveDataInfo[index] = default(GameSaveDataInfo);
 		FileUtil.Write(FileUtil.infoFilePaths[index], JsonUtility.ToJson(FileUtil.gameSaveDataInfo[index]), 1024, commit, false);
 	}
 
-	// Token: 0x060005B8 RID: 1464 RVA: 0x0001E170 File Offset: 0x0001C370
+	// Token: 0x06000716 RID: 1814 RVA: 0x00033938 File Offset: 0x00031B38
 	public static Settings.SettingsData ReadSettingsData()
 	{
 		if (!FileUtil.isInitialized)
@@ -344,7 +342,7 @@ public class FileUtil : MonoBehaviour
 		return FileUtil.cachedSettingsData;
 	}
 
-	// Token: 0x060005B9 RID: 1465 RVA: 0x0001E20C File Offset: 0x0001C40C
+	// Token: 0x06000717 RID: 1815 RVA: 0x0000730B File Offset: 0x0000550B
 	public static void WriteSettingsData(Settings.SettingsData settingsData)
 	{
 		if (!FileUtil.isInitialized)
@@ -354,7 +352,7 @@ public class FileUtil : MonoBehaviour
 		FileUtil.Write(FileUtil.settingsFilePath, JsonUtility.ToJson(settingsData), 131072, true, true);
 	}
 
-	// Token: 0x060005BA RID: 1466 RVA: 0x0001E231 File Offset: 0x0001C431
+	// Token: 0x06000718 RID: 1816 RVA: 0x00007330 File Offset: 0x00005530
 	private static bool DoesFileExist(string filePath, bool forceLocal = false)
 	{
 		if (!FileUtil.isInitialized)
@@ -368,7 +366,7 @@ public class FileUtil : MonoBehaviour
 		return SteamManager.Initialized && SteamRemoteStorage.FileExists(filePath);
 	}
 
-	// Token: 0x060005BB RID: 1467 RVA: 0x0001E258 File Offset: 0x0001C458
+	// Token: 0x06000719 RID: 1817 RVA: 0x00007357 File Offset: 0x00005557
 	private static bool DoesSaveFileExist(int index)
 	{
 		if (!FileUtil.isInitialized)
@@ -378,7 +376,7 @@ public class FileUtil : MonoBehaviour
 		return FileUtil.DoesFileExist(FileUtil.saveFilePaths[index], false);
 	}
 
-	// Token: 0x060005BC RID: 1468 RVA: 0x0001E274 File Offset: 0x0001C474
+	// Token: 0x0600071A RID: 1818 RVA: 0x000339D4 File Offset: 0x00031BD4
 	private static string Read(string path, int fileSize, bool forceLocal = false)
 	{
 		if (forceLocal)
@@ -397,7 +395,7 @@ public class FileUtil : MonoBehaviour
 		return Encoding.UTF8.GetString(array, 0, num);
 	}
 
-	// Token: 0x060005BD RID: 1469 RVA: 0x0001E2E8 File Offset: 0x0001C4E8
+	// Token: 0x0600071B RID: 1819 RVA: 0x00033A48 File Offset: 0x00031C48
 	private static void Write(string path, string contents, int fileSize, bool commit, bool forceLocal = false)
 	{
 		if (forceLocal)
@@ -426,98 +424,70 @@ public class FileUtil : MonoBehaviour
 		UISaveIcon.ShowIcon();
 	}
 
-	// Token: 0x060005BE RID: 1470 RVA: 0x0001E37C File Offset: 0x0001C57C
+	// Token: 0x0600071C RID: 1820 RVA: 0x00002229 File Offset: 0x00000429
 	private static void OnRemoteStorageFileWriteAsyncComplete(RemoteStorageFileWriteAsyncComplete_t m_eResult, bool bIOFailure)
 	{
 	}
 
-	// Token: 0x060005BF RID: 1471 RVA: 0x0001E37E File Offset: 0x0001C57E
+	// Token: 0x0600071D RID: 1821 RVA: 0x00002229 File Offset: 0x00000429
 	public static void Commit()
 	{
 	}
 
-	// Token: 0x040007C5 RID: 1989
 	private static FileUtil instance;
 
-	// Token: 0x040007C6 RID: 1990
 	private const int saveFileSize = 65536;
 
-	// Token: 0x040007C7 RID: 1991
 	private const int saveFileInfoSize = 1024;
 
-	// Token: 0x040007C8 RID: 1992
 	private const int settingsFileSize = 131072;
 
-	// Token: 0x040007C9 RID: 1993
 	public static string saveFilePath;
 
-	// Token: 0x040007CA RID: 1994
 	public static string saveFilePath2;
 
-	// Token: 0x040007CB RID: 1995
 	public static string saveFilePath3;
 
-	// Token: 0x040007CC RID: 1996
 	public static string[] saveFilePaths;
 
-	// Token: 0x040007CD RID: 1997
 	public static string infoFilePath;
 
-	// Token: 0x040007CE RID: 1998
 	public static string infoFilePath2;
 
-	// Token: 0x040007CF RID: 1999
 	public static string infoFilePath3;
 
-	// Token: 0x040007D0 RID: 2000
 	public static string[] infoFilePaths;
 
-	// Token: 0x040007D1 RID: 2001
 	public static string settingsFilePath;
 
-	// Token: 0x040007D2 RID: 2002
 	private const bool mustCreateFile = false;
 
-	// Token: 0x040007D3 RID: 2003
 	private static CallResult<RemoteStorageFileWriteAsyncComplete_t> OnRemoteStorageFileWriteAsyncCompleteCallResult;
 
-	// Token: 0x040007D4 RID: 2004
 	private static float lastSaveDataLoad = -100f;
 
-	// Token: 0x040007D5 RID: 2005
 	private static GameSaveData cachedSaveData;
 
-	// Token: 0x040007D6 RID: 2006
 	public static GameSaveDataInfo[] gameSaveDataInfo;
 
-	// Token: 0x040007D7 RID: 2007
 	private static float lastSettingsDataLoad = -100f;
 
-	// Token: 0x040007D8 RID: 2008
 	private static Settings.SettingsData cachedSettingsData;
 
-	// Token: 0x040007D9 RID: 2009
 	public static bool isInitialized = false;
 
-	// Token: 0x040007DA RID: 2010
 	private bool isThisOneInitialized;
 
-	// Token: 0x040007DB RID: 2011
 	public GameSaveWrapper newGameSave;
 
-	// Token: 0x040007DC RID: 2012
 	private static int asyncWriteCount = 0;
 
-	// Token: 0x040007DD RID: 2013
 	public static bool isApplicationQuitting = false;
 
-	// Token: 0x040007DE RID: 2014
 	[Header("New Game Plus")]
 	public string[] ngpBools;
 
-	// Token: 0x040007DF RID: 2015
 	public string[] ngpInts;
 
-	// Token: 0x040007E0 RID: 2016
 	private static bool isWritingSaveDataOverMultipleFrames = false;
 }

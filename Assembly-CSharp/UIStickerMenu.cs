@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020002F2 RID: 754
 public class UIStickerMenu : MonoBehaviour
 {
-	// Token: 0x06001015 RID: 4117 RVA: 0x0004D0D4 File Offset: 0x0004B2D4
+	// Token: 0x060013A2 RID: 5026 RVA: 0x000600A0 File Offset: 0x0005E2A0
 	private void Awake()
 	{
 		this.stickerDictionary = new Dictionary<string, StickerObject>();
@@ -15,19 +14,19 @@ public class UIStickerMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001016 RID: 4118 RVA: 0x0004D11F File Offset: 0x0004B31F
+	// Token: 0x060013A3 RID: 5027 RVA: 0x000109DD File Offset: 0x0000EBDD
 	private void Start()
 	{
 		this.LoadStickers();
 	}
 
-	// Token: 0x06001017 RID: 4119 RVA: 0x0004D127 File Offset: 0x0004B327
+	// Token: 0x060013A4 RID: 5028 RVA: 0x00002229 File Offset: 0x00000429
 	[ContextMenu("Load Stickers")]
 	private void LoadStickers()
 	{
 	}
 
-	// Token: 0x06001018 RID: 4120 RVA: 0x0004D12C File Offset: 0x0004B32C
+	// Token: 0x060013A5 RID: 5029 RVA: 0x000600EC File Offset: 0x0005E2EC
 	[ContextMenu("Place All Stickers")]
 	public void PlaceAllStickers()
 	{
@@ -37,7 +36,7 @@ public class UIStickerMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001019 RID: 4121 RVA: 0x0004D160 File Offset: 0x0004B360
+	// Token: 0x060013A6 RID: 5030 RVA: 0x00060120 File Offset: 0x0005E320
 	[ContextMenu("Rebuild Sticker List")]
 	public void RebuildStickerList()
 	{
@@ -49,17 +48,17 @@ public class UIStickerMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600101A RID: 4122 RVA: 0x0004D1AC File Offset: 0x0004B3AC
+	// Token: 0x060013A7 RID: 5031 RVA: 0x0006016C File Offset: 0x0005E36C
 	private void PlaceSticker(StickerObject stickerObject, Vector2 position, bool isInteractable = true)
 	{
-		UISticker component = Object.Instantiate<GameObject>(this.placedStickerPrefab, this.placedStickersParent).GetComponent<UISticker>();
+		UISticker component = global::UnityEngine.Object.Instantiate<GameObject>(this.placedStickerPrefab, this.placedStickersParent).GetComponent<UISticker>();
 		component.transform.localPosition = position;
 		component.LoadSticker(stickerObject);
 		component.button.interactable = isInteractable;
 		this.placedStickers.Add(component);
 	}
 
-	// Token: 0x0600101B RID: 4123 RVA: 0x0004D200 File Offset: 0x0004B400
+	// Token: 0x060013A8 RID: 5032 RVA: 0x000601C0 File Offset: 0x0005E3C0
 	private void ToggleInteractability(bool isInteractable)
 	{
 		foreach (UISticker uisticker in this.placedStickers)
@@ -68,18 +67,13 @@ public class UIStickerMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400151A RID: 5402
 	public StickerObject[] allStickers;
 
-	// Token: 0x0400151B RID: 5403
 	private Dictionary<string, StickerObject> stickerDictionary;
 
-	// Token: 0x0400151C RID: 5404
 	public GameObject placedStickerPrefab;
 
-	// Token: 0x0400151D RID: 5405
 	private List<UISticker> placedStickers = new List<UISticker>();
 
-	// Token: 0x0400151E RID: 5406
 	public RectTransform placedStickersParent;
 }

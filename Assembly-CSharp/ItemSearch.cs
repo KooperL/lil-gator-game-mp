@@ -2,10 +2,9 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020001CF RID: 463
 public class ItemSearch<T> : MonoBehaviour, IItemBehaviour where T : MonoBehaviour
 {
-	// Token: 0x0600099A RID: 2458 RVA: 0x0002D17A File Offset: 0x0002B37A
+	// Token: 0x06000B7D RID: 2941 RVA: 0x0000ACA5 File Offset: 0x00008EA5
 	public void Input(bool isDown, bool isHeld)
 	{
 		if (isDown)
@@ -14,7 +13,7 @@ public class ItemSearch<T> : MonoBehaviour, IItemBehaviour where T : MonoBehavio
 		}
 	}
 
-	// Token: 0x0600099B RID: 2459 RVA: 0x0002D185 File Offset: 0x0002B385
+	// Token: 0x06000B7E RID: 2942 RVA: 0x0000ACB0 File Offset: 0x00008EB0
 	protected IEnumerator RunSearch()
 	{
 		this.isSearching = true;
@@ -48,44 +47,44 @@ public class ItemSearch<T> : MonoBehaviour, IItemBehaviour where T : MonoBehavio
 		yield break;
 	}
 
-	// Token: 0x0600099C RID: 2460 RVA: 0x0002D194 File Offset: 0x0002B394
+	// Token: 0x06000B7F RID: 2943 RVA: 0x00002229 File Offset: 0x00000429
 	protected virtual void SearchResult(T result)
 	{
 	}
 
-	// Token: 0x0600099D RID: 2461 RVA: 0x0002D196 File Offset: 0x0002B396
+	// Token: 0x06000B80 RID: 2944 RVA: 0x00006415 File Offset: 0x00004615
 	protected virtual T[] GetList()
 	{
 		return null;
 	}
 
-	// Token: 0x0600099E RID: 2462 RVA: 0x0002D199 File Offset: 0x0002B399
+	// Token: 0x06000B81 RID: 2945 RVA: 0x00003A8E File Offset: 0x00001C8E
 	protected virtual bool IsValid(T item)
 	{
 		return false;
 	}
 
-	// Token: 0x0600099F RID: 2463 RVA: 0x0002D19C File Offset: 0x0002B39C
+	// Token: 0x06000B82 RID: 2946 RVA: 0x00002229 File Offset: 0x00000429
 	protected virtual void OnUse()
 	{
 	}
 
-	// Token: 0x060009A0 RID: 2464 RVA: 0x0002D19E File Offset: 0x0002B39E
+	// Token: 0x06000B83 RID: 2947 RVA: 0x00002229 File Offset: 0x00000429
 	public virtual void SetEquipped(bool isEquipped)
 	{
 	}
 
-	// Token: 0x060009A1 RID: 2465 RVA: 0x0002D1A0 File Offset: 0x0002B3A0
+	// Token: 0x06000B84 RID: 2948 RVA: 0x00002229 File Offset: 0x00000429
 	public virtual void Cancel()
 	{
 	}
 
-	// Token: 0x060009A2 RID: 2466 RVA: 0x0002D1A2 File Offset: 0x0002B3A2
+	// Token: 0x06000B85 RID: 2949 RVA: 0x00002229 File Offset: 0x00000429
 	public virtual void OnRemove()
 	{
 	}
 
-	// Token: 0x060009A3 RID: 2467 RVA: 0x0002D1A4 File Offset: 0x0002B3A4
+	// Token: 0x06000B86 RID: 2950 RVA: 0x0000ACBF File Offset: 0x00008EBF
 	public void SetIndex(int index)
 	{
 		if (index == 1)
@@ -94,12 +93,9 @@ public class ItemSearch<T> : MonoBehaviour, IItemBehaviour where T : MonoBehavio
 		}
 	}
 
-	// Token: 0x04000BF6 RID: 3062
 	protected bool isSearching;
 
-	// Token: 0x04000BF7 RID: 3063
 	public float searchTime = 1f;
 
-	// Token: 0x04000BF8 RID: 3064
 	protected bool isOnRight;
 }

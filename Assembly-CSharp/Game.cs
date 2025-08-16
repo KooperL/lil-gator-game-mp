@@ -2,17 +2,14 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-// Token: 0x0200011C RID: 284
 public class Game : MonoBehaviour
 {
-	// Token: 0x14000002 RID: 2
-	// (add) Token: 0x060005DB RID: 1499
-	// (remove) Token: 0x060005DC RID: 1500
+	// (add) Token: 0x0600073F RID: 1855 RVA: 0x00034518 File Offset: 0x00032718
+	// (remove) Token: 0x06000740 RID: 1856 RVA: 0x0003454C File Offset: 0x0003274C
 	public static event Action onEnterDialogue;
 
-	// Token: 0x1700004B RID: 75
-	// (get) Token: 0x060005DD RID: 1501
-	// (set) Token: 0x060005DE RID: 1502
+	// (get) Token: 0x06000741 RID: 1857 RVA: 0x00034580 File Offset: 0x00032780
+	// (set) Token: 0x06000742 RID: 1858 RVA: 0x000074EF File Offset: 0x000056EF
 	public static GameState State
 	{
 		get
@@ -42,8 +39,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700004C RID: 76
-	// (get) Token: 0x060005DF RID: 1503
+	// (get) Token: 0x06000743 RID: 1859 RVA: 0x00007517 File Offset: 0x00005717
 	public static bool AllowedToSave
 	{
 		get
@@ -52,9 +48,8 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700004D RID: 77
-	// (get) Token: 0x060005E0 RID: 1504
-	// (set) Token: 0x060005E1 RID: 1505
+	// (get) Token: 0x06000744 RID: 1860 RVA: 0x00007546 File Offset: 0x00005746
+	// (set) Token: 0x06000745 RID: 1861 RVA: 0x00007558 File Offset: 0x00005758
 	public static WorldState WorldState
 	{
 		get
@@ -67,8 +62,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700004E RID: 78
-	// (get) Token: 0x060005E2 RID: 1506
+	// (get) Token: 0x06000746 RID: 1862 RVA: 0x00007565 File Offset: 0x00005765
 	public static int NewGameIndex
 	{
 		get
@@ -77,8 +71,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700004F RID: 79
-	// (get) Token: 0x060005E3 RID: 1507
+	// (get) Token: 0x06000747 RID: 1863 RVA: 0x00007577 File Offset: 0x00005777
 	public static bool IsNewGamePlus
 	{
 		get
@@ -87,8 +80,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000050 RID: 80
-	// (get) Token: 0x060005E4 RID: 1508
+	// (get) Token: 0x06000748 RID: 1864 RVA: 0x00007581 File Offset: 0x00005781
 	public static bool IsInDialogue
 	{
 		get
@@ -97,8 +89,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000051 RID: 81
-	// (get) Token: 0x060005E5 RID: 1509
+	// (get) Token: 0x06000749 RID: 1865 RVA: 0x00007597 File Offset: 0x00005797
 	public static bool HasControl
 	{
 		get
@@ -107,9 +98,8 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000052 RID: 82
-	// (get) Token: 0x060005E6 RID: 1510
-	// (set) Token: 0x060005E7 RID: 1511
+	// (get) Token: 0x0600074A RID: 1866 RVA: 0x000075B4 File Offset: 0x000057B4
+	// (set) Token: 0x0600074B RID: 1867 RVA: 0x000345D4 File Offset: 0x000327D4
 	public static int DialogueDepth
 	{
 		get
@@ -130,14 +120,14 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005E8 RID: 1512
+	// Token: 0x0600074C RID: 1868 RVA: 0x000075C0 File Offset: 0x000057C0
 	private void Awake()
 	{
 		Game.g = this;
 		this.dialogueDepth = 0;
 	}
 
-	// Token: 0x060005E9 RID: 1513
+	// Token: 0x0600074D RID: 1869 RVA: 0x000075CF File Offset: 0x000057CF
 	private void OnEnable()
 	{
 		Game.g = this;
@@ -147,31 +137,35 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005EA RID: 1514
 	private void Start()
 	{
+		MultiplayerConfigLoader multiplayerConfigLoader = MultiplayerConfigLoader.Load("config.ini");
+		Debug.Log("Session Key: " + multiplayerConfigLoader.SessionKey);
+		Debug.Log("Display Name: " + multiplayerConfigLoader.DisplayName);
+		Debug.Log("Server Host: " + multiplayerConfigLoader.ServerHost);
+		MultiplayerCommunicationService.Instance.initConnection();
 		base.gameObject.AddComponent<PlayerPositionStreamer>();
 	}
 
-	// Token: 0x060005EB RID: 1515
+	// Token: 0x0600074F RID: 1871 RVA: 0x00007606 File Offset: 0x00005806
 	public void SetToStory()
 	{
 		this.SetWorldState(WorldState.Story);
 	}
 
-	// Token: 0x060005EC RID: 1516
+	// Token: 0x06000750 RID: 1872 RVA: 0x00007610 File Offset: 0x00005810
 	public void SetToFlashback()
 	{
 		this.SetWorldState(WorldState.Flashback);
 	}
 
-	// Token: 0x060005ED RID: 1517
+	// Token: 0x06000751 RID: 1873 RVA: 0x0000761A File Offset: 0x0000581A
 	public void SetWorldState(WorldState newWorldState)
 	{
 		this.SetWorldState(newWorldState, false, false);
 	}
 
-	// Token: 0x060005EE RID: 1518
+	// Token: 0x06000752 RID: 1874 RVA: 0x0003462C File Offset: 0x0003282C
 	public void SetWorldState(WorldState newWorldState, bool forceChange = false, bool delaySceneChange = false)
 	{
 		if (newWorldState != this.worldState || forceChange)
@@ -201,56 +195,38 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400080E RID: 2062
 	public const string versionID = "1.0.3";
 
-	// Token: 0x0400080F RID: 2063
 	public const int versionInt = 35;
 
-	// Token: 0x04000811 RID: 2065
 	public static bool ignoreDialogueDepth = false;
 
-	// Token: 0x04000812 RID: 2066
 	public static float setStatePlayTime = -1f;
 
-	// Token: 0x04000813 RID: 2067
 	private const float giveControlDelay = 0.1f;
 
-	// Token: 0x04000814 RID: 2068
 	public static Game g;
 
-	// Token: 0x04000815 RID: 2069
 	public GameState state;
 
-	// Token: 0x04000816 RID: 2070
 	public WorldState worldState;
 
-	// Token: 0x04000817 RID: 2071
 	public int dialogueDepth;
 
-	// Token: 0x04000818 RID: 2072
 	public bool autoChangeWorldState = true;
 
-	// Token: 0x04000819 RID: 2073
 	public GameObject storyPlayer;
 
-	// Token: 0x0400081A RID: 2074
 	public GameObject flashbackRoot;
 
-	// Token: 0x0400081B RID: 2075
 	public Game.SceneID sceneID = Game.SceneID.Other;
 
-	// Token: 0x0400081C RID: 2076
 	public AssetReference mainScene;
 
-	// Token: 0x020003B0 RID: 944
 	public enum SceneID
 	{
-		// Token: 0x04001B79 RID: 7033
 		Prologue,
-		// Token: 0x04001B7A RID: 7034
 		MainScene,
-		// Token: 0x04001B7B RID: 7035
 		Other
 	}
 }

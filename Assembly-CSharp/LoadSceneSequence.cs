@@ -7,10 +7,9 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
-// Token: 0x02000059 RID: 89
 public class LoadSceneSequence : MonoBehaviour
 {
-	// Token: 0x06000147 RID: 327 RVA: 0x00007C90 File Offset: 0x00005E90
+	// Token: 0x0600017A RID: 378 RVA: 0x0000344B File Offset: 0x0000164B
 	public static void LoadScene(int buildIndex, LoadSceneSequence.LoadType loadType = LoadSceneSequence.LoadType.LoadingScreen)
 	{
 		LoadSceneSequence.isSceneAsset = false;
@@ -18,7 +17,7 @@ public class LoadSceneSequence : MonoBehaviour
 		LoadSceneSequence.LoadScene(loadType);
 	}
 
-	// Token: 0x06000148 RID: 328 RVA: 0x00007CA4 File Offset: 0x00005EA4
+	// Token: 0x0600017B RID: 379 RVA: 0x0000345F File Offset: 0x0000165F
 	public static void LoadScene(AssetReference sceneAsset, LoadSceneSequence.LoadType loadType = LoadSceneSequence.LoadType.LoadingScreen)
 	{
 		LoadSceneSequence.isSceneAsset = true;
@@ -26,7 +25,7 @@ public class LoadSceneSequence : MonoBehaviour
 		LoadSceneSequence.LoadScene(loadType);
 	}
 
-	// Token: 0x06000149 RID: 329 RVA: 0x00007CB8 File Offset: 0x00005EB8
+	// Token: 0x0600017C RID: 380 RVA: 0x00003473 File Offset: 0x00001673
 	public static void StartPreloadScene(AssetReference sceneAsset)
 	{
 		LoadSceneSequence.hasPreloadedScene = true;
@@ -34,29 +33,29 @@ public class LoadSceneSequence : MonoBehaviour
 		LoadSceneSequence.preloadedScene = sceneAsset;
 	}
 
-	// Token: 0x0600014A RID: 330 RVA: 0x00007CD5 File Offset: 0x00005ED5
+	// Token: 0x0600017D RID: 381 RVA: 0x00003490 File Offset: 0x00001690
 	private static void LoadScene(LoadSceneSequence.LoadType loadType)
 	{
 		LoadSceneSequence.loadType = loadType;
 		LoadSceneSequence.oldScene = SceneManager.GetActiveScene();
 		if (loadType == LoadSceneSequence.LoadType.Fade)
 		{
-			Object.Instantiate<GameObject>(Prefabs.p.loadingSequenceFade);
+			global::UnityEngine.Object.Instantiate<GameObject>(Prefabs.p.loadingSequenceFade);
 			return;
 		}
-		Object.Instantiate<GameObject>(Prefabs.p.loadingSequence);
+		global::UnityEngine.Object.Instantiate<GameObject>(Prefabs.p.loadingSequence);
 	}
 
-	// Token: 0x0600014B RID: 331 RVA: 0x00007D0C File Offset: 0x00005F0C
+	// Token: 0x0600017E RID: 382 RVA: 0x000034C7 File Offset: 0x000016C7
 	private void Start()
 	{
 		base.StartCoroutine(this.LoadSceneAsync());
 	}
 
-	// Token: 0x0600014C RID: 332 RVA: 0x00007D1B File Offset: 0x00005F1B
+	// Token: 0x0600017F RID: 383 RVA: 0x000034D6 File Offset: 0x000016D6
 	public IEnumerator LoadSceneAsync()
 	{
-		Object.DontDestroyOnLoad(base.gameObject);
+		global::UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
 		FadeGameVolume.FadeOutGameVolume();
 		ReInput.players.GetPlayer(0).controllers.maps.SetAllMapsEnabled(false);
 		yield return new WaitForSeconds(1f);
@@ -103,49 +102,35 @@ public class LoadSceneSequence : MonoBehaviour
 		FadeGameVolume.FadeInGameVolume();
 		yield return new WaitForSeconds(0.5f);
 		ReInput.players.GetPlayer(0).controllers.maps.SetAllMapsEnabled(true);
-		Object.Destroy(base.gameObject);
+		global::UnityEngine.Object.Destroy(base.gameObject);
 		yield break;
 	}
 
-	// Token: 0x040001CB RID: 459
 	private static Scene oldScene;
 
-	// Token: 0x040001CC RID: 460
 	private static bool isSceneAsset;
 
-	// Token: 0x040001CD RID: 461
 	private static int sceneBuildIndex;
 
-	// Token: 0x040001CE RID: 462
 	private static AssetReference sceneAssetReference;
 
-	// Token: 0x040001CF RID: 463
 	private static LoadSceneSequence.LoadType loadType;
 
-	// Token: 0x040001D0 RID: 464
 	private static bool hasPreloadedScene;
 
-	// Token: 0x040001D1 RID: 465
 	private static AsyncOperationHandle<SceneInstance> preloadedSceneHandle;
 
-	// Token: 0x040001D2 RID: 466
 	private static AssetReference preloadedScene;
 
-	// Token: 0x040001D3 RID: 467
 	public AssetReference mainMenuScene;
 
-	// Token: 0x040001D4 RID: 468
 	public Animator animator;
 
-	// Token: 0x040001D5 RID: 469
 	public bool isReadyToShowScene = true;
 
-	// Token: 0x02000369 RID: 873
 	public enum LoadType
 	{
-		// Token: 0x04001A3A RID: 6714
 		LoadingScreen,
-		// Token: 0x04001A3B RID: 6715
 		Fade
 	}
 }

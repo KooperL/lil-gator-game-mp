@@ -2,11 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020001A2 RID: 418
 public class PersistentObject : MonoBehaviour
 {
-	// Token: 0x17000079 RID: 121
-	// (get) Token: 0x06000890 RID: 2192 RVA: 0x00028886 File Offset: 0x00026A86
+	// (get) Token: 0x06000A5B RID: 2651 RVA: 0x00009E63 File Offset: 0x00008063
 	public bool PersistentState
 	{
 		get
@@ -15,12 +13,12 @@ public class PersistentObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000891 RID: 2193 RVA: 0x00028898 File Offset: 0x00026A98
+	// Token: 0x06000A5C RID: 2652 RVA: 0x00002229 File Offset: 0x00000429
 	public virtual void OnValidate()
 	{
 	}
 
-	// Token: 0x06000892 RID: 2194 RVA: 0x0002889A File Offset: 0x00026A9A
+	// Token: 0x06000A5D RID: 2653 RVA: 0x00009E75 File Offset: 0x00008075
 	public virtual void Load(bool state)
 	{
 		if (!this.isPersistent)
@@ -31,7 +29,7 @@ public class PersistentObject : MonoBehaviour
 		base.gameObject.SetActive(!state);
 	}
 
-	// Token: 0x06000893 RID: 2195 RVA: 0x000288BC File Offset: 0x00026ABC
+	// Token: 0x06000A5E RID: 2654 RVA: 0x0003CDE4 File Offset: 0x0003AFE4
 	public virtual void SaveTrue()
 	{
 		if (!this.isPersistent)
@@ -48,7 +46,7 @@ public class PersistentObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000894 RID: 2196 RVA: 0x0002890C File Offset: 0x00026B0C
+	// Token: 0x06000A5F RID: 2655 RVA: 0x0003CE34 File Offset: 0x0003B034
 	[ContextMenu("Find persistent objects")]
 	public void FindPersistentObjects()
 	{
@@ -56,24 +54,20 @@ public class PersistentObject : MonoBehaviour
 		{
 			return;
 		}
-		SceneSaveData sceneSaveData = Object.FindObjectOfType<SceneSaveData>();
+		SceneSaveData sceneSaveData = global::UnityEngine.Object.FindObjectOfType<SceneSaveData>();
 		if (sceneSaveData != null)
 		{
 			sceneSaveData.FindPersistentObjects();
 		}
 	}
 
-	// Token: 0x04000A9A RID: 2714
 	public bool isPersistent = true;
 
-	// Token: 0x04000A9B RID: 2715
 	[ConditionalHide("isPersistent", true)]
 	public int id = -1;
 
-	// Token: 0x04000A9C RID: 2716
 	public UnityEvent onSaveTrue;
 
-	// Token: 0x04000A9D RID: 2717
 	[ReadOnly]
 	public bool isLoaded;
 }

@@ -1,15 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000067 RID: 103
 public class QuestZone : MonoBehaviour
 {
-	// Token: 0x06000194 RID: 404 RVA: 0x0000930D File Offset: 0x0000750D
+	// Token: 0x060001D6 RID: 470 RVA: 0x00003838 File Offset: 0x00001A38
 	private void OnTriggerStay(Collider other)
 	{
 		this.questProfile.QuestZoneTriggered();
 	}
 
-	// Token: 0x04000239 RID: 569
 	public QuestProfile questProfile;
 }

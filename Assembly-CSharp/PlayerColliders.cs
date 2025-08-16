@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001FC RID: 508
 public class PlayerColliders : MonoBehaviour
 {
-	// Token: 0x06000B13 RID: 2835 RVA: 0x00037538 File Offset: 0x00035738
+	// Token: 0x06000D24 RID: 3364 RVA: 0x00049F30 File Offset: 0x00048130
 	private void Awake()
 	{
 		if (IgnorePlayerCollision.playerColliders == null || IgnorePlayerCollision.playerColliders.Length == 0)
@@ -18,6 +17,5 @@ public class PlayerColliders : MonoBehaviour
 		IgnorePlayerCollision.playerColliders = array;
 	}
 
-	// Token: 0x04000EC7 RID: 3783
 	public Collider[] colliders;
 }

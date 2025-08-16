@@ -2,16 +2,15 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x0200018A RID: 394
 public class Laptop : MonoBehaviour
 {
-	// Token: 0x06000816 RID: 2070 RVA: 0x00026E2E File Offset: 0x0002502E
+	// Token: 0x060009C6 RID: 2502 RVA: 0x000096AD File Offset: 0x000078AD
 	public void Close()
 	{
 		CoroutineUtil.Start(this.CloseCoroutine());
 	}
 
-	// Token: 0x06000817 RID: 2071 RVA: 0x00026E3C File Offset: 0x0002503C
+	// Token: 0x060009C7 RID: 2503 RVA: 0x000096BB File Offset: 0x000078BB
 	private IEnumerator CloseCoroutine()
 	{
 		float angle = 0f;
@@ -25,15 +24,11 @@ public class Laptop : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04000A3F RID: 2623
 	public Transform screen;
 
-	// Token: 0x04000A40 RID: 2624
 	public float closedAngle = 101.2f;
 
-	// Token: 0x04000A41 RID: 2625
 	public float closeSpeed = 30f;
 
-	// Token: 0x04000A42 RID: 2626
 	public AudioSource closeSound;
 }

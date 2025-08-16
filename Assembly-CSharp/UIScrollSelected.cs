@@ -3,29 +3,28 @@ using Rewired;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-// Token: 0x020002DD RID: 733
 public class UIScrollSelected : MonoBehaviour
 {
-	// Token: 0x06000F79 RID: 3961 RVA: 0x0004A3F5 File Offset: 0x000485F5
+	// Token: 0x060012ED RID: 4845 RVA: 0x0000FF65 File Offset: 0x0000E165
 	private void Awake()
 	{
 		this.scrollToSelected = base.GetComponentInParent<UIScrollToSelected>();
 	}
 
-	// Token: 0x06000F7A RID: 3962 RVA: 0x0004A403 File Offset: 0x00048603
+	// Token: 0x060012EE RID: 4846 RVA: 0x0000FF73 File Offset: 0x0000E173
 	public void OnEnable()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
 		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.ScrollInput), UpdateLoopType.Update, InputActionEventType.AxisRawActiveOrJustInactive, ReInput.mapping.GetActionId("UIScroll"));
 	}
 
-	// Token: 0x06000F7B RID: 3963 RVA: 0x0004A43F File Offset: 0x0004863F
+	// Token: 0x060012EF RID: 4847 RVA: 0x0000FFAF File Offset: 0x0000E1AF
 	private void OnDisable()
 	{
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.ScrollInput));
 	}
 
-	// Token: 0x06000F7C RID: 3964 RVA: 0x0004A458 File Offset: 0x00048658
+	// Token: 0x060012F0 RID: 4848 RVA: 0x0005D5BC File Offset: 0x0005B7BC
 	private void ScrollInput(InputActionEventData obj)
 	{
 		if (Time.frameCount - this.scrollFrame < 3)
@@ -42,7 +41,7 @@ public class UIScrollSelected : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F7D RID: 3965 RVA: 0x0004A4CC File Offset: 0x000486CC
+	// Token: 0x060012F1 RID: 4849 RVA: 0x0005D630 File Offset: 0x0005B830
 	private void Scroll(int direction)
 	{
 		EventSystem current = EventSystem.current;
@@ -86,27 +85,19 @@ public class UIScrollSelected : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001448 RID: 5192
 	private const float scrollThreshold = 0.2f;
 
-	// Token: 0x04001449 RID: 5193
 	private float scroll;
 
-	// Token: 0x0400144A RID: 5194
 	private int scrollFrame = -1;
 
-	// Token: 0x0400144B RID: 5195
 	private const int scrollFrameGap = 3;
 
-	// Token: 0x0400144C RID: 5196
 	private global::Rewired.Player rePlayer;
 
-	// Token: 0x0400144D RID: 5197
 	private UIScrollToSelected scrollToSelected;
 
-	// Token: 0x0400144E RID: 5198
 	public bool isGrid;
 
-	// Token: 0x0400144F RID: 5199
 	public int gridWidth = 3;
 }

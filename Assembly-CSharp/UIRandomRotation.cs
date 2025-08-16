@@ -1,15 +1,13 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002D7 RID: 727
 public class UIRandomRotation : MonoBehaviour
 {
-	// Token: 0x06000F56 RID: 3926 RVA: 0x00049C0C File Offset: 0x00047E0C
+	// Token: 0x060012CA RID: 4810 RVA: 0x0000FD0E File Offset: 0x0000DF0E
 	private void OnEnable()
 	{
-		base.transform.rotation = Quaternion.Euler(Random.Range(-this.angle, this.angle) * Vector3.forward);
+		base.transform.rotation = Quaternion.Euler(global::UnityEngine.Random.Range(-this.angle, this.angle) * Vector3.forward);
 	}
 
-	// Token: 0x04001430 RID: 5168
 	public float angle = 25f;
 }

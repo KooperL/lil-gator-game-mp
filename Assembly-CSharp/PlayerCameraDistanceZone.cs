@@ -2,35 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020001E3 RID: 483
 public class PlayerCameraDistanceZone : MonoBehaviour
 {
-	// Token: 0x06000A25 RID: 2597 RVA: 0x0002F4F0 File Offset: 0x0002D6F0
+	// Token: 0x06000C26 RID: 3110 RVA: 0x000044B5 File Offset: 0x000026B5
 	private void OnValidate()
 	{
 		base.enabled = false;
 	}
 
-	// Token: 0x06000A26 RID: 2598 RVA: 0x0002F4F9 File Offset: 0x0002D6F9
+	// Token: 0x06000C27 RID: 3111 RVA: 0x0000B50F File Offset: 0x0000970F
 	private void OnEnable()
 	{
 		PlayerCameraDistanceZone.activeZones.Add(this);
 	}
 
-	// Token: 0x06000A27 RID: 2599 RVA: 0x0002F506 File Offset: 0x0002D706
+	// Token: 0x06000C28 RID: 3112 RVA: 0x0000B51C File Offset: 0x0000971C
 	private void OnDisable()
 	{
 		PlayerCameraDistanceZone.activeZones.Remove(this);
 	}
 
-	// Token: 0x06000A28 RID: 2600 RVA: 0x0002F514 File Offset: 0x0002D714
+	// Token: 0x06000C29 RID: 3113 RVA: 0x0000B52A File Offset: 0x0000972A
 	private void OnTriggerStay(Collider other)
 	{
 		this.lastTriggeredTime = Time.time;
 		base.enabled = true;
 	}
 
-	// Token: 0x06000A29 RID: 2601 RVA: 0x0002F528 File Offset: 0x0002D728
+	// Token: 0x06000C2A RID: 3114 RVA: 0x0000B53E File Offset: 0x0000973E
 	private void Update()
 	{
 		if (Time.time - this.lastTriggeredTime > 0.1f)
@@ -39,16 +38,12 @@ public class PlayerCameraDistanceZone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000CB1 RID: 3249
 	public static List<PlayerCameraDistanceZone> activeZones = new List<PlayerCameraDistanceZone>();
 
-	// Token: 0x04000CB2 RID: 3250
 	[Range(0f, 5f)]
 	public float distanceMultiplier = 1f;
 
-	// Token: 0x04000CB3 RID: 3251
 	public int priority;
 
-	// Token: 0x04000CB4 RID: 3252
 	private float lastTriggeredTime;
 }

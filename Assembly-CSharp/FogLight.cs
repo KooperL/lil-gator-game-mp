@@ -1,16 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000F0 RID: 240
 public class FogLight : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x060004F6 RID: 1270 RVA: 0x0001AA05 File Offset: 0x00018C05
+	// Token: 0x06000642 RID: 1602 RVA: 0x00006772 File Offset: 0x00004972
 	private void Awake()
 	{
-		this.seed = Random.value;
+		this.seed = global::UnityEngine.Random.value;
 	}
 
-	// Token: 0x060004F7 RID: 1271 RVA: 0x0001AA12 File Offset: 0x00018C12
+	// Token: 0x06000643 RID: 1603 RVA: 0x0000677F File Offset: 0x0000497F
 	private void OnEnable()
 	{
 		FastUpdateManager.updateEvery1.Add(this);
@@ -18,7 +17,7 @@ public class FogLight : MonoBehaviour, IManagedUpdate
 		PostProcessFog.fogLights.Add(this);
 	}
 
-	// Token: 0x060004F8 RID: 1272 RVA: 0x0001AA35 File Offset: 0x00018C35
+	// Token: 0x06000644 RID: 1604 RVA: 0x000067A2 File Offset: 0x000049A2
 	private void OnDisable()
 	{
 		if (FastUpdateManager.updateEvery1.Contains(this))
@@ -28,14 +27,14 @@ public class FogLight : MonoBehaviour, IManagedUpdate
 		PostProcessFog.fogLights.Remove(this);
 	}
 
-	// Token: 0x060004F9 RID: 1273 RVA: 0x0001AA5C File Offset: 0x00018C5C
+	// Token: 0x06000645 RID: 1605 RVA: 0x000067C9 File Offset: 0x000049C9
 	public void OnDrawGizmos()
 	{
 		Gizmos.color = new Color(1f, 1f, 1f, 0.25f);
 		Gizmos.DrawSphere(base.transform.position, this.radius);
 	}
 
-	// Token: 0x060004FA RID: 1274 RVA: 0x0001AA94 File Offset: 0x00018C94
+	// Token: 0x06000646 RID: 1606 RVA: 0x00030A84 File Offset: 0x0002EC84
 	public void ManagedUpdate()
 	{
 		this.percentStrengthSmooth = Mathf.SmoothDamp(this.percentStrengthSmooth, this.percentStrength, ref this.percentStrengthVel, 1f);
@@ -48,7 +47,7 @@ public class FogLight : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060004FB RID: 1275 RVA: 0x0001AB00 File Offset: 0x00018D00
+	// Token: 0x06000647 RID: 1607 RVA: 0x00030AF0 File Offset: 0x0002ECF0
 	public void SetStrength(float strength, bool max = true)
 	{
 		if (strength <= this.percentStrength && max)
@@ -67,7 +66,7 @@ public class FogLight : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060004FC RID: 1276 RVA: 0x0001AB64 File Offset: 0x00018D64
+	// Token: 0x06000648 RID: 1608 RVA: 0x00030B54 File Offset: 0x0002ED54
 	public bool GetLightData(Plane[] cameraFrustum, out Vector3 lightPosition, out float lightRadius, out float lightFalloff, out float lightIntensity)
 	{
 		float num = ((55f - (base.transform.position - MainCamera.t.position).magnitude > -this.radius) ? 1f : 0f);
@@ -111,62 +110,44 @@ public class FogLight : MonoBehaviour, IManagedUpdate
 		return true;
 	}
 
-	// Token: 0x040006CD RID: 1741
 	public float radius = 15f;
 
-	// Token: 0x040006CE RID: 1742
 	public float falloff = 5f;
 
-	// Token: 0x040006CF RID: 1743
 	[Range(0f, 1f)]
 	public float intensity = 1f;
 
-	// Token: 0x040006D0 RID: 1744
 	[Space]
 	private bool isSmoothing;
 
-	// Token: 0x040006D1 RID: 1745
 	[Range(0f, 1f)]
 	public float percentStrength;
 
-	// Token: 0x040006D2 RID: 1746
 	[Range(0f, 1f)]
 	public float percentStrengthSmooth;
 
-	// Token: 0x040006D3 RID: 1747
 	private float percentStrengthVel;
 
-	// Token: 0x040006D4 RID: 1748
 	public bool blinkOnChange;
 
-	// Token: 0x040006D5 RID: 1749
 	public bool customLightCurves;
 
-	// Token: 0x040006D6 RID: 1750
 	public AnimationCurve radiusCurve;
 
-	// Token: 0x040006D7 RID: 1751
 	public AnimationCurve intensityCurve;
 
-	// Token: 0x040006D8 RID: 1752
 	[Header("Variance")]
 	private float seed;
 
-	// Token: 0x040006D9 RID: 1753
 	public bool positionVariance = true;
 
-	// Token: 0x040006DA RID: 1754
 	public float positionMagnitude = 5f;
 
-	// Token: 0x040006DB RID: 1755
 	public float positionFrequency = 0.2f;
 
-	// Token: 0x040006DC RID: 1756
 	public bool strengthVariance = true;
 
-	// Token: 0x040006DD RID: 1757
 	public float strengthMagnitude = 0.2f;
 
-	// Token: 0x040006DE RID: 1758
 	public float strengthFrequency = 0.2f;
 }

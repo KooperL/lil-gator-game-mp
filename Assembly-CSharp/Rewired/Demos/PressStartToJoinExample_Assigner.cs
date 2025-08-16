@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace Rewired.Demos
 {
-	// Token: 0x02000344 RID: 836
 	[AddComponentMenu("")]
 	public class PressStartToJoinExample_Assigner : MonoBehaviour
 	{
-		// Token: 0x0600179B RID: 6043 RVA: 0x000646DC File Offset: 0x000628DC
+		// Token: 0x06001DE6 RID: 7654 RVA: 0x0007586C File Offset: 0x00073A6C
 		public static Player GetRewiredPlayer(int gamePlayerId)
 		{
 			if (!ReInput.isReady)
@@ -30,14 +29,14 @@ namespace Rewired.Demos
 			return null;
 		}
 
-		// Token: 0x0600179C RID: 6044 RVA: 0x0006475E File Offset: 0x0006295E
+		// Token: 0x06001DE7 RID: 7655 RVA: 0x00016D3E File Offset: 0x00014F3E
 		private void Awake()
 		{
 			this.playerMap = new List<PressStartToJoinExample_Assigner.PlayerMap>();
 			PressStartToJoinExample_Assigner.instance = this;
 		}
 
-		// Token: 0x0600179D RID: 6045 RVA: 0x00064774 File Offset: 0x00062974
+		// Token: 0x06001DE8 RID: 7656 RVA: 0x000758F0 File Offset: 0x00073AF0
 		private void Update()
 		{
 			for (int i = 0; i < ReInput.players.playerCount; i++)
@@ -49,7 +48,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x0600179E RID: 6046 RVA: 0x000647B4 File Offset: 0x000629B4
+		// Token: 0x06001DE9 RID: 7657 RVA: 0x00075930 File Offset: 0x00073B30
 		private void AssignNextPlayer(int rewiredPlayerId)
 		{
 			if (this.playerMap.Count >= this.maxPlayers)
@@ -65,7 +64,7 @@ namespace Rewired.Demos
 			Debug.Log("Added Rewired Player id " + rewiredPlayerId.ToString() + " to game player " + nextGamePlayerId.ToString());
 		}
 
-		// Token: 0x0600179F RID: 6047 RVA: 0x00064854 File Offset: 0x00062A54
+		// Token: 0x06001DEA RID: 7658 RVA: 0x000759D0 File Offset: 0x00073BD0
 		private int GetNextGamePlayerId()
 		{
 			int num = this.gamePlayerIdCounter;
@@ -73,32 +72,25 @@ namespace Rewired.Demos
 			return num;
 		}
 
-		// Token: 0x04001962 RID: 6498
 		private static PressStartToJoinExample_Assigner instance;
 
-		// Token: 0x04001963 RID: 6499
 		public int maxPlayers = 4;
 
-		// Token: 0x04001964 RID: 6500
 		private List<PressStartToJoinExample_Assigner.PlayerMap> playerMap;
 
-		// Token: 0x04001965 RID: 6501
 		private int gamePlayerIdCounter;
 
-		// Token: 0x020004AD RID: 1197
 		private class PlayerMap
 		{
-			// Token: 0x06001E07 RID: 7687 RVA: 0x00078F6A File Offset: 0x0007716A
+			// Token: 0x06001DEC RID: 7660 RVA: 0x00016D60 File Offset: 0x00014F60
 			public PlayerMap(int rewiredPlayerId, int gamePlayerId)
 			{
 				this.rewiredPlayerId = rewiredPlayerId;
 				this.gamePlayerId = gamePlayerId;
 			}
 
-			// Token: 0x04001F79 RID: 8057
 			public int rewiredPlayerId;
 
-			// Token: 0x04001F7A RID: 8058
 			public int gamePlayerId;
 		}
 	}

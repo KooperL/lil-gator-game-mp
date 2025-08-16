@@ -1,22 +1,21 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200014F RID: 335
 public class SusieDialogue : MonoBehaviour, Interaction
 {
-	// Token: 0x060006DF RID: 1759 RVA: 0x00022BD5 File Offset: 0x00020DD5
+	// Token: 0x0600085D RID: 2141 RVA: 0x000083BE File Offset: 0x000065BE
 	private void Awake()
 	{
 		this.boxCollider = base.GetComponent<BoxCollider>();
 	}
 
-	// Token: 0x060006E0 RID: 1760 RVA: 0x00022BE3 File Offset: 0x00020DE3
+	// Token: 0x0600085E RID: 2142 RVA: 0x000083CC File Offset: 0x000065CC
 	private void OnEnable()
 	{
 		this.speedInterface = base.transform.parent.GetComponent<SpeedInterface>();
 	}
 
-	// Token: 0x060006E1 RID: 1761 RVA: 0x00022BFC File Offset: 0x00020DFC
+	// Token: 0x0600085F RID: 2143 RVA: 0x000379CC File Offset: 0x00035BCC
 	public void Interact()
 	{
 		if (this.isSpeedTriggered)
@@ -43,7 +42,7 @@ public class SusieDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x060006E2 RID: 1762 RVA: 0x00022D00 File Offset: 0x00020F00
+	// Token: 0x06000860 RID: 2144 RVA: 0x00037AD0 File Offset: 0x00035CD0
 	private void FixedUpdate()
 	{
 		float speed = this.speedInterface.GetSpeed();
@@ -53,39 +52,27 @@ public class SusieDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x0400093B RID: 2363
 	public DialogueActor actor;
 
-	// Token: 0x0400093C RID: 2364
 	public string dialogueChunkName;
 
-	// Token: 0x0400093D RID: 2365
 	public int dialogueCount = 1;
 
-	// Token: 0x0400093E RID: 2366
 	private int dialogueIndex;
 
-	// Token: 0x0400093F RID: 2367
 	public string dialogueAfterChunkName;
 
-	// Token: 0x04000940 RID: 2368
 	public int dialogueAfterCount = 2;
 
-	// Token: 0x04000941 RID: 2369
 	private int dialogueAfterIndex;
 
-	// Token: 0x04000942 RID: 2370
 	private SpeedInterface speedInterface;
 
-	// Token: 0x04000943 RID: 2371
 	private bool isSpeedTriggered;
 
-	// Token: 0x04000944 RID: 2372
 	public float speedThreshold = 30f;
 
-	// Token: 0x04000945 RID: 2373
 	public int moneyReward = 5;
 
-	// Token: 0x04000946 RID: 2374
 	private BoxCollider boxCollider;
 }

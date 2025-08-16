@@ -2,11 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000133 RID: 307
 public class BreakableObject : PersistentObject, IOnTimeout
 {
-	// Token: 0x17000059 RID: 89
-	// (get) Token: 0x06000655 RID: 1621 RVA: 0x00020992 File Offset: 0x0001EB92
+	// (get) Token: 0x060007BA RID: 1978 RVA: 0x00007B0B File Offset: 0x00005D0B
 	public bool IsBroken
 	{
 		get
@@ -20,13 +18,13 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x06000656 RID: 1622 RVA: 0x000209B5 File Offset: 0x0001EBB5
+	// Token: 0x060007BB RID: 1979 RVA: 0x00007B2E File Offset: 0x00005D2E
 	public override void OnValidate()
 	{
 		base.OnValidate();
 	}
 
-	// Token: 0x06000657 RID: 1623 RVA: 0x000209C0 File Offset: 0x0001EBC0
+	// Token: 0x060007BC RID: 1980 RVA: 0x0003598C File Offset: 0x00033B8C
 	public override void Load(bool state)
 	{
 		this.isBroken = state;
@@ -40,12 +38,12 @@ public class BreakableObject : PersistentObject, IOnTimeout
 			this.brokenObject.SetActive(this.isBroken);
 			if (this.isBroken)
 			{
-				this.brokenObject.transform.rotation = Quaternion.Euler(0f, Random.value * 360f, 0f);
+				this.brokenObject.transform.rotation = Quaternion.Euler(0f, global::UnityEngine.Random.value * 360f, 0f);
 			}
 		}
 	}
 
-	// Token: 0x06000658 RID: 1624 RVA: 0x00020A53 File Offset: 0x0001EC53
+	// Token: 0x060007BD RID: 1981 RVA: 0x00007B36 File Offset: 0x00005D36
 	public virtual void OnEnable()
 	{
 		this.Load(this.isBroken);
@@ -55,14 +53,14 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x06000659 RID: 1625 RVA: 0x00020A78 File Offset: 0x0001EC78
+	// Token: 0x060007BE RID: 1982 RVA: 0x00035A20 File Offset: 0x00033C20
 	public virtual void OnDisable()
 	{
 		if (this.isBroken && this.breakingObject != null)
 		{
 			if (this.waitForValidation)
 			{
-				Object.Destroy(this.breakingObject);
+				global::UnityEngine.Object.Destroy(this.breakingObject);
 			}
 			this.breakingObject = null;
 		}
@@ -72,7 +70,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x0600065A RID: 1626 RVA: 0x00020AC4 File Offset: 0x0001ECC4
+	// Token: 0x060007BF RID: 1983 RVA: 0x00035A6C File Offset: 0x00033C6C
 	private bool IsRanged(bool isHeavy = false)
 	{
 		if (isHeavy)
@@ -97,7 +95,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		return true;
 	}
 
-	// Token: 0x0600065B RID: 1627 RVA: 0x00020B3C File Offset: 0x0001ED3C
+	// Token: 0x060007C0 RID: 1984 RVA: 0x00035AE4 File Offset: 0x00033CE4
 	private bool CanBeDestroyed(bool isHeavy = false, bool isRanged = false)
 	{
 		if (this.isNonRanged && isRanged)
@@ -137,13 +135,13 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		return false;
 	}
 
-	// Token: 0x0600065C RID: 1628 RVA: 0x00020BCA File Offset: 0x0001EDCA
+	// Token: 0x060007C1 RID: 1985 RVA: 0x00007B59 File Offset: 0x00005D59
 	public virtual void Break()
 	{
 		this.Break(false, Vector3.zero, false);
 	}
 
-	// Token: 0x0600065D RID: 1629 RVA: 0x00020BDC File Offset: 0x0001EDDC
+	// Token: 0x060007C2 RID: 1986 RVA: 0x00035B74 File Offset: 0x00033D74
 	public virtual void Break(bool fromAttachment, Vector3 velocity, bool isHeavy = false)
 	{
 		if (Time.time - this.lastBreakTime < 0.1f)
@@ -180,7 +178,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 			}
 			if (this.breakingPrefab != null)
 			{
-				this.breakingObject = Object.Instantiate<GameObject>(this.breakingPrefab, base.transform.position, base.transform.rotation);
+				this.breakingObject = global::UnityEngine.Object.Instantiate<GameObject>(this.breakingPrefab, base.transform.position, base.transform.rotation);
 				this.breakingObject.transform.localScale = base.transform.lossyScale.x * Vector3.one;
 				if (fromAttachment)
 				{
@@ -195,7 +193,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 					Rigidbody[] componentsInChildren2 = this.breakingObject.GetComponentsInChildren<Rigidbody>();
 					for (int i = 0; i < componentsInChildren2.Length; i++)
 					{
-						componentsInChildren2[i].velocity += Random.Range(0.75f, 1f) * velocity;
+						componentsInChildren2[i].velocity += global::UnityEngine.Random.Range(0.75f, 1f) * velocity;
 					}
 				}
 				DistanceTimeout component = this.breakingObject.GetComponent<DistanceTimeout>();
@@ -247,7 +245,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		this.onNearbyHit.Invoke();
 	}
 
-	// Token: 0x0600065E RID: 1630 RVA: 0x00020E9C File Offset: 0x0001F09C
+	// Token: 0x060007C3 RID: 1987 RVA: 0x00035E34 File Offset: 0x00034034
 	public void OnTimeout()
 	{
 		this.breakingObject = null;
@@ -264,11 +262,11 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		else if (this.brokenObject != null)
 		{
 			this.brokenObject.SetActive(true);
-			this.brokenObject.transform.rotation = Quaternion.Euler(0f, Random.value * 360f, 0f);
+			this.brokenObject.transform.rotation = Quaternion.Euler(0f, global::UnityEngine.Random.value * 360f, 0f);
 		}
 	}
 
-	// Token: 0x0600065F RID: 1631 RVA: 0x00020F34 File Offset: 0x0001F134
+	// Token: 0x060007C4 RID: 1988 RVA: 0x00035ECC File Offset: 0x000340CC
 	public void ValidateBreak()
 	{
 		this.waitForValidation = false;
@@ -286,82 +284,59 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x04000884 RID: 2180
 	public GameObject intactObject;
 
-	// Token: 0x04000885 RID: 2181
 	public GameObject brokenObject;
 
-	// Token: 0x04000886 RID: 2182
 	public GameObject breakingPrefab;
 
-	// Token: 0x04000887 RID: 2183
 	private GameObject breakingObject;
 
-	// Token: 0x04000888 RID: 2184
 	[ReadOnly]
 	public bool isBroken;
 
-	// Token: 0x04000889 RID: 2185
 	public UnityEvent onBreak;
 
-	// Token: 0x0400088A RID: 2186
 	public UnityEvent onHit;
 
-	// Token: 0x0400088B RID: 2187
 	public UnityEvent onRangedHit;
 
-	// Token: 0x0400088C RID: 2188
 	public UnityEvent onNearbyHit;
 
-	// Token: 0x0400088D RID: 2189
 	[Space]
 	public bool isAttached;
 
-	// Token: 0x0400088E RID: 2190
 	[ConditionalHide("isAttached", true)]
 	public BreakableObject parentBreakable;
 
-	// Token: 0x0400088F RID: 2191
 	[ConditionalHide("isAttached", true)]
 	public bool breakParent;
 
-	// Token: 0x04000890 RID: 2192
 	public BreakableObject[] childBreakables;
 
-	// Token: 0x04000891 RID: 2193
 	[Space]
 	public bool isSturdy;
 
-	// Token: 0x04000892 RID: 2194
 	[ConditionalHide("isSturdy", true)]
 	public int sturdyHits = 3;
 
-	// Token: 0x04000893 RID: 2195
 	[ConditionalHide("isSturdy", true)]
 	public GameObject crackedObject;
 
-	// Token: 0x04000894 RID: 2196
 	public bool isInvincible;
 
-	// Token: 0x04000895 RID: 2197
 	public bool isNonRanged;
 
-	// Token: 0x04000896 RID: 2198
 	[ConditionalHide("isSturdy", true, ConditionalSourceField2 = "isInvincible", UseOrLogic = true)]
 	public AudioSourceVariance bonkSound;
 
-	// Token: 0x04000897 RID: 2199
 	public BoxCollider bonkBoxReference;
 
-	// Token: 0x04000898 RID: 2200
 	[ConditionalHide("isPersistent", true, true)]
 	public bool respawn;
 
-	// Token: 0x04000899 RID: 2201
 	[HideInInspector]
 	public bool waitForValidation;
 
-	// Token: 0x0400089A RID: 2202
 	private float lastBreakTime = -1f;
 }

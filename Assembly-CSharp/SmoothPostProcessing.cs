@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-// Token: 0x0200023B RID: 571
 public class SmoothPostProcessing : MonoBehaviour
 {
-	// Token: 0x06000C7F RID: 3199 RVA: 0x0003CD68 File Offset: 0x0003AF68
+	// Token: 0x06000F87 RID: 3975 RVA: 0x00051C08 File Offset: 0x0004FE08
 	public static void FadeOutLayer(SmoothPostProcessing.PostProcessLayer layer, float speed)
 	{
 		SmoothPostProcessing smoothPostProcessing = SmoothPostProcessing.smoothLayers[(int)layer];
@@ -15,7 +14,7 @@ public class SmoothPostProcessing : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C80 RID: 3200 RVA: 0x0003CD90 File Offset: 0x0003AF90
+	// Token: 0x06000F88 RID: 3976 RVA: 0x00051C30 File Offset: 0x0004FE30
 	public static void FadeInLayer(SmoothPostProcessing.PostProcessLayer layer, float speed)
 	{
 		SmoothPostProcessing smoothPostProcessing = SmoothPostProcessing.smoothLayers[(int)layer];
@@ -25,7 +24,7 @@ public class SmoothPostProcessing : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C81 RID: 3201 RVA: 0x0003CDB8 File Offset: 0x0003AFB8
+	// Token: 0x06000F89 RID: 3977 RVA: 0x00051C58 File Offset: 0x0004FE58
 	private void Awake()
 	{
 		this.volume = base.GetComponent<PostProcessVolume>();
@@ -39,7 +38,7 @@ public class SmoothPostProcessing : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000C82 RID: 3202 RVA: 0x0003CE13 File Offset: 0x0003B013
+	// Token: 0x06000F8A RID: 3978 RVA: 0x0000D6A7 File Offset: 0x0000B8A7
 	protected void FadeOut(float speed)
 	{
 		this.depth--;
@@ -50,7 +49,7 @@ public class SmoothPostProcessing : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x06000C83 RID: 3203 RVA: 0x0003CE3F File Offset: 0x0003B03F
+	// Token: 0x06000F8B RID: 3979 RVA: 0x0000D6D3 File Offset: 0x0000B8D3
 	protected void FadeIn(float speed)
 	{
 		this.depth++;
@@ -59,7 +58,7 @@ public class SmoothPostProcessing : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x06000C84 RID: 3204 RVA: 0x0003CE6C File Offset: 0x0003B06C
+	// Token: 0x06000F8C RID: 3980 RVA: 0x00051CB4 File Offset: 0x0004FEB4
 	private void Update()
 	{
 		float num = ((this.depth > 0) ? 1f : 0f);
@@ -75,30 +74,21 @@ public class SmoothPostProcessing : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400106C RID: 4204
 	private static SmoothPostProcessing[] smoothLayers;
 
-	// Token: 0x0400106D RID: 4205
 	public SmoothPostProcessing.PostProcessLayer thisLayer;
 
-	// Token: 0x0400106E RID: 4206
 	private float fade;
 
-	// Token: 0x0400106F RID: 4207
 	private int depth;
 
-	// Token: 0x04001070 RID: 4208
 	private float speed;
 
-	// Token: 0x04001071 RID: 4209
 	private PostProcessVolume volume;
 
-	// Token: 0x02000421 RID: 1057
 	public enum PostProcessLayer
 	{
-		// Token: 0x04001D47 RID: 7495
 		Memory,
-		// Token: 0x04001D48 RID: 7496
 		LENGTH
 	}
 }

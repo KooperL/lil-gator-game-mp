@@ -2,12 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000046 RID: 70
 public class WaterPump : MonoBehaviour
 {
-	// Token: 0x1700000C RID: 12
-	// (get) Token: 0x06000113 RID: 275 RVA: 0x00006D17 File Offset: 0x00004F17
-	// (set) Token: 0x06000114 RID: 276 RVA: 0x00006D2A File Offset: 0x00004F2A
+	// (get) Token: 0x06000140 RID: 320 RVA: 0x000031A2 File Offset: 0x000013A2
+	// (set) Token: 0x06000141 RID: 321 RVA: 0x000031B5 File Offset: 0x000013B5
 	public bool State
 	{
 		get
@@ -20,13 +18,13 @@ public class WaterPump : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000115 RID: 277 RVA: 0x00006D3D File Offset: 0x00004F3D
+	// Token: 0x06000142 RID: 322 RVA: 0x000031C8 File Offset: 0x000013C8
 	private void Start()
 	{
 		this.SetState(this.State);
 	}
 
-	// Token: 0x06000116 RID: 278 RVA: 0x00006D4B File Offset: 0x00004F4B
+	// Token: 0x06000143 RID: 323 RVA: 0x000031D6 File Offset: 0x000013D6
 	public void Activate()
 	{
 		if (this.activated)
@@ -38,7 +36,7 @@ public class WaterPump : MonoBehaviour
 		this.OnActivate.Invoke();
 	}
 
-	// Token: 0x06000117 RID: 279 RVA: 0x00006D70 File Offset: 0x00004F70
+	// Token: 0x06000144 RID: 324 RVA: 0x0001BAE8 File Offset: 0x00019CE8
 	private void SetState(bool active)
 	{
 		this.activated = active;
@@ -49,24 +47,17 @@ public class WaterPump : MonoBehaviour
 		this.ripples.SetActive(active);
 	}
 
-	// Token: 0x04000182 RID: 386
 	public bool activated;
 
-	// Token: 0x04000183 RID: 387
 	public Renderer[] pipes;
 
-	// Token: 0x04000184 RID: 388
 	public Material runningWater;
 
-	// Token: 0x04000185 RID: 389
 	public Material glass;
 
-	// Token: 0x04000186 RID: 390
 	public GameObject ripples;
 
-	// Token: 0x04000187 RID: 391
 	public string pumpID = "Pump";
 
-	// Token: 0x04000188 RID: 392
 	public UnityEvent OnActivate;
 }

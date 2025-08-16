@@ -7,41 +7,40 @@ using Steamworks;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002D1 RID: 721
 public class UINameInput : MonoBehaviour
 {
-	// Token: 0x06000F2C RID: 3884 RVA: 0x000492D8 File Offset: 0x000474D8
+	// Token: 0x06001270 RID: 4720 RVA: 0x0000F9CE File Offset: 0x0000DBCE
 	public static YieldInstruction ShowNameInputPrompt()
 	{
 		UINameInput.isInputting = true;
-		return CoroutineUtil.Start(Object.Instantiate<GameObject>(Prefabs.p.nameInput).GetComponent<UINameInput>().RunNameInputSequence());
+		return CoroutineUtil.Start(global::UnityEngine.Object.Instantiate<GameObject>(Prefabs.p.nameInput).GetComponent<UINameInput>().RunNameInputSequence());
 	}
 
-	// Token: 0x06000F2D RID: 3885 RVA: 0x000492FE File Offset: 0x000474FE
+	// Token: 0x06001271 RID: 4721 RVA: 0x0000F9F4 File Offset: 0x0000DBF4
 	private void Awake()
 	{
 		UINameInput.instance = this;
 	}
 
-	// Token: 0x06000F2E RID: 3886 RVA: 0x00049306 File Offset: 0x00047506
+	// Token: 0x06001272 RID: 4722 RVA: 0x0000F9FC File Offset: 0x0000DBFC
 	private void Start()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
 		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.Submit), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("UISubmitInput"));
 	}
 
-	// Token: 0x06000F2F RID: 3887 RVA: 0x00049341 File Offset: 0x00047541
+	// Token: 0x06001273 RID: 4723 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnDestroy()
 	{
 	}
 
-	// Token: 0x06000F30 RID: 3888 RVA: 0x00049343 File Offset: 0x00047543
+	// Token: 0x06001274 RID: 4724 RVA: 0x0000FA37 File Offset: 0x0000DC37
 	private void Submit(InputActionEventData obj)
 	{
 		base.StartCoroutine(this.SubmitNextFrame());
 	}
 
-	// Token: 0x06000F31 RID: 3889 RVA: 0x00049352 File Offset: 0x00047552
+	// Token: 0x06001275 RID: 4725 RVA: 0x0000FA46 File Offset: 0x0000DC46
 	private IEnumerator SubmitNextFrame()
 	{
 		yield return null;
@@ -49,7 +48,7 @@ public class UINameInput : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000F32 RID: 3890 RVA: 0x00049364 File Offset: 0x00047564
+	// Token: 0x06001276 RID: 4726 RVA: 0x0005C29C File Offset: 0x0005A49C
 	private static string RemoveDiacritics(string text)
 	{
 		string text2 = text.Normalize(NormalizationForm.FormD);
@@ -64,7 +63,7 @@ public class UINameInput : MonoBehaviour
 		return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
 	}
 
-	// Token: 0x06000F33 RID: 3891 RVA: 0x000493BC File Offset: 0x000475BC
+	// Token: 0x06001277 RID: 4727 RVA: 0x0005C2F4 File Offset: 0x0005A4F4
 	public void Submit()
 	{
 		if (!this.submitButton.enabled)
@@ -91,7 +90,7 @@ public class UINameInput : MonoBehaviour
 		this.confirmBox.SetActive(true);
 	}
 
-	// Token: 0x06000F34 RID: 3892 RVA: 0x00049468 File Offset: 0x00047668
+	// Token: 0x06001278 RID: 4728 RVA: 0x0005C3A0 File Offset: 0x0005A5A0
 	public void Confirm()
 	{
 		this.animator.SetBool("ShowError", false);
@@ -102,7 +101,7 @@ public class UINameInput : MonoBehaviour
 		this.waitingForName = false;
 	}
 
-	// Token: 0x06000F35 RID: 3893 RVA: 0x000494D0 File Offset: 0x000476D0
+	// Token: 0x06001279 RID: 4729 RVA: 0x0005C408 File Offset: 0x0005A608
 	public void Cancel()
 	{
 		this.animator.SetBool("ShowError", false);
@@ -113,7 +112,7 @@ public class UINameInput : MonoBehaviour
 		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.Submit), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("UISubmitInput"));
 	}
 
-	// Token: 0x06000F36 RID: 3894 RVA: 0x00049540 File Offset: 0x00047740
+	// Token: 0x0600127A RID: 4730 RVA: 0x0005C478 File Offset: 0x0005A678
 	public void ConfirmError()
 	{
 		this.animator.SetBool("ShowError", false);
@@ -124,7 +123,7 @@ public class UINameInput : MonoBehaviour
 		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.Submit), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("UISubmitInput"));
 	}
 
-	// Token: 0x06000F37 RID: 3895 RVA: 0x000495B0 File Offset: 0x000477B0
+	// Token: 0x0600127B RID: 4731 RVA: 0x0000FA55 File Offset: 0x0000DC55
 	private bool Validate(string inputText, out string errorMessage)
 	{
 		errorMessage = "";
@@ -137,7 +136,7 @@ public class UINameInput : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000F38 RID: 3896 RVA: 0x000495E0 File Offset: 0x000477E0
+	// Token: 0x0600127C RID: 4732 RVA: 0x0000FA85 File Offset: 0x0000DC85
 	public IEnumerator RunNameInputSequence()
 	{
 		Game.DialogueDepth++;
@@ -154,17 +153,17 @@ public class UINameInput : MonoBehaviour
 		}
 		yield return base.StartCoroutine(this.OutroCoroutine());
 		Game.DialogueDepth--;
-		Object.Destroy(base.gameObject);
+		global::UnityEngine.Object.Destroy(base.gameObject);
 		yield break;
 	}
 
-	// Token: 0x06000F39 RID: 3897 RVA: 0x000495EF File Offset: 0x000477EF
+	// Token: 0x0600127D RID: 4733 RVA: 0x0000FA94 File Offset: 0x0000DC94
 	public void EndAnimation()
 	{
 		this.isAnimating = false;
 	}
 
-	// Token: 0x06000F3A RID: 3898 RVA: 0x000495F8 File Offset: 0x000477F8
+	// Token: 0x0600127E RID: 4734 RVA: 0x0000FA9D File Offset: 0x0000DC9D
 	private IEnumerator IntroCoroutine()
 	{
 		yield return null;
@@ -176,7 +175,7 @@ public class UINameInput : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000F3B RID: 3899 RVA: 0x00049607 File Offset: 0x00047807
+	// Token: 0x0600127F RID: 4735 RVA: 0x0000FAAC File Offset: 0x0000DCAC
 	private IEnumerator OutroCoroutine()
 	{
 		yield return null;
@@ -189,13 +188,13 @@ public class UINameInput : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000F3C RID: 3900 RVA: 0x00049616 File Offset: 0x00047816
+	// Token: 0x06001280 RID: 4736 RVA: 0x0000FABB File Offset: 0x0000DCBB
 	public void WriteName()
 	{
 		this.outroText.text = GameData.g.gameSaveData.playerName;
 	}
 
-	// Token: 0x06000F3D RID: 3901 RVA: 0x00049632 File Offset: 0x00047832
+	// Token: 0x06001281 RID: 4737 RVA: 0x0000FAD7 File Offset: 0x0000DCD7
 	private IEnumerator NameInputCoroutine()
 	{
 		yield return null;
@@ -211,80 +210,59 @@ public class UINameInput : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000F3E RID: 3902 RVA: 0x00049644 File Offset: 0x00047844
+	// Token: 0x06001282 RID: 4738 RVA: 0x0005C4E8 File Offset: 0x0005A6E8
 	private void ShowOnScreenKeyboard()
 	{
 		SteamUtils.ShowFloatingGamepadTextInput(EFloatingGamepadTextInputMode.k_EFloatingGamepadTextInputModeModeSingleLine, (int)this.preferredOnScreenKeyboardTransform.anchoredPosition.x, (int)this.preferredOnScreenKeyboardTransform.anchoredPosition.y, (int)this.preferredOnScreenKeyboardTransform.sizeDelta.x, (int)this.preferredOnScreenKeyboardTransform.sizeDelta.y);
 	}
 
-	// Token: 0x040013F9 RID: 5113
 	public static UINameInput instance;
 
-	// Token: 0x040013FA RID: 5114
 	public static bool isInputting;
 
-	// Token: 0x040013FB RID: 5115
 	public Animator animator;
 
-	// Token: 0x040013FC RID: 5116
 	private bool waitingForName;
 
-	// Token: 0x040013FD RID: 5117
 	private global::Rewired.Player rePlayer;
 
-	// Token: 0x040013FE RID: 5118
 	public UIPreventDeselection preventInputDeselection;
 
-	// Token: 0x040013FF RID: 5119
 	public InputField inputField;
 
-	// Token: 0x04001400 RID: 5120
 	public Button submitButton;
 
-	// Token: 0x04001401 RID: 5121
 	public GameObject confirmBox;
 
-	// Token: 0x04001402 RID: 5122
 	public Text confirmBoxText;
 
-	// Token: 0x04001403 RID: 5123
 	public GameObject errorBox;
 
-	// Token: 0x04001404 RID: 5124
 	public Text errorBoxText;
 
-	// Token: 0x04001405 RID: 5125
 	public MultilingualTextDocument document;
 
-	// Token: 0x04001406 RID: 5126
 	[Header("Error text")]
 	[TextLookup("document")]
 	public string errorTextEmpty;
 
-	// Token: 0x04001407 RID: 5127
 	[TextLookup("document")]
 	public string errorTextFriend;
 
-	// Token: 0x04001408 RID: 5128
 	[Header("Switch-only text")]
 	[TextLookup("document")]
 	public string promptText1;
 
-	// Token: 0x04001409 RID: 5129
 	[TextLookup("document")]
 	public string promptText2;
 
-	// Token: 0x0400140A RID: 5130
 	[TextLookup("document")]
 	public string confirmText;
 
-	// Token: 0x0400140B RID: 5131
 	[Header("Outro")]
 	public Text outroText;
 
-	// Token: 0x0400140C RID: 5132
 	private bool isAnimating;
 
-	// Token: 0x0400140D RID: 5133
 	public RectTransform preferredOnScreenKeyboardTransform;
 }

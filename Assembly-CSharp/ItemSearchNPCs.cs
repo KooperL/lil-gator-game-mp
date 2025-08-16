@@ -3,22 +3,21 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020001D0 RID: 464
 public class ItemSearchNPCs : ItemSearch<DialogueActor>
 {
-	// Token: 0x060009A5 RID: 2469 RVA: 0x0002D1C4 File Offset: 0x0002B3C4
+	// Token: 0x06000B8E RID: 2958 RVA: 0x0000ACF6 File Offset: 0x00008EF6
 	protected override DialogueActor[] GetList()
 	{
 		return CompletionStats.c.completionActors;
 	}
 
-	// Token: 0x060009A6 RID: 2470 RVA: 0x0002D1D0 File Offset: 0x0002B3D0
+	// Token: 0x06000B8F RID: 2959 RVA: 0x000409CC File Offset: 0x0003EBCC
 	protected override bool IsValid(DialogueActor item)
 	{
 		return !(item == null) && !item.profile.IsUnlocked && item.gameObject.activeSelf && (!(item.profile == this.stickDuckProfile) || !(item.gameObject.transform.parent != null) || item.gameObject.transform.parent.gameObject.activeSelf);
 	}
 
-	// Token: 0x060009A7 RID: 2471 RVA: 0x0002D250 File Offset: 0x0002B450
+	// Token: 0x06000B90 RID: 2960 RVA: 0x0000AD02 File Offset: 0x00008F02
 	protected override void OnUse()
 	{
 		if (this.isSearching || this.isRunning)
@@ -28,7 +27,7 @@ public class ItemSearchNPCs : ItemSearch<DialogueActor>
 		CoroutineUtil.c.StartCo(this.Run());
 	}
 
-	// Token: 0x060009A8 RID: 2472 RVA: 0x0002D274 File Offset: 0x0002B474
+	// Token: 0x06000B91 RID: 2961 RVA: 0x0000AD26 File Offset: 0x00008F26
 	private IEnumerator Run()
 	{
 		this.isRunning = true;
@@ -57,13 +56,13 @@ public class ItemSearchNPCs : ItemSearch<DialogueActor>
 		yield break;
 	}
 
-	// Token: 0x060009A9 RID: 2473 RVA: 0x0002D283 File Offset: 0x0002B483
+	// Token: 0x06000B92 RID: 2962 RVA: 0x0000AD35 File Offset: 0x00008F35
 	protected override void SearchResult(DialogueActor result)
 	{
 		this.result = result;
 	}
 
-	// Token: 0x060009AA RID: 2474 RVA: 0x0002D28C File Offset: 0x0002B48C
+	// Token: 0x06000B93 RID: 2963 RVA: 0x00040A4C File Offset: 0x0003EC4C
 	public override void SetEquipped(bool isEquipped)
 	{
 		Transform transform;
@@ -81,33 +80,24 @@ public class ItemSearchNPCs : ItemSearch<DialogueActor>
 		}
 	}
 
-	// Token: 0x04000BF9 RID: 3065
 	public MultilingualTextDocument document;
 
-	// Token: 0x04000BFA RID: 3066
 	[ChunkLookup("document")]
 	public string[] callouts;
 
-	// Token: 0x04000BFB RID: 3067
 	[ChunkLookup("document")]
 	public string[] replies;
 
-	// Token: 0x04000BFC RID: 3068
 	[ChunkLookup("document")]
 	public string foundAllBubble;
 
-	// Token: 0x04000BFD RID: 3069
 	private bool isRunning;
 
-	// Token: 0x04000BFE RID: 3070
 	private DialogueActor result;
 
-	// Token: 0x04000BFF RID: 3071
 	public UnityEvent onShout;
 
-	// Token: 0x04000C00 RID: 3072
 	private WaitForSeconds waitForCoolDown = new WaitForSeconds(0.5f);
 
-	// Token: 0x04000C01 RID: 3073
 	public CharacterProfile stickDuckProfile;
 }

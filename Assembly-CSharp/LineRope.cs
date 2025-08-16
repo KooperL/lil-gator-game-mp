@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200003F RID: 63
 public class LineRope : MonoBehaviour
 {
-	// Token: 0x06000101 RID: 257 RVA: 0x00006A04 File Offset: 0x00004C04
+	// Token: 0x0600012E RID: 302 RVA: 0x0001B8DC File Offset: 0x00019ADC
 	private void OnEnable()
 	{
 		this.lineRenderer = base.GetComponent<LineRenderer>();
@@ -25,13 +24,13 @@ public class LineRope : MonoBehaviour
 		this.UpdateLineRenderer();
 	}
 
-	// Token: 0x06000102 RID: 258 RVA: 0x00006A7D File Offset: 0x00004C7D
+	// Token: 0x0600012F RID: 303 RVA: 0x000030B0 File Offset: 0x000012B0
 	private void LateUpdate()
 	{
 		this.UpdateLineRenderer();
 	}
 
-	// Token: 0x06000103 RID: 259 RVA: 0x00006A88 File Offset: 0x00004C88
+	// Token: 0x06000130 RID: 304 RVA: 0x0001B958 File Offset: 0x00019B58
 	private void UpdateLineRenderer()
 	{
 		Vector3 position = base.transform.position;
@@ -44,24 +43,17 @@ public class LineRope : MonoBehaviour
 		this.lineRenderer.SetPositions(this.positions);
 	}
 
-	// Token: 0x0400016A RID: 362
 	public LineRope.Attachment attachment;
 
-	// Token: 0x0400016B RID: 363
 	private Transform attachmentTransform;
 
-	// Token: 0x0400016C RID: 364
 	private LineRenderer lineRenderer;
 
-	// Token: 0x0400016D RID: 365
 	private Vector3[] positions;
 
-	// Token: 0x02000361 RID: 865
 	public enum Attachment
 	{
-		// Token: 0x04001A1A RID: 6682
 		Hand,
-		// Token: 0x04001A1B RID: 6683
 		Hip
 	}
 }

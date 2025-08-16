@@ -2,22 +2,21 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020001D1 RID: 465
 public class ItemSearchObjects : ItemSearch<PersistentObject>
 {
-	// Token: 0x060009AC RID: 2476 RVA: 0x0002D300 File Offset: 0x0002B500
+	// Token: 0x06000B9B RID: 2971 RVA: 0x0000AD6D File Offset: 0x00008F6D
 	protected override PersistentObject[] GetList()
 	{
 		return CompletionStats.c.completionObjects;
 	}
 
-	// Token: 0x060009AD RID: 2477 RVA: 0x0002D30C File Offset: 0x0002B50C
+	// Token: 0x06000B9C RID: 2972 RVA: 0x0000AD79 File Offset: 0x00008F79
 	protected override bool IsValid(PersistentObject item)
 	{
 		return !(item == null) && item.isPersistent && !item.PersistentState;
 	}
 
-	// Token: 0x060009AE RID: 2478 RVA: 0x0002D32E File Offset: 0x0002B52E
+	// Token: 0x06000B9D RID: 2973 RVA: 0x0000AD9B File Offset: 0x00008F9B
 	protected override void OnUse()
 	{
 		if (this.isSearching || this.isRunning)
@@ -27,7 +26,7 @@ public class ItemSearchObjects : ItemSearch<PersistentObject>
 		CoroutineUtil.c.StartCo(this.Run());
 	}
 
-	// Token: 0x060009AF RID: 2479 RVA: 0x0002D352 File Offset: 0x0002B552
+	// Token: 0x06000B9E RID: 2974 RVA: 0x0000ADBF File Offset: 0x00008FBF
 	private IEnumerator Run()
 	{
 		this.isRunning = true;
@@ -58,13 +57,13 @@ public class ItemSearchObjects : ItemSearch<PersistentObject>
 		yield break;
 	}
 
-	// Token: 0x060009B0 RID: 2480 RVA: 0x0002D361 File Offset: 0x0002B561
+	// Token: 0x06000B9F RID: 2975 RVA: 0x0000ADCE File Offset: 0x00008FCE
 	protected override void SearchResult(PersistentObject result)
 	{
 		this.result = result;
 	}
 
-	// Token: 0x060009B1 RID: 2481 RVA: 0x0002D36C File Offset: 0x0002B56C
+	// Token: 0x06000BA0 RID: 2976 RVA: 0x00040C6C File Offset: 0x0003EE6C
 	public override void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (this.isOnRight ? Player.itemManager.satchelAnchor_r : Player.itemManager.satchelAnchor);
@@ -75,33 +74,28 @@ public class ItemSearchObjects : ItemSearch<PersistentObject>
 		(this.isOnRight ? Player.itemManager.hipSatchel_r : Player.itemManager.hipSatchel).SetActive(Player.itemManager.equippedState != PlayerItemManager.EquippedState.Phone);
 	}
 
-	// Token: 0x060009B2 RID: 2482 RVA: 0x0002D3EB File Offset: 0x0002B5EB
+	// Token: 0x06000BA1 RID: 2977 RVA: 0x0000ADD7 File Offset: 0x00008FD7
 	public override void OnRemove()
 	{
 		Player.actor.ClearEmote(false, false);
 		base.OnRemove();
 	}
 
-	// Token: 0x060009B3 RID: 2483 RVA: 0x0002D3FF File Offset: 0x0002B5FF
+	// Token: 0x06000BA2 RID: 2978 RVA: 0x0000ADEB File Offset: 0x00008FEB
 	public override void Cancel()
 	{
 		Player.actor.ClearEmote(false, false);
 		base.Cancel();
 	}
 
-	// Token: 0x04000C02 RID: 3074
 	private bool isRunning;
 
-	// Token: 0x04000C03 RID: 3075
 	private PersistentObject result;
 
-	// Token: 0x04000C04 RID: 3076
 	public GameObject hipPhone;
 
-	// Token: 0x04000C05 RID: 3077
 	public MultilingualTextDocument document;
 
-	// Token: 0x04000C06 RID: 3078
 	[ChunkLookup("document")]
 	public string foundAllBubble;
 }

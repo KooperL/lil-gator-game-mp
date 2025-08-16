@@ -2,59 +2,57 @@
 using System.IO;
 using UnityEngine;
 
-// Token: 0x020004D4 RID: 1236
 public class MultiplayerConfigLoader
 {
-	// Token: 0x06001EE7 RID: 7911
+	// Token: 0x06001E7D RID: 7805 RVA: 0x00077D18 File Offset: 0x00075F18
 	public static MultiplayerConfigLoader Load(string filename = "config.ini")
 	{
-		string path = Path.Combine(Directory.GetParent(Application.dataPath).FullName, filename);
-		Debug.Log("[ConfigINI] Full config path: " + path);
-		if (!File.Exists(path))
+		string text = Path.Combine(Directory.GetParent(Application.dataPath).FullName, filename);
+		Debug.Log("[ConfigINI] Full config path: " + text);
+		if (!File.Exists(text))
 		{
-			Debug.LogWarning("[ConfigINI] config.ini not found at: " + path);
+			Debug.LogWarning("[ConfigINI] config.ini not found at: " + text);
 			MultiplayerConfigLoader._instance = new MultiplayerConfigLoader();
 			return MultiplayerConfigLoader._instance;
 		}
-		MultiplayerConfigLoader config = new MultiplayerConfigLoader();
-		foreach (string line in File.ReadAllLines(path))
+		MultiplayerConfigLoader multiplayerConfigLoader = new MultiplayerConfigLoader();
+		foreach (string text2 in File.ReadAllLines(text))
 		{
-			if (!string.IsNullOrWhiteSpace(line) && !line.StartsWith("#"))
+			if (!string.IsNullOrWhiteSpace(text2) && !text2.StartsWith("#"))
 			{
-				string[] kv = line.Split(new char[] { '=' }, 2);
-				if (kv.Length == 2)
+				string[] array2 = text2.Split(new char[] { '=' }, 2);
+				if (array2.Length == 2)
 				{
-					string key = kv[0].Trim();
-					string value = kv[1].Trim();
-					string text = key.ToLowerInvariant();
-					if (!(text == "session_key"))
+					string text3 = array2[0].Trim();
+					string text4 = array2[1].Trim();
+					string text5 = text3.ToLowerInvariant();
+					if (!(text5 == "session_key"))
 					{
-						if (!(text == "display_name"))
+						if (!(text5 == "display_name"))
 						{
-							if (text == "server_host")
+							if (text5 == "server_host")
 							{
-								config.ServerHost = value;
+								multiplayerConfigLoader.ServerHost = text4;
 							}
 						}
 						else
 						{
-							config.DisplayName = value;
+							multiplayerConfigLoader.DisplayName = text4;
 						}
 					}
 					else
 					{
-						config.SessionKey = value;
+						multiplayerConfigLoader.SessionKey = text4;
 					}
 				}
 			}
 		}
-		MultiplayerConfigLoader._instance = config;
+		MultiplayerConfigLoader._instance = multiplayerConfigLoader;
 		Debug.Log("[ConfigINI] Config loaded successfully.");
 		return MultiplayerConfigLoader._instance;
 	}
 
-	// Token: 0x17000663 RID: 1635
-	// (get) Token: 0x06001F35 RID: 7989
+	// (get) Token: 0x06001E7F RID: 7807 RVA: 0x000174D9 File Offset: 0x000156D9
 	public static MultiplayerConfigLoader Instance
 	{
 		get
@@ -68,15 +66,11 @@ public class MultiplayerConfigLoader
 		}
 	}
 
-	// Token: 0x0400207E RID: 8318
 	public string SessionKey;
 
-	// Token: 0x0400207F RID: 8319
 	public string DisplayName;
 
-	// Token: 0x04002080 RID: 8320
 	public string ServerHost;
 
-	// Token: 0x04002081 RID: 8321
 	private static MultiplayerConfigLoader _instance;
 }

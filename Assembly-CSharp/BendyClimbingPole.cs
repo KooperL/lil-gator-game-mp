@@ -2,11 +2,10 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000092 RID: 146
 [AddComponentMenu("Contextual/Bendy Pole")]
 public class BendyClimbingPole : MonoBehaviour
 {
-	// Token: 0x06000292 RID: 658 RVA: 0x0000E344 File Offset: 0x0000C544
+	// Token: 0x060002E9 RID: 745 RVA: 0x0002280C File Offset: 0x00020A0C
 	private void Awake()
 	{
 		this.climbingPole.onEnable.AddListener(new UnityAction(this.OnClimbingPoleEnabled));
@@ -17,13 +16,13 @@ public class BendyClimbingPole : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x06000293 RID: 659 RVA: 0x0000E3DF File Offset: 0x0000C5DF
+	// Token: 0x060002EA RID: 746 RVA: 0x000044D7 File Offset: 0x000026D7
 	private void OnClimbingPoleEnabled()
 	{
 		base.enabled = true;
 	}
 
-	// Token: 0x06000294 RID: 660 RVA: 0x0000E3E8 File Offset: 0x0000C5E8
+	// Token: 0x060002EB RID: 747 RVA: 0x000228A8 File Offset: 0x00020AA8
 	private void OnEnable()
 	{
 		this.staticRenderer.enabled = false;
@@ -38,7 +37,7 @@ public class BendyClimbingPole : MonoBehaviour
 		this.onEnable.Invoke();
 	}
 
-	// Token: 0x06000295 RID: 661 RVA: 0x0000E44C File Offset: 0x0000C64C
+	// Token: 0x060002EC RID: 748 RVA: 0x0002290C File Offset: 0x00020B0C
 	private void LateUpdate()
 	{
 		if (this.climbingPole.enabled)
@@ -100,7 +99,7 @@ public class BendyClimbingPole : MonoBehaviour
 		this.UpdateAnchor();
 	}
 
-	// Token: 0x06000296 RID: 662 RVA: 0x0000E6B4 File Offset: 0x0000C8B4
+	// Token: 0x060002ED RID: 749 RVA: 0x00022B74 File Offset: 0x00020D74
 	private Vector3 AlongLine(Vector3 point)
 	{
 		Vector3 vector = this.climbingPole.ClosestPointOnPath(point);
@@ -108,7 +107,7 @@ public class BendyClimbingPole : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x06000297 RID: 663 RVA: 0x0000E6DC File Offset: 0x0000C8DC
+	// Token: 0x060002EE RID: 750 RVA: 0x00022B9C File Offset: 0x00020D9C
 	private void UpdateAnchor()
 	{
 		float closestInterpolated = this.climbingPole.GetClosestInterpolated(this.weightPoint);
@@ -124,64 +123,44 @@ public class BendyClimbingPole : MonoBehaviour
 		this.dynamicPivot.rotation = Quaternion.Slerp(this.initialRotation, quaternion * this.initialRotation, this.bendAmount);
 	}
 
-	// Token: 0x04000355 RID: 853
 	public ClimbingPole climbingPole;
 
-	// Token: 0x04000356 RID: 854
 	public Renderer staticRenderer;
 
-	// Token: 0x04000357 RID: 855
 	public Renderer dynamicRenderer;
 
-	// Token: 0x04000358 RID: 856
 	public Transform dynamicPivot;
 
-	// Token: 0x04000359 RID: 857
 	public Vector3[] initialPositions;
 
-	// Token: 0x0400035A RID: 858
 	private Quaternion initialRotation;
 
-	// Token: 0x0400035B RID: 859
 	public bool lockToVertical;
 
-	// Token: 0x0400035C RID: 860
 	private Vector3 weightPoint;
 
-	// Token: 0x0400035D RID: 861
 	private float weightPointOnPath;
 
-	// Token: 0x0400035E RID: 862
 	private Vector3 startPoint;
 
-	// Token: 0x0400035F RID: 863
 	private Vector3 endPoint;
 
-	// Token: 0x04000360 RID: 864
 	private float totalLength;
 
-	// Token: 0x04000361 RID: 865
 	public float springStrength = 4f;
 
-	// Token: 0x04000362 RID: 866
 	public float damperStrength = 0.5f;
 
-	// Token: 0x04000363 RID: 867
 	private Vector3 velocity;
 
-	// Token: 0x04000364 RID: 868
 	[Range(0.0001f, 1f)]
 	public float stiffness = 0.5f;
 
-	// Token: 0x04000365 RID: 869
 	private float bendAmount;
 
-	// Token: 0x04000366 RID: 870
 	public UnityEvent onEnable;
 
-	// Token: 0x04000367 RID: 871
 	private bool isPlayerOnBalanceBeam;
 
-	// Token: 0x04000368 RID: 872
 	private bool lockToTightrope;
 }

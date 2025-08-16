@@ -3,11 +3,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000211 RID: 529
 public class CoolQuest : MonoBehaviour
 {
-	// Token: 0x170000B9 RID: 185
-	// (get) Token: 0x06000B62 RID: 2914 RVA: 0x00038321 File Offset: 0x00036521
+	// (get) Token: 0x06000DAF RID: 3503 RVA: 0x0000C634 File Offset: 0x0000A834
 	private string StateID
 	{
 		get
@@ -16,9 +14,8 @@ public class CoolQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170000BA RID: 186
-	// (get) Token: 0x06000B63 RID: 2915 RVA: 0x00038328 File Offset: 0x00036528
-	// (set) Token: 0x06000B64 RID: 2916 RVA: 0x0003833B File Offset: 0x0003653B
+	// (get) Token: 0x06000DB0 RID: 3504 RVA: 0x0000C63B File Offset: 0x0000A83B
+	// (set) Token: 0x06000DB1 RID: 3505 RVA: 0x0000C64E File Offset: 0x0000A84E
 	public int State
 	{
 		get
@@ -31,19 +28,19 @@ public class CoolQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B65 RID: 2917 RVA: 0x0003834E File Offset: 0x0003654E
+	// Token: 0x06000DB2 RID: 3506 RVA: 0x0000C661 File Offset: 0x0000A861
 	private void OnEnable()
 	{
 		CoolQuest.c = this;
 	}
 
-	// Token: 0x06000B66 RID: 2918 RVA: 0x00038356 File Offset: 0x00036556
+	// Token: 0x06000DB3 RID: 3507 RVA: 0x0000C669 File Offset: 0x0000A869
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000B67 RID: 2919 RVA: 0x00038360 File Offset: 0x00036560
+	// Token: 0x06000DB4 RID: 3508 RVA: 0x0004B5F4 File Offset: 0x000497F4
 	private void UpdateState()
 	{
 		int state = this.State;
@@ -54,7 +51,7 @@ public class CoolQuest : MonoBehaviour
 		this.funCoolKids.SetActive(state >= 40);
 	}
 
-	// Token: 0x06000B68 RID: 2920 RVA: 0x000383C6 File Offset: 0x000365C6
+	// Token: 0x06000DB5 RID: 3509 RVA: 0x0000C671 File Offset: 0x0000A871
 	public void Wolf()
 	{
 		if (this.State < 40)
@@ -65,7 +62,7 @@ public class CoolQuest : MonoBehaviour
 		DialogueManager.d.Bubble("Cool_E_Wolf", this.eWolf, 0f, false, true, true);
 	}
 
-	// Token: 0x06000B69 RID: 2921 RVA: 0x000383FE File Offset: 0x000365FE
+	// Token: 0x06000DB6 RID: 3510 RVA: 0x0000C6A9 File Offset: 0x0000A8A9
 	private IEnumerator WolfA()
 	{
 		if (this.State < 10)
@@ -92,7 +89,7 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000B6A RID: 2922 RVA: 0x0003840D File Offset: 0x0003660D
+	// Token: 0x06000DB7 RID: 3511 RVA: 0x0000C6B8 File Offset: 0x0000A8B8
 	public void Boar()
 	{
 		if (this.State < 40)
@@ -103,7 +100,7 @@ public class CoolQuest : MonoBehaviour
 		DialogueManager.d.Bubble("Cool_E_Boar", this.eBoar, 0f, false, true, true);
 	}
 
-	// Token: 0x06000B6B RID: 2923 RVA: 0x00038445 File Offset: 0x00036645
+	// Token: 0x06000DB8 RID: 3512 RVA: 0x0000C6F0 File Offset: 0x0000A8F0
 	private IEnumerator BoarA()
 	{
 		if (this.State < 10)
@@ -130,7 +127,7 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000B6C RID: 2924 RVA: 0x00038454 File Offset: 0x00036654
+	// Token: 0x06000DB9 RID: 3513 RVA: 0x0000C6FF File Offset: 0x0000A8FF
 	public void Goose()
 	{
 		if (this.State < 40)
@@ -141,7 +138,7 @@ public class CoolQuest : MonoBehaviour
 		DialogueManager.d.Bubble("Cool_E_Goose", this.eGoose, 0f, false, true, true);
 	}
 
-	// Token: 0x06000B6D RID: 2925 RVA: 0x0003848C File Offset: 0x0003668C
+	// Token: 0x06000DBA RID: 3514 RVA: 0x0000C737 File Offset: 0x0000A937
 	private IEnumerator GooseA()
 	{
 		if (this.State < 10)
@@ -168,7 +165,7 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000B6E RID: 2926 RVA: 0x0003849C File Offset: 0x0003669C
+	// Token: 0x06000DBB RID: 3515 RVA: 0x0004B65C File Offset: 0x0004985C
 	public void Horse()
 	{
 		int state = this.State;
@@ -185,7 +182,7 @@ public class CoolQuest : MonoBehaviour
 		DialogueManager.d.Bubble("Cool_E_Horse", this.eHorse, 0f, false, true, true);
 	}
 
-	// Token: 0x06000B6F RID: 2927 RVA: 0x000384F4 File Offset: 0x000366F4
+	// Token: 0x06000DBC RID: 3516 RVA: 0x0000C746 File Offset: 0x0000A946
 	public void TextAlert()
 	{
 		base.StartCoroutine(this.RunTextAlert());
@@ -193,7 +190,7 @@ public class CoolQuest : MonoBehaviour
 		this.UpdateState();
 	}
 
-	// Token: 0x06000B70 RID: 2928 RVA: 0x00038510 File Offset: 0x00036710
+	// Token: 0x06000DBD RID: 3517 RVA: 0x0000C762 File Offset: 0x0000A962
 	private IEnumerator RunTextAlert()
 	{
 		yield return base.StartCoroutine(DialogueManager.d.LoadChunkPhone("Cool_TextAlert1", this.unknownProfiles, true, true, null));
@@ -201,7 +198,7 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000B71 RID: 2929 RVA: 0x0003851F File Offset: 0x0003671F
+	// Token: 0x06000DBE RID: 3518 RVA: 0x0000C771 File Offset: 0x0000A971
 	public IEnumerator RunConversationA()
 	{
 		Game.DialogueDepth++;
@@ -220,13 +217,13 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000B72 RID: 2930 RVA: 0x0003852E File Offset: 0x0003672E
+	// Token: 0x06000DBF RID: 3519 RVA: 0x0000C780 File Offset: 0x0000A980
 	public void ConversationB()
 	{
 		base.StartCoroutine(this.RunConversationB());
 	}
 
-	// Token: 0x06000B73 RID: 2931 RVA: 0x0003853D File Offset: 0x0003673D
+	// Token: 0x06000DC0 RID: 3520 RVA: 0x0000C78F File Offset: 0x0000A98F
 	private IEnumerator RunConversationB()
 	{
 		yield return DialogueManager.d.Bubble("Cool_B1", null, 0f, true, true, true);
@@ -236,7 +233,7 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000B74 RID: 2932 RVA: 0x0003854C File Offset: 0x0003674C
+	// Token: 0x06000DC1 RID: 3521 RVA: 0x0000C79E File Offset: 0x0000A99E
 	public IEnumerator CheckPumps()
 	{
 		int num = 0;
@@ -282,7 +279,7 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000B75 RID: 2933 RVA: 0x0003855B File Offset: 0x0003675B
+	// Token: 0x06000DC2 RID: 3522 RVA: 0x0000C7AD File Offset: 0x0000A9AD
 	private IEnumerator RunConversationD()
 	{
 		Game.DialogueDepth++;
@@ -311,7 +308,7 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000B76 RID: 2934 RVA: 0x0003856A File Offset: 0x0003676A
+	// Token: 0x06000DC3 RID: 3523 RVA: 0x0000C7BC File Offset: 0x0000A9BC
 	private IEnumerator RunConversationE()
 	{
 		yield return base.StartCoroutine(DialogueManager.d.LoadChunk("Cool_E1", this.eActors, DialogueManager.DialogueBoxBackground.Standard, true));
@@ -321,86 +318,60 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04000F1C RID: 3868
 	public static CoolQuest c;
 
-	// Token: 0x04000F1D RID: 3869
 	public CharacterProfile[] horseProfiles;
 
-	// Token: 0x04000F1E RID: 3870
 	public CharacterProfile[] unknownProfiles;
 
-	// Token: 0x04000F1F RID: 3871
 	public GameObject boringCoolKids;
 
-	// Token: 0x04000F20 RID: 3872
 	public GameObject funCoolKids;
 
-	// Token: 0x04000F21 RID: 3873
 	public GameObject splashPadWater;
 
-	// Token: 0x04000F22 RID: 3874
 	[Header("State A")]
 	public GameObject aTextAlert;
 
-	// Token: 0x04000F23 RID: 3875
 	public DialogueActor[] aActors;
 
-	// Token: 0x04000F24 RID: 3876
 	public DialogueActor[] aWolf;
 
-	// Token: 0x04000F25 RID: 3877
 	public DialogueActor[] aBoar;
 
-	// Token: 0x04000F26 RID: 3878
 	public DialogueActor[] aGoose;
 
-	// Token: 0x04000F27 RID: 3879
 	public GameObject flashback;
 
-	// Token: 0x04000F28 RID: 3880
 	[Header("State B")]
 	public GameObject bTrigger;
 
-	// Token: 0x04000F29 RID: 3881
 	[Header("State C")]
 	public WaterPump[] waterPumps;
 
-	// Token: 0x04000F2A RID: 3882
 	public UnityEvent onReward;
 
-	// Token: 0x04000F2B RID: 3883
 	[Header("State D")]
 	public DialogueActor[] dActors;
 
-	// Token: 0x04000F2C RID: 3884
 	public GameObject dTrigger;
 
-	// Token: 0x04000F2D RID: 3885
 	public GameObject dCameraSplash;
 
-	// Token: 0x04000F2E RID: 3886
 	public GameObject dCameraMountain;
 
-	// Token: 0x04000F2F RID: 3887
 	public GameObject dCameraJarl;
 
-	// Token: 0x04000F30 RID: 3888
 	public GameObject dHorse;
 
-	// Token: 0x04000F31 RID: 3889
 	[Header("State E")]
 	public DialogueActor[] eActors;
 
-	// Token: 0x04000F32 RID: 3890
 	public DialogueActor[] eWolf;
 
-	// Token: 0x04000F33 RID: 3891
 	public DialogueActor[] eBoar;
 
-	// Token: 0x04000F34 RID: 3892
 	public DialogueActor[] eGoose;
 
-	// Token: 0x04000F35 RID: 3893
 	public DialogueActor[] eHorse;
 }

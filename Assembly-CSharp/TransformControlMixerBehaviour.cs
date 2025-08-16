@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Playables;
 
-// Token: 0x02000008 RID: 8
 public class TransformControlMixerBehaviour : PlayableBehaviour
 {
-	// Token: 0x06000013 RID: 19 RVA: 0x00002550 File Offset: 0x00000750
+	// Token: 0x06000013 RID: 19 RVA: 0x00017930 File Offset: 0x00015B30
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
 	{
 		Transform transform = playerData as Transform;

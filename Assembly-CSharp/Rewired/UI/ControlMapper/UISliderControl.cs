@@ -6,13 +6,11 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x02000333 RID: 819
 	[AddComponentMenu("")]
 	public class UISliderControl : UIControl
 	{
-		// Token: 0x17000410 RID: 1040
-		// (get) Token: 0x060016BB RID: 5819 RVA: 0x0005F355 File Offset: 0x0005D555
-		// (set) Token: 0x060016BC RID: 5820 RVA: 0x0005F35D File Offset: 0x0005D55D
+		// (get) Token: 0x06001CA7 RID: 7335 RVA: 0x00015E4D File Offset: 0x0001404D
+		// (set) Token: 0x06001CA8 RID: 7336 RVA: 0x00015E55 File Offset: 0x00014055
 		public bool showIcon
 		{
 			get
@@ -30,9 +28,8 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x17000411 RID: 1041
-		// (get) Token: 0x060016BD RID: 5821 RVA: 0x0005F386 File Offset: 0x0005D586
-		// (set) Token: 0x060016BE RID: 5822 RVA: 0x0005F38E File Offset: 0x0005D58E
+		// (get) Token: 0x06001CA9 RID: 7337 RVA: 0x00015E7E File Offset: 0x0001407E
+		// (set) Token: 0x06001CAA RID: 7338 RVA: 0x00015E86 File Offset: 0x00014086
 		public bool showSlider
 		{
 			get
@@ -50,7 +47,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x060016BF RID: 5823 RVA: 0x0005F3B8 File Offset: 0x0005D5B8
+		// Token: 0x06001CAB RID: 7339 RVA: 0x00070D2C File Offset: 0x0006EF2C
 		public override void SetCancelCallback(Action cancelCallback)
 		{
 			base.SetCancelCallback(cancelCallback);
@@ -85,16 +82,12 @@ namespace Rewired.UI.ControlMapper
 			eventTrigger.triggers.Add(entry);
 		}
 
-		// Token: 0x040018E5 RID: 6373
 		public Image iconImage;
 
-		// Token: 0x040018E6 RID: 6374
 		public Slider slider;
 
-		// Token: 0x040018E7 RID: 6375
 		private bool _showIcon;
 
-		// Token: 0x040018E8 RID: 6376
 		private bool _showSlider;
 	}
 }

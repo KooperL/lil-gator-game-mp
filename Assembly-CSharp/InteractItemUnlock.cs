@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine.Events;
 
-// Token: 0x0200013A RID: 314
 public class InteractItemUnlock : PersistentObject, Interaction
 {
-	// Token: 0x06000674 RID: 1652 RVA: 0x000213D0 File Offset: 0x0001F5D0
+	// Token: 0x060007D9 RID: 2009 RVA: 0x000361F0 File Offset: 0x000343F0
 	public void Interact()
 	{
 		if (this.item != null)
@@ -23,12 +22,9 @@ public class InteractItemUnlock : PersistentObject, Interaction
 		}
 	}
 
-	// Token: 0x040008B4 RID: 2228
 	public ItemObject item;
 
-	// Token: 0x040008B5 RID: 2229
 	public string itemName;
 
-	// Token: 0x040008B6 RID: 2230
 	public UnityEvent afterUnlock;
 }

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200025F RID: 607
 public class WaitToDisplayDialogue : MonoBehaviour
 {
-	// Token: 0x06000D09 RID: 3337 RVA: 0x0003EC73 File Offset: 0x0003CE73
+	// Token: 0x06001012 RID: 4114 RVA: 0x0000DE08 File Offset: 0x0000C008
 	private void Update()
 	{
 		if (this.CanRunDialogue())
@@ -14,7 +13,7 @@ public class WaitToDisplayDialogue : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D0A RID: 3338 RVA: 0x0003EC88 File Offset: 0x0003CE88
+	// Token: 0x06001013 RID: 4115 RVA: 0x00053360 File Offset: 0x00051560
 	private bool CanRunDialogue()
 	{
 		if (DialogueManager.d.IsInImportantDialogue)
@@ -35,12 +34,9 @@ public class WaitToDisplayDialogue : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0400111C RID: 4380
 	public static List<WaitToDisplayDialogue> allWaiting = new List<WaitToDisplayDialogue>();
 
-	// Token: 0x0400111D RID: 4381
 	public int priority;
 
-	// Token: 0x0400111E RID: 4382
 	public DialogueSequencer sequencer;
 }

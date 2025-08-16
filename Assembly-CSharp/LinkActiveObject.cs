@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000158 RID: 344
 public class LinkActiveObject : MonoBehaviour
 {
-	// Token: 0x0600073A RID: 1850 RVA: 0x000242DC File Offset: 0x000224DC
+	// Token: 0x060008C4 RID: 2244 RVA: 0x00008950 File Offset: 0x00006B50
 	private void OnEnable()
 	{
 		if (this != null && this.linkedObject != null)
@@ -13,7 +12,7 @@ public class LinkActiveObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600073B RID: 1851 RVA: 0x00024301 File Offset: 0x00022501
+	// Token: 0x060008C5 RID: 2245 RVA: 0x00008975 File Offset: 0x00006B75
 	private void OnDisable()
 	{
 		if (this != null && this.linkedObject != null)
@@ -22,6 +21,5 @@ public class LinkActiveObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400097E RID: 2430
 	public GameObject linkedObject;
 }

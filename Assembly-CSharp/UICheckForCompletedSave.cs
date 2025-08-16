@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200005F RID: 95
 public class UICheckForCompletedSave : MonoBehaviour
 {
-	// Token: 0x06000166 RID: 358 RVA: 0x000086BC File Offset: 0x000068BC
+	// Token: 0x0600019F RID: 415 RVA: 0x0001D2BC File Offset: 0x0001B4BC
 	private void OnEnable()
 	{
 		bool flag = FileUtil.HasCompletedSaveData();
@@ -18,6 +17,5 @@ public class UICheckForCompletedSave : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400020E RID: 526
 	public bool hide;
 }

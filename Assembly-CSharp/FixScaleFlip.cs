@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001B4 RID: 436
 public class FixScaleFlip : MonoBehaviour
 {
-	// Token: 0x06000909 RID: 2313 RVA: 0x0002B4D0 File Offset: 0x000296D0
+	// Token: 0x06000ADA RID: 2778 RVA: 0x0003F244 File Offset: 0x0003D444
 	private void Start()
 	{
 		Vector3 lossyScale = base.transform.lossyScale;

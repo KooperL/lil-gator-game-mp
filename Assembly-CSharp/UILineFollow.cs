@@ -1,11 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020002CE RID: 718
 public class UILineFollow : MonoBehaviour
 {
-	// Token: 0x170000E5 RID: 229
-	// (get) Token: 0x06000F17 RID: 3863 RVA: 0x000488FA File Offset: 0x00046AFA
+	// (get) Token: 0x0600125B RID: 4699 RVA: 0x0000F909 File Offset: 0x0000DB09
 	private float CorrectedSourceDistance
 	{
 		get
@@ -14,7 +12,7 @@ public class UILineFollow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F18 RID: 3864 RVA: 0x0004891D File Offset: 0x00046B1D
+	// Token: 0x0600125C RID: 4700 RVA: 0x0000F92C File Offset: 0x0000DB2C
 	private void OnValidate()
 	{
 		if (this.canvas == null)
@@ -23,7 +21,7 @@ public class UILineFollow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F19 RID: 3865 RVA: 0x0004893C File Offset: 0x00046B3C
+	// Token: 0x0600125D RID: 4701 RVA: 0x0005B998 File Offset: 0x00059B98
 	private void Awake()
 	{
 		this.lineRenderer = base.GetComponent<LineRenderer>();
@@ -37,14 +35,14 @@ public class UILineFollow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F1A RID: 3866 RVA: 0x000489D5 File Offset: 0x00046BD5
+	// Token: 0x0600125E RID: 4702 RVA: 0x0000F948 File Offset: 0x0000DB48
 	private void Start()
 	{
 		this.width = this.lineRenderer.widthMultiplier;
 		this.perlinTime = Time.time;
 	}
 
-	// Token: 0x06000F1B RID: 3867 RVA: 0x000489F4 File Offset: 0x00046BF4
+	// Token: 0x0600125F RID: 4703 RVA: 0x0005BA34 File Offset: 0x00059C34
 	public void SetTarget(DialogueActor actor)
 	{
 		this.target = actor.DialogueAnchor;
@@ -57,7 +55,7 @@ public class UILineFollow : MonoBehaviour
 		this.perlinTime = Time.time;
 	}
 
-	// Token: 0x06000F1C RID: 3868 RVA: 0x00048A60 File Offset: 0x00046C60
+	// Token: 0x06001260 RID: 4704 RVA: 0x0005BAA0 File Offset: 0x00059CA0
 	private void LateUpdate()
 	{
 		if (this.target == null)
@@ -143,87 +141,59 @@ public class UILineFollow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040013C5 RID: 5061
 	public Canvas canvas;
 
-	// Token: 0x040013C6 RID: 5062
 	public RectTransform source;
 
-	// Token: 0x040013C7 RID: 5063
 	public UIFollow sourceFollow;
 
-	// Token: 0x040013C8 RID: 5064
 	public Vector3 sourceOffset;
 
-	// Token: 0x040013C9 RID: 5065
 	public float sourceDistance = 5f;
 
-	// Token: 0x040013CA RID: 5066
 	public Transform target;
 
-	// Token: 0x040013CB RID: 5067
 	public Vector3 targetOffset = Vector3.up;
 
-	// Token: 0x040013CC RID: 5068
 	public float targetDistance;
 
-	// Token: 0x040013CD RID: 5069
 	public float maxLineLength = 10f;
 
-	// Token: 0x040013CE RID: 5070
 	public float maxScreenLength = 0.25f;
 
-	// Token: 0x040013CF RID: 5071
 	private LineRenderer lineRenderer;
 
-	// Token: 0x040013D0 RID: 5072
 	private Camera mainCamera;
 
-	// Token: 0x040013D1 RID: 5073
 	private Vector3[] positions;
 
-	// Token: 0x040013D2 RID: 5074
 	private float width;
 
-	// Token: 0x040013D3 RID: 5075
 	public float t;
 
-	// Token: 0x040013D4 RID: 5076
 	private Bounds viewBounds;
 
-	// Token: 0x040013D5 RID: 5077
 	public float perlinAmount;
 
-	// Token: 0x040013D6 RID: 5078
 	public float perlinSpeed;
 
-	// Token: 0x040013D7 RID: 5079
 	public float perlinSpacing;
 
-	// Token: 0x040013D8 RID: 5080
 	public float perlinFramerate;
 
-	// Token: 0x040013D9 RID: 5081
 	private float perlinTime;
 
-	// Token: 0x040013DA RID: 5082
 	public RectTransform pullTransform;
 
-	// Token: 0x040013DB RID: 5083
 	private Vector2 pullDefaultPosition;
 
-	// Token: 0x040013DC RID: 5084
 	public float pullAmount = 0.5f;
 
-	// Token: 0x040013DD RID: 5085
 	public float pullMaxDistance = 10f;
 
-	// Token: 0x040013DE RID: 5086
 	public float pullT = 0.5f;
 
-	// Token: 0x040013DF RID: 5087
 	public float pullPerlin = 20f;
 
-	// Token: 0x040013E0 RID: 5088
 	public Transform lineScaleReference;
 }

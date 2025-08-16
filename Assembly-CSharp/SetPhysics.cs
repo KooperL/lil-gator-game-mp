@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000235 RID: 565
 public class SetPhysics : MonoBehaviour
 {
-	// Token: 0x06000C44 RID: 3140 RVA: 0x0003B020 File Offset: 0x00039220
+	// Token: 0x06000F3F RID: 3903 RVA: 0x00050160 File Offset: 0x0004E360
 	public void OnEnable()
 	{
 		if (this.rigidbody == null)
@@ -21,7 +20,7 @@ public class SetPhysics : MonoBehaviour
 		this.rigidbody.AddRelativeTorque(this.angularVelocity, ForceMode.VelocityChange);
 	}
 
-	// Token: 0x06000C45 RID: 3141 RVA: 0x0003B0A8 File Offset: 0x000392A8
+	// Token: 0x06000F40 RID: 3904 RVA: 0x000501E8 File Offset: 0x0004E3E8
 	private void OnDisable()
 	{
 		if (this.resetOnDisable && this.rigidbody != null)
@@ -33,24 +32,17 @@ public class SetPhysics : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000FFF RID: 4095
 	private Rigidbody rigidbody;
 
-	// Token: 0x04001000 RID: 4096
 	public Vector3 localVelocity;
 
-	// Token: 0x04001001 RID: 4097
 	public Vector3 globalVelocity;
 
-	// Token: 0x04001002 RID: 4098
 	public Vector3 angularVelocity;
 
-	// Token: 0x04001003 RID: 4099
 	public bool resetOnDisable;
 
-	// Token: 0x04001004 RID: 4100
 	private Vector3 position;
 
-	// Token: 0x04001005 RID: 4101
 	private Quaternion rotation;
 }

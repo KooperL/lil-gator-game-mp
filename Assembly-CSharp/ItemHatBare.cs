@@ -1,42 +1,40 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001CA RID: 458
 public class ItemHatBare : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x06000974 RID: 2420 RVA: 0x0002CBED File Offset: 0x0002ADED
+	// Token: 0x06000B57 RID: 2903 RVA: 0x0000AACF File Offset: 0x00008CCF
 	private void Start()
 	{
 		this.itemManager = Player.itemManager;
 		this.itemManager.bareHead.SetActive(true);
 	}
 
-	// Token: 0x06000975 RID: 2421 RVA: 0x0002CC0B File Offset: 0x0002AE0B
+	// Token: 0x06000B58 RID: 2904 RVA: 0x0000AAED File Offset: 0x00008CED
 	public void OnRemove()
 	{
 		this.itemManager.bareHead.SetActive(false);
 	}
 
-	// Token: 0x06000976 RID: 2422 RVA: 0x0002CC1E File Offset: 0x0002AE1E
+	// Token: 0x06000B59 RID: 2905 RVA: 0x00002229 File Offset: 0x00000429
 	public void Cancel()
 	{
 	}
 
-	// Token: 0x06000977 RID: 2423 RVA: 0x0002CC20 File Offset: 0x0002AE20
+	// Token: 0x06000B5A RID: 2906 RVA: 0x00002229 File Offset: 0x00000429
 	public void Input(bool isDown, bool isHeld)
 	{
 	}
 
-	// Token: 0x06000978 RID: 2424 RVA: 0x0002CC22 File Offset: 0x0002AE22
+	// Token: 0x06000B5B RID: 2907 RVA: 0x00002229 File Offset: 0x00000429
 	public void SetEquipped(bool isEquipped)
 	{
 	}
 
-	// Token: 0x06000979 RID: 2425 RVA: 0x0002CC24 File Offset: 0x0002AE24
+	// Token: 0x06000B5C RID: 2908 RVA: 0x00002229 File Offset: 0x00000429
 	public void SetIndex(int index)
 	{
 	}
 
-	// Token: 0x04000BDE RID: 3038
 	private PlayerItemManager itemManager;
 }

@@ -4,16 +4,15 @@ using UnityEngine.Playables;
 
 namespace Cinemachine.Examples
 {
-	// Token: 0x020002F4 RID: 756
 	public class GenericTrigger : MonoBehaviour
 	{
-		// Token: 0x06001020 RID: 4128 RVA: 0x0004D40F File Offset: 0x0004B60F
+		// Token: 0x060013AD RID: 5037 RVA: 0x00010A31 File Offset: 0x0000EC31
 		private void Start()
 		{
 			this.timeline = base.GetComponent<PlayableDirector>();
 		}
 
-		// Token: 0x06001021 RID: 4129 RVA: 0x0004D41D File Offset: 0x0004B61D
+		// Token: 0x060013AE RID: 5038 RVA: 0x00010A3F File Offset: 0x0000EC3F
 		private void OnTriggerExit(Collider c)
 		{
 			if (c.gameObject.CompareTag("Player"))
@@ -22,7 +21,7 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x06001022 RID: 4130 RVA: 0x0004D445 File Offset: 0x0004B645
+		// Token: 0x060013AF RID: 5039 RVA: 0x00010A67 File Offset: 0x0000EC67
 		private void OnTriggerEnter(Collider c)
 		{
 			if (c.gameObject.CompareTag("Player"))
@@ -32,7 +31,6 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x04001522 RID: 5410
 		public PlayableDirector timeline;
 	}
 }

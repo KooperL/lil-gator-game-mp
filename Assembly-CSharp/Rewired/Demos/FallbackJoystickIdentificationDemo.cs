@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace Rewired.Demos
 {
-	// Token: 0x0200033E RID: 830
 	[AddComponentMenu("")]
 	public class FallbackJoystickIdentificationDemo : MonoBehaviour
 	{
-		// Token: 0x0600176B RID: 5995 RVA: 0x00063744 File Offset: 0x00061944
+		// Token: 0x06001DB6 RID: 7606 RVA: 0x00016B5C File Offset: 0x00014D5C
 		private void Awake()
 		{
 			if (!ReInput.unityJoystickIdentificationRequired)
@@ -20,19 +19,19 @@ namespace Rewired.Demos
 			this.IdentifyAllJoysticks();
 		}
 
-		// Token: 0x0600176C RID: 5996 RVA: 0x00063776 File Offset: 0x00061976
+		// Token: 0x06001DB7 RID: 7607 RVA: 0x00016B8E File Offset: 0x00014D8E
 		private void JoystickConnected(ControllerStatusChangedEventArgs args)
 		{
 			this.IdentifyAllJoysticks();
 		}
 
-		// Token: 0x0600176D RID: 5997 RVA: 0x0006377E File Offset: 0x0006197E
+		// Token: 0x06001DB8 RID: 7608 RVA: 0x00016B8E File Offset: 0x00014D8E
 		private void JoystickDisconnected(ControllerStatusChangedEventArgs args)
 		{
 			this.IdentifyAllJoysticks();
 		}
 
-		// Token: 0x0600176E RID: 5998 RVA: 0x00063788 File Offset: 0x00061988
+		// Token: 0x06001DB9 RID: 7609 RVA: 0x00074AD0 File Offset: 0x00072CD0
 		public void IdentifyAllJoysticks()
 		{
 			this.Reset();
@@ -50,13 +49,13 @@ namespace Rewired.Demos
 			this.SetInputDelay();
 		}
 
-		// Token: 0x0600176F RID: 5999 RVA: 0x000637D0 File Offset: 0x000619D0
+		// Token: 0x06001DBA RID: 7610 RVA: 0x00016B96 File Offset: 0x00014D96
 		private void SetInputDelay()
 		{
 			this.nextInputAllowedTime = Time.time + 1f;
 		}
 
-		// Token: 0x06001770 RID: 6000 RVA: 0x000637E4 File Offset: 0x000619E4
+		// Token: 0x06001DBB RID: 7611 RVA: 0x00074B18 File Offset: 0x00072D18
 		private void OnGUI()
 		{
 			if (!this.identifyRequired)
@@ -87,7 +86,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001771 RID: 6001 RVA: 0x000638C8 File Offset: 0x00061AC8
+		// Token: 0x06001DBC RID: 7612 RVA: 0x00074BFC File Offset: 0x00072DFC
 		private void DrawDialogWindow(int windowId)
 		{
 			if (!this.identifyRequired)
@@ -111,32 +110,25 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001772 RID: 6002 RVA: 0x0006397A File Offset: 0x00061B7A
+		// Token: 0x06001DBD RID: 7613 RVA: 0x00016BA9 File Offset: 0x00014DA9
 		private void Reset()
 		{
 			this.joysticksToIdentify = null;
 			this.identifyRequired = false;
 		}
 
-		// Token: 0x04001940 RID: 6464
 		private const float windowWidth = 250f;
 
-		// Token: 0x04001941 RID: 6465
 		private const float windowHeight = 250f;
 
-		// Token: 0x04001942 RID: 6466
 		private const float inputDelay = 1f;
 
-		// Token: 0x04001943 RID: 6467
 		private bool identifyRequired;
 
-		// Token: 0x04001944 RID: 6468
 		private Queue<Joystick> joysticksToIdentify;
 
-		// Token: 0x04001945 RID: 6469
 		private float nextInputAllowedTime;
 
-		// Token: 0x04001946 RID: 6470
 		private GUIStyle style;
 	}
 }

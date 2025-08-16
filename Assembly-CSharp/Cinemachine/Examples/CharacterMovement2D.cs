@@ -3,11 +3,10 @@ using UnityEngine;
 
 namespace Cinemachine.Examples
 {
-	// Token: 0x020002F6 RID: 758
 	[AddComponentMenu("")]
 	public class CharacterMovement2D : MonoBehaviour
 	{
-		// Token: 0x06001028 RID: 4136 RVA: 0x0004D827 File Offset: 0x0004BA27
+		// Token: 0x060013B5 RID: 5045 RVA: 0x00010AD0 File Offset: 0x0000ECD0
 		private void Start()
 		{
 			this.anim = base.GetComponent<Animator>();
@@ -15,7 +14,7 @@ namespace Cinemachine.Examples
 			this.targetrot = base.transform.rotation;
 		}
 
-		// Token: 0x06001029 RID: 4137 RVA: 0x0004D854 File Offset: 0x0004BA54
+		// Token: 0x060013B6 RID: 5046 RVA: 0x000606F0 File Offset: 0x0005E8F0
 		private void FixedUpdate()
 		{
 			this.input.x = Input.GetAxis("Horizontal");
@@ -50,55 +49,40 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x0600102A RID: 4138 RVA: 0x0004DA59 File Offset: 0x0004BC59
+		// Token: 0x060013B7 RID: 5047 RVA: 0x00010AFB File Offset: 0x0000ECFB
 		public bool isGrounded()
 		{
 			return !this.checkGroundForJump || Physics.Raycast(base.transform.position, Vector3.down, this.groundTolerance);
 		}
 
-		// Token: 0x04001532 RID: 5426
 		public KeyCode sprintJoystick = KeyCode.JoystickButton2;
 
-		// Token: 0x04001533 RID: 5427
 		public KeyCode jumpJoystick = KeyCode.JoystickButton0;
 
-		// Token: 0x04001534 RID: 5428
 		public KeyCode sprintKeyboard = KeyCode.LeftShift;
 
-		// Token: 0x04001535 RID: 5429
 		public KeyCode jumpKeyboard = KeyCode.Space;
 
-		// Token: 0x04001536 RID: 5430
 		public float jumpVelocity = 7f;
 
-		// Token: 0x04001537 RID: 5431
 		public float groundTolerance = 0.2f;
 
-		// Token: 0x04001538 RID: 5432
 		public bool checkGroundForJump = true;
 
-		// Token: 0x04001539 RID: 5433
 		private float speed;
 
-		// Token: 0x0400153A RID: 5434
 		private bool isSprinting;
 
-		// Token: 0x0400153B RID: 5435
 		private Animator anim;
 
-		// Token: 0x0400153C RID: 5436
 		private Vector2 input;
 
-		// Token: 0x0400153D RID: 5437
 		private float velocity;
 
-		// Token: 0x0400153E RID: 5438
 		private bool headingleft;
 
-		// Token: 0x0400153F RID: 5439
 		private Quaternion targetrot;
 
-		// Token: 0x04001540 RID: 5440
 		private Rigidbody rigbody;
 	}
 }

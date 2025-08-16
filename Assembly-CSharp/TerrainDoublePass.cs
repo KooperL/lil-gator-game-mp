@@ -1,17 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000277 RID: 631
 [ExecuteInEditMode]
 public class TerrainDoublePass : MonoBehaviour
 {
-	// Token: 0x06000D88 RID: 3464 RVA: 0x0004176D File Offset: 0x0003F96D
+	// Token: 0x0600109F RID: 4255 RVA: 0x0000E402 File Offset: 0x0000C602
 	private void OnEnable()
 	{
 		this.UpdateMaterial();
 	}
 
-	// Token: 0x06000D89 RID: 3465 RVA: 0x00041778 File Offset: 0x0003F978
+	// Token: 0x060010A0 RID: 4256 RVA: 0x000559EC File Offset: 0x00053BEC
 	private void UpdateMaterial()
 	{
 		int num = 4;
@@ -26,9 +25,7 @@ public class TerrainDoublePass : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040011DE RID: 4574
 	public Terrain terrain;
 
-	// Token: 0x040011DF RID: 4575
 	public Material doublePassMaterial;
 }

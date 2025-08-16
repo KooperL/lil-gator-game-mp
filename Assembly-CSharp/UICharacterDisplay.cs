@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020002ED RID: 749
 public class UICharacterDisplay : MonoBehaviour
 {
-	// Token: 0x06000FEE RID: 4078 RVA: 0x0004C163 File Offset: 0x0004A363
+	// Token: 0x0600137B RID: 4987 RVA: 0x0001077F File Offset: 0x0000E97F
 	private void OnValidate()
 	{
 		if (this.rectTransform == null)
@@ -14,7 +13,7 @@ public class UICharacterDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FEF RID: 4079 RVA: 0x0004C180 File Offset: 0x0004A380
+	// Token: 0x0600137C RID: 4988 RVA: 0x0005F3D8 File Offset: 0x0005D5D8
 	public void Load(CharacterProfile profile)
 	{
 		if (!base.gameObject.activeSelf)
@@ -43,7 +42,7 @@ public class UICharacterDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FF0 RID: 4080 RVA: 0x0004C242 File Offset: 0x0004A442
+	// Token: 0x0600137D RID: 4989 RVA: 0x0001079B File Offset: 0x0000E99B
 	public void ClearItem()
 	{
 		if (this.nameDisplay != null)
@@ -52,7 +51,7 @@ public class UICharacterDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FF1 RID: 4081 RVA: 0x0004C262 File Offset: 0x0004A462
+	// Token: 0x0600137E RID: 4990 RVA: 0x000107BB File Offset: 0x0000E9BB
 	private void SetText(Text textObject, string textString)
 	{
 		if (!string.IsNullOrEmpty(textString))
@@ -64,26 +63,19 @@ public class UICharacterDisplay : MonoBehaviour
 		textObject.gameObject.SetActive(false);
 	}
 
-	// Token: 0x040014D6 RID: 5334
 	public RectTransform rectTransform;
 
-	// Token: 0x040014D7 RID: 5335
 	public Text nameDisplay;
 
-	// Token: 0x040014D8 RID: 5336
 	public bool coloredName = true;
 
-	// Token: 0x040014D9 RID: 5337
 	[ConditionalHide("nameCharacterColor", true)]
 	public CharacterProfile.CharacterColor nameColor;
 
-	// Token: 0x040014DA RID: 5338
 	[Space]
 	public Image darkColor;
 
-	// Token: 0x040014DB RID: 5339
 	public Image midColor;
 
-	// Token: 0x040014DC RID: 5340
 	public Image brightColor;
 }

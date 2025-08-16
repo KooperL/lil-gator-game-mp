@@ -3,22 +3,21 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// Token: 0x020002B1 RID: 689
 public class UIPreventDeselection : MonoBehaviour
 {
-	// Token: 0x06000E84 RID: 3716 RVA: 0x000454ED File Offset: 0x000436ED
+	// Token: 0x060011B4 RID: 4532 RVA: 0x0000F16E File Offset: 0x0000D36E
 	public void OnEnable()
 	{
 		this.eventSystem = EventSystem.current;
 		this.fallback = this.GetFallbackSelection();
 	}
 
-	// Token: 0x06000E85 RID: 3717 RVA: 0x00045506 File Offset: 0x00043706
+	// Token: 0x060011B5 RID: 4533 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x06000E86 RID: 3718 RVA: 0x00045508 File Offset: 0x00043708
+	// Token: 0x060011B6 RID: 4534 RVA: 0x00058ADC File Offset: 0x00056CDC
 	private void Update()
 	{
 		if (this.fallback == null || !this.fallback.activeSelf)
@@ -43,7 +42,7 @@ public class UIPreventDeselection : MonoBehaviour
 		this.selection = this.fallback;
 	}
 
-	// Token: 0x06000E87 RID: 3719 RVA: 0x000455C4 File Offset: 0x000437C4
+	// Token: 0x060011B7 RID: 4535 RVA: 0x00058B98 File Offset: 0x00056D98
 	private void SetSelection(GameObject newSelection)
 	{
 		if (newSelection == null)
@@ -58,7 +57,7 @@ public class UIPreventDeselection : MonoBehaviour
 		this.eventSystem.SetSelectedGameObject(newSelection);
 	}
 
-	// Token: 0x06000E88 RID: 3720 RVA: 0x000455F8 File Offset: 0x000437F8
+	// Token: 0x060011B8 RID: 4536 RVA: 0x00058BCC File Offset: 0x00056DCC
 	private GameObject GetFallbackSelection()
 	{
 		if (this.defaultSelection != null && this.defaultSelection.activeSelf)
@@ -77,18 +76,13 @@ public class UIPreventDeselection : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x040012E6 RID: 4838
 	public GameObject defaultSelection;
 
-	// Token: 0x040012E7 RID: 4839
 	public GameObject secondarySelection;
 
-	// Token: 0x040012E8 RID: 4840
 	private GameObject selection;
 
-	// Token: 0x040012E9 RID: 4841
 	private GameObject fallback;
 
-	// Token: 0x040012EA RID: 4842
 	private EventSystem eventSystem;
 }

@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001B8 RID: 440
 public class AttachSpringToHand : MonoBehaviour
 {
-	// Token: 0x0600092C RID: 2348 RVA: 0x0002BB5F File Offset: 0x00029D5F
+	// Token: 0x06000B0F RID: 2831 RVA: 0x0000A736 File Offset: 0x00008936
 	private void Start()
 	{
 		if (this.springJoint == null)
@@ -15,12 +14,11 @@ public class AttachSpringToHand : MonoBehaviour
 		Player.ragdollController.isAttached = true;
 	}
 
-	// Token: 0x0600092D RID: 2349 RVA: 0x0002BB9B File Offset: 0x00029D9B
+	// Token: 0x06000B10 RID: 2832 RVA: 0x0000A772 File Offset: 0x00008972
 	private void OnDisable()
 	{
 		Player.ragdollController.isAttached = false;
 	}
 
-	// Token: 0x04000B87 RID: 2951
 	public SpringJoint springJoint;
 }

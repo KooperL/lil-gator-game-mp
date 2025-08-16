@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x020000E3 RID: 227
 public class DialogueSequence : MonoBehaviour
 {
-	// Token: 0x060004B1 RID: 1201 RVA: 0x00019DAC File Offset: 0x00017FAC
+	// Token: 0x060005EE RID: 1518 RVA: 0x0002FE14 File Offset: 0x0002E014
 	public virtual void Activate()
 	{
 		this.onStart.Invoke();
@@ -20,13 +19,13 @@ public class DialogueSequence : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004B2 RID: 1202 RVA: 0x00019DF0 File Offset: 0x00017FF0
+	// Token: 0x060005EF RID: 1519 RVA: 0x00006415 File Offset: 0x00004615
 	public virtual YieldInstruction Run()
 	{
 		return null;
 	}
 
-	// Token: 0x060004B3 RID: 1203 RVA: 0x00019DF4 File Offset: 0x00017FF4
+	// Token: 0x060005F0 RID: 1520 RVA: 0x0002FE58 File Offset: 0x0002E058
 	public virtual void Deactivate()
 	{
 		GameObject[] array = this.stateObjects;
@@ -40,15 +39,11 @@ public class DialogueSequence : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000680 RID: 1664
 	public UnityEvent onStart;
 
-	// Token: 0x04000681 RID: 1665
 	public GameObject[] stateObjects;
 
-	// Token: 0x04000682 RID: 1666
 	public bool fade;
 
-	// Token: 0x04000683 RID: 1667
 	public bool ignoreDialogueDepth;
 }

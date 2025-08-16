@@ -2,15 +2,14 @@
 using UnityEngine;
 using UnityEngine.U2D;
 
-// Token: 0x020000F9 RID: 249
 public class ParticlesScreenSpace : MonoBehaviour
 {
-	// Token: 0x06000524 RID: 1316 RVA: 0x0001BB90 File Offset: 0x00019D90
+	// Token: 0x06000670 RID: 1648 RVA: 0x00031904 File Offset: 0x0002FB04
 	private void OnValidate()
 	{
 		if (this.pixelPerfectCamera == null)
 		{
-			this.pixelPerfectCamera = Object.FindObjectOfType<PixelPerfectCamera>();
+			this.pixelPerfectCamera = global::UnityEngine.Object.FindObjectOfType<PixelPerfectCamera>();
 		}
 		if (this.renderer == null)
 		{
@@ -22,13 +21,13 @@ public class ParticlesScreenSpace : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000525 RID: 1317 RVA: 0x0001BBE9 File Offset: 0x00019DE9
+	// Token: 0x06000671 RID: 1649 RVA: 0x00006A6C File Offset: 0x00004C6C
 	private void Update()
 	{
 		this.UpdateSize();
 	}
 
-	// Token: 0x06000526 RID: 1318 RVA: 0x0001BBF4 File Offset: 0x00019DF4
+	// Token: 0x06000672 RID: 1650 RVA: 0x00031960 File Offset: 0x0002FB60
 	[ContextMenu("Update Size")]
 	private void UpdateSize()
 	{
@@ -44,18 +43,13 @@ public class ParticlesScreenSpace : MonoBehaviour
 		this.renderer.minParticleSize = this.apparentSize;
 	}
 
-	// Token: 0x04000719 RID: 1817
 	public ParticleSystemRenderer renderer;
 
-	// Token: 0x0400071A RID: 1818
 	public PixelPerfectCamera pixelPerfectCamera;
 
-	// Token: 0x0400071B RID: 1819
 	public Camera mainCamera;
 
-	// Token: 0x0400071C RID: 1820
 	public float pixelSize;
 
-	// Token: 0x0400071D RID: 1821
 	public float apparentSize;
 }

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200027D RID: 637
 public class SyncTreeShadows : MonoBehaviour
 {
-	// Token: 0x06000D9D RID: 3485 RVA: 0x00041F44 File Offset: 0x00040144
+	// Token: 0x060010B4 RID: 4276 RVA: 0x000560E8 File Offset: 0x000542E8
 	private void OnValidate()
 	{
 		for (int i = 0; i < this.treeShadowIndices.Length; i++)
@@ -18,7 +17,7 @@ public class SyncTreeShadows : MonoBehaviour
 		this.UpdateTreeShadows();
 	}
 
-	// Token: 0x06000D9E RID: 3486 RVA: 0x00041F80 File Offset: 0x00040180
+	// Token: 0x060010B5 RID: 4277 RVA: 0x00056124 File Offset: 0x00054324
 	[ContextMenu("Update Tree Shadows")]
 	public void UpdateTreeShadows()
 	{
@@ -59,6 +58,5 @@ public class SyncTreeShadows : MonoBehaviour
 		component.terrainData.SetTreeInstances(list.ToArray(), true);
 	}
 
-	// Token: 0x040011F6 RID: 4598
 	public int[] treeShadowIndices;
 }

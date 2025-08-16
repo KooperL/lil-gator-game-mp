@@ -2,17 +2,16 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x020000D7 RID: 215
 [AddComponentMenu("Dialogue Sequence/Dialogue (Phone)")]
 public class DSDialoguePhone : DialogueSequence, ICueable
 {
-	// Token: 0x06000487 RID: 1159 RVA: 0x00019751 File Offset: 0x00017951
+	// Token: 0x060005B2 RID: 1458 RVA: 0x0000615B File Offset: 0x0000435B
 	public void SetCamera(GameObject camera)
 	{
 		this.camera = camera;
 	}
 
-	// Token: 0x06000488 RID: 1160 RVA: 0x0001975C File Offset: 0x0001795C
+	// Token: 0x060005B3 RID: 1459 RVA: 0x0002F804 File Offset: 0x0002DA04
 	public override YieldInstruction Run()
 	{
 		IEnumerator enumerator;
@@ -31,7 +30,7 @@ public class DSDialoguePhone : DialogueSequence, ICueable
 		return CoroutineUtil.Start(enumerator);
 	}
 
-	// Token: 0x06000489 RID: 1161 RVA: 0x0001980C File Offset: 0x00017A0C
+	// Token: 0x060005B4 RID: 1460 RVA: 0x0002F8B4 File Offset: 0x0002DAB4
 	[ContextMenu("Sync Cues")]
 	private void SyncCues()
 	{
@@ -44,7 +43,7 @@ public class DSDialoguePhone : DialogueSequence, ICueable
 		this.precueFirstCue = false;
 	}
 
-	// Token: 0x0600048A RID: 1162 RVA: 0x0001986C File Offset: 0x00017A6C
+	// Token: 0x060005B5 RID: 1461 RVA: 0x0002F914 File Offset: 0x0002DB14
 	public override void Activate()
 	{
 		if (this.precueFirstCue && this.cueData.Length != 0)
@@ -71,7 +70,7 @@ public class DSDialoguePhone : DialogueSequence, ICueable
 		base.Activate();
 	}
 
-	// Token: 0x0600048B RID: 1163 RVA: 0x00019933 File Offset: 0x00017B33
+	// Token: 0x060005B6 RID: 1462 RVA: 0x00006164 File Offset: 0x00004364
 	public override void Deactivate()
 	{
 		base.Deactivate();
@@ -81,31 +80,22 @@ public class DSDialoguePhone : DialogueSequence, ICueable
 		}
 	}
 
-	// Token: 0x04000654 RID: 1620
 	public MultilingualTextDocument document;
 
-	// Token: 0x04000655 RID: 1621
 	[ChunkLookup("document")]
 	public string dialogue;
 
-	// Token: 0x04000656 RID: 1622
 	public CharacterProfile[] characters;
 
-	// Token: 0x04000657 RID: 1623
 	public DialogueUtil.CueData[] cueData;
 
-	// Token: 0x04000658 RID: 1624
 	public bool precueFirstCue;
 
-	// Token: 0x04000659 RID: 1625
 	public bool displayNames = true;
 
-	// Token: 0x0400065A RID: 1626
 	public bool clearPhoneAfter = true;
 
-	// Token: 0x0400065B RID: 1627
 	public Sprite[] images;
 
-	// Token: 0x0400065C RID: 1628
 	private GameObject camera;
 }

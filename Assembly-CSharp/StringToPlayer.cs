@@ -1,17 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000249 RID: 585
 public class StringToPlayer : MonoBehaviour
 {
-	// Token: 0x06000CB4 RID: 3252 RVA: 0x0003D803 File Offset: 0x0003BA03
+	// Token: 0x06000FBC RID: 4028 RVA: 0x0000D99A File Offset: 0x0000BB9A
 	private void Awake()
 	{
 		this.positions = new Vector3[this.positionCount];
 		this.line.positionCount = this.positionCount;
 	}
 
-	// Token: 0x06000CB5 RID: 3253 RVA: 0x0003D828 File Offset: 0x0003BA28
+	// Token: 0x06000FBD RID: 4029 RVA: 0x00052370 File Offset: 0x00050570
 	private void LateUpdate()
 	{
 		Vector3 position = base.transform.position;
@@ -31,15 +30,11 @@ public class StringToPlayer : MonoBehaviour
 		this.line.SetPositions(this.positions);
 	}
 
-	// Token: 0x040010C9 RID: 4297
 	public LineRenderer line;
 
-	// Token: 0x040010CA RID: 4298
 	public int positionCount = 20;
 
-	// Token: 0x040010CB RID: 4299
 	private Vector3[] positions;
 
-	// Token: 0x040010CC RID: 4300
 	public float perlinVariance = 0.2f;
 }

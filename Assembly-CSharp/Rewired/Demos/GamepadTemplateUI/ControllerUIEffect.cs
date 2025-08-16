@@ -4,11 +4,10 @@ using UnityEngine.UI;
 
 namespace Rewired.Demos.GamepadTemplateUI
 {
-	// Token: 0x0200034B RID: 843
 	[RequireComponent(typeof(Image))]
 	public class ControllerUIEffect : MonoBehaviour
 	{
-		// Token: 0x060017DB RID: 6107 RVA: 0x00065BB1 File Offset: 0x00063DB1
+		// Token: 0x06001E3F RID: 7743 RVA: 0x000171EC File Offset: 0x000153EC
 		private void Awake()
 		{
 			this._image = base.GetComponent<Image>();
@@ -16,7 +15,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this._color = this._origColor;
 		}
 
-		// Token: 0x060017DC RID: 6108 RVA: 0x00065BDC File Offset: 0x00063DDC
+		// Token: 0x06001E40 RID: 7744 RVA: 0x00076B98 File Offset: 0x00074D98
 		public void Activate(float amount)
 		{
 			amount = Mathf.Clamp01(amount);
@@ -30,7 +29,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this.RedrawImage();
 		}
 
-		// Token: 0x060017DD RID: 6109 RVA: 0x00065C34 File Offset: 0x00063E34
+		// Token: 0x06001E41 RID: 7745 RVA: 0x00017217 File Offset: 0x00015417
 		public void Deactivate()
 		{
 			if (!this._isActive)
@@ -43,30 +42,24 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this.RedrawImage();
 		}
 
-		// Token: 0x060017DE RID: 6110 RVA: 0x00065C63 File Offset: 0x00063E63
+		// Token: 0x06001E42 RID: 7746 RVA: 0x00017246 File Offset: 0x00015446
 		private void RedrawImage()
 		{
 			this._image.color = this._color;
 			this._image.enabled = this._isActive;
 		}
 
-		// Token: 0x04001990 RID: 6544
 		[SerializeField]
 		private Color _highlightColor = Color.white;
 
-		// Token: 0x04001991 RID: 6545
 		private Image _image;
 
-		// Token: 0x04001992 RID: 6546
 		private Color _color;
 
-		// Token: 0x04001993 RID: 6547
 		private Color _origColor;
 
-		// Token: 0x04001994 RID: 6548
 		private bool _isActive;
 
-		// Token: 0x04001995 RID: 6549
 		private float _highlightAmount;
 	}
 }

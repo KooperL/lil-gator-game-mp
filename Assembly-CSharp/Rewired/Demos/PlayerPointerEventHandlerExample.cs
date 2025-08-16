@@ -8,11 +8,10 @@ using UnityEngine.UI;
 
 namespace Rewired.Demos
 {
-	// Token: 0x02000340 RID: 832
 	[AddComponentMenu("")]
 	public sealed class PlayerPointerEventHandlerExample : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler, IPointerClickHandler, IScrollHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 	{
-		// Token: 0x0600177A RID: 6010 RVA: 0x00063D46 File Offset: 0x00061F46
+		// Token: 0x06001DC5 RID: 7621 RVA: 0x00016BDA File Offset: 0x00014DDA
 		private void Log(string o)
 		{
 			this.log.Add(o);
@@ -22,7 +21,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x0600177B RID: 6011 RVA: 0x00063D70 File Offset: 0x00061F70
+		// Token: 0x06001DC6 RID: 7622 RVA: 0x00075040 File Offset: 0x00073240
 		private void Update()
 		{
 			if (this.text != null)
@@ -36,7 +35,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x0600177C RID: 6012 RVA: 0x00063DEC File Offset: 0x00061FEC
+		// Token: 0x06001DC7 RID: 7623 RVA: 0x000750BC File Offset: 0x000732BC
 		public void OnPointerEnter(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -54,7 +53,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x0600177D RID: 6013 RVA: 0x00063E5C File Offset: 0x0006205C
+		// Token: 0x06001DC8 RID: 7624 RVA: 0x0007512C File Offset: 0x0007332C
 		public void OnPointerExit(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -72,7 +71,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x0600177E RID: 6014 RVA: 0x00063ECC File Offset: 0x000620CC
+		// Token: 0x06001DC9 RID: 7625 RVA: 0x0007519C File Offset: 0x0007339C
 		public void OnPointerUp(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -92,7 +91,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x0600177F RID: 6015 RVA: 0x00063F58 File Offset: 0x00062158
+		// Token: 0x06001DCA RID: 7626 RVA: 0x00075228 File Offset: 0x00073428
 		public void OnPointerDown(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -112,7 +111,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001780 RID: 6016 RVA: 0x00063FE4 File Offset: 0x000621E4
+		// Token: 0x06001DCB RID: 7627 RVA: 0x000752B4 File Offset: 0x000734B4
 		public void OnPointerClick(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -132,7 +131,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001781 RID: 6017 RVA: 0x00064070 File Offset: 0x00062270
+		// Token: 0x06001DCC RID: 7628 RVA: 0x00075340 File Offset: 0x00073540
 		public void OnScroll(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -150,7 +149,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001782 RID: 6018 RVA: 0x000640E0 File Offset: 0x000622E0
+		// Token: 0x06001DCD RID: 7629 RVA: 0x000753B0 File Offset: 0x000735B0
 		public void OnBeginDrag(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -170,7 +169,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001783 RID: 6019 RVA: 0x0006416C File Offset: 0x0006236C
+		// Token: 0x06001DCE RID: 7630 RVA: 0x0007543C File Offset: 0x0007363C
 		public void OnDrag(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -190,7 +189,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001784 RID: 6020 RVA: 0x000641F8 File Offset: 0x000623F8
+		// Token: 0x06001DCF RID: 7631 RVA: 0x000754C8 File Offset: 0x000736C8
 		public void OnEndDrag(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -210,7 +209,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001785 RID: 6021 RVA: 0x00064284 File Offset: 0x00062484
+		// Token: 0x06001DD0 RID: 7632 RVA: 0x00075554 File Offset: 0x00073754
 		private static string GetSourceName(PlayerPointerEventData playerEventData)
 		{
 			if (playerEventData.sourceType == PointerEventType.Mouse)
@@ -227,13 +226,10 @@ namespace Rewired.Demos
 			return null;
 		}
 
-		// Token: 0x04001955 RID: 6485
 		public Text text;
 
-		// Token: 0x04001956 RID: 6486
 		private const int logLength = 10;
 
-		// Token: 0x04001957 RID: 6487
 		private List<string> log = new List<string>();
 	}
 }

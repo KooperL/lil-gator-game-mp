@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x0200021C RID: 540
 public class QuestReward : MonoBehaviour
 {
-	// Token: 0x06000BAE RID: 2990 RVA: 0x00038C1D File Offset: 0x00036E1D
+	// Token: 0x06000E4F RID: 3663 RVA: 0x00002229 File Offset: 0x00000429
 	public virtual void GiveReward()
 	{
 	}

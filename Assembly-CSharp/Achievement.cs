@@ -1,44 +1,40 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000071 RID: 113
 [CreateAssetMenu]
 public class Achievement : ScriptableObject
 {
-	// Token: 0x060001BE RID: 446 RVA: 0x00009BC1 File Offset: 0x00007DC1
+	// Token: 0x06000201 RID: 513 RVA: 0x00003A8E File Offset: 0x00001C8E
 	public bool IsAchievementUnlocked()
 	{
 		return false;
 	}
 
-	// Token: 0x060001BF RID: 447 RVA: 0x00009BC4 File Offset: 0x00007DC4
+	// Token: 0x06000202 RID: 514 RVA: 0x00003A91 File Offset: 0x00001C91
 	[ContextMenu("Unlock Achievement")]
 	public void SetProgress(int progress)
 	{
 		AchievementManager.MarkAchievementProgress(this, progress);
 	}
 
-	// Token: 0x060001C0 RID: 448 RVA: 0x00009BCD File Offset: 0x00007DCD
+	// Token: 0x06000203 RID: 515 RVA: 0x00003A9A File Offset: 0x00001C9A
 	[ContextMenu("Unlock Achievement")]
 	public void UnlockAchievement()
 	{
 		AchievementManager.MarkAchievementToUnlock(this);
 	}
 
-	// Token: 0x060001C1 RID: 449 RVA: 0x00009BD5 File Offset: 0x00007DD5
+	// Token: 0x06000204 RID: 516 RVA: 0x00003AA2 File Offset: 0x00001CA2
 	[ContextMenu("Lock Achievement")]
 	public void LockAchievement()
 	{
 		AchievementManager.a.LockAchievement(this);
 	}
 
-	// Token: 0x0400025E RID: 606
 	public string steamID;
 
-	// Token: 0x0400025F RID: 607
 	[Header("Progressive")]
 	public bool isProgressive;
 
-	// Token: 0x04000260 RID: 608
 	public int maxProgress;
 }

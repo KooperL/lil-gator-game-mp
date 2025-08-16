@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x02000263 RID: 611
 [AddComponentMenu("Wobble/Spring Bone")]
 public class WobbleBoneSpring : WobbleBoneBase
 {
-	// Token: 0x06000D2D RID: 3373 RVA: 0x0003FC1C File Offset: 0x0003DE1C
+	// Token: 0x06001036 RID: 4150 RVA: 0x000533E0 File Offset: 0x000515E0
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.blue;
@@ -14,14 +13,14 @@ public class WobbleBoneSpring : WobbleBoneBase
 		Gizmos.DrawWireSphere(base.transform.position, 0.02f);
 	}
 
-	// Token: 0x06000D2E RID: 3374 RVA: 0x0003FC68 File Offset: 0x0003DE68
+	// Token: 0x06001037 RID: 4151 RVA: 0x000541F4 File Offset: 0x000523F4
 	private void UpdateWindForce()
 	{
 		WobbleBoneSpring.windForceUpdateTime = Time.time;
 		WobbleBoneSpring.windForce = ((Mathf.Sin(WobbleBoneSpring.windForceUpdateTime * 7f) + 1f) * 2.5f + (Mathf.Sin(WobbleBoneSpring.windForceUpdateTime * 5f) + 1f) * 3.5f) * WobbleBoneSpring.windDirection;
 	}
 
-	// Token: 0x06000D2F RID: 3375 RVA: 0x0003FCC8 File Offset: 0x0003DEC8
+	// Token: 0x06001038 RID: 4152 RVA: 0x00054254 File Offset: 0x00052454
 	public override void Initialize()
 	{
 		List<WobbleBoneBase> list = new List<WobbleBoneBase>();
@@ -64,7 +63,7 @@ public class WobbleBoneSpring : WobbleBoneBase
 		this.maxDistance = magnitude * this.expansion;
 	}
 
-	// Token: 0x06000D30 RID: 3376 RVA: 0x0003FF08 File Offset: 0x0003E108
+	// Token: 0x06001039 RID: 4153 RVA: 0x00054494 File Offset: 0x00052694
 	private void UpdateState()
 	{
 		this.oldPosition = this.position;
@@ -82,13 +81,13 @@ public class WobbleBoneSpring : WobbleBoneBase
 		this.positionGoal = this.parentPosition + this.parentRotation * this.initialPositionLocal;
 	}
 
-	// Token: 0x06000D31 RID: 3377 RVA: 0x0003FF9D File Offset: 0x0003E19D
+	// Token: 0x0600103A RID: 4154 RVA: 0x0000DE29 File Offset: 0x0000C029
 	private Vector3 ProjectOnNormalized(Vector3 vector, Vector3 normal)
 	{
 		return vector - Vector3.Dot(vector, normal) * normal;
 	}
 
-	// Token: 0x06000D32 RID: 3378 RVA: 0x0003FFB4 File Offset: 0x0003E1B4
+	// Token: 0x0600103B RID: 4155 RVA: 0x0005452C File Offset: 0x0005272C
 	public override void RunWobbleUpdate()
 	{
 		if (!this.initialized)
@@ -139,7 +138,7 @@ public class WobbleBoneSpring : WobbleBoneBase
 		this.forces = Vector3.zero;
 	}
 
-	// Token: 0x06000D33 RID: 3379 RVA: 0x000401BC File Offset: 0x0003E3BC
+	// Token: 0x0600103C RID: 4156 RVA: 0x00054734 File Offset: 0x00052934
 	private Vector3 GetAverageChildPosition()
 	{
 		if (this.childBones.Length != 0)
@@ -154,7 +153,7 @@ public class WobbleBoneSpring : WobbleBoneBase
 		return this.position;
 	}
 
-	// Token: 0x06000D34 RID: 3380 RVA: 0x00040218 File Offset: 0x0003E418
+	// Token: 0x0600103D RID: 4157 RVA: 0x00054790 File Offset: 0x00052990
 	public override void Reacclimate()
 	{
 		this.velocity = Vector3.zero;
@@ -162,132 +161,99 @@ public class WobbleBoneSpring : WobbleBoneBase
 		this.rotation = (this.oldVisualRotation = (this.visualRotation = base.transform.rotation));
 	}
 
-	// Token: 0x06000D35 RID: 3381 RVA: 0x00040278 File Offset: 0x0003E478
+	// Token: 0x0600103E RID: 4158 RVA: 0x000547F0 File Offset: 0x000529F0
 	public override void ApplyPosition()
 	{
 		base.transform.position = (this.interpolatedPosition = this.position);
 	}
 
-	// Token: 0x06000D36 RID: 3382 RVA: 0x000402A0 File Offset: 0x0003E4A0
+	// Token: 0x0600103F RID: 4159 RVA: 0x00054818 File Offset: 0x00052A18
 	public override void ApplyPosition(float t)
 	{
 		base.transform.position = (this.interpolatedPosition = Vector3.Lerp(this.oldPosition, this.position, t));
 	}
 
-	// Token: 0x06000D37 RID: 3383 RVA: 0x000402D3 File Offset: 0x0003E4D3
+	// Token: 0x06001040 RID: 4160 RVA: 0x0000DEFC File Offset: 0x0000C0FC
 	public override void ApplyRotation()
 	{
 		base.transform.rotation = this.visualRotation;
 	}
 
-	// Token: 0x06000D38 RID: 3384 RVA: 0x000402E6 File Offset: 0x0003E4E6
+	// Token: 0x06001041 RID: 4161 RVA: 0x0000DF0F File Offset: 0x0000C10F
 	public override void ApplyRotation(float t)
 	{
 		base.transform.rotation = Quaternion.SlerpUnclamped(this.oldVisualRotation, this.visualRotation, t);
 	}
 
-	// Token: 0x04001161 RID: 4449
 	private static Vector3 windForce;
 
-	// Token: 0x04001162 RID: 4450
 	private static float windForceUpdateTime;
 
-	// Token: 0x04001163 RID: 4451
 	private static readonly Vector3 windDirection = Vector3.right;
 
-	// Token: 0x04001164 RID: 4452
 	private const float strength1 = 2.5f;
 
-	// Token: 0x04001165 RID: 4453
 	private const float frequency1 = 7f;
 
-	// Token: 0x04001166 RID: 4454
 	private const float strength2 = 3.5f;
 
-	// Token: 0x04001167 RID: 4455
 	private const float frequency2 = 5f;
 
-	// Token: 0x04001168 RID: 4456
 	private Vector3 initialPositionLocal;
 
-	// Token: 0x04001169 RID: 4457
 	private Vector3 initialDirectionLocal;
 
-	// Token: 0x0400116A RID: 4458
 	private Vector3 initialChildDirectionLocal;
 
-	// Token: 0x0400116B RID: 4459
 	private Quaternion initialLocalRotation;
 
-	// Token: 0x0400116C RID: 4460
 	public Vector3 oldPosition;
 
-	// Token: 0x0400116D RID: 4461
 	public Vector3 velocity;
 
-	// Token: 0x0400116E RID: 4462
 	private Quaternion oldVisualRotation;
 
-	// Token: 0x0400116F RID: 4463
 	private Quaternion visualRotation;
 
-	// Token: 0x04001170 RID: 4464
 	private Transform parent;
 
-	// Token: 0x04001171 RID: 4465
 	private WobbleBoneBase parentBone;
 
-	// Token: 0x04001172 RID: 4466
 	private bool hasParentBone;
 
-	// Token: 0x04001173 RID: 4467
 	[Space]
 	[Tooltip("~500-1000")]
 	public float spring = 500f;
 
-	// Token: 0x04001174 RID: 4468
 	[Range(0f, 1f)]
 	public float compression = 0.5f;
 
-	// Token: 0x04001175 RID: 4469
 	[Range(1f, 3f)]
 	public float expansion = 1.5f;
 
-	// Token: 0x04001176 RID: 4470
 	private float minDistance;
 
-	// Token: 0x04001177 RID: 4471
 	private float maxDistance;
 
-	// Token: 0x04001178 RID: 4472
 	public float damper = 20f;
 
-	// Token: 0x04001179 RID: 4473
 	public float gravity = 1f;
 
-	// Token: 0x0400117A RID: 4474
 	[Range(0f, 5f)]
 	public float windStrength;
 
-	// Token: 0x0400117B RID: 4475
 	[Space]
 	public bool ignoreRotation;
 
-	// Token: 0x0400117C RID: 4476
 	private bool initialized;
 
-	// Token: 0x0400117D RID: 4477
 	private WobbleBoneBase[] childBones;
 
-	// Token: 0x0400117E RID: 4478
 	private Vector3 parentPosition;
 
-	// Token: 0x0400117F RID: 4479
 	private Quaternion parentRotation;
 
-	// Token: 0x04001180 RID: 4480
 	private Vector3 directionGoal;
 
-	// Token: 0x04001181 RID: 4481
 	private Vector3 positionGoal;
 }

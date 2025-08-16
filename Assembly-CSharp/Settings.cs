@@ -8,29 +8,27 @@ using UnityEngine.Events;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.PostProcessing;
 
-// Token: 0x02000238 RID: 568
 public class Settings : MonoBehaviour
 {
-	// Token: 0x06000C4C RID: 3148 RVA: 0x0003B1CC File Offset: 0x000393CC
+	// Token: 0x06000F47 RID: 3911 RVA: 0x0000D35E File Offset: 0x0000B55E
 	public static float NormalizedAudioVolume(float flatVolume)
 	{
 		return Mathf.Log10(Mathf.Max(flatVolume, 1E-05f)) * 20f;
 	}
 
-	// Token: 0x06000C4D RID: 3149 RVA: 0x0003B1E4 File Offset: 0x000393E4
+	// Token: 0x06000F48 RID: 3912 RVA: 0x0000767F File Offset: 0x0000587F
 	public static int FloatToInt(float f)
 	{
 		return Mathf.FloorToInt(f * 1000f);
 	}
 
-	// Token: 0x06000C4E RID: 3150 RVA: 0x0003B1F2 File Offset: 0x000393F2
+	// Token: 0x06000F49 RID: 3913 RVA: 0x0000768D File Offset: 0x0000588D
 	public static float IntToFloat(int i)
 	{
 		return (float)i / 1000f;
 	}
 
-	// Token: 0x170000D0 RID: 208
-	// (get) Token: 0x06000C4F RID: 3151 RVA: 0x0003B1FC File Offset: 0x000393FC
+	// (get) Token: 0x06000F4A RID: 3914 RVA: 0x000502D8 File Offset: 0x0004E4D8
 	public static int CurrentResolutionIndex
 	{
 		get
@@ -45,16 +43,15 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x170000D1 RID: 209
-	// (get) Token: 0x06000C50 RID: 3152 RVA: 0x0003B23C File Offset: 0x0003943C
-	// (set) Token: 0x06000C51 RID: 3153 RVA: 0x0003B288 File Offset: 0x00039488
+	// (get) Token: 0x06000F4B RID: 3915 RVA: 0x00050318 File Offset: 0x0004E518
+	// (set) Token: 0x06000F4C RID: 3916 RVA: 0x0000D376 File Offset: 0x0000B576
 	public static Settings s
 	{
 		get
 		{
 			if (Settings.instance == null)
 			{
-				Settings.instance = Object.FindObjectOfType<Settings>();
+				Settings.instance = global::UnityEngine.Object.FindObjectOfType<Settings>();
 			}
 			if (Settings.instance != null && !Settings.instance.initialized)
 			{
@@ -68,7 +65,7 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C52 RID: 3154 RVA: 0x0003B290 File Offset: 0x00039490
+	// Token: 0x06000F4D RID: 3917 RVA: 0x00050364 File Offset: 0x0004E564
 	private void Initialize()
 	{
 		if (this.initialized)
@@ -114,19 +111,19 @@ public class Settings : MonoBehaviour
 		this.ReadFromDisk();
 	}
 
-	// Token: 0x06000C53 RID: 3155 RVA: 0x0003B3C2 File Offset: 0x000395C2
+	// Token: 0x06000F4E RID: 3918 RVA: 0x0000D37E File Offset: 0x0000B57E
 	private void OnEnable()
 	{
 		this.LoadSettings();
 	}
 
-	// Token: 0x06000C54 RID: 3156 RVA: 0x0003B3CA File Offset: 0x000395CA
+	// Token: 0x06000F4F RID: 3919 RVA: 0x0000D37E File Offset: 0x0000B57E
 	private void Start()
 	{
 		this.LoadSettings();
 	}
 
-	// Token: 0x06000C55 RID: 3157 RVA: 0x0003B3D2 File Offset: 0x000395D2
+	// Token: 0x06000F50 RID: 3920 RVA: 0x0000D386 File Offset: 0x0000B586
 	private void OnDisable()
 	{
 		if (Settings.instance == this)
@@ -135,7 +132,7 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C56 RID: 3158 RVA: 0x0003B3E7 File Offset: 0x000395E7
+	// Token: 0x06000F51 RID: 3921 RVA: 0x0000D386 File Offset: 0x0000B586
 	private void OnApplicationQuit()
 	{
 		if (Settings.instance == this)
@@ -144,7 +141,7 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C57 RID: 3159 RVA: 0x0003B3FC File Offset: 0x000395FC
+	// Token: 0x06000F52 RID: 3922 RVA: 0x00050498 File Offset: 0x0004E698
 	public void ReadFromDisk()
 	{
 		if (Settings.hasCachedData)
@@ -163,14 +160,14 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C58 RID: 3160 RVA: 0x0003B449 File Offset: 0x00039649
+	// Token: 0x06000F53 RID: 3923 RVA: 0x0000D39B File Offset: 0x0000B59B
 	public void WriteToDisk()
 	{
 		this.settingsData.v = 12;
 		FileUtil.WriteSettingsData(this.settingsData);
 	}
 
-	// Token: 0x06000C59 RID: 3161 RVA: 0x0003B463 File Offset: 0x00039663
+	// Token: 0x06000F54 RID: 3924 RVA: 0x0000D3B5 File Offset: 0x0000B5B5
 	private IEnumerator LoadSettingsNextFrame()
 	{
 		yield return null;
@@ -179,7 +176,7 @@ public class Settings : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000C5A RID: 3162 RVA: 0x0003B474 File Offset: 0x00039674
+	// Token: 0x06000F55 RID: 3925 RVA: 0x000504E8 File Offset: 0x0004E6E8
 	public void LoadSettings()
 	{
 		if (!this.initialized)
@@ -626,13 +623,13 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C5B RID: 3163 RVA: 0x0003BFEA File Offset: 0x0003A1EA
+	// Token: 0x06000F56 RID: 3926 RVA: 0x0000D3C4 File Offset: 0x0000B5C4
 	private Vector2Int FindClosestResolution()
 	{
 		return new Vector2Int(0, 0);
 	}
 
-	// Token: 0x06000C5C RID: 3164 RVA: 0x0003BFF3 File Offset: 0x0003A1F3
+	// Token: 0x06000F57 RID: 3927 RVA: 0x0000D3CD File Offset: 0x0000B5CD
 	public void Write(string key, bool value)
 	{
 		if (this.settingsData.bools.ContainsKey(key))
@@ -643,7 +640,7 @@ public class Settings : MonoBehaviour
 		this.settingsData.bools.Add(key, value);
 	}
 
-	// Token: 0x06000C5D RID: 3165 RVA: 0x0003C030 File Offset: 0x0003A230
+	// Token: 0x06000F58 RID: 3928 RVA: 0x00051060 File Offset: 0x0004F260
 	public bool ReadBool(string key, bool defaultValue = false)
 	{
 		bool flag;
@@ -655,7 +652,7 @@ public class Settings : MonoBehaviour
 		return defaultValue;
 	}
 
-	// Token: 0x06000C5E RID: 3166 RVA: 0x0003C067 File Offset: 0x0003A267
+	// Token: 0x06000F59 RID: 3929 RVA: 0x0000D407 File Offset: 0x0000B607
 	public void Write(string key, int value)
 	{
 		if (this.settingsData.ints.ContainsKey(key))
@@ -666,7 +663,7 @@ public class Settings : MonoBehaviour
 		this.settingsData.ints.Add(key, value);
 	}
 
-	// Token: 0x06000C5F RID: 3167 RVA: 0x0003C0A4 File Offset: 0x0003A2A4
+	// Token: 0x06000F5A RID: 3930 RVA: 0x00051098 File Offset: 0x0004F298
 	public int ReadInt(string key, int defaultValue = 0)
 	{
 		int num;
@@ -678,19 +675,19 @@ public class Settings : MonoBehaviour
 		return defaultValue;
 	}
 
-	// Token: 0x06000C60 RID: 3168 RVA: 0x0003C0DB File Offset: 0x0003A2DB
+	// Token: 0x06000F5B RID: 3931 RVA: 0x0000D441 File Offset: 0x0000B641
 	public void Write(string key, float value)
 	{
 		this.Write(key, Settings.FloatToInt(value));
 	}
 
-	// Token: 0x06000C61 RID: 3169 RVA: 0x0003C0EA File Offset: 0x0003A2EA
+	// Token: 0x06000F5C RID: 3932 RVA: 0x0000D450 File Offset: 0x0000B650
 	public float ReadFloat(string key, float defaultValue = 0f)
 	{
 		return Settings.IntToFloat(this.ReadInt(key, Settings.FloatToInt(defaultValue)));
 	}
 
-	// Token: 0x06000C62 RID: 3170 RVA: 0x0003C0FE File Offset: 0x0003A2FE
+	// Token: 0x06000F5D RID: 3933 RVA: 0x0000D464 File Offset: 0x0000B664
 	public void Write(string key, string value)
 	{
 		if (this.settingsData.strings.ContainsKey(key))
@@ -701,7 +698,7 @@ public class Settings : MonoBehaviour
 		this.settingsData.strings.Add(key, value);
 	}
 
-	// Token: 0x06000C63 RID: 3171 RVA: 0x0003C138 File Offset: 0x0003A338
+	// Token: 0x06000F5E RID: 3934 RVA: 0x0000D49E File Offset: 0x0000B69E
 	public string ReadString(string key)
 	{
 		if (!this.settingsData.strings.ContainsKey(key))
@@ -711,128 +708,89 @@ public class Settings : MonoBehaviour
 		return this.settingsData.strings[key];
 	}
 
-	// Token: 0x06000C64 RID: 3172 RVA: 0x0003C164 File Offset: 0x0003A364
+	// Token: 0x06000F5F RID: 3935 RVA: 0x0000D4CA File Offset: 0x0000B6CA
 	public bool HasString(string key)
 	{
 		return this.settingsData.strings.ContainsKey(key);
 	}
 
-	// Token: 0x0400100D RID: 4109
 	public static Language language;
 
-	// Token: 0x0400100E RID: 4110
 	public static float gameVolume;
 
-	// Token: 0x0400100F RID: 4111
 	private float heightmapPixelError = -1f;
 
-	// Token: 0x04001010 RID: 4112
 	public static bool hasMusic;
 
-	// Token: 0x04001011 RID: 4113
 	public static UnityEvent onHasMusicChanged = new UnityEvent();
 
-	// Token: 0x04001012 RID: 4114
 	private const float floatToIntScale = 1000f;
 
-	// Token: 0x04001013 RID: 4115
 	public static Vector2Int[] pixelResolutions;
 
-	// Token: 0x04001014 RID: 4116
 	public static int[] refreshRates;
 
-	// Token: 0x04001015 RID: 4117
 	public static Settings.SettingsData cachedSettingsData;
 
-	// Token: 0x04001016 RID: 4118
 	public static bool hasCachedData = false;
 
-	// Token: 0x04001017 RID: 4119
 	public Settings.SettingsData settingsData;
 
-	// Token: 0x04001018 RID: 4120
 	private static Settings instance;
 
-	// Token: 0x04001019 RID: 4121
 	public static float mouseSensitivity = 1f;
 
-	// Token: 0x0400101A RID: 4122
 	public static bool mouseInvertHorizontal = false;
 
-	// Token: 0x0400101B RID: 4123
 	public static bool mouseInvertVertical = false;
 
-	// Token: 0x0400101C RID: 4124
 	public static bool reCenterCameraIsToggle = false;
 
-	// Token: 0x0400101D RID: 4125
 	public AudioMixer volumeMixer;
 
-	// Token: 0x0400101E RID: 4126
 	public Terrain[] terrains = new Terrain[0];
 
-	// Token: 0x0400101F RID: 4127
 	public Light sunLight;
 
-	// Token: 0x04001020 RID: 4128
 	public GameObject postProcessVolumes;
 
-	// Token: 0x04001021 RID: 4129
 	public PostProcessProfile postProcessProfile;
 
-	// Token: 0x04001022 RID: 4130
 	private AmbientOcclusion ambientOcclusionSetting;
 
-	// Token: 0x04001023 RID: 4131
 	public GameObject fpsCounter;
 
-	// Token: 0x04001024 RID: 4132
 	public ShaderVariables shaderVariables;
 
-	// Token: 0x04001025 RID: 4133
 	public CameraLayerCullDistances cameraLayerCullDistances;
 
-	// Token: 0x04001026 RID: 4134
 	public GameObject skybox;
 
-	// Token: 0x04001027 RID: 4135
 	public Material[] leafMaterials;
 
-	// Token: 0x04001028 RID: 4136
 	public Material[] queueMaterials;
 
-	// Token: 0x04001029 RID: 4137
 	public Material[] instancingMaterials;
 
-	// Token: 0x0400102A RID: 4138
 	public Texture2D[] terrainTextures;
 
-	// Token: 0x0400102B RID: 4139
 	public DynamicResolutionScaler dynamicResolutionScaler;
 
-	// Token: 0x0400102C RID: 4140
 	protected bool initialized;
 
-	// Token: 0x0400102D RID: 4141
 	private bool willUpdateSettings;
 
-	// Token: 0x0200041D RID: 1053
 	[Serializable]
 	public class SettingsData
 	{
-		// Token: 0x04001D33 RID: 7475
 		public const int currentVersion = 12;
 
-		// Token: 0x04001D34 RID: 7476
 		public int v = 12;
 
-		// Token: 0x04001D35 RID: 7477
 		public BoolDictionary bools = new BoolDictionary();
 
-		// Token: 0x04001D36 RID: 7478
 		public IntDictionary ints = new IntDictionary();
 
-		// Token: 0x04001D37 RID: 7479
 		public StringDictionary strings = new StringDictionary();
 	}
 }

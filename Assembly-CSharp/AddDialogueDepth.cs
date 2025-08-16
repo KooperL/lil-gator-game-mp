@@ -1,16 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020000A9 RID: 169
 public class AddDialogueDepth : MonoBehaviour
 {
-	// Token: 0x0600033A RID: 826 RVA: 0x00013032 File Offset: 0x00011232
+	// Token: 0x060003A5 RID: 933 RVA: 0x00004C9B File Offset: 0x00002E9B
 	private void OnEnable()
 	{
 		Game.DialogueDepth++;
 	}
 
-	// Token: 0x0600033B RID: 827 RVA: 0x00013040 File Offset: 0x00011240
+	// Token: 0x060003A6 RID: 934 RVA: 0x00004CA9 File Offset: 0x00002EA9
 	private void OnDisable()
 	{
 		Game.DialogueDepth--;

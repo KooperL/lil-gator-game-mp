@@ -3,13 +3,11 @@ using UnityEngine;
 
 namespace Rewired.Demos
 {
-	// Token: 0x02000345 RID: 837
 	[AddComponentMenu("")]
 	[RequireComponent(typeof(CharacterController))]
 	public class PressStartToJoinExample_GamePlayer : MonoBehaviour
 	{
-		// Token: 0x17000423 RID: 1059
-		// (get) Token: 0x060017A1 RID: 6049 RVA: 0x00064881 File Offset: 0x00062A81
+		// (get) Token: 0x06001DED RID: 7661 RVA: 0x00016D76 File Offset: 0x00014F76
 		private Player player
 		{
 			get
@@ -18,13 +16,13 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x060017A2 RID: 6050 RVA: 0x0006488E File Offset: 0x00062A8E
+		// Token: 0x06001DEE RID: 7662 RVA: 0x00016D83 File Offset: 0x00014F83
 		private void OnEnable()
 		{
 			this.cc = base.GetComponent<CharacterController>();
 		}
 
-		// Token: 0x060017A3 RID: 6051 RVA: 0x0006489C File Offset: 0x00062A9C
+		// Token: 0x06001DEF RID: 7663 RVA: 0x00016D91 File Offset: 0x00014F91
 		private void Update()
 		{
 			if (!ReInput.isReady)
@@ -39,7 +37,7 @@ namespace Rewired.Demos
 			this.ProcessInput();
 		}
 
-		// Token: 0x060017A4 RID: 6052 RVA: 0x000648BC File Offset: 0x00062ABC
+		// Token: 0x06001DF0 RID: 7664 RVA: 0x000759F0 File Offset: 0x00073BF0
 		private void GetInput()
 		{
 			this.moveVector.x = this.player.GetAxis("Move Horizontal");
@@ -47,7 +45,7 @@ namespace Rewired.Demos
 			this.fire = this.player.GetButtonDown("Fire");
 		}
 
-		// Token: 0x060017A5 RID: 6053 RVA: 0x00064918 File Offset: 0x00062B18
+		// Token: 0x06001DF1 RID: 7665 RVA: 0x00075A4C File Offset: 0x00073C4C
 		private void ProcessInput()
 		{
 			if (this.moveVector.x != 0f || this.moveVector.y != 0f)
@@ -56,29 +54,22 @@ namespace Rewired.Demos
 			}
 			if (this.fire)
 			{
-				Object.Instantiate<GameObject>(this.bulletPrefab, base.transform.position + base.transform.right, base.transform.rotation).GetComponent<Rigidbody>().AddForce(base.transform.right * this.bulletSpeed, ForceMode.VelocityChange);
+				global::UnityEngine.Object.Instantiate<GameObject>(this.bulletPrefab, base.transform.position + base.transform.right, base.transform.rotation).GetComponent<Rigidbody>().AddForce(base.transform.right * this.bulletSpeed, ForceMode.VelocityChange);
 			}
 		}
 
-		// Token: 0x04001966 RID: 6502
 		public int gamePlayerId;
 
-		// Token: 0x04001967 RID: 6503
 		public float moveSpeed = 3f;
 
-		// Token: 0x04001968 RID: 6504
 		public float bulletSpeed = 15f;
 
-		// Token: 0x04001969 RID: 6505
 		public GameObject bulletPrefab;
 
-		// Token: 0x0400196A RID: 6506
 		private CharacterController cc;
 
-		// Token: 0x0400196B RID: 6507
 		private Vector3 moveVector;
 
-		// Token: 0x0400196C RID: 6508
 		private bool fire;
 	}
 }

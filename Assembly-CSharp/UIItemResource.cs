@@ -3,10 +3,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-// Token: 0x020002CD RID: 717
 public class UIItemResource : MonoBehaviour
 {
-	// Token: 0x06000F0A RID: 3850 RVA: 0x000481A4 File Offset: 0x000463A4
+	// Token: 0x0600124E RID: 4686 RVA: 0x0005B2F8 File Offset: 0x000594F8
 	private void Awake()
 	{
 		if (this.itemResource != null && !this.listenerAdded)
@@ -20,7 +19,7 @@ public class UIItemResource : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F0B RID: 3851 RVA: 0x0004820E File Offset: 0x0004640E
+	// Token: 0x0600124F RID: 4687 RVA: 0x0000F852 File Offset: 0x0000DA52
 	private void OnEnable()
 	{
 		if (Time.time > this.deltaTransferTime)
@@ -31,7 +30,7 @@ public class UIItemResource : MonoBehaviour
 		this.UpdateDisplay();
 	}
 
-	// Token: 0x06000F0C RID: 3852 RVA: 0x00048248 File Offset: 0x00046448
+	// Token: 0x06001250 RID: 4688 RVA: 0x0005B364 File Offset: 0x00059564
 	private void Start()
 	{
 		if (this.hide && this.startHidden)
@@ -41,14 +40,14 @@ public class UIItemResource : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F0D RID: 3853 RVA: 0x00048297 File Offset: 0x00046497
+	// Token: 0x06001251 RID: 4689 RVA: 0x0000F88B File Offset: 0x0000DA8B
 	private void OnDisable()
 	{
 		this.deltaValue = 0f;
 		this.currentValue = this.itemResource.Amount;
 	}
 
-	// Token: 0x06000F0E RID: 3854 RVA: 0x000482B5 File Offset: 0x000464B5
+	// Token: 0x06001252 RID: 4690 RVA: 0x0000F8A9 File Offset: 0x0000DAA9
 	private void OnDestroy()
 	{
 		if (this.itemResource != null)
@@ -57,7 +56,7 @@ public class UIItemResource : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F0F RID: 3855 RVA: 0x000482E4 File Offset: 0x000464E4
+	// Token: 0x06001253 RID: 4691 RVA: 0x0005B3B4 File Offset: 0x000595B4
 	private void LateUpdate()
 	{
 		if (this.deltaValue != 0f)
@@ -117,7 +116,7 @@ public class UIItemResource : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F10 RID: 3856 RVA: 0x00048510 File Offset: 0x00046710
+	// Token: 0x06001254 RID: 4692 RVA: 0x0005B5E0 File Offset: 0x000597E0
 	public void SetItemResource(ItemResource newResource)
 	{
 		if (newResource == this.itemResource)
@@ -136,8 +135,7 @@ public class UIItemResource : MonoBehaviour
 		this.UpdateDisplay();
 	}
 
-	// Token: 0x170000E4 RID: 228
-	// (get) Token: 0x06000F11 RID: 3857 RVA: 0x00048583 File Offset: 0x00046783
+	// (get) Token: 0x06001255 RID: 4693 RVA: 0x0000F8D5 File Offset: 0x0000DAD5
 	private bool DisplayChanges
 	{
 		get
@@ -146,7 +144,7 @@ public class UIItemResource : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F12 RID: 3858 RVA: 0x000485AC File Offset: 0x000467AC
+	// Token: 0x06001256 RID: 4694 RVA: 0x0005B654 File Offset: 0x00059854
 	public void AmountChanged(int amount)
 	{
 		if (!this.DisplayChanges)
@@ -180,7 +178,7 @@ public class UIItemResource : MonoBehaviour
 		this.UpdateDisplay();
 	}
 
-	// Token: 0x06000F13 RID: 3859 RVA: 0x00048684 File Offset: 0x00046884
+	// Token: 0x06001257 RID: 4695 RVA: 0x0005B72C File Offset: 0x0005992C
 	public void UpdateDisplay()
 	{
 		if (this.itemResource == null)
@@ -223,7 +221,7 @@ public class UIItemResource : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F14 RID: 3860 RVA: 0x00048800 File Offset: 0x00046A00
+	// Token: 0x06001258 RID: 4696 RVA: 0x0005B8A8 File Offset: 0x00059AA8
 	public void SetPrice(int price)
 	{
 		price = Mathf.Abs(price);
@@ -238,105 +236,73 @@ public class UIItemResource : MonoBehaviour
 		this.pricetag.SetActive(true);
 	}
 
-	// Token: 0x06000F15 RID: 3861 RVA: 0x0004887D File Offset: 0x00046A7D
+	// Token: 0x06001259 RID: 4697 RVA: 0x0000F8FB File Offset: 0x0000DAFB
 	public void ClearPrice()
 	{
 		this.pricetag.SetActive(false);
 	}
 
-	// Token: 0x040013A5 RID: 5029
 	public ItemResource itemResource;
 
-	// Token: 0x040013A6 RID: 5030
 	public bool showOutsideGameplay;
 
-	// Token: 0x040013A7 RID: 5031
 	public Text text;
 
-	// Token: 0x040013A8 RID: 5032
 	public Text deltaText;
 
-	// Token: 0x040013A9 RID: 5033
 	public Image image;
 
-	// Token: 0x040013AA RID: 5034
 	public Image background;
 
-	// Token: 0x040013AB RID: 5035
 	public GameObject pricetag;
 
-	// Token: 0x040013AC RID: 5036
 	public Text priceText;
 
-	// Token: 0x040013AD RID: 5037
 	public bool hide = true;
 
-	// Token: 0x040013AE RID: 5038
 	public bool startHidden;
 
-	// Token: 0x040013AF RID: 5039
 	public float hideDelay = 5f;
 
-	// Token: 0x040013B0 RID: 5040
 	private float hideTime = -1f;
 
-	// Token: 0x040013B1 RID: 5041
 	public float hiddenPosition;
 
-	// Token: 0x040013B2 RID: 5042
 	private float velocity;
 
-	// Token: 0x040013B3 RID: 5043
 	public RectTransform boxTransform;
 
-	// Token: 0x040013B4 RID: 5044
 	public int currentValue;
 
-	// Token: 0x040013B5 RID: 5045
 	public float deltaValue;
 
-	// Token: 0x040013B6 RID: 5046
 	private float deltaTransferTime = -1f;
 
-	// Token: 0x040013B7 RID: 5047
 	public float deltaTransferDelay = 2f;
 
-	// Token: 0x040013B8 RID: 5048
 	public float deltaTransferSpeed = 30f;
 
-	// Token: 0x040013B9 RID: 5049
 	private AudioSourceVariance collectSound;
 
-	// Token: 0x040013BA RID: 5050
 	public RectTransform pullout;
 
-	// Token: 0x040013BB RID: 5051
 	public float pulloutHiddenX;
 
-	// Token: 0x040013BC RID: 5052
 	public float pulloutVisibleX;
 
-	// Token: 0x040013BD RID: 5053
 	private float pulloutVelocity;
 
-	// Token: 0x040013BE RID: 5054
 	public bool bold;
 
-	// Token: 0x040013BF RID: 5055
 	private int soundsPerFrame = 3;
 
-	// Token: 0x040013C0 RID: 5056
 	private int soundBudget;
 
-	// Token: 0x040013C1 RID: 5057
 	private float soundBudgetResetTime = -1f;
 
-	// Token: 0x040013C2 RID: 5058
 	private float soundBudgetFrame = 0.05f;
 
-	// Token: 0x040013C3 RID: 5059
 	private bool listenerAdded;
 
-	// Token: 0x040013C4 RID: 5060
 	public bool skipDelta;
 }

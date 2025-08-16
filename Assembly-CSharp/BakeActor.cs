@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// Token: 0x02000081 RID: 129
 [AddComponentMenu("Actors/Posed Actor")]
 public class BakeActor : MonoBehaviour
 {
-	// Token: 0x06000216 RID: 534 RVA: 0x0000B7F9 File Offset: 0x000099F9
+	// Token: 0x0600025B RID: 603 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnValidate()
 	{
 	}
 
-	// Token: 0x06000217 RID: 535 RVA: 0x0000B7FC File Offset: 0x000099FC
+	// Token: 0x0600025C RID: 604 RVA: 0x0001FAF0 File Offset: 0x0001DCF0
 	public void UpdateArmature()
 	{
 		if (this.armatureRoot == null)
@@ -35,7 +34,7 @@ public class BakeActor : MonoBehaviour
 		this.armature = list.ToArray();
 	}
 
-	// Token: 0x06000218 RID: 536 RVA: 0x0000B910 File Offset: 0x00009B10
+	// Token: 0x0600025D RID: 605 RVA: 0x0001FC04 File Offset: 0x0001DE04
 	private void Start()
 	{
 		if (this.disableProximityTrigger && this.proximityTrigger != null)
@@ -76,7 +75,7 @@ public class BakeActor : MonoBehaviour
 		this.SetBakeState(false);
 	}
 
-	// Token: 0x06000219 RID: 537 RVA: 0x0000BA2E File Offset: 0x00009C2E
+	// Token: 0x0600025E RID: 606 RVA: 0x00003F8A File Offset: 0x0000218A
 	private void ActorEnabled()
 	{
 		if (this.actor.lookAtAmount > 0f || this.actor.shoulderLookAmount > 0f)
@@ -86,14 +85,14 @@ public class BakeActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600021A RID: 538 RVA: 0x0000BA62 File Offset: 0x00009C62
+	// Token: 0x0600025F RID: 607 RVA: 0x00003FBE File Offset: 0x000021BE
 	private void ActorEnteredDialogue()
 	{
 		base.enabled = true;
 		this.SetBakeState(false);
 	}
 
-	// Token: 0x0600021B RID: 539 RVA: 0x0000BA72 File Offset: 0x00009C72
+	// Token: 0x06000260 RID: 608 RVA: 0x00003FCE File Offset: 0x000021CE
 	private void Update()
 	{
 		if (!this.actor.enabled)
@@ -103,13 +102,13 @@ public class BakeActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600021C RID: 540 RVA: 0x0000BA8F File Offset: 0x00009C8F
+	// Token: 0x06000261 RID: 609 RVA: 0x00002229 File Offset: 0x00000429
 	[ContextMenu("PreBake Mesh")]
 	public void PreBakeMesh()
 	{
 	}
 
-	// Token: 0x0600021D RID: 541 RVA: 0x0000BA94 File Offset: 0x00009C94
+	// Token: 0x06000262 RID: 610 RVA: 0x0001FD24 File Offset: 0x0001DF24
 	private void GenerateBakedObject()
 	{
 		GameObject gameObject = new GameObject();
@@ -125,7 +124,7 @@ public class BakeActor : MonoBehaviour
 		gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600021E RID: 542 RVA: 0x0000BB4D File Offset: 0x00009D4D
+	// Token: 0x06000263 RID: 611 RVA: 0x00003FEB File Offset: 0x000021EB
 	private void BakeMesh()
 	{
 		if (this.bakedMesh == null)
@@ -136,7 +135,7 @@ public class BakeActor : MonoBehaviour
 		this.bakedMeshFilter.mesh = this.bakedMesh;
 	}
 
-	// Token: 0x0600021F RID: 543 RVA: 0x0000BB8C File Offset: 0x00009D8C
+	// Token: 0x06000264 RID: 612 RVA: 0x0001FDE0 File Offset: 0x0001DFE0
 	private void SetBakeState(bool isBaked)
 	{
 		this.actor.jawRotationMod = (isBaked ? 0f : this.jawRotationMod);
@@ -159,67 +158,48 @@ public class BakeActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x040002BB RID: 699
 	public bool bakeStatic = true;
 
-	// Token: 0x040002BC RID: 700
 	[ConditionalHide("bakeStatic", true)]
 	public bool alwaysStatic;
 
-	// Token: 0x040002BD RID: 701
 	[Header("References")]
 	public DialogueActor actor;
 
-	// Token: 0x040002BE RID: 702
 	public Animator animator;
 
-	// Token: 0x040002BF RID: 703
 	public Transform armatureRoot;
 
-	// Token: 0x040002C0 RID: 704
 	[ReadOnly]
 	public Transform[] armature;
 
-	// Token: 0x040002C1 RID: 705
 	public SkinnedMeshRenderer skinnedMeshRenderer;
 
-	// Token: 0x040002C2 RID: 706
 	public InteractionHighlightGeneric highlight;
 
-	// Token: 0x040002C3 RID: 707
 	public int highlightIndex = -1;
 
-	// Token: 0x040002C4 RID: 708
 	public WobbleBrain wobbleBrain;
 
-	// Token: 0x040002C5 RID: 709
 	public FadeRenderer fadeRenderer;
 
-	// Token: 0x040002C6 RID: 710
 	public GameObject proximityTrigger;
 
-	// Token: 0x040002C7 RID: 711
 	public bool disableProximityTrigger = true;
 
-	// Token: 0x040002C8 RID: 712
 	[ReadOnly]
 	public bool isPreBaked;
 
-	// Token: 0x040002C9 RID: 713
 	[ReadOnly]
 	public Mesh bakedMesh;
 
-	// Token: 0x040002CA RID: 714
 	[ReadOnly]
 	public MeshRenderer bakedMeshRenderer;
 
-	// Token: 0x040002CB RID: 715
 	[ReadOnly]
 	public MeshFilter bakedMeshFilter;
 
-	// Token: 0x040002CC RID: 716
 	private float headRotationMod;
 
-	// Token: 0x040002CD RID: 717
 	private float jawRotationMod;
 }

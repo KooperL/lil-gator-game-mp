@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001C3 RID: 451
 public class RetractSpring : MonoBehaviour
 {
-	// Token: 0x0600094C RID: 2380 RVA: 0x0002C224 File Offset: 0x0002A424
+	// Token: 0x06000B2F RID: 2863 RVA: 0x0003FD14 File Offset: 0x0003DF14
 	private void OnEnable()
 	{
 		if (this.adapt)
@@ -18,7 +17,7 @@ public class RetractSpring : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600094D RID: 2381 RVA: 0x0002C290 File Offset: 0x0002A490
+	// Token: 0x06000B30 RID: 2864 RVA: 0x0003FD80 File Offset: 0x0003DF80
 	private Vector3 GetCurrentDelta()
 	{
 		Vector3 vector = this.rigidbody.position + this.rigidbody.rotation * this.joint.anchor;
@@ -26,7 +25,7 @@ public class RetractSpring : MonoBehaviour
 		return vector - vector2;
 	}
 
-	// Token: 0x0600094E RID: 2382 RVA: 0x0002C304 File Offset: 0x0002A504
+	// Token: 0x06000B31 RID: 2865 RVA: 0x0003FDF4 File Offset: 0x0003DFF4
 	private float GetCurrentDistance()
 	{
 		Vector3 vector = this.rigidbody.position + this.rigidbody.rotation * this.joint.anchor;
@@ -34,7 +33,7 @@ public class RetractSpring : MonoBehaviour
 		return Vector3.Distance(vector, vector2);
 	}
 
-	// Token: 0x0600094F RID: 2383 RVA: 0x0002C378 File Offset: 0x0002A578
+	// Token: 0x06000B32 RID: 2866 RVA: 0x0003FE68 File Offset: 0x0003E068
 	private void FixedUpdate()
 	{
 		float num = this.jointLength - this.reelSpeed * Time.deltaTime;
@@ -53,36 +52,25 @@ public class RetractSpring : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000BAB RID: 2987
 	public Rigidbody rigidbody;
 
-	// Token: 0x04000BAC RID: 2988
 	public SpringJoint joint;
 
-	// Token: 0x04000BAD RID: 2989
 	public SpringJoint extendedJoint;
 
-	// Token: 0x04000BAE RID: 2990
 	public float extendedJointDistance = 0.5f;
 
-	// Token: 0x04000BAF RID: 2991
 	private float jointLength;
 
-	// Token: 0x04000BB0 RID: 2992
 	private float jointLengthVel;
 
-	// Token: 0x04000BB1 RID: 2993
 	public float reelSpeed = 0.25f;
 
-	// Token: 0x04000BB2 RID: 2994
 	public bool adapt = true;
 
-	// Token: 0x04000BB3 RID: 2995
 	public float adaptDistance = 1f;
 
-	// Token: 0x04000BB4 RID: 2996
 	public float maxAdaptSpeed = 10f;
 
-	// Token: 0x04000BB5 RID: 2997
 	public float minDistance = 1f;
 }

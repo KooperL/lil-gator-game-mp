@@ -2,16 +2,15 @@
 using System.Collections;
 using UnityEngine;
 
-// Token: 0x02000032 RID: 50
 public class PauseAnimator : MonoBehaviour
 {
-	// Token: 0x060000C4 RID: 196 RVA: 0x00005AA7 File Offset: 0x00003CA7
+	// Token: 0x060000D9 RID: 217 RVA: 0x00002B92 File Offset: 0x00000D92
 	public YieldInstruction DoThePause()
 	{
 		return base.StartCoroutine(this.RunThePause());
 	}
 
-	// Token: 0x060000C5 RID: 197 RVA: 0x00005AB5 File Offset: 0x00003CB5
+	// Token: 0x060000DA RID: 218 RVA: 0x00002BA0 File Offset: 0x00000DA0
 	private IEnumerator RunThePause()
 	{
 		if (this.waitForPause == null)
@@ -22,12 +21,9 @@ public class PauseAnimator : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x04000108 RID: 264
 	public float pauseTime = 0.1f;
 
-	// Token: 0x04000109 RID: 265
 	private WaitForSeconds waitForPause;
 
-	// Token: 0x0400010A RID: 266
 	private Animator animator;
 }

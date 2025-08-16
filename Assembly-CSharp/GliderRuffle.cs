@@ -2,23 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x0200012C RID: 300
 public class GliderRuffle : MonoBehaviour
 {
-	// Token: 0x06000636 RID: 1590 RVA: 0x00020310 File Offset: 0x0001E510
+	// Token: 0x0600079B RID: 1947 RVA: 0x000354EC File Offset: 0x000336EC
 	private void Start()
 	{
 		List<Transform> list = new List<Transform>(base.transform.GetComponentsInChildren<Transform>());
 		this.children = list.ToArray();
 	}
 
-	// Token: 0x06000637 RID: 1591 RVA: 0x0002033A File Offset: 0x0001E53A
+	// Token: 0x0600079C RID: 1948 RVA: 0x0000794F File Offset: 0x00005B4F
 	private void OnEnable()
 	{
 		this.fadeIn = -1f;
 	}
 
-	// Token: 0x06000638 RID: 1592 RVA: 0x00020348 File Offset: 0x0001E548
+	// Token: 0x0600079D RID: 1949 RVA: 0x00035518 File Offset: 0x00033718
 	private void LateUpdate()
 	{
 		if (this.fadeIn < 1f)
@@ -43,21 +42,15 @@ public class GliderRuffle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0400085F RID: 2143
 	private Transform[] children;
 
-	// Token: 0x04000860 RID: 2144
 	public float frequency = 5f;
 
-	// Token: 0x04000861 RID: 2145
 	public float magnitude = 20f;
 
-	// Token: 0x04000862 RID: 2146
 	private const float startFadeIn = 0.25f;
 
-	// Token: 0x04000863 RID: 2147
 	private float fadeIn;
 
-	// Token: 0x04000864 RID: 2148
 	private float lag = 0.5f;
 }

@@ -2,10 +2,9 @@
 using Unity.Collections;
 using UnityEngine;
 
-// Token: 0x02000282 RID: 642
 public class MovingWater : Water
 {
-	// Token: 0x06000DB0 RID: 3504 RVA: 0x0004248B File Offset: 0x0004068B
+	// Token: 0x060010C7 RID: 4295 RVA: 0x0000E516 File Offset: 0x0000C716
 	private void OnValidate()
 	{
 		if (this.waterMaterial == null)
@@ -16,7 +15,7 @@ public class MovingWater : Water
 		this._displacement = this.waterMaterial.GetFloat(this._Displacement);
 	}
 
-	// Token: 0x06000DB1 RID: 3505 RVA: 0x000424CC File Offset: 0x000406CC
+	// Token: 0x060010C8 RID: 4296 RVA: 0x0005658C File Offset: 0x0005478C
 	private void Awake()
 	{
 		NativeArray<Color32> rawTextureData = this._derivHeightMap.GetRawTextureData<Color32>();
@@ -32,7 +31,7 @@ public class MovingWater : Water
 		}
 	}
 
-	// Token: 0x06000DB2 RID: 3506 RVA: 0x0004257C File Offset: 0x0004077C
+	// Token: 0x060010C9 RID: 4297 RVA: 0x0005663C File Offset: 0x0005483C
 	private float SamplePoint(Vector2Int pixel)
 	{
 		pixel.x = (pixel.x % this.textureResolution.x + this.textureResolution.x) % this.textureResolution.x;
@@ -40,14 +39,14 @@ public class MovingWater : Water
 		return this.heights[pixel.x, pixel.y];
 	}
 
-	// Token: 0x06000DB3 RID: 3507 RVA: 0x00042608 File Offset: 0x00040808
+	// Token: 0x060010CA RID: 4298 RVA: 0x000566C8 File Offset: 0x000548C8
 	private float SampleHeight(Vector2 uv)
 	{
 		Vector2 vector = new Vector2(uv.x * (float)this.textureResolution.x, uv.y * (float)this.textureResolution.y);
 		return 0f + this.SamplePoint(new Vector2Int(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y)));
 	}
 
-	// Token: 0x06000DB4 RID: 3508 RVA: 0x0004266C File Offset: 0x0004086C
+	// Token: 0x060010CB RID: 4299 RVA: 0x0005672C File Offset: 0x0005492C
 	public override float GetWaterPlaneHeight(Vector3 referencePosition)
 	{
 		Vector2 vector = Time.time * this._flow.zw();
@@ -58,27 +57,19 @@ public class MovingWater : Water
 		return this._displacement * (num + num2 - 0.75f) - 0.15f;
 	}
 
-	// Token: 0x04001202 RID: 4610
 	public Material waterMaterial;
 
-	// Token: 0x04001203 RID: 4611
 	public Texture2D _derivHeightMap;
 
-	// Token: 0x04001204 RID: 4612
 	public float _displacement;
 
-	// Token: 0x04001205 RID: 4613
 	public Vector4 _flow;
 
-	// Token: 0x04001206 RID: 4614
 	private readonly int _Flow = Shader.PropertyToID("_Flow");
 
-	// Token: 0x04001207 RID: 4615
 	private readonly int _Displacement = Shader.PropertyToID("_Displacement");
 
-	// Token: 0x04001208 RID: 4616
 	private float[,] heights;
 
-	// Token: 0x04001209 RID: 4617
 	private Vector2Int textureResolution;
 }

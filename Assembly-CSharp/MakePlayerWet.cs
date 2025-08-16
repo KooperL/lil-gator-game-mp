@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x020001BF RID: 447
 public class MakePlayerWet : MonoBehaviour
 {
-	// Token: 0x06000940 RID: 2368 RVA: 0x0002BF28 File Offset: 0x0002A128
+	// Token: 0x06000B23 RID: 2851 RVA: 0x0000A852 File Offset: 0x00008A52
 	private void OnEnable()
 	{
 		this.playerEffects = Player.effects;
@@ -14,7 +13,7 @@ public class MakePlayerWet : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000941 RID: 2369 RVA: 0x0002BF56 File Offset: 0x0002A156
+	// Token: 0x06000B24 RID: 2852 RVA: 0x0000A880 File Offset: 0x00008A80
 	private void OnDisable()
 	{
 		if (this.playerEffects != null)
@@ -23,6 +22,5 @@ public class MakePlayerWet : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04000B9F RID: 2975
 	private PlayerEffects playerEffects;
 }

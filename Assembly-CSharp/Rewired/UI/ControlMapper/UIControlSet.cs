@@ -5,12 +5,10 @@ using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
-	// Token: 0x0200032E RID: 814
 	[AddComponentMenu("")]
 	public class UIControlSet : MonoBehaviour
 	{
-		// Token: 0x1700040D RID: 1037
-		// (get) Token: 0x060016A6 RID: 5798 RVA: 0x0005EDDC File Offset: 0x0005CFDC
+		// (get) Token: 0x06001C8D RID: 7309 RVA: 0x00070898 File Offset: 0x0006EA98
 		private Dictionary<int, UIControl> controls
 		{
 			get
@@ -24,7 +22,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x060016A7 RID: 5799 RVA: 0x0005EE01 File Offset: 0x0005D001
+		// Token: 0x06001C8E RID: 7310 RVA: 0x00015D3B File Offset: 0x00013F3B
 		public void SetTitle(string text)
 		{
 			if (this.title == null)
@@ -34,7 +32,7 @@ namespace Rewired.UI.ControlMapper
 			this.title.text = text;
 		}
 
-		// Token: 0x060016A8 RID: 5800 RVA: 0x0005EE20 File Offset: 0x0005D020
+		// Token: 0x06001C8F RID: 7311 RVA: 0x000708C0 File Offset: 0x0006EAC0
 		public T GetControl<T>(int uniqueId) where T : UIControl
 		{
 			UIControl uicontrol;
@@ -42,14 +40,14 @@ namespace Rewired.UI.ControlMapper
 			return uicontrol as T;
 		}
 
-		// Token: 0x060016A9 RID: 5801 RVA: 0x0005EE48 File Offset: 0x0005D048
+		// Token: 0x06001C90 RID: 7312 RVA: 0x000708E8 File Offset: 0x0006EAE8
 		public UISliderControl CreateSlider(GameObject prefab, Sprite icon, float minValue, float maxValue, Action<int, float> valueChangedCallback, Action<int> cancelCallback)
 		{
-			GameObject gameObject = Object.Instantiate<GameObject>(prefab);
+			GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(prefab);
 			UISliderControl control = gameObject.GetComponent<UISliderControl>();
 			if (control == null)
 			{
-				Object.Destroy(gameObject);
+				global::UnityEngine.Object.Destroy(gameObject);
 				Debug.LogError("Prefab missing UISliderControl component!");
 				return null;
 			}
@@ -81,11 +79,9 @@ namespace Rewired.UI.ControlMapper
 			return control;
 		}
 
-		// Token: 0x040018D9 RID: 6361
 		[SerializeField]
 		private Text title;
 
-		// Token: 0x040018DA RID: 6362
 		private Dictionary<int, UIControl> _controls;
 	}
 }

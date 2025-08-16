@@ -1,11 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000190 RID: 400
 public class PlaygroundStates : MonoBehaviour
 {
-	// Token: 0x17000071 RID: 113
-	// (get) Token: 0x0600082B RID: 2091 RVA: 0x0002718E File Offset: 0x0002538E
+	// (get) Token: 0x060009E1 RID: 2529 RVA: 0x00009856 File Offset: 0x00007A56
 	private string SaveID
 	{
 		get
@@ -14,13 +12,13 @@ public class PlaygroundStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600082C RID: 2092 RVA: 0x00027195 File Offset: 0x00025395
+	// Token: 0x060009E2 RID: 2530 RVA: 0x0000985D File Offset: 0x00007A5D
 	private void Start()
 	{
 		this.UpdateState(GameData.g.ReadInt(this.SaveID, 0));
 	}
 
-	// Token: 0x0600082D RID: 2093 RVA: 0x000271AE File Offset: 0x000253AE
+	// Token: 0x060009E3 RID: 2531 RVA: 0x00009876 File Offset: 0x00007A76
 	public void UpdateState(int newState)
 	{
 		this.state = newState;
@@ -28,7 +26,7 @@ public class PlaygroundStates : MonoBehaviour
 		this.Refresh();
 	}
 
-	// Token: 0x0600082E RID: 2094 RVA: 0x000271D0 File Offset: 0x000253D0
+	// Token: 0x060009E4 RID: 2532 RVA: 0x0003B908 File Offset: 0x00039B08
 	public void Refresh()
 	{
 		for (int i = 0; i < this.exclusiveStates.Length; i++)
@@ -50,21 +48,15 @@ public class PlaygroundStates : MonoBehaviour
 		this.mountainArea.SetActive(GameData.g.ReadBool("Sword_Hero", false) && this.state > 0);
 	}
 
-	// Token: 0x04000A55 RID: 2645
 	public GameObject[] exclusiveStates;
 
-	// Token: 0x04000A56 RID: 2646
 	public GameObject[] additiveStates;
 
-	// Token: 0x04000A57 RID: 2647
 	public GameObject forestArea;
 
-	// Token: 0x04000A58 RID: 2648
 	public GameObject waterArea;
 
-	// Token: 0x04000A59 RID: 2649
 	public GameObject mountainArea;
 
-	// Token: 0x04000A5A RID: 2650
 	public int state;
 }

@@ -1,9 +1,8 @@
 ﻿using System;
 
-// Token: 0x020000D1 RID: 209
 public class DSConditionalDialogue : DSDialogue
 {
-	// Token: 0x06000476 RID: 1142 RVA: 0x00018F94 File Offset: 0x00017194
+	// Token: 0x06000598 RID: 1432 RVA: 0x0002EF68 File Offset: 0x0002D168
 	public override void Activate()
 	{
 		int num = this.quests.Length + this.characters.Length;
@@ -42,21 +41,16 @@ public class DSConditionalDialogue : DSDialogue
 		}
 	}
 
-	// Token: 0x0400063E RID: 1598
 	public QuestProfile[] quests;
 
-	// Token: 0x0400063F RID: 1599
 	public CharacterProfile[] characters;
 
-	// Token: 0x04000640 RID: 1600
 	[ChunkLookup("document")]
 	public string allComplete;
 
-	// Token: 0x04000641 RID: 1601
 	[ChunkLookup("document")]
 	public string someComplete;
 
-	// Token: 0x04000642 RID: 1602
 	[ChunkLookup("document")]
 	public string noneComplete;
 }

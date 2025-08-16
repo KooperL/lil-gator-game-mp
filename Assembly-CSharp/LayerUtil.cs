@@ -1,11 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000176 RID: 374
 public class LayerUtil : MonoBehaviour
 {
-	// Token: 0x17000068 RID: 104
-	// (get) Token: 0x060007AE RID: 1966 RVA: 0x00025923 File Offset: 0x00023B23
+	// (get) Token: 0x0600094E RID: 2382 RVA: 0x000090B4 File Offset: 0x000072B4
 	public static LayerMask GroundLayers
 	{
 		get
@@ -14,8 +12,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// Token: 0x17000069 RID: 105
-	// (get) Token: 0x060007AF RID: 1967 RVA: 0x0002592F File Offset: 0x00023B2F
+	// (get) Token: 0x0600094F RID: 2383 RVA: 0x000090C0 File Offset: 0x000072C0
 	public static LayerMask GroundLayersMinusPlayer
 	{
 		get
@@ -24,8 +21,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700006A RID: 106
-	// (get) Token: 0x060007B0 RID: 1968 RVA: 0x0002593B File Offset: 0x00023B3B
+	// (get) Token: 0x06000950 RID: 2384 RVA: 0x000090CC File Offset: 0x000072CC
 	public static LayerMask BalanceBeamAnchorLayers
 	{
 		get
@@ -34,8 +30,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// Token: 0x1700006B RID: 107
-	// (get) Token: 0x060007B1 RID: 1969 RVA: 0x00025947 File Offset: 0x00023B47
+	// (get) Token: 0x06000951 RID: 2385 RVA: 0x000090D8 File Offset: 0x000072D8
 	public static LayerMask HitLayers
 	{
 		get
@@ -44,7 +39,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007B2 RID: 1970 RVA: 0x00025954 File Offset: 0x00023B54
+	// Token: 0x06000952 RID: 2386 RVA: 0x0003A1E4 File Offset: 0x000383E4
 	public static void SnapToGround(Transform transform, float range = 5f)
 	{
 		Vector3 position = transform.position;
@@ -54,7 +49,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007B3 RID: 1971 RVA: 0x0002597C File Offset: 0x00023B7C
+	// Token: 0x06000953 RID: 2387 RVA: 0x0003A20C File Offset: 0x0003840C
 	public static bool SnapToGround(ref Vector3 point, float range = 5f)
 	{
 		RaycastHit raycastHit;
@@ -66,47 +61,38 @@ public class LayerUtil : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x1700006C RID: 108
-	// (get) Token: 0x060007B4 RID: 1972 RVA: 0x000259CE File Offset: 0x00023BCE
+	// (get) Token: 0x06000954 RID: 2388 RVA: 0x000090E4 File Offset: 0x000072E4
 	private static LayerUtil Instance
 	{
 		get
 		{
 			if (LayerUtil.instance == null)
 			{
-				LayerUtil.instance = Object.FindObjectOfType<LayerUtil>();
+				LayerUtil.instance = global::UnityEngine.Object.FindObjectOfType<LayerUtil>();
 			}
 			return LayerUtil.instance;
 		}
 	}
 
-	// Token: 0x060007B5 RID: 1973 RVA: 0x000259EC File Offset: 0x00023BEC
+	// Token: 0x06000955 RID: 2389 RVA: 0x00009102 File Offset: 0x00007302
 	private void Awake()
 	{
 		LayerUtil.instance = this;
 	}
 
-	// Token: 0x040009DF RID: 2527
 	public const int physics = 26;
 
-	// Token: 0x040009E0 RID: 2528
 	public const int staticOnly = 25;
 
-	// Token: 0x040009E1 RID: 2529
 	public const int physicsNoPlayer = 23;
 
-	// Token: 0x040009E2 RID: 2530
 	private static LayerUtil instance;
 
-	// Token: 0x040009E3 RID: 2531
 	public LayerMask groundLayers;
 
-	// Token: 0x040009E4 RID: 2532
 	public LayerMask groundLayersMinusPlayer;
 
-	// Token: 0x040009E5 RID: 2533
 	public LayerMask balanceBeamAnchorLayers;
 
-	// Token: 0x040009E6 RID: 2534
 	public LayerMask hitLayers;
 }

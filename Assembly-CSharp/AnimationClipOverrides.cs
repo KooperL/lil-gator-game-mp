@@ -2,40 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Token: 0x020001F2 RID: 498
 public class AnimationClipOverrides : List<KeyValuePair<AnimationClip, AnimationClip>>
 {
-	// Token: 0x06000AD9 RID: 2777 RVA: 0x000362AD File Offset: 0x000344AD
+	// Token: 0x06000CDA RID: 3290 RVA: 0x0000BF0E File Offset: 0x0000A10E
 	public AnimationClipOverrides(int capacity)
 		: base(capacity)
 	{
 	}
 
-	// Token: 0x06000ADA RID: 2778 RVA: 0x000362B6 File Offset: 0x000344B6
+	// Token: 0x06000CDB RID: 3291 RVA: 0x0000BF17 File Offset: 0x0000A117
 	public void Set(AnimationClip original, AnimationClip overrideClip)
 	{
 		this[original] = overrideClip;
 	}
 
-	// Token: 0x06000ADB RID: 2779 RVA: 0x000362C0 File Offset: 0x000344C0
+	// Token: 0x06000CDC RID: 3292 RVA: 0x0000BF21 File Offset: 0x0000A121
 	public void Clear(AnimationClip original)
 	{
 		this[original] = null;
 	}
 
-	// Token: 0x06000ADC RID: 2780 RVA: 0x000362CA File Offset: 0x000344CA
+	// Token: 0x06000CDD RID: 3293 RVA: 0x0000BF2B File Offset: 0x0000A12B
 	public void Set(AnimationOverride animationOverride)
 	{
 		this[animationOverride.originalClip] = animationOverride.overrideClip;
 	}
 
-	// Token: 0x06000ADD RID: 2781 RVA: 0x000362DE File Offset: 0x000344DE
+	// Token: 0x06000CDE RID: 3294 RVA: 0x0000BF3F File Offset: 0x0000A13F
 	public void Clear(AnimationOverride animationOverride)
 	{
 		this[animationOverride.originalClip] = null;
 	}
 
-	// Token: 0x170000B2 RID: 178
 	public AnimationClip this[AnimationClip clip]
 	{
 		get

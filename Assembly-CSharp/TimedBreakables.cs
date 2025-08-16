@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine.Events;
 
-// Token: 0x02000150 RID: 336
 public class TimedBreakables : TimedChallenge
 {
-	// Token: 0x060006E4 RID: 1764 RVA: 0x00022D60 File Offset: 0x00020F60
+	// Token: 0x06000862 RID: 2146 RVA: 0x00037B08 File Offset: 0x00035D08
 	protected override void Start()
 	{
 		base.Start();
@@ -19,7 +18,7 @@ public class TimedBreakables : TimedChallenge
 		}
 	}
 
-	// Token: 0x060006E5 RID: 1765 RVA: 0x00022DC0 File Offset: 0x00020FC0
+	// Token: 0x06000863 RID: 2147 RVA: 0x00037B68 File Offset: 0x00035D68
 	private void OnBreakableBroken()
 	{
 		int num = 0;
@@ -45,9 +44,7 @@ public class TimedBreakables : TimedChallenge
 		PlayAudio.p.PlayQuestSting(num2);
 	}
 
-	// Token: 0x04000947 RID: 2375
 	public int unbrokenAllowance;
 
-	// Token: 0x04000948 RID: 2376
 	public BreakableObject[] requiredBreakables;
 }

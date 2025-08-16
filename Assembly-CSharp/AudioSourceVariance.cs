@@ -1,16 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-// Token: 0x02000080 RID: 128
 public class AudioSourceVariance : MonoBehaviour
 {
-	// Token: 0x06000210 RID: 528 RVA: 0x0000B612 File Offset: 0x00009812
+	// Token: 0x06000255 RID: 597 RVA: 0x00003F29 File Offset: 0x00002129
 	private void Awake()
 	{
 		this.audioSource = base.GetComponent<AudioSource>();
 	}
 
-	// Token: 0x06000211 RID: 529 RVA: 0x0000B620 File Offset: 0x00009820
+	// Token: 0x06000256 RID: 598 RVA: 0x00003F37 File Offset: 0x00002137
 	private void OnEnable()
 	{
 		if (this.playOnAwake)
@@ -24,17 +23,17 @@ public class AudioSourceVariance : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000212 RID: 530 RVA: 0x0000B659 File Offset: 0x00009859
+	// Token: 0x06000257 RID: 599 RVA: 0x00003F70 File Offset: 0x00002170
 	[ContextMenu("Play")]
 	public void Play()
 	{
 		this.PlayModified(1f, 1f);
 	}
 
-	// Token: 0x06000213 RID: 531 RVA: 0x0000B66C File Offset: 0x0000986C
+	// Token: 0x06000258 RID: 600 RVA: 0x0001F968 File Offset: 0x0001DB68
 	public void PlayModified(float volumeMod, float pitchMod)
 	{
-		int num = Mathf.FloorToInt(Random.value * (float)this.audioClips.Length);
+		int num = Mathf.FloorToInt(global::UnityEngine.Random.value * (float)this.audioClips.Length);
 		if (AudioSourceVariance.lastPlayedIndex == num && this.audioClips.Length > 1)
 		{
 			num++;
@@ -45,8 +44,8 @@ public class AudioSourceVariance : MonoBehaviour
 		}
 		AudioSourceVariance.lastPlayedIndex = num;
 		AudioClip audioClip = this.audioClips[num];
-		float num2 = Random.Range(this.minVolume, this.maxVolume) * volumeMod;
-		float num3 = Random.Range(this.minPitch, this.maxPitch) * pitchMod;
+		float num2 = global::UnityEngine.Random.Range(this.minVolume, this.maxVolume) * volumeMod;
+		float num3 = global::UnityEngine.Random.Range(this.minPitch, this.maxPitch) * pitchMod;
 		if (this.audioSource != null)
 		{
 			this.audioSource.clip = audioClip;
@@ -54,7 +53,7 @@ public class AudioSourceVariance : MonoBehaviour
 			this.audioSource.pitch = num3;
 			if (this.randomizeStart)
 			{
-				this.audioSource.time = Random.value * audioClip.length;
+				this.audioSource.time = global::UnityEngine.Random.value * audioClip.length;
 			}
 			this.audioSource.priority = this.priority;
 			this.audioSource.Play();
@@ -63,44 +62,32 @@ public class AudioSourceVariance : MonoBehaviour
 		PlayAudio.p.PlayAtPoint(audioClip, this.playHere ? base.transform.position : MainCamera.t.TransformPoint(new Vector3(0f, 0f, 8f)), num2, num3, this.priority);
 	}
 
-	// Token: 0x040002AF RID: 687
 	private static int lastPlayedIndex = -1;
 
-	// Token: 0x040002B0 RID: 688
 	public AudioClip[] audioClips;
 
-	// Token: 0x040002B1 RID: 689
 	[Range(0f, 2f)]
 	public float maxVolume = 1f;
 
-	// Token: 0x040002B2 RID: 690
 	[Range(0f, 2f)]
 	public float minVolume = 1f;
 
-	// Token: 0x040002B3 RID: 691
 	[Range(0f, 2f)]
 	public float maxPitch = 1f;
 
-	// Token: 0x040002B4 RID: 692
 	[Range(0f, 2f)]
 	public float minPitch = 1f;
 
-	// Token: 0x040002B5 RID: 693
 	private AudioSource audioSource;
 
-	// Token: 0x040002B6 RID: 694
 	public bool playOnAwake;
 
-	// Token: 0x040002B7 RID: 695
 	public float delay;
 
-	// Token: 0x040002B8 RID: 696
 	public bool playHere = true;
 
-	// Token: 0x040002B9 RID: 697
 	[Range(0f, 256f)]
 	public int priority = 128;
 
-	// Token: 0x040002BA RID: 698
 	public bool randomizeStart;
 }

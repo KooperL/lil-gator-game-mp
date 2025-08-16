@@ -2,10 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x0200028F RID: 655
 public class UIRaceIcon : MonoBehaviour
 {
-	// Token: 0x06000DF2 RID: 3570 RVA: 0x00043910 File Offset: 0x00041B10
+	// Token: 0x06001116 RID: 4374 RVA: 0x00057794 File Offset: 0x00055994
 	public static string TimerFormat(float time)
 	{
 		float num = (float)Mathf.FloorToInt(time / 60f);
@@ -13,7 +12,7 @@ public class UIRaceIcon : MonoBehaviour
 		return string.Format("{0:0}:{1:00.00}", num, num2);
 	}
 
-	// Token: 0x06000DF3 RID: 3571 RVA: 0x0004394C File Offset: 0x00041B4C
+	// Token: 0x06001117 RID: 4375 RVA: 0x000577D0 File Offset: 0x000559D0
 	public void LoadRace(float raceLength, Transform finishLine, float previousBest = -1f)
 	{
 		this.isEnd = false;
@@ -39,7 +38,7 @@ public class UIRaceIcon : MonoBehaviour
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x06000DF4 RID: 3572 RVA: 0x00043A28 File Offset: 0x00041C28
+	// Token: 0x06001118 RID: 4376 RVA: 0x000578AC File Offset: 0x00055AAC
 	public void LoadEnd(Transform finishLine, float previousBest, float newTime)
 	{
 		this.isEnd = true;
@@ -55,13 +54,13 @@ public class UIRaceIcon : MonoBehaviour
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x06000DF5 RID: 3573 RVA: 0x00043AE2 File Offset: 0x00041CE2
+	// Token: 0x06001119 RID: 4377 RVA: 0x0000968D File Offset: 0x0000788D
 	public void Clear()
 	{
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000DF6 RID: 3574 RVA: 0x00043AF0 File Offset: 0x00041CF0
+	// Token: 0x0600111A RID: 4378 RVA: 0x0000E8FB File Offset: 0x0000CAFB
 	private void Update()
 	{
 		if (!this.isEnd)
@@ -75,7 +74,7 @@ public class UIRaceIcon : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DF7 RID: 3575 RVA: 0x00043B28 File Offset: 0x00041D28
+	// Token: 0x0600111B RID: 4379 RVA: 0x00057968 File Offset: 0x00055B68
 	private void UpdateDisplay()
 	{
 		this.progress.fillAmount = Mathf.InverseLerp(this.raceEndTime, this.raceStartTime, Time.time);
@@ -85,42 +84,29 @@ public class UIRaceIcon : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001265 RID: 4709
 	public UIFollow uiFollow;
 
-	// Token: 0x04001266 RID: 4710
 	private float raceStartTime;
 
-	// Token: 0x04001267 RID: 4711
 	private float raceEndTime;
 
-	// Token: 0x04001268 RID: 4712
 	public Image progress;
 
-	// Token: 0x04001269 RID: 4713
 	private bool showTimer;
 
-	// Token: 0x0400126A RID: 4714
 	public GameObject timer;
 
-	// Token: 0x0400126B RID: 4715
 	public Text previousBestDisplay;
 
-	// Token: 0x0400126C RID: 4716
 	public Text currentTimeDisplay;
 
-	// Token: 0x0400126D RID: 4717
 	public Color betterColor;
 
-	// Token: 0x0400126E RID: 4718
 	public Color worseColor;
 
-	// Token: 0x0400126F RID: 4719
 	public UIButtonPrompt buttonPrompt;
 
-	// Token: 0x04001270 RID: 4720
 	private bool isEnd;
 
-	// Token: 0x04001271 RID: 4721
 	private float endTimeout = -10f;
 }
