@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class NGP_ToggleObjects : MonoBehaviour
 {
-	// Token: 0x0600099C RID: 2460 RVA: 0x0003AE5C File Offset: 0x0003905C
+	// Token: 0x0600099C RID: 2460 RVA: 0x0003B03C File Offset: 0x0003923C
 	private void Start()
 	{
 		if (Game.IsNewGamePlus)

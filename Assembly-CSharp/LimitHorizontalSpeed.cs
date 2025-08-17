@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LimitHorizontalSpeed : MonoBehaviour
 {
-	// Token: 0x06000B21 RID: 2849 RVA: 0x0003FA74 File Offset: 0x0003DC74
+	// Token: 0x06000B21 RID: 2849 RVA: 0x0003FC08 File Offset: 0x0003DE08
 	public void FixedUpdate()
 	{
 		Vector3 vector = this.rigidbody.velocity.Flat();

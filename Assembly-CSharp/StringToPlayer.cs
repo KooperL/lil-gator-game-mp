@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class StringToPlayer : MonoBehaviour
 {
-	// Token: 0x06000FBC RID: 4028 RVA: 0x0000D99A File Offset: 0x0000BB9A
+	// Token: 0x06000FBC RID: 4028 RVA: 0x0000D9AF File Offset: 0x0000BBAF
 	private void Awake()
 	{
 		this.positions = new Vector3[this.positionCount];
 		this.line.positionCount = this.positionCount;
 	}
 
-	// Token: 0x06000FBD RID: 4029 RVA: 0x00052370 File Offset: 0x00050570
+	// Token: 0x06000FBD RID: 4029 RVA: 0x00052504 File Offset: 0x00050704
 	private void LateUpdate()
 	{
 		Vector3 position = base.transform.position;

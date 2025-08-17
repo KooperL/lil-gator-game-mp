@@ -7,8 +7,8 @@ using UnityEngine.Events;
 [AddComponentMenu("Logic/State Machine")]
 public class QuestStates : MonoBehaviour
 {
-	// (get) Token: 0x0600090B RID: 2315 RVA: 0x00008C10 File Offset: 0x00006E10
-	// (set) Token: 0x0600090C RID: 2316 RVA: 0x00008C3C File Offset: 0x00006E3C
+	// (get) Token: 0x0600090B RID: 2315 RVA: 0x00008C25 File Offset: 0x00006E25
+	// (set) Token: 0x0600090C RID: 2316 RVA: 0x00008C51 File Offset: 0x00006E51
 	public int StateID
 	{
 		get
@@ -29,14 +29,14 @@ public class QuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600090D RID: 2317 RVA: 0x00008C68 File Offset: 0x00006E68
+	// Token: 0x0600090D RID: 2317 RVA: 0x00008C7D File Offset: 0x00006E7D
 	[ContextMenu("Debug State")]
 	public void DebugState()
 	{
 		Debug.Log(this.StateID);
 	}
 
-	// Token: 0x0600090E RID: 2318 RVA: 0x00008C7A File Offset: 0x00006E7A
+	// Token: 0x0600090E RID: 2318 RVA: 0x00008C8F File Offset: 0x00006E8F
 	private void OnEnable()
 	{
 		if (this.isShared)
@@ -46,7 +46,7 @@ public class QuestStates : MonoBehaviour
 		this.SetState(this.StateID, true, false);
 	}
 
-	// Token: 0x0600090F RID: 2319 RVA: 0x00008C9D File Offset: 0x00006E9D
+	// Token: 0x0600090F RID: 2319 RVA: 0x00008CB2 File Offset: 0x00006EB2
 	private void OnDisable()
 	{
 		if (this.isShared)
@@ -55,20 +55,20 @@ public class QuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000910 RID: 2320 RVA: 0x00008CB3 File Offset: 0x00006EB3
+	// Token: 0x06000910 RID: 2320 RVA: 0x00008CC8 File Offset: 0x00006EC8
 	[ContextMenu("Progress State")]
 	public void JustProgressState()
 	{
 		this.ProgressState(-1);
 	}
 
-	// Token: 0x06000911 RID: 2321 RVA: 0x00008CBD File Offset: 0x00006EBD
+	// Token: 0x06000911 RID: 2321 RVA: 0x00008CD2 File Offset: 0x00006ED2
 	public void ProgressToState(int nextStateID)
 	{
 		this.ProgressState(nextStateID);
 	}
 
-	// Token: 0x06000912 RID: 2322 RVA: 0x00039B48 File Offset: 0x00037D48
+	// Token: 0x06000912 RID: 2322 RVA: 0x00039D28 File Offset: 0x00037F28
 	public YieldInstruction ProgressState(int nextStateID = -1)
 	{
 		if (nextStateID == -1)
@@ -87,14 +87,14 @@ public class QuestStates : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x06000913 RID: 2323 RVA: 0x00008CC7 File Offset: 0x00006EC7
+	// Token: 0x06000913 RID: 2323 RVA: 0x00008CDC File Offset: 0x00006EDC
 	[ContextMenu("Progress To End")]
 	public void ProgressToEnd()
 	{
 		this.ProgressState(this.states.Length - 1);
 	}
 
-	// Token: 0x06000914 RID: 2324 RVA: 0x00008CDA File Offset: 0x00006EDA
+	// Token: 0x06000914 RID: 2324 RVA: 0x00008CEF File Offset: 0x00006EEF
 	private IEnumerator RunFadeTransition(int nextStateID)
 	{
 		Game.DialogueDepth++;
@@ -105,7 +105,7 @@ public class QuestStates : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000915 RID: 2325 RVA: 0x00039BA0 File Offset: 0x00037DA0
+	// Token: 0x06000915 RID: 2325 RVA: 0x00039D80 File Offset: 0x00037F80
 	private void SetState(int stateID, bool initial = false, bool fromShared = false)
 	{
 		int num = -1;

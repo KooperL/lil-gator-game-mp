@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlatformSpecificComponents : MonoBehaviour
 {
-	// Token: 0x060000E2 RID: 226 RVA: 0x0001A898 File Offset: 0x00018A98
+	// Token: 0x060000E2 RID: 226 RVA: 0x0001AA14 File Offset: 0x00018C14
 	private void Start()
 	{
 		bool flag = this.pc;

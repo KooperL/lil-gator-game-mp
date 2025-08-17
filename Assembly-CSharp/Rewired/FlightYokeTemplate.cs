@@ -4,7 +4,7 @@ namespace Rewired
 {
 	public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate, IControllerTemplate
 	{
-		// (get) Token: 0x06001568 RID: 5480 RVA: 0x00010E7E File Offset: 0x0000F07E
+		// (get) Token: 0x06001568 RID: 5480 RVA: 0x00010E93 File Offset: 0x0000F093
 		IControllerTemplateButton IFlightYokeTemplate.leftPaddle
 		{
 			get
@@ -13,7 +13,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001569 RID: 5481 RVA: 0x00010E88 File Offset: 0x0000F088
+		// (get) Token: 0x06001569 RID: 5481 RVA: 0x00010E9D File Offset: 0x0000F09D
 		IControllerTemplateButton IFlightYokeTemplate.rightPaddle
 		{
 			get
@@ -22,7 +22,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600156A RID: 5482 RVA: 0x00010C03 File Offset: 0x0000EE03
+		// (get) Token: 0x0600156A RID: 5482 RVA: 0x00010C18 File Offset: 0x0000EE18
 		IControllerTemplateButton IFlightYokeTemplate.leftGripButton1
 		{
 			get
@@ -31,7 +31,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600156B RID: 5483 RVA: 0x00010C0C File Offset: 0x0000EE0C
+		// (get) Token: 0x0600156B RID: 5483 RVA: 0x00010C21 File Offset: 0x0000EE21
 		IControllerTemplateButton IFlightYokeTemplate.leftGripButton2
 		{
 			get
@@ -40,7 +40,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600156C RID: 5484 RVA: 0x00010C15 File Offset: 0x0000EE15
+		// (get) Token: 0x0600156C RID: 5484 RVA: 0x00010C2A File Offset: 0x0000EE2A
 		IControllerTemplateButton IFlightYokeTemplate.leftGripButton3
 		{
 			get
@@ -49,7 +49,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600156D RID: 5485 RVA: 0x00010C1F File Offset: 0x0000EE1F
+		// (get) Token: 0x0600156D RID: 5485 RVA: 0x00010C34 File Offset: 0x0000EE34
 		IControllerTemplateButton IFlightYokeTemplate.leftGripButton4
 		{
 			get
@@ -58,7 +58,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600156E RID: 5486 RVA: 0x00010CC1 File Offset: 0x0000EEC1
+		// (get) Token: 0x0600156E RID: 5486 RVA: 0x00010CD6 File Offset: 0x0000EED6
 		IControllerTemplateButton IFlightYokeTemplate.leftGripButton5
 		{
 			get
@@ -67,7 +67,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600156F RID: 5487 RVA: 0x00010C33 File Offset: 0x0000EE33
+		// (get) Token: 0x0600156F RID: 5487 RVA: 0x00010C48 File Offset: 0x0000EE48
 		IControllerTemplateButton IFlightYokeTemplate.leftGripButton6
 		{
 			get
@@ -76,7 +76,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001570 RID: 5488 RVA: 0x00010CCB File Offset: 0x0000EECB
+		// (get) Token: 0x06001570 RID: 5488 RVA: 0x00010CE0 File Offset: 0x0000EEE0
 		IControllerTemplateButton IFlightYokeTemplate.rightGripButton1
 		{
 			get
@@ -85,7 +85,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001571 RID: 5489 RVA: 0x00010C47 File Offset: 0x0000EE47
+		// (get) Token: 0x06001571 RID: 5489 RVA: 0x00010C5C File Offset: 0x0000EE5C
 		IControllerTemplateButton IFlightYokeTemplate.rightGripButton2
 		{
 			get
@@ -94,7 +94,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001572 RID: 5490 RVA: 0x00010C51 File Offset: 0x0000EE51
+		// (get) Token: 0x06001572 RID: 5490 RVA: 0x00010C66 File Offset: 0x0000EE66
 		IControllerTemplateButton IFlightYokeTemplate.rightGripButton3
 		{
 			get
@@ -103,7 +103,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001573 RID: 5491 RVA: 0x00010C5B File Offset: 0x0000EE5B
+		// (get) Token: 0x06001573 RID: 5491 RVA: 0x00010C70 File Offset: 0x0000EE70
 		IControllerTemplateButton IFlightYokeTemplate.rightGripButton4
 		{
 			get
@@ -112,7 +112,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001574 RID: 5492 RVA: 0x00010CD5 File Offset: 0x0000EED5
+		// (get) Token: 0x06001574 RID: 5492 RVA: 0x00010CEA File Offset: 0x0000EEEA
 		IControllerTemplateButton IFlightYokeTemplate.rightGripButton5
 		{
 			get
@@ -121,7 +121,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001575 RID: 5493 RVA: 0x00010CDF File Offset: 0x0000EEDF
+		// (get) Token: 0x06001575 RID: 5493 RVA: 0x00010CF4 File Offset: 0x0000EEF4
 		IControllerTemplateButton IFlightYokeTemplate.rightGripButton6
 		{
 			get
@@ -130,7 +130,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001576 RID: 5494 RVA: 0x00010CE9 File Offset: 0x0000EEE9
+		// (get) Token: 0x06001576 RID: 5494 RVA: 0x00010CFE File Offset: 0x0000EEFE
 		IControllerTemplateButton IFlightYokeTemplate.centerButton1
 		{
 			get
@@ -139,7 +139,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001577 RID: 5495 RVA: 0x00010CF3 File Offset: 0x0000EEF3
+		// (get) Token: 0x06001577 RID: 5495 RVA: 0x00010D08 File Offset: 0x0000EF08
 		IControllerTemplateButton IFlightYokeTemplate.centerButton2
 		{
 			get
@@ -148,7 +148,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001578 RID: 5496 RVA: 0x00010CFD File Offset: 0x0000EEFD
+		// (get) Token: 0x06001578 RID: 5496 RVA: 0x00010D12 File Offset: 0x0000EF12
 		IControllerTemplateButton IFlightYokeTemplate.centerButton3
 		{
 			get
@@ -157,7 +157,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001579 RID: 5497 RVA: 0x00010D07 File Offset: 0x0000EF07
+		// (get) Token: 0x06001579 RID: 5497 RVA: 0x00010D1C File Offset: 0x0000EF1C
 		IControllerTemplateButton IFlightYokeTemplate.centerButton4
 		{
 			get
@@ -166,7 +166,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600157A RID: 5498 RVA: 0x00010D11 File Offset: 0x0000EF11
+		// (get) Token: 0x0600157A RID: 5498 RVA: 0x00010D26 File Offset: 0x0000EF26
 		IControllerTemplateButton IFlightYokeTemplate.centerButton5
 		{
 			get
@@ -175,7 +175,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600157B RID: 5499 RVA: 0x00010D1B File Offset: 0x0000EF1B
+		// (get) Token: 0x0600157B RID: 5499 RVA: 0x00010D30 File Offset: 0x0000EF30
 		IControllerTemplateButton IFlightYokeTemplate.centerButton6
 		{
 			get
@@ -184,7 +184,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600157C RID: 5500 RVA: 0x00010D25 File Offset: 0x0000EF25
+		// (get) Token: 0x0600157C RID: 5500 RVA: 0x00010D3A File Offset: 0x0000EF3A
 		IControllerTemplateButton IFlightYokeTemplate.centerButton7
 		{
 			get
@@ -193,7 +193,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600157D RID: 5501 RVA: 0x00010D2F File Offset: 0x0000EF2F
+		// (get) Token: 0x0600157D RID: 5501 RVA: 0x00010D44 File Offset: 0x0000EF44
 		IControllerTemplateButton IFlightYokeTemplate.centerButton8
 		{
 			get
@@ -202,7 +202,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600157E RID: 5502 RVA: 0x00010E42 File Offset: 0x0000F042
+		// (get) Token: 0x0600157E RID: 5502 RVA: 0x00010E57 File Offset: 0x0000F057
 		IControllerTemplateButton IFlightYokeTemplate.wheel1Up
 		{
 			get
@@ -211,7 +211,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600157F RID: 5503 RVA: 0x00010E4C File Offset: 0x0000F04C
+		// (get) Token: 0x0600157F RID: 5503 RVA: 0x00010E61 File Offset: 0x0000F061
 		IControllerTemplateButton IFlightYokeTemplate.wheel1Down
 		{
 			get
@@ -220,7 +220,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001580 RID: 5504 RVA: 0x00010E56 File Offset: 0x0000F056
+		// (get) Token: 0x06001580 RID: 5504 RVA: 0x00010E6B File Offset: 0x0000F06B
 		IControllerTemplateButton IFlightYokeTemplate.wheel1Press
 		{
 			get
@@ -229,7 +229,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001581 RID: 5505 RVA: 0x00010E60 File Offset: 0x0000F060
+		// (get) Token: 0x06001581 RID: 5505 RVA: 0x00010E75 File Offset: 0x0000F075
 		IControllerTemplateButton IFlightYokeTemplate.wheel2Up
 		{
 			get
@@ -238,7 +238,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001582 RID: 5506 RVA: 0x00010E6A File Offset: 0x0000F06A
+		// (get) Token: 0x06001582 RID: 5506 RVA: 0x00010E7F File Offset: 0x0000F07F
 		IControllerTemplateButton IFlightYokeTemplate.wheel2Down
 		{
 			get
@@ -247,7 +247,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001583 RID: 5507 RVA: 0x00010E74 File Offset: 0x0000F074
+		// (get) Token: 0x06001583 RID: 5507 RVA: 0x00010E89 File Offset: 0x0000F089
 		IControllerTemplateButton IFlightYokeTemplate.wheel2Press
 		{
 			get
@@ -256,7 +256,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001584 RID: 5508 RVA: 0x00010DBB File Offset: 0x0000EFBB
+		// (get) Token: 0x06001584 RID: 5508 RVA: 0x00010DD0 File Offset: 0x0000EFD0
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton1
 		{
 			get
@@ -265,7 +265,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001585 RID: 5509 RVA: 0x00010D93 File Offset: 0x0000EF93
+		// (get) Token: 0x06001585 RID: 5509 RVA: 0x00010DA8 File Offset: 0x0000EFA8
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton2
 		{
 			get
@@ -274,7 +274,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001586 RID: 5510 RVA: 0x00010E10 File Offset: 0x0000F010
+		// (get) Token: 0x06001586 RID: 5510 RVA: 0x00010E25 File Offset: 0x0000F025
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton3
 		{
 			get
@@ -283,7 +283,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001587 RID: 5511 RVA: 0x00010E1A File Offset: 0x0000F01A
+		// (get) Token: 0x06001587 RID: 5511 RVA: 0x00010E2F File Offset: 0x0000F02F
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton4
 		{
 			get
@@ -292,7 +292,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001588 RID: 5512 RVA: 0x000110E9 File Offset: 0x0000F2E9
+		// (get) Token: 0x06001588 RID: 5512 RVA: 0x000110FE File Offset: 0x0000F2FE
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton5
 		{
 			get
@@ -301,7 +301,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001589 RID: 5513 RVA: 0x000110F3 File Offset: 0x0000F2F3
+		// (get) Token: 0x06001589 RID: 5513 RVA: 0x00011108 File Offset: 0x0000F308
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton6
 		{
 			get
@@ -310,7 +310,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600158A RID: 5514 RVA: 0x000110FD File Offset: 0x0000F2FD
+		// (get) Token: 0x0600158A RID: 5514 RVA: 0x00011112 File Offset: 0x0000F312
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton7
 		{
 			get
@@ -319,7 +319,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600158B RID: 5515 RVA: 0x00010E24 File Offset: 0x0000F024
+		// (get) Token: 0x0600158B RID: 5515 RVA: 0x00010E39 File Offset: 0x0000F039
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton8
 		{
 			get
@@ -328,7 +328,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600158C RID: 5516 RVA: 0x00010E2E File Offset: 0x0000F02E
+		// (get) Token: 0x0600158C RID: 5516 RVA: 0x00010E43 File Offset: 0x0000F043
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton9
 		{
 			get
@@ -337,7 +337,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600158D RID: 5517 RVA: 0x00010E38 File Offset: 0x0000F038
+		// (get) Token: 0x0600158D RID: 5517 RVA: 0x00010E4D File Offset: 0x0000F04D
 		IControllerTemplateButton IFlightYokeTemplate.consoleButton10
 		{
 			get
@@ -346,7 +346,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600158E RID: 5518 RVA: 0x00010E92 File Offset: 0x0000F092
+		// (get) Token: 0x0600158E RID: 5518 RVA: 0x00010EA7 File Offset: 0x0000F0A7
 		IControllerTemplateButton IFlightYokeTemplate.mode1
 		{
 			get
@@ -355,7 +355,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600158F RID: 5519 RVA: 0x00010E9C File Offset: 0x0000F09C
+		// (get) Token: 0x0600158F RID: 5519 RVA: 0x00010EB1 File Offset: 0x0000F0B1
 		IControllerTemplateButton IFlightYokeTemplate.mode2
 		{
 			get
@@ -364,7 +364,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001590 RID: 5520 RVA: 0x00010EA6 File Offset: 0x0000F0A6
+		// (get) Token: 0x06001590 RID: 5520 RVA: 0x00010EBB File Offset: 0x0000F0BB
 		IControllerTemplateButton IFlightYokeTemplate.mode3
 		{
 			get
@@ -373,7 +373,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001591 RID: 5521 RVA: 0x00011107 File Offset: 0x0000F307
+		// (get) Token: 0x06001591 RID: 5521 RVA: 0x0001111C File Offset: 0x0000F31C
 		IControllerTemplateYoke IFlightYokeTemplate.yoke
 		{
 			get
@@ -382,7 +382,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001592 RID: 5522 RVA: 0x00011111 File Offset: 0x0000F311
+		// (get) Token: 0x06001592 RID: 5522 RVA: 0x00011126 File Offset: 0x0000F326
 		IControllerTemplateThrottle IFlightYokeTemplate.lever1
 		{
 			get
@@ -391,7 +391,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001593 RID: 5523 RVA: 0x0001111B File Offset: 0x0000F31B
+		// (get) Token: 0x06001593 RID: 5523 RVA: 0x00011130 File Offset: 0x0000F330
 		IControllerTemplateThrottle IFlightYokeTemplate.lever2
 		{
 			get
@@ -400,7 +400,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001594 RID: 5524 RVA: 0x00011125 File Offset: 0x0000F325
+		// (get) Token: 0x06001594 RID: 5524 RVA: 0x0001113A File Offset: 0x0000F33A
 		IControllerTemplateThrottle IFlightYokeTemplate.lever3
 		{
 			get
@@ -409,7 +409,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001595 RID: 5525 RVA: 0x0001112F File Offset: 0x0000F32F
+		// (get) Token: 0x06001595 RID: 5525 RVA: 0x00011144 File Offset: 0x0000F344
 		IControllerTemplateThrottle IFlightYokeTemplate.lever4
 		{
 			get
@@ -418,7 +418,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001596 RID: 5526 RVA: 0x00011139 File Offset: 0x0000F339
+		// (get) Token: 0x06001596 RID: 5526 RVA: 0x0001114E File Offset: 0x0000F34E
 		IControllerTemplateThrottle IFlightYokeTemplate.lever5
 		{
 			get
@@ -427,7 +427,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001597 RID: 5527 RVA: 0x00011143 File Offset: 0x0000F343
+		// (get) Token: 0x06001597 RID: 5527 RVA: 0x00011158 File Offset: 0x0000F358
 		IControllerTemplateHat IFlightYokeTemplate.leftGripHat
 		{
 			get
@@ -436,7 +436,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001598 RID: 5528 RVA: 0x0001114D File Offset: 0x0000F34D
+		// (get) Token: 0x06001598 RID: 5528 RVA: 0x00011162 File Offset: 0x0000F362
 		IControllerTemplateHat IFlightYokeTemplate.rightGripHat
 		{
 			get
@@ -445,7 +445,7 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x06001599 RID: 5529 RVA: 0x00010C83 File Offset: 0x0000EE83
+		// Token: 0x06001599 RID: 5529 RVA: 0x00010C98 File Offset: 0x0000EE98
 		public FlightYokeTemplate(object payload)
 			: base(payload)
 		{

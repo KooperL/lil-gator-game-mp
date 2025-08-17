@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemSearch<T> : MonoBehaviour, IItemBehaviour where T : MonoBehaviour
 {
-	// Token: 0x06000B7D RID: 2941 RVA: 0x0000ACA5 File Offset: 0x00008EA5
+	// Token: 0x06000B7D RID: 2941 RVA: 0x0000ACBA File Offset: 0x00008EBA
 	public void Input(bool isDown, bool isHeld)
 	{
 		if (isDown)
@@ -13,7 +13,7 @@ public class ItemSearch<T> : MonoBehaviour, IItemBehaviour where T : MonoBehavio
 		}
 	}
 
-	// Token: 0x06000B7E RID: 2942 RVA: 0x0000ACB0 File Offset: 0x00008EB0
+	// Token: 0x06000B7E RID: 2942 RVA: 0x0000ACC5 File Offset: 0x00008EC5
 	protected IEnumerator RunSearch()
 	{
 		this.isSearching = true;
@@ -84,7 +84,7 @@ public class ItemSearch<T> : MonoBehaviour, IItemBehaviour where T : MonoBehavio
 	{
 	}
 
-	// Token: 0x06000B86 RID: 2950 RVA: 0x0000ACBF File Offset: 0x00008EBF
+	// Token: 0x06000B86 RID: 2950 RVA: 0x0000ACD4 File Offset: 0x00008ED4
 	public void SetIndex(int index)
 	{
 		if (index == 1)

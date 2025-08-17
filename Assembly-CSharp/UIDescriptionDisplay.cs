@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIDescriptionDisplay : MonoBehaviour
 {
-	// Token: 0x0600112A RID: 4394 RVA: 0x0000EA27 File Offset: 0x0000CC27
+	// Token: 0x0600112A RID: 4394 RVA: 0x0000EA3C File Offset: 0x0000CC3C
 	public void Load(string description, UIDescription parent)
 	{
 		this.clearTime = -1f;
@@ -14,19 +14,19 @@ public class UIDescriptionDisplay : MonoBehaviour
 		this.onLoad.Invoke();
 	}
 
-	// Token: 0x0600112B RID: 4395 RVA: 0x0000EA52 File Offset: 0x0000CC52
+	// Token: 0x0600112B RID: 4395 RVA: 0x0000EA67 File Offset: 0x0000CC67
 	public void KeepOpen()
 	{
 		this.clearTime = -1f;
 	}
 
-	// Token: 0x0600112C RID: 4396 RVA: 0x0000EA5F File Offset: 0x0000CC5F
+	// Token: 0x0600112C RID: 4396 RVA: 0x0000EA74 File Offset: 0x0000CC74
 	public void Clear()
 	{
 		this.clearTime = Time.time + 0.03f;
 	}
 
-	// Token: 0x0600112D RID: 4397 RVA: 0x0000EA72 File Offset: 0x0000CC72
+	// Token: 0x0600112D RID: 4397 RVA: 0x0000EA87 File Offset: 0x0000CC87
 	private void Update()
 	{
 		if (this.clearTime > 0f && Time.time > this.clearTime)

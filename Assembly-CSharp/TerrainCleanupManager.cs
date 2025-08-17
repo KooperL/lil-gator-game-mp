@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TerrainCleanupManager : MonoBehaviour
 {
-	// Token: 0x060009F8 RID: 2552 RVA: 0x0003BC50 File Offset: 0x00039E50
+	// Token: 0x060009F8 RID: 2552 RVA: 0x0003BDE4 File Offset: 0x00039FE4
 	private void Awake()
 	{
 		if (TerrainCleanupManager.t != null || TerrainCleanupManager.hasInstance)
@@ -26,7 +26,7 @@ public class TerrainCleanupManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009F9 RID: 2553 RVA: 0x0003BCE0 File Offset: 0x00039EE0
+	// Token: 0x060009F9 RID: 2553 RVA: 0x0003BE74 File Offset: 0x0003A074
 	private void AddTerrain(TerrainData sourceData, int id)
 	{
 		TerrainCleanupManager.CleanData cleanData = new TerrainCleanupManager.CleanData
@@ -44,7 +44,7 @@ public class TerrainCleanupManager : MonoBehaviour
 		this.cleanDataDic.Add(id, cleanData);
 	}
 
-	// Token: 0x060009FA RID: 2554 RVA: 0x0003BD84 File Offset: 0x00039F84
+	// Token: 0x060009FA RID: 2554 RVA: 0x0003BF18 File Offset: 0x0003A118
 	public TerrainData GetCleanData(TerrainData sourceData, int id)
 	{
 		if (!this.cleanDataDic.ContainsKey(id))
@@ -60,7 +60,7 @@ public class TerrainCleanupManager : MonoBehaviour
 		return cleanData.terrainData;
 	}
 
-	// Token: 0x060009FB RID: 2555 RVA: 0x0000993C File Offset: 0x00007B3C
+	// Token: 0x060009FB RID: 2555 RVA: 0x00009951 File Offset: 0x00007B51
 	public float[,,] GetAlphamaps(TerrainData sourceData, int id)
 	{
 		if (!this.cleanDataDic.ContainsKey(id))
@@ -70,7 +70,7 @@ public class TerrainCleanupManager : MonoBehaviour
 		return this.cleanDataDic[id].alphamaps;
 	}
 
-	// Token: 0x060009FC RID: 2556 RVA: 0x00009965 File Offset: 0x00007B65
+	// Token: 0x060009FC RID: 2556 RVA: 0x0000997A File Offset: 0x00007B7A
 	public int[][,] GetDetails(TerrainData sourceData, int id)
 	{
 		if (!this.cleanDataDic.ContainsKey(id))

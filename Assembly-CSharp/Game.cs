@@ -4,11 +4,11 @@ using UnityEngine.AddressableAssets;
 
 public class Game : MonoBehaviour
 {
-	// (add) Token: 0x0600073F RID: 1855 RVA: 0x00034518 File Offset: 0x00032718
-	// (remove) Token: 0x06000740 RID: 1856 RVA: 0x0003454C File Offset: 0x0003274C
+	// (add) Token: 0x0600073F RID: 1855 RVA: 0x00034694 File Offset: 0x00032894
+	// (remove) Token: 0x06000740 RID: 1856 RVA: 0x000346C8 File Offset: 0x000328C8
 	public static event Action onEnterDialogue;
 
-	// (get) Token: 0x06000741 RID: 1857 RVA: 0x00034580 File Offset: 0x00032780
+	// (get) Token: 0x06000741 RID: 1857 RVA: 0x000346FC File Offset: 0x000328FC
 	// (set) Token: 0x06000742 RID: 1858 RVA: 0x000074EF File Offset: 0x000056EF
 	public static GameState State
 	{
@@ -99,7 +99,7 @@ public class Game : MonoBehaviour
 	}
 
 	// (get) Token: 0x0600074A RID: 1866 RVA: 0x000075B4 File Offset: 0x000057B4
-	// (set) Token: 0x0600074B RID: 1867 RVA: 0x000345D4 File Offset: 0x000327D4
+	// (set) Token: 0x0600074B RID: 1867 RVA: 0x00034750 File Offset: 0x00032950
 	public static int DialogueDepth
 	{
 		get
@@ -120,14 +120,18 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600074C RID: 1868 RVA: 0x000075C0 File Offset: 0x000057C0
+	// Token: 0x0600074C RID: 1868 RVA: 0x000347A8 File Offset: 0x000329A8
 	private void Awake()
 	{
 		Game.g = this;
 		this.dialogueDepth = 0;
+		MultiplayerConfigLoader multiplayerConfigLoader = MultiplayerConfigLoader.Load("lggmp_config.ini");
+		Debug.Log("[LGG-MP] Session Key: " + multiplayerConfigLoader.SessionKey);
+		Debug.Log("[LGG-MP] Display Name: " + multiplayerConfigLoader.DisplayName);
+		Debug.Log("[LGG-MP] Server Host: " + multiplayerConfigLoader.ServerHost);
 	}
 
-	// Token: 0x0600074D RID: 1869 RVA: 0x000075CF File Offset: 0x000057CF
+	// Token: 0x0600074D RID: 1869 RVA: 0x000075C0 File Offset: 0x000057C0
 	private void OnEnable()
 	{
 		Game.g = this;
@@ -137,35 +141,35 @@ public class Game : MonoBehaviour
 		}
 	}
 
+	// Token: 0x0600074E RID: 1870 RVA: 0x000075E9 File Offset: 0x000057E9
 	private void Start()
 	{
-		MultiplayerConfigLoader multiplayerConfigLoader = MultiplayerConfigLoader.Load("config.ini");
-		Debug.Log("Session Key: " + multiplayerConfigLoader.SessionKey);
-		Debug.Log("Display Name: " + multiplayerConfigLoader.DisplayName);
-		Debug.Log("Server Host: " + multiplayerConfigLoader.ServerHost);
 		MultiplayerCommunicationService.Instance.initConnection();
 		base.gameObject.AddComponent<PlayerPositionStreamer>();
+		GameObject gameObject = new GameObject("MultiplayerPlayerManager");
+		MultiplayerNetworkBootstrap.manager = gameObject.AddComponent<MultiplayerPlayerManager>();
+		global::UnityEngine.Object.DontDestroyOnLoad(gameObject);
 	}
 
-	// Token: 0x0600074F RID: 1871 RVA: 0x00007606 File Offset: 0x00005806
+	// Token: 0x0600074F RID: 1871 RVA: 0x0000761B File Offset: 0x0000581B
 	public void SetToStory()
 	{
 		this.SetWorldState(WorldState.Story);
 	}
 
-	// Token: 0x06000750 RID: 1872 RVA: 0x00007610 File Offset: 0x00005810
+	// Token: 0x06000750 RID: 1872 RVA: 0x00007625 File Offset: 0x00005825
 	public void SetToFlashback()
 	{
 		this.SetWorldState(WorldState.Flashback);
 	}
 
-	// Token: 0x06000751 RID: 1873 RVA: 0x0000761A File Offset: 0x0000581A
+	// Token: 0x06000751 RID: 1873 RVA: 0x0000762F File Offset: 0x0000582F
 	public void SetWorldState(WorldState newWorldState)
 	{
 		this.SetWorldState(newWorldState, false, false);
 	}
 
-	// Token: 0x06000752 RID: 1874 RVA: 0x0003462C File Offset: 0x0003282C
+	// Token: 0x06000752 RID: 1874 RVA: 0x0003480C File Offset: 0x00032A0C
 	public void SetWorldState(WorldState newWorldState, bool forceChange = false, bool delaySceneChange = false)
 	{
 		if (newWorldState != this.worldState || forceChange)

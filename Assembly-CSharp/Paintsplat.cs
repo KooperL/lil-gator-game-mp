@@ -36,7 +36,7 @@ public class Paintsplat : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000116 RID: 278 RVA: 0x0001B5CC File Offset: 0x000197CC
+	// Token: 0x06000116 RID: 278 RVA: 0x0001B748 File Offset: 0x00019948
 	private void UpdateDecal()
 	{
 		Color color = this.color;

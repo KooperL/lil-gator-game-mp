@@ -4,7 +4,7 @@ using UnityEngine.U2D;
 
 public class ParticlesScreenSpace : MonoBehaviour
 {
-	// Token: 0x06000670 RID: 1648 RVA: 0x00031904 File Offset: 0x0002FB04
+	// Token: 0x06000670 RID: 1648 RVA: 0x00031A80 File Offset: 0x0002FC80
 	private void OnValidate()
 	{
 		if (this.pixelPerfectCamera == null)
@@ -27,7 +27,7 @@ public class ParticlesScreenSpace : MonoBehaviour
 		this.UpdateSize();
 	}
 
-	// Token: 0x06000672 RID: 1650 RVA: 0x00031960 File Offset: 0x0002FB60
+	// Token: 0x06000672 RID: 1650 RVA: 0x00031ADC File Offset: 0x0002FCDC
 	[ContextMenu("Update Size")]
 	private void UpdateSize()
 	{

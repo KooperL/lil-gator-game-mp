@@ -10,26 +10,26 @@ public class PlayerCameraDistanceZone : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x06000C27 RID: 3111 RVA: 0x0000B50F File Offset: 0x0000970F
+	// Token: 0x06000C27 RID: 3111 RVA: 0x0000B524 File Offset: 0x00009724
 	private void OnEnable()
 	{
 		PlayerCameraDistanceZone.activeZones.Add(this);
 	}
 
-	// Token: 0x06000C28 RID: 3112 RVA: 0x0000B51C File Offset: 0x0000971C
+	// Token: 0x06000C28 RID: 3112 RVA: 0x0000B531 File Offset: 0x00009731
 	private void OnDisable()
 	{
 		PlayerCameraDistanceZone.activeZones.Remove(this);
 	}
 
-	// Token: 0x06000C29 RID: 3113 RVA: 0x0000B52A File Offset: 0x0000972A
+	// Token: 0x06000C29 RID: 3113 RVA: 0x0000B53F File Offset: 0x0000973F
 	private void OnTriggerStay(Collider other)
 	{
 		this.lastTriggeredTime = Time.time;
 		base.enabled = true;
 	}
 
-	// Token: 0x06000C2A RID: 3114 RVA: 0x0000B53E File Offset: 0x0000973E
+	// Token: 0x06000C2A RID: 3114 RVA: 0x0000B553 File Offset: 0x00009753
 	private void Update()
 	{
 		if (Time.time - this.lastTriggeredTime > 0.1f)

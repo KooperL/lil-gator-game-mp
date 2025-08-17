@@ -18,7 +18,7 @@ public class SmokeLine : MonoBehaviour
 		this.lineRenderer.GetPositions(this.positions);
 	}
 
-	// Token: 0x0600069A RID: 1690 RVA: 0x00031EBC File Offset: 0x000300BC
+	// Token: 0x0600069A RID: 1690 RVA: 0x00032038 File Offset: 0x00030238
 	private void Update()
 	{
 		this.t += Time.deltaTime * this.speed;

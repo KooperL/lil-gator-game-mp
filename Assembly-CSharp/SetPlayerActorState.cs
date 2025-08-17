@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SetPlayerActorState : MonoBehaviour
 {
-	// Token: 0x060004E9 RID: 1257 RVA: 0x0002CD1C File Offset: 0x0002AF1C
+	// Token: 0x060004E9 RID: 1257 RVA: 0x0002CE98 File Offset: 0x0002B098
 	private void OnEnable()
 	{
 		Player.actor.SetStateAndPosition((int)this.state, (int)this.position, this.skipTransition, false);
@@ -28,7 +28,7 @@ public class SetPlayerActorState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004EA RID: 1258 RVA: 0x0002CDD4 File Offset: 0x0002AFD4
+	// Token: 0x060004EA RID: 1258 RVA: 0x0002CF50 File Offset: 0x0002B150
 	[ContextMenu("Snap To Floor")]
 	public void SnapToFloor()
 	{

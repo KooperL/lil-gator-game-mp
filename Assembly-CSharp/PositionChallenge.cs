@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class PositionChallenge : PersistentObject
 {
-	// Token: 0x06000848 RID: 2120 RVA: 0x00037720 File Offset: 0x00035920
+	// Token: 0x06000848 RID: 2120 RVA: 0x00037900 File Offset: 0x00035B00
 	private void Awake()
 	{
 		BreakableObject[] array = this.countedBreakables;
@@ -14,28 +14,28 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x06000849 RID: 2121 RVA: 0x00008278 File Offset: 0x00006478
+	// Token: 0x06000849 RID: 2121 RVA: 0x0000828D File Offset: 0x0000648D
 	[ContextMenu("Gather Breakables")]
 	public void GatherBreakables()
 	{
 		this.challengeBreakables = base.transform.GetComponentsInChildren<BreakableObject>();
 	}
 
-	// Token: 0x0600084A RID: 2122 RVA: 0x0000828B File Offset: 0x0000648B
+	// Token: 0x0600084A RID: 2122 RVA: 0x000082A0 File Offset: 0x000064A0
 	public override void Load(bool state)
 	{
 		this.isFinished = state;
 		this.LoadState();
 	}
 
-	// Token: 0x0600084B RID: 2123 RVA: 0x0000829A File Offset: 0x0000649A
+	// Token: 0x0600084B RID: 2123 RVA: 0x000082AF File Offset: 0x000064AF
 	protected virtual void Start()
 	{
 		this.LoadState();
 		base.enabled = false;
 	}
 
-	// Token: 0x0600084C RID: 2124 RVA: 0x0003775C File Offset: 0x0003595C
+	// Token: 0x0600084C RID: 2124 RVA: 0x0003793C File Offset: 0x00035B3C
 	protected virtual void LoadState()
 	{
 		this.startObject.SetActive(!this.isFinished);
@@ -48,7 +48,7 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x0600084D RID: 2125 RVA: 0x000082A9 File Offset: 0x000064A9
+	// Token: 0x0600084D RID: 2125 RVA: 0x000082BE File Offset: 0x000064BE
 	public void OnTrigger()
 	{
 		this.raceTrigger = Time.time;
@@ -58,7 +58,7 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x0600084E RID: 2126 RVA: 0x000377B0 File Offset: 0x000359B0
+	// Token: 0x0600084E RID: 2126 RVA: 0x00037990 File Offset: 0x00035B90
 	public virtual void StartChallenge()
 	{
 		BreakableObject[] array = this.challengeBreakables;
@@ -79,13 +79,13 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x0600084F RID: 2127 RVA: 0x000082C4 File Offset: 0x000064C4
+	// Token: 0x0600084F RID: 2127 RVA: 0x000082D9 File Offset: 0x000064D9
 	protected virtual Transform RaceGoal()
 	{
 		return this.startObject.transform;
 	}
 
-	// Token: 0x06000850 RID: 2128 RVA: 0x000082D1 File Offset: 0x000064D1
+	// Token: 0x06000850 RID: 2128 RVA: 0x000082E6 File Offset: 0x000064E6
 	private void Update()
 	{
 		if (!this.isInChallenge)
@@ -99,7 +99,7 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x06000851 RID: 2129 RVA: 0x00037838 File Offset: 0x00035A38
+	// Token: 0x06000851 RID: 2129 RVA: 0x00037A18 File Offset: 0x00035C18
 	public virtual void CancelChallenge()
 	{
 		if (this.raceFailedSound != null)
@@ -115,7 +115,7 @@ public class PositionChallenge : PersistentObject
 		this.ClearRace();
 	}
 
-	// Token: 0x06000852 RID: 2130 RVA: 0x0003789C File Offset: 0x00035A9C
+	// Token: 0x06000852 RID: 2130 RVA: 0x00037A7C File Offset: 0x00035C7C
 	private void BreakableBroken()
 	{
 		int num = 0;
@@ -135,7 +135,7 @@ public class PositionChallenge : PersistentObject
 		PlayAudio.p.PlayQuestSting(num);
 	}
 
-	// Token: 0x06000853 RID: 2131 RVA: 0x000378EC File Offset: 0x00035AEC
+	// Token: 0x06000853 RID: 2131 RVA: 0x00037ACC File Offset: 0x00035CCC
 	public void FinishChallenge()
 	{
 		if (!this.isInChallenge)
@@ -154,7 +154,7 @@ public class PositionChallenge : PersistentObject
 		this.onFinish.Invoke();
 	}
 
-	// Token: 0x06000854 RID: 2132 RVA: 0x000082FC File Offset: 0x000064FC
+	// Token: 0x06000854 RID: 2132 RVA: 0x00008311 File Offset: 0x00006511
 	public void ClearRace()
 	{
 		base.enabled = false;
@@ -165,7 +165,7 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x06000855 RID: 2133 RVA: 0x00037984 File Offset: 0x00035B84
+	// Token: 0x06000855 RID: 2133 RVA: 0x00037B64 File Offset: 0x00035D64
 	protected virtual void DoParticleEffects()
 	{
 		foreach (BreakableObject breakableObject in this.challengeBreakables)

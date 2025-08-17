@@ -9,8 +9,8 @@ namespace Rewired.Demos
 	[RequireComponent(typeof(RectTransform))]
 	public sealed class UIPointer : UIBehaviour
 	{
-		// (get) Token: 0x06001DD2 RID: 7634 RVA: 0x00016C16 File Offset: 0x00014E16
-		// (set) Token: 0x06001DD3 RID: 7635 RVA: 0x00016C1E File Offset: 0x00014E1E
+		// (get) Token: 0x06001DD2 RID: 7634 RVA: 0x00016C2B File Offset: 0x00014E2B
+		// (set) Token: 0x06001DD3 RID: 7635 RVA: 0x00016C33 File Offset: 0x00014E33
 		public bool autoSort
 		{
 			get
@@ -31,7 +31,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DD4 RID: 7636 RVA: 0x000755B0 File Offset: 0x000737B0
+		// Token: 0x06001DD4 RID: 7636 RVA: 0x00075744 File Offset: 0x00073944
 		protected override void Awake()
 		{
 			base.Awake();
@@ -51,7 +51,7 @@ namespace Rewired.Demos
 			this.GetDependencies();
 		}
 
-		// Token: 0x06001DD5 RID: 7637 RVA: 0x00016C3F File Offset: 0x00014E3F
+		// Token: 0x06001DD5 RID: 7637 RVA: 0x00016C54 File Offset: 0x00014E54
 		private void Update()
 		{
 			if (this._autoSort && base.transform.GetSiblingIndex() < base.transform.parent.childCount - 1)
@@ -60,21 +60,21 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DD6 RID: 7638 RVA: 0x00016C73 File Offset: 0x00014E73
+		// Token: 0x06001DD6 RID: 7638 RVA: 0x00016C88 File Offset: 0x00014E88
 		protected override void OnTransformParentChanged()
 		{
 			base.OnTransformParentChanged();
 			this.GetDependencies();
 		}
 
-		// Token: 0x06001DD7 RID: 7639 RVA: 0x00016C81 File Offset: 0x00014E81
+		// Token: 0x06001DD7 RID: 7639 RVA: 0x00016C96 File Offset: 0x00014E96
 		protected override void OnCanvasGroupChanged()
 		{
 			base.OnCanvasGroupChanged();
 			this.GetDependencies();
 		}
 
-		// Token: 0x06001DD8 RID: 7640 RVA: 0x00075608 File Offset: 0x00073808
+		// Token: 0x06001DD8 RID: 7640 RVA: 0x0007579C File Offset: 0x0007399C
 		public void OnScreenPositionChanged(Vector2 screenPosition)
 		{
 			if (this._canvas == null)
@@ -83,16 +83,16 @@ namespace Rewired.Demos
 			}
 			Camera camera = null;
 			RenderMode renderMode = this._canvas.renderMode;
-			if (renderMode != RenderMode.ScreenSpaceOverlay && renderMode - RenderMode.ScreenSpaceCamera <= 1)
+			if (renderMode != null && renderMode - 1 <= 1)
 			{
 				camera = this._canvas.worldCamera;
 			}
 			Vector2 vector;
-			RectTransformUtility.ScreenPointToLocalPointInRectangle(base.transform.parent as RectTransform, screenPosition, camera, out vector);
+			RectTransformUtility.ScreenPointToLocalPointInRectangle(base.transform.parent as RectTransform, screenPosition, camera, ref vector);
 			base.transform.localPosition = new Vector3(vector.x, vector.y, base.transform.localPosition.z);
 		}
 
-		// Token: 0x06001DD9 RID: 7641 RVA: 0x00016C8F File Offset: 0x00014E8F
+		// Token: 0x06001DD9 RID: 7641 RVA: 0x00016CA4 File Offset: 0x00014EA4
 		private void GetDependencies()
 		{
 			this._canvas = base.transform.root.GetComponentInChildren<Canvas>();

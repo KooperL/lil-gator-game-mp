@@ -14,7 +14,7 @@ public class Ach_Ragdoll : MonoBehaviour
 		this.stepsSinceFast = 1000;
 	}
 
-	// Token: 0x060001F4 RID: 500 RVA: 0x0001E304 File Offset: 0x0001C504
+	// Token: 0x060001F4 RID: 500 RVA: 0x0001E480 File Offset: 0x0001C680
 	public void FixedUpdate()
 	{
 		float sqrMagnitude = this.rigidbody.velocity.sqrMagnitude;

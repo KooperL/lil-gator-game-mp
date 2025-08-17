@@ -44,7 +44,7 @@ public class ScrapingSFX : MonoBehaviour
 		ScrapingSFX.s = this;
 	}
 
-	// Token: 0x06000685 RID: 1669 RVA: 0x00031A30 File Offset: 0x0002FC30
+	// Token: 0x06000685 RID: 1669 RVA: 0x00031BAC File Offset: 0x0002FDAC
 	private void LateUpdate()
 	{
 		AudioSource currentAudioSource = this.CurrentAudioSource;
@@ -95,7 +95,7 @@ public class ScrapingSFX : MonoBehaviour
 		this.HandleTrigger(other);
 	}
 
-	// Token: 0x06000688 RID: 1672 RVA: 0x00031B70 File Offset: 0x0002FD70
+	// Token: 0x06000688 RID: 1672 RVA: 0x00031CEC File Offset: 0x0002FEEC
 	private void HandleTrigger(Collider other)
 	{
 		ISurface component = other.GetComponent<ISurface>();
@@ -109,7 +109,7 @@ public class ScrapingSFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000689 RID: 1673 RVA: 0x00031BD4 File Offset: 0x0002FDD4
+	// Token: 0x06000689 RID: 1673 RVA: 0x00031D50 File Offset: 0x0002FF50
 	public void SetScraping(AudioClip scrapingClip, bool overridden = false)
 	{
 		if (this.isOverridden && !overridden)

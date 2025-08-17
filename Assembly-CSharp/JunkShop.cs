@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JunkShop : MonoBehaviour
 {
-	// Token: 0x060000E4 RID: 228 RVA: 0x0001A8E8 File Offset: 0x00018AE8
+	// Token: 0x060000E4 RID: 228 RVA: 0x0001AA64 File Offset: 0x00018C64
 	private void OnValidate()
 	{
 		if (this.itemGet == null)
@@ -117,7 +117,7 @@ public class JunkShop : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060000E8 RID: 232 RVA: 0x0001A978 File Offset: 0x00018B78
+	// Token: 0x060000E8 RID: 232 RVA: 0x0001AAF4 File Offset: 0x00018CF4
 	private string[] GetChoiceList()
 	{
 		string[] array = new string[this.displayedItemCount + 1];
@@ -129,7 +129,7 @@ public class JunkShop : MonoBehaviour
 		return array;
 	}
 
-	// Token: 0x060000E9 RID: 233 RVA: 0x0001A9E8 File Offset: 0x00018BE8
+	// Token: 0x060000E9 RID: 233 RVA: 0x0001AB64 File Offset: 0x00018D64
 	private void UpdateInventory()
 	{
 		for (int i = 0; i < this.displayedItemCount; i++)

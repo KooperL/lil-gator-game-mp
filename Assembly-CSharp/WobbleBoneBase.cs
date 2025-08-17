@@ -13,7 +13,7 @@ public class WobbleBoneBase : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06001029 RID: 4137 RVA: 0x0000B50C File Offset: 0x0000970C
+	// Token: 0x06001029 RID: 4137 RVA: 0x0000B521 File Offset: 0x00009721
 	protected float Extrapolate(float t)
 	{
 		return t;

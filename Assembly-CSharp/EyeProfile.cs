@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class EyeProfile : ScriptableObject
 {
-	// Token: 0x060001A5 RID: 421 RVA: 0x0001D344 File Offset: 0x0001B544
+	// Token: 0x060001A5 RID: 421 RVA: 0x0001D4C0 File Offset: 0x0001B6C0
 	public EyeProfile.EyeState GetEyeState(ActorState actorState)
 	{
 		foreach (EyeProfile.EyeState eyeState in this.eyeStates)
@@ -17,7 +17,7 @@ public class EyeProfile : ScriptableObject
 		return this.defaultState;
 	}
 
-	// Token: 0x060001A6 RID: 422 RVA: 0x0001D380 File Offset: 0x0001B580
+	// Token: 0x060001A6 RID: 422 RVA: 0x0001D4FC File Offset: 0x0001B6FC
 	public bool TryGetEyeState(ActorState actorState, out EyeProfile.EyeState eyeState)
 	{
 		foreach (EyeProfile.EyeState eyeState2 in this.eyeStates)
@@ -32,7 +32,7 @@ public class EyeProfile : ScriptableObject
 		return this.overrideDefaultEyes;
 	}
 
-	// Token: 0x060001A7 RID: 423 RVA: 0x0001D3D0 File Offset: 0x0001B5D0
+	// Token: 0x060001A7 RID: 423 RVA: 0x0001D54C File Offset: 0x0001B74C
 	private void OnValidate()
 	{
 		for (int i = 0; i < this.eyeStates.Length; i++)

@@ -4,8 +4,8 @@ using UnityEngine;
 [CreateAssetMenu]
 public class StickerObject : ScriptableObject
 {
-	// (get) Token: 0x0600139A RID: 5018 RVA: 0x0001091F File Offset: 0x0000EB1F
-	// (set) Token: 0x0600139B RID: 5019 RVA: 0x00010932 File Offset: 0x0000EB32
+	// (get) Token: 0x0600139A RID: 5018 RVA: 0x00010934 File Offset: 0x0000EB34
+	// (set) Token: 0x0600139B RID: 5019 RVA: 0x00010947 File Offset: 0x0000EB47
 	public bool IsUnlocked
 	{
 		get
@@ -18,8 +18,8 @@ public class StickerObject : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x0600139C RID: 5020 RVA: 0x00010945 File Offset: 0x0000EB45
-	// (set) Token: 0x0600139D RID: 5021 RVA: 0x00060050 File Offset: 0x0005E250
+	// (get) Token: 0x0600139C RID: 5020 RVA: 0x0001095A File Offset: 0x0000EB5A
+	// (set) Token: 0x0600139D RID: 5021 RVA: 0x000601E4 File Offset: 0x0005E3E4
 	public Vector2Int SavedPosition
 	{
 		get

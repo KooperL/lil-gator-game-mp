@@ -25,7 +25,7 @@ public class SharedAudioSource : MonoBehaviour, ISharedAudioSource
 		this.cachedPosition = base.transform.position;
 	}
 
-	// Token: 0x06000250 RID: 592 RVA: 0x0001F850 File Offset: 0x0001DA50
+	// Token: 0x06000250 RID: 592 RVA: 0x0001F9CC File Offset: 0x0001DBCC
 	[ContextMenu("Update Radius")]
 	private void UpdateRadius()
 	{
@@ -65,7 +65,7 @@ public class SharedAudioSource : MonoBehaviour, ISharedAudioSource
 		}
 	}
 
-	// Token: 0x06000253 RID: 595 RVA: 0x0001F8FC File Offset: 0x0001DAFC
+	// Token: 0x06000253 RID: 595 RVA: 0x0001FA78 File Offset: 0x0001DC78
 	public void GetAudioData(Vector3 positionReference, out SharedAudioProfile profile, out Vector3 direction, out float strength)
 	{
 		profile = this.profile;

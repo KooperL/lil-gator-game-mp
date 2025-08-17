@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovement
 {
-	// Token: 0x060004CD RID: 1229 RVA: 0x0002C444 File Offset: 0x0002A644
+	// Token: 0x060004CD RID: 1229 RVA: 0x0002C5C0 File Offset: 0x0002A7C0
 	public void MovementUpdate(Vector3 input, ref Vector3 position, ref Vector3 velocity, ref Vector3 direction, ref Vector3 up, ref float animationIndex)
 	{
 		if (this.pathArray == null)
@@ -56,7 +56,7 @@ public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovemen
 		direction = vector2;
 	}
 
-	// Token: 0x060004CE RID: 1230 RVA: 0x0002C664 File Offset: 0x0002A864
+	// Token: 0x060004CE RID: 1230 RVA: 0x0002C7E0 File Offset: 0x0002A9E0
 	public float MoveAlongPath(float t, float distance)
 	{
 		if (distance == 0f)
@@ -82,7 +82,7 @@ public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovemen
 		return Mathf.Clamp(t + distance * num2, 0f, (float)(this.path.Count - 1));
 	}
 
-	// Token: 0x060004CF RID: 1231 RVA: 0x0002C71C File Offset: 0x0002A91C
+	// Token: 0x060004CF RID: 1231 RVA: 0x0002C898 File Offset: 0x0002AA98
 	public void SetMark(Vector3[] positions, Quaternion rotation, float speed, UnityEvent onReachMark, bool skipToStart, bool disableInteraction = false, bool playFootsteps = true)
 	{
 		if (this.path == null)
@@ -140,7 +140,7 @@ public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovemen
 		this.mountedActor.GetOut();
 	}
 
-	// Token: 0x060004D0 RID: 1232 RVA: 0x0002C8AC File Offset: 0x0002AAAC
+	// Token: 0x060004D0 RID: 1232 RVA: 0x0002CA28 File Offset: 0x0002AC28
 	private void StartMoving()
 	{
 		this.path[0] = (this.pathArray[0] = base.transform.position);

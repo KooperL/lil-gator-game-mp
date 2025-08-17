@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MoneyFlyingItem : MonoBehaviour
 {
-	// (get) Token: 0x06000979 RID: 2425 RVA: 0x000092FA File Offset: 0x000074FA
+	// (get) Token: 0x06000979 RID: 2425 RVA: 0x0000930F File Offset: 0x0000750F
 	private bool IsDelayed
 	{
 		get
@@ -12,7 +12,7 @@ public class MoneyFlyingItem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600097A RID: 2426 RVA: 0x0003AAE0 File Offset: 0x00038CE0
+	// Token: 0x0600097A RID: 2426 RVA: 0x0003ACC0 File Offset: 0x00038EC0
 	private void Start()
 	{
 		this.velocity = (global::UnityEngine.Random.insideUnitSphere + Vector3.up) * this.initialSpeed;
@@ -20,7 +20,7 @@ public class MoneyFlyingItem : MonoBehaviour
 		this.rotation = global::UnityEngine.Random.insideUnitSphere * this.maxRotationSpeed;
 	}
 
-	// Token: 0x0600097B RID: 2427 RVA: 0x0003AB30 File Offset: 0x00038D30
+	// Token: 0x0600097B RID: 2427 RVA: 0x0003AD10 File Offset: 0x00038F10
 	private void Update()
 	{
 		if (!this.IsDelayed)

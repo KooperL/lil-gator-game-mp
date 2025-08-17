@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class ItemSearchObjects : ItemSearch<PersistentObject>
 {
-	// Token: 0x06000B9B RID: 2971 RVA: 0x0000AD6D File Offset: 0x00008F6D
+	// Token: 0x06000B9B RID: 2971 RVA: 0x0000AD82 File Offset: 0x00008F82
 	protected override PersistentObject[] GetList()
 	{
 		return CompletionStats.c.completionObjects;
 	}
 
-	// Token: 0x06000B9C RID: 2972 RVA: 0x0000AD79 File Offset: 0x00008F79
+	// Token: 0x06000B9C RID: 2972 RVA: 0x0000AD8E File Offset: 0x00008F8E
 	protected override bool IsValid(PersistentObject item)
 	{
 		return !(item == null) && item.isPersistent && !item.PersistentState;
 	}
 
-	// Token: 0x06000B9D RID: 2973 RVA: 0x0000AD9B File Offset: 0x00008F9B
+	// Token: 0x06000B9D RID: 2973 RVA: 0x0000ADB0 File Offset: 0x00008FB0
 	protected override void OnUse()
 	{
 		if (this.isSearching || this.isRunning)
@@ -26,7 +26,7 @@ public class ItemSearchObjects : ItemSearch<PersistentObject>
 		CoroutineUtil.c.StartCo(this.Run());
 	}
 
-	// Token: 0x06000B9E RID: 2974 RVA: 0x0000ADBF File Offset: 0x00008FBF
+	// Token: 0x06000B9E RID: 2974 RVA: 0x0000ADD4 File Offset: 0x00008FD4
 	private IEnumerator Run()
 	{
 		this.isRunning = true;
@@ -57,13 +57,13 @@ public class ItemSearchObjects : ItemSearch<PersistentObject>
 		yield break;
 	}
 
-	// Token: 0x06000B9F RID: 2975 RVA: 0x0000ADCE File Offset: 0x00008FCE
+	// Token: 0x06000B9F RID: 2975 RVA: 0x0000ADE3 File Offset: 0x00008FE3
 	protected override void SearchResult(PersistentObject result)
 	{
 		this.result = result;
 	}
 
-	// Token: 0x06000BA0 RID: 2976 RVA: 0x00040C6C File Offset: 0x0003EE6C
+	// Token: 0x06000BA0 RID: 2976 RVA: 0x00040E00 File Offset: 0x0003F000
 	public override void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (this.isOnRight ? Player.itemManager.satchelAnchor_r : Player.itemManager.satchelAnchor);
@@ -74,14 +74,14 @@ public class ItemSearchObjects : ItemSearch<PersistentObject>
 		(this.isOnRight ? Player.itemManager.hipSatchel_r : Player.itemManager.hipSatchel).SetActive(Player.itemManager.equippedState != PlayerItemManager.EquippedState.Phone);
 	}
 
-	// Token: 0x06000BA1 RID: 2977 RVA: 0x0000ADD7 File Offset: 0x00008FD7
+	// Token: 0x06000BA1 RID: 2977 RVA: 0x0000ADEC File Offset: 0x00008FEC
 	public override void OnRemove()
 	{
 		Player.actor.ClearEmote(false, false);
 		base.OnRemove();
 	}
 
-	// Token: 0x06000BA2 RID: 2978 RVA: 0x0000ADEB File Offset: 0x00008FEB
+	// Token: 0x06000BA2 RID: 2978 RVA: 0x0000AE00 File Offset: 0x00009000
 	public override void Cancel()
 	{
 		Player.actor.ClearEmote(false, false);

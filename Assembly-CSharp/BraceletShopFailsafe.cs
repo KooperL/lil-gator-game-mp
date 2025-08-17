@@ -43,7 +43,7 @@ public class BraceletShopFailsafe : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000515 RID: 1301 RVA: 0x0002DAE8 File Offset: 0x0002BCE8
+	// Token: 0x06000515 RID: 1301 RVA: 0x0002DC64 File Offset: 0x0002BE64
 	private Coroutine LoadDialogue(string dialogue)
 	{
 		if (this.document != null)
@@ -53,7 +53,7 @@ public class BraceletShopFailsafe : MonoBehaviour
 		return base.StartCoroutine(DialogueManager.d.LoadChunk(dialogue, this.actors, DialogueManager.DialogueBoxBackground.Standard, true));
 	}
 
-	// Token: 0x06000516 RID: 1302 RVA: 0x0002DB44 File Offset: 0x0002BD44
+	// Token: 0x06000516 RID: 1302 RVA: 0x0002DCC0 File Offset: 0x0002BEC0
 	private Coroutine DoBraceletGet()
 	{
 		string text = this.braceletGetDialogue;

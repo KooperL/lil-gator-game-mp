@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WaterPumpWrench : MonoBehaviour, Interaction
 {
-	// Token: 0x06000146 RID: 326 RVA: 0x0001BB30 File Offset: 0x00019D30
+	// Token: 0x06000146 RID: 326 RVA: 0x0001BCAC File Offset: 0x00019EAC
 	public void Interact()
 	{
 		if (DialogueManager.d.IsInImportantDialogue)

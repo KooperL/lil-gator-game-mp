@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemThrowObject : ItemThrowable
 {
-	// Token: 0x06000BCB RID: 3019 RVA: 0x0000B04D File Offset: 0x0000924D
+	// Token: 0x06000BCB RID: 3019 RVA: 0x0000B062 File Offset: 0x00009262
 	public override void Input(bool isDown, bool isHeld)
 	{
 		if (this.spawnedObject != null && isDown)
@@ -14,7 +14,7 @@ public class ItemThrowObject : ItemThrowable
 		base.Input(isDown, isHeld);
 	}
 
-	// Token: 0x06000BCC RID: 3020 RVA: 0x00041488 File Offset: 0x0003F688
+	// Token: 0x06000BCC RID: 3020 RVA: 0x0004161C File Offset: 0x0003F81C
 	public override void LateUpdate()
 	{
 		if (this.spawnedObject != null)
@@ -47,7 +47,7 @@ public class ItemThrowObject : ItemThrowable
 		}
 	}
 
-	// Token: 0x06000BCD RID: 3021 RVA: 0x000414FC File Offset: 0x0003F6FC
+	// Token: 0x06000BCD RID: 3021 RVA: 0x00041690 File Offset: 0x0003F890
 	public override void SetCharging(bool isCharging)
 	{
 		if (UIMenus.reticle != null)
@@ -70,14 +70,14 @@ public class ItemThrowObject : ItemThrowable
 		this.charging = isCharging;
 	}
 
-	// Token: 0x06000BCE RID: 3022 RVA: 0x0000B071 File Offset: 0x00009271
+	// Token: 0x06000BCE RID: 3022 RVA: 0x0000B086 File Offset: 0x00009286
 	public override void Cancel()
 	{
 		base.Cancel();
 		this.ClearStuff();
 	}
 
-	// Token: 0x06000BCF RID: 3023 RVA: 0x00041568 File Offset: 0x0003F768
+	// Token: 0x06000BCF RID: 3023 RVA: 0x000416FC File Offset: 0x0003F8FC
 	public override void SetEquipped(bool isEquipped)
 	{
 		this.isEquipped = isEquipped;
@@ -107,14 +107,14 @@ public class ItemThrowObject : ItemThrowable
 		this.unequippedRenderer.enabled = this.spawnedObject == null;
 	}
 
-	// Token: 0x06000BD0 RID: 3024 RVA: 0x0000B07F File Offset: 0x0000927F
+	// Token: 0x06000BD0 RID: 3024 RVA: 0x0000B094 File Offset: 0x00009294
 	public override void OnRemove()
 	{
 		base.OnRemove();
 		this.ClearStuff();
 	}
 
-	// Token: 0x06000BD1 RID: 3025 RVA: 0x00041620 File Offset: 0x0003F820
+	// Token: 0x06000BD1 RID: 3025 RVA: 0x000417B4 File Offset: 0x0003F9B4
 	private void ClearStuff()
 	{
 		if (Player.itemManager.itemInUse == this)
@@ -135,13 +135,13 @@ public class ItemThrowObject : ItemThrowable
 		this.SetEquipped(this.isEquipped);
 	}
 
-	// Token: 0x06000BD2 RID: 3026 RVA: 0x0000B08D File Offset: 0x0000928D
+	// Token: 0x06000BD2 RID: 3026 RVA: 0x0000B0A2 File Offset: 0x000092A2
 	public override float GetSolveSpeed(float charge = 1f)
 	{
 		return this.spawnedObjectSpeed;
 	}
 
-	// Token: 0x06000BD3 RID: 3027 RVA: 0x0004169C File Offset: 0x0003F89C
+	// Token: 0x06000BD3 RID: 3027 RVA: 0x00041830 File Offset: 0x0003FA30
 	public override void Throw(float charge, Vector3 direction)
 	{
 		base.Throw(charge, direction);

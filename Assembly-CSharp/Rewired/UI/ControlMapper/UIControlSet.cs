@@ -8,7 +8,7 @@ namespace Rewired.UI.ControlMapper
 	[AddComponentMenu("")]
 	public class UIControlSet : MonoBehaviour
 	{
-		// (get) Token: 0x06001C8D RID: 7309 RVA: 0x00070898 File Offset: 0x0006EA98
+		// (get) Token: 0x06001C8D RID: 7309 RVA: 0x00070A2C File Offset: 0x0006EC2C
 		private Dictionary<int, UIControl> controls
 		{
 			get
@@ -22,7 +22,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001C8E RID: 7310 RVA: 0x00015D3B File Offset: 0x00013F3B
+		// Token: 0x06001C8E RID: 7310 RVA: 0x00015D50 File Offset: 0x00013F50
 		public void SetTitle(string text)
 		{
 			if (this.title == null)
@@ -32,7 +32,7 @@ namespace Rewired.UI.ControlMapper
 			this.title.text = text;
 		}
 
-		// Token: 0x06001C8F RID: 7311 RVA: 0x000708C0 File Offset: 0x0006EAC0
+		// Token: 0x06001C8F RID: 7311 RVA: 0x00070A54 File Offset: 0x0006EC54
 		public T GetControl<T>(int uniqueId) where T : UIControl
 		{
 			UIControl uicontrol;
@@ -40,7 +40,7 @@ namespace Rewired.UI.ControlMapper
 			return uicontrol as T;
 		}
 
-		// Token: 0x06001C90 RID: 7312 RVA: 0x000708E8 File Offset: 0x0006EAE8
+		// Token: 0x06001C90 RID: 7312 RVA: 0x00070A7C File Offset: 0x0006EC7C
 		public UISliderControl CreateSlider(GameObject prefab, Sprite icon, float minValue, float maxValue, Action<int, float> valueChangedCallback, Action<int> cancelCallback)
 		{
 			GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(prefab);

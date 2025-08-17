@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMoveOnSphere : MonoBehaviour
 {
-	// Token: 0x06000160 RID: 352 RVA: 0x0001C400 File Offset: 0x0001A600
+	// Token: 0x06000160 RID: 352 RVA: 0x0001C57C File Offset: 0x0001A77C
 	private void Update()
 	{
 		Vector3 vector = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
@@ -25,7 +25,7 @@ public class PlayerMoveOnSphere : MonoBehaviour
 		if (this.Sphere != null)
 		{
 			Vector3 normalized = (base.transform.position - this.Sphere.transform.position).normalized;
-			Vector3 vector2 = base.transform.forward.ProjectOntoPlane(normalized);
+			Vector3 vector2 = UnityVectorExtensions.ProjectOntoPlane(base.transform.forward, normalized);
 			base.transform.position = this.Sphere.transform.position + normalized * (this.Sphere.radius + base.transform.localScale.y / 2f);
 			base.transform.rotation = Quaternion.LookRotation(vector2, normalized);
 		}

@@ -16,7 +16,7 @@ public class SmoothAlterTime : MonoBehaviour
 		this.isTimeAltered = false;
 	}
 
-	// Token: 0x06000609 RID: 1545 RVA: 0x000302F0 File Offset: 0x0002E4F0
+	// Token: 0x06000609 RID: 1545 RVA: 0x0003046C File Offset: 0x0002E66C
 	private void Update()
 	{
 		this.alteredTimeSmooth = Mathf.MoveTowards(this.alteredTimeSmooth, this.isTimeAltered ? 1f : 0f, Time.unscaledDeltaTime / this.fadeRealTime);

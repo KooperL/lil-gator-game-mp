@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class SwingMount : ActorMount
 {
-	// Token: 0x0600054D RID: 1357 RVA: 0x0002E29C File Offset: 0x0002C49C
+	// Token: 0x0600054D RID: 1357 RVA: 0x0002E418 File Offset: 0x0002C618
 	protected override void HandlePlayerInput(Vector3 input, ref float animationIndex)
 	{
 		if (!Game.HasControl)
@@ -19,7 +19,7 @@ public class SwingMount : ActorMount
 		this.swing.AddForce(this.swingForce * input);
 	}
 
-	// Token: 0x0600054E RID: 1358 RVA: 0x0002E32C File Offset: 0x0002C52C
+	// Token: 0x0600054E RID: 1358 RVA: 0x0002E4A8 File Offset: 0x0002C6A8
 	protected override void GetIntoMount(bool skipToMount)
 	{
 		base.GetIntoMount(skipToMount);
@@ -47,7 +47,7 @@ public class SwingMount : ActorMount
 		this.onGottenInto.AddListener(new UnityAction(this.OnGetIntoSwing));
 	}
 
-	// Token: 0x0600054F RID: 1359 RVA: 0x0002E45C File Offset: 0x0002C65C
+	// Token: 0x0600054F RID: 1359 RVA: 0x0002E5D8 File Offset: 0x0002C7D8
 	private void OnGetIntoSwing()
 	{
 		if (!this.ignoreSwingPhysics)
@@ -61,7 +61,7 @@ public class SwingMount : ActorMount
 		}
 	}
 
-	// Token: 0x06000550 RID: 1360 RVA: 0x0002E4B8 File Offset: 0x0002C6B8
+	// Token: 0x06000550 RID: 1360 RVA: 0x0002E634 File Offset: 0x0002C834
 	public override void GetOut()
 	{
 		base.GetOut();
@@ -78,7 +78,7 @@ public class SwingMount : ActorMount
 		}
 	}
 
-	// Token: 0x06000551 RID: 1361 RVA: 0x0002E52C File Offset: 0x0002C72C
+	// Token: 0x06000551 RID: 1361 RVA: 0x0002E6A8 File Offset: 0x0002C8A8
 	public override void Cancel()
 	{
 		if (this == null || this.swing == null)
@@ -99,7 +99,7 @@ public class SwingMount : ActorMount
 		base.Cancel();
 	}
 
-	// Token: 0x06000552 RID: 1362 RVA: 0x0002E5B8 File Offset: 0x0002C7B8
+	// Token: 0x06000552 RID: 1362 RVA: 0x0002E734 File Offset: 0x0002C934
 	public override void CancelMount()
 	{
 		if (!this.actor.isPlayer && !this.ignoreSwingPhysics)

@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class DestroyQuest : MonoBehaviour
 {
-	// (get) Token: 0x06000E05 RID: 3589 RVA: 0x0000C8C0 File Offset: 0x0000AAC0
-	// (set) Token: 0x06000E06 RID: 3590 RVA: 0x0000C8D3 File Offset: 0x0000AAD3
+	// (get) Token: 0x06000E05 RID: 3589 RVA: 0x0000C8D5 File Offset: 0x0000AAD5
+	// (set) Token: 0x06000E06 RID: 3590 RVA: 0x0000C8E8 File Offset: 0x0000AAE8
 	public bool State
 	{
 		get
@@ -19,20 +19,20 @@ public class DestroyQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E07 RID: 3591 RVA: 0x0000C8E6 File Offset: 0x0000AAE6
+	// Token: 0x06000E07 RID: 3591 RVA: 0x0000C8FB File Offset: 0x0000AAFB
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000E08 RID: 3592 RVA: 0x0000C8EE File Offset: 0x0000AAEE
+	// Token: 0x06000E08 RID: 3592 RVA: 0x0000C903 File Offset: 0x0000AB03
 	[ContextMenu("DebugState")]
 	public void DebugState()
 	{
 		Debug.Log(this.State);
 	}
 
-	// Token: 0x06000E09 RID: 3593 RVA: 0x0004C4A0 File Offset: 0x0004A6A0
+	// Token: 0x06000E09 RID: 3593 RVA: 0x0004C634 File Offset: 0x0004A834
 	[ContextMenu("UpdateState")]
 	private void UpdateState()
 	{
@@ -64,7 +64,7 @@ public class DestroyQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E0A RID: 3594 RVA: 0x0004C55C File Offset: 0x0004A75C
+	// Token: 0x06000E0A RID: 3594 RVA: 0x0004C6F0 File Offset: 0x0004A8F0
 	public void TargetDestroyed()
 	{
 		this.UpdateState();
@@ -81,13 +81,13 @@ public class DestroyQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E0B RID: 3595 RVA: 0x0000C900 File Offset: 0x0000AB00
+	// Token: 0x06000E0B RID: 3595 RVA: 0x0000C915 File Offset: 0x0000AB15
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000E0C RID: 3596 RVA: 0x0000C90F File Offset: 0x0000AB0F
+	// Token: 0x06000E0C RID: 3596 RVA: 0x0000C924 File Offset: 0x0000AB24
 	public IEnumerator RunConversation()
 	{
 		DialogueManager.d.CancelBubble();

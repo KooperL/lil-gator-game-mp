@@ -6,16 +6,16 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public class CustomControllersTiltDemo : MonoBehaviour
 	{
-		// Token: 0x06001D7A RID: 7546 RVA: 0x00073D1C File Offset: 0x00071F1C
+		// Token: 0x06001D7A RID: 7546 RVA: 0x00073EB0 File Offset: 0x000720B0
 		private void Awake()
 		{
 			Screen.orientation = ScreenOrientation.LandscapeLeft;
 			this.player = ReInput.players.GetPlayer(0);
 			ReInput.InputSourceUpdateEvent += this.OnInputUpdate;
-			this.controller = (CustomController)this.player.controllers.GetControllerWithTag(ControllerType.Custom, "TiltController");
+			this.controller = (CustomController)this.player.controllers.GetControllerWithTag(20, "TiltController");
 		}
 
-		// Token: 0x06001D7B RID: 7547 RVA: 0x00073D74 File Offset: 0x00071F74
+		// Token: 0x06001D7B RID: 7547 RVA: 0x00073F08 File Offset: 0x00072108
 		private void Update()
 		{
 			if (this.target == null)
@@ -33,7 +33,7 @@ namespace Rewired.Demos
 			this.target.Translate(vector * this.speed);
 		}
 
-		// Token: 0x06001D7C RID: 7548 RVA: 0x00073DFC File Offset: 0x00071FFC
+		// Token: 0x06001D7C RID: 7548 RVA: 0x00073F90 File Offset: 0x00072190
 		private void OnInputUpdate()
 		{
 			Vector3 acceleration = Input.acceleration;

@@ -5,7 +5,7 @@ using UnityEngine.AddressableAssets;
 
 public class DebugButtons : MonoBehaviour
 {
-	// (get) Token: 0x0600034A RID: 842 RVA: 0x000258C0 File Offset: 0x00023AC0
+	// (get) Token: 0x0600034A RID: 842 RVA: 0x00025A3C File Offset: 0x00023C3C
 	public static bool IsSkipHeld
 	{
 		get
@@ -29,13 +29,13 @@ public class DebugButtons : MonoBehaviour
 		DebugButtons.d = this;
 	}
 
-	// Token: 0x0600034C RID: 844 RVA: 0x0002591C File Offset: 0x00023B1C
+	// Token: 0x0600034C RID: 844 RVA: 0x00025A98 File Offset: 0x00023C98
 	public void OnEnable()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnSkip), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("SkipDialogue"));
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnSkip), UpdateLoopType.Update, InputActionEventType.ButtonJustReleased, ReInput.mapping.GetActionId("SkipDialogue"));
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.SplitTimer), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("SR_Split"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnSkip), 0, 3, ReInput.mapping.GetActionId("SkipDialogue"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnSkip), 0, 4, ReInput.mapping.GetActionId("SkipDialogue"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.SplitTimer), 0, 3, ReInput.mapping.GetActionId("SR_Split"));
 	}
 
 	// Token: 0x0600034D RID: 845 RVA: 0x000048F4 File Offset: 0x00002AF4
@@ -111,7 +111,7 @@ public class DebugButtons : MonoBehaviour
 
 	public GameObject lockedCamera;
 
-	private global::Rewired.Player rePlayer;
+	private Player rePlayer;
 
 	public GameObject toggleSaveObject;
 

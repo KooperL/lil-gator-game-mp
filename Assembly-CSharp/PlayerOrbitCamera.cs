@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerOrbitCamera : MonoBehaviour
 {
-	// (get) Token: 0x06000CBE RID: 3262 RVA: 0x0000BD21 File Offset: 0x00009F21
+	// (get) Token: 0x06000CBE RID: 3262 RVA: 0x0000BD36 File Offset: 0x00009F36
 	public float CameraSmoothing
 	{
 		get
@@ -13,7 +13,7 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000CBF RID: 3263 RVA: 0x00047890 File Offset: 0x00045A90
+	// (get) Token: 0x06000CBF RID: 3263 RVA: 0x00047A24 File Offset: 0x00045C24
 	private Vector3 CenterPoint
 	{
 		get
@@ -30,7 +30,7 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000CC0 RID: 3264 RVA: 0x0000BD2F File Offset: 0x00009F2F
+	// (get) Token: 0x06000CC0 RID: 3264 RVA: 0x0000BD44 File Offset: 0x00009F44
 	private Vector3 CameraOffset
 	{
 		get
@@ -39,7 +39,7 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000CC1 RID: 3265 RVA: 0x00047924 File Offset: 0x00045B24
+	// (get) Token: 0x06000CC1 RID: 3265 RVA: 0x00047AB8 File Offset: 0x00045CB8
 	public float DistanceMultiplier
 	{
 		get
@@ -70,7 +70,7 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000CC2 RID: 3266 RVA: 0x0000BD4C File Offset: 0x00009F4C
+	// (get) Token: 0x06000CC2 RID: 3266 RVA: 0x0000BD61 File Offset: 0x00009F61
 	public bool IsAutoCameraActive
 	{
 		get
@@ -79,13 +79,13 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CC3 RID: 3267 RVA: 0x0000BD5B File Offset: 0x00009F5B
+	// Token: 0x06000CC3 RID: 3267 RVA: 0x0000BD70 File Offset: 0x00009F70
 	public void ForceAutoCamera()
 	{
 		this.autoCameraActiveTime = -1f;
 	}
 
-	// Token: 0x06000CC4 RID: 3268 RVA: 0x000479D0 File Offset: 0x00045BD0
+	// Token: 0x06000CC4 RID: 3268 RVA: 0x00047B64 File Offset: 0x00045D64
 	public void SetCameraMode(PlayerOrbitCamera.CameraMode cameraMode)
 	{
 		if (CameraCollidePlayer.c != null)
@@ -110,13 +110,13 @@ public class PlayerOrbitCamera : MonoBehaviour
 		this.cameraMode = cameraMode;
 	}
 
-	// Token: 0x06000CC5 RID: 3269 RVA: 0x0000BD68 File Offset: 0x00009F68
+	// Token: 0x06000CC5 RID: 3269 RVA: 0x0000BD7D File Offset: 0x00009F7D
 	private void OnEnable()
 	{
 		PlayerOrbitCamera.active = this;
 	}
 
-	// Token: 0x06000CC6 RID: 3270 RVA: 0x00047A44 File Offset: 0x00045C44
+	// Token: 0x06000CC6 RID: 3270 RVA: 0x00047BD8 File Offset: 0x00045DD8
 	private void Start()
 	{
 		this.virtualCamera = base.GetComponent<CinemachineVirtualCamera>();
@@ -142,13 +142,13 @@ public class PlayerOrbitCamera : MonoBehaviour
 		this.autoCameraActiveTime = Time.time + this.autoCameraInputDelay;
 	}
 
-	// Token: 0x06000CC7 RID: 3271 RVA: 0x0000BD70 File Offset: 0x00009F70
+	// Token: 0x06000CC7 RID: 3271 RVA: 0x0000BD85 File Offset: 0x00009F85
 	private void FixedUpdate()
 	{
 		this.framesSinceTrigger++;
 	}
 
-	// Token: 0x06000CC8 RID: 3272 RVA: 0x0000BD80 File Offset: 0x00009F80
+	// Token: 0x06000CC8 RID: 3272 RVA: 0x0000BD95 File Offset: 0x00009F95
 	public void ReCenterCamera(bool justEnabled = false)
 	{
 		if (justEnabled)
@@ -158,14 +158,14 @@ public class PlayerOrbitCamera : MonoBehaviour
 		this.reCenterCameraTime = Time.time + 0.5f;
 	}
 
-	// Token: 0x06000CC9 RID: 3273 RVA: 0x0000BDA1 File Offset: 0x00009FA1
+	// Token: 0x06000CC9 RID: 3273 RVA: 0x0000BDB6 File Offset: 0x00009FB6
 	public void CancelReCenterCamera()
 	{
 		this.autoCameraActiveTime = Time.time + this.autoCameraInputDelay;
 		this.reCenterCameraTime = -1f;
 	}
 
-	// Token: 0x06000CCA RID: 3274 RVA: 0x00047B7C File Offset: 0x00045D7C
+	// Token: 0x06000CCA RID: 3274 RVA: 0x00047D10 File Offset: 0x00045F10
 	private void LateUpdate()
 	{
 		if ((this.brain.ActiveVirtualCamera != null && !(this.brain.ActiveVirtualCamera.VirtualCameraGameObject != base.gameObject)) || Time.timeSinceLevelLoad <= 1f)
@@ -524,13 +524,13 @@ public class PlayerOrbitCamera : MonoBehaviour
 		this.lastFramePosition = base.transform.position;
 	}
 
-	// Token: 0x06000CCB RID: 3275 RVA: 0x0000BDC0 File Offset: 0x00009FC0
+	// Token: 0x06000CCB RID: 3275 RVA: 0x0000BDD5 File Offset: 0x00009FD5
 	public Quaternion GetRotation()
 	{
 		return Quaternion.Euler(this.smoothRotation);
 	}
 
-	// Token: 0x06000CCC RID: 3276 RVA: 0x000488D0 File Offset: 0x00046AD0
+	// Token: 0x06000CCC RID: 3276 RVA: 0x00048A64 File Offset: 0x00046C64
 	public void GetOrientationFromCamera()
 	{
 		if (this.mainCamera == null)
@@ -560,7 +560,7 @@ public class PlayerOrbitCamera : MonoBehaviour
 		this.hasControl = 0f;
 	}
 
-	// (get) Token: 0x06000CCD RID: 3277 RVA: 0x0000BDCD File Offset: 0x00009FCD
+	// (get) Token: 0x06000CCD RID: 3277 RVA: 0x0000BDE2 File Offset: 0x00009FE2
 	private float HighAngle
 	{
 		get
@@ -577,7 +577,7 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000CCE RID: 3278 RVA: 0x0000BDFD File Offset: 0x00009FFD
+	// (get) Token: 0x06000CCE RID: 3278 RVA: 0x0000BE12 File Offset: 0x0000A012
 	private float LowAngle
 	{
 		get
@@ -594,7 +594,7 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000CCF RID: 3279 RVA: 0x0000BE2D File Offset: 0x0000A02D
+	// (get) Token: 0x06000CCF RID: 3279 RVA: 0x0000BE42 File Offset: 0x0000A042
 	private float LowDistance
 	{
 		get
@@ -611,7 +611,7 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000CD0 RID: 3280 RVA: 0x0000BE5D File Offset: 0x0000A05D
+	// (get) Token: 0x06000CD0 RID: 3280 RVA: 0x0000BE72 File Offset: 0x0000A072
 	private float MiddleDistance
 	{
 		get
@@ -628,7 +628,7 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000CD1 RID: 3281 RVA: 0x0000BE8D File Offset: 0x0000A08D
+	// (get) Token: 0x06000CD1 RID: 3281 RVA: 0x0000BEA2 File Offset: 0x0000A0A2
 	private float HighDistance
 	{
 		get
@@ -645,7 +645,7 @@ public class PlayerOrbitCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CD2 RID: 3282 RVA: 0x00048A74 File Offset: 0x00046C74
+	// Token: 0x06000CD2 RID: 3282 RVA: 0x00048C08 File Offset: 0x00046E08
 	private float DistanceFromFocalPoint()
 	{
 		float num = this.HighAngle;
@@ -662,26 +662,26 @@ public class PlayerOrbitCamera : MonoBehaviour
 		return this.smoothDistanceMultiplier * Mathf.Lerp(num4, num3, Mathf.InverseLerp(0f, num2, this.smoothRotation.x));
 	}
 
-	// Token: 0x06000CD3 RID: 3283 RVA: 0x0000BEBD File Offset: 0x0000A0BD
+	// Token: 0x06000CD3 RID: 3283 RVA: 0x0000BED2 File Offset: 0x0000A0D2
 	private void OnTriggerEnter(Collider other)
 	{
 		this.framesSinceTrigger = 0;
 	}
 
-	// Token: 0x06000CD4 RID: 3284 RVA: 0x0000BEBD File Offset: 0x0000A0BD
+	// Token: 0x06000CD4 RID: 3284 RVA: 0x0000BED2 File Offset: 0x0000A0D2
 	private void OnTriggerStay(Collider other)
 	{
 		this.framesSinceTrigger = 0;
 	}
 
-	// Token: 0x06000CD5 RID: 3285 RVA: 0x0000BEC6 File Offset: 0x0000A0C6
+	// Token: 0x06000CD5 RID: 3285 RVA: 0x0000BEDB File Offset: 0x0000A0DB
 	public void ForceRecovery()
 	{
 		this.framesSinceTrigger = 0;
 		this.recovered = false;
 	}
 
-	// Token: 0x06000CD6 RID: 3286 RVA: 0x0000BED6 File Offset: 0x0000A0D6
+	// Token: 0x06000CD6 RID: 3286 RVA: 0x0000BEEB File Offset: 0x0000A0EB
 	public void ResetPosition()
 	{
 		this.smoothedCenterPoint = this.CenterPoint;

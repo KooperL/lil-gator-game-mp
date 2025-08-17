@@ -4,7 +4,7 @@ using UnityEngine.U2D;
 
 public class PowerLine : MonoBehaviour
 {
-	// Token: 0x06000D2C RID: 3372 RVA: 0x0004A070 File Offset: 0x00048270
+	// Token: 0x06000D2C RID: 3372 RVA: 0x0004A204 File Offset: 0x00048404
 	private void Awake()
 	{
 		if (this.lineRenderers != null && this.lineRenderers.Length != 0)
@@ -21,14 +21,14 @@ public class PowerLine : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D2D RID: 3373 RVA: 0x0000C2D9 File Offset: 0x0000A4D9
+	// Token: 0x06000D2D RID: 3373 RVA: 0x0000C2EE File Offset: 0x0000A4EE
 	private void Start()
 	{
 		this.mainCamera = Camera.main;
 		this.pixelCamera = this.mainCamera.GetComponent<PixelPerfectCamera>();
 	}
 
-	// Token: 0x06000D2E RID: 3374 RVA: 0x0004A128 File Offset: 0x00048328
+	// Token: 0x06000D2E RID: 3374 RVA: 0x0004A2BC File Offset: 0x000484BC
 	public void FastLateUpdate()
 	{
 		if (this.lineRenderers != null && this.lineRenderers.Length != 0)
@@ -41,7 +41,7 @@ public class PowerLine : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D2F RID: 3375 RVA: 0x0004A190 File Offset: 0x00048390
+	// Token: 0x06000D2F RID: 3375 RVA: 0x0004A324 File Offset: 0x00048524
 	private void UpdateLineRenderer(LineRenderer lineRenderer, Vector3 endPoint, float seed, int index)
 	{
 		if (!lineRenderer.isVisible)
@@ -78,14 +78,14 @@ public class PowerLine : MonoBehaviour
 		lineRenderer.SetPositions(this.positions);
 	}
 
-	// Token: 0x06000D30 RID: 3376 RVA: 0x0004A364 File Offset: 0x00048564
+	// Token: 0x06000D30 RID: 3376 RVA: 0x0004A4F8 File Offset: 0x000486F8
 	public float ScaleForWorldPosition(Vector3 position)
 	{
 		float num = (this.mainCamera.WorldToScreenPoint(position) - this.mainCamera.WorldToScreenPoint(position + this.mainCamera.transform.up / 1000f)).magnitude * 1000f;
 		return (float)this.pixelCamera.pixelRatio / num;
 	}
 
-	// Token: 0x06000D31 RID: 3377 RVA: 0x0004A3CC File Offset: 0x000485CC
+	// Token: 0x06000D31 RID: 3377 RVA: 0x0004A560 File Offset: 0x00048760
 	public Vector3 GetPointPosition(Vector3 start, Vector3 end, float t, Vector3 sway)
 	{
 		Vector3 vector = Vector3.Lerp(start, end, t);

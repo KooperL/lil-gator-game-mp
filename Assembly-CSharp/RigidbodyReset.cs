@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RigidbodyReset : MonoBehaviour, IManagedUpdate
 {
-	// (get) Token: 0x06000A6B RID: 2667 RVA: 0x00009EE1 File Offset: 0x000080E1
+	// (get) Token: 0x06000A6B RID: 2667 RVA: 0x00009EF6 File Offset: 0x000080F6
 	private bool JustReset
 	{
 		get
@@ -13,8 +13,8 @@ public class RigidbodyReset : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// (get) Token: 0x06000A6C RID: 2668 RVA: 0x00009EFC File Offset: 0x000080FC
-	// (set) Token: 0x06000A6D RID: 2669 RVA: 0x00009F04 File Offset: 0x00008104
+	// (get) Token: 0x06000A6C RID: 2668 RVA: 0x00009F11 File Offset: 0x00008111
+	// (set) Token: 0x06000A6D RID: 2669 RVA: 0x00009F19 File Offset: 0x00008119
 	private bool IsAwake
 	{
 		get
@@ -40,7 +40,7 @@ public class RigidbodyReset : MonoBehaviour, IManagedUpdate
 	{
 	}
 
-	// Token: 0x06000A6F RID: 2671 RVA: 0x00009F2A File Offset: 0x0000812A
+	// Token: 0x06000A6F RID: 2671 RVA: 0x00009F3F File Offset: 0x0000813F
 	public virtual void OnValidate()
 	{
 		if (this.rigidbody == null)
@@ -53,7 +53,7 @@ public class RigidbodyReset : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000A70 RID: 2672 RVA: 0x00009F60 File Offset: 0x00008160
+	// Token: 0x06000A70 RID: 2672 RVA: 0x00009F75 File Offset: 0x00008175
 	private void Awake()
 	{
 		this.initialPosition = this.rigidbody.position;
@@ -62,14 +62,14 @@ public class RigidbodyReset : MonoBehaviour, IManagedUpdate
 		this.IsAwake = false;
 	}
 
-	// Token: 0x06000A71 RID: 2673 RVA: 0x00009F96 File Offset: 0x00008196
+	// Token: 0x06000A71 RID: 2673 RVA: 0x00009FAB File Offset: 0x000081AB
 	private void Start()
 	{
 		this.mainCamera = MainCamera.t;
 		this.FindAdjacentResets();
 	}
 
-	// Token: 0x06000A72 RID: 2674 RVA: 0x00009FA9 File Offset: 0x000081A9
+	// Token: 0x06000A72 RID: 2674 RVA: 0x00009FBE File Offset: 0x000081BE
 	private void OnTriggerEnter()
 	{
 		if (!this.JustReset && !this.rigidbody.IsSleeping())
@@ -78,7 +78,7 @@ public class RigidbodyReset : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000A73 RID: 2675 RVA: 0x00009FA9 File Offset: 0x000081A9
+	// Token: 0x06000A73 RID: 2675 RVA: 0x00009FBE File Offset: 0x000081BE
 	private void OnTriggerExit()
 	{
 		if (!this.JustReset && !this.rigidbody.IsSleeping())
@@ -87,7 +87,7 @@ public class RigidbodyReset : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000A74 RID: 2676 RVA: 0x00009FA9 File Offset: 0x000081A9
+	// Token: 0x06000A74 RID: 2676 RVA: 0x00009FBE File Offset: 0x000081BE
 	private void OnCollisionEnter()
 	{
 		if (!this.JustReset && !this.rigidbody.IsSleeping())
@@ -96,7 +96,7 @@ public class RigidbodyReset : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000A75 RID: 2677 RVA: 0x00009FA9 File Offset: 0x000081A9
+	// Token: 0x06000A75 RID: 2677 RVA: 0x00009FBE File Offset: 0x000081BE
 	private void OnCollisionExit()
 	{
 		if (!this.JustReset && !this.rigidbody.IsSleeping())
@@ -105,19 +105,19 @@ public class RigidbodyReset : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000A76 RID: 2678 RVA: 0x00009FC7 File Offset: 0x000081C7
+	// Token: 0x06000A76 RID: 2678 RVA: 0x00009FDC File Offset: 0x000081DC
 	public void OnEnable()
 	{
 		FastUpdateManager.fixedUpdate16.Add(this);
 	}
 
-	// Token: 0x06000A77 RID: 2679 RVA: 0x00009FD4 File Offset: 0x000081D4
+	// Token: 0x06000A77 RID: 2679 RVA: 0x00009FE9 File Offset: 0x000081E9
 	public void OnDisable()
 	{
 		FastUpdateManager.fixedUpdate16.Remove(this);
 	}
 
-	// Token: 0x06000A78 RID: 2680 RVA: 0x0003D06C File Offset: 0x0003B26C
+	// Token: 0x06000A78 RID: 2680 RVA: 0x0003D200 File Offset: 0x0003B400
 	private bool IsPositionClear(Vector3 position, Vector3 referencePosition, Vector3 referenceForward)
 	{
 		Vector3 vector = position - referencePosition;
@@ -128,7 +128,7 @@ public class RigidbodyReset : MonoBehaviour, IManagedUpdate
 		return Vector3.SqrMagnitude(vector) > 2025f;
 	}
 
-	// Token: 0x06000A79 RID: 2681 RVA: 0x0003D0A8 File Offset: 0x0003B2A8
+	// Token: 0x06000A79 RID: 2681 RVA: 0x0003D23C File Offset: 0x0003B43C
 	public void ManagedUpdate()
 	{
 		if (Time.time - this.resetTime < 4f)
@@ -154,7 +154,7 @@ public class RigidbodyReset : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000A7A RID: 2682 RVA: 0x0003D10C File Offset: 0x0003B30C
+	// Token: 0x06000A7A RID: 2682 RVA: 0x0003D2A0 File Offset: 0x0003B4A0
 	private void FindAdjacentResets()
 	{
 		Collider component = base.GetComponent<Collider>();
@@ -182,7 +182,7 @@ public class RigidbodyReset : MonoBehaviour, IManagedUpdate
 		this.adjacentResets = list.ToArray();
 	}
 
-	// Token: 0x06000A7B RID: 2683 RVA: 0x0003D1C4 File Offset: 0x0003B3C4
+	// Token: 0x06000A7B RID: 2683 RVA: 0x0003D358 File Offset: 0x0003B558
 	public void TryToReset()
 	{
 		if (this.JustReset)
@@ -205,7 +205,7 @@ public class RigidbodyReset : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000A7C RID: 2684 RVA: 0x0003D250 File Offset: 0x0003B450
+	// Token: 0x06000A7C RID: 2684 RVA: 0x0003D3E4 File Offset: 0x0003B5E4
 	public void ResetToInitial()
 	{
 		this.resetTime = Time.time;
@@ -216,7 +216,7 @@ public class RigidbodyReset : MonoBehaviour, IManagedUpdate
 		this.rigidbody.rotation = this.initialRotation;
 	}
 
-	// Token: 0x06000A7D RID: 2685 RVA: 0x0003D2B0 File Offset: 0x0003B4B0
+	// Token: 0x06000A7D RID: 2685 RVA: 0x0003D444 File Offset: 0x0003B644
 	private void ResetAdjacentResets()
 	{
 		RigidbodyReset[] array = this.adjacentResets;

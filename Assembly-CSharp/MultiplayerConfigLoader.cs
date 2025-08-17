@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class MultiplayerConfigLoader
 {
-	// Token: 0x06001E7D RID: 7805 RVA: 0x00077D18 File Offset: 0x00075F18
-	public static MultiplayerConfigLoader Load(string filename = "config.ini")
+	// Token: 0x06001E8B RID: 7819 RVA: 0x00077FBC File Offset: 0x000761BC
+	public static MultiplayerConfigLoader Load(string filename = "lggmp_config.ini")
 	{
 		string text = Path.Combine(Directory.GetParent(Application.dataPath).FullName, filename);
-		Debug.Log("[ConfigINI] Full config path: " + text);
+		Debug.Log("[LGG-MP] Full config path: " + text);
 		if (!File.Exists(text))
 		{
-			Debug.LogWarning("[ConfigINI] config.ini not found at: " + text);
+			Debug.LogWarning("[LGG-MP] lggmp_config.ini not found at: " + text);
 			MultiplayerConfigLoader._instance = new MultiplayerConfigLoader();
 			return MultiplayerConfigLoader._instance;
 		}
 		MultiplayerConfigLoader multiplayerConfigLoader = new MultiplayerConfigLoader();
+		multiplayerConfigLoader.ConfigFileFound = true;
 		foreach (string text2 in File.ReadAllLines(text))
 		{
 			if (!string.IsNullOrWhiteSpace(text2) && !text2.StartsWith("#"))
@@ -33,11 +34,13 @@ public class MultiplayerConfigLoader
 							if (text5 == "server_host")
 							{
 								multiplayerConfigLoader.ServerHost = text4;
+								multiplayerConfigLoader.ServerHostPresent = true;
 							}
 						}
 						else
 						{
 							multiplayerConfigLoader.DisplayName = text4;
+							multiplayerConfigLoader.DisplayNamePresent = true;
 						}
 					}
 					else
@@ -48,18 +51,18 @@ public class MultiplayerConfigLoader
 			}
 		}
 		MultiplayerConfigLoader._instance = multiplayerConfigLoader;
-		Debug.Log("[ConfigINI] Config loaded successfully.");
+		Debug.Log("[LGG-MP] Config loaded successfully.");
 		return MultiplayerConfigLoader._instance;
 	}
 
-	// (get) Token: 0x06001E7F RID: 7807 RVA: 0x000174D9 File Offset: 0x000156D9
+	// (get) Token: 0x06001E8D RID: 7821 RVA: 0x000175A7 File Offset: 0x000157A7
 	public static MultiplayerConfigLoader Instance
 	{
 		get
 		{
 			if (MultiplayerConfigLoader._instance == null)
 			{
-				Debug.LogWarning("[ConfigINI] Instance requested before Load()!");
+				Debug.LogWarning("[LGG-MP] Instance requested before Load()!");
 				MultiplayerConfigLoader._instance = new MultiplayerConfigLoader();
 			}
 			return MultiplayerConfigLoader._instance;
@@ -73,4 +76,10 @@ public class MultiplayerConfigLoader
 	public string ServerHost;
 
 	private static MultiplayerConfigLoader _instance;
+
+	public bool DisplayNamePresent;
+
+	public bool ServerHostPresent;
+
+	public bool ConfigFileFound;
 }

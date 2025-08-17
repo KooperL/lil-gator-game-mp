@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class CheckInt : MonoBehaviour
 {
-	// (get) Token: 0x06000E26 RID: 3622 RVA: 0x0000C9DC File Offset: 0x0000ABDC
+	// (get) Token: 0x06000E26 RID: 3622 RVA: 0x0000C9F1 File Offset: 0x0000ABF1
 	private int State
 	{
 		get
@@ -14,13 +14,13 @@ public class CheckInt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E27 RID: 3623 RVA: 0x0000C9EF File Offset: 0x0000ABEF
+	// Token: 0x06000E27 RID: 3623 RVA: 0x0000CA04 File Offset: 0x0000AC04
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000E28 RID: 3624 RVA: 0x0000C9FE File Offset: 0x0000ABFE
+	// Token: 0x06000E28 RID: 3624 RVA: 0x0000CA13 File Offset: 0x0000AC13
 	private IEnumerator RunConversation()
 	{
 		int state = this.State;

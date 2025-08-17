@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HitSwing : MonoBehaviour, SpeedInterface, IHit
 {
-	// Token: 0x06000828 RID: 2088 RVA: 0x0000808C File Offset: 0x0000628C
+	// Token: 0x06000828 RID: 2088 RVA: 0x000080A1 File Offset: 0x000062A1
 	private void Awake()
 	{
 		this.variance = global::UnityEngine.Random.Range(0.5f, 1.5f);
@@ -12,19 +12,19 @@ public class HitSwing : MonoBehaviour, SpeedInterface, IHit
 		this.audioSource = base.GetComponent<AudioSource>();
 	}
 
-	// Token: 0x06000829 RID: 2089 RVA: 0x000080CC File Offset: 0x000062CC
+	// Token: 0x06000829 RID: 2089 RVA: 0x000080E1 File Offset: 0x000062E1
 	private float WorldToAngle(float arcLength)
 	{
 		return 2f * Mathf.Atan(arcLength / (2f * this.swingLength));
 	}
 
-	// Token: 0x0600082A RID: 2090 RVA: 0x000080E7 File Offset: 0x000062E7
+	// Token: 0x0600082A RID: 2090 RVA: 0x000080FC File Offset: 0x000062FC
 	private void Start()
 	{
 		this.rotation = 2f * (global::UnityEngine.Random.value - 0.5f);
 	}
 
-	// Token: 0x0600082B RID: 2091 RVA: 0x00037080 File Offset: 0x00035280
+	// Token: 0x0600082B RID: 2091 RVA: 0x00037260 File Offset: 0x00035460
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		if (this.rigidbody == null)
@@ -43,7 +43,7 @@ public class HitSwing : MonoBehaviour, SpeedInterface, IHit
 		}
 	}
 
-	// Token: 0x0600082C RID: 2092 RVA: 0x000370FC File Offset: 0x000352FC
+	// Token: 0x0600082C RID: 2092 RVA: 0x000372DC File Offset: 0x000354DC
 	public void AddForce(Vector3 force)
 	{
 		if (this.rigidbody == null)
@@ -54,7 +54,7 @@ public class HitSwing : MonoBehaviour, SpeedInterface, IHit
 		this.speed -= Time.deltaTime * Vector3.Dot(this.rigidbody.rotation * Vector3.forward, force);
 	}
 
-	// Token: 0x0600082D RID: 2093 RVA: 0x00037168 File Offset: 0x00035368
+	// Token: 0x0600082D RID: 2093 RVA: 0x00037348 File Offset: 0x00035548
 	private void FixedUpdate()
 	{
 		float num = this.variance * (this.hasActor ? 0.1f : 0f);
@@ -71,7 +71,7 @@ public class HitSwing : MonoBehaviour, SpeedInterface, IHit
 		this.rigidbody.angularVelocity = 1.25f * base.transform.parent.TransformDirection(Vector3.right * this.WorldToAngle(this.speed));
 	}
 
-	// Token: 0x0600082E RID: 2094 RVA: 0x00008100 File Offset: 0x00006300
+	// Token: 0x0600082E RID: 2094 RVA: 0x00008115 File Offset: 0x00006315
 	public float GetSpeed()
 	{
 		return this.speed;

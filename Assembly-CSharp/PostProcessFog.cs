@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 
 public class PostProcessFog : MonoBehaviour
 {
-	// Token: 0x06000652 RID: 1618 RVA: 0x00030E00 File Offset: 0x0002F000
+	// Token: 0x06000652 RID: 1618 RVA: 0x00030F7C File Offset: 0x0002F17C
 	private void OnEnable()
 	{
 		if (!this.isInitialized)
@@ -43,7 +43,7 @@ public class PostProcessFog : MonoBehaviour
 		this.UpdateCommandBuffer();
 	}
 
-	// Token: 0x06000655 RID: 1621 RVA: 0x00030EA0 File Offset: 0x0002F0A0
+	// Token: 0x06000655 RID: 1621 RVA: 0x0003101C File Offset: 0x0002F21C
 	private void UpdateCommandBuffer()
 	{
 		this.commandBuffer.Clear();

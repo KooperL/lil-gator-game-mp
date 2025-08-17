@@ -1,14 +1,13 @@
 ﻿using System;
 using Rewired.Utils;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Rewired.UI.ControlMapper
 {
 	[RequireComponent(typeof(CanvasScalerExt))]
 	public class CanvasScalerFitter : MonoBehaviour
 	{
-		// Token: 0x0600182A RID: 6186 RVA: 0x0001296A File Offset: 0x00010B6A
+		// Token: 0x0600182A RID: 6186 RVA: 0x0001297F File Offset: 0x00010B7F
 		private void OnEnable()
 		{
 			this.canvasScaler = base.GetComponent<CanvasScalerExt>();
@@ -16,7 +15,7 @@ namespace Rewired.UI.ControlMapper
 			this.canvasScaler.ForceRefresh();
 		}
 
-		// Token: 0x0600182B RID: 6187 RVA: 0x00012989 File Offset: 0x00010B89
+		// Token: 0x0600182B RID: 6187 RVA: 0x0001299E File Offset: 0x00010B9E
 		private void Update()
 		{
 			if (Screen.width != this.screenWidth || Screen.height != this.screenHeight)
@@ -27,10 +26,10 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x0600182C RID: 6188 RVA: 0x00066CBC File Offset: 0x00064EBC
+		// Token: 0x0600182C RID: 6188 RVA: 0x00066E50 File Offset: 0x00065050
 		private void UpdateSize()
 		{
-			if (this.canvasScaler.uiScaleMode != CanvasScaler.ScaleMode.ScaleWithScreenSize)
+			if (this.canvasScaler.uiScaleMode != 1)
 			{
 				return;
 			}

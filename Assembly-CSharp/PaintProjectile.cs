@@ -22,7 +22,7 @@ public class PaintProjectile : MonoBehaviour
 		this.UpdateDecal();
 	}
 
-	// Token: 0x06000100 RID: 256 RVA: 0x0001B350 File Offset: 0x00019550
+	// Token: 0x06000100 RID: 256 RVA: 0x0001B4CC File Offset: 0x000196CC
 	private void UpdateDecal()
 	{
 		Color color = this.color;
@@ -43,7 +43,7 @@ public class PaintProjectile : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000102 RID: 258 RVA: 0x0001B3A0 File Offset: 0x000195A0
+	// Token: 0x06000102 RID: 258 RVA: 0x0001B51C File Offset: 0x0001971C
 	private void OnTriggerEnter(Collider other)
 	{
 		if (!this.isSpawning)

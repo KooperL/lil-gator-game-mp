@@ -7,7 +7,7 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public class PressStartToJoinExample_Assigner : MonoBehaviour
 	{
-		// Token: 0x06001DE6 RID: 7654 RVA: 0x0007586C File Offset: 0x00073A6C
+		// Token: 0x06001DE6 RID: 7654 RVA: 0x00075A00 File Offset: 0x00073C00
 		public static Player GetRewiredPlayer(int gamePlayerId)
 		{
 			if (!ReInput.isReady)
@@ -29,14 +29,14 @@ namespace Rewired.Demos
 			return null;
 		}
 
-		// Token: 0x06001DE7 RID: 7655 RVA: 0x00016D3E File Offset: 0x00014F3E
+		// Token: 0x06001DE7 RID: 7655 RVA: 0x00016D53 File Offset: 0x00014F53
 		private void Awake()
 		{
 			this.playerMap = new List<PressStartToJoinExample_Assigner.PlayerMap>();
 			PressStartToJoinExample_Assigner.instance = this;
 		}
 
-		// Token: 0x06001DE8 RID: 7656 RVA: 0x000758F0 File Offset: 0x00073AF0
+		// Token: 0x06001DE8 RID: 7656 RVA: 0x00075A84 File Offset: 0x00073C84
 		private void Update()
 		{
 			for (int i = 0; i < ReInput.players.playerCount; i++)
@@ -48,7 +48,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DE9 RID: 7657 RVA: 0x00075930 File Offset: 0x00073B30
+		// Token: 0x06001DE9 RID: 7657 RVA: 0x00075AC4 File Offset: 0x00073CC4
 		private void AssignNextPlayer(int rewiredPlayerId)
 		{
 			if (this.playerMap.Count >= this.maxPlayers)
@@ -64,7 +64,7 @@ namespace Rewired.Demos
 			Debug.Log("Added Rewired Player id " + rewiredPlayerId.ToString() + " to game player " + nextGamePlayerId.ToString());
 		}
 
-		// Token: 0x06001DEA RID: 7658 RVA: 0x000759D0 File Offset: 0x00073BD0
+		// Token: 0x06001DEA RID: 7658 RVA: 0x00075B64 File Offset: 0x00073D64
 		private int GetNextGamePlayerId()
 		{
 			int num = this.gamePlayerIdCounter;
@@ -82,7 +82,7 @@ namespace Rewired.Demos
 
 		private class PlayerMap
 		{
-			// Token: 0x06001DEC RID: 7660 RVA: 0x00016D60 File Offset: 0x00014F60
+			// Token: 0x06001DEC RID: 7660 RVA: 0x00016D75 File Offset: 0x00014F75
 			public PlayerMap(int rewiredPlayerId, int gamePlayerId)
 			{
 				this.rewiredPlayerId = rewiredPlayerId;

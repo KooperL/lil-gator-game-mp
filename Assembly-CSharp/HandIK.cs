@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HandIK : MonoBehaviour
 {
-	// Token: 0x06000AC9 RID: 2761 RVA: 0x0000A43B File Offset: 0x0000863B
+	// Token: 0x06000AC9 RID: 2761 RVA: 0x0000A450 File Offset: 0x00008650
 	public void SetEnabled(bool isLeft, bool isEnabled)
 	{
 		if (isLeft)
@@ -14,7 +14,7 @@ public class HandIK : MonoBehaviour
 		this.isRightEnabled = isEnabled;
 	}
 
-	// Token: 0x06000ACA RID: 2762 RVA: 0x0000A44F File Offset: 0x0000864F
+	// Token: 0x06000ACA RID: 2762 RVA: 0x0000A464 File Offset: 0x00008664
 	public void SetOverride(bool isLeft, Vector3 position, Transform anchor)
 	{
 		if (isLeft)
@@ -29,7 +29,7 @@ public class HandIK : MonoBehaviour
 		this.overrideRightAnchor = anchor;
 	}
 
-	// Token: 0x06000ACB RID: 2763 RVA: 0x0000A47F File Offset: 0x0000867F
+	// Token: 0x06000ACB RID: 2763 RVA: 0x0000A494 File Offset: 0x00008694
 	public void ClearOverride(bool isLeft)
 	{
 		if (isLeft)
@@ -42,13 +42,13 @@ public class HandIK : MonoBehaviour
 		this.overrideRightAnchor = null;
 	}
 
-	// Token: 0x06000ACC RID: 2764 RVA: 0x0000A4A1 File Offset: 0x000086A1
+	// Token: 0x06000ACC RID: 2764 RVA: 0x0000A4B6 File Offset: 0x000086B6
 	private void Awake()
 	{
 		this.animator = base.GetComponent<Animator>();
 	}
 
-	// Token: 0x06000ACD RID: 2765 RVA: 0x0003EE04 File Offset: 0x0003D004
+	// Token: 0x06000ACD RID: 2765 RVA: 0x0003EF98 File Offset: 0x0003D198
 	private void OnAnimatorIK()
 	{
 		if (!this.isRightEnabled)
@@ -93,13 +93,13 @@ public class HandIK : MonoBehaviour
 		}
 		this.rightSmoothWeight = Mathf.SmoothDamp(this.rightSmoothWeight, this.rightHandWeight, ref this.rightVelocity, this.movement.IsClimbing ? 0.1f : 0.2f);
 		this.leftSmoothWeight = Mathf.SmoothDamp(this.leftSmoothWeight, this.leftHandWeight, ref this.leftVelocity, this.movement.IsClimbing ? 0.1f : 0.2f);
-		this.animator.SetIKPositionWeight(AvatarIKGoal.RightHand, this.rightSmoothWeight);
-		this.animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, this.leftSmoothWeight);
-		this.animator.SetIKPosition(AvatarIKGoal.RightHand, this.rightPoint);
-		this.animator.SetIKPosition(AvatarIKGoal.LeftHand, this.leftPoint);
+		this.animator.SetIKPositionWeight(3, this.rightSmoothWeight);
+		this.animator.SetIKPositionWeight(2, this.leftSmoothWeight);
+		this.animator.SetIKPosition(3, this.rightPoint);
+		this.animator.SetIKPosition(2, this.leftPoint);
 	}
 
-	// Token: 0x06000ACE RID: 2766 RVA: 0x0003F038 File Offset: 0x0003D238
+	// Token: 0x06000ACE RID: 2766 RVA: 0x0003F1CC File Offset: 0x0003D3CC
 	private void SetHandIK(string oppositeFoot, bool isHandBusy, ref bool hasPoint, Transform handTransform, Vector3 origin, ref float counter, ref float handWeight, ref Vector3 grabPoint, float smoothWeight)
 	{
 		if (((Game.HasControl && this.movement.IsGrounded) || (this.movement.IsClimbing && this.movement.Stamina > 0f)) && this.animator.GetFloat(oppositeFoot) < 0.1f && !isHandBusy)

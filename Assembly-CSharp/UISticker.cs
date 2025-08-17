@@ -5,7 +5,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class UISticker : MonoBehaviour
 {
-	// Token: 0x0600139F RID: 5023 RVA: 0x00010982 File Offset: 0x0000EB82
+	// Token: 0x0600139F RID: 5023 RVA: 0x00010997 File Offset: 0x0000EB97
 	private void OnValidate()
 	{
 		if (this.image == null)
@@ -18,7 +18,7 @@ public class UISticker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013A0 RID: 5024 RVA: 0x000109B8 File Offset: 0x0000EBB8
+	// Token: 0x060013A0 RID: 5024 RVA: 0x000109CD File Offset: 0x0000EBCD
 	public void LoadSticker(StickerObject stickerObject)
 	{
 		this.sticker = stickerObject;

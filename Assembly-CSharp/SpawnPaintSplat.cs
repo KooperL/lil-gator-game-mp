@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SpawnPaintSplat : MonoBehaviour
 {
-	// Token: 0x0600011C RID: 284 RVA: 0x0001B698 File Offset: 0x00019898
+	// Token: 0x0600011C RID: 284 RVA: 0x0001B814 File Offset: 0x00019A14
 	[ContextMenu("Spawn")]
 	public void Spawn()
 	{

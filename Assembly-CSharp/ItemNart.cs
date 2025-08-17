@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class ItemNart : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x06000B65 RID: 2917 RVA: 0x0000AB6C File Offset: 0x00008D6C
+	// Token: 0x06000B65 RID: 2917 RVA: 0x0000AB81 File Offset: 0x00008D81
 	private void Awake()
 	{
 		this.movement = Player.movement;
 		this.itemManager = Player.itemManager;
 	}
 
-	// Token: 0x06000B66 RID: 2918 RVA: 0x0000AB84 File Offset: 0x00008D84
+	// Token: 0x06000B66 RID: 2918 RVA: 0x0000AB99 File Offset: 0x00008D99
 	public void Input(bool isDown, bool isHeld)
 	{
 		if (Game.HasControl && isDown)
@@ -24,7 +24,7 @@ public class ItemNart : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B67 RID: 2919 RVA: 0x0000ABA7 File Offset: 0x00008DA7
+	// Token: 0x06000B67 RID: 2919 RVA: 0x0000ABBC File Offset: 0x00008DBC
 	private void LateUpdate()
 	{
 		if (this.activated && !this.movement.isModified)
@@ -33,13 +33,13 @@ public class ItemNart : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B68 RID: 2920 RVA: 0x0000ABC5 File Offset: 0x00008DC5
+	// Token: 0x06000B68 RID: 2920 RVA: 0x0000ABDA File Offset: 0x00008DDA
 	public void Cancel()
 	{
 		this.SetState(false);
 	}
 
-	// Token: 0x06000B69 RID: 2921 RVA: 0x00040550 File Offset: 0x0003E750
+	// Token: 0x06000B69 RID: 2921 RVA: 0x000406E4 File Offset: 0x0003E8E4
 	private void SetState(bool isActive)
 	{
 		if (this.activated == isActive)
@@ -68,7 +68,7 @@ public class ItemNart : MonoBehaviour, IItemBehaviour
 		this.itemManager.animator.SetBool("Nart", isActive);
 	}
 
-	// Token: 0x06000B6A RID: 2922 RVA: 0x000405E8 File Offset: 0x0003E7E8
+	// Token: 0x06000B6A RID: 2922 RVA: 0x0004077C File Offset: 0x0003E97C
 	public void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (isEquipped ? this.itemManager.leftHandAnchor : this.itemManager.hipAnchor);

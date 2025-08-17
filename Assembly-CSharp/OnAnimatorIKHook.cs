@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class OnAnimatorIKHook : MonoBehaviour
 {
-	// Token: 0x06000A50 RID: 2640 RVA: 0x00009DD7 File Offset: 0x00007FD7
+	// Token: 0x06000A50 RID: 2640 RVA: 0x00009DEC File Offset: 0x00007FEC
 	public void OnAnimatorIK()
 	{
 		this.actor.OnAnimatorIK();

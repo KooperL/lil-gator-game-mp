@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ExitGame : MonoBehaviour
 {
-	// Token: 0x0600119B RID: 4507 RVA: 0x0000F01C File Offset: 0x0000D21C
+	// Token: 0x0600119B RID: 4507 RVA: 0x0000F031 File Offset: 0x0000D231
 	public void Action()
 	{
 		if (Game.AllowedToSave)

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LoopParticles : MonoBehaviour, IManagedUpdate, ICameraCut
 {
-	// Token: 0x0600065C RID: 1628 RVA: 0x000311B4 File Offset: 0x0002F3B4
+	// Token: 0x0600065C RID: 1628 RVA: 0x00031330 File Offset: 0x0002F530
 	private void OnEnable()
 	{
 		this.particleSystem = base.GetComponent<ParticleSystem>();
@@ -29,7 +29,7 @@ public class LoopParticles : MonoBehaviour, IManagedUpdate, ICameraCut
 		this.ManagedUpdate();
 	}
 
-	// Token: 0x0600065F RID: 1631 RVA: 0x00031220 File Offset: 0x0002F420
+	// Token: 0x0600065F RID: 1631 RVA: 0x0003139C File Offset: 0x0002F59C
 	public void ManagedUpdate()
 	{
 		int num = this.particleSystem.GetParticles(this.particles);
@@ -57,7 +57,7 @@ public class LoopParticles : MonoBehaviour, IManagedUpdate, ICameraCut
 		this.particleSystem.SetParticles(this.particles, num);
 	}
 
-	// Token: 0x06000660 RID: 1632 RVA: 0x000312EC File Offset: 0x0002F4EC
+	// Token: 0x06000660 RID: 1632 RVA: 0x00031468 File Offset: 0x0002F668
 	private Vector3 LoopBounds(Vector3 point)
 	{
 		for (int i = 0; i < 3; i++)

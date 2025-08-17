@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class TransformDeepChildExtension
 {
-	// Token: 0x06000FF1 RID: 4081 RVA: 0x00053064 File Offset: 0x00051264
+	// Token: 0x06000FF1 RID: 4081 RVA: 0x000531F8 File Offset: 0x000513F8
 	public static Transform FindDeepChild(this Transform aParent, string aName)
 	{
 		Queue<Transform> queue = new Queue<Transform>();

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UITextBox : MonoBehaviour
 {
-	// (get) Token: 0x0600135B RID: 4955 RVA: 0x0005ED18 File Offset: 0x0005CF18
+	// (get) Token: 0x0600135B RID: 4955 RVA: 0x0005EEAC File Offset: 0x0005D0AC
 	public float Height
 	{
 		get
@@ -13,13 +13,13 @@ public class UITextBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600135C RID: 4956 RVA: 0x000105E8 File Offset: 0x0000E7E8
+	// Token: 0x0600135C RID: 4956 RVA: 0x000105FD File Offset: 0x0000E7FD
 	private void Awake()
 	{
 		this.rectTransform = base.GetComponent<RectTransform>();
 	}
 
-	// Token: 0x0600135D RID: 4957 RVA: 0x0005ED38 File Offset: 0x0005CF38
+	// Token: 0x0600135D RID: 4957 RVA: 0x0005EECC File Offset: 0x0005D0CC
 	public void SetText(string newText)
 	{
 		if (this.ignoreIndents)
@@ -33,7 +33,7 @@ public class UITextBox : MonoBehaviour
 		this.visibleText.text = newText;
 	}
 
-	// Token: 0x0600135E RID: 4958 RVA: 0x000105F6 File Offset: 0x0000E7F6
+	// Token: 0x0600135E RID: 4958 RVA: 0x0001060B File Offset: 0x0000E80B
 	public void SetColor(Color color)
 	{
 		this.coloredImage.color = color;

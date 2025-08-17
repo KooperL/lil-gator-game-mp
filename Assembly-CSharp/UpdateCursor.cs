@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpdateCursor : MonoBehaviour
 {
-	// Token: 0x06000D0D RID: 3341 RVA: 0x00049B88 File Offset: 0x00047D88
+	// Token: 0x06000D0D RID: 3341 RVA: 0x00049D1C File Offset: 0x00047F1C
 	private void Start()
 	{
 		this.isApplicationFocused = true;
@@ -13,8 +13,8 @@ public class UpdateCursor : MonoBehaviour
 		{
 			this.rePlayer = ReInput.players.GetPlayer(0);
 		}
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMouseClick), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("OnMouseClick"));
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMouseClick), UpdateLoopType.Update, InputActionEventType.ButtonJustReleased, ReInput.mapping.GetActionId("OnMouseClick"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMouseClick), 0, 3, ReInput.mapping.GetActionId("OnMouseClick"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMouseClick), 0, 4, ReInput.mapping.GetActionId("OnMouseClick"));
 		this.UpdateCursorState();
 	}
 
@@ -23,33 +23,33 @@ public class UpdateCursor : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06000D0F RID: 3343 RVA: 0x0000C19C File Offset: 0x0000A39C
+	// Token: 0x06000D0F RID: 3343 RVA: 0x0000C1B1 File Offset: 0x0000A3B1
 	private void Update()
 	{
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000D10 RID: 3344 RVA: 0x0000C1A4 File Offset: 0x0000A3A4
+	// Token: 0x06000D10 RID: 3344 RVA: 0x0000C1B9 File Offset: 0x0000A3B9
 	private void OnApplicationFocus(bool focus)
 	{
 		this.isApplicationFocused = focus;
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000D11 RID: 3345 RVA: 0x0000C1B3 File Offset: 0x0000A3B3
+	// Token: 0x06000D11 RID: 3345 RVA: 0x0000C1C8 File Offset: 0x0000A3C8
 	private void OnApplicationPause(bool pause)
 	{
 		this.isApplicationPaused = pause;
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000D12 RID: 3346 RVA: 0x0000C1C2 File Offset: 0x0000A3C2
+	// Token: 0x06000D12 RID: 3346 RVA: 0x0000C1D7 File Offset: 0x0000A3D7
 	private void OnApplicationQuit()
 	{
 		this.SetCursorState(false);
 	}
 
-	// Token: 0x06000D13 RID: 3347 RVA: 0x00049C14 File Offset: 0x00047E14
+	// Token: 0x06000D13 RID: 3347 RVA: 0x00049DA8 File Offset: 0x00047FA8
 	private void UpdateCursorState()
 	{
 		bool flag = true;
@@ -64,7 +64,7 @@ public class UpdateCursor : MonoBehaviour
 		this.SetCursorState(flag);
 	}
 
-	// Token: 0x06000D14 RID: 3348 RVA: 0x0000C1CB File Offset: 0x0000A3CB
+	// Token: 0x06000D14 RID: 3348 RVA: 0x0000C1E0 File Offset: 0x0000A3E0
 	private void SetCursorState(bool isLocked)
 	{
 		UpdateCursor.isCurrentlyLocked = isLocked;
@@ -76,7 +76,7 @@ public class UpdateCursor : MonoBehaviour
 		Cursor.visible = !isLocked;
 	}
 
-	// Token: 0x06000D15 RID: 3349 RVA: 0x0000C1FD File Offset: 0x0000A3FD
+	// Token: 0x06000D15 RID: 3349 RVA: 0x0000C212 File Offset: 0x0000A412
 	private void OnMouseClick(InputActionEventData obj)
 	{
 		if (UpdateCursor.isCurrentlyLocked && !this.isActuallyLocked)
@@ -94,5 +94,5 @@ public class UpdateCursor : MonoBehaviour
 
 	private bool isApplicationPaused;
 
-	private global::Rewired.Player rePlayer;
+	private Player rePlayer;
 }

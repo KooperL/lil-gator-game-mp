@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [AddComponentMenu("Dialogue Sequence/Attempt Purchase")]
 public class DSAttemptPurchase : DSDialogue
 {
-	// Token: 0x06000577 RID: 1399 RVA: 0x0002EB08 File Offset: 0x0002CD08
+	// Token: 0x06000577 RID: 1399 RVA: 0x0002EC84 File Offset: 0x0002CE84
 	private new void OnValidate()
 	{
 		if (this.uiItemResource == null || this.uiItemResource.itemResource != this.resource)
@@ -28,7 +28,7 @@ public class DSAttemptPurchase : DSDialogue
 		this.uiItemResource.SetPrice(this.cost);
 	}
 
-	// Token: 0x06000579 RID: 1401 RVA: 0x0002EB70 File Offset: 0x0002CD70
+	// Token: 0x06000579 RID: 1401 RVA: 0x0002ECEC File Offset: 0x0002CEEC
 	public override void Activate()
 	{
 		this.resource.ForceShow = false;

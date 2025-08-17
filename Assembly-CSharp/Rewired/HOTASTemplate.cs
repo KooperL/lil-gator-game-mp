@@ -4,7 +4,7 @@ namespace Rewired
 {
 	public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControllerTemplate
 	{
-		// (get) Token: 0x0600150E RID: 5390 RVA: 0x00010DE0 File Offset: 0x0000EFE0
+		// (get) Token: 0x0600150E RID: 5390 RVA: 0x00010DF5 File Offset: 0x0000EFF5
 		IControllerTemplateButton IHOTASTemplate.stickTrigger
 		{
 			get
@@ -13,7 +13,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600150F RID: 5391 RVA: 0x00010BE8 File Offset: 0x0000EDE8
+		// (get) Token: 0x0600150F RID: 5391 RVA: 0x00010BFD File Offset: 0x0000EDFD
 		IControllerTemplateButton IHOTASTemplate.stickTriggerStage2
 		{
 			get
@@ -22,7 +22,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001510 RID: 5392 RVA: 0x00010BF1 File Offset: 0x0000EDF1
+		// (get) Token: 0x06001510 RID: 5392 RVA: 0x00010C06 File Offset: 0x0000EE06
 		IControllerTemplateButton IHOTASTemplate.stickPinkyButton
 		{
 			get
@@ -31,7 +31,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001511 RID: 5393 RVA: 0x00010DE9 File Offset: 0x0000EFE9
+		// (get) Token: 0x06001511 RID: 5393 RVA: 0x00010DFE File Offset: 0x0000EFFE
 		IControllerTemplateButton IHOTASTemplate.stickPinkyTrigger
 		{
 			get
@@ -40,7 +40,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001512 RID: 5394 RVA: 0x00010BFA File Offset: 0x0000EDFA
+		// (get) Token: 0x06001512 RID: 5394 RVA: 0x00010C0F File Offset: 0x0000EE0F
 		IControllerTemplateButton IHOTASTemplate.stickButton1
 		{
 			get
@@ -49,7 +49,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001513 RID: 5395 RVA: 0x00010C03 File Offset: 0x0000EE03
+		// (get) Token: 0x06001513 RID: 5395 RVA: 0x00010C18 File Offset: 0x0000EE18
 		IControllerTemplateButton IHOTASTemplate.stickButton2
 		{
 			get
@@ -58,7 +58,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001514 RID: 5396 RVA: 0x00010C0C File Offset: 0x0000EE0C
+		// (get) Token: 0x06001514 RID: 5396 RVA: 0x00010C21 File Offset: 0x0000EE21
 		IControllerTemplateButton IHOTASTemplate.stickButton3
 		{
 			get
@@ -67,7 +67,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001515 RID: 5397 RVA: 0x00010C15 File Offset: 0x0000EE15
+		// (get) Token: 0x06001515 RID: 5397 RVA: 0x00010C2A File Offset: 0x0000EE2A
 		IControllerTemplateButton IHOTASTemplate.stickButton4
 		{
 			get
@@ -76,7 +76,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001516 RID: 5398 RVA: 0x00010C1F File Offset: 0x0000EE1F
+		// (get) Token: 0x06001516 RID: 5398 RVA: 0x00010C34 File Offset: 0x0000EE34
 		IControllerTemplateButton IHOTASTemplate.stickButton5
 		{
 			get
@@ -85,7 +85,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001517 RID: 5399 RVA: 0x00010CC1 File Offset: 0x0000EEC1
+		// (get) Token: 0x06001517 RID: 5399 RVA: 0x00010CD6 File Offset: 0x0000EED6
 		IControllerTemplateButton IHOTASTemplate.stickButton6
 		{
 			get
@@ -94,7 +94,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001518 RID: 5400 RVA: 0x00010C33 File Offset: 0x0000EE33
+		// (get) Token: 0x06001518 RID: 5400 RVA: 0x00010C48 File Offset: 0x0000EE48
 		IControllerTemplateButton IHOTASTemplate.stickButton7
 		{
 			get
@@ -103,7 +103,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001519 RID: 5401 RVA: 0x00010CCB File Offset: 0x0000EECB
+		// (get) Token: 0x06001519 RID: 5401 RVA: 0x00010CE0 File Offset: 0x0000EEE0
 		IControllerTemplateButton IHOTASTemplate.stickButton8
 		{
 			get
@@ -112,7 +112,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600151A RID: 5402 RVA: 0x00010C47 File Offset: 0x0000EE47
+		// (get) Token: 0x0600151A RID: 5402 RVA: 0x00010C5C File Offset: 0x0000EE5C
 		IControllerTemplateButton IHOTASTemplate.stickButton9
 		{
 			get
@@ -121,7 +121,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600151B RID: 5403 RVA: 0x00010C51 File Offset: 0x0000EE51
+		// (get) Token: 0x0600151B RID: 5403 RVA: 0x00010C66 File Offset: 0x0000EE66
 		IControllerTemplateButton IHOTASTemplate.stickButton10
 		{
 			get
@@ -130,7 +130,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600151C RID: 5404 RVA: 0x00010CDF File Offset: 0x0000EEDF
+		// (get) Token: 0x0600151C RID: 5404 RVA: 0x00010CF4 File Offset: 0x0000EEF4
 		IControllerTemplateButton IHOTASTemplate.stickBaseButton1
 		{
 			get
@@ -139,7 +139,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600151D RID: 5405 RVA: 0x00010CE9 File Offset: 0x0000EEE9
+		// (get) Token: 0x0600151D RID: 5405 RVA: 0x00010CFE File Offset: 0x0000EEFE
 		IControllerTemplateButton IHOTASTemplate.stickBaseButton2
 		{
 			get
@@ -148,7 +148,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600151E RID: 5406 RVA: 0x00010CF3 File Offset: 0x0000EEF3
+		// (get) Token: 0x0600151E RID: 5406 RVA: 0x00010D08 File Offset: 0x0000EF08
 		IControllerTemplateButton IHOTASTemplate.stickBaseButton3
 		{
 			get
@@ -157,7 +157,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600151F RID: 5407 RVA: 0x00010CFD File Offset: 0x0000EEFD
+		// (get) Token: 0x0600151F RID: 5407 RVA: 0x00010D12 File Offset: 0x0000EF12
 		IControllerTemplateButton IHOTASTemplate.stickBaseButton4
 		{
 			get
@@ -166,7 +166,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001520 RID: 5408 RVA: 0x00010D07 File Offset: 0x0000EF07
+		// (get) Token: 0x06001520 RID: 5408 RVA: 0x00010D1C File Offset: 0x0000EF1C
 		IControllerTemplateButton IHOTASTemplate.stickBaseButton5
 		{
 			get
@@ -175,7 +175,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001521 RID: 5409 RVA: 0x00010D11 File Offset: 0x0000EF11
+		// (get) Token: 0x06001521 RID: 5409 RVA: 0x00010D26 File Offset: 0x0000EF26
 		IControllerTemplateButton IHOTASTemplate.stickBaseButton6
 		{
 			get
@@ -184,7 +184,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001522 RID: 5410 RVA: 0x00010D1B File Offset: 0x0000EF1B
+		// (get) Token: 0x06001522 RID: 5410 RVA: 0x00010D30 File Offset: 0x0000EF30
 		IControllerTemplateButton IHOTASTemplate.stickBaseButton7
 		{
 			get
@@ -193,7 +193,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001523 RID: 5411 RVA: 0x00010D25 File Offset: 0x0000EF25
+		// (get) Token: 0x06001523 RID: 5411 RVA: 0x00010D3A File Offset: 0x0000EF3A
 		IControllerTemplateButton IHOTASTemplate.stickBaseButton8
 		{
 			get
@@ -202,7 +202,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001524 RID: 5412 RVA: 0x00010D2F File Offset: 0x0000EF2F
+		// (get) Token: 0x06001524 RID: 5412 RVA: 0x00010D44 File Offset: 0x0000EF44
 		IControllerTemplateButton IHOTASTemplate.stickBaseButton9
 		{
 			get
@@ -211,7 +211,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001525 RID: 5413 RVA: 0x00010D39 File Offset: 0x0000EF39
+		// (get) Token: 0x06001525 RID: 5413 RVA: 0x00010D4E File Offset: 0x0000EF4E
 		IControllerTemplateButton IHOTASTemplate.stickBaseButton10
 		{
 			get
@@ -220,7 +220,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001526 RID: 5414 RVA: 0x00010DF6 File Offset: 0x0000EFF6
+		// (get) Token: 0x06001526 RID: 5414 RVA: 0x00010E0B File Offset: 0x0000F00B
 		IControllerTemplateButton IHOTASTemplate.stickBaseButton11
 		{
 			get
@@ -229,7 +229,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001527 RID: 5415 RVA: 0x00010E03 File Offset: 0x0000F003
+		// (get) Token: 0x06001527 RID: 5415 RVA: 0x00010E18 File Offset: 0x0000F018
 		IControllerTemplateButton IHOTASTemplate.stickBaseButton12
 		{
 			get
@@ -238,7 +238,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001528 RID: 5416 RVA: 0x00010D93 File Offset: 0x0000EF93
+		// (get) Token: 0x06001528 RID: 5416 RVA: 0x00010DA8 File Offset: 0x0000EFA8
 		IControllerTemplateButton IHOTASTemplate.mode1
 		{
 			get
@@ -247,7 +247,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001529 RID: 5417 RVA: 0x00010E10 File Offset: 0x0000F010
+		// (get) Token: 0x06001529 RID: 5417 RVA: 0x00010E25 File Offset: 0x0000F025
 		IControllerTemplateButton IHOTASTemplate.mode2
 		{
 			get
@@ -256,7 +256,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600152A RID: 5418 RVA: 0x00010E1A File Offset: 0x0000F01A
+		// (get) Token: 0x0600152A RID: 5418 RVA: 0x00010E2F File Offset: 0x0000F02F
 		IControllerTemplateButton IHOTASTemplate.mode3
 		{
 			get
@@ -265,7 +265,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600152B RID: 5419 RVA: 0x00010E24 File Offset: 0x0000F024
+		// (get) Token: 0x0600152B RID: 5419 RVA: 0x00010E39 File Offset: 0x0000F039
 		IControllerTemplateButton IHOTASTemplate.throttleButton1
 		{
 			get
@@ -274,7 +274,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600152C RID: 5420 RVA: 0x00010E2E File Offset: 0x0000F02E
+		// (get) Token: 0x0600152C RID: 5420 RVA: 0x00010E43 File Offset: 0x0000F043
 		IControllerTemplateButton IHOTASTemplate.throttleButton2
 		{
 			get
@@ -283,7 +283,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600152D RID: 5421 RVA: 0x00010E38 File Offset: 0x0000F038
+		// (get) Token: 0x0600152D RID: 5421 RVA: 0x00010E4D File Offset: 0x0000F04D
 		IControllerTemplateButton IHOTASTemplate.throttleButton3
 		{
 			get
@@ -292,7 +292,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600152E RID: 5422 RVA: 0x00010E42 File Offset: 0x0000F042
+		// (get) Token: 0x0600152E RID: 5422 RVA: 0x00010E57 File Offset: 0x0000F057
 		IControllerTemplateButton IHOTASTemplate.throttleButton4
 		{
 			get
@@ -301,7 +301,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600152F RID: 5423 RVA: 0x00010E4C File Offset: 0x0000F04C
+		// (get) Token: 0x0600152F RID: 5423 RVA: 0x00010E61 File Offset: 0x0000F061
 		IControllerTemplateButton IHOTASTemplate.throttleButton5
 		{
 			get
@@ -310,7 +310,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001530 RID: 5424 RVA: 0x00010E56 File Offset: 0x0000F056
+		// (get) Token: 0x06001530 RID: 5424 RVA: 0x00010E6B File Offset: 0x0000F06B
 		IControllerTemplateButton IHOTASTemplate.throttleButton6
 		{
 			get
@@ -319,7 +319,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001531 RID: 5425 RVA: 0x00010E60 File Offset: 0x0000F060
+		// (get) Token: 0x06001531 RID: 5425 RVA: 0x00010E75 File Offset: 0x0000F075
 		IControllerTemplateButton IHOTASTemplate.throttleButton7
 		{
 			get
@@ -328,7 +328,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001532 RID: 5426 RVA: 0x00010E6A File Offset: 0x0000F06A
+		// (get) Token: 0x06001532 RID: 5426 RVA: 0x00010E7F File Offset: 0x0000F07F
 		IControllerTemplateButton IHOTASTemplate.throttleButton8
 		{
 			get
@@ -337,7 +337,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001533 RID: 5427 RVA: 0x00010E74 File Offset: 0x0000F074
+		// (get) Token: 0x06001533 RID: 5427 RVA: 0x00010E89 File Offset: 0x0000F089
 		IControllerTemplateButton IHOTASTemplate.throttleButton9
 		{
 			get
@@ -346,7 +346,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001534 RID: 5428 RVA: 0x00010E7E File Offset: 0x0000F07E
+		// (get) Token: 0x06001534 RID: 5428 RVA: 0x00010E93 File Offset: 0x0000F093
 		IControllerTemplateButton IHOTASTemplate.throttleButton10
 		{
 			get
@@ -355,7 +355,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001535 RID: 5429 RVA: 0x00010E88 File Offset: 0x0000F088
+		// (get) Token: 0x06001535 RID: 5429 RVA: 0x00010E9D File Offset: 0x0000F09D
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton1
 		{
 			get
@@ -364,7 +364,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001536 RID: 5430 RVA: 0x00010E92 File Offset: 0x0000F092
+		// (get) Token: 0x06001536 RID: 5430 RVA: 0x00010EA7 File Offset: 0x0000F0A7
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton2
 		{
 			get
@@ -373,7 +373,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001537 RID: 5431 RVA: 0x00010E9C File Offset: 0x0000F09C
+		// (get) Token: 0x06001537 RID: 5431 RVA: 0x00010EB1 File Offset: 0x0000F0B1
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton3
 		{
 			get
@@ -382,7 +382,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001538 RID: 5432 RVA: 0x00010EA6 File Offset: 0x0000F0A6
+		// (get) Token: 0x06001538 RID: 5432 RVA: 0x00010EBB File Offset: 0x0000F0BB
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton4
 		{
 			get
@@ -391,7 +391,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001539 RID: 5433 RVA: 0x00010EB0 File Offset: 0x0000F0B0
+		// (get) Token: 0x06001539 RID: 5433 RVA: 0x00010EC5 File Offset: 0x0000F0C5
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton5
 		{
 			get
@@ -400,7 +400,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600153A RID: 5434 RVA: 0x00010EBA File Offset: 0x0000F0BA
+		// (get) Token: 0x0600153A RID: 5434 RVA: 0x00010ECF File Offset: 0x0000F0CF
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton6
 		{
 			get
@@ -409,7 +409,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600153B RID: 5435 RVA: 0x00010EC4 File Offset: 0x0000F0C4
+		// (get) Token: 0x0600153B RID: 5435 RVA: 0x00010ED9 File Offset: 0x0000F0D9
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton7
 		{
 			get
@@ -418,7 +418,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600153C RID: 5436 RVA: 0x00010ECE File Offset: 0x0000F0CE
+		// (get) Token: 0x0600153C RID: 5436 RVA: 0x00010EE3 File Offset: 0x0000F0E3
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton8
 		{
 			get
@@ -427,7 +427,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600153D RID: 5437 RVA: 0x00010ED8 File Offset: 0x0000F0D8
+		// (get) Token: 0x0600153D RID: 5437 RVA: 0x00010EED File Offset: 0x0000F0ED
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton9
 		{
 			get
@@ -436,7 +436,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600153E RID: 5438 RVA: 0x00010EE2 File Offset: 0x0000F0E2
+		// (get) Token: 0x0600153E RID: 5438 RVA: 0x00010EF7 File Offset: 0x0000F0F7
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton10
 		{
 			get
@@ -445,7 +445,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600153F RID: 5439 RVA: 0x00010EEC File Offset: 0x0000F0EC
+		// (get) Token: 0x0600153F RID: 5439 RVA: 0x00010F01 File Offset: 0x0000F101
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton11
 		{
 			get
@@ -454,7 +454,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001540 RID: 5440 RVA: 0x00010EF9 File Offset: 0x0000F0F9
+		// (get) Token: 0x06001540 RID: 5440 RVA: 0x00010F0E File Offset: 0x0000F10E
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton12
 		{
 			get
@@ -463,7 +463,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001541 RID: 5441 RVA: 0x00010F06 File Offset: 0x0000F106
+		// (get) Token: 0x06001541 RID: 5441 RVA: 0x00010F1B File Offset: 0x0000F11B
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton13
 		{
 			get
@@ -472,7 +472,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001542 RID: 5442 RVA: 0x00010F13 File Offset: 0x0000F113
+		// (get) Token: 0x06001542 RID: 5442 RVA: 0x00010F28 File Offset: 0x0000F128
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton14
 		{
 			get
@@ -481,7 +481,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001543 RID: 5443 RVA: 0x00010F20 File Offset: 0x0000F120
+		// (get) Token: 0x06001543 RID: 5443 RVA: 0x00010F35 File Offset: 0x0000F135
 		IControllerTemplateButton IHOTASTemplate.throttleBaseButton15
 		{
 			get
@@ -490,7 +490,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001544 RID: 5444 RVA: 0x00010F2D File Offset: 0x0000F12D
+		// (get) Token: 0x06001544 RID: 5444 RVA: 0x00010F42 File Offset: 0x0000F142
 		IControllerTemplateAxis IHOTASTemplate.throttleSlider1
 		{
 			get
@@ -499,7 +499,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001545 RID: 5445 RVA: 0x00010F37 File Offset: 0x0000F137
+		// (get) Token: 0x06001545 RID: 5445 RVA: 0x00010F4C File Offset: 0x0000F14C
 		IControllerTemplateAxis IHOTASTemplate.throttleSlider2
 		{
 			get
@@ -508,7 +508,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001546 RID: 5446 RVA: 0x00010F41 File Offset: 0x0000F141
+		// (get) Token: 0x06001546 RID: 5446 RVA: 0x00010F56 File Offset: 0x0000F156
 		IControllerTemplateAxis IHOTASTemplate.throttleSlider3
 		{
 			get
@@ -517,7 +517,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001547 RID: 5447 RVA: 0x00010F4B File Offset: 0x0000F14B
+		// (get) Token: 0x06001547 RID: 5447 RVA: 0x00010F60 File Offset: 0x0000F160
 		IControllerTemplateAxis IHOTASTemplate.throttleSlider4
 		{
 			get
@@ -526,7 +526,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001548 RID: 5448 RVA: 0x00010F55 File Offset: 0x0000F155
+		// (get) Token: 0x06001548 RID: 5448 RVA: 0x00010F6A File Offset: 0x0000F16A
 		IControllerTemplateAxis IHOTASTemplate.throttleDial1
 		{
 			get
@@ -535,7 +535,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001549 RID: 5449 RVA: 0x00010F5F File Offset: 0x0000F15F
+		// (get) Token: 0x06001549 RID: 5449 RVA: 0x00010F74 File Offset: 0x0000F174
 		IControllerTemplateAxis IHOTASTemplate.throttleDial2
 		{
 			get
@@ -544,7 +544,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600154A RID: 5450 RVA: 0x00010F6C File Offset: 0x0000F16C
+		// (get) Token: 0x0600154A RID: 5450 RVA: 0x00010F81 File Offset: 0x0000F181
 		IControllerTemplateAxis IHOTASTemplate.throttleDial3
 		{
 			get
@@ -553,7 +553,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600154B RID: 5451 RVA: 0x00010F79 File Offset: 0x0000F179
+		// (get) Token: 0x0600154B RID: 5451 RVA: 0x00010F8E File Offset: 0x0000F18E
 		IControllerTemplateAxis IHOTASTemplate.throttleDial4
 		{
 			get
@@ -562,7 +562,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600154C RID: 5452 RVA: 0x00010F86 File Offset: 0x0000F186
+		// (get) Token: 0x0600154C RID: 5452 RVA: 0x00010F9B File Offset: 0x0000F19B
 		IControllerTemplateButton IHOTASTemplate.throttleWheel1Forward
 		{
 			get
@@ -571,7 +571,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600154D RID: 5453 RVA: 0x00010F93 File Offset: 0x0000F193
+		// (get) Token: 0x0600154D RID: 5453 RVA: 0x00010FA8 File Offset: 0x0000F1A8
 		IControllerTemplateButton IHOTASTemplate.throttleWheel1Back
 		{
 			get
@@ -580,7 +580,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600154E RID: 5454 RVA: 0x00010FA0 File Offset: 0x0000F1A0
+		// (get) Token: 0x0600154E RID: 5454 RVA: 0x00010FB5 File Offset: 0x0000F1B5
 		IControllerTemplateButton IHOTASTemplate.throttleWheel1Press
 		{
 			get
@@ -589,7 +589,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600154F RID: 5455 RVA: 0x00010FAD File Offset: 0x0000F1AD
+		// (get) Token: 0x0600154F RID: 5455 RVA: 0x00010FC2 File Offset: 0x0000F1C2
 		IControllerTemplateButton IHOTASTemplate.throttleWheel2Forward
 		{
 			get
@@ -598,7 +598,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001550 RID: 5456 RVA: 0x00010FBA File Offset: 0x0000F1BA
+		// (get) Token: 0x06001550 RID: 5456 RVA: 0x00010FCF File Offset: 0x0000F1CF
 		IControllerTemplateButton IHOTASTemplate.throttleWheel2Back
 		{
 			get
@@ -607,7 +607,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001551 RID: 5457 RVA: 0x00010FC7 File Offset: 0x0000F1C7
+		// (get) Token: 0x06001551 RID: 5457 RVA: 0x00010FDC File Offset: 0x0000F1DC
 		IControllerTemplateButton IHOTASTemplate.throttleWheel2Press
 		{
 			get
@@ -616,7 +616,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001552 RID: 5458 RVA: 0x00010FD4 File Offset: 0x0000F1D4
+		// (get) Token: 0x06001552 RID: 5458 RVA: 0x00010FE9 File Offset: 0x0000F1E9
 		IControllerTemplateButton IHOTASTemplate.throttleWheel3Forward
 		{
 			get
@@ -625,7 +625,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001553 RID: 5459 RVA: 0x00010FE1 File Offset: 0x0000F1E1
+		// (get) Token: 0x06001553 RID: 5459 RVA: 0x00010FF6 File Offset: 0x0000F1F6
 		IControllerTemplateButton IHOTASTemplate.throttleWheel3Back
 		{
 			get
@@ -634,7 +634,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001554 RID: 5460 RVA: 0x00010FEE File Offset: 0x0000F1EE
+		// (get) Token: 0x06001554 RID: 5460 RVA: 0x00011003 File Offset: 0x0000F203
 		IControllerTemplateButton IHOTASTemplate.throttleWheel3Press
 		{
 			get
@@ -643,7 +643,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001555 RID: 5461 RVA: 0x00010FFB File Offset: 0x0000F1FB
+		// (get) Token: 0x06001555 RID: 5461 RVA: 0x00011010 File Offset: 0x0000F210
 		IControllerTemplateAxis IHOTASTemplate.leftPedal
 		{
 			get
@@ -652,7 +652,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001556 RID: 5462 RVA: 0x00011008 File Offset: 0x0000F208
+		// (get) Token: 0x06001556 RID: 5462 RVA: 0x0001101D File Offset: 0x0000F21D
 		IControllerTemplateAxis IHOTASTemplate.rightPedal
 		{
 			get
@@ -661,7 +661,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001557 RID: 5463 RVA: 0x00011015 File Offset: 0x0000F215
+		// (get) Token: 0x06001557 RID: 5463 RVA: 0x0001102A File Offset: 0x0000F22A
 		IControllerTemplateAxis IHOTASTemplate.slidePedals
 		{
 			get
@@ -670,7 +670,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001558 RID: 5464 RVA: 0x00011022 File Offset: 0x0000F222
+		// (get) Token: 0x06001558 RID: 5464 RVA: 0x00011037 File Offset: 0x0000F237
 		IControllerTemplateStick IHOTASTemplate.stick
 		{
 			get
@@ -679,7 +679,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001559 RID: 5465 RVA: 0x0001102F File Offset: 0x0000F22F
+		// (get) Token: 0x06001559 RID: 5465 RVA: 0x00011044 File Offset: 0x0000F244
 		IControllerTemplateThumbStick IHOTASTemplate.stickMiniStick1
 		{
 			get
@@ -688,7 +688,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600155A RID: 5466 RVA: 0x0001103C File Offset: 0x0000F23C
+		// (get) Token: 0x0600155A RID: 5466 RVA: 0x00011051 File Offset: 0x0000F251
 		IControllerTemplateThumbStick IHOTASTemplate.stickMiniStick2
 		{
 			get
@@ -697,7 +697,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600155B RID: 5467 RVA: 0x00011049 File Offset: 0x0000F249
+		// (get) Token: 0x0600155B RID: 5467 RVA: 0x0001105E File Offset: 0x0000F25E
 		IControllerTemplateHat IHOTASTemplate.stickHat1
 		{
 			get
@@ -706,7 +706,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600155C RID: 5468 RVA: 0x00011056 File Offset: 0x0000F256
+		// (get) Token: 0x0600155C RID: 5468 RVA: 0x0001106B File Offset: 0x0000F26B
 		IControllerTemplateHat IHOTASTemplate.stickHat2
 		{
 			get
@@ -715,7 +715,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600155D RID: 5469 RVA: 0x00011063 File Offset: 0x0000F263
+		// (get) Token: 0x0600155D RID: 5469 RVA: 0x00011078 File Offset: 0x0000F278
 		IControllerTemplateHat IHOTASTemplate.stickHat3
 		{
 			get
@@ -724,7 +724,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600155E RID: 5470 RVA: 0x00011070 File Offset: 0x0000F270
+		// (get) Token: 0x0600155E RID: 5470 RVA: 0x00011085 File Offset: 0x0000F285
 		IControllerTemplateHat IHOTASTemplate.stickHat4
 		{
 			get
@@ -733,7 +733,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600155F RID: 5471 RVA: 0x0001107D File Offset: 0x0000F27D
+		// (get) Token: 0x0600155F RID: 5471 RVA: 0x00011092 File Offset: 0x0000F292
 		IControllerTemplateThrottle IHOTASTemplate.throttle1
 		{
 			get
@@ -742,7 +742,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001560 RID: 5472 RVA: 0x0001108A File Offset: 0x0000F28A
+		// (get) Token: 0x06001560 RID: 5472 RVA: 0x0001109F File Offset: 0x0000F29F
 		IControllerTemplateThrottle IHOTASTemplate.throttle2
 		{
 			get
@@ -751,7 +751,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001561 RID: 5473 RVA: 0x00011097 File Offset: 0x0000F297
+		// (get) Token: 0x06001561 RID: 5473 RVA: 0x000110AC File Offset: 0x0000F2AC
 		IControllerTemplateThumbStick IHOTASTemplate.throttleMiniStick
 		{
 			get
@@ -760,7 +760,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001562 RID: 5474 RVA: 0x000110A4 File Offset: 0x0000F2A4
+		// (get) Token: 0x06001562 RID: 5474 RVA: 0x000110B9 File Offset: 0x0000F2B9
 		IControllerTemplateHat IHOTASTemplate.throttleHat1
 		{
 			get
@@ -769,7 +769,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001563 RID: 5475 RVA: 0x000110B1 File Offset: 0x0000F2B1
+		// (get) Token: 0x06001563 RID: 5475 RVA: 0x000110C6 File Offset: 0x0000F2C6
 		IControllerTemplateHat IHOTASTemplate.throttleHat2
 		{
 			get
@@ -778,7 +778,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001564 RID: 5476 RVA: 0x000110BE File Offset: 0x0000F2BE
+		// (get) Token: 0x06001564 RID: 5476 RVA: 0x000110D3 File Offset: 0x0000F2D3
 		IControllerTemplateHat IHOTASTemplate.throttleHat3
 		{
 			get
@@ -787,7 +787,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001565 RID: 5477 RVA: 0x000110CB File Offset: 0x0000F2CB
+		// (get) Token: 0x06001565 RID: 5477 RVA: 0x000110E0 File Offset: 0x0000F2E0
 		IControllerTemplateHat IHOTASTemplate.throttleHat4
 		{
 			get
@@ -796,7 +796,7 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x06001566 RID: 5478 RVA: 0x00010C83 File Offset: 0x0000EE83
+		// Token: 0x06001566 RID: 5478 RVA: 0x00010C98 File Offset: 0x0000EE98
 		public HOTASTemplate(object payload)
 			: base(payload)
 		{

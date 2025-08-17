@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class PlayerTail : MonoBehaviour
 {
-	// Token: 0x06000CEF RID: 3311 RVA: 0x0000BFEA File Offset: 0x0000A1EA
+	// Token: 0x06000CEF RID: 3311 RVA: 0x0000BFFF File Offset: 0x0000A1FF
 	private void Awake()
 	{
 		this.neutralRotation = Quaternion.Euler(this.neutralX, 0f, 0f);
 		this.swimmingRotation = Quaternion.Euler(this.swimmingX, 0f, 0f);
 	}
 
-	// Token: 0x06000CF0 RID: 3312 RVA: 0x00048EEC File Offset: 0x000470EC
+	// Token: 0x06000CF0 RID: 3312 RVA: 0x00049080 File Offset: 0x00047280
 	private void LateUpdate()
 	{
 		if (this.movement != null)

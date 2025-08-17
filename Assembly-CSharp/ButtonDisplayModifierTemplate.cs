@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ButtonDisplayModifierTemplate : MonoBehaviour
 {
-	// Token: 0x06001156 RID: 4438 RVA: 0x00057E40 File Offset: 0x00056040
+	// Token: 0x06001156 RID: 4438 RVA: 0x00057FD4 File Offset: 0x000561D4
 	public void LoadModifierAndText(string[] modifiers, string name)
 	{
 		foreach (string text in modifiers)

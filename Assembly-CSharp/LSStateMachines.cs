@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [AddComponentMenu("Logic/LogicState - State Machines")]
 public class LSStateMachines : LogicState
 {
-	// Token: 0x060008EF RID: 2287 RVA: 0x000392D8 File Offset: 0x000374D8
+	// Token: 0x060008EF RID: 2287 RVA: 0x000394B8 File Offset: 0x000376B8
 	public override void Start()
 	{
 		base.Start();
@@ -18,7 +18,7 @@ public class LSStateMachines : LogicState
 		}
 	}
 
-	// Token: 0x060008F0 RID: 2288 RVA: 0x00039344 File Offset: 0x00037544
+	// Token: 0x060008F0 RID: 2288 RVA: 0x00039524 File Offset: 0x00037724
 	public override void CheckLogic()
 	{
 		int num = 0;

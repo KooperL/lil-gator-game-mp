@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class FetchQuest : MonoBehaviour
 {
-	// (get) Token: 0x06000E18 RID: 3608 RVA: 0x0000C966 File Offset: 0x0000AB66
-	// (set) Token: 0x06000E19 RID: 3609 RVA: 0x0000C979 File Offset: 0x0000AB79
+	// (get) Token: 0x06000E18 RID: 3608 RVA: 0x0000C97B File Offset: 0x0000AB7B
+	// (set) Token: 0x06000E19 RID: 3609 RVA: 0x0000C98E File Offset: 0x0000AB8E
 	private int State
 	{
 		get
@@ -19,7 +19,7 @@ public class FetchQuest : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000E1A RID: 3610 RVA: 0x0000C98C File Offset: 0x0000AB8C
+	// (get) Token: 0x06000E1A RID: 3610 RVA: 0x0000C9A1 File Offset: 0x0000ABA1
 	private bool IsItemFetched
 	{
 		get
@@ -28,13 +28,13 @@ public class FetchQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E1B RID: 3611 RVA: 0x0000C99F File Offset: 0x0000AB9F
+	// Token: 0x06000E1B RID: 3611 RVA: 0x0000C9B4 File Offset: 0x0000ABB4
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000E1C RID: 3612 RVA: 0x0004C770 File Offset: 0x0004A970
+	// Token: 0x06000E1C RID: 3612 RVA: 0x0004C904 File Offset: 0x0004AB04
 	private void UpdateState()
 	{
 		bool isItemFetched = this.IsItemFetched;
@@ -58,13 +58,13 @@ public class FetchQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E1D RID: 3613 RVA: 0x0000C9A7 File Offset: 0x0000ABA7
+	// Token: 0x06000E1D RID: 3613 RVA: 0x0000C9BC File Offset: 0x0000ABBC
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000E1E RID: 3614 RVA: 0x0000C9B6 File Offset: 0x0000ABB6
+	// Token: 0x06000E1E RID: 3614 RVA: 0x0000C9CB File Offset: 0x0000ABCB
 	private IEnumerator RunConversation()
 	{
 		DialogueManager.d.CancelBubble();

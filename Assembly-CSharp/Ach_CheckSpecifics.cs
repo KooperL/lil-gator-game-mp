@@ -22,7 +22,7 @@ public class Ach_CheckSpecifics : MonoBehaviour
 		PlayerItemManager.onItemRefresh.RemoveListener(new UnityAction(this.CheckItems));
 	}
 
-	// Token: 0x060001E6 RID: 486 RVA: 0x0001E0A0 File Offset: 0x0001C2A0
+	// Token: 0x060001E6 RID: 486 RVA: 0x0001E21C File Offset: 0x0001C41C
 	private void CheckItems()
 	{
 		if (!this.braceletsGet)

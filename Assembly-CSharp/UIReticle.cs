@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UIReticle : MonoBehaviour
 {
-	// Token: 0x060012CC RID: 4812 RVA: 0x0000FD4F File Offset: 0x0000DF4F
+	// Token: 0x060012CC RID: 4812 RVA: 0x0000FD64 File Offset: 0x0000DF64
 	public void OnValidate()
 	{
 		if (this.animator == null)
@@ -12,7 +12,7 @@ public class UIReticle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012CD RID: 4813 RVA: 0x0000FD6B File Offset: 0x0000DF6B
+	// Token: 0x060012CD RID: 4813 RVA: 0x0000FD80 File Offset: 0x0000DF80
 	private void OnDisable()
 	{
 		if (this.isAiming)
@@ -22,7 +22,7 @@ public class UIReticle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012CE RID: 4814 RVA: 0x0000FD88 File Offset: 0x0000DF88
+	// Token: 0x060012CE RID: 4814 RVA: 0x0000FD9D File Offset: 0x0000DF9D
 	public void StartAiming(float chargeTime)
 	{
 		base.gameObject.SetActive(true);
@@ -31,7 +31,7 @@ public class UIReticle : MonoBehaviour
 		this.animator.SetBool(this.showID, true);
 	}
 
-	// Token: 0x060012CF RID: 4815 RVA: 0x0000FDC7 File Offset: 0x0000DFC7
+	// Token: 0x060012CF RID: 4815 RVA: 0x0000FDDC File Offset: 0x0000DFDC
 	public void StopAiming()
 	{
 		if (this.isAiming)
@@ -41,7 +41,7 @@ public class UIReticle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012D0 RID: 4816 RVA: 0x0000FDEA File Offset: 0x0000DFEA
+	// Token: 0x060012D0 RID: 4816 RVA: 0x0000FDFF File Offset: 0x0000DFFF
 	public void Update()
 	{
 		if (this.isAiming && !Player.itemManager.IsAiming)
@@ -50,7 +50,7 @@ public class UIReticle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012D1 RID: 4817 RVA: 0x0000968D File Offset: 0x0000788D
+	// Token: 0x060012D1 RID: 4817 RVA: 0x000096A2 File Offset: 0x000078A2
 	public void Deactivate()
 	{
 		base.gameObject.SetActive(false);

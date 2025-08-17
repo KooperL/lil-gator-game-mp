@@ -6,8 +6,8 @@ using UnityEngine.Events;
 [CreateAssetMenu]
 public class UIButtonObject : ScriptableObject
 {
-	// (get) Token: 0x060011E7 RID: 4583 RVA: 0x0000F3C3 File Offset: 0x0000D5C3
-	// (set) Token: 0x060011E8 RID: 4584 RVA: 0x0000F3CB File Offset: 0x0000D5CB
+	// (get) Token: 0x060011E7 RID: 4583 RVA: 0x0000F3D8 File Offset: 0x0000D5D8
+	// (set) Token: 0x060011E8 RID: 4584 RVA: 0x0000F3E0 File Offset: 0x0000D5E0
 	public int InputMode
 	{
 		get
@@ -24,7 +24,7 @@ public class UIButtonObject : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x060011E9 RID: 4585 RVA: 0x00059AEC File Offset: 0x00057CEC
+	// (get) Token: 0x060011E9 RID: 4585 RVA: 0x00059C80 File Offset: 0x00057E80
 	public Sprite InputSprite
 	{
 		get
@@ -50,7 +50,7 @@ public class UIButtonObject : ScriptableObject
 	{
 	}
 
-	// Token: 0x060011EB RID: 4587 RVA: 0x0000F3E7 File Offset: 0x0000D5E7
+	// Token: 0x060011EB RID: 4587 RVA: 0x0000F3FC File Offset: 0x0000D5FC
 	private void OnEnable()
 	{
 		if (!InputHelper.activeButtonObjects.Contains(this))
@@ -73,5 +73,5 @@ public class UIButtonObject : ScriptableObject
 
 	public int inputMode;
 
-	private global::Rewired.Player rePlayer;
+	private Player rePlayer;
 }

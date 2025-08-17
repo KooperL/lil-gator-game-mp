@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SettableState : MonoBehaviour
 {
-	// Token: 0x06000F44 RID: 3908 RVA: 0x00050250 File Offset: 0x0004E450
+	// Token: 0x06000F44 RID: 3908 RVA: 0x000503E4 File Offset: 0x0004E5E4
 	private void Start()
 	{
 		if (!this.hasBeenSet)
@@ -16,7 +16,7 @@ public class SettableState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F45 RID: 3909 RVA: 0x00050288 File Offset: 0x0004E488
+	// Token: 0x06000F45 RID: 3909 RVA: 0x0005041C File Offset: 0x0004E61C
 	public void SetState(bool active)
 	{
 		GameObject[] array = this.stateObjects;

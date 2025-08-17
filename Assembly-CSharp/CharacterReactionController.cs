@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CharacterReactionController : MonoBehaviour
 {
-	// Token: 0x06000AB5 RID: 2741 RVA: 0x0000A3B2 File Offset: 0x000085B2
+	// Token: 0x06000AB5 RID: 2741 RVA: 0x0000A3C7 File Offset: 0x000085C7
 	private void Awake()
 	{
 		CharacterReactionController.c = this;
@@ -12,13 +12,13 @@ public class CharacterReactionController : MonoBehaviour
 		this.animator = this.movement.animator;
 	}
 
-	// Token: 0x06000AB6 RID: 2742 RVA: 0x0000A3E3 File Offset: 0x000085E3
+	// Token: 0x06000AB6 RID: 2742 RVA: 0x0000A3F8 File Offset: 0x000085F8
 	private void OnEnable()
 	{
 		CharacterReactionController.c = this;
 	}
 
-	// Token: 0x06000AB7 RID: 2743 RVA: 0x0003DBD0 File Offset: 0x0003BDD0
+	// Token: 0x06000AB7 RID: 2743 RVA: 0x0003DD64 File Offset: 0x0003BF64
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.DrawRay(this.hips.position, this.bodyForward);
@@ -26,7 +26,7 @@ public class CharacterReactionController : MonoBehaviour
 		Gizmos.DrawRay(this.neck.position, this.neckForward);
 	}
 
-	// Token: 0x06000AB8 RID: 2744 RVA: 0x0003DC20 File Offset: 0x0003BE20
+	// Token: 0x06000AB8 RID: 2744 RVA: 0x0003DDB4 File Offset: 0x0003BFB4
 	private void Start()
 	{
 		this.lastNeckForward = (this.nextNeckForward = (this.neckForward = this.neck.forward));
@@ -36,7 +36,7 @@ public class CharacterReactionController : MonoBehaviour
 		this.bodyDisplacement = this.body.localPosition - this.bodyRotationCenter;
 	}
 
-	// Token: 0x06000AB9 RID: 2745 RVA: 0x0003DCD4 File Offset: 0x0003BED4
+	// Token: 0x06000AB9 RID: 2745 RVA: 0x0003DE68 File Offset: 0x0003C068
 	private void UpdateReactions()
 	{
 		this.lastBodyForward = this.nextBodyForward;
@@ -171,13 +171,13 @@ public class CharacterReactionController : MonoBehaviour
 		this.lastPosition = this.body.position;
 	}
 
-	// Token: 0x06000ABA RID: 2746 RVA: 0x0000A3EB File Offset: 0x000085EB
+	// Token: 0x06000ABA RID: 2746 RVA: 0x0000A400 File Offset: 0x00008600
 	private Vector3 ClampNeckDirection(Vector3 direction)
 	{
 		return Vector3.RotateTowards(this.bodyForward, direction, 1.2217305f, 1f);
 	}
 
-	// Token: 0x06000ABB RID: 2747 RVA: 0x0003E484 File Offset: 0x0003C684
+	// Token: 0x06000ABB RID: 2747 RVA: 0x0003E618 File Offset: 0x0003C818
 	private void StandardNeckForward()
 	{
 		Vector3 vector = this.bodyForward;
@@ -190,7 +190,7 @@ public class CharacterReactionController : MonoBehaviour
 		this.neckForward = Vector3.Slerp(this.neckForward, vector, this.neckRotationSpeed * Time.deltaTime);
 	}
 
-	// Token: 0x06000ABC RID: 2748 RVA: 0x0003E530 File Offset: 0x0003C730
+	// Token: 0x06000ABC RID: 2748 RVA: 0x0003E6C4 File Offset: 0x0003C8C4
 	private void LateUpdate()
 	{
 		this.UpdateReactions();
@@ -211,7 +211,7 @@ public class CharacterReactionController : MonoBehaviour
 		this.UpdateRotations();
 	}
 
-	// Token: 0x06000ABD RID: 2749 RVA: 0x0003E5D4 File Offset: 0x0003C7D4
+	// Token: 0x06000ABD RID: 2749 RVA: 0x0003E768 File Offset: 0x0003C968
 	private void UpdateRotations()
 	{
 		if (this.movement == null)
@@ -300,7 +300,7 @@ public class CharacterReactionController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000ABE RID: 2750 RVA: 0x0003EAB8 File Offset: 0x0003CCB8
+	// Token: 0x06000ABE RID: 2750 RVA: 0x0003EC4C File Offset: 0x0003CE4C
 	public void SetForward(Vector3 forward)
 	{
 		this.bodyForward = forward;

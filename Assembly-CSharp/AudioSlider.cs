@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 
 public class AudioSlider : MonoBehaviour
 {
-	// Token: 0x0600105D RID: 4189 RVA: 0x0000E0B8 File Offset: 0x0000C2B8
+	// Token: 0x0600105D RID: 4189 RVA: 0x0000E0CD File Offset: 0x0000C2CD
 	private void LateUpdate()
 	{
 		this.mixer.SetFloat(this.mixerVariable, this.variableValue);

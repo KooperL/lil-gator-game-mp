@@ -15,7 +15,7 @@ public class ItemObject : ScriptableObject
 	}
 
 	// (get) Token: 0x06000123 RID: 291 RVA: 0x00002F3E File Offset: 0x0000113E
-	// (set) Token: 0x06000124 RID: 292 RVA: 0x0001B7D4 File Offset: 0x000199D4
+	// (set) Token: 0x06000124 RID: 292 RVA: 0x0001B950 File Offset: 0x00019B50
 	public bool IsUnlocked
 	{
 		get

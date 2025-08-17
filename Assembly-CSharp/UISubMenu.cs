@@ -4,19 +4,19 @@ using UnityEngine.Events;
 
 public class UISubMenu : MonoBehaviour
 {
-	// Token: 0x06001347 RID: 4935 RVA: 0x0001040D File Offset: 0x0000E60D
+	// Token: 0x06001347 RID: 4935 RVA: 0x00010422 File Offset: 0x0000E622
 	private void OnValidate()
 	{
 		this.transformDepth = base.transform.GetDepth();
 	}
 
-	// Token: 0x06001348 RID: 4936 RVA: 0x00010420 File Offset: 0x0000E620
+	// Token: 0x06001348 RID: 4936 RVA: 0x00010435 File Offset: 0x0000E635
 	private void Awake()
 	{
 		this.checkCancel = base.GetComponent<ICheckCancel>();
 	}
 
-	// Token: 0x06001349 RID: 4937 RVA: 0x0001042E File Offset: 0x0000E62E
+	// Token: 0x06001349 RID: 4937 RVA: 0x00010443 File Offset: 0x0000E643
 	private void OnEnable()
 	{
 		UIRootMenu.u.AddMenu(this);
@@ -26,7 +26,7 @@ public class UISubMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600134A RID: 4938 RVA: 0x00010449 File Offset: 0x0000E649
+	// Token: 0x0600134A RID: 4938 RVA: 0x0001045E File Offset: 0x0000E65E
 	private void OnDisable()
 	{
 		UIRootMenu.u.RemoveMenu(this);
@@ -36,7 +36,7 @@ public class UISubMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600134B RID: 4939 RVA: 0x00010464 File Offset: 0x0000E664
+	// Token: 0x0600134B RID: 4939 RVA: 0x00010479 File Offset: 0x0000E679
 	public void Activate()
 	{
 		this.isActivated = true;
@@ -48,7 +48,7 @@ public class UISubMenu : MonoBehaviour
 		this.onActivate.Invoke();
 	}
 
-	// Token: 0x0600134C RID: 4940 RVA: 0x0001049E File Offset: 0x0000E69E
+	// Token: 0x0600134C RID: 4940 RVA: 0x000104B3 File Offset: 0x0000E6B3
 	public void Deactivate()
 	{
 		this.isActivated = false;
@@ -56,7 +56,7 @@ public class UISubMenu : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600134D RID: 4941 RVA: 0x000104BE File Offset: 0x0000E6BE
+	// Token: 0x0600134D RID: 4941 RVA: 0x000104D3 File Offset: 0x0000E6D3
 	public void OnLoseProminence()
 	{
 		if (this.prominentObject != null)
@@ -66,7 +66,7 @@ public class UISubMenu : MonoBehaviour
 		this.onLoseProminence.Invoke();
 	}
 
-	// Token: 0x0600134E RID: 4942 RVA: 0x000104E5 File Offset: 0x0000E6E5
+	// Token: 0x0600134E RID: 4942 RVA: 0x000104FA File Offset: 0x0000E6FA
 	public void OnRegainProminence()
 	{
 		if (this.prominentObject != null)
@@ -76,7 +76,7 @@ public class UISubMenu : MonoBehaviour
 		this.onRegainProminence.Invoke();
 	}
 
-	// Token: 0x0600134F RID: 4943 RVA: 0x0001050C File Offset: 0x0000E70C
+	// Token: 0x0600134F RID: 4943 RVA: 0x00010521 File Offset: 0x0000E721
 	public void OnCancel()
 	{
 		if (this.deactivateOnCancel && (this.checkCancel == null || this.checkCancel.TryCancel()))

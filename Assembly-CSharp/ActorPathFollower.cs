@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ActorPathFollower : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06000228 RID: 552 RVA: 0x0001E960 File Offset: 0x0001CB60
+	// Token: 0x06000228 RID: 552 RVA: 0x0001EADC File Offset: 0x0001CCDC
 	private void OnValidate()
 	{
 		if (this.actor == null)
@@ -20,7 +20,7 @@ public class ActorPathFollower : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000229 RID: 553 RVA: 0x0001E9E0 File Offset: 0x0001CBE0
+	// Token: 0x06000229 RID: 553 RVA: 0x0001EB5C File Offset: 0x0001CD5C
 	private void Start()
 	{
 		this.scaledSpeed = this.speed / Mathf.Min(1f, base.transform.localScale.x);
@@ -43,7 +43,7 @@ public class ActorPathFollower : MonoBehaviour, IManagedUpdate
 	{
 	}
 
-	// Token: 0x0600022B RID: 555 RVA: 0x0001EA84 File Offset: 0x0001CC84
+	// Token: 0x0600022B RID: 555 RVA: 0x0001EC00 File Offset: 0x0001CE00
 	private void OnEnable()
 	{
 		this.isInRange = this.path.SqrDistance(MainCamera.t.position) <= 3025f;
@@ -72,7 +72,7 @@ public class ActorPathFollower : MonoBehaviour, IManagedUpdate
 		return (!this.stopWhileTalking || !this.actor.IsInDialogue) && this.moving;
 	}
 
-	// Token: 0x0600022E RID: 558 RVA: 0x0001EAD8 File Offset: 0x0001CCD8
+	// Token: 0x0600022E RID: 558 RVA: 0x0001EC54 File Offset: 0x0001CE54
 	public void ManagedUpdate()
 	{
 		if (this.isInRange != this.path.SqrDistance(MainCamera.t.position) <= 3025f)
@@ -147,7 +147,7 @@ public class ActorPathFollower : MonoBehaviour, IManagedUpdate
 		this.animator.SetLayerWeight(1, num3);
 	}
 
-	// Token: 0x0600022F RID: 559 RVA: 0x0001ED80 File Offset: 0x0001CF80
+	// Token: 0x0600022F RID: 559 RVA: 0x0001EEFC File Offset: 0x0001D0FC
 	private void DoNewTimeStep()
 	{
 		this.fromPosition = this.toPosition;

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class SelectOptions : Selectable
 {
-	// Token: 0x06001132 RID: 4402 RVA: 0x00057A78 File Offset: 0x00055C78
+	// Token: 0x06001132 RID: 4402 RVA: 0x00057C0C File Offset: 0x00055E0C
 	public static void ForceRefresh()
 	{
 		foreach (SelectOptions selectOptions in SelectOptions.active)
@@ -16,7 +16,7 @@ public class SelectOptions : Selectable
 		}
 	}
 
-	// Token: 0x06001133 RID: 4403 RVA: 0x0000EAAF File Offset: 0x0000CCAF
+	// Token: 0x06001133 RID: 4403 RVA: 0x0000EAC4 File Offset: 0x0000CCC4
 	protected override void OnEnable()
 	{
 		base.OnEnable();
@@ -24,26 +24,26 @@ public class SelectOptions : Selectable
 		SelectOptions.active.Add(this);
 	}
 
-	// Token: 0x06001134 RID: 4404 RVA: 0x0000EAC8 File Offset: 0x0000CCC8
+	// Token: 0x06001134 RID: 4404 RVA: 0x0000EADD File Offset: 0x0000CCDD
 	protected override void OnDisable()
 	{
 		base.OnDisable();
 		SelectOptions.active.Remove(this);
 	}
 
-	// Token: 0x06001135 RID: 4405 RVA: 0x00057AC8 File Offset: 0x00055CC8
+	// Token: 0x06001135 RID: 4405 RVA: 0x00057C5C File Offset: 0x00055E5C
 	public override void OnMove(AxisEventData eventData)
 	{
 		switch (eventData.moveDir)
 		{
-		case MoveDirection.Left:
+		case 0:
 			this.MoveLeft();
 			return;
-		case MoveDirection.Up:
-		case MoveDirection.Down:
+		case 1:
+		case 3:
 			base.OnMove(eventData);
 			return;
-		case MoveDirection.Right:
+		case 2:
 			this.MoveRight();
 			return;
 		default:
@@ -51,7 +51,7 @@ public class SelectOptions : Selectable
 		}
 	}
 
-	// Token: 0x06001136 RID: 4406 RVA: 0x0000EADC File Offset: 0x0000CCDC
+	// Token: 0x06001136 RID: 4406 RVA: 0x0000EAF1 File Offset: 0x0000CCF1
 	public void MoveRight()
 	{
 		this.selectedOption++;
@@ -63,7 +63,7 @@ public class SelectOptions : Selectable
 		this.UpdateDisplay();
 	}
 
-	// Token: 0x06001137 RID: 4407 RVA: 0x0000EB1A File Offset: 0x0000CD1A
+	// Token: 0x06001137 RID: 4407 RVA: 0x0000EB2F File Offset: 0x0000CD2F
 	public void MoveLeft()
 	{
 		this.selectedOption--;
@@ -75,7 +75,7 @@ public class SelectOptions : Selectable
 		this.UpdateDisplay();
 	}
 
-	// Token: 0x06001138 RID: 4408 RVA: 0x0000EB5A File Offset: 0x0000CD5A
+	// Token: 0x06001138 RID: 4408 RVA: 0x0000EB6F File Offset: 0x0000CD6F
 	private void UpdateDisplay()
 	{
 		if (this.selectedOptionDisplay == null || this.options.Length == 0)
@@ -86,7 +86,7 @@ public class SelectOptions : Selectable
 		this.Refresh();
 	}
 
-	// Token: 0x06001139 RID: 4409 RVA: 0x00057B08 File Offset: 0x00055D08
+	// Token: 0x06001139 RID: 4409 RVA: 0x00057C9C File Offset: 0x00055E9C
 	public void Refresh()
 	{
 		if (this.document == null)
@@ -97,7 +97,7 @@ public class SelectOptions : Selectable
 		this.selectedOptionDisplay.text = this.document.FetchString(this.options[this.selectedOption], Language.Auto);
 	}
 
-	// Token: 0x0600113A RID: 4410 RVA: 0x0000EB96 File Offset: 0x0000CD96
+	// Token: 0x0600113A RID: 4410 RVA: 0x0000EBAB File Offset: 0x0000CDAB
 	public void SetSelection(int newSelection, bool doCallback = true)
 	{
 		this.selectedOption = Mathf.Clamp(newSelection, 0, this.options.Length - 1);

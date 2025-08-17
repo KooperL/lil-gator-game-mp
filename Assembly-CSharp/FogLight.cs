@@ -34,7 +34,7 @@ public class FogLight : MonoBehaviour, IManagedUpdate
 		Gizmos.DrawSphere(base.transform.position, this.radius);
 	}
 
-	// Token: 0x06000646 RID: 1606 RVA: 0x00030A84 File Offset: 0x0002EC84
+	// Token: 0x06000646 RID: 1606 RVA: 0x00030C00 File Offset: 0x0002EE00
 	public void ManagedUpdate()
 	{
 		this.percentStrengthSmooth = Mathf.SmoothDamp(this.percentStrengthSmooth, this.percentStrength, ref this.percentStrengthVel, 1f);
@@ -47,7 +47,7 @@ public class FogLight : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000647 RID: 1607 RVA: 0x00030AF0 File Offset: 0x0002ECF0
+	// Token: 0x06000647 RID: 1607 RVA: 0x00030C6C File Offset: 0x0002EE6C
 	public void SetStrength(float strength, bool max = true)
 	{
 		if (strength <= this.percentStrength && max)
@@ -66,7 +66,7 @@ public class FogLight : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000648 RID: 1608 RVA: 0x00030B54 File Offset: 0x0002ED54
+	// Token: 0x06000648 RID: 1608 RVA: 0x00030CD0 File Offset: 0x0002EED0
 	public bool GetLightData(Plane[] cameraFrustum, out Vector3 lightPosition, out float lightRadius, out float lightFalloff, out float lightIntensity)
 	{
 		float num = ((55f - (base.transform.position - MainCamera.t.position).magnitude > -this.radius) ? 1f : 0f);

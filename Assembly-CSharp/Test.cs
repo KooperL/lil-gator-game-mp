@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-	// Token: 0x06000FDE RID: 4062 RVA: 0x0000DAC7 File Offset: 0x0000BCC7
+	// Token: 0x06000FDE RID: 4062 RVA: 0x0000DADC File Offset: 0x0000BCDC
 	private void OnToggle(InputActionEventData obj)
 	{
 		this.isToggled = !this.isToggled;

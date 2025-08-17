@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FitBounds : MonoBehaviour
 {
-	// Token: 0x06000055 RID: 85 RVA: 0x00018608 File Offset: 0x00016808
+	// Token: 0x06000055 RID: 85 RVA: 0x00018784 File Offset: 0x00016984
 	public void Fit(BoxCollider box)
 	{
 		base.transform.position = box.transform.TransformPoint(box.center);
@@ -13,7 +13,7 @@ public class FitBounds : MonoBehaviour
 		for (int i = 0; i < array.Length; i++)
 		{
 			ParticleSystem.ShapeModule shape = array[i].shape;
-			shape.shapeType = ParticleSystemShapeType.BoxShell;
+			shape.shapeType = 15;
 			shape.position = Vector3.zero;
 			shape.scale = vector;
 		}

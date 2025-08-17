@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MaintainAnimationDirection : StateMachineBehaviour
 {
-	// Token: 0x06000942 RID: 2370 RVA: 0x00009009 File Offset: 0x00007209
+	// Token: 0x06000942 RID: 2370 RVA: 0x0000901E File Offset: 0x0000721E
 	private void Initialize(Animator animator, AnimatorStateInfo stateInfo)
 	{
 		this.animator = animator;

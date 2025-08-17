@@ -41,7 +41,7 @@ public class FadeRenderer : MonoBehaviour
 		this.SetFade(this.fade);
 	}
 
-	// Token: 0x060006F6 RID: 1782 RVA: 0x00032F60 File Offset: 0x00031160
+	// Token: 0x060006F6 RID: 1782 RVA: 0x000330DC File Offset: 0x000312DC
 	public virtual void SetFade(float fade)
 	{
 		this.fade = fade;

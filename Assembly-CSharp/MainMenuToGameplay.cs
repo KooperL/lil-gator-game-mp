@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class MainMenuToGameplay : MonoBehaviour
 {
+	// Token: 0x060009CF RID: 2511 RVA: 0x0003B8C8 File Offset: 0x00039AC8
 	private void Start()
 	{
 		Game.State = GameState.Menu;
@@ -21,7 +22,7 @@ public class MainMenuToGameplay : MonoBehaviour
 		base.gameObject.AddComponent<InjectButtonToMainMenu>();
 	}
 
-	// Token: 0x060009D0 RID: 2512 RVA: 0x000096FF File Offset: 0x000078FF
+	// Token: 0x060009D0 RID: 2512 RVA: 0x00009714 File Offset: 0x00007914
 	public void StartFreshNewGame(int index = 0)
 	{
 		GameData.g.SetSaveFile(index);
@@ -29,14 +30,14 @@ public class MainMenuToGameplay : MonoBehaviour
 		this.StartNewGame();
 	}
 
-	// Token: 0x060009D1 RID: 2513 RVA: 0x00009727 File Offset: 0x00007927
+	// Token: 0x060009D1 RID: 2513 RVA: 0x0000973C File Offset: 0x0000793C
 	public void StartNewGamePlus(int index = 0)
 	{
 		GameData.g.LoadSaveFile(index);
 		this.StartNewGame();
 	}
 
-	// Token: 0x060009D2 RID: 2514 RVA: 0x0003B788 File Offset: 0x00039988
+	// Token: 0x060009D2 RID: 2514 RVA: 0x0003B91C File Offset: 0x00039B1C
 	public void StartNewGame()
 	{
 		this.game.enabled = true;
@@ -53,7 +54,7 @@ public class MainMenuToGameplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009D3 RID: 2515 RVA: 0x0003B7F8 File Offset: 0x000399F8
+	// Token: 0x060009D3 RID: 2515 RVA: 0x0003B98C File Offset: 0x00039B8C
 	public void LoadGameplay()
 	{
 		this.game.enabled = true;
@@ -70,14 +71,14 @@ public class MainMenuToGameplay : MonoBehaviour
 		this.gameplayObject.SetActive(true);
 	}
 
-	// Token: 0x060009D4 RID: 2516 RVA: 0x0000973A File Offset: 0x0000793A
+	// Token: 0x060009D4 RID: 2516 RVA: 0x0000974F File Offset: 0x0000794F
 	[ContextMenu("Start Slideshow")]
 	public void StartSlideshow()
 	{
 		global::UnityEngine.Object.Instantiate<GameObject>(this.slideshow);
 	}
 
-	// Token: 0x060009D5 RID: 2517 RVA: 0x00009748 File Offset: 0x00007948
+	// Token: 0x060009D5 RID: 2517 RVA: 0x0000975D File Offset: 0x0000795D
 	[ContextMenu("Start Indieland Slideshow")]
 	public void StartILSlideshow()
 	{

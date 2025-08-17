@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Slide : GenericPath, ICustomPlayerMovement
 {
-	// Token: 0x0600030C RID: 780 RVA: 0x00023FCC File Offset: 0x000221CC
+	// Token: 0x0600030C RID: 780 RVA: 0x00024148 File Offset: 0x00022348
 	private void OnTriggerStay(Collider other)
 	{
 		if (!base.enabled && Time.time - this.lastEnabled > 0.5f && !Player.movement.JustCanceled)
@@ -31,7 +31,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		}
 	}
 
-	// Token: 0x0600030D RID: 781 RVA: 0x000240D0 File Offset: 0x000222D0
+	// Token: 0x0600030D RID: 781 RVA: 0x0002424C File Offset: 0x0002244C
 	private void OnEnable()
 	{
 		Player.movement.isModified = true;
@@ -88,7 +88,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		s.ClearOverride();
 	}
 
-	// Token: 0x0600030F RID: 783 RVA: 0x00024250 File Offset: 0x00022450
+	// Token: 0x0600030F RID: 783 RVA: 0x000243CC File Offset: 0x000225CC
 	public void MovementUpdate(Vector3 input, ref Vector3 position, ref Vector3 velocity, ref Vector3 direction, ref Vector3 up, ref float animationIndex)
 	{
 		this.lastT = this.t;
@@ -107,7 +107,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		}
 	}
 
-	// Token: 0x06000310 RID: 784 RVA: 0x00024360 File Offset: 0x00022560
+	// Token: 0x06000310 RID: 784 RVA: 0x000244DC File Offset: 0x000226DC
 	private void Update()
 	{
 		if (this.lockedCamera)
@@ -119,7 +119,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		}
 	}
 
-	// Token: 0x06000311 RID: 785 RVA: 0x000243CC File Offset: 0x000225CC
+	// Token: 0x06000311 RID: 785 RVA: 0x00024548 File Offset: 0x00022748
 	private void UpdateCameraPos()
 	{
 		this.camera.transform.position = base.GetPosition(this.lockedCameraT) + this.cameraOffset;

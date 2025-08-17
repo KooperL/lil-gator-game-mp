@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueBubbleTrigger : MonoBehaviour
 {
-	// Token: 0x06000437 RID: 1079 RVA: 0x00029B40 File Offset: 0x00027D40
+	// Token: 0x06000437 RID: 1079 RVA: 0x00029CBC File Offset: 0x00027EBC
 	private void OnValidate()
 	{
 		DialogueActor dialogueActor;
@@ -61,7 +61,7 @@ public class DialogueBubbleTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600043D RID: 1085 RVA: 0x00029B80 File Offset: 0x00027D80
+	// Token: 0x0600043D RID: 1085 RVA: 0x00029CFC File Offset: 0x00027EFC
 	[ContextMenu("Trigger")]
 	public void Trigger()
 	{

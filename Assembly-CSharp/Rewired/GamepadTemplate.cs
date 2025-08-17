@@ -4,7 +4,7 @@ namespace Rewired
 {
 	public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, IControllerTemplate
 	{
-		// (get) Token: 0x060014C3 RID: 5315 RVA: 0x00010BE8 File Offset: 0x0000EDE8
+		// (get) Token: 0x060014C3 RID: 5315 RVA: 0x00010BFD File Offset: 0x0000EDFD
 		IControllerTemplateButton IGamepadTemplate.actionBottomRow1
 		{
 			get
@@ -13,7 +13,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014C4 RID: 5316 RVA: 0x00010BE8 File Offset: 0x0000EDE8
+		// (get) Token: 0x060014C4 RID: 5316 RVA: 0x00010BFD File Offset: 0x0000EDFD
 		IControllerTemplateButton IGamepadTemplate.a
 		{
 			get
@@ -22,7 +22,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014C5 RID: 5317 RVA: 0x00010BF1 File Offset: 0x0000EDF1
+		// (get) Token: 0x060014C5 RID: 5317 RVA: 0x00010C06 File Offset: 0x0000EE06
 		IControllerTemplateButton IGamepadTemplate.actionBottomRow2
 		{
 			get
@@ -31,7 +31,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014C6 RID: 5318 RVA: 0x00010BF1 File Offset: 0x0000EDF1
+		// (get) Token: 0x060014C6 RID: 5318 RVA: 0x00010C06 File Offset: 0x0000EE06
 		IControllerTemplateButton IGamepadTemplate.b
 		{
 			get
@@ -40,7 +40,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014C7 RID: 5319 RVA: 0x00010BFA File Offset: 0x0000EDFA
+		// (get) Token: 0x060014C7 RID: 5319 RVA: 0x00010C0F File Offset: 0x0000EE0F
 		IControllerTemplateButton IGamepadTemplate.actionBottomRow3
 		{
 			get
@@ -49,7 +49,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014C8 RID: 5320 RVA: 0x00010BFA File Offset: 0x0000EDFA
+		// (get) Token: 0x060014C8 RID: 5320 RVA: 0x00010C0F File Offset: 0x0000EE0F
 		IControllerTemplateButton IGamepadTemplate.c
 		{
 			get
@@ -58,7 +58,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014C9 RID: 5321 RVA: 0x00010C03 File Offset: 0x0000EE03
+		// (get) Token: 0x060014C9 RID: 5321 RVA: 0x00010C18 File Offset: 0x0000EE18
 		IControllerTemplateButton IGamepadTemplate.actionTopRow1
 		{
 			get
@@ -67,7 +67,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014CA RID: 5322 RVA: 0x00010C03 File Offset: 0x0000EE03
+		// (get) Token: 0x060014CA RID: 5322 RVA: 0x00010C18 File Offset: 0x0000EE18
 		IControllerTemplateButton IGamepadTemplate.x
 		{
 			get
@@ -76,7 +76,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014CB RID: 5323 RVA: 0x00010C0C File Offset: 0x0000EE0C
+		// (get) Token: 0x060014CB RID: 5323 RVA: 0x00010C21 File Offset: 0x0000EE21
 		IControllerTemplateButton IGamepadTemplate.actionTopRow2
 		{
 			get
@@ -85,7 +85,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014CC RID: 5324 RVA: 0x00010C0C File Offset: 0x0000EE0C
+		// (get) Token: 0x060014CC RID: 5324 RVA: 0x00010C21 File Offset: 0x0000EE21
 		IControllerTemplateButton IGamepadTemplate.y
 		{
 			get
@@ -94,7 +94,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014CD RID: 5325 RVA: 0x00010C15 File Offset: 0x0000EE15
+		// (get) Token: 0x060014CD RID: 5325 RVA: 0x00010C2A File Offset: 0x0000EE2A
 		IControllerTemplateButton IGamepadTemplate.actionTopRow3
 		{
 			get
@@ -103,7 +103,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014CE RID: 5326 RVA: 0x00010C15 File Offset: 0x0000EE15
+		// (get) Token: 0x060014CE RID: 5326 RVA: 0x00010C2A File Offset: 0x0000EE2A
 		IControllerTemplateButton IGamepadTemplate.z
 		{
 			get
@@ -112,7 +112,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014CF RID: 5327 RVA: 0x00010C1F File Offset: 0x0000EE1F
+		// (get) Token: 0x060014CF RID: 5327 RVA: 0x00010C34 File Offset: 0x0000EE34
 		IControllerTemplateButton IGamepadTemplate.leftShoulder1
 		{
 			get
@@ -121,7 +121,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014D0 RID: 5328 RVA: 0x00010C1F File Offset: 0x0000EE1F
+		// (get) Token: 0x060014D0 RID: 5328 RVA: 0x00010C34 File Offset: 0x0000EE34
 		IControllerTemplateButton IGamepadTemplate.leftBumper
 		{
 			get
@@ -130,7 +130,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014D1 RID: 5329 RVA: 0x00010C29 File Offset: 0x0000EE29
+		// (get) Token: 0x060014D1 RID: 5329 RVA: 0x00010C3E File Offset: 0x0000EE3E
 		IControllerTemplateAxis IGamepadTemplate.leftShoulder2
 		{
 			get
@@ -139,7 +139,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014D2 RID: 5330 RVA: 0x00010C29 File Offset: 0x0000EE29
+		// (get) Token: 0x060014D2 RID: 5330 RVA: 0x00010C3E File Offset: 0x0000EE3E
 		IControllerTemplateAxis IGamepadTemplate.leftTrigger
 		{
 			get
@@ -148,7 +148,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014D3 RID: 5331 RVA: 0x00010C33 File Offset: 0x0000EE33
+		// (get) Token: 0x060014D3 RID: 5331 RVA: 0x00010C48 File Offset: 0x0000EE48
 		IControllerTemplateButton IGamepadTemplate.rightShoulder1
 		{
 			get
@@ -157,7 +157,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014D4 RID: 5332 RVA: 0x00010C33 File Offset: 0x0000EE33
+		// (get) Token: 0x060014D4 RID: 5332 RVA: 0x00010C48 File Offset: 0x0000EE48
 		IControllerTemplateButton IGamepadTemplate.rightBumper
 		{
 			get
@@ -166,7 +166,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014D5 RID: 5333 RVA: 0x00010C3D File Offset: 0x0000EE3D
+		// (get) Token: 0x060014D5 RID: 5333 RVA: 0x00010C52 File Offset: 0x0000EE52
 		IControllerTemplateAxis IGamepadTemplate.rightShoulder2
 		{
 			get
@@ -175,7 +175,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014D6 RID: 5334 RVA: 0x00010C3D File Offset: 0x0000EE3D
+		// (get) Token: 0x060014D6 RID: 5334 RVA: 0x00010C52 File Offset: 0x0000EE52
 		IControllerTemplateAxis IGamepadTemplate.rightTrigger
 		{
 			get
@@ -184,7 +184,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014D7 RID: 5335 RVA: 0x00010C47 File Offset: 0x0000EE47
+		// (get) Token: 0x060014D7 RID: 5335 RVA: 0x00010C5C File Offset: 0x0000EE5C
 		IControllerTemplateButton IGamepadTemplate.center1
 		{
 			get
@@ -193,7 +193,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014D8 RID: 5336 RVA: 0x00010C47 File Offset: 0x0000EE47
+		// (get) Token: 0x060014D8 RID: 5336 RVA: 0x00010C5C File Offset: 0x0000EE5C
 		IControllerTemplateButton IGamepadTemplate.back
 		{
 			get
@@ -202,7 +202,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014D9 RID: 5337 RVA: 0x00010C51 File Offset: 0x0000EE51
+		// (get) Token: 0x060014D9 RID: 5337 RVA: 0x00010C66 File Offset: 0x0000EE66
 		IControllerTemplateButton IGamepadTemplate.center2
 		{
 			get
@@ -211,7 +211,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014DA RID: 5338 RVA: 0x00010C51 File Offset: 0x0000EE51
+		// (get) Token: 0x060014DA RID: 5338 RVA: 0x00010C66 File Offset: 0x0000EE66
 		IControllerTemplateButton IGamepadTemplate.start
 		{
 			get
@@ -220,7 +220,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014DB RID: 5339 RVA: 0x00010C5B File Offset: 0x0000EE5B
+		// (get) Token: 0x060014DB RID: 5339 RVA: 0x00010C70 File Offset: 0x0000EE70
 		IControllerTemplateButton IGamepadTemplate.center3
 		{
 			get
@@ -229,7 +229,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014DC RID: 5340 RVA: 0x00010C5B File Offset: 0x0000EE5B
+		// (get) Token: 0x060014DC RID: 5340 RVA: 0x00010C70 File Offset: 0x0000EE70
 		IControllerTemplateButton IGamepadTemplate.guide
 		{
 			get
@@ -238,7 +238,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014DD RID: 5341 RVA: 0x00010C65 File Offset: 0x0000EE65
+		// (get) Token: 0x060014DD RID: 5341 RVA: 0x00010C7A File Offset: 0x0000EE7A
 		IControllerTemplateThumbStick IGamepadTemplate.leftStick
 		{
 			get
@@ -247,7 +247,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014DE RID: 5342 RVA: 0x00010C6F File Offset: 0x0000EE6F
+		// (get) Token: 0x060014DE RID: 5342 RVA: 0x00010C84 File Offset: 0x0000EE84
 		IControllerTemplateThumbStick IGamepadTemplate.rightStick
 		{
 			get
@@ -256,7 +256,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014DF RID: 5343 RVA: 0x00010C79 File Offset: 0x0000EE79
+		// (get) Token: 0x060014DF RID: 5343 RVA: 0x00010C8E File Offset: 0x0000EE8E
 		IControllerTemplateDPad IGamepadTemplate.dPad
 		{
 			get
@@ -265,7 +265,7 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x060014E0 RID: 5344 RVA: 0x00010C83 File Offset: 0x0000EE83
+		// Token: 0x060014E0 RID: 5344 RVA: 0x00010C98 File Offset: 0x0000EE98
 		public GamepadTemplate(object payload)
 			: base(payload)
 		{

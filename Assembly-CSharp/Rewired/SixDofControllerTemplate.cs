@@ -4,7 +4,7 @@ namespace Rewired
 {
 	public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofControllerTemplate, IControllerTemplate
 	{
-		// (get) Token: 0x060015A0 RID: 5536 RVA: 0x00011179 File Offset: 0x0000F379
+		// (get) Token: 0x060015A0 RID: 5536 RVA: 0x0001118E File Offset: 0x0000F38E
 		IControllerTemplateAxis ISixDofControllerTemplate.extraAxis1
 		{
 			get
@@ -13,7 +13,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015A1 RID: 5537 RVA: 0x00011182 File Offset: 0x0000F382
+		// (get) Token: 0x060015A1 RID: 5537 RVA: 0x00011197 File Offset: 0x0000F397
 		IControllerTemplateAxis ISixDofControllerTemplate.extraAxis2
 		{
 			get
@@ -22,7 +22,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015A2 RID: 5538 RVA: 0x0001118C File Offset: 0x0000F38C
+		// (get) Token: 0x060015A2 RID: 5538 RVA: 0x000111A1 File Offset: 0x0000F3A1
 		IControllerTemplateAxis ISixDofControllerTemplate.extraAxis3
 		{
 			get
@@ -31,7 +31,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015A3 RID: 5539 RVA: 0x00010C29 File Offset: 0x0000EE29
+		// (get) Token: 0x060015A3 RID: 5539 RVA: 0x00010C3E File Offset: 0x0000EE3E
 		IControllerTemplateAxis ISixDofControllerTemplate.extraAxis4
 		{
 			get
@@ -40,7 +40,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015A4 RID: 5540 RVA: 0x00010C33 File Offset: 0x0000EE33
+		// (get) Token: 0x060015A4 RID: 5540 RVA: 0x00010C48 File Offset: 0x0000EE48
 		IControllerTemplateButton ISixDofControllerTemplate.button1
 		{
 			get
@@ -49,7 +49,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015A5 RID: 5541 RVA: 0x00010CCB File Offset: 0x0000EECB
+		// (get) Token: 0x060015A5 RID: 5541 RVA: 0x00010CE0 File Offset: 0x0000EEE0
 		IControllerTemplateButton ISixDofControllerTemplate.button2
 		{
 			get
@@ -58,7 +58,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015A6 RID: 5542 RVA: 0x00010C47 File Offset: 0x0000EE47
+		// (get) Token: 0x060015A6 RID: 5542 RVA: 0x00010C5C File Offset: 0x0000EE5C
 		IControllerTemplateButton ISixDofControllerTemplate.button3
 		{
 			get
@@ -67,7 +67,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015A7 RID: 5543 RVA: 0x00010C51 File Offset: 0x0000EE51
+		// (get) Token: 0x060015A7 RID: 5543 RVA: 0x00010C66 File Offset: 0x0000EE66
 		IControllerTemplateButton ISixDofControllerTemplate.button4
 		{
 			get
@@ -76,7 +76,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015A8 RID: 5544 RVA: 0x00010C5B File Offset: 0x0000EE5B
+		// (get) Token: 0x060015A8 RID: 5544 RVA: 0x00010C70 File Offset: 0x0000EE70
 		IControllerTemplateButton ISixDofControllerTemplate.button5
 		{
 			get
@@ -85,7 +85,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015A9 RID: 5545 RVA: 0x00010CD5 File Offset: 0x0000EED5
+		// (get) Token: 0x060015A9 RID: 5545 RVA: 0x00010CEA File Offset: 0x0000EEEA
 		IControllerTemplateButton ISixDofControllerTemplate.button6
 		{
 			get
@@ -94,7 +94,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015AA RID: 5546 RVA: 0x00010CDF File Offset: 0x0000EEDF
+		// (get) Token: 0x060015AA RID: 5546 RVA: 0x00010CF4 File Offset: 0x0000EEF4
 		IControllerTemplateButton ISixDofControllerTemplate.button7
 		{
 			get
@@ -103,7 +103,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015AB RID: 5547 RVA: 0x00010CE9 File Offset: 0x0000EEE9
+		// (get) Token: 0x060015AB RID: 5547 RVA: 0x00010CFE File Offset: 0x0000EEFE
 		IControllerTemplateButton ISixDofControllerTemplate.button8
 		{
 			get
@@ -112,7 +112,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015AC RID: 5548 RVA: 0x00010CF3 File Offset: 0x0000EEF3
+		// (get) Token: 0x060015AC RID: 5548 RVA: 0x00010D08 File Offset: 0x0000EF08
 		IControllerTemplateButton ISixDofControllerTemplate.button9
 		{
 			get
@@ -121,7 +121,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015AD RID: 5549 RVA: 0x00010CFD File Offset: 0x0000EEFD
+		// (get) Token: 0x060015AD RID: 5549 RVA: 0x00010D12 File Offset: 0x0000EF12
 		IControllerTemplateButton ISixDofControllerTemplate.button10
 		{
 			get
@@ -130,7 +130,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015AE RID: 5550 RVA: 0x00010D07 File Offset: 0x0000EF07
+		// (get) Token: 0x060015AE RID: 5550 RVA: 0x00010D1C File Offset: 0x0000EF1C
 		IControllerTemplateButton ISixDofControllerTemplate.button11
 		{
 			get
@@ -139,7 +139,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015AF RID: 5551 RVA: 0x00010D11 File Offset: 0x0000EF11
+		// (get) Token: 0x060015AF RID: 5551 RVA: 0x00010D26 File Offset: 0x0000EF26
 		IControllerTemplateButton ISixDofControllerTemplate.button12
 		{
 			get
@@ -148,7 +148,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015B0 RID: 5552 RVA: 0x00010D1B File Offset: 0x0000EF1B
+		// (get) Token: 0x060015B0 RID: 5552 RVA: 0x00010D30 File Offset: 0x0000EF30
 		IControllerTemplateButton ISixDofControllerTemplate.button13
 		{
 			get
@@ -157,7 +157,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015B1 RID: 5553 RVA: 0x00010D25 File Offset: 0x0000EF25
+		// (get) Token: 0x060015B1 RID: 5553 RVA: 0x00010D3A File Offset: 0x0000EF3A
 		IControllerTemplateButton ISixDofControllerTemplate.button14
 		{
 			get
@@ -166,7 +166,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015B2 RID: 5554 RVA: 0x00010D2F File Offset: 0x0000EF2F
+		// (get) Token: 0x060015B2 RID: 5554 RVA: 0x00010D44 File Offset: 0x0000EF44
 		IControllerTemplateButton ISixDofControllerTemplate.button15
 		{
 			get
@@ -175,7 +175,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015B3 RID: 5555 RVA: 0x00010D39 File Offset: 0x0000EF39
+		// (get) Token: 0x060015B3 RID: 5555 RVA: 0x00010D4E File Offset: 0x0000EF4E
 		IControllerTemplateButton ISixDofControllerTemplate.button16
 		{
 			get
@@ -184,7 +184,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015B4 RID: 5556 RVA: 0x00010D43 File Offset: 0x0000EF43
+		// (get) Token: 0x060015B4 RID: 5556 RVA: 0x00010D58 File Offset: 0x0000EF58
 		IControllerTemplateButton ISixDofControllerTemplate.button17
 		{
 			get
@@ -193,7 +193,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015B5 RID: 5557 RVA: 0x00010D4D File Offset: 0x0000EF4D
+		// (get) Token: 0x060015B5 RID: 5557 RVA: 0x00010D62 File Offset: 0x0000EF62
 		IControllerTemplateButton ISixDofControllerTemplate.button18
 		{
 			get
@@ -202,7 +202,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015B6 RID: 5558 RVA: 0x00010D57 File Offset: 0x0000EF57
+		// (get) Token: 0x060015B6 RID: 5558 RVA: 0x00010D6C File Offset: 0x0000EF6C
 		IControllerTemplateButton ISixDofControllerTemplate.button19
 		{
 			get
@@ -211,7 +211,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015B7 RID: 5559 RVA: 0x00010D61 File Offset: 0x0000EF61
+		// (get) Token: 0x060015B7 RID: 5559 RVA: 0x00010D76 File Offset: 0x0000EF76
 		IControllerTemplateButton ISixDofControllerTemplate.button20
 		{
 			get
@@ -220,7 +220,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015B8 RID: 5560 RVA: 0x00010E56 File Offset: 0x0000F056
+		// (get) Token: 0x060015B8 RID: 5560 RVA: 0x00010E6B File Offset: 0x0000F06B
 		IControllerTemplateButton ISixDofControllerTemplate.button21
 		{
 			get
@@ -229,7 +229,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015B9 RID: 5561 RVA: 0x00010E60 File Offset: 0x0000F060
+		// (get) Token: 0x060015B9 RID: 5561 RVA: 0x00010E75 File Offset: 0x0000F075
 		IControllerTemplateButton ISixDofControllerTemplate.button22
 		{
 			get
@@ -238,7 +238,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015BA RID: 5562 RVA: 0x00010E6A File Offset: 0x0000F06A
+		// (get) Token: 0x060015BA RID: 5562 RVA: 0x00010E7F File Offset: 0x0000F07F
 		IControllerTemplateButton ISixDofControllerTemplate.button23
 		{
 			get
@@ -247,7 +247,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015BB RID: 5563 RVA: 0x00010E74 File Offset: 0x0000F074
+		// (get) Token: 0x060015BB RID: 5563 RVA: 0x00010E89 File Offset: 0x0000F089
 		IControllerTemplateButton ISixDofControllerTemplate.button24
 		{
 			get
@@ -256,7 +256,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015BC RID: 5564 RVA: 0x00010E7E File Offset: 0x0000F07E
+		// (get) Token: 0x060015BC RID: 5564 RVA: 0x00010E93 File Offset: 0x0000F093
 		IControllerTemplateButton ISixDofControllerTemplate.button25
 		{
 			get
@@ -265,7 +265,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015BD RID: 5565 RVA: 0x00010E88 File Offset: 0x0000F088
+		// (get) Token: 0x060015BD RID: 5565 RVA: 0x00010E9D File Offset: 0x0000F09D
 		IControllerTemplateButton ISixDofControllerTemplate.button26
 		{
 			get
@@ -274,7 +274,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015BE RID: 5566 RVA: 0x00010E92 File Offset: 0x0000F092
+		// (get) Token: 0x060015BE RID: 5566 RVA: 0x00010EA7 File Offset: 0x0000F0A7
 		IControllerTemplateButton ISixDofControllerTemplate.button27
 		{
 			get
@@ -283,7 +283,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015BF RID: 5567 RVA: 0x00010E9C File Offset: 0x0000F09C
+		// (get) Token: 0x060015BF RID: 5567 RVA: 0x00010EB1 File Offset: 0x0000F0B1
 		IControllerTemplateButton ISixDofControllerTemplate.button28
 		{
 			get
@@ -292,7 +292,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015C0 RID: 5568 RVA: 0x00010EA6 File Offset: 0x0000F0A6
+		// (get) Token: 0x060015C0 RID: 5568 RVA: 0x00010EBB File Offset: 0x0000F0BB
 		IControllerTemplateButton ISixDofControllerTemplate.button29
 		{
 			get
@@ -301,7 +301,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015C1 RID: 5569 RVA: 0x00010EB0 File Offset: 0x0000F0B0
+		// (get) Token: 0x060015C1 RID: 5569 RVA: 0x00010EC5 File Offset: 0x0000F0C5
 		IControllerTemplateButton ISixDofControllerTemplate.button30
 		{
 			get
@@ -310,7 +310,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015C2 RID: 5570 RVA: 0x00010EBA File Offset: 0x0000F0BA
+		// (get) Token: 0x060015C2 RID: 5570 RVA: 0x00010ECF File Offset: 0x0000F0CF
 		IControllerTemplateButton ISixDofControllerTemplate.button31
 		{
 			get
@@ -319,7 +319,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015C3 RID: 5571 RVA: 0x00010EC4 File Offset: 0x0000F0C4
+		// (get) Token: 0x060015C3 RID: 5571 RVA: 0x00010ED9 File Offset: 0x0000F0D9
 		IControllerTemplateButton ISixDofControllerTemplate.button32
 		{
 			get
@@ -328,7 +328,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015C4 RID: 5572 RVA: 0x00011196 File Offset: 0x0000F396
+		// (get) Token: 0x060015C4 RID: 5572 RVA: 0x000111AB File Offset: 0x0000F3AB
 		IControllerTemplateHat ISixDofControllerTemplate.hat1
 		{
 			get
@@ -337,7 +337,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015C5 RID: 5573 RVA: 0x000111A0 File Offset: 0x0000F3A0
+		// (get) Token: 0x060015C5 RID: 5573 RVA: 0x000111B5 File Offset: 0x0000F3B5
 		IControllerTemplateHat ISixDofControllerTemplate.hat2
 		{
 			get
@@ -346,7 +346,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015C6 RID: 5574 RVA: 0x000111AA File Offset: 0x0000F3AA
+		// (get) Token: 0x060015C6 RID: 5574 RVA: 0x000111BF File Offset: 0x0000F3BF
 		IControllerTemplateThrottle ISixDofControllerTemplate.throttle1
 		{
 			get
@@ -355,7 +355,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015C7 RID: 5575 RVA: 0x000111B4 File Offset: 0x0000F3B4
+		// (get) Token: 0x060015C7 RID: 5575 RVA: 0x000111C9 File Offset: 0x0000F3C9
 		IControllerTemplateThrottle ISixDofControllerTemplate.throttle2
 		{
 			get
@@ -364,7 +364,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060015C8 RID: 5576 RVA: 0x000111BE File Offset: 0x0000F3BE
+		// (get) Token: 0x060015C8 RID: 5576 RVA: 0x000111D3 File Offset: 0x0000F3D3
 		IControllerTemplateStick6D ISixDofControllerTemplate.stick
 		{
 			get
@@ -373,7 +373,7 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x060015C9 RID: 5577 RVA: 0x00010C83 File Offset: 0x0000EE83
+		// Token: 0x060015C9 RID: 5577 RVA: 0x00010C98 File Offset: 0x0000EE98
 		public SixDofControllerTemplate(object payload)
 			: base(payload)
 		{

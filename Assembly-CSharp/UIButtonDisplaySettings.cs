@@ -9,18 +9,18 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Rewired/Button Display Settings")]
 public class UIButtonDisplaySettings : ScriptableObject
 {
-	// Token: 0x060011D3 RID: 4563 RVA: 0x00059418 File Offset: 0x00057618
+	// Token: 0x060011D3 RID: 4563 RVA: 0x000595AC File Offset: 0x000577AC
 	public GameObject GetDisplay(InputAction action)
 	{
 		global::Rewired.Player player = ReInput.players.GetPlayer(0);
 		ControllerType controllerType = InputHelper.lastActiveControllerType;
-		if (controllerType != ControllerType.Keyboard)
+		if (controllerType != null)
 		{
-			if (controllerType == ControllerType.Mouse)
+			if (controllerType == 1)
 			{
 				if (player.controllers.maps.GetFirstElementMapWithAction(controllerType, action.id, true) == null && player.controllers.hasKeyboard)
 				{
-					controllerType = ControllerType.Keyboard;
+					controllerType = 0;
 				}
 			}
 		}
@@ -30,19 +30,19 @@ public class UIButtonDisplaySettings : ScriptableObject
 			{
 				if (action.id == num)
 				{
-					controllerType = ControllerType.Mouse;
+					controllerType = 1;
 					break;
 				}
 			}
 			if (player.controllers.maps.GetFirstElementMapWithAction(controllerType, action.id, true) == null && player.controllers.hasMouse)
 			{
-				controllerType = ControllerType.Mouse;
+				controllerType = 1;
 			}
 		}
 		return this.GetDisplay(player.controllers.maps.GetFirstElementMapWithAction(controllerType, InputHelper.lastActiveControllerID, action.id, true), true);
 	}
 
-	// Token: 0x060011D4 RID: 4564 RVA: 0x000594E0 File Offset: 0x000576E0
+	// Token: 0x060011D4 RID: 4564 RVA: 0x00059674 File Offset: 0x00057874
 	public GameObject GetDisplay(InputAction action, Controller controller)
 	{
 		global::Rewired.Player player = ReInput.players.GetPlayer(0);
@@ -58,14 +58,14 @@ public class UIButtonDisplaySettings : ScriptableObject
 		return this.GetDisplay(firstElementMapWithAction, true);
 	}
 
-	// Token: 0x060011D5 RID: 4565 RVA: 0x00059524 File Offset: 0x00057724
+	// Token: 0x060011D5 RID: 4565 RVA: 0x000596B8 File Offset: 0x000578B8
 	public GameObject GetDisplay(ActionElementMap map, bool showUnbound = false)
 	{
 		if (map == null)
 		{
 			if (showUnbound)
 			{
-				return this.GenerateTextButton(this.document.FetchString(this.unboundText, Language.Auto), ControllerType.Joystick);
+				return this.GenerateTextButton(this.document.FetchString(this.unboundText, Language.Auto), 2);
 			}
 			return null;
 		}
@@ -75,13 +75,13 @@ public class UIButtonDisplaySettings : ScriptableObject
 			Controller controller = map.controllerMap.controller;
 			ControllerType controllerType = map.controllerMap.controllerType;
 			Guid guid = default(Guid);
-			if (controllerType == ControllerType.Joystick)
+			if (controllerType == 2)
 			{
 				guid = (controller as Joystick).hardwareTypeGuid;
 			}
-			if (controllerType != ControllerType.Mouse)
+			if (controllerType != 1)
 			{
-				if (controllerType == ControllerType.Joystick)
+				if (controllerType == 2)
 				{
 					if (SteamManager.Initialized && SteamUtils.IsSteamRunningOnSteamDeck() && this.steamOverrideController.Guid == guid)
 					{
@@ -135,7 +135,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		}
 	}
 
-	// Token: 0x060011D6 RID: 4566 RVA: 0x0000F346 File Offset: 0x0000D546
+	// Token: 0x060011D6 RID: 4566 RVA: 0x0000F35B File Offset: 0x0000D55B
 	private GameObject GenerateButtonSprite(Sprite sprite)
 	{
 		ButtonDisplayTemplate component = global::UnityEngine.Object.Instantiate<GameObject>(this.spriteButtonTemplate).GetComponent<ButtonDisplayTemplate>();
@@ -144,13 +144,13 @@ public class UIButtonDisplaySettings : ScriptableObject
 		return component.gameObject;
 	}
 
-	// Token: 0x060011D7 RID: 4567 RVA: 0x000596BC File Offset: 0x000578BC
+	// Token: 0x060011D7 RID: 4567 RVA: 0x00059850 File Offset: 0x00057A50
 	private GameObject GenerateTextButton(string name, ControllerType controllerType)
 	{
 		GameObject gameObject;
-		if (controllerType != ControllerType.Keyboard)
+		if (controllerType != null)
 		{
-			if (controllerType == ControllerType.Joystick)
+			if (controllerType == 2)
 			{
 				gameObject = this.buttonTemplate;
 			}
@@ -168,7 +168,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		return component.gameObject;
 	}
 
-	// Token: 0x060011D8 RID: 4568 RVA: 0x0000F374 File Offset: 0x0000D574
+	// Token: 0x060011D8 RID: 4568 RVA: 0x0000F389 File Offset: 0x0000D589
 	private GameObject GenerateModifiedTextButton(string name, string[] modifiers)
 	{
 		ButtonDisplayModifierTemplate component = global::UnityEngine.Object.Instantiate<GameObject>(this.keyWithModifierTemplate).GetComponent<ButtonDisplayModifierTemplate>();
@@ -176,7 +176,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		return component.gameObject;
 	}
 
-	// Token: 0x060011D9 RID: 4569 RVA: 0x00059708 File Offset: 0x00057908
+	// Token: 0x060011D9 RID: 4569 RVA: 0x0005989C File Offset: 0x00057A9C
 	private UIButtonDisplaySettings.ControllerEntry GetControllerEntry(Guid joystickGuid)
 	{
 		for (int i = 0; i < this.controllers.Length; i++)
@@ -189,7 +189,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		return null;
 	}
 
-	// Token: 0x060011DA RID: 4570 RVA: 0x0005976C File Offset: 0x0005796C
+	// Token: 0x060011DA RID: 4570 RVA: 0x00059900 File Offset: 0x00057B00
 	private UIButtonDisplaySettings.ControllerTemplateEntry GetControllerTemplateEntry(Guid templateGuid)
 	{
 		for (int i = 0; i < this.templates.Length; i++)
@@ -202,7 +202,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		return null;
 	}
 
-	// Token: 0x060011DB RID: 4571 RVA: 0x000597D0 File Offset: 0x000579D0
+	// Token: 0x060011DB RID: 4571 RVA: 0x00059964 File Offset: 0x00057B64
 	private Sprite GetMouseGlyph(int elementIdentifierId, AxisRange axisRange)
 	{
 		if (this.mouseGlyphs == null)
@@ -219,7 +219,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		return null;
 	}
 
-	// Token: 0x060011DC RID: 4572 RVA: 0x00059824 File Offset: 0x00057A24
+	// Token: 0x060011DC RID: 4572 RVA: 0x000599B8 File Offset: 0x00057BB8
 	public void GetElementIdentifierName(ActionElementMap actionElementMap, out string name, out string[] modifier)
 	{
 		name = "";
@@ -228,7 +228,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		{
 			throw new ArgumentNullException("actionElementMap");
 		}
-		if (actionElementMap.controllerMap.controllerType == ControllerType.Keyboard)
+		if (actionElementMap.controllerMap.controllerType == null)
 		{
 			this.GetElementIdentifierName(actionElementMap.keyCode, actionElementMap.modifierKeyFlags, out name, out modifier);
 		}
@@ -242,7 +242,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 		}
 	}
 
-	// Token: 0x060011DD RID: 4573 RVA: 0x000598AC File Offset: 0x00057AAC
+	// Token: 0x060011DD RID: 4573 RVA: 0x00059A40 File Offset: 0x00057C40
 	public string GetElementIdentifierName(Controller controller, int elementIdentifierId, AxisRange axisRange)
 	{
 		if (controller == null)
@@ -260,21 +260,21 @@ public class UIButtonDisplaySettings : ScriptableObject
 			return string.Empty;
 		}
 		ControllerElementType type = elementById.type;
-		if (type == ControllerElementType.Axis)
+		if (type == null)
 		{
 			return elementIdentifierById.GetDisplayName(elementById.type, axisRange);
 		}
-		if (type != ControllerElementType.Button)
+		if (type != 1)
 		{
 			return elementIdentifierById.name;
 		}
 		return elementIdentifierById.name;
 	}
 
-	// Token: 0x060011DE RID: 4574 RVA: 0x0000F393 File Offset: 0x0000D593
+	// Token: 0x060011DE RID: 4574 RVA: 0x0000F3A8 File Offset: 0x0000D5A8
 	public void GetElementIdentifierName(KeyCode keyCode, ModifierKeyFlags modifierKeyFlags, out string name, out string[] modifier)
 	{
-		if (modifierKeyFlags != ModifierKeyFlags.None)
+		if (modifierKeyFlags != null)
 		{
 			modifier = this.ModifierKeyFlagsToString(modifierKeyFlags);
 		}
@@ -285,28 +285,28 @@ public class UIButtonDisplaySettings : ScriptableObject
 		name = Keyboard.GetKeyName(keyCode);
 	}
 
-	// Token: 0x060011DF RID: 4575 RVA: 0x00059928 File Offset: 0x00057B28
+	// Token: 0x060011DF RID: 4575 RVA: 0x00059ABC File Offset: 0x00057CBC
 	public string[] ModifierKeyFlagsToString(ModifierKeyFlags flags)
 	{
 		int num = 0;
 		string empty = string.Empty;
 		List<string> list = new List<string>();
-		if (Keyboard.ModifierKeyFlagsContain(flags, ModifierKey.Control))
+		if (Keyboard.ModifierKeyFlagsContain(flags, 1))
 		{
 			list.Add(this.document.FetchString("Control", Language.Auto));
 			num++;
 		}
-		if (Keyboard.ModifierKeyFlagsContain(flags, ModifierKey.Command))
+		if (Keyboard.ModifierKeyFlagsContain(flags, 4))
 		{
 			list.Add(this.document.FetchString("Command", Language.Auto));
 			num++;
 		}
-		if (Keyboard.ModifierKeyFlagsContain(flags, ModifierKey.Alt))
+		if (Keyboard.ModifierKeyFlagsContain(flags, 2))
 		{
 			list.Add(this.document.FetchString("Alt", Language.Auto));
 			num++;
 		}
-		if (Keyboard.ModifierKeyFlagsContain(flags, ModifierKey.Shift))
+		if (Keyboard.ModifierKeyFlagsContain(flags, 3))
 		{
 			list.Add(this.document.FetchString("Shift", Language.Auto));
 			num++;
@@ -355,20 +355,20 @@ public class UIButtonDisplaySettings : ScriptableObject
 	[Serializable]
 	private class GlyphEntry
 	{
-		// Token: 0x060011E1 RID: 4577 RVA: 0x000599E0 File Offset: 0x00057BE0
+		// Token: 0x060011E1 RID: 4577 RVA: 0x00059B74 File Offset: 0x00057D74
 		public Sprite GetGlyph(AxisRange axisRange)
 		{
 			switch (axisRange)
 			{
-			case AxisRange.Full:
+			case 0:
 				return this.glyph;
-			case AxisRange.Positive:
+			case 1:
 				if (!(this.glyphPos != null))
 				{
 					return this.glyph;
 				}
 				return this.glyphPos;
-			case AxisRange.Negative:
+			case 2:
 				if (!(this.glyphNeg != null))
 				{
 					return this.glyph;
@@ -391,7 +391,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 	[Serializable]
 	private class ControllerEntry
 	{
-		// Token: 0x060011E3 RID: 4579 RVA: 0x00059A44 File Offset: 0x00057C44
+		// Token: 0x060011E3 RID: 4579 RVA: 0x00059BD8 File Offset: 0x00057DD8
 		public Sprite GetGlyph(int elementIdentifierId, AxisRange axisRange)
 		{
 			if (this.glyphs == null)
@@ -418,7 +418,7 @@ public class UIButtonDisplaySettings : ScriptableObject
 	[Serializable]
 	private class ControllerTemplateEntry
 	{
-		// Token: 0x060011E5 RID: 4581 RVA: 0x00059A98 File Offset: 0x00057C98
+		// Token: 0x060011E5 RID: 4581 RVA: 0x00059C2C File Offset: 0x00057E2C
 		public Sprite GetGlyph(int elementIdentifierId, AxisRange axisRange)
 		{
 			if (this.glyphs == null)

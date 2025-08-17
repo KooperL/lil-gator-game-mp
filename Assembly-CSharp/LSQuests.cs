@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [AddComponentMenu("Logic/LogicState - Quests")]
 public class LSQuests : LogicState
 {
-	// Token: 0x060008EB RID: 2283 RVA: 0x000391B4 File Offset: 0x000373B4
+	// Token: 0x060008EB RID: 2283 RVA: 0x00039394 File Offset: 0x00037594
 	public override void CheckLogic()
 	{
 		QuestProfile[] array = this.quests;
@@ -17,7 +17,7 @@ public class LSQuests : LogicState
 		this.CheckQuests();
 	}
 
-	// Token: 0x060008EC RID: 2284 RVA: 0x000391FC File Offset: 0x000373FC
+	// Token: 0x060008EC RID: 2284 RVA: 0x000393DC File Offset: 0x000375DC
 	private void OnDestroy()
 	{
 		if (this.addedListeners)
@@ -31,7 +31,7 @@ public class LSQuests : LogicState
 		this.addedListeners = false;
 	}
 
-	// Token: 0x060008ED RID: 2285 RVA: 0x00039248 File Offset: 0x00037448
+	// Token: 0x060008ED RID: 2285 RVA: 0x00039428 File Offset: 0x00037628
 	private void CheckQuests()
 	{
 		bool flag = true;

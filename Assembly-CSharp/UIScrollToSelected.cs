@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIScrollToSelected : MonoBehaviour
 {
-	// (get) Token: 0x060012F3 RID: 4851 RVA: 0x0000FFDE File Offset: 0x0000E1DE
+	// (get) Token: 0x060012F3 RID: 4851 RVA: 0x0000FFF3 File Offset: 0x0000E1F3
 	private bool IsScrolling
 	{
 		get
@@ -15,7 +15,7 @@ public class UIScrollToSelected : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x060012F4 RID: 4852 RVA: 0x0000FFF3 File Offset: 0x0000E1F3
+	// (get) Token: 0x060012F4 RID: 4852 RVA: 0x00010008 File Offset: 0x0000E208
 	private bool ShouldCheckScroll
 	{
 		get
@@ -24,7 +24,7 @@ public class UIScrollToSelected : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012F5 RID: 4853 RVA: 0x00010008 File Offset: 0x0000E208
+	// Token: 0x060012F5 RID: 4853 RVA: 0x0001001D File Offset: 0x0000E21D
 	private void OnValidate()
 	{
 		if (this.scrollRect == null)
@@ -33,7 +33,7 @@ public class UIScrollToSelected : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012F6 RID: 4854 RVA: 0x0005D770 File Offset: 0x0005B970
+	// Token: 0x060012F6 RID: 4854 RVA: 0x0005D904 File Offset: 0x0005BB04
 	private void Awake()
 	{
 		this.scrollRT = this.scrollRect.GetComponent<RectTransform>();
@@ -42,36 +42,36 @@ public class UIScrollToSelected : MonoBehaviour
 		this.rePlayer = ReInput.players.GetPlayer(0);
 	}
 
-	// Token: 0x060012F7 RID: 4855 RVA: 0x0005D7DC File Offset: 0x0005B9DC
+	// Token: 0x060012F7 RID: 4855 RVA: 0x0005D970 File Offset: 0x0005BB70
 	private void OnEnable()
 	{
 		this.worldCorners = new Vector3[4];
 		this.eventSystem = EventSystem.current;
 		this.smoothPosition = (this.position = (this.desiredPosition = this.scrollRect.verticalNormalizedPosition));
 		this.lastUINavigation = Time.time;
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnUINavigate), UpdateLoopType.Update, InputActionEventType.AxisActive, "UIHorizontal");
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnUINavigate), UpdateLoopType.Update, InputActionEventType.AxisActive, "UIVertical");
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnUINavigate), 0, 33, "UIHorizontal");
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnUINavigate), 0, 33, "UIVertical");
 	}
 
-	// Token: 0x060012F8 RID: 4856 RVA: 0x00010024 File Offset: 0x0000E224
+	// Token: 0x060012F8 RID: 4856 RVA: 0x00010039 File Offset: 0x0000E239
 	private void OnDisable()
 	{
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnUINavigate));
 	}
 
-	// Token: 0x060012F9 RID: 4857 RVA: 0x0001003D File Offset: 0x0000E23D
+	// Token: 0x060012F9 RID: 4857 RVA: 0x00010052 File Offset: 0x0000E252
 	private void OnUINavigate(InputActionEventData obj)
 	{
 		this.lastUINavigation = Time.time;
 	}
 
-	// Token: 0x060012FA RID: 4858 RVA: 0x0001004A File Offset: 0x0000E24A
+	// Token: 0x060012FA RID: 4858 RVA: 0x0001005F File Offset: 0x0000E25F
 	private void LateUpdate()
 	{
 		this.UpdateScrollToSelected();
 	}
 
-	// Token: 0x060012FB RID: 4859 RVA: 0x0005D86C File Offset: 0x0005BA6C
+	// Token: 0x060012FB RID: 4859 RVA: 0x0005DA00 File Offset: 0x0005BC00
 	private void UpdatePositionBad()
 	{
 		this.selectedGameObject = this.eventSystem.currentSelectedGameObject;
@@ -100,13 +100,13 @@ public class UIScrollToSelected : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012FC RID: 4860 RVA: 0x00010052 File Offset: 0x0000E252
+	// Token: 0x060012FC RID: 4860 RVA: 0x00010067 File Offset: 0x0000E267
 	private float GetNormalizedPosition(float a, float b, float t)
 	{
 		return (t - a) / (b - a);
 	}
 
-	// Token: 0x060012FD RID: 4861 RVA: 0x0001005B File Offset: 0x0000E25B
+	// Token: 0x060012FD RID: 4861 RVA: 0x00010070 File Offset: 0x0000E270
 	private void GetWorldMinMax(RectTransform rectTransform, out float min, out float max)
 	{
 		rectTransform.GetWorldCorners(this.worldCorners);
@@ -114,7 +114,7 @@ public class UIScrollToSelected : MonoBehaviour
 		max = this.worldCorners[1].y;
 	}
 
-	// Token: 0x060012FE RID: 4862 RVA: 0x0005D994 File Offset: 0x0005BB94
+	// Token: 0x060012FE RID: 4862 RVA: 0x0005DB28 File Offset: 0x0005BD28
 	private void UpdateScrollToSelected()
 	{
 		GameObject currentSelectedGameObject = EventSystem.current.currentSelectedGameObject;
@@ -153,7 +153,7 @@ public class UIScrollToSelected : MonoBehaviour
 		this.scrollRect.normalizedPosition = new Vector2(0f, num10);
 	}
 
-	// Token: 0x060012FF RID: 4863 RVA: 0x0005DB24 File Offset: 0x0005BD24
+	// Token: 0x060012FF RID: 4863 RVA: 0x0005DCB8 File Offset: 0x0005BEB8
 	public void Scroll(float heightDelta)
 	{
 		this.scrollTime = Time.time;
@@ -196,5 +196,5 @@ public class UIScrollToSelected : MonoBehaviour
 
 	public float scrollBoundary;
 
-	private global::Rewired.Player rePlayer;
+	private Player rePlayer;
 }

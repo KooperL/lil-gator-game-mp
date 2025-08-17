@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UIMenus : MonoBehaviour
 {
-	// Token: 0x06001262 RID: 4706 RVA: 0x0005C070 File Offset: 0x0005A270
+	// Token: 0x06001262 RID: 4706 RVA: 0x0005C204 File Offset: 0x0005A404
 	public void Awake()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
@@ -30,7 +30,7 @@ public class UIMenus : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06001265 RID: 4709 RVA: 0x0005C0EC File Offset: 0x0005A2EC
+	// Token: 0x06001265 RID: 4709 RVA: 0x0005C280 File Offset: 0x0005A480
 	private void Update()
 	{
 		if (Game.g == null || DialogueSequencer.IsInSequence)
@@ -47,7 +47,7 @@ public class UIMenus : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001266 RID: 4710 RVA: 0x0005C140 File Offset: 0x0005A340
+	// Token: 0x06001266 RID: 4710 RVA: 0x0005C2D4 File Offset: 0x0005A4D4
 	public void OnInventory()
 	{
 		if (ControlMapper.isActive)
@@ -76,7 +76,7 @@ public class UIMenus : MonoBehaviour
 		this.itemMenuTutorial.Press();
 	}
 
-	// Token: 0x06001267 RID: 4711 RVA: 0x0005C1B0 File Offset: 0x0005A3B0
+	// Token: 0x06001267 RID: 4711 RVA: 0x0005C344 File Offset: 0x0005A544
 	public void CloseMenus()
 	{
 		if (ControlMapper.isActive)
@@ -96,7 +96,7 @@ public class UIMenus : MonoBehaviour
 		Game.State = GameState.Play;
 	}
 
-	// Token: 0x06001268 RID: 4712 RVA: 0x0000F966 File Offset: 0x0000DB66
+	// Token: 0x06001268 RID: 4712 RVA: 0x0000F97B File Offset: 0x0000DB7B
 	public void SetGameplayState(bool isInGameplay, bool showNotifications)
 	{
 		this.notifications.SetActive(showNotifications);
@@ -104,7 +104,7 @@ public class UIMenus : MonoBehaviour
 		Game.State = (isInGameplay ? GameState.Play : GameState.Menu);
 	}
 
-	// Token: 0x06001269 RID: 4713 RVA: 0x0000F98C File Offset: 0x0000DB8C
+	// Token: 0x06001269 RID: 4713 RVA: 0x0000F9A1 File Offset: 0x0000DBA1
 	public void SetGameplayState(bool isInGameplay)
 	{
 		this.notifications.SetActive(isInGameplay);
@@ -112,7 +112,7 @@ public class UIMenus : MonoBehaviour
 		Game.State = (isInGameplay ? GameState.Play : GameState.Menu);
 	}
 
-	// Token: 0x0600126A RID: 4714 RVA: 0x0005C214 File Offset: 0x0005A414
+	// Token: 0x0600126A RID: 4714 RVA: 0x0005C3A8 File Offset: 0x0005A5A8
 	private void OnPause()
 	{
 		if (ControlMapper.isActive)
@@ -185,5 +185,5 @@ public class UIMenus : MonoBehaviour
 
 	public UIRootMenu rootMenu;
 
-	private global::Rewired.Player rePlayer;
+	private Player rePlayer;
 }

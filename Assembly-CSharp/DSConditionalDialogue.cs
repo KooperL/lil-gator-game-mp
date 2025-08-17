@@ -2,7 +2,7 @@
 
 public class DSConditionalDialogue : DSDialogue
 {
-	// Token: 0x06000598 RID: 1432 RVA: 0x0002EF68 File Offset: 0x0002D168
+	// Token: 0x06000598 RID: 1432 RVA: 0x0002F0E4 File Offset: 0x0002D2E4
 	public override void Activate()
 	{
 		int num = this.quests.Length + this.characters.Length;

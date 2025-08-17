@@ -41,8 +41,8 @@ public class CharacterProfile : ScriptableObject
 		}
 	}
 
-	// (add) Token: 0x060003B4 RID: 948 RVA: 0x000271C4 File Offset: 0x000253C4
-	// (remove) Token: 0x060003B5 RID: 949 RVA: 0x000271FC File Offset: 0x000253FC
+	// (add) Token: 0x060003B4 RID: 948 RVA: 0x00027340 File Offset: 0x00025540
+	// (remove) Token: 0x060003B5 RID: 949 RVA: 0x00027378 File Offset: 0x00025578
 	public event EventHandler<bool> OnChange = delegate
 	{
 	};

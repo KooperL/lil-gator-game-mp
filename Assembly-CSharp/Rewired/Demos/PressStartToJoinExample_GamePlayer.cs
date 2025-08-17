@@ -7,7 +7,7 @@ namespace Rewired.Demos
 	[RequireComponent(typeof(CharacterController))]
 	public class PressStartToJoinExample_GamePlayer : MonoBehaviour
 	{
-		// (get) Token: 0x06001DED RID: 7661 RVA: 0x00016D76 File Offset: 0x00014F76
+		// (get) Token: 0x06001DED RID: 7661 RVA: 0x00016D8B File Offset: 0x00014F8B
 		private Player player
 		{
 			get
@@ -16,13 +16,13 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DEE RID: 7662 RVA: 0x00016D83 File Offset: 0x00014F83
+		// Token: 0x06001DEE RID: 7662 RVA: 0x00016D98 File Offset: 0x00014F98
 		private void OnEnable()
 		{
 			this.cc = base.GetComponent<CharacterController>();
 		}
 
-		// Token: 0x06001DEF RID: 7663 RVA: 0x00016D91 File Offset: 0x00014F91
+		// Token: 0x06001DEF RID: 7663 RVA: 0x00016DA6 File Offset: 0x00014FA6
 		private void Update()
 		{
 			if (!ReInput.isReady)
@@ -37,7 +37,7 @@ namespace Rewired.Demos
 			this.ProcessInput();
 		}
 
-		// Token: 0x06001DF0 RID: 7664 RVA: 0x000759F0 File Offset: 0x00073BF0
+		// Token: 0x06001DF0 RID: 7664 RVA: 0x00075B84 File Offset: 0x00073D84
 		private void GetInput()
 		{
 			this.moveVector.x = this.player.GetAxis("Move Horizontal");
@@ -45,7 +45,7 @@ namespace Rewired.Demos
 			this.fire = this.player.GetButtonDown("Fire");
 		}
 
-		// Token: 0x06001DF1 RID: 7665 RVA: 0x00075A4C File Offset: 0x00073C4C
+		// Token: 0x06001DF1 RID: 7665 RVA: 0x00075BE0 File Offset: 0x00073DE0
 		private void ProcessInput()
 		{
 			if (this.moveVector.x != 0f || this.moveVector.y != 0f)

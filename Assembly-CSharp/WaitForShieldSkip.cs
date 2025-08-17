@@ -4,13 +4,13 @@ using UnityEngine.Events;
 
 public class WaitForShieldSkip : MonoBehaviour
 {
-	// Token: 0x06000936 RID: 2358 RVA: 0x00008EAB File Offset: 0x000070AB
+	// Token: 0x06000936 RID: 2358 RVA: 0x00008EC0 File Offset: 0x000070C0
 	private void OnEnable()
 	{
 		PlayerMovement.didShieldSkip = false;
 	}
 
-	// Token: 0x06000937 RID: 2359 RVA: 0x00008EB3 File Offset: 0x000070B3
+	// Token: 0x06000937 RID: 2359 RVA: 0x00008EC8 File Offset: 0x000070C8
 	public void OnTriggerStay(Collider other)
 	{
 		base.enabled = true;
@@ -25,7 +25,7 @@ public class WaitForShieldSkip : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000938 RID: 2360 RVA: 0x00008EED File Offset: 0x000070ED
+	// Token: 0x06000938 RID: 2360 RVA: 0x00008F02 File Offset: 0x00007102
 	private void Update()
 	{
 		if (Time.time - this.lastTriggerTime > 0.25f)

@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class UILineFollow : MonoBehaviour
 {
-	// (get) Token: 0x0600125B RID: 4699 RVA: 0x0000F909 File Offset: 0x0000DB09
+	// (get) Token: 0x0600125B RID: 4699 RVA: 0x0000F91E File Offset: 0x0000DB1E
 	private float CorrectedSourceDistance
 	{
 		get
 		{
-			return ((this.canvas.renderMode == RenderMode.ScreenSpaceCamera) ? 1f : 2f) * this.sourceDistance;
+			return ((this.canvas.renderMode == 1) ? 1f : 2f) * this.sourceDistance;
 		}
 	}
 
-	// Token: 0x0600125C RID: 4700 RVA: 0x0000F92C File Offset: 0x0000DB2C
+	// Token: 0x0600125C RID: 4700 RVA: 0x0000F941 File Offset: 0x0000DB41
 	private void OnValidate()
 	{
 		if (this.canvas == null)
@@ -21,7 +21,7 @@ public class UILineFollow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600125D RID: 4701 RVA: 0x0005B998 File Offset: 0x00059B98
+	// Token: 0x0600125D RID: 4701 RVA: 0x0005BB2C File Offset: 0x00059D2C
 	private void Awake()
 	{
 		this.lineRenderer = base.GetComponent<LineRenderer>();
@@ -35,14 +35,14 @@ public class UILineFollow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600125E RID: 4702 RVA: 0x0000F948 File Offset: 0x0000DB48
+	// Token: 0x0600125E RID: 4702 RVA: 0x0000F95D File Offset: 0x0000DB5D
 	private void Start()
 	{
 		this.width = this.lineRenderer.widthMultiplier;
 		this.perlinTime = Time.time;
 	}
 
-	// Token: 0x0600125F RID: 4703 RVA: 0x0005BA34 File Offset: 0x00059C34
+	// Token: 0x0600125F RID: 4703 RVA: 0x0005BBC8 File Offset: 0x00059DC8
 	public void SetTarget(DialogueActor actor)
 	{
 		this.target = actor.DialogueAnchor;
@@ -55,7 +55,7 @@ public class UILineFollow : MonoBehaviour
 		this.perlinTime = Time.time;
 	}
 
-	// Token: 0x06001260 RID: 4704 RVA: 0x0005BAA0 File Offset: 0x00059CA0
+	// Token: 0x06001260 RID: 4704 RVA: 0x0005BC34 File Offset: 0x00059E34
 	private void LateUpdate()
 	{
 		if (this.target == null)
@@ -67,7 +67,7 @@ public class UILineFollow : MonoBehaviour
 			this.perlinTime = Time.time;
 		}
 		Vector3 vector;
-		if (this.canvas.renderMode == RenderMode.ScreenSpaceOverlay)
+		if (this.canvas.renderMode == null)
 		{
 			vector = this.mainCamera.ScreenPointToRay(this.source.position).GetPoint(this.CorrectedSourceDistance) + this.sourceOffset;
 		}

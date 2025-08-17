@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	// (get) Token: 0x06000C12 RID: 3090 RVA: 0x0000B40F File Offset: 0x0000960F
+	// (get) Token: 0x06000C12 RID: 3090 RVA: 0x0000B424 File Offset: 0x00009624
 	public static Vector3 RawPosition
 	{
 		get
@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C13 RID: 3091 RVA: 0x0000B41B File Offset: 0x0000961B
+	// (get) Token: 0x06000C13 RID: 3091 RVA: 0x0000B430 File Offset: 0x00009630
 	public static Vector3 Position
 	{
 		get
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C14 RID: 3092 RVA: 0x0000B436 File Offset: 0x00009636
+	// (get) Token: 0x06000C14 RID: 3092 RVA: 0x0000B44B File Offset: 0x0000964B
 	public static Vector3 Forward
 	{
 		get
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C15 RID: 3093 RVA: 0x0000B442 File Offset: 0x00009642
+	// Token: 0x06000C15 RID: 3093 RVA: 0x0000B457 File Offset: 0x00009657
 	private void OnValidate()
 	{
 		if (this.pHandIK == null)
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C16 RID: 3094 RVA: 0x00042030 File Offset: 0x00040230
+	// Token: 0x06000C16 RID: 3094 RVA: 0x000421C4 File Offset: 0x000403C4
 	private void OnEnable()
 	{
 		Player.player = this;

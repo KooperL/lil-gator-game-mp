@@ -9,7 +9,7 @@ public class SplashPad : MonoBehaviour
 		this.RefreshState();
 	}
 
-	// Token: 0x0600013E RID: 318 RVA: 0x0001BA8C File Offset: 0x00019C8C
+	// Token: 0x0600013E RID: 318 RVA: 0x0001BC08 File Offset: 0x00019E08
 	[ContextMenu("RefreshState")]
 	public void RefreshState()
 	{

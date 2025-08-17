@@ -15,7 +15,7 @@ public class FollowPlayerWithinBounds : MonoBehaviour
 		this.UpdatePosition();
 	}
 
-	// Token: 0x0600072F RID: 1839 RVA: 0x00033C68 File Offset: 0x00031E68
+	// Token: 0x0600072F RID: 1839 RVA: 0x00033DE4 File Offset: 0x00031FE4
 	private void UpdatePosition()
 	{
 		Vector3 vector = Player.Position;

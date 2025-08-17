@@ -10,25 +10,25 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class Settings : MonoBehaviour
 {
-	// Token: 0x06000F47 RID: 3911 RVA: 0x0000D35E File Offset: 0x0000B55E
+	// Token: 0x06000F47 RID: 3911 RVA: 0x0000D373 File Offset: 0x0000B573
 	public static float NormalizedAudioVolume(float flatVolume)
 	{
 		return Mathf.Log10(Mathf.Max(flatVolume, 1E-05f)) * 20f;
 	}
 
-	// Token: 0x06000F48 RID: 3912 RVA: 0x0000767F File Offset: 0x0000587F
+	// Token: 0x06000F48 RID: 3912 RVA: 0x00007694 File Offset: 0x00005894
 	public static int FloatToInt(float f)
 	{
 		return Mathf.FloorToInt(f * 1000f);
 	}
 
-	// Token: 0x06000F49 RID: 3913 RVA: 0x0000768D File Offset: 0x0000588D
+	// Token: 0x06000F49 RID: 3913 RVA: 0x000076A2 File Offset: 0x000058A2
 	public static float IntToFloat(int i)
 	{
 		return (float)i / 1000f;
 	}
 
-	// (get) Token: 0x06000F4A RID: 3914 RVA: 0x000502D8 File Offset: 0x0004E4D8
+	// (get) Token: 0x06000F4A RID: 3914 RVA: 0x0005046C File Offset: 0x0004E66C
 	public static int CurrentResolutionIndex
 	{
 		get
@@ -43,8 +43,8 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000F4B RID: 3915 RVA: 0x00050318 File Offset: 0x0004E518
-	// (set) Token: 0x06000F4C RID: 3916 RVA: 0x0000D376 File Offset: 0x0000B576
+	// (get) Token: 0x06000F4B RID: 3915 RVA: 0x000504AC File Offset: 0x0004E6AC
+	// (set) Token: 0x06000F4C RID: 3916 RVA: 0x0000D38B File Offset: 0x0000B58B
 	public static Settings s
 	{
 		get
@@ -65,7 +65,7 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F4D RID: 3917 RVA: 0x00050364 File Offset: 0x0004E564
+	// Token: 0x06000F4D RID: 3917 RVA: 0x000504F8 File Offset: 0x0004E6F8
 	private void Initialize()
 	{
 		if (this.initialized)
@@ -111,19 +111,19 @@ public class Settings : MonoBehaviour
 		this.ReadFromDisk();
 	}
 
-	// Token: 0x06000F4E RID: 3918 RVA: 0x0000D37E File Offset: 0x0000B57E
+	// Token: 0x06000F4E RID: 3918 RVA: 0x0000D393 File Offset: 0x0000B593
 	private void OnEnable()
 	{
 		this.LoadSettings();
 	}
 
-	// Token: 0x06000F4F RID: 3919 RVA: 0x0000D37E File Offset: 0x0000B57E
+	// Token: 0x06000F4F RID: 3919 RVA: 0x0000D393 File Offset: 0x0000B593
 	private void Start()
 	{
 		this.LoadSettings();
 	}
 
-	// Token: 0x06000F50 RID: 3920 RVA: 0x0000D386 File Offset: 0x0000B586
+	// Token: 0x06000F50 RID: 3920 RVA: 0x0000D39B File Offset: 0x0000B59B
 	private void OnDisable()
 	{
 		if (Settings.instance == this)
@@ -132,7 +132,7 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F51 RID: 3921 RVA: 0x0000D386 File Offset: 0x0000B586
+	// Token: 0x06000F51 RID: 3921 RVA: 0x0000D39B File Offset: 0x0000B59B
 	private void OnApplicationQuit()
 	{
 		if (Settings.instance == this)
@@ -141,7 +141,7 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F52 RID: 3922 RVA: 0x00050498 File Offset: 0x0004E698
+	// Token: 0x06000F52 RID: 3922 RVA: 0x0005062C File Offset: 0x0004E82C
 	public void ReadFromDisk()
 	{
 		if (Settings.hasCachedData)
@@ -160,14 +160,14 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F53 RID: 3923 RVA: 0x0000D39B File Offset: 0x0000B59B
+	// Token: 0x06000F53 RID: 3923 RVA: 0x0000D3B0 File Offset: 0x0000B5B0
 	public void WriteToDisk()
 	{
 		this.settingsData.v = 12;
 		FileUtil.WriteSettingsData(this.settingsData);
 	}
 
-	// Token: 0x06000F54 RID: 3924 RVA: 0x0000D3B5 File Offset: 0x0000B5B5
+	// Token: 0x06000F54 RID: 3924 RVA: 0x0000D3CA File Offset: 0x0000B5CA
 	private IEnumerator LoadSettingsNextFrame()
 	{
 		yield return null;
@@ -176,7 +176,7 @@ public class Settings : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000F55 RID: 3925 RVA: 0x000504E8 File Offset: 0x0004E6E8
+	// Token: 0x06000F55 RID: 3925 RVA: 0x0005067C File Offset: 0x0004E87C
 	public void LoadSettings()
 	{
 		if (!this.initialized)
@@ -623,13 +623,13 @@ public class Settings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F56 RID: 3926 RVA: 0x0000D3C4 File Offset: 0x0000B5C4
+	// Token: 0x06000F56 RID: 3926 RVA: 0x0000D3D9 File Offset: 0x0000B5D9
 	private Vector2Int FindClosestResolution()
 	{
 		return new Vector2Int(0, 0);
 	}
 
-	// Token: 0x06000F57 RID: 3927 RVA: 0x0000D3CD File Offset: 0x0000B5CD
+	// Token: 0x06000F57 RID: 3927 RVA: 0x0000D3E2 File Offset: 0x0000B5E2
 	public void Write(string key, bool value)
 	{
 		if (this.settingsData.bools.ContainsKey(key))
@@ -640,7 +640,7 @@ public class Settings : MonoBehaviour
 		this.settingsData.bools.Add(key, value);
 	}
 
-	// Token: 0x06000F58 RID: 3928 RVA: 0x00051060 File Offset: 0x0004F260
+	// Token: 0x06000F58 RID: 3928 RVA: 0x000511F4 File Offset: 0x0004F3F4
 	public bool ReadBool(string key, bool defaultValue = false)
 	{
 		bool flag;
@@ -652,7 +652,7 @@ public class Settings : MonoBehaviour
 		return defaultValue;
 	}
 
-	// Token: 0x06000F59 RID: 3929 RVA: 0x0000D407 File Offset: 0x0000B607
+	// Token: 0x06000F59 RID: 3929 RVA: 0x0000D41C File Offset: 0x0000B61C
 	public void Write(string key, int value)
 	{
 		if (this.settingsData.ints.ContainsKey(key))
@@ -663,7 +663,7 @@ public class Settings : MonoBehaviour
 		this.settingsData.ints.Add(key, value);
 	}
 
-	// Token: 0x06000F5A RID: 3930 RVA: 0x00051098 File Offset: 0x0004F298
+	// Token: 0x06000F5A RID: 3930 RVA: 0x0005122C File Offset: 0x0004F42C
 	public int ReadInt(string key, int defaultValue = 0)
 	{
 		int num;
@@ -675,19 +675,19 @@ public class Settings : MonoBehaviour
 		return defaultValue;
 	}
 
-	// Token: 0x06000F5B RID: 3931 RVA: 0x0000D441 File Offset: 0x0000B641
+	// Token: 0x06000F5B RID: 3931 RVA: 0x0000D456 File Offset: 0x0000B656
 	public void Write(string key, float value)
 	{
 		this.Write(key, Settings.FloatToInt(value));
 	}
 
-	// Token: 0x06000F5C RID: 3932 RVA: 0x0000D450 File Offset: 0x0000B650
+	// Token: 0x06000F5C RID: 3932 RVA: 0x0000D465 File Offset: 0x0000B665
 	public float ReadFloat(string key, float defaultValue = 0f)
 	{
 		return Settings.IntToFloat(this.ReadInt(key, Settings.FloatToInt(defaultValue)));
 	}
 
-	// Token: 0x06000F5D RID: 3933 RVA: 0x0000D464 File Offset: 0x0000B664
+	// Token: 0x06000F5D RID: 3933 RVA: 0x0000D479 File Offset: 0x0000B679
 	public void Write(string key, string value)
 	{
 		if (this.settingsData.strings.ContainsKey(key))
@@ -698,7 +698,7 @@ public class Settings : MonoBehaviour
 		this.settingsData.strings.Add(key, value);
 	}
 
-	// Token: 0x06000F5E RID: 3934 RVA: 0x0000D49E File Offset: 0x0000B69E
+	// Token: 0x06000F5E RID: 3934 RVA: 0x0000D4B3 File Offset: 0x0000B6B3
 	public string ReadString(string key)
 	{
 		if (!this.settingsData.strings.ContainsKey(key))
@@ -708,7 +708,7 @@ public class Settings : MonoBehaviour
 		return this.settingsData.strings[key];
 	}
 
-	// Token: 0x06000F5F RID: 3935 RVA: 0x0000D4CA File Offset: 0x0000B6CA
+	// Token: 0x06000F5F RID: 3935 RVA: 0x0000D4DF File Offset: 0x0000B6DF
 	public bool HasString(string key)
 	{
 		return this.settingsData.strings.ContainsKey(key);

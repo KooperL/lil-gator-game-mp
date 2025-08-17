@@ -21,7 +21,7 @@ public class RippleSpawner : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x0600067D RID: 1661 RVA: 0x000319E0 File Offset: 0x0002FBE0
+	// Token: 0x0600067D RID: 1661 RVA: 0x00031B5C File Offset: 0x0002FD5C
 	public void ManagedUpdate()
 	{
 		if (this.nextTime <= Time.time)

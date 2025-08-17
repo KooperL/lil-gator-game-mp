@@ -7,11 +7,11 @@ namespace Rewired.UI.ControlMapper
 	[AddComponentMenu("")]
 	public class InputRow : MonoBehaviour
 	{
-		// (get) Token: 0x06001B42 RID: 6978 RVA: 0x00014F9F File Offset: 0x0001319F
-		// (set) Token: 0x06001B43 RID: 6979 RVA: 0x00014FA7 File Offset: 0x000131A7
+		// (get) Token: 0x06001B42 RID: 6978 RVA: 0x00014FB4 File Offset: 0x000131B4
+		// (set) Token: 0x06001B43 RID: 6979 RVA: 0x00014FBC File Offset: 0x000131BC
 		public ButtonInfo[] buttons { get; private set; }
 
-		// Token: 0x06001B44 RID: 6980 RVA: 0x00014FB0 File Offset: 0x000131B0
+		// Token: 0x06001B44 RID: 6980 RVA: 0x00014FC5 File Offset: 0x000131C5
 		public void Initialize(int rowIndex, string label, Action<int, ButtonInfo> inputFieldActivatedCallback)
 		{
 			this.rowIndex = rowIndex;
@@ -20,7 +20,7 @@ namespace Rewired.UI.ControlMapper
 			this.buttons = base.transform.GetComponentsInChildren<ButtonInfo>(true);
 		}
 
-		// Token: 0x06001B45 RID: 6981 RVA: 0x00014FDE File Offset: 0x000131DE
+		// Token: 0x06001B45 RID: 6981 RVA: 0x00014FF3 File Offset: 0x000131F3
 		public void OnButtonActivated(ButtonInfo buttonInfo)
 		{
 			if (this.inputFieldActivatedCallback == null)

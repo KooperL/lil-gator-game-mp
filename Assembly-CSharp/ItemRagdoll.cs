@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemRagdoll : MonoBehaviour, IItemBehaviour
 {
-	// (get) Token: 0x06000B6E RID: 2926 RVA: 0x0000ABCE File Offset: 0x00008DCE
+	// (get) Token: 0x06000B6E RID: 2926 RVA: 0x0000ABE3 File Offset: 0x00008DE3
 	private PlayerItemManager.EquippedState EquippedState
 	{
 		get
@@ -16,14 +16,14 @@ public class ItemRagdoll : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B6F RID: 2927 RVA: 0x0000ABDB File Offset: 0x00008DDB
+	// Token: 0x06000B6F RID: 2927 RVA: 0x0000ABF0 File Offset: 0x00008DF0
 	private void Awake()
 	{
 		this.itemManager = Player.itemManager;
 		this.movement = Player.movement;
 	}
 
-	// Token: 0x06000B70 RID: 2928 RVA: 0x0000ABF3 File Offset: 0x00008DF3
+	// Token: 0x06000B70 RID: 2928 RVA: 0x0000AC08 File Offset: 0x00008E08
 	public void Input(bool isDown, bool isHeld)
 	{
 		if (isDown)
@@ -32,7 +32,7 @@ public class ItemRagdoll : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B71 RID: 2929 RVA: 0x0000AC07 File Offset: 0x00008E07
+	// Token: 0x06000B71 RID: 2929 RVA: 0x0000AC1C File Offset: 0x00008E1C
 	private void LateUpdate()
 	{
 		if (this.isActivated && (!this.movement.isRagdolling || Player.itemManager.itemInUse != this))
@@ -41,13 +41,13 @@ public class ItemRagdoll : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B72 RID: 2930 RVA: 0x0000AC32 File Offset: 0x00008E32
+	// Token: 0x06000B72 RID: 2930 RVA: 0x0000AC47 File Offset: 0x00008E47
 	public void Cancel()
 	{
 		this.SetState(false);
 	}
 
-	// Token: 0x06000B73 RID: 2931 RVA: 0x00040660 File Offset: 0x0003E860
+	// Token: 0x06000B73 RID: 2931 RVA: 0x000407F4 File Offset: 0x0003E9F4
 	private void SetState(bool isActive)
 	{
 		this.isActivated = isActive;
@@ -65,7 +65,7 @@ public class ItemRagdoll : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B74 RID: 2932 RVA: 0x000406C0 File Offset: 0x0003E8C0
+	// Token: 0x06000B74 RID: 2932 RVA: 0x00040854 File Offset: 0x0003EA54
 	public void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (this.isOnRight ? this.itemManager.hipAnchor_r : this.itemManager.hipAnchor);
@@ -83,7 +83,7 @@ public class ItemRagdoll : MonoBehaviour, IItemBehaviour
 	{
 	}
 
-	// Token: 0x06000B76 RID: 2934 RVA: 0x0000AC3B File Offset: 0x00008E3B
+	// Token: 0x06000B76 RID: 2934 RVA: 0x0000AC50 File Offset: 0x00008E50
 	public void SetIndex(int index)
 	{
 		if (index == 1)

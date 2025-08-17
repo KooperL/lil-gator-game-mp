@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIScrollRepeat : MonoBehaviour
 {
-	// Token: 0x060012E9 RID: 4841 RVA: 0x0005D3E8 File Offset: 0x0005B5E8
+	// Token: 0x060012E9 RID: 4841 RVA: 0x0005D57C File Offset: 0x0005B77C
 	[ContextMenu("Fit to size")]
 	public void FitToSize()
 	{
@@ -15,7 +15,7 @@ public class UIScrollRepeat : MonoBehaviour
 		component.offsetMin = -0.5f * this.tileSize;
 	}
 
-	// Token: 0x060012EA RID: 4842 RVA: 0x0005D444 File Offset: 0x0005B644
+	// Token: 0x060012EA RID: 4842 RVA: 0x0005D5D8 File Offset: 0x0005B7D8
 	private void Start()
 	{
 		Transform transform = base.transform;
@@ -34,7 +34,7 @@ public class UIScrollRepeat : MonoBehaviour
 		this.tileSize = base.GetComponent<Image>().sprite.rect.size;
 	}
 
-	// Token: 0x060012EB RID: 4843 RVA: 0x0005D4B0 File Offset: 0x0005B6B0
+	// Token: 0x060012EB RID: 4843 RVA: 0x0005D644 File Offset: 0x0005B844
 	private void Update()
 	{
 		if (this.selectableRoot != null && EventSystem.current.currentSelectedGameObject != this.selectableRoot)

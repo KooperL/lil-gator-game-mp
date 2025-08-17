@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MoveToBone : MonoBehaviour
 {
-	// Token: 0x06000B26 RID: 2854 RVA: 0x0003FADC File Offset: 0x0003DCDC
+	// Token: 0x06000B26 RID: 2854 RVA: 0x0003FC70 File Offset: 0x0003DE70
 	private void Start()
 	{
 		this.originalParent = base.transform.parent;
@@ -39,7 +39,7 @@ public class MoveToBone : MonoBehaviour
 		base.transform.localScale = this.localScale;
 	}
 
-	// Token: 0x06000B27 RID: 2855 RVA: 0x0000A8A3 File Offset: 0x00008AA3
+	// Token: 0x06000B27 RID: 2855 RVA: 0x0000A8B8 File Offset: 0x00008AB8
 	private void LateUpdate()
 	{
 		if (this.originalParent == null)

@@ -6,7 +6,7 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public class PlayerMouseSpriteExample : MonoBehaviour
 	{
-		// Token: 0x06001DBF RID: 7615 RVA: 0x00074CB0 File Offset: 0x00072EB0
+		// Token: 0x06001DBF RID: 7615 RVA: 0x00074E44 File Offset: 0x00073044
 		private void Awake()
 		{
 			this.pointer = global::UnityEngine.Object.Instantiate<GameObject>(this.pointerPrefab);
@@ -30,7 +30,7 @@ namespace Rewired.Demos
 			this.OnScreenPositionChanged(this.mouse.screenPosition);
 		}
 
-		// Token: 0x06001DC0 RID: 7616 RVA: 0x00074E24 File Offset: 0x00073024
+		// Token: 0x06001DC0 RID: 7616 RVA: 0x00074FB8 File Offset: 0x000731B8
 		private void Update()
 		{
 			if (!ReInput.isReady)
@@ -52,7 +52,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DC1 RID: 7617 RVA: 0x00016BB9 File Offset: 0x00014DB9
+		// Token: 0x06001DC1 RID: 7617 RVA: 0x00016BCE File Offset: 0x00014DCE
 		private void OnDestroy()
 		{
 			if (!ReInput.isReady)
@@ -62,7 +62,7 @@ namespace Rewired.Demos
 			this.mouse.ScreenPositionChangedEvent -= this.OnScreenPositionChanged;
 		}
 
-		// Token: 0x06001DC2 RID: 7618 RVA: 0x00074EFC File Offset: 0x000730FC
+		// Token: 0x06001DC2 RID: 7618 RVA: 0x00075090 File Offset: 0x00073290
 		private void CreateClickEffect(Color color)
 		{
 			GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(this.clickEffectPrefab);
@@ -72,7 +72,7 @@ namespace Rewired.Demos
 			global::UnityEngine.Object.Destroy(gameObject, 0.5f);
 		}
 
-		// Token: 0x06001DC3 RID: 7619 RVA: 0x00074F8C File Offset: 0x0007318C
+		// Token: 0x06001DC3 RID: 7619 RVA: 0x00075120 File Offset: 0x00073320
 		private void OnScreenPositionChanged(Vector2 position)
 		{
 			Vector3 vector = Camera.main.ScreenToWorldPoint(new Vector3(position.x, position.y, this.distanceFromCamera));

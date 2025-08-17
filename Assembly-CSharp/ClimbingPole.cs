@@ -14,7 +14,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		}
 	}
 
-	// Token: 0x060002FA RID: 762 RVA: 0x000231A8 File Offset: 0x000213A8
+	// Token: 0x060002FA RID: 762 RVA: 0x00023324 File Offset: 0x00021524
 	private void OnDrawGizmosSelected()
 	{
 		for (int i = 0; i < this.positions.Length; i++)
@@ -24,7 +24,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		}
 	}
 
-	// Token: 0x060002FB RID: 763 RVA: 0x00023210 File Offset: 0x00021410
+	// Token: 0x060002FB RID: 763 RVA: 0x0002338C File Offset: 0x0002158C
 	[ContextMenu("Fit Capsule To Beam")]
 	public void FitCapsule()
 	{
@@ -35,7 +35,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		component.height = Mathf.Abs(vector.y - vector2.y) + 1f;
 	}
 
-	// Token: 0x060002FC RID: 764 RVA: 0x0002327C File Offset: 0x0002147C
+	// Token: 0x060002FC RID: 764 RVA: 0x000233F8 File Offset: 0x000215F8
 	private void Initialize()
 	{
 		this.topHeldT = base.MoveAlongPath((float)(this.positions.Length - 1), -0.75f);
@@ -56,7 +56,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		this.groundT = 0f;
 	}
 
-	// Token: 0x060002FD RID: 765 RVA: 0x00023320 File Offset: 0x00021520
+	// Token: 0x060002FD RID: 765 RVA: 0x0002349C File Offset: 0x0002169C
 	private bool IsEligible()
 	{
 		this.t = base.GetClosestInterpolated(Player.RawPosition);
@@ -64,7 +64,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		return this.IsEligible(this.t, vector);
 	}
 
-	// Token: 0x060002FE RID: 766 RVA: 0x00023358 File Offset: 0x00021558
+	// Token: 0x060002FE RID: 766 RVA: 0x000234D4 File Offset: 0x000216D4
 	private bool IsEligible(float t, Vector3 direction)
 	{
 		if (PlayerInput.RawInput.y < 0f)
@@ -151,7 +151,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		return true;
 	}
 
-	// Token: 0x060002FF RID: 767 RVA: 0x0002352C File Offset: 0x0002172C
+	// Token: 0x060002FF RID: 767 RVA: 0x000236A8 File Offset: 0x000218A8
 	private void OnTriggerStay(Collider other)
 	{
 		if (this.groundT < -0.5f)
@@ -194,7 +194,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		}
 	}
 
-	// Token: 0x06000300 RID: 768 RVA: 0x00023608 File Offset: 0x00021808
+	// Token: 0x06000300 RID: 768 RVA: 0x00023784 File Offset: 0x00021984
 	private void OnEnable()
 	{
 		Player.movement.isModified = true;
@@ -250,7 +250,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		Player.movement.modNoStaminaRecovery = true;
 	}
 
-	// Token: 0x06000301 RID: 769 RVA: 0x00023834 File Offset: 0x00021A34
+	// Token: 0x06000301 RID: 769 RVA: 0x000239B0 File Offset: 0x00021BB0
 	private void OnDisable()
 	{
 		Player.footIK.ClearOverrides();
@@ -288,7 +288,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		return (this.thickness.Evaluate(t / (float)(this.positions.Length - 1)) + 0f) * -1f * base.transform.lossyScale.x;
 	}
 
-	// Token: 0x06000303 RID: 771 RVA: 0x0002394C File Offset: 0x00021B4C
+	// Token: 0x06000303 RID: 771 RVA: 0x00023AC8 File Offset: 0x00021CC8
 	public void MovementUpdate(Vector3 input, ref Vector3 position, ref Vector3 velocity, ref Vector3 direction, ref Vector3 up, ref float animationIndex)
 	{
 		this.t = Mathf.Clamp(this.t, 0f, (float)(this.positions.Length - 1));
@@ -438,7 +438,7 @@ public class ClimbingPole : GenericPath, ICustomPlayerMovement, ICustomFootIKPos
 		return this.GetTargetPoint(currentPosition, new Vector3(1f, 0f, -1f));
 	}
 
-	// Token: 0x06000309 RID: 777 RVA: 0x00023EA0 File Offset: 0x000220A0
+	// Token: 0x06000309 RID: 777 RVA: 0x0002401C File Offset: 0x0002221C
 	private Vector3 GetTargetPoint(Vector3 currentPosition, Vector3 offsetDirection)
 	{
 		float closestInterpolated = base.GetClosestInterpolated(currentPosition);

@@ -8,7 +8,7 @@ namespace Rewired.UI.ControlMapper
 	[AddComponentMenu("")]
 	public class InputBehaviorWindow : Window
 	{
-		// Token: 0x06001B1C RID: 6940 RVA: 0x0006EBC0 File Offset: 0x0006CDC0
+		// Token: 0x06001B1C RID: 6940 RVA: 0x0006ED54 File Offset: 0x0006CF54
 		public override void Initialize(int id, Func<int, bool> isFocusedCallback)
 		{
 			if (this.spawnTransform == null || this.doneButton == null || this.cancelButton == null || this.defaultButton == null || this.uiControlSetPrefab == null || this.uiSliderControlPrefab == null || this.doneButtonLabel == null || this.cancelButtonLabel == null || this.defaultButtonLabel == null)
@@ -24,7 +24,7 @@ namespace Rewired.UI.ControlMapper
 			base.Initialize(id, isFocusedCallback);
 		}
 
-		// Token: 0x06001B1D RID: 6941 RVA: 0x0006ECB4 File Offset: 0x0006CEB4
+		// Token: 0x06001B1D RID: 6941 RVA: 0x0006EE48 File Offset: 0x0006D048
 		public void SetData(int playerId, ControlMapper.InputBehaviorSettings[] data)
 		{
 			if (!base.initialized)
@@ -69,7 +69,7 @@ namespace Rewired.UI.ControlMapper
 			base.defaultUIElement = this.doneButton.gameObject;
 		}
 
-		// Token: 0x06001B1E RID: 6942 RVA: 0x00014E24 File Offset: 0x00013024
+		// Token: 0x06001B1E RID: 6942 RVA: 0x00014E39 File Offset: 0x00013039
 		public void SetButtonCallback(InputBehaviorWindow.ButtonIdentifier buttonIdentifier, Action<int> callback)
 		{
 			if (!base.initialized)
@@ -88,7 +88,7 @@ namespace Rewired.UI.ControlMapper
 			this.buttonCallbacks.Add((int)buttonIdentifier, callback);
 		}
 
-		// Token: 0x06001B1F RID: 6943 RVA: 0x0006EE7C File Offset: 0x0006D07C
+		// Token: 0x06001B1F RID: 6943 RVA: 0x0006F010 File Offset: 0x0006D210
 		public override void Cancel()
 		{
 			if (!base.initialized)
@@ -111,7 +111,7 @@ namespace Rewired.UI.ControlMapper
 			action(base.id);
 		}
 
-		// Token: 0x06001B20 RID: 6944 RVA: 0x0006EF08 File Offset: 0x0006D108
+		// Token: 0x06001B20 RID: 6944 RVA: 0x0006F09C File Offset: 0x0006D29C
 		public void OnDone()
 		{
 			if (!base.initialized)
@@ -126,13 +126,13 @@ namespace Rewired.UI.ControlMapper
 			action(base.id);
 		}
 
-		// Token: 0x06001B21 RID: 6945 RVA: 0x0001273E File Offset: 0x0001093E
+		// Token: 0x06001B21 RID: 6945 RVA: 0x00012753 File Offset: 0x00010953
 		public void OnCancel()
 		{
 			this.Cancel();
 		}
 
-		// Token: 0x06001B22 RID: 6946 RVA: 0x0006EF3C File Offset: 0x0006D13C
+		// Token: 0x06001B22 RID: 6946 RVA: 0x0006F0D0 File Offset: 0x0006D2D0
 		public void OnRestoreDefault()
 		{
 			if (!base.initialized)
@@ -145,19 +145,19 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001B23 RID: 6947 RVA: 0x00014E5C File Offset: 0x0001305C
+		// Token: 0x06001B23 RID: 6947 RVA: 0x00014E71 File Offset: 0x00013071
 		private void JoystickAxisSensitivityValueChanged(int inputBehaviorId, int controlId, float value)
 		{
 			this.GetInputBehavior(inputBehaviorId).joystickAxisSensitivity = value;
 		}
 
-		// Token: 0x06001B24 RID: 6948 RVA: 0x00014E6B File Offset: 0x0001306B
+		// Token: 0x06001B24 RID: 6948 RVA: 0x00014E80 File Offset: 0x00013080
 		private void MouseXYAxisSensitivityValueChanged(int inputBehaviorId, int controlId, float value)
 		{
 			this.GetInputBehavior(inputBehaviorId).mouseXYAxisSensitivity = value;
 		}
 
-		// Token: 0x06001B25 RID: 6949 RVA: 0x0006EF98 File Offset: 0x0006D198
+		// Token: 0x06001B25 RID: 6949 RVA: 0x0006F12C File Offset: 0x0006D32C
 		private void JoystickAxisSensitivityCanceled(int inputBehaviorId, int controlId)
 		{
 			InputBehaviorWindow.InputBehaviorInfo inputBehaviorInfo = this.GetInputBehaviorInfo(inputBehaviorId);
@@ -168,7 +168,7 @@ namespace Rewired.UI.ControlMapper
 			inputBehaviorInfo.RestoreData(InputBehaviorWindow.PropertyType.JoystickAxisSensitivity, controlId);
 		}
 
-		// Token: 0x06001B26 RID: 6950 RVA: 0x0006EFBC File Offset: 0x0006D1BC
+		// Token: 0x06001B26 RID: 6950 RVA: 0x0006F150 File Offset: 0x0006D350
 		private void MouseXYAxisSensitivityCanceled(int inputBehaviorId, int controlId)
 		{
 			InputBehaviorWindow.InputBehaviorInfo inputBehaviorInfo = this.GetInputBehaviorInfo(inputBehaviorId);
@@ -179,13 +179,13 @@ namespace Rewired.UI.ControlMapper
 			inputBehaviorInfo.RestoreData(InputBehaviorWindow.PropertyType.MouseXYAxisSensitivity, controlId);
 		}
 
-		// Token: 0x06001B27 RID: 6951 RVA: 0x00014E7A File Offset: 0x0001307A
+		// Token: 0x06001B27 RID: 6951 RVA: 0x00014E8F File Offset: 0x0001308F
 		public override void TakeInputFocus()
 		{
 			base.TakeInputFocus();
 		}
 
-		// Token: 0x06001B28 RID: 6952 RVA: 0x00014E82 File Offset: 0x00013082
+		// Token: 0x06001B28 RID: 6952 RVA: 0x00014E97 File Offset: 0x00013097
 		private UIControlSet CreateControlSet()
 		{
 			GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(this.uiControlSetPrefab);
@@ -193,7 +193,7 @@ namespace Rewired.UI.ControlMapper
 			return gameObject.GetComponent<UIControlSet>();
 		}
 
-		// Token: 0x06001B29 RID: 6953 RVA: 0x0006EFE0 File Offset: 0x0006D1E0
+		// Token: 0x06001B29 RID: 6953 RVA: 0x0006F174 File Offset: 0x0006D374
 		private UISliderControl CreateSlider(UIControlSet set, int inputBehaviorId, string defaultTitle, string overrideTitle, Sprite icon, float minValue, float maxValue, Action<int, int, float> valueChangedCallback, Action<int, int> cancelCallback)
 		{
 			UISliderControl uisliderControl = set.CreateSlider(this.uiSliderControlPrefab, icon, minValue, maxValue, delegate(int cId, float value)
@@ -217,13 +217,13 @@ namespace Rewired.UI.ControlMapper
 			return uisliderControl;
 		}
 
-		// Token: 0x06001B2A RID: 6954 RVA: 0x00014EA6 File Offset: 0x000130A6
+		// Token: 0x06001B2A RID: 6954 RVA: 0x00014EBB File Offset: 0x000130BB
 		private InputBehavior GetInputBehavior(int id)
 		{
 			return ReInput.mapping.GetInputBehavior(this.playerId, id);
 		}
 
-		// Token: 0x06001B2B RID: 6955 RVA: 0x0006F078 File Offset: 0x0006D278
+		// Token: 0x06001B2B RID: 6955 RVA: 0x0006F20C File Offset: 0x0006D40C
 		private InputBehaviorWindow.InputBehaviorInfo GetInputBehaviorInfo(int inputBehaviorId)
 		{
 			int count = this.inputBehaviorInfo.Count;
@@ -274,7 +274,7 @@ namespace Rewired.UI.ControlMapper
 
 		private class InputBehaviorInfo
 		{
-			// (get) Token: 0x06001B2D RID: 6957 RVA: 0x00014EC1 File Offset: 0x000130C1
+			// (get) Token: 0x06001B2D RID: 6957 RVA: 0x00014ED6 File Offset: 0x000130D6
 			public InputBehavior inputBehavior
 			{
 				get
@@ -283,7 +283,7 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// (get) Token: 0x06001B2E RID: 6958 RVA: 0x00014EC9 File Offset: 0x000130C9
+			// (get) Token: 0x06001B2E RID: 6958 RVA: 0x00014EDE File Offset: 0x000130DE
 			public UIControlSet controlSet
 			{
 				get
@@ -292,7 +292,7 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x06001B2F RID: 6959 RVA: 0x00014ED1 File Offset: 0x000130D1
+			// Token: 0x06001B2F RID: 6959 RVA: 0x00014EE6 File Offset: 0x000130E6
 			public InputBehaviorInfo(InputBehavior inputBehavior, UIControlSet controlSet, Dictionary<int, InputBehaviorWindow.PropertyType> idToProperty)
 			{
 				this._inputBehavior = inputBehavior;
@@ -301,20 +301,20 @@ namespace Rewired.UI.ControlMapper
 				this.copyOfOriginal = new InputBehavior(inputBehavior);
 			}
 
-			// Token: 0x06001B30 RID: 6960 RVA: 0x00014EFA File Offset: 0x000130FA
+			// Token: 0x06001B30 RID: 6960 RVA: 0x00014F0F File Offset: 0x0001310F
 			public void RestorePreviousData()
 			{
 				this._inputBehavior.ImportData(this.copyOfOriginal);
 			}
 
-			// Token: 0x06001B31 RID: 6961 RVA: 0x00014F0E File Offset: 0x0001310E
+			// Token: 0x06001B31 RID: 6961 RVA: 0x00014F23 File Offset: 0x00013123
 			public void RestoreDefaultData()
 			{
 				this._inputBehavior.Reset();
 				this.RefreshControls();
 			}
 
-			// Token: 0x06001B32 RID: 6962 RVA: 0x0006F0C4 File Offset: 0x0006D2C4
+			// Token: 0x06001B32 RID: 6962 RVA: 0x0006F258 File Offset: 0x0006D458
 			public void RestoreData(InputBehaviorWindow.PropertyType propertyType, int controlId)
 			{
 				if (propertyType != InputBehaviorWindow.PropertyType.JoystickAxisSensitivity)
@@ -344,7 +344,7 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x06001B33 RID: 6963 RVA: 0x0006F150 File Offset: 0x0006D350
+			// Token: 0x06001B33 RID: 6963 RVA: 0x0006F2E4 File Offset: 0x0006D4E4
 			public void RefreshControls()
 			{
 				if (this._controlSet == null)

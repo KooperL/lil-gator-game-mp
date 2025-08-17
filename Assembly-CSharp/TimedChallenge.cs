@@ -5,8 +5,8 @@ using UnityEngine.Serialization;
 
 public class TimedChallenge : PersistentObject
 {
-	// (get) Token: 0x06000865 RID: 2149 RVA: 0x0000840C File Offset: 0x0000660C
-	// (set) Token: 0x06000866 RID: 2150 RVA: 0x00008432 File Offset: 0x00006632
+	// (get) Token: 0x06000865 RID: 2149 RVA: 0x00008421 File Offset: 0x00006621
+	// (set) Token: 0x06000866 RID: 2150 RVA: 0x00008447 File Offset: 0x00006647
 	private float BestTime
 	{
 		get
@@ -19,7 +19,7 @@ public class TimedChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x06000867 RID: 2151 RVA: 0x00008454 File Offset: 0x00006654
+	// Token: 0x06000867 RID: 2151 RVA: 0x00008469 File Offset: 0x00006669
 	public override void OnValidate()
 	{
 		if (this.raceIcon == null)
@@ -33,28 +33,28 @@ public class TimedChallenge : PersistentObject
 		base.OnValidate();
 	}
 
-	// Token: 0x06000868 RID: 2152 RVA: 0x00008490 File Offset: 0x00006690
+	// Token: 0x06000868 RID: 2152 RVA: 0x000084A5 File Offset: 0x000066A5
 	[ContextMenu("Gather Breakables")]
 	public void GatherBreakables()
 	{
 		this.timedBreakables = base.transform.GetComponentsInChildren<BreakableObject>();
 	}
 
-	// Token: 0x06000869 RID: 2153 RVA: 0x000084A3 File Offset: 0x000066A3
+	// Token: 0x06000869 RID: 2153 RVA: 0x000084B8 File Offset: 0x000066B8
 	public override void Load(bool state)
 	{
 		this.isFinished = state;
 		this.LoadState();
 	}
 
-	// Token: 0x0600086A RID: 2154 RVA: 0x000084B2 File Offset: 0x000066B2
+	// Token: 0x0600086A RID: 2154 RVA: 0x000084C7 File Offset: 0x000066C7
 	protected virtual void Start()
 	{
 		this.LoadState();
 		base.enabled = false;
 	}
 
-	// Token: 0x0600086B RID: 2155 RVA: 0x00037BC8 File Offset: 0x00035DC8
+	// Token: 0x0600086B RID: 2155 RVA: 0x00037DA8 File Offset: 0x00035FA8
 	protected virtual void LoadState()
 	{
 		this.startObject.SetActive(!this.isFinished || this.isRepeatable);
@@ -67,7 +67,7 @@ public class TimedChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x0600086C RID: 2156 RVA: 0x000084C1 File Offset: 0x000066C1
+	// Token: 0x0600086C RID: 2156 RVA: 0x000084D6 File Offset: 0x000066D6
 	public virtual void EnterProximity()
 	{
 		if (this.isRepeatable && base.PersistentState)
@@ -76,13 +76,13 @@ public class TimedChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x0600086D RID: 2157 RVA: 0x000084EF File Offset: 0x000066EF
+	// Token: 0x0600086D RID: 2157 RVA: 0x00008504 File Offset: 0x00006704
 	public virtual void TriggerStay()
 	{
 		this.lastTrigger = Time.time;
 	}
 
-	// Token: 0x0600086E RID: 2158 RVA: 0x00037C3C File Offset: 0x00035E3C
+	// Token: 0x0600086E RID: 2158 RVA: 0x00037E1C File Offset: 0x0003601C
 	public virtual void StartRace()
 	{
 		if (Time.time - this.raceTrigger < 0.5f)
@@ -144,7 +144,7 @@ public class TimedChallenge : PersistentObject
 		this.raceIcon.LoadRace(this.raceTime, this.RaceGoal(), -1f);
 	}
 
-	// Token: 0x0600086F RID: 2159 RVA: 0x000084FC File Offset: 0x000066FC
+	// Token: 0x0600086F RID: 2159 RVA: 0x00008511 File Offset: 0x00006711
 	protected virtual Transform RaceGoal()
 	{
 		if (this.raceIconAnchor != null)
@@ -154,7 +154,7 @@ public class TimedChallenge : PersistentObject
 		return this.startObject.transform;
 	}
 
-	// Token: 0x06000870 RID: 2160 RVA: 0x0000851E File Offset: 0x0000671E
+	// Token: 0x06000870 RID: 2160 RVA: 0x00008533 File Offset: 0x00006733
 	private void Update()
 	{
 		if (!this.isRacing)
@@ -167,7 +167,7 @@ public class TimedChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x06000871 RID: 2161 RVA: 0x00008542 File Offset: 0x00006742
+	// Token: 0x06000871 RID: 2161 RVA: 0x00008557 File Offset: 0x00006757
 	protected virtual void FailedRace()
 	{
 		if (this.raceFailedSound != null)
@@ -178,7 +178,7 @@ public class TimedChallenge : PersistentObject
 		this.CancelRace();
 	}
 
-	// Token: 0x06000872 RID: 2162 RVA: 0x00037E00 File Offset: 0x00036000
+	// Token: 0x06000872 RID: 2162 RVA: 0x00037FE0 File Offset: 0x000361E0
 	public virtual void CancelRace()
 	{
 		BreakableObject[] array = this.timedBreakables;
@@ -194,7 +194,7 @@ public class TimedChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x06000873 RID: 2163 RVA: 0x00037E8C File Offset: 0x0003608C
+	// Token: 0x06000873 RID: 2163 RVA: 0x0003806C File Offset: 0x0003626C
 	public void FinishRace()
 	{
 		bool flag = !base.PersistentState;
@@ -245,7 +245,7 @@ public class TimedChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x06000874 RID: 2164 RVA: 0x00037FB0 File Offset: 0x000361B0
+	// Token: 0x06000874 RID: 2164 RVA: 0x00038190 File Offset: 0x00036390
 	public virtual void ClearRace()
 	{
 		TimedChallenge.current = null;
@@ -266,7 +266,7 @@ public class TimedChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x06000875 RID: 2165 RVA: 0x00038030 File Offset: 0x00036230
+	// Token: 0x06000875 RID: 2165 RVA: 0x00038210 File Offset: 0x00036410
 	protected virtual void DoParticleEffects()
 	{
 		foreach (BreakableObject breakableObject in this.timedBreakables)
@@ -278,7 +278,7 @@ public class TimedChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x06000876 RID: 2166 RVA: 0x0000857D File Offset: 0x0000677D
+	// Token: 0x06000876 RID: 2166 RVA: 0x00008592 File Offset: 0x00006792
 	public void SetPlaceholderTextToFinishTime(int index)
 	{
 		MultilingualTextDocument.SetPlaceholder(index, this.playerFinishTime.ToString("0.00"));

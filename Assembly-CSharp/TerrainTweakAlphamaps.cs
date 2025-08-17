@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TerrainTweakAlphamaps : MonoBehaviour
 {
-	// Token: 0x060010B0 RID: 4272 RVA: 0x00055FB0 File Offset: 0x000541B0
+	// Token: 0x060010B0 RID: 4272 RVA: 0x00056144 File Offset: 0x00054344
 	private void OnValidate()
 	{
 		if (this.terrain == null)
@@ -30,7 +30,7 @@ public class TerrainTweakAlphamaps : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010B1 RID: 4273 RVA: 0x00056084 File Offset: 0x00054284
+	// Token: 0x060010B1 RID: 4273 RVA: 0x00056218 File Offset: 0x00054418
 	[ContextMenu("Grab Alphamaps")]
 	public void GrabAlphamaps()
 	{
@@ -39,7 +39,7 @@ public class TerrainTweakAlphamaps : MonoBehaviour
 		this.modifiedAlphamaps = (float[,,])this.alphamaps.Clone();
 	}
 
-	// Token: 0x060010B2 RID: 4274 RVA: 0x0000E47C File Offset: 0x0000C67C
+	// Token: 0x060010B2 RID: 4274 RVA: 0x0000E491 File Offset: 0x0000C691
 	[ContextMenu("Apply Alphamaps")]
 	public void ApplyAlphamaps()
 	{

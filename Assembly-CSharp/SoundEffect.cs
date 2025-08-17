@@ -4,7 +4,7 @@ using UnityEngine;
 [Serializable]
 public class SoundEffect
 {
-	// (get) Token: 0x06000AA4 RID: 2724 RVA: 0x0000A266 File Offset: 0x00008466
+	// (get) Token: 0x06000AA4 RID: 2724 RVA: 0x0000A27B File Offset: 0x0000847B
 	public float Volume
 	{
 		get
@@ -13,7 +13,7 @@ public class SoundEffect
 		}
 	}
 
-	// (get) Token: 0x06000AA5 RID: 2725 RVA: 0x0000A27E File Offset: 0x0000847E
+	// (get) Token: 0x06000AA5 RID: 2725 RVA: 0x0000A293 File Offset: 0x00008493
 	public float Pitch
 	{
 		get

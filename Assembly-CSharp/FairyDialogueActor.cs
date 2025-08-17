@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FairyDialogueActor : DialogueActor
 {
-	// Token: 0x060004B3 RID: 1203 RVA: 0x0002BFD8 File Offset: 0x0002A1D8
+	// Token: 0x060004B3 RID: 1203 RVA: 0x0002C154 File Offset: 0x0002A354
 	protected override void Start()
 	{
 		this.perlinSeed = 1000f * global::UnityEngine.Random.value;
@@ -17,7 +17,7 @@ public class FairyDialogueActor : DialogueActor
 		base.transform.parent = base.transform.parent.parent;
 	}
 
-	// Token: 0x060004B4 RID: 1204 RVA: 0x0002C064 File Offset: 0x0002A264
+	// Token: 0x060004B4 RID: 1204 RVA: 0x0002C1E0 File Offset: 0x0002A3E0
 	private Vector3 GetPerlinOffset()
 	{
 		float num = this.perlinSpeed * Time.time;
@@ -27,7 +27,7 @@ public class FairyDialogueActor : DialogueActor
 		return this.perlinRadius * Vector3.ClampMagnitude(vector, 1f);
 	}
 
-	// Token: 0x060004B5 RID: 1205 RVA: 0x0002C0E4 File Offset: 0x0002A2E4
+	// Token: 0x060004B5 RID: 1205 RVA: 0x0002C260 File Offset: 0x0002A460
 	public override void LateUpdate()
 	{
 		base.LateUpdate();
@@ -47,7 +47,7 @@ public class FairyDialogueActor : DialogueActor
 		base.transform.position = this.position;
 	}
 
-	// Token: 0x060004B6 RID: 1206 RVA: 0x0002C1D4 File Offset: 0x0002A3D4
+	// Token: 0x060004B6 RID: 1206 RVA: 0x0002C350 File Offset: 0x0002A550
 	protected override void UpdateMouthFlap()
 	{
 		float num = Mathf.SmoothStep(0f, 1f, this.mouthControl);

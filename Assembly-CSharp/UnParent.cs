@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UnParent : MonoBehaviour
 {
-	// Token: 0x06000FF7 RID: 4087 RVA: 0x0000DC9A File Offset: 0x0000BE9A
+	// Token: 0x06000FF7 RID: 4087 RVA: 0x0000DCAF File Offset: 0x0000BEAF
 	private void OnValidate()
 	{
 		if (this.parent == null)
@@ -12,13 +12,13 @@ public class UnParent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FF8 RID: 4088 RVA: 0x0000DCBB File Offset: 0x0000BEBB
+	// Token: 0x06000FF8 RID: 4088 RVA: 0x0000DCD0 File Offset: 0x0000BED0
 	private void Start()
 	{
 		base.transform.parent = null;
 	}
 
-	// Token: 0x06000FF9 RID: 4089 RVA: 0x000530EC File Offset: 0x000512EC
+	// Token: 0x06000FF9 RID: 4089 RVA: 0x00053280 File Offset: 0x00051480
 	private void Update()
 	{
 		if (this.parent == null || this.parent.gameObject == null)

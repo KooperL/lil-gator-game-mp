@@ -11,7 +11,7 @@ public class DSDialoguePhone : DialogueSequence, ICueable
 		this.camera = camera;
 	}
 
-	// Token: 0x060005B3 RID: 1459 RVA: 0x0002F804 File Offset: 0x0002DA04
+	// Token: 0x060005B3 RID: 1459 RVA: 0x0002F980 File Offset: 0x0002DB80
 	public override YieldInstruction Run()
 	{
 		IEnumerator enumerator;
@@ -30,7 +30,7 @@ public class DSDialoguePhone : DialogueSequence, ICueable
 		return CoroutineUtil.Start(enumerator);
 	}
 
-	// Token: 0x060005B4 RID: 1460 RVA: 0x0002F8B4 File Offset: 0x0002DAB4
+	// Token: 0x060005B4 RID: 1460 RVA: 0x0002FA30 File Offset: 0x0002DC30
 	[ContextMenu("Sync Cues")]
 	private void SyncCues()
 	{
@@ -43,7 +43,7 @@ public class DSDialoguePhone : DialogueSequence, ICueable
 		this.precueFirstCue = false;
 	}
 
-	// Token: 0x060005B5 RID: 1461 RVA: 0x0002F914 File Offset: 0x0002DB14
+	// Token: 0x060005B5 RID: 1461 RVA: 0x0002FA90 File Offset: 0x0002DC90
 	public override void Activate()
 	{
 		if (this.precueFirstCue && this.cueData.Length != 0)

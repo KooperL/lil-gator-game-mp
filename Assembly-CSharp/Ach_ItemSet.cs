@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class Ach_ItemSet : MonoBehaviour
 {
-	// Token: 0x060001E8 RID: 488 RVA: 0x0001E124 File Offset: 0x0001C324
+	// Token: 0x060001E8 RID: 488 RVA: 0x0001E2A0 File Offset: 0x0001C4A0
 	private void Initialize()
 	{
 		this.hasInitialized = true;
@@ -54,7 +54,7 @@ public class Ach_ItemSet : MonoBehaviour
 		PlayerItemManager.onItemRefresh.RemoveListener(new UnityAction(this.CheckItems));
 	}
 
-	// Token: 0x060001EC RID: 492 RVA: 0x0001E22C File Offset: 0x0001C42C
+	// Token: 0x060001EC RID: 492 RVA: 0x0001E3A8 File Offset: 0x0001C5A8
 	private void CheckItems()
 	{
 		if (!this.hasInitialized)

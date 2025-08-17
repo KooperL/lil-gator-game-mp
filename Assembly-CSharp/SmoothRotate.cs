@@ -19,7 +19,7 @@ public class SmoothRotate : MonoBehaviour
 		this.t = 0f;
 	}
 
-	// Token: 0x0600069E RID: 1694 RVA: 0x00031FA4 File Offset: 0x000301A4
+	// Token: 0x0600069E RID: 1694 RVA: 0x00032120 File Offset: 0x00030320
 	private void Update()
 	{
 		if (this.t < 1f)

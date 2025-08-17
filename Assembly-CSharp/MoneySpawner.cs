@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MoneySpawner : MonoBehaviour
 {
-	// Token: 0x06000986 RID: 2438 RVA: 0x000093F9 File Offset: 0x000075F9
+	// Token: 0x06000986 RID: 2438 RVA: 0x0000940E File Offset: 0x0000760E
 	private void Start()
 	{
 		if (this.spawnOnAwake)
@@ -12,7 +12,7 @@ public class MoneySpawner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000987 RID: 2439 RVA: 0x00009409 File Offset: 0x00007609
+	// Token: 0x06000987 RID: 2439 RVA: 0x0000941E File Offset: 0x0000761E
 	public void SpawnMoney()
 	{
 		int num = this.cents;

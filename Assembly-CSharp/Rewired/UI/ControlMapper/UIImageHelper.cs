@@ -8,7 +8,7 @@ namespace Rewired.UI.ControlMapper
 	[RequireComponent(typeof(Image))]
 	public class UIImageHelper : MonoBehaviour
 	{
-		// Token: 0x06001C9E RID: 7326 RVA: 0x00070A84 File Offset: 0x0006EC84
+		// Token: 0x06001C9E RID: 7326 RVA: 0x00070C18 File Offset: 0x0006EE18
 		public void SetEnabledState(bool newState)
 		{
 			this.currentState = newState;
@@ -26,19 +26,19 @@ namespace Rewired.UI.ControlMapper
 			state.Set(component);
 		}
 
-		// Token: 0x06001C9F RID: 7327 RVA: 0x00015E0C File Offset: 0x0001400C
+		// Token: 0x06001C9F RID: 7327 RVA: 0x00015E21 File Offset: 0x00014021
 		public void SetEnabledStateColor(Color color)
 		{
 			this.enabledState.color = color;
 		}
 
-		// Token: 0x06001CA0 RID: 7328 RVA: 0x00015E1A File Offset: 0x0001401A
+		// Token: 0x06001CA0 RID: 7328 RVA: 0x00015E2F File Offset: 0x0001402F
 		public void SetDisabledStateColor(Color color)
 		{
 			this.disabledState.color = color;
 		}
 
-		// Token: 0x06001CA1 RID: 7329 RVA: 0x00070AD8 File Offset: 0x0006ECD8
+		// Token: 0x06001CA1 RID: 7329 RVA: 0x00070C6C File Offset: 0x0006EE6C
 		public void Refresh()
 		{
 			UIImageHelper.State state = (this.currentState ? this.enabledState : this.disabledState);
@@ -61,7 +61,7 @@ namespace Rewired.UI.ControlMapper
 		[Serializable]
 		private class State
 		{
-			// Token: 0x06001CA3 RID: 7331 RVA: 0x00015E28 File Offset: 0x00014028
+			// Token: 0x06001CA3 RID: 7331 RVA: 0x00015E3D File Offset: 0x0001403D
 			public void Set(Image image)
 			{
 				if (image == null)

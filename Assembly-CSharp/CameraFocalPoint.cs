@@ -22,7 +22,7 @@ public class CameraFocalPoint : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600029E RID: 670 RVA: 0x00020BA4 File Offset: 0x0001EDA4
+	// Token: 0x0600029E RID: 670 RVA: 0x00020D20 File Offset: 0x0001EF20
 	private void OnEnable()
 	{
 		int num = -1;

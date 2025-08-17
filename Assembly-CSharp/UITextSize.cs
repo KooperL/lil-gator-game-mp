@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UITextSize : MonoBehaviour
 {
-	// Token: 0x06001360 RID: 4960 RVA: 0x00010604 File Offset: 0x0000E804
+	// Token: 0x06001360 RID: 4960 RVA: 0x00010619 File Offset: 0x0000E819
 	private void Awake()
 	{
 		this.text = base.GetComponent<Text>();

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemTest : ItemThrowable
 {
-	// Token: 0x06000BC8 RID: 3016 RVA: 0x00041380 File Offset: 0x0003F580
+	// Token: 0x06000BC8 RID: 3016 RVA: 0x00041514 File Offset: 0x0003F714
 	public override void Throw(float charge, Vector3 direction)
 	{
 		Player.movement.Ragdoll(charge * this.speed * (direction + Vector3.up));
@@ -26,7 +26,7 @@ public class ItemTest : ItemThrowable
 		}
 	}
 
-	// Token: 0x06000BC9 RID: 3017 RVA: 0x0000AFFB File Offset: 0x000091FB
+	// Token: 0x06000BC9 RID: 3017 RVA: 0x0000B010 File Offset: 0x00009210
 	public override void LateUpdate()
 	{
 		if (this.springObject != null && !Player.movement.isRagdolling)

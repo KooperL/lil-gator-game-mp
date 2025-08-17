@@ -6,7 +6,7 @@ namespace Cinemachine.Examples
 	[AddComponentMenu("")]
 	public class ExampleHelpWindow : MonoBehaviour
 	{
-		// Token: 0x060013BF RID: 5055 RVA: 0x000609BC File Offset: 0x0005EBBC
+		// Token: 0x060013BF RID: 5055 RVA: 0x00060B50 File Offset: 0x0005ED50
 		private void OnGUI()
 		{
 			if (this.mShowingHelpWindow)
@@ -24,7 +24,7 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x060013C0 RID: 5056 RVA: 0x00060A90 File Offset: 0x0005EC90
+		// Token: 0x060013C0 RID: 5056 RVA: 0x00060C24 File Offset: 0x0005EE24
 		private void DrawWindow(int id, float maxWidth)
 		{
 			GUILayout.BeginVertical(GUI.skin.box, Array.Empty<GUILayoutOption>());

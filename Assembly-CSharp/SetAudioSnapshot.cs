@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 
 public class SetAudioSnapshot : MonoBehaviour
 {
-	// Token: 0x0600105F RID: 4191 RVA: 0x0000E0D2 File Offset: 0x0000C2D2
+	// Token: 0x0600105F RID: 4191 RVA: 0x0000E0E7 File Offset: 0x0000C2E7
 	private void Start()
 	{
 		if (this.onAwake)
@@ -13,7 +13,7 @@ public class SetAudioSnapshot : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001060 RID: 4192 RVA: 0x0000E0E2 File Offset: 0x0000C2E2
+	// Token: 0x06001060 RID: 4192 RVA: 0x0000E0F7 File Offset: 0x0000C2F7
 	private void OnDisable()
 	{
 		if (this.onDisable)
@@ -22,7 +22,7 @@ public class SetAudioSnapshot : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001061 RID: 4193 RVA: 0x0000E0F2 File Offset: 0x0000C2F2
+	// Token: 0x06001061 RID: 4193 RVA: 0x0000E107 File Offset: 0x0000C307
 	public void SetSnapshot()
 	{
 		this.snapshot.TransitionTo(this.transitionTime);

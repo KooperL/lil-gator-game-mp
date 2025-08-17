@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 {
-	// (get) Token: 0x06000BC0 RID: 3008 RVA: 0x0000AFC6 File Offset: 0x000091C6
+	// (get) Token: 0x06000BC0 RID: 3008 RVA: 0x0000AFDB File Offset: 0x000091DB
 	private PlayerItemManager.EquippedState EquippedState
 	{
 		get
@@ -16,7 +16,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BC1 RID: 3009 RVA: 0x000410E8 File Offset: 0x0003F2E8
+	// Token: 0x06000BC1 RID: 3009 RVA: 0x0004127C File Offset: 0x0003F47C
 	public void Input(bool isDown, bool isHeld)
 	{
 		if (isDown)
@@ -46,7 +46,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BC2 RID: 3010 RVA: 0x000411DC File Offset: 0x0003F3DC
+	// Token: 0x06000BC2 RID: 3010 RVA: 0x00041370 File Offset: 0x0003F570
 	private void LateUpdate()
 	{
 		if (this.spawnedObject != null)
@@ -78,7 +78,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BC3 RID: 3011 RVA: 0x00041264 File Offset: 0x0003F464
+	// Token: 0x06000BC3 RID: 3011 RVA: 0x000413F8 File Offset: 0x0003F5F8
 	public void Cancel()
 	{
 		Player.movement.isModified = false;
@@ -101,7 +101,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BC4 RID: 3012 RVA: 0x0004130C File Offset: 0x0003F50C
+	// Token: 0x06000BC4 RID: 3012 RVA: 0x000414A0 File Offset: 0x0003F6A0
 	public void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (this.isOnRight ? Player.itemManager.hipAnchor_r : Player.itemManager.hipAnchor);
@@ -119,13 +119,13 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BC5 RID: 3013 RVA: 0x0000AFD3 File Offset: 0x000091D3
+	// Token: 0x06000BC5 RID: 3013 RVA: 0x0000AFE8 File Offset: 0x000091E8
 	public void OnRemove()
 	{
 		this.Cancel();
 	}
 
-	// Token: 0x06000BC6 RID: 3014 RVA: 0x0000AFDB File Offset: 0x000091DB
+	// Token: 0x06000BC6 RID: 3014 RVA: 0x0000AFF0 File Offset: 0x000091F0
 	public void SetIndex(int index)
 	{
 		if (index == 1)

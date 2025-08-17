@@ -46,7 +46,7 @@ public static class DialogueUtil
 		}
 	}
 
-	// Token: 0x0600059C RID: 1436 RVA: 0x0002F014 File Offset: 0x0002D214
+	// Token: 0x0600059C RID: 1436 RVA: 0x0002F190 File Offset: 0x0002D390
 	public static DialogueUtil.CueData[] UpdateCues(MultilingualTextDocument document, string dialogue, DialogueUtil.CueData[] cueData)
 	{
 		if (document == null)
@@ -143,7 +143,7 @@ public static class DialogueUtil
 		return cueData;
 	}
 
-	// Token: 0x0600059D RID: 1437 RVA: 0x0002F2B8 File Offset: 0x0002D4B8
+	// Token: 0x0600059D RID: 1437 RVA: 0x0002F434 File Offset: 0x0002D634
 	public static bool CheckForPrequeue(MultilingualTextDocument document, string dialogue, DialogueUtil.CueData firstCue)
 	{
 		if (firstCue.lineIndex == 0)
@@ -176,7 +176,7 @@ public static class DialogueUtil
 			this.cueObjects = new GameObject[0];
 		}
 
-		// Token: 0x0600059F RID: 1439 RVA: 0x0002F318 File Offset: 0x0002D518
+		// Token: 0x0600059F RID: 1439 RVA: 0x0002F494 File Offset: 0x0002D694
 		public void Cue(ref GameObject currentCamera)
 		{
 			this.onCue.Invoke();
@@ -199,7 +199,7 @@ public static class DialogueUtil
 			}
 		}
 
-		// Token: 0x060005A0 RID: 1440 RVA: 0x0002F384 File Offset: 0x0002D584
+		// Token: 0x060005A0 RID: 1440 RVA: 0x0002F500 File Offset: 0x0002D700
 		public void Uncue()
 		{
 			GameObject[] array = this.cueObjects;

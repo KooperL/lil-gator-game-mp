@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ConditionalMappingSets : MonoBehaviour
 {
-	// Token: 0x06001198 RID: 4504 RVA: 0x00058794 File Offset: 0x00056994
+	// Token: 0x06001198 RID: 4504 RVA: 0x00058928 File Offset: 0x00056B28
 	[ContextMenu("Copy mapping sets")]
 	public void CopyMappingSets()
 	{
@@ -12,7 +12,7 @@ public class ConditionalMappingSets : MonoBehaviour
 		this.copiedMappingSets = component._mappingSets;
 	}
 
-	// Token: 0x06001199 RID: 4505 RVA: 0x0000EFE7 File Offset: 0x0000D1E7
+	// Token: 0x06001199 RID: 4505 RVA: 0x0000EFFC File Offset: 0x0000D1FC
 	[ContextMenu("Set mapping set")]
 	public void SetMappingSet()
 	{

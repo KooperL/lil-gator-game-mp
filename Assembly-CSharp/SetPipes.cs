@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SetPipes : MonoBehaviour
 {
-	// Token: 0x0600014B RID: 331 RVA: 0x0001BBF4 File Offset: 0x00019DF4
+	// Token: 0x0600014B RID: 331 RVA: 0x0001BD70 File Offset: 0x00019F70
 	public void SetWater(bool hasWater)
 	{
 		Pipe[] array = this.pipes;

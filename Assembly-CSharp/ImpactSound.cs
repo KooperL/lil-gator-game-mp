@@ -9,7 +9,7 @@ public class ImpactSound : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06000659 RID: 1625 RVA: 0x0003109C File Offset: 0x0002F29C
+	// Token: 0x06000659 RID: 1625 RVA: 0x00031218 File Offset: 0x0002F418
 	private void OnTriggerEnter(Collider other)
 	{
 		if (!base.enabled)
@@ -28,7 +28,7 @@ public class ImpactSound : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600065A RID: 1626 RVA: 0x00031104 File Offset: 0x0002F304
+	// Token: 0x0600065A RID: 1626 RVA: 0x00031280 File Offset: 0x0002F480
 	private void OnCollisionEnter(Collision collision)
 	{
 		if (!base.enabled)

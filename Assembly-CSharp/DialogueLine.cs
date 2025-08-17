@@ -9,7 +9,7 @@ public struct DialogueLine
 		return this.english != null && this.english.Length != 0 && !string.IsNullOrEmpty(this.english[0]);
 	}
 
-	// Token: 0x06000033 RID: 51 RVA: 0x00017C9C File Offset: 0x00015E9C
+	// Token: 0x06000033 RID: 51 RVA: 0x00017E18 File Offset: 0x00016018
 	public string GetText(Language language = Language.Auto)
 	{
 		if (language == Language.Auto)

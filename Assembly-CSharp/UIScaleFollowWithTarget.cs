@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class UIScaleFollowWithTarget : MonoBehaviour
 {
-	// Token: 0x060012E5 RID: 4837 RVA: 0x0000FF1F File Offset: 0x0000E11F
+	// Token: 0x060012E5 RID: 4837 RVA: 0x0000FF34 File Offset: 0x0000E134
 	private void Awake()
 	{
 		this.highlight = global::UnityEngine.Object.FindObjectOfType<HighlightsFX>();
 		this.UpdateFollowTarget();
 	}
 
-	// Token: 0x060012E6 RID: 4838 RVA: 0x0000FF32 File Offset: 0x0000E132
+	// Token: 0x060012E6 RID: 4838 RVA: 0x0000FF47 File Offset: 0x0000E147
 	private void Update()
 	{
 		if (this.followTarget != this.follow.followTarget)
@@ -19,7 +19,7 @@ public class UIScaleFollowWithTarget : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012E7 RID: 4839 RVA: 0x0005D2C4 File Offset: 0x0005B4C4
+	// Token: 0x060012E7 RID: 4839 RVA: 0x0005D458 File Offset: 0x0005B658
 	private void UpdateFollowTarget()
 	{
 		this.followTarget = this.follow.followTarget;

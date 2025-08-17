@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SettingResolution : MonoBehaviour
 {
-	// Token: 0x06001147 RID: 4423 RVA: 0x0000EC69 File Offset: 0x0000CE69
+	// Token: 0x06001147 RID: 4423 RVA: 0x0000EC7E File Offset: 0x0000CE7E
 	private void OnValidate()
 	{
 		if (this.selectOptions != null)
@@ -12,7 +12,7 @@ public class SettingResolution : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001148 RID: 4424 RVA: 0x00057CEC File Offset: 0x00055EEC
+	// Token: 0x06001148 RID: 4424 RVA: 0x00057E80 File Offset: 0x00056080
 	private void OnEnable()
 	{
 		this.selectOptions.options = new string[Settings.pixelResolutions.Length];
@@ -34,7 +34,7 @@ public class SettingResolution : MonoBehaviour
 		this.setInitialSetting = true;
 	}
 
-	// Token: 0x06001149 RID: 4425 RVA: 0x00057DE0 File Offset: 0x00055FE0
+	// Token: 0x06001149 RID: 4425 RVA: 0x00057F74 File Offset: 0x00056174
 	public void OnSelectionChange(int selectedOption)
 	{
 		if (!this.setInitialSetting)

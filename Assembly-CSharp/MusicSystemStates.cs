@@ -12,7 +12,7 @@ public class MusicSystemStates : MonoBehaviour
 		this.dynamicStates = base.GetComponent<MusicSystemDynamicStates>();
 	}
 
-	// Token: 0x060000AE RID: 174 RVA: 0x00019F78 File Offset: 0x00018178
+	// Token: 0x060000AE RID: 174 RVA: 0x0001A0F4 File Offset: 0x000182F4
 	public void SetState(string stateName)
 	{
 		if (this.dynamicStates != null)

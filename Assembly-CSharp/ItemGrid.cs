@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class ItemGrid : MonoBehaviour
 {
-	// Token: 0x060010F3 RID: 4339 RVA: 0x0000E739 File Offset: 0x0000C939
+	// Token: 0x060010F3 RID: 4339 RVA: 0x0000E74E File Offset: 0x0000C94E
 	private void OnValidate()
 	{
 		if (this.preventDeselection == null)
@@ -21,7 +21,7 @@ public class ItemGrid : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010F4 RID: 4340 RVA: 0x00057018 File Offset: 0x00055218
+	// Token: 0x060010F4 RID: 4340 RVA: 0x000571AC File Offset: 0x000553AC
 	public void LoadElements(ItemObject[] itemData, int selectedIndex = 0)
 	{
 		this.items = itemData;
@@ -60,7 +60,7 @@ public class ItemGrid : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010F5 RID: 4341 RVA: 0x0005713C File Offset: 0x0005533C
+	// Token: 0x060010F5 RID: 4341 RVA: 0x000572D0 File Offset: 0x000554D0
 	public void LoadElements(ItemObject[] itemData, int[] selectedIndices)
 	{
 		this.items = itemData;
@@ -97,7 +97,7 @@ public class ItemGrid : MonoBehaviour
 		this.SelectIndex(num);
 	}
 
-	// Token: 0x060010F6 RID: 4342 RVA: 0x00057234 File Offset: 0x00055434
+	// Token: 0x060010F6 RID: 4342 RVA: 0x000573C8 File Offset: 0x000555C8
 	public void RefreshElements()
 	{
 		for (int i = 0; i < this.items.Length; i++)
@@ -110,13 +110,13 @@ public class ItemGrid : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010F7 RID: 4343 RVA: 0x0000E76F File Offset: 0x0000C96F
+	// Token: 0x060010F7 RID: 4343 RVA: 0x0000E784 File Offset: 0x0000C984
 	private void OnEnable()
 	{
 		this.SelectIndex(this.selectedIndex);
 	}
 
-	// Token: 0x060010F8 RID: 4344 RVA: 0x00057298 File Offset: 0x00055498
+	// Token: 0x060010F8 RID: 4344 RVA: 0x0005742C File Offset: 0x0005562C
 	public void SelectIndex(int index)
 	{
 		if (this.selectedIndex >= this.items.Length)
@@ -135,7 +135,7 @@ public class ItemGrid : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010F9 RID: 4345 RVA: 0x00057330 File Offset: 0x00055530
+	// Token: 0x060010F9 RID: 4345 RVA: 0x000574C4 File Offset: 0x000556C4
 	public void UpdateSelectedIndex(ItemObject newSelectedItem)
 	{
 		for (int i = 0; i < this.items.Length; i++)

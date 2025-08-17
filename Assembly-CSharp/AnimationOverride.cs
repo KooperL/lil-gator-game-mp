@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public struct AnimationOverride
 {
-	// Token: 0x06000CD9 RID: 3289 RVA: 0x0000BEFB File Offset: 0x0000A0FB
+	// Token: 0x06000CD9 RID: 3289 RVA: 0x0000BF10 File Offset: 0x0000A110
 	public KeyValuePair<AnimationClip, AnimationClip> GetPair()
 	{
 		return new KeyValuePair<AnimationClip, AnimationClip>(this.originalClip, this.overrideClip);

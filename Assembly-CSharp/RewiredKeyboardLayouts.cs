@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RewiredKeyboardLayouts : MonoBehaviour
 {
-	// Token: 0x06000F0A RID: 3850 RVA: 0x0000D16D File Offset: 0x0000B36D
+	// Token: 0x06000F0A RID: 3850 RVA: 0x0000D182 File Offset: 0x0000B382
 	private void Start()
 	{
 		this.player = ReInput.players.GetPlayer(0);
@@ -19,14 +19,14 @@ public class RewiredKeyboardLayouts : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06000F0C RID: 3852 RVA: 0x0000D1AD File Offset: 0x0000B3AD
+	// Token: 0x06000F0C RID: 3852 RVA: 0x0000D1C2 File Offset: 0x0000B3C2
 	[ContextMenu("Force Update")]
 	public void ForceUpdate()
 	{
 		this.ApplyKeyboardLayouts();
 	}
 
-	// Token: 0x06000F0D RID: 3853 RVA: 0x0004EA7C File Offset: 0x0004CC7C
+	// Token: 0x06000F0D RID: 3853 RVA: 0x0004EC10 File Offset: 0x0004CE10
 	private void UpdateKeyboardLayouts(int keyboardID)
 	{
 		Debug.Log(keyboardID);
@@ -46,7 +46,7 @@ public class RewiredKeyboardLayouts : MonoBehaviour
 		this.ApplyKeyboardLayouts();
 	}
 
-	// Token: 0x06000F0E RID: 3854 RVA: 0x0004EAFC File Offset: 0x0004CCFC
+	// Token: 0x06000F0E RID: 3854 RVA: 0x0004EC90 File Offset: 0x0004CE90
 	private void ApplyKeyboardLayouts()
 	{
 		int num = -1;
@@ -95,7 +95,7 @@ public class RewiredKeyboardLayouts : MonoBehaviour
 	[DllImport("user32.dll")]
 	private static extern IntPtr GetKeyboardLayout(uint thread);
 
-	// Token: 0x06000F12 RID: 3858 RVA: 0x0004EC70 File Offset: 0x0004CE70
+	// Token: 0x06000F12 RID: 3858 RVA: 0x0004EE04 File Offset: 0x0004D004
 	public int GetCurrentKeyboardLayout()
 	{
 		int num2;
@@ -115,7 +115,7 @@ public class RewiredKeyboardLayouts : MonoBehaviour
 		return num2;
 	}
 
-	// Token: 0x06000F13 RID: 3859 RVA: 0x0004ECC8 File Offset: 0x0004CEC8
+	// Token: 0x06000F13 RID: 3859 RVA: 0x0004EE5C File Offset: 0x0004D05C
 	private void CheckKeyboardLayout()
 	{
 		int currentKeyboardLayout = this.GetCurrentKeyboardLayout();
@@ -126,7 +126,7 @@ public class RewiredKeyboardLayouts : MonoBehaviour
 		}
 	}
 
-	private global::Rewired.Player player;
+	private Player player;
 
 	public RewiredKeyboardLayouts.KeyboardLayout[] layouts;
 

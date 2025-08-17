@@ -11,7 +11,7 @@ public class Sun : MonoBehaviour
 		this.rotation = base.transform.rotation;
 	}
 
-	// Token: 0x060006A3 RID: 1699 RVA: 0x000320A0 File Offset: 0x000302A0
+	// Token: 0x060006A3 RID: 1699 RVA: 0x0003221C File Offset: 0x0003041C
 	private void Update()
 	{
 		Quaternion quaternion = this.rotation;

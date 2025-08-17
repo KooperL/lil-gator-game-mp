@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UIRaceIcon : MonoBehaviour
 {
-	// Token: 0x06001116 RID: 4374 RVA: 0x00057794 File Offset: 0x00055994
+	// Token: 0x06001116 RID: 4374 RVA: 0x00057928 File Offset: 0x00055B28
 	public static string TimerFormat(float time)
 	{
 		float num = (float)Mathf.FloorToInt(time / 60f);
@@ -12,7 +12,7 @@ public class UIRaceIcon : MonoBehaviour
 		return string.Format("{0:0}:{1:00.00}", num, num2);
 	}
 
-	// Token: 0x06001117 RID: 4375 RVA: 0x000577D0 File Offset: 0x000559D0
+	// Token: 0x06001117 RID: 4375 RVA: 0x00057964 File Offset: 0x00055B64
 	public void LoadRace(float raceLength, Transform finishLine, float previousBest = -1f)
 	{
 		this.isEnd = false;
@@ -38,7 +38,7 @@ public class UIRaceIcon : MonoBehaviour
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x06001118 RID: 4376 RVA: 0x000578AC File Offset: 0x00055AAC
+	// Token: 0x06001118 RID: 4376 RVA: 0x00057A40 File Offset: 0x00055C40
 	public void LoadEnd(Transform finishLine, float previousBest, float newTime)
 	{
 		this.isEnd = true;
@@ -54,13 +54,13 @@ public class UIRaceIcon : MonoBehaviour
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x06001119 RID: 4377 RVA: 0x0000968D File Offset: 0x0000788D
+	// Token: 0x06001119 RID: 4377 RVA: 0x000096A2 File Offset: 0x000078A2
 	public void Clear()
 	{
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600111A RID: 4378 RVA: 0x0000E8FB File Offset: 0x0000CAFB
+	// Token: 0x0600111A RID: 4378 RVA: 0x0000E910 File Offset: 0x0000CB10
 	private void Update()
 	{
 		if (!this.isEnd)
@@ -74,7 +74,7 @@ public class UIRaceIcon : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600111B RID: 4379 RVA: 0x00057968 File Offset: 0x00055B68
+	// Token: 0x0600111B RID: 4379 RVA: 0x00057AFC File Offset: 0x00055CFC
 	private void UpdateDisplay()
 	{
 		this.progress.fillAmount = Mathf.InverseLerp(this.raceEndTime, this.raceStartTime, Time.time);

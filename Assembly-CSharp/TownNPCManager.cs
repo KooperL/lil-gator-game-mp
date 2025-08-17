@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class TownNPCManager : MonoBehaviour
 {
-	// (get) Token: 0x06000A04 RID: 2564 RVA: 0x000099F5 File Offset: 0x00007BF5
+	// (get) Token: 0x06000A04 RID: 2564 RVA: 0x00009A0A File Offset: 0x00007C0A
 	private bool ShowSequence
 	{
 		get
@@ -15,7 +15,7 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000A05 RID: 2565 RVA: 0x00009A02 File Offset: 0x00007C02
+	// (get) Token: 0x06000A05 RID: 2565 RVA: 0x00009A17 File Offset: 0x00007C17
 	public bool isJillQuestFinished
 	{
 		get
@@ -24,7 +24,7 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000A06 RID: 2566 RVA: 0x00009A0F File Offset: 0x00007C0F
+	// (get) Token: 0x06000A06 RID: 2566 RVA: 0x00009A24 File Offset: 0x00007C24
 	public bool isMartinQuestFinished
 	{
 		get
@@ -33,7 +33,7 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000A07 RID: 2567 RVA: 0x00009A1C File Offset: 0x00007C1C
+	// (get) Token: 0x06000A07 RID: 2567 RVA: 0x00009A31 File Offset: 0x00007C31
 	public bool isAveryQuestFinished
 	{
 		get
@@ -42,8 +42,8 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000A08 RID: 2568 RVA: 0x00009A29 File Offset: 0x00007C29
-	// (set) Token: 0x06000A09 RID: 2569 RVA: 0x00009A36 File Offset: 0x00007C36
+	// (get) Token: 0x06000A08 RID: 2568 RVA: 0x00009A3E File Offset: 0x00007C3E
+	// (set) Token: 0x06000A09 RID: 2569 RVA: 0x00009A4B File Offset: 0x00007C4B
 	public TownNPCManager.TownState State
 	{
 		get
@@ -56,7 +56,7 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A0A RID: 2570 RVA: 0x0003BE5C File Offset: 0x0003A05C
+	// Token: 0x06000A0A RID: 2570 RVA: 0x0003BFF0 File Offset: 0x0003A1F0
 	private void Awake()
 	{
 		TownNPCManager.t = this;
@@ -68,21 +68,21 @@ public class TownNPCManager : MonoBehaviour
 		this.stateMachine.onStateChange.AddListener(new UnityAction<int>(this.OnStateProgressed));
 	}
 
-	// Token: 0x06000A0B RID: 2571 RVA: 0x00009A44 File Offset: 0x00007C44
+	// Token: 0x06000A0B RID: 2571 RVA: 0x00009A59 File Offset: 0x00007C59
 	private void Start()
 	{
 		this.UpdateTownActors();
 		this.UpdateState();
 	}
 
-	// Token: 0x06000A0C RID: 2572 RVA: 0x00009A52 File Offset: 0x00007C52
+	// Token: 0x06000A0C RID: 2572 RVA: 0x00009A67 File Offset: 0x00007C67
 	[ContextMenu("Find Town Actors")]
 	public void FindTownActors()
 	{
 		this.townActors = base.transform.GetComponentsInChildren<DialogueActor>(true);
 	}
 
-	// Token: 0x06000A0D RID: 2573 RVA: 0x0003BF04 File Offset: 0x0003A104
+	// Token: 0x06000A0D RID: 2573 RVA: 0x0003C098 File Offset: 0x0003A298
 	public void UnlockAllNPCs()
 	{
 		foreach (DialogueActor dialogueActor in this.townActors)
@@ -95,7 +95,7 @@ public class TownNPCManager : MonoBehaviour
 		this.UpdateTownActors();
 	}
 
-	// Token: 0x06000A0E RID: 2574 RVA: 0x0003BF54 File Offset: 0x0003A154
+	// Token: 0x06000A0E RID: 2574 RVA: 0x0003C0E8 File Offset: 0x0003A2E8
 	public void RewardNPCsSilently(CharacterProfile[] profiles)
 	{
 		foreach (CharacterProfile characterProfile in profiles)
@@ -112,13 +112,13 @@ public class TownNPCManager : MonoBehaviour
 		this.UpdateTownActors();
 	}
 
-	// Token: 0x06000A0F RID: 2575 RVA: 0x00009A66 File Offset: 0x00007C66
+	// Token: 0x06000A0F RID: 2575 RVA: 0x00009A7B File Offset: 0x00007C7B
 	public void RewardNPCs(CharacterProfile[] profiles, int count = -1)
 	{
 		CoroutineUtil.Start(this.RewardNPCsCoroutine(profiles, -1));
 	}
 
-	// Token: 0x06000A10 RID: 2576 RVA: 0x00009A76 File Offset: 0x00007C76
+	// Token: 0x06000A10 RID: 2576 RVA: 0x00009A8B File Offset: 0x00007C8B
 	private IEnumerator RewardNPCsCoroutine(CharacterProfile[] profiles, int count = -1)
 	{
 		yield return null;
@@ -174,7 +174,7 @@ public class TownNPCManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000A11 RID: 2577 RVA: 0x0003BFB4 File Offset: 0x0003A1B4
+	// Token: 0x06000A11 RID: 2577 RVA: 0x0003C148 File Offset: 0x0003A348
 	public void RewardAlreadyUnlockedNPCs()
 	{
 		List<CharacterProfile> list = new List<CharacterProfile>();
@@ -192,7 +192,7 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A12 RID: 2578 RVA: 0x0003C020 File Offset: 0x0003A220
+	// Token: 0x06000A12 RID: 2578 RVA: 0x0003C1B4 File Offset: 0x0003A3B4
 	private void UpdateTownActors()
 	{
 		foreach (DialogueActor dialogueActor in this.townActors)
@@ -222,7 +222,7 @@ public class TownNPCManager : MonoBehaviour
 		this.UpdateState();
 	}
 
-	// Token: 0x06000A13 RID: 2579 RVA: 0x0003C0CC File Offset: 0x0003A2CC
+	// Token: 0x06000A13 RID: 2579 RVA: 0x0003C260 File Offset: 0x0003A460
 	private void UpdateState()
 	{
 		TownNPCManager.TownState state = this.State;
@@ -233,7 +233,7 @@ public class TownNPCManager : MonoBehaviour
 		this.market.SetActive(this.martinQuest.IsComplete && state == TownNPCManager.TownState.UpgradingTown);
 	}
 
-	// Token: 0x06000A14 RID: 2580 RVA: 0x00009A93 File Offset: 0x00007C93
+	// Token: 0x06000A14 RID: 2580 RVA: 0x00009AA8 File Offset: 0x00007CA8
 	public void OnAveryComplete()
 	{
 		if (this.State == TownNPCManager.TownState.UpgradingTown)
@@ -244,7 +244,7 @@ public class TownNPCManager : MonoBehaviour
 		this.juiceBar.SetActive(false);
 	}
 
-	// Token: 0x06000A15 RID: 2581 RVA: 0x00009ABD File Offset: 0x00007CBD
+	// Token: 0x06000A15 RID: 2581 RVA: 0x00009AD2 File Offset: 0x00007CD2
 	public void OnMartinComplete()
 	{
 		if (this.State == TownNPCManager.TownState.UpgradingTown)
@@ -255,7 +255,7 @@ public class TownNPCManager : MonoBehaviour
 		this.market.SetActive(false);
 	}
 
-	// Token: 0x06000A16 RID: 2582 RVA: 0x00009AE7 File Offset: 0x00007CE7
+	// Token: 0x06000A16 RID: 2582 RVA: 0x00009AFC File Offset: 0x00007CFC
 	public void OnJillComplete()
 	{
 		if (this.State == TownNPCManager.TownState.UpgradingTown)
@@ -266,7 +266,7 @@ public class TownNPCManager : MonoBehaviour
 		this.cathedral.SetActive(false);
 	}
 
-	// Token: 0x06000A17 RID: 2583 RVA: 0x00009B11 File Offset: 0x00007D11
+	// Token: 0x06000A17 RID: 2583 RVA: 0x00009B26 File Offset: 0x00007D26
 	private IEnumerator ShowAlreadyUnlockedBuildings()
 	{
 		yield return base.StartCoroutine(this.castle.RunUnlockSequence());
@@ -285,7 +285,7 @@ public class TownNPCManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000A18 RID: 2584 RVA: 0x00009B20 File Offset: 0x00007D20
+	// Token: 0x06000A18 RID: 2584 RVA: 0x00009B35 File Offset: 0x00007D35
 	private void CheckBuildings()
 	{
 		if (this.castle.IsUpgraded && this.cathedral.IsUpgraded && this.juiceBar.IsUpgraded && this.market.IsUpgraded)
@@ -294,13 +294,13 @@ public class TownNPCManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A19 RID: 2585 RVA: 0x00009B5C File Offset: 0x00007D5C
+	// Token: 0x06000A19 RID: 2585 RVA: 0x00009B71 File Offset: 0x00007D71
 	public void ProgressState()
 	{
 		this.stateMachine.ProgressState(-1);
 	}
 
-	// Token: 0x06000A1A RID: 2586 RVA: 0x00009B6B File Offset: 0x00007D6B
+	// Token: 0x06000A1A RID: 2586 RVA: 0x00009B80 File Offset: 0x00007D80
 	private void OnStateProgressed(int newState)
 	{
 		if (this.State == TownNPCManager.TownState.UpgradingTown)

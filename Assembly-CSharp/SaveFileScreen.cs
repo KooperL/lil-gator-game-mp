@@ -31,7 +31,7 @@ public class SaveFileScreen : MonoBehaviour
 		this.UpdateState();
 	}
 
-	// Token: 0x06000193 RID: 403 RVA: 0x0001CD00 File Offset: 0x0001AF00
+	// Token: 0x06000193 RID: 403 RVA: 0x0001CE7C File Offset: 0x0001B07C
 	public void Confirm()
 	{
 		SaveFileScreen.State state = this.currentState;
@@ -65,7 +65,7 @@ public class SaveFileScreen : MonoBehaviour
 		this.UpdateState();
 	}
 
-	// Token: 0x06000195 RID: 405 RVA: 0x0001CD78 File Offset: 0x0001AF78
+	// Token: 0x06000195 RID: 405 RVA: 0x0001CEF4 File Offset: 0x0001B0F4
 	public void PressSaveFileButton(int index)
 	{
 		switch (this.currentState)
@@ -143,7 +143,7 @@ public class SaveFileScreen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000196 RID: 406 RVA: 0x0001CEBC File Offset: 0x0001B0BC
+	// Token: 0x06000196 RID: 406 RVA: 0x0001D038 File Offset: 0x0001B238
 	private void UpdateState()
 	{
 		if (this.currentState == SaveFileScreen.State.Standard)

@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class ForkByAmountBroken : MonoBehaviour
 {
-	// Token: 0x060008CB RID: 2251 RVA: 0x00038E00 File Offset: 0x00037000
+	// Token: 0x060008CB RID: 2251 RVA: 0x00038FE0 File Offset: 0x000371E0
 	public void Fork()
 	{
 		int num = 0;

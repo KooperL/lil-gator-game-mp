@@ -8,7 +8,7 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public class DualShock4SpecialFeaturesExample : MonoBehaviour
 	{
-		// (get) Token: 0x06001DA1 RID: 7585 RVA: 0x00016AB4 File Offset: 0x00014CB4
+		// (get) Token: 0x06001DA1 RID: 7585 RVA: 0x00016AC9 File Offset: 0x00014CC9
 		private Player player
 		{
 			get
@@ -17,13 +17,13 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DA2 RID: 7586 RVA: 0x00016AC6 File Offset: 0x00014CC6
+		// Token: 0x06001DA2 RID: 7586 RVA: 0x00016ADB File Offset: 0x00014CDB
 		private void Awake()
 		{
 			this.InitializeTouchObjects();
 		}
 
-		// Token: 0x06001DA3 RID: 7587 RVA: 0x00074350 File Offset: 0x00072550
+		// Token: 0x06001DA3 RID: 7587 RVA: 0x000744E4 File Offset: 0x000726E4
 		private void Update()
 		{
 			if (!ReInput.isReady)
@@ -68,7 +68,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DA4 RID: 7588 RVA: 0x00074460 File Offset: 0x00072660
+		// Token: 0x06001DA4 RID: 7588 RVA: 0x000745F4 File Offset: 0x000727F4
 		private void OnGUI()
 		{
 			if (this.textStyle == null)
@@ -84,27 +84,27 @@ namespace Rewired.Demos
 			GUILayout.BeginArea(new Rect(200f, 100f, (float)Screen.width - 400f, (float)Screen.height - 200f));
 			GUILayout.Label("Rotate the Dual Shock 4 to see the model rotate in sync.", this.textStyle, Array.Empty<GUILayoutOption>());
 			GUILayout.Label("Touch the touchpad to see them appear on the model.", this.textStyle, Array.Empty<GUILayoutOption>());
-			ActionElementMap actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(ControllerType.Joystick, "ResetOrientation", true);
+			ActionElementMap actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(2, "ResetOrientation", true);
 			if (actionElementMap != null)
 			{
 				GUILayout.Label("Press " + actionElementMap.elementIdentifierName + " to reset the orientation. Hold the gamepad facing the screen with sticks pointing up and press the button.", this.textStyle, Array.Empty<GUILayoutOption>());
 			}
-			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(ControllerType.Joystick, "CycleLight", true);
+			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(2, "CycleLight", true);
 			if (actionElementMap != null)
 			{
 				GUILayout.Label("Press " + actionElementMap.elementIdentifierName + " to change the light color.", this.textStyle, Array.Empty<GUILayoutOption>());
 			}
-			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(ControllerType.Joystick, "ToggleLightFlash", true);
+			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(2, "ToggleLightFlash", true);
 			if (actionElementMap != null)
 			{
 				GUILayout.Label("Press " + actionElementMap.elementIdentifierName + " to start or stop the light flashing.", this.textStyle, Array.Empty<GUILayoutOption>());
 			}
-			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(ControllerType.Joystick, "VibrateLeft", true);
+			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(2, "VibrateLeft", true);
 			if (actionElementMap != null)
 			{
 				GUILayout.Label("Press " + actionElementMap.elementIdentifierName + " vibrate the left motor.", this.textStyle, Array.Empty<GUILayoutOption>());
 			}
-			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(ControllerType.Joystick, "VibrateRight", true);
+			actionElementMap = this.player.controllers.maps.GetFirstElementMapWithAction(2, "VibrateRight", true);
 			if (actionElementMap != null)
 			{
 				GUILayout.Label("Press " + actionElementMap.elementIdentifierName + " vibrate the right motor.", this.textStyle, Array.Empty<GUILayoutOption>());
@@ -112,7 +112,7 @@ namespace Rewired.Demos
 			GUILayout.EndArea();
 		}
 
-		// Token: 0x06001DA5 RID: 7589 RVA: 0x00074668 File Offset: 0x00072868
+		// Token: 0x06001DA5 RID: 7589 RVA: 0x000747FC File Offset: 0x000729FC
 		private void ResetOrientation()
 		{
 			IDualShock4Extension firstDS = this.GetFirstDS4(this.player);
@@ -122,7 +122,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DA6 RID: 7590 RVA: 0x0007468C File Offset: 0x0007288C
+		// Token: 0x06001DA6 RID: 7590 RVA: 0x00074820 File Offset: 0x00072A20
 		private void SetRandomLightColor()
 		{
 			IDualShock4Extension firstDS = this.GetFirstDS4(this.player);
@@ -134,7 +134,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DA7 RID: 7591 RVA: 0x00074700 File Offset: 0x00072900
+		// Token: 0x06001DA7 RID: 7591 RVA: 0x00074894 File Offset: 0x00072A94
 		private void StartLightFlash()
 		{
 			DualShock4Extension dualShock4Extension = this.GetFirstDS4(this.player) as DualShock4Extension;
@@ -144,7 +144,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DA8 RID: 7592 RVA: 0x00074734 File Offset: 0x00072934
+		// Token: 0x06001DA8 RID: 7592 RVA: 0x000748C8 File Offset: 0x00072AC8
 		private void StopLightFlash()
 		{
 			DualShock4Extension dualShock4Extension = this.GetFirstDS4(this.player) as DualShock4Extension;
@@ -154,7 +154,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DA9 RID: 7593 RVA: 0x0007475C File Offset: 0x0007295C
+		// Token: 0x06001DA9 RID: 7593 RVA: 0x000748F0 File Offset: 0x00072AF0
 		private IDualShock4Extension GetFirstDS4(Player player)
 		{
 			foreach (Joystick joystick in player.controllers.Joysticks)
@@ -168,7 +168,7 @@ namespace Rewired.Demos
 			return null;
 		}
 
-		// Token: 0x06001DAA RID: 7594 RVA: 0x000747B8 File Offset: 0x000729B8
+		// Token: 0x06001DAA RID: 7594 RVA: 0x0007494C File Offset: 0x00072B4C
 		private void InitializeTouchObjects()
 		{
 			this.touches = new List<DualShock4SpecialFeaturesExample.Touch>(2);
@@ -185,7 +185,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DAB RID: 7595 RVA: 0x00074878 File Offset: 0x00072A78
+		// Token: 0x06001DAB RID: 7595 RVA: 0x00074A0C File Offset: 0x00072C0C
 		private void HandleTouchpad(IDualShock4Extension ds4)
 		{
 			for (int i = this.touches.Count - 1; i >= 0; i--)
@@ -212,7 +212,7 @@ namespace Rewired.Demos
 					touch2.touchId = touchId;
 					touch2.go.SetActive(true);
 					Vector2 vector;
-					ds4.GetTouchPosition(j, out vector);
+					ds4.GetTouchPosition(j, ref vector);
 					touch2.go.transform.localPosition = new Vector3(vector.x - 0.5f, 0.5f + touch2.go.transform.localScale.y * 0.5f, vector.y - 0.5f);
 				}
 			}

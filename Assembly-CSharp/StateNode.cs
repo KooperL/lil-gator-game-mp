@@ -4,7 +4,7 @@ using XNode;
 
 public class StateNode : Node
 {
-	// Token: 0x060010ED RID: 4333 RVA: 0x00056FB4 File Offset: 0x000551B4
+	// Token: 0x060010ED RID: 4333 RVA: 0x00057148 File Offset: 0x00055348
 	public void MoveNext()
 	{
 		if ((this.graph as StateGraph).current != this)
@@ -21,16 +21,16 @@ public class StateNode : Node
 		(outputPort.Connection.node as StateNode).OnEnter();
 	}
 
-	// Token: 0x060010EE RID: 4334 RVA: 0x0000E70C File Offset: 0x0000C90C
+	// Token: 0x060010EE RID: 4334 RVA: 0x0000E721 File Offset: 0x0000C921
 	public void OnEnter()
 	{
 		(this.graph as StateGraph).current = this;
 	}
 
-	[Node.InputAttribute(Node.ShowBackingValue.Unconnected, Node.ConnectionType.Multiple, Node.TypeConstraint.None, false)]
+	[Node.InputAttribute(1, 0, 0, false)]
 	public StateNode.Empty enter;
 
-	[Node.OutputAttribute(Node.ShowBackingValue.Never, Node.ConnectionType.Multiple, Node.TypeConstraint.None, false)]
+	[Node.OutputAttribute(0, 0, 0, false)]
 	public StateNode.Empty exit;
 
 	[Serializable]

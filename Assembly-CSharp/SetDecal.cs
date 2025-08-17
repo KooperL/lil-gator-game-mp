@@ -16,7 +16,7 @@ public class SetDecal : MonoBehaviour
 		this.UpdatePropertyBlock();
 	}
 
-	// Token: 0x0600011A RID: 282 RVA: 0x0001B624 File Offset: 0x00019824
+	// Token: 0x0600011A RID: 282 RVA: 0x0001B7A0 File Offset: 0x000199A0
 	public void UpdatePropertyBlock()
 	{
 		if (this.properties == null)

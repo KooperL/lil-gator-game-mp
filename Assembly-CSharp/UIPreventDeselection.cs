@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIPreventDeselection : MonoBehaviour
 {
-	// Token: 0x060011B4 RID: 4532 RVA: 0x0000F16E File Offset: 0x0000D36E
+	// Token: 0x060011B4 RID: 4532 RVA: 0x0000F183 File Offset: 0x0000D383
 	public void OnEnable()
 	{
 		this.eventSystem = EventSystem.current;
@@ -17,7 +17,7 @@ public class UIPreventDeselection : MonoBehaviour
 	{
 	}
 
-	// Token: 0x060011B6 RID: 4534 RVA: 0x00058ADC File Offset: 0x00056CDC
+	// Token: 0x060011B6 RID: 4534 RVA: 0x00058C70 File Offset: 0x00056E70
 	private void Update()
 	{
 		if (this.fallback == null || !this.fallback.activeSelf)
@@ -42,7 +42,7 @@ public class UIPreventDeselection : MonoBehaviour
 		this.selection = this.fallback;
 	}
 
-	// Token: 0x060011B7 RID: 4535 RVA: 0x00058B98 File Offset: 0x00056D98
+	// Token: 0x060011B7 RID: 4535 RVA: 0x00058D2C File Offset: 0x00056F2C
 	private void SetSelection(GameObject newSelection)
 	{
 		if (newSelection == null)
@@ -57,7 +57,7 @@ public class UIPreventDeselection : MonoBehaviour
 		this.eventSystem.SetSelectedGameObject(newSelection);
 	}
 
-	// Token: 0x060011B8 RID: 4536 RVA: 0x00058BCC File Offset: 0x00056DCC
+	// Token: 0x060011B8 RID: 4536 RVA: 0x00058D60 File Offset: 0x00056F60
 	private GameObject GetFallbackSelection()
 	{
 		if (this.defaultSelection != null && this.defaultSelection.activeSelf)

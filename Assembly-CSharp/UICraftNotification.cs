@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class UICraftNotification : MonoBehaviour
 {
-	// Token: 0x06001203 RID: 4611 RVA: 0x00059E94 File Offset: 0x00058094
+	// Token: 0x06001203 RID: 4611 RVA: 0x0005A028 File Offset: 0x00058228
 	public void LoadItems(ItemObject[] items)
 	{
 		this.ResetThing();
@@ -15,7 +15,7 @@ public class UICraftNotification : MonoBehaviour
 		this.onLoad.Invoke();
 	}
 
-	// Token: 0x06001204 RID: 4612 RVA: 0x0000F4A3 File Offset: 0x0000D6A3
+	// Token: 0x06001204 RID: 4612 RVA: 0x0000F4B8 File Offset: 0x0000D6B8
 	public void LoadItem(ItemObject item)
 	{
 		this.ResetThing();
@@ -24,14 +24,14 @@ public class UICraftNotification : MonoBehaviour
 		this.onLoad.Invoke();
 	}
 
-	// Token: 0x06001205 RID: 4613 RVA: 0x0000F4C9 File Offset: 0x0000D6C9
+	// Token: 0x06001205 RID: 4613 RVA: 0x0000F4DE File Offset: 0x0000D6DE
 	private void ResetThing()
 	{
 		this.hideBehavior.Show();
 		this.hideTime = Time.time + this.hideDelay;
 	}
 
-	// Token: 0x06001206 RID: 4614 RVA: 0x00059EE0 File Offset: 0x000580E0
+	// Token: 0x06001206 RID: 4614 RVA: 0x0005A074 File Offset: 0x00058274
 	private void Update()
 	{
 		if (this.items != null && this.items.Length > 1 && Time.time > this.nextItemTime)

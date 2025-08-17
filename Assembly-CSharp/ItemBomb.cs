@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemBomb : ItemThrowable, IOnTimeout
 {
-	// Token: 0x06000ADC RID: 2780 RVA: 0x0000A59A File Offset: 0x0000879A
+	// Token: 0x06000ADC RID: 2780 RVA: 0x0000A5AF File Offset: 0x000087AF
 	public override void Input(bool isDown, bool isHeld)
 	{
 		if (Game.HasControl && this.thrownBomb != null)
@@ -17,7 +17,7 @@ public class ItemBomb : ItemThrowable, IOnTimeout
 		base.Input(isDown, isHeld);
 	}
 
-	// Token: 0x06000ADD RID: 2781 RVA: 0x0003F2A0 File Offset: 0x0003D4A0
+	// Token: 0x06000ADD RID: 2781 RVA: 0x0003F434 File Offset: 0x0003D634
 	public override void Throw(float charge, Vector3 direction)
 	{
 		this.thrownBomb = global::UnityEngine.Object.Instantiate<GameObject>(this.thrownPrefab, Player.itemManager.thrownSpawnPoint.position, base.transform.rotation);
@@ -28,21 +28,21 @@ public class ItemBomb : ItemThrowable, IOnTimeout
 		base.Throw(charge, direction);
 	}
 
-	// Token: 0x06000ADE RID: 2782 RVA: 0x0000A5C4 File Offset: 0x000087C4
+	// Token: 0x06000ADE RID: 2782 RVA: 0x0000A5D9 File Offset: 0x000087D9
 	public override void Cancel()
 	{
 		this.PopBomb(true);
 		base.Cancel();
 	}
 
-	// Token: 0x06000ADF RID: 2783 RVA: 0x0000A5D3 File Offset: 0x000087D3
+	// Token: 0x06000ADF RID: 2783 RVA: 0x0000A5E8 File Offset: 0x000087E8
 	public override void OnRemove()
 	{
 		this.PopBomb(true);
 		base.OnRemove();
 	}
 
-	// Token: 0x06000AE0 RID: 2784 RVA: 0x0003F31C File Offset: 0x0003D51C
+	// Token: 0x06000AE0 RID: 2784 RVA: 0x0003F4B0 File Offset: 0x0003D6B0
 	private void PopBomb(bool destroyBomb = true)
 	{
 		if (this.thrownBomb == null)
@@ -58,13 +58,13 @@ public class ItemBomb : ItemThrowable, IOnTimeout
 		this.explodeTime = Time.time;
 	}
 
-	// Token: 0x06000AE1 RID: 2785 RVA: 0x0000A5E2 File Offset: 0x000087E2
+	// Token: 0x06000AE1 RID: 2785 RVA: 0x0000A5F7 File Offset: 0x000087F7
 	protected override bool CanStartThrow(bool isDown, bool isHeld)
 	{
 		return isDown || Time.time - this.explodeTime >= this.heldDelayAfterExplode;
 	}
 
-	// Token: 0x06000AE2 RID: 2786 RVA: 0x0003F380 File Offset: 0x0003D580
+	// Token: 0x06000AE2 RID: 2786 RVA: 0x0003F514 File Offset: 0x0003D714
 	public override void SetCharging(bool isCharging)
 	{
 		this.heldBomb.enabled = isCharging;
@@ -76,7 +76,7 @@ public class ItemBomb : ItemThrowable, IOnTimeout
 		base.SetCharging(isCharging);
 	}
 
-	// Token: 0x06000AE3 RID: 2787 RVA: 0x0003F3C8 File Offset: 0x0003D5C8
+	// Token: 0x06000AE3 RID: 2787 RVA: 0x0003F55C File Offset: 0x0003D75C
 	public override void SetEquipped(bool isEquipped)
 	{
 		Transform leftHandAnchor = Player.itemManager.leftHandAnchor;
@@ -90,7 +90,7 @@ public class ItemBomb : ItemThrowable, IOnTimeout
 		}
 	}
 
-	// Token: 0x06000AE4 RID: 2788 RVA: 0x0000A600 File Offset: 0x00008800
+	// Token: 0x06000AE4 RID: 2788 RVA: 0x0000A615 File Offset: 0x00008815
 	public void OnTimeout()
 	{
 		this.PopBomb(false);

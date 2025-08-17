@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LinkJointToParent : MonoBehaviour
 {
-	// Token: 0x060008C7 RID: 2247 RVA: 0x00038DB4 File Offset: 0x00036FB4
+	// Token: 0x060008C7 RID: 2247 RVA: 0x00038F94 File Offset: 0x00037194
 	private void Start()
 	{
 		Joint component = base.GetComponent<Joint>();

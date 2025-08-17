@@ -6,7 +6,7 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public class TouchControls1_ManipulateCube : MonoBehaviour
 	{
-		// Token: 0x06001E32 RID: 7730 RVA: 0x000768B4 File Offset: 0x00074AB4
+		// Token: 0x06001E32 RID: 7730 RVA: 0x00076A48 File Offset: 0x00074C48
 		private void OnEnable()
 		{
 			if (!ReInput.isReady)
@@ -18,19 +18,19 @@ namespace Rewired.Demos
 			{
 				return;
 			}
-			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveReceivedX), UpdateLoopType.Update, InputActionEventType.AxisActive, "Horizontal");
-			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveReceivedX), UpdateLoopType.Update, InputActionEventType.AxisInactive, "Horizontal");
-			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveReceivedY), UpdateLoopType.Update, InputActionEventType.AxisActive, "Vertical");
-			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveReceivedY), UpdateLoopType.Update, InputActionEventType.AxisInactive, "Vertical");
-			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnCycleColor), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, "CycleColor");
-			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnCycleColorReverse), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, "CycleColorReverse");
-			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnRotationReceivedX), UpdateLoopType.Update, InputActionEventType.AxisActive, "RotateHorizontal");
-			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnRotationReceivedX), UpdateLoopType.Update, InputActionEventType.AxisInactive, "RotateHorizontal");
-			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnRotationReceivedY), UpdateLoopType.Update, InputActionEventType.AxisActive, "RotateVertical");
-			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnRotationReceivedY), UpdateLoopType.Update, InputActionEventType.AxisInactive, "RotateVertical");
+			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveReceivedX), 0, 33, "Horizontal");
+			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveReceivedX), 0, 34, "Horizontal");
+			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveReceivedY), 0, 33, "Vertical");
+			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveReceivedY), 0, 34, "Vertical");
+			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnCycleColor), 0, 3, "CycleColor");
+			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnCycleColorReverse), 0, 3, "CycleColorReverse");
+			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnRotationReceivedX), 0, 33, "RotateHorizontal");
+			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnRotationReceivedX), 0, 34, "RotateHorizontal");
+			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnRotationReceivedY), 0, 33, "RotateVertical");
+			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnRotationReceivedY), 0, 34, "RotateVertical");
 		}
 
-		// Token: 0x06001E33 RID: 7731 RVA: 0x000769DC File Offset: 0x00074BDC
+		// Token: 0x06001E33 RID: 7731 RVA: 0x00076B70 File Offset: 0x00074D70
 		private void OnDisable()
 		{
 			if (!ReInput.isReady)
@@ -50,49 +50,49 @@ namespace Rewired.Demos
 			player.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnRotationReceivedY));
 		}
 
-		// Token: 0x06001E34 RID: 7732 RVA: 0x00017110 File Offset: 0x00015310
+		// Token: 0x06001E34 RID: 7732 RVA: 0x00017125 File Offset: 0x00015325
 		private void OnMoveReceivedX(InputActionEventData data)
 		{
 			this.OnMoveReceived(new Vector2(data.GetAxis(), 0f));
 		}
 
-		// Token: 0x06001E35 RID: 7733 RVA: 0x00017129 File Offset: 0x00015329
+		// Token: 0x06001E35 RID: 7733 RVA: 0x0001713E File Offset: 0x0001533E
 		private void OnMoveReceivedY(InputActionEventData data)
 		{
 			this.OnMoveReceived(new Vector2(0f, data.GetAxis()));
 		}
 
-		// Token: 0x06001E36 RID: 7734 RVA: 0x00017142 File Offset: 0x00015342
+		// Token: 0x06001E36 RID: 7734 RVA: 0x00017157 File Offset: 0x00015357
 		private void OnRotationReceivedX(InputActionEventData data)
 		{
 			this.OnRotationReceived(new Vector2(data.GetAxis(), 0f));
 		}
 
-		// Token: 0x06001E37 RID: 7735 RVA: 0x0001715B File Offset: 0x0001535B
+		// Token: 0x06001E37 RID: 7735 RVA: 0x00017170 File Offset: 0x00015370
 		private void OnRotationReceivedY(InputActionEventData data)
 		{
 			this.OnRotationReceived(new Vector2(0f, data.GetAxis()));
 		}
 
-		// Token: 0x06001E38 RID: 7736 RVA: 0x00017174 File Offset: 0x00015374
+		// Token: 0x06001E38 RID: 7736 RVA: 0x00017189 File Offset: 0x00015389
 		private void OnCycleColor(InputActionEventData data)
 		{
 			this.OnCycleColor();
 		}
 
-		// Token: 0x06001E39 RID: 7737 RVA: 0x0001717C File Offset: 0x0001537C
+		// Token: 0x06001E39 RID: 7737 RVA: 0x00017191 File Offset: 0x00015391
 		private void OnCycleColorReverse(InputActionEventData data)
 		{
 			this.OnCycleColorReverse();
 		}
 
-		// Token: 0x06001E3A RID: 7738 RVA: 0x00017184 File Offset: 0x00015384
+		// Token: 0x06001E3A RID: 7738 RVA: 0x00017199 File Offset: 0x00015399
 		private void OnMoveReceived(Vector2 move)
 		{
 			base.transform.Translate(move * Time.deltaTime * this.moveSpeed, Space.World);
 		}
 
-		// Token: 0x06001E3B RID: 7739 RVA: 0x000171AD File Offset: 0x000153AD
+		// Token: 0x06001E3B RID: 7739 RVA: 0x000171C2 File Offset: 0x000153C2
 		private void OnRotationReceived(Vector2 rotate)
 		{
 			rotate *= this.rotateSpeed;
@@ -100,7 +100,7 @@ namespace Rewired.Demos
 			base.transform.Rotate(Vector3.right, rotate.y, Space.World);
 		}
 
-		// Token: 0x06001E3C RID: 7740 RVA: 0x00076A70 File Offset: 0x00074C70
+		// Token: 0x06001E3C RID: 7740 RVA: 0x00076C04 File Offset: 0x00074E04
 		private void OnCycleColor()
 		{
 			if (this.colors.Length == 0)
@@ -115,7 +115,7 @@ namespace Rewired.Demos
 			base.GetComponent<Renderer>().material.color = this.colors[this.currentColorIndex];
 		}
 
-		// Token: 0x06001E3D RID: 7741 RVA: 0x00076AD0 File Offset: 0x00074CD0
+		// Token: 0x06001E3D RID: 7741 RVA: 0x00076C64 File Offset: 0x00074E64
 		private void OnCycleColorReverse()
 		{
 			if (this.colors.Length == 0)

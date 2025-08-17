@@ -4,7 +4,7 @@ using UnityEngine.Scripting;
 
 public class TriggerGC : MonoBehaviour
 {
-	// Token: 0x06000FF2 RID: 4082 RVA: 0x0000DC27 File Offset: 0x0000BE27
+	// Token: 0x06000FF2 RID: 4082 RVA: 0x0000DC3C File Offset: 0x0000BE3C
 	public static void TriggerGarbageCollection(bool isImmediate = true, bool alwaysRun = false)
 	{
 		if (Time.time - TriggerGC.lastGCCollectTime < 60f && !alwaysRun)
@@ -22,13 +22,13 @@ public class TriggerGC : MonoBehaviour
 		TriggerGC.lastGCCollectTime = Time.time;
 	}
 
-	// Token: 0x06000FF3 RID: 4083 RVA: 0x0000DC5B File Offset: 0x0000BE5B
+	// Token: 0x06000FF3 RID: 4083 RVA: 0x0000DC70 File Offset: 0x0000BE70
 	private void OnEnable()
 	{
 		this.frameCount = 0;
 	}
 
-	// Token: 0x06000FF4 RID: 4084 RVA: 0x0000DC64 File Offset: 0x0000BE64
+	// Token: 0x06000FF4 RID: 4084 RVA: 0x0000DC79 File Offset: 0x0000BE79
 	private void Update()
 	{
 		if (this.frameCount >= 2)

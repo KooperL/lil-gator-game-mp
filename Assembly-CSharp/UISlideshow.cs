@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class UISlideshow : MonoBehaviour
 {
-	// Token: 0x0600132C RID: 4908 RVA: 0x00010286 File Offset: 0x0000E486
+	// Token: 0x0600132C RID: 4908 RVA: 0x0001029B File Offset: 0x0000E49B
 	public void OnEnable()
 	{
 		Game.g.SetWorldState(this.worldState, false, true);
@@ -20,14 +20,14 @@ public class UISlideshow : MonoBehaviour
 		this.StartLoad();
 	}
 
-	// Token: 0x0600132D RID: 4909 RVA: 0x000102B8 File Offset: 0x0000E4B8
+	// Token: 0x0600132D RID: 4909 RVA: 0x000102CD File Offset: 0x0000E4CD
 	private Color MoveTowardsColor(Color current, float target, float speed, int channel)
 	{
 		current[channel] = Mathf.MoveTowards(current[channel], target, speed * Time.deltaTime);
 		return current;
 	}
 
-	// Token: 0x0600132E RID: 4910 RVA: 0x000102DA File Offset: 0x0000E4DA
+	// Token: 0x0600132E RID: 4910 RVA: 0x000102EF File Offset: 0x0000E4EF
 	private IEnumerator RunSlideTransition(int currentSlide)
 	{
 		Color backgroundColor = this.slides[currentSlide].backgroundColor;
@@ -92,7 +92,7 @@ public class UISlideshow : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600132F RID: 4911 RVA: 0x0005E2D4 File Offset: 0x0005C4D4
+	// Token: 0x0600132F RID: 4911 RVA: 0x0005E468 File Offset: 0x0005C668
 	public void NextSlide()
 	{
 		this.oldBackgroundColor = this.background.color;
@@ -106,13 +106,13 @@ public class UISlideshow : MonoBehaviour
 		base.StartCoroutine(this.currentTransition);
 	}
 
-	// Token: 0x06001330 RID: 4912 RVA: 0x000102F0 File Offset: 0x0000E4F0
+	// Token: 0x06001330 RID: 4912 RVA: 0x00010305 File Offset: 0x0000E505
 	public void StartLoad()
 	{
 		base.StartCoroutine(this.LoadSceneAsync());
 	}
 
-	// Token: 0x06001331 RID: 4913 RVA: 0x000102FF File Offset: 0x0000E4FF
+	// Token: 0x06001331 RID: 4913 RVA: 0x00010314 File Offset: 0x0000E514
 	public void FinishSlideshow()
 	{
 		if (!this.isLoadFinished)
@@ -123,7 +123,7 @@ public class UISlideshow : MonoBehaviour
 		this.isSlideshowFinished = true;
 	}
 
-	// Token: 0x06001332 RID: 4914 RVA: 0x0001031D File Offset: 0x0000E51D
+	// Token: 0x06001332 RID: 4914 RVA: 0x00010332 File Offset: 0x0000E532
 	public IEnumerator LoadSceneAsync()
 	{
 		global::UnityEngine.Object.DontDestroyOnLoad(base.gameObject);

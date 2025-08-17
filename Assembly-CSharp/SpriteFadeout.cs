@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class SpriteFadeout : MonoBehaviour
 {
-	// Token: 0x06000FB0 RID: 4016 RVA: 0x0000D91A File Offset: 0x0000BB1A
+	// Token: 0x06000FB0 RID: 4016 RVA: 0x0000D92F File Offset: 0x0000BB2F
 	private void Awake()
 	{
 		this.spriteRenderer = base.GetComponent<SpriteRenderer>();
 	}
 
-	// Token: 0x06000FB1 RID: 4017 RVA: 0x0000D928 File Offset: 0x0000BB28
+	// Token: 0x06000FB1 RID: 4017 RVA: 0x0000D93D File Offset: 0x0000BB3D
 	private void Start()
 	{
 		this.color = this.spriteRenderer.color;
 		this.alpha = this.color.a;
 	}
 
-	// Token: 0x06000FB2 RID: 4018 RVA: 0x00052208 File Offset: 0x00050408
+	// Token: 0x06000FB2 RID: 4018 RVA: 0x0005239C File Offset: 0x0005059C
 	private void Update()
 	{
 		this.t += Time.deltaTime;

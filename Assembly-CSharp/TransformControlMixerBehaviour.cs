@@ -4,7 +4,7 @@ using UnityEngine.Playables;
 
 public class TransformControlMixerBehaviour : PlayableBehaviour
 {
-	// Token: 0x06000013 RID: 19 RVA: 0x00017930 File Offset: 0x00015B30
+	// Token: 0x06000013 RID: 19 RVA: 0x00017AAC File Offset: 0x00015CAC
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
 	{
 		Transform transform = playerData as Transform;

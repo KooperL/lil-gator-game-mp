@@ -3,25 +3,25 @@ using UnityEngine;
 
 public class KeepWithinDistance : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x060008B8 RID: 2232 RVA: 0x000088DF File Offset: 0x00006ADF
+	// Token: 0x060008B8 RID: 2232 RVA: 0x000088F4 File Offset: 0x00006AF4
 	private void Start()
 	{
 		this.ManagedUpdate();
 	}
 
-	// Token: 0x060008B9 RID: 2233 RVA: 0x000088E7 File Offset: 0x00006AE7
+	// Token: 0x060008B9 RID: 2233 RVA: 0x000088FC File Offset: 0x00006AFC
 	private void OnEnable()
 	{
 		FastUpdateManager.fixedUpdate8.Add(this);
 	}
 
-	// Token: 0x060008BA RID: 2234 RVA: 0x000088F4 File Offset: 0x00006AF4
+	// Token: 0x060008BA RID: 2234 RVA: 0x00008909 File Offset: 0x00006B09
 	private void OnDisable()
 	{
 		FastUpdateManager.fixedUpdate8.Remove(this);
 	}
 
-	// Token: 0x060008BB RID: 2235 RVA: 0x00038A50 File Offset: 0x00036C50
+	// Token: 0x060008BB RID: 2235 RVA: 0x00038C30 File Offset: 0x00036E30
 	public void ManagedUpdate()
 	{
 		if (this.rigidbody == null || this.target == null)

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PersistentAudioListener : MonoBehaviour
 {
-	// Token: 0x060009DA RID: 2522 RVA: 0x0000977A File Offset: 0x0000797A
+	// Token: 0x060009DA RID: 2522 RVA: 0x0000978F File Offset: 0x0000798F
 	private void Start()
 	{
 		if (PersistentAudioListener.persistentInstance == null)
@@ -16,7 +16,7 @@ public class PersistentAudioListener : MonoBehaviour
 		global::UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060009DB RID: 2523 RVA: 0x000097B2 File Offset: 0x000079B2
+	// Token: 0x060009DB RID: 2523 RVA: 0x000097C7 File Offset: 0x000079C7
 	private void LateUpdate()
 	{
 		if (this.parent == null)

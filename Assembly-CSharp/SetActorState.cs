@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SetActorState : MonoBehaviour
 {
-	// Token: 0x060004E1 RID: 1249 RVA: 0x0002C9B4 File Offset: 0x0002ABB4
+	// Token: 0x060004E1 RID: 1249 RVA: 0x0002CB30 File Offset: 0x0002AD30
 	private void OnValidate()
 	{
 		if (this.actor == null)
@@ -16,7 +16,7 @@ public class SetActorState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004E2 RID: 1250 RVA: 0x0002CA08 File Offset: 0x0002AC08
+	// Token: 0x060004E2 RID: 1250 RVA: 0x0002CB84 File Offset: 0x0002AD84
 	[ContextMenu("ApplyState")]
 	private void OnEnable()
 	{
@@ -142,7 +142,7 @@ public class SetActorState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004E5 RID: 1253 RVA: 0x0002CCD4 File Offset: 0x0002AED4
+	// Token: 0x060004E5 RID: 1253 RVA: 0x0002CE50 File Offset: 0x0002B050
 	[ContextMenu("Snap To Floor")]
 	public void SnapToFloor()
 	{

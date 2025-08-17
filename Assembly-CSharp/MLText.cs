@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text))]
 public class MLText : MonoBehaviour
 {
-	// Token: 0x06000026 RID: 38 RVA: 0x00017B20 File Offset: 0x00015D20
+	// Token: 0x06000026 RID: 38 RVA: 0x00017C9C File Offset: 0x00015E9C
 	public static void ForceRefresh()
 	{
 		foreach (MLText mltext in MLText.activeMLText)
@@ -16,7 +16,7 @@ public class MLText : MonoBehaviour
 		SelectOptions.ForceRefresh();
 	}
 
-	// Token: 0x06000027 RID: 39 RVA: 0x00017B74 File Offset: 0x00015D74
+	// Token: 0x06000027 RID: 39 RVA: 0x00017CF0 File Offset: 0x00015EF0
 	public void OnValidate()
 	{
 		if (this.text == null)
@@ -34,7 +34,7 @@ public class MLText : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000028 RID: 40 RVA: 0x00017C44 File Offset: 0x00015E44
+	// Token: 0x06000028 RID: 40 RVA: 0x00017DC0 File Offset: 0x00015FC0
 	[ContextMenu("Add entry to document")]
 	public void AddEntryToDocument()
 	{

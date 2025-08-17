@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class BreakableObject : PersistentObject, IOnTimeout
 {
-	// (get) Token: 0x060007BA RID: 1978 RVA: 0x00007B0B File Offset: 0x00005D0B
+	// (get) Token: 0x060007BA RID: 1978 RVA: 0x00007B20 File Offset: 0x00005D20
 	public bool IsBroken
 	{
 		get
@@ -18,13 +18,13 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x060007BB RID: 1979 RVA: 0x00007B2E File Offset: 0x00005D2E
+	// Token: 0x060007BB RID: 1979 RVA: 0x00007B43 File Offset: 0x00005D43
 	public override void OnValidate()
 	{
 		base.OnValidate();
 	}
 
-	// Token: 0x060007BC RID: 1980 RVA: 0x0003598C File Offset: 0x00033B8C
+	// Token: 0x060007BC RID: 1980 RVA: 0x00035B6C File Offset: 0x00033D6C
 	public override void Load(bool state)
 	{
 		this.isBroken = state;
@@ -43,7 +43,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x060007BD RID: 1981 RVA: 0x00007B36 File Offset: 0x00005D36
+	// Token: 0x060007BD RID: 1981 RVA: 0x00007B4B File Offset: 0x00005D4B
 	public virtual void OnEnable()
 	{
 		this.Load(this.isBroken);
@@ -53,7 +53,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x060007BE RID: 1982 RVA: 0x00035A20 File Offset: 0x00033C20
+	// Token: 0x060007BE RID: 1982 RVA: 0x00035C00 File Offset: 0x00033E00
 	public virtual void OnDisable()
 	{
 		if (this.isBroken && this.breakingObject != null)
@@ -70,7 +70,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x060007BF RID: 1983 RVA: 0x00035A6C File Offset: 0x00033C6C
+	// Token: 0x060007BF RID: 1983 RVA: 0x00035C4C File Offset: 0x00033E4C
 	private bool IsRanged(bool isHeavy = false)
 	{
 		if (isHeavy)
@@ -95,7 +95,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		return true;
 	}
 
-	// Token: 0x060007C0 RID: 1984 RVA: 0x00035AE4 File Offset: 0x00033CE4
+	// Token: 0x060007C0 RID: 1984 RVA: 0x00035CC4 File Offset: 0x00033EC4
 	private bool CanBeDestroyed(bool isHeavy = false, bool isRanged = false)
 	{
 		if (this.isNonRanged && isRanged)
@@ -135,13 +135,13 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		return false;
 	}
 
-	// Token: 0x060007C1 RID: 1985 RVA: 0x00007B59 File Offset: 0x00005D59
+	// Token: 0x060007C1 RID: 1985 RVA: 0x00007B6E File Offset: 0x00005D6E
 	public virtual void Break()
 	{
 		this.Break(false, Vector3.zero, false);
 	}
 
-	// Token: 0x060007C2 RID: 1986 RVA: 0x00035B74 File Offset: 0x00033D74
+	// Token: 0x060007C2 RID: 1986 RVA: 0x00035D54 File Offset: 0x00033F54
 	public virtual void Break(bool fromAttachment, Vector3 velocity, bool isHeavy = false)
 	{
 		if (Time.time - this.lastBreakTime < 0.1f)
@@ -245,7 +245,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		this.onNearbyHit.Invoke();
 	}
 
-	// Token: 0x060007C3 RID: 1987 RVA: 0x00035E34 File Offset: 0x00034034
+	// Token: 0x060007C3 RID: 1987 RVA: 0x00036014 File Offset: 0x00034214
 	public void OnTimeout()
 	{
 		this.breakingObject = null;
@@ -266,7 +266,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x060007C4 RID: 1988 RVA: 0x00035ECC File Offset: 0x000340CC
+	// Token: 0x060007C4 RID: 1988 RVA: 0x000360AC File Offset: 0x000342AC
 	public void ValidateBreak()
 	{
 		this.waitForValidation = false;

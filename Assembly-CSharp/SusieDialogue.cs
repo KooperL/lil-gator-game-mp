@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class SusieDialogue : MonoBehaviour, Interaction
 {
-	// Token: 0x0600085D RID: 2141 RVA: 0x000083BE File Offset: 0x000065BE
+	// Token: 0x0600085D RID: 2141 RVA: 0x000083D3 File Offset: 0x000065D3
 	private void Awake()
 	{
 		this.boxCollider = base.GetComponent<BoxCollider>();
 	}
 
-	// Token: 0x0600085E RID: 2142 RVA: 0x000083CC File Offset: 0x000065CC
+	// Token: 0x0600085E RID: 2142 RVA: 0x000083E1 File Offset: 0x000065E1
 	private void OnEnable()
 	{
 		this.speedInterface = base.transform.parent.GetComponent<SpeedInterface>();
 	}
 
-	// Token: 0x0600085F RID: 2143 RVA: 0x000379CC File Offset: 0x00035BCC
+	// Token: 0x0600085F RID: 2143 RVA: 0x00037BAC File Offset: 0x00035DAC
 	public void Interact()
 	{
 		if (this.isSpeedTriggered)
@@ -42,7 +42,7 @@ public class SusieDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000860 RID: 2144 RVA: 0x00037AD0 File Offset: 0x00035CD0
+	// Token: 0x06000860 RID: 2144 RVA: 0x00037CB0 File Offset: 0x00035EB0
 	private void FixedUpdate()
 	{
 		float speed = this.speedInterface.GetSpeed();

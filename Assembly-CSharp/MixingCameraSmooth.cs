@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MixingCameraSmooth : MonoBehaviour
 {
-	// Token: 0x06000972 RID: 2418 RVA: 0x0000929D File Offset: 0x0000749D
+	// Token: 0x06000972 RID: 2418 RVA: 0x000092B2 File Offset: 0x000074B2
 	private void OnValidate()
 	{
 		if (this.mixingCamera == null)
@@ -14,20 +14,20 @@ public class MixingCameraSmooth : MonoBehaviour
 		this.UpdateWeights();
 	}
 
-	// Token: 0x06000973 RID: 2419 RVA: 0x000092BF File Offset: 0x000074BF
+	// Token: 0x06000973 RID: 2419 RVA: 0x000092D4 File Offset: 0x000074D4
 	private void OnEnable()
 	{
 		this.t = 0f;
 		this.UpdateWeights();
 	}
 
-	// Token: 0x06000974 RID: 2420 RVA: 0x000092D2 File Offset: 0x000074D2
+	// Token: 0x06000974 RID: 2420 RVA: 0x000092E7 File Offset: 0x000074E7
 	private void Start()
 	{
 		this.childCameraCount = this.mixingCamera.ChildCameras.Length;
 	}
 
-	// Token: 0x06000975 RID: 2421 RVA: 0x0003A970 File Offset: 0x00038B70
+	// Token: 0x06000975 RID: 2421 RVA: 0x0003AB50 File Offset: 0x00038D50
 	private void LateUpdate()
 	{
 		float num = Time.deltaTime * (float)this.childCameraCount / this.smoothTime;
@@ -39,7 +39,7 @@ public class MixingCameraSmooth : MonoBehaviour
 		this.UpdateWeights();
 	}
 
-	// Token: 0x06000976 RID: 2422 RVA: 0x0003A9EC File Offset: 0x00038BEC
+	// Token: 0x06000976 RID: 2422 RVA: 0x0003ABCC File Offset: 0x00038DCC
 	private void UpdateWeights()
 	{
 		float num = this.t;
@@ -53,7 +53,7 @@ public class MixingCameraSmooth : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000977 RID: 2423 RVA: 0x0003AA68 File Offset: 0x00038C68
+	// Token: 0x06000977 RID: 2423 RVA: 0x0003AC48 File Offset: 0x00038E48
 	private void UpdateWeightsOld()
 	{
 		float num = this.t;

@@ -6,7 +6,7 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public class CustomControllerDemo : MonoBehaviour
 	{
-		// Token: 0x06001D7E RID: 7550 RVA: 0x00016884 File Offset: 0x00014A84
+		// Token: 0x06001D7E RID: 7550 RVA: 0x00016899 File Offset: 0x00014A99
 		private void Awake()
 		{
 			if (SystemInfo.deviceType == DeviceType.Handheld && Screen.orientation != ScreenOrientation.LandscapeLeft)
@@ -16,7 +16,7 @@ namespace Rewired.Demos
 			this.Initialize();
 		}
 
-		// Token: 0x06001D7F RID: 7551 RVA: 0x00073E48 File Offset: 0x00072048
+		// Token: 0x06001D7F RID: 7551 RVA: 0x00073FDC File Offset: 0x000721DC
 		private void Initialize()
 		{
 			ReInput.InputSourceUpdateEvent += this.OnInputSourceUpdate;
@@ -44,7 +44,7 @@ namespace Rewired.Demos
 			this.initialized = true;
 		}
 
-		// Token: 0x06001D80 RID: 7552 RVA: 0x000168A2 File Offset: 0x00014AA2
+		// Token: 0x06001D80 RID: 7552 RVA: 0x000168B7 File Offset: 0x00014AB7
 		private void Update()
 		{
 			if (!ReInput.isReady)
@@ -57,7 +57,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D81 RID: 7553 RVA: 0x000168BA File Offset: 0x00014ABA
+		// Token: 0x06001D81 RID: 7553 RVA: 0x000168CF File Offset: 0x00014ACF
 		private void OnInputSourceUpdate()
 		{
 			this.GetSourceAxisValues();
@@ -69,7 +69,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D82 RID: 7554 RVA: 0x00073F84 File Offset: 0x00072184
+		// Token: 0x06001D82 RID: 7554 RVA: 0x00074118 File Offset: 0x00072318
 		private void GetSourceAxisValues()
 		{
 			for (int i = 0; i < this.axisValues.Length; i++)
@@ -85,7 +85,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D83 RID: 7555 RVA: 0x00073FE4 File Offset: 0x000721E4
+		// Token: 0x06001D83 RID: 7555 RVA: 0x00074178 File Offset: 0x00072378
 		private void GetSourceButtonValues()
 		{
 			for (int i = 0; i < this.buttonValues.Length; i++)
@@ -94,7 +94,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D84 RID: 7556 RVA: 0x0007401C File Offset: 0x0007221C
+		// Token: 0x06001D84 RID: 7556 RVA: 0x000741B0 File Offset: 0x000723B0
 		private void SetControllerAxisValues()
 		{
 			for (int i = 0; i < this.axisValues.Length; i++)
@@ -103,7 +103,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D85 RID: 7557 RVA: 0x00074050 File Offset: 0x00072250
+		// Token: 0x06001D85 RID: 7557 RVA: 0x000741E4 File Offset: 0x000723E4
 		private void SetControllerButtonValues()
 		{
 			for (int i = 0; i < this.buttonValues.Length; i++)
@@ -112,7 +112,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D86 RID: 7558 RVA: 0x000168DC File Offset: 0x00014ADC
+		// Token: 0x06001D86 RID: 7558 RVA: 0x000168F1 File Offset: 0x00014AF1
 		private float GetAxisValueCallback(int index)
 		{
 			if (index >= this.axisValues.Length)
@@ -122,7 +122,7 @@ namespace Rewired.Demos
 			return this.axisValues[index];
 		}
 
-		// Token: 0x06001D87 RID: 7559 RVA: 0x000168F7 File Offset: 0x00014AF7
+		// Token: 0x06001D87 RID: 7559 RVA: 0x0001690C File Offset: 0x00014B0C
 		private bool GetButtonValueCallback(int index)
 		{
 			return index < this.buttonValues.Length && this.buttonValues[index];

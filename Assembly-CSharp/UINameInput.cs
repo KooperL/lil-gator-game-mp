@@ -9,24 +9,24 @@ using UnityEngine.UI;
 
 public class UINameInput : MonoBehaviour
 {
-	// Token: 0x06001270 RID: 4720 RVA: 0x0000F9CE File Offset: 0x0000DBCE
+	// Token: 0x06001270 RID: 4720 RVA: 0x0000F9E3 File Offset: 0x0000DBE3
 	public static YieldInstruction ShowNameInputPrompt()
 	{
 		UINameInput.isInputting = true;
 		return CoroutineUtil.Start(global::UnityEngine.Object.Instantiate<GameObject>(Prefabs.p.nameInput).GetComponent<UINameInput>().RunNameInputSequence());
 	}
 
-	// Token: 0x06001271 RID: 4721 RVA: 0x0000F9F4 File Offset: 0x0000DBF4
+	// Token: 0x06001271 RID: 4721 RVA: 0x0000FA09 File Offset: 0x0000DC09
 	private void Awake()
 	{
 		UINameInput.instance = this;
 	}
 
-	// Token: 0x06001272 RID: 4722 RVA: 0x0000F9FC File Offset: 0x0000DBFC
+	// Token: 0x06001272 RID: 4722 RVA: 0x0000FA11 File Offset: 0x0000DC11
 	private void Start()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.Submit), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("UISubmitInput"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.Submit), 0, 3, ReInput.mapping.GetActionId("UISubmitInput"));
 	}
 
 	// Token: 0x06001273 RID: 4723 RVA: 0x00002229 File Offset: 0x00000429
@@ -34,13 +34,13 @@ public class UINameInput : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06001274 RID: 4724 RVA: 0x0000FA37 File Offset: 0x0000DC37
+	// Token: 0x06001274 RID: 4724 RVA: 0x0000FA4C File Offset: 0x0000DC4C
 	private void Submit(InputActionEventData obj)
 	{
 		base.StartCoroutine(this.SubmitNextFrame());
 	}
 
-	// Token: 0x06001275 RID: 4725 RVA: 0x0000FA46 File Offset: 0x0000DC46
+	// Token: 0x06001275 RID: 4725 RVA: 0x0000FA5B File Offset: 0x0000DC5B
 	private IEnumerator SubmitNextFrame()
 	{
 		yield return null;
@@ -48,7 +48,7 @@ public class UINameInput : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001276 RID: 4726 RVA: 0x0005C29C File Offset: 0x0005A49C
+	// Token: 0x06001276 RID: 4726 RVA: 0x0005C430 File Offset: 0x0005A630
 	private static string RemoveDiacritics(string text)
 	{
 		string text2 = text.Normalize(NormalizationForm.FormD);
@@ -63,7 +63,7 @@ public class UINameInput : MonoBehaviour
 		return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
 	}
 
-	// Token: 0x06001277 RID: 4727 RVA: 0x0005C2F4 File Offset: 0x0005A4F4
+	// Token: 0x06001277 RID: 4727 RVA: 0x0005C488 File Offset: 0x0005A688
 	public void Submit()
 	{
 		if (!this.submitButton.enabled)
@@ -90,7 +90,7 @@ public class UINameInput : MonoBehaviour
 		this.confirmBox.SetActive(true);
 	}
 
-	// Token: 0x06001278 RID: 4728 RVA: 0x0005C3A0 File Offset: 0x0005A5A0
+	// Token: 0x06001278 RID: 4728 RVA: 0x0005C534 File Offset: 0x0005A734
 	public void Confirm()
 	{
 		this.animator.SetBool("ShowError", false);
@@ -101,7 +101,7 @@ public class UINameInput : MonoBehaviour
 		this.waitingForName = false;
 	}
 
-	// Token: 0x06001279 RID: 4729 RVA: 0x0005C408 File Offset: 0x0005A608
+	// Token: 0x06001279 RID: 4729 RVA: 0x0005C59C File Offset: 0x0005A79C
 	public void Cancel()
 	{
 		this.animator.SetBool("ShowError", false);
@@ -109,10 +109,10 @@ public class UINameInput : MonoBehaviour
 		this.inputField.interactable = true;
 		this.ShowOnScreenKeyboard();
 		this.preventInputDeselection.enabled = true;
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.Submit), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("UISubmitInput"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.Submit), 0, 3, ReInput.mapping.GetActionId("UISubmitInput"));
 	}
 
-	// Token: 0x0600127A RID: 4730 RVA: 0x0005C478 File Offset: 0x0005A678
+	// Token: 0x0600127A RID: 4730 RVA: 0x0005C60C File Offset: 0x0005A80C
 	public void ConfirmError()
 	{
 		this.animator.SetBool("ShowError", false);
@@ -120,10 +120,10 @@ public class UINameInput : MonoBehaviour
 		this.inputField.interactable = true;
 		this.ShowOnScreenKeyboard();
 		this.preventInputDeselection.enabled = true;
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.Submit), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("UISubmitInput"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.Submit), 0, 3, ReInput.mapping.GetActionId("UISubmitInput"));
 	}
 
-	// Token: 0x0600127B RID: 4731 RVA: 0x0000FA55 File Offset: 0x0000DC55
+	// Token: 0x0600127B RID: 4731 RVA: 0x0000FA6A File Offset: 0x0000DC6A
 	private bool Validate(string inputText, out string errorMessage)
 	{
 		errorMessage = "";
@@ -136,7 +136,7 @@ public class UINameInput : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x0600127C RID: 4732 RVA: 0x0000FA85 File Offset: 0x0000DC85
+	// Token: 0x0600127C RID: 4732 RVA: 0x0000FA9A File Offset: 0x0000DC9A
 	public IEnumerator RunNameInputSequence()
 	{
 		Game.DialogueDepth++;
@@ -157,13 +157,13 @@ public class UINameInput : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600127D RID: 4733 RVA: 0x0000FA94 File Offset: 0x0000DC94
+	// Token: 0x0600127D RID: 4733 RVA: 0x0000FAA9 File Offset: 0x0000DCA9
 	public void EndAnimation()
 	{
 		this.isAnimating = false;
 	}
 
-	// Token: 0x0600127E RID: 4734 RVA: 0x0000FA9D File Offset: 0x0000DC9D
+	// Token: 0x0600127E RID: 4734 RVA: 0x0000FAB2 File Offset: 0x0000DCB2
 	private IEnumerator IntroCoroutine()
 	{
 		yield return null;
@@ -175,7 +175,7 @@ public class UINameInput : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600127F RID: 4735 RVA: 0x0000FAAC File Offset: 0x0000DCAC
+	// Token: 0x0600127F RID: 4735 RVA: 0x0000FAC1 File Offset: 0x0000DCC1
 	private IEnumerator OutroCoroutine()
 	{
 		yield return null;
@@ -188,13 +188,13 @@ public class UINameInput : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001280 RID: 4736 RVA: 0x0000FABB File Offset: 0x0000DCBB
+	// Token: 0x06001280 RID: 4736 RVA: 0x0000FAD0 File Offset: 0x0000DCD0
 	public void WriteName()
 	{
 		this.outroText.text = GameData.g.gameSaveData.playerName;
 	}
 
-	// Token: 0x06001281 RID: 4737 RVA: 0x0000FAD7 File Offset: 0x0000DCD7
+	// Token: 0x06001281 RID: 4737 RVA: 0x0000FAEC File Offset: 0x0000DCEC
 	private IEnumerator NameInputCoroutine()
 	{
 		yield return null;
@@ -210,10 +210,10 @@ public class UINameInput : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001282 RID: 4738 RVA: 0x0005C4E8 File Offset: 0x0005A6E8
+	// Token: 0x06001282 RID: 4738 RVA: 0x0005C67C File Offset: 0x0005A87C
 	private void ShowOnScreenKeyboard()
 	{
-		SteamUtils.ShowFloatingGamepadTextInput(EFloatingGamepadTextInputMode.k_EFloatingGamepadTextInputModeModeSingleLine, (int)this.preferredOnScreenKeyboardTransform.anchoredPosition.x, (int)this.preferredOnScreenKeyboardTransform.anchoredPosition.y, (int)this.preferredOnScreenKeyboardTransform.sizeDelta.x, (int)this.preferredOnScreenKeyboardTransform.sizeDelta.y);
+		SteamUtils.ShowFloatingGamepadTextInput(0, (int)this.preferredOnScreenKeyboardTransform.anchoredPosition.x, (int)this.preferredOnScreenKeyboardTransform.anchoredPosition.y, (int)this.preferredOnScreenKeyboardTransform.sizeDelta.x, (int)this.preferredOnScreenKeyboardTransform.sizeDelta.y);
 	}
 
 	public static UINameInput instance;
@@ -224,7 +224,7 @@ public class UINameInput : MonoBehaviour
 
 	private bool waitingForName;
 
-	private global::Rewired.Player rePlayer;
+	private Player rePlayer;
 
 	public UIPreventDeselection preventInputDeselection;
 

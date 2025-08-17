@@ -11,7 +11,7 @@ public class EditorlikeCamera : MonoBehaviour
 		this.virtualCamera = base.GetComponent<CinemachineVirtualCamera>();
 	}
 
-	// Token: 0x06000044 RID: 68 RVA: 0x00018000 File Offset: 0x00016200
+	// Token: 0x06000044 RID: 68 RVA: 0x0001817C File Offset: 0x0001637C
 	private void OnEnable()
 	{
 		base.transform.ApplyTransform(MainCamera.t);
@@ -23,16 +23,16 @@ public class EditorlikeCamera : MonoBehaviour
 		this.rePlayer = ReInput.players.GetPlayer(0);
 		if (this.allowMovement)
 		{
-			this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveHorizontal), UpdateLoopType.Update, ReInput.mapping.GetActionId("DebugCameraHorizontal"));
-			this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveForward), UpdateLoopType.Update, ReInput.mapping.GetActionId("DebugCameraForward"));
-			this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveVertical), UpdateLoopType.Update, ReInput.mapping.GetActionId("DebugCameraVertical"));
-			this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnSpeedChange), UpdateLoopType.Update, ReInput.mapping.GetActionId("DebugCameraSpeed"));
+			this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveHorizontal), 0, ReInput.mapping.GetActionId("DebugCameraHorizontal"));
+			this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveForward), 0, ReInput.mapping.GetActionId("DebugCameraForward"));
+			this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMoveVertical), 0, ReInput.mapping.GetActionId("DebugCameraVertical"));
+			this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnSpeedChange), 0, ReInput.mapping.GetActionId("DebugCameraSpeed"));
 		}
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnLookVertical), UpdateLoopType.Update, ReInput.mapping.GetActionId("Look Vertical"));
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnLookHorizontal), UpdateLoopType.Update, ReInput.mapping.GetActionId("Look Horizontal"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnLookVertical), 0, ReInput.mapping.GetActionId("Look Vertical"));
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnLookHorizontal), 0, ReInput.mapping.GetActionId("Look Horizontal"));
 	}
 
-	// Token: 0x06000045 RID: 69 RVA: 0x0001816C File Offset: 0x0001636C
+	// Token: 0x06000045 RID: 69 RVA: 0x000182E8 File Offset: 0x000164E8
 	private void OnDisable()
 	{
 		if (this.allowMovement)
@@ -46,7 +46,7 @@ public class EditorlikeCamera : MonoBehaviour
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnLookVertical));
 	}
 
-	// Token: 0x06000046 RID: 70 RVA: 0x0001820C File Offset: 0x0001640C
+	// Token: 0x06000046 RID: 70 RVA: 0x00018388 File Offset: 0x00016588
 	private void Update()
 	{
 		if (this.lookSmoothing == 0f)
@@ -160,7 +160,7 @@ public class EditorlikeCamera : MonoBehaviour
 
 	private Quaternion rotation;
 
-	private global::Rewired.Player rePlayer;
+	private Player rePlayer;
 
 	public bool allowMovement = true;
 }

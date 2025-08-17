@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class ItemShieldPaint : ItemShield
 {
-	// Token: 0x06000BBB RID: 3003 RVA: 0x0000AF51 File Offset: 0x00009151
+	// Token: 0x06000BBB RID: 3003 RVA: 0x0000AF66 File Offset: 0x00009166
 	private void Start()
 	{
 		this.spawnDistance = global::UnityEngine.Random.Range(this.minSpawnDistance, this.maxSpawnDistance);
 	}
 
-	// Token: 0x06000BBC RID: 3004 RVA: 0x00041068 File Offset: 0x0003F268
+	// Token: 0x06000BBC RID: 3004 RVA: 0x000411FC File Offset: 0x0003F3FC
 	public override void WhileSledding()
 	{
 		if (Player.movement.HasGroundContact)

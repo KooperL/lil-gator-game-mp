@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class QuestMarker : MonoBehaviour
 {
-	// Token: 0x06000E41 RID: 3649 RVA: 0x0004CE20 File Offset: 0x0004B020
+	// Token: 0x06000E41 RID: 3649 RVA: 0x0004CFB4 File Offset: 0x0004B1B4
 	private void OnValidate()
 	{
 		if (this.attachedActor == null)
@@ -17,7 +17,7 @@ public class QuestMarker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E42 RID: 3650 RVA: 0x0004CE74 File Offset: 0x0004B074
+	// Token: 0x06000E42 RID: 3650 RVA: 0x0004D008 File Offset: 0x0004B208
 	private void Awake()
 	{
 		if (this.uiElementParent == null)
@@ -32,7 +32,7 @@ public class QuestMarker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E43 RID: 3651 RVA: 0x0000CAC0 File Offset: 0x0000ACC0
+	// Token: 0x06000E43 RID: 3651 RVA: 0x0000CAD5 File Offset: 0x0000ACD5
 	private void OnDisable()
 	{
 		if (this.isUIActivated)
@@ -41,7 +41,7 @@ public class QuestMarker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E44 RID: 3652 RVA: 0x0000CAD0 File Offset: 0x0000ACD0
+	// Token: 0x06000E44 RID: 3652 RVA: 0x0000CAE5 File Offset: 0x0000ACE5
 	private void OnTriggerExit(Collider other)
 	{
 		if (this.isUIActivated)
@@ -51,21 +51,21 @@ public class QuestMarker : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x06000E45 RID: 3653 RVA: 0x0000CAE7 File Offset: 0x0000ACE7
+	// Token: 0x06000E45 RID: 3653 RVA: 0x0000CAFC File Offset: 0x0000ACFC
 	private void OnTriggerEnter(Collider other)
 	{
 		this.stepsSinceTriggered = 0;
 		base.enabled = true;
 	}
 
-	// Token: 0x06000E46 RID: 3654 RVA: 0x0000CAE7 File Offset: 0x0000ACE7
+	// Token: 0x06000E46 RID: 3654 RVA: 0x0000CAFC File Offset: 0x0000ACFC
 	private void OnTriggerStay(Collider other)
 	{
 		this.stepsSinceTriggered = 0;
 		base.enabled = true;
 	}
 
-	// Token: 0x06000E47 RID: 3655 RVA: 0x0004CECC File Offset: 0x0004B0CC
+	// Token: 0x06000E47 RID: 3655 RVA: 0x0004D060 File Offset: 0x0004B260
 	private void FixedUpdate()
 	{
 		this.stepsSinceTriggered++;
@@ -93,14 +93,14 @@ public class QuestMarker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E48 RID: 3656 RVA: 0x0000CAF7 File Offset: 0x0000ACF7
+	// Token: 0x06000E48 RID: 3656 RVA: 0x0000CB0C File Offset: 0x0000AD0C
 	private void DeactivateUI()
 	{
 		this.isUIActivated = false;
 		global::UnityEngine.Object.Destroy(this.currentUIElement);
 	}
 
-	// Token: 0x06000E49 RID: 3657 RVA: 0x0000CB0B File Offset: 0x0000AD0B
+	// Token: 0x06000E49 RID: 3657 RVA: 0x0000CB20 File Offset: 0x0000AD20
 	private void ActivateUI()
 	{
 		this.isUIActivated = true;

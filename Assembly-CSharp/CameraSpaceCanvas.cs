@@ -25,7 +25,7 @@ public class CameraSpaceCanvas : MonoBehaviour
 	// Token: 0x0600001B RID: 27 RVA: 0x000021FC File Offset: 0x000003FC
 	public void Set(bool isInCamera)
 	{
-		this.canvas.renderMode = (isInCamera ? RenderMode.ScreenSpaceCamera : RenderMode.ScreenSpaceOverlay);
+		this.canvas.renderMode = (isInCamera ? 1 : 0);
 	}
 
 	private static CameraSpaceCanvas instance;

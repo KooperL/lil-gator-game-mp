@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class ItemHatBare : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x06000B57 RID: 2903 RVA: 0x0000AACF File Offset: 0x00008CCF
+	// Token: 0x06000B57 RID: 2903 RVA: 0x0000AAE4 File Offset: 0x00008CE4
 	private void Start()
 	{
 		this.itemManager = Player.itemManager;
 		this.itemManager.bareHead.SetActive(true);
 	}
 
-	// Token: 0x06000B58 RID: 2904 RVA: 0x0000AAED File Offset: 0x00008CED
+	// Token: 0x06000B58 RID: 2904 RVA: 0x0000AB02 File Offset: 0x00008D02
 	public void OnRemove()
 	{
 		this.itemManager.bareHead.SetActive(false);

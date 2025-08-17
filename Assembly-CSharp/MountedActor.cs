@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class MountedActor : MonoBehaviour
 {
-	// Token: 0x060004C8 RID: 1224 RVA: 0x0002C420 File Offset: 0x0002A620
+	// Token: 0x060004C8 RID: 1224 RVA: 0x0002C59C File Offset: 0x0002A79C
 	private void Awake()
 	{
 		PlayerActorStates component = base.GetComponent<PlayerActorStates>();

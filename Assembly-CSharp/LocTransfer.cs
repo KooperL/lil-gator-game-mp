@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LocTransfer : ScriptableObject
 {
-	// Token: 0x0600003F RID: 63 RVA: 0x00017FB8 File Offset: 0x000161B8
+	// Token: 0x0600003F RID: 63 RVA: 0x00018134 File Offset: 0x00016334
 	public string GetLocDocumentName(MultilingualTextDocument document)
 	{
 		foreach (LocTransfer.DocumentSource documentSource in this.documentSources)

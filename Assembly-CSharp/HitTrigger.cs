@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class HitTrigger : MonoBehaviour
 {
-	// Token: 0x060007D4 RID: 2004 RVA: 0x00007C95 File Offset: 0x00005E95
+	// Token: 0x060007D4 RID: 2004 RVA: 0x00007CAA File Offset: 0x00005EAA
 	public void OnTriggerStay(Collider other)
 	{
 		if (this.hitOnStay)
@@ -13,13 +13,13 @@ public class HitTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007D5 RID: 2005 RVA: 0x00007CA6 File Offset: 0x00005EA6
+	// Token: 0x060007D5 RID: 2005 RVA: 0x00007CBB File Offset: 0x00005EBB
 	private void OnTriggerEnter(Collider other)
 	{
 		this.HitCollider(other);
 	}
 
-	// Token: 0x060007D6 RID: 2006 RVA: 0x000360E8 File Offset: 0x000342E8
+	// Token: 0x060007D6 RID: 2006 RVA: 0x000362C8 File Offset: 0x000344C8
 	private void HitCollider(Collider other)
 	{
 		if (this.onHit != null)

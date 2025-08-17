@@ -4,7 +4,7 @@ namespace Rewired.Internal
 {
 	public static class ControllerTemplateFactory
 	{
-		// (get) Token: 0x06001752 RID: 5970 RVA: 0x00011F10 File Offset: 0x00010110
+		// (get) Token: 0x06001752 RID: 5970 RVA: 0x00011F25 File Offset: 0x00010125
 		public static Type[] templateTypes
 		{
 			get
@@ -13,7 +13,7 @@ namespace Rewired.Internal
 			}
 		}
 
-		// (get) Token: 0x06001753 RID: 5971 RVA: 0x00011F17 File Offset: 0x00010117
+		// (get) Token: 0x06001753 RID: 5971 RVA: 0x00011F2C File Offset: 0x0001012C
 		public static Type[] templateInterfaceTypes
 		{
 			get
@@ -22,7 +22,7 @@ namespace Rewired.Internal
 			}
 		}
 
-		// Token: 0x06001754 RID: 5972 RVA: 0x00063D28 File Offset: 0x00061F28
+		// Token: 0x06001754 RID: 5972 RVA: 0x00063EBC File Offset: 0x000620BC
 		public static IControllerTemplate Create(Guid typeGuid, object payload)
 		{
 			if (typeGuid == GamepadTemplate.typeGuid)

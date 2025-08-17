@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class ThrowObjectQuest : MonoBehaviour
 {
-	// (get) Token: 0x06000E70 RID: 3696 RVA: 0x0000CC52 File Offset: 0x0000AE52
-	// (set) Token: 0x06000E71 RID: 3697 RVA: 0x0000CC65 File Offset: 0x0000AE65
+	// (get) Token: 0x06000E70 RID: 3696 RVA: 0x0000CC67 File Offset: 0x0000AE67
+	// (set) Token: 0x06000E71 RID: 3697 RVA: 0x0000CC7A File Offset: 0x0000AE7A
 	private int State
 	{
 		get
@@ -19,13 +19,13 @@ public class ThrowObjectQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E72 RID: 3698 RVA: 0x0000CC78 File Offset: 0x0000AE78
+	// Token: 0x06000E72 RID: 3698 RVA: 0x0000CC8D File Offset: 0x0000AE8D
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000E73 RID: 3699 RVA: 0x0004D32C File Offset: 0x0004B52C
+	// Token: 0x06000E73 RID: 3699 RVA: 0x0004D4C0 File Offset: 0x0004B6C0
 	private void UpdateState()
 	{
 		int state = this.State;
@@ -42,13 +42,13 @@ public class ThrowObjectQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E74 RID: 3700 RVA: 0x0000CC80 File Offset: 0x0000AE80
+	// Token: 0x06000E74 RID: 3700 RVA: 0x0000CC95 File Offset: 0x0000AE95
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000E75 RID: 3701 RVA: 0x0000CC8F File Offset: 0x0000AE8F
+	// Token: 0x06000E75 RID: 3701 RVA: 0x0000CCA4 File Offset: 0x0000AEA4
 	private IEnumerator RunConversation()
 	{
 		DialogueManager.d.CancelBubble();
@@ -96,7 +96,7 @@ public class ThrowObjectQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000E76 RID: 3702 RVA: 0x0004D3BC File Offset: 0x0004B5BC
+	// Token: 0x06000E76 RID: 3702 RVA: 0x0004D550 File Offset: 0x0004B750
 	public void PickedUpPencil()
 	{
 		int state = this.State;
@@ -124,8 +124,8 @@ public class ThrowObjectQuest : MonoBehaviour
 	[Serializable]
 	public struct QuestChunk
 	{
-		// (get) Token: 0x06000E78 RID: 3704 RVA: 0x0000CC9E File Offset: 0x0000AE9E
-		// (set) Token: 0x06000E79 RID: 3705 RVA: 0x0000CCB1 File Offset: 0x0000AEB1
+		// (get) Token: 0x06000E78 RID: 3704 RVA: 0x0000CCB3 File Offset: 0x0000AEB3
+		// (set) Token: 0x06000E79 RID: 3705 RVA: 0x0000CCC6 File Offset: 0x0000AEC6
 		public bool IsItemFetched
 		{
 			get

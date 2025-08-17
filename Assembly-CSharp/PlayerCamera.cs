@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
-	// Token: 0x06000D17 RID: 3351 RVA: 0x00049C48 File Offset: 0x00047E48
+	// Token: 0x06000D17 RID: 3351 RVA: 0x00049DDC File Offset: 0x00047FDC
 	public static void FocusOnConversation(DialogueActor actor)
 	{
 		if (actor == null)
@@ -15,20 +15,20 @@ public class PlayerCamera : MonoBehaviour
 		PlayerCamera.p.StartCoroutine(PlayerCamera.p.Focus(Vector3.Lerp(actor.GetDialoguePosition(), DialogueActor.playerActor.GetDialoguePosition(), 0.5f)));
 	}
 
-	// Token: 0x06000D18 RID: 3352 RVA: 0x0000C21B File Offset: 0x0000A41B
+	// Token: 0x06000D18 RID: 3352 RVA: 0x0000C230 File Offset: 0x0000A430
 	private void OnEnable()
 	{
 		PlayerCamera.p = this;
 	}
 
-	// Token: 0x06000D19 RID: 3353 RVA: 0x0000C223 File Offset: 0x0000A423
+	// Token: 0x06000D19 RID: 3353 RVA: 0x0000C238 File Offset: 0x0000A438
 	private void Start()
 	{
 		this.angle = this.defaultAngle;
 		this.distance = this.defaultDistance;
 	}
 
-	// Token: 0x06000D1A RID: 3354 RVA: 0x00049CB0 File Offset: 0x00047EB0
+	// Token: 0x06000D1A RID: 3354 RVA: 0x00049E44 File Offset: 0x00048044
 	private void FixedUpdate()
 	{
 		float num = this.defaultAngle;
@@ -49,7 +49,7 @@ public class PlayerCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D1B RID: 3355 RVA: 0x0000C23D File Offset: 0x0000A43D
+	// Token: 0x06000D1B RID: 3355 RVA: 0x0000C252 File Offset: 0x0000A452
 	public IEnumerator Focus(Vector3 newFocusTarget)
 	{
 		this.focusing = true;
@@ -66,7 +66,7 @@ public class PlayerCamera : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000D1C RID: 3356 RVA: 0x0000C253 File Offset: 0x0000A453
+	// Token: 0x06000D1C RID: 3356 RVA: 0x0000C268 File Offset: 0x0000A468
 	public void StopFocus()
 	{
 		this.focusing = false;

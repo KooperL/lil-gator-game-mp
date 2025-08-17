@@ -7,7 +7,7 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public class FallbackJoystickIdentificationDemo : MonoBehaviour
 	{
-		// Token: 0x06001DB6 RID: 7606 RVA: 0x00016B5C File Offset: 0x00014D5C
+		// Token: 0x06001DB6 RID: 7606 RVA: 0x00016B71 File Offset: 0x00014D71
 		private void Awake()
 		{
 			if (!ReInput.unityJoystickIdentificationRequired)
@@ -19,19 +19,19 @@ namespace Rewired.Demos
 			this.IdentifyAllJoysticks();
 		}
 
-		// Token: 0x06001DB7 RID: 7607 RVA: 0x00016B8E File Offset: 0x00014D8E
+		// Token: 0x06001DB7 RID: 7607 RVA: 0x00016BA3 File Offset: 0x00014DA3
 		private void JoystickConnected(ControllerStatusChangedEventArgs args)
 		{
 			this.IdentifyAllJoysticks();
 		}
 
-		// Token: 0x06001DB8 RID: 7608 RVA: 0x00016B8E File Offset: 0x00014D8E
+		// Token: 0x06001DB8 RID: 7608 RVA: 0x00016BA3 File Offset: 0x00014DA3
 		private void JoystickDisconnected(ControllerStatusChangedEventArgs args)
 		{
 			this.IdentifyAllJoysticks();
 		}
 
-		// Token: 0x06001DB9 RID: 7609 RVA: 0x00074AD0 File Offset: 0x00072CD0
+		// Token: 0x06001DB9 RID: 7609 RVA: 0x00074C64 File Offset: 0x00072E64
 		public void IdentifyAllJoysticks()
 		{
 			this.Reset();
@@ -49,13 +49,13 @@ namespace Rewired.Demos
 			this.SetInputDelay();
 		}
 
-		// Token: 0x06001DBA RID: 7610 RVA: 0x00016B96 File Offset: 0x00014D96
+		// Token: 0x06001DBA RID: 7610 RVA: 0x00016BAB File Offset: 0x00014DAB
 		private void SetInputDelay()
 		{
 			this.nextInputAllowedTime = Time.time + 1f;
 		}
 
-		// Token: 0x06001DBB RID: 7611 RVA: 0x00074B18 File Offset: 0x00072D18
+		// Token: 0x06001DBB RID: 7611 RVA: 0x00074CAC File Offset: 0x00072EAC
 		private void OnGUI()
 		{
 			if (!this.identifyRequired)
@@ -86,7 +86,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DBC RID: 7612 RVA: 0x00074BFC File Offset: 0x00072DFC
+		// Token: 0x06001DBC RID: 7612 RVA: 0x00074D90 File Offset: 0x00072F90
 		private void DrawDialogWindow(int windowId)
 		{
 			if (!this.identifyRequired)
@@ -110,7 +110,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DBD RID: 7613 RVA: 0x00016BA9 File Offset: 0x00014DA9
+		// Token: 0x06001DBD RID: 7613 RVA: 0x00016BBE File Offset: 0x00014DBE
 		private void Reset()
 		{
 			this.joysticksToIdentify = null;

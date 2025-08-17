@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SyncTreeShadows : MonoBehaviour
 {
-	// Token: 0x060010B4 RID: 4276 RVA: 0x000560E8 File Offset: 0x000542E8
+	// Token: 0x060010B4 RID: 4276 RVA: 0x0005627C File Offset: 0x0005447C
 	private void OnValidate()
 	{
 		for (int i = 0; i < this.treeShadowIndices.Length; i++)
@@ -17,7 +17,7 @@ public class SyncTreeShadows : MonoBehaviour
 		this.UpdateTreeShadows();
 	}
 
-	// Token: 0x060010B5 RID: 4277 RVA: 0x00056124 File Offset: 0x00054324
+	// Token: 0x060010B5 RID: 4277 RVA: 0x000562B8 File Offset: 0x000544B8
 	[ContextMenu("Update Tree Shadows")]
 	public void UpdateTreeShadows()
 	{
@@ -45,14 +45,13 @@ public class SyncTreeShadows : MonoBehaviour
 			int num;
 			if (dictionary.TryGetValue(list[k].prototypeIndex, out num))
 			{
-				list.Add(new TreeInstance
-				{
-					prototypeIndex = num,
-					heightScale = list[k].heightScale,
-					position = list[k].position,
-					rotation = list[k].rotation,
-					widthScale = list[k].widthScale
-				});
+				TreeInstance treeInstance = default(TreeInstance);
+				treeInstance.prototypeIndex = num;
+				treeInstance.heightScale = list[k].heightScale;
+				treeInstance.position = list[k].position;
+				treeInstance.rotation = list[k].rotation;
+				treeInstance.widthScale = list[k].widthScale;
+				list.Add(treeInstance);
 			}
 		}
 		component.terrainData.SetTreeInstances(list.ToArray(), true);

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 public static class SpeedrunData
 {
-	// (get) Token: 0x06000F90 RID: 3984 RVA: 0x0000D70A File Offset: 0x0000B90A
-	// (set) Token: 0x06000F91 RID: 3985 RVA: 0x0000D711 File Offset: 0x0000B911
+	// (get) Token: 0x06000F90 RID: 3984 RVA: 0x0000D71F File Offset: 0x0000B91F
+	// (set) Token: 0x06000F91 RID: 3985 RVA: 0x0000D726 File Offset: 0x0000B926
 	public static bool IsSpeedrunMode
 	{
 		get
@@ -29,7 +29,7 @@ public static class SpeedrunData
 		}
 	}
 
-	// (get) Token: 0x06000F92 RID: 3986 RVA: 0x0000D70A File Offset: 0x0000B90A
+	// (get) Token: 0x06000F92 RID: 3986 RVA: 0x0000D71F File Offset: 0x0000B91F
 	public static bool ShouldSkip
 	{
 		get
@@ -38,7 +38,7 @@ public static class SpeedrunData
 		}
 	}
 
-	// (get) Token: 0x06000F93 RID: 3987 RVA: 0x0000D743 File Offset: 0x0000B943
+	// (get) Token: 0x06000F93 RID: 3987 RVA: 0x0000D758 File Offset: 0x0000B958
 	public static bool GiveAutoName
 	{
 		get
@@ -47,7 +47,7 @@ public static class SpeedrunData
 		}
 	}
 
-	// (get) Token: 0x06000F94 RID: 3988 RVA: 0x00051D2C File Offset: 0x0004FF2C
+	// (get) Token: 0x06000F94 RID: 3988 RVA: 0x00051EC0 File Offset: 0x000500C0
 	public static string AutoName
 	{
 		get
@@ -79,7 +79,7 @@ public static class SpeedrunData
 		}
 	}
 
-	// (get) Token: 0x06000F95 RID: 3989 RVA: 0x0000D70A File Offset: 0x0000B90A
+	// (get) Token: 0x06000F95 RID: 3989 RVA: 0x0000D71F File Offset: 0x0000B91F
 	public static bool MaxSpeedAutoSword
 	{
 		get
@@ -88,7 +88,7 @@ public static class SpeedrunData
 		}
 	}
 
-	// (get) Token: 0x06000F96 RID: 3990 RVA: 0x0000D75E File Offset: 0x0000B95E
+	// (get) Token: 0x06000F96 RID: 3990 RVA: 0x0000D773 File Offset: 0x0000B973
 	public static bool IsRunning
 	{
 		get
@@ -97,7 +97,7 @@ public static class SpeedrunData
 		}
 	}
 
-	// (get) Token: 0x06000F97 RID: 3991 RVA: 0x0000D771 File Offset: 0x0000B971
+	// (get) Token: 0x06000F97 RID: 3991 RVA: 0x0000D786 File Offset: 0x0000B986
 	public static bool IsTimerRunning
 	{
 		get
@@ -106,7 +106,7 @@ public static class SpeedrunData
 		}
 	}
 
-	// (get) Token: 0x06000F98 RID: 3992 RVA: 0x0000D70A File Offset: 0x0000B90A
+	// (get) Token: 0x06000F98 RID: 3992 RVA: 0x0000D71F File Offset: 0x0000B91F
 	public static bool ShouldTrack
 	{
 		get
@@ -115,7 +115,7 @@ public static class SpeedrunData
 		}
 	}
 
-	// Token: 0x06000F99 RID: 3993 RVA: 0x0000D785 File Offset: 0x0000B985
+	// Token: 0x06000F99 RID: 3993 RVA: 0x0000D79A File Offset: 0x0000B99A
 	public static void StartNewRun()
 	{
 		SpeedrunData.inGameTime = 0.0;
@@ -132,7 +132,7 @@ public static class SpeedrunData
 	{
 	}
 
-	// Token: 0x06000F9B RID: 3995 RVA: 0x0000D7B8 File Offset: 0x0000B9B8
+	// Token: 0x06000F9B RID: 3995 RVA: 0x0000D7CD File Offset: 0x0000B9CD
 	public static void ResetRun()
 	{
 		SpeedrunData.state = RunState.NotStarted;
@@ -143,7 +143,7 @@ public static class SpeedrunData
 		}
 	}
 
-	// Token: 0x06000F9C RID: 3996 RVA: 0x00051DD0 File Offset: 0x0004FFD0
+	// Token: 0x06000F9C RID: 3996 RVA: 0x00051F64 File Offset: 0x00050164
 	private static void ClearStats()
 	{
 		SpeedrunData.unlockedFriends = new List<string>();
@@ -156,7 +156,7 @@ public static class SpeedrunData
 		SpeedrunData.showTownToSis = false;
 	}
 
-	// Token: 0x06000F9D RID: 3997 RVA: 0x00051E38 File Offset: 0x00050038
+	// Token: 0x06000F9D RID: 3997 RVA: 0x00051FCC File Offset: 0x000501CC
 	public static void Cue(SpeedrunCueTime cueType)
 	{
 		bool flag = false;

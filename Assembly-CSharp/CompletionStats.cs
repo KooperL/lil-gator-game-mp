@@ -75,7 +75,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002B7 RID: 695 RVA: 0x00020E54 File Offset: 0x0001F054
+	// Token: 0x060002B7 RID: 695 RVA: 0x00020FD0 File Offset: 0x0001F1D0
 	public void OnEnable()
 	{
 		CompletionStats.instance = this;
@@ -99,7 +99,7 @@ public class CompletionStats : MonoBehaviour
 		this.UpdateCharacters(null, true);
 	}
 
-	// Token: 0x060002B9 RID: 697 RVA: 0x00020EC0 File Offset: 0x0001F0C0
+	// Token: 0x060002B9 RID: 697 RVA: 0x0002103C File Offset: 0x0001F23C
 	private void OnDisable()
 	{
 		if (CompletionStats.instance == this)
@@ -122,7 +122,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002BA RID: 698 RVA: 0x00020F50 File Offset: 0x0001F150
+	// Token: 0x060002BA RID: 698 RVA: 0x000210CC File Offset: 0x0001F2CC
 	private void UpdateObjects()
 	{
 		if (CompletionStats.PercentObjects == 100)
@@ -152,7 +152,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002BB RID: 699 RVA: 0x00020FE8 File Offset: 0x0001F1E8
+	// Token: 0x060002BB RID: 699 RVA: 0x00021164 File Offset: 0x0001F364
 	private void UpdateCharacters(object sender, bool wasUnlocked)
 	{
 		if (!wasUnlocked)
@@ -186,7 +186,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002BC RID: 700 RVA: 0x00021084 File Offset: 0x0001F284
+	// Token: 0x060002BC RID: 700 RVA: 0x00021200 File Offset: 0x0001F400
 	public void UpdateItems()
 	{
 		if (CompletionStats.PercentItems == 100)
@@ -219,7 +219,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002BE RID: 702 RVA: 0x000210F4 File Offset: 0x0001F2F4
+	// Token: 0x060002BE RID: 702 RVA: 0x00021270 File Offset: 0x0001F470
 	[ContextMenu("Count")]
 	public void CountPersistentObjects()
 	{
@@ -239,7 +239,7 @@ public class CompletionStats : MonoBehaviour
 		Debug.Log("Timed Challenges: " + num.ToString() + "  Breakables: " + num2.ToString());
 	}
 
-	// Token: 0x060002BF RID: 703 RVA: 0x00021158 File Offset: 0x0001F358
+	// Token: 0x060002BF RID: 703 RVA: 0x000212D4 File Offset: 0x0001F4D4
 	[ContextMenu("Find Non Quest Objects")]
 	public void FindNonQuestObjects()
 	{
@@ -254,7 +254,7 @@ public class CompletionStats : MonoBehaviour
 		this.completionObjects = list.ToArray();
 	}
 
-	// Token: 0x060002C0 RID: 704 RVA: 0x00021294 File Offset: 0x0001F494
+	// Token: 0x060002C0 RID: 704 RVA: 0x00021410 File Offset: 0x0001F610
 	[ContextMenu("Find Completion Actors")]
 	public void FindCompletionActors()
 	{
@@ -273,7 +273,7 @@ public class CompletionStats : MonoBehaviour
 		this.completionActors = list.ToArray();
 	}
 
-	// Token: 0x060002C1 RID: 705 RVA: 0x00021440 File Offset: 0x0001F640
+	// Token: 0x060002C1 RID: 705 RVA: 0x000215BC File Offset: 0x0001F7BC
 	[ContextMenu("Get Profiles From Actors")]
 	public void GetProfilesFromActors()
 	{
@@ -288,7 +288,7 @@ public class CompletionStats : MonoBehaviour
 		this.completionCharacters = list.ToArray();
 	}
 
-	// Token: 0x060002C2 RID: 706 RVA: 0x00021494 File Offset: 0x0001F694
+	// Token: 0x060002C2 RID: 706 RVA: 0x00021610 File Offset: 0x0001F810
 	[ContextMenu("Break All Breakables")]
 	public void BreakAllBreakables()
 	{
@@ -301,7 +301,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002C3 RID: 707 RVA: 0x000214D4 File Offset: 0x0001F6D4
+	// Token: 0x060002C3 RID: 707 RVA: 0x00021650 File Offset: 0x0001F850
 	[ContextMenu("Break Most Breakables")]
 	public void BreakMostBreakables()
 	{
@@ -330,7 +330,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002C4 RID: 708 RVA: 0x0002153C File Offset: 0x0001F73C
+	// Token: 0x060002C4 RID: 708 RVA: 0x000216B8 File Offset: 0x0001F8B8
 	[ContextMenu("Break ALL Breakables")]
 	public void BreakALLBreakables()
 	{
@@ -341,7 +341,7 @@ public class CompletionStats : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002C5 RID: 709 RVA: 0x00021570 File Offset: 0x0001F770
+	// Token: 0x060002C5 RID: 709 RVA: 0x000216EC File Offset: 0x0001F8EC
 	[ContextMenu("Collect All Rewards")]
 	public void CollectAllRewards()
 	{

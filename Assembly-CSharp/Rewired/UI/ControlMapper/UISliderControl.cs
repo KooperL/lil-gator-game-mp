@@ -9,8 +9,8 @@ namespace Rewired.UI.ControlMapper
 	[AddComponentMenu("")]
 	public class UISliderControl : UIControl
 	{
-		// (get) Token: 0x06001CA7 RID: 7335 RVA: 0x00015E4D File Offset: 0x0001404D
-		// (set) Token: 0x06001CA8 RID: 7336 RVA: 0x00015E55 File Offset: 0x00014055
+		// (get) Token: 0x06001CA7 RID: 7335 RVA: 0x00015E62 File Offset: 0x00014062
+		// (set) Token: 0x06001CA8 RID: 7336 RVA: 0x00015E6A File Offset: 0x0001406A
 		public bool showIcon
 		{
 			get
@@ -28,8 +28,8 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001CA9 RID: 7337 RVA: 0x00015E7E File Offset: 0x0001407E
-		// (set) Token: 0x06001CAA RID: 7338 RVA: 0x00015E86 File Offset: 0x00014086
+		// (get) Token: 0x06001CA9 RID: 7337 RVA: 0x00015E93 File Offset: 0x00014093
+		// (set) Token: 0x06001CAA RID: 7338 RVA: 0x00015E9B File Offset: 0x0001409B
 		public bool showSlider
 		{
 			get
@@ -47,7 +47,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001CAB RID: 7339 RVA: 0x00070D2C File Offset: 0x0006EF2C
+		// Token: 0x06001CAB RID: 7339 RVA: 0x00070EC0 File Offset: 0x0006F0C0
 		public override void SetCancelCallback(Action cancelCallback)
 		{
 			base.SetCancelCallback(cancelCallback);
@@ -70,7 +70,7 @@ namespace Rewired.UI.ControlMapper
 			}
 			EventTrigger.Entry entry = new EventTrigger.Entry();
 			entry.callback = new EventTrigger.TriggerEvent();
-			entry.eventID = EventTriggerType.Cancel;
+			entry.eventID = 16;
 			entry.callback.AddListener(delegate(BaseEventData data)
 			{
 				cancelCallback();

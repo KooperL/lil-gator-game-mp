@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TerrainPreventClipping : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x060010A4 RID: 4260 RVA: 0x0000E419 File Offset: 0x0000C619
+	// Token: 0x060010A4 RID: 4260 RVA: 0x0000E42E File Offset: 0x0000C62E
 	private void OnValidate()
 	{
 		if (this.terrain == null)
@@ -12,7 +12,7 @@ public class TerrainPreventClipping : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060010A5 RID: 4261 RVA: 0x00055B40 File Offset: 0x00053D40
+	// Token: 0x060010A5 RID: 4261 RVA: 0x00055CD4 File Offset: 0x00053ED4
 	private void Start()
 	{
 		this.offset = base.transform.position.y;
@@ -22,19 +22,19 @@ public class TerrainPreventClipping : MonoBehaviour, IManagedUpdate
 		this.terrainRadius = (0.5f * vector).magnitude;
 	}
 
-	// Token: 0x060010A6 RID: 4262 RVA: 0x000088E7 File Offset: 0x00006AE7
+	// Token: 0x060010A6 RID: 4262 RVA: 0x000088FC File Offset: 0x00006AFC
 	private void OnEnable()
 	{
 		FastUpdateManager.fixedUpdate8.Add(this);
 	}
 
-	// Token: 0x060010A7 RID: 4263 RVA: 0x000088F4 File Offset: 0x00006AF4
+	// Token: 0x060010A7 RID: 4263 RVA: 0x00008909 File Offset: 0x00006B09
 	private void OnDisable()
 	{
 		FastUpdateManager.fixedUpdate8.Remove(this);
 	}
 
-	// Token: 0x060010A8 RID: 4264 RVA: 0x00055BDC File Offset: 0x00053DDC
+	// Token: 0x060010A8 RID: 4264 RVA: 0x00055D70 File Offset: 0x00053F70
 	public void ManagedUpdate()
 	{
 		if (Player.movement == null)

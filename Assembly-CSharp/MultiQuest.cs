@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 public class MultiQuest : MonoBehaviour
 {
-	// (get) Token: 0x06000E3D RID: 3645 RVA: 0x0000CA9A File Offset: 0x0000AC9A
-	// (set) Token: 0x06000E3E RID: 3646 RVA: 0x0000CAAD File Offset: 0x0000ACAD
+	// (get) Token: 0x06000E3D RID: 3645 RVA: 0x0000CAAF File Offset: 0x0000ACAF
+	// (set) Token: 0x06000E3E RID: 3646 RVA: 0x0000CAC2 File Offset: 0x0000ACC2
 	public int Count
 	{
 		get
@@ -18,7 +18,7 @@ public class MultiQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E3F RID: 3647 RVA: 0x0004CDEC File Offset: 0x0004AFEC
+	// Token: 0x06000E3F RID: 3647 RVA: 0x0004CF80 File Offset: 0x0004B180
 	public void CompleteSubQuest()
 	{
 		int num = this.Count + 1;

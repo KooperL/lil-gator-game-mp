@@ -9,7 +9,7 @@ public class FallbackAudioListener : MonoBehaviour
 		this.audioListener = global::UnityEngine.Object.FindObjectOfType<AudioListener>(false);
 	}
 
-	// Token: 0x06000169 RID: 361 RVA: 0x0001C6AC File Offset: 0x0001A8AC
+	// Token: 0x06000169 RID: 361 RVA: 0x0001C828 File Offset: 0x0001AA28
 	private void LateUpdate()
 	{
 		if (this.audioListener == null)

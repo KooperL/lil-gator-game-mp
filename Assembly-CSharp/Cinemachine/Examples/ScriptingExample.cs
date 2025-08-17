@@ -5,7 +5,7 @@ namespace Cinemachine.Examples
 {
 	public class ScriptingExample : MonoBehaviour
 	{
-		// Token: 0x060013AA RID: 5034 RVA: 0x00060218 File Offset: 0x0005E418
+		// Token: 0x060013AA RID: 5034 RVA: 0x000603AC File Offset: 0x0005E5AC
 		private void Start()
 		{
 			CinemachineBrain cinemachineBrain = GameObject.Find("Main Camera").AddComponent<CinemachineBrain>();
@@ -30,7 +30,7 @@ namespace Cinemachine.Examples
 			rig3.GetCinemachineComponent<CinemachineComposer>().m_ScreenY = 0.15f;
 		}
 
-		// Token: 0x060013AB RID: 5035 RVA: 0x000109F8 File Offset: 0x0000EBF8
+		// Token: 0x060013AB RID: 5035 RVA: 0x00010A0D File Offset: 0x0000EC0D
 		private void Update()
 		{
 			if (Time.realtimeSinceStartup - this.lastSwapTime > 5f)

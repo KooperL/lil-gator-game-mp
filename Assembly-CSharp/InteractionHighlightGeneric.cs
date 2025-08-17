@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class InteractionHighlightGeneric : MonoBehaviour, InteractionHighlight
 {
-	// Token: 0x0600080A RID: 2058 RVA: 0x00036A78 File Offset: 0x00034C78
+	// Token: 0x0600080A RID: 2058 RVA: 0x00036C58 File Offset: 0x00034E58
 	private void OnValidate()
 	{
 		if (this.highlightedRenderer != null)
@@ -26,7 +26,7 @@ public class InteractionHighlightGeneric : MonoBehaviour, InteractionHighlight
 		}
 	}
 
-	// Token: 0x0600080B RID: 2059 RVA: 0x00007EA9 File Offset: 0x000060A9
+	// Token: 0x0600080B RID: 2059 RVA: 0x00007EBE File Offset: 0x000060BE
 	private void Start()
 	{
 		if (base.GetComponent<Interaction>() == null)
@@ -35,13 +35,13 @@ public class InteractionHighlightGeneric : MonoBehaviour, InteractionHighlight
 		}
 	}
 
-	// Token: 0x0600080C RID: 2060 RVA: 0x00007EBA File Offset: 0x000060BA
+	// Token: 0x0600080C RID: 2060 RVA: 0x00007ECF File Offset: 0x000060CF
 	public Renderer[] GetHighlightedRenderer()
 	{
 		return this.highlightedRenderers;
 	}
 
-	// Token: 0x0600080D RID: 2061 RVA: 0x00007EC2 File Offset: 0x000060C2
+	// Token: 0x0600080D RID: 2061 RVA: 0x00007ED7 File Offset: 0x000060D7
 	public void RenderersChanged()
 	{
 		if (PlayerInteract.currentHighlight == this)
