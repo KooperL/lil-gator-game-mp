@@ -32,14 +32,14 @@ public class FootIKSmooth : MonoBehaviour
 		this.minHeightSmooth = base.transform.position.y;
 	}
 
-	// Token: 0x06000737 RID: 1847 RVA: 0x00033E1C File Offset: 0x0003201C
+	// Token: 0x06000737 RID: 1847 RVA: 0x00033DF8 File Offset: 0x00031FF8
 	public void ResetHeight()
 	{
 		this.minHeightSmooth = base.transform.position.y;
 		this.heightVelocity = (this.heightGravityVelocity = 0f);
 	}
 
-	// Token: 0x06000738 RID: 1848 RVA: 0x00033E54 File Offset: 0x00032054
+	// Token: 0x06000738 RID: 1848 RVA: 0x00033E30 File Offset: 0x00032030
 	private bool FootRaycast(Vector3 footPos, Vector3 rayDirection, float parentHeight, out RaycastHit hit)
 	{
 		bool flag = false;
@@ -67,7 +67,7 @@ public class FootIKSmooth : MonoBehaviour
 		return flag2 || flag;
 	}
 
-	// Token: 0x06000739 RID: 1849 RVA: 0x00033F10 File Offset: 0x00032110
+	// Token: 0x06000739 RID: 1849 RVA: 0x00033EEC File Offset: 0x000320EC
 	public Vector3 GetFootCenter()
 	{
 		Vector3 vector = Vector3.Lerp(this.leftPosition, this.rightPosition, 0.5f);
@@ -75,18 +75,18 @@ public class FootIKSmooth : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x0600073A RID: 1850 RVA: 0x00033F50 File Offset: 0x00032150
+	// Token: 0x0600073A RID: 1850 RVA: 0x00033F2C File Offset: 0x0003212C
 	private void OnAnimatorIK()
 	{
 		if (!this.ikActive)
 		{
 			this.minHeightSmooth = base.transform.parent.position.y;
-			this.animator.SetIKPositionWeight(1, 0f);
-			this.animator.SetIKRotationWeight(1, 0f);
-			this.animator.SetIKPositionWeight(0, 0f);
-			this.animator.SetIKRotationWeight(0, 0f);
-			this.animator.SetIKHintPositionWeight(1, 0f);
-			this.animator.SetIKHintPositionWeight(0, 0f);
+			this.animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, 0f);
+			this.animator.SetIKRotationWeight(AvatarIKGoal.RightFoot, 0f);
+			this.animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, 0f);
+			this.animator.SetIKRotationWeight(AvatarIKGoal.LeftFoot, 0f);
+			this.animator.SetIKHintPositionWeight(AvatarIKHint.RightKnee, 0f);
+			this.animator.SetIKHintPositionWeight(AvatarIKHint.LeftKnee, 0f);
 			return;
 		}
 		bool flag = true;
@@ -105,7 +105,7 @@ public class FootIKSmooth : MonoBehaviour
 			if (this.customIKPositions != null && num2 > 0f)
 			{
 				this.rightPosition = this.customIKPositions.GetRightFootTarget(vector2);
-				this.animator.SetIKPosition(1, this.rightPosition);
+				this.animator.SetIKPosition(AvatarIKGoal.RightFoot, this.rightPosition);
 				num = Mathf.Min(num, Mathf.Lerp(this.minHeightSmooth, this.rightPosition.y + this.offset.y, this.rightWeightSmooth));
 			}
 			else
@@ -117,26 +117,26 @@ public class FootIKSmooth : MonoBehaviour
 		{
 			num = Mathf.Min(num, Mathf.Lerp(this.minHeightSmooth, this.hit.point.y + this.offset.y, this.rightWeightSmooth));
 			this.rightPosition = this.hit.point + this.offset;
-			this.animator.SetIKPosition(1, this.rightPosition);
+			this.animator.SetIKPosition(AvatarIKGoal.RightFoot, this.rightPosition);
 			Quaternion quaternion = Quaternion.FromToRotation(Vector3.up, this.hit.normal) * Quaternion.LookRotation(base.transform.forward);
-			this.animator.SetIKRotation(1, quaternion);
-			this.animator.SetIKHintPosition(1, this.hit.point + this.offset + base.transform.forward);
+			this.animator.SetIKRotation(AvatarIKGoal.RightFoot, quaternion);
+			this.animator.SetIKHintPosition(AvatarIKHint.RightKnee, this.hit.point + this.offset + base.transform.forward);
 		}
 		else
 		{
 			num2 = 0f;
 		}
 		this.rightWeightSmooth = Mathf.SmoothDamp(this.rightWeightSmooth, num2, ref this.rightWeightVelocity, 0.025f);
-		this.animator.SetIKPositionWeight(1, this.rightWeightSmooth);
-		this.animator.SetIKRotationWeight(1, this.rightWeightSmooth);
-		this.animator.SetIKHintPositionWeight(1, this.rightWeightSmooth);
+		this.animator.SetIKPositionWeight(AvatarIKGoal.RightFoot, this.rightWeightSmooth);
+		this.animator.SetIKRotationWeight(AvatarIKGoal.RightFoot, this.rightWeightSmooth);
+		this.animator.SetIKHintPositionWeight(AvatarIKHint.RightKnee, this.rightWeightSmooth);
 		vector2 = this.leftFoot.position;
 		if (this.overrideIK)
 		{
 			if (this.customIKPositions != null && num3 > 0f)
 			{
 				this.leftPosition = this.customIKPositions.GetLeftFootTarget(vector2);
-				this.animator.SetIKPosition(0, this.leftPosition);
+				this.animator.SetIKPosition(AvatarIKGoal.LeftFoot, this.leftPosition);
 				num = Mathf.Min(num, Mathf.Lerp(this.minHeightSmooth, this.leftPosition.y + this.offset.y, this.leftWeightSmooth));
 			}
 			else
@@ -148,19 +148,19 @@ public class FootIKSmooth : MonoBehaviour
 		{
 			num = Mathf.Min(num, Mathf.Lerp(this.minHeightSmooth, this.hit.point.y + this.offset.y, this.leftWeightSmooth));
 			this.leftPosition = this.hit.point + this.offset;
-			this.animator.SetIKPosition(0, this.leftPosition);
+			this.animator.SetIKPosition(AvatarIKGoal.LeftFoot, this.leftPosition);
 			Quaternion quaternion2 = Quaternion.FromToRotation(Vector3.up, this.hit.normal) * Quaternion.LookRotation(base.transform.forward);
-			this.animator.SetIKRotation(0, quaternion2);
-			this.animator.SetIKHintPosition(0, this.hit.point + this.offset + base.transform.forward);
+			this.animator.SetIKRotation(AvatarIKGoal.LeftFoot, quaternion2);
+			this.animator.SetIKHintPosition(AvatarIKHint.LeftKnee, this.hit.point + this.offset + base.transform.forward);
 		}
 		else
 		{
 			num3 = 0f;
 		}
 		this.leftWeightSmooth = Mathf.SmoothDamp(this.leftWeightSmooth, num3, ref this.leftWeightVelocity, 0.025f);
-		this.animator.SetIKPositionWeight(0, this.leftWeightSmooth);
-		this.animator.SetIKRotationWeight(0, this.leftWeightSmooth);
-		this.animator.SetIKHintPositionWeight(0, this.leftWeightSmooth);
+		this.animator.SetIKPositionWeight(AvatarIKGoal.LeftFoot, this.leftWeightSmooth);
+		this.animator.SetIKRotationWeight(AvatarIKGoal.LeftFoot, this.leftWeightSmooth);
+		this.animator.SetIKHintPositionWeight(AvatarIKHint.LeftKnee, this.leftWeightSmooth);
 		if (num3 == 0f && num2 == 0f)
 		{
 			num = y;

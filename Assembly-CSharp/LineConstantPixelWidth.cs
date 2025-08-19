@@ -5,13 +5,13 @@ using UnityEngine.U2D;
 [RequireComponent(typeof(LineRenderer))]
 public class LineConstantPixelWidth : MonoBehaviour
 {
-	// Token: 0x060008BF RID: 2239 RVA: 0x00008944 File Offset: 0x00006B44
+	// Token: 0x060008BF RID: 2239 RVA: 0x0000894E File Offset: 0x00006B4E
 	private void Awake()
 	{
 		this.lineRenderer = base.GetComponent<LineRenderer>();
 	}
 
-	// Token: 0x060008C0 RID: 2240 RVA: 0x00038D9C File Offset: 0x00036F9C
+	// Token: 0x060008C0 RID: 2240 RVA: 0x00038D78 File Offset: 0x00036F78
 	private void Start()
 	{
 		this.mainCamera = Camera.main;
@@ -31,7 +31,7 @@ public class LineConstantPixelWidth : MonoBehaviour
 		this.lineRenderer.widthCurve = this.widthCurve;
 	}
 
-	// Token: 0x060008C1 RID: 2241 RVA: 0x00038E98 File Offset: 0x00037098
+	// Token: 0x060008C1 RID: 2241 RVA: 0x00038E74 File Offset: 0x00037074
 	private void LateUpdate()
 	{
 		if (!this.lineRenderer.isVisible)
@@ -52,7 +52,7 @@ public class LineConstantPixelWidth : MonoBehaviour
 		this.lineRenderer.widthCurve = this.widthCurve;
 	}
 
-	// Token: 0x060008C2 RID: 2242 RVA: 0x00038F3C File Offset: 0x0003713C
+	// Token: 0x060008C2 RID: 2242 RVA: 0x00038F18 File Offset: 0x00037118
 	public float ScaleForWorldPosition(Vector3 position)
 	{
 		float num = (this.mainCamera.WorldToScreenPoint(position) - this.mainCamera.WorldToScreenPoint(position + Vector3.up / 1000f)).magnitude * 1000f;

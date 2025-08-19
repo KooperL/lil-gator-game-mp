@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class UIBar : MonoBehaviour
 {
-	// Token: 0x060011BE RID: 4542 RVA: 0x00058E3C File Offset: 0x0005703C
+	// Token: 0x060011BE RID: 4542 RVA: 0x00058E18 File Offset: 0x00057018
 	private void Enable()
 	{
 		this.leftEdge = base.transform.InverseTransformPoint(base.transform.parent.TransformPoint(new Vector2(this.rectTransform.rect.xMin, 0f)));
@@ -18,7 +18,7 @@ public class UIBar : MonoBehaviour
 	{
 	}
 
-	// Token: 0x060011C0 RID: 4544 RVA: 0x00058EF0 File Offset: 0x000570F0
+	// Token: 0x060011C0 RID: 4544 RVA: 0x00058ECC File Offset: 0x000570CC
 	public void Load(UIBar.UIBarChunk[] chunks, ItemResource newResource, UIBar.Callbacks newCallbackObject)
 	{
 		base.gameObject.SetActive(true);
@@ -90,14 +90,14 @@ public class UIBar : MonoBehaviour
 		this.lockedFill.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, this.rectTransform.rect.width * (float)num3 / (float)num, this.rectTransform.rect.width);
 	}
 
-	// Token: 0x060011C1 RID: 4545 RVA: 0x0000F1F7 File Offset: 0x0000D3F7
+	// Token: 0x060011C1 RID: 4545 RVA: 0x0000F201 File Offset: 0x0000D401
 	public void Buy()
 	{
 		base.gameObject.SetActive(false);
 		this.callbackObject.Buy();
 	}
 
-	// Token: 0x060011C2 RID: 4546 RVA: 0x0000F210 File Offset: 0x0000D410
+	// Token: 0x060011C2 RID: 4546 RVA: 0x0000F21A File Offset: 0x0000D41A
 	public void Cancel()
 	{
 		base.gameObject.SetActive(false);

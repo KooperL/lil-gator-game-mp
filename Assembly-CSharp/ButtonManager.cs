@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
-	// Token: 0x06001190 RID: 4496 RVA: 0x0000EFEC File Offset: 0x0000D1EC
+	// Token: 0x06001190 RID: 4496 RVA: 0x0000EFF6 File Offset: 0x0000D1F6
 	private void OnEnable()
 	{
 		ButtonManager.b = this;
 	}
 
-	// Token: 0x06001191 RID: 4497 RVA: 0x000585CC File Offset: 0x000567CC
+	// Token: 0x06001191 RID: 4497 RVA: 0x000585A8 File Offset: 0x000567A8
 	public Sprite GetButtonSprite(ButtonList button)
 	{
 		switch (this.buttonStyle)

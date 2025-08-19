@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class PositionChallenge : PersistentObject
 {
-	// Token: 0x06000848 RID: 2120 RVA: 0x00037900 File Offset: 0x00035B00
+	// Token: 0x06000848 RID: 2120 RVA: 0x000378DC File Offset: 0x00035ADC
 	private void Awake()
 	{
 		BreakableObject[] array = this.countedBreakables;
@@ -35,7 +35,7 @@ public class PositionChallenge : PersistentObject
 		base.enabled = false;
 	}
 
-	// Token: 0x0600084C RID: 2124 RVA: 0x0003793C File Offset: 0x00035B3C
+	// Token: 0x0600084C RID: 2124 RVA: 0x00037918 File Offset: 0x00035B18
 	protected virtual void LoadState()
 	{
 		this.startObject.SetActive(!this.isFinished);
@@ -58,7 +58,7 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x0600084E RID: 2126 RVA: 0x00037990 File Offset: 0x00035B90
+	// Token: 0x0600084E RID: 2126 RVA: 0x0003796C File Offset: 0x00035B6C
 	public virtual void StartChallenge()
 	{
 		BreakableObject[] array = this.challengeBreakables;
@@ -99,7 +99,7 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x06000851 RID: 2129 RVA: 0x00037A18 File Offset: 0x00035C18
+	// Token: 0x06000851 RID: 2129 RVA: 0x000379F4 File Offset: 0x00035BF4
 	public virtual void CancelChallenge()
 	{
 		if (this.raceFailedSound != null)
@@ -115,7 +115,7 @@ public class PositionChallenge : PersistentObject
 		this.ClearRace();
 	}
 
-	// Token: 0x06000852 RID: 2130 RVA: 0x00037A7C File Offset: 0x00035C7C
+	// Token: 0x06000852 RID: 2130 RVA: 0x00037A58 File Offset: 0x00035C58
 	private void BreakableBroken()
 	{
 		int num = 0;
@@ -135,7 +135,7 @@ public class PositionChallenge : PersistentObject
 		PlayAudio.p.PlayQuestSting(num);
 	}
 
-	// Token: 0x06000853 RID: 2131 RVA: 0x00037ACC File Offset: 0x00035CCC
+	// Token: 0x06000853 RID: 2131 RVA: 0x00037AA8 File Offset: 0x00035CA8
 	public void FinishChallenge()
 	{
 		if (!this.isInChallenge)
@@ -165,7 +165,7 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x06000855 RID: 2133 RVA: 0x00037B64 File Offset: 0x00035D64
+	// Token: 0x06000855 RID: 2133 RVA: 0x00037B40 File Offset: 0x00035D40
 	protected virtual void DoParticleEffects()
 	{
 		foreach (BreakableObject breakableObject in this.challengeBreakables)

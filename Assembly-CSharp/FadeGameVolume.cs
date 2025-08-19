@@ -14,7 +14,7 @@ public class FadeGameVolume : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006D3 RID: 1747 RVA: 0x00032BAC File Offset: 0x00030DAC
+	// Token: 0x060006D3 RID: 1747 RVA: 0x00032B88 File Offset: 0x00030D88
 	public static void FadeOutGameVolume()
 	{
 		if (FadeGameVolume.audioMixer == null && Settings.s != null)
@@ -29,7 +29,7 @@ public class FadeGameVolume : MonoBehaviour
 		CoroutineUtil.Start(FadeGameVolume.coroutine);
 	}
 
-	// Token: 0x060006D4 RID: 1748 RVA: 0x00032C10 File Offset: 0x00030E10
+	// Token: 0x060006D4 RID: 1748 RVA: 0x00032BEC File Offset: 0x00030DEC
 	public static void FadeInGameVolume()
 	{
 		if (FadeGameVolume.audioMixer == null && Settings.s != null)
@@ -57,7 +57,7 @@ public class FadeGameVolume : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060006D6 RID: 1750 RVA: 0x00032C74 File Offset: 0x00030E74
+	// Token: 0x060006D6 RID: 1750 RVA: 0x00032C50 File Offset: 0x00030E50
 	public static void UpdateGameVolume()
 	{
 		float num = Mathf.Lerp(Settings.gameVolume, -80f, 1f - FadeGameVolume.volumeMultiplier);

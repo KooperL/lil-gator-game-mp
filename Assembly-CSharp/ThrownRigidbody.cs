@@ -10,7 +10,7 @@ public class ThrownRigidbody : MonoBehaviour
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x060006AB RID: 1707 RVA: 0x00032334 File Offset: 0x00030534
+	// Token: 0x060006AB RID: 1707 RVA: 0x00032310 File Offset: 0x00030510
 	private void OnDrawGizmosSelected()
 	{
 		float num = 0.1f;
@@ -103,7 +103,7 @@ public class ThrownRigidbody : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060006B0 RID: 1712 RVA: 0x000323B0 File Offset: 0x000305B0
+	// Token: 0x060006B0 RID: 1712 RVA: 0x0003238C File Offset: 0x0003058C
 	private void Land(bool playEffects = true)
 	{
 		base.transform.position = this.intendedPosition;

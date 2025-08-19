@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class InteractionHighlightGeneric : MonoBehaviour, InteractionHighlight
 {
-	// Token: 0x0600080A RID: 2058 RVA: 0x00036C58 File Offset: 0x00034E58
+	// Token: 0x0600080A RID: 2058 RVA: 0x00036C34 File Offset: 0x00034E34
 	private void OnValidate()
 	{
 		if (this.highlightedRenderer != null)

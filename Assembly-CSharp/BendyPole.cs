@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [AddComponentMenu("Contextual/Bendy Beam")]
 public class BendyPole : MonoBehaviour
 {
-	// Token: 0x060002F0 RID: 752 RVA: 0x00022DE0 File Offset: 0x00020FE0
+	// Token: 0x060002F0 RID: 752 RVA: 0x00022DBC File Offset: 0x00020FBC
 	private void Awake()
 	{
 		this.balanceBeam.onEnable.AddListener(new UnityAction(this.OnBalanceBeamEnabled));
@@ -28,7 +28,7 @@ public class BendyPole : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x060002F2 RID: 754 RVA: 0x00022EEC File Offset: 0x000210EC
+	// Token: 0x060002F2 RID: 754 RVA: 0x00022EC8 File Offset: 0x000210C8
 	private void OnEnable()
 	{
 		this.staticRenderer.enabled = false;
@@ -43,7 +43,7 @@ public class BendyPole : MonoBehaviour
 		this.onEnable.Invoke();
 	}
 
-	// Token: 0x060002F3 RID: 755 RVA: 0x00022F50 File Offset: 0x00021150
+	// Token: 0x060002F3 RID: 755 RVA: 0x00022F2C File Offset: 0x0002112C
 	private void LateUpdate()
 	{
 		if (this.balanceBeam.enabled)
@@ -105,7 +105,7 @@ public class BendyPole : MonoBehaviour
 		this.UpdateAnchor();
 	}
 
-	// Token: 0x060002F4 RID: 756 RVA: 0x000231A8 File Offset: 0x000213A8
+	// Token: 0x060002F4 RID: 756 RVA: 0x00023184 File Offset: 0x00021384
 	private Vector3 AlongLine(Vector3 point)
 	{
 		Vector3 vector = this.balanceBeam.ClosestPointOnPath(point);
@@ -113,21 +113,21 @@ public class BendyPole : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x060002F5 RID: 757 RVA: 0x000231D0 File Offset: 0x000213D0
+	// Token: 0x060002F5 RID: 757 RVA: 0x000231AC File Offset: 0x000213AC
 	public Vector3 ClosestPointOnPath(Vector3 point)
 	{
 		float closestInterpolated = this.balanceBeam.GetClosestInterpolated(point);
 		return this.GetPointOnPath(closestInterpolated);
 	}
 
-	// Token: 0x060002F6 RID: 758 RVA: 0x000231F4 File Offset: 0x000213F4
+	// Token: 0x060002F6 RID: 758 RVA: 0x000231D0 File Offset: 0x000213D0
 	public Vector3 GetPointOnPath(float t)
 	{
 		Vector3 vector = Vector3.Lerp(this.initialPositions[Mathf.FloorToInt(t)], this.initialPositions[Mathf.CeilToInt(t)], t - Mathf.Floor(t));
 		return base.transform.TransformPoint(vector);
 	}
 
-	// Token: 0x060002F7 RID: 759 RVA: 0x00023240 File Offset: 0x00021440
+	// Token: 0x060002F7 RID: 759 RVA: 0x0002321C File Offset: 0x0002141C
 	private void UpdateAnchor()
 	{
 		float closestInterpolated = this.balanceBeam.GetClosestInterpolated(this.weightPoint);

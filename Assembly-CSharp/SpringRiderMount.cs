@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class SpringRiderMount : ActorMount
 {
-	// Token: 0x0600052E RID: 1326 RVA: 0x0002E020 File Offset: 0x0002C220
+	// Token: 0x0600052E RID: 1326 RVA: 0x0002DFFC File Offset: 0x0002C1FC
 	protected override void HandlePlayerInput(Vector3 input, ref float animationIndex)
 	{
 		animationIndex = 0f;
@@ -14,7 +14,7 @@ public class SpringRiderMount : ActorMount
 		this.spring.AddForce(this.force * input);
 	}
 
-	// Token: 0x0600052F RID: 1327 RVA: 0x0002E098 File Offset: 0x0002C298
+	// Token: 0x0600052F RID: 1327 RVA: 0x0002E074 File Offset: 0x0002C274
 	protected override void GetIntoMount(bool skipToMount)
 	{
 		base.GetIntoMount(skipToMount);

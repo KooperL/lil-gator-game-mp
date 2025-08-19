@@ -5,10 +5,10 @@ using System.Text.RegularExpressions;
 
 public static class StringHelper
 {
-	// Token: 0x060009E9 RID: 2537 RVA: 0x000098DE File Offset: 0x00007ADE
+	// Token: 0x060009E9 RID: 2537 RVA: 0x000098E8 File Offset: 0x00007AE8
 	public static IEnumerable<string> EnumerateCSV(this string input)
 	{
-		Regex regex = new Regex("(?:^|,)(\"(?:[^\"]+|\"\")*\"|[^,]*)", 8);
+		Regex regex = new Regex("(?:^|,)(\"(?:[^\"]+|\"\")*\"|[^,]*)", RegexOptions.Compiled);
 		foreach (object obj in regex.Matches(input))
 		{
 			Match match = (Match)obj;
@@ -19,7 +19,7 @@ public static class StringHelper
 		yield break;
 	}
 
-	// Token: 0x060009EA RID: 2538 RVA: 0x0003BB9C File Offset: 0x00039D9C
+	// Token: 0x060009EA RID: 2538 RVA: 0x0003BB78 File Offset: 0x00039D78
 	public static string[] SplitRecords(this string input)
 	{
 		string[] array = new Regex("\n(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))").Split(input);
@@ -30,7 +30,7 @@ public static class StringHelper
 		return array;
 	}
 
-	// Token: 0x060009EB RID: 2539 RVA: 0x0003BBD4 File Offset: 0x00039DD4
+	// Token: 0x060009EB RID: 2539 RVA: 0x0003BBB0 File Offset: 0x00039DB0
 	public static string[] SplitCSV(this string input, char separatorCharacter, bool removeQuotes = true)
 	{
 		string[] array = new Regex(separatorCharacter.ToString() + "(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))").Split(input);

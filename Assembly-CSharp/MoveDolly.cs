@@ -11,10 +11,10 @@ public class MoveDolly : MonoBehaviour
 		{
 			this.trackedDolly = this.virtualCamera.GetCinemachineComponent<CinemachineTrackedDolly>();
 		}
-		this.dollyCart.m_PositionUnits = 0;
+		this.dollyCart.m_PositionUnits = CinemachinePathBase.PositionUnits.PathUnits;
 	}
 
-	// Token: 0x06000603 RID: 1539 RVA: 0x00030394 File Offset: 0x0002E594
+	// Token: 0x06000603 RID: 1539 RVA: 0x00030370 File Offset: 0x0002E570
 	private void OnValidate()
 	{
 		if (this.virtualCamera != null)
@@ -27,7 +27,7 @@ public class MoveDolly : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000604 RID: 1540 RVA: 0x000303E4 File Offset: 0x0002E5E4
+	// Token: 0x06000604 RID: 1540 RVA: 0x000303C0 File Offset: 0x0002E5C0
 	private void Update()
 	{
 		this.position = Mathf.SmoothDamp(this.position, this.targetPosition, ref this.velocity, this.smoothTime);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GliderRuffle : MonoBehaviour
 {
-	// Token: 0x0600079B RID: 1947 RVA: 0x000356CC File Offset: 0x000338CC
+	// Token: 0x0600079B RID: 1947 RVA: 0x000356A8 File Offset: 0x000338A8
 	private void Start()
 	{
 		List<Transform> list = new List<Transform>(base.transform.GetComponentsInChildren<Transform>());
@@ -17,7 +17,7 @@ public class GliderRuffle : MonoBehaviour
 		this.fadeIn = -1f;
 	}
 
-	// Token: 0x0600079D RID: 1949 RVA: 0x000356F8 File Offset: 0x000338F8
+	// Token: 0x0600079D RID: 1949 RVA: 0x000356D4 File Offset: 0x000338D4
 	private void LateUpdate()
 	{
 		if (this.fadeIn < 1f)

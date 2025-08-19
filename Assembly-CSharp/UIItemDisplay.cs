@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UIItemDisplay : MonoBehaviour
 {
-	// Token: 0x06001380 RID: 4992 RVA: 0x00010809 File Offset: 0x0000EA09
+	// Token: 0x06001380 RID: 4992 RVA: 0x00010813 File Offset: 0x0000EA13
 	private void OnValidate()
 	{
 		if (this.rectTransform == null)
@@ -13,7 +13,7 @@ public class UIItemDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001381 RID: 4993 RVA: 0x0005F630 File Offset: 0x0005D830
+	// Token: 0x06001381 RID: 4993 RVA: 0x0005F60C File Offset: 0x0005D80C
 	public void LoadItem(ItemObject item)
 	{
 		if (!base.gameObject.activeSelf)
@@ -64,7 +64,7 @@ public class UIItemDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001382 RID: 4994 RVA: 0x0005F7A0 File Offset: 0x0005D9A0
+	// Token: 0x06001382 RID: 4994 RVA: 0x0005F77C File Offset: 0x0005D97C
 	public void ClearItem()
 	{
 		if (this.spriteDisplay != null)
@@ -81,7 +81,7 @@ public class UIItemDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001383 RID: 4995 RVA: 0x000107D0 File Offset: 0x0000E9D0
+	// Token: 0x06001383 RID: 4995 RVA: 0x000107DA File Offset: 0x0000E9DA
 	private void SetText(Text textObject, string textString)
 	{
 		if (!string.IsNullOrEmpty(textString))

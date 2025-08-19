@@ -7,7 +7,7 @@ namespace Rewired.UI.ControlMapper
 	[AddComponentMenu("")]
 	public class UIControl : MonoBehaviour
 	{
-		// (get) Token: 0x06001C86 RID: 7302 RVA: 0x00015CE5 File Offset: 0x00013EE5
+		// (get) Token: 0x06001C86 RID: 7302 RVA: 0x00015CEF File Offset: 0x00013EEF
 		public int id
 		{
 			get
@@ -16,14 +16,14 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001C87 RID: 7303 RVA: 0x00015CED File Offset: 0x00013EED
+		// Token: 0x06001C87 RID: 7303 RVA: 0x00015CF7 File Offset: 0x00013EF7
 		private void Awake()
 		{
 			this._id = UIControl.GetNextUid();
 		}
 
-		// (get) Token: 0x06001C88 RID: 7304 RVA: 0x00015CFA File Offset: 0x00013EFA
-		// (set) Token: 0x06001C89 RID: 7305 RVA: 0x00015D02 File Offset: 0x00013F02
+		// (get) Token: 0x06001C88 RID: 7304 RVA: 0x00015D04 File Offset: 0x00013F04
+		// (set) Token: 0x06001C89 RID: 7305 RVA: 0x00015D0C File Offset: 0x00013F0C
 		public bool showTitle
 		{
 			get
@@ -46,7 +46,7 @@ namespace Rewired.UI.ControlMapper
 		{
 		}
 
-		// Token: 0x06001C8B RID: 7307 RVA: 0x00015D2B File Offset: 0x00013F2B
+		// Token: 0x06001C8B RID: 7307 RVA: 0x00015D35 File Offset: 0x00013F35
 		private static int GetNextUid()
 		{
 			if (UIControl._uidCounter == 2147483647)

@@ -11,7 +11,7 @@ public class AnimationEvents : MonoBehaviour
 		this.actor = base.GetComponent<DialogueActor>();
 	}
 
-	// Token: 0x06000234 RID: 564 RVA: 0x0001F060 File Offset: 0x0001D260
+	// Token: 0x06000234 RID: 564 RVA: 0x0001F03C File Offset: 0x0001D23C
 	public void LeftStep()
 	{
 		if (this.lastStep > 0f && Time.time - this.lastStep < 0.5f)
@@ -31,7 +31,7 @@ public class AnimationEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000235 RID: 565 RVA: 0x0001F0FC File Offset: 0x0001D2FC
+	// Token: 0x06000235 RID: 565 RVA: 0x0001F0D8 File Offset: 0x0001D2D8
 	public void RightStep()
 	{
 		if (this.lastStep < 0f && Time.time - -this.lastStep < 0.5f)
@@ -51,7 +51,7 @@ public class AnimationEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000236 RID: 566 RVA: 0x0001F19C File Offset: 0x0001D39C
+	// Token: 0x06000236 RID: 566 RVA: 0x0001F178 File Offset: 0x0001D378
 	public void PlaySound(AnimationEvent animEvent)
 	{
 		if (animEvent.objectReferenceParameter == null)
@@ -71,7 +71,7 @@ public class AnimationEvents : MonoBehaviour
 		PlayAudio.p.PlayAtPoint(audioClip, base.transform.position, num, 1f, 128);
 	}
 
-	// Token: 0x06000237 RID: 567 RVA: 0x0001F204 File Offset: 0x0001D404
+	// Token: 0x06000237 RID: 567 RVA: 0x0001F1E0 File Offset: 0x0001D3E0
 	public void PlayEffect(AnimationEvent animEvent)
 	{
 		int intParameter = animEvent.intParameter;
@@ -110,7 +110,7 @@ public class AnimationEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000238 RID: 568 RVA: 0x0001F324 File Offset: 0x0001D524
+	// Token: 0x06000238 RID: 568 RVA: 0x0001F300 File Offset: 0x0001D500
 	public void PlayContinuousSound(AnimationEvent animEvent)
 	{
 		if (Vector3.Distance(base.transform.position, MainCamera.t.position) > 30f)
@@ -142,7 +142,7 @@ public class AnimationEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000239 RID: 569 RVA: 0x0001F42C File Offset: 0x0001D62C
+	// Token: 0x06000239 RID: 569 RVA: 0x0001F408 File Offset: 0x0001D608
 	private void ClearContinuousSound()
 	{
 		this.hasContinousHook = false;

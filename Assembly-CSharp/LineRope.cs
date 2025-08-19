@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LineRope : MonoBehaviour
 {
-	// Token: 0x0600012E RID: 302 RVA: 0x0001BA58 File Offset: 0x00019C58
+	// Token: 0x0600012E RID: 302 RVA: 0x0001BA34 File Offset: 0x00019C34
 	private void OnEnable()
 	{
 		this.lineRenderer = base.GetComponent<LineRenderer>();
@@ -30,7 +30,7 @@ public class LineRope : MonoBehaviour
 		this.UpdateLineRenderer();
 	}
 
-	// Token: 0x06000130 RID: 304 RVA: 0x0001BAD4 File Offset: 0x00019CD4
+	// Token: 0x06000130 RID: 304 RVA: 0x0001BAB0 File Offset: 0x00019CB0
 	private void UpdateLineRenderer()
 	{
 		Vector3 position = base.transform.position;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SmearObject : MonoBehaviour
 {
-	// Token: 0x06000695 RID: 1685 RVA: 0x00031E70 File Offset: 0x00030070
+	// Token: 0x06000695 RID: 1685 RVA: 0x00031E4C File Offset: 0x0003004C
 	private void Start()
 	{
 		this.initialScale = base.transform.localScale;
@@ -12,7 +12,7 @@ public class SmearObject : MonoBehaviour
 		this.lastPosition = base.transform.position;
 	}
 
-	// Token: 0x06000696 RID: 1686 RVA: 0x00031ECC File Offset: 0x000300CC
+	// Token: 0x06000696 RID: 1686 RVA: 0x00031EA8 File Offset: 0x000300A8
 	private void LateUpdate()
 	{
 		if (Time.deltaTime == 0f)

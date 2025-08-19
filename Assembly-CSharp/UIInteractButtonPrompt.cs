@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class UIInteractButtonPrompt : MonoBehaviour
 {
-	// Token: 0x06001233 RID: 4659 RVA: 0x0000F756 File Offset: 0x0000D956
+	// Token: 0x06001233 RID: 4659 RVA: 0x0000F760 File Offset: 0x0000D960
 	private void Awake()
 	{
 		this.buttonDisplay = base.GetComponent<UIButtonDisplay>();
 		this.buttonDisplay.updateAutomatically = false;
 	}
 
-	// Token: 0x06001234 RID: 4660 RVA: 0x0005B144 File Offset: 0x00059344
+	// Token: 0x06001234 RID: 4660 RVA: 0x0005B120 File Offset: 0x00059320
 	private void OnEnable()
 	{
 		if (UIInteractButtonPrompt.showPrompt)

@@ -13,7 +13,7 @@ public class HitSpring : MonoBehaviour, IHit
 		this.initialRotation = this.springTransform.localRotation;
 	}
 
-	// Token: 0x06000816 RID: 2070 RVA: 0x00036D78 File Offset: 0x00034F78
+	// Token: 0x06000816 RID: 2070 RVA: 0x00036D54 File Offset: 0x00034F54
 	private void OnEnable()
 	{
 		if (this.surface == null)
@@ -34,7 +34,7 @@ public class HitSpring : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x06000817 RID: 2071 RVA: 0x00036DE8 File Offset: 0x00034FE8
+	// Token: 0x06000817 RID: 2071 RVA: 0x00036DC4 File Offset: 0x00034FC4
 	private void OnDisable()
 	{
 		if (this.dynamicRenderer != null)
@@ -48,7 +48,7 @@ public class HitSpring : MonoBehaviour, IHit
 		this.prevVelocity = (this.velocity = Vector2.zero);
 	}
 
-	// Token: 0x06000818 RID: 2072 RVA: 0x00036E40 File Offset: 0x00035040
+	// Token: 0x06000818 RID: 2072 RVA: 0x00036E1C File Offset: 0x0003501C
 	private void Start()
 	{
 		this.rotation = this.springTransform.localRotation.eulerAngles.y;
@@ -65,7 +65,7 @@ public class HitSpring : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x0600081A RID: 2074 RVA: 0x00036E74 File Offset: 0x00035074
+	// Token: 0x0600081A RID: 2074 RVA: 0x00036E50 File Offset: 0x00035050
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		this.AddImpulse(100f * velocity);
@@ -98,7 +98,7 @@ public class HitSpring : MonoBehaviour, IHit
 		base.enabled = true;
 	}
 
-	// Token: 0x0600081C RID: 2076 RVA: 0x00036F24 File Offset: 0x00035124
+	// Token: 0x0600081C RID: 2076 RVA: 0x00036F00 File Offset: 0x00035100
 	public void AddForce(Vector3 force)
 	{
 		force = this.springTransform.InverseTransformDirection(force);
@@ -107,7 +107,7 @@ public class HitSpring : MonoBehaviour, IHit
 		base.enabled = true;
 	}
 
-	// Token: 0x0600081D RID: 2077 RVA: 0x00036F80 File Offset: 0x00035180
+	// Token: 0x0600081D RID: 2077 RVA: 0x00036F5C File Offset: 0x0003515C
 	private void Update()
 	{
 		if (this.collider != null && !this.collider.enabled && Time.time > this.colliderEnableTime)

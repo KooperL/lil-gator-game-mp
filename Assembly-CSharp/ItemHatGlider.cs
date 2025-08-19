@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemHatGlider : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x06000B5E RID: 2910 RVA: 0x0000AB15 File Offset: 0x00008D15
+	// Token: 0x06000B5E RID: 2910 RVA: 0x0000AB1F File Offset: 0x00008D1F
 	private void Start()
 	{
 		this.movement = Player.movement;
@@ -17,7 +17,7 @@ public class ItemHatGlider : MonoBehaviour, IItemBehaviour
 	{
 	}
 
-	// Token: 0x06000B60 RID: 2912 RVA: 0x00040668 File Offset: 0x0003E868
+	// Token: 0x06000B60 RID: 2912 RVA: 0x00040644 File Offset: 0x0003E844
 	public void SetEquipped(bool isEquipped)
 	{
 		if (this.itemManager == null)
@@ -36,7 +36,7 @@ public class ItemHatGlider : MonoBehaviour, IItemBehaviour
 		this.itemManager.bareHead.SetActive(isEquipped);
 	}
 
-	// Token: 0x06000B61 RID: 2913 RVA: 0x0000AB55 File Offset: 0x00008D55
+	// Token: 0x06000B61 RID: 2913 RVA: 0x0000AB5F File Offset: 0x00008D5F
 	public void OnRemove()
 	{
 		if (this.glider != null)

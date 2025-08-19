@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class UIButtonDisplay : MonoBehaviour
 {
-	// Token: 0x060011CE RID: 4558 RVA: 0x0000F2D6 File Offset: 0x0000D4D6
+	// Token: 0x060011CE RID: 4558 RVA: 0x0000F2E0 File Offset: 0x0000D4E0
 	public void OnEnable()
 	{
 		if (this.updateAutomatically)
@@ -17,7 +17,7 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011CF RID: 4559 RVA: 0x0000F2FC File Offset: 0x0000D4FC
+	// Token: 0x060011CF RID: 4559 RVA: 0x0000F306 File Offset: 0x0000D506
 	private void OnDisable()
 	{
 		if (this.updateAutomatically)
@@ -26,7 +26,7 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011D0 RID: 4560 RVA: 0x0000F31C File Offset: 0x0000D51C
+	// Token: 0x060011D0 RID: 4560 RVA: 0x0000F326 File Offset: 0x0000D526
 	public void ClearButtonDisplay()
 	{
 		if (this.currentButtonDisplay != null)
@@ -35,7 +35,7 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011D1 RID: 4561 RVA: 0x000592E8 File Offset: 0x000574E8
+	// Token: 0x060011D1 RID: 4561 RVA: 0x000592C4 File Offset: 0x000574C4
 	[ContextMenu("Update Button Display")]
 	public void UpdateButtonDisplay()
 	{
@@ -47,9 +47,9 @@ public class UIButtonDisplay : MonoBehaviour
 		else
 		{
 			ControllerType lastActiveControllerType = InputHelper.lastActiveControllerType;
-			if (lastActiveControllerType > 1)
+			if (lastActiveControllerType > ControllerType.Mouse)
 			{
-				if (lastActiveControllerType == 2 && !this.showForGamepad)
+				if (lastActiveControllerType == ControllerType.Joystick && !this.showForGamepad)
 				{
 					return;
 				}

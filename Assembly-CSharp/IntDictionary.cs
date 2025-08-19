@@ -4,7 +4,7 @@ using System.Collections.Generic;
 [Serializable]
 public class IntDictionary : SerializableDictionary<string, int>
 {
-	// Token: 0x0600077F RID: 1919 RVA: 0x000352A4 File Offset: 0x000334A4
+	// Token: 0x0600077F RID: 1919 RVA: 0x00035280 File Offset: 0x00033480
 	public IntDictionary Clone()
 	{
 		IntDictionary intDictionary = new IntDictionary();

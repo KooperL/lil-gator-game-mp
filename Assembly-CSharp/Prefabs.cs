@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Prefabs : MonoBehaviour
 {
-	// (get) Token: 0x060009E6 RID: 2534 RVA: 0x000098AB File Offset: 0x00007AAB
+	// (get) Token: 0x060009E6 RID: 2534 RVA: 0x000098B5 File Offset: 0x00007AB5
 	public static Prefabs p
 	{
 		get
@@ -16,7 +16,7 @@ public class Prefabs : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009E7 RID: 2535 RVA: 0x000098C9 File Offset: 0x00007AC9
+	// Token: 0x060009E7 RID: 2535 RVA: 0x000098D3 File Offset: 0x00007AD3
 	private void Awake()
 	{
 		if (Prefabs.instance == null)

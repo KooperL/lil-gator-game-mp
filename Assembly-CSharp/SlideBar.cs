@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class SlideBar : Selectable, ISubmitHandler, IEventSystemHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-	// Token: 0x06001369 RID: 4969 RVA: 0x0005EFF4 File Offset: 0x0005D1F4
+	// Token: 0x06001369 RID: 4969 RVA: 0x0005EFD0 File Offset: 0x0005D1D0
 	public void LoadElements(ItemObject[] elementData, int selectedIndex = 0)
 	{
 		this.elementData = elementData;
@@ -44,7 +44,7 @@ public class SlideBar : Selectable, ISubmitHandler, IEventSystemHandler, IBeginD
 		this.SetElementPositions((float)selectedIndex);
 	}
 
-	// Token: 0x0600136A RID: 4970 RVA: 0x0005F0DC File Offset: 0x0005D2DC
+	// Token: 0x0600136A RID: 4970 RVA: 0x0005F0B8 File Offset: 0x0005D2B8
 	public void RefreshElements()
 	{
 		for (int i = 0; i < this.elementData.Length; i++)
@@ -53,7 +53,7 @@ public class SlideBar : Selectable, ISubmitHandler, IEventSystemHandler, IBeginD
 		}
 	}
 
-	// Token: 0x0600136B RID: 4971 RVA: 0x0005F118 File Offset: 0x0005D318
+	// Token: 0x0600136B RID: 4971 RVA: 0x0005F0F4 File Offset: 0x0005D2F4
 	public void MoveBar(int direction)
 	{
 		this.Select();
@@ -69,7 +69,7 @@ public class SlideBar : Selectable, ISubmitHandler, IEventSystemHandler, IBeginD
 		this.SetSelectedIndex(num);
 	}
 
-	// Token: 0x0600136C RID: 4972 RVA: 0x0005F158 File Offset: 0x0005D358
+	// Token: 0x0600136C RID: 4972 RVA: 0x0005F134 File Offset: 0x0005D334
 	private void SetSelectedIndex(int newIndex)
 	{
 		newIndex = Mathf.Clamp(newIndex, 0, this.elementData.Length);
@@ -80,7 +80,7 @@ public class SlideBar : Selectable, ISubmitHandler, IEventSystemHandler, IBeginD
 		this.onSelect.Invoke(this.elementData[this.selectedIndex]);
 	}
 
-	// Token: 0x0600136D RID: 4973 RVA: 0x000106C1 File Offset: 0x0000E8C1
+	// Token: 0x0600136D RID: 4973 RVA: 0x000106CB File Offset: 0x0000E8CB
 	public override void OnSelect(BaseEventData eventData)
 	{
 		this.isSelected = true;
@@ -88,14 +88,14 @@ public class SlideBar : Selectable, ISubmitHandler, IEventSystemHandler, IBeginD
 		base.OnSelect(eventData);
 	}
 
-	// Token: 0x0600136E RID: 4974 RVA: 0x000106E9 File Offset: 0x0000E8E9
+	// Token: 0x0600136E RID: 4974 RVA: 0x000106F3 File Offset: 0x0000E8F3
 	public override void OnDeselect(BaseEventData eventData)
 	{
 		this.isSelected = false;
 		base.OnDeselect(eventData);
 	}
 
-	// Token: 0x0600136F RID: 4975 RVA: 0x000106F9 File Offset: 0x0000E8F9
+	// Token: 0x0600136F RID: 4975 RVA: 0x00010703 File Offset: 0x0000E903
 	public void OnBeginDrag(PointerEventData eventData)
 	{
 		this.Select();
@@ -103,7 +103,7 @@ public class SlideBar : Selectable, ISubmitHandler, IEventSystemHandler, IBeginD
 		this.selectionChanging = true;
 	}
 
-	// Token: 0x06001370 RID: 4976 RVA: 0x0005F1B4 File Offset: 0x0005D3B4
+	// Token: 0x06001370 RID: 4976 RVA: 0x0005F190 File Offset: 0x0005D390
 	public void OnDrag(PointerEventData eventData)
 	{
 		this.selectedPosition -= 40f * eventData.delta.x / (float)Screen.currentResolution.width;
@@ -114,19 +114,19 @@ public class SlideBar : Selectable, ISubmitHandler, IEventSystemHandler, IBeginD
 		}
 	}
 
-	// Token: 0x06001371 RID: 4977 RVA: 0x0001070F File Offset: 0x0000E90F
+	// Token: 0x06001371 RID: 4977 RVA: 0x00010719 File Offset: 0x0000E919
 	public void OnEndDrag(PointerEventData eventData)
 	{
 		this.isDragging = false;
 	}
 
-	// Token: 0x06001372 RID: 4978 RVA: 0x00010718 File Offset: 0x0000E918
+	// Token: 0x06001372 RID: 4978 RVA: 0x00010722 File Offset: 0x0000E922
 	public void OnSubmit(BaseEventData eventData)
 	{
 		this.onSubmit.Invoke(this.elementData[this.selectedIndex]);
 	}
 
-	// Token: 0x06001373 RID: 4979 RVA: 0x0005F220 File Offset: 0x0005D420
+	// Token: 0x06001373 RID: 4979 RVA: 0x0005F1FC File Offset: 0x0005D3FC
 	public void OnClickDisplay(UIItemDisplay clickedDisplay)
 	{
 		int num = this.elements.IndexOf(clickedDisplay);
@@ -141,26 +141,26 @@ public class SlideBar : Selectable, ISubmitHandler, IEventSystemHandler, IBeginD
 		this.Select();
 	}
 
-	// Token: 0x06001374 RID: 4980 RVA: 0x00010732 File Offset: 0x0000E932
+	// Token: 0x06001374 RID: 4980 RVA: 0x0001073C File Offset: 0x0000E93C
 	public override void OnMove(AxisEventData eventData)
 	{
-		if (eventData.moveDir == 1 || eventData.moveDir == 3)
+		if (eventData.moveDir == MoveDirection.Up || eventData.moveDir == MoveDirection.Down)
 		{
 			base.OnMove(eventData);
 			return;
 		}
-		if (eventData.moveDir == null)
+		if (eventData.moveDir == MoveDirection.Left)
 		{
 			this.MoveBar(-1);
 			return;
 		}
-		if (eventData.moveDir == 2)
+		if (eventData.moveDir == MoveDirection.Right)
 		{
 			this.MoveBar(1);
 		}
 	}
 
-	// Token: 0x06001375 RID: 4981 RVA: 0x0005F274 File Offset: 0x0005D474
+	// Token: 0x06001375 RID: 4981 RVA: 0x0005F250 File Offset: 0x0005D450
 	private void Update()
 	{
 		if (this.selectionChanging)
@@ -189,7 +189,7 @@ public class SlideBar : Selectable, ISubmitHandler, IEventSystemHandler, IBeginD
 		}
 	}
 
-	// Token: 0x06001376 RID: 4982 RVA: 0x0005F314 File Offset: 0x0005D514
+	// Token: 0x06001376 RID: 4982 RVA: 0x0005F2F0 File Offset: 0x0005D4F0
 	private void SetElementPositions(float position)
 	{
 		if (Mathf.Approximately(position, Mathf.Round(position)))
@@ -223,7 +223,7 @@ public class SlideBar : Selectable, ISubmitHandler, IEventSystemHandler, IBeginD
 		}
 	}
 
-	// Token: 0x06001377 RID: 4983 RVA: 0x0005F3F4 File Offset: 0x0005D5F4
+	// Token: 0x06001377 RID: 4983 RVA: 0x0005F3D0 File Offset: 0x0005D5D0
 	private void GetElementTransform(int i, out Vector3 localPosition, out Vector3 localScale, int selectedIndex)
 	{
 		if (i < selectedIndex)
@@ -242,7 +242,7 @@ public class SlideBar : Selectable, ISubmitHandler, IEventSystemHandler, IBeginD
 		localScale = this.rightAnchor.localScale;
 	}
 
-	// Token: 0x06001378 RID: 4984 RVA: 0x0005F4B0 File Offset: 0x0005D6B0
+	// Token: 0x06001378 RID: 4984 RVA: 0x0005F48C File Offset: 0x0005D68C
 	private void GetElementTransform(int i, out Vector3 localPosition, out Vector2 size, int selectedIndex)
 	{
 		if (i < selectedIndex)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TutFrogQuest : MonoBehaviour
 {
-	// (get) Token: 0x06000ED4 RID: 3796 RVA: 0x0000CFC6 File Offset: 0x0000B1C6
+	// (get) Token: 0x06000ED4 RID: 3796 RVA: 0x0000CFD0 File Offset: 0x0000B1D0
 	private string StateID
 	{
 		get
@@ -13,7 +13,7 @@ public class TutFrogQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000ED5 RID: 3797 RVA: 0x0004E29C File Offset: 0x0004C49C
+	// Token: 0x06000ED5 RID: 3797 RVA: 0x0004E278 File Offset: 0x0004C478
 	private void Start()
 	{
 		int num = GameData.g.ReadInt(this.StateID, 0);
@@ -21,13 +21,13 @@ public class TutFrogQuest : MonoBehaviour
 		this.frog.SetActive(num != 0);
 	}
 
-	// Token: 0x06000ED6 RID: 3798 RVA: 0x0000CFCD File Offset: 0x0000B1CD
+	// Token: 0x06000ED6 RID: 3798 RVA: 0x0000CFD7 File Offset: 0x0000B1D7
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000ED7 RID: 3799 RVA: 0x0000CFDC File Offset: 0x0000B1DC
+	// Token: 0x06000ED7 RID: 3799 RVA: 0x0000CFE6 File Offset: 0x0000B1E6
 	private IEnumerator RunConversation()
 	{
 		Game.DialogueDepth++;

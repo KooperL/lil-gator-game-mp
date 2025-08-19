@@ -3,7 +3,7 @@ using System.Collections;
 
 public class InteractPickup : PersistentObject, Interaction
 {
-	// Token: 0x060007DF RID: 2015 RVA: 0x0003643C File Offset: 0x0003463C
+	// Token: 0x060007DF RID: 2015 RVA: 0x00036418 File Offset: 0x00034618
 	public void Interact()
 	{
 		if (this.resource != null)

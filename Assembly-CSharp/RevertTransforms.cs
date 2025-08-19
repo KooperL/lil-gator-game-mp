@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RevertTransforms : MonoBehaviour
 {
-	// Token: 0x06000155 RID: 341 RVA: 0x0001C27C File Offset: 0x0001A47C
+	// Token: 0x06000155 RID: 341 RVA: 0x0001C258 File Offset: 0x0001A458
 	[ContextMenu("Get Initial Transform")]
 	public void GetInitialTransforms()
 	{
@@ -23,7 +23,7 @@ public class RevertTransforms : MonoBehaviour
 		this.Revert();
 	}
 
-	// Token: 0x06000157 RID: 343 RVA: 0x0001C2FC File Offset: 0x0001A4FC
+	// Token: 0x06000157 RID: 343 RVA: 0x0001C2D8 File Offset: 0x0001A4D8
 	[ContextMenu("Revert Transforms")]
 	public void Revert()
 	{

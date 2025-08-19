@@ -13,7 +13,7 @@ public class InteractShop : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x060007E9 RID: 2025 RVA: 0x00036520 File Offset: 0x00034720
+	// Token: 0x060007E9 RID: 2025 RVA: 0x000364FC File Offset: 0x000346FC
 	private void Start()
 	{
 		int num = GameData.g.ReadInt(this.SaveID, 0);

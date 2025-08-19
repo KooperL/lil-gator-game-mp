@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [AddComponentMenu("Interaction/Talk To NPC")]
 public class InteractTalkTo : MonoBehaviour, Interaction
 {
-	// Token: 0x060007F7 RID: 2039 RVA: 0x000367D8 File Offset: 0x000349D8
+	// Token: 0x060007F7 RID: 2039 RVA: 0x000367B4 File Offset: 0x000349B4
 	private void OnValidate()
 	{
 		if (this.actors == null || this.actors.Length == 0)
@@ -136,7 +136,7 @@ public class InteractTalkTo : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x060007FD RID: 2045 RVA: 0x00036828 File Offset: 0x00034A28
+	// Token: 0x060007FD RID: 2045 RVA: 0x00036804 File Offset: 0x00034A04
 	protected virtual string GetDialogue()
 	{
 		string text = this.dialogues[this.dialogueIndex];

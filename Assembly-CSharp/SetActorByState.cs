@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class SetActorByState : MonoBehaviour
 {
-	// Token: 0x0600091F RID: 2335 RVA: 0x00008D3B File Offset: 0x00006F3B
+	// Token: 0x0600091F RID: 2335 RVA: 0x00008D45 File Offset: 0x00006F45
 	private void OnValidate()
 	{
 		if (this.stateMachine == null)
@@ -13,13 +13,13 @@ public class SetActorByState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000920 RID: 2336 RVA: 0x00008D57 File Offset: 0x00006F57
+	// Token: 0x06000920 RID: 2336 RVA: 0x00008D61 File Offset: 0x00006F61
 	private void Awake()
 	{
 		this.stateMachine.onStateChange.AddListener(new UnityAction<int>(this.UpdateState));
 	}
 
-	// Token: 0x06000921 RID: 2337 RVA: 0x00008D75 File Offset: 0x00006F75
+	// Token: 0x06000921 RID: 2337 RVA: 0x00008D7F File Offset: 0x00006F7F
 	private void Start()
 	{
 		this.UpdateState(this.stateMachine.StateID);

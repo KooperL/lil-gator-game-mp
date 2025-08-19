@@ -11,7 +11,7 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public sealed class PlayerPointerEventHandlerExample : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler, IPointerClickHandler, IScrollHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 	{
-		// Token: 0x06001DC5 RID: 7621 RVA: 0x00016BEF File Offset: 0x00014DEF
+		// Token: 0x06001DC5 RID: 7621 RVA: 0x00016BF9 File Offset: 0x00014DF9
 		private void Log(string o)
 		{
 			this.log.Add(o);
@@ -21,7 +21,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DC6 RID: 7622 RVA: 0x000751D4 File Offset: 0x000733D4
+		// Token: 0x06001DC6 RID: 7622 RVA: 0x000751B0 File Offset: 0x000733B0
 		private void Update()
 		{
 			if (this.text != null)
@@ -35,7 +35,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DC7 RID: 7623 RVA: 0x00075250 File Offset: 0x00073450
+		// Token: 0x06001DC7 RID: 7623 RVA: 0x0007522C File Offset: 0x0007342C
 		public void OnPointerEnter(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -53,7 +53,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DC8 RID: 7624 RVA: 0x000752C0 File Offset: 0x000734C0
+		// Token: 0x06001DC8 RID: 7624 RVA: 0x0007529C File Offset: 0x0007349C
 		public void OnPointerExit(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -71,7 +71,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DC9 RID: 7625 RVA: 0x00075330 File Offset: 0x00073530
+		// Token: 0x06001DC9 RID: 7625 RVA: 0x0007530C File Offset: 0x0007350C
 		public void OnPointerUp(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -91,7 +91,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DCA RID: 7626 RVA: 0x000753BC File Offset: 0x000735BC
+		// Token: 0x06001DCA RID: 7626 RVA: 0x00075398 File Offset: 0x00073598
 		public void OnPointerDown(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -111,7 +111,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DCB RID: 7627 RVA: 0x00075448 File Offset: 0x00073648
+		// Token: 0x06001DCB RID: 7627 RVA: 0x00075424 File Offset: 0x00073624
 		public void OnPointerClick(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -131,7 +131,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DCC RID: 7628 RVA: 0x000754D4 File Offset: 0x000736D4
+		// Token: 0x06001DCC RID: 7628 RVA: 0x000754B0 File Offset: 0x000736B0
 		public void OnScroll(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -149,7 +149,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DCD RID: 7629 RVA: 0x00075544 File Offset: 0x00073744
+		// Token: 0x06001DCD RID: 7629 RVA: 0x00075520 File Offset: 0x00073720
 		public void OnBeginDrag(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -169,7 +169,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DCE RID: 7630 RVA: 0x000755D0 File Offset: 0x000737D0
+		// Token: 0x06001DCE RID: 7630 RVA: 0x000755AC File Offset: 0x000737AC
 		public void OnDrag(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -189,7 +189,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DCF RID: 7631 RVA: 0x0007565C File Offset: 0x0007385C
+		// Token: 0x06001DCF RID: 7631 RVA: 0x00075638 File Offset: 0x00073838
 		public void OnEndDrag(PointerEventData eventData)
 		{
 			if (eventData is PlayerPointerEventData)
@@ -209,7 +209,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DD0 RID: 7632 RVA: 0x000756E8 File Offset: 0x000738E8
+		// Token: 0x06001DD0 RID: 7632 RVA: 0x000756C4 File Offset: 0x000738C4
 		private static string GetSourceName(PlayerPointerEventData playerEventData)
 		{
 			if (playerEventData.sourceType == PointerEventType.Mouse)

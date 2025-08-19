@@ -20,7 +20,7 @@ public class DialogueDocumentInfo : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600056C RID: 1388 RVA: 0x0002EB74 File Offset: 0x0002CD74
+	// Token: 0x0600056C RID: 1388 RVA: 0x0002EB50 File Offset: 0x0002CD50
 	public void LoadDocumentInfo(DialogueChunk chunk)
 	{
 		MultilingualTextDocument multilingualTextDocument = this.FindDocumentForChunk(chunk);
@@ -44,7 +44,7 @@ public class DialogueDocumentInfo : MonoBehaviour
 		this.root.SetActive(false);
 	}
 
-	// Token: 0x0600056E RID: 1390 RVA: 0x0002EBE4 File Offset: 0x0002CDE4
+	// Token: 0x0600056E RID: 1390 RVA: 0x0002EBC0 File Offset: 0x0002CDC0
 	private MultilingualTextDocument FindDocumentForChunk(DialogueChunk chunk)
 	{
 		foreach (MultilingualTextDocument multilingualTextDocument in this.documents)

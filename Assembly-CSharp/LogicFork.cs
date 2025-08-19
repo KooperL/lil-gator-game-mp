@@ -11,7 +11,7 @@ public class LogicFork : MonoBehaviour
 	{
 	}
 
-	// Token: 0x060008F5 RID: 2293 RVA: 0x00039578 File Offset: 0x00037778
+	// Token: 0x060008F5 RID: 2293 RVA: 0x00039554 File Offset: 0x00037754
 	protected virtual void OnValidate()
 	{
 		if (this.stateMachine == null)
@@ -37,7 +37,7 @@ public class LogicFork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008F6 RID: 2294 RVA: 0x0003969C File Offset: 0x0003789C
+	// Token: 0x060008F6 RID: 2294 RVA: 0x00039678 File Offset: 0x00037878
 	public void Action()
 	{
 		int stateID = this.stateMachine.StateID;
@@ -71,7 +71,7 @@ public class LogicFork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008F7 RID: 2295 RVA: 0x00008B68 File Offset: 0x00006D68
+	// Token: 0x060008F7 RID: 2295 RVA: 0x00008B72 File Offset: 0x00006D72
 	private IEnumerator RunExecuteAction(LogicFork.StateAction action, int actionIndex)
 	{
 		action.onAction.Invoke();
@@ -180,7 +180,7 @@ public class LogicFork : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060008F8 RID: 2296 RVA: 0x00039728 File Offset: 0x00037928
+	// Token: 0x060008F8 RID: 2296 RVA: 0x00039704 File Offset: 0x00037904
 	private YieldInstruction RunDialogueChunk(string dialogue, bool isBubble = false, bool skipWaitForPlayer = false)
 	{
 		if (this.document == null)
@@ -201,7 +201,7 @@ public class LogicFork : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008F9 RID: 2297 RVA: 0x000397C8 File Offset: 0x000379C8
+	// Token: 0x060008F9 RID: 2297 RVA: 0x000397A4 File Offset: 0x000379A4
 	public void ProgressIndex()
 	{
 		int stateID = this.stateMachine.StateID;

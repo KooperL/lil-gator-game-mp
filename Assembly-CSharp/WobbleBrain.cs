@@ -5,7 +5,7 @@ using UnityEngine;
 [AddComponentMenu("Wobble/Brain")]
 public class WobbleBrain : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06001044 RID: 4164 RVA: 0x000549E0 File Offset: 0x00052BE0
+	// Token: 0x06001044 RID: 4164 RVA: 0x000549BC File Offset: 0x00052BBC
 	private void Start()
 	{
 		List<WobbleBoneBase> list = new List<WobbleBoneBase>();
@@ -20,7 +20,7 @@ public class WobbleBrain : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06001045 RID: 4165 RVA: 0x00054A48 File Offset: 0x00052C48
+	// Token: 0x06001045 RID: 4165 RVA: 0x00054A24 File Offset: 0x00052C24
 	private void AddChildren(Transform parent, ref List<WobbleBoneBase> boneList)
 	{
 		foreach (object obj in parent)
@@ -44,14 +44,14 @@ public class WobbleBrain : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEveryNonFixed.Add(this);
 	}
 
-	// Token: 0x06001047 RID: 4167 RVA: 0x0000DF8E File Offset: 0x0000C18E
+	// Token: 0x06001047 RID: 4167 RVA: 0x0000DF98 File Offset: 0x0000C198
 	private void OnDisable()
 	{
 		this.isPaused = true;
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x06001048 RID: 4168 RVA: 0x00054AC0 File Offset: 0x00052CC0
+	// Token: 0x06001048 RID: 4168 RVA: 0x00054A9C File Offset: 0x00052C9C
 	public void ManagedUpdate()
 	{
 		float num = Mathf.Min(Time.time - this.lastManagedUpdateTime, 0.5f);
@@ -77,7 +77,7 @@ public class WobbleBrain : MonoBehaviour, IManagedUpdate
 		this.lastManagedUpdateTime = Time.time;
 	}
 
-	// Token: 0x06001049 RID: 4169 RVA: 0x00054B74 File Offset: 0x00052D74
+	// Token: 0x06001049 RID: 4169 RVA: 0x00054B50 File Offset: 0x00052D50
 	private void LateUpdate()
 	{
 		if (this.isPaused)
@@ -99,7 +99,7 @@ public class WobbleBrain : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x0600104A RID: 4170 RVA: 0x00054BE4 File Offset: 0x00052DE4
+	// Token: 0x0600104A RID: 4170 RVA: 0x00054BC0 File Offset: 0x00052DC0
 	public void Reacclimate()
 	{
 		if (this.bones != null)

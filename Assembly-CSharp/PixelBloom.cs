@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-[PostProcess(typeof(PixelBloomRenderer), 2, "Custom/PixelBloom", true)]
+[PostProcess(typeof(PixelBloomRenderer), PostProcessEvent.AfterStack, "Custom/PixelBloom", true)]
 [Serializable]
 public sealed class PixelBloom : PostProcessEffectSettings
 {

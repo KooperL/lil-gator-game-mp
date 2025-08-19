@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WaterPhysics : MonoBehaviour
 {
-	// Token: 0x06000A87 RID: 2695 RVA: 0x0000A098 File Offset: 0x00008298
+	// Token: 0x06000A87 RID: 2695 RVA: 0x0000A0A2 File Offset: 0x000082A2
 	private void Awake()
 	{
 		if (this.rigidbody == null)
@@ -14,7 +14,7 @@ public class WaterPhysics : MonoBehaviour
 		this.initialAngularDrag = this.rigidbody.angularDrag;
 	}
 
-	// Token: 0x06000A88 RID: 2696 RVA: 0x0000A0D6 File Offset: 0x000082D6
+	// Token: 0x06000A88 RID: 2696 RVA: 0x0000A0E0 File Offset: 0x000082E0
 	private void Start()
 	{
 		if (this.accurateCollider == null || !this.accurateCollider.enabled)
@@ -24,26 +24,26 @@ public class WaterPhysics : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x06000A89 RID: 2697 RVA: 0x0000A106 File Offset: 0x00008306
+	// Token: 0x06000A89 RID: 2697 RVA: 0x0000A110 File Offset: 0x00008310
 	private void OnDisable()
 	{
 		this.waterPlaneHeight = -100f;
 		this.rigidbody.drag = this.initialDrag;
 	}
 
-	// Token: 0x06000A8A RID: 2698 RVA: 0x0000A124 File Offset: 0x00008324
+	// Token: 0x06000A8A RID: 2698 RVA: 0x0000A12E File Offset: 0x0000832E
 	private void OnTriggerEnter(Collider other)
 	{
 		this.WaterTrigger(other);
 	}
 
-	// Token: 0x06000A8B RID: 2699 RVA: 0x0000A124 File Offset: 0x00008324
+	// Token: 0x06000A8B RID: 2699 RVA: 0x0000A12E File Offset: 0x0000832E
 	private void OnTriggerStay(Collider other)
 	{
 		this.WaterTrigger(other);
 	}
 
-	// Token: 0x06000A8C RID: 2700 RVA: 0x0003D6B0 File Offset: 0x0003B8B0
+	// Token: 0x06000A8C RID: 2700 RVA: 0x0003D68C File Offset: 0x0003B88C
 	private void WaterTrigger(Collider collider)
 	{
 		if (collider.gameObject.layer != 4)
@@ -70,7 +70,7 @@ public class WaterPhysics : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x06000A8D RID: 2701 RVA: 0x0003D740 File Offset: 0x0003B940
+	// Token: 0x06000A8D RID: 2701 RVA: 0x0003D71C File Offset: 0x0003B91C
 	private void FixedUpdate()
 	{
 		this.stepsSinceTriggered++;

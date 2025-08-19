@@ -6,13 +6,13 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Selectable))]
 public class SelectOnHighlight : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler
 {
-	// Token: 0x060011AB RID: 4523 RVA: 0x0000F116 File Offset: 0x0000D316
+	// Token: 0x060011AB RID: 4523 RVA: 0x0000F120 File Offset: 0x0000D320
 	private void Awake()
 	{
 		this.selectable = base.GetComponent<Selectable>();
 	}
 
-	// Token: 0x060011AC RID: 4524 RVA: 0x00058AB4 File Offset: 0x00056CB4
+	// Token: 0x060011AC RID: 4524 RVA: 0x00058A90 File Offset: 0x00056C90
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		if (EventSystem.current.alreadySelecting)

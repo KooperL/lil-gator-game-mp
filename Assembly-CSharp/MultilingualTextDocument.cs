@@ -9,7 +9,7 @@ public class MultilingualTextDocument : ScriptableObject
 		MultilingualTextDocument.placeholders[index] = replacementText;
 	}
 
-	// Token: 0x06000036 RID: 54 RVA: 0x00017F8C File Offset: 0x0001618C
+	// Token: 0x06000036 RID: 54 RVA: 0x00017F68 File Offset: 0x00016168
 	public string FetchString(string id, Language language = Language.Auto)
 	{
 		if (string.IsNullOrEmpty(id))
@@ -26,7 +26,7 @@ public class MultilingualTextDocument : ScriptableObject
 		return id;
 	}
 
-	// Token: 0x06000037 RID: 55 RVA: 0x00017FDC File Offset: 0x000161DC
+	// Token: 0x06000037 RID: 55 RVA: 0x00017FB8 File Offset: 0x000161B8
 	public string FetchString(int id, Language language = Language.Auto)
 	{
 		foreach (MultilingualString multilingualString in this.mlStrings)
@@ -39,7 +39,7 @@ public class MultilingualTextDocument : ScriptableObject
 		return "No string found";
 	}
 
-	// Token: 0x06000038 RID: 56 RVA: 0x00018020 File Offset: 0x00016220
+	// Token: 0x06000038 RID: 56 RVA: 0x00017FFC File Offset: 0x000161FC
 	public bool HasString(string id)
 	{
 		if (string.IsNullOrEmpty(id))
@@ -57,7 +57,7 @@ public class MultilingualTextDocument : ScriptableObject
 		return false;
 	}
 
-	// Token: 0x06000039 RID: 57 RVA: 0x00018064 File Offset: 0x00016264
+	// Token: 0x06000039 RID: 57 RVA: 0x00018040 File Offset: 0x00016240
 	public bool HasChunk(string id)
 	{
 		int num = Animator.StringToHash(id);
@@ -72,7 +72,7 @@ public class MultilingualTextDocument : ScriptableObject
 		return false;
 	}
 
-	// Token: 0x0600003A RID: 58 RVA: 0x0001809C File Offset: 0x0001629C
+	// Token: 0x0600003A RID: 58 RVA: 0x00018078 File Offset: 0x00016278
 	public DialogueChunk FetchChunk(string id)
 	{
 		int num = Animator.StringToHash(id);
@@ -87,7 +87,7 @@ public class MultilingualTextDocument : ScriptableObject
 		return null;
 	}
 
-	// Token: 0x0600003B RID: 59 RVA: 0x000180EC File Offset: 0x000162EC
+	// Token: 0x0600003B RID: 59 RVA: 0x000180C8 File Offset: 0x000162C8
 	internal string FindString(string text)
 	{
 		foreach (MultilingualString multilingualString in this.mlStrings)

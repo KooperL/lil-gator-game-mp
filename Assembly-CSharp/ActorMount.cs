@@ -29,7 +29,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		this.transitionSpeed = 1f / duration;
 	}
 
-	// Token: 0x06000380 RID: 896 RVA: 0x00026254 File Offset: 0x00024454
+	// Token: 0x06000380 RID: 896 RVA: 0x00026230 File Offset: 0x00024430
 	private void Update()
 	{
 		if (this.mountedActor == null)
@@ -48,7 +48,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x06000381 RID: 897 RVA: 0x000262B4 File Offset: 0x000244B4
+	// Token: 0x06000381 RID: 897 RVA: 0x00026290 File Offset: 0x00024490
 	public virtual void MovementUpdate(Vector3 input, ref Vector3 position, ref Vector3 velocity, ref Vector3 direction, ref Vector3 up, ref float animationIndex)
 	{
 		Vector3 vector;
@@ -64,7 +64,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		this.HandlePlayerInput(input, ref animationIndex);
 	}
 
-	// Token: 0x06000382 RID: 898 RVA: 0x00026344 File Offset: 0x00024544
+	// Token: 0x06000382 RID: 898 RVA: 0x00026320 File Offset: 0x00024520
 	protected virtual void HandlePlayerInput(Vector3 input, ref float animationIndex)
 	{
 		animationIndex = -1f;
@@ -83,7 +83,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x06000383 RID: 899 RVA: 0x000263AC File Offset: 0x000245AC
+	// Token: 0x06000383 RID: 899 RVA: 0x00026388 File Offset: 0x00024588
 	private void UpdateTransform(out Vector3 position, out Quaternion rotation, out Vector3 nextPosition)
 	{
 		Transform transform = (this.gettingIntoPosition ? this.mountAnchor : this.standingAnchor);
@@ -119,7 +119,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x06000384 RID: 900 RVA: 0x000264D0 File Offset: 0x000246D0
+	// Token: 0x06000384 RID: 900 RVA: 0x000264AC File Offset: 0x000246AC
 	private Vector3 GetPosition(Transform target, float lerp)
 	{
 		float num = Mathf.Abs(lerp - 0.5f) * 2f;
@@ -127,7 +127,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		return Vector3.Lerp(this.initialPosition, target.position, lerp) + 0.5f * num2 * Vector3.up;
 	}
 
-	// Token: 0x06000385 RID: 901 RVA: 0x00026524 File Offset: 0x00024724
+	// Token: 0x06000385 RID: 901 RVA: 0x00026500 File Offset: 0x00024700
 	public void InviteActor(DialogueActor actor, bool skipToMount = false, bool skipWalk = false)
 	{
 		if (this.isFilled)
@@ -182,7 +182,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		this.GetIntoMount(false);
 	}
 
-	// Token: 0x06000387 RID: 903 RVA: 0x00026670 File Offset: 0x00024870
+	// Token: 0x06000387 RID: 903 RVA: 0x0002664C File Offset: 0x0002484C
 	protected virtual void GetIntoMount(bool skipToMount)
 	{
 		this.mountedActor = this.actor.gameObject.AddComponent<MountedActor>();
@@ -256,7 +256,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x06000388 RID: 904 RVA: 0x000268EC File Offset: 0x00024AEC
+	// Token: 0x06000388 RID: 904 RVA: 0x000268C8 File Offset: 0x00024AC8
 	public virtual void GetOut()
 	{
 		if (this.mountedActor == null || !this.gettingIntoPosition)
@@ -270,7 +270,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		this.gettingIntoPosition = false;
 	}
 
-	// Token: 0x06000389 RID: 905 RVA: 0x0002695C File Offset: 0x00024B5C
+	// Token: 0x06000389 RID: 905 RVA: 0x00026938 File Offset: 0x00024B38
 	private void GottenOut()
 	{
 		if (this.actor.isPlayer)
@@ -296,7 +296,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		this.actor = null;
 	}
 
-	// Token: 0x0600038A RID: 906 RVA: 0x000269E0 File Offset: 0x00024BE0
+	// Token: 0x0600038A RID: 906 RVA: 0x000269BC File Offset: 0x00024BBC
 	public virtual void Cancel()
 	{
 		if (this == null)
@@ -321,7 +321,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		this.gettingIntoPosition = false;
 	}
 
-	// Token: 0x0600038B RID: 907 RVA: 0x00026AC0 File Offset: 0x00024CC0
+	// Token: 0x0600038B RID: 907 RVA: 0x00026A9C File Offset: 0x00024C9C
 	public virtual void CancelMount()
 	{
 		if (this.actor.isPlayer)

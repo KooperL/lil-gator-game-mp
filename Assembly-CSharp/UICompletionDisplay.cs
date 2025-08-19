@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 public class UICompletionDisplay : MonoBehaviour
 {
-	// Token: 0x060011FF RID: 4607 RVA: 0x0000F4B0 File Offset: 0x0000D6B0
+	// Token: 0x060011FF RID: 4607 RVA: 0x0000F4BA File Offset: 0x0000D6BA
 	private void OnEnable()
 	{
 		this.UpdateDisplay();
 	}
 
-	// Token: 0x06001200 RID: 4608 RVA: 0x00059F3C File Offset: 0x0005813C
+	// Token: 0x06001200 RID: 4608 RVA: 0x00059F18 File Offset: 0x00058118
 	private void OnDisable()
 	{
 		if (this.objectPercentObject != null)
@@ -25,7 +25,7 @@ public class UICompletionDisplay : MonoBehaviour
 		this.characterResource.skipDelta = false;
 	}
 
-	// Token: 0x06001201 RID: 4609 RVA: 0x00059F98 File Offset: 0x00058198
+	// Token: 0x06001201 RID: 4609 RVA: 0x00059F74 File Offset: 0x00058174
 	public void UpdateDisplay()
 	{
 		bool flag = this.playgroundStates.StateID >= 4;

@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class KeepUpright : MonoBehaviour
 {
-	// Token: 0x06000C06 RID: 3078 RVA: 0x0000B348 File Offset: 0x00009548
+	// Token: 0x06000C06 RID: 3078 RVA: 0x0000B352 File Offset: 0x00009552
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x06000C07 RID: 3079 RVA: 0x00042004 File Offset: 0x00040204
+	// Token: 0x06000C07 RID: 3079 RVA: 0x00041FE0 File Offset: 0x000401E0
 	private Vector3 GetForward()
 	{
 		Vector3 vector = Quaternion.FromToRotation(this.referenceRigidbody.rotation * this.referenceUp, Vector3.up) * this.referenceRigidbody.rotation * this.referenceForward;
@@ -21,7 +21,7 @@ public class KeepUpright : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x06000C08 RID: 3080 RVA: 0x0000B356 File Offset: 0x00009556
+	// Token: 0x06000C08 RID: 3080 RVA: 0x0000B360 File Offset: 0x00009560
 	public static Quaternion ShortestRotation(Quaternion a, Quaternion b)
 	{
 		if (Quaternion.Dot(a, b) < 0f)
@@ -31,13 +31,13 @@ public class KeepUpright : MonoBehaviour
 		return a * Quaternion.Inverse(b);
 	}
 
-	// Token: 0x06000C09 RID: 3081 RVA: 0x00009D6A File Offset: 0x00007F6A
+	// Token: 0x06000C09 RID: 3081 RVA: 0x00009D74 File Offset: 0x00007F74
 	public static Quaternion Multiply(Quaternion input, float scalar)
 	{
 		return new Quaternion(input.x * scalar, input.y * scalar, input.z * scalar, input.w * scalar);
 	}
 
-	// Token: 0x06000C0A RID: 3082 RVA: 0x00042070 File Offset: 0x00040270
+	// Token: 0x06000C0A RID: 3082 RVA: 0x0004204C File Offset: 0x0004024C
 	private void FixedUpdate()
 	{
 		if (this.rigidbody.isKinematic)

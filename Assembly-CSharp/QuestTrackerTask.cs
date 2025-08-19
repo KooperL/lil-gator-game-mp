@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class QuestTrackerTask : MonoBehaviour
 {
-	// Token: 0x06001114 RID: 4372 RVA: 0x0000E8EE File Offset: 0x0000CAEE
+	// Token: 0x06001114 RID: 4372 RVA: 0x0000E8F8 File Offset: 0x0000CAF8
 	public void Load(QuestProfile.QuestTask task)
 	{
 		if (this.taskText != null)

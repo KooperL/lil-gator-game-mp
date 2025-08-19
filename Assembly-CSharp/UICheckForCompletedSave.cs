@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UICheckForCompletedSave : MonoBehaviour
 {
-	// Token: 0x0600019F RID: 415 RVA: 0x0001D438 File Offset: 0x0001B638
+	// Token: 0x0600019F RID: 415 RVA: 0x0001D414 File Offset: 0x0001B614
 	private void OnEnable()
 	{
 		bool flag = FileUtil.HasCompletedSaveData();

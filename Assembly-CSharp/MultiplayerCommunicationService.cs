@@ -8,15 +8,14 @@ using UnityEngine;
 
 public class MultiplayerCommunicationService
 {
-	// Token: 0x06001E8E RID: 7822 RVA: 0x00078108 File Offset: 0x00076308
 	public async void initConnection()
 	{
-		Uri uri = new Uri("ws://" + MultiplayerConfigLoader.Instance.ServerHost);
+		Uri uri = new Uri("ws://" + MultiplayerConfigLoader.Instance.ServerHost + "?sessionKey=" + MultiplayerConfigLoader.Instance.SessionKey);
 		using (this._webSocket = new ClientWebSocket())
 		{
 			await this._webSocket.ConnectAsync(uri, default(CancellationToken));
 			Debug.Log("[LGG-MP] WebSocket connected");
-			while (this._webSocket.State == 2)
+			while (this._webSocket.State == WebSocketState.Open)
 			{
 				byte[] bytes = new byte[1024];
 				ArraySegment<byte> arraySegment = new ArraySegment<byte>(bytes);
@@ -37,13 +36,18 @@ public class MultiplayerCommunicationService
 				bytes = null;
 				bytes = null;
 				bytes = null;
+				bytes = null;
+				bytes = null;
+				bytes = null;
+				bytes = null;
+				bytes = null;
 			}
-			await this._webSocket.CloseAsync(1000, "Client closed", default(CancellationToken));
+			await this._webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Client closed", default(CancellationToken));
 		}
 		ClientWebSocket clientWebSocket = null;
 	}
 
-	// (get) Token: 0x06001E90 RID: 7824 RVA: 0x000175C9 File Offset: 0x000157C9
+	// (get) Token: 0x06001E88 RID: 7816 RVA: 0x00017591 File Offset: 0x00015791
 	public static MultiplayerCommunicationService Instance
 	{
 		get
@@ -56,50 +60,53 @@ public class MultiplayerCommunicationService
 		}
 	}
 
-	// Token: 0x06001E91 RID: 7825 RVA: 0x00078140 File Offset: 0x00076340
+	// Token: 0x06001E89 RID: 7817 RVA: 0x00078AE0 File Offset: 0x00076CE0
 	public void receiveMessage(string message)
 	{
 		try
 		{
 			if (!(MultiplayerNetworkBootstrap.manager == null))
 			{
-				PlayerPositionStreamer.PositionData positionData = JsonUtility.FromJson<PlayerPositionStreamer.PositionData>(message);
-				if (positionData.worldState != Game.WorldState)
+				MultiplayerPlayerFrameStreamer.MultiplayerPlayerFrameData multiplayerPlayerFrameData = JsonUtility.FromJson<MultiplayerPlayerFrameStreamer.MultiplayerPlayerFrameData>(message);
+				if (!(multiplayerPlayerFrameData.displayName == MultiplayerConfigLoader.Instance.DisplayName) || !(MultiplayerConfigLoader.Instance.DisplayName != "debug"))
 				{
-					MultiplayerNetworkBootstrap.manager.Despawn(positionData.displayName);
-				}
-				else
-				{
-					Vector3 vector = new Vector3(positionData.x, positionData.y, positionData.z);
-					Quaternion quaternion = Quaternion.LookRotation(new Vector3(positionData.fx, positionData.fy, positionData.fz));
-					Vector3 zero = Vector3.zero;
-					double unscaledTimeAsDouble = Time.unscaledTimeAsDouble;
-					MultiplayerNetworkBootstrap.manager.EnsurePlayer(positionData.displayName, vector, quaternion, null);
-					MultiplayerNetworkBootstrap.manager.OnState(positionData.displayName, vector, quaternion, zero, unscaledTimeAsDouble);
+					if (multiplayerPlayerFrameData.worldState != Game.WorldState)
+					{
+						MultiplayerNetworkBootstrap.manager.Despawn(multiplayerPlayerFrameData.displayName);
+					}
+					else
+					{
+						Vector3 vector = new Vector3(multiplayerPlayerFrameData.x, multiplayerPlayerFrameData.y, multiplayerPlayerFrameData.z);
+						Quaternion quaternion = Quaternion.LookRotation(new Vector3(multiplayerPlayerFrameData.fx, multiplayerPlayerFrameData.fy, multiplayerPlayerFrameData.fz));
+						Vector3 zero = Vector3.zero;
+						double unscaledTimeAsDouble = Time.unscaledTimeAsDouble;
+						MultiplayerNetworkBootstrap.manager.EnsurePlayer(multiplayerPlayerFrameData.displayName, vector, quaternion, null);
+						MultiplayerNetworkBootstrap.manager.OnStateWithAnimation(multiplayerPlayerFrameData.displayName, vector, quaternion, zero, unscaledTimeAsDouble, -1597646531, 0f, multiplayerPlayerFrameData.speed, multiplayerPlayerFrameData.verticalSpeed, multiplayerPlayerFrameData.angle, multiplayerPlayerFrameData.grounded, multiplayerPlayerFrameData.climbing, multiplayerPlayerFrameData.swimming, multiplayerPlayerFrameData.gliding, multiplayerPlayerFrameData.sledding);
+					}
 				}
 			}
 		}
-		catch (Exception)
+		catch (Exception ex)
 		{
-			Debug.LogError("[LGG-MP] Failed to process message");
+			Debug.LogError("[LGG-MP] Failed to process message: " + ex.Message);
 		}
 	}
 
-	// Token: 0x06001E92 RID: 7826 RVA: 0x000175E1 File Offset: 0x000157E1
+	// Token: 0x06001E8A RID: 7818 RVA: 0x000175A9 File Offset: 0x000157A9
 	public IEnumerator sendMessage(byte[] bytes)
 	{
 		if (this._webSocket == null)
 		{
-			Debug.LogWarning("[LGG-MP] WebSocket not instantiated");
+			Debug.LogWarning("[LGG-MP] Attempted to send message, WebSocket not instantiated");
 			yield break;
 		}
-		if (this._webSocket.State != 2)
+		if (this._webSocket.State != WebSocketState.Open)
 		{
-			Debug.LogWarning("[LGG-MP] WebSocket not open");
+			Debug.LogWarning("[LGG-MP] Attempted to send message, WebSocket was not open");
 			yield break;
 		}
 		ArraySegment<byte> arraySegment = new ArraySegment<byte>(bytes);
-		Task sendTask = this._webSocket.SendAsync(arraySegment, 1, true, CancellationToken.None);
+		Task sendTask = this._webSocket.SendAsync(arraySegment, WebSocketMessageType.Binary, true, CancellationToken.None);
 		while (!sendTask.IsCompleted)
 		{
 			yield return null;

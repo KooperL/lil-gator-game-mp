@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class PlayerItemManager : MonoBehaviour
 {
-	// (get) Token: 0x06000C5E RID: 3166 RVA: 0x0000B8B9 File Offset: 0x00009AB9
+	// (get) Token: 0x06000C5E RID: 3166 RVA: 0x0000B8C3 File Offset: 0x00009AC3
 	public bool PrimaryInUse
 	{
 		get
@@ -13,7 +13,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C5F RID: 3167 RVA: 0x0000B8D3 File Offset: 0x00009AD3
+	// (get) Token: 0x06000C5F RID: 3167 RVA: 0x0000B8DD File Offset: 0x00009ADD
 	public bool SecondaryInUse
 	{
 		get
@@ -22,7 +22,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C60 RID: 3168 RVA: 0x0000B8ED File Offset: 0x00009AED
+	// (get) Token: 0x06000C60 RID: 3168 RVA: 0x0000B8F7 File Offset: 0x00009AF7
 	public bool IsAnyItemInUse
 	{
 		get
@@ -31,7 +31,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C61 RID: 3169 RVA: 0x0000B8ED File Offset: 0x00009AED
+	// (get) Token: 0x06000C61 RID: 3169 RVA: 0x0000B8F7 File Offset: 0x00009AF7
 	public bool IsItemInUse
 	{
 		get
@@ -40,7 +40,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C62 RID: 3170 RVA: 0x0000B907 File Offset: 0x00009B07
+	// (get) Token: 0x06000C62 RID: 3170 RVA: 0x0000B911 File Offset: 0x00009B11
 	public bool IsItemInUse_R
 	{
 		get
@@ -49,7 +49,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C63 RID: 3171 RVA: 0x0000B921 File Offset: 0x00009B21
+	// Token: 0x06000C63 RID: 3171 RVA: 0x0000B92B File Offset: 0x00009B2B
 	public void SetItemInUse(IItemBehaviour item, bool isInUse)
 	{
 		if (isInUse)
@@ -70,7 +70,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C64 RID: 3172 RVA: 0x0000B95A File Offset: 0x00009B5A
+	// (get) Token: 0x06000C64 RID: 3172 RVA: 0x0000B964 File Offset: 0x00009B64
 	public bool RightHandBusy
 	{
 		get
@@ -79,7 +79,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C65 RID: 3173 RVA: 0x0000B95A File Offset: 0x00009B5A
+	// (get) Token: 0x06000C65 RID: 3173 RVA: 0x0000B964 File Offset: 0x00009B64
 	public bool LeftHandBusy
 	{
 		get
@@ -88,8 +88,8 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C66 RID: 3174 RVA: 0x0000B97A File Offset: 0x00009B7A
-	// (set) Token: 0x06000C67 RID: 3175 RVA: 0x0000B982 File Offset: 0x00009B82
+	// (get) Token: 0x06000C66 RID: 3174 RVA: 0x0000B984 File Offset: 0x00009B84
+	// (set) Token: 0x06000C67 RID: 3175 RVA: 0x0000B98C File Offset: 0x00009B8C
 	public bool IsAiming
 	{
 		get
@@ -103,13 +103,13 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C68 RID: 3176 RVA: 0x0000B996 File Offset: 0x00009B96
+	// Token: 0x06000C68 RID: 3176 RVA: 0x0000B9A0 File Offset: 0x00009BA0
 	private void Awake()
 	{
 		this.movement = base.GetComponent<PlayerMovement>();
 	}
 
-	// Token: 0x06000C69 RID: 3177 RVA: 0x0000B9A4 File Offset: 0x00009BA4
+	// Token: 0x06000C69 RID: 3177 RVA: 0x0000B9AE File Offset: 0x00009BAE
 	private void OnEnable()
 	{
 		PlayerItemManager.p = this;
@@ -117,14 +117,14 @@ public class PlayerItemManager : MonoBehaviour
 		this.framesUntilRefresh = 2;
 	}
 
-	// Token: 0x06000C6A RID: 3178 RVA: 0x0000B9B9 File Offset: 0x00009BB9
+	// Token: 0x06000C6A RID: 3178 RVA: 0x0000B9C3 File Offset: 0x00009BC3
 	private void Start()
 	{
 		this.bareHead.SetActive(false);
 		this.framesUntilRefresh = 2;
 	}
 
-	// Token: 0x06000C6B RID: 3179 RVA: 0x0004411C File Offset: 0x0004231C
+	// Token: 0x06000C6B RID: 3179 RVA: 0x000440F8 File Offset: 0x000422F8
 	public void Refresh()
 	{
 		if (ItemManager.i == null)
@@ -194,7 +194,7 @@ public class PlayerItemManager : MonoBehaviour
 		PlayerItemManager.onItemRefresh.Invoke();
 	}
 
-	// Token: 0x06000C6C RID: 3180 RVA: 0x0004446C File Offset: 0x0004266C
+	// Token: 0x06000C6C RID: 3180 RVA: 0x00044448 File Offset: 0x00042648
 	private void RefreshVariant(ref GameObject item, ref string itemID, ref IItemBehaviour itemBehaviour, string newID, GameObject newPrefab, Transform anchor, bool active, int index = 0)
 	{
 		if (newPrefab != null != (item != null) || item == null || itemID != newID)
@@ -230,7 +230,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C6D RID: 3181 RVA: 0x00044554 File Offset: 0x00042754
+	// Token: 0x06000C6D RID: 3181 RVA: 0x00044530 File Offset: 0x00042730
 	public void SetEquippedState(PlayerItemManager.EquippedState newEquippedState, bool force = false)
 	{
 		if (newEquippedState == this.equippedState && !force)
@@ -264,7 +264,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C6E RID: 3182 RVA: 0x00044614 File Offset: 0x00042814
+	// Token: 0x06000C6E RID: 3182 RVA: 0x000445F0 File Offset: 0x000427F0
 	private void FixedUpdate()
 	{
 		if (this.framesUntilRefresh > 0)
@@ -326,7 +326,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C6F RID: 3183 RVA: 0x0004474C File Offset: 0x0004294C
+	// Token: 0x06000C6F RID: 3183 RVA: 0x00044728 File Offset: 0x00042928
 	public void EquipLeft(GameObject itemObject)
 	{
 		if (this.leftHandHeld != itemObject)
@@ -343,7 +343,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C70 RID: 3184 RVA: 0x0000B9CE File Offset: 0x00009BCE
+	// Token: 0x06000C70 RID: 3184 RVA: 0x0000B9D8 File Offset: 0x00009BD8
 	private void ClearLeft()
 	{
 		if (this.leftHandHeld != null)
@@ -353,7 +353,7 @@ public class PlayerItemManager : MonoBehaviour
 		this.leftHandHeld = null;
 	}
 
-	// Token: 0x06000C71 RID: 3185 RVA: 0x000447A4 File Offset: 0x000429A4
+	// Token: 0x06000C71 RID: 3185 RVA: 0x00044780 File Offset: 0x00042980
 	public void CutGrass()
 	{
 		RaycastHit raycastHit;
@@ -367,13 +367,13 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C72 RID: 3186 RVA: 0x0000B9F1 File Offset: 0x00009BF1
+	// Token: 0x06000C72 RID: 3186 RVA: 0x0000B9FB File Offset: 0x00009BFB
 	public void EquipPhone()
 	{
 		this.SetEquippedState(PlayerItemManager.EquippedState.Phone, false);
 	}
 
-	// Token: 0x06000C73 RID: 3187 RVA: 0x00044828 File Offset: 0x00042A28
+	// Token: 0x06000C73 RID: 3187 RVA: 0x00044804 File Offset: 0x00042A04
 	public void OnPrimary(bool isDown, bool isHeld)
 	{
 		if (this.primaryBehaviour == null || !this.movement.CanUsePrimary)
@@ -402,7 +402,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C74 RID: 3188 RVA: 0x000448A8 File Offset: 0x00042AA8
+	// Token: 0x06000C74 RID: 3188 RVA: 0x00044884 File Offset: 0x00042A84
 	public void OnSecondary(bool isDown, bool isHeld)
 	{
 		if (this.secondaryBehaviour == null || !this.movement.CanUseSecondary)
@@ -431,7 +431,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C75 RID: 3189 RVA: 0x00044928 File Offset: 0x00042B28
+	// Token: 0x06000C75 RID: 3189 RVA: 0x00044904 File Offset: 0x00042B04
 	public void OnUseItem(bool isDown, bool isHeld)
 	{
 		if (this.itemBehaviour == null || !this.movement.CanUseItem)
@@ -460,7 +460,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C76 RID: 3190 RVA: 0x000449A8 File Offset: 0x00042BA8
+	// Token: 0x06000C76 RID: 3190 RVA: 0x00044984 File Offset: 0x00042B84
 	public void OnUseItem_R(bool isDown, bool isHeld)
 	{
 		if (this.itemBehaviour_r == null || !this.movement.CanUseItem)

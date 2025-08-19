@@ -14,7 +14,7 @@ public class CoolShop : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06000DFD RID: 3581 RVA: 0x0000C8AF File Offset: 0x0000AAAF
+	// Token: 0x06000DFD RID: 3581 RVA: 0x0000C8B9 File Offset: 0x0000AAB9
 	private IEnumerator RunConversation()
 	{
 		if (this.stateMachine.StateID == 0)

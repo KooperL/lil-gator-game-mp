@@ -34,7 +34,7 @@ public class DistanceTimeout : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEvery4.Remove(this);
 	}
 
-	// Token: 0x06000611 RID: 1553 RVA: 0x00030510 File Offset: 0x0002E710
+	// Token: 0x06000611 RID: 1553 RVA: 0x000304EC File Offset: 0x0002E6EC
 	public void ManagedUpdate()
 	{
 		Vector3 vector = MainCamera.t.position - base.transform.position;
@@ -48,7 +48,7 @@ public class DistanceTimeout : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000612 RID: 1554 RVA: 0x00030578 File Offset: 0x0002E778
+	// Token: 0x06000612 RID: 1554 RVA: 0x00030554 File Offset: 0x0002E754
 	public void Timeout()
 	{
 		if (this.callback == null && this.callbackObject != null)

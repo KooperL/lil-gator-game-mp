@@ -10,7 +10,7 @@ public class HeadController : MonoBehaviour
 		this.velocityForward = this.forward;
 	}
 
-	// Token: 0x060007A0 RID: 1952 RVA: 0x000357E0 File Offset: 0x000339E0
+	// Token: 0x060007A0 RID: 1952 RVA: 0x000357BC File Offset: 0x000339BC
 	private void FixedUpdate()
 	{
 		float magnitude = this.rigidbody.velocity.magnitude;

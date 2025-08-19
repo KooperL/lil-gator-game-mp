@@ -4,7 +4,7 @@ namespace Rewired
 {
 	public sealed class FlightPedalsTemplate : ControllerTemplate, IFlightPedalsTemplate, IControllerTemplate
 	{
-		// (get) Token: 0x0600159B RID: 5531 RVA: 0x00010CB2 File Offset: 0x0000EEB2
+		// (get) Token: 0x0600159B RID: 5531 RVA: 0x00010CBC File Offset: 0x0000EEBC
 		IControllerTemplateAxis IFlightPedalsTemplate.leftPedal
 		{
 			get
@@ -13,7 +13,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600159C RID: 5532 RVA: 0x00010CBB File Offset: 0x0000EEBB
+		// (get) Token: 0x0600159C RID: 5532 RVA: 0x00010CC5 File Offset: 0x0000EEC5
 		IControllerTemplateAxis IFlightPedalsTemplate.rightPedal
 		{
 			get
@@ -22,7 +22,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600159D RID: 5533 RVA: 0x00010CC4 File Offset: 0x0000EEC4
+		// (get) Token: 0x0600159D RID: 5533 RVA: 0x00010CCE File Offset: 0x0000EECE
 		IControllerTemplateAxis IFlightPedalsTemplate.slide
 		{
 			get
@@ -31,7 +31,7 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x0600159E RID: 5534 RVA: 0x00010C98 File Offset: 0x0000EE98
+		// Token: 0x0600159E RID: 5534 RVA: 0x00010CA2 File Offset: 0x0000EEA2
 		public FlightPedalsTemplate(object payload)
 			: base(payload)
 		{

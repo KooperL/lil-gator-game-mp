@@ -11,7 +11,7 @@ public class BakeActor : MonoBehaviour
 	{
 	}
 
-	// Token: 0x0600025C RID: 604 RVA: 0x0001FC6C File Offset: 0x0001DE6C
+	// Token: 0x0600025C RID: 604 RVA: 0x0001FC48 File Offset: 0x0001DE48
 	public void UpdateArmature()
 	{
 		if (this.armatureRoot == null)
@@ -34,7 +34,7 @@ public class BakeActor : MonoBehaviour
 		this.armature = list.ToArray();
 	}
 
-	// Token: 0x0600025D RID: 605 RVA: 0x0001FD80 File Offset: 0x0001DF80
+	// Token: 0x0600025D RID: 605 RVA: 0x0001FD5C File Offset: 0x0001DF5C
 	private void Start()
 	{
 		if (this.disableProximityTrigger && this.proximityTrigger != null)
@@ -108,7 +108,7 @@ public class BakeActor : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06000262 RID: 610 RVA: 0x0001FEA0 File Offset: 0x0001E0A0
+	// Token: 0x06000262 RID: 610 RVA: 0x0001FE7C File Offset: 0x0001E07C
 	private void GenerateBakedObject()
 	{
 		GameObject gameObject = new GameObject();
@@ -135,7 +135,7 @@ public class BakeActor : MonoBehaviour
 		this.bakedMeshFilter.mesh = this.bakedMesh;
 	}
 
-	// Token: 0x06000264 RID: 612 RVA: 0x0001FF5C File Offset: 0x0001E15C
+	// Token: 0x06000264 RID: 612 RVA: 0x0001FF38 File Offset: 0x0001E138
 	private void SetBakeState(bool isBaked)
 	{
 		this.actor.jawRotationMod = (isBaked ? 0f : this.jawRotationMod);

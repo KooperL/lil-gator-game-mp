@@ -33,8 +33,8 @@ public class GameData : MonoBehaviour
 		}
 	}
 
-	// (add) Token: 0x0600075C RID: 1884 RVA: 0x00034CDC File Offset: 0x00032EDC
-	// (remove) Token: 0x0600075D RID: 1885 RVA: 0x00034D14 File Offset: 0x00032F14
+	// (add) Token: 0x0600075C RID: 1884 RVA: 0x00034CB8 File Offset: 0x00032EB8
+	// (remove) Token: 0x0600075D RID: 1885 RVA: 0x00034CF0 File Offset: 0x00032EF0
 	public event Action beforeSave;
 
 	// (get) Token: 0x0600075E RID: 1886 RVA: 0x000076E8 File Offset: 0x000058E8
@@ -55,7 +55,7 @@ public class GameData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000760 RID: 1888 RVA: 0x00034D4C File Offset: 0x00032F4C
+	// Token: 0x06000760 RID: 1888 RVA: 0x00034D28 File Offset: 0x00032F28
 	protected void Awake()
 	{
 		if (GameData.instance != null && GameData.instance != this)
@@ -133,7 +133,7 @@ public class GameData : MonoBehaviour
 		this.WriteToDisk(false);
 	}
 
-	// Token: 0x06000768 RID: 1896 RVA: 0x00034DF4 File Offset: 0x00032FF4
+	// Token: 0x06000768 RID: 1896 RVA: 0x00034DD0 File Offset: 0x00032FD0
 	public void WriteToDisk(bool isAutoSave)
 	{
 		if (!this.save)
@@ -148,7 +148,7 @@ public class GameData : MonoBehaviour
 		this.gameSaveWrapper.gameSaveData = this.gameSaveData;
 	}
 
-	// Token: 0x06000769 RID: 1897 RVA: 0x00034E40 File Offset: 0x00033040
+	// Token: 0x06000769 RID: 1897 RVA: 0x00034E1C File Offset: 0x0003301C
 	public void ReadFromDisk()
 	{
 		GameSaveData gameSaveData = FileUtil.ReadSaveData(this.saveFileSlot, false);
@@ -164,7 +164,7 @@ public class GameData : MonoBehaviour
 		this.RefreshLoadedData();
 	}
 
-	// Token: 0x0600076A RID: 1898 RVA: 0x00034E90 File Offset: 0x00033090
+	// Token: 0x0600076A RID: 1898 RVA: 0x00034E6C File Offset: 0x0003306C
 	private void RefreshLoadedData()
 	{
 		foreach (QuestProfile questProfile in QuestProfile.loadedQuestProfiles)
@@ -173,7 +173,7 @@ public class GameData : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600076B RID: 1899 RVA: 0x00034EE0 File Offset: 0x000330E0
+	// Token: 0x0600076B RID: 1899 RVA: 0x00034EBC File Offset: 0x000330BC
 	public void LoadSaveData(GameSaveData gameSaveData)
 	{
 		GameSaveData gameSaveData2 = gameSaveData.Clone();
@@ -183,7 +183,7 @@ public class GameData : MonoBehaviour
 		this.RefreshLoadedData();
 	}
 
-	// Token: 0x0600076C RID: 1900 RVA: 0x00034F14 File Offset: 0x00033114
+	// Token: 0x0600076C RID: 1900 RVA: 0x00034EF0 File Offset: 0x000330F0
 	private void Update()
 	{
 		bool flag = false;
@@ -249,7 +249,7 @@ public class GameData : MonoBehaviour
 		this.gameSaveData.bools.Add(key, value);
 	}
 
-	// Token: 0x0600076F RID: 1903 RVA: 0x00035010 File Offset: 0x00033210
+	// Token: 0x0600076F RID: 1903 RVA: 0x00034FEC File Offset: 0x000331EC
 	public bool ReadBool(string key, bool defaultValue = false)
 	{
 		bool flag;
@@ -272,7 +272,7 @@ public class GameData : MonoBehaviour
 		this.gameSaveData.ints.Add(key, value);
 	}
 
-	// Token: 0x06000771 RID: 1905 RVA: 0x00035048 File Offset: 0x00033248
+	// Token: 0x06000771 RID: 1905 RVA: 0x00035024 File Offset: 0x00033224
 	public int ReadInt(string key, int defaultValue = 0)
 	{
 		int num;
@@ -296,7 +296,7 @@ public class GameData : MonoBehaviour
 		return GameData.IntToFloat(this.ReadInt(key, GameData.FloatToInt(defaultValue)));
 	}
 
-	// Token: 0x06000774 RID: 1908 RVA: 0x00035080 File Offset: 0x00033280
+	// Token: 0x06000774 RID: 1908 RVA: 0x0003505C File Offset: 0x0003325C
 	public void Write(string key, Vector3 value)
 	{
 		this.Write(string.Format("{0}_X", key), value.x);
@@ -310,7 +310,7 @@ public class GameData : MonoBehaviour
 		return this.ReadVector3(key, Vector3.zero);
 	}
 
-	// Token: 0x06000776 RID: 1910 RVA: 0x000350D4 File Offset: 0x000332D4
+	// Token: 0x06000776 RID: 1910 RVA: 0x000350B0 File Offset: 0x000332B0
 	public Vector3 ReadVector3(string key, Vector3 defaultValue)
 	{
 		return new Vector3(this.ReadFloat(string.Format("{0}_X", key), defaultValue.x), this.ReadFloat(string.Format("{0}_Y", key), defaultValue.y), this.ReadFloat(string.Format("{0}_Z", key), defaultValue.z));

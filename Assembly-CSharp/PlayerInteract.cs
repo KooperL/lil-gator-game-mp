@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-	// (get) Token: 0x06000C42 RID: 3138 RVA: 0x0000B65A File Offset: 0x0000985A
+	// (get) Token: 0x06000C42 RID: 3138 RVA: 0x0000B664 File Offset: 0x00009864
 	public static GameObject CurrentTarget
 	{
 		get
@@ -13,13 +13,13 @@ public class PlayerInteract : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C43 RID: 3139 RVA: 0x0000B66B File Offset: 0x0000986B
+	// Token: 0x06000C43 RID: 3139 RVA: 0x0000B675 File Offset: 0x00009875
 	public static void CurrentHighlightChanged()
 	{
 		PlayerInteract.p.UpdateInteractionRenderers();
 	}
 
-	// (get) Token: 0x06000C44 RID: 3140 RVA: 0x0000B677 File Offset: 0x00009877
+	// (get) Token: 0x06000C44 RID: 3140 RVA: 0x0000B681 File Offset: 0x00009881
 	public bool InteractionAvailable
 	{
 		get
@@ -28,7 +28,7 @@ public class PlayerInteract : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C45 RID: 3141 RVA: 0x0000B685 File Offset: 0x00009885
+	// Token: 0x06000C45 RID: 3141 RVA: 0x0000B68F File Offset: 0x0000988F
 	private void OnValidate()
 	{
 		if (this.playerOrbitCamera == null)
@@ -37,7 +37,7 @@ public class PlayerInteract : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C46 RID: 3142 RVA: 0x0000B6A0 File Offset: 0x000098A0
+	// Token: 0x06000C46 RID: 3142 RVA: 0x0000B6AA File Offset: 0x000098AA
 	private void Awake()
 	{
 		PlayerInteract.p = this;
@@ -47,7 +47,7 @@ public class PlayerInteract : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C47 RID: 3143 RVA: 0x0000B6CC File Offset: 0x000098CC
+	// Token: 0x06000C47 RID: 3143 RVA: 0x0000B6D6 File Offset: 0x000098D6
 	private void OnDisable()
 	{
 		if (this == null)
@@ -59,31 +59,31 @@ public class PlayerInteract : MonoBehaviour
 		this.UpdateInteraction();
 	}
 
-	// Token: 0x06000C48 RID: 3144 RVA: 0x0000B6F0 File Offset: 0x000098F0
+	// Token: 0x06000C48 RID: 3144 RVA: 0x0000B6FA File Offset: 0x000098FA
 	private void Start()
 	{
 		this.highlightsFX = HighlightsFX.h;
 	}
 
-	// Token: 0x06000C49 RID: 3145 RVA: 0x0000B6FD File Offset: 0x000098FD
+	// Token: 0x06000C49 RID: 3145 RVA: 0x0000B707 File Offset: 0x00009907
 	private void OnTriggerEnter(Collider other)
 	{
 		this.AddInteraction(other);
 	}
 
-	// Token: 0x06000C4A RID: 3146 RVA: 0x0000B6FD File Offset: 0x000098FD
+	// Token: 0x06000C4A RID: 3146 RVA: 0x0000B707 File Offset: 0x00009907
 	private void OnTriggerStay(Collider other)
 	{
 		this.AddInteraction(other);
 	}
 
-	// Token: 0x06000C4B RID: 3147 RVA: 0x0000B706 File Offset: 0x00009906
+	// Token: 0x06000C4B RID: 3147 RVA: 0x0000B710 File Offset: 0x00009910
 	private void OnTriggerExit(Collider other)
 	{
 		this.RemoveInteraction(other);
 	}
 
-	// Token: 0x06000C4C RID: 3148 RVA: 0x0000B70F File Offset: 0x0000990F
+	// Token: 0x06000C4C RID: 3148 RVA: 0x0000B719 File Offset: 0x00009919
 	private void AddInteraction(Collider target)
 	{
 		base.enabled = true;
@@ -94,7 +94,7 @@ public class PlayerInteract : MonoBehaviour
 		this.UpdateInteraction();
 	}
 
-	// Token: 0x06000C4D RID: 3149 RVA: 0x0000B738 File Offset: 0x00009938
+	// Token: 0x06000C4D RID: 3149 RVA: 0x0000B742 File Offset: 0x00009942
 	private void RemoveInteraction(Collider target)
 	{
 		this.targetList.Remove(target);
@@ -105,7 +105,7 @@ public class PlayerInteract : MonoBehaviour
 		this.UpdateInteraction();
 	}
 
-	// Token: 0x06000C4E RID: 3150 RVA: 0x00043CC8 File Offset: 0x00041EC8
+	// Token: 0x06000C4E RID: 3150 RVA: 0x00043CA4 File Offset: 0x00041EA4
 	private void CleanTargets()
 	{
 		for (int i = 0; i < this.targetList.Count; i++)
@@ -122,7 +122,7 @@ public class PlayerInteract : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C4F RID: 3151 RVA: 0x00043D74 File Offset: 0x00041F74
+	// Token: 0x06000C4F RID: 3151 RVA: 0x00043D50 File Offset: 0x00041F50
 	private void UpdateInteraction()
 	{
 		if (PlayerInteract.interactButtonPriority != null && !PlayerInteract.interactButtonPriority.activeSelf)
@@ -194,7 +194,7 @@ public class PlayerInteract : MonoBehaviour
 		this.hadInteractionTarget = this.interactionTarget != null;
 	}
 
-	// Token: 0x06000C50 RID: 3152 RVA: 0x00043F8C File Offset: 0x0004218C
+	// Token: 0x06000C50 RID: 3152 RVA: 0x00043F68 File Offset: 0x00042168
 	private float GetPriority(Vector3 position)
 	{
 		Vector3 vector = base.transform.InverseTransformPoint(position);
@@ -209,7 +209,7 @@ public class PlayerInteract : MonoBehaviour
 		return num + num2 + num3;
 	}
 
-	// Token: 0x06000C51 RID: 3153 RVA: 0x00044014 File Offset: 0x00042214
+	// Token: 0x06000C51 RID: 3153 RVA: 0x00043FF0 File Offset: 0x000421F0
 	public void Interact()
 	{
 		if (this.interactionTarget == null)
@@ -229,7 +229,7 @@ public class PlayerInteract : MonoBehaviour
 		this.RemoveInteraction(this.interactionTarget);
 	}
 
-	// Token: 0x06000C52 RID: 3154 RVA: 0x00044068 File Offset: 0x00042268
+	// Token: 0x06000C52 RID: 3154 RVA: 0x00044044 File Offset: 0x00042244
 	private bool IsInteractionValid(Collider target, out Renderer[] highlightRenderer)
 	{
 		InteractionHighlight component = target.GetComponent<InteractionHighlight>();
@@ -247,14 +247,14 @@ public class PlayerInteract : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000C53 RID: 3155 RVA: 0x0000B769 File Offset: 0x00009969
+	// Token: 0x06000C53 RID: 3155 RVA: 0x0000B773 File Offset: 0x00009973
 	public void UpdateInteractionRenderers()
 	{
 		this.interactionHighlight = PlayerInteract.currentHighlight.GetHighlightedRenderer();
 		this.highlightsFX.SetRenderer(this.interactionHighlight, Color.white, HighlightsFX.SortingType.Overlay, false);
 	}
 
-	// Token: 0x06000C54 RID: 3156 RVA: 0x0004409C File Offset: 0x0004229C
+	// Token: 0x06000C54 RID: 3156 RVA: 0x00044078 File Offset: 0x00042278
 	private void SetInteractionFocus(Collider target, Renderer[] highlightRenderer)
 	{
 		this.interactionHighlight = highlightRenderer;
@@ -270,7 +270,7 @@ public class PlayerInteract : MonoBehaviour
 		this.dialogueActor.lookAtTarget = this.interactionTarget.transform.position;
 	}
 
-	// Token: 0x06000C55 RID: 3157 RVA: 0x0000B793 File Offset: 0x00009993
+	// Token: 0x06000C55 RID: 3157 RVA: 0x0000B79D File Offset: 0x0000999D
 	private void ClearInteractionFocus()
 	{
 		if (this.highlightsFX != null)
@@ -283,7 +283,7 @@ public class PlayerInteract : MonoBehaviour
 		this.dialogueActor.LookAt = false;
 	}
 
-	// Token: 0x06000C56 RID: 3158 RVA: 0x0000B7CE File Offset: 0x000099CE
+	// Token: 0x06000C56 RID: 3158 RVA: 0x0000B7D8 File Offset: 0x000099D8
 	private void FixedUpdate()
 	{
 		this.UpdateInteraction();

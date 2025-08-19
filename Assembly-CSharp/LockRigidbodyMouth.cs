@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class LockRigidbodyMouth : MonoBehaviour
 {
-	// Token: 0x06000C0C RID: 3084 RVA: 0x0000B3BD File Offset: 0x000095BD
+	// Token: 0x06000C0C RID: 3084 RVA: 0x0000B3C7 File Offset: 0x000095C7
 	private void OnEnable()
 	{
 		Player.ragdollController.lockMouth = true;
 		Player.ragdollController.lockMouthOpenness = this.mouthOpenness;
 	}
 
-	// Token: 0x06000C0D RID: 3085 RVA: 0x0000B3DA File Offset: 0x000095DA
+	// Token: 0x06000C0D RID: 3085 RVA: 0x0000B3E4 File Offset: 0x000095E4
 	private void OnDisable()
 	{
 		Player.ragdollController.lockMouth = false;

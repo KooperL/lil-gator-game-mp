@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class UICancelEvent : MonoBehaviour, ICancelHandler, IEventSystemHandler
 {
-	// Token: 0x060011F6 RID: 4598 RVA: 0x0000F464 File Offset: 0x0000D664
+	// Token: 0x060011F6 RID: 4598 RVA: 0x0000F46E File Offset: 0x0000D66E
 	public void OnCancel(BaseEventData eventData)
 	{
 		this.onCancel.Invoke();

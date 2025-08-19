@@ -6,7 +6,7 @@ namespace Rewired.UI.ControlMapper
 {
 	public static class UITools
 	{
-		// Token: 0x06001CB0 RID: 7344 RVA: 0x00070F9C File Offset: 0x0006F19C
+		// Token: 0x06001CB0 RID: 7344 RVA: 0x00070F78 File Offset: 0x0006F178
 		public static GameObject InstantiateGUIObject<T>(GameObject prefab, Transform parent, string name) where T : Component
 		{
 			GameObject gameObject = UITools.InstantiateGUIObject_Pre<T>(prefab, parent, name);
@@ -26,7 +26,7 @@ namespace Rewired.UI.ControlMapper
 			return gameObject;
 		}
 
-		// Token: 0x06001CB1 RID: 7345 RVA: 0x00070FEC File Offset: 0x0006F1EC
+		// Token: 0x06001CB1 RID: 7345 RVA: 0x00070FC8 File Offset: 0x0006F1C8
 		public static GameObject InstantiateGUIObject<T>(GameObject prefab, Transform parent, string name, Vector2 pivot, Vector2 anchorMin, Vector2 anchorMax, Vector2 anchoredPosition) where T : Component
 		{
 			GameObject gameObject = UITools.InstantiateGUIObject_Pre<T>(prefab, parent, name);
@@ -50,7 +50,7 @@ namespace Rewired.UI.ControlMapper
 			return gameObject;
 		}
 
-		// Token: 0x06001CB2 RID: 7346 RVA: 0x0007105C File Offset: 0x0006F25C
+		// Token: 0x06001CB2 RID: 7346 RVA: 0x00071038 File Offset: 0x0006F238
 		private static GameObject InstantiateGUIObject_Pre<T>(GameObject prefab, Transform parent, string name) where T : Component
 		{
 			if (prefab == null)
@@ -76,7 +76,7 @@ namespace Rewired.UI.ControlMapper
 			return gameObject;
 		}
 
-		// Token: 0x06001CB3 RID: 7347 RVA: 0x000710F0 File Offset: 0x0006F2F0
+		// Token: 0x06001CB3 RID: 7347 RVA: 0x000710CC File Offset: 0x0006F2CC
 		public static Vector3 GetPointOnRectEdge(RectTransform rectTransform, Vector2 dir)
 		{
 			if (rectTransform == null)
@@ -92,7 +92,7 @@ namespace Rewired.UI.ControlMapper
 			return dir;
 		}
 
-		// Token: 0x06001CB4 RID: 7348 RVA: 0x00071170 File Offset: 0x0006F370
+		// Token: 0x06001CB4 RID: 7348 RVA: 0x0007114C File Offset: 0x0006F34C
 		public static Rect GetWorldSpaceRect(RectTransform rt)
 		{
 			if (rt == null)
@@ -106,7 +106,7 @@ namespace Rewired.UI.ControlMapper
 			return new Rect(vector.x, vector.y, vector3.x - vector.x, vector2.y - vector.y);
 		}
 
-		// Token: 0x06001CB5 RID: 7349 RVA: 0x00071230 File Offset: 0x0006F430
+		// Token: 0x06001CB5 RID: 7349 RVA: 0x0007120C File Offset: 0x0006F40C
 		public static Rect TransformRectTo(Transform from, Transform to, Rect rect)
 		{
 			Vector3 vector;
@@ -133,13 +133,13 @@ namespace Rewired.UI.ControlMapper
 			return new Rect(vector.x, vector.y, vector3.x - vector.x, vector.y - vector2.y);
 		}
 
-		// Token: 0x06001CB6 RID: 7350 RVA: 0x00015ED9 File Offset: 0x000140D9
+		// Token: 0x06001CB6 RID: 7350 RVA: 0x00015EE3 File Offset: 0x000140E3
 		public static Rect InvertY(Rect rect)
 		{
 			return new Rect(rect.xMin, rect.yMin, rect.width, -rect.height);
 		}
 
-		// Token: 0x06001CB7 RID: 7351 RVA: 0x0007133C File Offset: 0x0006F53C
+		// Token: 0x06001CB7 RID: 7351 RVA: 0x00071318 File Offset: 0x0006F518
 		public static void SetInteractable(Selectable selectable, bool state, bool playTransition)
 		{
 			if (selectable == null)
@@ -151,7 +151,7 @@ namespace Rewired.UI.ControlMapper
 				selectable.interactable = state;
 				return;
 			}
-			if (selectable.transition == 1)
+			if (selectable.transition == Selectable.Transition.ColorTint)
 			{
 				ColorBlock colors = selectable.colors;
 				float fadeDuration = colors.fadeDuration;

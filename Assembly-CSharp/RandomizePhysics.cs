@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class RandomizePhysics : MonoBehaviour
 {
-	// Token: 0x06000F04 RID: 3844 RVA: 0x0000D14B File Offset: 0x0000B34B
+	// Token: 0x06000F04 RID: 3844 RVA: 0x0000D155 File Offset: 0x0000B355
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x06000F05 RID: 3845 RVA: 0x0004EB84 File Offset: 0x0004CD84
+	// Token: 0x06000F05 RID: 3845 RVA: 0x0004EB60 File Offset: 0x0004CD60
 	private void Start()
 	{
 		this.rigidbody.velocity += this.velocityMagnitude * global::UnityEngine.Random.insideUnitSphere + this.verticalOffset * Vector3.up + base.transform.rotation * this.directionalPush;

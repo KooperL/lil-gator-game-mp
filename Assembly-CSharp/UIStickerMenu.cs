@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIStickerMenu : MonoBehaviour
 {
-	// Token: 0x060013A2 RID: 5026 RVA: 0x00060234 File Offset: 0x0005E434
+	// Token: 0x060013A2 RID: 5026 RVA: 0x00060210 File Offset: 0x0005E410
 	private void Awake()
 	{
 		this.stickerDictionary = new Dictionary<string, StickerObject>();
@@ -14,7 +14,7 @@ public class UIStickerMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013A3 RID: 5027 RVA: 0x000109F2 File Offset: 0x0000EBF2
+	// Token: 0x060013A3 RID: 5027 RVA: 0x000109FC File Offset: 0x0000EBFC
 	private void Start()
 	{
 		this.LoadStickers();
@@ -26,7 +26,7 @@ public class UIStickerMenu : MonoBehaviour
 	{
 	}
 
-	// Token: 0x060013A5 RID: 5029 RVA: 0x00060280 File Offset: 0x0005E480
+	// Token: 0x060013A5 RID: 5029 RVA: 0x0006025C File Offset: 0x0005E45C
 	[ContextMenu("Place All Stickers")]
 	public void PlaceAllStickers()
 	{
@@ -36,7 +36,7 @@ public class UIStickerMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013A6 RID: 5030 RVA: 0x000602B4 File Offset: 0x0005E4B4
+	// Token: 0x060013A6 RID: 5030 RVA: 0x00060290 File Offset: 0x0005E490
 	[ContextMenu("Rebuild Sticker List")]
 	public void RebuildStickerList()
 	{
@@ -48,7 +48,7 @@ public class UIStickerMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013A7 RID: 5031 RVA: 0x00060300 File Offset: 0x0005E500
+	// Token: 0x060013A7 RID: 5031 RVA: 0x000602DC File Offset: 0x0005E4DC
 	private void PlaceSticker(StickerObject stickerObject, Vector2 position, bool isInteractable = true)
 	{
 		UISticker component = global::UnityEngine.Object.Instantiate<GameObject>(this.placedStickerPrefab, this.placedStickersParent).GetComponent<UISticker>();
@@ -58,7 +58,7 @@ public class UIStickerMenu : MonoBehaviour
 		this.placedStickers.Add(component);
 	}
 
-	// Token: 0x060013A8 RID: 5032 RVA: 0x00060354 File Offset: 0x0005E554
+	// Token: 0x060013A8 RID: 5032 RVA: 0x00060330 File Offset: 0x0005E530
 	private void ToggleInteractability(bool isInteractable)
 	{
 		foreach (UISticker uisticker in this.placedStickers)

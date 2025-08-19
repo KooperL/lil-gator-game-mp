@@ -25,7 +25,7 @@ public class HitPhysics : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x060007D2 RID: 2002 RVA: 0x0003624C File Offset: 0x0003444C
+	// Token: 0x060007D2 RID: 2002 RVA: 0x00036228 File Offset: 0x00034428
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		if (this.randomizeForcePoint)

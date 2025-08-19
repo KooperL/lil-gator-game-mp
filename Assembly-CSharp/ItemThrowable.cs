@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class ItemThrowable : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x06000BD5 RID: 3029 RVA: 0x0000B0BD File Offset: 0x000092BD
+	// Token: 0x06000BD5 RID: 3029 RVA: 0x0000B0C7 File Offset: 0x000092C7
 	public static bool AimSolver(float speed, Vector3 direction, out Vector3 velocity, float maxSolveDistance = 20f, float failedSolveDistance = 15f, float gravityFactor = 1f)
 	{
 		return ItemThrowable.AimSolver(speed, direction, out velocity, Player.itemManager.thrownSpawnPoint.position, maxSolveDistance, failedSolveDistance, gravityFactor);
 	}
 
-	// Token: 0x06000BD6 RID: 3030 RVA: 0x000418E0 File Offset: 0x0003FAE0
+	// Token: 0x06000BD6 RID: 3030 RVA: 0x000418BC File Offset: 0x0003FABC
 	public static bool AimSolver(float speed, Vector3 direction, out Vector3 velocity, Vector3 spawnPoint, float maxSolveDistance = 20f, float failedSolveDistance = 15f, float gravityFactor = 1f)
 	{
 		bool flag = false;
@@ -30,7 +30,7 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		return false;
 	}
 
-	// (get) Token: 0x06000BD7 RID: 3031 RVA: 0x0000B0DB File Offset: 0x000092DB
+	// (get) Token: 0x06000BD7 RID: 3031 RVA: 0x0000B0E5 File Offset: 0x000092E5
 	protected PlayerItemManager.EquippedState EquippedState
 	{
 		get
@@ -43,7 +43,7 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BD8 RID: 3032 RVA: 0x0000B0E8 File Offset: 0x000092E8
+	// Token: 0x06000BD8 RID: 3032 RVA: 0x0000B0F2 File Offset: 0x000092F2
 	private void Awake()
 	{
 		this.itemManager = Player.itemManager;
@@ -52,13 +52,13 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		this.reaction = Player.reaction;
 	}
 
-	// Token: 0x06000BD9 RID: 3033 RVA: 0x0000B11C File Offset: 0x0000931C
+	// Token: 0x06000BD9 RID: 3033 RVA: 0x0000B126 File Offset: 0x00009326
 	protected virtual bool CanStartThrow(bool isDown, bool isHeld)
 	{
 		return Time.time - this.lastHeldTime > 0.5f || isDown;
 	}
 
-	// Token: 0x06000BDA RID: 3034 RVA: 0x0004198C File Offset: 0x0003FB8C
+	// Token: 0x06000BDA RID: 3034 RVA: 0x00041968 File Offset: 0x0003FB68
 	public virtual void Input(bool isDown, bool isHeld)
 	{
 		if (Game.HasControl)
@@ -125,13 +125,13 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BDB RID: 3035 RVA: 0x0000A70A File Offset: 0x0000890A
+	// Token: 0x06000BDB RID: 3035 RVA: 0x0000A714 File Offset: 0x00008914
 	public virtual float GetSolveSpeed(float charge = 1f)
 	{
 		return 30f;
 	}
 
-	// Token: 0x06000BDC RID: 3036 RVA: 0x00041B90 File Offset: 0x0003FD90
+	// Token: 0x06000BDC RID: 3036 RVA: 0x00041B6C File Offset: 0x0003FD6C
 	public virtual void Throw(float charge, Vector3 direction)
 	{
 		if (this.throwSound != null)
@@ -143,7 +143,7 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		this.animator.SetTrigger(ItemThrowable._ThrowBody);
 	}
 
-	// Token: 0x06000BDD RID: 3037 RVA: 0x0000B133 File Offset: 0x00009333
+	// Token: 0x06000BDD RID: 3037 RVA: 0x0000B13D File Offset: 0x0000933D
 	public virtual void LateUpdate()
 	{
 		if (!this.charging)
@@ -156,14 +156,14 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BDE RID: 3038 RVA: 0x0000B16B File Offset: 0x0000936B
+	// Token: 0x06000BDE RID: 3038 RVA: 0x0000B175 File Offset: 0x00009375
 	public virtual void Cancel()
 	{
 		this.SetCharging(false);
 		Player.itemManager.IsAiming = false;
 	}
 
-	// Token: 0x06000BDF RID: 3039 RVA: 0x00041BE0 File Offset: 0x0003FDE0
+	// Token: 0x06000BDF RID: 3039 RVA: 0x00041BBC File Offset: 0x0003FDBC
 	public virtual void SetCharging(bool isCharging)
 	{
 		if (UIMenus.reticle != null)
@@ -183,7 +183,7 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		this.charging = isCharging;
 	}
 
-	// Token: 0x06000BE0 RID: 3040 RVA: 0x00041C4C File Offset: 0x0003FE4C
+	// Token: 0x06000BE0 RID: 3040 RVA: 0x00041C28 File Offset: 0x0003FE28
 	public virtual void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (isEquipped ? this.itemManager.leftHandAnchor : (this.isOnRight ? this.itemManager.hipAnchor_r : this.itemManager.hipAnchor));
@@ -197,13 +197,13 @@ public class ItemThrowable : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BE1 RID: 3041 RVA: 0x0000AA42 File Offset: 0x00008C42
+	// Token: 0x06000BE1 RID: 3041 RVA: 0x0000AA4C File Offset: 0x00008C4C
 	public virtual void OnRemove()
 	{
 		Player.itemManager.IsAiming = false;
 	}
 
-	// Token: 0x06000BE2 RID: 3042 RVA: 0x00041CB4 File Offset: 0x0003FEB4
+	// Token: 0x06000BE2 RID: 3042 RVA: 0x00041C90 File Offset: 0x0003FE90
 	public void SetIndex(int index)
 	{
 		if (index == 1)

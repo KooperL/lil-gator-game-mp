@@ -4,13 +4,13 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class TerrainDoublePass : MonoBehaviour
 {
-	// Token: 0x0600109F RID: 4255 RVA: 0x0000E417 File Offset: 0x0000C617
+	// Token: 0x0600109F RID: 4255 RVA: 0x0000E421 File Offset: 0x0000C621
 	private void OnEnable()
 	{
 		this.UpdateMaterial();
 	}
 
-	// Token: 0x060010A0 RID: 4256 RVA: 0x00055B80 File Offset: 0x00053D80
+	// Token: 0x060010A0 RID: 4256 RVA: 0x00055B5C File Offset: 0x00053D5C
 	private void UpdateMaterial()
 	{
 		int num = 4;

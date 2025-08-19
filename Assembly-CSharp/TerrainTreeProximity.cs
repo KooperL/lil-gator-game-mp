@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TerrainTreeProximity : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x060010AB RID: 4267 RVA: 0x00055E70 File Offset: 0x00054070
+	// Token: 0x060010AB RID: 4267 RVA: 0x00055E4C File Offset: 0x0005404C
 	public void OnValidate()
 	{
 		if (this.terrainData != null && this.trees != null)
@@ -15,7 +15,7 @@ public class TerrainTreeProximity : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060010AC RID: 4268 RVA: 0x00055EE0 File Offset: 0x000540E0
+	// Token: 0x060010AC RID: 4268 RVA: 0x00055EBC File Offset: 0x000540BC
 	private void OnEnable()
 	{
 		this.treeInstances = this.terrainData.treeInstances;
@@ -36,7 +36,7 @@ public class TerrainTreeProximity : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEvery4.Remove(this);
 	}
 
-	// Token: 0x060010AE RID: 4270 RVA: 0x00055F94 File Offset: 0x00054194
+	// Token: 0x060010AE RID: 4270 RVA: 0x00055F70 File Offset: 0x00054170
 	public void ManagedUpdate()
 	{
 		for (int i = 0; i < this.trees.Length; i++)

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnvironmentalSettings : MonoBehaviour
 {
-	// Token: 0x06000634 RID: 1588 RVA: 0x00030A8C File Offset: 0x0002EC8C
+	// Token: 0x06000634 RID: 1588 RVA: 0x00030A68 File Offset: 0x0002EC68
 	[ContextMenu("Get default values")]
 	public void GetDefaultValues()
 	{
@@ -22,7 +22,7 @@ public class EnvironmentalSettings : MonoBehaviour
 		this.cartoonShadowStrength = shaderVariables.cartoonShadowStrength;
 	}
 
-	// Token: 0x06000635 RID: 1589 RVA: 0x00030B18 File Offset: 0x0002ED18
+	// Token: 0x06000635 RID: 1589 RVA: 0x00030AF4 File Offset: 0x0002ECF4
 	private void OnEnable()
 	{
 		int num = -1;

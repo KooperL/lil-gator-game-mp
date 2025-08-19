@@ -6,17 +6,17 @@ using UnityEngine;
 [AddComponentMenu("Dialogue Sequence/Wait For Input")]
 public class DSWaitForInput : DialogueSequence
 {
-	// Token: 0x060005DF RID: 1503 RVA: 0x0002FDF8 File Offset: 0x0002DFF8
+	// Token: 0x060005DF RID: 1503 RVA: 0x0002FDD4 File Offset: 0x0002DFD4
 	public override void Activate()
 	{
 		if (this.player == null)
 		{
 			this.player = ReInput.players.GetPlayer(0);
 		}
-		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMove), 0, 3, ReInput.mapping.GetActionId("Move Horizontal"));
-		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMove), 0, 3, ReInput.mapping.GetActionId("Move Vertical"));
-		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnInteract), 0, 3, ReInput.mapping.GetActionId("Interact"));
-		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.Jump), 0, 3, ReInput.mapping.GetActionId("Jump"));
+		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMove), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("Move Horizontal"));
+		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnMove), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("Move Vertical"));
+		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnInteract), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("Interact"));
+		this.player.AddInputEventDelegate(new Action<InputActionEventData>(this.Jump), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("Jump"));
 		if (this.waitUntilTriggered == null)
 		{
 			this.waitUntilTriggered = new WaitUntil(() => this.isTriggered);
@@ -24,7 +24,7 @@ public class DSWaitForInput : DialogueSequence
 		base.Activate();
 	}
 
-	// Token: 0x060005E0 RID: 1504 RVA: 0x0002FEE4 File Offset: 0x0002E0E4
+	// Token: 0x060005E0 RID: 1504 RVA: 0x0002FEC0 File Offset: 0x0002E0C0
 	public override void Deactivate()
 	{
 		this.player.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnMove));
@@ -77,7 +77,7 @@ public class DSWaitForInput : DialogueSequence
 		}
 	}
 
-	private Player player;
+	private global::Rewired.Player player;
 
 	public bool waitForMove;
 

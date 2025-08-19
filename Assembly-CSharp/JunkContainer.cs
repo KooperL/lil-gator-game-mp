@@ -33,7 +33,7 @@ public class JunkContainer : MonoBehaviour
 		this.SetSelected(this.contents.GetChild(Mathf.FloorToInt(global::UnityEngine.Random.value * (float)this.contents.childCount)));
 	}
 
-	// Token: 0x0600083D RID: 2109 RVA: 0x000374C8 File Offset: 0x000356C8
+	// Token: 0x0600083D RID: 2109 RVA: 0x000374A4 File Offset: 0x000356A4
 	private void Update()
 	{
 		foreach (object obj in this.contents)
@@ -62,7 +62,7 @@ public class JunkContainer : MonoBehaviour
 		this.lastPosition = this.selected.position;
 	}
 
-	// Token: 0x0600083E RID: 2110 RVA: 0x000375C0 File Offset: 0x000357C0
+	// Token: 0x0600083E RID: 2110 RVA: 0x0003759C File Offset: 0x0003579C
 	private void ActivateChildren()
 	{
 		foreach (object obj in this.contents)
@@ -85,7 +85,7 @@ public class JunkContainer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000840 RID: 2112 RVA: 0x00037640 File Offset: 0x00035840
+	// Token: 0x06000840 RID: 2112 RVA: 0x0003761C File Offset: 0x0003581C
 	private Transform FindClosest(Vector3 position)
 	{
 		Transform transform = null;
@@ -103,7 +103,7 @@ public class JunkContainer : MonoBehaviour
 		return transform;
 	}
 
-	// Token: 0x06000841 RID: 2113 RVA: 0x000376C0 File Offset: 0x000358C0
+	// Token: 0x06000841 RID: 2113 RVA: 0x0003769C File Offset: 0x0003589C
 	private Transform FindClosestDirectional(Vector3 position, Vector3 direction)
 	{
 		Transform transform = null;
@@ -166,7 +166,7 @@ public class JunkContainer : MonoBehaviour
 
 	private GameObject player;
 
-	private Player rePlayer;
+	private global::Rewired.Player rePlayer;
 
 	private Camera mainCamera;
 

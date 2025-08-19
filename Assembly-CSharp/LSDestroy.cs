@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [AddComponentMenu("Logic/LogicState - Destroy")]
 public class LSDestroy : LogicState
 {
-	// Token: 0x060008D6 RID: 2262 RVA: 0x00008A80 File Offset: 0x00006C80
+	// Token: 0x060008D6 RID: 2262 RVA: 0x00008A8A File Offset: 0x00006C8A
 	[ContextMenu("Collect Breakables")]
 	public void CollectBreakables()
 	{
@@ -16,7 +16,7 @@ public class LSDestroy : LogicState
 		this.targets = this.parent.GetComponentsInChildren<BreakableObject>();
 	}
 
-	// Token: 0x060008D7 RID: 2263 RVA: 0x000390E0 File Offset: 0x000372E0
+	// Token: 0x060008D7 RID: 2263 RVA: 0x000390BC File Offset: 0x000372BC
 	public override void Start()
 	{
 		if (!this.addedListeners)
@@ -29,7 +29,7 @@ public class LSDestroy : LogicState
 		}
 	}
 
-	// Token: 0x060008D8 RID: 2264 RVA: 0x00039124 File Offset: 0x00037324
+	// Token: 0x060008D8 RID: 2264 RVA: 0x00039100 File Offset: 0x00037300
 	public override void CheckLogic()
 	{
 		if (!base.enabled)

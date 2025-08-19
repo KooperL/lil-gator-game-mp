@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class QuestStateFork : MonoBehaviour
 {
-	// Token: 0x06000E5F RID: 3679 RVA: 0x0004D264 File Offset: 0x0004B464
+	// Token: 0x06000E5F RID: 3679 RVA: 0x0004D240 File Offset: 0x0004B440
 	public void Fork()
 	{
 		if (this.stateReference == null)

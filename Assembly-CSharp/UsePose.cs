@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class UsePose : MonoBehaviour
 {
-	// (get) Token: 0x06000E80 RID: 3712 RVA: 0x0000CCF0 File Offset: 0x0000AEF0
-	// (set) Token: 0x06000E81 RID: 3713 RVA: 0x0000CD03 File Offset: 0x0000AF03
+	// (get) Token: 0x06000E80 RID: 3712 RVA: 0x0000CCFA File Offset: 0x0000AEFA
+	// (set) Token: 0x06000E81 RID: 3713 RVA: 0x0000CD0D File Offset: 0x0000AF0D
 	private int Pose
 	{
 		get
@@ -17,7 +17,7 @@ public class UsePose : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E82 RID: 3714 RVA: 0x0000CD16 File Offset: 0x0000AF16
+	// Token: 0x06000E82 RID: 3714 RVA: 0x0000CD20 File Offset: 0x0000AF20
 	private void OnEnable()
 	{
 		if (this.isFirstEnable)
@@ -28,13 +28,13 @@ public class UsePose : MonoBehaviour
 		this.UpdateState();
 	}
 
-	// Token: 0x06000E83 RID: 3715 RVA: 0x0000CD2E File Offset: 0x0000AF2E
+	// Token: 0x06000E83 RID: 3715 RVA: 0x0000CD38 File Offset: 0x0000AF38
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000E84 RID: 3716 RVA: 0x0004D8BC File Offset: 0x0004BABC
+	// Token: 0x06000E84 RID: 3716 RVA: 0x0004D898 File Offset: 0x0004BA98
 	private void UpdateState()
 	{
 		int pose = this.Pose;

@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class MaterialManager : MonoBehaviour
 {
-	// Token: 0x06000FBF RID: 4031 RVA: 0x0000D9EE File Offset: 0x0000BBEE
+	// Token: 0x06000FBF RID: 4031 RVA: 0x0000D9F8 File Offset: 0x0000BBF8
 	private void OnEnable()
 	{
 		MaterialManager.m = this;
 		this.lastSample = this.fallbackMaterial;
 	}
 
-	// Token: 0x06000FC0 RID: 4032 RVA: 0x00052618 File Offset: 0x00050818
+	// Token: 0x06000FC0 RID: 4032 RVA: 0x000525F4 File Offset: 0x000507F4
 	public SurfaceMaterial SampleSurfaceMaterial(Vector3 point, Vector3 direction)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - point) > 1600f)
@@ -34,7 +34,7 @@ public class MaterialManager : MonoBehaviour
 		return surfaceMaterial;
 	}
 
-	// Token: 0x06000FC1 RID: 4033 RVA: 0x0005269C File Offset: 0x0005089C
+	// Token: 0x06000FC1 RID: 4033 RVA: 0x00052678 File Offset: 0x00050878
 	public bool SampleSurfaceMaterial(Vector3 point, Vector3 direction, out SurfaceMaterial surfaceMaterial, out RaycastHit hit)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - point) > 1600f)
@@ -53,7 +53,7 @@ public class MaterialManager : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000FC2 RID: 4034 RVA: 0x0005272C File Offset: 0x0005092C
+	// Token: 0x06000FC2 RID: 4034 RVA: 0x00052708 File Offset: 0x00050908
 	public SurfaceMaterial GetSurfaceMaterial(RaycastHit hit)
 	{
 		SurfaceMaterial surfaceMaterial = null;

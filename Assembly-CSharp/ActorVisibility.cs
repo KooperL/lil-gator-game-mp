@@ -16,7 +16,7 @@ public class ActorVisibility : MonoBehaviour
 		this.renderers = base.GetComponentsInChildren<Renderer>();
 	}
 
-	// Token: 0x060003A2 RID: 930 RVA: 0x00027294 File Offset: 0x00025494
+	// Token: 0x060003A2 RID: 930 RVA: 0x00027270 File Offset: 0x00025470
 	public void Show()
 	{
 		foreach (Renderer renderer in this.renderers)
@@ -28,7 +28,7 @@ public class ActorVisibility : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003A3 RID: 931 RVA: 0x000272CC File Offset: 0x000254CC
+	// Token: 0x060003A3 RID: 931 RVA: 0x000272A8 File Offset: 0x000254A8
 	public void Hide()
 	{
 		foreach (Renderer renderer in this.renderers)

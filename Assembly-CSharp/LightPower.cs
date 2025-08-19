@@ -20,7 +20,7 @@ public class LightPower : MonoBehaviour
 		this.LightPowerChanged(this.lightResource.Amount);
 	}
 
-	// Token: 0x0600064C RID: 1612 RVA: 0x00030EE4 File Offset: 0x0002F0E4
+	// Token: 0x0600064C RID: 1612 RVA: 0x00030EC0 File Offset: 0x0002F0C0
 	private void LightPowerChanged(int lightPower)
 	{
 		float num = Mathf.Lerp(this.unpoweredStrength, 1f, (float)lightPower / (float)this.maxLightPower);

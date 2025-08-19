@@ -36,7 +36,7 @@ public class RememberMusic : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060000CB RID: 203 RVA: 0x0001A418 File Offset: 0x00018618
+	// Token: 0x060000CB RID: 203 RVA: 0x0001A3F4 File Offset: 0x000185F4
 	[ContextMenu("Update Music List")]
 	public void UpdateMusicList()
 	{
@@ -56,7 +56,7 @@ public class RememberMusic : MonoBehaviour, IManagedUpdate
 		this.dynamicMusic = list.ToArray();
 	}
 
-	// Token: 0x060000CC RID: 204 RVA: 0x0001A47C File Offset: 0x0001867C
+	// Token: 0x060000CC RID: 204 RVA: 0x0001A458 File Offset: 0x00018658
 	private void Start()
 	{
 		int currentSongIndex = this.CurrentSongIndex;
@@ -87,7 +87,7 @@ public class RememberMusic : MonoBehaviour, IManagedUpdate
 		this.UpdateCurrentState();
 	}
 
-	// Token: 0x060000D0 RID: 208 RVA: 0x0001A4C0 File Offset: 0x000186C0
+	// Token: 0x060000D0 RID: 208 RVA: 0x0001A49C File Offset: 0x0001869C
 	private void UpdateCurrentState()
 	{
 		for (int i = 0; i < this.dynamicMusic.Length; i++)

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class SmoothAudioFade : MonoBehaviour
 {
-	// Token: 0x06001063 RID: 4195 RVA: 0x0000E134 File Offset: 0x0000C334
+	// Token: 0x06001063 RID: 4195 RVA: 0x0000E13E File Offset: 0x0000C33E
 	private void Awake()
 	{
 		this.volume = this.audioSource.volume;
 	}
 
-	// Token: 0x06001064 RID: 4196 RVA: 0x00054CE0 File Offset: 0x00052EE0
+	// Token: 0x06001064 RID: 4196 RVA: 0x00054CBC File Offset: 0x00052EBC
 	private void OnEnable()
 	{
 		this.target = 1f;
@@ -26,7 +26,7 @@ public class SmoothAudioFade : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001065 RID: 4197 RVA: 0x00054D48 File Offset: 0x00052F48
+	// Token: 0x06001065 RID: 4197 RVA: 0x00054D24 File Offset: 0x00052F24
 	private void OnDisable()
 	{
 		if (this.audioSource == null)
@@ -46,7 +46,7 @@ public class SmoothAudioFade : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001066 RID: 4198 RVA: 0x0000E147 File Offset: 0x0000C347
+	// Token: 0x06001066 RID: 4198 RVA: 0x0000E151 File Offset: 0x0000C351
 	private IEnumerator RunFade()
 	{
 		yield return null;

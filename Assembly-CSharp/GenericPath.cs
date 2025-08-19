@@ -16,7 +16,7 @@ public class GenericPath : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000788 RID: 1928 RVA: 0x000353D0 File Offset: 0x000335D0
+	// Token: 0x06000788 RID: 1928 RVA: 0x000353AC File Offset: 0x000335AC
 	private void GenerateBounds()
 	{
 		this.generatedBounds = true;
@@ -27,7 +27,7 @@ public class GenericPath : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000789 RID: 1929 RVA: 0x0003542C File Offset: 0x0003362C
+	// Token: 0x06000789 RID: 1929 RVA: 0x00035408 File Offset: 0x00033608
 	public float SqrDistance(Vector3 point)
 	{
 		return this.Bounds.SqrDistance(base.transform.InverseTransformPoint(point));
@@ -64,7 +64,7 @@ public class GenericPath : MonoBehaviour
 		return iTween.PointOnPath(this.positions, t);
 	}
 
-	// Token: 0x0600078F RID: 1935 RVA: 0x00035454 File Offset: 0x00033654
+	// Token: 0x0600078F RID: 1935 RVA: 0x00035430 File Offset: 0x00033630
 	[ContextMenu("Snap to ground")]
 	public void SnapToGround()
 	{
@@ -78,7 +78,7 @@ public class GenericPath : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000790 RID: 1936 RVA: 0x000354B4 File Offset: 0x000336B4
+	// Token: 0x06000790 RID: 1936 RVA: 0x00035490 File Offset: 0x00033690
 	public int GetClosest(Vector3 position)
 	{
 		position = base.transform.InverseTransformPoint(position);
@@ -102,7 +102,7 @@ public class GenericPath : MonoBehaviour
 		return this.GetClosestInterpolated(position, this.GetClosest(position));
 	}
 
-	// Token: 0x06000792 RID: 1938 RVA: 0x00035514 File Offset: 0x00033714
+	// Token: 0x06000792 RID: 1938 RVA: 0x000354F0 File Offset: 0x000336F0
 	public float GetClosestInterpolated(Vector3 position, int closest)
 	{
 		int num;
@@ -153,7 +153,7 @@ public class GenericPath : MonoBehaviour
 		return this.GetDirection((float)closest);
 	}
 
-	// Token: 0x06000794 RID: 1940 RVA: 0x00035608 File Offset: 0x00033808
+	// Token: 0x06000794 RID: 1940 RVA: 0x000355E4 File Offset: 0x000337E4
 	public Vector3 GetDirection(float interpolatedPosition)
 	{
 		return (this.GetPosition(interpolatedPosition + 0.01f) - this.GetPosition(interpolatedPosition - 0.01f)).normalized;
@@ -171,7 +171,7 @@ public class GenericPath : MonoBehaviour
 		return Vector3.Distance(this.ClosestPointOnPath(point), point);
 	}
 
-	// Token: 0x06000797 RID: 1943 RVA: 0x0003563C File Offset: 0x0003383C
+	// Token: 0x06000797 RID: 1943 RVA: 0x00035618 File Offset: 0x00033818
 	public float MoveAlongPath(float t, float distance)
 	{
 		if (distance == 0f)

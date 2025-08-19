@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class BuildingUpgradeStation : MonoBehaviour, Interaction
 {
-	// Token: 0x06000270 RID: 624 RVA: 0x00020294 File Offset: 0x0001E494
+	// Token: 0x06000270 RID: 624 RVA: 0x00020270 File Offset: 0x0001E470
 	public static void UpdateAllActive()
 	{
 		foreach (BuildingUpgradeStation buildingUpgradeStation in BuildingUpgradeStation.upgradedStations)
@@ -58,7 +58,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		this.waitUpgradePost = new WaitForSeconds(1f);
 	}
 
-	// Token: 0x06000276 RID: 630 RVA: 0x000202E4 File Offset: 0x0001E4E4
+	// Token: 0x06000276 RID: 630 RVA: 0x000202C0 File Offset: 0x0001E4C0
 	private void OnValidate()
 	{
 		if (this.uiCurrency == null || (this.upgradeCurrency != null && this.uiCurrency.itemResource != this.upgradeCurrency))
@@ -74,7 +74,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000277 RID: 631 RVA: 0x00020358 File Offset: 0x0001E558
+	// Token: 0x06000277 RID: 631 RVA: 0x00020334 File Offset: 0x0001E534
 	[ContextMenu("Get Objects")]
 	public void GetObjects()
 	{
@@ -114,7 +114,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x0600027A RID: 634 RVA: 0x000203F4 File Offset: 0x0001E5F4
+	// Token: 0x0600027A RID: 634 RVA: 0x000203D0 File Offset: 0x0001E5D0
 	[ContextMenu("Update State")]
 	public void UpdateState()
 	{
@@ -128,7 +128,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		DependentDecoration.ActivateAll();
 	}
 
-	// Token: 0x0600027B RID: 635 RVA: 0x00020440 File Offset: 0x0001E640
+	// Token: 0x0600027B RID: 635 RVA: 0x0002041C File Offset: 0x0001E61C
 	private void UpdateCharacters(bool isUpgraded, bool isUnlocked)
 	{
 		bool flag = true;
@@ -297,7 +297,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x0600027F RID: 639 RVA: 0x000204F0 File Offset: 0x0001E6F0
+	// Token: 0x0600027F RID: 639 RVA: 0x000204CC File Offset: 0x0001E6CC
 	public void UpdateActive()
 	{
 		foreach (GameObject gameObject in this.upgradeObjects)

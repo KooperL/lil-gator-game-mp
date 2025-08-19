@@ -24,7 +24,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		base.OnValidate();
 	}
 
-	// Token: 0x060007BC RID: 1980 RVA: 0x00035B6C File Offset: 0x00033D6C
+	// Token: 0x060007BC RID: 1980 RVA: 0x00035B48 File Offset: 0x00033D48
 	public override void Load(bool state)
 	{
 		this.isBroken = state;
@@ -53,7 +53,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x060007BE RID: 1982 RVA: 0x00035C00 File Offset: 0x00033E00
+	// Token: 0x060007BE RID: 1982 RVA: 0x00035BDC File Offset: 0x00033DDC
 	public virtual void OnDisable()
 	{
 		if (this.isBroken && this.breakingObject != null)
@@ -70,7 +70,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x060007BF RID: 1983 RVA: 0x00035C4C File Offset: 0x00033E4C
+	// Token: 0x060007BF RID: 1983 RVA: 0x00035C28 File Offset: 0x00033E28
 	private bool IsRanged(bool isHeavy = false)
 	{
 		if (isHeavy)
@@ -95,7 +95,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		return true;
 	}
 
-	// Token: 0x060007C0 RID: 1984 RVA: 0x00035CC4 File Offset: 0x00033EC4
+	// Token: 0x060007C0 RID: 1984 RVA: 0x00035CA0 File Offset: 0x00033EA0
 	private bool CanBeDestroyed(bool isHeavy = false, bool isRanged = false)
 	{
 		if (this.isNonRanged && isRanged)
@@ -141,7 +141,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		this.Break(false, Vector3.zero, false);
 	}
 
-	// Token: 0x060007C2 RID: 1986 RVA: 0x00035D54 File Offset: 0x00033F54
+	// Token: 0x060007C2 RID: 1986 RVA: 0x00035D30 File Offset: 0x00033F30
 	public virtual void Break(bool fromAttachment, Vector3 velocity, bool isHeavy = false)
 	{
 		if (Time.time - this.lastBreakTime < 0.1f)
@@ -245,7 +245,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		this.onNearbyHit.Invoke();
 	}
 
-	// Token: 0x060007C3 RID: 1987 RVA: 0x00036014 File Offset: 0x00034214
+	// Token: 0x060007C3 RID: 1987 RVA: 0x00035FF0 File Offset: 0x000341F0
 	public void OnTimeout()
 	{
 		this.breakingObject = null;
@@ -266,7 +266,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x060007C4 RID: 1988 RVA: 0x000360AC File Offset: 0x000342AC
+	// Token: 0x060007C4 RID: 1988 RVA: 0x00036088 File Offset: 0x00034288
 	public void ValidateBreak()
 	{
 		this.waitForValidation = false;

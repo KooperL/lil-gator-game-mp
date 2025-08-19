@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class RagdollWhenSpringed : MonoBehaviour
 {
-	// Token: 0x06000B2C RID: 2860 RVA: 0x0000A8F4 File Offset: 0x00008AF4
+	// Token: 0x06000B2C RID: 2860 RVA: 0x0000A8FE File Offset: 0x00008AFE
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 		this.joint = base.GetComponent<SpringJoint>();
 	}
 
-	// Token: 0x06000B2D RID: 2861 RVA: 0x0003FE00 File Offset: 0x0003E000
+	// Token: 0x06000B2D RID: 2861 RVA: 0x0003FDDC File Offset: 0x0003DFDC
 	private void FixedUpdate()
 	{
 		Vector3 vector = this.rigidbody.position + this.rigidbody.rotation * this.joint.anchor;

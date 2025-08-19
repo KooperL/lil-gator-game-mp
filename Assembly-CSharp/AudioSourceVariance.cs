@@ -30,7 +30,7 @@ public class AudioSourceVariance : MonoBehaviour
 		this.PlayModified(1f, 1f);
 	}
 
-	// Token: 0x06000258 RID: 600 RVA: 0x0001FAE4 File Offset: 0x0001DCE4
+	// Token: 0x06000258 RID: 600 RVA: 0x0001FAC0 File Offset: 0x0001DCC0
 	public void PlayModified(float volumeMod, float pitchMod)
 	{
 		int num = Mathf.FloorToInt(global::UnityEngine.Random.value * (float)this.audioClips.Length);

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UIAnim : MonoBehaviour
 {
-	// Token: 0x060011BA RID: 4538 RVA: 0x0000F19C File Offset: 0x0000D39C
+	// Token: 0x060011BA RID: 4538 RVA: 0x0000F1A6 File Offset: 0x0000D3A6
 	private void OnValidate()
 	{
 		if (this.image == null)
@@ -13,14 +13,14 @@ public class UIAnim : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011BB RID: 4539 RVA: 0x0000F1B8 File Offset: 0x0000D3B8
+	// Token: 0x060011BB RID: 4539 RVA: 0x0000F1C2 File Offset: 0x0000D3C2
 	private void OnEnable()
 	{
 		this.index = 0;
 		this.nextFrameTime = Time.time + 1f / this.fps;
 	}
 
-	// Token: 0x060011BC RID: 4540 RVA: 0x00058DCC File Offset: 0x00056FCC
+	// Token: 0x060011BC RID: 4540 RVA: 0x00058DA8 File Offset: 0x00056FA8
 	private void FixedUpdate()
 	{
 		if (Time.time > this.nextFrameTime)

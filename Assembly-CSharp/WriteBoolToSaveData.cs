@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WriteBoolToSaveData : MonoBehaviour
 {
-	// Token: 0x0600104C RID: 4172 RVA: 0x0000DFA3 File Offset: 0x0000C1A3
+	// Token: 0x0600104C RID: 4172 RVA: 0x0000DFAD File Offset: 0x0000C1AD
 	public void WriteBool()
 	{
 		GameData.g.Write(this.key, this.boolValue);

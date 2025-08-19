@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class QuestTrackerPopup : MonoBehaviour
 {
-	// Token: 0x0600110C RID: 4364 RVA: 0x000575D0 File Offset: 0x000557D0
+	// Token: 0x0600110C RID: 4364 RVA: 0x000575AC File Offset: 0x000557AC
 	private void Awake()
 	{
 		this.instantiateTime = Time.time;
@@ -21,19 +21,19 @@ public class QuestTrackerPopup : MonoBehaviour
 		this.hideBehavior.Hide();
 	}
 
-	// Token: 0x0600110D RID: 4365 RVA: 0x0000E8AD File Offset: 0x0000CAAD
+	// Token: 0x0600110D RID: 4365 RVA: 0x0000E8B7 File Offset: 0x0000CAB7
 	private void OnEnable()
 	{
 		QuestTrackerPopup.q = this;
 	}
 
-	// Token: 0x0600110E RID: 4366 RVA: 0x0000E8B5 File Offset: 0x0000CAB5
+	// Token: 0x0600110E RID: 4366 RVA: 0x0000E8BF File Offset: 0x0000CABF
 	private void OnDisable()
 	{
 		this == null;
 	}
 
-	// Token: 0x0600110F RID: 4367 RVA: 0x00057620 File Offset: 0x00055820
+	// Token: 0x0600110F RID: 4367 RVA: 0x000575FC File Offset: 0x000557FC
 	public void QuestUpdated(QuestProfile profile)
 	{
 		if (profile == null || profile.tasks == null || profile.tasks.Length == 0 || Time.time - 1f < this.instantiateTime)
@@ -63,7 +63,7 @@ public class QuestTrackerPopup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001110 RID: 4368 RVA: 0x000576C4 File Offset: 0x000558C4
+	// Token: 0x06001110 RID: 4368 RVA: 0x000576A0 File Offset: 0x000558A0
 	private void DisplayQuest(QuestProfile profile)
 	{
 		profile.WasDisplayed();
@@ -112,7 +112,7 @@ public class QuestTrackerPopup : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06001111 RID: 4369 RVA: 0x0000E8BF File Offset: 0x0000CABF
+	// (get) Token: 0x06001111 RID: 4369 RVA: 0x0000E8C9 File Offset: 0x0000CAC9
 	private bool CanDisplay
 	{
 		get
@@ -121,7 +121,7 @@ public class QuestTrackerPopup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001112 RID: 4370 RVA: 0x00057820 File Offset: 0x00055A20
+	// Token: 0x06001112 RID: 4370 RVA: 0x000577FC File Offset: 0x000559FC
 	private void Update()
 	{
 		if (!this.hideBehavior.gameObject.activeSelf && this.profileQueue.Count == 0)

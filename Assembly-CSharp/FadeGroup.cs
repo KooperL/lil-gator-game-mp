@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FadeGroup : MonoBehaviour
 {
-	// Token: 0x060006DF RID: 1759 RVA: 0x00032D28 File Offset: 0x00030F28
+	// Token: 0x060006DF RID: 1759 RVA: 0x00032D04 File Offset: 0x00030F04
 	[ContextMenu("Find Renderers")]
 	public void FindRenderers()
 	{
@@ -67,7 +67,7 @@ public class FadeGroup : MonoBehaviour
 		this.UpdateFade();
 	}
 
-	// Token: 0x060006E3 RID: 1763 RVA: 0x00032DD8 File Offset: 0x00030FD8
+	// Token: 0x060006E3 RID: 1763 RVA: 0x00032DB4 File Offset: 0x00030FB4
 	private void Update()
 	{
 		if (this.fade != this.fadeTarget)
@@ -82,7 +82,7 @@ public class FadeGroup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006E4 RID: 1764 RVA: 0x00032E5C File Offset: 0x0003105C
+	// Token: 0x060006E4 RID: 1764 RVA: 0x00032E38 File Offset: 0x00031038
 	private void Initialize()
 	{
 		List<Material> list = new List<Material>();
@@ -102,7 +102,7 @@ public class FadeGroup : MonoBehaviour
 		this.isInitialized = true;
 	}
 
-	// Token: 0x060006E5 RID: 1765 RVA: 0x00032EE8 File Offset: 0x000310E8
+	// Token: 0x060006E5 RID: 1765 RVA: 0x00032EC4 File Offset: 0x000310C4
 	private void UpdateFade()
 	{
 		if (!this.isInitialized)

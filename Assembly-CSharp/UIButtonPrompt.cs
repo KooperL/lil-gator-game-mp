@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIButtonPrompt : MonoBehaviour
 {
-	// Token: 0x060011ED RID: 4589 RVA: 0x00059CD0 File Offset: 0x00057ED0
+	// Token: 0x060011ED RID: 4589 RVA: 0x00059CAC File Offset: 0x00057EAC
 	private void Awake()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
@@ -17,7 +17,7 @@ public class UIButtonPrompt : MonoBehaviour
 		this.waitUntilTriggered = new WaitUntil(() => this.triggered);
 	}
 
-	// Token: 0x060011EE RID: 4590 RVA: 0x0000F416 File Offset: 0x0000D616
+	// Token: 0x060011EE RID: 4590 RVA: 0x0000F420 File Offset: 0x0000D620
 	private void OnEnable()
 	{
 		this.triggered = false;
@@ -34,7 +34,7 @@ public class UIButtonPrompt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011F0 RID: 4592 RVA: 0x00059D28 File Offset: 0x00057F28
+	// Token: 0x060011F0 RID: 4592 RVA: 0x00059D04 File Offset: 0x00057F04
 	private void Update()
 	{
 		if (this.rePlayer != null && (this.rePlayer.GetButtonDown("Interact") || (Game.State == GameState.Dialogue && (this.rePlayer.GetButtonDown("Interact Dialogue") || this.rePlayer.GetButtonDown("UISubmit"))) || (PlayerInput.interactMapping == PlayerInput.InteractMapping.Jump && this.rePlayer.GetButtonDown("Jump")) || (PlayerInput.interactMapping == PlayerInput.InteractMapping.Primary && this.rePlayer.GetButtonDown("Primary"))))
@@ -59,5 +59,5 @@ public class UIButtonPrompt : MonoBehaviour
 
 	public bool allowSkip = true;
 
-	private Player rePlayer;
+	private global::Rewired.Player rePlayer;
 }

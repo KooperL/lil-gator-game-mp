@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 
 public class Footsteps : MonoBehaviour
 {
-	// Token: 0x06000AC0 RID: 2752 RVA: 0x0000A418 File Offset: 0x00008618
+	// Token: 0x06000AC0 RID: 2752 RVA: 0x0000A422 File Offset: 0x00008622
 	public void ClearOverride()
 	{
 		this.overrideSettings = false;
@@ -13,13 +13,13 @@ public class Footsteps : MonoBehaviour
 		this.overrideHasFootstepDust = true;
 	}
 
-	// Token: 0x06000AC1 RID: 2753 RVA: 0x0000A436 File Offset: 0x00008636
+	// Token: 0x06000AC1 RID: 2753 RVA: 0x0000A440 File Offset: 0x00008640
 	public void DoStep(bool isLeft)
 	{
 		this.Step(isLeft ? this.leftFoot : this.rightFoot, isLeft);
 	}
 
-	// Token: 0x06000AC2 RID: 2754 RVA: 0x0003ECFC File Offset: 0x0003CEFC
+	// Token: 0x06000AC2 RID: 2754 RVA: 0x0003ECD8 File Offset: 0x0003CED8
 	private void Step(Transform footTransform, bool isLeft)
 	{
 		if (Time.time - this.minFootstepDelay < this.lastFootstep)
@@ -54,7 +54,7 @@ public class Footsteps : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AC3 RID: 2755 RVA: 0x0003EE18 File Offset: 0x0003D018
+	// Token: 0x06000AC3 RID: 2755 RVA: 0x0003EDF4 File Offset: 0x0003CFF4
 	private void PlayFootstep(SurfaceMaterial surface, Vector3 position, bool isLeft)
 	{
 		float num = this.footstepVolume;
@@ -62,7 +62,7 @@ public class Footsteps : MonoBehaviour
 		surface.PlayFootstep(position, num, isLeft ? this.leftFootPitch : 1f);
 	}
 
-	// Token: 0x06000AC4 RID: 2756 RVA: 0x0003EE6C File Offset: 0x0003D06C
+	// Token: 0x06000AC4 RID: 2756 RVA: 0x0003EE48 File Offset: 0x0003D048
 	private void MakeFootprint(SurfaceMaterial surface, Vector3 position, Quaternion rotation)
 	{
 		Color color = Color.white;
@@ -79,7 +79,7 @@ public class Footsteps : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AC5 RID: 2757 RVA: 0x0003EECC File Offset: 0x0003D0CC
+	// Token: 0x06000AC5 RID: 2757 RVA: 0x0003EEA8 File Offset: 0x0003D0A8
 	private void MakeFootstepDust(SurfaceMaterial surface, Vector3 position)
 	{
 		if (Player.rigidbody.velocity.sqrMagnitude < this.minDustSpeed * this.minDustSpeed)

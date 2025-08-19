@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 public class UIPlayerCoordinates : MonoBehaviour
 {
-	// Token: 0x060012C7 RID: 4807 RVA: 0x0000FD15 File Offset: 0x0000DF15
+	// Token: 0x060012C7 RID: 4807 RVA: 0x0000FD1F File Offset: 0x0000DF1F
 	private void Start()
 	{
 		this.text = base.GetComponent<Text>();
 	}
 
-	// Token: 0x060012C8 RID: 4808 RVA: 0x0005D118 File Offset: 0x0005B318
+	// Token: 0x060012C8 RID: 4808 RVA: 0x0005D0F4 File Offset: 0x0005B2F4
 	private void Update()
 	{
 		Vector3 rawPosition = Player.RawPosition;

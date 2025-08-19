@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ActorHandIK : MonoBehaviour
 {
-	// Token: 0x0600036E RID: 878 RVA: 0x00025DF8 File Offset: 0x00023FF8
+	// Token: 0x0600036E RID: 878 RVA: 0x00025DD4 File Offset: 0x00023FD4
 	private void Awake()
 	{
 		this.actor = base.GetComponent<DialogueActor>();
@@ -19,7 +19,7 @@ public class ActorHandIK : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600036F RID: 879 RVA: 0x00025E58 File Offset: 0x00024058
+	// Token: 0x0600036F RID: 879 RVA: 0x00025E34 File Offset: 0x00024034
 	private void Update()
 	{
 		this.rightWeight = Mathf.MoveTowards(this.rightWeight, (!this.isRemoving && this.hasRightIK) ? 1f : 0f, 2f * Time.deltaTime);
@@ -30,18 +30,18 @@ public class ActorHandIK : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000370 RID: 880 RVA: 0x00025F00 File Offset: 0x00024100
+	// Token: 0x06000370 RID: 880 RVA: 0x00025EDC File Offset: 0x000240DC
 	private void OnAnimatorIK()
 	{
 		float num = this.rightWeight * this.animator.GetFloat(ActorHandIK.RightHandID);
 		float num2 = this.leftWeight * this.animator.GetFloat(ActorHandIK.LeftHandID);
-		this.animator.SetIKPositionWeight(3, Mathf.SmoothStep(0f, 1f, num));
-		this.animator.SetIKPositionWeight(2, Mathf.SmoothStep(0f, 1f, num2));
-		this.animator.SetIKPosition(3, this.GetIKPosition(false));
-		this.animator.SetIKPosition(2, this.GetIKPosition(true));
+		this.animator.SetIKPositionWeight(AvatarIKGoal.RightHand, Mathf.SmoothStep(0f, 1f, num));
+		this.animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, Mathf.SmoothStep(0f, 1f, num2));
+		this.animator.SetIKPosition(AvatarIKGoal.RightHand, this.GetIKPosition(false));
+		this.animator.SetIKPosition(AvatarIKGoal.LeftHand, this.GetIKPosition(true));
 	}
 
-	// Token: 0x06000371 RID: 881 RVA: 0x00025F9C File Offset: 0x0002419C
+	// Token: 0x06000371 RID: 881 RVA: 0x00025F78 File Offset: 0x00024178
 	public Vector3 GetIKPosition(bool isLeft)
 	{
 		Transform transform = (isLeft ? this.leftAnchor : this.rightAnchor);
@@ -62,7 +62,7 @@ public class ActorHandIK : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x06000372 RID: 882 RVA: 0x00026034 File Offset: 0x00024234
+	// Token: 0x06000372 RID: 882 RVA: 0x00026010 File Offset: 0x00024210
 	public void SetHandIK(bool isLeft, Vector3 position, Transform anchor = null, bool allowYAxis = false)
 	{
 		if (this.actor == null)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ManualDistanceCulling : MonoBehaviour
 {
-	// Token: 0x06000957 RID: 2391 RVA: 0x0003A440 File Offset: 0x00038640
+	// Token: 0x06000957 RID: 2391 RVA: 0x0003A41C File Offset: 0x0003861C
 	private static Vector2Int IndexToCoordinate(int index, int chunkDivisions)
 	{
 		Vector2Int zero = Vector2Int.zero;
@@ -13,20 +13,20 @@ public class ManualDistanceCulling : MonoBehaviour
 		return zero;
 	}
 
-	// Token: 0x06000958 RID: 2392 RVA: 0x0003A470 File Offset: 0x00038670
+	// Token: 0x06000958 RID: 2392 RVA: 0x0003A44C File Offset: 0x0003864C
 	private static float InterpolateCenterAxis(int coordinate, int chunkDivisions, float lowEdge, float highEdge)
 	{
 		float num = (2f * (float)coordinate + 1f) / (2f * (float)chunkDivisions);
 		return Mathf.Lerp(lowEdge, highEdge, num);
 	}
 
-	// Token: 0x06000959 RID: 2393 RVA: 0x0003A4A0 File Offset: 0x000386A0
+	// Token: 0x06000959 RID: 2393 RVA: 0x0003A47C File Offset: 0x0003867C
 	private static Vector3 GetCenterForCoordinate(Vector2Int coordinate, int chunkDivisions, Bounds bounds)
 	{
 		return new Vector3(ManualDistanceCulling.InterpolateCenterAxis(coordinate.x, chunkDivisions, bounds.min.x, bounds.max.x), 0f, ManualDistanceCulling.InterpolateCenterAxis(coordinate.y, chunkDivisions, bounds.min.z, bounds.max.z));
 	}
 
-	// Token: 0x0600095A RID: 2394 RVA: 0x0003A504 File Offset: 0x00038704
+	// Token: 0x0600095A RID: 2394 RVA: 0x0003A4E0 File Offset: 0x000386E0
 	[ContextMenu("1. Collect Culled Objects")]
 	private void CollectCulledObjects()
 	{
@@ -66,7 +66,7 @@ public class ManualDistanceCulling : MonoBehaviour
 		this.expensiveCulledObjects = list2.ToArray();
 	}
 
-	// Token: 0x0600095B RID: 2395 RVA: 0x0000911F File Offset: 0x0000731F
+	// Token: 0x0600095B RID: 2395 RVA: 0x00009129 File Offset: 0x00007329
 	private Bounds ExpandEdgeBounds(Bounds bounds, Vector3 direction)
 	{
 		bounds.Encapsulate(bounds.center + 200f * direction);
@@ -79,7 +79,7 @@ public class ManualDistanceCulling : MonoBehaviour
 	{
 	}
 
-	// Token: 0x0600095D RID: 2397 RVA: 0x0003A624 File Offset: 0x00038824
+	// Token: 0x0600095D RID: 2397 RVA: 0x0003A600 File Offset: 0x00038800
 	private void VerifyObjectsAreSorted()
 	{
 		int num = 0;
@@ -90,14 +90,14 @@ public class ManualDistanceCulling : MonoBehaviour
 		Debug.Log("Total chunk objects: " + num.ToString() + " Culled Objects: " + this.culledObjects.Length.ToString());
 	}
 
-	// Token: 0x0600095E RID: 2398 RVA: 0x00009140 File Offset: 0x00007340
+	// Token: 0x0600095E RID: 2398 RVA: 0x0000914A File Offset: 0x0000734A
 	private void OnValidate()
 	{
 		this.totalChunks = this.chunkDivisions * this.chunkDivisions;
 		this.chunkWidth = this.bounds.extents.x / (float)this.chunkDivisions;
 	}
 
-	// Token: 0x0600095F RID: 2399 RVA: 0x00009173 File Offset: 0x00007373
+	// Token: 0x0600095F RID: 2399 RVA: 0x0000917D File Offset: 0x0000737D
 	private void LateUpdate()
 	{
 		if (Game.WorldState == WorldState.Flashback)
@@ -115,7 +115,7 @@ public class ManualDistanceCulling : MonoBehaviour
 		this.UpdateChunkObjects();
 	}
 
-	// Token: 0x06000960 RID: 2400 RVA: 0x0003A688 File Offset: 0x00038888
+	// Token: 0x06000960 RID: 2400 RVA: 0x0003A664 File Offset: 0x00038864
 	private void UpdateChunkVisibility()
 	{
 		Vector3 position = MainCamera.t.position;
@@ -156,7 +156,7 @@ public class ManualDistanceCulling : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000961 RID: 2401 RVA: 0x0003A7E4 File Offset: 0x000389E4
+	// Token: 0x06000961 RID: 2401 RVA: 0x0003A7C0 File Offset: 0x000389C0
 	private void UpdateChunkObjects()
 	{
 		bool flag = true;
@@ -169,7 +169,7 @@ public class ManualDistanceCulling : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000962 RID: 2402 RVA: 0x0003A840 File Offset: 0x00038A40
+	// Token: 0x06000962 RID: 2402 RVA: 0x0003A81C File Offset: 0x00038A1C
 	private void UpdateUrgentChunkObjects()
 	{
 		for (int i = 0; i < this.chunks.Length; i++)
@@ -222,7 +222,7 @@ public class ManualDistanceCulling : MonoBehaviour
 	[Serializable]
 	public struct CulledObjectChunk
 	{
-		// (get) Token: 0x06000964 RID: 2404 RVA: 0x000091B8 File Offset: 0x000073B8
+		// (get) Token: 0x06000964 RID: 2404 RVA: 0x000091C2 File Offset: 0x000073C2
 		public bool IsEverythingVisible
 		{
 			get
@@ -231,7 +231,7 @@ public class ManualDistanceCulling : MonoBehaviour
 			}
 		}
 
-		// (get) Token: 0x06000965 RID: 2405 RVA: 0x000091D5 File Offset: 0x000073D5
+		// (get) Token: 0x06000965 RID: 2405 RVA: 0x000091DF File Offset: 0x000073DF
 		public bool IsEverythingCulled
 		{
 			get
@@ -240,7 +240,7 @@ public class ManualDistanceCulling : MonoBehaviour
 			}
 		}
 
-		// Token: 0x06000966 RID: 2406 RVA: 0x0003A898 File Offset: 0x00038A98
+		// Token: 0x06000966 RID: 2406 RVA: 0x0003A874 File Offset: 0x00038A74
 		public bool UpdateObjectVisibility(int allowance, bool allowExpensive)
 		{
 			while (allowance > 0)

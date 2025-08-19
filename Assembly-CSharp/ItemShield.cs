@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class ItemShield : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x06000BAA RID: 2986 RVA: 0x0000AE33 File Offset: 0x00009033
+	// Token: 0x06000BAA RID: 2986 RVA: 0x0000AE3D File Offset: 0x0000903D
 	private void Awake()
 	{
 		this.itemManager = Player.itemManager;
@@ -12,7 +12,7 @@ public class ItemShield : MonoBehaviour, IItemBehaviour
 		this.movement.shield = this;
 	}
 
-	// Token: 0x06000BAB RID: 2987 RVA: 0x0000AE57 File Offset: 0x00009057
+	// Token: 0x06000BAB RID: 2987 RVA: 0x0000AE61 File Offset: 0x00009061
 	private void OnDestroy()
 	{
 		if (this.movement != null && this.movement.shield == this)
@@ -21,7 +21,7 @@ public class ItemShield : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BAC RID: 2988 RVA: 0x0000AE86 File Offset: 0x00009086
+	// Token: 0x06000BAC RID: 2988 RVA: 0x0000AE90 File Offset: 0x00009090
 	public void Input(bool isDown, bool isHeld)
 	{
 		if (isDown)
@@ -32,7 +32,7 @@ public class ItemShield : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BAD RID: 2989 RVA: 0x00041014 File Offset: 0x0003F214
+	// Token: 0x06000BAD RID: 2989 RVA: 0x00040FF0 File Offset: 0x0003F1F0
 	private void LateUpdate()
 	{
 		if (this.isSledding)
@@ -61,13 +61,13 @@ public class ItemShield : MonoBehaviour, IItemBehaviour
 	{
 	}
 
-	// Token: 0x06000BAF RID: 2991 RVA: 0x0000AEC0 File Offset: 0x000090C0
+	// Token: 0x06000BAF RID: 2991 RVA: 0x0000AECA File Offset: 0x000090CA
 	public void Cancel()
 	{
 		this.SetState(false);
 	}
 
-	// Token: 0x06000BB0 RID: 2992 RVA: 0x0000AEC9 File Offset: 0x000090C9
+	// Token: 0x06000BB0 RID: 2992 RVA: 0x0000AED3 File Offset: 0x000090D3
 	private void SetState(bool isActive)
 	{
 		this.isSledding = isActive;
@@ -78,7 +78,7 @@ public class ItemShield : MonoBehaviour, IItemBehaviour
 		this.itemManager.SetItemInUse(this, isActive);
 	}
 
-	// Token: 0x06000BB1 RID: 2993 RVA: 0x000410CC File Offset: 0x0003F2CC
+	// Token: 0x06000BB1 RID: 2993 RVA: 0x000410A8 File Offset: 0x0003F2A8
 	public void SetEquipped(bool isEquipped)
 	{
 		if (this.itemManager == null)
@@ -92,7 +92,7 @@ public class ItemShield : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BB2 RID: 2994 RVA: 0x00041120 File Offset: 0x0003F320
+	// Token: 0x06000BB2 RID: 2994 RVA: 0x000410FC File Offset: 0x0003F2FC
 	public virtual Transform GetParent(bool isEquipped, bool isSledding)
 	{
 		Transform transform = null;
@@ -119,7 +119,7 @@ public class ItemShield : MonoBehaviour, IItemBehaviour
 		return transform;
 	}
 
-	// Token: 0x06000BB3 RID: 2995 RVA: 0x0000AF00 File Offset: 0x00009100
+	// Token: 0x06000BB3 RID: 2995 RVA: 0x0000AF0A File Offset: 0x0000910A
 	public void OnRemove()
 	{
 		if (this.onRemove != null)
@@ -133,7 +133,7 @@ public class ItemShield : MonoBehaviour, IItemBehaviour
 	{
 	}
 
-	// Token: 0x06000BB5 RID: 2997 RVA: 0x0000AF15 File Offset: 0x00009115
+	// Token: 0x06000BB5 RID: 2997 RVA: 0x0000AF1F File Offset: 0x0000911F
 	public virtual void OnJump()
 	{
 		if (this.jumpSound != null)
@@ -142,7 +142,7 @@ public class ItemShield : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BB6 RID: 2998 RVA: 0x00041194 File Offset: 0x0003F394
+	// Token: 0x06000BB6 RID: 2998 RVA: 0x00041170 File Offset: 0x0003F370
 	public virtual void OnLand()
 	{
 		if (this.landSound != null)

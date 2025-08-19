@@ -9,7 +9,7 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		TriggerPickup.quickPickupTime = Time.time;
 	}
 
-	// Token: 0x060006BB RID: 1723 RVA: 0x000326C0 File Offset: 0x000308C0
+	// Token: 0x060006BB RID: 1723 RVA: 0x0003269C File Offset: 0x0003089C
 	private void OnValidate()
 	{
 		if (this.rigidbody == null)
@@ -36,7 +36,7 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x060006BD RID: 1725 RVA: 0x00032744 File Offset: 0x00030944
+	// Token: 0x060006BD RID: 1725 RVA: 0x00032720 File Offset: 0x00030920
 	public void Initialize()
 	{
 		this.initialized = true;
@@ -51,7 +51,7 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x060006BE RID: 1726 RVA: 0x00032800 File Offset: 0x00030A00
+	// Token: 0x060006BE RID: 1726 RVA: 0x000327DC File Offset: 0x000309DC
 	private void FixedUpdate()
 	{
 		if (!this.isQuick && Time.time - TriggerPickup.quickPickupTime < 0.1f)
@@ -107,7 +107,7 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		this.resource.SetAmountSecret(this.resource.Amount + this.resourceValue);
 	}
 
-	// Token: 0x060006C1 RID: 1729 RVA: 0x000329A4 File Offset: 0x00030BA4
+	// Token: 0x060006C1 RID: 1729 RVA: 0x00032980 File Offset: 0x00030B80
 	private void StartPickUp()
 	{
 		if (this.waterPhysics != null)
@@ -123,7 +123,7 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x060006C2 RID: 1730 RVA: 0x00032A0C File Offset: 0x00030C0C
+	// Token: 0x060006C2 RID: 1730 RVA: 0x000329E8 File Offset: 0x00030BE8
 	private void GiveReward()
 	{
 		if (this.pickingUp && this.audioSourceVariance != null)

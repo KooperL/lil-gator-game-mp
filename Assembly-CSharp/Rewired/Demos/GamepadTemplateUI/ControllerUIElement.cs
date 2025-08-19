@@ -7,7 +7,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 	[RequireComponent(typeof(Image))]
 	public class ControllerUIElement : MonoBehaviour
 	{
-		// (get) Token: 0x06001E44 RID: 7748 RVA: 0x00017292 File Offset: 0x00015492
+		// (get) Token: 0x06001E44 RID: 7748 RVA: 0x0001729C File Offset: 0x0001549C
 		private bool hasEffects
 		{
 			get
@@ -16,7 +16,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001E45 RID: 7749 RVA: 0x000172B0 File Offset: 0x000154B0
+		// Token: 0x06001E45 RID: 7749 RVA: 0x000172BA File Offset: 0x000154BA
 		private void Awake()
 		{
 			this._image = base.GetComponent<Image>();
@@ -25,7 +25,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this.ClearLabels();
 		}
 
-		// Token: 0x06001E46 RID: 7750 RVA: 0x00076D84 File Offset: 0x00074F84
+		// Token: 0x06001E46 RID: 7750 RVA: 0x00076D60 File Offset: 0x00074F60
 		public void Activate(float amount)
 		{
 			amount = Mathf.Clamp(amount, -1f, 1f);
@@ -63,7 +63,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001E47 RID: 7751 RVA: 0x00076E78 File Offset: 0x00075078
+		// Token: 0x06001E47 RID: 7751 RVA: 0x00076E54 File Offset: 0x00075054
 		public void Deactivate()
 		{
 			if (!this._isActive)
@@ -94,19 +94,19 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001E48 RID: 7752 RVA: 0x00076F20 File Offset: 0x00075120
+		// Token: 0x06001E48 RID: 7752 RVA: 0x00076EFC File Offset: 0x000750FC
 		public void SetLabel(string text, AxisRange labelType)
 		{
 			Text text2;
 			switch (labelType)
 			{
-			case 0:
+			case AxisRange.Full:
 				text2 = this._label;
 				break;
-			case 1:
+			case AxisRange.Positive:
 				text2 = this._positiveLabel;
 				break;
-			case 2:
+			case AxisRange.Negative:
 				text2 = this._negativeLabel;
 				break;
 			default:
@@ -129,7 +129,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001E49 RID: 7753 RVA: 0x00076FAC File Offset: 0x000751AC
+		// Token: 0x06001E49 RID: 7753 RVA: 0x00076F88 File Offset: 0x00075188
 		public void ClearLabels()
 		{
 			if (this._label != null)
@@ -156,7 +156,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001E4A RID: 7754 RVA: 0x000172E1 File Offset: 0x000154E1
+		// Token: 0x06001E4A RID: 7754 RVA: 0x000172EB File Offset: 0x000154EB
 		private void RedrawImage()
 		{
 			this._image.color = this._color;

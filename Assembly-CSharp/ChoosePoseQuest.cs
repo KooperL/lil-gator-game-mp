@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class ChoosePoseQuest : MonoBehaviour
 {
-	// (get) Token: 0x06000E61 RID: 3681 RVA: 0x0000CBDE File Offset: 0x0000ADDE
-	// (set) Token: 0x06000E62 RID: 3682 RVA: 0x0000CBF1 File Offset: 0x0000ADF1
+	// (get) Token: 0x06000E61 RID: 3681 RVA: 0x0000CBE8 File Offset: 0x0000ADE8
+	// (set) Token: 0x06000E62 RID: 3682 RVA: 0x0000CBFB File Offset: 0x0000ADFB
 	private bool State
 	{
 		get
@@ -19,8 +19,8 @@ public class ChoosePoseQuest : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000E63 RID: 3683 RVA: 0x0000CC04 File Offset: 0x0000AE04
-	// (set) Token: 0x06000E64 RID: 3684 RVA: 0x0000CC17 File Offset: 0x0000AE17
+	// (get) Token: 0x06000E63 RID: 3683 RVA: 0x0000CC0E File Offset: 0x0000AE0E
+	// (set) Token: 0x06000E64 RID: 3684 RVA: 0x0000CC21 File Offset: 0x0000AE21
 	private int Pose
 	{
 		get
@@ -33,13 +33,13 @@ public class ChoosePoseQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E65 RID: 3685 RVA: 0x0000CC2A File Offset: 0x0000AE2A
+	// Token: 0x06000E65 RID: 3685 RVA: 0x0000CC34 File Offset: 0x0000AE34
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000E66 RID: 3686 RVA: 0x0004D2A8 File Offset: 0x0004B4A8
+	// Token: 0x06000E66 RID: 3686 RVA: 0x0004D284 File Offset: 0x0004B484
 	private void UpdateState()
 	{
 		bool state = this.State;
@@ -60,13 +60,13 @@ public class ChoosePoseQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E67 RID: 3687 RVA: 0x0000CC32 File Offset: 0x0000AE32
+	// Token: 0x06000E67 RID: 3687 RVA: 0x0000CC3C File Offset: 0x0000AE3C
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000E68 RID: 3688 RVA: 0x0000CC41 File Offset: 0x0000AE41
+	// Token: 0x06000E68 RID: 3688 RVA: 0x0000CC4B File Offset: 0x0000AE4B
 	private IEnumerator RunConversation()
 	{
 		DialogueManager.d.CancelBubble();

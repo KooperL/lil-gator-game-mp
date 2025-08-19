@@ -5,7 +5,7 @@ using UnityEngine;
 [AddComponentMenu("Wobble/Rotating Bone")]
 public class WobbleBoneRotate : WobbleBoneBase
 {
-	// Token: 0x06001030 RID: 4144 RVA: 0x00054088 File Offset: 0x00052288
+	// Token: 0x06001030 RID: 4144 RVA: 0x00054064 File Offset: 0x00052264
 	public override void Initialize()
 	{
 		this.parent = base.transform.parent;
@@ -46,7 +46,7 @@ public class WobbleBoneRotate : WobbleBoneBase
 		this.initialDirectionLocal = this.parent.rotation.Inverse() * this.initialDirection;
 	}
 
-	// Token: 0x06001031 RID: 4145 RVA: 0x000541E8 File Offset: 0x000523E8
+	// Token: 0x06001031 RID: 4145 RVA: 0x000541C4 File Offset: 0x000523C4
 	public override void RunWobbleUpdate()
 	{
 		this.oldRotation = this.visualRotation;
@@ -68,7 +68,7 @@ public class WobbleBoneRotate : WobbleBoneBase
 		this.visualRotation = this.rotation;
 	}
 
-	// Token: 0x06001032 RID: 4146 RVA: 0x000542F0 File Offset: 0x000524F0
+	// Token: 0x06001032 RID: 4146 RVA: 0x000542CC File Offset: 0x000524CC
 	private void LockAxis()
 	{
 		if (this.lockXAxis || this.lockYAxis || this.lockZAxis)
@@ -91,7 +91,7 @@ public class WobbleBoneRotate : WobbleBoneBase
 		}
 	}
 
-	// Token: 0x06001033 RID: 4147 RVA: 0x0000DEA8 File Offset: 0x0000C0A8
+	// Token: 0x06001033 RID: 4147 RVA: 0x0000DEB2 File Offset: 0x0000C0B2
 	public override void ApplyRotation()
 	{
 		this.interpolatedRotation = this.visualRotation;
@@ -99,7 +99,7 @@ public class WobbleBoneRotate : WobbleBoneBase
 		this.LockAxis();
 	}
 
-	// Token: 0x06001034 RID: 4148 RVA: 0x0000DECD File Offset: 0x0000C0CD
+	// Token: 0x06001034 RID: 4148 RVA: 0x0000DED7 File Offset: 0x0000C0D7
 	public override void ApplyRotation(float t)
 	{
 		this.interpolatedRotation = Quaternion.SlerpUnclamped(this.oldRotation, this.visualRotation, t);

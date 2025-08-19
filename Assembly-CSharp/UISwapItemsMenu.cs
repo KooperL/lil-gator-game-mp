@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 {
-	// Token: 0x06001385 RID: 4997 RVA: 0x0005F804 File Offset: 0x0005DA04
+	// Token: 0x06001385 RID: 4997 RVA: 0x0005F7E0 File Offset: 0x0005D9E0
 	public void Activate()
 	{
 		if (this.rePlayer == null)
@@ -24,12 +24,12 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 			global::Player.itemManager.menuCamera.SetActive(true);
 		}
 		this.resource.ForceShow = true;
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnEquipLeft), 0, 3, this.equipLeftAction);
-		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnEquipRight), 0, 3, this.equipRightAction);
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnEquipLeft), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, this.equipLeftAction);
+		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnEquipRight), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, this.equipRightAction);
 		this.UpdateInventories();
 	}
 
-	// Token: 0x06001386 RID: 4998 RVA: 0x0005F8C4 File Offset: 0x0005DAC4
+	// Token: 0x06001386 RID: 4998 RVA: 0x0005F8A0 File Offset: 0x0005DAA0
 	public void Deactivate()
 	{
 		if (this == null || !Application.isPlaying)
@@ -47,25 +47,25 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnEquipRight));
 	}
 
-	// Token: 0x06001387 RID: 4999 RVA: 0x00010825 File Offset: 0x0000EA25
+	// Token: 0x06001387 RID: 4999 RVA: 0x0001082F File Offset: 0x0000EA2F
 	private void Update()
 	{
 		this.ForceCorrectSelection();
 	}
 
-	// Token: 0x06001388 RID: 5000 RVA: 0x0001082D File Offset: 0x0000EA2D
+	// Token: 0x06001388 RID: 5000 RVA: 0x00010837 File Offset: 0x0000EA37
 	private void ForceCorrectSelection()
 	{
 		this.eventSystem.currentSelectedGameObject == null;
 	}
 
-	// Token: 0x06001389 RID: 5001 RVA: 0x00010841 File Offset: 0x0000EA41
+	// Token: 0x06001389 RID: 5001 RVA: 0x0001084B File Offset: 0x0000EA4B
 	public void OnCancel(BaseEventData eventData)
 	{
 		throw new NotImplementedException();
 	}
 
-	// Token: 0x0600138A RID: 5002 RVA: 0x0005F950 File Offset: 0x0005DB50
+	// Token: 0x0600138A RID: 5002 RVA: 0x0005F92C File Offset: 0x0005DB2C
 	private void UpdateInventories()
 	{
 		List<ItemObject> list = new List<ItemObject>();
@@ -180,7 +180,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		}
 	}
 
-	// Token: 0x0600138B RID: 5003 RVA: 0x0005FC60 File Offset: 0x0005DE60
+	// Token: 0x0600138B RID: 5003 RVA: 0x0005FC3C File Offset: 0x0005DE3C
 	public void SelectItem(ItemObject item)
 	{
 		this.selectedItem = item;
@@ -212,7 +212,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		this.ShowItem();
 	}
 
-	// Token: 0x0600138C RID: 5004 RVA: 0x00010848 File Offset: 0x0000EA48
+	// Token: 0x0600138C RID: 5004 RVA: 0x00010852 File Offset: 0x0000EA52
 	public void SubmitItem(ItemObject item)
 	{
 		if (item == this.placeholderItem)
@@ -228,7 +228,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		this.EquipItem();
 	}
 
-	// Token: 0x0600138D RID: 5005 RVA: 0x00010875 File Offset: 0x0000EA75
+	// Token: 0x0600138D RID: 5005 RVA: 0x0001087F File Offset: 0x0000EA7F
 	public void HighlightItem(ItemObject item)
 	{
 		if (item == this.selectedItem)
@@ -239,7 +239,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		this.SetButtonPromptState(UISwapItemsMenu.ButtonPromptState.Select);
 	}
 
-	// Token: 0x0600138E RID: 5006 RVA: 0x0005FDB0 File Offset: 0x0005DFB0
+	// Token: 0x0600138E RID: 5006 RVA: 0x0005FD8C File Offset: 0x0005DF8C
 	public void PurchaseItem()
 	{
 		if (this.resource.Amount >= this.selectedItem.shopCost)
@@ -252,7 +252,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		}
 	}
 
-	// Token: 0x0600138F RID: 5007 RVA: 0x0005FE18 File Offset: 0x0005E018
+	// Token: 0x0600138F RID: 5007 RVA: 0x0005FDF4 File Offset: 0x0005DFF4
 	public void EquipItem()
 	{
 		if (this.selectedItem.itemType == ItemManager.ItemType.Item)
@@ -294,19 +294,19 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		}
 	}
 
-	// Token: 0x06001390 RID: 5008 RVA: 0x00010894 File Offset: 0x0000EA94
+	// Token: 0x06001390 RID: 5008 RVA: 0x0001089E File Offset: 0x0000EA9E
 	private void OnEquipLeft(InputActionEventData obj)
 	{
 		this.EquipIntoSlot(0);
 	}
 
-	// Token: 0x06001391 RID: 5009 RVA: 0x0001089D File Offset: 0x0000EA9D
+	// Token: 0x06001391 RID: 5009 RVA: 0x000108A7 File Offset: 0x0000EAA7
 	private void OnEquipRight(InputActionEventData obj)
 	{
 		this.EquipIntoSlot(1);
 	}
 
-	// Token: 0x06001392 RID: 5010 RVA: 0x0005FF18 File Offset: 0x0005E118
+	// Token: 0x06001392 RID: 5010 RVA: 0x0005FEF4 File Offset: 0x0005E0F4
 	public void EquipIntoSlot(int slot)
 	{
 		if (!this.isEquipWindowActive)
@@ -335,7 +335,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		this.RefreshSelectedBar();
 	}
 
-	// Token: 0x06001393 RID: 5011 RVA: 0x0005FFA0 File Offset: 0x0005E1A0
+	// Token: 0x06001393 RID: 5011 RVA: 0x0005FF7C File Offset: 0x0005E17C
 	private void SetEquipWindow(bool isActive)
 	{
 		if (this.isEquipWindowActive == isActive)
@@ -365,7 +365,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		}
 	}
 
-	// Token: 0x06001394 RID: 5012 RVA: 0x000108A6 File Offset: 0x0000EAA6
+	// Token: 0x06001394 RID: 5012 RVA: 0x000108B0 File Offset: 0x0000EAB0
 	public bool TryCancel()
 	{
 		if (this.isEquipWindowActive)
@@ -376,13 +376,13 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		return true;
 	}
 
-	// Token: 0x06001395 RID: 5013 RVA: 0x000108BA File Offset: 0x0000EABA
+	// Token: 0x06001395 RID: 5013 RVA: 0x000108C4 File Offset: 0x0000EAC4
 	public void ShowItem()
 	{
 		this.SetShowItemState(this.selectedItem.itemType);
 	}
 
-	// Token: 0x06001396 RID: 5014 RVA: 0x00060048 File Offset: 0x0005E248
+	// Token: 0x06001396 RID: 5014 RVA: 0x00060024 File Offset: 0x0005E224
 	private void SetShowItemState(ItemManager.ItemType itemType)
 	{
 		if (global::Player.animator == null)
@@ -427,7 +427,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		}
 	}
 
-	// Token: 0x06001397 RID: 5015 RVA: 0x000600E4 File Offset: 0x0005E2E4
+	// Token: 0x06001397 RID: 5015 RVA: 0x000600C0 File Offset: 0x0005E2C0
 	private void RefreshSelectedBar()
 	{
 		switch (this.selectedItem.itemType)
@@ -480,7 +480,7 @@ public class UISwapItemsMenu : MonoBehaviour, ICheckCancel
 		}
 	}
 
-	// Token: 0x06001398 RID: 5016 RVA: 0x000108CD File Offset: 0x0000EACD
+	// Token: 0x06001398 RID: 5016 RVA: 0x000108D7 File Offset: 0x0000EAD7
 	private void SetButtonPromptState(UISwapItemsMenu.ButtonPromptState state)
 	{
 		this.buttonPromptSelect.SetActive(state == UISwapItemsMenu.ButtonPromptState.Select);

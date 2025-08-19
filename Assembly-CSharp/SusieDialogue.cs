@@ -15,7 +15,7 @@ public class SusieDialogue : MonoBehaviour, Interaction
 		this.speedInterface = base.transform.parent.GetComponent<SpeedInterface>();
 	}
 
-	// Token: 0x0600085F RID: 2143 RVA: 0x00037BAC File Offset: 0x00035DAC
+	// Token: 0x0600085F RID: 2143 RVA: 0x00037B88 File Offset: 0x00035D88
 	public void Interact()
 	{
 		if (this.isSpeedTriggered)
@@ -42,7 +42,7 @@ public class SusieDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000860 RID: 2144 RVA: 0x00037CB0 File Offset: 0x00035EB0
+	// Token: 0x06000860 RID: 2144 RVA: 0x00037C8C File Offset: 0x00035E8C
 	private void FixedUpdate()
 	{
 		float speed = this.speedInterface.GetSpeed();

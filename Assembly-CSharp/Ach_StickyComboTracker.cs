@@ -28,7 +28,7 @@ public class Ach_StickyComboTracker : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001FE RID: 510 RVA: 0x0001E4E4 File Offset: 0x0001C6E4
+	// Token: 0x060001FE RID: 510 RVA: 0x0001E4C0 File Offset: 0x0001C6C0
 	private void FixedUpdate()
 	{
 		if ((Player.movement.IsGrounded && Player.movement.stepsSinceLastClimbing > 10) || Player.movement.IsSwimming || (Player.movement.HasGroundContact && Player.movement.isSledding))

@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class WaitForFlip : MonoBehaviour
 {
-	// Token: 0x0600092F RID: 2351 RVA: 0x0003A120 File Offset: 0x00038320
+	// Token: 0x0600092F RID: 2351 RVA: 0x0003A0FC File Offset: 0x000382FC
 	public void OnTriggerStay(Collider other)
 	{
 		base.enabled = true;
@@ -19,7 +19,7 @@ public class WaitForFlip : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000930 RID: 2352 RVA: 0x00008E29 File Offset: 0x00007029
+	// Token: 0x06000930 RID: 2352 RVA: 0x00008E33 File Offset: 0x00007033
 	private void Update()
 	{
 		if (Time.time - this.lastTriggerTime > 0.25f)

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Timeout : MonoBehaviour
 {
-	// Token: 0x06000FE0 RID: 4064 RVA: 0x0000DB1B File Offset: 0x0000BD1B
+	// Token: 0x06000FE0 RID: 4064 RVA: 0x0000DB25 File Offset: 0x0000BD25
 	private void Start()
 	{
 		base.Invoke("Destroy", this.delay);

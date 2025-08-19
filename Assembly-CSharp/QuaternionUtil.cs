@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class QuaternionUtil
 {
-	// Token: 0x06000A41 RID: 2625 RVA: 0x0003C7DC File Offset: 0x0003A9DC
+	// Token: 0x06000A41 RID: 2625 RVA: 0x0003C7B8 File Offset: 0x0003A9B8
 	public static Quaternion SmoothDamp(Quaternion rot, Quaternion target, ref Quaternion deriv, float time)
 	{
 		if (Time.deltaTime < Mathf.Epsilon)

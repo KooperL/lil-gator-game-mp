@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class CameraLayerCullDistances : MonoBehaviour
 {
-	// Token: 0x060002A4 RID: 676 RVA: 0x00020E00 File Offset: 0x0001F000
+	// Token: 0x060002A4 RID: 676 RVA: 0x00020DDC File Offset: 0x0001EFDC
 	private void OnValidate()
 	{
 		if (this.shadowCaster == null)
@@ -45,7 +45,7 @@ public class CameraLayerCullDistances : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060002A6 RID: 678 RVA: 0x00020EAC File Offset: 0x0001F0AC
+	// Token: 0x060002A6 RID: 678 RVA: 0x00020E88 File Offset: 0x0001F088
 	public void SetFogDistance(float fogDistance, float shadowDistance, float offset = 0f)
 	{
 		this.fogDistance = fogDistance;

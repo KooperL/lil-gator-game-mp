@@ -14,7 +14,7 @@ public class CreditsOverlay : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x06000332 RID: 818 RVA: 0x000254F0 File Offset: 0x000236F0
+	// Token: 0x06000332 RID: 818 RVA: 0x000254CC File Offset: 0x000236CC
 	private void Update()
 	{
 		if (this.nextChunkTime < 0f)

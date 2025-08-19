@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class Bounce : MonoBehaviour
 {
-	// Token: 0x0600026E RID: 622 RVA: 0x00020160 File Offset: 0x0001E360
+	// Token: 0x0600026E RID: 622 RVA: 0x0002013C File Offset: 0x0001E33C
 	public void OnTriggerStay(Collider other)
 	{
 		if (Time.time - this.lastBounce < this.cooldown)

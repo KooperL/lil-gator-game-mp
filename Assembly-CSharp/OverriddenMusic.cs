@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class OverriddenMusic : MonoBehaviour
 {
-	// Token: 0x060000B8 RID: 184 RVA: 0x0001A230 File Offset: 0x00018430
+	// Token: 0x060000B8 RID: 184 RVA: 0x0001A20C File Offset: 0x0001840C
 	private void OnEnable()
 	{
 		OverriddenMusic.isOverridden = true;
@@ -40,7 +40,7 @@ public class OverriddenMusic : MonoBehaviour
 		this.isStopped = true;
 	}
 
-	// Token: 0x060000BC RID: 188 RVA: 0x0001A284 File Offset: 0x00018484
+	// Token: 0x060000BC RID: 188 RVA: 0x0001A260 File Offset: 0x00018460
 	private void Update()
 	{
 		if (this.isUnloading || this.isStopped)

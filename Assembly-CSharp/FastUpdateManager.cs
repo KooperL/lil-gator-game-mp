@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FastUpdateManager : MonoBehaviour
 {
-	// Token: 0x060006FC RID: 1788 RVA: 0x00033238 File Offset: 0x00031438
+	// Token: 0x060006FC RID: 1788 RVA: 0x00033214 File Offset: 0x00031414
 	private void FixedUpdate()
 	{
 		this.isFixedUpdate = true;
@@ -48,7 +48,7 @@ public class FastUpdateManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006FD RID: 1789 RVA: 0x00033348 File Offset: 0x00031548
+	// Token: 0x060006FD RID: 1789 RVA: 0x00033324 File Offset: 0x00031524
 	private void Update()
 	{
 		this.index++;

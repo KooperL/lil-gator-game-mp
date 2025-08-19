@@ -19,7 +19,7 @@ public class HitTrigger : MonoBehaviour
 		this.HitCollider(other);
 	}
 
-	// Token: 0x060007D6 RID: 2006 RVA: 0x000362C8 File Offset: 0x000344C8
+	// Token: 0x060007D6 RID: 2006 RVA: 0x000362A4 File Offset: 0x000344A4
 	private void HitCollider(Collider other)
 	{
 		if (this.onHit != null)

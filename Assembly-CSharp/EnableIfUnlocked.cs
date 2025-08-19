@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnableIfUnlocked : MonoBehaviour
 {
-	// Token: 0x060009BC RID: 2492 RVA: 0x0003B758 File Offset: 0x00039958
+	// Token: 0x060009BC RID: 2492 RVA: 0x0003B734 File Offset: 0x00039934
 	private void OnValidate()
 	{
 		if (this.profile == null)
@@ -16,7 +16,7 @@ public class EnableIfUnlocked : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009BD RID: 2493 RVA: 0x0000963A File Offset: 0x0000783A
+	// Token: 0x060009BD RID: 2493 RVA: 0x00009644 File Offset: 0x00007844
 	private void Start()
 	{
 		if (!this.profile.IsUnlocked)
@@ -27,7 +27,7 @@ public class EnableIfUnlocked : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009BE RID: 2494 RVA: 0x00009673 File Offset: 0x00007873
+	// Token: 0x060009BE RID: 2494 RVA: 0x0000967D File Offset: 0x0000787D
 	private void OnDestroy()
 	{
 		if (this.hasEvent)
@@ -36,7 +36,7 @@ public class EnableIfUnlocked : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009BF RID: 2495 RVA: 0x00009694 File Offset: 0x00007894
+	// Token: 0x060009BF RID: 2495 RVA: 0x0000969E File Offset: 0x0000789E
 	public void OnChange(object sender, bool isUnlocked)
 	{
 		base.gameObject.SetActive(isUnlocked);

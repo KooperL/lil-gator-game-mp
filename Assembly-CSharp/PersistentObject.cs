@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class PersistentObject : MonoBehaviour
 {
-	// (get) Token: 0x06000A5B RID: 2651 RVA: 0x00009E78 File Offset: 0x00008078
+	// (get) Token: 0x06000A5B RID: 2651 RVA: 0x00009E82 File Offset: 0x00008082
 	public bool PersistentState
 	{
 		get
@@ -18,7 +18,7 @@ public class PersistentObject : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06000A5D RID: 2653 RVA: 0x00009E8A File Offset: 0x0000808A
+	// Token: 0x06000A5D RID: 2653 RVA: 0x00009E94 File Offset: 0x00008094
 	public virtual void Load(bool state)
 	{
 		if (!this.isPersistent)
@@ -29,7 +29,7 @@ public class PersistentObject : MonoBehaviour
 		base.gameObject.SetActive(!state);
 	}
 
-	// Token: 0x06000A5E RID: 2654 RVA: 0x0003CF78 File Offset: 0x0003B178
+	// Token: 0x06000A5E RID: 2654 RVA: 0x0003CF54 File Offset: 0x0003B154
 	public virtual void SaveTrue()
 	{
 		if (!this.isPersistent)
@@ -46,7 +46,7 @@ public class PersistentObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A5F RID: 2655 RVA: 0x0003CFC8 File Offset: 0x0003B1C8
+	// Token: 0x06000A5F RID: 2655 RVA: 0x0003CFA4 File Offset: 0x0003B1A4
 	[ContextMenu("Find persistent objects")]
 	public void FindPersistentObjects()
 	{

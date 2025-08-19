@@ -2,7 +2,7 @@
 
 public class LogicStateSubmerge : LogicState
 {
-	// Token: 0x06000928 RID: 2344 RVA: 0x00008DEC File Offset: 0x00006FEC
+	// Token: 0x06000928 RID: 2344 RVA: 0x00008DF6 File Offset: 0x00006FF6
 	private void FixedUpdate()
 	{
 		if (Player.movement.IsSwimming)

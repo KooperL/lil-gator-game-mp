@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class PhysUtil
 {
-	// Token: 0x06000A65 RID: 2661 RVA: 0x0003B118 File Offset: 0x00039318
+	// Token: 0x06000A65 RID: 2661 RVA: 0x0003B0F4 File Offset: 0x000392F4
 	private static float SolveTimeQuadratic(float a, float b, float c)
 	{
 		if (b * b - 4f * a * c < 0f)
@@ -23,13 +23,13 @@ public static class PhysUtil
 		return 0f;
 	}
 
-	// Token: 0x06000A66 RID: 2662 RVA: 0x00009ECA File Offset: 0x000080CA
+	// Token: 0x06000A66 RID: 2662 RVA: 0x00009ED4 File Offset: 0x000080D4
 	public static float SolveTimeUntilLanding(float velocity, float deltaY)
 	{
 		return PhysUtil.SolveTimeQuadratic(0.5f * Physics.gravity.y, velocity, deltaY);
 	}
 
-	// Token: 0x06000A67 RID: 2663 RVA: 0x0003D050 File Offset: 0x0003B250
+	// Token: 0x06000A67 RID: 2663 RVA: 0x0003D02C File Offset: 0x0003B22C
 	public static float SolveProjectileAngle(Vector2 delta, float speed, float gravityFactor = 1f)
 	{
 		float num = -1f * gravityFactor * Physics.gravity.y;
@@ -47,7 +47,7 @@ public static class PhysUtil
 		return num4;
 	}
 
-	// Token: 0x06000A68 RID: 2664 RVA: 0x0003D0F0 File Offset: 0x0003B2F0
+	// Token: 0x06000A68 RID: 2664 RVA: 0x0003D0CC File Offset: 0x0003B2CC
 	public static bool SolveProjectileVelocity(Vector3 delta, float speed, out Vector3 velocity, float gravityFactor = 1f)
 	{
 		velocity = Vector3.zero;

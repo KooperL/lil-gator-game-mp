@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Surface : MonoBehaviour, ISurface
 {
-	// Token: 0x06000FC6 RID: 4038 RVA: 0x0000DA02 File Offset: 0x0000BC02
+	// Token: 0x06000FC6 RID: 4038 RVA: 0x0000DA0C File Offset: 0x0000BC0C
 	public SurfaceMaterial GetSurfaceMaterial(Vector3 position)
 	{
 		return this.GetSurfaceMaterial(position, Vector3.up);
 	}
 
-	// Token: 0x06000FC7 RID: 4039 RVA: 0x0000DA10 File Offset: 0x0000BC10
+	// Token: 0x06000FC7 RID: 4039 RVA: 0x0000DA1A File Offset: 0x0000BC1A
 	public SurfaceMaterial GetSurfaceMaterial(Vector3 position, Vector3 normal)
 	{
 		return this.surfaceMaterial;

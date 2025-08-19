@@ -9,7 +9,7 @@ public class Follow : MonoBehaviour
 		this.lockedPosition = base.transform.position;
 	}
 
-	// Token: 0x06000728 RID: 1832 RVA: 0x00033CD8 File Offset: 0x00031ED8
+	// Token: 0x06000728 RID: 1832 RVA: 0x00033CB4 File Offset: 0x00031EB4
 	private void LateUpdate()
 	{
 		Vector3 vector = base.transform.position;

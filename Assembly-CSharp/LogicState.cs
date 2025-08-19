@@ -10,19 +10,19 @@ public class LogicState : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06000905 RID: 2309 RVA: 0x00008BAC File Offset: 0x00006DAC
+	// Token: 0x06000905 RID: 2309 RVA: 0x00008BB6 File Offset: 0x00006DB6
 	private void Awake()
 	{
 		this.stateMachine.onStateChange.AddListener(new UnityAction<int>(this.UpdateState));
 	}
 
-	// Token: 0x06000906 RID: 2310 RVA: 0x00008BCA File Offset: 0x00006DCA
+	// Token: 0x06000906 RID: 2310 RVA: 0x00008BD4 File Offset: 0x00006DD4
 	public virtual void Start()
 	{
 		this.UpdateState(this.stateMachine.StateID);
 	}
 
-	// Token: 0x06000907 RID: 2311 RVA: 0x00039CD8 File Offset: 0x00037ED8
+	// Token: 0x06000907 RID: 2311 RVA: 0x00039CB4 File Offset: 0x00037EB4
 	public void UpdateState(int newState)
 	{
 		base.enabled = newState == this.stateIndex;
@@ -36,7 +36,7 @@ public class LogicState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000908 RID: 2312 RVA: 0x00008BDD File Offset: 0x00006DDD
+	// Token: 0x06000908 RID: 2312 RVA: 0x00008BE7 File Offset: 0x00006DE7
 	public virtual void LogicCompleted()
 	{
 		if (!base.enabled)

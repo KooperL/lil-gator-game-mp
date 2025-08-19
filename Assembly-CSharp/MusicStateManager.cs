@@ -35,7 +35,7 @@ public class MusicStateManager : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEvery4.Remove(this);
 	}
 
-	// Token: 0x06000076 RID: 118 RVA: 0x000188D0 File Offset: 0x00016AD0
+	// Token: 0x06000076 RID: 118 RVA: 0x000188AC File Offset: 0x00016AAC
 	public void ManagedUpdate()
 	{
 		float time = Time.time;
@@ -117,7 +117,7 @@ public class MusicStateManager : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000077 RID: 119 RVA: 0x00018B30 File Offset: 0x00016D30
+	// Token: 0x06000077 RID: 119 RVA: 0x00018B0C File Offset: 0x00016D0C
 	private void UpdateState(int newActiveStateIndex)
 	{
 		this.stateIndex = newActiveStateIndex;
@@ -128,7 +128,7 @@ public class MusicStateManager : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000078 RID: 120 RVA: 0x00018B9C File Offset: 0x00016D9C
+	// Token: 0x06000078 RID: 120 RVA: 0x00018B78 File Offset: 0x00016D78
 	private void UpdateSong(int songIndex)
 	{
 		for (int i = 0; i < MusicSystem.current.Count; i++)
@@ -144,7 +144,7 @@ public class MusicStateManager : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000079 RID: 121 RVA: 0x00018BF0 File Offset: 0x00016DF0
+	// Token: 0x06000079 RID: 121 RVA: 0x00018BCC File Offset: 0x00016DCC
 	public void MarkState(string stateName)
 	{
 		for (int i = 0; i < this.states.Length; i++)
@@ -157,7 +157,7 @@ public class MusicStateManager : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x0600007A RID: 122 RVA: 0x00018C40 File Offset: 0x00016E40
+	// Token: 0x0600007A RID: 122 RVA: 0x00018C1C File Offset: 0x00016E1C
 	public void LockState(string stateName)
 	{
 		for (int i = 0; i < this.states.Length; i++)
@@ -170,7 +170,7 @@ public class MusicStateManager : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x0600007B RID: 123 RVA: 0x00018C8C File Offset: 0x00016E8C
+	// Token: 0x0600007B RID: 123 RVA: 0x00018C68 File Offset: 0x00016E68
 	public void ClearState(string stateName)
 	{
 		for (int i = 0; i < this.states.Length; i++)

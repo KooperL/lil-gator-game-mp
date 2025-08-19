@@ -24,7 +24,7 @@ public class HitSwing : MonoBehaviour, SpeedInterface, IHit
 		this.rotation = 2f * (global::UnityEngine.Random.value - 0.5f);
 	}
 
-	// Token: 0x0600082B RID: 2091 RVA: 0x00037260 File Offset: 0x00035460
+	// Token: 0x0600082B RID: 2091 RVA: 0x0003723C File Offset: 0x0003543C
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		if (this.rigidbody == null)
@@ -43,7 +43,7 @@ public class HitSwing : MonoBehaviour, SpeedInterface, IHit
 		}
 	}
 
-	// Token: 0x0600082C RID: 2092 RVA: 0x000372DC File Offset: 0x000354DC
+	// Token: 0x0600082C RID: 2092 RVA: 0x000372B8 File Offset: 0x000354B8
 	public void AddForce(Vector3 force)
 	{
 		if (this.rigidbody == null)
@@ -54,7 +54,7 @@ public class HitSwing : MonoBehaviour, SpeedInterface, IHit
 		this.speed -= Time.deltaTime * Vector3.Dot(this.rigidbody.rotation * Vector3.forward, force);
 	}
 
-	// Token: 0x0600082D RID: 2093 RVA: 0x00037348 File Offset: 0x00035548
+	// Token: 0x0600082D RID: 2093 RVA: 0x00037324 File Offset: 0x00035524
 	private void FixedUpdate()
 	{
 		float num = this.variance * (this.hasActor ? 0.1f : 0f);

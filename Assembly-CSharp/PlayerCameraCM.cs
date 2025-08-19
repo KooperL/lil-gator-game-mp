@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerCameraCM : MonoBehaviour
 {
-	// Token: 0x06000C20 RID: 3104 RVA: 0x0000B513 File Offset: 0x00009713
+	// Token: 0x06000C20 RID: 3104 RVA: 0x0000B51D File Offset: 0x0000971D
 	public void Awake()
 	{
 		this.cm = base.GetComponent<CinemachineFreeLook>();
 	}
 
-	// Token: 0x06000C21 RID: 3105 RVA: 0x00042708 File Offset: 0x00040908
+	// Token: 0x06000C21 RID: 3105 RVA: 0x000426E4 File Offset: 0x000408E4
 	private void Start()
 	{
 		this.rigidbody = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
@@ -21,7 +21,7 @@ public class PlayerCameraCM : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C22 RID: 3106 RVA: 0x00042788 File Offset: 0x00040988
+	// Token: 0x06000C22 RID: 3106 RVA: 0x00042764 File Offset: 0x00040964
 	private void LateUpdate()
 	{
 		this.yAxis = this.cm.m_YAxis.Value;
@@ -69,13 +69,13 @@ public class PlayerCameraCM : MonoBehaviour
 		this.cm.m_YAxis.Value = this.yAxis;
 	}
 
-	// Token: 0x06000C23 RID: 3107 RVA: 0x0000B521 File Offset: 0x00009721
+	// Token: 0x06000C23 RID: 3107 RVA: 0x0000B52B File Offset: 0x0000972B
 	private float AngleToYAxis(float angle)
 	{
 		return angle;
 	}
 
-	// Token: 0x06000C24 RID: 3108 RVA: 0x000429F8 File Offset: 0x00040BF8
+	// Token: 0x06000C24 RID: 3108 RVA: 0x000429D4 File Offset: 0x00040BD4
 	private Vector3 YAxisToPosition(float yAxis)
 	{
 		yAxis = Mathf.Clamp01(yAxis);

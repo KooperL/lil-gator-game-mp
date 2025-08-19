@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SwapShieldMaterial : MonoBehaviour
 {
-	// Token: 0x06000BE7 RID: 3047 RVA: 0x0000B1B5 File Offset: 0x000093B5
+	// Token: 0x06000BE7 RID: 3047 RVA: 0x0000B1BF File Offset: 0x000093BF
 	private void Start()
 	{
 		this.shieldCollider = Player.movement.sledCollider;
@@ -11,7 +11,7 @@ public class SwapShieldMaterial : MonoBehaviour
 		this.shieldCollider.sharedMaterial = this.material;
 	}
 
-	// Token: 0x06000BE8 RID: 3048 RVA: 0x0000B1E9 File Offset: 0x000093E9
+	// Token: 0x06000BE8 RID: 3048 RVA: 0x0000B1F3 File Offset: 0x000093F3
 	private void OnDestroy()
 	{
 		if (this.shieldCollider != null)

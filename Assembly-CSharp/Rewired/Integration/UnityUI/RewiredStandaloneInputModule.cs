@@ -12,8 +12,8 @@ namespace Rewired.Integration.UnityUI
 	[AddComponentMenu("Rewired/Rewired Standalone Input Module")]
 	public sealed class RewiredStandaloneInputModule : RewiredPointerInputModule
 	{
-		// (get) Token: 0x060017A4 RID: 6052 RVA: 0x0001229D File Offset: 0x0001049D
-		// (set) Token: 0x060017A5 RID: 6053 RVA: 0x000122A5 File Offset: 0x000104A5
+		// (get) Token: 0x060017A4 RID: 6052 RVA: 0x000122A7 File Offset: 0x000104A7
+		// (set) Token: 0x060017A5 RID: 6053 RVA: 0x000122AF File Offset: 0x000104AF
 		public InputManager_Base RewiredInputManager
 		{
 			get
@@ -26,8 +26,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017A6 RID: 6054 RVA: 0x000122AE File Offset: 0x000104AE
-		// (set) Token: 0x060017A7 RID: 6055 RVA: 0x000122B6 File Offset: 0x000104B6
+		// (get) Token: 0x060017A6 RID: 6054 RVA: 0x000122B8 File Offset: 0x000104B8
+		// (set) Token: 0x060017A7 RID: 6055 RVA: 0x000122C0 File Offset: 0x000104C0
 		public bool UseAllRewiredGamePlayers
 		{
 			get
@@ -45,8 +45,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017A8 RID: 6056 RVA: 0x000122D3 File Offset: 0x000104D3
-		// (set) Token: 0x060017A9 RID: 6057 RVA: 0x000122DB File Offset: 0x000104DB
+		// (get) Token: 0x060017A8 RID: 6056 RVA: 0x000122DD File Offset: 0x000104DD
+		// (set) Token: 0x060017A9 RID: 6057 RVA: 0x000122E5 File Offset: 0x000104E5
 		public bool UseRewiredSystemPlayer
 		{
 			get
@@ -64,8 +64,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017AA RID: 6058 RVA: 0x000122F8 File Offset: 0x000104F8
-		// (set) Token: 0x060017AB RID: 6059 RVA: 0x0001230A File Offset: 0x0001050A
+		// (get) Token: 0x060017AA RID: 6058 RVA: 0x00012302 File Offset: 0x00010502
+		// (set) Token: 0x060017AB RID: 6059 RVA: 0x00012314 File Offset: 0x00010514
 		public int[] RewiredPlayerIds
 		{
 			get
@@ -79,8 +79,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017AC RID: 6060 RVA: 0x0001232E File Offset: 0x0001052E
-		// (set) Token: 0x060017AD RID: 6061 RVA: 0x00012336 File Offset: 0x00010536
+		// (get) Token: 0x060017AC RID: 6060 RVA: 0x00012338 File Offset: 0x00010538
+		// (set) Token: 0x060017AD RID: 6061 RVA: 0x00012340 File Offset: 0x00010540
 		public bool UsePlayingPlayersOnly
 		{
 			get
@@ -93,8 +93,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017AE RID: 6062 RVA: 0x0001233F File Offset: 0x0001053F
-		// (set) Token: 0x060017AF RID: 6063 RVA: 0x0001234C File Offset: 0x0001054C
+		// (get) Token: 0x060017AE RID: 6062 RVA: 0x00012349 File Offset: 0x00010549
+		// (set) Token: 0x060017AF RID: 6063 RVA: 0x00012356 File Offset: 0x00010556
 		public List<PlayerMouse> PlayerMice
 		{
 			get
@@ -114,8 +114,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017B0 RID: 6064 RVA: 0x00012375 File Offset: 0x00010575
-		// (set) Token: 0x060017B1 RID: 6065 RVA: 0x0001237D File Offset: 0x0001057D
+		// (get) Token: 0x060017B0 RID: 6064 RVA: 0x0001237F File Offset: 0x0001057F
+		// (set) Token: 0x060017B1 RID: 6065 RVA: 0x00012387 File Offset: 0x00010587
 		public bool MoveOneElementPerAxisPress
 		{
 			get
@@ -128,8 +128,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017B2 RID: 6066 RVA: 0x00012386 File Offset: 0x00010586
-		// (set) Token: 0x060017B3 RID: 6067 RVA: 0x0001238E File Offset: 0x0001058E
+		// (get) Token: 0x060017B2 RID: 6066 RVA: 0x00012390 File Offset: 0x00010590
+		// (set) Token: 0x060017B3 RID: 6067 RVA: 0x00012398 File Offset: 0x00010598
 		public bool allowMouseInput
 		{
 			get
@@ -142,8 +142,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017B4 RID: 6068 RVA: 0x00012397 File Offset: 0x00010597
-		// (set) Token: 0x060017B5 RID: 6069 RVA: 0x0001239F File Offset: 0x0001059F
+		// (get) Token: 0x060017B4 RID: 6068 RVA: 0x000123A1 File Offset: 0x000105A1
+		// (set) Token: 0x060017B5 RID: 6069 RVA: 0x000123A9 File Offset: 0x000105A9
 		public bool allowMouseInputIfTouchSupported
 		{
 			get
@@ -156,8 +156,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017B6 RID: 6070 RVA: 0x000123A8 File Offset: 0x000105A8
-		// (set) Token: 0x060017B7 RID: 6071 RVA: 0x000123B0 File Offset: 0x000105B0
+		// (get) Token: 0x060017B6 RID: 6070 RVA: 0x000123B2 File Offset: 0x000105B2
+		// (set) Token: 0x060017B7 RID: 6071 RVA: 0x000123BA File Offset: 0x000105BA
 		public bool allowTouchInput
 		{
 			get
@@ -170,8 +170,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017B8 RID: 6072 RVA: 0x000123B9 File Offset: 0x000105B9
-		// (set) Token: 0x060017B9 RID: 6073 RVA: 0x000123C1 File Offset: 0x000105C1
+		// (get) Token: 0x060017B8 RID: 6072 RVA: 0x000123C3 File Offset: 0x000105C3
+		// (set) Token: 0x060017B9 RID: 6073 RVA: 0x000123CB File Offset: 0x000105CB
 		public bool deselectIfBackgroundClicked
 		{
 			get
@@ -184,8 +184,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017BA RID: 6074 RVA: 0x000123CA File Offset: 0x000105CA
-		// (set) Token: 0x060017BB RID: 6075 RVA: 0x000123D2 File Offset: 0x000105D2
+		// (get) Token: 0x060017BA RID: 6074 RVA: 0x000123D4 File Offset: 0x000105D4
+		// (set) Token: 0x060017BB RID: 6075 RVA: 0x000123DC File Offset: 0x000105DC
 		private bool deselectBeforeSelecting
 		{
 			get
@@ -198,8 +198,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017BC RID: 6076 RVA: 0x000123DB File Offset: 0x000105DB
-		// (set) Token: 0x060017BD RID: 6077 RVA: 0x000123E3 File Offset: 0x000105E3
+		// (get) Token: 0x060017BC RID: 6076 RVA: 0x000123E5 File Offset: 0x000105E5
+		// (set) Token: 0x060017BD RID: 6077 RVA: 0x000123ED File Offset: 0x000105ED
 		public bool SetActionsById
 		{
 			get
@@ -217,8 +217,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017BE RID: 6078 RVA: 0x000123FC File Offset: 0x000105FC
-		// (set) Token: 0x060017BF RID: 6079 RVA: 0x00064D14 File Offset: 0x00062F14
+		// (get) Token: 0x060017BE RID: 6078 RVA: 0x00012406 File Offset: 0x00010606
+		// (set) Token: 0x060017BF RID: 6079 RVA: 0x00064CF0 File Offset: 0x00062EF0
 		public int HorizontalActionId
 		{
 			get
@@ -239,8 +239,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017C0 RID: 6080 RVA: 0x00012404 File Offset: 0x00010604
-		// (set) Token: 0x060017C1 RID: 6081 RVA: 0x00064D64 File Offset: 0x00062F64
+		// (get) Token: 0x060017C0 RID: 6080 RVA: 0x0001240E File Offset: 0x0001060E
+		// (set) Token: 0x060017C1 RID: 6081 RVA: 0x00064D40 File Offset: 0x00062F40
 		public int VerticalActionId
 		{
 			get
@@ -261,8 +261,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017C2 RID: 6082 RVA: 0x0001240C File Offset: 0x0001060C
-		// (set) Token: 0x060017C3 RID: 6083 RVA: 0x00064DB4 File Offset: 0x00062FB4
+		// (get) Token: 0x060017C2 RID: 6082 RVA: 0x00012416 File Offset: 0x00010616
+		// (set) Token: 0x060017C3 RID: 6083 RVA: 0x00064D90 File Offset: 0x00062F90
 		public int SubmitActionId
 		{
 			get
@@ -283,8 +283,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017C4 RID: 6084 RVA: 0x00012414 File Offset: 0x00010614
-		// (set) Token: 0x060017C5 RID: 6085 RVA: 0x00064E04 File Offset: 0x00063004
+		// (get) Token: 0x060017C4 RID: 6084 RVA: 0x0001241E File Offset: 0x0001061E
+		// (set) Token: 0x060017C5 RID: 6085 RVA: 0x00064DE0 File Offset: 0x00062FE0
 		public int CancelActionId
 		{
 			get
@@ -305,7 +305,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017C6 RID: 6086 RVA: 0x0001241C File Offset: 0x0001061C
+		// (get) Token: 0x060017C6 RID: 6086 RVA: 0x00012426 File Offset: 0x00010626
 		protected override bool isMouseSupported
 		{
 			get
@@ -314,7 +314,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017C7 RID: 6087 RVA: 0x000123A8 File Offset: 0x000105A8
+		// (get) Token: 0x060017C7 RID: 6087 RVA: 0x000123B2 File Offset: 0x000105B2
 		private bool isTouchAllowed
 		{
 			get
@@ -323,8 +323,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017C8 RID: 6088 RVA: 0x00012442 File Offset: 0x00010642
-		// (set) Token: 0x060017C9 RID: 6089 RVA: 0x0001244A File Offset: 0x0001064A
+		// (get) Token: 0x060017C8 RID: 6088 RVA: 0x0001244C File Offset: 0x0001064C
+		// (set) Token: 0x060017C9 RID: 6089 RVA: 0x00012454 File Offset: 0x00010654
 		[Obsolete("allowActivationOnMobileDevice has been deprecated. Use forceModuleActive instead")]
 		public bool allowActivationOnMobileDevice
 		{
@@ -338,8 +338,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017CA RID: 6090 RVA: 0x00012442 File Offset: 0x00010642
-		// (set) Token: 0x060017CB RID: 6091 RVA: 0x0001244A File Offset: 0x0001064A
+		// (get) Token: 0x060017CA RID: 6090 RVA: 0x0001244C File Offset: 0x0001064C
+		// (set) Token: 0x060017CB RID: 6091 RVA: 0x00012454 File Offset: 0x00010654
 		public bool forceModuleActive
 		{
 			get
@@ -352,8 +352,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017CC RID: 6092 RVA: 0x00012453 File Offset: 0x00010653
-		// (set) Token: 0x060017CD RID: 6093 RVA: 0x0001245B File Offset: 0x0001065B
+		// (get) Token: 0x060017CC RID: 6092 RVA: 0x0001245D File Offset: 0x0001065D
+		// (set) Token: 0x060017CD RID: 6093 RVA: 0x00012465 File Offset: 0x00010665
 		public float inputActionsPerSecond
 		{
 			get
@@ -366,8 +366,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017CE RID: 6094 RVA: 0x00012464 File Offset: 0x00010664
-		// (set) Token: 0x060017CF RID: 6095 RVA: 0x0001246C File Offset: 0x0001066C
+		// (get) Token: 0x060017CE RID: 6094 RVA: 0x0001246E File Offset: 0x0001066E
+		// (set) Token: 0x060017CF RID: 6095 RVA: 0x00012476 File Offset: 0x00010676
 		public float repeatDelay
 		{
 			get
@@ -380,8 +380,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017D0 RID: 6096 RVA: 0x00012475 File Offset: 0x00010675
-		// (set) Token: 0x060017D1 RID: 6097 RVA: 0x0001247D File Offset: 0x0001067D
+		// (get) Token: 0x060017D0 RID: 6096 RVA: 0x0001247F File Offset: 0x0001067F
+		// (set) Token: 0x060017D1 RID: 6097 RVA: 0x00012487 File Offset: 0x00010687
 		public string horizontalAxis
 		{
 			get
@@ -402,8 +402,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017D2 RID: 6098 RVA: 0x000124AD File Offset: 0x000106AD
-		// (set) Token: 0x060017D3 RID: 6099 RVA: 0x000124B5 File Offset: 0x000106B5
+		// (get) Token: 0x060017D2 RID: 6098 RVA: 0x000124B7 File Offset: 0x000106B7
+		// (set) Token: 0x060017D3 RID: 6099 RVA: 0x000124BF File Offset: 0x000106BF
 		public string verticalAxis
 		{
 			get
@@ -424,8 +424,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017D4 RID: 6100 RVA: 0x000124E5 File Offset: 0x000106E5
-		// (set) Token: 0x060017D5 RID: 6101 RVA: 0x000124ED File Offset: 0x000106ED
+		// (get) Token: 0x060017D4 RID: 6100 RVA: 0x000124EF File Offset: 0x000106EF
+		// (set) Token: 0x060017D5 RID: 6101 RVA: 0x000124F7 File Offset: 0x000106F7
 		public string submitButton
 		{
 			get
@@ -446,8 +446,8 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x060017D6 RID: 6102 RVA: 0x0001251D File Offset: 0x0001071D
-		// (set) Token: 0x060017D7 RID: 6103 RVA: 0x00012525 File Offset: 0x00010725
+		// (get) Token: 0x060017D6 RID: 6102 RVA: 0x00012527 File Offset: 0x00010727
+		// (set) Token: 0x060017D7 RID: 6103 RVA: 0x0001252F File Offset: 0x0001072F
 		public string cancelButton
 		{
 			get
@@ -468,12 +468,12 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x060017D8 RID: 6104 RVA: 0x00064E54 File Offset: 0x00063054
+		// Token: 0x060017D8 RID: 6104 RVA: 0x00064E30 File Offset: 0x00063030
 		private RewiredStandaloneInputModule()
 		{
 		}
 
-		// Token: 0x060017D9 RID: 6105 RVA: 0x00064EFC File Offset: 0x000630FC
+		// Token: 0x060017D9 RID: 6105 RVA: 0x00064ED8 File Offset: 0x000630D8
 		protected override void Awake()
 		{
 			base.Awake();
@@ -487,7 +487,7 @@ namespace Rewired.Integration.UnityUI
 			this.InitializeRewired();
 		}
 
-		// Token: 0x060017DA RID: 6106 RVA: 0x00012555 File Offset: 0x00010755
+		// Token: 0x060017DA RID: 6106 RVA: 0x0001255F File Offset: 0x0001075F
 		public override void UpdateModule()
 		{
 			this.CheckEditorRecompile();
@@ -512,7 +512,7 @@ namespace Rewired.Integration.UnityUI
 			return true;
 		}
 
-		// Token: 0x060017DC RID: 6108 RVA: 0x00064F50 File Offset: 0x00063150
+		// Token: 0x060017DC RID: 6108 RVA: 0x00064F2C File Offset: 0x0006312C
 		public override bool ShouldActivateModule()
 		{
 			if (!base.ShouldActivateModule())
@@ -557,13 +557,13 @@ namespace Rewired.Integration.UnityUI
 				for (int j = 0; j < base.defaultTouchInputSource.touchCount; j++)
 				{
 					Touch touch = base.defaultTouchInputSource.GetTouch(j);
-					flag |= touch.phase == null || touch.phase == 1 || touch.phase == 2;
+					flag |= touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary;
 				}
 			}
 			return flag;
 		}
 
-		// Token: 0x060017DD RID: 6109 RVA: 0x000650DC File Offset: 0x000632DC
+		// Token: 0x060017DD RID: 6109 RVA: 0x000650B8 File Offset: 0x000632B8
 		public override void ActivateModule()
 		{
 			if (!this.m_HasFocus && this.ShouldIgnoreEventsOnNoFocus())
@@ -579,14 +579,14 @@ namespace Rewired.Integration.UnityUI
 			base.eventSystem.SetSelectedGameObject(gameObject, this.GetBaseEventData());
 		}
 
-		// Token: 0x060017DE RID: 6110 RVA: 0x0001257E File Offset: 0x0001077E
+		// Token: 0x060017DE RID: 6110 RVA: 0x00012588 File Offset: 0x00010788
 		public override void DeactivateModule()
 		{
 			base.DeactivateModule();
 			base.ClearSelection();
 		}
 
-		// Token: 0x060017DF RID: 6111 RVA: 0x00065134 File Offset: 0x00063334
+		// Token: 0x060017DF RID: 6111 RVA: 0x00065110 File Offset: 0x00063310
 		public override void Process()
 		{
 			if (!ReInput.isReady)
@@ -619,7 +619,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x060017E0 RID: 6112 RVA: 0x000651B0 File Offset: 0x000633B0
+		// Token: 0x060017E0 RID: 6112 RVA: 0x0006518C File Offset: 0x0006338C
 		private bool ProcessTouchEvents()
 		{
 			if (!this.isTouchAllowed)
@@ -629,7 +629,7 @@ namespace Rewired.Integration.UnityUI
 			for (int i = 0; i < base.defaultTouchInputSource.touchCount; i++)
 			{
 				Touch touch = base.defaultTouchInputSource.GetTouch(i);
-				if (touch.type != 1)
+				if (touch.type != TouchType.Indirect)
 				{
 					bool flag;
 					bool flag2;
@@ -649,7 +649,7 @@ namespace Rewired.Integration.UnityUI
 			return base.defaultTouchInputSource.touchCount > 0;
 		}
 
-		// Token: 0x060017E1 RID: 6113 RVA: 0x00065238 File Offset: 0x00063438
+		// Token: 0x060017E1 RID: 6113 RVA: 0x00065214 File Offset: 0x00063414
 		private void ProcessTouchPress(PointerEventData pointerEvent, bool pressed, bool released)
 		{
 			GameObject gameObject = pointerEvent.pointerCurrentRaycast.gameObject;
@@ -730,7 +730,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x060017E2 RID: 6114 RVA: 0x00065468 File Offset: 0x00063668
+		// Token: 0x060017E2 RID: 6114 RVA: 0x00065444 File Offset: 0x00063644
 		private bool SendSubmitEventToSelectedObject()
 		{
 			if (base.eventSystem.currentSelectedGameObject == null)
@@ -762,7 +762,7 @@ namespace Rewired.Integration.UnityUI
 			return baseEventData.used;
 		}
 
-		// Token: 0x060017E3 RID: 6115 RVA: 0x00065530 File Offset: 0x00063730
+		// Token: 0x060017E3 RID: 6115 RVA: 0x0006550C File Offset: 0x0006370C
 		private Vector2 GetRawMoveVector()
 		{
 			if (this.recompiling)
@@ -828,7 +828,7 @@ namespace Rewired.Integration.UnityUI
 			return zero;
 		}
 
-		// Token: 0x060017E4 RID: 6116 RVA: 0x00065730 File Offset: 0x00063930
+		// Token: 0x060017E4 RID: 6116 RVA: 0x0006570C File Offset: 0x0006390C
 		private bool SendMoveEventToSelectedObject()
 		{
 			if (this.recompiling)
@@ -852,7 +852,7 @@ namespace Rewired.Integration.UnityUI
 			{
 				axisEventData = this.GetAxisEventData(rawMoveVector.x, rawMoveVector.y, 0f);
 				MoveDirection moveDir = axisEventData.moveDir;
-				flag4 = ((moveDir == 1 || moveDir == 3) && flag3) || ((moveDir == null || moveDir == 2) && flag2);
+				flag4 = ((moveDir == MoveDirection.Up || moveDir == MoveDirection.Down) && flag3) || ((moveDir == MoveDirection.Left || moveDir == MoveDirection.Right) && flag2);
 			}
 			if (!flag4)
 			{
@@ -880,7 +880,7 @@ namespace Rewired.Integration.UnityUI
 			{
 				axisEventData = this.GetAxisEventData(rawMoveVector.x, rawMoveVector.y, 0f);
 			}
-			if (axisEventData.moveDir != 4)
+			if (axisEventData.moveDir != MoveDirection.None)
 			{
 				ExecuteEvents.Execute<IMoveHandler>(base.eventSystem.currentSelectedGameObject, axisEventData, ExecuteEvents.moveHandler);
 				if (!flag)
@@ -901,7 +901,7 @@ namespace Rewired.Integration.UnityUI
 			return axisEventData.used;
 		}
 
-		// Token: 0x060017E5 RID: 6117 RVA: 0x000658E8 File Offset: 0x00063AE8
+		// Token: 0x060017E5 RID: 6117 RVA: 0x000658C4 File Offset: 0x00063AC4
 		private void CheckButtonOrKeyMovement(out bool downHorizontal, out bool downVertical)
 		{
 			downHorizontal = false;
@@ -917,7 +917,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x060017E6 RID: 6118 RVA: 0x0006597C File Offset: 0x00063B7C
+		// Token: 0x060017E6 RID: 6118 RVA: 0x00065958 File Offset: 0x00063B58
 		private void ProcessMouseEvents()
 		{
 			for (int i = 0; i < this.playerIds.Length; i++)
@@ -934,7 +934,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x060017E7 RID: 6119 RVA: 0x000659EC File Offset: 0x00063BEC
+		// Token: 0x060017E7 RID: 6119 RVA: 0x000659C8 File Offset: 0x00063BC8
 		private void ProcessMouseEvent(int playerId, int pointerIndex)
 		{
 			RewiredPointerInputModule.MouseState mousePointerEventData = this.GetMousePointerEventData(playerId, pointerIndex);
@@ -966,7 +966,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x060017E8 RID: 6120 RVA: 0x00065B18 File Offset: 0x00063D18
+		// Token: 0x060017E8 RID: 6120 RVA: 0x00065AF4 File Offset: 0x00063CF4
 		private bool SendUpdateEventToSelectedObject()
 		{
 			if (base.eventSystem.currentSelectedGameObject == null)
@@ -978,7 +978,7 @@ namespace Rewired.Integration.UnityUI
 			return baseEventData.used;
 		}
 
-		// Token: 0x060017E9 RID: 6121 RVA: 0x00065B60 File Offset: 0x00063D60
+		// Token: 0x060017E9 RID: 6121 RVA: 0x00065B3C File Offset: 0x00063D3C
 		private void ProcessMousePress(RewiredPointerInputModule.MouseButtonEventData data)
 		{
 			PlayerPointerEventData buttonData = data.buttonData;
@@ -1058,7 +1058,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x060017EA RID: 6122 RVA: 0x00065D7C File Offset: 0x00063F7C
+		// Token: 0x060017EA RID: 6122 RVA: 0x00065D58 File Offset: 0x00063F58
 		private void HandleMouseTouchDeselectionOnSelectionChanged(GameObject currentOverGo, BaseEventData pointerEvent)
 		{
 			if (this.m_deselectIfBackgroundClicked && this.m_deselectBeforeSelecting)
@@ -1081,19 +1081,19 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x060017EB RID: 6123 RVA: 0x0001258C File Offset: 0x0001078C
+		// Token: 0x060017EB RID: 6123 RVA: 0x00012596 File Offset: 0x00010796
 		private void OnApplicationFocus(bool hasFocus)
 		{
 			this.m_HasFocus = hasFocus;
 		}
 
-		// Token: 0x060017EC RID: 6124 RVA: 0x00012595 File Offset: 0x00010795
+		// Token: 0x060017EC RID: 6124 RVA: 0x0001259F File Offset: 0x0001079F
 		private bool ShouldIgnoreEventsOnNoFocus()
 		{
 			return !ReInput.isReady || ReInput.configuration.ignoreInputWhenAppNotInFocus;
 		}
 
-		// Token: 0x060017ED RID: 6125 RVA: 0x000125AA File Offset: 0x000107AA
+		// Token: 0x060017ED RID: 6125 RVA: 0x000125B4 File Offset: 0x000107B4
 		protected override void OnDestroy()
 		{
 			base.OnDestroy();
@@ -1102,7 +1102,7 @@ namespace Rewired.Integration.UnityUI
 			ReInput.EditorRecompileEvent -= this.OnEditorRecompile;
 		}
 
-		// Token: 0x060017EE RID: 6126 RVA: 0x00065E0C File Offset: 0x0006400C
+		// Token: 0x060017EE RID: 6126 RVA: 0x00065DE8 File Offset: 0x00063FE8
 		protected override bool IsDefaultPlayer(int playerId)
 		{
 			if (this.playerIds == null)
@@ -1127,7 +1127,7 @@ namespace Rewired.Integration.UnityUI
 			return false;
 		}
 
-		// Token: 0x060017EF RID: 6127 RVA: 0x00065E94 File Offset: 0x00064094
+		// Token: 0x060017EF RID: 6127 RVA: 0x00065E70 File Offset: 0x00064070
 		private void InitializeRewired()
 		{
 			if (!ReInput.isReady)
@@ -1142,7 +1142,7 @@ namespace Rewired.Integration.UnityUI
 			this.SetupRewiredVars();
 		}
 
-		// Token: 0x060017F0 RID: 6128 RVA: 0x00065F00 File Offset: 0x00064100
+		// Token: 0x060017F0 RID: 6128 RVA: 0x00065EDC File Offset: 0x000640DC
 		private void SetupRewiredVars()
 		{
 			if (!ReInput.isReady)
@@ -1184,7 +1184,7 @@ namespace Rewired.Integration.UnityUI
 			this.SetUpRewiredPlayerMice();
 		}
 
-		// Token: 0x060017F1 RID: 6129 RVA: 0x00066020 File Offset: 0x00064220
+		// Token: 0x060017F1 RID: 6129 RVA: 0x00065FFC File Offset: 0x000641FC
 		private void SetUpRewiredPlayerMice()
 		{
 			if (!ReInput.isReady)
@@ -1202,7 +1202,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x060017F2 RID: 6130 RVA: 0x00066070 File Offset: 0x00064270
+		// Token: 0x060017F2 RID: 6130 RVA: 0x0006604C File Offset: 0x0006424C
 		private void SetUpRewiredActions()
 		{
 			if (!ReInput.isReady)
@@ -1243,31 +1243,31 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x060017F3 RID: 6131 RVA: 0x000125E5 File Offset: 0x000107E5
+		// Token: 0x060017F3 RID: 6131 RVA: 0x000125EF File Offset: 0x000107EF
 		private bool GetButton(Player player, int actionId)
 		{
 			return actionId >= 0 && player.GetButton(actionId);
 		}
 
-		// Token: 0x060017F4 RID: 6132 RVA: 0x000125F4 File Offset: 0x000107F4
+		// Token: 0x060017F4 RID: 6132 RVA: 0x000125FE File Offset: 0x000107FE
 		private bool GetButtonDown(Player player, int actionId)
 		{
 			return actionId >= 0 && player.GetButtonDown(actionId);
 		}
 
-		// Token: 0x060017F5 RID: 6133 RVA: 0x00012603 File Offset: 0x00010803
+		// Token: 0x060017F5 RID: 6133 RVA: 0x0001260D File Offset: 0x0001080D
 		private bool GetNegativeButton(Player player, int actionId)
 		{
 			return actionId >= 0 && player.GetNegativeButton(actionId);
 		}
 
-		// Token: 0x060017F6 RID: 6134 RVA: 0x00012612 File Offset: 0x00010812
+		// Token: 0x060017F6 RID: 6134 RVA: 0x0001261C File Offset: 0x0001081C
 		private bool GetNegativeButtonDown(Player player, int actionId)
 		{
 			return actionId >= 0 && player.GetNegativeButtonDown(actionId);
 		}
 
-		// Token: 0x060017F7 RID: 6135 RVA: 0x00012621 File Offset: 0x00010821
+		// Token: 0x060017F7 RID: 6135 RVA: 0x0001262B File Offset: 0x0001082B
 		private float GetAxis(Player player, int actionId)
 		{
 			if (actionId < 0)
@@ -1277,7 +1277,7 @@ namespace Rewired.Integration.UnityUI
 			return player.GetAxis(actionId);
 		}
 
-		// Token: 0x060017F8 RID: 6136 RVA: 0x00012634 File Offset: 0x00010834
+		// Token: 0x060017F8 RID: 6136 RVA: 0x0001263E File Offset: 0x0001083E
 		private void CheckEditorRecompile()
 		{
 			if (!this.recompiling)
@@ -1292,21 +1292,21 @@ namespace Rewired.Integration.UnityUI
 			this.InitializeRewired();
 		}
 
-		// Token: 0x060017F9 RID: 6137 RVA: 0x00012654 File Offset: 0x00010854
+		// Token: 0x060017F9 RID: 6137 RVA: 0x0001265E File Offset: 0x0001085E
 		private void OnEditorRecompile()
 		{
 			this.recompiling = true;
 			this.ClearRewiredVars();
 		}
 
-		// Token: 0x060017FA RID: 6138 RVA: 0x00012663 File Offset: 0x00010863
+		// Token: 0x060017FA RID: 6138 RVA: 0x0001266D File Offset: 0x0001086D
 		private void ClearRewiredVars()
 		{
 			Array.Clear(this.playerIds, 0, this.playerIds.Length);
 			base.ClearMouseInputSources();
 		}
 
-		// Token: 0x060017FB RID: 6139 RVA: 0x000661AC File Offset: 0x000643AC
+		// Token: 0x060017FB RID: 6139 RVA: 0x00066188 File Offset: 0x00064388
 		private bool DidAnyMouseMove()
 		{
 			for (int i = 0; i < this.playerIds.Length; i++)
@@ -1329,7 +1329,7 @@ namespace Rewired.Integration.UnityUI
 			return false;
 		}
 
-		// Token: 0x060017FC RID: 6140 RVA: 0x00066238 File Offset: 0x00064438
+		// Token: 0x060017FC RID: 6140 RVA: 0x00066214 File Offset: 0x00064414
 		private bool GetMouseButtonDownOnAnyMouse(int buttonIndex)
 		{
 			for (int i = 0; i < this.playerIds.Length; i++)
@@ -1352,13 +1352,13 @@ namespace Rewired.Integration.UnityUI
 			return false;
 		}
 
-		// Token: 0x060017FD RID: 6141 RVA: 0x0001267F File Offset: 0x0001087F
+		// Token: 0x060017FD RID: 6141 RVA: 0x00012689 File Offset: 0x00010889
 		private void OnRewiredInitialized()
 		{
 			this.InitializeRewired();
 		}
 
-		// Token: 0x060017FE RID: 6142 RVA: 0x00012687 File Offset: 0x00010887
+		// Token: 0x060017FE RID: 6142 RVA: 0x00012691 File Offset: 0x00010891
 		private void OnRewiredShutDown()
 		{
 			this.ClearRewiredVars();
@@ -1492,12 +1492,12 @@ namespace Rewired.Integration.UnityUI
 		[Serializable]
 		public class PlayerSetting
 		{
-			// Token: 0x060017FF RID: 6143 RVA: 0x0001268F File Offset: 0x0001088F
+			// Token: 0x060017FF RID: 6143 RVA: 0x00012699 File Offset: 0x00010899
 			public PlayerSetting()
 			{
 			}
 
-			// Token: 0x06001800 RID: 6144 RVA: 0x000662B4 File Offset: 0x000644B4
+			// Token: 0x06001800 RID: 6144 RVA: 0x00066290 File Offset: 0x00064490
 			private PlayerSetting(RewiredStandaloneInputModule.PlayerSetting other)
 			{
 				if (other == null)
@@ -1515,7 +1515,7 @@ namespace Rewired.Integration.UnityUI
 				}
 			}
 
-			// Token: 0x06001801 RID: 6145 RVA: 0x000126A2 File Offset: 0x000108A2
+			// Token: 0x06001801 RID: 6145 RVA: 0x000126AC File Offset: 0x000108AC
 			public RewiredStandaloneInputModule.PlayerSetting Clone()
 			{
 				return new RewiredStandaloneInputModule.PlayerSetting(this);

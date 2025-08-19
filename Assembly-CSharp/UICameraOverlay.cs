@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UICameraOverlay : MonoBehaviour
 {
-	// Token: 0x060011F4 RID: 4596 RVA: 0x00059DB8 File Offset: 0x00057FB8
+	// Token: 0x060011F4 RID: 4596 RVA: 0x00059D94 File Offset: 0x00057F94
 	public void SetState(ItemCamera.CameraMode cameraMode, bool isRightHand)
 	{
 		if (base.gameObject == null)

@@ -50,7 +50,7 @@ public class SteamManager : MonoBehaviour
 		SteamManager.s_instance = null;
 	}
 
-	// Token: 0x06000219 RID: 537 RVA: 0x0001E724 File Offset: 0x0001C924
+	// Token: 0x06000219 RID: 537 RVA: 0x0001E700 File Offset: 0x0001C900
 	protected void Initialize()
 	{
 		if (this.thisInitialized)
@@ -108,7 +108,7 @@ public class SteamManager : MonoBehaviour
 		this.Initialize();
 	}
 
-	// Token: 0x0600021B RID: 539 RVA: 0x0001E814 File Offset: 0x0001CA14
+	// Token: 0x0600021B RID: 539 RVA: 0x0001E7F0 File Offset: 0x0001C9F0
 	protected virtual void OnEnable()
 	{
 		if (SteamManager.s_instance == null)

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PopPlayerToPosition : MonoBehaviour
 {
-	// Token: 0x06000D2A RID: 3370 RVA: 0x0000C2BC File Offset: 0x0000A4BC
+	// Token: 0x06000D2A RID: 3370 RVA: 0x0000C2C6 File Offset: 0x0000A4C6
 	private void OnTriggerEnter(Collider other)
 	{
 		if (Player.movement.ragdollController.enabled)

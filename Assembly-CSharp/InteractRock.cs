@@ -16,7 +16,7 @@ public class InteractRock : MonoBehaviour, Interaction
 		global::UnityEngine.Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000837 RID: 2103 RVA: 0x0003747C File Offset: 0x0003567C
+	// Token: 0x06000837 RID: 2103 RVA: 0x00037458 File Offset: 0x00035658
 	private void FixedUpdate()
 	{
 		this.interactionCollider.enabled = this.rigidbody.velocity.sqrMagnitude < this.maxSpeedForInteraction;

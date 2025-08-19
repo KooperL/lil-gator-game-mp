@@ -4,7 +4,7 @@ using System.Collections.Generic;
 [Serializable]
 public class BoolDictionary : SerializableDictionary<string, bool>
 {
-	// Token: 0x0600077D RID: 1917 RVA: 0x00035240 File Offset: 0x00033440
+	// Token: 0x0600077D RID: 1917 RVA: 0x0003521C File Offset: 0x0003341C
 	public BoolDictionary Clone()
 	{
 		BoolDictionary boolDictionary = new BoolDictionary();

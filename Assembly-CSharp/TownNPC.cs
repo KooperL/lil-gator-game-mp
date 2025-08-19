@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TownNPC : MonoBehaviour
 {
-	// (get) Token: 0x060009FF RID: 2559 RVA: 0x000099A3 File Offset: 0x00007BA3
+	// (get) Token: 0x060009FF RID: 2559 RVA: 0x000099AD File Offset: 0x00007BAD
 	private string SaveID
 	{
 		get
@@ -12,7 +12,7 @@ public class TownNPC : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A00 RID: 2560 RVA: 0x000099B5 File Offset: 0x00007BB5
+	// Token: 0x06000A00 RID: 2560 RVA: 0x000099BF File Offset: 0x00007BBF
 	private void Start()
 	{
 		if (this.inTown)
@@ -21,7 +21,7 @@ public class TownNPC : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A01 RID: 2561 RVA: 0x0003BF8C File Offset: 0x0003A18C
+	// Token: 0x06000A01 RID: 2561 RVA: 0x0003BF68 File Offset: 0x0003A168
 	[ContextMenu("Find Town Instance")]
 	public void FindTownInstance()
 	{
@@ -40,7 +40,7 @@ public class TownNPC : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A02 RID: 2562 RVA: 0x000099E6 File Offset: 0x00007BE6
+	// Token: 0x06000A02 RID: 2562 RVA: 0x000099F0 File Offset: 0x00007BF0
 	public void EnableTownInstance()
 	{
 		GameData.g.Write(this.SaveID, true);

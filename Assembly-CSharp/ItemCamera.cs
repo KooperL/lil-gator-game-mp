@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemCamera : MonoBehaviour, IItemBehaviour
 {
-	// (get) Token: 0x06000AF5 RID: 2805 RVA: 0x0000A67A File Offset: 0x0000887A
+	// (get) Token: 0x06000AF5 RID: 2805 RVA: 0x0000A684 File Offset: 0x00008884
 	private PlayerItemManager.EquippedState EquippedState
 	{
 		get
@@ -17,7 +17,7 @@ public class ItemCamera : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000AF6 RID: 2806 RVA: 0x0000A687 File Offset: 0x00008887
+	// Token: 0x06000AF6 RID: 2806 RVA: 0x0000A691 File Offset: 0x00008891
 	private void Awake()
 	{
 		this.itemManager = Player.itemManager;
@@ -26,7 +26,7 @@ public class ItemCamera : MonoBehaviour, IItemBehaviour
 		this.reaction = Player.reaction;
 	}
 
-	// Token: 0x06000AF7 RID: 2807 RVA: 0x0003F618 File Offset: 0x0003D818
+	// Token: 0x06000AF7 RID: 2807 RVA: 0x0003F5F4 File Offset: 0x0003D7F4
 	public virtual void Input(bool isDown, bool isHeld)
 	{
 		if (Game.HasControl)
@@ -49,19 +49,19 @@ public class ItemCamera : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000AF8 RID: 2808 RVA: 0x0000A6BB File Offset: 0x000088BB
+	// Token: 0x06000AF8 RID: 2808 RVA: 0x0000A6C5 File Offset: 0x000088C5
 	public void InputCancel()
 	{
 		this.SetCameraMode(ItemCamera.CameraMode.Off);
 	}
 
-	// Token: 0x06000AF9 RID: 2809 RVA: 0x0000A6C4 File Offset: 0x000088C4
+	// Token: 0x06000AF9 RID: 2809 RVA: 0x0000A6CE File Offset: 0x000088CE
 	public void InputHideUI()
 	{
 		HideUI.Toggle();
 	}
 
-	// Token: 0x06000AFA RID: 2810 RVA: 0x0000A6CB File Offset: 0x000088CB
+	// Token: 0x06000AFA RID: 2810 RVA: 0x0000A6D5 File Offset: 0x000088D5
 	public void InputCapture()
 	{
 		if (!this.isTakingScreenshot)
@@ -70,7 +70,7 @@ public class ItemCamera : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000AFB RID: 2811 RVA: 0x0003F694 File Offset: 0x0003D894
+	// Token: 0x06000AFB RID: 2811 RVA: 0x0003F670 File Offset: 0x0003D870
 	public void InputSwitch()
 	{
 		ItemCamera.CameraMode cameraMode = this.cameraMode;
@@ -86,13 +86,13 @@ public class ItemCamera : MonoBehaviour, IItemBehaviour
 		this.SetCameraMode(ItemCamera.CameraMode.Forward);
 	}
 
-	// Token: 0x06000AFC RID: 2812 RVA: 0x0000A6E1 File Offset: 0x000088E1
+	// Token: 0x06000AFC RID: 2812 RVA: 0x0000A6EB File Offset: 0x000088EB
 	public void InputLock()
 	{
 		this.SetCameraMode(ItemCamera.CameraMode.Static);
 	}
 
-	// Token: 0x06000AFD RID: 2813 RVA: 0x0000A6EA File Offset: 0x000088EA
+	// Token: 0x06000AFD RID: 2813 RVA: 0x0000A6F4 File Offset: 0x000088F4
 	private IEnumerator TakeScreenshot()
 	{
 		this.isTakingScreenshot = true;
@@ -105,13 +105,13 @@ public class ItemCamera : MonoBehaviour, IItemBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000AFE RID: 2814 RVA: 0x0000A6F9 File Offset: 0x000088F9
+	// Token: 0x06000AFE RID: 2814 RVA: 0x0000A703 File Offset: 0x00008903
 	public virtual Vector3 GetSpawnPoint()
 	{
 		return Player.itemManager.thrownSpawnPoint.position;
 	}
 
-	// Token: 0x06000AFF RID: 2815 RVA: 0x0003F6C0 File Offset: 0x0003D8C0
+	// Token: 0x06000AFF RID: 2815 RVA: 0x0003F69C File Offset: 0x0003D89C
 	private void SetCameraMode(ItemCamera.CameraMode cameraMode)
 	{
 		this.cameraMode = cameraMode;
@@ -160,13 +160,13 @@ public class ItemCamera : MonoBehaviour, IItemBehaviour
 		this.animator.SetBool("Aiming", cameraMode == ItemCamera.CameraMode.Forward || cameraMode == ItemCamera.CameraMode.Backward);
 	}
 
-	// Token: 0x06000B00 RID: 2816 RVA: 0x0000A70A File Offset: 0x0000890A
+	// Token: 0x06000B00 RID: 2816 RVA: 0x0000A714 File Offset: 0x00008914
 	public virtual float GetSpeed(float charge = 1f)
 	{
 		return 30f;
 	}
 
-	// Token: 0x06000B01 RID: 2817 RVA: 0x0003F838 File Offset: 0x0003DA38
+	// Token: 0x06000B01 RID: 2817 RVA: 0x0003F814 File Offset: 0x0003DA14
 	public virtual void LateUpdate()
 	{
 		if ((this.cameraMode == ItemCamera.CameraMode.Forward || this.cameraMode == ItemCamera.CameraMode.Backward) && (Player.itemManager.equippedState != this.EquippedState || (Player.movement.isModified && Player.movement.modItemRule == PlayerMovement.ModRule.Locked)))
@@ -184,13 +184,13 @@ public class ItemCamera : MonoBehaviour, IItemBehaviour
 	{
 	}
 
-	// Token: 0x06000B03 RID: 2819 RVA: 0x0000A6BB File Offset: 0x000088BB
+	// Token: 0x06000B03 RID: 2819 RVA: 0x0000A6C5 File Offset: 0x000088C5
 	private void OnDestroy()
 	{
 		this.SetCameraMode(ItemCamera.CameraMode.Off);
 	}
 
-	// Token: 0x06000B04 RID: 2820 RVA: 0x0003F8C8 File Offset: 0x0003DAC8
+	// Token: 0x06000B04 RID: 2820 RVA: 0x0003F8A4 File Offset: 0x0003DAA4
 	public virtual void SetEquipped(bool isEquipped)
 	{
 		Transform transform = this.itemManager.transform;
@@ -209,13 +209,13 @@ public class ItemCamera : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B05 RID: 2821 RVA: 0x0000A6BB File Offset: 0x000088BB
+	// Token: 0x06000B05 RID: 2821 RVA: 0x0000A6C5 File Offset: 0x000088C5
 	public virtual void OnRemove()
 	{
 		this.SetCameraMode(ItemCamera.CameraMode.Off);
 	}
 
-	// Token: 0x06000B06 RID: 2822 RVA: 0x0000A711 File Offset: 0x00008911
+	// Token: 0x06000B06 RID: 2822 RVA: 0x0000A71B File Offset: 0x0000891B
 	public void SetIndex(int index)
 	{
 		if (index == 1)

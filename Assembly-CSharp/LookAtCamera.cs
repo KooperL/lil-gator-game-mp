@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class LookAtCamera : MonoBehaviour
 {
-	// Token: 0x06000C0F RID: 3087 RVA: 0x0000B3E7 File Offset: 0x000095E7
+	// Token: 0x06000C0F RID: 3087 RVA: 0x0000B3F1 File Offset: 0x000095F1
 	private void Start()
 	{
 		this.mainCameraTransform = MainCamera.t;
 	}
 
-	// Token: 0x06000C10 RID: 3088 RVA: 0x00042118 File Offset: 0x00040318
+	// Token: 0x06000C10 RID: 3088 RVA: 0x000420F4 File Offset: 0x000402F4
 	private void LateUpdate()
 	{
 		Vector3 vector = this.mainCameraTransform.position - base.transform.position;

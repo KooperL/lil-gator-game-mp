@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [AddComponentMenu("Logic/LogicState - Items")]
 public class LSItem : LogicState
 {
-	// Token: 0x060008DB RID: 2267 RVA: 0x000391C8 File Offset: 0x000373C8
+	// Token: 0x060008DB RID: 2267 RVA: 0x000391A4 File Offset: 0x000373A4
 	public override void CheckLogic()
 	{
 		bool flag = true;
@@ -29,7 +29,7 @@ public class LSItem : LogicState
 		}
 	}
 
-	// Token: 0x060008DC RID: 2268 RVA: 0x00008AC4 File Offset: 0x00006CC4
+	// Token: 0x060008DC RID: 2268 RVA: 0x00008ACE File Offset: 0x00006CCE
 	private IEnumerator CompleteWhenInGameplay()
 	{
 		yield return null;

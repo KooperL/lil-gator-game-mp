@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class CoolQuest : MonoBehaviour
 {
-	// (get) Token: 0x06000DAF RID: 3503 RVA: 0x0000C649 File Offset: 0x0000A849
+	// (get) Token: 0x06000DAF RID: 3503 RVA: 0x0000C653 File Offset: 0x0000A853
 	private string StateID
 	{
 		get
@@ -14,8 +14,8 @@ public class CoolQuest : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000DB0 RID: 3504 RVA: 0x0000C650 File Offset: 0x0000A850
-	// (set) Token: 0x06000DB1 RID: 3505 RVA: 0x0000C663 File Offset: 0x0000A863
+	// (get) Token: 0x06000DB0 RID: 3504 RVA: 0x0000C65A File Offset: 0x0000A85A
+	// (set) Token: 0x06000DB1 RID: 3505 RVA: 0x0000C66D File Offset: 0x0000A86D
 	public int State
 	{
 		get
@@ -28,19 +28,19 @@ public class CoolQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DB2 RID: 3506 RVA: 0x0000C676 File Offset: 0x0000A876
+	// Token: 0x06000DB2 RID: 3506 RVA: 0x0000C680 File Offset: 0x0000A880
 	private void OnEnable()
 	{
 		CoolQuest.c = this;
 	}
 
-	// Token: 0x06000DB3 RID: 3507 RVA: 0x0000C67E File Offset: 0x0000A87E
+	// Token: 0x06000DB3 RID: 3507 RVA: 0x0000C688 File Offset: 0x0000A888
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000DB4 RID: 3508 RVA: 0x0004B788 File Offset: 0x00049988
+	// Token: 0x06000DB4 RID: 3508 RVA: 0x0004B764 File Offset: 0x00049964
 	private void UpdateState()
 	{
 		int state = this.State;
@@ -51,7 +51,7 @@ public class CoolQuest : MonoBehaviour
 		this.funCoolKids.SetActive(state >= 40);
 	}
 
-	// Token: 0x06000DB5 RID: 3509 RVA: 0x0000C686 File Offset: 0x0000A886
+	// Token: 0x06000DB5 RID: 3509 RVA: 0x0000C690 File Offset: 0x0000A890
 	public void Wolf()
 	{
 		if (this.State < 40)
@@ -62,7 +62,7 @@ public class CoolQuest : MonoBehaviour
 		DialogueManager.d.Bubble("Cool_E_Wolf", this.eWolf, 0f, false, true, true);
 	}
 
-	// Token: 0x06000DB6 RID: 3510 RVA: 0x0000C6BE File Offset: 0x0000A8BE
+	// Token: 0x06000DB6 RID: 3510 RVA: 0x0000C6C8 File Offset: 0x0000A8C8
 	private IEnumerator WolfA()
 	{
 		if (this.State < 10)
@@ -89,7 +89,7 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000DB7 RID: 3511 RVA: 0x0000C6CD File Offset: 0x0000A8CD
+	// Token: 0x06000DB7 RID: 3511 RVA: 0x0000C6D7 File Offset: 0x0000A8D7
 	public void Boar()
 	{
 		if (this.State < 40)
@@ -100,7 +100,7 @@ public class CoolQuest : MonoBehaviour
 		DialogueManager.d.Bubble("Cool_E_Boar", this.eBoar, 0f, false, true, true);
 	}
 
-	// Token: 0x06000DB8 RID: 3512 RVA: 0x0000C705 File Offset: 0x0000A905
+	// Token: 0x06000DB8 RID: 3512 RVA: 0x0000C70F File Offset: 0x0000A90F
 	private IEnumerator BoarA()
 	{
 		if (this.State < 10)
@@ -127,7 +127,7 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000DB9 RID: 3513 RVA: 0x0000C714 File Offset: 0x0000A914
+	// Token: 0x06000DB9 RID: 3513 RVA: 0x0000C71E File Offset: 0x0000A91E
 	public void Goose()
 	{
 		if (this.State < 40)
@@ -138,7 +138,7 @@ public class CoolQuest : MonoBehaviour
 		DialogueManager.d.Bubble("Cool_E_Goose", this.eGoose, 0f, false, true, true);
 	}
 
-	// Token: 0x06000DBA RID: 3514 RVA: 0x0000C74C File Offset: 0x0000A94C
+	// Token: 0x06000DBA RID: 3514 RVA: 0x0000C756 File Offset: 0x0000A956
 	private IEnumerator GooseA()
 	{
 		if (this.State < 10)
@@ -165,7 +165,7 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000DBB RID: 3515 RVA: 0x0004B7F0 File Offset: 0x000499F0
+	// Token: 0x06000DBB RID: 3515 RVA: 0x0004B7CC File Offset: 0x000499CC
 	public void Horse()
 	{
 		int state = this.State;
@@ -182,7 +182,7 @@ public class CoolQuest : MonoBehaviour
 		DialogueManager.d.Bubble("Cool_E_Horse", this.eHorse, 0f, false, true, true);
 	}
 
-	// Token: 0x06000DBC RID: 3516 RVA: 0x0000C75B File Offset: 0x0000A95B
+	// Token: 0x06000DBC RID: 3516 RVA: 0x0000C765 File Offset: 0x0000A965
 	public void TextAlert()
 	{
 		base.StartCoroutine(this.RunTextAlert());
@@ -190,7 +190,7 @@ public class CoolQuest : MonoBehaviour
 		this.UpdateState();
 	}
 
-	// Token: 0x06000DBD RID: 3517 RVA: 0x0000C777 File Offset: 0x0000A977
+	// Token: 0x06000DBD RID: 3517 RVA: 0x0000C781 File Offset: 0x0000A981
 	private IEnumerator RunTextAlert()
 	{
 		yield return base.StartCoroutine(DialogueManager.d.LoadChunkPhone("Cool_TextAlert1", this.unknownProfiles, true, true, null));
@@ -198,7 +198,7 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000DBE RID: 3518 RVA: 0x0000C786 File Offset: 0x0000A986
+	// Token: 0x06000DBE RID: 3518 RVA: 0x0000C790 File Offset: 0x0000A990
 	public IEnumerator RunConversationA()
 	{
 		Game.DialogueDepth++;
@@ -217,13 +217,13 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000DBF RID: 3519 RVA: 0x0000C795 File Offset: 0x0000A995
+	// Token: 0x06000DBF RID: 3519 RVA: 0x0000C79F File Offset: 0x0000A99F
 	public void ConversationB()
 	{
 		base.StartCoroutine(this.RunConversationB());
 	}
 
-	// Token: 0x06000DC0 RID: 3520 RVA: 0x0000C7A4 File Offset: 0x0000A9A4
+	// Token: 0x06000DC0 RID: 3520 RVA: 0x0000C7AE File Offset: 0x0000A9AE
 	private IEnumerator RunConversationB()
 	{
 		yield return DialogueManager.d.Bubble("Cool_B1", null, 0f, true, true, true);
@@ -233,7 +233,7 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000DC1 RID: 3521 RVA: 0x0000C7B3 File Offset: 0x0000A9B3
+	// Token: 0x06000DC1 RID: 3521 RVA: 0x0000C7BD File Offset: 0x0000A9BD
 	public IEnumerator CheckPumps()
 	{
 		int num = 0;
@@ -279,7 +279,7 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000DC2 RID: 3522 RVA: 0x0000C7C2 File Offset: 0x0000A9C2
+	// Token: 0x06000DC2 RID: 3522 RVA: 0x0000C7CC File Offset: 0x0000A9CC
 	private IEnumerator RunConversationD()
 	{
 		Game.DialogueDepth++;
@@ -308,7 +308,7 @@ public class CoolQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000DC3 RID: 3523 RVA: 0x0000C7D1 File Offset: 0x0000A9D1
+	// Token: 0x06000DC3 RID: 3523 RVA: 0x0000C7DB File Offset: 0x0000A9DB
 	private IEnumerator RunConversationE()
 	{
 		yield return base.StartCoroutine(DialogueManager.d.LoadChunk("Cool_E1", this.eActors, DialogueManager.DialogueBoxBackground.Standard, true));

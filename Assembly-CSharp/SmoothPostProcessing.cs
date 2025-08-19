@@ -4,7 +4,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class SmoothPostProcessing : MonoBehaviour
 {
-	// Token: 0x06000F87 RID: 3975 RVA: 0x00051D9C File Offset: 0x0004FF9C
+	// Token: 0x06000F87 RID: 3975 RVA: 0x00051D78 File Offset: 0x0004FF78
 	public static void FadeOutLayer(SmoothPostProcessing.PostProcessLayer layer, float speed)
 	{
 		SmoothPostProcessing smoothPostProcessing = SmoothPostProcessing.smoothLayers[(int)layer];
@@ -14,7 +14,7 @@ public class SmoothPostProcessing : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F88 RID: 3976 RVA: 0x00051DC4 File Offset: 0x0004FFC4
+	// Token: 0x06000F88 RID: 3976 RVA: 0x00051DA0 File Offset: 0x0004FFA0
 	public static void FadeInLayer(SmoothPostProcessing.PostProcessLayer layer, float speed)
 	{
 		SmoothPostProcessing smoothPostProcessing = SmoothPostProcessing.smoothLayers[(int)layer];
@@ -24,7 +24,7 @@ public class SmoothPostProcessing : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F89 RID: 3977 RVA: 0x00051DEC File Offset: 0x0004FFEC
+	// Token: 0x06000F89 RID: 3977 RVA: 0x00051DC8 File Offset: 0x0004FFC8
 	private void Awake()
 	{
 		this.volume = base.GetComponent<PostProcessVolume>();
@@ -38,7 +38,7 @@ public class SmoothPostProcessing : MonoBehaviour
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000F8A RID: 3978 RVA: 0x0000D6BC File Offset: 0x0000B8BC
+	// Token: 0x06000F8A RID: 3978 RVA: 0x0000D6C6 File Offset: 0x0000B8C6
 	protected void FadeOut(float speed)
 	{
 		this.depth--;
@@ -49,7 +49,7 @@ public class SmoothPostProcessing : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x06000F8B RID: 3979 RVA: 0x0000D6E8 File Offset: 0x0000B8E8
+	// Token: 0x06000F8B RID: 3979 RVA: 0x0000D6F2 File Offset: 0x0000B8F2
 	protected void FadeIn(float speed)
 	{
 		this.depth++;
@@ -58,7 +58,7 @@ public class SmoothPostProcessing : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x06000F8C RID: 3980 RVA: 0x00051E48 File Offset: 0x00050048
+	// Token: 0x06000F8C RID: 3980 RVA: 0x00051E24 File Offset: 0x00050024
 	private void Update()
 	{
 		float num = ((this.depth > 0) ? 1f : 0f);

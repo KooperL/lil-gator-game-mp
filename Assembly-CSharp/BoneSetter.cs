@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BoneSetter : MonoBehaviour
 {
-	// Token: 0x0600026B RID: 619 RVA: 0x00020088 File Offset: 0x0001E288
+	// Token: 0x0600026B RID: 619 RVA: 0x00020064 File Offset: 0x0001E264
 	[ContextMenu("GetBoneNames()")]
 	public void GetBoneNames()
 	{
@@ -20,7 +20,7 @@ public class BoneSetter : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600026C RID: 620 RVA: 0x000200DC File Offset: 0x0001E2DC
+	// Token: 0x0600026C RID: 620 RVA: 0x000200B8 File Offset: 0x0001E2B8
 	[ContextMenu("SetBones()")]
 	public void SetBones()
 	{

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HideDebug : MonoBehaviour
 {
-	// Token: 0x060009C1 RID: 2497 RVA: 0x0003B790 File Offset: 0x00039990
+	// Token: 0x060009C1 RID: 2497 RVA: 0x0003B76C File Offset: 0x0003996C
 	public static void ToggleHidden()
 	{
 		HideDebug.isHidden = !HideDebug.isHidden;
@@ -18,7 +18,7 @@ public class HideDebug : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009C2 RID: 2498 RVA: 0x000096A2 File Offset: 0x000078A2
+	// Token: 0x060009C2 RID: 2498 RVA: 0x000096AC File Offset: 0x000078AC
 	private void Start()
 	{
 		base.gameObject.SetActive(false);

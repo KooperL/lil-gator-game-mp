@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerActorStates : MonoBehaviour
 {
-	// Token: 0x06000C18 RID: 3096 RVA: 0x0000B48D File Offset: 0x0000968D
+	// Token: 0x06000C18 RID: 3096 RVA: 0x0000B497 File Offset: 0x00009697
 	private void Awake()
 	{
 		this.actor = base.GetComponent<DialogueActor>();
@@ -11,21 +11,21 @@ public class PlayerActorStates : MonoBehaviour
 		this.neutralStateInt = (int)this.neutralState;
 	}
 
-	// Token: 0x06000C19 RID: 3097 RVA: 0x0000B4B3 File Offset: 0x000096B3
+	// Token: 0x06000C19 RID: 3097 RVA: 0x0000B4BD File Offset: 0x000096BD
 	private void Start()
 	{
 		this.movement = Player.movement;
 		this.itemManager = Player.itemManager;
 	}
 
-	// Token: 0x06000C1A RID: 3098 RVA: 0x0000B4CB File Offset: 0x000096CB
+	// Token: 0x06000C1A RID: 3098 RVA: 0x0000B4D5 File Offset: 0x000096D5
 	private void OnEnable()
 	{
 		this.actor.State = this.neutralStateInt;
 		this.UpdateNextFidgetTime();
 	}
 
-	// Token: 0x06000C1B RID: 3099 RVA: 0x000422A0 File Offset: 0x000404A0
+	// Token: 0x06000C1B RID: 3099 RVA: 0x0004227C File Offset: 0x0004047C
 	private void FixedUpdate()
 	{
 		if (Player.movement.modCustomMovement || !Game.HasControl)
@@ -117,7 +117,7 @@ public class PlayerActorStates : MonoBehaviour
 		this.UpdateFidgets();
 	}
 
-	// Token: 0x06000C1C RID: 3100 RVA: 0x000424EC File Offset: 0x000406EC
+	// Token: 0x06000C1C RID: 3100 RVA: 0x000424C8 File Offset: 0x000406C8
 	private void UpdateFidgets()
 	{
 		bool flag = !this.movement.IsClimbing && !this.movement.IsSwimming && !this.movement.isGliding;
@@ -171,13 +171,13 @@ public class PlayerActorStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C1D RID: 3101 RVA: 0x0000B4E4 File Offset: 0x000096E4
+	// Token: 0x06000C1D RID: 3101 RVA: 0x0000B4EE File Offset: 0x000096EE
 	private void UpdateNextFidgetTime()
 	{
 		this.nextFidgetTime = Time.time + global::UnityEngine.Random.Range(8f, 16f);
 	}
 
-	// Token: 0x06000C1E RID: 3102 RVA: 0x0000B501 File Offset: 0x00009701
+	// Token: 0x06000C1E RID: 3102 RVA: 0x0000B50B File Offset: 0x0000970B
 	private void ClearFidget()
 	{
 		if (!this.isFidgeting)

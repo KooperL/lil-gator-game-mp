@@ -12,7 +12,7 @@ public class FallbackMusicZone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600006B RID: 107 RVA: 0x00018870 File Offset: 0x00016A70
+	// Token: 0x0600006B RID: 107 RVA: 0x0001884C File Offset: 0x00016A4C
 	private void OnTriggerStay(Collider other)
 	{
 		if (this.musicToOverride.isPlaying && !this.musicToOverride.isLocked && !this.musicToOverride.IsEligible)

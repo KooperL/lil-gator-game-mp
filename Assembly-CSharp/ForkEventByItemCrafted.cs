@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class ForkEventByItemCrafted : MonoBehaviour
 {
-	// Token: 0x060008D3 RID: 2259 RVA: 0x00008A34 File Offset: 0x00006C34
+	// Token: 0x060008D3 RID: 2259 RVA: 0x00008A3E File Offset: 0x00006C3E
 	public void Fork()
 	{
 		if (this.item.IsUnlocked)
@@ -31,7 +31,7 @@ public class ForkEventByItemCrafted : MonoBehaviour
 	[Serializable]
 	public struct ChoiceEvent
 	{
-		// Token: 0x060008D5 RID: 2261 RVA: 0x00008A73 File Offset: 0x00006C73
+		// Token: 0x060008D5 RID: 2261 RVA: 0x00008A7D File Offset: 0x00006C7D
 		public void Execute()
 		{
 			this.onChoose.Invoke();

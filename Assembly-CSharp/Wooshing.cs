@@ -11,7 +11,7 @@ public class Wooshing : MonoBehaviour
 		this.oldPosition = base.transform.position;
 	}
 
-	// Token: 0x060006C6 RID: 1734 RVA: 0x00032A60 File Offset: 0x00030C60
+	// Token: 0x060006C6 RID: 1734 RVA: 0x00032A3C File Offset: 0x00030C3C
 	private void Update()
 	{
 		Vector3 position = base.transform.position;

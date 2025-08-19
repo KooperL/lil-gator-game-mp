@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AcademicSubQuest : MonoBehaviour
 {
-	// (get) Token: 0x06000D80 RID: 3456 RVA: 0x0000C4C6 File Offset: 0x0000A6C6
-	// (set) Token: 0x06000D81 RID: 3457 RVA: 0x0000C4D9 File Offset: 0x0000A6D9
+	// (get) Token: 0x06000D80 RID: 3456 RVA: 0x0000C4D0 File Offset: 0x0000A6D0
+	// (set) Token: 0x06000D81 RID: 3457 RVA: 0x0000C4E3 File Offset: 0x0000A6E3
 	private int State
 	{
 		get
@@ -18,7 +18,7 @@ public class AcademicSubQuest : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000D82 RID: 3458 RVA: 0x0000C4EC File Offset: 0x0000A6EC
+	// (get) Token: 0x06000D82 RID: 3458 RVA: 0x0000C4F6 File Offset: 0x0000A6F6
 	public bool IsComplete
 	{
 		get
@@ -27,7 +27,7 @@ public class AcademicSubQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D83 RID: 3459 RVA: 0x0000C4F7 File Offset: 0x0000A6F7
+	// Token: 0x06000D83 RID: 3459 RVA: 0x0000C501 File Offset: 0x0000A701
 	private void OnValidate()
 	{
 		if (this.academicQuest == null)
@@ -36,13 +36,13 @@ public class AcademicSubQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D84 RID: 3460 RVA: 0x0000C512 File Offset: 0x0000A712
+	// Token: 0x06000D84 RID: 3460 RVA: 0x0000C51C File Offset: 0x0000A71C
 	public void Conversation()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000D85 RID: 3461 RVA: 0x0000C521 File Offset: 0x0000A721
+	// Token: 0x06000D85 RID: 3461 RVA: 0x0000C52B File Offset: 0x0000A72B
 	public IEnumerator RunConversation()
 	{
 		Game.DialogueDepth++;

@@ -15,7 +15,7 @@ public class PlayerMovePhysics : MonoBehaviour
 		base.transform.position += new Vector3(10f, 0f, 0f);
 	}
 
-	// Token: 0x06000164 RID: 356 RVA: 0x0001C704 File Offset: 0x0001A904
+	// Token: 0x06000164 RID: 356 RVA: 0x0001C6E0 File Offset: 0x0001A8E0
 	private void FixedUpdate()
 	{
 		Vector3 vector = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TutHorseQuest : MonoBehaviour
 {
-	// (get) Token: 0x06000EDF RID: 3807 RVA: 0x0000D002 File Offset: 0x0000B202
+	// (get) Token: 0x06000EDF RID: 3807 RVA: 0x0000D00C File Offset: 0x0000B20C
 	private string StateID
 	{
 		get
@@ -13,8 +13,8 @@ public class TutHorseQuest : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000EE0 RID: 3808 RVA: 0x0000D009 File Offset: 0x0000B209
-	// (set) Token: 0x06000EE1 RID: 3809 RVA: 0x0000D01C File Offset: 0x0000B21C
+	// (get) Token: 0x06000EE0 RID: 3808 RVA: 0x0000D013 File Offset: 0x0000B213
+	// (set) Token: 0x06000EE1 RID: 3809 RVA: 0x0000D026 File Offset: 0x0000B226
 	private int State
 	{
 		get
@@ -27,7 +27,7 @@ public class TutHorseQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000EE2 RID: 3810 RVA: 0x0004E4BC File Offset: 0x0004C6BC
+	// Token: 0x06000EE2 RID: 3810 RVA: 0x0004E498 File Offset: 0x0004C698
 	private void Start()
 	{
 		int state = this.State;
@@ -36,13 +36,13 @@ public class TutHorseQuest : MonoBehaviour
 		this.trigger3.SetActive(state == 6);
 	}
 
-	// Token: 0x06000EE3 RID: 3811 RVA: 0x0000D02F File Offset: 0x0000B22F
+	// Token: 0x06000EE3 RID: 3811 RVA: 0x0000D039 File Offset: 0x0000B239
 	public void Interact()
 	{
 		base.StartCoroutine(this.InteractC());
 	}
 
-	// Token: 0x06000EE4 RID: 3812 RVA: 0x0000D03E File Offset: 0x0000B23E
+	// Token: 0x06000EE4 RID: 3812 RVA: 0x0000D048 File Offset: 0x0000B248
 	private IEnumerator InteractC()
 	{
 		Game.DialogueDepth++;
@@ -102,7 +102,7 @@ public class TutHorseQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000EE5 RID: 3813 RVA: 0x0000D04D File Offset: 0x0000B24D
+	// Token: 0x06000EE5 RID: 3813 RVA: 0x0000D057 File Offset: 0x0000B257
 	public void Trigger1()
 	{
 		this.trigger1.SetActive(false);
@@ -110,7 +110,7 @@ public class TutHorseQuest : MonoBehaviour
 		DialogueManager.d.Bubble("Tutorial_HorseQuest2_Trigger", this.actors, 0f, false, true, true);
 	}
 
-	// Token: 0x06000EE6 RID: 3814 RVA: 0x0000D080 File Offset: 0x0000B280
+	// Token: 0x06000EE6 RID: 3814 RVA: 0x0000D08A File Offset: 0x0000B28A
 	private IEnumerator Trigger1C()
 	{
 		this.trigger1.SetActive(false);
@@ -121,7 +121,7 @@ public class TutHorseQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000EE7 RID: 3815 RVA: 0x0000D08F File Offset: 0x0000B28F
+	// Token: 0x06000EE7 RID: 3815 RVA: 0x0000D099 File Offset: 0x0000B299
 	public void Trigger2()
 	{
 		this.trigger2.SetActive(false);
@@ -129,7 +129,7 @@ public class TutHorseQuest : MonoBehaviour
 		DialogueManager.d.Bubble("Tutorial_HorseQuest4_Trigger", this.actors, 0f, false, true, true);
 	}
 
-	// Token: 0x06000EE8 RID: 3816 RVA: 0x0000D0C2 File Offset: 0x0000B2C2
+	// Token: 0x06000EE8 RID: 3816 RVA: 0x0000D0CC File Offset: 0x0000B2CC
 	private IEnumerator Trigger2C()
 	{
 		this.trigger2.SetActive(false);
@@ -140,13 +140,13 @@ public class TutHorseQuest : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000EE9 RID: 3817 RVA: 0x0000D0D1 File Offset: 0x0000B2D1
+	// Token: 0x06000EE9 RID: 3817 RVA: 0x0000D0DB File Offset: 0x0000B2DB
 	public void Trigger3()
 	{
 		base.StartCoroutine(this.Trigger3C());
 	}
 
-	// Token: 0x06000EEA RID: 3818 RVA: 0x0000D0E0 File Offset: 0x0000B2E0
+	// Token: 0x06000EEA RID: 3818 RVA: 0x0000D0EA File Offset: 0x0000B2EA
 	private IEnumerator Trigger3C()
 	{
 		Game.DialogueDepth++;

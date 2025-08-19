@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-	// (get) Token: 0x06000C37 RID: 3127 RVA: 0x0000B611 File Offset: 0x00009811
+	// (get) Token: 0x06000C37 RID: 3127 RVA: 0x0000B61B File Offset: 0x0000981B
 	public static Vector2 RawInput
 	{
 		get
@@ -13,7 +13,7 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C38 RID: 3128 RVA: 0x00043300 File Offset: 0x00041500
+	// Token: 0x06000C38 RID: 3128 RVA: 0x000432DC File Offset: 0x000414DC
 	private void OnEnable()
 	{
 		PlayerInput.p = this;
@@ -41,7 +41,7 @@ public class PlayerInput : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06000C3A RID: 3130 RVA: 0x0004342C File Offset: 0x0004162C
+	// Token: 0x06000C3A RID: 3130 RVA: 0x00043408 File Offset: 0x00041608
 	private void Update()
 	{
 		if (!Game.HasControl)
@@ -80,7 +80,7 @@ public class PlayerInput : MonoBehaviour
 				{
 					this.primaryMapping = 1;
 				}
-				else if (PlayerInput.secondaryMapping == PlayerInput.SecondaryMapping.Primary && !Player.movement.IsGrounded)
+				else if (PlayerInput.secondaryMapping == PlayerInput.SecondaryMapping.Primary && !global::Player.movement.IsGrounded)
 				{
 					this.primaryMapping = 2;
 				}
@@ -88,7 +88,7 @@ public class PlayerInput : MonoBehaviour
 				{
 					this.primaryMapping = 0;
 				}
-				if (!Player.movement.IsGrounded)
+				if (!global::Player.movement.IsGrounded)
 				{
 					this.jumpMapping = 0;
 				}
@@ -195,12 +195,12 @@ public class PlayerInput : MonoBehaviour
 			Controller lastActiveController = this.rePlayer.controllers.GetLastActiveController();
 			if (lastActiveController != null)
 			{
-				flag3 = lastActiveController.type != 2;
+				flag3 = lastActiveController.type != ControllerType.Joystick;
 			}
 			if ((UpdateCursor.isCurrentlyLocked || !flag3) && Game.State != GameState.Menu)
 			{
 				this.lookAxisRaw = this.rePlayer.GetAxis2DRaw(this.lookHorizontal, this.lookVertical);
-				if (this.rePlayer.GetAxisCoordinateMode(this.lookHorizontal) == null)
+				if (this.rePlayer.GetAxisCoordinateMode(this.lookHorizontal) == AxisCoordinateMode.Absolute)
 				{
 					this.lookAxisRaw *= 120f * Time.unscaledDeltaTime;
 				}
@@ -210,9 +210,9 @@ public class PlayerInput : MonoBehaviour
 				this.lookAxisRaw = Vector2.zero;
 			}
 		}
-		if (PlayerInput.useMovementToAim && Player.itemManager.IsAiming)
+		if (PlayerInput.useMovementToAim && global::Player.itemManager.IsAiming)
 		{
-			if (this.rePlayer.GetAxisCoordinateMode(this.moveHorizontal) == null)
+			if (this.rePlayer.GetAxisCoordinateMode(this.moveHorizontal) == AxisCoordinateMode.Absolute)
 			{
 				this.inputDirectionRaw *= 120f * Time.unscaledDeltaTime;
 			}
@@ -240,14 +240,14 @@ public class PlayerInput : MonoBehaviour
 		this.lookAxis = this.lookAxisRaw;
 	}
 
-	// Token: 0x06000C3B RID: 3131 RVA: 0x0000B636 File Offset: 0x00009836
+	// Token: 0x06000C3B RID: 3131 RVA: 0x0000B640 File Offset: 0x00009840
 	private void LateUpdate()
 	{
 		this.jumpDesired = false;
 		this.cancelAction = false;
 	}
 
-	// Token: 0x06000C3C RID: 3132 RVA: 0x000439E4 File Offset: 0x00041BE4
+	// Token: 0x06000C3C RID: 3132 RVA: 0x000439C0 File Offset: 0x00041BC0
 	private void HandlePrimary()
 	{
 		bool flag = false;
@@ -284,7 +284,7 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C3D RID: 3133 RVA: 0x00043B14 File Offset: 0x00041D14
+	// Token: 0x06000C3D RID: 3133 RVA: 0x00043AF0 File Offset: 0x00041CF0
 	private void HandleSecondary()
 	{
 		bool flag = this.rePlayer.GetButtonDown(this.secondary);
@@ -305,7 +305,7 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C3E RID: 3134 RVA: 0x00043BD0 File Offset: 0x00041DD0
+	// Token: 0x06000C3E RID: 3134 RVA: 0x00043BAC File Offset: 0x00041DAC
 	private void HandleItem()
 	{
 		bool buttonDown = this.rePlayer.GetButtonDown(this.useItem);
@@ -320,7 +320,7 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C3F RID: 3135 RVA: 0x00043C4C File Offset: 0x00041E4C
+	// Token: 0x06000C3F RID: 3135 RVA: 0x00043C28 File Offset: 0x00041E28
 	private void HandleItem_R()
 	{
 		bool buttonDown = this.rePlayer.GetButtonDown(this.useItemR);
@@ -377,7 +377,7 @@ public class PlayerInput : MonoBehaviour
 
 	public Vector2 lookAxis;
 
-	private Player rePlayer;
+	private global::Rewired.Player rePlayer;
 
 	private int moveHorizontal;
 

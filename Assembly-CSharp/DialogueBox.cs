@@ -12,7 +12,7 @@ public class DialogueBox : MonoBehaviour
 		return breakCharacter == ' ';
 	}
 
-	// Token: 0x06000411 RID: 1041 RVA: 0x00028F54 File Offset: 0x00027154
+	// Token: 0x06000411 RID: 1041 RVA: 0x00028F30 File Offset: 0x00027130
 	public static string InsertLineBreaks(string text, TextGenerationSettings settings)
 	{
 		string text2 = text;
@@ -72,7 +72,7 @@ public class DialogueBox : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000413 RID: 1043 RVA: 0x00029070 File Offset: 0x00027270
+	// (get) Token: 0x06000413 RID: 1043 RVA: 0x0002904C File Offset: 0x0002724C
 	public TextGenerationSettings TextGenerationSettings
 	{
 		get
@@ -105,7 +105,7 @@ public class DialogueBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000414 RID: 1044 RVA: 0x00029134 File Offset: 0x00027334
+	// Token: 0x06000414 RID: 1044 RVA: 0x00029110 File Offset: 0x00027310
 	private void Awake()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
@@ -143,7 +143,7 @@ public class DialogueBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000418 RID: 1048 RVA: 0x00029200 File Offset: 0x00027400
+	// Token: 0x06000418 RID: 1048 RVA: 0x000291DC File Offset: 0x000273DC
 	public YieldInstruction Load(string text, DialogueActor actor = null, bool hasInput = true, float waitTime = 0f)
 	{
 		bool flag = this.actor == actor;
@@ -170,7 +170,7 @@ public class DialogueBox : MonoBehaviour
 		return this.Load(text, color, sprite, flag, hasInput, sprite2, waitTime);
 	}
 
-	// Token: 0x06000419 RID: 1049 RVA: 0x000292D8 File Offset: 0x000274D8
+	// Token: 0x06000419 RID: 1049 RVA: 0x000292B4 File Offset: 0x000274B4
 	public YieldInstruction Load(string text, Color color, Sprite decoration = null, bool ignoreAnimation = false, bool hasInput = true, Sprite pattern = null, float waitTime = 0f)
 	{
 		string text2 = text;
@@ -208,7 +208,7 @@ public class DialogueBox : MonoBehaviour
 			else
 			{
 				this.invisibleText.text = text;
-				this.invisibleText.horizontalOverflow = 1;
+				this.invisibleText.horizontalOverflow = HorizontalWrapMode.Overflow;
 			}
 		}
 		if (this.textSpeed > 0f)
@@ -261,7 +261,7 @@ public class DialogueBox : MonoBehaviour
 		return base.StartCoroutine(this.RunDialogue());
 	}
 
-	// Token: 0x0600041A RID: 1050 RVA: 0x00029570 File Offset: 0x00027770
+	// Token: 0x0600041A RID: 1050 RVA: 0x0002954C File Offset: 0x0002774C
 	public void SetColor(Color color)
 	{
 		if (this.coloredImage != null)
@@ -277,7 +277,7 @@ public class DialogueBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600041B RID: 1051 RVA: 0x000295CC File Offset: 0x000277CC
+	// Token: 0x0600041B RID: 1051 RVA: 0x000295A8 File Offset: 0x000277A8
 	public void SetDecorations(Sprite decoration)
 	{
 		if (this.decorations == null || this.decorations.Length == 0)
@@ -298,7 +298,7 @@ public class DialogueBox : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600041C RID: 1052 RVA: 0x00029634 File Offset: 0x00027834
+	// Token: 0x0600041C RID: 1052 RVA: 0x00029610 File Offset: 0x00027810
 	public void SetPattern(Sprite sprite)
 	{
 		if (this.pattern == null)
@@ -447,7 +447,7 @@ public class DialogueBox : MonoBehaviour
 		this.visibleText.text = this.text;
 	}
 
-	// Token: 0x06000421 RID: 1057 RVA: 0x00029688 File Offset: 0x00027888
+	// Token: 0x06000421 RID: 1057 RVA: 0x00029664 File Offset: 0x00027864
 	private void Update()
 	{
 		if (this.clearTime > 0f && this.clearTime < Time.time)
@@ -562,7 +562,7 @@ public class DialogueBox : MonoBehaviour
 
 	private bool hasInput = true;
 
-	private Player rePlayer;
+	private global::Rewired.Player rePlayer;
 
 	private float clearTime = -1f;
 }

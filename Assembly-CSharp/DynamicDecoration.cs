@@ -45,7 +45,7 @@ public class DynamicDecoration : MonoBehaviour
 		this.UpdateState();
 	}
 
-	// Token: 0x060000F6 RID: 246 RVA: 0x0001B0A8 File Offset: 0x000192A8
+	// Token: 0x060000F6 RID: 246 RVA: 0x0001B084 File Offset: 0x00019284
 	[ContextMenu("Snap to ground")]
 	public void SnapToGround()
 	{
@@ -58,7 +58,7 @@ public class DynamicDecoration : MonoBehaviour
 		this.staticRoot.SetActive(true);
 	}
 
-	// Token: 0x060000F7 RID: 247 RVA: 0x0001B114 File Offset: 0x00019314
+	// Token: 0x060000F7 RID: 247 RVA: 0x0001B0F0 File Offset: 0x000192F0
 	public void Settle()
 	{
 		this.staticRoot.SetActive(false);
@@ -143,7 +143,7 @@ public class DynamicDecoration : MonoBehaviour
 		this.staticRoot.SetActive(true);
 	}
 
-	// Token: 0x060000F8 RID: 248 RVA: 0x0001B424 File Offset: 0x00019624
+	// Token: 0x060000F8 RID: 248 RVA: 0x0001B400 File Offset: 0x00019600
 	[ContextMenu("Update State")]
 	private void UpdateState()
 	{

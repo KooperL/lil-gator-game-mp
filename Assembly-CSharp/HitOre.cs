@@ -32,7 +32,7 @@ public class HitOre : MonoBehaviour
 		base.gameObject.SetActive(!state);
 	}
 
-	// Token: 0x06000813 RID: 2067 RVA: 0x00036CE4 File Offset: 0x00034EE4
+	// Token: 0x06000813 RID: 2067 RVA: 0x00036CC0 File Offset: 0x00034EC0
 	[ContextMenu("Assign Unique ID")]
 	public void AssignUniqueID()
 	{
