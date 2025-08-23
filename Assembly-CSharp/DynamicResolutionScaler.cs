@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class DynamicResolutionScaler : MonoBehaviour
 {
-	// Token: 0x06000947 RID: 2375 RVA: 0x00009031 File Offset: 0x00007231
+	// Token: 0x06000948 RID: 2376 RVA: 0x00009031 File Offset: 0x00007231
 	private void Start()
 	{
 		this.frameTimings = new FrameTiming[10];
 	}
 
-	// Token: 0x06000948 RID: 2376 RVA: 0x00009040 File Offset: 0x00007240
+	// Token: 0x06000949 RID: 2377 RVA: 0x00009040 File Offset: 0x00007240
 	private void OnEnable()
 	{
 		this.updateCounter = 0;
 	}
 
-	// Token: 0x06000949 RID: 2377 RVA: 0x00009049 File Offset: 0x00007249
+	// Token: 0x0600094A RID: 2378 RVA: 0x00009049 File Offset: 0x00007249
 	private void Update()
 	{
 		FrameTimingManager.CaptureFrameTimings();
@@ -27,7 +27,7 @@ public class DynamicResolutionScaler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600094A RID: 2378 RVA: 0x0003A1BC File Offset: 0x000383BC
+	// Token: 0x0600094B RID: 2379 RVA: 0x0003A4A8 File Offset: 0x000386A8
 	private void CheckPerformance()
 	{
 		uint latestTimings = FrameTimingManager.GetLatestTimings(10U, this.frameTimings);
@@ -67,7 +67,7 @@ public class DynamicResolutionScaler : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600094B RID: 2379 RVA: 0x0003A2F0 File Offset: 0x000384F0
+	// Token: 0x0600094C RID: 2380 RVA: 0x0003A5DC File Offset: 0x000387DC
 	[ContextMenu("Calculate Intervals")]
 	private void CalculateIntervals()
 	{
@@ -116,7 +116,7 @@ public class DynamicResolutionScaler : MonoBehaviour
 	[Serializable]
 	public struct ScaleInterval
 	{
-		// Token: 0x0600094D RID: 2381 RVA: 0x0000909E File Offset: 0x0000729E
+		// Token: 0x0600094E RID: 2382 RVA: 0x0000909E File Offset: 0x0000729E
 		public ScaleInterval(float scale, float unscaledPixelCount)
 		{
 			this.scale = scale;

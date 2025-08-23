@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMoveOnSphere : MonoBehaviour
 {
-	// Token: 0x06000160 RID: 352 RVA: 0x0001C558 File Offset: 0x0001A758
+	// Token: 0x06000160 RID: 352 RVA: 0x0001C590 File Offset: 0x0001A790
 	private void Update()
 	{
 		Vector3 vector = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));

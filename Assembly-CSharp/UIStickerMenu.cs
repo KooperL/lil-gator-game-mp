@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIStickerMenu : MonoBehaviour
 {
-	// Token: 0x060013A2 RID: 5026 RVA: 0x00060210 File Offset: 0x0005E410
+	// Token: 0x060013A3 RID: 5027 RVA: 0x000604FC File Offset: 0x0005E6FC
 	private void Awake()
 	{
 		this.stickerDictionary = new Dictionary<string, StickerObject>();
@@ -14,19 +14,19 @@ public class UIStickerMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013A3 RID: 5027 RVA: 0x000109FC File Offset: 0x0000EBFC
+	// Token: 0x060013A4 RID: 5028 RVA: 0x000109FC File Offset: 0x0000EBFC
 	private void Start()
 	{
 		this.LoadStickers();
 	}
 
-	// Token: 0x060013A4 RID: 5028 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x060013A5 RID: 5029 RVA: 0x00002229 File Offset: 0x00000429
 	[ContextMenu("Load Stickers")]
 	private void LoadStickers()
 	{
 	}
 
-	// Token: 0x060013A5 RID: 5029 RVA: 0x0006025C File Offset: 0x0005E45C
+	// Token: 0x060013A6 RID: 5030 RVA: 0x00060548 File Offset: 0x0005E748
 	[ContextMenu("Place All Stickers")]
 	public void PlaceAllStickers()
 	{
@@ -36,7 +36,7 @@ public class UIStickerMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013A6 RID: 5030 RVA: 0x00060290 File Offset: 0x0005E490
+	// Token: 0x060013A7 RID: 5031 RVA: 0x0006057C File Offset: 0x0005E77C
 	[ContextMenu("Rebuild Sticker List")]
 	public void RebuildStickerList()
 	{
@@ -48,7 +48,7 @@ public class UIStickerMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060013A7 RID: 5031 RVA: 0x000602DC File Offset: 0x0005E4DC
+	// Token: 0x060013A8 RID: 5032 RVA: 0x000605C8 File Offset: 0x0005E7C8
 	private void PlaceSticker(StickerObject stickerObject, Vector2 position, bool isInteractable = true)
 	{
 		UISticker component = global::UnityEngine.Object.Instantiate<GameObject>(this.placedStickerPrefab, this.placedStickersParent).GetComponent<UISticker>();
@@ -58,7 +58,7 @@ public class UIStickerMenu : MonoBehaviour
 		this.placedStickers.Add(component);
 	}
 
-	// Token: 0x060013A8 RID: 5032 RVA: 0x00060330 File Offset: 0x0005E530
+	// Token: 0x060013A9 RID: 5033 RVA: 0x0006061C File Offset: 0x0005E81C
 	private void ToggleInteractability(bool isInteractable)
 	{
 		foreach (UISticker uisticker in this.placedStickers)

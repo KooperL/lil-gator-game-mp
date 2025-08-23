@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemSearch<T> : MonoBehaviour, IItemBehaviour where T : MonoBehaviour
 {
-	// Token: 0x06000B7D RID: 2941 RVA: 0x0000ACC4 File Offset: 0x00008EC4
+	// Token: 0x06000B7E RID: 2942 RVA: 0x0000ACC4 File Offset: 0x00008EC4
 	public void Input(bool isDown, bool isHeld)
 	{
 		if (isDown)
@@ -13,7 +13,7 @@ public class ItemSearch<T> : MonoBehaviour, IItemBehaviour where T : MonoBehavio
 		}
 	}
 
-	// Token: 0x06000B7E RID: 2942 RVA: 0x0000ACCF File Offset: 0x00008ECF
+	// Token: 0x06000B7F RID: 2943 RVA: 0x0000ACCF File Offset: 0x00008ECF
 	protected IEnumerator RunSearch()
 	{
 		this.isSearching = true;
@@ -47,44 +47,44 @@ public class ItemSearch<T> : MonoBehaviour, IItemBehaviour where T : MonoBehavio
 		yield break;
 	}
 
-	// Token: 0x06000B7F RID: 2943 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B80 RID: 2944 RVA: 0x00002229 File Offset: 0x00000429
 	protected virtual void SearchResult(T result)
 	{
 	}
 
-	// Token: 0x06000B80 RID: 2944 RVA: 0x00006415 File Offset: 0x00004615
+	// Token: 0x06000B81 RID: 2945 RVA: 0x00006415 File Offset: 0x00004615
 	protected virtual T[] GetList()
 	{
 		return null;
 	}
 
-	// Token: 0x06000B81 RID: 2945 RVA: 0x00003A8E File Offset: 0x00001C8E
+	// Token: 0x06000B82 RID: 2946 RVA: 0x00003A8E File Offset: 0x00001C8E
 	protected virtual bool IsValid(T item)
 	{
 		return false;
 	}
 
-	// Token: 0x06000B82 RID: 2946 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B83 RID: 2947 RVA: 0x00002229 File Offset: 0x00000429
 	protected virtual void OnUse()
 	{
 	}
 
-	// Token: 0x06000B83 RID: 2947 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B84 RID: 2948 RVA: 0x00002229 File Offset: 0x00000429
 	public virtual void SetEquipped(bool isEquipped)
 	{
 	}
 
-	// Token: 0x06000B84 RID: 2948 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B85 RID: 2949 RVA: 0x00002229 File Offset: 0x00000429
 	public virtual void Cancel()
 	{
 	}
 
-	// Token: 0x06000B85 RID: 2949 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B86 RID: 2950 RVA: 0x00002229 File Offset: 0x00000429
 	public virtual void OnRemove()
 	{
 	}
 
-	// Token: 0x06000B86 RID: 2950 RVA: 0x0000ACDE File Offset: 0x00008EDE
+	// Token: 0x06000B87 RID: 2951 RVA: 0x0000ACDE File Offset: 0x00008EDE
 	public void SetIndex(int index)
 	{
 		if (index == 1)

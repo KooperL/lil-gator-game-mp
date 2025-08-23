@@ -8,7 +8,7 @@ namespace Rewired.UI.ControlMapper
 	[Serializable]
 	public class MLLanguageData : LanguageDataBase
 	{
-		// Token: 0x06001BD7 RID: 7127 RVA: 0x000153FD File Offset: 0x000135FD
+		// Token: 0x06001BD8 RID: 7128 RVA: 0x000153FD File Offset: 0x000135FD
 		public override void Initialize()
 		{
 			if (this._initialized)
@@ -19,7 +19,7 @@ namespace Rewired.UI.ControlMapper
 			this._initialized = true;
 		}
 
-		// Token: 0x06001BD8 RID: 7128 RVA: 0x0006F8CC File Offset: 0x0006DACC
+		// Token: 0x06001BD9 RID: 7129 RVA: 0x0006FBB8 File Offset: 0x0006DDB8
 		public override string GetCustomEntry(string key)
 		{
 			if (string.IsNullOrEmpty(key))
@@ -34,13 +34,13 @@ namespace Rewired.UI.ControlMapper
 			return text;
 		}
 
-		// Token: 0x06001BD9 RID: 7129 RVA: 0x00015420 File Offset: 0x00013620
+		// Token: 0x06001BDA RID: 7130 RVA: 0x00015420 File Offset: 0x00013620
 		public override bool ContainsCustomEntryKey(string key)
 		{
 			return !string.IsNullOrEmpty(key) && this.customDict.ContainsKey(key);
 		}
 
-		// (get) Token: 0x06001BDA RID: 7130 RVA: 0x00015438 File Offset: 0x00013638
+		// (get) Token: 0x06001BDB RID: 7131 RVA: 0x00015438 File Offset: 0x00013638
 		public override string yes
 		{
 			get
@@ -49,7 +49,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BDB RID: 7131 RVA: 0x0001544D File Offset: 0x0001364D
+		// (get) Token: 0x06001BDC RID: 7132 RVA: 0x0001544D File Offset: 0x0001364D
 		public override string no
 		{
 			get
@@ -58,7 +58,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BDC RID: 7132 RVA: 0x00015462 File Offset: 0x00013662
+		// (get) Token: 0x06001BDD RID: 7133 RVA: 0x00015462 File Offset: 0x00013662
 		public override string add
 		{
 			get
@@ -67,7 +67,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BDD RID: 7133 RVA: 0x00015477 File Offset: 0x00013677
+		// (get) Token: 0x06001BDE RID: 7134 RVA: 0x00015477 File Offset: 0x00013677
 		public override string replace
 		{
 			get
@@ -76,7 +76,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BDE RID: 7134 RVA: 0x0001548C File Offset: 0x0001368C
+		// (get) Token: 0x06001BDF RID: 7135 RVA: 0x0001548C File Offset: 0x0001368C
 		public override string remove
 		{
 			get
@@ -85,7 +85,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BDF RID: 7135 RVA: 0x000154A1 File Offset: 0x000136A1
+		// (get) Token: 0x06001BE0 RID: 7136 RVA: 0x000154A1 File Offset: 0x000136A1
 		public override string swap
 		{
 			get
@@ -94,7 +94,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BE0 RID: 7136 RVA: 0x000154B6 File Offset: 0x000136B6
+		// (get) Token: 0x06001BE1 RID: 7137 RVA: 0x000154B6 File Offset: 0x000136B6
 		public override string cancel
 		{
 			get
@@ -103,7 +103,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BE1 RID: 7137 RVA: 0x000154CB File Offset: 0x000136CB
+		// (get) Token: 0x06001BE2 RID: 7138 RVA: 0x000154CB File Offset: 0x000136CB
 		public override string none
 		{
 			get
@@ -112,7 +112,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BE2 RID: 7138 RVA: 0x000154E0 File Offset: 0x000136E0
+		// (get) Token: 0x06001BE3 RID: 7139 RVA: 0x000154E0 File Offset: 0x000136E0
 		public override string okay
 		{
 			get
@@ -121,7 +121,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BE3 RID: 7139 RVA: 0x000154F5 File Offset: 0x000136F5
+		// (get) Token: 0x06001BE4 RID: 7140 RVA: 0x000154F5 File Offset: 0x000136F5
 		public override string done
 		{
 			get
@@ -130,7 +130,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BE4 RID: 7140 RVA: 0x0001550A File Offset: 0x0001370A
+		// (get) Token: 0x06001BE5 RID: 7141 RVA: 0x0001550A File Offset: 0x0001370A
 		public override string default_
 		{
 			get
@@ -139,7 +139,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BE5 RID: 7141 RVA: 0x0001551F File Offset: 0x0001371F
+		// (get) Token: 0x06001BE6 RID: 7142 RVA: 0x0001551F File Offset: 0x0001371F
 		public override string assignControllerWindowTitle
 		{
 			get
@@ -148,7 +148,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BE6 RID: 7142 RVA: 0x00015534 File Offset: 0x00013734
+		// (get) Token: 0x06001BE7 RID: 7143 RVA: 0x00015534 File Offset: 0x00013734
 		public override string assignControllerWindowMessage
 		{
 			get
@@ -157,7 +157,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BE7 RID: 7143 RVA: 0x00015549 File Offset: 0x00013749
+		// (get) Token: 0x06001BE8 RID: 7144 RVA: 0x00015549 File Offset: 0x00013749
 		public override string controllerAssignmentConflictWindowTitle
 		{
 			get
@@ -166,7 +166,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BE8 RID: 7144 RVA: 0x0001555E File Offset: 0x0001375E
+		// (get) Token: 0x06001BE9 RID: 7145 RVA: 0x0001555E File Offset: 0x0001375E
 		public override string elementAssignmentPrePollingWindowMessage
 		{
 			get
@@ -175,7 +175,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BE9 RID: 7145 RVA: 0x00015573 File Offset: 0x00013773
+		// (get) Token: 0x06001BEA RID: 7146 RVA: 0x00015573 File Offset: 0x00013773
 		public override string elementAssignmentConflictWindowMessage
 		{
 			get
@@ -184,7 +184,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BEA RID: 7146 RVA: 0x00015588 File Offset: 0x00013788
+		// (get) Token: 0x06001BEB RID: 7147 RVA: 0x00015588 File Offset: 0x00013788
 		public override string elementAssignmentReplacementWindowMessage
 		{
 			get
@@ -193,7 +193,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BEB RID: 7147 RVA: 0x0001559D File Offset: 0x0001379D
+		// (get) Token: 0x06001BEC RID: 7148 RVA: 0x0001559D File Offset: 0x0001379D
 		public override string mouseAssignmentConflictWindowTitle
 		{
 			get
@@ -202,7 +202,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BEC RID: 7148 RVA: 0x000155B2 File Offset: 0x000137B2
+		// (get) Token: 0x06001BED RID: 7149 RVA: 0x000155B2 File Offset: 0x000137B2
 		public override string calibrateControllerWindowTitle
 		{
 			get
@@ -211,7 +211,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BED RID: 7149 RVA: 0x000155C7 File Offset: 0x000137C7
+		// (get) Token: 0x06001BEE RID: 7150 RVA: 0x000155C7 File Offset: 0x000137C7
 		public override string calibrateAxisStep1WindowTitle
 		{
 			get
@@ -220,7 +220,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BEE RID: 7150 RVA: 0x000155DC File Offset: 0x000137DC
+		// (get) Token: 0x06001BEF RID: 7151 RVA: 0x000155DC File Offset: 0x000137DC
 		public override string calibrateAxisStep2WindowTitle
 		{
 			get
@@ -229,7 +229,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BEF RID: 7151 RVA: 0x000155F1 File Offset: 0x000137F1
+		// (get) Token: 0x06001BF0 RID: 7152 RVA: 0x000155F1 File Offset: 0x000137F1
 		public override string inputBehaviorSettingsWindowTitle
 		{
 			get
@@ -238,7 +238,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BF0 RID: 7152 RVA: 0x00015606 File Offset: 0x00013806
+		// (get) Token: 0x06001BF1 RID: 7153 RVA: 0x00015606 File Offset: 0x00013806
 		public override string restoreDefaultsWindowTitle
 		{
 			get
@@ -247,7 +247,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BF1 RID: 7153 RVA: 0x0001561B File Offset: 0x0001381B
+		// (get) Token: 0x06001BF2 RID: 7154 RVA: 0x0001561B File Offset: 0x0001381B
 		public override string actionColumnLabel
 		{
 			get
@@ -256,7 +256,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BF2 RID: 7154 RVA: 0x00015630 File Offset: 0x00013830
+		// (get) Token: 0x06001BF3 RID: 7155 RVA: 0x00015630 File Offset: 0x00013830
 		public override string keyboardColumnLabel
 		{
 			get
@@ -265,7 +265,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BF3 RID: 7155 RVA: 0x00015645 File Offset: 0x00013845
+		// (get) Token: 0x06001BF4 RID: 7156 RVA: 0x00015645 File Offset: 0x00013845
 		public override string mouseColumnLabel
 		{
 			get
@@ -274,7 +274,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BF4 RID: 7156 RVA: 0x0001565A File Offset: 0x0001385A
+		// (get) Token: 0x06001BF5 RID: 7157 RVA: 0x0001565A File Offset: 0x0001385A
 		public override string controllerColumnLabel
 		{
 			get
@@ -283,7 +283,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BF5 RID: 7157 RVA: 0x0001566F File Offset: 0x0001386F
+		// (get) Token: 0x06001BF6 RID: 7158 RVA: 0x0001566F File Offset: 0x0001386F
 		public override string removeControllerButtonLabel
 		{
 			get
@@ -292,7 +292,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BF6 RID: 7158 RVA: 0x00015684 File Offset: 0x00013884
+		// (get) Token: 0x06001BF7 RID: 7159 RVA: 0x00015684 File Offset: 0x00013884
 		public override string calibrateControllerButtonLabel
 		{
 			get
@@ -301,7 +301,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BF7 RID: 7159 RVA: 0x00015699 File Offset: 0x00013899
+		// (get) Token: 0x06001BF8 RID: 7160 RVA: 0x00015699 File Offset: 0x00013899
 		public override string assignControllerButtonLabel
 		{
 			get
@@ -310,7 +310,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BF8 RID: 7160 RVA: 0x000156AE File Offset: 0x000138AE
+		// (get) Token: 0x06001BF9 RID: 7161 RVA: 0x000156AE File Offset: 0x000138AE
 		public override string inputBehaviorSettingsButtonLabel
 		{
 			get
@@ -319,7 +319,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BF9 RID: 7161 RVA: 0x000156C3 File Offset: 0x000138C3
+		// (get) Token: 0x06001BFA RID: 7162 RVA: 0x000156C3 File Offset: 0x000138C3
 		public override string doneButtonLabel
 		{
 			get
@@ -328,7 +328,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BFA RID: 7162 RVA: 0x000156D8 File Offset: 0x000138D8
+		// (get) Token: 0x06001BFB RID: 7163 RVA: 0x000156D8 File Offset: 0x000138D8
 		public override string restoreDefaultsButtonLabel
 		{
 			get
@@ -337,7 +337,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BFB RID: 7163 RVA: 0x000156ED File Offset: 0x000138ED
+		// (get) Token: 0x06001BFC RID: 7164 RVA: 0x000156ED File Offset: 0x000138ED
 		public override string controllerSettingsGroupLabel
 		{
 			get
@@ -346,7 +346,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BFC RID: 7164 RVA: 0x00015702 File Offset: 0x00013902
+		// (get) Token: 0x06001BFD RID: 7165 RVA: 0x00015702 File Offset: 0x00013902
 		public override string playersGroupLabel
 		{
 			get
@@ -355,7 +355,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BFD RID: 7165 RVA: 0x00015717 File Offset: 0x00013917
+		// (get) Token: 0x06001BFE RID: 7166 RVA: 0x00015717 File Offset: 0x00013917
 		public override string assignedControllersGroupLabel
 		{
 			get
@@ -364,7 +364,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BFE RID: 7166 RVA: 0x0001572C File Offset: 0x0001392C
+		// (get) Token: 0x06001BFF RID: 7167 RVA: 0x0001572C File Offset: 0x0001392C
 		public override string settingsGroupLabel
 		{
 			get
@@ -373,7 +373,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001BFF RID: 7167 RVA: 0x00015741 File Offset: 0x00013941
+		// (get) Token: 0x06001C00 RID: 7168 RVA: 0x00015741 File Offset: 0x00013941
 		public override string mapCategoriesGroupLabel
 		{
 			get
@@ -382,7 +382,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001C00 RID: 7168 RVA: 0x00015756 File Offset: 0x00013956
+		// (get) Token: 0x06001C01 RID: 7169 RVA: 0x00015756 File Offset: 0x00013956
 		public override string restoreDefaultsWindowMessage
 		{
 			get
@@ -395,7 +395,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001C01 RID: 7169 RVA: 0x0001578C File Offset: 0x0001398C
+		// (get) Token: 0x06001C02 RID: 7170 RVA: 0x0001578C File Offset: 0x0001398C
 		public override string calibrateWindow_deadZoneSliderLabel
 		{
 			get
@@ -404,7 +404,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001C02 RID: 7170 RVA: 0x000157A1 File Offset: 0x000139A1
+		// (get) Token: 0x06001C03 RID: 7171 RVA: 0x000157A1 File Offset: 0x000139A1
 		public override string calibrateWindow_zeroSliderLabel
 		{
 			get
@@ -413,7 +413,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001C03 RID: 7171 RVA: 0x000157B6 File Offset: 0x000139B6
+		// (get) Token: 0x06001C04 RID: 7172 RVA: 0x000157B6 File Offset: 0x000139B6
 		public override string calibrateWindow_sensitivitySliderLabel
 		{
 			get
@@ -422,7 +422,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001C04 RID: 7172 RVA: 0x000157CB File Offset: 0x000139CB
+		// (get) Token: 0x06001C05 RID: 7173 RVA: 0x000157CB File Offset: 0x000139CB
 		public override string calibrateWindow_invertToggleLabel
 		{
 			get
@@ -431,7 +431,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001C05 RID: 7173 RVA: 0x000157E0 File Offset: 0x000139E0
+		// (get) Token: 0x06001C06 RID: 7174 RVA: 0x000157E0 File Offset: 0x000139E0
 		public override string calibrateWindow_calibrateButtonLabel
 		{
 			get
@@ -440,49 +440,49 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001C06 RID: 7174 RVA: 0x000157F5 File Offset: 0x000139F5
+		// Token: 0x06001C07 RID: 7175 RVA: 0x000157F5 File Offset: 0x000139F5
 		public override string GetControllerAssignmentConflictWindowMessage(string joystickName, string otherPlayerName, string currentPlayerName)
 		{
 			return string.Format(this.document.FetchString(this._controllerAssignmentConflictWindowMessage, Language.Auto), joystickName, otherPlayerName, currentPlayerName);
 		}
 
-		// Token: 0x06001C07 RID: 7175 RVA: 0x00015812 File Offset: 0x00013A12
+		// Token: 0x06001C08 RID: 7176 RVA: 0x00015812 File Offset: 0x00013A12
 		public override string GetJoystickElementAssignmentPollingWindowMessage(string actionName)
 		{
 			return string.Format(this.document.FetchString(this._joystickElementAssignmentPollingWindowMessage, Language.Auto), actionName);
 		}
 
-		// Token: 0x06001C08 RID: 7176 RVA: 0x0001582D File Offset: 0x00013A2D
+		// Token: 0x06001C09 RID: 7177 RVA: 0x0001582D File Offset: 0x00013A2D
 		public override string GetJoystickElementAssignmentPollingWindowMessage_FullAxisFieldOnly(string actionName)
 		{
 			return string.Format(this.document.FetchString(this._joystickElementAssignmentPollingWindowMessage_fullAxisFieldOnly, Language.Auto), actionName);
 		}
 
-		// Token: 0x06001C09 RID: 7177 RVA: 0x00015848 File Offset: 0x00013A48
+		// Token: 0x06001C0A RID: 7178 RVA: 0x00015848 File Offset: 0x00013A48
 		public override string GetKeyboardElementAssignmentPollingWindowMessage(string actionName)
 		{
 			return string.Format(this.document.FetchString(this._keyboardElementAssignmentPollingWindowMessage, Language.Auto), actionName);
 		}
 
-		// Token: 0x06001C0A RID: 7178 RVA: 0x00015863 File Offset: 0x00013A63
+		// Token: 0x06001C0B RID: 7179 RVA: 0x00015863 File Offset: 0x00013A63
 		public override string GetMouseElementAssignmentPollingWindowMessage(string actionName)
 		{
 			return string.Format(this.document.FetchString(this._mouseElementAssignmentPollingWindowMessage, Language.Auto), actionName);
 		}
 
-		// Token: 0x06001C0B RID: 7179 RVA: 0x0001587E File Offset: 0x00013A7E
+		// Token: 0x06001C0C RID: 7180 RVA: 0x0001587E File Offset: 0x00013A7E
 		public override string GetMouseElementAssignmentPollingWindowMessage_FullAxisFieldOnly(string actionName)
 		{
 			return string.Format(this.document.FetchString(this._mouseElementAssignmentPollingWindowMessage_fullAxisFieldOnly, Language.Auto), actionName);
 		}
 
-		// Token: 0x06001C0C RID: 7180 RVA: 0x00015899 File Offset: 0x00013A99
+		// Token: 0x06001C0D RID: 7181 RVA: 0x00015899 File Offset: 0x00013A99
 		public override string GetElementAlreadyInUseBlocked(string elementName)
 		{
 			return string.Format(this.document.FetchString(this._elementAlreadyInUseBlocked, Language.Auto), elementName);
 		}
 
-		// Token: 0x06001C0D RID: 7181 RVA: 0x000158B4 File Offset: 0x00013AB4
+		// Token: 0x06001C0E RID: 7182 RVA: 0x000158B4 File Offset: 0x00013AB4
 		public override string GetElementAlreadyInUseCanReplace(string elementName, bool allowConflicts)
 		{
 			if (!allowConflicts)
@@ -492,25 +492,25 @@ namespace Rewired.UI.ControlMapper
 			return string.Format(this.document.FetchString(this._elementAlreadyInUseCanReplace_conflictAllowed, Language.Auto), elementName);
 		}
 
-		// Token: 0x06001C0E RID: 7182 RVA: 0x000158EC File Offset: 0x00013AEC
+		// Token: 0x06001C0F RID: 7183 RVA: 0x000158EC File Offset: 0x00013AEC
 		public override string GetMouseAssignmentConflictWindowMessage(string otherPlayerName, string thisPlayerName)
 		{
 			return string.Format(this.document.FetchString(this._mouseAssignmentConflictWindowMessage, Language.Auto), otherPlayerName, thisPlayerName);
 		}
 
-		// Token: 0x06001C0F RID: 7183 RVA: 0x00015908 File Offset: 0x00013B08
+		// Token: 0x06001C10 RID: 7184 RVA: 0x00015908 File Offset: 0x00013B08
 		public override string GetCalibrateAxisStep1WindowMessage(string axisName)
 		{
 			return string.Format(this.document.FetchString(this._calibrateAxisStep1WindowMessage, Language.Auto), axisName);
 		}
 
-		// Token: 0x06001C10 RID: 7184 RVA: 0x00015923 File Offset: 0x00013B23
+		// Token: 0x06001C11 RID: 7185 RVA: 0x00015923 File Offset: 0x00013B23
 		public override string GetCalibrateAxisStep2WindowMessage(string axisName)
 		{
 			return string.Format(this.document.FetchString(this._calibrateAxisStep2WindowMessage, Language.Auto), axisName);
 		}
 
-		// Token: 0x06001C11 RID: 7185 RVA: 0x00015275 File Offset: 0x00013475
+		// Token: 0x06001C12 RID: 7186 RVA: 0x00015275 File Offset: 0x00013475
 		public override string GetPlayerName(int playerId)
 		{
 			Player player = ReInput.players.GetPlayer(playerId);
@@ -521,7 +521,7 @@ namespace Rewired.UI.ControlMapper
 			return player.descriptiveName;
 		}
 
-		// Token: 0x06001C12 RID: 7186 RVA: 0x000152A1 File Offset: 0x000134A1
+		// Token: 0x06001C13 RID: 7187 RVA: 0x000152A1 File Offset: 0x000134A1
 		public override string GetControllerName(Controller controller)
 		{
 			if (controller == null)
@@ -531,7 +531,7 @@ namespace Rewired.UI.ControlMapper
 			return controller.name;
 		}
 
-		// Token: 0x06001C13 RID: 7187 RVA: 0x0006F3B4 File Offset: 0x0006D5B4
+		// Token: 0x06001C14 RID: 7188 RVA: 0x0006F6A0 File Offset: 0x0006D8A0
 		public override string GetElementIdentifierName(ActionElementMap actionElementMap)
 		{
 			if (actionElementMap == null)
@@ -545,7 +545,7 @@ namespace Rewired.UI.ControlMapper
 			return this.GetElementIdentifierName(actionElementMap.controllerMap.controller, actionElementMap.elementIdentifierId, actionElementMap.axisRange);
 		}
 
-		// Token: 0x06001C14 RID: 7188 RVA: 0x0006F900 File Offset: 0x0006DB00
+		// Token: 0x06001C15 RID: 7189 RVA: 0x0006FBEC File Offset: 0x0006DDEC
 		public override string GetElementIdentifierName(Controller controller, int elementIdentifierId, AxisRange axisRange)
 		{
 			if (controller == null)
@@ -586,7 +586,7 @@ namespace Rewired.UI.ControlMapper
 			return text;
 		}
 
-		// Token: 0x06001C15 RID: 7189 RVA: 0x0006F99C File Offset: 0x0006DB9C
+		// Token: 0x06001C16 RID: 7190 RVA: 0x0006FC88 File Offset: 0x0006DE88
 		public override string GetElementIdentifierName(KeyCode keyCode, ModifierKeyFlags modifierKeyFlags)
 		{
 			string text = Keyboard.GetKeyName(keyCode);
@@ -601,7 +601,7 @@ namespace Rewired.UI.ControlMapper
 			return text;
 		}
 
-		// Token: 0x06001C16 RID: 7190 RVA: 0x0006F9E4 File Offset: 0x0006DBE4
+		// Token: 0x06001C17 RID: 7191 RVA: 0x0006FCD0 File Offset: 0x0006DED0
 		public override string GetActionName(int actionId)
 		{
 			InputAction action = ReInput.mapping.GetAction(actionId);
@@ -632,7 +632,7 @@ namespace Rewired.UI.ControlMapper
 			return this.document.FetchString(text, Language.Auto);
 		}
 
-		// Token: 0x06001C17 RID: 7191 RVA: 0x0006FA90 File Offset: 0x0006DC90
+		// Token: 0x06001C18 RID: 7192 RVA: 0x0006FD7C File Offset: 0x0006DF7C
 		public override string GetActionName(int actionId, AxisRange axisRange)
 		{
 			InputAction action = ReInput.mapping.GetAction(actionId);
@@ -661,7 +661,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001C18 RID: 7192 RVA: 0x00015311 File Offset: 0x00013511
+		// Token: 0x06001C19 RID: 7193 RVA: 0x00015311 File Offset: 0x00013511
 		public override string GetMapCategoryName(int id)
 		{
 			InputMapCategory mapCategory = ReInput.mapping.GetMapCategory(id);
@@ -672,7 +672,7 @@ namespace Rewired.UI.ControlMapper
 			return mapCategory.descriptiveName;
 		}
 
-		// Token: 0x06001C19 RID: 7193 RVA: 0x0001533D File Offset: 0x0001353D
+		// Token: 0x06001C1A RID: 7194 RVA: 0x0001533D File Offset: 0x0001353D
 		public override string GetActionCategoryName(int id)
 		{
 			InputCategory actionCategory = ReInput.mapping.GetActionCategory(id);
@@ -683,7 +683,7 @@ namespace Rewired.UI.ControlMapper
 			return actionCategory.descriptiveName;
 		}
 
-		// Token: 0x06001C1A RID: 7194 RVA: 0x00015369 File Offset: 0x00013569
+		// Token: 0x06001C1B RID: 7195 RVA: 0x00015369 File Offset: 0x00013569
 		public override string GetLayoutName(ControllerType controllerType, int id)
 		{
 			InputLayout layout = ReInput.mapping.GetLayout(controllerType, id);
@@ -694,7 +694,7 @@ namespace Rewired.UI.ControlMapper
 			return layout.descriptiveName;
 		}
 
-		// Token: 0x06001C1B RID: 7195 RVA: 0x0006FB74 File Offset: 0x0006DD74
+		// Token: 0x06001C1C RID: 7196 RVA: 0x0006FE60 File Offset: 0x0006E060
 		public override string ModifierKeyFlagsToString(ModifierKeyFlags flags)
 		{
 			int num = 0;
@@ -995,19 +995,19 @@ namespace Rewired.UI.ControlMapper
 		[Serializable]
 		protected class CustomEntry
 		{
-			// Token: 0x06001C1D RID: 7197 RVA: 0x000022AD File Offset: 0x000004AD
+			// Token: 0x06001C1E RID: 7198 RVA: 0x000022AD File Offset: 0x000004AD
 			public CustomEntry()
 			{
 			}
 
-			// Token: 0x06001C1E RID: 7198 RVA: 0x0001593E File Offset: 0x00013B3E
+			// Token: 0x06001C1F RID: 7199 RVA: 0x0001593E File Offset: 0x00013B3E
 			public CustomEntry(string key, string value)
 			{
 				this.key = key;
 				this.value = value;
 			}
 
-			// Token: 0x06001C1F RID: 7199 RVA: 0x0006FEF8 File Offset: 0x0006E0F8
+			// Token: 0x06001C20 RID: 7200 RVA: 0x000701E4 File Offset: 0x0006E3E4
 			public static Dictionary<string, string> ToDictionary(MLLanguageData.CustomEntry[] array)
 			{
 				if (array == null)

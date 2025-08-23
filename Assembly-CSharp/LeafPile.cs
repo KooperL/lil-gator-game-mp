@@ -14,7 +14,7 @@ public class LeafPile : PersistentObject
 		}
 	}
 
-	// Token: 0x0600013A RID: 314 RVA: 0x0001BB28 File Offset: 0x00019D28
+	// Token: 0x0600013A RID: 314 RVA: 0x0001BB60 File Offset: 0x00019D60
 	private void OnTriggerEnter(Collider other)
 	{
 		this.health--;

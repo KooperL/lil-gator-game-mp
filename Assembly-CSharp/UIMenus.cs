@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UIMenus : MonoBehaviour
 {
-	// Token: 0x06001262 RID: 4706 RVA: 0x0005C1E0 File Offset: 0x0005A3E0
+	// Token: 0x06001263 RID: 4707 RVA: 0x0005C4CC File Offset: 0x0005A6CC
 	public void Awake()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
@@ -20,17 +20,17 @@ public class UIMenus : MonoBehaviour
 		Blackout.b = this.blackout;
 	}
 
-	// Token: 0x06001263 RID: 4707 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06001264 RID: 4708 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnEnable()
 	{
 	}
 
-	// Token: 0x06001264 RID: 4708 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06001265 RID: 4709 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x06001265 RID: 4709 RVA: 0x0005C25C File Offset: 0x0005A45C
+	// Token: 0x06001266 RID: 4710 RVA: 0x0005C548 File Offset: 0x0005A748
 	private void Update()
 	{
 		if (Game.g == null || DialogueSequencer.IsInSequence)
@@ -47,7 +47,7 @@ public class UIMenus : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001266 RID: 4710 RVA: 0x0005C2B0 File Offset: 0x0005A4B0
+	// Token: 0x06001267 RID: 4711 RVA: 0x0005C59C File Offset: 0x0005A79C
 	public void OnInventory()
 	{
 		if (ControlMapper.isActive)
@@ -76,7 +76,7 @@ public class UIMenus : MonoBehaviour
 		this.itemMenuTutorial.Press();
 	}
 
-	// Token: 0x06001267 RID: 4711 RVA: 0x0005C320 File Offset: 0x0005A520
+	// Token: 0x06001268 RID: 4712 RVA: 0x0005C60C File Offset: 0x0005A80C
 	public void CloseMenus()
 	{
 		if (ControlMapper.isActive)
@@ -96,7 +96,7 @@ public class UIMenus : MonoBehaviour
 		Game.State = GameState.Play;
 	}
 
-	// Token: 0x06001268 RID: 4712 RVA: 0x0000F985 File Offset: 0x0000DB85
+	// Token: 0x06001269 RID: 4713 RVA: 0x0000F985 File Offset: 0x0000DB85
 	public void SetGameplayState(bool isInGameplay, bool showNotifications)
 	{
 		this.notifications.SetActive(showNotifications);
@@ -104,7 +104,7 @@ public class UIMenus : MonoBehaviour
 		Game.State = (isInGameplay ? GameState.Play : GameState.Menu);
 	}
 
-	// Token: 0x06001269 RID: 4713 RVA: 0x0000F9AB File Offset: 0x0000DBAB
+	// Token: 0x0600126A RID: 4714 RVA: 0x0000F9AB File Offset: 0x0000DBAB
 	public void SetGameplayState(bool isInGameplay)
 	{
 		this.notifications.SetActive(isInGameplay);
@@ -112,7 +112,7 @@ public class UIMenus : MonoBehaviour
 		Game.State = (isInGameplay ? GameState.Play : GameState.Menu);
 	}
 
-	// Token: 0x0600126A RID: 4714 RVA: 0x0005C384 File Offset: 0x0005A584
+	// Token: 0x0600126B RID: 4715 RVA: 0x0005C670 File Offset: 0x0005A870
 	private void OnPause()
 	{
 		if (ControlMapper.isActive)

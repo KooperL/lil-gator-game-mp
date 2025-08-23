@@ -5,14 +5,14 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(Camera))]
 public class BlitToScreen : MonoBehaviour
 {
-	// Token: 0x0600115F RID: 4447 RVA: 0x0000EDF2 File Offset: 0x0000CFF2
+	// Token: 0x06001160 RID: 4448 RVA: 0x0000EDF2 File Offset: 0x0000CFF2
 	private void Awake()
 	{
 		this.camera = base.GetComponent<Camera>();
 		this.LoadScreen(new Vector2(384f, 216f));
 	}
 
-	// Token: 0x06001160 RID: 4448 RVA: 0x00058014 File Offset: 0x00056214
+	// Token: 0x06001161 RID: 4449 RVA: 0x00058300 File Offset: 0x00056500
 	public void LoadScreen(Vector2 screenSize)
 	{
 		if (this.screenTexture != null)
@@ -41,13 +41,13 @@ public class BlitToScreen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001161 RID: 4449 RVA: 0x0000EE15 File Offset: 0x0000D015
+	// Token: 0x06001162 RID: 4450 RVA: 0x0000EE15 File Offset: 0x0000D015
 	private void OnPreRender()
 	{
 		this.camera.targetTexture = this.screenTexture;
 	}
 
-	// Token: 0x06001162 RID: 4450 RVA: 0x0000EE28 File Offset: 0x0000D028
+	// Token: 0x06001163 RID: 4451 RVA: 0x0000EE28 File Offset: 0x0000D028
 	private void OnPostRender()
 	{
 		this.camera.targetTexture = null;

@@ -10,7 +10,7 @@ public class ActivateOnKeypress : MonoBehaviour
 		this.vcam = base.GetComponent<CinemachineVirtualCameraBase>();
 	}
 
-	// Token: 0x0600015C RID: 348 RVA: 0x0001C360 File Offset: 0x0001A560
+	// Token: 0x0600015C RID: 348 RVA: 0x0001C398 File Offset: 0x0001A598
 	private void Update()
 	{
 		if (this.vcam != null)

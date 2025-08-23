@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HandIK : MonoBehaviour
 {
-	// Token: 0x06000AC9 RID: 2761 RVA: 0x0000A45A File Offset: 0x0000865A
+	// Token: 0x06000ACA RID: 2762 RVA: 0x0000A45A File Offset: 0x0000865A
 	public void SetEnabled(bool isLeft, bool isEnabled)
 	{
 		if (isLeft)
@@ -14,7 +14,7 @@ public class HandIK : MonoBehaviour
 		this.isRightEnabled = isEnabled;
 	}
 
-	// Token: 0x06000ACA RID: 2762 RVA: 0x0000A46E File Offset: 0x0000866E
+	// Token: 0x06000ACB RID: 2763 RVA: 0x0000A46E File Offset: 0x0000866E
 	public void SetOverride(bool isLeft, Vector3 position, Transform anchor)
 	{
 		if (isLeft)
@@ -29,7 +29,7 @@ public class HandIK : MonoBehaviour
 		this.overrideRightAnchor = anchor;
 	}
 
-	// Token: 0x06000ACB RID: 2763 RVA: 0x0000A49E File Offset: 0x0000869E
+	// Token: 0x06000ACC RID: 2764 RVA: 0x0000A49E File Offset: 0x0000869E
 	public void ClearOverride(bool isLeft)
 	{
 		if (isLeft)
@@ -42,13 +42,13 @@ public class HandIK : MonoBehaviour
 		this.overrideRightAnchor = null;
 	}
 
-	// Token: 0x06000ACC RID: 2764 RVA: 0x0000A4C0 File Offset: 0x000086C0
+	// Token: 0x06000ACD RID: 2765 RVA: 0x0000A4C0 File Offset: 0x000086C0
 	private void Awake()
 	{
 		this.animator = base.GetComponent<Animator>();
 	}
 
-	// Token: 0x06000ACD RID: 2765 RVA: 0x0003EF74 File Offset: 0x0003D174
+	// Token: 0x06000ACE RID: 2766 RVA: 0x0003F260 File Offset: 0x0003D460
 	private void OnAnimatorIK()
 	{
 		if (!this.isRightEnabled)
@@ -99,7 +99,7 @@ public class HandIK : MonoBehaviour
 		this.animator.SetIKPosition(AvatarIKGoal.LeftHand, this.leftPoint);
 	}
 
-	// Token: 0x06000ACE RID: 2766 RVA: 0x0003F1A8 File Offset: 0x0003D3A8
+	// Token: 0x06000ACF RID: 2767 RVA: 0x0003F494 File Offset: 0x0003D694
 	private void SetHandIK(string oppositeFoot, bool isHandBusy, ref bool hasPoint, Transform handTransform, Vector3 origin, ref float counter, ref float handWeight, ref Vector3 grabPoint, float smoothWeight)
 	{
 		if (((Game.HasControl && this.movement.IsGrounded) || (this.movement.IsClimbing && this.movement.Stamina > 0f)) && this.animator.GetFloat(oppositeFoot) < 0.1f && !isHandBusy)

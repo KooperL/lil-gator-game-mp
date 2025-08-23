@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MultiplayerPlayerManager : MonoBehaviour
 {
+	// Token: 0x06001E63 RID: 7779 RVA: 0x00077A30 File Offset: 0x00075C30
 	public void OnState(string netId, Vector3 pos, Quaternion rot, Vector3 vel, double remoteTime)
 	{
 		if (!this._players.ContainsKey(netId))
@@ -71,6 +72,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		}
 	}
 
+	// Token: 0x06001E64 RID: 7780 RVA: 0x00077C68 File Offset: 0x00075E68
 	public void Despawn(string netId)
 	{
 		if (!this._players.ContainsKey(netId))
@@ -97,11 +99,13 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		}
 	}
 
+	// Token: 0x06001E65 RID: 7781 RVA: 0x0001744C File Offset: 0x0001564C
 	private void Start()
 	{
 		this.FindPlayerTemplate();
 	}
 
+	// Token: 0x06001E66 RID: 7782 RVA: 0x00077D28 File Offset: 0x00075F28
 	private void FindPlayerTemplate()
 	{
 		foreach (GameObject gameObject in global::UnityEngine.Object.FindObjectsOfType<GameObject>())
@@ -119,6 +123,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		}
 	}
 
+	// Token: 0x06001E67 RID: 7783 RVA: 0x00077DA8 File Offset: 0x00075FA8
 	private Transform FindChildByName(Transform parent, string name)
 	{
 		for (int i = 0; i < parent.childCount; i++)
@@ -132,6 +137,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		return null;
 	}
 
+	// Token: 0x06001E68 RID: 7784 RVA: 0x00077DE0 File Offset: 0x00075FE0
 	private void CleanupRemotePlayerComponents(GameObject remoteHeroboy)
 	{
 		foreach (Component component in new Component[]
@@ -185,6 +191,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		Debug.Log("[LGG-MP] Cleaned up remote player components");
 	}
 
+	// Token: 0x06001E69 RID: 7785 RVA: 0x00077F7C File Offset: 0x0007617C
 	private void SetAnimatorParam(Animator animator, string paramName, object value)
 	{
 		try
@@ -225,6 +232,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		}
 	}
 
+	// Token: 0x06001E6A RID: 7786 RVA: 0x00078014 File Offset: 0x00076214
 	private void OnDestroy()
 	{
 		foreach (KeyValuePair<string, GameObject> keyValuePair in this._players)
@@ -240,6 +248,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		this._lastUpdateTimes.Clear();
 	}
 
+	// Token: 0x06001E6B RID: 7787 RVA: 0x000780A8 File Offset: 0x000762A8
 	public void EnsurePlayer(string netId, Vector3 initialPos, Quaternion initialRot, string playerName = null)
 	{
 		if (this._players.ContainsKey(netId))
@@ -258,7 +267,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 			{
 				this._playerNames[netId] = playerName;
 			}
-			GameObject gameObject = new GameObject("RemotePlayer_" + netId);
+			GameObject gameObject = new GameObject("+" + netId);
 			gameObject.transform.position = initialPos;
 			gameObject.transform.rotation = initialRot;
 			Transform transform = this.FindChildByName(this._playerTemplate.transform, "Heroboy");
@@ -269,10 +278,44 @@ public class MultiplayerPlayerManager : MonoBehaviour
 				gameObject2.transform.localPosition = Vector3.zero;
 				gameObject2.transform.localRotation = Quaternion.identity;
 				Debug.Log("[LGG-MP] REMOVED FOR TESTING -- this.CleanupRemotePlayerComponents(remoteHeroboy);");
-				string text = ((!string.IsNullOrEmpty(playerName)) ? playerName : ("RemotePlayer_" + netId));
+				string text = ((!string.IsNullOrEmpty(playerName)) ? playerName : ("+" + netId));
 				this.CreateNameTag(gameObject, text);
 				this._players[netId] = gameObject;
 				Debug.Log(string.Format("[LGG-MP] Created remote player: {0} ({1}) at {2}", netId, text, initialPos));
+				Shader shader = Shader.Find("Sprites/Default");
+				if (shader != null)
+				{
+					Renderer[] componentsInChildren = gameObject2.GetComponentsInChildren<Renderer>();
+					if (componentsInChildren.Length != 0)
+					{
+						foreach (Renderer renderer in componentsInChildren)
+						{
+							if (renderer != null)
+							{
+								Material[] materials = renderer.materials;
+								Material[] array2 = new Material[materials.Length + 1];
+								for (int j = 0; j < materials.Length; j++)
+								{
+									array2[j] = materials[j];
+								}
+								Material material = new Material(shader);
+								material.color = new Color(1f, 1f, 1f, 0.3f);
+								material.renderQueue = 3001;
+								array2[array2.Length - 1] = material;
+								renderer.materials = array2;
+								Debug.Log("[LGG-MP] Applied white overlay to renderer: " + renderer.name);
+							}
+						}
+					}
+					else
+					{
+						Debug.Log("[LGG-MP] No renderers found on Heroboy object");
+					}
+				}
+				else
+				{
+					Debug.Log("[LGG-MP] Shader is null");
+				}
 			}
 			else
 			{
@@ -286,6 +329,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		}
 	}
 
+	// Token: 0x06001E6C RID: 7788 RVA: 0x00078338 File Offset: 0x00076538
 	private void CreateNameTag(GameObject player, string playerName)
 	{
 		try
@@ -312,6 +356,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		}
 	}
 
+	// Token: 0x06001E6D RID: 7789 RVA: 0x0007843C File Offset: 0x0007663C
 	private void UpdateNameTagRotation(GameObject player)
 	{
 		try
@@ -336,6 +381,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		}
 	}
 
+	// Token: 0x06001E6E RID: 7790 RVA: 0x000784B8 File Offset: 0x000766B8
 	public void OnStateWithAnimation(string netId, Vector3 pos, Quaternion rot, Vector3 vel, double remoteTime, int animStateHash, float animNormalizedTime, float animSpeed, float animVerticalSpeed, float animAngle, bool animGrounded, bool animClimbing, bool animSwimming, bool animGliding, bool animSledding)
 	{
 		if (!this._players.ContainsKey(netId))
@@ -391,6 +437,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		}
 	}
 
+	// Token: 0x06001E6F RID: 7791 RVA: 0x00078698 File Offset: 0x00076898
 	public void OnStateSimpleAnimation(string netId, Vector3 pos, Quaternion rot, Vector3 vel, double remoteTime, int animStateHash, float animNormalizedTime, float animSpeed)
 	{
 		if (!this._players.ContainsKey(netId))
@@ -438,6 +485,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		}
 	}
 
+	// Token: 0x06001E71 RID: 7793 RVA: 0x000787F4 File Offset: 0x000769F4
 	public void PurgeAllMultiplayerActivity()
 	{
 		foreach (string text in new List<string>(this._players.Keys))

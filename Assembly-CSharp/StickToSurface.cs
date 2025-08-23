@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class StickToSurface : MonoBehaviour
 {
-	// Token: 0x06000B37 RID: 2871 RVA: 0x0000A933 File Offset: 0x00008B33
+	// Token: 0x06000B38 RID: 2872 RVA: 0x0000A933 File Offset: 0x00008B33
 	private void OnCollisionEnter(Collision collision)
 	{
 		if (this.isStuck)
@@ -18,7 +18,7 @@ public class StickToSurface : MonoBehaviour
 		this.Stick(collision);
 	}
 
-	// Token: 0x06000B38 RID: 2872 RVA: 0x0004013C File Offset: 0x0003E33C
+	// Token: 0x06000B39 RID: 2873 RVA: 0x00040428 File Offset: 0x0003E628
 	private void Stick(Collision collision)
 	{
 		this.isStuck = true;
@@ -45,20 +45,20 @@ public class StickToSurface : MonoBehaviour
 		this.onStick.Invoke();
 	}
 
-	// Token: 0x06000B39 RID: 2873 RVA: 0x0000A961 File Offset: 0x00008B61
+	// Token: 0x06000B3A RID: 2874 RVA: 0x0000A961 File Offset: 0x00008B61
 	private void Unstick()
 	{
 		this.isStuck = false;
 		this.rigidbody.isKinematic = false;
 	}
 
-	// Token: 0x06000B3A RID: 2874 RVA: 0x0004028C File Offset: 0x0003E48C
+	// Token: 0x06000B3B RID: 2875 RVA: 0x00040578 File Offset: 0x0003E778
 	private bool ShouldUnstick()
 	{
 		return this.stuckCollider == null || this.stuckObject == null || !this.stuckObject.activeInHierarchy || (this.stuckRigidbody != null && !this.stuckRigidbody.isKinematic);
 	}
 
-	// Token: 0x06000B3B RID: 2875 RVA: 0x000402E8 File Offset: 0x0003E4E8
+	// Token: 0x06000B3C RID: 2876 RVA: 0x000405D4 File Offset: 0x0003E7D4
 	private void Update()
 	{
 		if (this.isStuck)

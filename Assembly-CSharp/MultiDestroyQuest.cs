@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class MultiDestroyQuest : MonoBehaviour
 {
-	// (get) Token: 0x06000E30 RID: 3632 RVA: 0x0000CA43 File Offset: 0x0000AC43
-	// (set) Token: 0x06000E31 RID: 3633 RVA: 0x0000CA56 File Offset: 0x0000AC56
+	// (get) Token: 0x06000E31 RID: 3633 RVA: 0x0000CA43 File Offset: 0x0000AC43
+	// (set) Token: 0x06000E32 RID: 3634 RVA: 0x0000CA56 File Offset: 0x0000AC56
 	private bool State
 	{
 		get
@@ -19,13 +19,13 @@ public class MultiDestroyQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E32 RID: 3634 RVA: 0x0000CA69 File Offset: 0x0000AC69
+	// Token: 0x06000E33 RID: 3635 RVA: 0x0000CA69 File Offset: 0x0000AC69
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000E33 RID: 3635 RVA: 0x0004CCB8 File Offset: 0x0004AEB8
+	// Token: 0x06000E34 RID: 3636 RVA: 0x0004CFA4 File Offset: 0x0004B1A4
 	public void UpdateState()
 	{
 		int num = -1;
@@ -58,13 +58,13 @@ public class MultiDestroyQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E34 RID: 3636 RVA: 0x0000CA71 File Offset: 0x0000AC71
+	// Token: 0x06000E35 RID: 3637 RVA: 0x0000CA71 File Offset: 0x0000AC71
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000E35 RID: 3637 RVA: 0x0000CA80 File Offset: 0x0000AC80
+	// Token: 0x06000E36 RID: 3638 RVA: 0x0000CA80 File Offset: 0x0000AC80
 	private IEnumerator RunConversation()
 	{
 		yield return null;

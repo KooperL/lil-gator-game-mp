@@ -10,7 +10,7 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		this.proximityTrigger.radius *= global::UnityEngine.Random.Range(1f - this.proximityTriggerVariance, 1f + this.proximityTriggerVariance);
 	}
 
-	// Token: 0x06000005 RID: 5 RVA: 0x00017790 File Offset: 0x00015990
+	// Token: 0x06000005 RID: 5 RVA: 0x000177C8 File Offset: 0x000159C8
 	private void OnEnable()
 	{
 		if (this.attachedTightrope != null)
@@ -27,7 +27,7 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000006 RID: 6 RVA: 0x0001781C File Offset: 0x00015A1C
+	// Token: 0x06000006 RID: 6 RVA: 0x00017854 File Offset: 0x00015A54
 	private void OnDisable()
 	{
 		if (this.attachedTightrope != null)
@@ -59,7 +59,7 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		this.BeginFlying();
 	}
 
-	// Token: 0x06000009 RID: 9 RVA: 0x000178A8 File Offset: 0x00015AA8
+	// Token: 0x06000009 RID: 9 RVA: 0x000178E0 File Offset: 0x00015AE0
 	public void BeginFlying()
 	{
 		if (this.isFlying)
@@ -77,7 +77,7 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x0600000A RID: 10 RVA: 0x00017938 File Offset: 0x00015B38
+	// Token: 0x0600000A RID: 10 RVA: 0x00017970 File Offset: 0x00015B70
 	public void ManagedUpdate()
 	{
 		if (this.attachedTightrope != null && this.attachedTightrope.enabled)
@@ -101,7 +101,7 @@ public class Bird_Standing : MonoBehaviour, IManagedUpdate
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x0600000B RID: 11 RVA: 0x000179DC File Offset: 0x00015BDC
+	// Token: 0x0600000B RID: 11 RVA: 0x00017A14 File Offset: 0x00015C14
 	[ContextMenu("Snap to...")]
 	public void SnapTo()
 	{

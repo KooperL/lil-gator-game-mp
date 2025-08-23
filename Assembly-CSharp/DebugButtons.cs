@@ -5,7 +5,7 @@ using UnityEngine.AddressableAssets;
 
 public class DebugButtons : MonoBehaviour
 {
-	// (get) Token: 0x0600034A RID: 842 RVA: 0x00025A18 File Offset: 0x00023C18
+	// (get) Token: 0x0600034A RID: 842 RVA: 0x00025A50 File Offset: 0x00023C50
 	public static bool IsSkipHeld
 	{
 		get
@@ -29,7 +29,7 @@ public class DebugButtons : MonoBehaviour
 		DebugButtons.d = this;
 	}
 
-	// Token: 0x0600034C RID: 844 RVA: 0x00025A74 File Offset: 0x00023C74
+	// Token: 0x0600034C RID: 844 RVA: 0x00025AAC File Offset: 0x00023CAC
 	public void OnEnable()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);

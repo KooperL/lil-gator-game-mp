@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerPosition : MonoBehaviour
 {
-	// Token: 0x060009DF RID: 2527 RVA: 0x0000983C File Offset: 0x00007A3C
+	// Token: 0x060009E0 RID: 2528 RVA: 0x0000983C File Offset: 0x00007A3C
 	private void Start()
 	{
 		if (this.snapToFloor)

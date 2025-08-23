@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HitSquish : MonoBehaviour, IHit
 {
-	// Token: 0x0600081F RID: 2079 RVA: 0x0000803A File Offset: 0x0000623A
+	// Token: 0x06000820 RID: 2080 RVA: 0x0000803A File Offset: 0x0000623A
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		if (this.squish == null)
@@ -14,7 +14,7 @@ public class HitSquish : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x06000820 RID: 2080 RVA: 0x0000805D File Offset: 0x0000625D
+	// Token: 0x06000821 RID: 2081 RVA: 0x0000805D File Offset: 0x0000625D
 	private IEnumerator Squish()
 	{
 		float time = 0f;

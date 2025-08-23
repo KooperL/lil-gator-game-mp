@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractShop : MonoBehaviour, Interaction
 {
-	// (get) Token: 0x060007E8 RID: 2024 RVA: 0x00007D92 File Offset: 0x00005F92
+	// (get) Token: 0x060007E9 RID: 2025 RVA: 0x00007D92 File Offset: 0x00005F92
 	private string SaveID
 	{
 		get
@@ -13,7 +13,7 @@ public class InteractShop : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x060007E9 RID: 2025 RVA: 0x000364FC File Offset: 0x000346FC
+	// Token: 0x060007EA RID: 2026 RVA: 0x000367E8 File Offset: 0x000349E8
 	private void Start()
 	{
 		int num = GameData.g.ReadInt(this.SaveID, 0);
@@ -24,13 +24,13 @@ public class InteractShop : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x060007EA RID: 2026 RVA: 0x00007DA9 File Offset: 0x00005FA9
+	// Token: 0x060007EB RID: 2027 RVA: 0x00007DA9 File Offset: 0x00005FA9
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunShop());
 	}
 
-	// Token: 0x060007EB RID: 2027 RVA: 0x00007DB8 File Offset: 0x00005FB8
+	// Token: 0x060007EC RID: 2028 RVA: 0x00007DB8 File Offset: 0x00005FB8
 	private IEnumerator RunShop()
 	{
 		int state = GameData.g.ReadInt(this.SaveID, 0);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformSpecific : MonoBehaviour
 {
-	// Token: 0x06000A91 RID: 2705 RVA: 0x0003D9B0 File Offset: 0x0003BBB0
+	// Token: 0x06000A92 RID: 2706 RVA: 0x0003DC9C File Offset: 0x0003BE9C
 	private void OnEnable()
 	{
 		bool flag = true;

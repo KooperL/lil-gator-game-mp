@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class RandomizeImage : MonoBehaviour
 {
-	// Token: 0x06001130 RID: 4400 RVA: 0x00057BB0 File Offset: 0x00055DB0
+	// Token: 0x06001131 RID: 4401 RVA: 0x00057E9C File Offset: 0x0005609C
 	public void Start()
 	{
 		Sprite sprite = this.randomSprites.RandomValue<Sprite>();

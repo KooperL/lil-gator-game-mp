@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIItemGet : MonoBehaviour
 {
-	// Token: 0x0600123D RID: 4669 RVA: 0x0000F7D3 File Offset: 0x0000D9D3
+	// Token: 0x0600123E RID: 4670 RVA: 0x0000F7D3 File Offset: 0x0000D9D3
 	public IEnumerator RunSequence(Sprite itemSprite, string displayName, DialogueChunk dialogueChunk, DialogueActor[] actors = null)
 	{
 		Game.DialogueDepth++;
@@ -22,7 +22,7 @@ public class UIItemGet : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600123E RID: 4670 RVA: 0x0000F7FF File Offset: 0x0000D9FF
+	// Token: 0x0600123F RID: 4671 RVA: 0x0000F7FF File Offset: 0x0000D9FF
 	public IEnumerator RunSequence(Sprite itemSprite, string displayName, string dialogue, DialogueActor[] actors = null)
 	{
 		Game.DialogueDepth++;
@@ -39,7 +39,7 @@ public class UIItemGet : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x0600123F RID: 4671 RVA: 0x0005B1F8 File Offset: 0x000593F8
+	// Token: 0x06001240 RID: 4672 RVA: 0x0005B4E4 File Offset: 0x000596E4
 	public void Activate(Sprite itemSprite, string displayName = "Item")
 	{
 		this.itemImage.sprite = ((itemSprite != null) ? itemSprite : this.defaultItemSprite);
@@ -62,7 +62,7 @@ public class UIItemGet : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001240 RID: 4672 RVA: 0x0000F82B File Offset: 0x0000DA2B
+	// Token: 0x06001241 RID: 4673 RVA: 0x0000F82B File Offset: 0x0000DA2B
 	public void Deactivate()
 	{
 		base.gameObject.SetActive(false);

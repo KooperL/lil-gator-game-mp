@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LayerUtil : MonoBehaviour
 {
-	// (get) Token: 0x0600094E RID: 2382 RVA: 0x000090D3 File Offset: 0x000072D3
+	// (get) Token: 0x0600094F RID: 2383 RVA: 0x000090D3 File Offset: 0x000072D3
 	public static LayerMask GroundLayers
 	{
 		get
@@ -12,7 +12,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x0600094F RID: 2383 RVA: 0x000090DF File Offset: 0x000072DF
+	// (get) Token: 0x06000950 RID: 2384 RVA: 0x000090DF File Offset: 0x000072DF
 	public static LayerMask GroundLayersMinusPlayer
 	{
 		get
@@ -21,7 +21,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000950 RID: 2384 RVA: 0x000090EB File Offset: 0x000072EB
+	// (get) Token: 0x06000951 RID: 2385 RVA: 0x000090EB File Offset: 0x000072EB
 	public static LayerMask BalanceBeamAnchorLayers
 	{
 		get
@@ -30,7 +30,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000951 RID: 2385 RVA: 0x000090F7 File Offset: 0x000072F7
+	// (get) Token: 0x06000952 RID: 2386 RVA: 0x000090F7 File Offset: 0x000072F7
 	public static LayerMask HitLayers
 	{
 		get
@@ -39,7 +39,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000952 RID: 2386 RVA: 0x0003A3A0 File Offset: 0x000385A0
+	// Token: 0x06000953 RID: 2387 RVA: 0x0003A68C File Offset: 0x0003888C
 	public static void SnapToGround(Transform transform, float range = 5f)
 	{
 		Vector3 position = transform.position;
@@ -49,7 +49,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000953 RID: 2387 RVA: 0x0003A3C8 File Offset: 0x000385C8
+	// Token: 0x06000954 RID: 2388 RVA: 0x0003A6B4 File Offset: 0x000388B4
 	public static bool SnapToGround(ref Vector3 point, float range = 5f)
 	{
 		RaycastHit raycastHit;
@@ -61,7 +61,7 @@ public class LayerUtil : MonoBehaviour
 		return false;
 	}
 
-	// (get) Token: 0x06000954 RID: 2388 RVA: 0x00009103 File Offset: 0x00007303
+	// (get) Token: 0x06000955 RID: 2389 RVA: 0x00009103 File Offset: 0x00007303
 	private static LayerUtil Instance
 	{
 		get
@@ -74,7 +74,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000955 RID: 2389 RVA: 0x00009121 File Offset: 0x00007321
+	// Token: 0x06000956 RID: 2390 RVA: 0x00009121 File Offset: 0x00007321
 	private void Awake()
 	{
 		LayerUtil.instance = this;

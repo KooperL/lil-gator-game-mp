@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class MainMenuToGameplay : MonoBehaviour
 {
-	// Token: 0x060009CF RID: 2511 RVA: 0x0003B8A4 File Offset: 0x00039AA4
+	// Token: 0x060009D0 RID: 2512 RVA: 0x0003BB90 File Offset: 0x00039D90
 	private void Start()
 	{
 		Game.State = GameState.Menu;
@@ -22,7 +22,7 @@ public class MainMenuToGameplay : MonoBehaviour
 		base.gameObject.AddComponent<MultiplayerInjectButtonToMainMenu>();
 	}
 
-	// Token: 0x060009D0 RID: 2512 RVA: 0x0000971E File Offset: 0x0000791E
+	// Token: 0x060009D1 RID: 2513 RVA: 0x0000971E File Offset: 0x0000791E
 	public void StartFreshNewGame(int index = 0)
 	{
 		GameData.g.SetSaveFile(index);
@@ -30,14 +30,14 @@ public class MainMenuToGameplay : MonoBehaviour
 		this.StartNewGame();
 	}
 
-	// Token: 0x060009D1 RID: 2513 RVA: 0x00009746 File Offset: 0x00007946
+	// Token: 0x060009D2 RID: 2514 RVA: 0x00009746 File Offset: 0x00007946
 	public void StartNewGamePlus(int index = 0)
 	{
 		GameData.g.LoadSaveFile(index);
 		this.StartNewGame();
 	}
 
-	// Token: 0x060009D2 RID: 2514 RVA: 0x0003B8F8 File Offset: 0x00039AF8
+	// Token: 0x060009D3 RID: 2515 RVA: 0x0003BBE4 File Offset: 0x00039DE4
 	public void StartNewGame()
 	{
 		this.game.enabled = true;
@@ -54,7 +54,7 @@ public class MainMenuToGameplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009D3 RID: 2515 RVA: 0x0003B968 File Offset: 0x00039B68
+	// Token: 0x060009D4 RID: 2516 RVA: 0x0003BC54 File Offset: 0x00039E54
 	public void LoadGameplay()
 	{
 		this.game.enabled = true;
@@ -71,14 +71,14 @@ public class MainMenuToGameplay : MonoBehaviour
 		this.gameplayObject.SetActive(true);
 	}
 
-	// Token: 0x060009D4 RID: 2516 RVA: 0x00009759 File Offset: 0x00007959
+	// Token: 0x060009D5 RID: 2517 RVA: 0x00009759 File Offset: 0x00007959
 	[ContextMenu("Start Slideshow")]
 	public void StartSlideshow()
 	{
 		global::UnityEngine.Object.Instantiate<GameObject>(this.slideshow);
 	}
 
-	// Token: 0x060009D5 RID: 2517 RVA: 0x00009767 File Offset: 0x00007967
+	// Token: 0x060009D6 RID: 2518 RVA: 0x00009767 File Offset: 0x00007967
 	[ContextMenu("Start Indieland Slideshow")]
 	public void StartILSlideshow()
 	{

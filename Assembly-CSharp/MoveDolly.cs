@@ -14,7 +14,7 @@ public class MoveDolly : MonoBehaviour
 		this.dollyCart.m_PositionUnits = CinemachinePathBase.PositionUnits.PathUnits;
 	}
 
-	// Token: 0x06000603 RID: 1539 RVA: 0x00030370 File Offset: 0x0002E570
+	// Token: 0x06000603 RID: 1539 RVA: 0x000303A8 File Offset: 0x0002E5A8
 	private void OnValidate()
 	{
 		if (this.virtualCamera != null)
@@ -27,7 +27,7 @@ public class MoveDolly : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000604 RID: 1540 RVA: 0x000303C0 File Offset: 0x0002E5C0
+	// Token: 0x06000604 RID: 1540 RVA: 0x000303F8 File Offset: 0x0002E5F8
 	private void Update()
 	{
 		this.position = Mathf.SmoothDamp(this.position, this.targetPosition, ref this.velocity, this.smoothTime);

@@ -31,7 +31,7 @@ public class FadeParticlesProximity : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEvery4.Remove(this);
 	}
 
-	// Token: 0x060006EB RID: 1771 RVA: 0x00032F9C File Offset: 0x0003119C
+	// Token: 0x060006EB RID: 1771 RVA: 0x00032FD4 File Offset: 0x000311D4
 	public void ManagedUpdate()
 	{
 		if (this.proximityTransform == null)
@@ -47,7 +47,7 @@ public class FadeParticlesProximity : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060006EC RID: 1772 RVA: 0x00033010 File Offset: 0x00031210
+	// Token: 0x060006EC RID: 1772 RVA: 0x00033048 File Offset: 0x00031248
 	private void OnTriggerStay(Collider other)
 	{
 		if (base.enabled)
@@ -64,7 +64,7 @@ public class FadeParticlesProximity : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060006ED RID: 1773 RVA: 0x00033090 File Offset: 0x00031290
+	// Token: 0x060006ED RID: 1773 RVA: 0x000330C8 File Offset: 0x000312C8
 	private void SetFade(float fadeAmount)
 	{
 		this.particleSystem.emission.rateOverTimeMultiplier = fadeAmount * this.maxRate;

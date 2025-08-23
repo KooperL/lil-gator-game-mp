@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SyncAnimationToMusic : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x060000D3 RID: 211 RVA: 0x0001A500 File Offset: 0x00018700
+	// Token: 0x060000D3 RID: 211 RVA: 0x0001A538 File Offset: 0x00018738
 	private float GetMultForBpm(MusicSystem musicSystem, float animationLength, int beatsInAnimation, float minSpeed, float maxSpeed, out float beatMult)
 	{
 		float num = musicSystem.bpm * animationLength / 60f / (float)beatsInAnimation;
@@ -26,7 +26,7 @@ public class SyncAnimationToMusic : MonoBehaviour, IManagedUpdate
 	{
 	}
 
-	// Token: 0x060000D5 RID: 213 RVA: 0x0001A568 File Offset: 0x00018768
+	// Token: 0x060000D5 RID: 213 RVA: 0x0001A5A0 File Offset: 0x000187A0
 	private void Update()
 	{
 		MusicSystem musicSystem = null;

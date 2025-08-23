@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class Skipper : MonoBehaviour
 {
-	// Token: 0x06000A80 RID: 2688 RVA: 0x0003D44C File Offset: 0x0003B64C
+	// Token: 0x06000A81 RID: 2689 RVA: 0x0003D738 File Offset: 0x0003B938
 	private void OnValidate()
 	{
 		if (this.rigidbody == null)
@@ -19,14 +19,14 @@ public class Skipper : MonoBehaviour
 		this.waterLayer = LayerMask.NameToLayer("Water");
 	}
 
-	// Token: 0x06000A81 RID: 2689 RVA: 0x0000A022 File Offset: 0x00008222
+	// Token: 0x06000A82 RID: 2690 RVA: 0x0000A022 File Offset: 0x00008222
 	private void Start()
 	{
 		this.randomSkipFactor = global::UnityEngine.Random.Range(0.75f, 1f);
 		this.randomFriction = global::UnityEngine.Random.value;
 	}
 
-	// Token: 0x06000A82 RID: 2690 RVA: 0x0003D4A0 File Offset: 0x0003B6A0
+	// Token: 0x06000A83 RID: 2691 RVA: 0x0003D78C File Offset: 0x0003B98C
 	private void OnTriggerEnter(Collider other)
 	{
 		this.stayCount = 0;
@@ -67,7 +67,7 @@ public class Skipper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A83 RID: 2691 RVA: 0x0000A044 File Offset: 0x00008244
+	// Token: 0x06000A84 RID: 2692 RVA: 0x0000A044 File Offset: 0x00008244
 	private void OnTriggerStay(Collider other)
 	{
 		this.stayCount++;
@@ -77,13 +77,13 @@ public class Skipper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A84 RID: 2692 RVA: 0x0000A07A File Offset: 0x0000827A
+	// Token: 0x06000A85 RID: 2693 RVA: 0x0000A07A File Offset: 0x0000827A
 	private void OnTriggerExit(Collider other)
 	{
 		this.stayCount = 0;
 	}
 
-	// Token: 0x06000A85 RID: 2693 RVA: 0x0000A083 File Offset: 0x00008283
+	// Token: 0x06000A86 RID: 2694 RVA: 0x0000A083 File Offset: 0x00008283
 	private void Sink()
 	{
 		this.waterPhysics.activateAutomatically = true;

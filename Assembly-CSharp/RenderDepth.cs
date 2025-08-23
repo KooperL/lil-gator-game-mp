@@ -4,7 +4,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class RenderDepth : MonoBehaviour
 {
-	// (get) Token: 0x06000662 RID: 1634 RVA: 0x00031510 File Offset: 0x0002F710
+	// (get) Token: 0x06000662 RID: 1634 RVA: 0x00031548 File Offset: 0x0002F748
 	private Shader shader
 	{
 		get
@@ -37,7 +37,7 @@ public class RenderDepth : MonoBehaviour
 		this.camera = base.GetComponent<Camera>();
 	}
 
-	// Token: 0x06000665 RID: 1637 RVA: 0x00031548 File Offset: 0x0002F748
+	// Token: 0x06000665 RID: 1637 RVA: 0x00031580 File Offset: 0x0002F780
 	private void Start()
 	{
 		if (this.shader == null || !this.shader.isSupported)

@@ -7,7 +7,7 @@ namespace Rewired.Demos
 	[RequireComponent(typeof(CharacterController))]
 	public class CustomControllerDemo_Player : MonoBehaviour
 	{
-		// (get) Token: 0x06001D89 RID: 7561 RVA: 0x0001692D File Offset: 0x00014B2D
+		// (get) Token: 0x06001D8A RID: 7562 RVA: 0x0001692D File Offset: 0x00014B2D
 		private Player player
 		{
 			get
@@ -20,13 +20,13 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D8A RID: 7562 RVA: 0x00016953 File Offset: 0x00014B53
+		// Token: 0x06001D8B RID: 7563 RVA: 0x00016953 File Offset: 0x00014B53
 		private void Awake()
 		{
 			this.cc = base.GetComponent<CharacterController>();
 		}
 
-		// Token: 0x06001D8B RID: 7563 RVA: 0x000741F4 File Offset: 0x000723F4
+		// Token: 0x06001D8C RID: 7564 RVA: 0x000744E0 File Offset: 0x000726E0
 		private void Update()
 		{
 			if (!ReInput.isReady)

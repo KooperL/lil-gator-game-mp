@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlaygroundStates : MonoBehaviour
 {
-	// (get) Token: 0x060009E1 RID: 2529 RVA: 0x00009875 File Offset: 0x00007A75
+	// (get) Token: 0x060009E2 RID: 2530 RVA: 0x00009875 File Offset: 0x00007A75
 	private string SaveID
 	{
 		get
@@ -12,13 +12,13 @@ public class PlaygroundStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009E2 RID: 2530 RVA: 0x0000987C File Offset: 0x00007A7C
+	// Token: 0x060009E3 RID: 2531 RVA: 0x0000987C File Offset: 0x00007A7C
 	private void Start()
 	{
 		this.UpdateState(GameData.g.ReadInt(this.SaveID, 0));
 	}
 
-	// Token: 0x060009E3 RID: 2531 RVA: 0x00009895 File Offset: 0x00007A95
+	// Token: 0x060009E4 RID: 2532 RVA: 0x00009895 File Offset: 0x00007A95
 	public void UpdateState(int newState)
 	{
 		this.state = newState;
@@ -26,7 +26,7 @@ public class PlaygroundStates : MonoBehaviour
 		this.Refresh();
 	}
 
-	// Token: 0x060009E4 RID: 2532 RVA: 0x0003BA78 File Offset: 0x00039C78
+	// Token: 0x060009E5 RID: 2533 RVA: 0x0003BD64 File Offset: 0x00039F64
 	public void Refresh()
 	{
 		for (int i = 0; i < this.exclusiveStates.Length; i++)

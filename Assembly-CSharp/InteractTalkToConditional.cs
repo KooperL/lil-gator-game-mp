@@ -2,7 +2,7 @@
 
 public class InteractTalkToConditional : InteractTalkTo
 {
-	// Token: 0x06000805 RID: 2053 RVA: 0x00036B88 File Offset: 0x00034D88
+	// Token: 0x06000806 RID: 2054 RVA: 0x00036E74 File Offset: 0x00035074
 	protected override string GetDialogue()
 	{
 		if (this.dialogueIndex >= this.conditionalDialogueMinIndex)

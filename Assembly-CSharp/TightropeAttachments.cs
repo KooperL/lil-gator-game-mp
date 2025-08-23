@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class TightropeAttachments : MonoBehaviour
 {
-	// (get) Token: 0x06000322 RID: 802 RVA: 0x000250A8 File Offset: 0x000232A8
+	// (get) Token: 0x06000322 RID: 802 RVA: 0x000250E0 File Offset: 0x000232E0
 	public GameObject StaticRoot
 	{
 		get
@@ -21,7 +21,7 @@ public class TightropeAttachments : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000323 RID: 803 RVA: 0x00025158 File Offset: 0x00023358
+	// (get) Token: 0x06000323 RID: 803 RVA: 0x00025190 File Offset: 0x00023390
 	public GameObject DynamicRoot
 	{
 		get
@@ -48,7 +48,7 @@ public class TightropeAttachments : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x06000325 RID: 805 RVA: 0x00025208 File Offset: 0x00023408
+	// Token: 0x06000325 RID: 805 RVA: 0x00025240 File Offset: 0x00023440
 	private void OnBalanceBeamEnabled()
 	{
 		if (this.staticRenderers == null)
@@ -81,7 +81,7 @@ public class TightropeAttachments : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x06000326 RID: 806 RVA: 0x00025370 File Offset: 0x00023570
+	// Token: 0x06000326 RID: 806 RVA: 0x000253A8 File Offset: 0x000235A8
 	private void OnEnable()
 	{
 		if (this.staticRenderers != null)
@@ -102,7 +102,7 @@ public class TightropeAttachments : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000327 RID: 807 RVA: 0x000253CC File Offset: 0x000235CC
+	// Token: 0x06000327 RID: 807 RVA: 0x00025404 File Offset: 0x00023604
 	private void OnDisable()
 	{
 		if (this.staticRenderers != null)
@@ -127,7 +127,7 @@ public class TightropeAttachments : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000328 RID: 808 RVA: 0x00025440 File Offset: 0x00023640
+	// Token: 0x06000328 RID: 808 RVA: 0x00025478 File Offset: 0x00023678
 	private void LateUpdate()
 	{
 		if (this.tightrope.enabled)

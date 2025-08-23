@@ -4,7 +4,7 @@ using UnityEngine;
 [AddComponentMenu("Dialogue Sequence/Load Choice")]
 public class DSLoadChoice : DSDialogue
 {
-	// Token: 0x060005D4 RID: 1492 RVA: 0x0002FDA0 File Offset: 0x0002DFA0
+	// Token: 0x060005D4 RID: 1492 RVA: 0x0002FDD8 File Offset: 0x0002DFD8
 	public override YieldInstruction Run()
 	{
 		int num = GameData.g.ReadInt(this.savedChoice, 0);

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class GameDataConversion
 {
-	// Token: 0x06000783 RID: 1923 RVA: 0x00035348 File Offset: 0x00033548
+	// Token: 0x06000784 RID: 1924 RVA: 0x00035634 File Offset: 0x00033834
 	public static GameSaveData Convert(string rawSaveData, int version)
 	{
 		if (version == 0)

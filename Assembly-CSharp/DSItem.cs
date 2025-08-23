@@ -14,7 +14,7 @@ public class DSItem : DialogueSequence
 		}
 	}
 
-	// Token: 0x060005C8 RID: 1480 RVA: 0x0002FBB4 File Offset: 0x0002DDB4
+	// Token: 0x060005C8 RID: 1480 RVA: 0x0002FBEC File Offset: 0x0002DDEC
 	[ContextMenu("Add Name Entry")]
 	public void AddNameEntry()
 	{

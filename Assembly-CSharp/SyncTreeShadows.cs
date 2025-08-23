@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SyncTreeShadows : MonoBehaviour
 {
-	// Token: 0x060010B4 RID: 4276 RVA: 0x00056258 File Offset: 0x00054458
+	// Token: 0x060010B5 RID: 4277 RVA: 0x00056544 File Offset: 0x00054744
 	private void OnValidate()
 	{
 		for (int i = 0; i < this.treeShadowIndices.Length; i++)
@@ -17,7 +17,7 @@ public class SyncTreeShadows : MonoBehaviour
 		this.UpdateTreeShadows();
 	}
 
-	// Token: 0x060010B5 RID: 4277 RVA: 0x00056294 File Offset: 0x00054494
+	// Token: 0x060010B6 RID: 4278 RVA: 0x00056580 File Offset: 0x00054780
 	[ContextMenu("Update Tree Shadows")]
 	public void UpdateTreeShadows()
 	{

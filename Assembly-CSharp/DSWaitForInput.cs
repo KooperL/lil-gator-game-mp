@@ -6,7 +6,7 @@ using UnityEngine;
 [AddComponentMenu("Dialogue Sequence/Wait For Input")]
 public class DSWaitForInput : DialogueSequence
 {
-	// Token: 0x060005DF RID: 1503 RVA: 0x0002FDD4 File Offset: 0x0002DFD4
+	// Token: 0x060005DF RID: 1503 RVA: 0x0002FE0C File Offset: 0x0002E00C
 	public override void Activate()
 	{
 		if (this.player == null)
@@ -24,7 +24,7 @@ public class DSWaitForInput : DialogueSequence
 		base.Activate();
 	}
 
-	// Token: 0x060005E0 RID: 1504 RVA: 0x0002FEC0 File Offset: 0x0002E0C0
+	// Token: 0x060005E0 RID: 1504 RVA: 0x0002FEF8 File Offset: 0x0002E0F8
 	public override void Deactivate()
 	{
 		this.player.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnMove));

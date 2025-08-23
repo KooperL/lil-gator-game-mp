@@ -4,13 +4,13 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ShaderVariables : MonoBehaviour
 {
-	// Token: 0x06000F69 RID: 3945 RVA: 0x0000D591 File Offset: 0x0000B791
+	// Token: 0x06000F6A RID: 3946 RVA: 0x0000D591 File Offset: 0x0000B791
 	private void Awake()
 	{
 		this.skybox = RenderSettings.skybox;
 	}
 
-	// Token: 0x06000F6A RID: 3946 RVA: 0x0000D59E File Offset: 0x0000B79E
+	// Token: 0x06000F6B RID: 3947 RVA: 0x0000D59E File Offset: 0x0000B79E
 	public void OnEnable()
 	{
 		ShaderVariables.s = this;
@@ -19,19 +19,19 @@ public class ShaderVariables : MonoBehaviour
 		this.UpdateVariables();
 	}
 
-	// Token: 0x06000F6B RID: 3947 RVA: 0x0000D5D7 File Offset: 0x0000B7D7
+	// Token: 0x06000F6C RID: 3948 RVA: 0x0000D5D7 File Offset: 0x0000B7D7
 	public void OnDisable()
 	{
 		this.UpdateVariables();
 	}
 
-	// Token: 0x06000F6C RID: 3948 RVA: 0x0000D5D7 File Offset: 0x0000B7D7
+	// Token: 0x06000F6D RID: 3949 RVA: 0x0000D5D7 File Offset: 0x0000B7D7
 	private void OnValidate()
 	{
 		this.UpdateVariables();
 	}
 
-	// Token: 0x06000F6D RID: 3949 RVA: 0x00051290 File Offset: 0x0004F490
+	// Token: 0x06000F6E RID: 3950 RVA: 0x0005157C File Offset: 0x0004F77C
 	public void UpdateVariables()
 	{
 		Texture2D fogTexture = this.fogFactor;
@@ -119,12 +119,12 @@ public class ShaderVariables : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F6E RID: 3950 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000F6F RID: 3951 RVA: 0x00002229 File Offset: 0x00000429
 	public void SetFog(bool isUnderwater)
 	{
 	}
 
-	// Token: 0x06000F6F RID: 3951 RVA: 0x000515C4 File Offset: 0x0004F7C4
+	// Token: 0x06000F70 RID: 3952 RVA: 0x000518B0 File Offset: 0x0004FAB0
 	private void LateUpdate()
 	{
 		if (Player.transform != null)

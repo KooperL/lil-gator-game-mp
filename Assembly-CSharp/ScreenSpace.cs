@@ -4,7 +4,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ScreenSpace : MonoBehaviour
 {
-	// Token: 0x06001164 RID: 4452 RVA: 0x0000EE36 File Offset: 0x0000D036
+	// Token: 0x06001165 RID: 4453 RVA: 0x0000EE36 File Offset: 0x0000D036
 	public static void ForceReload()
 	{
 		if (ScreenSpace.instance != null)
@@ -13,24 +13,24 @@ public class ScreenSpace : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001165 RID: 4453 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06001166 RID: 4454 RVA: 0x00002229 File Offset: 0x00000429
 	private void Awake()
 	{
 	}
 
-	// Token: 0x06001166 RID: 4454 RVA: 0x0000EE4F File Offset: 0x0000D04F
+	// Token: 0x06001167 RID: 4455 RVA: 0x0000EE4F File Offset: 0x0000D04F
 	private void OnEnable()
 	{
 		ScreenSpace.instance = this;
 		this.Load();
 	}
 
-	// Token: 0x06001167 RID: 4455 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06001168 RID: 4456 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x06001168 RID: 4456 RVA: 0x0000EE5D File Offset: 0x0000D05D
+	// Token: 0x06001169 RID: 4457 RVA: 0x0000EE5D File Offset: 0x0000D05D
 	private void Update()
 	{
 		if (Screen.width != this.widthBuffer || Screen.height != this.heightBuffer)
@@ -39,13 +39,13 @@ public class ScreenSpace : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001169 RID: 4457 RVA: 0x0000EE7F File Offset: 0x0000D07F
+	// Token: 0x0600116A RID: 4458 RVA: 0x0000EE7F File Offset: 0x0000D07F
 	protected void Load()
 	{
 		this.Refresh();
 	}
 
-	// Token: 0x0600116A RID: 4458 RVA: 0x0000EE87 File Offset: 0x0000D087
+	// Token: 0x0600116B RID: 4459 RVA: 0x0000EE87 File Offset: 0x0000D087
 	protected void Refresh()
 	{
 		this.widthBuffer = Screen.width;
@@ -57,7 +57,7 @@ public class ScreenSpace : MonoBehaviour
 		this.RefreshScale();
 	}
 
-	// Token: 0x0600116B RID: 4459 RVA: 0x00058150 File Offset: 0x00056350
+	// Token: 0x0600116C RID: 4460 RVA: 0x0005843C File Offset: 0x0005663C
 	private void RefreshScale()
 	{
 		Vector2 vector = Vector2.one;
@@ -83,7 +83,7 @@ public class ScreenSpace : MonoBehaviour
 		this.UpdateScreenScaleVariable();
 	}
 
-	// Token: 0x0600116C RID: 4460 RVA: 0x0000EEB6 File Offset: 0x0000D0B6
+	// Token: 0x0600116D RID: 4461 RVA: 0x0000EEB6 File Offset: 0x0000D0B6
 	public static void SetZoom(float zoom, Vector2 zoomPan)
 	{
 		if (ScreenSpace.instance == null)
@@ -95,13 +95,13 @@ public class ScreenSpace : MonoBehaviour
 		ScreenSpace.instance.UpdateScreenScaleVariable();
 	}
 
-	// Token: 0x0600116D RID: 4461 RVA: 0x000581F8 File Offset: 0x000563F8
+	// Token: 0x0600116E RID: 4462 RVA: 0x000584E4 File Offset: 0x000566E4
 	public void UpdateScreenScaleVariable()
 	{
 		Shader.SetGlobalVector("SCREEN_SCALE", new Vector4(this.zoomPan.x, this.zoomPan.y, this.zoom / this.relativeScale.x, this.zoom / this.relativeScale.y));
 	}
 
-	// Token: 0x0600116E RID: 4462 RVA: 0x00058250 File Offset: 0x00056450
+	// Token: 0x0600116F RID: 4463 RVA: 0x0005853C File Offset: 0x0005673C
 	public static Vector2 CameraToScreen(Vector2 cameraPosition)
 	{
 		cameraPosition += Vector2.Scale(ScreenSpace.instance.zoomPan, new Vector2(8f, 4.5f));
@@ -111,7 +111,7 @@ public class ScreenSpace : MonoBehaviour
 		return cameraPosition;
 	}
 
-	// Token: 0x0600116F RID: 4463 RVA: 0x000582DC File Offset: 0x000564DC
+	// Token: 0x06001170 RID: 4464 RVA: 0x000585C8 File Offset: 0x000567C8
 	private Vector2 BestFit()
 	{
 		Vector2 vector = this.MaintainAspectFit();
@@ -124,7 +124,7 @@ public class ScreenSpace : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x06001170 RID: 4464 RVA: 0x00058338 File Offset: 0x00056538
+	// Token: 0x06001171 RID: 4465 RVA: 0x00058624 File Offset: 0x00056824
 	private Vector2 MaintainAspectFit()
 	{
 		float num = (float)this.screenRT.width / (float)this.screenRT.height;
@@ -132,13 +132,13 @@ public class ScreenSpace : MonoBehaviour
 		return new Vector2(num2 * num, num2);
 	}
 
-	// Token: 0x06001171 RID: 4465 RVA: 0x0000EEE6 File Offset: 0x0000D0E6
+	// Token: 0x06001172 RID: 4466 RVA: 0x0000EEE6 File Offset: 0x0000D0E6
 	private Vector2 ScaleToFit()
 	{
 		return new Vector2((float)Screen.width, (float)Screen.height);
 	}
 
-	// (get) Token: 0x06001172 RID: 4466 RVA: 0x0000EEF9 File Offset: 0x0000D0F9
+	// (get) Token: 0x06001173 RID: 4467 RVA: 0x0000EEF9 File Offset: 0x0000D0F9
 	public float toScreen
 	{
 		get

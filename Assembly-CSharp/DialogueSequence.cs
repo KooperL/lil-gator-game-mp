@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class DialogueSequence : MonoBehaviour
 {
-	// Token: 0x060005EE RID: 1518 RVA: 0x0002FF6C File Offset: 0x0002E16C
+	// Token: 0x060005EE RID: 1518 RVA: 0x0002FFA4 File Offset: 0x0002E1A4
 	public virtual void Activate()
 	{
 		this.onStart.Invoke();
@@ -25,7 +25,7 @@ public class DialogueSequence : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x060005F0 RID: 1520 RVA: 0x0002FFB0 File Offset: 0x0002E1B0
+	// Token: 0x060005F0 RID: 1520 RVA: 0x0002FFE8 File Offset: 0x0002E1E8
 	public virtual void Deactivate()
 	{
 		GameObject[] array = this.stateObjects;

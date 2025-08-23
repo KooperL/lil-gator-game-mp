@@ -16,7 +16,7 @@ public static class BitHelper
 		return new BitArray(new int[] { integer });
 	}
 
-	// Token: 0x0600026A RID: 618 RVA: 0x00020030 File Offset: 0x0001E230
+	// Token: 0x0600026A RID: 618 RVA: 0x00020068 File Offset: 0x0001E268
 	public static int ToInteger(BitArray bitArray)
 	{
 		if (bitArray.Length > 32)

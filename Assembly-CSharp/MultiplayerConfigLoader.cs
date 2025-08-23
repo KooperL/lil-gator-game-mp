@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MultiplayerConfigLoader
 {
+	// Token: 0x06001E72 RID: 7794 RVA: 0x00078888 File Offset: 0x00076A88
 	public static MultiplayerConfigLoader Load(string filename = "lggmp_config.ini")
 	{
 		string text = Path.Combine(Directory.GetParent(Application.dataPath).FullName, filename);
@@ -54,7 +55,7 @@ public class MultiplayerConfigLoader
 		return MultiplayerConfigLoader._instance;
 	}
 
-	// (get) Token: 0x06001E72 RID: 7794
+	// (get) Token: 0x06001E73 RID: 7795 RVA: 0x00017488 File Offset: 0x00015688
 	public static MultiplayerConfigLoader Instance
 	{
 		get

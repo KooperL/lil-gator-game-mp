@@ -14,7 +14,7 @@ public class ActorMover : MonoBehaviour, IActorMover
 		}
 	}
 
-	// Token: 0x0600038F RID: 911 RVA: 0x00026B28 File Offset: 0x00024D28
+	// Token: 0x0600038F RID: 911 RVA: 0x00026B60 File Offset: 0x00024D60
 	private void Awake()
 	{
 		if (this.animator == null)
@@ -37,7 +37,7 @@ public class ActorMover : MonoBehaviour, IActorMover
 		this.lastPosition = base.transform.position;
 	}
 
-	// Token: 0x06000391 RID: 913 RVA: 0x00026B84 File Offset: 0x00024D84
+	// Token: 0x06000391 RID: 913 RVA: 0x00026BBC File Offset: 0x00024DBC
 	private void Update()
 	{
 		if (this.pathArray == null)
@@ -100,7 +100,7 @@ public class ActorMover : MonoBehaviour, IActorMover
 		}
 	}
 
-	// Token: 0x06000392 RID: 914 RVA: 0x00026E04 File Offset: 0x00025004
+	// Token: 0x06000392 RID: 914 RVA: 0x00026E3C File Offset: 0x0002503C
 	public float MoveAlongPath(float t, float distance)
 	{
 		if (distance == 0f)
@@ -126,7 +126,7 @@ public class ActorMover : MonoBehaviour, IActorMover
 		return Mathf.Clamp(t + distance * num2, 0f, (float)(this.path.Count - 1));
 	}
 
-	// Token: 0x06000393 RID: 915 RVA: 0x00026EBC File Offset: 0x000250BC
+	// Token: 0x06000393 RID: 915 RVA: 0x00026EF4 File Offset: 0x000250F4
 	public void SetMark(Vector3[] positions, Quaternion rotation, float speed, UnityEvent onReachMark, bool skipToStart = false, bool disableInteraction = true, bool playFootsteps = true)
 	{
 		if (this.actor == null)
@@ -189,7 +189,7 @@ public class ActorMover : MonoBehaviour, IActorMover
 		this.mountedActor.GetOut();
 	}
 
-	// Token: 0x06000394 RID: 916 RVA: 0x00027064 File Offset: 0x00025264
+	// Token: 0x06000394 RID: 916 RVA: 0x0002709C File Offset: 0x0002529C
 	private void StartMoving()
 	{
 		this.path[0] = (this.pathArray[0] = base.transform.position);
@@ -197,7 +197,7 @@ public class ActorMover : MonoBehaviour, IActorMover
 		base.enabled = true;
 	}
 
-	// Token: 0x06000395 RID: 917 RVA: 0x000270AC File Offset: 0x000252AC
+	// Token: 0x06000395 RID: 917 RVA: 0x000270E4 File Offset: 0x000252E4
 	public void CancelMove()
 	{
 		if (!base.enabled)

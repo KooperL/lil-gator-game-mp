@@ -5,7 +5,7 @@ using UnityEngine.U2D;
 
 public class ItemGlasses : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x06000B4F RID: 2895 RVA: 0x000405AC File Offset: 0x0003E7AC
+	// Token: 0x06000B50 RID: 2896 RVA: 0x00040898 File Offset: 0x0003EA98
 	public static void SetPixelFilterEnabled(bool isEnabled)
 	{
 		ItemGlasses.pixelPerfectCamera = MainCamera.p;
@@ -32,7 +32,7 @@ public class ItemGlasses : MonoBehaviour, IItemBehaviour
 		ItemGlasses.ppLayer.enabled = !isEnabled;
 	}
 
-	// Token: 0x06000B50 RID: 2896 RVA: 0x0000AAB1 File Offset: 0x00008CB1
+	// Token: 0x06000B51 RID: 2897 RVA: 0x0000AAB1 File Offset: 0x00008CB1
 	private void Start()
 	{
 		ItemGlasses.SetPixelFilterEnabled(true);
@@ -40,29 +40,29 @@ public class ItemGlasses : MonoBehaviour, IItemBehaviour
 		this.itemManager.bareHead.SetActive(true);
 	}
 
-	// Token: 0x06000B51 RID: 2897 RVA: 0x0000AAD5 File Offset: 0x00008CD5
+	// Token: 0x06000B52 RID: 2898 RVA: 0x0000AAD5 File Offset: 0x00008CD5
 	public void OnRemove()
 	{
 		ItemGlasses.SetPixelFilterEnabled(false);
 		this.itemManager.bareHead.SetActive(false);
 	}
 
-	// Token: 0x06000B52 RID: 2898 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B53 RID: 2899 RVA: 0x00002229 File Offset: 0x00000429
 	public void Cancel()
 	{
 	}
 
-	// Token: 0x06000B53 RID: 2899 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B54 RID: 2900 RVA: 0x00002229 File Offset: 0x00000429
 	public void Input(bool isDown, bool isHeld)
 	{
 	}
 
-	// Token: 0x06000B54 RID: 2900 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B55 RID: 2901 RVA: 0x00002229 File Offset: 0x00000429
 	public void SetEquipped(bool isEquipped)
 	{
 	}
 
-	// Token: 0x06000B55 RID: 2901 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B56 RID: 2902 RVA: 0x00002229 File Offset: 0x00000429
 	public void SetIndex(int index)
 	{
 	}

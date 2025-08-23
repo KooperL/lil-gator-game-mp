@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class TimedBreakables : TimedChallenge
 {
-	// Token: 0x06000862 RID: 2146 RVA: 0x00037CC4 File Offset: 0x00035EC4
+	// Token: 0x06000863 RID: 2147 RVA: 0x00037FB0 File Offset: 0x000361B0
 	protected override void Start()
 	{
 		base.Start();
@@ -18,7 +18,7 @@ public class TimedBreakables : TimedChallenge
 		}
 	}
 
-	// Token: 0x06000863 RID: 2147 RVA: 0x00037D24 File Offset: 0x00035F24
+	// Token: 0x06000864 RID: 2148 RVA: 0x00038010 File Offset: 0x00036210
 	private void OnBreakableBroken()
 	{
 		int num = 0;

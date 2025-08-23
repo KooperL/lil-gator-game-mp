@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UISetUnlockedItems : MonoBehaviour
 {
-	// Token: 0x06001316 RID: 4886 RVA: 0x0005E1F4 File Offset: 0x0005C3F4
+	// Token: 0x06001317 RID: 4887 RVA: 0x0005E4E0 File Offset: 0x0005C6E0
 	public void Set()
 	{
 		foreach (ItemObject itemObject in ItemManager.i.items)

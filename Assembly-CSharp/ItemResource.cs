@@ -28,7 +28,7 @@ public class ItemResource : ScriptableObject
 	}
 
 	// (get) Token: 0x060001AB RID: 427 RVA: 0x00003685 File Offset: 0x00001885
-	// (set) Token: 0x060001AC RID: 428 RVA: 0x0001D578 File Offset: 0x0001B778
+	// (set) Token: 0x060001AC RID: 428 RVA: 0x0001D5B0 File Offset: 0x0001B7B0
 	public int Amount
 	{
 		get

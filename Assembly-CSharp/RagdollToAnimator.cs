@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RagdollToAnimator : MonoBehaviour
 {
-	// Token: 0x06000D04 RID: 3332 RVA: 0x00049B04 File Offset: 0x00047D04
+	// Token: 0x06000D05 RID: 3333 RVA: 0x00049DF0 File Offset: 0x00047FF0
 	[ContextMenu("Read Ragdoll Transforms")]
 	public void ReadRagdollTransforms()
 	{
@@ -23,14 +23,14 @@ public class RagdollToAnimator : MonoBehaviour
 		this.t = 0f;
 	}
 
-	// Token: 0x06000D05 RID: 3333 RVA: 0x0000C0F0 File Offset: 0x0000A2F0
+	// Token: 0x06000D06 RID: 3334 RVA: 0x0000C0F0 File Offset: 0x0000A2F0
 	private void Awake()
 	{
 		this.animatorPositions = new Vector3[this.transforms.Length];
 		this.animatorRotations = new Quaternion[this.transforms.Length];
 	}
 
-	// Token: 0x06000D06 RID: 3334 RVA: 0x0000C118 File Offset: 0x0000A318
+	// Token: 0x06000D07 RID: 3335 RVA: 0x0000C118 File Offset: 0x0000A318
 	private void LateUpdate()
 	{
 		this.t += Time.deltaTime / this.interpolationTime;
@@ -42,14 +42,14 @@ public class RagdollToAnimator : MonoBehaviour
 		this.SetInterpolation(this.t);
 	}
 
-	// Token: 0x06000D07 RID: 3335 RVA: 0x0000C154 File Offset: 0x0000A354
+	// Token: 0x06000D08 RID: 3336 RVA: 0x0000C154 File Offset: 0x0000A354
 	public void SkipTo(float newT = 1f)
 	{
 		this.t = newT;
 		this.SetInterpolation(this.t);
 	}
 
-	// Token: 0x06000D08 RID: 3336 RVA: 0x00049BA8 File Offset: 0x00047DA8
+	// Token: 0x06000D09 RID: 3337 RVA: 0x00049E94 File Offset: 0x00048094
 	private void SetInterpolation(float t)
 	{
 		t = Mathf.Clamp01(t);

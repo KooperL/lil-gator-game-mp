@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class ItemFireableProjectile : ItemFireable
 {
-	// Token: 0x06000B4C RID: 2892 RVA: 0x0000AA9C File Offset: 0x00008C9C
+	// Token: 0x06000B4D RID: 2893 RVA: 0x0000AA9C File Offset: 0x00008C9C
 	public override Vector3 GetSpawnPoint()
 	{
 		return this.projectileLaunchPoint.position;
 	}
 
-	// Token: 0x06000B4D RID: 2893 RVA: 0x00040544 File Offset: 0x0003E744
+	// Token: 0x06000B4E RID: 2894 RVA: 0x00040830 File Offset: 0x0003EA30
 	public override void Fire(Vector3 direction)
 	{
 		GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(this.projectile);

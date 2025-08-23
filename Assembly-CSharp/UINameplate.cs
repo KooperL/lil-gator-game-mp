@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UINameplate : MonoBehaviour
 {
-	// Token: 0x060012A2 RID: 4770 RVA: 0x0005C990 File Offset: 0x0005AB90
+	// Token: 0x060012A3 RID: 4771 RVA: 0x0005CC7C File Offset: 0x0005AE7C
 	public static void UpdateNameplates(CharacterProfile changedCharacter)
 	{
 		foreach (UINameplate uinameplate in UINameplate.currentNameplates)
@@ -17,19 +17,19 @@ public class UINameplate : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012A3 RID: 4771 RVA: 0x0000FB78 File Offset: 0x0000DD78
+	// Token: 0x060012A4 RID: 4772 RVA: 0x0000FB78 File Offset: 0x0000DD78
 	public void OnEnable()
 	{
 		UINameplate.currentNameplates.Add(this);
 	}
 
-	// Token: 0x060012A4 RID: 4772 RVA: 0x0000FB85 File Offset: 0x0000DD85
+	// Token: 0x060012A5 RID: 4773 RVA: 0x0000FB85 File Offset: 0x0000DD85
 	public void OnDisable()
 	{
 		UINameplate.currentNameplates.Remove(this);
 	}
 
-	// Token: 0x060012A5 RID: 4773 RVA: 0x0005C9F0 File Offset: 0x0005ABF0
+	// Token: 0x060012A6 RID: 4774 RVA: 0x0005CCDC File Offset: 0x0005AEDC
 	public void SetNameplate(CharacterProfile character)
 	{
 		this.character = character;
@@ -65,7 +65,7 @@ public class UINameplate : MonoBehaviour
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x060012A6 RID: 4774 RVA: 0x0000FB93 File Offset: 0x0000DD93
+	// Token: 0x060012A7 RID: 4775 RVA: 0x0000FB93 File Offset: 0x0000DD93
 	public void Clear()
 	{
 		this.character = null;

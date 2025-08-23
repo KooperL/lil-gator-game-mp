@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UICheckForSave : MonoBehaviour
 {
-	// Token: 0x060001A1 RID: 417 RVA: 0x0001D458 File Offset: 0x0001B658
+	// Token: 0x060001A1 RID: 417 RVA: 0x0001D490 File Offset: 0x0001B690
 	private void Awake()
 	{
 		bool flag = FileUtil.HasInitializedSaveData();

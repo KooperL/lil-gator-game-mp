@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 public class UIStamina : MonoBehaviour
 {
-	// Token: 0x06001340 RID: 4928 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06001341 RID: 4929 RVA: 0x00002229 File Offset: 0x00000429
 	private void Awake()
 	{
 	}
 
-	// Token: 0x06001341 RID: 4929 RVA: 0x000103B0 File Offset: 0x0000E5B0
+	// Token: 0x06001342 RID: 4930 RVA: 0x000103B0 File Offset: 0x0000E5B0
 	private void Start()
 	{
 		if (Player.movement == null)
@@ -22,13 +22,13 @@ public class UIStamina : MonoBehaviour
 		this.UpdateStamina();
 	}
 
-	// Token: 0x06001342 RID: 4930 RVA: 0x000103ED File Offset: 0x0000E5ED
+	// Token: 0x06001343 RID: 4931 RVA: 0x000103ED File Offset: 0x0000E5ED
 	private void OnEnable()
 	{
 		UIStamina.u = this;
 	}
 
-	// Token: 0x06001343 RID: 4931 RVA: 0x0005EA5C File Offset: 0x0005CC5C
+	// Token: 0x06001344 RID: 4932 RVA: 0x0005ED48 File Offset: 0x0005CF48
 	private void LateUpdate()
 	{
 		if (Player.movement == null)
@@ -74,7 +74,7 @@ public class UIStamina : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001344 RID: 4932 RVA: 0x0005EC60 File Offset: 0x0005CE60
+	// Token: 0x06001345 RID: 4933 RVA: 0x0005EF4C File Offset: 0x0005D14C
 	private void UpdateStamina()
 	{
 		for (int i = 0; i < this.braceletImages.Length; i++)

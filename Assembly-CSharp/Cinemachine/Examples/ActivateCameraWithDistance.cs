@@ -6,13 +6,13 @@ namespace Cinemachine.Examples
 	[AddComponentMenu("")]
 	public class ActivateCameraWithDistance : MonoBehaviour
 	{
-		// Token: 0x060013BB RID: 5051 RVA: 0x00010B5B File Offset: 0x0000ED5B
+		// Token: 0x060013BC RID: 5052 RVA: 0x00010B5B File Offset: 0x0000ED5B
 		private void Start()
 		{
 			this.SwitchCam(this.initialActiveCam);
 		}
 
-		// Token: 0x060013BC RID: 5052 RVA: 0x00060AC4 File Offset: 0x0005ECC4
+		// Token: 0x060013BD RID: 5053 RVA: 0x00060DB0 File Offset: 0x0005EFB0
 		private void Update()
 		{
 			if (this.objectToCheck && this.switchCameraTo)
@@ -26,7 +26,7 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x060013BD RID: 5053 RVA: 0x00010B69 File Offset: 0x0000ED69
+		// Token: 0x060013BE RID: 5054 RVA: 0x00010B69 File Offset: 0x0000ED69
 		public void SwitchCam(CinemachineVirtualCameraBase vcam)
 		{
 			if (Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera.Name != vcam.Name)

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class ProofReadDialogue : MonoBehaviour, Interaction
 {
-	// Token: 0x06000D34 RID: 3380 RVA: 0x0000C316 File Offset: 0x0000A516
+	// Token: 0x06000D35 RID: 3381 RVA: 0x0000C316 File Offset: 0x0000A516
 	public void Interact()
 	{
 		base.StartCoroutine(this.ProofReadDocuments());
 	}
 
-	// Token: 0x06000D35 RID: 3381 RVA: 0x0000C325 File Offset: 0x0000A525
+	// Token: 0x06000D36 RID: 3382 RVA: 0x0000C325 File Offset: 0x0000A525
 	private IEnumerator ProofReadDocuments()
 	{
 		Game.DialogueDepth++;

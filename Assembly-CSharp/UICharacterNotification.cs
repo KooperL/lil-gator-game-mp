@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class UICharacterNotification : MonoBehaviour
 {
-	// Token: 0x060011FA RID: 4602 RVA: 0x00059E28 File Offset: 0x00058028
+	// Token: 0x060011FB RID: 4603 RVA: 0x0005A114 File Offset: 0x00058314
 	public void Load(CharacterProfile[] characters)
 	{
 		this.ResetThing();
@@ -17,7 +17,7 @@ public class UICharacterNotification : MonoBehaviour
 		this.onLoad.Invoke();
 	}
 
-	// Token: 0x060011FB RID: 4603 RVA: 0x0000F47B File Offset: 0x0000D67B
+	// Token: 0x060011FC RID: 4604 RVA: 0x0000F47B File Offset: 0x0000D67B
 	public void Load(CharacterProfile character)
 	{
 		this.ResetThing();
@@ -26,7 +26,7 @@ public class UICharacterNotification : MonoBehaviour
 		this.onLoad.Invoke();
 	}
 
-	// Token: 0x060011FC RID: 4604 RVA: 0x00059E64 File Offset: 0x00058064
+	// Token: 0x060011FD RID: 4605 RVA: 0x0005A150 File Offset: 0x00058350
 	private void AddDisplay(CharacterProfile character)
 	{
 		UICharacterDisplay component = global::UnityEngine.Object.Instantiate<GameObject>(this.displayPrefab, this.displayParent).GetComponent<UICharacterDisplay>();
@@ -34,7 +34,7 @@ public class UICharacterNotification : MonoBehaviour
 		this.displays.Add(component);
 	}
 
-	// Token: 0x060011FD RID: 4605 RVA: 0x00059E9C File Offset: 0x0005809C
+	// Token: 0x060011FE RID: 4606 RVA: 0x0005A188 File Offset: 0x00058388
 	private void ResetThing()
 	{
 		this.hideBehavior.Show();

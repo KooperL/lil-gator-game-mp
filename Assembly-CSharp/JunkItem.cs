@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class JunkItem : MonoBehaviour
 {
-	// Token: 0x06000844 RID: 2116 RVA: 0x00037794 File Offset: 0x00035994
+	// Token: 0x06000845 RID: 2117 RVA: 0x00037A80 File Offset: 0x00035C80
 	private void Start()
 	{
 		this.renderer = base.transform.parent.GetComponent<Renderer>();
@@ -12,7 +12,7 @@ public class JunkItem : MonoBehaviour
 		this.mainCamera = MainCamera.t;
 	}
 
-	// Token: 0x06000845 RID: 2117 RVA: 0x000377EC File Offset: 0x000359EC
+	// Token: 0x06000846 RID: 2118 RVA: 0x00037AD8 File Offset: 0x00035CD8
 	private void FixedUpdate()
 	{
 		this.rigidbody.velocity += 50f * Time.deltaTime * (this.mainCamera.TransformPoint(new Vector3(0f, 0f, -1f)) - this.rigidbody.position).normalized;
@@ -22,7 +22,7 @@ public class JunkItem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000846 RID: 2118 RVA: 0x0003788C File Offset: 0x00035A8C
+	// Token: 0x06000847 RID: 2119 RVA: 0x00037B78 File Offset: 0x00035D78
 	private void Collect()
 	{
 		ItemResource itemResource = this.resource;

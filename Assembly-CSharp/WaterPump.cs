@@ -36,7 +36,7 @@ public class WaterPump : MonoBehaviour
 		this.OnActivate.Invoke();
 	}
 
-	// Token: 0x06000144 RID: 324 RVA: 0x0001BC40 File Offset: 0x00019E40
+	// Token: 0x06000144 RID: 324 RVA: 0x0001BC78 File Offset: 0x00019E78
 	private void SetState(bool active)
 	{
 		this.activated = active;

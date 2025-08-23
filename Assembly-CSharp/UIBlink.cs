@@ -4,14 +4,14 @@ using UnityEngine.UI;
 
 public class UIBlink : MonoBehaviour
 {
-	// Token: 0x060011C7 RID: 4551 RVA: 0x0000F246 File Offset: 0x0000D446
+	// Token: 0x060011C8 RID: 4552 RVA: 0x0000F246 File Offset: 0x0000D446
 	private void OnEnable()
 	{
 		this.image.enabled = true;
 		this.nextBlinkTime = Time.time + this.blinkInterval;
 	}
 
-	// Token: 0x060011C8 RID: 4552 RVA: 0x0000F266 File Offset: 0x0000D466
+	// Token: 0x060011C9 RID: 4553 RVA: 0x0000F266 File Offset: 0x0000D466
 	private void Update()
 	{
 		if (Time.time > this.nextBlinkTime)

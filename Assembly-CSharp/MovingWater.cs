@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovingWater : Water
 {
-	// Token: 0x060010C7 RID: 4295 RVA: 0x0000E535 File Offset: 0x0000C735
+	// Token: 0x060010C8 RID: 4296 RVA: 0x0000E535 File Offset: 0x0000C735
 	private void OnValidate()
 	{
 		if (this.waterMaterial == null)
@@ -15,7 +15,7 @@ public class MovingWater : Water
 		this._displacement = this.waterMaterial.GetFloat(this._Displacement);
 	}
 
-	// Token: 0x060010C8 RID: 4296 RVA: 0x000566FC File Offset: 0x000548FC
+	// Token: 0x060010C9 RID: 4297 RVA: 0x000569E8 File Offset: 0x00054BE8
 	private void Awake()
 	{
 		NativeArray<Color32> rawTextureData = this._derivHeightMap.GetRawTextureData<Color32>();
@@ -31,7 +31,7 @@ public class MovingWater : Water
 		}
 	}
 
-	// Token: 0x060010C9 RID: 4297 RVA: 0x000567AC File Offset: 0x000549AC
+	// Token: 0x060010CA RID: 4298 RVA: 0x00056A98 File Offset: 0x00054C98
 	private float SamplePoint(Vector2Int pixel)
 	{
 		pixel.x = (pixel.x % this.textureResolution.x + this.textureResolution.x) % this.textureResolution.x;
@@ -39,14 +39,14 @@ public class MovingWater : Water
 		return this.heights[pixel.x, pixel.y];
 	}
 
-	// Token: 0x060010CA RID: 4298 RVA: 0x00056838 File Offset: 0x00054A38
+	// Token: 0x060010CB RID: 4299 RVA: 0x00056B24 File Offset: 0x00054D24
 	private float SampleHeight(Vector2 uv)
 	{
 		Vector2 vector = new Vector2(uv.x * (float)this.textureResolution.x, uv.y * (float)this.textureResolution.y);
 		return 0f + this.SamplePoint(new Vector2Int(Mathf.FloorToInt(vector.x), Mathf.FloorToInt(vector.y)));
 	}
 
-	// Token: 0x060010CB RID: 4299 RVA: 0x0005689C File Offset: 0x00054A9C
+	// Token: 0x060010CC RID: 4300 RVA: 0x00056B88 File Offset: 0x00054D88
 	public override float GetWaterPlaneHeight(Vector3 referencePosition)
 	{
 		Vector2 vector = Time.time * this._flow.zw();

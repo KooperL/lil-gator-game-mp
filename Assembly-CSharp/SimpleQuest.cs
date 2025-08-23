@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class SimpleQuest : MonoBehaviour
 {
-	// (get) Token: 0x06000E8B RID: 3723 RVA: 0x0000CD9B File Offset: 0x0000AF9B
-	// (set) Token: 0x06000E8C RID: 3724 RVA: 0x0000CDAE File Offset: 0x0000AFAE
+	// (get) Token: 0x06000E8C RID: 3724 RVA: 0x0000CD9B File Offset: 0x0000AF9B
+	// (set) Token: 0x06000E8D RID: 3725 RVA: 0x0000CDAE File Offset: 0x0000AFAE
 	private bool State
 	{
 		get
@@ -19,13 +19,13 @@ public class SimpleQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E8D RID: 3725 RVA: 0x0000CDC1 File Offset: 0x0000AFC1
+	// Token: 0x06000E8E RID: 3726 RVA: 0x0000CDC1 File Offset: 0x0000AFC1
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000E8E RID: 3726 RVA: 0x0004D8D8 File Offset: 0x0004BAD8
+	// Token: 0x06000E8F RID: 3727 RVA: 0x0004DBC4 File Offset: 0x0004BDC4
 	private void UpdateState()
 	{
 		bool state = this.State;
@@ -49,13 +49,13 @@ public class SimpleQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000E8F RID: 3727 RVA: 0x0000CDC9 File Offset: 0x0000AFC9
+	// Token: 0x06000E90 RID: 3728 RVA: 0x0000CDC9 File Offset: 0x0000AFC9
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000E90 RID: 3728 RVA: 0x0000CDD8 File Offset: 0x0000AFD8
+	// Token: 0x06000E91 RID: 3729 RVA: 0x0000CDD8 File Offset: 0x0000AFD8
 	private IEnumerator RunConversation()
 	{
 		DialogueManager.d.CancelBubble();

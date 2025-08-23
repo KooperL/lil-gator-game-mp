@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AttachSpringToPlayer : MonoBehaviour
 {
-	// Token: 0x06000B12 RID: 2834 RVA: 0x0003F9C8 File Offset: 0x0003DBC8
+	// Token: 0x06000B13 RID: 2835 RVA: 0x0003FCB4 File Offset: 0x0003DEB4
 	private void Start()
 	{
 		if (this.handJoint != null)
@@ -21,7 +21,7 @@ public class AttachSpringToPlayer : MonoBehaviour
 		Player.ragdollController.isAttached = true;
 	}
 
-	// Token: 0x06000B13 RID: 2835 RVA: 0x0000A791 File Offset: 0x00008991
+	// Token: 0x06000B14 RID: 2836 RVA: 0x0000A791 File Offset: 0x00008991
 	private void OnDisable()
 	{
 		Player.ragdollController.isAttached = false;

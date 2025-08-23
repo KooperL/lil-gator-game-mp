@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class SyncQuestStates : MonoBehaviour
 {
-	// Token: 0x060001DB RID: 475 RVA: 0x0001DFA0 File Offset: 0x0001C1A0
+	// Token: 0x060001DB RID: 475 RVA: 0x0001DFD8 File Offset: 0x0001C1D8
 	private void OnValidate()
 	{
 		if (this.stateMachine == null)
@@ -40,7 +40,7 @@ public class SyncQuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001DE RID: 478 RVA: 0x0001E030 File Offset: 0x0001C230
+	// Token: 0x060001DE RID: 478 RVA: 0x0001E068 File Offset: 0x0001C268
 	[ContextMenu("Auto Populate")]
 	public void AutoPopulate()
 	{
@@ -77,7 +77,7 @@ public class SyncQuestStates : MonoBehaviour
 		this.statePairs = list.ToArray();
 	}
 
-	// Token: 0x060001DF RID: 479 RVA: 0x0001E110 File Offset: 0x0001C310
+	// Token: 0x060001DF RID: 479 RVA: 0x0001E148 File Offset: 0x0001C348
 	public void UpdateState(int newStateIndex)
 	{
 		bool flag = false;

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class InteractDialogueGeneric : MonoBehaviour, Interaction
 {
-	// Token: 0x060004B9 RID: 1209 RVA: 0x0002C414 File Offset: 0x0002A614
+	// Token: 0x060004B9 RID: 1209 RVA: 0x0002C44C File Offset: 0x0002A64C
 	private void OnValidate()
 	{
 		if (this.actors == null || this.actors.Length == 0)

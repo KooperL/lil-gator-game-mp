@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SpawnManagedParticles : MonoBehaviour
 {
-	// Token: 0x060006A0 RID: 1696 RVA: 0x00032164 File Offset: 0x00030364
+	// Token: 0x060006A0 RID: 1696 RVA: 0x0003219C File Offset: 0x0003039C
 	public void OnEnable()
 	{
 		if (Time.timeSinceLevelLoad < 0.5f)

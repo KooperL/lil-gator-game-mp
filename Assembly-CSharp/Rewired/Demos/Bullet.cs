@@ -6,7 +6,7 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public class Bullet : MonoBehaviour
 	{
-		// Token: 0x06001DF3 RID: 7667 RVA: 0x00016DED File Offset: 0x00014FED
+		// Token: 0x06001DF4 RID: 7668 RVA: 0x00016DED File Offset: 0x00014FED
 		private void Start()
 		{
 			if (this.lifeTime > 0f)
@@ -16,7 +16,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DF4 RID: 7668 RVA: 0x00016E15 File Offset: 0x00015015
+		// Token: 0x06001DF5 RID: 7669 RVA: 0x00016E15 File Offset: 0x00015015
 		private void Update()
 		{
 			if (this.die && Time.time >= this.deathTime)

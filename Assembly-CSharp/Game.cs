@@ -4,12 +4,12 @@ using UnityEngine.AddressableAssets;
 
 public class Game : MonoBehaviour
 {
-	// (add) Token: 0x0600073F RID: 1855
-	// (remove) Token: 0x06000740 RID: 1856
+	// (add) Token: 0x0600073F RID: 1855 RVA: 0x000346A8 File Offset: 0x000328A8
+	// (remove) Token: 0x06000740 RID: 1856 RVA: 0x000346DC File Offset: 0x000328DC
 	public static event Action onEnterDialogue;
 
-	// (get) Token: 0x06000741 RID: 1857
-	// (set) Token: 0x06000742 RID: 1858
+	// (get) Token: 0x06000741 RID: 1857 RVA: 0x00034710 File Offset: 0x00032910
+	// (set) Token: 0x06000742 RID: 1858 RVA: 0x000074EF File Offset: 0x000056EF
 	public static GameState State
 	{
 		get
@@ -39,7 +39,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000743 RID: 1859
+	// (get) Token: 0x06000743 RID: 1859 RVA: 0x00007517 File Offset: 0x00005717
 	public static bool AllowedToSave
 	{
 		get
@@ -48,8 +48,8 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000744 RID: 1860
-	// (set) Token: 0x06000745 RID: 1861
+	// (get) Token: 0x06000744 RID: 1860 RVA: 0x00007546 File Offset: 0x00005746
+	// (set) Token: 0x06000745 RID: 1861 RVA: 0x00007558 File Offset: 0x00005758
 	public static WorldState WorldState
 	{
 		get
@@ -62,7 +62,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000746 RID: 1862
+	// (get) Token: 0x06000746 RID: 1862 RVA: 0x00007565 File Offset: 0x00005765
 	public static int NewGameIndex
 	{
 		get
@@ -71,7 +71,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000747 RID: 1863
+	// (get) Token: 0x06000747 RID: 1863 RVA: 0x00007577 File Offset: 0x00005777
 	public static bool IsNewGamePlus
 	{
 		get
@@ -80,7 +80,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000748 RID: 1864
+	// (get) Token: 0x06000748 RID: 1864 RVA: 0x00007581 File Offset: 0x00005781
 	public static bool IsInDialogue
 	{
 		get
@@ -89,7 +89,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000749 RID: 1865
+	// (get) Token: 0x06000749 RID: 1865 RVA: 0x00007597 File Offset: 0x00005797
 	public static bool HasControl
 	{
 		get
@@ -98,8 +98,8 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x0600074A RID: 1866
-	// (set) Token: 0x0600074B RID: 1867
+	// (get) Token: 0x0600074A RID: 1866 RVA: 0x000075B4 File Offset: 0x000057B4
+	// (set) Token: 0x0600074B RID: 1867 RVA: 0x00034764 File Offset: 0x00032964
 	public static int DialogueDepth
 	{
 		get
@@ -120,6 +120,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
+	// Token: 0x0600074C RID: 1868 RVA: 0x000347BC File Offset: 0x000329BC
 	private void Awake()
 	{
 		Game.g = this;
@@ -130,6 +131,7 @@ public class Game : MonoBehaviour
 		Debug.Log("[LGG-MP] Server Host: " + multiplayerConfigLoader.ServerHost);
 	}
 
+	// Token: 0x0600074D RID: 1869 RVA: 0x000075C0 File Offset: 0x000057C0
 	private void OnEnable()
 	{
 		Game.g = this;
@@ -139,6 +141,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
+	// Token: 0x0600074E RID: 1870 RVA: 0x000075E9 File Offset: 0x000057E9
 	private void Start()
 	{
 		MultiplayerCommunicationService.Instance.initConnection();
@@ -148,21 +151,25 @@ public class Game : MonoBehaviour
 		global::UnityEngine.Object.DontDestroyOnLoad(gameObject);
 	}
 
+	// Token: 0x0600074F RID: 1871 RVA: 0x0000761B File Offset: 0x0000581B
 	public void SetToStory()
 	{
 		this.SetWorldState(WorldState.Story);
 	}
 
+	// Token: 0x06000750 RID: 1872 RVA: 0x00007625 File Offset: 0x00005825
 	public void SetToFlashback()
 	{
 		this.SetWorldState(WorldState.Flashback);
 	}
 
+	// Token: 0x06000751 RID: 1873 RVA: 0x0000762F File Offset: 0x0000582F
 	public void SetWorldState(WorldState newWorldState)
 	{
 		this.SetWorldState(newWorldState, false, false);
 	}
 
+	// Token: 0x06000752 RID: 1874 RVA: 0x00034820 File Offset: 0x00032A20
 	public void SetWorldState(WorldState newWorldState, bool forceChange = false, bool delaySceneChange = false)
 	{
 		if (newWorldState != this.worldState || forceChange)
@@ -192,59 +199,67 @@ public class Game : MonoBehaviour
 		}
 	}
 
+	// Token: 0x06000755 RID: 1877 RVA: 0x000348D8 File Offset: 0x00032AD8
 	public void Update()
 	{
 		if (MultiplayerConfigLoader.Instance.logTemp.Contains("F"))
 		{
-			foreach (GameObject go in global::UnityEngine.Object.FindObjectsOfType<GameObject>())
+			foreach (GameObject gameObject in global::UnityEngine.Object.FindObjectsOfType<GameObject>())
 			{
-				if (go.name.Contains("Hero") || go.name.Contains("Sis"))
+				if (gameObject.name.Contains("Hero") || gameObject.name.Contains("Sis"))
 				{
-					if (go.transform.root != go.transform)
+					if (gameObject.transform.root != gameObject.transform)
 					{
 						Debug.Log(string.Concat(new string[]
 						{
 							"Possible prefab instance: ",
-							go.name,
+							gameObject.name,
 							" (Parent: ",
-							go.transform.root.name,
+							gameObject.transform.root.name,
 							")"
 						}));
 					}
-					Transform parent = go.transform.parent;
-					while (parent != null)
+					Transform transform = gameObject.transform.parent;
+					while (transform != null)
 					{
-						Debug.Log(go.name + " hierarchy: " + parent.name);
-						parent = parent.parent;
+						Debug.Log(gameObject.name + " hierarchy: " + transform.name);
+						transform = transform.parent;
 					}
 				}
 			}
 		}
 		if (MultiplayerConfigLoader.Instance.logTemp.Contains("I"))
 		{
-			foreach (GameObject go2 in global::UnityEngine.Object.FindObjectsOfType<GameObject>())
+			foreach (GameObject gameObject2 in global::UnityEngine.Object.FindObjectsOfType<GameObject>())
 			{
-				Debug.Log("=== PLAYER CONTAINER: " + go2.name + " ===");
-				Debug.Log(string.Format("Position: {0}", go2.transform.position));
-				Debug.Log(string.Format("Active: {0}", go2.activeInHierarchy));
-				foreach (Component c in go2.GetComponents<Component>())
+				Debug.Log("=== PLAYER CONTAINER: " + gameObject2.name + " ===");
+				Debug.Log(string.Format("Position: {0}", gameObject2.transform.position));
+				Debug.Log(string.Format("Active: {0}", gameObject2.activeInHierarchy));
+				foreach (Component component in gameObject2.GetComponents<Component>())
 				{
-					Debug.Log(string.Format("    Container Component: {0}", c.GetType()));
+					Debug.Log(string.Format("    Container Component: {0}", component.GetType()));
 				}
 				Debug.Log("Children:");
-				for (int i = 0; i < go2.transform.childCount; i++)
+				for (int k = 0; k < gameObject2.transform.childCount; k++)
 				{
-					Transform child = go2.transform.GetChild(i);
+					Transform child = gameObject2.transform.GetChild(k);
 					Debug.Log("    Child: " + child.name);
 					if (child.name.Contains("Hero"))
 					{
-						foreach (Component c2 in child.GetComponents<Component>())
+						foreach (Component component2 in child.GetComponents<Component>())
 						{
-							Debug.Log(string.Format("        Child Component: {0}", c2.GetType()));
+							Debug.Log(string.Format("        Child Component: {0}", component2.GetType()));
 						}
 					}
 				}
 				Debug.Log("=== END ===\n");
+			}
+		}
+		if (MultiplayerConfigLoader.Instance.logTemp.Contains("S"))
+		{
+			foreach (Shader shader in Resources.FindObjectsOfTypeAll<Shader>())
+			{
+				Debug.Log("Found shader: " + shader.name);
 			}
 		}
 	}

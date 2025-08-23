@@ -19,7 +19,7 @@ public class SharedAudioManager : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEvery4.Remove(this);
 	}
 
-	// Token: 0x06000244 RID: 580 RVA: 0x0001F46C File Offset: 0x0001D66C
+	// Token: 0x06000244 RID: 580 RVA: 0x0001F4A4 File Offset: 0x0001D6A4
 	public void ManagedUpdate()
 	{
 		Vector3 position = base.transform.position;
@@ -101,7 +101,7 @@ public class SharedAudioManager : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000245 RID: 581 RVA: 0x0001F8E4 File Offset: 0x0001DAE4
+	// Token: 0x06000245 RID: 581 RVA: 0x0001F91C File Offset: 0x0001DB1C
 	private void AddActiveSource(SharedAudioProfile profile)
 	{
 		SharedAudioManager.ActiveAudioSource activeAudioSource = new SharedAudioManager.ActiveAudioSource();

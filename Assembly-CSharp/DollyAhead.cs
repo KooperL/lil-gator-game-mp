@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DollyAhead : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x0600062D RID: 1581 RVA: 0x000309B8 File Offset: 0x0002EBB8
+	// Token: 0x0600062D RID: 1581 RVA: 0x000309F0 File Offset: 0x0002EBF0
 	private void OnValidate()
 	{
 		if (this.cart == null)
@@ -38,7 +38,7 @@ public class DollyAhead : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEvery4.Remove(this);
 	}
 
-	// Token: 0x06000631 RID: 1585 RVA: 0x00030A28 File Offset: 0x0002EC28
+	// Token: 0x06000631 RID: 1585 RVA: 0x00030A60 File Offset: 0x0002EC60
 	public void ManagedUpdate()
 	{
 		float num = this.path.FromPathNativeUnits(this.path.FindClosestPoint(Player.Position, 0, -1, 4), CinemachinePathBase.PositionUnits.Distance);

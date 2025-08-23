@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public class SurfaceMaterial : ScriptableObject
 {
-	// (get) Token: 0x06000FCF RID: 4047 RVA: 0x0000DA78 File Offset: 0x0000BC78
+	// (get) Token: 0x06000FD0 RID: 4048 RVA: 0x0000DA78 File Offset: 0x0000BC78
 	public bool HasFootstep
 	{
 		get
@@ -14,7 +14,7 @@ public class SurfaceMaterial : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x06000FD0 RID: 4048 RVA: 0x000527EC File Offset: 0x000509EC
+	// (get) Token: 0x06000FD1 RID: 4049 RVA: 0x00052AD8 File Offset: 0x00050CD8
 	public AudioClip Footstep
 	{
 		get
@@ -33,7 +33,7 @@ public class SurfaceMaterial : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x06000FD1 RID: 4049 RVA: 0x0000DA8E File Offset: 0x0000BC8E
+	// (get) Token: 0x06000FD2 RID: 4050 RVA: 0x0000DA8E File Offset: 0x0000BC8E
 	public bool HasImpact
 	{
 		get
@@ -42,7 +42,7 @@ public class SurfaceMaterial : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x06000FD2 RID: 4050 RVA: 0x00052854 File Offset: 0x00050A54
+	// (get) Token: 0x06000FD3 RID: 4051 RVA: 0x00052B40 File Offset: 0x00050D40
 	public AudioClip Impact
 	{
 		get
@@ -61,7 +61,7 @@ public class SurfaceMaterial : ScriptableObject
 		}
 	}
 
-	// Token: 0x06000FD3 RID: 4051 RVA: 0x000528D0 File Offset: 0x00050AD0
+	// Token: 0x06000FD4 RID: 4052 RVA: 0x00052BBC File Offset: 0x00050DBC
 	public void PlayFootstep(Vector3 position, float volumeMod = 1f, float pitchMod = 1f)
 	{
 		if (!this.HasFootstep)
@@ -75,7 +75,7 @@ public class SurfaceMaterial : ScriptableObject
 		}
 	}
 
-	// Token: 0x06000FD4 RID: 4052 RVA: 0x00052938 File Offset: 0x00050B38
+	// Token: 0x06000FD5 RID: 4053 RVA: 0x00052C24 File Offset: 0x00050E24
 	public void PlayImpact(Vector3 position, float volumeMod = 1f, float pitchMod = 1f)
 	{
 		if (!this.HasImpact)

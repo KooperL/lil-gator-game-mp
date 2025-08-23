@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class DialogueActor : MonoBehaviour
 {
-	// Token: 0x060003BE RID: 958 RVA: 0x000273E8 File Offset: 0x000255E8
+	// Token: 0x060003BE RID: 958 RVA: 0x00027420 File Offset: 0x00025620
 	private static string PositionString(ActorPosition position)
 	{
 		switch (position)
@@ -28,7 +28,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003BF RID: 959 RVA: 0x00027440 File Offset: 0x00025640
+	// Token: 0x060003BF RID: 959 RVA: 0x00027478 File Offset: 0x00025678
 	private static string StateString(ActorState state)
 	{
 		switch (state)
@@ -60,7 +60,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003C0 RID: 960 RVA: 0x000274C8 File Offset: 0x000256C8
+	// Token: 0x060003C0 RID: 960 RVA: 0x00027500 File Offset: 0x00025700
 	private static int GetPositionStateHash(int position, int state, Animator animator, int stateLayer)
 	{
 		if (DialogueActor.positionStateHashes[position, state] != 0)
@@ -76,7 +76,7 @@ public class DialogueActor : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x060003C1 RID: 961 RVA: 0x00027538 File Offset: 0x00025738
+	// Token: 0x060003C1 RID: 961 RVA: 0x00027570 File Offset: 0x00025770
 	private static string GetTransitionName(int oldPosition, int newPosition)
 	{
 		if (oldPosition == 0 && newPosition == 1)
@@ -110,7 +110,7 @@ public class DialogueActor : MonoBehaviour
 		return "";
 	}
 
-	// Token: 0x060003C2 RID: 962 RVA: 0x000275AC File Offset: 0x000257AC
+	// Token: 0x060003C2 RID: 962 RVA: 0x000275E4 File Offset: 0x000257E4
 	private static int GetTransitionHash(int oldPosition, int newPosition)
 	{
 		if (DialogueActor.transitionHashes[oldPosition, newPosition] == 0)
@@ -272,7 +272,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003D0 RID: 976 RVA: 0x00027604 File Offset: 0x00025804
+	// Token: 0x060003D0 RID: 976 RVA: 0x0002763C File Offset: 0x0002583C
 	[ContextMenu("Snap To Floor")]
 	public void SnapToFloor()
 	{
@@ -289,7 +289,7 @@ public class DialogueActor : MonoBehaviour
 	{
 	}
 
-	// Token: 0x060003D2 RID: 978 RVA: 0x00027668 File Offset: 0x00025868
+	// Token: 0x060003D2 RID: 978 RVA: 0x000276A0 File Offset: 0x000258A0
 	private void Awake()
 	{
 		this.awakeTime = Time.time;
@@ -333,7 +333,7 @@ public class DialogueActor : MonoBehaviour
 		base.gameObject.AddComponent<DialogueActorEnable>().dialogueActor = this;
 	}
 
-	// Token: 0x060003D3 RID: 979 RVA: 0x00027794 File Offset: 0x00025994
+	// Token: 0x060003D3 RID: 979 RVA: 0x000277CC File Offset: 0x000259CC
 	private void OnEnable()
 	{
 		if (this.animatorIKHook != null)
@@ -398,7 +398,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003D7 RID: 983 RVA: 0x00027910 File Offset: 0x00025B10
+	// Token: 0x060003D7 RID: 983 RVA: 0x00027948 File Offset: 0x00025B48
 	private void GetAnimatorLayers()
 	{
 		if (this.animator != null)
@@ -409,7 +409,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x060003D8 RID: 984 RVA: 0x00027970 File Offset: 0x00025B70
+	// (get) Token: 0x060003D8 RID: 984 RVA: 0x000279A8 File Offset: 0x00025BA8
 	private bool IsEmoting
 	{
 		get
@@ -423,7 +423,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x060003D9 RID: 985 RVA: 0x000279D0 File Offset: 0x00025BD0
+	// (get) Token: 0x060003D9 RID: 985 RVA: 0x00027A08 File Offset: 0x00025C08
 	public bool IsCurrentlyEmoting
 	{
 		get
@@ -443,7 +443,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x060003DA RID: 986 RVA: 0x00027A4C File Offset: 0x00025C4C
+	// (get) Token: 0x060003DA RID: 986 RVA: 0x00027A84 File Offset: 0x00025C84
 	public int CurrentEmoteHash
 	{
 		get
@@ -461,7 +461,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003DB RID: 987 RVA: 0x00027AA0 File Offset: 0x00025CA0
+	// Token: 0x060003DB RID: 987 RVA: 0x00027AD8 File Offset: 0x00025CD8
 	public void SetEmote(int emoteHash, bool skipTransition = false)
 	{
 		if (this.onChangeStateOrEmote != null)
@@ -523,7 +523,7 @@ public class DialogueActor : MonoBehaviour
 		this.holdEmote = true;
 	}
 
-	// Token: 0x060003DD RID: 989 RVA: 0x00027C14 File Offset: 0x00025E14
+	// Token: 0x060003DD RID: 989 RVA: 0x00027C4C File Offset: 0x00025E4C
 	public void ClearEmote(bool overrideHoldEmote = false, bool ignoreHoldEmote = false)
 	{
 		if (this.animator == null || !this.IsEmoting || (this.holdEmote && !overrideHoldEmote && !ignoreHoldEmote))
@@ -577,7 +577,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003E2 RID: 994 RVA: 0x00027CB4 File Offset: 0x00025EB4
+	// Token: 0x060003E2 RID: 994 RVA: 0x00027CEC File Offset: 0x00025EEC
 	public void SetStateString(string stateName)
 	{
 		ActorState actorState;
@@ -587,7 +587,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003E3 RID: 995 RVA: 0x00027CD8 File Offset: 0x00025ED8
+	// Token: 0x060003E3 RID: 995 RVA: 0x00027D10 File Offset: 0x00025F10
 	public void SetStateAndPosition(int newState, int newPosition, bool skipTransition = false, bool immediate = false)
 	{
 		if (this.animator == null)
@@ -645,7 +645,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003E4 RID: 996 RVA: 0x00027E00 File Offset: 0x00026000
+	// Token: 0x060003E4 RID: 996 RVA: 0x00027E38 File Offset: 0x00026038
 	private bool DoPositionTransitions(int from, int to)
 	{
 		if (Time.time - this.lastEmoteStart <= 0.25f)
@@ -673,7 +673,7 @@ public class DialogueActor : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060003E6 RID: 998 RVA: 0x00027E3C File Offset: 0x0002603C
+	// Token: 0x060003E6 RID: 998 RVA: 0x00027E74 File Offset: 0x00026074
 	private void UpdateActorState(float transitionTime = 0.25f)
 	{
 		if (this.animator == null || this.stateLayer == -1)
@@ -705,7 +705,7 @@ public class DialogueActor : MonoBehaviour
 		this.UpdateEyeState();
 	}
 
-	// Token: 0x060003E7 RID: 999 RVA: 0x00027F10 File Offset: 0x00026110
+	// Token: 0x060003E7 RID: 999 RVA: 0x00027F48 File Offset: 0x00026148
 	public void SetActorLookTarget(DialogueActor lookTarget, bool immediate = false)
 	{
 		if (!base.gameObject.activeInHierarchy)
@@ -759,7 +759,7 @@ public class DialogueActor : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060003E9 RID: 1001 RVA: 0x00027FE8 File Offset: 0x000261E8
+	// Token: 0x060003E9 RID: 1001 RVA: 0x00028020 File Offset: 0x00026220
 	private void FinishSetActorLookTargetDelayed()
 	{
 		if (this.delayedSetLookTarget == null || this.delayedSetLookTarget == this)
@@ -775,7 +775,7 @@ public class DialogueActor : MonoBehaviour
 		this.delayedSetLookTarget = null;
 	}
 
-	// Token: 0x060003EA RID: 1002 RVA: 0x00028048 File Offset: 0x00026248
+	// Token: 0x060003EA RID: 1002 RVA: 0x00028080 File Offset: 0x00026280
 	protected virtual void Start()
 	{
 		if (this.animator != null && this.animator.gameObject != base.gameObject)
@@ -810,7 +810,7 @@ public class DialogueActor : MonoBehaviour
 	{
 	}
 
-	// Token: 0x060003EE RID: 1006 RVA: 0x000280D8 File Offset: 0x000262D8
+	// Token: 0x060003EE RID: 1006 RVA: 0x00028110 File Offset: 0x00026310
 	[ContextMenu("Auto Populate Fields")]
 	public void AutoPopulateFields()
 	{
@@ -848,7 +848,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003EF RID: 1007 RVA: 0x000281F4 File Offset: 0x000263F4
+	// Token: 0x060003EF RID: 1007 RVA: 0x0002822C File Offset: 0x0002642C
 	[ContextMenu("Populate LOD Group")]
 	public void PopulateLODGroup()
 	{
@@ -867,7 +867,7 @@ public class DialogueActor : MonoBehaviour
 		component.SetLODs(lods);
 	}
 
-	// Token: 0x060003F0 RID: 1008 RVA: 0x00028288 File Offset: 0x00026488
+	// Token: 0x060003F0 RID: 1008 RVA: 0x000282C0 File Offset: 0x000264C0
 	private void UpdateLookAtRotation(bool includeGlobal = false, bool readAnimatorValues = true)
 	{
 		if (this.isRagdolling)
@@ -908,7 +908,7 @@ public class DialogueActor : MonoBehaviour
 		this.headLookAtWeight = Mathf.SmoothDamp(this.headLookAtWeight, num3, ref this.headLookAtVelocity, 0.25f);
 	}
 
-	// Token: 0x060003F1 RID: 1009 RVA: 0x00028424 File Offset: 0x00026624
+	// Token: 0x060003F1 RID: 1009 RVA: 0x0002845C File Offset: 0x0002665C
 	public void OnAnimatorIK()
 	{
 		if (this.lookAtLerp > 0.01f && this.head != null && this.animator.enabled)
@@ -925,7 +925,7 @@ public class DialogueActor : MonoBehaviour
 		this.lookAtLerp = 0f;
 	}
 
-	// Token: 0x060003F2 RID: 1010 RVA: 0x00028514 File Offset: 0x00026714
+	// Token: 0x060003F2 RID: 1010 RVA: 0x0002854C File Offset: 0x0002674C
 	public virtual void LateUpdate()
 	{
 		this.wasHeadRotatedThisFrame = false;
@@ -1044,7 +1044,7 @@ public class DialogueActor : MonoBehaviour
 		return this.DialogueAnchor.position;
 	}
 
-	// Token: 0x060003F4 RID: 1012 RVA: 0x000288A4 File Offset: 0x00026AA4
+	// Token: 0x060003F4 RID: 1012 RVA: 0x000288DC File Offset: 0x00026ADC
 	private void UpdateEyeState()
 	{
 		if (this.leftEye == null && this.rightEye == null)
@@ -1078,7 +1078,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003F6 RID: 1014 RVA: 0x0002897C File Offset: 0x00026B7C
+	// Token: 0x060003F6 RID: 1014 RVA: 0x000289B4 File Offset: 0x00026BB4
 	public virtual void MouthOpen()
 	{
 		PlayAudio.p.PlayVoice((this.head != null) ? this.head.position : base.transform.position, this.voicePitchMultiplier, this.voiceVarianceMultiplier);
@@ -1091,7 +1091,7 @@ public class DialogueActor : MonoBehaviour
 		this.mouthOpenTime = Time.time;
 	}
 
-	// Token: 0x060003F7 RID: 1015 RVA: 0x000289FC File Offset: 0x00026BFC
+	// Token: 0x060003F7 RID: 1015 RVA: 0x00028A34 File Offset: 0x00026C34
 	protected virtual void UpdateMouthFlap()
 	{
 		float num = Mathf.SmoothStep(0f, 1f, this.mouthControl);
@@ -1119,7 +1119,7 @@ public class DialogueActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003F8 RID: 1016 RVA: 0x00028B34 File Offset: 0x00026D34
+	// Token: 0x060003F8 RID: 1016 RVA: 0x00028B6C File Offset: 0x00026D6C
 	public void SetJawOpen(float openAmount)
 	{
 		if (this.jaw == null)
@@ -1130,7 +1130,7 @@ public class DialogueActor : MonoBehaviour
 		this.jaw.localRotation = this.jawClosed * quaternion;
 	}
 
-	// Token: 0x060003F9 RID: 1017 RVA: 0x00028B88 File Offset: 0x00026D88
+	// Token: 0x060003F9 RID: 1017 RVA: 0x00028BC0 File Offset: 0x00026DC0
 	public void DoManualLookAtRotations()
 	{
 		if (this.isRagdolling)

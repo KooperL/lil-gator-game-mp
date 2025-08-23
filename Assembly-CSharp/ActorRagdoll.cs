@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ActorRagdoll : MonoBehaviour
 {
-	// Token: 0x0600039A RID: 922 RVA: 0x00027120 File Offset: 0x00025320
+	// Token: 0x0600039A RID: 922 RVA: 0x00027158 File Offset: 0x00025358
 	private void OnValidate()
 	{
 		if (this.dialogueActor == null)
@@ -20,7 +20,7 @@ public class ActorRagdoll : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600039B RID: 923 RVA: 0x00027170 File Offset: 0x00025370
+	// Token: 0x0600039B RID: 923 RVA: 0x000271A8 File Offset: 0x000253A8
 	private void Start()
 	{
 		Rigidbody[] array = this.ragdollBodies;
@@ -39,7 +39,7 @@ public class ActorRagdoll : MonoBehaviour
 		this.rootRigidbody = ((componentInChildren != null) ? componentInChildren.transform : null);
 	}
 
-	// Token: 0x0600039D RID: 925 RVA: 0x0002719C File Offset: 0x0002539C
+	// Token: 0x0600039D RID: 925 RVA: 0x000271D4 File Offset: 0x000253D4
 	[ContextMenu("Enable Rigidbody")]
 	public void EnableRagdoll()
 	{
@@ -54,7 +54,7 @@ public class ActorRagdoll : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600039E RID: 926 RVA: 0x00027204 File Offset: 0x00025404
+	// Token: 0x0600039E RID: 926 RVA: 0x0002723C File Offset: 0x0002543C
 	[ContextMenu("Disable Rigidbody")]
 	public void DisableRagdoll()
 	{

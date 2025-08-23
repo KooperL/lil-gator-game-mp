@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [AddComponentMenu("Logic/LogicState - Persistent Objects")]
 public class LSPersistentObjects : LogicState
 {
-	// Token: 0x060008E4 RID: 2276 RVA: 0x00008AF4 File Offset: 0x00006CF4
+	// Token: 0x060008E5 RID: 2277 RVA: 0x00008AF4 File Offset: 0x00006CF4
 	[ContextMenu("Collect Objects")]
 	public void CollectObjects()
 	{
@@ -16,7 +16,7 @@ public class LSPersistentObjects : LogicState
 		this.targets = this.parent.GetComponentsInChildren<PersistentObject>();
 	}
 
-	// Token: 0x060008E5 RID: 2277 RVA: 0x00039280 File Offset: 0x00037480
+	// Token: 0x060008E6 RID: 2278 RVA: 0x0003956C File Offset: 0x0003776C
 	public override void Start()
 	{
 		if (!this.addedListeners)
@@ -30,7 +30,7 @@ public class LSPersistentObjects : LogicState
 		base.Start();
 	}
 
-	// Token: 0x060008E6 RID: 2278 RVA: 0x000392CC File Offset: 0x000374CC
+	// Token: 0x060008E7 RID: 2279 RVA: 0x000395B8 File Offset: 0x000377B8
 	public override void CheckLogic()
 	{
 		if (!base.enabled)

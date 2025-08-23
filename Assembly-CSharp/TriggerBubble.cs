@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TriggerBubble : MonoBehaviour
 {
-	// Token: 0x06000554 RID: 1364 RVA: 0x0002E790 File Offset: 0x0002C990
+	// Token: 0x06000554 RID: 1364 RVA: 0x0002E7C8 File Offset: 0x0002C9C8
 	public void Interact()
 	{
 		if (this.document != null)

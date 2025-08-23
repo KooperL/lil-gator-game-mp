@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ActorHandIK : MonoBehaviour
 {
-	// Token: 0x0600036E RID: 878 RVA: 0x00025DD4 File Offset: 0x00023FD4
+	// Token: 0x0600036E RID: 878 RVA: 0x00025E0C File Offset: 0x0002400C
 	private void Awake()
 	{
 		this.actor = base.GetComponent<DialogueActor>();
@@ -19,7 +19,7 @@ public class ActorHandIK : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600036F RID: 879 RVA: 0x00025E34 File Offset: 0x00024034
+	// Token: 0x0600036F RID: 879 RVA: 0x00025E6C File Offset: 0x0002406C
 	private void Update()
 	{
 		this.rightWeight = Mathf.MoveTowards(this.rightWeight, (!this.isRemoving && this.hasRightIK) ? 1f : 0f, 2f * Time.deltaTime);
@@ -30,7 +30,7 @@ public class ActorHandIK : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000370 RID: 880 RVA: 0x00025EDC File Offset: 0x000240DC
+	// Token: 0x06000370 RID: 880 RVA: 0x00025F14 File Offset: 0x00024114
 	private void OnAnimatorIK()
 	{
 		float num = this.rightWeight * this.animator.GetFloat(ActorHandIK.RightHandID);
@@ -41,7 +41,7 @@ public class ActorHandIK : MonoBehaviour
 		this.animator.SetIKPosition(AvatarIKGoal.LeftHand, this.GetIKPosition(true));
 	}
 
-	// Token: 0x06000371 RID: 881 RVA: 0x00025F78 File Offset: 0x00024178
+	// Token: 0x06000371 RID: 881 RVA: 0x00025FB0 File Offset: 0x000241B0
 	public Vector3 GetIKPosition(bool isLeft)
 	{
 		Transform transform = (isLeft ? this.leftAnchor : this.rightAnchor);
@@ -62,7 +62,7 @@ public class ActorHandIK : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x06000372 RID: 882 RVA: 0x00026010 File Offset: 0x00024210
+	// Token: 0x06000372 RID: 882 RVA: 0x00026048 File Offset: 0x00024248
 	public void SetHandIK(bool isLeft, Vector3 position, Transform anchor = null, bool allowYAxis = false)
 	{
 		if (this.actor == null)

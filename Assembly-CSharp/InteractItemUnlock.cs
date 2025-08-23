@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class InteractItemUnlock : PersistentObject, Interaction
 {
-	// Token: 0x060007D9 RID: 2009 RVA: 0x000363AC File Offset: 0x000345AC
+	// Token: 0x060007DA RID: 2010 RVA: 0x00036698 File Offset: 0x00034898
 	public void Interact()
 	{
 		if (this.item != null)

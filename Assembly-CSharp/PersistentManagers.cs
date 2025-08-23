@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PersistentManagers : MonoBehaviour
 {
-	// Token: 0x060009DD RID: 2525 RVA: 0x00009810 File Offset: 0x00007A10
+	// Token: 0x060009DE RID: 2526 RVA: 0x00009810 File Offset: 0x00007A10
 	private void Awake()
 	{
 		if (PersistentManagers.p != null)

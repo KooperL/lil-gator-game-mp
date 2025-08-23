@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class PlayNotificationSting : MonoBehaviour
 {
-	// Token: 0x060011A4 RID: 4516 RVA: 0x0000F0A8 File Offset: 0x0000D2A8
+	// Token: 0x060011A5 RID: 4517 RVA: 0x0000F0A8 File Offset: 0x0000D2A8
 	public void ResetSting()
 	{
 		this.isTriggered = false;
 		base.enabled = true;
 	}
 
-	// Token: 0x060011A5 RID: 4517 RVA: 0x0000F0B8 File Offset: 0x0000D2B8
+	// Token: 0x060011A6 RID: 4518 RVA: 0x0000F0B8 File Offset: 0x0000D2B8
 	private void OnDisable()
 	{
 		this.timer = 0f;
 	}
 
-	// Token: 0x060011A6 RID: 4518 RVA: 0x0000F0C5 File Offset: 0x0000D2C5
+	// Token: 0x060011A7 RID: 4519 RVA: 0x0000F0C5 File Offset: 0x0000D2C5
 	private void Update()
 	{
 		this.timer += Time.deltaTime;

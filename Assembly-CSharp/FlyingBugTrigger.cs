@@ -29,7 +29,7 @@ public class FlyingBugTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000153 RID: 339 RVA: 0x0001C08C File Offset: 0x0001A28C
+	// Token: 0x06000153 RID: 339 RVA: 0x0001C0C4 File Offset: 0x0001A2C4
 	private void FixedUpdate()
 	{
 		bool flag = this.stepsSinceTriggered < 2;

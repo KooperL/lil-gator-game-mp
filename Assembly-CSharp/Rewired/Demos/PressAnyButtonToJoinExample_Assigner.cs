@@ -7,7 +7,7 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public class PressAnyButtonToJoinExample_Assigner : MonoBehaviour
 	{
-		// Token: 0x06001DDB RID: 7643 RVA: 0x00016CDC File Offset: 0x00014EDC
+		// Token: 0x06001DDC RID: 7644 RVA: 0x00016CDC File Offset: 0x00014EDC
 		private void Update()
 		{
 			if (!ReInput.isReady)
@@ -17,7 +17,7 @@ namespace Rewired.Demos
 			this.AssignJoysticksToPlayers();
 		}
 
-		// Token: 0x06001DDC RID: 7644 RVA: 0x00075800 File Offset: 0x00073A00
+		// Token: 0x06001DDD RID: 7645 RVA: 0x00075AEC File Offset: 0x00073CEC
 		private void AssignJoysticksToPlayers()
 		{
 			IList<Joystick> joysticks = ReInput.controllers.Joysticks;
@@ -41,7 +41,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DDD RID: 7645 RVA: 0x00075884 File Offset: 0x00073A84
+		// Token: 0x06001DDE RID: 7646 RVA: 0x00075B70 File Offset: 0x00073D70
 		private Player FindPlayerWithoutJoystick()
 		{
 			IList<Player> players = ReInput.players.Players;
@@ -55,7 +55,7 @@ namespace Rewired.Demos
 			return null;
 		}
 
-		// Token: 0x06001DDE RID: 7646 RVA: 0x00016CEC File Offset: 0x00014EEC
+		// Token: 0x06001DDF RID: 7647 RVA: 0x00016CEC File Offset: 0x00014EEC
 		private bool DoAllPlayersHaveJoysticks()
 		{
 			return this.FindPlayerWithoutJoystick() == null;

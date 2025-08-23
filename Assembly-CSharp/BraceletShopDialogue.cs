@@ -231,7 +231,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x060004FD RID: 1277 RVA: 0x0002D0D0 File Offset: 0x0002B2D0
+	// Token: 0x060004FD RID: 1277 RVA: 0x0002D108 File Offset: 0x0002B308
 	private Coroutine LoadDialogue(string dialogue)
 	{
 		if (this.document != null)
@@ -241,7 +241,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		return base.StartCoroutine(DialogueManager.d.LoadChunk(dialogue, this.actors, DialogueManager.DialogueBoxBackground.Standard, true));
 	}
 
-	// Token: 0x060004FE RID: 1278 RVA: 0x0002D12C File Offset: 0x0002B32C
+	// Token: 0x060004FE RID: 1278 RVA: 0x0002D164 File Offset: 0x0002B364
 	private Coroutine LoadDialogueNGP(string dialogue)
 	{
 		if (this.ngpDocument != null)
@@ -251,7 +251,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		return base.StartCoroutine(DialogueManager.d.LoadChunk(dialogue, this.actors, DialogueManager.DialogueBoxBackground.Standard, true));
 	}
 
-	// Token: 0x060004FF RID: 1279 RVA: 0x0002D188 File Offset: 0x0002B388
+	// Token: 0x060004FF RID: 1279 RVA: 0x0002D1C0 File Offset: 0x0002B3C0
 	private Coroutine DoBraceletGet()
 	{
 		int num = ItemManager.i.BraceletsCollected - 1;
@@ -263,7 +263,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		return base.StartCoroutine(this.uiItemGet.RunSequence(this.braceletSprite[num], this.braceletItem.DisplayName, text, this.actors));
 	}
 
-	// Token: 0x06000500 RID: 1280 RVA: 0x0002D21C File Offset: 0x0002B41C
+	// Token: 0x06000500 RID: 1280 RVA: 0x0002D254 File Offset: 0x0002B454
 	private void DisableActor()
 	{
 		base.GetComponent<Collider>().enabled = false;
@@ -293,7 +293,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x06000502 RID: 1282 RVA: 0x0002D298 File Offset: 0x0002B498
+	// Token: 0x06000502 RID: 1282 RVA: 0x0002D2D0 File Offset: 0x0002B4D0
 	[ContextMenu("Assign Unique ID")]
 	public void AssignUniqueID()
 	{
@@ -322,7 +322,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000504 RID: 1284 RVA: 0x0002D32C File Offset: 0x0002B52C
+	// Token: 0x06000504 RID: 1284 RVA: 0x0002D364 File Offset: 0x0002B564
 	private bool CheckIfAllBraceletShops()
 	{
 		for (int i = 0; i < 4; i++)

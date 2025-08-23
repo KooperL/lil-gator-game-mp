@@ -17,7 +17,7 @@ public class SaveFileScreen1 : MonoBehaviour
 		this.toGameplay.LoadGameplay();
 	}
 
-	// Token: 0x0600019A RID: 410 RVA: 0x0001D3D8 File Offset: 0x0001B5D8
+	// Token: 0x0600019A RID: 410 RVA: 0x0001D410 File Offset: 0x0001B610
 	private void UpdateState()
 	{
 		for (int i = 0; i < this.displays.Length; i++)

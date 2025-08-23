@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HitPhysics : MonoBehaviour, IHit
 {
-	// Token: 0x060007D0 RID: 2000 RVA: 0x00007C3E File Offset: 0x00005E3E
+	// Token: 0x060007D1 RID: 2001 RVA: 0x00007C3E File Offset: 0x00005E3E
 	private void OnValidate()
 	{
 		if (this.rigidbody == null)
@@ -16,7 +16,7 @@ public class HitPhysics : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x060007D1 RID: 2001 RVA: 0x00007C74 File Offset: 0x00005E74
+	// Token: 0x060007D2 RID: 2002 RVA: 0x00007C74 File Offset: 0x00005E74
 	private void Awake()
 	{
 		if (this.rigidbody == null)
@@ -25,7 +25,7 @@ public class HitPhysics : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x060007D2 RID: 2002 RVA: 0x00036228 File Offset: 0x00034428
+	// Token: 0x060007D3 RID: 2003 RVA: 0x00036514 File Offset: 0x00034714
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		if (this.randomizeForcePoint)

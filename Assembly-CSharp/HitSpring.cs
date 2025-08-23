@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HitSpring : MonoBehaviour, IHit
 {
-	// Token: 0x06000815 RID: 2069 RVA: 0x00007F5B File Offset: 0x0000615B
+	// Token: 0x06000816 RID: 2070 RVA: 0x00007F5B File Offset: 0x0000615B
 	private void Awake()
 	{
 		if (this.springTransform == null)
@@ -13,7 +13,7 @@ public class HitSpring : MonoBehaviour, IHit
 		this.initialRotation = this.springTransform.localRotation;
 	}
 
-	// Token: 0x06000816 RID: 2070 RVA: 0x00036D54 File Offset: 0x00034F54
+	// Token: 0x06000817 RID: 2071 RVA: 0x00037040 File Offset: 0x00035240
 	private void OnEnable()
 	{
 		if (this.surface == null)
@@ -34,7 +34,7 @@ public class HitSpring : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x06000817 RID: 2071 RVA: 0x00036DC4 File Offset: 0x00034FC4
+	// Token: 0x06000818 RID: 2072 RVA: 0x000370B0 File Offset: 0x000352B0
 	private void OnDisable()
 	{
 		if (this.dynamicRenderer != null)
@@ -48,14 +48,14 @@ public class HitSpring : MonoBehaviour, IHit
 		this.prevVelocity = (this.velocity = Vector2.zero);
 	}
 
-	// Token: 0x06000818 RID: 2072 RVA: 0x00036E1C File Offset: 0x0003501C
+	// Token: 0x06000819 RID: 2073 RVA: 0x00037108 File Offset: 0x00035308
 	private void Start()
 	{
 		this.rotation = this.springTransform.localRotation.eulerAngles.y;
 		base.enabled = false;
 	}
 
-	// Token: 0x06000819 RID: 2073 RVA: 0x00007F88 File Offset: 0x00006188
+	// Token: 0x0600081A RID: 2074 RVA: 0x00007F88 File Offset: 0x00006188
 	private void TrySqueakEffect()
 	{
 		if (this.squeakSound != null && Time.time - this.lastSqueakSoundTime > 0.25f)
@@ -65,7 +65,7 @@ public class HitSpring : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x0600081A RID: 2074 RVA: 0x00036E50 File Offset: 0x00035050
+	// Token: 0x0600081B RID: 2075 RVA: 0x0003713C File Offset: 0x0003533C
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		this.AddImpulse(100f * velocity);
@@ -89,7 +89,7 @@ public class HitSpring : MonoBehaviour, IHit
 		base.enabled = true;
 	}
 
-	// Token: 0x0600081B RID: 2075 RVA: 0x00007FC1 File Offset: 0x000061C1
+	// Token: 0x0600081C RID: 2076 RVA: 0x00007FC1 File Offset: 0x000061C1
 	public void AddImpulse(Vector3 impulse)
 	{
 		impulse = this.springTransform.InverseTransformDirection(impulse);
@@ -98,7 +98,7 @@ public class HitSpring : MonoBehaviour, IHit
 		base.enabled = true;
 	}
 
-	// Token: 0x0600081C RID: 2076 RVA: 0x00036F00 File Offset: 0x00035100
+	// Token: 0x0600081D RID: 2077 RVA: 0x000371EC File Offset: 0x000353EC
 	public void AddForce(Vector3 force)
 	{
 		force = this.springTransform.InverseTransformDirection(force);
@@ -107,7 +107,7 @@ public class HitSpring : MonoBehaviour, IHit
 		base.enabled = true;
 	}
 
-	// Token: 0x0600081D RID: 2077 RVA: 0x00036F5C File Offset: 0x0003515C
+	// Token: 0x0600081E RID: 2078 RVA: 0x00037248 File Offset: 0x00035448
 	private void Update()
 	{
 		if (this.collider != null && !this.collider.enabled && Time.time > this.colliderEnableTime)

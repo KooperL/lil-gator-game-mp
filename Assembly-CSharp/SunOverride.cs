@@ -9,7 +9,7 @@ public class SunOverride : MonoBehaviour
 		this.rotation = base.transform.rotation;
 	}
 
-	// Token: 0x060006A7 RID: 1703 RVA: 0x00032284 File Offset: 0x00030484
+	// Token: 0x060006A7 RID: 1703 RVA: 0x000322BC File Offset: 0x000304BC
 	private void OnEnable()
 	{
 		if (Sun.s == null)

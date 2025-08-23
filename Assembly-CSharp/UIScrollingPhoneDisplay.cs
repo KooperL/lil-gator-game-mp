@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 public class UIScrollingPhoneDisplay : MonoBehaviour
 {
-	// Token: 0x06001301 RID: 4865 RVA: 0x0005DD10 File Offset: 0x0005BF10
+	// Token: 0x06001302 RID: 4866 RVA: 0x0005DFFC File Offset: 0x0005C1FC
 	private void Awake()
 	{
 		this.textGenerationSettings = this.textTemplate.GetGenerationSettings(this.textTemplate.rectTransform.rect.size);
 	}
 
-	// Token: 0x06001302 RID: 4866 RVA: 0x0005DD48 File Offset: 0x0005BF48
+	// Token: 0x06001303 RID: 4867 RVA: 0x0005E034 File Offset: 0x0005C234
 	private void OnEnable()
 	{
 		if (this.contents == null)
@@ -24,7 +24,7 @@ public class UIScrollingPhoneDisplay : MonoBehaviour
 		this.scrollingArea.anchoredPosition = Vector3.zero;
 	}
 
-	// Token: 0x06001303 RID: 4867 RVA: 0x0005DD98 File Offset: 0x0005BF98
+	// Token: 0x06001304 RID: 4868 RVA: 0x0005E084 File Offset: 0x0005C284
 	private void OnDisable()
 	{
 		if (this.contents != null && this.contents.Count > 0)
@@ -42,7 +42,7 @@ public class UIScrollingPhoneDisplay : MonoBehaviour
 		this.scrollingArea.anchoredPosition = Vector3.zero;
 	}
 
-	// Token: 0x06001304 RID: 4868 RVA: 0x0005DE40 File Offset: 0x0005C040
+	// Token: 0x06001305 RID: 4869 RVA: 0x0005E12C File Offset: 0x0005C32C
 	private void InsertName(CharacterProfile character)
 	{
 		if (!character.isPlayer && this.lastCharacterDisplayed != character)
@@ -54,7 +54,7 @@ public class UIScrollingPhoneDisplay : MonoBehaviour
 		this.lastCharacterDisplayed = character;
 	}
 
-	// Token: 0x06001305 RID: 4869 RVA: 0x000100E2 File Offset: 0x0000E2E2
+	// Token: 0x06001306 RID: 4870 RVA: 0x000100E2 File Offset: 0x0000E2E2
 	public IEnumerator DisplayTextMessage(string message, CharacterProfile character, bool displayNames = true)
 	{
 		if (!base.gameObject.activeSelf)
@@ -83,7 +83,7 @@ public class UIScrollingPhoneDisplay : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001306 RID: 4870 RVA: 0x00010106 File Offset: 0x0000E306
+	// Token: 0x06001307 RID: 4871 RVA: 0x00010106 File Offset: 0x0000E306
 	public IEnumerator DisplayImage(Sprite image, CharacterProfile character, bool displayNames = true, bool clearAfter = true)
 	{
 		if (!base.gameObject.activeSelf)
@@ -112,13 +112,13 @@ public class UIScrollingPhoneDisplay : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001307 RID: 4871 RVA: 0x00010132 File Offset: 0x0000E332
+	// Token: 0x06001308 RID: 4872 RVA: 0x00010132 File Offset: 0x0000E332
 	public void ClearPhone()
 	{
 		this.phone.Deactivate();
 	}
 
-	// Token: 0x06001308 RID: 4872 RVA: 0x0005DE9C File Offset: 0x0005C09C
+	// Token: 0x06001309 RID: 4873 RVA: 0x0005E188 File Offset: 0x0005C388
 	private void Update()
 	{
 		this.position = Mathf.SmoothDamp(this.position, this.scrollingArea.rect.height, ref this.velocity, 0.05f);

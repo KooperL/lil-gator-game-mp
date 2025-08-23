@@ -27,7 +27,7 @@ public class DialogueOptions : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004AB RID: 1195 RVA: 0x0002BF14 File Offset: 0x0002A114
+	// Token: 0x060004AB RID: 1195 RVA: 0x0002BF4C File Offset: 0x0002A14C
 	public WaitUntil SetOptions(string[] options)
 	{
 		this.isTriggered = false;
@@ -67,14 +67,14 @@ public class DialogueOptions : MonoBehaviour
 		this.isTriggered = false;
 	}
 
-	// Token: 0x060004AD RID: 1197 RVA: 0x0002C058 File Offset: 0x0002A258
+	// Token: 0x060004AD RID: 1197 RVA: 0x0002C090 File Offset: 0x0002A290
 	private void Update()
 	{
 		this.selectorPosition = Vector2.Lerp(this.selectorPosition, this.optionBoxes[this.selectedOption].rectTransform.anchoredPosition, 10f * Time.deltaTime);
 		this.selector.anchoredPosition = new Vector2(Mathf.Round(this.selectorPosition.x), Mathf.Round(this.selectorPosition.y));
 	}
 
-	// Token: 0x060004AE RID: 1198 RVA: 0x0002C0C8 File Offset: 0x0002A2C8
+	// Token: 0x060004AE RID: 1198 RVA: 0x0002C100 File Offset: 0x0002A300
 	public void UpdateSelectedOption(float axis)
 	{
 		if (axis > 0f)

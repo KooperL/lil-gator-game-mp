@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIItemResource : MonoBehaviour
 {
-	// Token: 0x0600124E RID: 4686 RVA: 0x0005B468 File Offset: 0x00059668
+	// Token: 0x0600124F RID: 4687 RVA: 0x0005B754 File Offset: 0x00059954
 	private void Awake()
 	{
 		if (this.itemResource != null && !this.listenerAdded)
@@ -19,7 +19,7 @@ public class UIItemResource : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600124F RID: 4687 RVA: 0x0000F871 File Offset: 0x0000DA71
+	// Token: 0x06001250 RID: 4688 RVA: 0x0000F871 File Offset: 0x0000DA71
 	private void OnEnable()
 	{
 		if (Time.time > this.deltaTransferTime)
@@ -30,7 +30,7 @@ public class UIItemResource : MonoBehaviour
 		this.UpdateDisplay();
 	}
 
-	// Token: 0x06001250 RID: 4688 RVA: 0x0005B4D4 File Offset: 0x000596D4
+	// Token: 0x06001251 RID: 4689 RVA: 0x0005B7C0 File Offset: 0x000599C0
 	private void Start()
 	{
 		if (this.hide && this.startHidden)
@@ -40,14 +40,14 @@ public class UIItemResource : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001251 RID: 4689 RVA: 0x0000F8AA File Offset: 0x0000DAAA
+	// Token: 0x06001252 RID: 4690 RVA: 0x0000F8AA File Offset: 0x0000DAAA
 	private void OnDisable()
 	{
 		this.deltaValue = 0f;
 		this.currentValue = this.itemResource.Amount;
 	}
 
-	// Token: 0x06001252 RID: 4690 RVA: 0x0000F8C8 File Offset: 0x0000DAC8
+	// Token: 0x06001253 RID: 4691 RVA: 0x0000F8C8 File Offset: 0x0000DAC8
 	private void OnDestroy()
 	{
 		if (this.itemResource != null)
@@ -56,7 +56,7 @@ public class UIItemResource : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001253 RID: 4691 RVA: 0x0005B524 File Offset: 0x00059724
+	// Token: 0x06001254 RID: 4692 RVA: 0x0005B810 File Offset: 0x00059A10
 	private void LateUpdate()
 	{
 		if (this.deltaValue != 0f)
@@ -116,7 +116,7 @@ public class UIItemResource : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001254 RID: 4692 RVA: 0x0005B750 File Offset: 0x00059950
+	// Token: 0x06001255 RID: 4693 RVA: 0x0005BA3C File Offset: 0x00059C3C
 	public void SetItemResource(ItemResource newResource)
 	{
 		if (newResource == this.itemResource)
@@ -135,7 +135,7 @@ public class UIItemResource : MonoBehaviour
 		this.UpdateDisplay();
 	}
 
-	// (get) Token: 0x06001255 RID: 4693 RVA: 0x0000F8F4 File Offset: 0x0000DAF4
+	// (get) Token: 0x06001256 RID: 4694 RVA: 0x0000F8F4 File Offset: 0x0000DAF4
 	private bool DisplayChanges
 	{
 		get
@@ -144,7 +144,7 @@ public class UIItemResource : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001256 RID: 4694 RVA: 0x0005B7C4 File Offset: 0x000599C4
+	// Token: 0x06001257 RID: 4695 RVA: 0x0005BAB0 File Offset: 0x00059CB0
 	public void AmountChanged(int amount)
 	{
 		if (!this.DisplayChanges)
@@ -178,7 +178,7 @@ public class UIItemResource : MonoBehaviour
 		this.UpdateDisplay();
 	}
 
-	// Token: 0x06001257 RID: 4695 RVA: 0x0005B89C File Offset: 0x00059A9C
+	// Token: 0x06001258 RID: 4696 RVA: 0x0005BB88 File Offset: 0x00059D88
 	public void UpdateDisplay()
 	{
 		if (this.itemResource == null)
@@ -221,7 +221,7 @@ public class UIItemResource : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001258 RID: 4696 RVA: 0x0005BA18 File Offset: 0x00059C18
+	// Token: 0x06001259 RID: 4697 RVA: 0x0005BD04 File Offset: 0x00059F04
 	public void SetPrice(int price)
 	{
 		price = Mathf.Abs(price);
@@ -236,7 +236,7 @@ public class UIItemResource : MonoBehaviour
 		this.pricetag.SetActive(true);
 	}
 
-	// Token: 0x06001259 RID: 4697 RVA: 0x0000F91A File Offset: 0x0000DB1A
+	// Token: 0x0600125A RID: 4698 RVA: 0x0000F91A File Offset: 0x0000DB1A
 	public void ClearPrice()
 	{
 		this.pricetag.SetActive(false);

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SelectProperties : MonoBehaviour, ISelectHandler, IEventSystemHandler, IDeselectHandler
 {
-	// Token: 0x060011AE RID: 4526 RVA: 0x0000F12E File Offset: 0x0000D32E
+	// Token: 0x060011AF RID: 4527 RVA: 0x0000F12E File Offset: 0x0000D32E
 	private void OnEnable()
 	{
 		if (EventSystem.current.currentSelectedGameObject == base.gameObject)
@@ -14,7 +14,7 @@ public class SelectProperties : MonoBehaviour, ISelectHandler, IEventSystemHandl
 		}
 	}
 
-	// Token: 0x060011AF RID: 4527 RVA: 0x0000F14E File Offset: 0x0000D34E
+	// Token: 0x060011B0 RID: 4528 RVA: 0x0000F14E File Offset: 0x0000D34E
 	private void OnDisable()
 	{
 		if (this == null)
@@ -24,19 +24,19 @@ public class SelectProperties : MonoBehaviour, ISelectHandler, IEventSystemHandl
 		this.SetSelected(false);
 	}
 
-	// Token: 0x060011B0 RID: 4528 RVA: 0x0000F161 File Offset: 0x0000D361
+	// Token: 0x060011B1 RID: 4529 RVA: 0x0000F161 File Offset: 0x0000D361
 	public void OnSelect(BaseEventData eventData)
 	{
 		this.SetSelected(true);
 	}
 
-	// Token: 0x060011B1 RID: 4529 RVA: 0x0000F16A File Offset: 0x0000D36A
+	// Token: 0x060011B2 RID: 4530 RVA: 0x0000F16A File Offset: 0x0000D36A
 	public void OnDeselect(BaseEventData eventData)
 	{
 		this.SetSelected(false);
 	}
 
-	// Token: 0x060011B2 RID: 4530 RVA: 0x00058AEC File Offset: 0x00056CEC
+	// Token: 0x060011B3 RID: 4531 RVA: 0x00058DD8 File Offset: 0x00056FD8
 	private void SetSelected(bool isSelected)
 	{
 		if (this.modifyText)

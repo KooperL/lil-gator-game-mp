@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpdateCursor : MonoBehaviour
 {
-	// Token: 0x06000D0D RID: 3341 RVA: 0x00049CF8 File Offset: 0x00047EF8
+	// Token: 0x06000D0E RID: 3342 RVA: 0x00049FE4 File Offset: 0x000481E4
 	private void Start()
 	{
 		this.isApplicationFocused = true;
@@ -18,38 +18,38 @@ public class UpdateCursor : MonoBehaviour
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000D0E RID: 3342 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000D0F RID: 3343 RVA: 0x00002229 File Offset: 0x00000429
 	private void OnDestroy()
 	{
 	}
 
-	// Token: 0x06000D0F RID: 3343 RVA: 0x0000C1BB File Offset: 0x0000A3BB
+	// Token: 0x06000D10 RID: 3344 RVA: 0x0000C1BB File Offset: 0x0000A3BB
 	private void Update()
 	{
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000D10 RID: 3344 RVA: 0x0000C1C3 File Offset: 0x0000A3C3
+	// Token: 0x06000D11 RID: 3345 RVA: 0x0000C1C3 File Offset: 0x0000A3C3
 	private void OnApplicationFocus(bool focus)
 	{
 		this.isApplicationFocused = focus;
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000D11 RID: 3345 RVA: 0x0000C1D2 File Offset: 0x0000A3D2
+	// Token: 0x06000D12 RID: 3346 RVA: 0x0000C1D2 File Offset: 0x0000A3D2
 	private void OnApplicationPause(bool pause)
 	{
 		this.isApplicationPaused = pause;
 		this.UpdateCursorState();
 	}
 
-	// Token: 0x06000D12 RID: 3346 RVA: 0x0000C1E1 File Offset: 0x0000A3E1
+	// Token: 0x06000D13 RID: 3347 RVA: 0x0000C1E1 File Offset: 0x0000A3E1
 	private void OnApplicationQuit()
 	{
 		this.SetCursorState(false);
 	}
 
-	// Token: 0x06000D13 RID: 3347 RVA: 0x00049D84 File Offset: 0x00047F84
+	// Token: 0x06000D14 RID: 3348 RVA: 0x0004A070 File Offset: 0x00048270
 	private void UpdateCursorState()
 	{
 		bool flag = true;
@@ -64,7 +64,7 @@ public class UpdateCursor : MonoBehaviour
 		this.SetCursorState(flag);
 	}
 
-	// Token: 0x06000D14 RID: 3348 RVA: 0x0000C1EA File Offset: 0x0000A3EA
+	// Token: 0x06000D15 RID: 3349 RVA: 0x0000C1EA File Offset: 0x0000A3EA
 	private void SetCursorState(bool isLocked)
 	{
 		UpdateCursor.isCurrentlyLocked = isLocked;
@@ -76,7 +76,7 @@ public class UpdateCursor : MonoBehaviour
 		Cursor.visible = !isLocked;
 	}
 
-	// Token: 0x06000D15 RID: 3349 RVA: 0x0000C21C File Offset: 0x0000A41C
+	// Token: 0x06000D16 RID: 3350 RVA: 0x0000C21C File Offset: 0x0000A41C
 	private void OnMouseClick(InputActionEventData obj)
 	{
 		if (UpdateCursor.isCurrentlyLocked && !this.isActuallyLocked)

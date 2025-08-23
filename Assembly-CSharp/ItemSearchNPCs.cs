@@ -5,19 +5,19 @@ using UnityEngine.Events;
 
 public class ItemSearchNPCs : ItemSearch<DialogueActor>
 {
-	// Token: 0x06000B8E RID: 2958 RVA: 0x0000AD15 File Offset: 0x00008F15
+	// Token: 0x06000B8F RID: 2959 RVA: 0x0000AD15 File Offset: 0x00008F15
 	protected override DialogueActor[] GetList()
 	{
 		return CompletionStats.c.completionActors;
 	}
 
-	// Token: 0x06000B8F RID: 2959 RVA: 0x00040B3C File Offset: 0x0003ED3C
+	// Token: 0x06000B90 RID: 2960 RVA: 0x00040E28 File Offset: 0x0003F028
 	protected override bool IsValid(DialogueActor item)
 	{
 		return !(item == null) && !item.profile.IsUnlocked && item.gameObject.activeSelf && (!(item.profile == this.stickDuckProfile) || !(item.gameObject.transform.parent != null) || item.gameObject.transform.parent.gameObject.activeSelf);
 	}
 
-	// Token: 0x06000B90 RID: 2960 RVA: 0x0000AD21 File Offset: 0x00008F21
+	// Token: 0x06000B91 RID: 2961 RVA: 0x0000AD21 File Offset: 0x00008F21
 	protected override void OnUse()
 	{
 		if (this.isSearching || this.isRunning)
@@ -27,7 +27,7 @@ public class ItemSearchNPCs : ItemSearch<DialogueActor>
 		CoroutineUtil.c.StartCo(this.Run());
 	}
 
-	// Token: 0x06000B91 RID: 2961 RVA: 0x0000AD45 File Offset: 0x00008F45
+	// Token: 0x06000B92 RID: 2962 RVA: 0x0000AD45 File Offset: 0x00008F45
 	private IEnumerator Run()
 	{
 		this.isRunning = true;
@@ -56,13 +56,13 @@ public class ItemSearchNPCs : ItemSearch<DialogueActor>
 		yield break;
 	}
 
-	// Token: 0x06000B92 RID: 2962 RVA: 0x0000AD54 File Offset: 0x00008F54
+	// Token: 0x06000B93 RID: 2963 RVA: 0x0000AD54 File Offset: 0x00008F54
 	protected override void SearchResult(DialogueActor result)
 	{
 		this.result = result;
 	}
 
-	// Token: 0x06000B93 RID: 2963 RVA: 0x00040BBC File Offset: 0x0003EDBC
+	// Token: 0x06000B94 RID: 2964 RVA: 0x00040EA8 File Offset: 0x0003F0A8
 	public override void SetEquipped(bool isEquipped)
 	{
 		Transform transform;

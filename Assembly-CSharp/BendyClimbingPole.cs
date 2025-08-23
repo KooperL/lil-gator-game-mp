@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [AddComponentMenu("Contextual/Bendy Pole")]
 public class BendyClimbingPole : MonoBehaviour
 {
-	// Token: 0x060002E9 RID: 745 RVA: 0x00022964 File Offset: 0x00020B64
+	// Token: 0x060002E9 RID: 745 RVA: 0x0002299C File Offset: 0x00020B9C
 	private void Awake()
 	{
 		this.climbingPole.onEnable.AddListener(new UnityAction(this.OnClimbingPoleEnabled));
@@ -22,7 +22,7 @@ public class BendyClimbingPole : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x060002EB RID: 747 RVA: 0x00022A00 File Offset: 0x00020C00
+	// Token: 0x060002EB RID: 747 RVA: 0x00022A38 File Offset: 0x00020C38
 	private void OnEnable()
 	{
 		this.staticRenderer.enabled = false;
@@ -37,7 +37,7 @@ public class BendyClimbingPole : MonoBehaviour
 		this.onEnable.Invoke();
 	}
 
-	// Token: 0x060002EC RID: 748 RVA: 0x00022A64 File Offset: 0x00020C64
+	// Token: 0x060002EC RID: 748 RVA: 0x00022A9C File Offset: 0x00020C9C
 	private void LateUpdate()
 	{
 		if (this.climbingPole.enabled)
@@ -99,7 +99,7 @@ public class BendyClimbingPole : MonoBehaviour
 		this.UpdateAnchor();
 	}
 
-	// Token: 0x060002ED RID: 749 RVA: 0x00022CCC File Offset: 0x00020ECC
+	// Token: 0x060002ED RID: 749 RVA: 0x00022D04 File Offset: 0x00020F04
 	private Vector3 AlongLine(Vector3 point)
 	{
 		Vector3 vector = this.climbingPole.ClosestPointOnPath(point);
@@ -107,7 +107,7 @@ public class BendyClimbingPole : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x060002EE RID: 750 RVA: 0x00022CF4 File Offset: 0x00020EF4
+	// Token: 0x060002EE RID: 750 RVA: 0x00022D2C File Offset: 0x00020F2C
 	private void UpdateAnchor()
 	{
 		float closestInterpolated = this.climbingPole.GetClosestInterpolated(this.weightPoint);

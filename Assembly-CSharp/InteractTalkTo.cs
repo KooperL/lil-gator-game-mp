@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [AddComponentMenu("Interaction/Talk To NPC")]
 public class InteractTalkTo : MonoBehaviour, Interaction
 {
-	// Token: 0x060007F7 RID: 2039 RVA: 0x000367B4 File Offset: 0x000349B4
+	// Token: 0x060007F8 RID: 2040 RVA: 0x00036AA0 File Offset: 0x00034CA0
 	private void OnValidate()
 	{
 		if (this.actors == null || this.actors.Length == 0)
@@ -23,13 +23,13 @@ public class InteractTalkTo : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x060007F8 RID: 2040 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x060007F9 RID: 2041 RVA: 0x00002229 File Offset: 0x00000429
 	[ContextMenu("Move to interaction")]
 	public void MoveToInteraction()
 	{
 	}
 
-	// Token: 0x060007F9 RID: 2041 RVA: 0x00007DDE File Offset: 0x00005FDE
+	// Token: 0x060007FA RID: 2042 RVA: 0x00007DDE File Offset: 0x00005FDE
 	public void Start()
 	{
 		if (this.saveDialogueIndex)
@@ -38,7 +38,7 @@ public class InteractTalkTo : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x060007FA RID: 2042 RVA: 0x00007DFF File Offset: 0x00005FFF
+	// Token: 0x060007FB RID: 2043 RVA: 0x00007DFF File Offset: 0x00005FFF
 	[ContextMenu("Fix Actors")]
 	public void FixActors()
 	{
@@ -50,13 +50,13 @@ public class InteractTalkTo : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x060007FB RID: 2043 RVA: 0x00007E39 File Offset: 0x00006039
+	// Token: 0x060007FC RID: 2044 RVA: 0x00007E39 File Offset: 0x00006039
 	public void Interact()
 	{
 		CoroutineUtil.Start(this.RunDialogueChunk(this.GetDialogue()));
 	}
 
-	// Token: 0x060007FC RID: 2044 RVA: 0x00007E4D File Offset: 0x0000604D
+	// Token: 0x060007FD RID: 2045 RVA: 0x00007E4D File Offset: 0x0000604D
 	private IEnumerator RunDialogueChunk(string dialogue)
 	{
 		if (this.fadeBefore)
@@ -136,7 +136,7 @@ public class InteractTalkTo : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x060007FD RID: 2045 RVA: 0x00036804 File Offset: 0x00034A04
+	// Token: 0x060007FE RID: 2046 RVA: 0x00036AF0 File Offset: 0x00034CF0
 	protected virtual string GetDialogue()
 	{
 		string text = this.dialogues[this.dialogueIndex];

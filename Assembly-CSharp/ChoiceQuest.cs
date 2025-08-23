@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class ChoiceQuest : MonoBehaviour
 {
-	// (get) Token: 0x06000DA2 RID: 3490 RVA: 0x0000C5E1 File Offset: 0x0000A7E1
-	// (set) Token: 0x06000DA3 RID: 3491 RVA: 0x0000C5F4 File Offset: 0x0000A7F4
+	// (get) Token: 0x06000DA3 RID: 3491 RVA: 0x0000C5E1 File Offset: 0x0000A7E1
+	// (set) Token: 0x06000DA4 RID: 3492 RVA: 0x0000C5F4 File Offset: 0x0000A7F4
 	private bool State
 	{
 		get
@@ -19,13 +19,13 @@ public class ChoiceQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DA4 RID: 3492 RVA: 0x0000C607 File Offset: 0x0000A807
+	// Token: 0x06000DA5 RID: 3493 RVA: 0x0000C607 File Offset: 0x0000A807
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x06000DA5 RID: 3493 RVA: 0x0004B4CC File Offset: 0x000496CC
+	// Token: 0x06000DA6 RID: 3494 RVA: 0x0004B7B8 File Offset: 0x000499B8
 	private void UpdateState()
 	{
 		if (this.crier != null)
@@ -48,13 +48,13 @@ public class ChoiceQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000DA6 RID: 3494 RVA: 0x0000C60F File Offset: 0x0000A80F
+	// Token: 0x06000DA7 RID: 3495 RVA: 0x0000C60F File Offset: 0x0000A80F
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000DA7 RID: 3495 RVA: 0x0000C61E File Offset: 0x0000A81E
+	// Token: 0x06000DA8 RID: 3496 RVA: 0x0000C61E File Offset: 0x0000A81E
 	private IEnumerator RunConversation()
 	{
 		if (!this.State)

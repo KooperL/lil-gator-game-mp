@@ -4,14 +4,14 @@ using UnityEngine.Events;
 
 public class TimerEvent : MonoBehaviour
 {
-	// Token: 0x06001003 RID: 4099 RVA: 0x0000DD26 File Offset: 0x0000BF26
+	// Token: 0x06001004 RID: 4100 RVA: 0x0000DD26 File Offset: 0x0000BF26
 	public void OnEnable()
 	{
 		this.eventTime = Time.time + this.time;
 		this.triggered = false;
 	}
 
-	// Token: 0x06001004 RID: 4100 RVA: 0x0000DD41 File Offset: 0x0000BF41
+	// Token: 0x06001005 RID: 4101 RVA: 0x0000DD41 File Offset: 0x0000BF41
 	private void Update()
 	{
 		if (this.triggered)

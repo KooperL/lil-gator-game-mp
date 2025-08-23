@@ -16,7 +16,7 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x0600066C RID: 1644 RVA: 0x000315A4 File Offset: 0x0002F7A4
+	// Token: 0x0600066C RID: 1644 RVA: 0x000315DC File Offset: 0x0002F7DC
 	private void Start()
 	{
 		this.particles = new ParticleSystem.Particle[this.particleSystem.main.maxParticles];
@@ -26,7 +26,7 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 		this.autoPickupTime = Time.time + this.autoPickupDelay;
 	}
 
-	// Token: 0x0600066D RID: 1645 RVA: 0x00031624 File Offset: 0x0002F824
+	// Token: 0x0600066D RID: 1645 RVA: 0x0003165C File Offset: 0x0002F85C
 	private void Update()
 	{
 		if (!this.isQuick && Time.time - TriggerPickup.quickPickupTime < 0.1f)
@@ -116,7 +116,7 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x0600066E RID: 1646 RVA: 0x000319A8 File Offset: 0x0002FBA8
+	// Token: 0x0600066E RID: 1646 RVA: 0x000319E0 File Offset: 0x0002FBE0
 	public void OnTimeout()
 	{
 		this.resource.SetAmountSecret(this.resource.Amount + Mathf.RoundToInt(this.rewardPerPickup * (float)this.particleSystem.main.maxParticles) - this.rewardGiven);

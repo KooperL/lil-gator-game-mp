@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [AddComponentMenu("Dialogue Sequence/Choose Event")]
 public class DSChooseEvent : DialogueSequence
 {
-	// Token: 0x06000594 RID: 1428 RVA: 0x0002F070 File Offset: 0x0002D270
+	// Token: 0x06000594 RID: 1428 RVA: 0x0002F0A8 File Offset: 0x0002D2A8
 	public override YieldInstruction Run()
 	{
 		UnityEvent unityEvent = this.choices[DialogueManager.optionChosen];

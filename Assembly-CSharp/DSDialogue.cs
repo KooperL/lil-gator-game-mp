@@ -12,7 +12,7 @@ public class DSDialogue : DialogueSequence, ICueable
 		this.camera = camera;
 	}
 
-	// Token: 0x060005A9 RID: 1449 RVA: 0x0002F628 File Offset: 0x0002D828
+	// Token: 0x060005A9 RID: 1449 RVA: 0x0002F660 File Offset: 0x0002D860
 	public override YieldInstruction Run()
 	{
 		if (string.IsNullOrEmpty(this.dialogue))
@@ -35,7 +35,7 @@ public class DSDialogue : DialogueSequence, ICueable
 		return CoroutineUtil.Start(enumerator);
 	}
 
-	// Token: 0x060005AA RID: 1450 RVA: 0x0002F6E8 File Offset: 0x0002D8E8
+	// Token: 0x060005AA RID: 1450 RVA: 0x0002F720 File Offset: 0x0002D920
 	public void OnValidate()
 	{
 		if (this.document == null)
@@ -57,7 +57,7 @@ public class DSDialogue : DialogueSequence, ICueable
 		}
 	}
 
-	// Token: 0x060005AB RID: 1451 RVA: 0x0002F798 File Offset: 0x0002D998
+	// Token: 0x060005AB RID: 1451 RVA: 0x0002F7D0 File Offset: 0x0002D9D0
 	[ContextMenu("Sync Cues")]
 	private void SyncCues()
 	{
@@ -70,7 +70,7 @@ public class DSDialogue : DialogueSequence, ICueable
 		this.precueFirstCue = false;
 	}
 
-	// Token: 0x060005AC RID: 1452 RVA: 0x0002F7F8 File Offset: 0x0002D9F8
+	// Token: 0x060005AC RID: 1452 RVA: 0x0002F830 File Offset: 0x0002DA30
 	public override void Activate()
 	{
 		if (this.presetPosition)

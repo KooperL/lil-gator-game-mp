@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-	// (get) Token: 0x06000C83 RID: 3203 RVA: 0x0000BA20 File Offset: 0x00009C20
+	// (get) Token: 0x06000C84 RID: 3204 RVA: 0x0000BA20 File Offset: 0x00009C20
 	private Vector3 position
 	{
 		get
@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C84 RID: 3204 RVA: 0x0000BA41 File Offset: 0x00009C41
+	// (get) Token: 0x06000C85 RID: 3205 RVA: 0x0000BA41 File Offset: 0x00009C41
 	public float Speed
 	{
 		get
@@ -25,8 +25,8 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C85 RID: 3205 RVA: 0x0000BA58 File Offset: 0x00009C58
-	// (set) Token: 0x06000C86 RID: 3206 RVA: 0x00044A60 File Offset: 0x00042C60
+	// (get) Token: 0x06000C86 RID: 3206 RVA: 0x0000BA58 File Offset: 0x00009C58
+	// (set) Token: 0x06000C87 RID: 3207 RVA: 0x00044D4C File Offset: 0x00042F4C
 	public float Stamina
 	{
 		get
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C87 RID: 3207 RVA: 0x00044ACC File Offset: 0x00042CCC
+	// (get) Token: 0x06000C88 RID: 3208 RVA: 0x00044DB8 File Offset: 0x00042FB8
 	private float DepthSubmerged
 	{
 		get
@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C88 RID: 3208 RVA: 0x0000BA6D File Offset: 0x00009C6D
+	// (get) Token: 0x06000C89 RID: 3209 RVA: 0x0000BA6D File Offset: 0x00009C6D
 	private bool CanUseAnything
 	{
 		get
@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C89 RID: 3209 RVA: 0x0000BA87 File Offset: 0x00009C87
+	// (get) Token: 0x06000C8A RID: 3210 RVA: 0x0000BA87 File Offset: 0x00009C87
 	public bool CanUsePrimary
 	{
 		get
@@ -92,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C8A RID: 3210 RVA: 0x0000BA9A File Offset: 0x00009C9A
+	// (get) Token: 0x06000C8B RID: 3211 RVA: 0x0000BA9A File Offset: 0x00009C9A
 	public bool CanUseSecondary
 	{
 		get
@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C8B RID: 3211 RVA: 0x0000BAAD File Offset: 0x00009CAD
+	// (get) Token: 0x06000C8C RID: 3212 RVA: 0x0000BAAD File Offset: 0x00009CAD
 	public bool CanUseItem
 	{
 		get
@@ -110,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C8C RID: 3212 RVA: 0x0000BAC0 File Offset: 0x00009CC0
+	// (get) Token: 0x06000C8D RID: 3213 RVA: 0x0000BAC0 File Offset: 0x00009CC0
 	public bool HasGroundContact
 	{
 		get
@@ -119,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C8D RID: 3213 RVA: 0x0000BADD File Offset: 0x00009CDD
+	// (get) Token: 0x06000C8E RID: 3214 RVA: 0x0000BADD File Offset: 0x00009CDD
 	private bool HasSteepContact
 	{
 		get
@@ -128,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C8E RID: 3214 RVA: 0x0000BAFA File Offset: 0x00009CFA
+	// (get) Token: 0x06000C8F RID: 3215 RVA: 0x0000BAFA File Offset: 0x00009CFA
 	private bool HasWallContact
 	{
 		get
@@ -137,7 +137,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C8F RID: 3215 RVA: 0x0000BB26 File Offset: 0x00009D26
+	// (get) Token: 0x06000C90 RID: 3216 RVA: 0x0000BB26 File Offset: 0x00009D26
 	private bool HasStuckContact
 	{
 		get
@@ -146,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C90 RID: 3216 RVA: 0x0000BB34 File Offset: 0x00009D34
+	// (get) Token: 0x06000C91 RID: 3217 RVA: 0x0000BB34 File Offset: 0x00009D34
 	public bool IsInWater
 	{
 		get
@@ -155,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C91 RID: 3217 RVA: 0x00044B2C File Offset: 0x00042D2C
+	// (get) Token: 0x06000C92 RID: 3218 RVA: 0x00044E18 File Offset: 0x00043018
 	public bool IsSubmerged
 	{
 		get
@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C92 RID: 3218 RVA: 0x0000BB3F File Offset: 0x00009D3F
+	// (get) Token: 0x06000C93 RID: 3219 RVA: 0x0000BB3F File Offset: 0x00009D3F
 	public bool IsSwimming
 	{
 		get
@@ -173,7 +173,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C93 RID: 3219 RVA: 0x0000BB54 File Offset: 0x00009D54
+	// (get) Token: 0x06000C94 RID: 3220 RVA: 0x0000BB54 File Offset: 0x00009D54
 	public bool InAir
 	{
 		get
@@ -182,7 +182,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C94 RID: 3220 RVA: 0x0000BB73 File Offset: 0x00009D73
+	// (get) Token: 0x06000C95 RID: 3221 RVA: 0x0000BB73 File Offset: 0x00009D73
 	public bool IsClimbing
 	{
 		get
@@ -191,7 +191,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C95 RID: 3221 RVA: 0x0000BB8D File Offset: 0x00009D8D
+	// (get) Token: 0x06000C96 RID: 3222 RVA: 0x0000BB8D File Offset: 0x00009D8D
 	public bool JustJumped
 	{
 		get
@@ -200,7 +200,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C96 RID: 3222 RVA: 0x0000BB99 File Offset: 0x00009D99
+	// (get) Token: 0x06000C97 RID: 3223 RVA: 0x0000BB99 File Offset: 0x00009D99
 	public bool JustCanceled
 	{
 		get
@@ -209,7 +209,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C97 RID: 3223 RVA: 0x0000BBA5 File Offset: 0x00009DA5
+	// (get) Token: 0x06000C98 RID: 3224 RVA: 0x0000BBA5 File Offset: 0x00009DA5
 	private bool IsSettled
 	{
 		get
@@ -218,7 +218,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C98 RID: 3224 RVA: 0x0000BBBA File Offset: 0x00009DBA
+	// (get) Token: 0x06000C99 RID: 3225 RVA: 0x0000BBBA File Offset: 0x00009DBA
 	public bool IsGrounded
 	{
 		get
@@ -227,7 +227,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C99 RID: 3225 RVA: 0x0000BBE9 File Offset: 0x00009DE9
+	// (get) Token: 0x06000C9A RID: 3226 RVA: 0x0000BBE9 File Offset: 0x00009DE9
 	public bool IsMoving
 	{
 		get
@@ -236,7 +236,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C9A RID: 3226 RVA: 0x00044B80 File Offset: 0x00042D80
+	// Token: 0x06000C9B RID: 3227 RVA: 0x00044E6C File Offset: 0x0004306C
 	private void Start()
 	{
 		this.unsettledTime = Time.time;
@@ -255,13 +255,13 @@ public class PlayerMovement : MonoBehaviour
 		this.Stamina = this.maxStamina;
 	}
 
-	// Token: 0x06000C9B RID: 3227 RVA: 0x0000BC1C File Offset: 0x00009E1C
+	// Token: 0x06000C9C RID: 3228 RVA: 0x0000BC1C File Offset: 0x00009E1C
 	internal void ClampSpeedForABit()
 	{
 		this.clampingSpeedUntil = Time.time + 0.25f;
 	}
 
-	// Token: 0x06000C9C RID: 3228 RVA: 0x00044C6C File Offset: 0x00042E6C
+	// Token: 0x06000C9D RID: 3229 RVA: 0x00044F58 File Offset: 0x00043158
 	private void OnEnable()
 	{
 		PlayerMovement.mostRecentEnable = Time.time;
@@ -291,7 +291,7 @@ public class PlayerMovement : MonoBehaviour
 		PlayerMovement.isBabyPlayer = this.isBaby;
 	}
 
-	// Token: 0x06000C9D RID: 3229 RVA: 0x00044D80 File Offset: 0x00042F80
+	// Token: 0x06000C9E RID: 3230 RVA: 0x0004506C File Offset: 0x0004326C
 	private void OnDisable()
 	{
 		this.recoveringControl = 0f;
@@ -306,7 +306,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C9E RID: 3230 RVA: 0x00044E14 File Offset: 0x00043014
+	// Token: 0x06000C9F RID: 3231 RVA: 0x00045100 File Offset: 0x00043300
 	private void FixedUpdate()
 	{
 		this.UpdateState();
@@ -336,7 +336,7 @@ public class PlayerMovement : MonoBehaviour
 		this.ClearState();
 	}
 
-	// Token: 0x06000C9F RID: 3231 RVA: 0x00044E9C File Offset: 0x0004309C
+	// Token: 0x06000CA0 RID: 3232 RVA: 0x00045188 File Offset: 0x00043388
 	private void ClearState()
 	{
 		this.groundContactCount = (this.steepContactCount = (this.wallContactCount = (this.stuckContactCount = 0)));
@@ -345,7 +345,7 @@ public class PlayerMovement : MonoBehaviour
 		this.stuckCollider = null;
 	}
 
-	// Token: 0x06000CA0 RID: 3232 RVA: 0x00044EFC File Offset: 0x000430FC
+	// Token: 0x06000CA1 RID: 3233 RVA: 0x000451E8 File Offset: 0x000433E8
 	public void ClearMods()
 	{
 		this.isModified = false;
@@ -374,7 +374,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CA1 RID: 3233 RVA: 0x00045000 File Offset: 0x00043200
+	// Token: 0x06000CA2 RID: 3234 RVA: 0x000452EC File Offset: 0x000434EC
 	public bool TryCancelNow()
 	{
 		if (this.transitionCooldown < 0f)
@@ -392,7 +392,7 @@ public class PlayerMovement : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000CA2 RID: 3234 RVA: 0x0004504C File Offset: 0x0004324C
+	// Token: 0x06000CA3 RID: 3235 RVA: 0x00045338 File Offset: 0x00043538
 	private void UpdateState()
 	{
 		this.lastVelocity = this.velocity;
@@ -576,7 +576,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CA3 RID: 3235 RVA: 0x0000BC2F File Offset: 0x00009E2F
+	// Token: 0x06000CA4 RID: 3236 RVA: 0x0000BC2F File Offset: 0x00009E2F
 	public void ForceModdedState()
 	{
 		this.ClearMods();
@@ -585,7 +585,7 @@ public class PlayerMovement : MonoBehaviour
 		this.stepsSinceLastClimbing = 100;
 	}
 
-	// Token: 0x06000CA4 RID: 3236 RVA: 0x0004571C File Offset: 0x0004391C
+	// Token: 0x06000CA5 RID: 3237 RVA: 0x00045A08 File Offset: 0x00043C08
 	private bool SnapToGround()
 	{
 		if (this.stepsSinceLastGrounded > 1 || this.stepsSinceLastJump <= 2 || this.IsSubmerged)
@@ -622,7 +622,7 @@ public class PlayerMovement : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000CA5 RID: 3237 RVA: 0x00045860 File Offset: 0x00043A60
+	// Token: 0x06000CA6 RID: 3238 RVA: 0x00045B4C File Offset: 0x00043D4C
 	private bool SnapToWall()
 	{
 		if (this.stepsSinceLastClimbing > 1 || this.stepsSinceLastJump <= 2 || this.IsSubmerged)
@@ -692,7 +692,7 @@ public class PlayerMovement : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x06000CA6 RID: 3238 RVA: 0x00045AD0 File Offset: 0x00043CD0
+	// Token: 0x06000CA7 RID: 3239 RVA: 0x00045DBC File Offset: 0x00043FBC
 	private bool CheckSteepContacts()
 	{
 		if (this.steepContactCount > 1)
@@ -709,7 +709,7 @@ public class PlayerMovement : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000CA7 RID: 3239 RVA: 0x00045B24 File Offset: 0x00043D24
+	// Token: 0x06000CA8 RID: 3240 RVA: 0x00045E10 File Offset: 0x00044010
 	private bool CheckWallContacts()
 	{
 		if (this.stepsSinceLastJump < 5 || this.wallContactCount == 0 || (this.IsSubmerged && this.Stamina == 0f))
@@ -751,7 +751,7 @@ public class PlayerMovement : MonoBehaviour
 		return false;
 	}
 
-	// Token: 0x06000CA8 RID: 3240 RVA: 0x00045C64 File Offset: 0x00043E64
+	// Token: 0x06000CA9 RID: 3241 RVA: 0x00045F50 File Offset: 0x00044150
 	private void UpdateVelocity()
 	{
 		Vector3 vector = this.velocity;
@@ -911,7 +911,7 @@ public class PlayerMovement : MonoBehaviour
 		this.velocity = Vector3.ClampMagnitude(this.velocity, this.maxSpeed);
 	}
 
-	// Token: 0x06000CA9 RID: 3241 RVA: 0x000464E8 File Offset: 0x000446E8
+	// Token: 0x06000CAA RID: 3242 RVA: 0x000467D4 File Offset: 0x000449D4
 	private void HandleCustomMovement()
 	{
 		Vector3 position = this.rigidbody.position;
@@ -948,7 +948,7 @@ public class PlayerMovement : MonoBehaviour
 		this.animator.SetFloat(PlayerMovement.ContextualBlendID, 0f);
 	}
 
-	// Token: 0x06000CAA RID: 3242 RVA: 0x0000BC4D File Offset: 0x00009E4D
+	// Token: 0x06000CAB RID: 3243 RVA: 0x0000BC4D File Offset: 0x00009E4D
 	public void TryJump()
 	{
 		if (this.modJumpRule != PlayerMovement.ModRule.Locked)
@@ -957,7 +957,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CAB RID: 3243 RVA: 0x000466B8 File Offset: 0x000448B8
+	// Token: 0x06000CAC RID: 3244 RVA: 0x000469A4 File Offset: 0x00044BA4
 	public void Jump(bool fromRagdoll = false)
 	{
 		if (this.stepsSinceLastJump < 20 && !fromRagdoll)
@@ -1084,14 +1084,14 @@ public class PlayerMovement : MonoBehaviour
 		this.jumpTutorial.Press();
 	}
 
-	// Token: 0x06000CAC RID: 3244 RVA: 0x0000BC5F File Offset: 0x00009E5F
+	// Token: 0x06000CAD RID: 3245 RVA: 0x0000BC5F File Offset: 0x00009E5F
 	public void ResetGrounded()
 	{
 		this.stepsSinceLastGrounded = 1;
 		this.stepsSinceLastJump = 0;
 	}
 
-	// Token: 0x06000CAD RID: 3245 RVA: 0x00046B04 File Offset: 0x00044D04
+	// Token: 0x06000CAE RID: 3246 RVA: 0x00046DF0 File Offset: 0x00044FF0
 	public bool Sled()
 	{
 		if (this.isSledding)
@@ -1124,19 +1124,19 @@ public class PlayerMovement : MonoBehaviour
 		return this.isSledding;
 	}
 
-	// Token: 0x06000CAE RID: 3246 RVA: 0x0000BC6F File Offset: 0x00009E6F
+	// Token: 0x06000CAF RID: 3247 RVA: 0x0000BC6F File Offset: 0x00009E6F
 	public void Ragdoll(float forwardSpeed)
 	{
 		this.Ragdoll(this.animator.transform.forward * forwardSpeed);
 	}
 
-	// Token: 0x06000CAF RID: 3247 RVA: 0x0000BC8D File Offset: 0x00009E8D
+	// Token: 0x06000CB0 RID: 3248 RVA: 0x0000BC8D File Offset: 0x00009E8D
 	public void Ragdoll()
 	{
 		this.Ragdoll(Vector3.zero);
 	}
 
-	// Token: 0x06000CB0 RID: 3248 RVA: 0x00046C40 File Offset: 0x00044E40
+	// Token: 0x06000CB1 RID: 3249 RVA: 0x00046F2C File Offset: 0x0004512C
 	public void Ragdoll(Vector3 velocity)
 	{
 		if (this.isRagdolling)
@@ -1158,7 +1158,7 @@ public class PlayerMovement : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x06000CB1 RID: 3249 RVA: 0x00046CBC File Offset: 0x00044EBC
+	// Token: 0x06000CB2 RID: 3250 RVA: 0x00046FA8 File Offset: 0x000451A8
 	private void UpdateReactors()
 	{
 		float num = (this.IsClimbing ? this.colliderClimbingHeight : (this.colliderStandingHeight + this.bonusHeight));
@@ -1204,7 +1204,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CB2 RID: 3250 RVA: 0x00046FB8 File Offset: 0x000451B8
+	// Token: 0x06000CB3 RID: 3251 RVA: 0x000472A4 File Offset: 0x000454A4
 	private void Update()
 	{
 		Vector3 vector = Vector3.Lerp(this.lastVelocity, this.velocity, (Time.time - Time.fixedTime) / Time.fixedDeltaTime);
@@ -1270,19 +1270,19 @@ public class PlayerMovement : MonoBehaviour
 		this.animator.SetLayerWeight(this.contextualAnimationsLayer, this.hasContextualAnimations);
 	}
 
-	// Token: 0x06000CB3 RID: 3251 RVA: 0x0000BC9A File Offset: 0x00009E9A
+	// Token: 0x06000CB4 RID: 3252 RVA: 0x0000BC9A File Offset: 0x00009E9A
 	private void OnCollisionEnter(Collision collision)
 	{
 		this.EvaluateCollision(collision);
 	}
 
-	// Token: 0x06000CB4 RID: 3252 RVA: 0x0000BC9A File Offset: 0x00009E9A
+	// Token: 0x06000CB5 RID: 3253 RVA: 0x0000BC9A File Offset: 0x00009E9A
 	private void OnCollisionStay(Collision collision)
 	{
 		this.EvaluateCollision(collision);
 	}
 
-	// Token: 0x06000CB5 RID: 3253 RVA: 0x00047338 File Offset: 0x00045538
+	// Token: 0x06000CB6 RID: 3254 RVA: 0x00047624 File Offset: 0x00045824
 	private void EvaluateCollision(Collision collision)
 	{
 		bool flag = false;
@@ -1352,7 +1352,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CB6 RID: 3254 RVA: 0x000475C8 File Offset: 0x000457C8
+	// Token: 0x06000CB7 RID: 3255 RVA: 0x000478B4 File Offset: 0x00045AB4
 	public void WaterTrigger(Collider waterCollider, Water water)
 	{
 		float waterPlaneHeight = water.GetWaterPlaneHeight(this.rigidbody.position);
@@ -1394,26 +1394,26 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CB7 RID: 3255 RVA: 0x0000BCA3 File Offset: 0x00009EA3
+	// Token: 0x06000CB8 RID: 3256 RVA: 0x0000BCA3 File Offset: 0x00009EA3
 	private Vector3 ProjectOnContactPlane(Vector3 vector)
 	{
 		return vector - this.contactNormal * Vector3.Dot(vector, this.contactNormal);
 	}
 
-	// Token: 0x06000CB8 RID: 3256 RVA: 0x0000BCC2 File Offset: 0x00009EC2
+	// Token: 0x06000CB9 RID: 3257 RVA: 0x0000BCC2 File Offset: 0x00009EC2
 	private Vector3 ProjectOnWallPlane(Vector3 vector)
 	{
 		return this.ProjectOnContactPlane(vector) + Vector3.down * Vector3.Dot(vector, this.wallNormal);
 	}
 
-	// Token: 0x06000CB9 RID: 3257 RVA: 0x0000BCE6 File Offset: 0x00009EE6
+	// Token: 0x06000CBA RID: 3258 RVA: 0x0000BCE6 File Offset: 0x00009EE6
 	public void ApplyTransform(Transform newTransform)
 	{
 		this.SetPosition(newTransform.position);
 		this.SetRotation(newTransform.rotation);
 	}
 
-	// Token: 0x06000CBA RID: 3258 RVA: 0x000476E8 File Offset: 0x000458E8
+	// Token: 0x06000CBB RID: 3259 RVA: 0x000479D4 File Offset: 0x00045BD4
 	public void SetPosition(Vector3 newPosition)
 	{
 		if (this.isModified)
@@ -1431,7 +1431,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CBB RID: 3259 RVA: 0x0000BD00 File Offset: 0x00009F00
+	// Token: 0x06000CBC RID: 3260 RVA: 0x0000BD00 File Offset: 0x00009F00
 	public void SetRotation(Quaternion newRotation)
 	{
 		this.animator.transform.rotation = newRotation;

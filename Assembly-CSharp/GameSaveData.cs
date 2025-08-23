@@ -3,7 +3,7 @@
 [Serializable]
 public class GameSaveData
 {
-	// (get) Token: 0x06000756 RID: 1878 RVA: 0x00034BEC File Offset: 0x00032DEC
+	// (get) Token: 0x06000757 RID: 1879 RVA: 0x00034ED8 File Offset: 0x000330D8
 	public bool IsInitialized
 	{
 		get
@@ -12,7 +12,7 @@ public class GameSaveData
 		}
 	}
 
-	// Token: 0x06000757 RID: 1879 RVA: 0x00034C50 File Offset: 0x00032E50
+	// Token: 0x06000758 RID: 1880 RVA: 0x00034F3C File Offset: 0x0003313C
 	public GameSaveData Clone()
 	{
 		GameSaveData gameSaveData = (GameSaveData)base.MemberwiseClone();

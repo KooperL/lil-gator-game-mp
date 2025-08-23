@@ -50,7 +50,7 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x0600044B RID: 1099 RVA: 0x00029EDC File Offset: 0x000280DC
+	// (get) Token: 0x0600044B RID: 1099 RVA: 0x00029F14 File Offset: 0x00028114
 	public Vector3 DialogueFocusPoint
 	{
 		get
@@ -83,7 +83,7 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600044C RID: 1100 RVA: 0x00029FF0 File Offset: 0x000281F0
+	// Token: 0x0600044C RID: 1100 RVA: 0x0002A028 File Offset: 0x00028228
 	private void OnEnable()
 	{
 		DialogueManager.d = this;
@@ -151,7 +151,7 @@ public class DialogueManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000451 RID: 1105 RVA: 0x0002A184 File Offset: 0x00028384
+	// Token: 0x06000451 RID: 1105 RVA: 0x0002A1BC File Offset: 0x000283BC
 	public IEnumerator LoadChunk(DialogueChunk chunk, DialogueActor[] actors = null, DialogueManager.DialogueBoxBackground background = DialogueManager.DialogueBoxBackground.Standard, bool cancelBubble = true, bool setDialogueCamera = true, bool skipWaits = false, bool skipWaitForPlayer = false)
 	{
 		this.isInNormalDialogue = true;
@@ -342,7 +342,7 @@ public class DialogueManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000453 RID: 1107 RVA: 0x0002A1D4 File Offset: 0x000283D4
+	// Token: 0x06000453 RID: 1107 RVA: 0x0002A20C File Offset: 0x0002840C
 	public IEnumerator RunDialogueOptions(MultilingualString[] options)
 	{
 		string[] array = new string[options.Length];
@@ -457,7 +457,7 @@ public class DialogueManager : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000459 RID: 1113 RVA: 0x0002A210 File Offset: 0x00028410
+	// Token: 0x06000459 RID: 1113 RVA: 0x0002A248 File Offset: 0x00028448
 	public YieldInstruction Bubble(string chunkName, DialogueActor[] actors = null, float delay = 0f, bool isImportant = false, bool hasInput = true, bool canInterrupt = true)
 	{
 		if (!this.chunkDic.ContainsKey(chunkName))
@@ -469,7 +469,7 @@ public class DialogueManager : MonoBehaviour
 		return this.Bubble(dialogueChunk, actors, delay, isImportant, hasInput, canInterrupt);
 	}
 
-	// Token: 0x0600045A RID: 1114 RVA: 0x0002A25C File Offset: 0x0002845C
+	// Token: 0x0600045A RID: 1114 RVA: 0x0002A294 File Offset: 0x00028494
 	public YieldInstruction Bubble(DialogueChunk chunk, DialogueActor[] actors = null, float delay = 0f, bool isImportant = false, bool hasInput = false, bool canInterrupt = true)
 	{
 		if (this.bubbleCoroutine != null && canInterrupt)
@@ -485,7 +485,7 @@ public class DialogueManager : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x0600045B RID: 1115 RVA: 0x0002A2B0 File Offset: 0x000284B0
+	// Token: 0x0600045B RID: 1115 RVA: 0x0002A2E8 File Offset: 0x000284E8
 	public void CancelBubble()
 	{
 		if (this.bubbleCoroutine != null)
@@ -710,7 +710,7 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000463 RID: 1123 RVA: 0x0002A338 File Offset: 0x00028538
+	// Token: 0x06000463 RID: 1123 RVA: 0x0002A370 File Offset: 0x00028570
 	private void SetLookTarget(DialogueActor actor, int lookIndex, DialogueActor primaryLookTarget, DialogueActor secondaryLookTarget, DialogueActor player, DialogueActor[] actors, bool isFirstLine)
 	{
 		DialogueActor dialogueActor = null;
@@ -733,7 +733,7 @@ public class DialogueManager : MonoBehaviour
 		actor.SetActorLookTarget(dialogueActor, isFirstLine);
 	}
 
-	// Token: 0x06000464 RID: 1124 RVA: 0x0002A384 File Offset: 0x00028584
+	// Token: 0x06000464 RID: 1124 RVA: 0x0002A3BC File Offset: 0x000285BC
 	[ContextMenu("Estimate Word Count")]
 	public void EstimateWordCount()
 	{
@@ -806,7 +806,7 @@ public class DialogueManager : MonoBehaviour
 		Debug.Log(text);
 	}
 
-	// Token: 0x06000465 RID: 1125 RVA: 0x0002A67C File Offset: 0x0002887C
+	// Token: 0x06000465 RID: 1125 RVA: 0x0002A6B4 File Offset: 0x000288B4
 	[ContextMenu("Search Documents For Capitals")]
 	public void SearchDocumentsForCapitals()
 	{
@@ -851,7 +851,7 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000466 RID: 1126 RVA: 0x0002A87C File Offset: 0x00028A7C
+	// Token: 0x06000466 RID: 1126 RVA: 0x0002A8B4 File Offset: 0x00028AB4
 	[ContextMenu("Search Documents For Lil Gator")]
 	public void SearchDocumentsForLilGator()
 	{
@@ -871,7 +871,7 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000467 RID: 1127 RVA: 0x0002A95C File Offset: 0x00028B5C
+	// Token: 0x06000467 RID: 1127 RVA: 0x0002A994 File Offset: 0x00028B94
 	[ContextMenu("Search Documents For Amphitheater")]
 	public void SearchDocumentsForAmphitheater()
 	{

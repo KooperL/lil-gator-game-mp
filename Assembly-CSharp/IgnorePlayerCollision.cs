@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IgnorePlayerCollision : MonoBehaviour
 {
-	// Token: 0x060007A9 RID: 1961 RVA: 0x00035864 File Offset: 0x00033A64
+	// Token: 0x060007AA RID: 1962 RVA: 0x00035B50 File Offset: 0x00033D50
 	public static void IgnoreCollider(Collider collider)
 	{
 		List<Collider> list = new List<Collider>();
@@ -30,7 +30,7 @@ public class IgnorePlayerCollision : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007AA RID: 1962 RVA: 0x00007A27 File Offset: 0x00005C27
+	// Token: 0x060007AB RID: 1963 RVA: 0x00007A27 File Offset: 0x00005C27
 	private void OnValidate()
 	{
 		if (this.colliders == null || this.colliders.Length == 0)
@@ -39,7 +39,7 @@ public class IgnorePlayerCollision : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007AB RID: 1963 RVA: 0x00035910 File Offset: 0x00033B10
+	// Token: 0x060007AC RID: 1964 RVA: 0x00035BFC File Offset: 0x00033DFC
 	public void Start()
 	{
 		Collider[] array = this.colliders;

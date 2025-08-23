@@ -11,7 +11,7 @@ public class EditorlikeCamera : MonoBehaviour
 		this.virtualCamera = base.GetComponent<CinemachineVirtualCamera>();
 	}
 
-	// Token: 0x06000044 RID: 68 RVA: 0x00018158 File Offset: 0x00016358
+	// Token: 0x06000044 RID: 68 RVA: 0x00018190 File Offset: 0x00016390
 	private void OnEnable()
 	{
 		base.transform.ApplyTransform(MainCamera.t);
@@ -32,7 +32,7 @@ public class EditorlikeCamera : MonoBehaviour
 		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnLookHorizontal), UpdateLoopType.Update, ReInput.mapping.GetActionId("Look Horizontal"));
 	}
 
-	// Token: 0x06000045 RID: 69 RVA: 0x000182C4 File Offset: 0x000164C4
+	// Token: 0x06000045 RID: 69 RVA: 0x000182FC File Offset: 0x000164FC
 	private void OnDisable()
 	{
 		if (this.allowMovement)
@@ -46,7 +46,7 @@ public class EditorlikeCamera : MonoBehaviour
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnLookVertical));
 	}
 
-	// Token: 0x06000046 RID: 70 RVA: 0x00018364 File Offset: 0x00016564
+	// Token: 0x06000046 RID: 70 RVA: 0x0001839C File Offset: 0x0001659C
 	private void Update()
 	{
 		if (this.lookSmoothing == 0f)

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class UIButtonDisplay : MonoBehaviour
 {
-	// Token: 0x060011CE RID: 4558 RVA: 0x0000F2E0 File Offset: 0x0000D4E0
+	// Token: 0x060011CF RID: 4559 RVA: 0x0000F2E0 File Offset: 0x0000D4E0
 	public void OnEnable()
 	{
 		if (this.updateAutomatically)
@@ -17,7 +17,7 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011CF RID: 4559 RVA: 0x0000F306 File Offset: 0x0000D506
+	// Token: 0x060011D0 RID: 4560 RVA: 0x0000F306 File Offset: 0x0000D506
 	private void OnDisable()
 	{
 		if (this.updateAutomatically)
@@ -26,7 +26,7 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011D0 RID: 4560 RVA: 0x0000F326 File Offset: 0x0000D526
+	// Token: 0x060011D1 RID: 4561 RVA: 0x0000F326 File Offset: 0x0000D526
 	public void ClearButtonDisplay()
 	{
 		if (this.currentButtonDisplay != null)
@@ -35,7 +35,7 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011D1 RID: 4561 RVA: 0x000592C4 File Offset: 0x000574C4
+	// Token: 0x060011D2 RID: 4562 RVA: 0x000595B0 File Offset: 0x000577B0
 	[ContextMenu("Update Button Display")]
 	public void UpdateButtonDisplay()
 	{

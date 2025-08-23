@@ -6,7 +6,7 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public class TouchControls1_ManipulateCube : MonoBehaviour
 	{
-		// Token: 0x06001E32 RID: 7730 RVA: 0x00076A24 File Offset: 0x00074C24
+		// Token: 0x06001E33 RID: 7731 RVA: 0x00076D10 File Offset: 0x00074F10
 		private void OnEnable()
 		{
 			if (!ReInput.isReady)
@@ -30,7 +30,7 @@ namespace Rewired.Demos
 			player.AddInputEventDelegate(new Action<InputActionEventData>(this.OnRotationReceivedY), UpdateLoopType.Update, InputActionEventType.AxisInactive, "RotateVertical");
 		}
 
-		// Token: 0x06001E33 RID: 7731 RVA: 0x00076B4C File Offset: 0x00074D4C
+		// Token: 0x06001E34 RID: 7732 RVA: 0x00076E38 File Offset: 0x00075038
 		private void OnDisable()
 		{
 			if (!ReInput.isReady)
@@ -50,49 +50,49 @@ namespace Rewired.Demos
 			player.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnRotationReceivedY));
 		}
 
-		// Token: 0x06001E34 RID: 7732 RVA: 0x0001712F File Offset: 0x0001532F
+		// Token: 0x06001E35 RID: 7733 RVA: 0x0001712F File Offset: 0x0001532F
 		private void OnMoveReceivedX(InputActionEventData data)
 		{
 			this.OnMoveReceived(new Vector2(data.GetAxis(), 0f));
 		}
 
-		// Token: 0x06001E35 RID: 7733 RVA: 0x00017148 File Offset: 0x00015348
+		// Token: 0x06001E36 RID: 7734 RVA: 0x00017148 File Offset: 0x00015348
 		private void OnMoveReceivedY(InputActionEventData data)
 		{
 			this.OnMoveReceived(new Vector2(0f, data.GetAxis()));
 		}
 
-		// Token: 0x06001E36 RID: 7734 RVA: 0x00017161 File Offset: 0x00015361
+		// Token: 0x06001E37 RID: 7735 RVA: 0x00017161 File Offset: 0x00015361
 		private void OnRotationReceivedX(InputActionEventData data)
 		{
 			this.OnRotationReceived(new Vector2(data.GetAxis(), 0f));
 		}
 
-		// Token: 0x06001E37 RID: 7735 RVA: 0x0001717A File Offset: 0x0001537A
+		// Token: 0x06001E38 RID: 7736 RVA: 0x0001717A File Offset: 0x0001537A
 		private void OnRotationReceivedY(InputActionEventData data)
 		{
 			this.OnRotationReceived(new Vector2(0f, data.GetAxis()));
 		}
 
-		// Token: 0x06001E38 RID: 7736 RVA: 0x00017193 File Offset: 0x00015393
+		// Token: 0x06001E39 RID: 7737 RVA: 0x00017193 File Offset: 0x00015393
 		private void OnCycleColor(InputActionEventData data)
 		{
 			this.OnCycleColor();
 		}
 
-		// Token: 0x06001E39 RID: 7737 RVA: 0x0001719B File Offset: 0x0001539B
+		// Token: 0x06001E3A RID: 7738 RVA: 0x0001719B File Offset: 0x0001539B
 		private void OnCycleColorReverse(InputActionEventData data)
 		{
 			this.OnCycleColorReverse();
 		}
 
-		// Token: 0x06001E3A RID: 7738 RVA: 0x000171A3 File Offset: 0x000153A3
+		// Token: 0x06001E3B RID: 7739 RVA: 0x000171A3 File Offset: 0x000153A3
 		private void OnMoveReceived(Vector2 move)
 		{
 			base.transform.Translate(move * Time.deltaTime * this.moveSpeed, Space.World);
 		}
 
-		// Token: 0x06001E3B RID: 7739 RVA: 0x000171CC File Offset: 0x000153CC
+		// Token: 0x06001E3C RID: 7740 RVA: 0x000171CC File Offset: 0x000153CC
 		private void OnRotationReceived(Vector2 rotate)
 		{
 			rotate *= this.rotateSpeed;
@@ -100,7 +100,7 @@ namespace Rewired.Demos
 			base.transform.Rotate(Vector3.right, rotate.y, Space.World);
 		}
 
-		// Token: 0x06001E3C RID: 7740 RVA: 0x00076BE0 File Offset: 0x00074DE0
+		// Token: 0x06001E3D RID: 7741 RVA: 0x00076ECC File Offset: 0x000750CC
 		private void OnCycleColor()
 		{
 			if (this.colors.Length == 0)
@@ -115,7 +115,7 @@ namespace Rewired.Demos
 			base.GetComponent<Renderer>().material.color = this.colors[this.currentColorIndex];
 		}
 
-		// Token: 0x06001E3D RID: 7741 RVA: 0x00076C40 File Offset: 0x00074E40
+		// Token: 0x06001E3E RID: 7742 RVA: 0x00076F2C File Offset: 0x0007512C
 		private void OnCycleColorReverse()
 		{
 			if (this.colors.Length == 0)

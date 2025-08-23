@@ -16,7 +16,7 @@ public class PersistentLight : PersistentObject
 		this.SaveTrue();
 	}
 
-	// Token: 0x06000650 RID: 1616 RVA: 0x00030EF8 File Offset: 0x0002F0F8
+	// Token: 0x06000650 RID: 1616 RVA: 0x00030F30 File Offset: 0x0002F130
 	private void SetState(bool state)
 	{
 		if (state)

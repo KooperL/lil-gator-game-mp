@@ -7,8 +7,8 @@ using UnityEngine.Events;
 
 public class InputHelper : MonoBehaviour
 {
-	// (get) Token: 0x060007AE RID: 1966 RVA: 0x00007A53 File Offset: 0x00005C53
-	// (set) Token: 0x060007AF RID: 1967 RVA: 0x00007A71 File Offset: 0x00005C71
+	// (get) Token: 0x060007AF RID: 1967 RVA: 0x00007A53 File Offset: 0x00005C53
+	// (set) Token: 0x060007B0 RID: 1968 RVA: 0x00007A71 File Offset: 0x00005C71
 	public static InputHelper i
 	{
 		get
@@ -25,18 +25,18 @@ public class InputHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007B0 RID: 1968 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x060007B1 RID: 1969 RVA: 0x00002229 File Offset: 0x00000429
 	private void Awake()
 	{
 	}
 
-	// Token: 0x060007B1 RID: 1969 RVA: 0x00007A79 File Offset: 0x00005C79
+	// Token: 0x060007B2 RID: 1970 RVA: 0x00007A79 File Offset: 0x00005C79
 	private void OnEnable()
 	{
 		InputHelper.i = this;
 	}
 
-	// Token: 0x060007B2 RID: 1970 RVA: 0x00035984 File Offset: 0x00033B84
+	// Token: 0x060007B3 RID: 1971 RVA: 0x00035C70 File Offset: 0x00033E70
 	private void Start()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
@@ -44,7 +44,7 @@ public class InputHelper : MonoBehaviour
 		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnAnyInput), UpdateLoopType.Update, InputActionEventType.NegativeButtonJustPressed);
 	}
 
-	// Token: 0x060007B3 RID: 1971 RVA: 0x000359D8 File Offset: 0x00033BD8
+	// Token: 0x060007B4 RID: 1972 RVA: 0x00035CC4 File Offset: 0x00033EC4
 	private void OnAnyInput(InputActionEventData obj)
 	{
 		if (this.ignoreActions.Contains(obj.actionId))
@@ -97,7 +97,7 @@ public class InputHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007B4 RID: 1972 RVA: 0x00007A81 File Offset: 0x00005C81
+	// Token: 0x060007B5 RID: 1973 RVA: 0x00007A81 File Offset: 0x00005C81
 	public void UpdateInput()
 	{
 		InputHelper.onLastActiveControllerChanged.Invoke();

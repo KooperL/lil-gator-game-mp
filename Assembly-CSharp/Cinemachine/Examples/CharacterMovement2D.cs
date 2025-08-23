@@ -6,7 +6,7 @@ namespace Cinemachine.Examples
 	[AddComponentMenu("")]
 	public class CharacterMovement2D : MonoBehaviour
 	{
-		// Token: 0x060013B5 RID: 5045 RVA: 0x00010AEF File Offset: 0x0000ECEF
+		// Token: 0x060013B6 RID: 5046 RVA: 0x00010AEF File Offset: 0x0000ECEF
 		private void Start()
 		{
 			this.anim = base.GetComponent<Animator>();
@@ -14,7 +14,7 @@ namespace Cinemachine.Examples
 			this.targetrot = base.transform.rotation;
 		}
 
-		// Token: 0x060013B6 RID: 5046 RVA: 0x00060860 File Offset: 0x0005EA60
+		// Token: 0x060013B7 RID: 5047 RVA: 0x00060B4C File Offset: 0x0005ED4C
 		private void FixedUpdate()
 		{
 			this.input.x = Input.GetAxis("Horizontal");
@@ -49,7 +49,7 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x060013B7 RID: 5047 RVA: 0x00010B1A File Offset: 0x0000ED1A
+		// Token: 0x060013B8 RID: 5048 RVA: 0x00010B1A File Offset: 0x0000ED1A
 		public bool isGrounded()
 		{
 			return !this.checkGroundForJump || Physics.Raycast(base.transform.position, Vector3.down, this.groundTolerance);

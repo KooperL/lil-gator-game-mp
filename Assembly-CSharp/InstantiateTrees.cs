@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InstantiateTrees : MonoBehaviour
 {
-	// Token: 0x060010BB RID: 4283 RVA: 0x00056468 File Offset: 0x00054668
+	// Token: 0x060010BC RID: 4284 RVA: 0x00056754 File Offset: 0x00054954
 	private void OnValidate()
 	{
 		for (int i = 0; i < this.prefabs.Length; i++)
@@ -37,7 +37,7 @@ public class InstantiateTrees : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010BC RID: 4284 RVA: 0x00056570 File Offset: 0x00054770
+	// Token: 0x060010BD RID: 4285 RVA: 0x0005685C File Offset: 0x00054A5C
 	private Vector3 TerrainToWorld(Vector3 position)
 	{
 		Vector3 zero = Vector3.zero;
@@ -50,7 +50,7 @@ public class InstantiateTrees : MonoBehaviour
 		return zero;
 	}
 
-	// Token: 0x060010BD RID: 4285 RVA: 0x000565D4 File Offset: 0x000547D4
+	// Token: 0x060010BE RID: 4286 RVA: 0x000568C0 File Offset: 0x00054AC0
 	private void Start()
 	{
 		if (this.lodParent != null && this.lodParent.gameObject.activeSelf)

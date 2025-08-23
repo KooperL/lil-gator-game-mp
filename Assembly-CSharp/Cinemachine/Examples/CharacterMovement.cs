@@ -6,14 +6,14 @@ namespace Cinemachine.Examples
 	[AddComponentMenu("")]
 	public class CharacterMovement : MonoBehaviour
 	{
-		// Token: 0x060013B1 RID: 5041 RVA: 0x00010AB0 File Offset: 0x0000ECB0
+		// Token: 0x060013B2 RID: 5042 RVA: 0x00010AB0 File Offset: 0x0000ECB0
 		private void Start()
 		{
 			this.anim = base.GetComponent<Animator>();
 			this.mainCamera = Camera.main;
 		}
 
-		// Token: 0x060013B2 RID: 5042 RVA: 0x000604EC File Offset: 0x0005E6EC
+		// Token: 0x060013B3 RID: 5043 RVA: 0x000607D8 File Offset: 0x0005E9D8
 		private void FixedUpdate()
 		{
 			this.input.x = Input.GetAxis("Horizontal");
@@ -56,7 +56,7 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x060013B3 RID: 5043 RVA: 0x0006076C File Offset: 0x0005E96C
+		// Token: 0x060013B4 RID: 5044 RVA: 0x00060A58 File Offset: 0x0005EC58
 		public virtual void UpdateTargetDirection()
 		{
 			if (!this.useCharacterForward)

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ButtonTutorialUI : MonoBehaviour
 {
-	// Token: 0x060009B8 RID: 2488 RVA: 0x0003B620 File Offset: 0x00039820
+	// Token: 0x060009B9 RID: 2489 RVA: 0x0003B90C File Offset: 0x00039B0C
 	public void Activate()
 	{
 		if (this.allowRecentlyPressed && this.buttonTutorial.HasBeenPressedRecently)
@@ -23,14 +23,14 @@ public class ButtonTutorialUI : MonoBehaviour
 		this.showTime = Time.time + (this.buttonTutorial.HasBeenPressed ? this.hasBeenPressedDelay : this.hasntBeenPressedDelay);
 	}
 
-	// Token: 0x060009B9 RID: 2489 RVA: 0x00009606 File Offset: 0x00007806
+	// Token: 0x060009BA RID: 2490 RVA: 0x00009606 File Offset: 0x00007806
 	public void Hide()
 	{
 		base.gameObject.SetActive(false);
 		base.enabled = false;
 	}
 
-	// Token: 0x060009BA RID: 2490 RVA: 0x0003B6A0 File Offset: 0x000398A0
+	// Token: 0x060009BB RID: 2491 RVA: 0x0003B98C File Offset: 0x00039B8C
 	private void Update()
 	{
 		if (Game.HasControl)

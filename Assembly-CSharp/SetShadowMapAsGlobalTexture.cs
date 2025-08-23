@@ -20,7 +20,7 @@ public class SetShadowMapAsGlobalTexture : MonoBehaviour
 		this.ReleaseCommandBuffer();
 	}
 
-	// Token: 0x06000692 RID: 1682 RVA: 0x00031E08 File Offset: 0x00030008
+	// Token: 0x06000692 RID: 1682 RVA: 0x00031E40 File Offset: 0x00030040
 	private void SetupCommandBuffer()
 	{
 		this.commandBuffer = new CommandBuffer();

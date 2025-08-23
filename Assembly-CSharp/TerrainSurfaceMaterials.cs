@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TerrainSurfaceMaterials : MonoBehaviour, ISurface
 {
-	// Token: 0x06000FD6 RID: 4054 RVA: 0x00052994 File Offset: 0x00050B94
+	// Token: 0x06000FD7 RID: 4055 RVA: 0x00052C80 File Offset: 0x00050E80
 	private void OnValidate()
 	{
 		if (this.detailMaterials != null)
@@ -16,7 +16,7 @@ public class TerrainSurfaceMaterials : MonoBehaviour, ISurface
 		}
 	}
 
-	// Token: 0x06000FD7 RID: 4055 RVA: 0x000529F4 File Offset: 0x00050BF4
+	// Token: 0x06000FD8 RID: 4056 RVA: 0x00052CE0 File Offset: 0x00050EE0
 	private void OnEnable()
 	{
 		this.terrain = base.GetComponent<Terrain>();
@@ -30,7 +30,7 @@ public class TerrainSurfaceMaterials : MonoBehaviour, ISurface
 		this.alphamaps = this.terrain.terrainData.GetAlphamaps(0, 0, this.terrain.terrainData.alphamapWidth, this.terrain.terrainData.alphamapHeight);
 	}
 
-	// Token: 0x06000FD8 RID: 4056 RVA: 0x00052A8C File Offset: 0x00050C8C
+	// Token: 0x06000FD9 RID: 4057 RVA: 0x00052D78 File Offset: 0x00050F78
 	private Vector2 WorldToAlpha(Vector3 worldPosition)
 	{
 		Vector2 vector = new Vector2(worldPosition.x - base.transform.position.x, worldPosition.z - base.transform.position.z);
@@ -43,13 +43,13 @@ public class TerrainSurfaceMaterials : MonoBehaviour, ISurface
 		return new Vector2(vector.y, vector.x);
 	}
 
-	// Token: 0x06000FD9 RID: 4057 RVA: 0x0000DAD8 File Offset: 0x0000BCD8
+	// Token: 0x06000FDA RID: 4058 RVA: 0x0000DAD8 File Offset: 0x0000BCD8
 	public SurfaceMaterial GetSurfaceMaterial(Vector3 position)
 	{
 		return this.GetSurfaceMaterial(position, Vector3.up);
 	}
 
-	// Token: 0x06000FDA RID: 4058 RVA: 0x00052B6C File Offset: 0x00050D6C
+	// Token: 0x06000FDB RID: 4059 RVA: 0x00052E58 File Offset: 0x00051058
 	public SurfaceMaterial GetSurfaceMaterial(Vector3 position, Vector3 normal)
 	{
 		Vector2 vector = new Vector2(position.x - base.transform.position.x, position.z - base.transform.position.z);
@@ -82,7 +82,7 @@ public class TerrainSurfaceMaterials : MonoBehaviour, ISurface
 		return this.splatMaterials[num4];
 	}
 
-	// Token: 0x06000FDB RID: 4059 RVA: 0x00052D04 File Offset: 0x00050F04
+	// Token: 0x06000FDC RID: 4060 RVA: 0x00052FF0 File Offset: 0x000511F0
 	public float MultiSample(float x, float y, int z)
 	{
 		float num = 0f;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 public class CanvasMesh : Graphic
 {
-	// Token: 0x06001193 RID: 4499 RVA: 0x000585EC File Offset: 0x000567EC
+	// Token: 0x06001194 RID: 4500 RVA: 0x000588D8 File Offset: 0x00056AD8
 	protected override void OnPopulateMesh(VertexHelper vh)
 	{
 		vh.Clear();
@@ -36,7 +36,7 @@ public class CanvasMesh : Graphic
 		}
 	}
 
-	// Token: 0x06001194 RID: 4500 RVA: 0x00058758 File Offset: 0x00056958
+	// Token: 0x06001195 RID: 4501 RVA: 0x00058A44 File Offset: 0x00056C44
 	public Vector3 TransformVertex(Vector3 vertex)
 	{
 		Vector2 vector;
@@ -46,7 +46,7 @@ public class CanvasMesh : Graphic
 		return base.transform.TransformPoint(vector);
 	}
 
-	// Token: 0x06001195 RID: 4501 RVA: 0x00058820 File Offset: 0x00056A20
+	// Token: 0x06001196 RID: 4502 RVA: 0x00058B0C File Offset: 0x00056D0C
 	public Vector3 InverseTransformVertex(Vector3 vertex)
 	{
 		Vector2 vector = base.transform.InverseTransformPoint(vertex);

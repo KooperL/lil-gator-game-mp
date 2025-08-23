@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TerrainPreserver : MonoBehaviour
 {
-	// Token: 0x060010A2 RID: 4258 RVA: 0x00055C58 File Offset: 0x00053E58
+	// Token: 0x060010A3 RID: 4259 RVA: 0x00055F44 File Offset: 0x00054144
 	private void Awake()
 	{
 		Terrain component = base.GetComponent<Terrain>();

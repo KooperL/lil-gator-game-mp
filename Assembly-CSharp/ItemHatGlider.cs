@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemHatGlider : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x06000B5E RID: 2910 RVA: 0x0000AB1F File Offset: 0x00008D1F
+	// Token: 0x06000B5F RID: 2911 RVA: 0x0000AB1F File Offset: 0x00008D1F
 	private void Start()
 	{
 		this.movement = Player.movement;
@@ -12,12 +12,12 @@ public class ItemHatGlider : MonoBehaviour, IItemBehaviour
 		this.glider.SetActive(false);
 	}
 
-	// Token: 0x06000B5F RID: 2911 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B60 RID: 2912 RVA: 0x00002229 File Offset: 0x00000429
 	public void Input(bool isDown, bool isHeld)
 	{
 	}
 
-	// Token: 0x06000B60 RID: 2912 RVA: 0x00040644 File Offset: 0x0003E844
+	// Token: 0x06000B61 RID: 2913 RVA: 0x00040930 File Offset: 0x0003EB30
 	public void SetEquipped(bool isEquipped)
 	{
 		if (this.itemManager == null)
@@ -36,7 +36,7 @@ public class ItemHatGlider : MonoBehaviour, IItemBehaviour
 		this.itemManager.bareHead.SetActive(isEquipped);
 	}
 
-	// Token: 0x06000B61 RID: 2913 RVA: 0x0000AB5F File Offset: 0x00008D5F
+	// Token: 0x06000B62 RID: 2914 RVA: 0x0000AB5F File Offset: 0x00008D5F
 	public void OnRemove()
 	{
 		if (this.glider != null)
@@ -46,12 +46,12 @@ public class ItemHatGlider : MonoBehaviour, IItemBehaviour
 		this.itemManager.bareHead.SetActive(false);
 	}
 
-	// Token: 0x06000B62 RID: 2914 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B63 RID: 2915 RVA: 0x00002229 File Offset: 0x00000429
 	public void Cancel()
 	{
 	}
 
-	// Token: 0x06000B63 RID: 2915 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B64 RID: 2916 RVA: 0x00002229 File Offset: 0x00000429
 	public void SetIndex(int index)
 	{
 	}

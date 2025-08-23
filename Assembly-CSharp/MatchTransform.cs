@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MatchTransform : MonoBehaviour
 {
-	// Token: 0x0600096D RID: 2413 RVA: 0x00009278 File Offset: 0x00007478
+	// Token: 0x0600096E RID: 2414 RVA: 0x00009278 File Offset: 0x00007478
 	public void OnValidate()
 	{
 		if (this.matchPlayer)
@@ -12,19 +12,19 @@ public class MatchTransform : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600096E RID: 2414 RVA: 0x00009297 File Offset: 0x00007497
+	// Token: 0x0600096F RID: 2415 RVA: 0x00009297 File Offset: 0x00007497
 	private void Start()
 	{
 		this.Match();
 	}
 
-	// Token: 0x0600096F RID: 2415 RVA: 0x00009297 File Offset: 0x00007497
+	// Token: 0x06000970 RID: 2416 RVA: 0x00009297 File Offset: 0x00007497
 	private void LateUpdate()
 	{
 		this.Match();
 	}
 
-	// Token: 0x06000970 RID: 2416 RVA: 0x0003AAD4 File Offset: 0x00038CD4
+	// Token: 0x06000971 RID: 2417 RVA: 0x0003ADC0 File Offset: 0x00038FC0
 	[ContextMenu("Match")]
 	private void Match()
 	{

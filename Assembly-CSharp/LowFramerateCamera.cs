@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LowFramerateCamera : MonoBehaviour
 {
-	// Token: 0x0600093A RID: 2362 RVA: 0x00008F4D File Offset: 0x0000714D
+	// Token: 0x0600093B RID: 2363 RVA: 0x00008F4D File Offset: 0x0000714D
 	public void OnValidate()
 	{
 		if (this.camera == null)
@@ -13,13 +13,13 @@ public class LowFramerateCamera : MonoBehaviour
 		this.frameTime = 1f / this.framerate;
 	}
 
-	// Token: 0x0600093B RID: 2363 RVA: 0x00008F7B File Offset: 0x0000717B
+	// Token: 0x0600093C RID: 2364 RVA: 0x00008F7B File Offset: 0x0000717B
 	private void OnEnable()
 	{
 		this.nextFrameTime = Time.time;
 	}
 
-	// Token: 0x0600093C RID: 2364 RVA: 0x00008F88 File Offset: 0x00007188
+	// Token: 0x0600093D RID: 2365 RVA: 0x00008F88 File Offset: 0x00007188
 	private void Update()
 	{
 		if (Time.time > this.nextFrameTime)

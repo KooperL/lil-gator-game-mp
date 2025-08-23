@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnParentChildren : MonoBehaviour
 {
-	// Token: 0x06000FFB RID: 4091 RVA: 0x0000DCE8 File Offset: 0x0000BEE8
+	// Token: 0x06000FFC RID: 4092 RVA: 0x0000DCE8 File Offset: 0x0000BEE8
 	public void OnValidate()
 	{
 		if (this.children == null || this.children.Length == 0)
@@ -17,7 +17,7 @@ public class UnParentChildren : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FFC RID: 4092 RVA: 0x000532E0 File Offset: 0x000514E0
+	// Token: 0x06000FFD RID: 4093 RVA: 0x000535CC File Offset: 0x000517CC
 	[ContextMenu("Get Children")]
 	public void GetChildren()
 	{
@@ -33,7 +33,7 @@ public class UnParentChildren : MonoBehaviour
 		this.children = list.ToArray();
 	}
 
-	// Token: 0x06000FFD RID: 4093 RVA: 0x0005333C File Offset: 0x0005153C
+	// Token: 0x06000FFE RID: 4094 RVA: 0x00053628 File Offset: 0x00051828
 	private void OnEnable()
 	{
 		Transform[] array = this.children;
@@ -43,7 +43,7 @@ public class UnParentChildren : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FFE RID: 4094 RVA: 0x00053368 File Offset: 0x00051568
+	// Token: 0x06000FFF RID: 4095 RVA: 0x00053654 File Offset: 0x00051854
 	private void OnDisable()
 	{
 		foreach (Transform transform in this.children)

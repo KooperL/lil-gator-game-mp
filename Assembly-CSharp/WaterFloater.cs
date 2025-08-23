@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WaterFloater : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x060010D2 RID: 4306 RVA: 0x0005692C File Offset: 0x00054B2C
+	// Token: 0x060010D3 RID: 4307 RVA: 0x00056C18 File Offset: 0x00054E18
 	private void Awake()
 	{
 		this.initialPosition = base.transform.position;
@@ -13,7 +13,7 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		this.height = this.initialPosition.y;
 	}
 
-	// Token: 0x060010D3 RID: 4307 RVA: 0x000569A0 File Offset: 0x00054BA0
+	// Token: 0x060010D4 RID: 4308 RVA: 0x00056C8C File Offset: 0x00054E8C
 	private void OnEnable()
 	{
 		this.isInRange = Vector3.Distance(MainCamera.t.position, base.transform.position) <= 55f;
@@ -25,7 +25,7 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEveryNonFixed.Add(this);
 	}
 
-	// Token: 0x060010D4 RID: 4308 RVA: 0x0000E5FB File Offset: 0x0000C7FB
+	// Token: 0x060010D5 RID: 4309 RVA: 0x0000E5FB File Offset: 0x0000C7FB
 	private void OnDisable()
 	{
 		if (this.isInRange)
@@ -36,7 +36,7 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x060010D5 RID: 4309 RVA: 0x000569F8 File Offset: 0x00054BF8
+	// Token: 0x060010D6 RID: 4310 RVA: 0x00056CE4 File Offset: 0x00054EE4
 	public void ManagedUpdate()
 	{
 		if (this.isInRange != Vector3.Distance(MainCamera.t.position, base.transform.position) <= 55f)
@@ -56,7 +56,7 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		this.UpdateFloatingPosition();
 	}
 
-	// Token: 0x060010D6 RID: 4310 RVA: 0x00056A80 File Offset: 0x00054C80
+	// Token: 0x060010D7 RID: 4311 RVA: 0x00056D6C File Offset: 0x00054F6C
 	private void UpdateFloatingPosition()
 	{
 		Vector2 vector = this.positionVariance * PerlinUtil.Perlin2(this.positionSeed, Time.time * this.positionPerlinSpeed);

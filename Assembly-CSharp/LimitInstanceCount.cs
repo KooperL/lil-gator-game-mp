@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LimitInstanceCount : MonoBehaviour
 {
-	// Token: 0x06000057 RID: 87 RVA: 0x000187F8 File Offset: 0x000169F8
+	// Token: 0x06000057 RID: 87 RVA: 0x00018830 File Offset: 0x00016A30
 	private static void AddInstance(LimitInstanceCount instance)
 	{
 		LimitInstanceCount.instances.Add(instance);

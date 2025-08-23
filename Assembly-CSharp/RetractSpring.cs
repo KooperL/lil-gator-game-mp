@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RetractSpring : MonoBehaviour
 {
-	// Token: 0x06000B2F RID: 2863 RVA: 0x0003FE84 File Offset: 0x0003E084
+	// Token: 0x06000B30 RID: 2864 RVA: 0x00040170 File Offset: 0x0003E370
 	private void OnEnable()
 	{
 		if (this.adapt)
@@ -17,7 +17,7 @@ public class RetractSpring : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B30 RID: 2864 RVA: 0x0003FEF0 File Offset: 0x0003E0F0
+	// Token: 0x06000B31 RID: 2865 RVA: 0x000401DC File Offset: 0x0003E3DC
 	private Vector3 GetCurrentDelta()
 	{
 		Vector3 vector = this.rigidbody.position + this.rigidbody.rotation * this.joint.anchor;
@@ -25,7 +25,7 @@ public class RetractSpring : MonoBehaviour
 		return vector - vector2;
 	}
 
-	// Token: 0x06000B31 RID: 2865 RVA: 0x0003FF64 File Offset: 0x0003E164
+	// Token: 0x06000B32 RID: 2866 RVA: 0x00040250 File Offset: 0x0003E450
 	private float GetCurrentDistance()
 	{
 		Vector3 vector = this.rigidbody.position + this.rigidbody.rotation * this.joint.anchor;
@@ -33,7 +33,7 @@ public class RetractSpring : MonoBehaviour
 		return Vector3.Distance(vector, vector2);
 	}
 
-	// Token: 0x06000B32 RID: 2866 RVA: 0x0003FFD8 File Offset: 0x0003E1D8
+	// Token: 0x06000B33 RID: 2867 RVA: 0x000402C4 File Offset: 0x0003E4C4
 	private void FixedUpdate()
 	{
 		float num = this.jointLength - this.reelSpeed * Time.deltaTime;

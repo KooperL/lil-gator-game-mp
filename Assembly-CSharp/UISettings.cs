@@ -5,31 +5,31 @@ using UnityEngine.UI;
 
 public class UISettings : MonoBehaviour
 {
-	// Token: 0x06001318 RID: 4888 RVA: 0x0001018F File Offset: 0x0000E38F
+	// Token: 0x06001319 RID: 4889 RVA: 0x0001018F File Offset: 0x0000E38F
 	public void OnChangeVolume(float value)
 	{
 		this.volumeMixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20f);
 	}
 
-	// Token: 0x06001319 RID: 4889 RVA: 0x000101AE File Offset: 0x0000E3AE
+	// Token: 0x0600131A RID: 4890 RVA: 0x000101AE File Offset: 0x0000E3AE
 	public void OnChangeSensitivity(float value)
 	{
 		Settings.mouseSensitivity = Mathf.Pow(value, 2f);
 	}
 
-	// Token: 0x0600131A RID: 4890 RVA: 0x000101C0 File Offset: 0x0000E3C0
+	// Token: 0x0600131B RID: 4891 RVA: 0x000101C0 File Offset: 0x0000E3C0
 	public void OnChangeVerticalInvert(bool value)
 	{
 		Settings.mouseInvertVertical = value;
 	}
 
-	// Token: 0x0600131B RID: 4891 RVA: 0x000101C8 File Offset: 0x0000E3C8
+	// Token: 0x0600131C RID: 4892 RVA: 0x000101C8 File Offset: 0x0000E3C8
 	public void OnChangeHorizontalInvert(bool value)
 	{
 		Settings.mouseInvertHorizontal = value;
 	}
 
-	// Token: 0x0600131C RID: 4892 RVA: 0x0005E23C File Offset: 0x0005C43C
+	// Token: 0x0600131D RID: 4893 RVA: 0x0005E528 File Offset: 0x0005C728
 	public void ResetPlayerPosition()
 	{
 		if (Game.WorldState == WorldState.Flashback)
@@ -40,14 +40,14 @@ public class UISettings : MonoBehaviour
 		Player.movement.SetPosition(new Vector3(-79.429115f, 1.9195004f, 164.39221f));
 	}
 
-	// Token: 0x0600131D RID: 4893 RVA: 0x000101D0 File Offset: 0x0000E3D0
+	// Token: 0x0600131E RID: 4894 RVA: 0x000101D0 File Offset: 0x0000E3D0
 	public void GiveCraftingMaterials()
 	{
 		this.craftingResource.Amount += 100;
 		this.populationResource.Amount += 30;
 	}
 
-	// Token: 0x0600131E RID: 4894 RVA: 0x0005E290 File Offset: 0x0005C490
+	// Token: 0x0600131F RID: 4895 RVA: 0x0005E57C File Offset: 0x0005C77C
 	[ContextMenu("Unlock Items")]
 	public void UnlockEverything()
 	{
@@ -61,7 +61,7 @@ public class UISettings : MonoBehaviour
 		Player.itemManager.Refresh();
 	}
 
-	// Token: 0x0600131F RID: 4895 RVA: 0x0005E2D4 File Offset: 0x0005C4D4
+	// Token: 0x06001320 RID: 4896 RVA: 0x0005E5C0 File Offset: 0x0005C7C0
 	[ContextMenu("Relock Items")]
 	public void RelockEverything()
 	{
@@ -73,7 +73,7 @@ public class UISettings : MonoBehaviour
 		Player.itemManager.Refresh();
 	}
 
-	// Token: 0x06001320 RID: 4896 RVA: 0x0005E314 File Offset: 0x0005C514
+	// Token: 0x06001321 RID: 4897 RVA: 0x0005E600 File Offset: 0x0005C800
 	[ContextMenu("Unlock Recipes")]
 	public void GiveAllRecipes()
 	{
@@ -87,7 +87,7 @@ public class UISettings : MonoBehaviour
 		Player.itemManager.Refresh();
 	}
 
-	// Token: 0x06001321 RID: 4897 RVA: 0x000101FA File Offset: 0x0000E3FA
+	// Token: 0x06001322 RID: 4898 RVA: 0x000101FA File Offset: 0x0000E3FA
 	public void SaveSettings()
 	{
 		if (Settings.s != null)
@@ -96,7 +96,7 @@ public class UISettings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001322 RID: 4898 RVA: 0x00010213 File Offset: 0x0000E413
+	// Token: 0x06001323 RID: 4899 RVA: 0x00010213 File Offset: 0x0000E413
 	public void ExitToDesktop()
 	{
 		Application.Quit();

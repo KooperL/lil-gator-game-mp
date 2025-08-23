@@ -34,7 +34,7 @@ public class EffectsManager : MonoBehaviour
 		return volume * Mathf.Lerp(0.3f, 1f, Mathf.InverseLerp(0.1f, 0.25f, Time.time - lastSoundTime));
 	}
 
-	// Token: 0x0600061A RID: 1562 RVA: 0x000305F0 File Offset: 0x0002E7F0
+	// Token: 0x0600061A RID: 1562 RVA: 0x00030628 File Offset: 0x0002E828
 	public void Splash(Vector3 position, float volume = 0.8f)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) < this.maxDistance * this.maxDistance && this.splashPrefab != null)
@@ -61,7 +61,7 @@ public class EffectsManager : MonoBehaviour
 		this.Ripple(position, count, Vector3.zero);
 	}
 
-	// Token: 0x0600061C RID: 1564 RVA: 0x00030690 File Offset: 0x0002E890
+	// Token: 0x0600061C RID: 1564 RVA: 0x000306C8 File Offset: 0x0002E8C8
 	public void Ripple(Vector3 position, int count, Vector3 direction)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) >= this.maxDistance * this.maxDistance || this.rippleSystem == null)
@@ -84,7 +84,7 @@ public class EffectsManager : MonoBehaviour
 		this.Dust(position, count, Vector3.zero, 0f);
 	}
 
-	// Token: 0x0600061E RID: 1566 RVA: 0x0003072C File Offset: 0x0002E92C
+	// Token: 0x0600061E RID: 1566 RVA: 0x00030764 File Offset: 0x0002E964
 	public void Dust(Vector3 position, int count, Vector3 velocity, float startSize = 0f)
 	{
 		if (MainCamera.t == null)
@@ -112,7 +112,7 @@ public class EffectsManager : MonoBehaviour
 		this.dustSystem.Emit(emitParams, count);
 	}
 
-	// Token: 0x0600061F RID: 1567 RVA: 0x000307C8 File Offset: 0x0002E9C8
+	// Token: 0x0600061F RID: 1567 RVA: 0x00030800 File Offset: 0x0002EA00
 	public void FloorDust(Vector3 position, int count, Vector3 normal)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) >= this.maxDistance * this.maxDistance || this.dustSystem == null)
@@ -129,7 +129,7 @@ public class EffectsManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000620 RID: 1568 RVA: 0x00030880 File Offset: 0x0002EA80
+	// Token: 0x06000620 RID: 1568 RVA: 0x000308B8 File Offset: 0x0002EAB8
 	public void Bonk(Vector3 position)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) < this.maxDistance * this.maxDistance && this.bonkPrefab != null)
@@ -138,7 +138,7 @@ public class EffectsManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000621 RID: 1569 RVA: 0x000308D4 File Offset: 0x0002EAD4
+	// Token: 0x06000621 RID: 1569 RVA: 0x0003090C File Offset: 0x0002EB0C
 	public void Bonk(Vector3 position, BoxCollider box)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) < this.maxDistance * this.maxDistance && this.bonkPrefab != null)
@@ -152,7 +152,7 @@ public class EffectsManager : MonoBehaviour
 	{
 	}
 
-	// Token: 0x06000623 RID: 1571 RVA: 0x00030930 File Offset: 0x0002EB30
+	// Token: 0x06000623 RID: 1571 RVA: 0x00030968 File Offset: 0x0002EB68
 	public void Dig(Vector3 position)
 	{
 		if (Vector3.SqrMagnitude(MainCamera.t.position - position) < this.maxDistance * this.maxDistance && this.digPrefab != null)
@@ -161,7 +161,7 @@ public class EffectsManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000624 RID: 1572 RVA: 0x00030984 File Offset: 0x0002EB84
+	// Token: 0x06000624 RID: 1572 RVA: 0x000309BC File Offset: 0x0002EBBC
 	public void TryToPlayHitSound(Vector3 position, Vector3 direction, float volume = 1f)
 	{
 		SurfaceMaterial surfaceMaterial = MaterialManager.m.SampleSurfaceMaterial(position, direction);

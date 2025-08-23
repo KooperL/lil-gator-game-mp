@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class MathUtils
 {
-	// Token: 0x06000A42 RID: 2626 RVA: 0x00009D41 File Offset: 0x00007F41
+	// Token: 0x06000A43 RID: 2627 RVA: 0x00009D41 File Offset: 0x00007F41
 	public static Quaternion ShortestRotation(Quaternion a, Quaternion b)
 	{
 		if (Quaternion.Dot(a, b) < 0f)
@@ -13,19 +13,19 @@ public static class MathUtils
 		return a * Quaternion.Inverse(b);
 	}
 
-	// Token: 0x06000A43 RID: 2627 RVA: 0x00009D74 File Offset: 0x00007F74
+	// Token: 0x06000A44 RID: 2628 RVA: 0x00009D74 File Offset: 0x00007F74
 	public static Quaternion Multiply(Quaternion input, float scalar)
 	{
 		return new Quaternion(input.x * scalar, input.y * scalar, input.z * scalar, input.w * scalar);
 	}
 
-	// Token: 0x06000A44 RID: 2628 RVA: 0x00009D9B File Offset: 0x00007F9B
+	// Token: 0x06000A45 RID: 2629 RVA: 0x00009D9B File Offset: 0x00007F9B
 	public static float SmoothDampAngleAcc(float current, float target, ref float currentVelocity, float smoothTime, float acceleration)
 	{
 		return MathUtils.SmoothDampAngleAcc(current, target, ref currentVelocity, smoothTime, acceleration, Time.deltaTime);
 	}
 
-	// Token: 0x06000A45 RID: 2629 RVA: 0x0003C910 File Offset: 0x0003AB10
+	// Token: 0x06000A46 RID: 2630 RVA: 0x0003CBFC File Offset: 0x0003ADFC
 	public static float SmoothDampAngleAcc(float current, float target, ref float currentVelocity, float smoothTime, float acceleration, float deltaTime)
 	{
 		float num = currentVelocity;
@@ -38,7 +38,7 @@ public static class MathUtils
 		return num2;
 	}
 
-	// Token: 0x06000A46 RID: 2630 RVA: 0x0003C954 File Offset: 0x0003AB54
+	// Token: 0x06000A47 RID: 2631 RVA: 0x0003CC40 File Offset: 0x0003AE40
 	public static Vector3 SmoothDampAcc(Vector3 current, Vector3 target, ref Vector3 currentVelocity, float smoothTime, float acceleration)
 	{
 		Vector3 vector = currentVelocity;
@@ -51,14 +51,14 @@ public static class MathUtils
 		return vector2;
 	}
 
-	// Token: 0x06000A47 RID: 2631 RVA: 0x00009DAD File Offset: 0x00007FAD
+	// Token: 0x06000A48 RID: 2632 RVA: 0x00009DAD File Offset: 0x00007FAD
 	public static float SmoothDampAngle(float current, float target, ref float currentVelocity, float smoothTime, float maxSpeed, float deltaTime)
 	{
 		target = current + Mathf.DeltaAngle(current, target);
 		return MathUtils.SmoothDamp(current, target, ref currentVelocity, smoothTime, maxSpeed, deltaTime);
 	}
 
-	// Token: 0x06000A48 RID: 2632 RVA: 0x0003C9C0 File Offset: 0x0003ABC0
+	// Token: 0x06000A49 RID: 2633 RVA: 0x0003CCAC File Offset: 0x0003AEAC
 	public static float SmoothDamp(float current, float target, ref float currentVelocity, float smoothTime, float maxSpeed, float deltaTime)
 	{
 		smoothTime = Mathf.Max(0.0001f, smoothTime);
@@ -73,7 +73,7 @@ public static class MathUtils
 		return current - num4 + (num4 + num6) * num3;
 	}
 
-	// Token: 0x06000A49 RID: 2633 RVA: 0x0003CA44 File Offset: 0x0003AC44
+	// Token: 0x06000A4A RID: 2634 RVA: 0x0003CD30 File Offset: 0x0003AF30
 	public static Vector3 SlerpFlat(Vector3 from, Vector3 to, float t, bool perfectMagnitudes = false)
 	{
 		from.Normalize();
@@ -87,7 +87,7 @@ public static class MathUtils
 		return Vector3.Slerp(vector, to, t * 2f - 1f);
 	}
 
-	// Token: 0x06000A4A RID: 2634 RVA: 0x0003CACC File Offset: 0x0003ACCC
+	// Token: 0x06000A4B RID: 2635 RVA: 0x0003CDB8 File Offset: 0x0003AFB8
 	public static Quaternion SlerpFlat(Quaternion from, Quaternion to, float t)
 	{
 		Quaternion quaternion = Quaternion.Slerp(from, to, 0.5f);
@@ -101,13 +101,13 @@ public static class MathUtils
 		return Quaternion.Slerp(quaternion, to, t * 2f - 1f);
 	}
 
-	// Token: 0x06000A4B RID: 2635 RVA: 0x00009DC7 File Offset: 0x00007FC7
+	// Token: 0x06000A4C RID: 2636 RVA: 0x00009DC7 File Offset: 0x00007FC7
 	public static Vector3 ClosestAlongLine(Vector3 point, Vector3 a, Vector3 b)
 	{
 		return Vector3.Lerp(a, b, MathUtils.InverseLerp(point, a, b));
 	}
 
-	// Token: 0x06000A4C RID: 2636 RVA: 0x0003CB58 File Offset: 0x0003AD58
+	// Token: 0x06000A4D RID: 2637 RVA: 0x0003CE44 File Offset: 0x0003B044
 	public static float InverseLerp(Vector3 point, Vector3 a, Vector3 b)
 	{
 		Vector3 vector = point - a;

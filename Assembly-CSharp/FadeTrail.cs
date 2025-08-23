@@ -24,7 +24,7 @@ public class FadeTrail : MonoBehaviour
 		this.baseWidth = this.trailRenderer.widthMultiplier;
 	}
 
-	// Token: 0x0600012C RID: 300 RVA: 0x0001B998 File Offset: 0x00019B98
+	// Token: 0x0600012C RID: 300 RVA: 0x0001B9D0 File Offset: 0x00019BD0
 	private void Update()
 	{
 		float magnitude = this.rigidbody.velocity.magnitude;

@@ -9,14 +9,14 @@ public class JiggleDialogueActor : DialogueActor
 		this.perlinSeed = 1000f * global::UnityEngine.Random.value;
 	}
 
-	// Token: 0x060004C4 RID: 1220 RVA: 0x0002C4C4 File Offset: 0x0002A6C4
+	// Token: 0x060004C4 RID: 1220 RVA: 0x0002C4FC File Offset: 0x0002A6FC
 	private Vector3 GetPerlin()
 	{
 		float num = this.perlinSpeed * Time.time;
 		return Vector3.ClampMagnitude(new Vector3(Mathf.PerlinNoise(this.perlinSeed, num), Mathf.PerlinNoise(this.perlinSeed, 10000f + num), Mathf.PerlinNoise(this.perlinSeed, 20000f + num)) * 2f - Vector3.one, 1f);
 	}
 
-	// Token: 0x060004C5 RID: 1221 RVA: 0x0002C534 File Offset: 0x0002A734
+	// Token: 0x060004C5 RID: 1221 RVA: 0x0002C56C File Offset: 0x0002A76C
 	protected override void UpdateMouthFlap()
 	{
 		float num = Mathf.SmoothStep(0f, 1f, this.mouthControl);

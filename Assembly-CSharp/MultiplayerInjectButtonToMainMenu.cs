@@ -3,17 +3,16 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Token: 0x020004D1 RID: 1233
 public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 {
-	// Token: 0x06001E74 RID: 7796 RVA: 0x000174B2 File Offset: 0x000156B2
+	// Token: 0x06001E75 RID: 7797 RVA: 0x000174BD File Offset: 0x000156BD
 	private void Start()
 	{
 		this.CreateButton();
 		this.StartAnimations();
 	}
 
-	// Token: 0x06001E75 RID: 7797 RVA: 0x000785C4 File Offset: 0x000767C4
+	// Token: 0x06001E76 RID: 7798 RVA: 0x000789D4 File Offset: 0x00076BD4
 	private void CreateButton()
 	{
 		GameObject gameObject = GameObject.Find("Main Menu Canvas");
@@ -82,7 +81,7 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 		Debug.Log("[LGG-MP] Injected custom button successfully");
 	}
 
-	// Token: 0x06001E76 RID: 7798 RVA: 0x000174C0 File Offset: 0x000156C0
+	// Token: 0x06001E77 RID: 7799 RVA: 0x000174CB File Offset: 0x000156CB
 	private void StartAnimations()
 	{
 		if (this.buttonTransform == null)
@@ -94,7 +93,7 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 		this.animationsEnabled = true;
 	}
 
-	// Token: 0x06001E77 RID: 7799 RVA: 0x000174E9 File Offset: 0x000156E9
+	// Token: 0x06001E78 RID: 7800 RVA: 0x000174F4 File Offset: 0x000156F4
 	private void Update()
 	{
 		if (!this.animationsEnabled || this.buttonTransform == null)
@@ -105,7 +104,7 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 		this.AnimateScale();
 	}
 
-	// Token: 0x06001E78 RID: 7800 RVA: 0x00078830 File Offset: 0x00076A30
+	// Token: 0x06001E79 RID: 7801 RVA: 0x00078C40 File Offset: 0x00076E40
 	private void AnimateRotation()
 	{
 		this.rotationTimer += Time.deltaTime;
@@ -118,7 +117,7 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 		this.buttonTransform.Rotate(0f, 0f, num);
 	}
 
-	// Token: 0x06001E79 RID: 7801 RVA: 0x000788A4 File Offset: 0x00076AA4
+	// Token: 0x06001E7A RID: 7802 RVA: 0x00078CB4 File Offset: 0x00076EB4
 	private void AnimateScale()
 	{
 		this.scaleTimer += Time.deltaTime * this.scaleSpeed;
@@ -127,7 +126,7 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 		this.buttonTransform.localScale = vector;
 	}
 
-	// Token: 0x06001E7A RID: 7802 RVA: 0x0001750E File Offset: 0x0001570E
+	// Token: 0x06001E7B RID: 7803 RVA: 0x00017519 File Offset: 0x00015719
 	private IEnumerator ClickAnimation()
 	{
 		Vector3 originalScale = this.buttonTransform.localScale;
@@ -153,26 +152,26 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001E7B RID: 7803 RVA: 0x0001751D File Offset: 0x0001571D
+	// Token: 0x06001E7C RID: 7804 RVA: 0x00017528 File Offset: 0x00015728
 	public void EnableAnimations(bool enable)
 	{
 		this.animationsEnabled = enable;
 	}
 
-	// Token: 0x06001E7C RID: 7804 RVA: 0x00017526 File Offset: 0x00015726
+	// Token: 0x06001E7D RID: 7805 RVA: 0x00017531 File Offset: 0x00015731
 	public void SetRotationSpeed(float speed)
 	{
 		this.rotationSpeed = speed;
 	}
 
-	// Token: 0x06001E7D RID: 7805 RVA: 0x0001752F File Offset: 0x0001572F
+	// Token: 0x06001E7E RID: 7806 RVA: 0x0001753A File Offset: 0x0001573A
 	public void SetScaleSettings(float amplitude, float speed)
 	{
 		this.scaleAmplitude = amplitude;
 		this.scaleSpeed = speed;
 	}
 
-	// Token: 0x06001E7E RID: 7806 RVA: 0x0001753F File Offset: 0x0001573F
+	// Token: 0x06001E7F RID: 7807 RVA: 0x0001754A File Offset: 0x0001574A
 	private void OnDestroy()
 	{
 		if (this.injectedButton != null)
@@ -181,44 +180,32 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001FF3 RID: 8179
 	public Font scribbleFont;
 
-	// Token: 0x04001FF4 RID: 8180
 	[Header("Animation Settings")]
 	[SerializeField]
 	private float rotationSpeed;
 
-	// Token: 0x04001FF5 RID: 8181
 	[SerializeField]
 	private float scaleAmplitude = 0.15f;
 
-	// Token: 0x04001FF6 RID: 8182
 	[SerializeField]
 	private float scaleSpeed = 2f;
 
-	// Token: 0x04001FF7 RID: 8183
 	[SerializeField]
 	private float rotationChangeInterval = 1f;
 
-	// Token: 0x04001FF8 RID: 8184
 	private GameObject injectedButton;
 
-	// Token: 0x04001FF9 RID: 8185
 	private RectTransform buttonTransform;
 
-	// Token: 0x04001FFA RID: 8186
 	private Vector3 baseScale = Vector3.one;
 
-	// Token: 0x04001FFB RID: 8187
 	private float currentRotationDirection = -1f;
 
-	// Token: 0x04001FFC RID: 8188
 	private float rotationTimer;
 
-	// Token: 0x04001FFD RID: 8189
 	private float scaleTimer;
 
-	// Token: 0x04001FFE RID: 8190
 	private bool animationsEnabled = true;
 }

@@ -16,7 +16,7 @@ public class PlaygroundMusicDynamicStates : MonoBehaviour
 		this.UpdateMusicSystem();
 	}
 
-	// Token: 0x060000C1 RID: 193 RVA: 0x0001A334 File Offset: 0x00018534
+	// Token: 0x060000C1 RID: 193 RVA: 0x0001A36C File Offset: 0x0001856C
 	private void UpdateMusicSystem()
 	{
 		bool isAveryQuestFinished = this.townNPCManager.isAveryQuestFinished;

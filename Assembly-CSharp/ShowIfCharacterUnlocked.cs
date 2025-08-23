@@ -9,7 +9,7 @@ public class ShowIfCharacterUnlocked : MonoBehaviour
 	{
 	}
 
-	// Token: 0x060004ED RID: 1261 RVA: 0x0002CF90 File Offset: 0x0002B190
+	// Token: 0x060004ED RID: 1261 RVA: 0x0002CFC8 File Offset: 0x0002B1C8
 	private void Start()
 	{
 		if (!this.IsUnlocked())
@@ -40,7 +40,7 @@ public class ShowIfCharacterUnlocked : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004EF RID: 1263 RVA: 0x0002D010 File Offset: 0x0002B210
+	// Token: 0x060004EF RID: 1263 RVA: 0x0002D048 File Offset: 0x0002B248
 	private bool IsUnlocked()
 	{
 		if (this.characterProfile != null && !this.characterProfile.IsUnlocked)
@@ -71,7 +71,7 @@ public class ShowIfCharacterUnlocked : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004F1 RID: 1265 RVA: 0x0002D064 File Offset: 0x0002B264
+	// Token: 0x060004F1 RID: 1265 RVA: 0x0002D09C File Offset: 0x0002B29C
 	private void RemoveListeners()
 	{
 		if (this.characterProfile != null)

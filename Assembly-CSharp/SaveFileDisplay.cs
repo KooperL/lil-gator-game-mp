@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SaveFileDisplay : MonoBehaviour
 {
-	// Token: 0x0600018A RID: 394 RVA: 0x0001CBD0 File Offset: 0x0001ADD0
+	// Token: 0x0600018A RID: 394 RVA: 0x0001CC08 File Offset: 0x0001AE08
 	public void SetButton(bool isInteractable, Color nonInteractiveColor, bool shouldShow = true)
 	{
 		this.button.interactable = isInteractable;
@@ -30,7 +30,7 @@ public class SaveFileDisplay : MonoBehaviour
 		this.selectIcon.sprite = this.loadIcon;
 	}
 
-	// Token: 0x0600018C RID: 396 RVA: 0x0001CC18 File Offset: 0x0001AE18
+	// Token: 0x0600018C RID: 396 RVA: 0x0001CC50 File Offset: 0x0001AE50
 	public void Load(GameSaveDataInfo info, int fileIndex)
 	{
 		this.fileIndex.text = (fileIndex + 1).ToString("0");

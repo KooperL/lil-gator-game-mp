@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class BreakableObjectMulti : BreakableObject
 {
-	// Token: 0x060007C6 RID: 1990 RVA: 0x000360DC File Offset: 0x000342DC
+	// Token: 0x060007C7 RID: 1991 RVA: 0x000363C8 File Offset: 0x000345C8
 	private void BreakStageIndex(int stageIndex)
 	{
 		BreakableObjectMulti.BreakStage breakStage = this.breakingStages[stageIndex];
@@ -22,7 +22,7 @@ public class BreakableObjectMulti : BreakableObject
 		}
 	}
 
-	// Token: 0x060007C7 RID: 1991 RVA: 0x00036150 File Offset: 0x00034350
+	// Token: 0x060007C8 RID: 1992 RVA: 0x0003643C File Offset: 0x0003463C
 	public override void Break(bool fromAttachment, Vector3 velocity, bool isSturdy = false)
 	{
 		if (!this.isBroken)

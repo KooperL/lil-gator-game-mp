@@ -14,7 +14,7 @@ public class LoadScene : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000178 RID: 376 RVA: 0x0001C904 File Offset: 0x0001AB04
+	// Token: 0x06000178 RID: 376 RVA: 0x0001C93C File Offset: 0x0001AB3C
 	public void DoLoadScene()
 	{
 		if (this.triggerSave && Game.AllowedToSave)

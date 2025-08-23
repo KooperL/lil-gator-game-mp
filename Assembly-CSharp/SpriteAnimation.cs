@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SpriteAnimation : MonoBehaviour
 {
-	// Token: 0x06000FAB RID: 4011 RVA: 0x0000D8C6 File Offset: 0x0000BAC6
+	// Token: 0x06000FAC RID: 4012 RVA: 0x0000D8C6 File Offset: 0x0000BAC6
 	private void OnValidate()
 	{
 		if (this.spriteRenderer == null)
@@ -13,7 +13,7 @@ public class SpriteAnimation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FAC RID: 4012 RVA: 0x0000D8E2 File Offset: 0x0000BAE2
+	// Token: 0x06000FAD RID: 4013 RVA: 0x0000D8E2 File Offset: 0x0000BAE2
 	private void OnEnable()
 	{
 		this.nextFrameTime = Time.time + 1f / this.fps;
@@ -24,7 +24,7 @@ public class SpriteAnimation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FAD RID: 4013 RVA: 0x000522C4 File Offset: 0x000504C4
+	// Token: 0x06000FAE RID: 4014 RVA: 0x000525B0 File Offset: 0x000507B0
 	private void Update()
 	{
 		if (Time.time >= this.nextFrameTime)
@@ -39,7 +39,7 @@ public class SpriteAnimation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FAE RID: 4014 RVA: 0x00052328 File Offset: 0x00050528
+	// Token: 0x06000FAF RID: 4015 RVA: 0x00052614 File Offset: 0x00050814
 	private void SetSpriteIndex(int index)
 	{
 		if (this.spriteRenderer != null)

@@ -10,7 +10,7 @@ namespace Rewired.UI.ControlMapper
 	[RequireComponent(typeof(Selectable))]
 	public class ScrollRectSelectableChild : MonoBehaviour, ISelectHandler, IEventSystemHandler
 	{
-		// (get) Token: 0x06001C21 RID: 7201 RVA: 0x00015993 File Offset: 0x00013B93
+		// (get) Token: 0x06001C22 RID: 7202 RVA: 0x00015993 File Offset: 0x00013B93
 		private RectTransform parentScrollRectContentTransform
 		{
 			get
@@ -19,7 +19,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001C22 RID: 7202 RVA: 0x0006FF8C File Offset: 0x0006E18C
+		// (get) Token: 0x06001C23 RID: 7203 RVA: 0x00070278 File Offset: 0x0006E478
 		private Selectable selectable
 		{
 			get
@@ -33,7 +33,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001C23 RID: 7203 RVA: 0x000159A0 File Offset: 0x00013BA0
+		// (get) Token: 0x06001C24 RID: 7204 RVA: 0x000159A0 File Offset: 0x00013BA0
 		private RectTransform rectTransform
 		{
 			get
@@ -42,7 +42,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001C24 RID: 7204 RVA: 0x000159AD File Offset: 0x00013BAD
+		// Token: 0x06001C25 RID: 7205 RVA: 0x000159AD File Offset: 0x00013BAD
 		private void Start()
 		{
 			this.parentScrollRect = base.transform.GetComponentInParent<ScrollRect>();
@@ -53,7 +53,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001C25 RID: 7205 RVA: 0x0006FFB4 File Offset: 0x0006E1B4
+		// Token: 0x06001C26 RID: 7206 RVA: 0x000702A0 File Offset: 0x0006E4A0
 		public void OnSelect(BaseEventData eventData)
 		{
 			if (this.parentScrollRect == null)

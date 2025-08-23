@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ActorAnimationOverrides : MonoBehaviour
 {
-	// Token: 0x06000364 RID: 868 RVA: 0x00025BD4 File Offset: 0x00023DD4
+	// Token: 0x06000364 RID: 868 RVA: 0x00025C0C File Offset: 0x00023E0C
 	private void Awake()
 	{
 		if (!this.hasActiveSceneHook)
@@ -29,7 +29,7 @@ public class ActorAnimationOverrides : MonoBehaviour
 		ActorAnimationOverrides.standardAnimations = null;
 	}
 
-	// Token: 0x06000366 RID: 870 RVA: 0x00025C74 File Offset: 0x00023E74
+	// Token: 0x06000366 RID: 870 RVA: 0x00025CAC File Offset: 0x00023EAC
 	public void SetAnimations(AnimationOverride[] animationOverrides)
 	{
 		foreach (AnimationOverride animationOverride in animationOverrides)
@@ -56,7 +56,7 @@ public class ActorAnimationOverrides : MonoBehaviour
 		this.overrideController.ApplyOverrides(this.overrides);
 	}
 
-	// Token: 0x06000369 RID: 873 RVA: 0x00025CB4 File Offset: 0x00023EB4
+	// Token: 0x06000369 RID: 873 RVA: 0x00025CEC File Offset: 0x00023EEC
 	public static AnimationClip GetStandardAnimation(ActorAnimationOverrides.StandardAnimation standardAnimation, AnimationClipOverrides overrides)
 	{
 		if (ActorAnimationOverrides.standardAnimations == null || (float)ActorAnimationOverrides.standardAnimations.Length == 0f)
@@ -84,7 +84,7 @@ public class ActorAnimationOverrides : MonoBehaviour
 		return ActorAnimationOverrides.standardAnimations[(int)standardAnimation];
 	}
 
-	// Token: 0x0600036A RID: 874 RVA: 0x00025D88 File Offset: 0x00023F88
+	// Token: 0x0600036A RID: 874 RVA: 0x00025DC0 File Offset: 0x00023FC0
 	public static string GetStandardAnimationName(ActorAnimationOverrides.StandardAnimation standardAnimation)
 	{
 		switch (standardAnimation)

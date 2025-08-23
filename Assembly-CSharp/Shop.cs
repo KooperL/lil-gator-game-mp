@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-	// (get) Token: 0x06000F72 RID: 3954 RVA: 0x0000D610 File Offset: 0x0000B810
+	// (get) Token: 0x06000F73 RID: 3955 RVA: 0x0000D610 File Offset: 0x0000B810
 	private Shop.ShopItem currentItem
 	{
 		get
@@ -14,21 +14,21 @@ public class Shop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F73 RID: 3955 RVA: 0x0000D62A File Offset: 0x0000B82A
+	// Token: 0x06000F74 RID: 3956 RVA: 0x0000D62A File Offset: 0x0000B82A
 	private void Awake()
 	{
 		this.displayedItems = new int[this.itemSlots.Length];
 		this.cameraDelta = this.camera.transform.position - this.itemSlots[0].position;
 	}
 
-	// Token: 0x06000F74 RID: 3956 RVA: 0x0000D667 File Offset: 0x0000B867
+	// Token: 0x06000F75 RID: 3957 RVA: 0x0000D667 File Offset: 0x0000B867
 	private void Start()
 	{
 		this.UpdateInventory();
 		base.enabled = false;
 	}
 
-	// Token: 0x06000F75 RID: 3957 RVA: 0x00051844 File Offset: 0x0004FA44
+	// Token: 0x06000F76 RID: 3958 RVA: 0x00051B30 File Offset: 0x0004FD30
 	public void Activate()
 	{
 		base.enabled = true;
@@ -53,7 +53,7 @@ public class Shop : MonoBehaviour
 		this.playerMark.SetActive(true);
 	}
 
-	// Token: 0x06000F76 RID: 3958 RVA: 0x00051984 File Offset: 0x0004FB84
+	// Token: 0x06000F77 RID: 3959 RVA: 0x00051C70 File Offset: 0x0004FE70
 	public void Deactivate()
 	{
 		this.camera.SetActive(false);
@@ -66,32 +66,32 @@ public class Shop : MonoBehaviour
 		this.playerMark.SetActive(false);
 	}
 
-	// Token: 0x06000F77 RID: 3959 RVA: 0x00051A0C File Offset: 0x0004FC0C
+	// Token: 0x06000F78 RID: 3960 RVA: 0x00051CF8 File Offset: 0x0004FEF8
 	private void OnMoveHorizontal(InputActionEventData obj)
 	{
 		float axisRaw = obj.GetAxisRaw();
 		this.MoveSelection(axisRaw > 0f);
 	}
 
-	// Token: 0x06000F78 RID: 3960 RVA: 0x0000D676 File Offset: 0x0000B876
+	// Token: 0x06000F79 RID: 3961 RVA: 0x0000D676 File Offset: 0x0000B876
 	private void OnCancel(InputActionEventData obj)
 	{
 		this.Deactivate();
 	}
 
-	// Token: 0x06000F79 RID: 3961 RVA: 0x0000D67E File Offset: 0x0000B87E
+	// Token: 0x06000F7A RID: 3962 RVA: 0x0000D67E File Offset: 0x0000B87E
 	private void OnSubmit(InputActionEventData obj)
 	{
 		this.Buy();
 	}
 
-	// Token: 0x06000F7A RID: 3962 RVA: 0x00051A30 File Offset: 0x0004FC30
+	// Token: 0x06000F7B RID: 3963 RVA: 0x00051D1C File Offset: 0x0004FF1C
 	private void Update()
 	{
 		this.camera.transform.position = Vector3.SmoothDamp(this.camera.transform.position, this.itemSlots[this.selectionIndex].position + this.cameraDelta, ref this.cameraVelocity, 0.25f);
 	}
 
-	// Token: 0x06000F7B RID: 3963 RVA: 0x00051A8C File Offset: 0x0004FC8C
+	// Token: 0x06000F7C RID: 3964 RVA: 0x00051D78 File Offset: 0x0004FF78
 	public void MoveSelection(bool isRight)
 	{
 		this.selectionIndex += (isRight ? 1 : (-1));
@@ -106,13 +106,13 @@ public class Shop : MonoBehaviour
 		this.UpdateSelection();
 	}
 
-	// Token: 0x06000F7C RID: 3964 RVA: 0x0000D686 File Offset: 0x0000B886
+	// Token: 0x06000F7D RID: 3965 RVA: 0x0000D686 File Offset: 0x0000B886
 	private void UpdateSelection()
 	{
 		UIMenus.shop.Load(this.currentItem, this);
 	}
 
-	// Token: 0x06000F7D RID: 3965 RVA: 0x00051AE0 File Offset: 0x0004FCE0
+	// Token: 0x06000F7E RID: 3966 RVA: 0x00051DCC File Offset: 0x0004FFCC
 	private void UpdateInventory()
 	{
 		for (int i = 0; i < this.displayedItemCount; i++)
@@ -159,7 +159,7 @@ public class Shop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F7E RID: 3966 RVA: 0x00051C68 File Offset: 0x0004FE68
+	// Token: 0x06000F7F RID: 3967 RVA: 0x00051F54 File Offset: 0x00050154
 	public void Buy()
 	{
 		Shop.ShopItem shopItem = this.shopItems[this.displayedItems[this.selectionIndex]];
@@ -172,7 +172,7 @@ public class Shop : MonoBehaviour
 		UIMenus.shop.SetDescription(DialogueManager.d.chunkDic[this.notEnoughChunk].lines[0].GetText(Language.Auto));
 	}
 
-	// Token: 0x06000F7F RID: 3967 RVA: 0x0000D699 File Offset: 0x0000B899
+	// Token: 0x06000F80 RID: 3968 RVA: 0x0000D699 File Offset: 0x0000B899
 	public IEnumerator RunBuyItem(ItemObject item)
 	{
 		this.Deactivate();

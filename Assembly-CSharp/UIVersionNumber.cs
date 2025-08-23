@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UIVersionNumber : MonoBehaviour
 {
-	// Token: 0x06001363 RID: 4963 RVA: 0x00010647 File Offset: 0x0000E847
+	// Token: 0x06001364 RID: 4964 RVA: 0x00010647 File Offset: 0x0000E847
 	private void Start()
 	{
 		base.GetComponent<Text>().text = "1.0.3";

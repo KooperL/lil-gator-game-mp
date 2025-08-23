@@ -5,13 +5,13 @@ using UnityEngine.Events;
 
 public class ChoiceDialogue : MonoBehaviour
 {
-	// Token: 0x06000D99 RID: 3481 RVA: 0x0000C5AC File Offset: 0x0000A7AC
+	// Token: 0x06000D9A RID: 3482 RVA: 0x0000C5AC File Offset: 0x0000A7AC
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000D9A RID: 3482 RVA: 0x0000C5BB File Offset: 0x0000A7BB
+	// Token: 0x06000D9B RID: 3483 RVA: 0x0000C5BB File Offset: 0x0000A7BB
 	private IEnumerator RunConversation()
 	{
 		foreach (ChoiceDialogue.Prompt prompt in this.prompts)

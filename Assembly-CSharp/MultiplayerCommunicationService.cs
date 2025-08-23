@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class MultiplayerCommunicationService
 {
+	// Token: 0x06001E88 RID: 7816 RVA: 0x00078EB8 File Offset: 0x000770B8
 	public async void initConnection()
 	{
 		Uri uri = new Uri("ws://" + MultiplayerConfigLoader.Instance.ServerHost + "?sessionKey=" + MultiplayerConfigLoader.Instance.SessionKey);
@@ -47,7 +48,7 @@ public class MultiplayerCommunicationService
 		ClientWebSocket clientWebSocket = null;
 	}
 
-	// (get) Token: 0x06001E88 RID: 7816 RVA: 0x00017591 File Offset: 0x00015791
+	// (get) Token: 0x06001E89 RID: 7817 RVA: 0x0001759C File Offset: 0x0001579C
 	public static MultiplayerCommunicationService Instance
 	{
 		get
@@ -60,7 +61,7 @@ public class MultiplayerCommunicationService
 		}
 	}
 
-	// Token: 0x06001E89 RID: 7817 RVA: 0x00078AE0 File Offset: 0x00076CE0
+	// Token: 0x06001E8A RID: 7818 RVA: 0x00078EF0 File Offset: 0x000770F0
 	public void receiveMessage(string message)
 	{
 		try
@@ -92,7 +93,7 @@ public class MultiplayerCommunicationService
 		}
 	}
 
-	// Token: 0x06001E8A RID: 7818 RVA: 0x000175A9 File Offset: 0x000157A9
+	// Token: 0x06001E8B RID: 7819 RVA: 0x000175B4 File Offset: 0x000157B4
 	public IEnumerator sendMessage(byte[] bytes)
 	{
 		if (this._webSocket == null)

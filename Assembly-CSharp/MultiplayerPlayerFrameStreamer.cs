@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class MultiplayerPlayerFrameStreamer : MonoBehaviour
 {
-	// Token: 0x06001E9C RID: 7836 RVA: 0x00017609 File Offset: 0x00015809
+	// Token: 0x06001E9F RID: 7839 RVA: 0x0001762A File Offset: 0x0001582A
 	private void Start()
 	{
 		Debug.Log("[LGG-MP] Initialising multiplayer coroutine");
 		base.StartCoroutine(this.SendPositionLoop());
 	}
 
+	// Token: 0x06001EA0 RID: 7840 RVA: 0x00017643 File Offset: 0x00015843
 	private IEnumerator SendPositionLoop()
 	{
 		for (;;)
@@ -59,7 +60,7 @@ public class MultiplayerPlayerFrameStreamer : MonoBehaviour
 	[Serializable]
 	public class MultiplayerPlayerFrameData
 	{
-		// Token: 0x06001E9F RID: 7839 RVA: 0x00079464 File Offset: 0x00077664
+		// Token: 0x06001EA2 RID: 7842 RVA: 0x00079BA8 File Offset: 0x00077DA8
 		public MultiplayerPlayerFrameData(Vector3 pos, Vector3 dir, string displayName, string sessionKey, WorldState worldState, float speed, float verticalSpeed, float angle, bool grounded, bool climbing, bool swimming, bool gliding, bool sledding)
 		{
 			this.x = pos.x;

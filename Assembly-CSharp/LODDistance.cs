@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LODDistance : MonoBehaviour
 {
-	// Token: 0x060008BD RID: 2237 RVA: 0x00038CB0 File Offset: 0x00036EB0
+	// Token: 0x060008BE RID: 2238 RVA: 0x00038F9C File Offset: 0x0003719C
 	private void OnValidate()
 	{
 		if (this.lodGroup == null)

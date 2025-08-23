@@ -33,7 +33,7 @@ public class CameraUnderwater : MonoBehaviour
 		this.ProcessTrigger(other);
 	}
 
-	// Token: 0x060002AC RID: 684 RVA: 0x00020F4C File Offset: 0x0001F14C
+	// Token: 0x060002AC RID: 684 RVA: 0x00020F84 File Offset: 0x0001F184
 	private void ProcessTrigger(Collider other)
 	{
 		Water water;

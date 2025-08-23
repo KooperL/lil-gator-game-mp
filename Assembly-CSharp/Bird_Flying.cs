@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Bird_Flying : MonoBehaviour
 {
-	// Token: 0x06000001 RID: 1 RVA: 0x00017688 File Offset: 0x00015888
+	// Token: 0x06000001 RID: 1 RVA: 0x000176C0 File Offset: 0x000158C0
 	private void Start()
 	{
 		this.flyDirection += this.directionVariance * global::UnityEngine.Random.insideUnitSphere;
@@ -13,7 +13,7 @@ public class Bird_Flying : MonoBehaviour
 		this.speed = this.initialSpeed;
 	}
 
-	// Token: 0x06000002 RID: 2 RVA: 0x00017730 File Offset: 0x00015930
+	// Token: 0x06000002 RID: 2 RVA: 0x00017768 File Offset: 0x00015968
 	public void Update()
 	{
 		this.speed = Mathf.MoveTowards(this.speed, this.maxSpeed, Time.deltaTime * this.acceleration);

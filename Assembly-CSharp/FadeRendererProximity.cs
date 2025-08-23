@@ -15,7 +15,7 @@ public class FadeRendererProximity : FadeRenderer
 		}
 	}
 
-	// Token: 0x060006F9 RID: 1785 RVA: 0x00033134 File Offset: 0x00031334
+	// Token: 0x060006F9 RID: 1785 RVA: 0x0003316C File Offset: 0x0003136C
 	private void LateUpdate()
 	{
 		if (this.usePlayerTransform)
@@ -31,7 +31,7 @@ public class FadeRendererProximity : FadeRenderer
 		}
 	}
 
-	// Token: 0x060006FA RID: 1786 RVA: 0x000331AC File Offset: 0x000313AC
+	// Token: 0x060006FA RID: 1786 RVA: 0x000331E4 File Offset: 0x000313E4
 	private void OnTriggerStay(Collider other)
 	{
 		if (base.enabled)

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIButtonPrompt : MonoBehaviour
 {
-	// Token: 0x060011ED RID: 4589 RVA: 0x00059CAC File Offset: 0x00057EAC
+	// Token: 0x060011EE RID: 4590 RVA: 0x00059F98 File Offset: 0x00058198
 	private void Awake()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
@@ -17,7 +17,7 @@ public class UIButtonPrompt : MonoBehaviour
 		this.waitUntilTriggered = new WaitUntil(() => this.triggered);
 	}
 
-	// Token: 0x060011EE RID: 4590 RVA: 0x0000F420 File Offset: 0x0000D620
+	// Token: 0x060011EF RID: 4591 RVA: 0x0000F420 File Offset: 0x0000D620
 	private void OnEnable()
 	{
 		this.triggered = false;
@@ -25,7 +25,7 @@ public class UIButtonPrompt : MonoBehaviour
 		PlayerInteract.interactButtonPriority = base.gameObject;
 	}
 
-	// Token: 0x060011EF RID: 4591 RVA: 0x000050F2 File Offset: 0x000032F2
+	// Token: 0x060011F0 RID: 4592 RVA: 0x000050F2 File Offset: 0x000032F2
 	private void OnDisable()
 	{
 		if (PlayerInteract.interactButtonPriority == base.gameObject)
@@ -34,7 +34,7 @@ public class UIButtonPrompt : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011F0 RID: 4592 RVA: 0x00059D04 File Offset: 0x00057F04
+	// Token: 0x060011F1 RID: 4593 RVA: 0x00059FF0 File Offset: 0x000581F0
 	private void Update()
 	{
 		if (this.rePlayer != null && (this.rePlayer.GetButtonDown("Interact") || (Game.State == GameState.Dialogue && (this.rePlayer.GetButtonDown("Interact Dialogue") || this.rePlayer.GetButtonDown("UISubmit"))) || (PlayerInput.interactMapping == PlayerInput.InteractMapping.Jump && this.rePlayer.GetButtonDown("Jump")) || (PlayerInput.interactMapping == PlayerInput.InteractMapping.Primary && this.rePlayer.GetButtonDown("Primary"))))

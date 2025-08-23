@@ -21,7 +21,7 @@ public class DialogueSequencer : MonoBehaviour
 		this.StartSequence();
 	}
 
-	// Token: 0x060005F4 RID: 1524 RVA: 0x0002FFEC File Offset: 0x0002E1EC
+	// Token: 0x060005F4 RID: 1524 RVA: 0x00030024 File Offset: 0x0002E224
 	[ContextMenu("Start Sequence")]
 	public Coroutine StartSequence()
 	{

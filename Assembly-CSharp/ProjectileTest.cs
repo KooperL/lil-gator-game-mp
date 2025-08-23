@@ -4,7 +4,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ProjectileTest : MonoBehaviour
 {
-	// Token: 0x06000A69 RID: 2665 RVA: 0x0003D168 File Offset: 0x0003B368
+	// Token: 0x06000A6A RID: 2666 RVA: 0x0003D454 File Offset: 0x0003B654
 	[ContextMenu("Launch")]
 	public void LaunchProjectile()
 	{

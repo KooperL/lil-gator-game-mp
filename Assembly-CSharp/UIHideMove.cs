@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UIHideMove : UIHideBehavior
 {
-	// Token: 0x06001224 RID: 4644 RVA: 0x0000F6BF File Offset: 0x0000D8BF
+	// Token: 0x06001225 RID: 4645 RVA: 0x0000F6BF File Offset: 0x0000D8BF
 	private void OnValidate()
 	{
 		if (this.rectTransform == null)
@@ -12,13 +12,13 @@ public class UIHideMove : UIHideBehavior
 		}
 	}
 
-	// Token: 0x06001225 RID: 4645 RVA: 0x0000F6DB File Offset: 0x0000D8DB
+	// Token: 0x06001226 RID: 4646 RVA: 0x0000F6DB File Offset: 0x0000D8DB
 	private void Awake()
 	{
 		this.position = this.anchoredHidePosition;
 	}
 
-	// Token: 0x06001226 RID: 4646 RVA: 0x0000F6E9 File Offset: 0x0000D8E9
+	// Token: 0x06001227 RID: 4647 RVA: 0x0000F6E9 File Offset: 0x0000D8E9
 	[ContextMenu("Hide")]
 	public override void Hide()
 	{
@@ -26,7 +26,7 @@ public class UIHideMove : UIHideBehavior
 		base.enabled = true;
 	}
 
-	// Token: 0x06001227 RID: 4647 RVA: 0x0005AD6C File Offset: 0x00058F6C
+	// Token: 0x06001228 RID: 4648 RVA: 0x0005B058 File Offset: 0x00059258
 	[ContextMenu("Show")]
 	public override void Show()
 	{
@@ -43,7 +43,7 @@ public class UIHideMove : UIHideBehavior
 		}
 	}
 
-	// Token: 0x06001228 RID: 4648 RVA: 0x0005ADCC File Offset: 0x00058FCC
+	// Token: 0x06001229 RID: 4649 RVA: 0x0005B0B8 File Offset: 0x000592B8
 	protected override void Update()
 	{
 		base.Update();

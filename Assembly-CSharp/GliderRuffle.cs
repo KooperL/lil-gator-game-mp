@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class GliderRuffle : MonoBehaviour
 {
-	// Token: 0x0600079B RID: 1947 RVA: 0x000356A8 File Offset: 0x000338A8
+	// Token: 0x0600079C RID: 1948 RVA: 0x00035994 File Offset: 0x00033B94
 	private void Start()
 	{
 		List<Transform> list = new List<Transform>(base.transform.GetComponentsInChildren<Transform>());
 		this.children = list.ToArray();
 	}
 
-	// Token: 0x0600079C RID: 1948 RVA: 0x00007964 File Offset: 0x00005B64
+	// Token: 0x0600079D RID: 1949 RVA: 0x00007964 File Offset: 0x00005B64
 	private void OnEnable()
 	{
 		this.fadeIn = -1f;
 	}
 
-	// Token: 0x0600079D RID: 1949 RVA: 0x000356D4 File Offset: 0x000338D4
+	// Token: 0x0600079E RID: 1950 RVA: 0x000359C0 File Offset: 0x00033BC0
 	private void LateUpdate()
 	{
 		if (this.fadeIn < 1f)

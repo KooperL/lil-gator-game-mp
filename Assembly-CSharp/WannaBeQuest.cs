@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 public class WannaBeQuest : MonoBehaviour
 {
-	// (get) Token: 0x06000E86 RID: 3718 RVA: 0x0000CD4F File Offset: 0x0000AF4F
-	// (set) Token: 0x06000E87 RID: 3719 RVA: 0x0000CD62 File Offset: 0x0000AF62
+	// (get) Token: 0x06000E87 RID: 3719 RVA: 0x0000CD4F File Offset: 0x0000AF4F
+	// (set) Token: 0x06000E88 RID: 3720 RVA: 0x0000CD62 File Offset: 0x0000AF62
 	private bool State
 	{
 		get
@@ -18,8 +18,8 @@ public class WannaBeQuest : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000E88 RID: 3720 RVA: 0x0000CD75 File Offset: 0x0000AF75
-	// (set) Token: 0x06000E89 RID: 3721 RVA: 0x0000CD88 File Offset: 0x0000AF88
+	// (get) Token: 0x06000E89 RID: 3721 RVA: 0x0000CD75 File Offset: 0x0000AF75
+	// (set) Token: 0x06000E8A RID: 3722 RVA: 0x0000CD88 File Offset: 0x0000AF88
 	private int WannaBePose
 	{
 		get

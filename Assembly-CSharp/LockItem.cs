@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LockItem : MonoBehaviour
 {
-	// Token: 0x060008F2 RID: 2290 RVA: 0x00008B4E File Offset: 0x00006D4E
+	// Token: 0x060008F3 RID: 2291 RVA: 0x00008B4E File Offset: 0x00006D4E
 	public void LockItemNowPlease()
 	{
 		this.item.IsUnlocked = false;
