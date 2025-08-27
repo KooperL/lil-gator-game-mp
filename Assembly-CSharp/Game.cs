@@ -4,12 +4,12 @@ using UnityEngine.AddressableAssets;
 
 public class Game : MonoBehaviour
 {
-	// (add) Token: 0x0600073F RID: 1855 RVA: 0x000346A8 File Offset: 0x000328A8
-	// (remove) Token: 0x06000740 RID: 1856 RVA: 0x000346DC File Offset: 0x000328DC
+	// (add) Token: 0x0600073F RID: 1855
+	// (remove) Token: 0x06000740 RID: 1856
 	public static event Action onEnterDialogue;
 
-	// (get) Token: 0x06000741 RID: 1857 RVA: 0x00034710 File Offset: 0x00032910
-	// (set) Token: 0x06000742 RID: 1858 RVA: 0x000074EF File Offset: 0x000056EF
+	// (get) Token: 0x06000741 RID: 1857
+	// (set) Token: 0x06000742 RID: 1858
 	public static GameState State
 	{
 		get
@@ -39,7 +39,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000743 RID: 1859 RVA: 0x00007517 File Offset: 0x00005717
+	// (get) Token: 0x06000743 RID: 1859
 	public static bool AllowedToSave
 	{
 		get
@@ -48,8 +48,8 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000744 RID: 1860 RVA: 0x00007546 File Offset: 0x00005746
-	// (set) Token: 0x06000745 RID: 1861 RVA: 0x00007558 File Offset: 0x00005758
+	// (get) Token: 0x06000744 RID: 1860
+	// (set) Token: 0x06000745 RID: 1861
 	public static WorldState WorldState
 	{
 		get
@@ -62,7 +62,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000746 RID: 1862 RVA: 0x00007565 File Offset: 0x00005765
+	// (get) Token: 0x06000746 RID: 1862
 	public static int NewGameIndex
 	{
 		get
@@ -71,7 +71,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000747 RID: 1863 RVA: 0x00007577 File Offset: 0x00005777
+	// (get) Token: 0x06000747 RID: 1863
 	public static bool IsNewGamePlus
 	{
 		get
@@ -80,7 +80,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000748 RID: 1864 RVA: 0x00007581 File Offset: 0x00005781
+	// (get) Token: 0x06000748 RID: 1864
 	public static bool IsInDialogue
 	{
 		get
@@ -89,7 +89,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000749 RID: 1865 RVA: 0x00007597 File Offset: 0x00005797
+	// (get) Token: 0x06000749 RID: 1865
 	public static bool HasControl
 	{
 		get
@@ -98,8 +98,8 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x0600074A RID: 1866 RVA: 0x000075B4 File Offset: 0x000057B4
-	// (set) Token: 0x0600074B RID: 1867 RVA: 0x00034764 File Offset: 0x00032964
+	// (get) Token: 0x0600074A RID: 1866
+	// (set) Token: 0x0600074B RID: 1867
 	public static int DialogueDepth
 	{
 		get
@@ -120,7 +120,6 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600074C RID: 1868 RVA: 0x000347BC File Offset: 0x000329BC
 	private void Awake()
 	{
 		Game.g = this;
@@ -129,9 +128,12 @@ public class Game : MonoBehaviour
 		Debug.Log("[LGG-MP] Session Key: " + multiplayerConfigLoader.SessionKey);
 		Debug.Log("[LGG-MP] Display Name: " + multiplayerConfigLoader.DisplayName);
 		Debug.Log("[LGG-MP] Server Host: " + multiplayerConfigLoader.ServerHost);
+		if (MultiplayerCommunicationService.Instance.connectionState == MultiplayerCommunicationService.ConnectionState.None)
+		{
+			MultiplayerCommunicationService.Instance.initConnection();
+		}
 	}
 
-	// Token: 0x0600074D RID: 1869 RVA: 0x000075C0 File Offset: 0x000057C0
 	private void OnEnable()
 	{
 		Game.g = this;
@@ -141,35 +143,29 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600074E RID: 1870 RVA: 0x000075E9 File Offset: 0x000057E9
 	private void Start()
 	{
-		MultiplayerCommunicationService.Instance.initConnection();
-		base.gameObject.AddComponent<MultiplayerPlayerFrameStreamer>();
 		GameObject gameObject = new GameObject("MultiplayerPlayerManager");
+		base.gameObject.AddComponent<MultiplayerPlayerFrameStreamer>();
 		MultiplayerNetworkBootstrap.manager = gameObject.AddComponent<MultiplayerPlayerManager>();
 		global::UnityEngine.Object.DontDestroyOnLoad(gameObject);
 	}
 
-	// Token: 0x0600074F RID: 1871 RVA: 0x0000761B File Offset: 0x0000581B
 	public void SetToStory()
 	{
 		this.SetWorldState(WorldState.Story);
 	}
 
-	// Token: 0x06000750 RID: 1872 RVA: 0x00007625 File Offset: 0x00005825
 	public void SetToFlashback()
 	{
 		this.SetWorldState(WorldState.Flashback);
 	}
 
-	// Token: 0x06000751 RID: 1873 RVA: 0x0000762F File Offset: 0x0000582F
 	public void SetWorldState(WorldState newWorldState)
 	{
 		this.SetWorldState(newWorldState, false, false);
 	}
 
-	// Token: 0x06000752 RID: 1874 RVA: 0x00034820 File Offset: 0x00032A20
 	public void SetWorldState(WorldState newWorldState, bool forceChange = false, bool delaySceneChange = false)
 	{
 		if (newWorldState != this.worldState || forceChange)
@@ -199,7 +195,6 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000755 RID: 1877 RVA: 0x000348D8 File Offset: 0x00032AD8
 	public void Update()
 	{
 		if (MultiplayerConfigLoader.Instance.logTemp.Contains("F"))
@@ -240,9 +235,9 @@ public class Game : MonoBehaviour
 					Debug.Log(string.Format("    Container Component: {0}", component.GetType()));
 				}
 				Debug.Log("Children:");
-				for (int k = 0; k < gameObject2.transform.childCount; k++)
+				for (int i = 0; i < gameObject2.transform.childCount; i++)
 				{
-					Transform child = gameObject2.transform.GetChild(k);
+					Transform child = gameObject2.transform.GetChild(i);
 					Debug.Log("    Child: " + child.name);
 					if (child.name.Contains("Hero"))
 					{
@@ -260,6 +255,41 @@ public class Game : MonoBehaviour
 			foreach (Shader shader in Resources.FindObjectsOfTypeAll<Shader>())
 			{
 				Debug.Log("Found shader: " + shader.name);
+			}
+		}
+		if (MultiplayerConfigLoader.Instance.logTemp.Contains("A"))
+		{
+			GameObject playerGO = Player.gameObject;
+			if (playerGO == null)
+			{
+				return;
+			}
+			Transform playerGOT = playerGO.transform.Find("Heroboy");
+			if (base.transform == null)
+			{
+				return;
+			}
+			Animator animator = playerGOT.GetComponent<Animator>();
+			if (animator != null)
+			{
+				try
+				{
+					foreach (AnimatorControllerParameter param in animator.parameters)
+					{
+						Debug.Log(string.Format("Found animator parameter: {0} ({1})", param.name, param.type));
+					}
+				}
+				catch (Exception e)
+				{
+					Debug.LogWarning("Could not reset animator: " + e.Message);
+				}
+			}
+		}
+		if (MultiplayerConfigLoader.Instance.logTemp.Contains("M"))
+		{
+			for (int j = 0; j < ItemManager.i.items.Length; j++)
+			{
+				Debug.Log("Loading " + ItemManager.i.items[j].name);
 			}
 		}
 	}

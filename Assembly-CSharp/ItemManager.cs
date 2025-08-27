@@ -183,7 +183,6 @@ public class ItemManager : MonoBehaviour
 		this.items = list.ToArray();
 	}
 
-	// Token: 0x06000890 RID: 2192 RVA: 0x000386DC File Offset: 0x000368DC
 	private void Awake()
 	{
 		ItemManager.i = this;

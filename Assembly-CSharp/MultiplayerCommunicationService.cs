@@ -8,47 +8,58 @@ using UnityEngine;
 
 public class MultiplayerCommunicationService
 {
-	// Token: 0x06001E88 RID: 7816 RVA: 0x00078EB8 File Offset: 0x000770B8
 	public async void initConnection()
 	{
-		Uri uri = new Uri("ws://" + MultiplayerConfigLoader.Instance.ServerHost + "?sessionKey=" + MultiplayerConfigLoader.Instance.SessionKey);
-		using (this._webSocket = new ClientWebSocket())
+		Debug.Log("[LGG-MP] Opening WS connection");
+		if (this.connectionState == MultiplayerCommunicationService.ConnectionState.None)
 		{
-			await this._webSocket.ConnectAsync(uri, default(CancellationToken));
-			Debug.Log("[LGG-MP] WebSocket connected");
-			while (this._webSocket.State == WebSocketState.Open)
+			this.connectionState = MultiplayerCommunicationService.ConnectionState.Connecting;
+			Uri uri = new Uri("ws://" + MultiplayerConfigLoader.Instance.ServerHost + "?sessionKey=" + MultiplayerConfigLoader.Instance.SessionKey);
+			using (this._webSocket = new ClientWebSocket())
 			{
-				byte[] bytes = new byte[1024];
-				ArraySegment<byte> arraySegment = new ArraySegment<byte>(bytes);
-				WebSocketReceiveResult webSocketReceiveResult = await this._webSocket.ReceiveAsync(arraySegment, default(CancellationToken));
-				string @string = Encoding.UTF8.GetString(bytes, 0, webSocketReceiveResult.Count);
-				Debug.Log("[LGG-MP] Received: " + @string);
-				this.receiveMessage(@string);
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
-				bytes = null;
+				await this._webSocket.ConnectAsync(uri, default(CancellationToken));
+				this.connectionState = MultiplayerCommunicationService.ConnectionState.Connected;
+				Debug.Log("[LGG-MP] WebSocket connected");
+				while (this._webSocket.State == WebSocketState.Open)
+				{
+					byte[] bytes = new byte[1024];
+					ArraySegment<byte> arraySegment = new ArraySegment<byte>(bytes);
+					WebSocketReceiveResult webSocketReceiveResult = await this._webSocket.ReceiveAsync(arraySegment, default(CancellationToken));
+					string @string = Encoding.UTF8.GetString(bytes, 0, webSocketReceiveResult.Count);
+					Debug.Log("[LGG-MP] Received: " + @string);
+					this.receiveMessage(@string);
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
+				}
+				await this._webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Client closed", default(CancellationToken));
+				this.connectionState = MultiplayerCommunicationService.ConnectionState.None;
 			}
-			await this._webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Client closed", default(CancellationToken));
+			ClientWebSocket clientWebSocket = null;
 		}
-		ClientWebSocket clientWebSocket = null;
 	}
 
-	// (get) Token: 0x06001E89 RID: 7817 RVA: 0x0001759C File Offset: 0x0001579C
+	// (get) Token: 0x06001E89 RID: 7817
 	public static MultiplayerCommunicationService Instance
 	{
 		get
@@ -61,14 +72,13 @@ public class MultiplayerCommunicationService
 		}
 	}
 
-	// Token: 0x06001E8A RID: 7818 RVA: 0x00078EF0 File Offset: 0x000770F0
 	public void receiveMessage(string message)
 	{
 		try
 		{
 			if (!(MultiplayerNetworkBootstrap.manager == null))
 			{
-				MultiplayerPlayerFrameStreamer.MultiplayerPlayerFrameData multiplayerPlayerFrameData = JsonUtility.FromJson<MultiplayerPlayerFrameStreamer.MultiplayerPlayerFrameData>(message);
+				MultiplayerPlayerFrameStreamer.MultiplayerPlayerStateData multiplayerPlayerFrameData = JsonUtility.FromJson<MultiplayerPlayerFrameStreamer.MultiplayerPlayerStateData>(message);
 				if (!(multiplayerPlayerFrameData.displayName == MultiplayerConfigLoader.Instance.DisplayName) || !(MultiplayerConfigLoader.Instance.DisplayName != "debug"))
 				{
 					if (multiplayerPlayerFrameData.worldState != Game.WorldState)
@@ -82,7 +92,7 @@ public class MultiplayerCommunicationService
 						Vector3 zero = Vector3.zero;
 						double unscaledTimeAsDouble = Time.unscaledTimeAsDouble;
 						MultiplayerNetworkBootstrap.manager.EnsurePlayer(multiplayerPlayerFrameData.displayName, vector, quaternion, null);
-						MultiplayerNetworkBootstrap.manager.OnStateWithAnimation(multiplayerPlayerFrameData.displayName, vector, quaternion, zero, unscaledTimeAsDouble, -1597646531, 0f, multiplayerPlayerFrameData.speed, multiplayerPlayerFrameData.verticalSpeed, multiplayerPlayerFrameData.angle, multiplayerPlayerFrameData.grounded, multiplayerPlayerFrameData.climbing, multiplayerPlayerFrameData.swimming, multiplayerPlayerFrameData.gliding, multiplayerPlayerFrameData.sledding);
+						MultiplayerNetworkBootstrap.manager.OnStateUpdate(multiplayerPlayerFrameData.displayName, vector, quaternion, zero, unscaledTimeAsDouble, -1597646531, 0f, multiplayerPlayerFrameData.speed, multiplayerPlayerFrameData.verticalSpeed, multiplayerPlayerFrameData.angle, multiplayerPlayerFrameData.grounded, multiplayerPlayerFrameData.climbing, multiplayerPlayerFrameData.swimming, multiplayerPlayerFrameData.gliding, multiplayerPlayerFrameData.sledding, multiplayerPlayerFrameData.equippedState, multiplayerPlayerFrameData.attackTrigger, multiplayerPlayerFrameData.ragdollTrigger, multiplayerPlayerFrameData.hatItemID, multiplayerPlayerFrameData.leftHandItemID, multiplayerPlayerFrameData.rightHandItemID);
 					}
 				}
 			}
@@ -90,10 +100,10 @@ public class MultiplayerCommunicationService
 		catch (Exception ex)
 		{
 			Debug.LogError("[LGG-MP] Failed to process message: " + ex.Message);
+			Debug.LogError("[LGG-MP] Stack trace: " + ex.StackTrace);
 		}
 	}
 
-	// Token: 0x06001E8B RID: 7819 RVA: 0x000175B4 File Offset: 0x000157B4
 	public IEnumerator sendMessage(byte[] bytes)
 	{
 		if (this._webSocket == null)
@@ -128,4 +138,14 @@ public class MultiplayerCommunicationService
 	private static MultiplayerCommunicationService _instance;
 
 	private ClientWebSocket _webSocket;
+
+	public MultiplayerCommunicationService.ConnectionState connectionState;
+
+	public enum ConnectionState
+	{
+		None,
+		Connected,
+		Error,
+		Connecting
+	}
 }

@@ -14,7 +14,6 @@ public class HandIK : MonoBehaviour
 		this.isRightEnabled = isEnabled;
 	}
 
-	// Token: 0x06000ACB RID: 2763 RVA: 0x0000A46E File Offset: 0x0000866E
 	public void SetOverride(bool isLeft, Vector3 position, Transform anchor)
 	{
 		if (isLeft)

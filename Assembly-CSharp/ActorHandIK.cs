@@ -62,9 +62,16 @@ public class ActorHandIK : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x06000372 RID: 882 RVA: 0x00026048 File Offset: 0x00024248
 	public void SetHandIK(bool isLeft, Vector3 position, Transform anchor = null, bool allowYAxis = false)
 	{
+		Debug.Log(string.Concat(new string[]
+		{
+			"=================================",
+			isLeft.ToString(),
+			"-",
+			anchor.name,
+			"================================="
+		}));
 		if (this.actor == null)
 		{
 			this.actor = base.transform.GetComponentInParent<DialogueActor>();

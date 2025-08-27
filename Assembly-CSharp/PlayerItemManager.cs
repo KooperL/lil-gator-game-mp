@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class PlayerItemManager : MonoBehaviour
 {
-	// (get) Token: 0x06000C5F RID: 3167 RVA: 0x0000B8C3 File Offset: 0x00009AC3
+	// (get) Token: 0x06000C5F RID: 3167
 	public bool PrimaryInUse
 	{
 		get
@@ -13,7 +13,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C60 RID: 3168 RVA: 0x0000B8DD File Offset: 0x00009ADD
+	// (get) Token: 0x06000C60 RID: 3168
 	public bool SecondaryInUse
 	{
 		get
@@ -22,7 +22,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C61 RID: 3169 RVA: 0x0000B8F7 File Offset: 0x00009AF7
+	// (get) Token: 0x06000C61 RID: 3169
 	public bool IsAnyItemInUse
 	{
 		get
@@ -31,7 +31,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C62 RID: 3170 RVA: 0x0000B8F7 File Offset: 0x00009AF7
+	// (get) Token: 0x06000C62 RID: 3170
 	public bool IsItemInUse
 	{
 		get
@@ -40,7 +40,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C63 RID: 3171 RVA: 0x0000B911 File Offset: 0x00009B11
+	// (get) Token: 0x06000C63 RID: 3171
 	public bool IsItemInUse_R
 	{
 		get
@@ -49,7 +49,6 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C64 RID: 3172 RVA: 0x0000B92B File Offset: 0x00009B2B
 	public void SetItemInUse(IItemBehaviour item, bool isInUse)
 	{
 		if (isInUse)
@@ -70,7 +69,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C65 RID: 3173 RVA: 0x0000B964 File Offset: 0x00009B64
+	// (get) Token: 0x06000C65 RID: 3173
 	public bool RightHandBusy
 	{
 		get
@@ -79,7 +78,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C66 RID: 3174 RVA: 0x0000B964 File Offset: 0x00009B64
+	// (get) Token: 0x06000C66 RID: 3174
 	public bool LeftHandBusy
 	{
 		get
@@ -88,8 +87,8 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C67 RID: 3175 RVA: 0x0000B984 File Offset: 0x00009B84
-	// (set) Token: 0x06000C68 RID: 3176 RVA: 0x0000B98C File Offset: 0x00009B8C
+	// (get) Token: 0x06000C67 RID: 3175
+	// (set) Token: 0x06000C68 RID: 3176
 	public bool IsAiming
 	{
 		get
@@ -103,13 +102,12 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C69 RID: 3177 RVA: 0x0000B9A0 File Offset: 0x00009BA0
 	private void Awake()
 	{
 		this.movement = base.GetComponent<PlayerMovement>();
+		this.isWeaponAttacking = false;
 	}
 
-	// Token: 0x06000C6A RID: 3178 RVA: 0x0000B9AE File Offset: 0x00009BAE
 	private void OnEnable()
 	{
 		PlayerItemManager.p = this;
@@ -117,16 +115,19 @@ public class PlayerItemManager : MonoBehaviour
 		this.framesUntilRefresh = 2;
 	}
 
-	// Token: 0x06000C6B RID: 3179 RVA: 0x0000B9C3 File Offset: 0x00009BC3
 	private void Start()
 	{
 		this.bareHead.SetActive(false);
 		this.framesUntilRefresh = 2;
 	}
 
-	// Token: 0x06000C6C RID: 3180 RVA: 0x000443E4 File Offset: 0x000425E4
 	public void Refresh()
 	{
+		Debug.Log(this.leftHandAnchor.name);
+		Debug.Log(this.rightHandAnchor.name);
+		Debug.Log(this.hatAnchor.name);
+		Debug.Log(this.shieldArmAnchor.name);
+		Debug.Log(this.shieldSledAnchor.name);
 		if (ItemManager.i == null)
 		{
 			return;
@@ -194,7 +195,6 @@ public class PlayerItemManager : MonoBehaviour
 		PlayerItemManager.onItemRefresh.Invoke();
 	}
 
-	// Token: 0x06000C6D RID: 3181 RVA: 0x00044734 File Offset: 0x00042934
 	private void RefreshVariant(ref GameObject item, ref string itemID, ref IItemBehaviour itemBehaviour, string newID, GameObject newPrefab, Transform anchor, bool active, int index = 0)
 	{
 		if (newPrefab != null != (item != null) || item == null || itemID != newID)
@@ -230,7 +230,6 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C6E RID: 3182 RVA: 0x0004481C File Offset: 0x00042A1C
 	public void SetEquippedState(PlayerItemManager.EquippedState newEquippedState, bool force = false)
 	{
 		if (newEquippedState == this.equippedState && !force)
@@ -264,7 +263,6 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C6F RID: 3183 RVA: 0x000448DC File Offset: 0x00042ADC
 	private void FixedUpdate()
 	{
 		if (this.framesUntilRefresh > 0)
@@ -326,7 +324,6 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C70 RID: 3184 RVA: 0x00044A14 File Offset: 0x00042C14
 	public void EquipLeft(GameObject itemObject)
 	{
 		if (this.leftHandHeld != itemObject)
@@ -343,7 +340,6 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C71 RID: 3185 RVA: 0x0000B9D8 File Offset: 0x00009BD8
 	private void ClearLeft()
 	{
 		if (this.leftHandHeld != null)
@@ -353,7 +349,6 @@ public class PlayerItemManager : MonoBehaviour
 		this.leftHandHeld = null;
 	}
 
-	// Token: 0x06000C72 RID: 3186 RVA: 0x00044A6C File Offset: 0x00042C6C
 	public void CutGrass()
 	{
 		RaycastHit raycastHit;
@@ -367,13 +362,11 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C73 RID: 3187 RVA: 0x0000B9FB File Offset: 0x00009BFB
 	public void EquipPhone()
 	{
 		this.SetEquippedState(PlayerItemManager.EquippedState.Phone, false);
 	}
 
-	// Token: 0x06000C74 RID: 3188 RVA: 0x00044AF0 File Offset: 0x00042CF0
 	public void OnPrimary(bool isDown, bool isHeld)
 	{
 		if (this.primaryBehaviour == null || !this.movement.CanUsePrimary)
@@ -402,7 +395,6 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C75 RID: 3189 RVA: 0x00044B70 File Offset: 0x00042D70
 	public void OnSecondary(bool isDown, bool isHeld)
 	{
 		if (this.secondaryBehaviour == null || !this.movement.CanUseSecondary)
@@ -431,7 +423,6 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C76 RID: 3190 RVA: 0x00044BF0 File Offset: 0x00042DF0
 	public void OnUseItem(bool isDown, bool isHeld)
 	{
 		if (this.itemBehaviour == null || !this.movement.CanUseItem)
@@ -460,7 +451,6 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C77 RID: 3191 RVA: 0x00044C70 File Offset: 0x00042E70
 	public void OnUseItem_R(bool isDown, bool isHeld)
 	{
 		if (this.itemBehaviour_r == null || !this.movement.CanUseItem)
@@ -648,6 +638,8 @@ public class PlayerItemManager : MonoBehaviour
 	public PlayerItemManager.EquippedState equippedState;
 
 	private int framesUntilRefresh;
+
+	public bool isWeaponAttacking;
 
 	public enum EquippedState
 	{
