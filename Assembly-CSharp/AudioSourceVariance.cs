@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class AudioSourceVariance : MonoBehaviour
 {
-	// Token: 0x06000255 RID: 597 RVA: 0x00003F29 File Offset: 0x00002129
+	// Token: 0x06000210 RID: 528 RVA: 0x0000B612 File Offset: 0x00009812
 	private void Awake()
 	{
 		this.audioSource = base.GetComponent<AudioSource>();
 	}
 
-	// Token: 0x06000256 RID: 598 RVA: 0x00003F37 File Offset: 0x00002137
+	// Token: 0x06000211 RID: 529 RVA: 0x0000B620 File Offset: 0x00009820
 	private void OnEnable()
 	{
 		if (this.playOnAwake)
@@ -23,17 +23,17 @@ public class AudioSourceVariance : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000257 RID: 599 RVA: 0x00003F70 File Offset: 0x00002170
+	// Token: 0x06000212 RID: 530 RVA: 0x0000B659 File Offset: 0x00009859
 	[ContextMenu("Play")]
 	public void Play()
 	{
 		this.PlayModified(1f, 1f);
 	}
 
-	// Token: 0x06000258 RID: 600 RVA: 0x0001FAF8 File Offset: 0x0001DCF8
+	// Token: 0x06000213 RID: 531 RVA: 0x0000B66C File Offset: 0x0000986C
 	public void PlayModified(float volumeMod, float pitchMod)
 	{
-		int num = Mathf.FloorToInt(global::UnityEngine.Random.value * (float)this.audioClips.Length);
+		int num = Mathf.FloorToInt(Random.value * (float)this.audioClips.Length);
 		if (AudioSourceVariance.lastPlayedIndex == num && this.audioClips.Length > 1)
 		{
 			num++;
@@ -44,8 +44,8 @@ public class AudioSourceVariance : MonoBehaviour
 		}
 		AudioSourceVariance.lastPlayedIndex = num;
 		AudioClip audioClip = this.audioClips[num];
-		float num2 = global::UnityEngine.Random.Range(this.minVolume, this.maxVolume) * volumeMod;
-		float num3 = global::UnityEngine.Random.Range(this.minPitch, this.maxPitch) * pitchMod;
+		float num2 = Random.Range(this.minVolume, this.maxVolume) * volumeMod;
+		float num3 = Random.Range(this.minPitch, this.maxPitch) * pitchMod;
 		if (this.audioSource != null)
 		{
 			this.audioSource.clip = audioClip;
@@ -53,7 +53,7 @@ public class AudioSourceVariance : MonoBehaviour
 			this.audioSource.pitch = num3;
 			if (this.randomizeStart)
 			{
-				this.audioSource.time = global::UnityEngine.Random.value * audioClip.length;
+				this.audioSource.time = Random.value * audioClip.length;
 			}
 			this.audioSource.priority = this.priority;
 			this.audioSource.Play();

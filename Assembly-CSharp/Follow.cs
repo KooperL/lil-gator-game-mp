@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
-	// Token: 0x06000727 RID: 1831 RVA: 0x000073D1 File Offset: 0x000055D1
+	// Token: 0x060005C3 RID: 1475 RVA: 0x0001E3D0 File Offset: 0x0001C5D0
 	private void Start()
 	{
 		this.lockedPosition = base.transform.position;
 	}
 
-	// Token: 0x06000728 RID: 1832 RVA: 0x00033CEC File Offset: 0x00031EEC
+	// Token: 0x060005C4 RID: 1476 RVA: 0x0001E3E4 File Offset: 0x0001C5E4
 	private void LateUpdate()
 	{
 		Vector3 vector = base.transform.position;

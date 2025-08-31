@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class Tightrope : MonoBehaviour
 {
-	// Token: 0x06000314 RID: 788 RVA: 0x0002467C File Offset: 0x0002287C
+	// Token: 0x060002BD RID: 701 RVA: 0x000101E4 File Offset: 0x0000E3E4
 	[ContextMenu("Snap to ends")]
 	public void SnapToEnds()
 	{
@@ -28,7 +28,7 @@ public class Tightrope : MonoBehaviour
 		base.transform.rotation = quaternion;
 	}
 
-	// Token: 0x06000315 RID: 789 RVA: 0x000247D4 File Offset: 0x000229D4
+	// Token: 0x060002BE RID: 702 RVA: 0x0001033C File Offset: 0x0000E53C
 	private void Awake()
 	{
 		this.balanceBeam.onEnable.AddListener(new UnityAction(this.OnBalanceBeamEnabled));
@@ -41,13 +41,13 @@ public class Tightrope : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x06000316 RID: 790 RVA: 0x000044D7 File Offset: 0x000026D7
+	// Token: 0x060002BF RID: 703 RVA: 0x000103FA File Offset: 0x0000E5FA
 	private void OnBalanceBeamEnabled()
 	{
 		base.enabled = true;
 	}
 
-	// Token: 0x06000317 RID: 791 RVA: 0x00024894 File Offset: 0x00022A94
+	// Token: 0x060002C0 RID: 704 RVA: 0x00010404 File Offset: 0x0000E604
 	private void OnEnable()
 	{
 		this.staticRenderer.enabled = false;
@@ -74,14 +74,14 @@ public class Tightrope : MonoBehaviour
 		this.onEnable.Invoke();
 	}
 
-	// Token: 0x06000318 RID: 792 RVA: 0x00024968 File Offset: 0x00022B68
+	// Token: 0x060002C1 RID: 705 RVA: 0x000104D8 File Offset: 0x0000E6D8
 	private float GetTForPoint(Vector3 point)
 	{
 		Vector3 vector = point - this.linePoint1;
 		return Mathf.Clamp01(Mathf.InverseLerp(0f, this.lineLength, Vector3.Dot(vector, this.lineVectorNormalized)));
 	}
 
-	// Token: 0x06000319 RID: 793 RVA: 0x000249A4 File Offset: 0x00022BA4
+	// Token: 0x060002C2 RID: 706 RVA: 0x00010514 File Offset: 0x0000E714
 	private void LateUpdate()
 	{
 		if (this.balanceBeam.enabled)
@@ -185,7 +185,7 @@ public class Tightrope : MonoBehaviour
 		this.updatedCenterTPoint = false;
 	}
 
-	// Token: 0x0600031A RID: 794 RVA: 0x00024D9C File Offset: 0x00022F9C
+	// Token: 0x060002C3 RID: 707 RVA: 0x0001090C File Offset: 0x0000EB0C
 	private Vector3 AlongLine(Vector3 point)
 	{
 		Vector3 vector = Vector3.Project(point - this.linePoint1, this.lineVectorNormalized) + this.linePoint1;
@@ -193,14 +193,14 @@ public class Tightrope : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x0600031B RID: 795 RVA: 0x0000468C File Offset: 0x0000288C
+	// Token: 0x060002C4 RID: 708 RVA: 0x0001094A File Offset: 0x0000EB4A
 	public Vector3 ClosestPointOnLine(Vector3 point)
 	{
 		this.UpdatePoints();
 		return MathUtils.ClosestAlongLine(point, this.linePoint1, this.linePoint2);
 	}
 
-	// Token: 0x0600031C RID: 796 RVA: 0x00024DDC File Offset: 0x00022FDC
+	// Token: 0x060002C5 RID: 709 RVA: 0x00010964 File Offset: 0x0000EB64
 	public Vector3 GetPointOnTightrope(float t)
 	{
 		Vector3 vector = this.linePoint1;
@@ -235,13 +235,13 @@ public class Tightrope : MonoBehaviour
 		return Vector3.Lerp(vector, vector2, t);
 	}
 
-	// Token: 0x0600031D RID: 797 RVA: 0x000046A6 File Offset: 0x000028A6
+	// Token: 0x060002C6 RID: 710 RVA: 0x00010AB1 File Offset: 0x0000ECB1
 	public Vector3 GetPointOnLine(float t)
 	{
 		return Vector3.Lerp(this.linePoint1, this.linePoint2, t);
 	}
 
-	// Token: 0x0600031E RID: 798 RVA: 0x00024F2C File Offset: 0x0002312C
+	// Token: 0x060002C7 RID: 711 RVA: 0x00010AC8 File Offset: 0x0000ECC8
 	public void UpdatePoints()
 	{
 		this.linePoint1 = this.partial1.transform.position;
@@ -252,7 +252,7 @@ public class Tightrope : MonoBehaviour
 		this.lineLength = this.lineVector.magnitude;
 	}
 
-	// Token: 0x0600031F RID: 799 RVA: 0x00024FD0 File Offset: 0x000231D0
+	// Token: 0x060002C8 RID: 712 RVA: 0x00010B6C File Offset: 0x0000ED6C
 	private void UpdateAnchor()
 	{
 		Vector3 vector = this.centerWeightPoint - this.linePoint1;

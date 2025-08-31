@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class SunOverride : MonoBehaviour
 {
-	// Token: 0x060006A6 RID: 1702 RVA: 0x00006D0A File Offset: 0x00004F0A
+	// Token: 0x0600055A RID: 1370 RVA: 0x0001C6AC File Offset: 0x0001A8AC
 	private void Awake()
 	{
 		this.rotation = base.transform.rotation;
 	}
 
-	// Token: 0x060006A7 RID: 1703 RVA: 0x000322BC File Offset: 0x000304BC
+	// Token: 0x0600055B RID: 1371 RVA: 0x0001C6C0 File Offset: 0x0001A8C0
 	private void OnEnable()
 	{
 		if (Sun.s == null)
 		{
-			Sun.s = global::UnityEngine.Object.FindObjectOfType<Sun>();
+			Sun.s = Object.FindObjectOfType<Sun>();
 		}
 		if (Sun.s == null)
 		{
@@ -38,7 +38,7 @@ public class SunOverride : MonoBehaviour
 		Sun.overrides.Insert(num, this);
 	}
 
-	// Token: 0x060006A8 RID: 1704 RVA: 0x00006D1D File Offset: 0x00004F1D
+	// Token: 0x0600055C RID: 1372 RVA: 0x0001C74C File Offset: 0x0001A94C
 	private void OnDisable()
 	{
 		Sun.overrides.Remove(this);

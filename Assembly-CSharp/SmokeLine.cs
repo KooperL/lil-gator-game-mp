@@ -4,21 +4,21 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class SmokeLine : MonoBehaviour
 {
-	// Token: 0x06000698 RID: 1688 RVA: 0x00006C1C File Offset: 0x00004E1C
+	// Token: 0x0600054C RID: 1356 RVA: 0x0001C344 File Offset: 0x0001A544
 	private void Awake()
 	{
 		this.lineRenderer = base.GetComponent<LineRenderer>();
-		this.seed = global::UnityEngine.Random.value * 100f;
+		this.seed = Random.value * 100f;
 	}
 
-	// Token: 0x06000699 RID: 1689 RVA: 0x00006C3B File Offset: 0x00004E3B
+	// Token: 0x0600054D RID: 1357 RVA: 0x0001C363 File Offset: 0x0001A563
 	private void Start()
 	{
 		this.positions = new Vector3[this.lineRenderer.positionCount];
 		this.lineRenderer.GetPositions(this.positions);
 	}
 
-	// Token: 0x0600069A RID: 1690 RVA: 0x0003204C File Offset: 0x0003024C
+	// Token: 0x0600054E RID: 1358 RVA: 0x0001C390 File Offset: 0x0001A590
 	private void Update()
 	{
 		this.t += Time.deltaTime * this.speed;

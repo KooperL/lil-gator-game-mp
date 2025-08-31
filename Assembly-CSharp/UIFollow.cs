@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UIFollow : MonoBehaviour
 {
-	// Token: 0x06001217 RID: 4631 RVA: 0x0005A618 File Offset: 0x00058818
+	// Token: 0x06000EDE RID: 3806 RVA: 0x00046FC0 File Offset: 0x000451C0
 	private void OnValidate()
 	{
 		if (this.canvas == null)
@@ -16,13 +16,13 @@ public class UIFollow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001218 RID: 4632 RVA: 0x0000F600 File Offset: 0x0000D800
+	// Token: 0x06000EDF RID: 3807 RVA: 0x00047014 File Offset: 0x00045214
 	private void Awake()
 	{
 		this.rectTransform = base.transform as RectTransform;
 	}
 
-	// Token: 0x06001219 RID: 4633 RVA: 0x0005A66C File Offset: 0x0005886C
+	// Token: 0x06000EE0 RID: 3808 RVA: 0x00047028 File Offset: 0x00045228
 	private void Start()
 	{
 		if (this.canvas == null)
@@ -37,19 +37,19 @@ public class UIFollow : MonoBehaviour
 		this.mainCamera = Camera.main;
 	}
 
-	// Token: 0x0600121A RID: 4634 RVA: 0x0000F613 File Offset: 0x0000D813
+	// Token: 0x06000EE1 RID: 3809 RVA: 0x000470A1 File Offset: 0x000452A1
 	private void OnDisable()
 	{
 		this.smoothPosition = this.initialPosition;
 	}
 
-	// Token: 0x0600121B RID: 4635 RVA: 0x0000F621 File Offset: 0x0000D821
+	// Token: 0x06000EE2 RID: 3810 RVA: 0x000470AF File Offset: 0x000452AF
 	public void SetTarget(DialogueActor actor)
 	{
 		this.followTarget = actor.DialogueAnchor;
 	}
 
-	// Token: 0x0600121C RID: 4636 RVA: 0x0005A6E8 File Offset: 0x000588E8
+	// Token: 0x06000EE3 RID: 3811 RVA: 0x000470C0 File Offset: 0x000452C0
 	private Vector3 GetViewportPoint(Vector3 worldPosition)
 	{
 		Vector3 vector = Vector3.RotateTowards(this.mainCamera.transform.forward, worldPosition - this.mainCamera.transform.position, 1.3962634f, float.PositiveInfinity);
@@ -57,7 +57,7 @@ public class UIFollow : MonoBehaviour
 		return this.mainCamera.WorldToViewportPoint(vector2) + this.screenOffset;
 	}
 
-	// Token: 0x0600121D RID: 4637 RVA: 0x0005A75C File Offset: 0x0005895C
+	// Token: 0x06000EE4 RID: 3812 RVA: 0x00047134 File Offset: 0x00045334
 	private void ClampToBoundsGood(ref Vector3 position)
 	{
 		this.rectTransform.anchoredPosition = position;
@@ -134,7 +134,7 @@ public class UIFollow : MonoBehaviour
 		this.clamped = flag;
 	}
 
-	// Token: 0x0600121E RID: 4638 RVA: 0x0005AADC File Offset: 0x00058CDC
+	// Token: 0x06000EE5 RID: 3813 RVA: 0x000474B4 File Offset: 0x000456B4
 	private void ClampToBoundsBad(ref Vector3 position)
 	{
 		this.rectTransform.anchoredPosition = position;
@@ -191,7 +191,7 @@ public class UIFollow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600121F RID: 4639 RVA: 0x0005AD2C File Offset: 0x00058F2C
+	// Token: 0x06000EE6 RID: 3814 RVA: 0x00047704 File Offset: 0x00045904
 	private void LateUpdate()
 	{
 		Vector3 vector = this.rectTransform.anchoredPosition;

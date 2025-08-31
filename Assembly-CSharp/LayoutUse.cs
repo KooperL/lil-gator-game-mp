@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [AddComponentMenu("Layout - Use Other Transforms")]
 public class LayoutUse : UIBehaviour, ILayoutSelfController, ILayoutController
 {
-	// Token: 0x0600119E RID: 4510 RVA: 0x0000F05D File Offset: 0x0000D25D
+	// Token: 0x06000E6D RID: 3693 RVA: 0x00045087 File Offset: 0x00043287
 	public void SetLayoutHorizontal()
 	{
 		if (this.useHorizontal == null)
@@ -16,7 +16,7 @@ public class LayoutUse : UIBehaviour, ILayoutSelfController, ILayoutController
 		this.UpdateRectTransform();
 	}
 
-	// Token: 0x0600119F RID: 4511 RVA: 0x0000F074 File Offset: 0x0000D274
+	// Token: 0x06000E6E RID: 3694 RVA: 0x0004509E File Offset: 0x0004329E
 	public void SetLayoutVertical()
 	{
 		if (this.useVertical == null)
@@ -26,13 +26,13 @@ public class LayoutUse : UIBehaviour, ILayoutSelfController, ILayoutController
 		this.UpdateRectTransform();
 	}
 
-	// Token: 0x060011A0 RID: 4512 RVA: 0x0000F08B File Offset: 0x0000D28B
+	// Token: 0x06000E6F RID: 3695 RVA: 0x000450B5 File Offset: 0x000432B5
 	protected override void OnRectTransformDimensionsChange()
 	{
 		this.UpdateRectTransform();
 	}
 
-	// Token: 0x060011A1 RID: 4513 RVA: 0x00058C10 File Offset: 0x00056E10
+	// Token: 0x06000E70 RID: 3696 RVA: 0x000450C0 File Offset: 0x000432C0
 	private void UpdateRectTransform()
 	{
 		if (this.rectTransform == null)

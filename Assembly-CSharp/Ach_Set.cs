@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Ach_Set : MonoBehaviour
 {
-	// Token: 0x060001F6 RID: 502 RVA: 0x000039DC File Offset: 0x00001BDC
+	// Token: 0x060001B3 RID: 435 RVA: 0x00009A82 File Offset: 0x00007C82
 	private void OnEnable()
 	{
 		if (this.setOnEnable)
@@ -12,7 +12,7 @@ public class Ach_Set : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001F7 RID: 503 RVA: 0x000039EC File Offset: 0x00001BEC
+	// Token: 0x060001B4 RID: 436 RVA: 0x00009A92 File Offset: 0x00007C92
 	public void UnlockAchievement()
 	{
 		this.achievement.UnlockAchievement();

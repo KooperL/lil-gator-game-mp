@@ -3,25 +3,25 @@ using UnityEngine;
 
 public class Breakable : PersistentObject, IHit
 {
-	// Token: 0x060007B8 RID: 1976 RVA: 0x00007ABF File Offset: 0x00005CBF
+	// Token: 0x06000652 RID: 1618 RVA: 0x00020929 File Offset: 0x0001EB29
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
-		global::UnityEngine.Object.Instantiate<GameObject>(this.broken, base.transform.position, Quaternion.identity);
+		Object.Instantiate<GameObject>(this.broken, base.transform.position, Quaternion.identity);
 		if (this.cents > 0)
 		{
 			this.SpawnMoney();
 		}
 		this.SaveTrue();
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060007B9 RID: 1977 RVA: 0x00007AFD File Offset: 0x00005CFD
+	// Token: 0x06000653 RID: 1619 RVA: 0x00020967 File Offset: 0x0001EB67
 	public void SpawnMoney()
 	{
 		int num = this.cents;
 		if (this.minCents != 0)
 		{
-			global::UnityEngine.Random.Range(this.minCents, this.cents);
+			Random.Range(this.minCents, this.cents);
 		}
 	}
 

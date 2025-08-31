@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemBomb : ItemThrowable, IOnTimeout
 {
-	// Token: 0x06000ADD RID: 2781 RVA: 0x0000A5B9 File Offset: 0x000087B9
+	// Token: 0x0600090B RID: 2315 RVA: 0x0002B534 File Offset: 0x00029734
 	public override void Input(bool isDown, bool isHeld)
 	{
 		if (Game.HasControl && this.thrownBomb != null)
@@ -17,10 +17,10 @@ public class ItemBomb : ItemThrowable, IOnTimeout
 		base.Input(isDown, isHeld);
 	}
 
-	// Token: 0x06000ADE RID: 2782 RVA: 0x0003F6FC File Offset: 0x0003D8FC
+	// Token: 0x0600090C RID: 2316 RVA: 0x0002B560 File Offset: 0x00029760
 	public override void Throw(float charge, Vector3 direction)
 	{
-		this.thrownBomb = global::UnityEngine.Object.Instantiate<GameObject>(this.thrownPrefab, Player.itemManager.thrownSpawnPoint.position, base.transform.rotation);
+		this.thrownBomb = Object.Instantiate<GameObject>(this.thrownPrefab, Player.itemManager.thrownSpawnPoint.position, base.transform.rotation);
 		Rigidbody component = this.thrownBomb.GetComponent<Rigidbody>();
 		Vector3 vector = Mathf.Lerp(this.minThrowSpeed, this.maxThrowSpeed, charge) * direction;
 		component.velocity = vector;
@@ -28,43 +28,43 @@ public class ItemBomb : ItemThrowable, IOnTimeout
 		base.Throw(charge, direction);
 	}
 
-	// Token: 0x06000ADF RID: 2783 RVA: 0x0000A5E3 File Offset: 0x000087E3
+	// Token: 0x0600090D RID: 2317 RVA: 0x0002B5DB File Offset: 0x000297DB
 	public override void Cancel()
 	{
 		this.PopBomb(true);
 		base.Cancel();
 	}
 
-	// Token: 0x06000AE0 RID: 2784 RVA: 0x0000A5F2 File Offset: 0x000087F2
+	// Token: 0x0600090E RID: 2318 RVA: 0x0002B5EA File Offset: 0x000297EA
 	public override void OnRemove()
 	{
 		this.PopBomb(true);
 		base.OnRemove();
 	}
 
-	// Token: 0x06000AE1 RID: 2785 RVA: 0x0003F778 File Offset: 0x0003D978
+	// Token: 0x0600090F RID: 2319 RVA: 0x0002B5FC File Offset: 0x000297FC
 	private void PopBomb(bool destroyBomb = true)
 	{
 		if (this.thrownBomb == null)
 		{
 			return;
 		}
-		global::UnityEngine.Object.Instantiate<GameObject>(this.popPrefab, this.thrownBomb.transform.position, Quaternion.identity);
+		Object.Instantiate<GameObject>(this.popPrefab, this.thrownBomb.transform.position, Quaternion.identity);
 		if (destroyBomb)
 		{
-			global::UnityEngine.Object.Destroy(this.thrownBomb);
+			Object.Destroy(this.thrownBomb);
 		}
 		this.itemManager.SetItemInUse(this, false);
 		this.explodeTime = Time.time;
 	}
 
-	// Token: 0x06000AE2 RID: 2786 RVA: 0x0000A601 File Offset: 0x00008801
+	// Token: 0x06000910 RID: 2320 RVA: 0x0002B65F File Offset: 0x0002985F
 	protected override bool CanStartThrow(bool isDown, bool isHeld)
 	{
 		return isDown || Time.time - this.explodeTime >= this.heldDelayAfterExplode;
 	}
 
-	// Token: 0x06000AE3 RID: 2787 RVA: 0x0003F7DC File Offset: 0x0003D9DC
+	// Token: 0x06000911 RID: 2321 RVA: 0x0002B680 File Offset: 0x00029880
 	public override void SetCharging(bool isCharging)
 	{
 		this.heldBomb.enabled = isCharging;
@@ -76,7 +76,7 @@ public class ItemBomb : ItemThrowable, IOnTimeout
 		base.SetCharging(isCharging);
 	}
 
-	// Token: 0x06000AE4 RID: 2788 RVA: 0x0003F824 File Offset: 0x0003DA24
+	// Token: 0x06000912 RID: 2322 RVA: 0x0002B6C8 File Offset: 0x000298C8
 	public override void SetEquipped(bool isEquipped)
 	{
 		Transform leftHandAnchor = Player.itemManager.leftHandAnchor;
@@ -90,7 +90,7 @@ public class ItemBomb : ItemThrowable, IOnTimeout
 		}
 	}
 
-	// Token: 0x06000AE5 RID: 2789 RVA: 0x0000A61F File Offset: 0x0000881F
+	// Token: 0x06000913 RID: 2323 RVA: 0x0002B709 File Offset: 0x00029909
 	public void OnTimeout()
 	{
 		this.PopBomb(false);

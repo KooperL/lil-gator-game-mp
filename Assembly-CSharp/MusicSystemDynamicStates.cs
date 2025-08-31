@@ -5,7 +5,7 @@ using UnityEngine;
 [AddComponentMenu("Music/MusicSystem Dynamic States")]
 public class MusicSystemDynamicStates : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x0600009D RID: 157 RVA: 0x00019D24 File Offset: 0x00017F24
+	// Token: 0x06000091 RID: 145 RVA: 0x00004C48 File Offset: 0x00002E48
 	private void OnValidate()
 	{
 		if (this.musicSystem == null)
@@ -28,7 +28,7 @@ public class MusicSystemDynamicStates : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x0600009E RID: 158 RVA: 0x00019DFC File Offset: 0x00017FFC
+	// Token: 0x06000092 RID: 146 RVA: 0x00004D20 File Offset: 0x00002F20
 	private void Awake()
 	{
 		MusicSystemDynamicStates.DynamicState[] array = this.dynamicStates;
@@ -38,7 +38,7 @@ public class MusicSystemDynamicStates : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x0600009F RID: 159 RVA: 0x00019E2C File Offset: 0x0001802C
+	// Token: 0x06000093 RID: 147 RVA: 0x00004D50 File Offset: 0x00002F50
 	private void OnEnable()
 	{
 		this.isPlayerActiveSmooth = 1f;
@@ -51,13 +51,13 @@ public class MusicSystemDynamicStates : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEveryNonFixed.Add(this);
 	}
 
-	// Token: 0x060000A0 RID: 160 RVA: 0x000028C1 File Offset: 0x00000AC1
+	// Token: 0x06000094 RID: 148 RVA: 0x00004DB2 File Offset: 0x00002FB2
 	private void OnDisable()
 	{
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x060000A1 RID: 161 RVA: 0x00019E90 File Offset: 0x00018090
+	// Token: 0x06000095 RID: 149 RVA: 0x00004DC0 File Offset: 0x00002FC0
 	public void ManagedUpdate()
 	{
 		MusicSystemDynamicStates.VariantStates variantStates = this.currentVariant;
@@ -78,7 +78,7 @@ public class MusicSystemDynamicStates : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060000A2 RID: 162 RVA: 0x00019F0C File Offset: 0x0001810C
+	// Token: 0x06000096 RID: 150 RVA: 0x00004E3C File Offset: 0x0000303C
 	private void UpdateDynamicState(int newState, MusicSystemDynamicStates.VariantStates newVariant)
 	{
 		this.currentState = newState;
@@ -104,7 +104,7 @@ public class MusicSystemDynamicStates : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060000A3 RID: 163 RVA: 0x00019FB8 File Offset: 0x000181B8
+	// Token: 0x06000097 RID: 151 RVA: 0x00004EE8 File Offset: 0x000030E8
 	public int GetStateIndex(string stateName)
 	{
 		for (int i = 0; i < this.dynamicStates.Length; i++)
@@ -117,7 +117,7 @@ public class MusicSystemDynamicStates : MonoBehaviour, IManagedUpdate
 		return -1;
 	}
 
-	// Token: 0x060000A4 RID: 164 RVA: 0x000028CF File Offset: 0x00000ACF
+	// Token: 0x06000098 RID: 152 RVA: 0x00004F20 File Offset: 0x00003120
 	public void MarkStateEligible(int index)
 	{
 		this.dynamicStates[index].lastEligibleTime = Time.time;
@@ -149,7 +149,7 @@ public class MusicSystemDynamicStates : MonoBehaviour, IManagedUpdate
 	[Serializable]
 	public class DynamicState
 	{
-		// (get) Token: 0x060000A6 RID: 166 RVA: 0x000028FD File Offset: 0x00000AFD
+		// (get) Token: 0x06001803 RID: 6147 RVA: 0x00066A34 File Offset: 0x00064C34
 		public bool IsEligible
 		{
 			get
@@ -158,13 +158,13 @@ public class MusicSystemDynamicStates : MonoBehaviour, IManagedUpdate
 			}
 		}
 
-		// Token: 0x060000A7 RID: 167 RVA: 0x0000291C File Offset: 0x00000B1C
+		// Token: 0x06001804 RID: 6148 RVA: 0x00066A53 File Offset: 0x00064C53
 		public int[] GetNeededLayers()
 		{
 			return this.neededLayers;
 		}
 
-		// Token: 0x060000A8 RID: 168 RVA: 0x00019FF0 File Offset: 0x000181F0
+		// Token: 0x06001805 RID: 6149 RVA: 0x00066A5C File Offset: 0x00064C5C
 		public void Initialize(MusicSystem musicSystem)
 		{
 			List<int> list = new List<int>();
@@ -210,7 +210,7 @@ public class MusicSystemDynamicStates : MonoBehaviour, IManagedUpdate
 		[Serializable]
 		public class LayerSetting
 		{
-			// Token: 0x060000AA RID: 170 RVA: 0x0001A0BC File Offset: 0x000182BC
+			// Token: 0x06001E27 RID: 7719 RVA: 0x00079430 File Offset: 0x00077630
 			public void FindLayerIndex(MusicSystem musicSystem)
 			{
 				for (int i = 0; i < musicSystem.layers.Length; i++)

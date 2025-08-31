@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FadeRenderer : MonoBehaviour
 {
-	// Token: 0x060006F2 RID: 1778 RVA: 0x0000707E File Offset: 0x0000527E
+	// Token: 0x06000594 RID: 1428 RVA: 0x0001D509 File Offset: 0x0001B709
 	private void OnEnable()
 	{
 		if (FadeRenderer.propertyBlock == null)
@@ -12,13 +12,13 @@ public class FadeRenderer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006F3 RID: 1779 RVA: 0x00007091 File Offset: 0x00005291
+	// Token: 0x06000595 RID: 1429 RVA: 0x0001D51C File Offset: 0x0001B71C
 	private void Start()
 	{
 		this.SetFade(this.fade);
 	}
 
-	// Token: 0x060006F4 RID: 1780 RVA: 0x0000709F File Offset: 0x0000529F
+	// Token: 0x06000596 RID: 1430 RVA: 0x0001D52A File Offset: 0x0001B72A
 	public virtual void OnValidate()
 	{
 		if (this.mainRenderer == null)
@@ -31,7 +31,7 @@ public class FadeRenderer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006F5 RID: 1781 RVA: 0x000070D8 File Offset: 0x000052D8
+	// Token: 0x06000597 RID: 1431 RVA: 0x0001D563 File Offset: 0x0001B763
 	public void UpdateFade()
 	{
 		if (this.materialToFade == null)
@@ -41,7 +41,7 @@ public class FadeRenderer : MonoBehaviour
 		this.SetFade(this.fade);
 	}
 
-	// Token: 0x060006F6 RID: 1782 RVA: 0x000330F0 File Offset: 0x000312F0
+	// Token: 0x06000598 RID: 1432 RVA: 0x0001D580 File Offset: 0x0001B780
 	public virtual void SetFade(float fade)
 	{
 		this.fade = fade;

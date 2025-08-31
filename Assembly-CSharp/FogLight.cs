@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class FogLight : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06000642 RID: 1602 RVA: 0x00006772 File Offset: 0x00004972
+	// Token: 0x060004F6 RID: 1270 RVA: 0x0001AA05 File Offset: 0x00018C05
 	private void Awake()
 	{
-		this.seed = global::UnityEngine.Random.value;
+		this.seed = Random.value;
 	}
 
-	// Token: 0x06000643 RID: 1603 RVA: 0x0000677F File Offset: 0x0000497F
+	// Token: 0x060004F7 RID: 1271 RVA: 0x0001AA12 File Offset: 0x00018C12
 	private void OnEnable()
 	{
 		FastUpdateManager.updateEvery1.Add(this);
@@ -17,7 +17,7 @@ public class FogLight : MonoBehaviour, IManagedUpdate
 		PostProcessFog.fogLights.Add(this);
 	}
 
-	// Token: 0x06000644 RID: 1604 RVA: 0x000067A2 File Offset: 0x000049A2
+	// Token: 0x060004F8 RID: 1272 RVA: 0x0001AA35 File Offset: 0x00018C35
 	private void OnDisable()
 	{
 		if (FastUpdateManager.updateEvery1.Contains(this))
@@ -27,14 +27,14 @@ public class FogLight : MonoBehaviour, IManagedUpdate
 		PostProcessFog.fogLights.Remove(this);
 	}
 
-	// Token: 0x06000645 RID: 1605 RVA: 0x000067C9 File Offset: 0x000049C9
+	// Token: 0x060004F9 RID: 1273 RVA: 0x0001AA5C File Offset: 0x00018C5C
 	public void OnDrawGizmos()
 	{
 		Gizmos.color = new Color(1f, 1f, 1f, 0.25f);
 		Gizmos.DrawSphere(base.transform.position, this.radius);
 	}
 
-	// Token: 0x06000646 RID: 1606 RVA: 0x00030C14 File Offset: 0x0002EE14
+	// Token: 0x060004FA RID: 1274 RVA: 0x0001AA94 File Offset: 0x00018C94
 	public void ManagedUpdate()
 	{
 		this.percentStrengthSmooth = Mathf.SmoothDamp(this.percentStrengthSmooth, this.percentStrength, ref this.percentStrengthVel, 1f);
@@ -47,7 +47,7 @@ public class FogLight : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000647 RID: 1607 RVA: 0x00030C80 File Offset: 0x0002EE80
+	// Token: 0x060004FB RID: 1275 RVA: 0x0001AB00 File Offset: 0x00018D00
 	public void SetStrength(float strength, bool max = true)
 	{
 		if (strength <= this.percentStrength && max)
@@ -66,7 +66,7 @@ public class FogLight : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000648 RID: 1608 RVA: 0x00030CE4 File Offset: 0x0002EEE4
+	// Token: 0x060004FC RID: 1276 RVA: 0x0001AB64 File Offset: 0x00018D64
 	public bool GetLightData(Plane[] cameraFrustum, out Vector3 lightPosition, out float lightRadius, out float lightFalloff, out float lightIntensity)
 	{
 		float num = ((55f - (base.transform.position - MainCamera.t.position).magnitude > -this.radius) ? 1f : 0f);

@@ -4,12 +4,12 @@ using UnityEngine.AddressableAssets;
 
 public class Game : MonoBehaviour
 {
-	// (add) Token: 0x0600073F RID: 1855
-	// (remove) Token: 0x06000740 RID: 1856
+	// (add) Token: 0x060005DB RID: 1499
+	// (remove) Token: 0x060005DC RID: 1500
 	public static event Action onEnterDialogue;
 
-	// (get) Token: 0x06000741 RID: 1857
-	// (set) Token: 0x06000742 RID: 1858
+	// (get) Token: 0x060005DD RID: 1501
+	// (set) Token: 0x060005DE RID: 1502
 	public static GameState State
 	{
 		get
@@ -39,7 +39,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000743 RID: 1859
+	// (get) Token: 0x060005DF RID: 1503
 	public static bool AllowedToSave
 	{
 		get
@@ -48,8 +48,8 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000744 RID: 1860
-	// (set) Token: 0x06000745 RID: 1861
+	// (get) Token: 0x060005E0 RID: 1504
+	// (set) Token: 0x060005E1 RID: 1505
 	public static WorldState WorldState
 	{
 		get
@@ -62,7 +62,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000746 RID: 1862
+	// (get) Token: 0x060005E2 RID: 1506
 	public static int NewGameIndex
 	{
 		get
@@ -71,7 +71,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000747 RID: 1863
+	// (get) Token: 0x060005E3 RID: 1507
 	public static bool IsNewGamePlus
 	{
 		get
@@ -80,7 +80,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000748 RID: 1864
+	// (get) Token: 0x060005E4 RID: 1508
 	public static bool IsInDialogue
 	{
 		get
@@ -89,7 +89,7 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000749 RID: 1865
+	// (get) Token: 0x060005E5 RID: 1509
 	public static bool HasControl
 	{
 		get
@@ -98,8 +98,8 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x0600074A RID: 1866
-	// (set) Token: 0x0600074B RID: 1867
+	// (get) Token: 0x060005E6 RID: 1510
+	// (set) Token: 0x060005E7 RID: 1511
 	public static int DialogueDepth
 	{
 		get
@@ -124,6 +124,8 @@ public class Game : MonoBehaviour
 	{
 		Game.g = this;
 		this.dialogueDepth = 0;
+		Game.g = this;
+		this.dialogueDepth = 0;
 		MultiplayerConfigLoader multiplayerConfigLoader = MultiplayerConfigLoader.Load("lggmp_config.ini");
 		Debug.Log("[LGG-MP] Session Key: " + multiplayerConfigLoader.SessionKey);
 		Debug.Log("[LGG-MP] Display Name: " + multiplayerConfigLoader.DisplayName);
@@ -146,9 +148,9 @@ public class Game : MonoBehaviour
 	private void Start()
 	{
 		GameObject gameObject = new GameObject("MultiplayerPlayerManager");
-		base.gameObject.AddComponent<MultiplayerPlayerFrameStreamer>();
 		MultiplayerNetworkBootstrap.manager = gameObject.AddComponent<MultiplayerPlayerManager>();
-		global::UnityEngine.Object.DontDestroyOnLoad(gameObject);
+		Object.DontDestroyOnLoad(gameObject);
+		base.gameObject.AddComponent<MultiplayerPlayerFrameStreamer>();
 	}
 
 	public void SetToStory()
@@ -195,11 +197,11 @@ public class Game : MonoBehaviour
 		}
 	}
 
-	public void Update()
+	private void Update()
 	{
 		if (MultiplayerConfigLoader.Instance.logTemp.Contains("F"))
 		{
-			foreach (GameObject gameObject in global::UnityEngine.Object.FindObjectsOfType<GameObject>())
+			foreach (GameObject gameObject in Object.FindObjectsOfType<GameObject>())
 			{
 				if (gameObject.name.Contains("Hero") || gameObject.name.Contains("Sis"))
 				{
@@ -225,7 +227,7 @@ public class Game : MonoBehaviour
 		}
 		if (MultiplayerConfigLoader.Instance.logTemp.Contains("I"))
 		{
-			foreach (GameObject gameObject2 in global::UnityEngine.Object.FindObjectsOfType<GameObject>())
+			foreach (GameObject gameObject2 in Object.FindObjectsOfType<GameObject>())
 			{
 				Debug.Log("=== PLAYER CONTAINER: " + gameObject2.name + " ===");
 				Debug.Log(string.Format("Position: {0}", gameObject2.transform.position));

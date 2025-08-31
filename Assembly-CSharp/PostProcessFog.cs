@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 
 public class PostProcessFog : MonoBehaviour
 {
-	// Token: 0x06000652 RID: 1618 RVA: 0x00030F90 File Offset: 0x0002F190
+	// Token: 0x06000506 RID: 1286 RVA: 0x0001AE94 File Offset: 0x00019094
 	private void OnEnable()
 	{
 		if (!this.isInitialized)
@@ -23,7 +23,7 @@ public class PostProcessFog : MonoBehaviour
 		this.camera.AddCommandBuffer(CameraEvent.BeforeSkybox, this.commandBuffer);
 	}
 
-	// Token: 0x06000653 RID: 1619 RVA: 0x00006885 File Offset: 0x00004A85
+	// Token: 0x06000507 RID: 1287 RVA: 0x0001AF31 File Offset: 0x00019131
 	private void OnDisable()
 	{
 		if (this.camera != null)
@@ -33,7 +33,7 @@ public class PostProcessFog : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000654 RID: 1620 RVA: 0x000068BB File Offset: 0x00004ABB
+	// Token: 0x06000508 RID: 1288 RVA: 0x0001AF67 File Offset: 0x00019167
 	private void LateUpdate()
 	{
 		if (MainCamera.c != null)
@@ -43,7 +43,7 @@ public class PostProcessFog : MonoBehaviour
 		this.UpdateCommandBuffer();
 	}
 
-	// Token: 0x06000655 RID: 1621 RVA: 0x00031030 File Offset: 0x0002F230
+	// Token: 0x06000509 RID: 1289 RVA: 0x0001AF98 File Offset: 0x00019198
 	private void UpdateCommandBuffer()
 	{
 		this.commandBuffer.Clear();

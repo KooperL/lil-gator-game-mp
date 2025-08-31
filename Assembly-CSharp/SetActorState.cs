@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SetActorState : MonoBehaviour
 {
-	// Token: 0x060004E1 RID: 1249 RVA: 0x0002CB44 File Offset: 0x0002AD44
+	// Token: 0x06000407 RID: 1031 RVA: 0x00017850 File Offset: 0x00015A50
 	private void OnValidate()
 	{
 		if (this.actor == null)
@@ -16,7 +16,7 @@ public class SetActorState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004E2 RID: 1250 RVA: 0x0002CB98 File Offset: 0x0002AD98
+	// Token: 0x06000408 RID: 1032 RVA: 0x000178A4 File Offset: 0x00015AA4
 	[ContextMenu("ApplyState")]
 	private void OnEnable()
 	{
@@ -127,12 +127,12 @@ public class SetActorState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004E3 RID: 1251 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000409 RID: 1033 RVA: 0x00017B6D File Offset: 0x00015D6D
 	public void SetOverrides()
 	{
 	}
 
-	// Token: 0x060004E4 RID: 1252 RVA: 0x00005976 File Offset: 0x00003B76
+	// Token: 0x0600040A RID: 1034 RVA: 0x00017B6F File Offset: 0x00015D6F
 	private void OnDisable()
 	{
 		if (this.resetTransformOnDisable)
@@ -142,7 +142,7 @@ public class SetActorState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004E5 RID: 1253 RVA: 0x0002CE64 File Offset: 0x0002B064
+	// Token: 0x0600040B RID: 1035 RVA: 0x00017B9C File Offset: 0x00015D9C
 	[ContextMenu("Snap To Floor")]
 	public void SnapToFloor()
 	{

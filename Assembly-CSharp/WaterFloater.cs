@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class WaterFloater : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x060010D3 RID: 4307 RVA: 0x00056C18 File Offset: 0x00054E18
+	// Token: 0x06000DBB RID: 3515 RVA: 0x000427AC File Offset: 0x000409AC
 	private void Awake()
 	{
 		this.initialPosition = base.transform.position;
-		this.positionSeed = global::UnityEngine.Random.value * 1000f;
-		this.rotationSeed = global::UnityEngine.Random.value * 1000f;
-		this.rotation = new Vector3(0f, 360f * global::UnityEngine.Random.value, 0f);
+		this.positionSeed = Random.value * 1000f;
+		this.rotationSeed = Random.value * 1000f;
+		this.rotation = new Vector3(0f, 360f * Random.value, 0f);
 		this.height = this.initialPosition.y;
 	}
 
-	// Token: 0x060010D4 RID: 4308 RVA: 0x00056C8C File Offset: 0x00054E8C
+	// Token: 0x06000DBC RID: 3516 RVA: 0x00042820 File Offset: 0x00040A20
 	private void OnEnable()
 	{
 		this.isInRange = Vector3.Distance(MainCamera.t.position, base.transform.position) <= 55f;
@@ -25,7 +25,7 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEveryNonFixed.Add(this);
 	}
 
-	// Token: 0x060010D5 RID: 4309 RVA: 0x0000E5FB File Offset: 0x0000C7FB
+	// Token: 0x06000DBD RID: 3517 RVA: 0x00042876 File Offset: 0x00040A76
 	private void OnDisable()
 	{
 		if (this.isInRange)
@@ -36,7 +36,7 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x060010D6 RID: 4310 RVA: 0x00056CE4 File Offset: 0x00054EE4
+	// Token: 0x06000DBE RID: 3518 RVA: 0x0004289C File Offset: 0x00040A9C
 	public void ManagedUpdate()
 	{
 		if (this.isInRange != Vector3.Distance(MainCamera.t.position, base.transform.position) <= 55f)
@@ -56,7 +56,7 @@ public class WaterFloater : MonoBehaviour, IManagedUpdate
 		this.UpdateFloatingPosition();
 	}
 
-	// Token: 0x060010D7 RID: 4311 RVA: 0x00056D6C File Offset: 0x00054F6C
+	// Token: 0x06000DBF RID: 3519 RVA: 0x00042924 File Offset: 0x00040B24
 	private void UpdateFloatingPosition()
 	{
 		Vector2 vector = this.positionVariance * PerlinUtil.Perlin2(this.positionSeed, Time.time * this.positionPerlinSpeed);

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class InteractMount : MonoBehaviour, Interaction, InteractionHighlight
 {
-	// Token: 0x060007DC RID: 2012 RVA: 0x00007CEE File Offset: 0x00005EEE
+	// Token: 0x06000676 RID: 1654 RVA: 0x00021441 File Offset: 0x0001F641
 	private void OnValidate()
 	{
 		if (this.highlight != null)
@@ -14,7 +14,7 @@ public class InteractMount : MonoBehaviour, Interaction, InteractionHighlight
 		}
 	}
 
-	// Token: 0x060007DD RID: 2013 RVA: 0x00007D1F File Offset: 0x00005F1F
+	// Token: 0x06000677 RID: 1655 RVA: 0x00021472 File Offset: 0x0001F672
 	public Renderer[] GetHighlightedRenderer()
 	{
 		if (this.mount.isFilled)
@@ -24,7 +24,7 @@ public class InteractMount : MonoBehaviour, Interaction, InteractionHighlight
 		return this.highlightedRenderers;
 	}
 
-	// Token: 0x060007DE RID: 2014 RVA: 0x00007D36 File Offset: 0x00005F36
+	// Token: 0x06000678 RID: 1656 RVA: 0x00021489 File Offset: 0x0001F689
 	public void Interact()
 	{
 		if (this.mount.isFilled)

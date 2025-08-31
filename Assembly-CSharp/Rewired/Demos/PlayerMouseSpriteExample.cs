@@ -6,10 +6,10 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public class PlayerMouseSpriteExample : MonoBehaviour
 	{
-		// Token: 0x06001DC0 RID: 7616 RVA: 0x0007510C File Offset: 0x0007330C
+		// Token: 0x06001774 RID: 6004 RVA: 0x00063994 File Offset: 0x00061B94
 		private void Awake()
 		{
-			this.pointer = global::UnityEngine.Object.Instantiate<GameObject>(this.pointerPrefab);
+			this.pointer = Object.Instantiate<GameObject>(this.pointerPrefab);
 			this.pointer.transform.localScale = new Vector3(this.spriteScale, this.spriteScale, this.spriteScale);
 			if (this.hideHardwarePointer)
 			{
@@ -30,7 +30,7 @@ namespace Rewired.Demos
 			this.OnScreenPositionChanged(this.mouse.screenPosition);
 		}
 
-		// Token: 0x06001DC1 RID: 7617 RVA: 0x00075280 File Offset: 0x00073480
+		// Token: 0x06001775 RID: 6005 RVA: 0x00063B08 File Offset: 0x00061D08
 		private void Update()
 		{
 			if (!ReInput.isReady)
@@ -52,7 +52,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DC2 RID: 7618 RVA: 0x00016BD8 File Offset: 0x00014DD8
+		// Token: 0x06001776 RID: 6006 RVA: 0x00063BE0 File Offset: 0x00061DE0
 		private void OnDestroy()
 		{
 			if (!ReInput.isReady)
@@ -62,17 +62,17 @@ namespace Rewired.Demos
 			this.mouse.ScreenPositionChangedEvent -= this.OnScreenPositionChanged;
 		}
 
-		// Token: 0x06001DC3 RID: 7619 RVA: 0x00075358 File Offset: 0x00073558
+		// Token: 0x06001777 RID: 6007 RVA: 0x00063C04 File Offset: 0x00061E04
 		private void CreateClickEffect(Color color)
 		{
-			GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(this.clickEffectPrefab);
+			GameObject gameObject = Object.Instantiate<GameObject>(this.clickEffectPrefab);
 			gameObject.transform.localScale = new Vector3(this.spriteScale, this.spriteScale, this.spriteScale);
 			gameObject.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(this.mouse.screenPosition.x, this.mouse.screenPosition.y, this.distanceFromCamera));
 			gameObject.GetComponentInChildren<SpriteRenderer>().color = color;
-			global::UnityEngine.Object.Destroy(gameObject, 0.5f);
+			Object.Destroy(gameObject, 0.5f);
 		}
 
-		// Token: 0x06001DC4 RID: 7620 RVA: 0x000753E8 File Offset: 0x000735E8
+		// Token: 0x06001778 RID: 6008 RVA: 0x00063C94 File Offset: 0x00061E94
 		private void OnScreenPositionChanged(Vector2 position)
 		{
 			Vector3 vector = Camera.main.ScreenToWorldPoint(new Vector3(position.x, position.y, this.distanceFromCamera));

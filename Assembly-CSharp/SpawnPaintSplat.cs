@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SpawnPaintSplat : MonoBehaviour
 {
-	// Token: 0x0600011C RID: 284 RVA: 0x0001B828 File Offset: 0x00019A28
+	// Token: 0x060000EF RID: 239 RVA: 0x000065BC File Offset: 0x000047BC
 	[ContextMenu("Spawn")]
 	public void Spawn()
 	{
@@ -24,11 +24,11 @@ public class SpawnPaintSplat : MonoBehaviour
 		RaycastHit raycastHit;
 		if (Physics.SphereCast(base.transform.position - 0.5f * vector, 0.25f, vector, out raycastHit, 1.25f, this.raycastLayers))
 		{
-			GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(this.prefab, raycastHit.point + 0.1f * global::UnityEngine.Random.insideUnitSphere, global::UnityEngine.Random.rotation);
+			GameObject gameObject = Object.Instantiate<GameObject>(this.prefab, raycastHit.point + 0.1f * Random.insideUnitSphere, Random.rotation);
 			gameObject.transform.rotation = Quaternion.FromToRotation(gameObject.transform.up, raycastHit.normal) * gameObject.transform.rotation;
 			return;
 		}
-		global::UnityEngine.Object.Instantiate<GameObject>(this.prefab, base.transform.position + 0.1f * global::UnityEngine.Random.insideUnitSphere, base.transform.rotation);
+		Object.Instantiate<GameObject>(this.prefab, base.transform.position + 0.1f * Random.insideUnitSphere, base.transform.rotation);
 	}
 
 	public GameObject prefab;

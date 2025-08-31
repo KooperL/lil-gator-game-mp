@@ -3,30 +3,30 @@ using UnityEngine;
 
 public class RippleSpawner : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x0600067A RID: 1658 RVA: 0x00006AE1 File Offset: 0x00004CE1
+	// Token: 0x0600052E RID: 1326 RVA: 0x0001BCF8 File Offset: 0x00019EF8
 	private void Start()
 	{
-		this.nextTime = Time.time + global::UnityEngine.Random.value / this.speed;
+		this.nextTime = Time.time + Random.value / this.speed;
 	}
 
-	// Token: 0x0600067B RID: 1659 RVA: 0x00002B40 File Offset: 0x00000D40
+	// Token: 0x0600052F RID: 1327 RVA: 0x0001BD12 File Offset: 0x00019F12
 	private void OnEnable()
 	{
 		FastUpdateManager.updateEveryNonFixed.Add(this);
 	}
 
-	// Token: 0x0600067C RID: 1660 RVA: 0x000028C1 File Offset: 0x00000AC1
+	// Token: 0x06000530 RID: 1328 RVA: 0x0001BD1F File Offset: 0x00019F1F
 	private void OnDisable()
 	{
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x0600067D RID: 1661 RVA: 0x00031B70 File Offset: 0x0002FD70
+	// Token: 0x06000531 RID: 1329 RVA: 0x0001BD30 File Offset: 0x00019F30
 	public void ManagedUpdate()
 	{
 		if (this.nextTime <= Time.time)
 		{
-			this.nextTime = Time.time + (0.5f + global::UnityEngine.Random.value) / this.speed;
+			this.nextTime = Time.time + (0.5f + Random.value) / this.speed;
 			EffectsManager.e.Ripple(base.transform.position, 1);
 		}
 	}

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class SyncQuestStates : MonoBehaviour
 {
-	// Token: 0x060001DB RID: 475 RVA: 0x0001DFD8 File Offset: 0x0001C1D8
+	// Token: 0x06000199 RID: 409 RVA: 0x000093C8 File Offset: 0x000075C8
 	private void OnValidate()
 	{
 		if (this.stateMachine == null)
@@ -21,7 +21,7 @@ public class SyncQuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001DC RID: 476 RVA: 0x00003845 File Offset: 0x00001A45
+	// Token: 0x0600019A RID: 410 RVA: 0x00009457 File Offset: 0x00007657
 	public virtual void OnEnable()
 	{
 		this.stateMachine.onStateChange.AddListener(new UnityAction<int>(this.UpdateState));
@@ -31,7 +31,7 @@ public class SyncQuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001DD RID: 477 RVA: 0x00003881 File Offset: 0x00001A81
+	// Token: 0x0600019B RID: 411 RVA: 0x00009493 File Offset: 0x00007693
 	private void OnDisable()
 	{
 		if (this.stateMachine != null)
@@ -40,7 +40,7 @@ public class SyncQuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001DE RID: 478 RVA: 0x0001E068 File Offset: 0x0001C268
+	// Token: 0x0600019C RID: 412 RVA: 0x000094C0 File Offset: 0x000076C0
 	[ContextMenu("Auto Populate")]
 	public void AutoPopulate()
 	{
@@ -77,7 +77,7 @@ public class SyncQuestStates : MonoBehaviour
 		this.statePairs = list.ToArray();
 	}
 
-	// Token: 0x060001DF RID: 479 RVA: 0x0001E148 File Offset: 0x0001C348
+	// Token: 0x0600019D RID: 413 RVA: 0x000095A0 File Offset: 0x000077A0
 	public void UpdateState(int newStateIndex)
 	{
 		bool flag = false;
@@ -119,7 +119,7 @@ public class SyncQuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001E0 RID: 480 RVA: 0x000038AD File Offset: 0x00001AAD
+	// Token: 0x0600019E RID: 414 RVA: 0x00009686 File Offset: 0x00007886
 	public void SetCompleted()
 	{
 		this.questProfile.MarkCompleted();

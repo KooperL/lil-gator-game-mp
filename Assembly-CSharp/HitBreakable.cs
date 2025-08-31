@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HitBreakable : MonoBehaviour, IHit
 {
-	// Token: 0x060007CC RID: 1996 RVA: 0x00007BC6 File Offset: 0x00005DC6
+	// Token: 0x06000666 RID: 1638 RVA: 0x0002111D File Offset: 0x0001F31D
 	private void OnValidate()
 	{
 		if (this.breakableObject == null)
@@ -12,7 +12,7 @@ public class HitBreakable : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x060007CD RID: 1997 RVA: 0x00007BE2 File Offset: 0x00005DE2
+	// Token: 0x06000667 RID: 1639 RVA: 0x00021139 File Offset: 0x0001F339
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		this.breakableObject.Break(false, velocity, isHeavy);

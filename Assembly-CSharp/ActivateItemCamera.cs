@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ActivateItemCamera : MonoBehaviour
 {
-	// Token: 0x06000220 RID: 544 RVA: 0x00003C5C File Offset: 0x00001E5C
+	// Token: 0x060001DC RID: 476 RVA: 0x0000A09D File Offset: 0x0000829D
 	private void OnEnable()
 	{
 		if (this != null && Player.uiItemCamera != null)
@@ -12,7 +12,7 @@ public class ActivateItemCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000221 RID: 545 RVA: 0x00003C7F File Offset: 0x00001E7F
+	// Token: 0x060001DD RID: 477 RVA: 0x0000A0C0 File Offset: 0x000082C0
 	private void OnDisable()
 	{
 		if (this != null && Player.uiItemCamera != null)

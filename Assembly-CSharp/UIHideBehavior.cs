@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UIHideBehavior : MonoBehaviour
 {
-	// Token: 0x06001221 RID: 4641 RVA: 0x0000F62F File Offset: 0x0000D82F
+	// Token: 0x06000EE8 RID: 3816 RVA: 0x00047A2E File Offset: 0x00045C2E
 	public virtual void Show()
 	{
 		this.isHiding = false;
@@ -14,14 +14,14 @@ public class UIHideBehavior : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001222 RID: 4642 RVA: 0x0000F663 File Offset: 0x0000D863
+	// Token: 0x06000EE9 RID: 3817 RVA: 0x00047A62 File Offset: 0x00045C62
 	public virtual void Hide()
 	{
 		this.isHiding = true;
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06001223 RID: 4643 RVA: 0x0000F678 File Offset: 0x0000D878
+	// Token: 0x06000EEA RID: 3818 RVA: 0x00047A77 File Offset: 0x00045C77
 	protected virtual void Update()
 	{
 		if (this.autoHideTime > 0f && Time.time > this.autoHideTime)

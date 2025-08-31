@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FootIKSmooth : MonoBehaviour
 {
-	// (get) Token: 0x06000733 RID: 1843 RVA: 0x0000743E File Offset: 0x0000563E
+	// (get) Token: 0x060005CF RID: 1487 RVA: 0x0001E592 File Offset: 0x0001C792
 	public float smoothDeltaY
 	{
 		get
@@ -12,7 +12,7 @@ public class FootIKSmooth : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000734 RID: 1844 RVA: 0x0000745C File Offset: 0x0000565C
+	// Token: 0x060005D0 RID: 1488 RVA: 0x0001E5B0 File Offset: 0x0001C7B0
 	public void ClearOverrides()
 	{
 		this.overrideIK = false;
@@ -20,26 +20,26 @@ public class FootIKSmooth : MonoBehaviour
 		this.overrideLock = false;
 	}
 
-	// Token: 0x06000735 RID: 1845 RVA: 0x00007473 File Offset: 0x00005673
+	// Token: 0x060005D1 RID: 1489 RVA: 0x0001E5C7 File Offset: 0x0001C7C7
 	private void Awake()
 	{
 		this.animator = base.GetComponent<Animator>();
 	}
 
-	// Token: 0x06000736 RID: 1846 RVA: 0x00007481 File Offset: 0x00005681
+	// Token: 0x060005D2 RID: 1490 RVA: 0x0001E5D5 File Offset: 0x0001C7D5
 	private void Start()
 	{
 		this.minHeightSmooth = base.transform.position.y;
 	}
 
-	// Token: 0x06000737 RID: 1847 RVA: 0x00033E30 File Offset: 0x00032030
+	// Token: 0x060005D3 RID: 1491 RVA: 0x0001E5F0 File Offset: 0x0001C7F0
 	public void ResetHeight()
 	{
 		this.minHeightSmooth = base.transform.position.y;
 		this.heightVelocity = (this.heightGravityVelocity = 0f);
 	}
 
-	// Token: 0x06000738 RID: 1848 RVA: 0x00033E68 File Offset: 0x00032068
+	// Token: 0x060005D4 RID: 1492 RVA: 0x0001E628 File Offset: 0x0001C828
 	private bool FootRaycast(Vector3 footPos, Vector3 rayDirection, float parentHeight, out RaycastHit hit)
 	{
 		bool flag = false;
@@ -67,7 +67,7 @@ public class FootIKSmooth : MonoBehaviour
 		return flag2 || flag;
 	}
 
-	// Token: 0x06000739 RID: 1849 RVA: 0x00033F24 File Offset: 0x00032124
+	// Token: 0x060005D5 RID: 1493 RVA: 0x0001E6E4 File Offset: 0x0001C8E4
 	public Vector3 GetFootCenter()
 	{
 		Vector3 vector = Vector3.Lerp(this.leftPosition, this.rightPosition, 0.5f);
@@ -75,7 +75,7 @@ public class FootIKSmooth : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x0600073A RID: 1850 RVA: 0x00033F64 File Offset: 0x00032164
+	// Token: 0x060005D6 RID: 1494 RVA: 0x0001E724 File Offset: 0x0001C924
 	private void OnAnimatorIK()
 	{
 		if (!this.ikActive)

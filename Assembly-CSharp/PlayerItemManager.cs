@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class PlayerItemManager : MonoBehaviour
 {
-	// (get) Token: 0x06000C5F RID: 3167
+	// (get) Token: 0x06000A5D RID: 2653
 	public bool PrimaryInUse
 	{
 		get
@@ -13,7 +13,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C60 RID: 3168
+	// (get) Token: 0x06000A5E RID: 2654
 	public bool SecondaryInUse
 	{
 		get
@@ -22,7 +22,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C61 RID: 3169
+	// (get) Token: 0x06000A5F RID: 2655
 	public bool IsAnyItemInUse
 	{
 		get
@@ -31,7 +31,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C62 RID: 3170
+	// (get) Token: 0x06000A60 RID: 2656
 	public bool IsItemInUse
 	{
 		get
@@ -40,7 +40,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C63 RID: 3171
+	// (get) Token: 0x06000A61 RID: 2657
 	public bool IsItemInUse_R
 	{
 		get
@@ -69,7 +69,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C65 RID: 3173
+	// (get) Token: 0x06000A63 RID: 2659
 	public bool RightHandBusy
 	{
 		get
@@ -78,7 +78,7 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C66 RID: 3174
+	// (get) Token: 0x06000A64 RID: 2660
 	public bool LeftHandBusy
 	{
 		get
@@ -87,8 +87,8 @@ public class PlayerItemManager : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C67 RID: 3175
-	// (set) Token: 0x06000C68 RID: 3176
+	// (get) Token: 0x06000A65 RID: 2661
+	// (set) Token: 0x06000A66 RID: 2662
 	public bool IsAiming
 	{
 		get
@@ -123,11 +123,6 @@ public class PlayerItemManager : MonoBehaviour
 
 	public void Refresh()
 	{
-		Debug.Log(this.leftHandAnchor.name);
-		Debug.Log(this.rightHandAnchor.name);
-		Debug.Log(this.hatAnchor.name);
-		Debug.Log(this.shieldArmAnchor.name);
-		Debug.Log(this.shieldSledAnchor.name);
 		if (ItemManager.i == null)
 		{
 			return;
@@ -211,11 +206,11 @@ public class PlayerItemManager : MonoBehaviour
 			}
 			if (item != null)
 			{
-				global::UnityEngine.Object.Destroy(item);
+				Object.Destroy(item);
 			}
 			if (newPrefab != null)
 			{
-				item = global::UnityEngine.Object.Instantiate<GameObject>(newPrefab, anchor);
+				item = Object.Instantiate<GameObject>(newPrefab, anchor);
 				item.transform.localPosition = Vector3.zero;
 				item.transform.localRotation = Quaternion.identity;
 				item.SetActive(active);

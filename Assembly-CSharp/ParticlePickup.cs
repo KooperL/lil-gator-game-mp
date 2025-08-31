@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ParticlePickup : MonoBehaviour, IOnTimeout
 {
-	// Token: 0x0600066B RID: 1643 RVA: 0x00006A36 File Offset: 0x00004C36
+	// Token: 0x0600051F RID: 1311 RVA: 0x0001B69F File Offset: 0x0001989F
 	private void OnValidate()
 	{
 		if (this.particleSystem == null)
@@ -16,7 +16,7 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x0600066C RID: 1644 RVA: 0x000315DC File Offset: 0x0002F7DC
+	// Token: 0x06000520 RID: 1312 RVA: 0x0001B6D8 File Offset: 0x000198D8
 	private void Start()
 	{
 		this.particles = new ParticleSystem.Particle[this.particleSystem.main.maxParticles];
@@ -26,7 +26,7 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 		this.autoPickupTime = Time.time + this.autoPickupDelay;
 	}
 
-	// Token: 0x0600066D RID: 1645 RVA: 0x0003165C File Offset: 0x0002F85C
+	// Token: 0x06000521 RID: 1313 RVA: 0x0001B758 File Offset: 0x00019958
 	private void Update()
 	{
 		if (!this.isQuick && Time.time - TriggerPickup.quickPickupTime < 0.1f)
@@ -49,7 +49,7 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 				{
 					this.persistentObject.SaveTrue();
 				}
-				global::UnityEngine.Object.Destroy(base.gameObject);
+				Object.Destroy(base.gameObject);
 				return;
 			}
 			if (Time.time > this.autoPickupTime && this.particleSystem.collision.enabled)
@@ -68,7 +68,7 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 		int num = this.particleSystem.GetParticles(this.particles);
 		if (num == 0)
 		{
-			global::UnityEngine.Object.Destroy(base.gameObject);
+			Object.Destroy(base.gameObject);
 			if (this.persistentObject != null)
 			{
 				this.persistentObject.SaveTrue();
@@ -116,7 +116,7 @@ public class ParticlePickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x0600066E RID: 1646 RVA: 0x000319E0 File Offset: 0x0002FBE0
+	// Token: 0x06000522 RID: 1314 RVA: 0x0001BADC File Offset: 0x00019CDC
 	public void OnTimeout()
 	{
 		this.resource.SetAmountSecret(this.resource.Amount + Mathf.RoundToInt(this.rewardPerPickup * (float)this.particleSystem.main.maxParticles) - this.rewardGiven);

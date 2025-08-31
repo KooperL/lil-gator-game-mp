@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class MatchCameraRotation : MonoBehaviour
 {
-	// Token: 0x06000968 RID: 2408 RVA: 0x00009213 File Offset: 0x00007413
+	// Token: 0x060007C4 RID: 1988 RVA: 0x00025EEB File Offset: 0x000240EB
 	private void Start()
 	{
 		base.transform.position = PlayerOrbitCamera.active.transform.position;
 		base.transform.rotation = PlayerOrbitCamera.active.transform.rotation;
 	}
 
-	// Token: 0x06000969 RID: 2409 RVA: 0x00009249 File Offset: 0x00007449
+	// Token: 0x060007C5 RID: 1989 RVA: 0x00025F21 File Offset: 0x00024121
 	private void LateUpdate()
 	{
 		base.transform.rotation = PlayerOrbitCamera.active.transform.rotation;

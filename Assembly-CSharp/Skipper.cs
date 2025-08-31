@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class Skipper : MonoBehaviour
 {
-	// Token: 0x06000A81 RID: 2689 RVA: 0x0003D738 File Offset: 0x0003B938
+	// Token: 0x060008B5 RID: 2229 RVA: 0x00029018 File Offset: 0x00027218
 	private void OnValidate()
 	{
 		if (this.rigidbody == null)
@@ -19,14 +19,14 @@ public class Skipper : MonoBehaviour
 		this.waterLayer = LayerMask.NameToLayer("Water");
 	}
 
-	// Token: 0x06000A82 RID: 2690 RVA: 0x0000A022 File Offset: 0x00008222
+	// Token: 0x060008B6 RID: 2230 RVA: 0x00029069 File Offset: 0x00027269
 	private void Start()
 	{
-		this.randomSkipFactor = global::UnityEngine.Random.Range(0.75f, 1f);
-		this.randomFriction = global::UnityEngine.Random.value;
+		this.randomSkipFactor = Random.Range(0.75f, 1f);
+		this.randomFriction = Random.value;
 	}
 
-	// Token: 0x06000A83 RID: 2691 RVA: 0x0003D78C File Offset: 0x0003B98C
+	// Token: 0x060008B7 RID: 2231 RVA: 0x0002908C File Offset: 0x0002728C
 	private void OnTriggerEnter(Collider other)
 	{
 		this.stayCount = 0;
@@ -50,7 +50,7 @@ public class Skipper : MonoBehaviour
 				Water component = other.GetComponent<Water>();
 				Vector3 worldCenterOfMass = this.rigidbody.worldCenterOfMass;
 				worldCenterOfMass.y = component.GetWaterPlaneHeight(this.rigidbody.position);
-				global::UnityEngine.Object.Instantiate<GameObject>(this.skipEffect, worldCenterOfMass, Quaternion.identity);
+				Object.Instantiate<GameObject>(this.skipEffect, worldCenterOfMass, Quaternion.identity);
 				this.skipCount++;
 				Skipper.bestSkip = Mathf.Max(Skipper.bestSkip, this.skipCount);
 				if (Skipper.isPartOfQuest)
@@ -67,7 +67,7 @@ public class Skipper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A84 RID: 2692 RVA: 0x0000A044 File Offset: 0x00008244
+	// Token: 0x060008B8 RID: 2232 RVA: 0x0002920B File Offset: 0x0002740B
 	private void OnTriggerStay(Collider other)
 	{
 		this.stayCount++;
@@ -77,18 +77,18 @@ public class Skipper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A85 RID: 2693 RVA: 0x0000A07A File Offset: 0x0000827A
+	// Token: 0x060008B9 RID: 2233 RVA: 0x00029241 File Offset: 0x00027441
 	private void OnTriggerExit(Collider other)
 	{
 		this.stayCount = 0;
 	}
 
-	// Token: 0x06000A86 RID: 2694 RVA: 0x0000A083 File Offset: 0x00008283
+	// Token: 0x060008BA RID: 2234 RVA: 0x0002924A File Offset: 0x0002744A
 	private void Sink()
 	{
 		this.waterPhysics.activateAutomatically = true;
 		this.onSink.Invoke();
-		global::UnityEngine.Object.Destroy(this);
+		Object.Destroy(this);
 	}
 
 	public static int bestSkip;

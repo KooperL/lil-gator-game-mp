@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SaveFileDisplay : MonoBehaviour
 {
-	// Token: 0x0600018A RID: 394 RVA: 0x0001CC08 File Offset: 0x0001AE08
+	// Token: 0x06000151 RID: 337 RVA: 0x00007D64 File Offset: 0x00005F64
 	public void SetButton(bool isInteractable, Color nonInteractiveColor, bool shouldShow = true)
 	{
 		this.button.interactable = isInteractable;
@@ -14,7 +14,7 @@ public class SaveFileDisplay : MonoBehaviour
 		this.rootObject.SetActive(shouldShow);
 	}
 
-	// Token: 0x0600018B RID: 395 RVA: 0x0000352B File Offset: 0x0000172B
+	// Token: 0x06000152 RID: 338 RVA: 0x00007DA9 File Offset: 0x00005FA9
 	public void SetIconState(bool isCopying, bool isErasing)
 	{
 		if (isCopying)
@@ -30,7 +30,7 @@ public class SaveFileDisplay : MonoBehaviour
 		this.selectIcon.sprite = this.loadIcon;
 	}
 
-	// Token: 0x0600018C RID: 396 RVA: 0x0001CC50 File Offset: 0x0001AE50
+	// Token: 0x06000153 RID: 339 RVA: 0x00007DE8 File Offset: 0x00005FE8
 	public void Load(GameSaveDataInfo info, int fileIndex)
 	{
 		this.fileIndex.text = (fileIndex + 1).ToString("0");
@@ -76,7 +76,7 @@ public class SaveFileDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600018D RID: 397 RVA: 0x00003568 File Offset: 0x00001768
+	// Token: 0x06000154 RID: 340 RVA: 0x00008028 File Offset: 0x00006228
 	public void SetItemImage(Image itemImage, int index)
 	{
 		if (index == -1)

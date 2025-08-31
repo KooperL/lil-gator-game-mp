@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class BuildingUpgradeStation : MonoBehaviour, Interaction
 {
-	// Token: 0x06000270 RID: 624 RVA: 0x000202A8 File Offset: 0x0001E4A8
+	// Token: 0x0600022B RID: 555 RVA: 0x0000BF68 File Offset: 0x0000A168
 	public static void UpdateAllActive()
 	{
 		foreach (BuildingUpgradeStation buildingUpgradeStation in BuildingUpgradeStation.upgradedStations)
@@ -15,8 +15,8 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// (get) Token: 0x06000271 RID: 625 RVA: 0x000040C1 File Offset: 0x000022C1
-	// (set) Token: 0x06000272 RID: 626 RVA: 0x000040D4 File Offset: 0x000022D4
+	// (get) Token: 0x0600022C RID: 556 RVA: 0x0000BFB8 File Offset: 0x0000A1B8
+	// (set) Token: 0x0600022D RID: 557 RVA: 0x0000BFCB File Offset: 0x0000A1CB
 	public bool IsUpgraded
 	{
 		get
@@ -29,8 +29,8 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// (get) Token: 0x06000273 RID: 627 RVA: 0x000040E7 File Offset: 0x000022E7
-	// (set) Token: 0x06000274 RID: 628 RVA: 0x0000411D File Offset: 0x0000231D
+	// (get) Token: 0x0600022E RID: 558 RVA: 0x0000BFDE File Offset: 0x0000A1DE
+	// (set) Token: 0x0600022F RID: 559 RVA: 0x0000C014 File Offset: 0x0000A214
 	public bool HasPrompted
 	{
 		get
@@ -51,19 +51,19 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000275 RID: 629 RVA: 0x00004153 File Offset: 0x00002353
+	// Token: 0x06000230 RID: 560 RVA: 0x0000C04A File Offset: 0x0000A24A
 	private void Awake()
 	{
 		this.waitUpgradeStep = new WaitForSeconds(0.4f);
 		this.waitUpgradePost = new WaitForSeconds(1f);
 	}
 
-	// Token: 0x06000276 RID: 630 RVA: 0x000202F8 File Offset: 0x0001E4F8
+	// Token: 0x06000231 RID: 561 RVA: 0x0000C06C File Offset: 0x0000A26C
 	private void OnValidate()
 	{
 		if (this.uiCurrency == null || (this.upgradeCurrency != null && this.uiCurrency.itemResource != this.upgradeCurrency))
 		{
-			foreach (UIItemResource uiitemResource in global::UnityEngine.Object.FindObjectsOfType<UIItemResource>())
+			foreach (UIItemResource uiitemResource in Object.FindObjectsOfType<UIItemResource>())
 			{
 				if (uiitemResource.itemResource == this.upgradeCurrency)
 				{
@@ -74,7 +74,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000277 RID: 631 RVA: 0x0002036C File Offset: 0x0001E56C
+	// Token: 0x06000232 RID: 562 RVA: 0x0000C0E0 File Offset: 0x0000A2E0
 	[ContextMenu("Get Objects")]
 	public void GetObjects()
 	{
@@ -96,13 +96,13 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		this.upgradeObjects = list.ToArray();
 	}
 
-	// Token: 0x06000278 RID: 632 RVA: 0x00004175 File Offset: 0x00002375
+	// Token: 0x06000233 RID: 563 RVA: 0x0000C17C File Offset: 0x0000A37C
 	public void Interact()
 	{
 		CoroutineUtil.Start(this.RunInteraction());
 	}
 
-	// Token: 0x06000279 RID: 633 RVA: 0x00004183 File Offset: 0x00002383
+	// Token: 0x06000234 RID: 564 RVA: 0x0000C18A File Offset: 0x0000A38A
 	public void SetActive(bool isActive)
 	{
 		base.gameObject.SetActive(isActive);
@@ -114,7 +114,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x0600027A RID: 634 RVA: 0x00020408 File Offset: 0x0001E608
+	// Token: 0x06000235 RID: 565 RVA: 0x0000C1C0 File Offset: 0x0000A3C0
 	[ContextMenu("Update State")]
 	public void UpdateState()
 	{
@@ -128,7 +128,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		DependentDecoration.ActivateAll();
 	}
 
-	// Token: 0x0600027B RID: 635 RVA: 0x00020454 File Offset: 0x0001E654
+	// Token: 0x06000236 RID: 566 RVA: 0x0000C20C File Offset: 0x0000A40C
 	private void UpdateCharacters(bool isUpgraded, bool isUnlocked)
 	{
 		bool flag = true;
@@ -150,7 +150,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x0600027C RID: 636 RVA: 0x000041B6 File Offset: 0x000023B6
+	// Token: 0x06000237 RID: 567 RVA: 0x0000C2BB File Offset: 0x0000A4BB
 	public IEnumerator RunUnlockSequence()
 	{
 		this.UpdateCharacters(false, true);
@@ -160,7 +160,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x0600027D RID: 637 RVA: 0x000041C5 File Offset: 0x000023C5
+	// Token: 0x06000238 RID: 568 RVA: 0x0000C2CA File Offset: 0x0000A4CA
 	private IEnumerator RunInteraction()
 	{
 		Game.DialogueDepth++;
@@ -253,7 +253,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x0600027E RID: 638 RVA: 0x000041D4 File Offset: 0x000023D4
+	// Token: 0x06000239 RID: 569 RVA: 0x0000C2D9 File Offset: 0x0000A4D9
 	private IEnumerator UpgradeAnimation()
 	{
 		yield return null;
@@ -264,7 +264,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		{
 			for (int j = 0; j < this.upgradeObjects.Length; j++)
 			{
-				int num = Mathf.FloorToInt((float)(2 * global::UnityEngine.Random.Range(0, i + 1)));
+				int num = Mathf.FloorToInt((float)(2 * Random.Range(0, i + 1)));
 				if (num > 0)
 				{
 					EffectsManager.e.Dust(this.upgradeObjects[j].transform.position, num, Vector3.zero, 3f);
@@ -272,7 +272,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 			}
 			for (int k = 0; k < this.smokePuffObjects.Length; k++)
 			{
-				int num2 = Mathf.FloorToInt((float)(2 * global::UnityEngine.Random.Range(0, i + 1)));
+				int num2 = Mathf.FloorToInt((float)(2 * Random.Range(0, i + 1)));
 				if (num2 > 0)
 				{
 					EffectsManager.e.Dust(this.smokePuffObjects[k].transform.position, num2, Vector3.zero, 3f);
@@ -297,7 +297,7 @@ public class BuildingUpgradeStation : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x0600027F RID: 639 RVA: 0x00020504 File Offset: 0x0001E704
+	// Token: 0x0600023A RID: 570 RVA: 0x0000C2E8 File Offset: 0x0000A4E8
 	public void UpdateActive()
 	{
 		foreach (GameObject gameObject in this.upgradeObjects)

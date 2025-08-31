@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class FadeEvent : MonoBehaviour
 {
-	// Token: 0x060006C8 RID: 1736 RVA: 0x00006EF3 File Offset: 0x000050F3
+	// Token: 0x06000576 RID: 1398 RVA: 0x0001CED3 File Offset: 0x0001B0D3
 	private void OnEnable()
 	{
 		if (this.triggerOnEnable)
@@ -14,13 +14,13 @@ public class FadeEvent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006C9 RID: 1737 RVA: 0x00006F03 File Offset: 0x00005103
+	// Token: 0x06000577 RID: 1399 RVA: 0x0001CEE3 File Offset: 0x0001B0E3
 	private void StartFade()
 	{
 		CoroutineUtil.Start(this.DoFade());
 	}
 
-	// Token: 0x060006CA RID: 1738 RVA: 0x00006F11 File Offset: 0x00005111
+	// Token: 0x06000578 RID: 1400 RVA: 0x0001CEF1 File Offset: 0x0001B0F1
 	private IEnumerator DoFade()
 	{
 		yield return Blackout.FadeIn();

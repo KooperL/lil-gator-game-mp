@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class ExportToFBX : MonoBehaviour
 {
-	// Token: 0x06001076 RID: 4214 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000D65 RID: 3429 RVA: 0x000409D7 File Offset: 0x0003EBD7
 	private void Start()
 	{
 	}
 
-	// Token: 0x06001077 RID: 4215 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000D66 RID: 3430 RVA: 0x000409D9 File Offset: 0x0003EBD9
 	private void Update()
 	{
 	}

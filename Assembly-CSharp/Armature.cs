@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Armature : MonoBehaviour
 {
-	// Token: 0x06000240 RID: 576 RVA: 0x00003DAA File Offset: 0x00001FAA
+	// Token: 0x060001FC RID: 508 RVA: 0x0000AE28 File Offset: 0x00009028
 	public void OnValidate()
 	{
 		if (this.transforms == null || (float)this.transforms.Length == 0f)

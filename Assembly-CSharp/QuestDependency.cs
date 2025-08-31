@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class QuestDependency : MonoBehaviour
 {
-	// Token: 0x060001B0 RID: 432 RVA: 0x0001D62C File Offset: 0x0001B82C
+	// Token: 0x06000177 RID: 375 RVA: 0x0000899C File Offset: 0x00006B9C
 	private void Start()
 	{
 		QuestProfile[] array = this.quests;
@@ -15,13 +15,13 @@ public class QuestDependency : MonoBehaviour
 		this.CheckQuests(true);
 	}
 
-	// Token: 0x060001B1 RID: 433 RVA: 0x000036E1 File Offset: 0x000018E1
+	// Token: 0x06000178 RID: 376 RVA: 0x000089DE File Offset: 0x00006BDE
 	private void CheckQuests()
 	{
 		this.CheckQuests(false);
 	}
 
-	// Token: 0x060001B2 RID: 434 RVA: 0x0001D670 File Offset: 0x0001B870
+	// Token: 0x06000179 RID: 377 RVA: 0x000089E8 File Offset: 0x00006BE8
 	private void CheckQuests(bool isInitial)
 	{
 		bool flag = true;

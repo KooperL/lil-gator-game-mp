@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CameraGrabOldPosition : MonoBehaviour
 {
-	// Token: 0x060002A2 RID: 674 RVA: 0x00020DB8 File Offset: 0x0001EFB8
+	// Token: 0x0600024B RID: 587 RVA: 0x0000C4D0 File Offset: 0x0000A6D0
 	private void OnEnable()
 	{
 		if (this.mainCamera == null)

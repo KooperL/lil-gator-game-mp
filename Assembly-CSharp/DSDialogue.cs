@@ -6,13 +6,13 @@ using UnityEngine.Events;
 [AddComponentMenu("Dialogue Sequence/Dialogue")]
 public class DSDialogue : DialogueSequence, ICueable
 {
-	// Token: 0x060005A8 RID: 1448 RVA: 0x000060EA File Offset: 0x000042EA
+	// Token: 0x0600047D RID: 1149 RVA: 0x000193A0 File Offset: 0x000175A0
 	public void SetCamera(GameObject camera)
 	{
 		this.camera = camera;
 	}
 
-	// Token: 0x060005A9 RID: 1449 RVA: 0x0002F660 File Offset: 0x0002D860
+	// Token: 0x0600047E RID: 1150 RVA: 0x000193AC File Offset: 0x000175AC
 	public override YieldInstruction Run()
 	{
 		if (string.IsNullOrEmpty(this.dialogue))
@@ -35,7 +35,7 @@ public class DSDialogue : DialogueSequence, ICueable
 		return CoroutineUtil.Start(enumerator);
 	}
 
-	// Token: 0x060005AA RID: 1450 RVA: 0x0002F720 File Offset: 0x0002D920
+	// Token: 0x0600047F RID: 1151 RVA: 0x0001946C File Offset: 0x0001766C
 	public void OnValidate()
 	{
 		if (this.document == null)
@@ -57,7 +57,7 @@ public class DSDialogue : DialogueSequence, ICueable
 		}
 	}
 
-	// Token: 0x060005AB RID: 1451 RVA: 0x0002F7D0 File Offset: 0x0002D9D0
+	// Token: 0x06000480 RID: 1152 RVA: 0x0001951C File Offset: 0x0001771C
 	[ContextMenu("Sync Cues")]
 	private void SyncCues()
 	{
@@ -70,7 +70,7 @@ public class DSDialogue : DialogueSequence, ICueable
 		this.precueFirstCue = false;
 	}
 
-	// Token: 0x060005AC RID: 1452 RVA: 0x0002F830 File Offset: 0x0002DA30
+	// Token: 0x06000481 RID: 1153 RVA: 0x0001957C File Offset: 0x0001777C
 	public override void Activate()
 	{
 		if (this.presetPosition)
@@ -101,7 +101,7 @@ public class DSDialogue : DialogueSequence, ICueable
 		base.Activate();
 	}
 
-	// Token: 0x060005AD RID: 1453 RVA: 0x000060F3 File Offset: 0x000042F3
+	// Token: 0x06000482 RID: 1154 RVA: 0x0001965B File Offset: 0x0001785B
 	public override void Deactivate()
 	{
 		base.Deactivate();

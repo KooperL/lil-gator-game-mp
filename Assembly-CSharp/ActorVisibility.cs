@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class ActorVisibility : MonoBehaviour
 {
-	// Token: 0x060003A0 RID: 928 RVA: 0x00004C85 File Offset: 0x00002E85
+	// Token: 0x06000335 RID: 821 RVA: 0x00012FA3 File Offset: 0x000111A3
 	private void OnValidate()
 	{
 		this.UpdateRenderers();
 	}
 
-	// Token: 0x060003A1 RID: 929 RVA: 0x00004C8D File Offset: 0x00002E8D
+	// Token: 0x06000336 RID: 822 RVA: 0x00012FAB File Offset: 0x000111AB
 	[ContextMenu("Update Renderers")]
 	public void UpdateRenderers()
 	{
 		this.renderers = base.GetComponentsInChildren<Renderer>();
 	}
 
-	// Token: 0x060003A2 RID: 930 RVA: 0x000272A8 File Offset: 0x000254A8
+	// Token: 0x06000337 RID: 823 RVA: 0x00012FBC File Offset: 0x000111BC
 	public void Show()
 	{
 		foreach (Renderer renderer in this.renderers)
@@ -28,7 +28,7 @@ public class ActorVisibility : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060003A3 RID: 931 RVA: 0x000272E0 File Offset: 0x000254E0
+	// Token: 0x06000338 RID: 824 RVA: 0x00012FF4 File Offset: 0x000111F4
 	public void Hide()
 	{
 		foreach (Renderer renderer in this.renderers)

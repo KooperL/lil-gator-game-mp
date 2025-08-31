@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class HeadController : MonoBehaviour
 {
-	// Token: 0x060007A0 RID: 1952 RVA: 0x0000799A File Offset: 0x00005B9A
+	// Token: 0x0600063A RID: 1594 RVA: 0x00020457 File Offset: 0x0001E657
 	private void Start()
 	{
 		this.forward = this.neck.forward;
 		this.velocityForward = this.forward;
 	}
 
-	// Token: 0x060007A1 RID: 1953 RVA: 0x00035AA8 File Offset: 0x00033CA8
+	// Token: 0x0600063B RID: 1595 RVA: 0x00020478 File Offset: 0x0001E678
 	private void FixedUpdate()
 	{
 		float magnitude = this.rigidbody.velocity.magnitude;
@@ -28,7 +28,7 @@ public class HeadController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007A2 RID: 1954 RVA: 0x000079B9 File Offset: 0x00005BB9
+	// Token: 0x0600063C RID: 1596 RVA: 0x0002051D File Offset: 0x0001E71D
 	private void LateUpdate()
 	{
 		this.neck.forward = this.forward;

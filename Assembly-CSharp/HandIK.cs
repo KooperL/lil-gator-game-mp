@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HandIK : MonoBehaviour
 {
-	// Token: 0x06000ACA RID: 2762 RVA: 0x0000A45A File Offset: 0x0000865A
+	// Token: 0x060008F8 RID: 2296 RVA: 0x0002AF28 File Offset: 0x00029128
 	public void SetEnabled(bool isLeft, bool isEnabled)
 	{
 		if (isLeft)
@@ -14,6 +14,7 @@ public class HandIK : MonoBehaviour
 		this.isRightEnabled = isEnabled;
 	}
 
+	// Token: 0x060008F9 RID: 2297 RVA: 0x0002AF3C File Offset: 0x0002913C
 	public void SetOverride(bool isLeft, Vector3 position, Transform anchor)
 	{
 		if (isLeft)
@@ -28,7 +29,7 @@ public class HandIK : MonoBehaviour
 		this.overrideRightAnchor = anchor;
 	}
 
-	// Token: 0x06000ACC RID: 2764 RVA: 0x0000A49E File Offset: 0x0000869E
+	// Token: 0x060008FA RID: 2298 RVA: 0x0002AF6C File Offset: 0x0002916C
 	public void ClearOverride(bool isLeft)
 	{
 		if (isLeft)
@@ -41,13 +42,13 @@ public class HandIK : MonoBehaviour
 		this.overrideRightAnchor = null;
 	}
 
-	// Token: 0x06000ACD RID: 2765 RVA: 0x0000A4C0 File Offset: 0x000086C0
+	// Token: 0x060008FB RID: 2299 RVA: 0x0002AF8E File Offset: 0x0002918E
 	private void Awake()
 	{
 		this.animator = base.GetComponent<Animator>();
 	}
 
-	// Token: 0x06000ACE RID: 2766 RVA: 0x0003F260 File Offset: 0x0003D460
+	// Token: 0x060008FC RID: 2300 RVA: 0x0002AF9C File Offset: 0x0002919C
 	private void OnAnimatorIK()
 	{
 		if (!this.isRightEnabled)
@@ -98,7 +99,7 @@ public class HandIK : MonoBehaviour
 		this.animator.SetIKPosition(AvatarIKGoal.LeftHand, this.leftPoint);
 	}
 
-	// Token: 0x06000ACF RID: 2767 RVA: 0x0003F494 File Offset: 0x0003D694
+	// Token: 0x060008FD RID: 2301 RVA: 0x0002B1D0 File Offset: 0x000293D0
 	private void SetHandIK(string oppositeFoot, bool isHandBusy, ref bool hasPoint, Transform handTransform, Vector3 origin, ref float counter, ref float handWeight, ref Vector3 grabPoint, float smoothWeight)
 	{
 		if (((Game.HasControl && this.movement.IsGrounded) || (this.movement.IsClimbing && this.movement.Stamina > 0f)) && this.animator.GetFloat(oppositeFoot) < 0.1f && !isHandBusy)

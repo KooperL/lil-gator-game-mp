@@ -4,7 +4,7 @@ using UnityEngine;
 [AddComponentMenu("Dialogue Sequence/Dialogue (Bubble)")]
 public class DSDialogueBubble : DialogueSequence
 {
-	// Token: 0x060005AF RID: 1455 RVA: 0x0002F910 File Offset: 0x0002DB10
+	// Token: 0x06000484 RID: 1156 RVA: 0x000196B0 File Offset: 0x000178B0
 	public override YieldInstruction Run()
 	{
 		if (this.document != null)

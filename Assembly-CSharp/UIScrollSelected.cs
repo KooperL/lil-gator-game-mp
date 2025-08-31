@@ -5,26 +5,26 @@ using UnityEngine.EventSystems;
 
 public class UIScrollSelected : MonoBehaviour
 {
-	// Token: 0x060012EE RID: 4846 RVA: 0x0000FF84 File Offset: 0x0000E184
+	// Token: 0x06000F79 RID: 3961 RVA: 0x0004A3F5 File Offset: 0x000485F5
 	private void Awake()
 	{
 		this.scrollToSelected = base.GetComponentInParent<UIScrollToSelected>();
 	}
 
-	// Token: 0x060012EF RID: 4847 RVA: 0x0000FF92 File Offset: 0x0000E192
+	// Token: 0x06000F7A RID: 3962 RVA: 0x0004A403 File Offset: 0x00048603
 	public void OnEnable()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
 		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.ScrollInput), UpdateLoopType.Update, InputActionEventType.AxisRawActiveOrJustInactive, ReInput.mapping.GetActionId("UIScroll"));
 	}
 
-	// Token: 0x060012F0 RID: 4848 RVA: 0x0000FFCE File Offset: 0x0000E1CE
+	// Token: 0x06000F7B RID: 3963 RVA: 0x0004A43F File Offset: 0x0004863F
 	private void OnDisable()
 	{
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.ScrollInput));
 	}
 
-	// Token: 0x060012F1 RID: 4849 RVA: 0x0005DA18 File Offset: 0x0005BC18
+	// Token: 0x06000F7C RID: 3964 RVA: 0x0004A458 File Offset: 0x00048658
 	private void ScrollInput(InputActionEventData obj)
 	{
 		if (Time.frameCount - this.scrollFrame < 3)
@@ -41,7 +41,7 @@ public class UIScrollSelected : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012F2 RID: 4850 RVA: 0x0005DA8C File Offset: 0x0005BC8C
+	// Token: 0x06000F7D RID: 3965 RVA: 0x0004A4CC File Offset: 0x000486CC
 	private void Scroll(int direction)
 	{
 		EventSystem current = EventSystem.current;

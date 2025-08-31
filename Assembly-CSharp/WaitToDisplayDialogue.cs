@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaitToDisplayDialogue : MonoBehaviour
 {
-	// Token: 0x06001013 RID: 4115 RVA: 0x0000DE27 File Offset: 0x0000C027
+	// Token: 0x06000D09 RID: 3337 RVA: 0x0003EC73 File Offset: 0x0003CE73
 	private void Update()
 	{
 		if (this.CanRunDialogue())
@@ -13,7 +13,7 @@ public class WaitToDisplayDialogue : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001014 RID: 4116 RVA: 0x000537BC File Offset: 0x000519BC
+	// Token: 0x06000D0A RID: 3338 RVA: 0x0003EC88 File Offset: 0x0003CE88
 	private bool CanRunDialogue()
 	{
 		if (DialogueManager.d.IsInImportantDialogue)

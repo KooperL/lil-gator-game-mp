@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Parser
 {
-	// Token: 0x06000A53 RID: 2643 RVA: 0x00009E03 File Offset: 0x00008003
+	// Token: 0x06000887 RID: 2183 RVA: 0x00028434 File Offset: 0x00026634
 	public Parser(string t)
 	{
 		this.text = t;
@@ -12,7 +12,7 @@ public class Parser
 		this.length = this.text.Length;
 	}
 
-	// Token: 0x06000A54 RID: 2644 RVA: 0x00009E2A File Offset: 0x0000802A
+	// Token: 0x06000888 RID: 2184 RVA: 0x0002845B File Offset: 0x0002665B
 	private string nextCharacter()
 	{
 		if (this.index == this.length)
@@ -24,13 +24,13 @@ public class Parser
 		return text;
 	}
 
-	// Token: 0x06000A55 RID: 2645 RVA: 0x0003CE80 File Offset: 0x0003B080
+	// Token: 0x06000889 RID: 2185 RVA: 0x00028494 File Offset: 0x00026694
 	private bool isWhitespace(string cha)
 	{
 		return cha.Equals(" ") || cha.Equals("\t") || cha.Equals("\n") || cha.Equals("\r") || cha.Equals("\v") || cha.Equals("");
 	}
 
-	// Token: 0x06000A56 RID: 2646 RVA: 0x0003CEE0 File Offset: 0x0003B0E0
+	// Token: 0x0600088A RID: 2186 RVA: 0x000284F4 File Offset: 0x000266F4
 	private string nextLexeme()
 	{
 		string text = this.nextCharacter();
@@ -73,7 +73,7 @@ public class Parser
 		return text;
 	}
 
-	// Token: 0x06000A57 RID: 2647 RVA: 0x0003CFB0 File Offset: 0x0003B1B0
+	// Token: 0x0600088B RID: 2187 RVA: 0x000285C4 File Offset: 0x000267C4
 	private DialogueChunk nextDialogueChunk()
 	{
 		string text = this.nextLexeme();
@@ -157,7 +157,7 @@ public class Parser
 		return dialogueChunk;
 	}
 
-	// Token: 0x06000A58 RID: 2648 RVA: 0x00009E60 File Offset: 0x00008060
+	// Token: 0x0600088C RID: 2188 RVA: 0x00028823 File Offset: 0x00026A23
 	private string clean(string text)
 	{
 		if (text.Length - 2 < 0)
@@ -167,7 +167,7 @@ public class Parser
 		return text.Substring(1, text.Length - 2);
 	}
 
-	// Token: 0x06000A59 RID: 2649 RVA: 0x0003D210 File Offset: 0x0003B410
+	// Token: 0x0600088D RID: 2189 RVA: 0x00028848 File Offset: 0x00026A48
 	public List<DialogueChunk> getChunks()
 	{
 		List<DialogueChunk> list = new List<DialogueChunk>();

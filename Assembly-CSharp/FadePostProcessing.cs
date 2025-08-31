@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class FadePostProcessing : MonoBehaviour
 {
-	// Token: 0x060006EF RID: 1775 RVA: 0x0000703A File Offset: 0x0000523A
+	// Token: 0x06000591 RID: 1425 RVA: 0x0001D4C5 File Offset: 0x0001B6C5
 	public void OnEnable()
 	{
 		SmoothPostProcessing.FadeInLayer(this.layer, this.fadeInSpeed);
 	}
 
-	// Token: 0x060006F0 RID: 1776 RVA: 0x0000704D File Offset: 0x0000524D
+	// Token: 0x06000592 RID: 1426 RVA: 0x0001D4D8 File Offset: 0x0001B6D8
 	public void OnDisable()
 	{
 		SmoothPostProcessing.FadeOutLayer(this.layer, this.fadeOutSpeed);

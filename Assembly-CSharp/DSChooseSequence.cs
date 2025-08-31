@@ -4,7 +4,7 @@ using UnityEngine;
 [AddComponentMenu("Dialogue Sequence/Choose Sequence")]
 public class DSChooseSequence : DialogueSequence
 {
-	// Token: 0x06000596 RID: 1430 RVA: 0x0002F0CC File Offset: 0x0002D2CC
+	// Token: 0x06000474 RID: 1140 RVA: 0x00018F60 File Offset: 0x00017160
 	public override YieldInstruction Run()
 	{
 		DialogueSequencer dialogueSequencer = this.choices[DialogueManager.optionChosen];

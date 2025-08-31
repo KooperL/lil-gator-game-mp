@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class UIWobble : MonoBehaviour
 {
-	// Token: 0x06001366 RID: 4966 RVA: 0x00010659 File Offset: 0x0000E859
+	// Token: 0x06000FD9 RID: 4057 RVA: 0x0004B9D6 File Offset: 0x00049BD6
 	private void Awake()
 	{
 		this.rectTransform = base.GetComponent<RectTransform>();
-		this.seed = new Vector2(10000f * global::UnityEngine.Random.value, 20000f * global::UnityEngine.Random.value);
+		this.seed = new Vector2(10000f * Random.value, 20000f * Random.value);
 	}
 
-	// Token: 0x06001367 RID: 4967 RVA: 0x00010688 File Offset: 0x0000E888
+	// Token: 0x06000FDA RID: 4058 RVA: 0x0004BA05 File Offset: 0x00049C05
 	private void Start()
 	{
 		this.initialPosition = this.rectTransform.anchoredPosition;
 	}
 
-	// Token: 0x06001368 RID: 4968 RVA: 0x0005F1E4 File Offset: 0x0005D3E4
+	// Token: 0x06000FDB RID: 4059 RVA: 0x0004BA18 File Offset: 0x00049C18
 	private void Update()
 	{
 		if (this.lowFramerate)

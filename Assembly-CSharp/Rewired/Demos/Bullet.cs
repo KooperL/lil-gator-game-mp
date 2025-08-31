@@ -6,7 +6,7 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public class Bullet : MonoBehaviour
 	{
-		// Token: 0x06001DF4 RID: 7668 RVA: 0x00016DED File Offset: 0x00014FED
+		// Token: 0x060017A7 RID: 6055 RVA: 0x000649E8 File Offset: 0x00062BE8
 		private void Start()
 		{
 			if (this.lifeTime > 0f)
@@ -16,12 +16,12 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DF5 RID: 7669 RVA: 0x00016E15 File Offset: 0x00015015
+		// Token: 0x060017A8 RID: 6056 RVA: 0x00064A10 File Offset: 0x00062C10
 		private void Update()
 		{
 			if (this.die && Time.time >= this.deathTime)
 			{
-				global::UnityEngine.Object.Destroy(base.gameObject);
+				Object.Destroy(base.gameObject);
 			}
 		}
 

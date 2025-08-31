@@ -4,24 +4,24 @@ using UnityEngine.SceneManagement;
 
 public class OverriddenMusic : MonoBehaviour
 {
-	// Token: 0x060000B8 RID: 184 RVA: 0x0001A244 File Offset: 0x00018444
+	// Token: 0x060000A4 RID: 164 RVA: 0x00005178 File Offset: 0x00003378
 	private void OnEnable()
 	{
 		OverriddenMusic.isOverridden = true;
 		this.timer = 0f;
 		base.transform.parent = null;
-		global::UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
+		Object.DontDestroyOnLoad(base.gameObject);
 		this.nativeScene = SceneManager.GetActiveScene();
 		SceneManager.sceneUnloaded += this.OnSceneUnload;
 	}
 
-	// Token: 0x060000B9 RID: 185 RVA: 0x00002A30 File Offset: 0x00000C30
+	// Token: 0x060000A5 RID: 165 RVA: 0x000051C9 File Offset: 0x000033C9
 	private void OnDisable()
 	{
 		OverriddenMusic.isOverridden = false;
 	}
 
-	// Token: 0x060000BA RID: 186 RVA: 0x00002A38 File Offset: 0x00000C38
+	// Token: 0x060000A6 RID: 166 RVA: 0x000051D1 File Offset: 0x000033D1
 	private void OnSceneUnload(Scene scene)
 	{
 		if (scene == this.nativeScene)
@@ -29,18 +29,18 @@ public class OverriddenMusic : MonoBehaviour
 			this.isUnloading = true;
 			if (!base.gameObject.activeSelf)
 			{
-				global::UnityEngine.Object.Destroy(base.gameObject);
+				Object.Destroy(base.gameObject);
 			}
 		}
 	}
 
-	// Token: 0x060000BB RID: 187 RVA: 0x00002A67 File Offset: 0x00000C67
+	// Token: 0x060000A7 RID: 167 RVA: 0x00005200 File Offset: 0x00003400
 	public void StopMusic()
 	{
 		this.isStopped = true;
 	}
 
-	// Token: 0x060000BC RID: 188 RVA: 0x0001A298 File Offset: 0x00018498
+	// Token: 0x060000A8 RID: 168 RVA: 0x0000520C File Offset: 0x0000340C
 	private void Update()
 	{
 		if (this.isUnloading || this.isStopped)
@@ -64,7 +64,7 @@ public class OverriddenMusic : MonoBehaviour
 				base.gameObject.SetActive(false);
 				return;
 			}
-			global::UnityEngine.Object.Destroy(base.gameObject);
+			Object.Destroy(base.gameObject);
 		}
 	}
 

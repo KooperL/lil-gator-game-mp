@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class PersistentLight : PersistentObject
 {
-	// Token: 0x0600064E RID: 1614 RVA: 0x00006865 File Offset: 0x00004A65
+	// Token: 0x06000502 RID: 1282 RVA: 0x0001AE14 File Offset: 0x00019014
 	public override void Load(bool state)
 	{
 		this.SetState(state);
 	}
 
-	// Token: 0x0600064F RID: 1615 RVA: 0x0000686E File Offset: 0x00004A6E
+	// Token: 0x06000503 RID: 1283 RVA: 0x0001AE1D File Offset: 0x0001901D
 	public void Activate()
 	{
 		this.SetState(true);
 		this.SaveTrue();
 	}
 
-	// Token: 0x06000650 RID: 1616 RVA: 0x00030F30 File Offset: 0x0002F130
+	// Token: 0x06000504 RID: 1284 RVA: 0x0001AE2C File Offset: 0x0001902C
 	private void SetState(bool state)
 	{
 		if (state)

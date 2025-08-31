@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class JunkContainer : MonoBehaviour
 {
-	// Token: 0x0600083A RID: 2106 RVA: 0x0000818F File Offset: 0x0000638F
+	// Token: 0x060006BB RID: 1723 RVA: 0x000222A3 File Offset: 0x000204A3
 	private void Awake()
 	{
 		this.mainCamera = Camera.main;
 	}
 
-	// Token: 0x0600083B RID: 2107 RVA: 0x0000819C File Offset: 0x0000639C
+	// Token: 0x060006BC RID: 1724 RVA: 0x000222B0 File Offset: 0x000204B0
 	private void OnEnable()
 	{
 		this.interactionCollider.enabled = false;
@@ -21,19 +21,19 @@ public class JunkContainer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600083C RID: 2108 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x060006BD RID: 1725 RVA: 0x000222E3 File Offset: 0x000204E3
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x0600083D RID: 2109 RVA: 0x000081CF File Offset: 0x000063CF
+	// Token: 0x060006BE RID: 1726 RVA: 0x000222E5 File Offset: 0x000204E5
 	private void Start()
 	{
 		this.ActivateChildren();
-		this.SetSelected(this.contents.GetChild(Mathf.FloorToInt(global::UnityEngine.Random.value * (float)this.contents.childCount)));
+		this.SetSelected(this.contents.GetChild(Mathf.FloorToInt(Random.value * (float)this.contents.childCount)));
 	}
 
-	// Token: 0x0600083E RID: 2110 RVA: 0x00037790 File Offset: 0x00035990
+	// Token: 0x060006BF RID: 1727 RVA: 0x00022318 File Offset: 0x00020518
 	private void Update()
 	{
 		foreach (object obj in this.contents)
@@ -42,7 +42,7 @@ public class JunkContainer : MonoBehaviour
 			if (!this.bounds.Contains(transform.localPosition))
 			{
 				transform.parent = base.transform.parent;
-				global::UnityEngine.Object.Instantiate<GameObject>(this.junkItemPrefab, transform).GetComponent<JunkItem>().resource = this.itemResource;
+				Object.Instantiate<GameObject>(this.junkItemPrefab, transform).GetComponent<JunkItem>().resource = this.itemResource;
 				if (transform == this.selected)
 				{
 					this.selected = null;
@@ -62,7 +62,7 @@ public class JunkContainer : MonoBehaviour
 		this.lastPosition = this.selected.position;
 	}
 
-	// Token: 0x0600083F RID: 2111 RVA: 0x00037888 File Offset: 0x00035A88
+	// Token: 0x060006C0 RID: 1728 RVA: 0x00022410 File Offset: 0x00020610
 	private void ActivateChildren()
 	{
 		foreach (object obj in this.contents)
@@ -75,7 +75,7 @@ public class JunkContainer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000840 RID: 2112 RVA: 0x000081FF File Offset: 0x000063FF
+	// Token: 0x060006C1 RID: 1729 RVA: 0x00022490 File Offset: 0x00020690
 	private void SetSelected(Transform newSelection)
 	{
 		this.selected = newSelection;
@@ -85,7 +85,7 @@ public class JunkContainer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000841 RID: 2113 RVA: 0x00037908 File Offset: 0x00035B08
+	// Token: 0x060006C2 RID: 1730 RVA: 0x000224C4 File Offset: 0x000206C4
 	private Transform FindClosest(Vector3 position)
 	{
 		Transform transform = null;
@@ -103,7 +103,7 @@ public class JunkContainer : MonoBehaviour
 		return transform;
 	}
 
-	// Token: 0x06000842 RID: 2114 RVA: 0x00037988 File Offset: 0x00035B88
+	// Token: 0x060006C3 RID: 1731 RVA: 0x00022544 File Offset: 0x00020744
 	private Transform FindClosestDirectional(Vector3 position, Vector3 direction)
 	{
 		Transform transform = null;
@@ -145,7 +145,7 @@ public class JunkContainer : MonoBehaviour
 		return transform2;
 	}
 
-	// Token: 0x06000843 RID: 2115 RVA: 0x00008231 File Offset: 0x00006431
+	// Token: 0x060006C4 RID: 1732 RVA: 0x0002263C File Offset: 0x0002083C
 	public void Deactivate()
 	{
 		base.enabled = false;

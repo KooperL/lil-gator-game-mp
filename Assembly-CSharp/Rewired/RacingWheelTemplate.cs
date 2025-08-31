@@ -4,7 +4,7 @@ namespace Rewired
 {
 	public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTemplate, IControllerTemplate
 	{
-		// (get) Token: 0x060014E3 RID: 5347 RVA: 0x00010CBC File Offset: 0x0000EEBC
+		// (get) Token: 0x06001153 RID: 4435 RVA: 0x0004DF1D File Offset: 0x0004C11D
 		IControllerTemplateAxis IRacingWheelTemplate.wheel
 		{
 			get
@@ -13,7 +13,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014E4 RID: 5348 RVA: 0x00010CC5 File Offset: 0x0000EEC5
+		// (get) Token: 0x06001154 RID: 4436 RVA: 0x0004DF26 File Offset: 0x0004C126
 		IControllerTemplateAxis IRacingWheelTemplate.accelerator
 		{
 			get
@@ -22,7 +22,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014E5 RID: 5349 RVA: 0x00010CCE File Offset: 0x0000EECE
+		// (get) Token: 0x06001155 RID: 4437 RVA: 0x0004DF2F File Offset: 0x0004C12F
 		IControllerTemplateAxis IRacingWheelTemplate.brake
 		{
 			get
@@ -31,7 +31,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014E6 RID: 5350 RVA: 0x00010CD7 File Offset: 0x0000EED7
+		// (get) Token: 0x06001156 RID: 4438 RVA: 0x0004DF38 File Offset: 0x0004C138
 		IControllerTemplateAxis IRacingWheelTemplate.clutch
 		{
 			get
@@ -40,7 +40,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014E7 RID: 5351 RVA: 0x00010C07 File Offset: 0x0000EE07
+		// (get) Token: 0x06001157 RID: 4439 RVA: 0x0004DF41 File Offset: 0x0004C141
 		IControllerTemplateButton IRacingWheelTemplate.shiftDown
 		{
 			get
@@ -49,7 +49,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014E8 RID: 5352 RVA: 0x00010C10 File Offset: 0x0000EE10
+		// (get) Token: 0x06001158 RID: 4440 RVA: 0x0004DF4A File Offset: 0x0004C14A
 		IControllerTemplateButton IRacingWheelTemplate.shiftUp
 		{
 			get
@@ -58,7 +58,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014E9 RID: 5353 RVA: 0x00010C19 File Offset: 0x0000EE19
+		// (get) Token: 0x06001159 RID: 4441 RVA: 0x0004DF53 File Offset: 0x0004C153
 		IControllerTemplateButton IRacingWheelTemplate.wheelButton1
 		{
 			get
@@ -67,7 +67,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014EA RID: 5354 RVA: 0x00010C22 File Offset: 0x0000EE22
+		// (get) Token: 0x0600115A RID: 4442 RVA: 0x0004DF5C File Offset: 0x0004C15C
 		IControllerTemplateButton IRacingWheelTemplate.wheelButton2
 		{
 			get
@@ -76,7 +76,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014EB RID: 5355 RVA: 0x00010C2B File Offset: 0x0000EE2B
+		// (get) Token: 0x0600115B RID: 4443 RVA: 0x0004DF65 File Offset: 0x0004C165
 		IControllerTemplateButton IRacingWheelTemplate.wheelButton3
 		{
 			get
@@ -85,7 +85,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014EC RID: 5356 RVA: 0x00010C34 File Offset: 0x0000EE34
+		// (get) Token: 0x0600115C RID: 4444 RVA: 0x0004DF6E File Offset: 0x0004C16E
 		IControllerTemplateButton IRacingWheelTemplate.wheelButton4
 		{
 			get
@@ -94,7 +94,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014ED RID: 5357 RVA: 0x00010C3E File Offset: 0x0000EE3E
+		// (get) Token: 0x0600115D RID: 4445 RVA: 0x0004DF78 File Offset: 0x0004C178
 		IControllerTemplateButton IRacingWheelTemplate.wheelButton5
 		{
 			get
@@ -103,7 +103,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014EE RID: 5358 RVA: 0x00010CE0 File Offset: 0x0000EEE0
+		// (get) Token: 0x0600115E RID: 4446 RVA: 0x0004DF82 File Offset: 0x0004C182
 		IControllerTemplateButton IRacingWheelTemplate.wheelButton6
 		{
 			get
@@ -112,7 +112,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014EF RID: 5359 RVA: 0x00010C52 File Offset: 0x0000EE52
+		// (get) Token: 0x0600115F RID: 4447 RVA: 0x0004DF8C File Offset: 0x0004C18C
 		IControllerTemplateButton IRacingWheelTemplate.wheelButton7
 		{
 			get
@@ -121,7 +121,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014F0 RID: 5360 RVA: 0x00010CEA File Offset: 0x0000EEEA
+		// (get) Token: 0x06001160 RID: 4448 RVA: 0x0004DF96 File Offset: 0x0004C196
 		IControllerTemplateButton IRacingWheelTemplate.wheelButton8
 		{
 			get
@@ -130,7 +130,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014F1 RID: 5361 RVA: 0x00010C66 File Offset: 0x0000EE66
+		// (get) Token: 0x06001161 RID: 4449 RVA: 0x0004DFA0 File Offset: 0x0004C1A0
 		IControllerTemplateButton IRacingWheelTemplate.wheelButton9
 		{
 			get
@@ -139,7 +139,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014F2 RID: 5362 RVA: 0x00010C70 File Offset: 0x0000EE70
+		// (get) Token: 0x06001162 RID: 4450 RVA: 0x0004DFAA File Offset: 0x0004C1AA
 		IControllerTemplateButton IRacingWheelTemplate.wheelButton10
 		{
 			get
@@ -148,7 +148,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014F3 RID: 5363 RVA: 0x00010C7A File Offset: 0x0000EE7A
+		// (get) Token: 0x06001163 RID: 4451 RVA: 0x0004DFB4 File Offset: 0x0004C1B4
 		IControllerTemplateButton IRacingWheelTemplate.consoleButton1
 		{
 			get
@@ -157,7 +157,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014F4 RID: 5364 RVA: 0x00010CF4 File Offset: 0x0000EEF4
+		// (get) Token: 0x06001164 RID: 4452 RVA: 0x0004DFBE File Offset: 0x0004C1BE
 		IControllerTemplateButton IRacingWheelTemplate.consoleButton2
 		{
 			get
@@ -166,7 +166,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014F5 RID: 5365 RVA: 0x00010CFE File Offset: 0x0000EEFE
+		// (get) Token: 0x06001165 RID: 4453 RVA: 0x0004DFC8 File Offset: 0x0004C1C8
 		IControllerTemplateButton IRacingWheelTemplate.consoleButton3
 		{
 			get
@@ -175,7 +175,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014F6 RID: 5366 RVA: 0x00010D08 File Offset: 0x0000EF08
+		// (get) Token: 0x06001166 RID: 4454 RVA: 0x0004DFD2 File Offset: 0x0004C1D2
 		IControllerTemplateButton IRacingWheelTemplate.consoleButton4
 		{
 			get
@@ -184,7 +184,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014F7 RID: 5367 RVA: 0x00010D12 File Offset: 0x0000EF12
+		// (get) Token: 0x06001167 RID: 4455 RVA: 0x0004DFDC File Offset: 0x0004C1DC
 		IControllerTemplateButton IRacingWheelTemplate.consoleButton5
 		{
 			get
@@ -193,7 +193,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014F8 RID: 5368 RVA: 0x00010D1C File Offset: 0x0000EF1C
+		// (get) Token: 0x06001168 RID: 4456 RVA: 0x0004DFE6 File Offset: 0x0004C1E6
 		IControllerTemplateButton IRacingWheelTemplate.consoleButton6
 		{
 			get
@@ -202,7 +202,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014F9 RID: 5369 RVA: 0x00010D26 File Offset: 0x0000EF26
+		// (get) Token: 0x06001169 RID: 4457 RVA: 0x0004DFF0 File Offset: 0x0004C1F0
 		IControllerTemplateButton IRacingWheelTemplate.consoleButton7
 		{
 			get
@@ -211,7 +211,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014FA RID: 5370 RVA: 0x00010D30 File Offset: 0x0000EF30
+		// (get) Token: 0x0600116A RID: 4458 RVA: 0x0004DFFA File Offset: 0x0004C1FA
 		IControllerTemplateButton IRacingWheelTemplate.consoleButton8
 		{
 			get
@@ -220,7 +220,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014FB RID: 5371 RVA: 0x00010D3A File Offset: 0x0000EF3A
+		// (get) Token: 0x0600116B RID: 4459 RVA: 0x0004E004 File Offset: 0x0004C204
 		IControllerTemplateButton IRacingWheelTemplate.consoleButton9
 		{
 			get
@@ -229,7 +229,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014FC RID: 5372 RVA: 0x00010D44 File Offset: 0x0000EF44
+		// (get) Token: 0x0600116C RID: 4460 RVA: 0x0004E00E File Offset: 0x0004C20E
 		IControllerTemplateButton IRacingWheelTemplate.consoleButton10
 		{
 			get
@@ -238,7 +238,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014FD RID: 5373 RVA: 0x00010D4E File Offset: 0x0000EF4E
+		// (get) Token: 0x0600116D RID: 4461 RVA: 0x0004E018 File Offset: 0x0004C218
 		IControllerTemplateButton IRacingWheelTemplate.shifter1
 		{
 			get
@@ -247,7 +247,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014FE RID: 5374 RVA: 0x00010D58 File Offset: 0x0000EF58
+		// (get) Token: 0x0600116E RID: 4462 RVA: 0x0004E022 File Offset: 0x0004C222
 		IControllerTemplateButton IRacingWheelTemplate.shifter2
 		{
 			get
@@ -256,7 +256,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x060014FF RID: 5375 RVA: 0x00010D62 File Offset: 0x0000EF62
+		// (get) Token: 0x0600116F RID: 4463 RVA: 0x0004E02C File Offset: 0x0004C22C
 		IControllerTemplateButton IRacingWheelTemplate.shifter3
 		{
 			get
@@ -265,7 +265,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001500 RID: 5376 RVA: 0x00010D6C File Offset: 0x0000EF6C
+		// (get) Token: 0x06001170 RID: 4464 RVA: 0x0004E036 File Offset: 0x0004C236
 		IControllerTemplateButton IRacingWheelTemplate.shifter4
 		{
 			get
@@ -274,7 +274,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001501 RID: 5377 RVA: 0x00010D76 File Offset: 0x0000EF76
+		// (get) Token: 0x06001171 RID: 4465 RVA: 0x0004E040 File Offset: 0x0004C240
 		IControllerTemplateButton IRacingWheelTemplate.shifter5
 		{
 			get
@@ -283,7 +283,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001502 RID: 5378 RVA: 0x00010D80 File Offset: 0x0000EF80
+		// (get) Token: 0x06001172 RID: 4466 RVA: 0x0004E04A File Offset: 0x0004C24A
 		IControllerTemplateButton IRacingWheelTemplate.shifter6
 		{
 			get
@@ -292,7 +292,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001503 RID: 5379 RVA: 0x00010D8A File Offset: 0x0000EF8A
+		// (get) Token: 0x06001173 RID: 4467 RVA: 0x0004E054 File Offset: 0x0004C254
 		IControllerTemplateButton IRacingWheelTemplate.shifter7
 		{
 			get
@@ -301,7 +301,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001504 RID: 5380 RVA: 0x00010D94 File Offset: 0x0000EF94
+		// (get) Token: 0x06001174 RID: 4468 RVA: 0x0004E05E File Offset: 0x0004C25E
 		IControllerTemplateButton IRacingWheelTemplate.shifter8
 		{
 			get
@@ -310,7 +310,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001505 RID: 5381 RVA: 0x00010D9E File Offset: 0x0000EF9E
+		// (get) Token: 0x06001175 RID: 4469 RVA: 0x0004E068 File Offset: 0x0004C268
 		IControllerTemplateButton IRacingWheelTemplate.shifter9
 		{
 			get
@@ -319,7 +319,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001506 RID: 5382 RVA: 0x00010DA8 File Offset: 0x0000EFA8
+		// (get) Token: 0x06001176 RID: 4470 RVA: 0x0004E072 File Offset: 0x0004C272
 		IControllerTemplateButton IRacingWheelTemplate.shifter10
 		{
 			get
@@ -328,7 +328,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001507 RID: 5383 RVA: 0x00010DB2 File Offset: 0x0000EFB2
+		// (get) Token: 0x06001177 RID: 4471 RVA: 0x0004E07C File Offset: 0x0004C27C
 		IControllerTemplateButton IRacingWheelTemplate.reverseGear
 		{
 			get
@@ -337,7 +337,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001508 RID: 5384 RVA: 0x00010DBC File Offset: 0x0000EFBC
+		// (get) Token: 0x06001178 RID: 4472 RVA: 0x0004E086 File Offset: 0x0004C286
 		IControllerTemplateButton IRacingWheelTemplate.select
 		{
 			get
@@ -346,7 +346,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x06001509 RID: 5385 RVA: 0x00010DC6 File Offset: 0x0000EFC6
+		// (get) Token: 0x06001179 RID: 4473 RVA: 0x0004E090 File Offset: 0x0004C290
 		IControllerTemplateButton IRacingWheelTemplate.start
 		{
 			get
@@ -355,7 +355,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600150A RID: 5386 RVA: 0x00010DD0 File Offset: 0x0000EFD0
+		// (get) Token: 0x0600117A RID: 4474 RVA: 0x0004E09A File Offset: 0x0004C29A
 		IControllerTemplateButton IRacingWheelTemplate.systemButton
 		{
 			get
@@ -364,7 +364,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600150B RID: 5387 RVA: 0x00010DDA File Offset: 0x0000EFDA
+		// (get) Token: 0x0600117B RID: 4475 RVA: 0x0004E0A4 File Offset: 0x0004C2A4
 		IControllerTemplateButton IRacingWheelTemplate.horn
 		{
 			get
@@ -373,7 +373,7 @@ namespace Rewired
 			}
 		}
 
-		// (get) Token: 0x0600150C RID: 5388 RVA: 0x00010DE4 File Offset: 0x0000EFE4
+		// (get) Token: 0x0600117C RID: 4476 RVA: 0x0004E0AE File Offset: 0x0004C2AE
 		IControllerTemplateDPad IRacingWheelTemplate.dPad
 		{
 			get
@@ -382,7 +382,7 @@ namespace Rewired
 			}
 		}
 
-		// Token: 0x0600150D RID: 5389 RVA: 0x00010CA2 File Offset: 0x0000EEA2
+		// Token: 0x0600117D RID: 4477 RVA: 0x0004E0B8 File Offset: 0x0004C2B8
 		public RacingWheelTemplate(object payload)
 			: base(payload)
 		{

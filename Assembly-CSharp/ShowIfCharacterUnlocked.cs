@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class ShowIfCharacterUnlocked : MonoBehaviour
 {
-	// Token: 0x060004EC RID: 1260 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000412 RID: 1042 RVA: 0x00017D69 File Offset: 0x00015F69
 	[ContextMenu("fix Profiles")]
 	private void FixProfiles()
 	{
 	}
 
-	// Token: 0x060004ED RID: 1261 RVA: 0x0002CFC8 File Offset: 0x0002B1C8
+	// Token: 0x06000413 RID: 1043 RVA: 0x00017D6C File Offset: 0x00015F6C
 	private void Start()
 	{
 		if (!this.IsUnlocked())
@@ -31,7 +31,7 @@ public class ShowIfCharacterUnlocked : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004EE RID: 1262 RVA: 0x00005A04 File Offset: 0x00003C04
+	// Token: 0x06000414 RID: 1044 RVA: 0x00017DEA File Offset: 0x00015FEA
 	private void OnDestroy()
 	{
 		if (this.hasListener)
@@ -40,7 +40,7 @@ public class ShowIfCharacterUnlocked : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004EF RID: 1263 RVA: 0x0002D048 File Offset: 0x0002B248
+	// Token: 0x06000415 RID: 1045 RVA: 0x00017DFC File Offset: 0x00015FFC
 	private bool IsUnlocked()
 	{
 		if (this.characterProfile != null && !this.characterProfile.IsUnlocked)
@@ -61,7 +61,7 @@ public class ShowIfCharacterUnlocked : MonoBehaviour
 		return true;
 	}
 
-	// Token: 0x060004F0 RID: 1264 RVA: 0x00005A14 File Offset: 0x00003C14
+	// Token: 0x06000416 RID: 1046 RVA: 0x00017E50 File Offset: 0x00016050
 	private void OnCharacterChange(object sender, bool isUnlocked)
 	{
 		if (this.IsUnlocked())
@@ -71,7 +71,7 @@ public class ShowIfCharacterUnlocked : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060004F1 RID: 1265 RVA: 0x0002D09C File Offset: 0x0002B29C
+	// Token: 0x06000417 RID: 1047 RVA: 0x00017E6C File Offset: 0x0001606C
 	private void RemoveListeners()
 	{
 		if (this.characterProfile != null)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueBubbleTrigger : MonoBehaviour
 {
-	// Token: 0x06000437 RID: 1079 RVA: 0x00029CD0 File Offset: 0x00027ED0
+	// Token: 0x0600039F RID: 927 RVA: 0x0001580C File Offset: 0x00013A0C
 	private void OnValidate()
 	{
 		DialogueActor dialogueActor;
@@ -15,7 +15,7 @@ public class DialogueBubbleTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000438 RID: 1080 RVA: 0x000051E7 File Offset: 0x000033E7
+	// Token: 0x060003A0 RID: 928 RVA: 0x00015849 File Offset: 0x00013A49
 	[ContextMenu("Fix Actor")]
 	public void FixActor()
 	{
@@ -23,13 +23,13 @@ public class DialogueBubbleTrigger : MonoBehaviour
 		this.actors[0] = base.GetComponent<DialogueActor>();
 	}
 
-	// Token: 0x06000439 RID: 1081 RVA: 0x00005203 File Offset: 0x00003403
+	// Token: 0x060003A1 RID: 929 RVA: 0x00015865 File Offset: 0x00013A65
 	private void Awake()
 	{
 		this.minimumDistanceSqr = this.minimumDistance * this.minimumDistance;
 	}
 
-	// Token: 0x0600043A RID: 1082 RVA: 0x00005218 File Offset: 0x00003418
+	// Token: 0x060003A2 RID: 930 RVA: 0x0001587A File Offset: 0x00013A7A
 	private void OnTriggerEnter(Collider other)
 	{
 		if (this.onEnter)
@@ -38,7 +38,7 @@ public class DialogueBubbleTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600043B RID: 1083 RVA: 0x00005228 File Offset: 0x00003428
+	// Token: 0x060003A3 RID: 931 RVA: 0x0001588A File Offset: 0x00013A8A
 	private void OnTriggerStay(Collider other)
 	{
 		if (this.onStay)
@@ -47,7 +47,7 @@ public class DialogueBubbleTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600043C RID: 1084 RVA: 0x00005238 File Offset: 0x00003438
+	// Token: 0x060003A4 RID: 932 RVA: 0x0001589A File Offset: 0x00013A9A
 	private void OnTriggerExit(Collider other)
 	{
 		if (this.cancelOnExit && this.waitForBubble != null)
@@ -61,7 +61,7 @@ public class DialogueBubbleTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600043D RID: 1085 RVA: 0x00029D10 File Offset: 0x00027F10
+	// Token: 0x060003A5 RID: 933 RVA: 0x000158D0 File Offset: 0x00013AD0
 	[ContextMenu("Trigger")]
 	public void Trigger()
 	{
@@ -101,7 +101,7 @@ public class DialogueBubbleTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600043E RID: 1086 RVA: 0x0000526E File Offset: 0x0000346E
+	// Token: 0x060003A6 RID: 934 RVA: 0x00015A68 File Offset: 0x00013C68
 	public IEnumerator WaitForBubbleToFinish(YieldInstruction bubble)
 	{
 		while (DialogueManager.d.isInBubbleDialogue)

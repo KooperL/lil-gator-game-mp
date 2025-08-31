@@ -5,8 +5,8 @@ using UnityEngine.Serialization;
 [CreateAssetMenu]
 public class CharacterProfile : ScriptableObject
 {
-	// (get) Token: 0x060003B1 RID: 945 RVA: 0x00004CFF File Offset: 0x00002EFF
-	// (set) Token: 0x060003B2 RID: 946 RVA: 0x00004D1C File Offset: 0x00002F1C
+	// (get) Token: 0x06000340 RID: 832 RVA: 0x00013087 File Offset: 0x00011287
+	// (set) Token: 0x06000341 RID: 833 RVA: 0x000130A4 File Offset: 0x000112A4
 	public bool IsUnlocked
 	{
 		get
@@ -24,7 +24,7 @@ public class CharacterProfile : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x060003B3 RID: 947 RVA: 0x00004D45 File Offset: 0x00002F45
+	// (get) Token: 0x06000342 RID: 834 RVA: 0x000130CD File Offset: 0x000112CD
 	public string Name
 	{
 		get
@@ -41,13 +41,13 @@ public class CharacterProfile : ScriptableObject
 		}
 	}
 
-	// (add) Token: 0x060003B4 RID: 948 RVA: 0x00027354 File Offset: 0x00025554
-	// (remove) Token: 0x060003B5 RID: 949 RVA: 0x0002738C File Offset: 0x0002558C
+	// (add) Token: 0x06000343 RID: 835 RVA: 0x00013108 File Offset: 0x00011308
+	// (remove) Token: 0x06000344 RID: 836 RVA: 0x00013140 File Offset: 0x00011340
 	public event EventHandler<bool> OnChange = delegate
 	{
 	};
 
-	// Token: 0x060003B6 RID: 950 RVA: 0x00004D7D File Offset: 0x00002F7D
+	// Token: 0x06000345 RID: 837 RVA: 0x00013175 File Offset: 0x00011375
 	public Color GetColor(CharacterProfile.CharacterColor colorType)
 	{
 		switch (colorType)
@@ -63,7 +63,7 @@ public class CharacterProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x060003B7 RID: 951 RVA: 0x00004DAD File Offset: 0x00002FAD
+	// Token: 0x06000346 RID: 838 RVA: 0x000131A5 File Offset: 0x000113A5
 	private void OnValidate()
 	{
 		if (this.midColor == Color.white)
@@ -72,14 +72,14 @@ public class CharacterProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x060003B8 RID: 952 RVA: 0x00004DCD File Offset: 0x00002FCD
+	// Token: 0x06000347 RID: 839 RVA: 0x000131C5 File Offset: 0x000113C5
 	public void SetName(string nameID, MultilingualTextDocument document)
 	{
 		this.name = document.FetchString(nameID, Language.Auto);
 		UINameplate.UpdateNameplates(this);
 	}
 
-	// Token: 0x060003B9 RID: 953 RVA: 0x00004DE4 File Offset: 0x00002FE4
+	// Token: 0x06000348 RID: 840 RVA: 0x000131DC File Offset: 0x000113DC
 	[ContextMenu("Add Name To Document")]
 	public void AddNameToDocument()
 	{

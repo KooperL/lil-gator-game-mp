@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class DialogueDocumentInfo : MonoBehaviour
 {
-	// Token: 0x0600056A RID: 1386 RVA: 0x00005EE0 File Offset: 0x000040E0
+	// Token: 0x0600045A RID: 1114 RVA: 0x00018C07 File Offset: 0x00016E07
 	private void OnEnable()
 	{
 		DialogueDocumentInfo.d = this;
 	}
 
-	// Token: 0x0600056B RID: 1387 RVA: 0x00005EE8 File Offset: 0x000040E8
+	// Token: 0x0600045B RID: 1115 RVA: 0x00018C0F File Offset: 0x00016E0F
 	private void OnDisable()
 	{
 		if (DialogueDocumentInfo.d == this)
@@ -20,7 +20,7 @@ public class DialogueDocumentInfo : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600056C RID: 1388 RVA: 0x0002EB88 File Offset: 0x0002CD88
+	// Token: 0x0600045C RID: 1116 RVA: 0x00018C24 File Offset: 0x00016E24
 	public void LoadDocumentInfo(DialogueChunk chunk)
 	{
 		MultilingualTextDocument multilingualTextDocument = this.FindDocumentForChunk(chunk);
@@ -38,13 +38,13 @@ public class DialogueDocumentInfo : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600056D RID: 1389 RVA: 0x00005EFD File Offset: 0x000040FD
+	// Token: 0x0600045D RID: 1117 RVA: 0x00018C93 File Offset: 0x00016E93
 	private void ClearDocumentInfo()
 	{
 		this.root.SetActive(false);
 	}
 
-	// Token: 0x0600056E RID: 1390 RVA: 0x0002EBF8 File Offset: 0x0002CDF8
+	// Token: 0x0600045E RID: 1118 RVA: 0x00018CA4 File Offset: 0x00016EA4
 	private MultilingualTextDocument FindDocumentForChunk(DialogueChunk chunk)
 	{
 		foreach (MultilingualTextDocument multilingualTextDocument in this.documents)
@@ -57,7 +57,7 @@ public class DialogueDocumentInfo : MonoBehaviour
 		return null;
 	}
 
-	// Token: 0x0600056F RID: 1391 RVA: 0x00005F0B File Offset: 0x0000410B
+	// Token: 0x0600045F RID: 1119 RVA: 0x00018CDB File Offset: 0x00016EDB
 	private IEnumerator WaitForDialogueToEnd()
 	{
 		while (Game.State == GameState.Dialogue || DialogueManager.d.isInBubbleDialogue)

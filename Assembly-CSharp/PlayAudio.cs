@@ -5,19 +5,19 @@ using UnityEngine.Audio;
 
 public class PlayAudio : MonoBehaviour
 {
-	// Token: 0x06000A94 RID: 2708 RVA: 0x0000A169 File Offset: 0x00008369
+	// Token: 0x060008C8 RID: 2248 RVA: 0x00029723 File Offset: 0x00027923
 	private void OnEnable()
 	{
 		PlayAudio.p = this;
 	}
 
-	// Token: 0x06000A95 RID: 2709 RVA: 0x0000A171 File Offset: 0x00008371
+	// Token: 0x060008C9 RID: 2249 RVA: 0x0002972B File Offset: 0x0002792B
 	public void Play(AudioClip audioClip, float volume = 1f, float pitch = 1f)
 	{
 		this.PlayAtPoint(audioClip, Player.Position, volume, pitch, 128);
 	}
 
-	// Token: 0x06000A96 RID: 2710 RVA: 0x0000A186 File Offset: 0x00008386
+	// Token: 0x060008CA RID: 2250 RVA: 0x00029740 File Offset: 0x00027940
 	public void PlayAtPoint(SoundEffect soundEffect, Vector3 point)
 	{
 		if (soundEffect == null || soundEffect.audioClip == null)
@@ -27,16 +27,16 @@ public class PlayAudio : MonoBehaviour
 		this.PlayAtPoint(soundEffect.audioClip, point, soundEffect.Volume, soundEffect.Pitch, 128);
 	}
 
-	// Token: 0x06000A97 RID: 2711 RVA: 0x0000A1B8 File Offset: 0x000083B8
+	// Token: 0x060008CB RID: 2251 RVA: 0x00029772 File Offset: 0x00027972
 	public void PlayAtPoint(AudioClip audioClip, Vector3 point, float volume = 1f, float pitch = 1f, int priority = 128)
 	{
 		this.PlayAtPoint(audioClip, point, this.defaultGroup, volume, pitch, priority);
 	}
 
-	// Token: 0x06000A98 RID: 2712 RVA: 0x0003DCE8 File Offset: 0x0003BEE8
+	// Token: 0x060008CC RID: 2252 RVA: 0x00029788 File Offset: 0x00027988
 	public void PlayAtPoint(AudioClip audioClip, Vector3 point, AudioMixerGroup mixerGroup, float volume = 1f, float pitch = 1f, int priority = 128)
 	{
-		GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(this.prefab);
+		GameObject gameObject = Object.Instantiate<GameObject>(this.prefab);
 		gameObject.transform.position = point;
 		AudioSource component = gameObject.GetComponent<AudioSource>();
 		component.clip = audioClip;
@@ -48,21 +48,21 @@ public class PlayAudio : MonoBehaviour
 		base.StartCoroutine(this.DestroyAudioSource(gameObject, audioClip.length));
 	}
 
-	// Token: 0x06000A99 RID: 2713 RVA: 0x0000A1CD File Offset: 0x000083CD
+	// Token: 0x060008CD RID: 2253 RVA: 0x000297F2 File Offset: 0x000279F2
 	private IEnumerator DestroyAudioSource(GameObject gameObject, float clipLength)
 	{
 		yield return new WaitForSeconds(clipLength);
-		global::UnityEngine.Object.Destroy(gameObject);
+		Object.Destroy(gameObject);
 		yield break;
 	}
 
-	// Token: 0x06000A9A RID: 2714 RVA: 0x0000A1E3 File Offset: 0x000083E3
+	// Token: 0x060008CE RID: 2254 RVA: 0x00029808 File Offset: 0x00027A08
 	public void PlayVoice(Vector3 position, float pitchMultiplier = 1f, float varianceMultiplier = 1f)
 	{
 		this.PlayVoice(this.voiceProfile, position, pitchMultiplier, varianceMultiplier);
 	}
 
-	// Token: 0x06000A9B RID: 2715 RVA: 0x0003DD54 File Offset: 0x0003BF54
+	// Token: 0x060008CF RID: 2255 RVA: 0x0002981C File Offset: 0x00027A1C
 	public void PlayVoice(VoiceProfile voiceProfile, Vector3 position, float pitchMultiplier = 1f, float varianceMultiplier = 1f)
 	{
 		if (Time.time < this.allowNextVoiceTime)
@@ -72,8 +72,8 @@ public class PlayAudio : MonoBehaviour
 		AudioClip audioClip = voiceProfile.voiceClips.RandomValue<AudioClip>();
 		float num = voiceProfile.pitch * pitchMultiplier;
 		float num2 = voiceProfile.variance * varianceMultiplier;
-		num *= global::UnityEngine.Random.Range(1f - num2, 1f + num2);
-		AudioSource component = global::UnityEngine.Object.Instantiate<GameObject>(this.voicePrefab, position, Quaternion.identity, base.transform).GetComponent<AudioSource>();
+		num *= Random.Range(1f - num2, 1f + num2);
+		AudioSource component = Object.Instantiate<GameObject>(this.voicePrefab, position, Quaternion.identity, base.transform).GetComponent<AudioSource>();
 		component.clip = audioClip;
 		component.pitch = num;
 		component.Play();
@@ -81,13 +81,13 @@ public class PlayAudio : MonoBehaviour
 		base.StartCoroutine(this.DestroyAudioSource(component.gameObject, audioClip.length));
 	}
 
-	// Token: 0x06000A9C RID: 2716 RVA: 0x0000A1F4 File Offset: 0x000083F4
+	// Token: 0x060008D0 RID: 2256 RVA: 0x000298CE File Offset: 0x00027ACE
 	public void PlayQuestSting(int index)
 	{
 		this.Play(this.questStings[index], 0.35f, 1f);
 	}
 
-	// Token: 0x06000A9D RID: 2717 RVA: 0x0000A20E File Offset: 0x0000840E
+	// Token: 0x060008D1 RID: 2257 RVA: 0x000298E8 File Offset: 0x00027AE8
 	public void PlayQuestEndSting()
 	{
 		if (Time.time - this.lastQuestEndStingTime < 0.5f)

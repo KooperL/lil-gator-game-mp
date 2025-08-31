@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ForceShowResource : MonoBehaviour
 {
-	// Token: 0x0600073C RID: 1852 RVA: 0x000074BE File Offset: 0x000056BE
+	// Token: 0x060005D8 RID: 1496 RVA: 0x0001EE8D File Offset: 0x0001D08D
 	public void OnEnable()
 	{
 		if (!this.ignoreIfEmpty || this.resource.HasBeenCollected())
@@ -12,7 +12,7 @@ public class ForceShowResource : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600073D RID: 1853 RVA: 0x000074E1 File Offset: 0x000056E1
+	// Token: 0x060005D9 RID: 1497 RVA: 0x0001EEB0 File Offset: 0x0001D0B0
 	public void OnDisable()
 	{
 		this.resource.ForceShow = false;

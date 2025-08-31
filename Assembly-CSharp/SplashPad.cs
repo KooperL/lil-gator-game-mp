@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class SplashPad : MonoBehaviour
 {
-	// Token: 0x0600013D RID: 317 RVA: 0x0000319A File Offset: 0x0000139A
+	// Token: 0x06000110 RID: 272 RVA: 0x00006CAC File Offset: 0x00004EAC
 	private void Start()
 	{
 		this.RefreshState();
 	}
 
-	// Token: 0x0600013E RID: 318 RVA: 0x0001BC1C File Offset: 0x00019E1C
+	// Token: 0x06000111 RID: 273 RVA: 0x00006CB4 File Offset: 0x00004EB4
 	[ContextMenu("RefreshState")]
 	public void RefreshState()
 	{

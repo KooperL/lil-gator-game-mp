@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class OffsetAtRuntime : MonoBehaviour
 {
-	// Token: 0x06000A4F RID: 2639 RVA: 0x00009DD8 File Offset: 0x00007FD8
+	// Token: 0x06000883 RID: 2179 RVA: 0x000283F9 File Offset: 0x000265F9
 	private void Start()
 	{
 		base.transform.position += this.worldOffset;

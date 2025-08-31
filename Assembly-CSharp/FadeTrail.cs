@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FadeTrail : MonoBehaviour
 {
-	// Token: 0x0600012A RID: 298 RVA: 0x0000300E File Offset: 0x0000120E
+	// Token: 0x060000FD RID: 253 RVA: 0x000068C4 File Offset: 0x00004AC4
 	public void OnValidate()
 	{
 		if (this.rigidbody == null)
@@ -16,7 +16,7 @@ public class FadeTrail : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600012B RID: 299 RVA: 0x00003044 File Offset: 0x00001244
+	// Token: 0x060000FE RID: 254 RVA: 0x000068FA File Offset: 0x00004AFA
 	private void Start()
 	{
 		this.fadeStartTime = Time.time + this.fadeDelay;
@@ -24,7 +24,7 @@ public class FadeTrail : MonoBehaviour
 		this.baseWidth = this.trailRenderer.widthMultiplier;
 	}
 
-	// Token: 0x0600012C RID: 300 RVA: 0x0001B9D0 File Offset: 0x00019BD0
+	// Token: 0x060000FF RID: 255 RVA: 0x00006934 File Offset: 0x00004B34
 	private void Update()
 	{
 		float magnitude = this.rigidbody.velocity.magnitude;

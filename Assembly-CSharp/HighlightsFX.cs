@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(Camera))]
 public class HighlightsFX : MonoBehaviour
 {
-	// Token: 0x060010DA RID: 4314 RVA: 0x00056E4C File Offset: 0x0005504C
+	// Token: 0x06000DC2 RID: 3522 RVA: 0x00042A48 File Offset: 0x00040C48
 	public void SetRenderer(Renderer[] renderers, Color col, HighlightsFX.SortingType sorting = HighlightsFX.SortingType.Overlay, bool fadeIn = true)
 	{
 		this.objectRenderers = renderers;
@@ -26,28 +26,28 @@ public class HighlightsFX : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010DB RID: 4315 RVA: 0x0000E65F File Offset: 0x0000C85F
+	// Token: 0x06000DC3 RID: 3523 RVA: 0x00042AC3 File Offset: 0x00040CC3
 	public void ClearRenderer()
 	{
 		this.objectRenderers = null;
 		this.RecreateCommandBuffer();
 	}
 
-	// Token: 0x060010DC RID: 4316 RVA: 0x0000E66E File Offset: 0x0000C86E
+	// Token: 0x06000DC4 RID: 3524 RVA: 0x00042AD2 File Offset: 0x00040CD2
 	public void AddExcluders(Renderer renderer)
 	{
 		this.m_objectExcluders.Add(renderer);
 		this.RecreateCommandBuffer();
 	}
 
-	// Token: 0x060010DD RID: 4317 RVA: 0x0000E682 File Offset: 0x0000C882
+	// Token: 0x06000DC5 RID: 3525 RVA: 0x00042AE6 File Offset: 0x00040CE6
 	public void RemoveExcluders(Renderer renderer)
 	{
 		this.m_objectExcluders.Remove(renderer);
 		this.RecreateCommandBuffer();
 	}
 
-	// Token: 0x060010DE RID: 4318 RVA: 0x0000E697 File Offset: 0x0000C897
+	// Token: 0x06000DC6 RID: 3526 RVA: 0x00042AFB File Offset: 0x00040CFB
 	public void ClearOutlineData()
 	{
 		this.m_objectRenderers.Clear();
@@ -55,12 +55,12 @@ public class HighlightsFX : MonoBehaviour
 		this.RecreateCommandBuffer();
 	}
 
-	// Token: 0x060010DF RID: 4319 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000DC7 RID: 3527 RVA: 0x00042B19 File Offset: 0x00040D19
 	private void CleanRenderers()
 	{
 	}
 
-	// Token: 0x060010E0 RID: 4320 RVA: 0x0000E6B5 File Offset: 0x0000C8B5
+	// Token: 0x06000DC8 RID: 3528 RVA: 0x00042B1B File Offset: 0x00040D1B
 	[ContextMenu("LoadShaders")]
 	public void FindShaders()
 	{
@@ -68,7 +68,7 @@ public class HighlightsFX : MonoBehaviour
 		this.m_blurShader = Shader.Find("Hidden/FastBlur");
 	}
 
-	// Token: 0x060010E1 RID: 4321 RVA: 0x00056EC8 File Offset: 0x000550C8
+	// Token: 0x06000DC9 RID: 3529 RVA: 0x00042B40 File Offset: 0x00040D40
 	private void OnEnable()
 	{
 		HighlightsFX.h = this;
@@ -90,13 +90,13 @@ public class HighlightsFX : MonoBehaviour
 		this.m_camera.AddCommandBuffer(this.BufferDrawEvent, this.m_commandBuffer);
 	}
 
-	// Token: 0x060010E2 RID: 4322 RVA: 0x0000E6D7 File Offset: 0x0000C8D7
+	// Token: 0x06000DCA RID: 3530 RVA: 0x00042C55 File Offset: 0x00040E55
 	private void OnDisable()
 	{
 		this.m_camera.RemoveCommandBuffer(this.BufferDrawEvent, this.m_commandBuffer);
 	}
 
-	// Token: 0x060010E3 RID: 4323 RVA: 0x00056FE0 File Offset: 0x000551E0
+	// Token: 0x06000DCB RID: 3531 RVA: 0x00042C70 File Offset: 0x00040E70
 	public void RecreateCommandBuffer()
 	{
 		this.m_commandBuffer.Clear();
@@ -139,7 +139,7 @@ public class HighlightsFX : MonoBehaviour
 		this.m_commandBuffer.ReleaseTemporaryRT(this.m_highlightRTID);
 	}
 
-	// Token: 0x060010E4 RID: 4324 RVA: 0x0000E6F0 File Offset: 0x0000C8F0
+	// Token: 0x06000DCC RID: 3532 RVA: 0x00042F6C File Offset: 0x0004116C
 	private IEnumerator FadeInMaterial()
 	{
 		float fade = 0.5f;

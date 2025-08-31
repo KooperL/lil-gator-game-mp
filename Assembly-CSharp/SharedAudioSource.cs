@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SharedAudioSource : MonoBehaviour, ISharedAudioSource
 {
-	// Token: 0x0600024D RID: 589 RVA: 0x00003E75 File Offset: 0x00002075
+	// Token: 0x06000208 RID: 520 RVA: 0x0000B445 File Offset: 0x00009645
 	private void OnValidate()
 	{
 		if (this.sphereTrigger == null)
@@ -13,19 +13,19 @@ public class SharedAudioSource : MonoBehaviour, ISharedAudioSource
 		this.UpdateRadius();
 	}
 
-	// Token: 0x0600024E RID: 590 RVA: 0x00003E97 File Offset: 0x00002097
+	// Token: 0x06000209 RID: 521 RVA: 0x0000B467 File Offset: 0x00009667
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.DrawSphere(base.transform.position, this.profile.radius * this.radiusMultiplier * 0.5f);
 	}
 
-	// Token: 0x0600024F RID: 591 RVA: 0x00003EC1 File Offset: 0x000020C1
+	// Token: 0x0600020A RID: 522 RVA: 0x0000B491 File Offset: 0x00009691
 	private void Start()
 	{
 		this.cachedPosition = base.transform.position;
 	}
 
-	// Token: 0x06000250 RID: 592 RVA: 0x0001F9E0 File Offset: 0x0001DBE0
+	// Token: 0x0600020B RID: 523 RVA: 0x0000B4A4 File Offset: 0x000096A4
 	[ContextMenu("Update Radius")]
 	private void UpdateRadius()
 	{
@@ -46,7 +46,7 @@ public class SharedAudioSource : MonoBehaviour, ISharedAudioSource
 		}
 	}
 
-	// Token: 0x06000251 RID: 593 RVA: 0x00003ED4 File Offset: 0x000020D4
+	// Token: 0x0600020C RID: 524 RVA: 0x0000B54F File Offset: 0x0000974F
 	private void OnTriggerStay(Collider collider)
 	{
 		if (!SharedAudioManager.nearbyAudioSources.Contains(this))
@@ -56,7 +56,7 @@ public class SharedAudioSource : MonoBehaviour, ISharedAudioSource
 		}
 	}
 
-	// Token: 0x06000252 RID: 594 RVA: 0x00003EFA File Offset: 0x000020FA
+	// Token: 0x0600020D RID: 525 RVA: 0x0000B575 File Offset: 0x00009775
 	public void WasRemoved()
 	{
 		if (this.sphereTrigger != null)
@@ -65,7 +65,7 @@ public class SharedAudioSource : MonoBehaviour, ISharedAudioSource
 		}
 	}
 
-	// Token: 0x06000253 RID: 595 RVA: 0x0001FA8C File Offset: 0x0001DC8C
+	// Token: 0x0600020E RID: 526 RVA: 0x0000B594 File Offset: 0x00009794
 	public void GetAudioData(Vector3 positionReference, out SharedAudioProfile profile, out Vector3 direction, out float strength)
 	{
 		profile = this.profile;

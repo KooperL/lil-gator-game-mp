@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Sun : MonoBehaviour
 {
-	// Token: 0x060006A2 RID: 1698 RVA: 0x00006CE5 File Offset: 0x00004EE5
+	// Token: 0x06000556 RID: 1366 RVA: 0x0001C5F3 File Offset: 0x0001A7F3
 	private void Awake()
 	{
 		Sun.s = this;
 		this.rotation = base.transform.rotation;
 	}
 
-	// Token: 0x060006A3 RID: 1699 RVA: 0x00032230 File Offset: 0x00030430
+	// Token: 0x06000557 RID: 1367 RVA: 0x0001C60C File Offset: 0x0001A80C
 	private void Update()
 	{
 		Quaternion quaternion = this.rotation;

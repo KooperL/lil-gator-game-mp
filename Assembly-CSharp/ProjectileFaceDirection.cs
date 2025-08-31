@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class ProjectileFaceDirection : MonoBehaviour
 {
-	// Token: 0x06000B2A RID: 2858 RVA: 0x0000A8F0 File Offset: 0x00008AF0
+	// Token: 0x06000946 RID: 2374 RVA: 0x0002C0D4 File Offset: 0x0002A2D4
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x06000B2B RID: 2859 RVA: 0x0004005C File Offset: 0x0003E25C
+	// Token: 0x06000947 RID: 2375 RVA: 0x0002C0E4 File Offset: 0x0002A2E4
 	public void FixedUpdate()
 	{
 		float magnitude = this.rigidbody.velocity.magnitude;

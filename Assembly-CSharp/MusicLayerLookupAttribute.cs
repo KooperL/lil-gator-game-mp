@@ -2,7 +2,7 @@
 
 public class MusicLayerLookupAttribute : LookupAttribute
 {
-	// Token: 0x060000C4 RID: 196 RVA: 0x00002ABF File Offset: 0x00000CBF
+	// Token: 0x060000B0 RID: 176 RVA: 0x0000540B File Offset: 0x0000360B
 	public MusicLayerLookupAttribute(string sourceField)
 	{
 		this.sourceField = sourceField;

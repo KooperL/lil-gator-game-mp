@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIItem : MonoBehaviour
 {
-	// Token: 0x06001238 RID: 4664 RVA: 0x0005B4A0 File Offset: 0x000596A0
+	// Token: 0x06000EFF RID: 3839 RVA: 0x00047FE4 File Offset: 0x000461E4
 	public static void RefreshAll()
 	{
 		if (UIItem.allItems == null)
@@ -18,7 +18,7 @@ public class UIItem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001239 RID: 4665 RVA: 0x0000F782 File Offset: 0x0000D982
+	// Token: 0x06000F00 RID: 3840 RVA: 0x00048027 File Offset: 0x00046227
 	private void OnEnable()
 	{
 		if (UIItem.allItems == null)
@@ -28,19 +28,19 @@ public class UIItem : MonoBehaviour
 		UIItem.allItems.Add(this);
 	}
 
-	// Token: 0x0600123A RID: 4666 RVA: 0x0000F7A0 File Offset: 0x0000D9A0
+	// Token: 0x06000F01 RID: 3841 RVA: 0x00048045 File Offset: 0x00046245
 	private void OnDisable()
 	{
 		UIItem.allItems.Remove(this);
 	}
 
-	// Token: 0x0600123B RID: 4667 RVA: 0x0000F7AE File Offset: 0x0000D9AE
+	// Token: 0x06000F02 RID: 3842 RVA: 0x00048053 File Offset: 0x00046253
 	private void Start()
 	{
 		this.Refresh();
 	}
 
-	// Token: 0x0600123C RID: 4668 RVA: 0x0000F7B6 File Offset: 0x0000D9B6
+	// Token: 0x06000F03 RID: 3843 RVA: 0x0004805B File Offset: 0x0004625B
 	public void Refresh()
 	{
 		this.image.enabled = ItemManager.i.IsItemUnlocked(this.itemName);

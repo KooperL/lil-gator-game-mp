@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class SpringRiderMount : ActorMount
 {
-	// Token: 0x0600052E RID: 1326 RVA: 0x0002E034 File Offset: 0x0002C234
+	// Token: 0x06000436 RID: 1078 RVA: 0x00018498 File Offset: 0x00016698
 	protected override void HandlePlayerInput(Vector3 input, ref float animationIndex)
 	{
 		animationIndex = 0f;
@@ -14,7 +14,7 @@ public class SpringRiderMount : ActorMount
 		this.spring.AddForce(this.force * input);
 	}
 
-	// Token: 0x0600052F RID: 1327 RVA: 0x0002E0AC File Offset: 0x0002C2AC
+	// Token: 0x06000437 RID: 1079 RVA: 0x00018510 File Offset: 0x00016710
 	protected override void GetIntoMount(bool skipToMount)
 	{
 		base.GetIntoMount(skipToMount);
@@ -33,7 +33,7 @@ public class SpringRiderMount : ActorMount
 		this.onGottenInto.AddListener(new UnityAction(this.OnGetInto));
 	}
 
-	// Token: 0x06000530 RID: 1328 RVA: 0x00005C5F File Offset: 0x00003E5F
+	// Token: 0x06000438 RID: 1080 RVA: 0x0001857F File Offset: 0x0001677F
 	private void OnGetInto()
 	{
 		if (!this.ignoreSpringPhysics)
@@ -42,7 +42,7 @@ public class SpringRiderMount : ActorMount
 		}
 	}
 
-	// Token: 0x06000531 RID: 1329 RVA: 0x00005C8A File Offset: 0x00003E8A
+	// Token: 0x06000439 RID: 1081 RVA: 0x000185AA File Offset: 0x000167AA
 	public override void GetOut()
 	{
 		base.GetOut();
@@ -52,7 +52,7 @@ public class SpringRiderMount : ActorMount
 		}
 	}
 
-	// Token: 0x06000532 RID: 1330 RVA: 0x00005CBC File Offset: 0x00003EBC
+	// Token: 0x0600043A RID: 1082 RVA: 0x000185DC File Offset: 0x000167DC
 	public override void Cancel()
 	{
 		if (!this.ignoreSpringPhysics)
@@ -62,7 +62,7 @@ public class SpringRiderMount : ActorMount
 		base.Cancel();
 	}
 
-	// Token: 0x06000533 RID: 1331 RVA: 0x00005CEC File Offset: 0x00003EEC
+	// Token: 0x0600043B RID: 1083 RVA: 0x0001860C File Offset: 0x0001680C
 	public override void CancelMount()
 	{
 		if (!this.actor.isPlayer && !this.ignoreSpringPhysics)

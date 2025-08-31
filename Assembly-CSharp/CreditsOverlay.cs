@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CreditsOverlay : MonoBehaviour
 {
-	// Token: 0x06000331 RID: 817 RVA: 0x000047F4 File Offset: 0x000029F4
+	// Token: 0x060002DA RID: 730 RVA: 0x000111F8 File Offset: 0x0000F3F8
 	[ContextMenu("Start Credits")]
 	public void StartCredits()
 	{
@@ -14,7 +14,7 @@ public class CreditsOverlay : MonoBehaviour
 		base.enabled = true;
 	}
 
-	// Token: 0x06000332 RID: 818 RVA: 0x00025504 File Offset: 0x00023704
+	// Token: 0x060002DB RID: 731 RVA: 0x00011214 File Offset: 0x0000F414
 	private void Update()
 	{
 		if (this.nextChunkTime < 0f)
@@ -55,7 +55,7 @@ public class CreditsOverlay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000333 RID: 819 RVA: 0x00004810 File Offset: 0x00002A10
+	// Token: 0x060002DC RID: 732 RVA: 0x000112F7 File Offset: 0x0000F4F7
 	private IEnumerator ProgressChunk()
 	{
 		this.currentChunk++;
@@ -96,7 +96,7 @@ public class CreditsOverlay : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000334 RID: 820 RVA: 0x0000481F File Offset: 0x00002A1F
+	// Token: 0x060002DD RID: 733 RVA: 0x00011306 File Offset: 0x0000F506
 	private IEnumerator FadeIn(Text text)
 	{
 		float fade = 0f;
@@ -114,7 +114,7 @@ public class CreditsOverlay : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000335 RID: 821 RVA: 0x00004835 File Offset: 0x00002A35
+	// Token: 0x060002DE RID: 734 RVA: 0x0001131C File Offset: 0x0000F51C
 	private IEnumerator FadeOut(Text text)
 	{
 		float fade = 0f;
@@ -129,14 +129,14 @@ public class CreditsOverlay : MonoBehaviour
 			yield return null;
 		}
 		yield return null;
-		global::UnityEngine.Object.Destroy(text.gameObject);
+		Object.Destroy(text.gameObject);
 		yield break;
 	}
 
-	// Token: 0x06000336 RID: 822 RVA: 0x0000484B File Offset: 0x00002A4B
+	// Token: 0x060002DF RID: 735 RVA: 0x00011332 File Offset: 0x0000F532
 	private Text GetInstance(GameObject prefab, string text)
 	{
-		GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(prefab, base.transform);
+		GameObject gameObject = Object.Instantiate<GameObject>(prefab, base.transform);
 		gameObject.SetActive(true);
 		Text component = gameObject.GetComponent<Text>();
 		component.text = text;

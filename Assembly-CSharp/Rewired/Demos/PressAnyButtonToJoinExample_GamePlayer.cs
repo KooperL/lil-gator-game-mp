@@ -7,7 +7,7 @@ namespace Rewired.Demos
 	[RequireComponent(typeof(CharacterController))]
 	public class PressAnyButtonToJoinExample_GamePlayer : MonoBehaviour
 	{
-		// (get) Token: 0x06001DE1 RID: 7649 RVA: 0x00016CF7 File Offset: 0x00014EF7
+		// (get) Token: 0x06001795 RID: 6037 RVA: 0x00064565 File Offset: 0x00062765
 		private Player player
 		{
 			get
@@ -20,13 +20,13 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DE2 RID: 7650 RVA: 0x00016D12 File Offset: 0x00014F12
+		// Token: 0x06001796 RID: 6038 RVA: 0x00064580 File Offset: 0x00062780
 		private void OnEnable()
 		{
 			this.cc = base.GetComponent<CharacterController>();
 		}
 
-		// Token: 0x06001DE3 RID: 7651 RVA: 0x00016D20 File Offset: 0x00014F20
+		// Token: 0x06001797 RID: 6039 RVA: 0x0006458E File Offset: 0x0006278E
 		private void Update()
 		{
 			if (!ReInput.isReady)
@@ -41,7 +41,7 @@ namespace Rewired.Demos
 			this.ProcessInput();
 		}
 
-		// Token: 0x06001DE4 RID: 7652 RVA: 0x00075BB8 File Offset: 0x00073DB8
+		// Token: 0x06001798 RID: 6040 RVA: 0x000645B0 File Offset: 0x000627B0
 		private void GetInput()
 		{
 			this.moveVector.x = this.player.GetAxis("Move Horizontal");
@@ -49,7 +49,7 @@ namespace Rewired.Demos
 			this.fire = this.player.GetButtonDown("Fire");
 		}
 
-		// Token: 0x06001DE5 RID: 7653 RVA: 0x00075C14 File Offset: 0x00073E14
+		// Token: 0x06001799 RID: 6041 RVA: 0x0006460C File Offset: 0x0006280C
 		private void ProcessInput()
 		{
 			if (this.moveVector.x != 0f || this.moveVector.y != 0f)
@@ -58,7 +58,7 @@ namespace Rewired.Demos
 			}
 			if (this.fire)
 			{
-				global::UnityEngine.Object.Instantiate<GameObject>(this.bulletPrefab, base.transform.position + base.transform.right, base.transform.rotation).GetComponent<Rigidbody>().AddForce(base.transform.right * this.bulletSpeed, ForceMode.VelocityChange);
+				Object.Instantiate<GameObject>(this.bulletPrefab, base.transform.position + base.transform.right, base.transform.rotation).GetComponent<Rigidbody>().AddForce(base.transform.right * this.bulletSpeed, ForceMode.VelocityChange);
 			}
 		}
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UpdateInputHelper : MonoBehaviour
 {
-	// Token: 0x06001011 RID: 4113 RVA: 0x0000DE1B File Offset: 0x0000C01B
+	// Token: 0x06000D07 RID: 3335 RVA: 0x0003EC5F File Offset: 0x0003CE5F
 	public void DoUpdateInputHelper()
 	{
 		InputHelper.i.UpdateInput();

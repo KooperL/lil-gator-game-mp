@@ -6,7 +6,7 @@ namespace Cinemachine.Examples
 	[AddComponentMenu("")]
 	public class MixingCameraBlend : MonoBehaviour
 	{
-		// Token: 0x060013C5 RID: 5061 RVA: 0x00010BC8 File Offset: 0x0000EDC8
+		// Token: 0x06001035 RID: 4149 RVA: 0x0004DCE1 File Offset: 0x0004BEE1
 		private void Start()
 		{
 			if (this.followTarget)
@@ -16,7 +16,7 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x060013C6 RID: 5062 RVA: 0x00060F3C File Offset: 0x0005F13C
+		// Token: 0x06001036 RID: 4150 RVA: 0x0004DD10 File Offset: 0x0004BF10
 		private void Update()
 		{
 			if (this.followTarget)

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RenameCharacter : MonoBehaviour
 {
-	// Token: 0x0600115E RID: 4446 RVA: 0x0000EDE0 File Offset: 0x0000CFE0
+	// Token: 0x06000E39 RID: 3641 RVA: 0x00044588 File Offset: 0x00042788
 	public void DoTheThing()
 	{
 		UIMenus.u.CloseMenus();

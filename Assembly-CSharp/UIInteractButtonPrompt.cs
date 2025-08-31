@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class UIInteractButtonPrompt : MonoBehaviour
 {
-	// Token: 0x06001234 RID: 4660 RVA: 0x0000F760 File Offset: 0x0000D960
+	// Token: 0x06000EFB RID: 3835 RVA: 0x00047F26 File Offset: 0x00046126
 	private void Awake()
 	{
 		this.buttonDisplay = base.GetComponent<UIButtonDisplay>();
 		this.buttonDisplay.updateAutomatically = false;
 	}
 
-	// Token: 0x06001235 RID: 4661 RVA: 0x0005B40C File Offset: 0x0005960C
+	// Token: 0x06000EFC RID: 3836 RVA: 0x00047F40 File Offset: 0x00046140
 	private void OnEnable()
 	{
 		if (UIInteractButtonPrompt.showPrompt)
@@ -41,12 +41,12 @@ public class UIInteractButtonPrompt : MonoBehaviour
 
 	private UIButtonDisplay buttonDisplay;
 
-	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
+	[ActionIdProperty(typeof(Action))]
 	public int interact;
 
-	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
+	[ActionIdProperty(typeof(Action))]
 	public int primary;
 
-	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
+	[ActionIdProperty(typeof(Action))]
 	public int jump;
 }

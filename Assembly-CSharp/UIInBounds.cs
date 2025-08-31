@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class UIInBounds : MonoBehaviour
 {
-	// Token: 0x0600122E RID: 4654 RVA: 0x0000F73F File Offset: 0x0000D93F
+	// Token: 0x06000EF5 RID: 3829 RVA: 0x00047D1B File Offset: 0x00045F1B
 	private void Awake()
 	{
 		this.rectTransform = base.GetComponent<RectTransform>();
 	}
 
-	// Token: 0x0600122F RID: 4655 RVA: 0x0000F74D File Offset: 0x0000D94D
+	// Token: 0x06000EF6 RID: 3830 RVA: 0x00047D29 File Offset: 0x00045F29
 	private void Start()
 	{
 		this.anchor = this.rectTransform.anchoredPosition;
 	}
 
-	// Token: 0x06001230 RID: 4656 RVA: 0x0005B234 File Offset: 0x00059434
+	// Token: 0x06000EF7 RID: 3831 RVA: 0x00047D3C File Offset: 0x00045F3C
 	private void LateUpdate()
 	{
 		this.rectTransform.anchoredPosition = this.anchor;

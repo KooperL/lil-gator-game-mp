@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	// (get) Token: 0x06000C13 RID: 3091 RVA: 0x0000B42E File Offset: 0x0000962E
+	// (get) Token: 0x06000A11 RID: 2577
 	public static Vector3 RawPosition
 	{
 		get
@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C14 RID: 3092 RVA: 0x0000B43A File Offset: 0x0000963A
+	// (get) Token: 0x06000A12 RID: 2578
 	public static Vector3 Position
 	{
 		get
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000C15 RID: 3093 RVA: 0x0000B455 File Offset: 0x00009655
+	// (get) Token: 0x06000A13 RID: 2579
 	public static Vector3 Forward
 	{
 		get
@@ -30,7 +30,6 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C16 RID: 3094 RVA: 0x0000B461 File Offset: 0x00009661
 	private void OnValidate()
 	{
 		if (this.pHandIK == null)
@@ -43,7 +42,6 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C17 RID: 3095 RVA: 0x0004248C File Offset: 0x0004068C
 	private void OnEnable()
 	{
 		Player.player = this;
@@ -65,6 +63,10 @@ public class Player : MonoBehaviour
 		Player.actorStates = this.pActorStates;
 		Player.rawTransform = base.transform;
 		Player.gameObject = base.gameObject;
+	}
+
+	private void Start()
+	{
 	}
 
 	public static Player player;

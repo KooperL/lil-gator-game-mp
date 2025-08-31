@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class SurfaceImpacts : MonoBehaviour
 {
-	// Token: 0x06000FCD RID: 4045 RVA: 0x0000DA4C File Offset: 0x0000BC4C
+	// Token: 0x06000CC4 RID: 3268 RVA: 0x0003DB46 File Offset: 0x0003BD46
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x06000FCE RID: 4046 RVA: 0x00052A64 File Offset: 0x00050C64
+	// Token: 0x06000CC5 RID: 3269 RVA: 0x0003DB54 File Offset: 0x0003BD54
 	private void OnCollisionEnter(Collision collision)
 	{
 		float sqrMagnitude = collision.relativeVelocity.sqrMagnitude;

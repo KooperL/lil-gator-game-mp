@@ -4,7 +4,7 @@ using UnityEngine;
 [AddComponentMenu("Dialogue Sequence/Wait")]
 public class DSWait : DialogueSequence
 {
-	// Token: 0x060005DD RID: 1501 RVA: 0x00006372 File Offset: 0x00004572
+	// Token: 0x060004A6 RID: 1190 RVA: 0x00019BD4 File Offset: 0x00017DD4
 	public override YieldInstruction Run()
 	{
 		if (this.waitForSeconds == null)

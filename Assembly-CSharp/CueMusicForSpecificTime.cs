@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CueMusicForSpecificTime : MonoBehaviour
 {
-	// Token: 0x0600005F RID: 95 RVA: 0x00002485 File Offset: 0x00000685
+	// Token: 0x0600005E RID: 94 RVA: 0x0000367B File Offset: 0x0000187B
 	private void OnEnable()
 	{
 		if (this.musicSystem != null)
@@ -13,7 +13,7 @@ public class CueMusicForSpecificTime : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000060 RID: 96 RVA: 0x000024B2 File Offset: 0x000006B2
+	// Token: 0x0600005F RID: 95 RVA: 0x000036A8 File Offset: 0x000018A8
 	private void OnDisable()
 	{
 		if (this.musicSystem != null)

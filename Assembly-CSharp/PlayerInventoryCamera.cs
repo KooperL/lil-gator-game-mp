@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerInventoryCamera : MonoBehaviour
 {
-	// Token: 0x06000C5B RID: 3163 RVA: 0x0000B828 File Offset: 0x00009A28
+	// Token: 0x06000A59 RID: 2649 RVA: 0x00030DFB File Offset: 0x0002EFFB
 	public void Activate()
 	{
 		if (this.mainCamera == null)
@@ -14,14 +14,14 @@ public class PlayerInventoryCamera : MonoBehaviour
 		base.gameObject.SetActive(true);
 	}
 
-	// Token: 0x06000C5C RID: 3164 RVA: 0x0000B865 File Offset: 0x00009A65
+	// Token: 0x06000A5A RID: 2650 RVA: 0x00030E38 File Offset: 0x0002F038
 	public void Deactivate()
 	{
 		this.mainCamera.cullingMask = this.cameraCullingMask;
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000C5D RID: 3165 RVA: 0x0000B889 File Offset: 0x00009A89
+	// Token: 0x06000A5B RID: 2651 RVA: 0x00030E5C File Offset: 0x0002F05C
 	private void Update()
 	{
 		if (this.mainCamera.transform.position == this.thisCamera.position)

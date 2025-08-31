@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FadeAudio : MonoBehaviour
 {
-	// Token: 0x0600004E RID: 78 RVA: 0x0001861C File Offset: 0x0001681C
+	// Token: 0x0600004D RID: 77 RVA: 0x00003344 File Offset: 0x00001544
 	public void FadeIn()
 	{
 		base.enabled = true;
@@ -15,14 +15,14 @@ public class FadeAudio : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600004F RID: 79 RVA: 0x000023C9 File Offset: 0x000005C9
+	// Token: 0x0600004E RID: 78 RVA: 0x00003393 File Offset: 0x00001593
 	public void FadeOut()
 	{
 		base.enabled = true;
 		this.fadeTarget = 0f;
 	}
 
-	// Token: 0x06000050 RID: 80 RVA: 0x0001866C File Offset: 0x0001686C
+	// Token: 0x0600004F RID: 79 RVA: 0x000033A8 File Offset: 0x000015A8
 	private void Update()
 	{
 		this.fade = Mathf.MoveTowards(this.fade, this.fadeTarget, Time.deltaTime / ((this.fadeTarget > this.fade) ? this.fadeInTime : this.fadeOutTime));

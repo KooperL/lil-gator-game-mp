@@ -6,13 +6,13 @@ using UnityEngine.Events;
 [AddComponentMenu("Dialogue Sequence/Choose Correct Choice")]
 public class DSChooseCorrect : DialogueSequence
 {
-	// Token: 0x06000589 RID: 1417 RVA: 0x00006014 File Offset: 0x00004214
+	// Token: 0x0600046D RID: 1133 RVA: 0x00018EBA File Offset: 0x000170BA
 	public override YieldInstruction Run()
 	{
 		return CoroutineUtil.Start(this.RunChoiceLoop());
 	}
 
-	// Token: 0x0600058A RID: 1418 RVA: 0x00006021 File Offset: 0x00004221
+	// Token: 0x0600046E RID: 1134 RVA: 0x00018EC7 File Offset: 0x000170C7
 	private IEnumerator RunChoiceLoop()
 	{
 		if (this.showPrompt)

@@ -3,28 +3,28 @@ using UnityEngine;
 
 public class HitSwing : MonoBehaviour, SpeedInterface, IHit
 {
-	// Token: 0x06000829 RID: 2089 RVA: 0x000080A1 File Offset: 0x000062A1
+	// Token: 0x060006AA RID: 1706 RVA: 0x00021F2D File Offset: 0x0002012D
 	private void Awake()
 	{
-		this.variance = global::UnityEngine.Random.Range(0.5f, 1.5f);
+		this.variance = Random.Range(0.5f, 1.5f);
 		this.rigidbody = base.GetComponent<Rigidbody>();
 		this.initialPosition = this.rigidbody.position;
 		this.audioSource = base.GetComponent<AudioSource>();
 	}
 
-	// Token: 0x0600082A RID: 2090 RVA: 0x000080E1 File Offset: 0x000062E1
+	// Token: 0x060006AB RID: 1707 RVA: 0x00021F6D File Offset: 0x0002016D
 	private float WorldToAngle(float arcLength)
 	{
 		return 2f * Mathf.Atan(arcLength / (2f * this.swingLength));
 	}
 
-	// Token: 0x0600082B RID: 2091 RVA: 0x000080FC File Offset: 0x000062FC
+	// Token: 0x060006AC RID: 1708 RVA: 0x00021F88 File Offset: 0x00020188
 	private void Start()
 	{
-		this.rotation = 2f * (global::UnityEngine.Random.value - 0.5f);
+		this.rotation = 2f * (Random.value - 0.5f);
 	}
 
-	// Token: 0x0600082C RID: 2092 RVA: 0x00037528 File Offset: 0x00035728
+	// Token: 0x060006AD RID: 1709 RVA: 0x00021FA4 File Offset: 0x000201A4
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		if (this.rigidbody == null)
@@ -43,7 +43,7 @@ public class HitSwing : MonoBehaviour, SpeedInterface, IHit
 		}
 	}
 
-	// Token: 0x0600082D RID: 2093 RVA: 0x000375A4 File Offset: 0x000357A4
+	// Token: 0x060006AE RID: 1710 RVA: 0x00022020 File Offset: 0x00020220
 	public void AddForce(Vector3 force)
 	{
 		if (this.rigidbody == null)
@@ -54,7 +54,7 @@ public class HitSwing : MonoBehaviour, SpeedInterface, IHit
 		this.speed -= Time.deltaTime * Vector3.Dot(this.rigidbody.rotation * Vector3.forward, force);
 	}
 
-	// Token: 0x0600082E RID: 2094 RVA: 0x00037610 File Offset: 0x00035810
+	// Token: 0x060006AF RID: 1711 RVA: 0x0002208C File Offset: 0x0002028C
 	private void FixedUpdate()
 	{
 		float num = this.variance * (this.hasActor ? 0.1f : 0f);
@@ -71,7 +71,7 @@ public class HitSwing : MonoBehaviour, SpeedInterface, IHit
 		this.rigidbody.angularVelocity = 1.25f * base.transform.parent.TransformDirection(Vector3.right * this.WorldToAngle(this.speed));
 	}
 
-	// Token: 0x0600082F RID: 2095 RVA: 0x00008115 File Offset: 0x00006315
+	// Token: 0x060006B0 RID: 1712 RVA: 0x000221BE File Offset: 0x000203BE
 	public float GetSpeed()
 	{
 		return this.speed;

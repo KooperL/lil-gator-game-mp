@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class BalancePoint : MonoBehaviour, ICustomPlayerMovement, ICustomFootIKPositions
 {
-	// Token: 0x060002DF RID: 735 RVA: 0x00004443 File Offset: 0x00002643
+	// Token: 0x06000288 RID: 648 RVA: 0x0000DEB5 File Offset: 0x0000C0B5
 	private void OnValidate()
 	{
 		if (!Application.isPlaying)
@@ -13,14 +13,14 @@ public class BalancePoint : MonoBehaviour, ICustomPlayerMovement, ICustomFootIKP
 		}
 	}
 
-	// Token: 0x060002E0 RID: 736 RVA: 0x0002255C File Offset: 0x0002075C
+	// Token: 0x06000289 RID: 649 RVA: 0x0000DEC8 File Offset: 0x0000C0C8
 	private bool IsEligible()
 	{
 		Vector3 rawPosition = Player.RawPosition;
 		return Vector3.SqrMagnitude(base.transform.position - rawPosition) <= this.distanceAllowance * this.distanceAllowance && Player.rigidbody.velocity.y <= 0f;
 	}
 
-	// Token: 0x060002E1 RID: 737 RVA: 0x000225B0 File Offset: 0x000207B0
+	// Token: 0x0600028A RID: 650 RVA: 0x0000DF1C File Offset: 0x0000C11C
 	private void OnTriggerStay(Collider other)
 	{
 		if (base.enabled || Time.time - this.lastEnabled < 0.5f || Player.movement.JustCanceled)
@@ -66,7 +66,7 @@ public class BalancePoint : MonoBehaviour, ICustomPlayerMovement, ICustomFootIKP
 		}
 	}
 
-	// Token: 0x060002E2 RID: 738 RVA: 0x000226A4 File Offset: 0x000208A4
+	// Token: 0x0600028B RID: 651 RVA: 0x0000E010 File Offset: 0x0000C210
 	private void OnEnable()
 	{
 		Player.movement.isModified = true;
@@ -92,7 +92,7 @@ public class BalancePoint : MonoBehaviour, ICustomPlayerMovement, ICustomFootIKP
 		this.onEnable.Invoke();
 	}
 
-	// Token: 0x060002E3 RID: 739 RVA: 0x000227A4 File Offset: 0x000209A4
+	// Token: 0x0600028C RID: 652 RVA: 0x0000E110 File Offset: 0x0000C310
 	private void OnDisable()
 	{
 		if (Player.footIK.customIKPositions == this)
@@ -115,7 +115,7 @@ public class BalancePoint : MonoBehaviour, ICustomPlayerMovement, ICustomFootIKP
 		this.lastEnabled = Time.time;
 	}
 
-	// Token: 0x060002E4 RID: 740 RVA: 0x0002284C File Offset: 0x00020A4C
+	// Token: 0x0600028D RID: 653 RVA: 0x0000E1B8 File Offset: 0x0000C3B8
 	public void MovementUpdate(Vector3 input, ref Vector3 position, ref Vector3 velocity, ref Vector3 direction, ref Vector3 up, ref float animationIndex)
 	{
 		Vector3 position2 = base.transform.position;
@@ -145,19 +145,19 @@ public class BalancePoint : MonoBehaviour, ICustomPlayerMovement, ICustomFootIKP
 		}
 	}
 
-	// Token: 0x060002E5 RID: 741 RVA: 0x000044B5 File Offset: 0x000026B5
+	// Token: 0x0600028E RID: 654 RVA: 0x0000E2B6 File Offset: 0x0000C4B6
 	public void Cancel()
 	{
 		base.enabled = false;
 	}
 
-	// Token: 0x060002E6 RID: 742 RVA: 0x000044BE File Offset: 0x000026BE
+	// Token: 0x0600028F RID: 655 RVA: 0x0000E2BF File Offset: 0x0000C4BF
 	public Vector3 GetLeftFootTarget(Vector3 currentPosition)
 	{
 		return Vector3.Lerp(currentPosition, base.transform.position, this.lerpToPosition);
 	}
 
-	// Token: 0x060002E7 RID: 743 RVA: 0x000044BE File Offset: 0x000026BE
+	// Token: 0x06000290 RID: 656 RVA: 0x0000E2D8 File Offset: 0x0000C4D8
 	public Vector3 GetRightFootTarget(Vector3 currentPosition)
 	{
 		return Vector3.Lerp(currentPosition, base.transform.position, this.lerpToPosition);

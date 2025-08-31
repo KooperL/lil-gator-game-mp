@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UITabNavigation : MonoBehaviour
 {
-	// Token: 0x06001352 RID: 4946 RVA: 0x0001056A File Offset: 0x0000E76A
+	// Token: 0x06000FC5 RID: 4037 RVA: 0x0004B73B File Offset: 0x0004993B
 	private void OnValidate()
 	{
 		if (this.tabs == null || this.tabs.Length < base.transform.childCount)
@@ -14,7 +14,7 @@ public class UITabNavigation : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001353 RID: 4947 RVA: 0x0005F05C File Offset: 0x0005D25C
+	// Token: 0x06000FC6 RID: 4038 RVA: 0x0004B768 File Offset: 0x00049968
 	private void OnEnable()
 	{
 		if (this.rePlayer == null)
@@ -25,14 +25,14 @@ public class UITabNavigation : MonoBehaviour
 		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnTabLeft), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("UITabLeft"));
 	}
 
-	// Token: 0x06001354 RID: 4948 RVA: 0x00010595 File Offset: 0x0000E795
+	// Token: 0x06000FC7 RID: 4039 RVA: 0x0004B7DE File Offset: 0x000499DE
 	private void OnDisable()
 	{
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnTabRight));
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnTabLeft));
 	}
 
-	// Token: 0x06001355 RID: 4949 RVA: 0x000105C5 File Offset: 0x0000E7C5
+	// Token: 0x06000FC8 RID: 4040 RVA: 0x0004B80E File Offset: 0x00049A0E
 	private void OnTabLeft(InputActionEventData obj)
 	{
 		if (Time.time - UITabNavigation.bufferTime < 0.1f)
@@ -42,7 +42,7 @@ public class UITabNavigation : MonoBehaviour
 		this.OnTabLeft();
 	}
 
-	// Token: 0x06001356 RID: 4950 RVA: 0x0005F0D4 File Offset: 0x0005D2D4
+	// Token: 0x06000FC9 RID: 4041 RVA: 0x0004B82C File Offset: 0x00049A2C
 	private void OnTabLeft()
 	{
 		int num = this.FindCurrentlySelectedTab();
@@ -54,7 +54,7 @@ public class UITabNavigation : MonoBehaviour
 		this.tabs[num].isOn = true;
 	}
 
-	// Token: 0x06001357 RID: 4951 RVA: 0x000105E0 File Offset: 0x0000E7E0
+	// Token: 0x06000FCA RID: 4042 RVA: 0x0004B861 File Offset: 0x00049A61
 	private void OnTabRight(InputActionEventData obj)
 	{
 		if (Time.time - UITabNavigation.bufferTime < 0.1f)
@@ -64,7 +64,7 @@ public class UITabNavigation : MonoBehaviour
 		this.OnTabRight();
 	}
 
-	// Token: 0x06001358 RID: 4952 RVA: 0x0005F10C File Offset: 0x0005D30C
+	// Token: 0x06000FCB RID: 4043 RVA: 0x0004B87C File Offset: 0x00049A7C
 	private void OnTabRight()
 	{
 		int num = this.FindCurrentlySelectedTab();
@@ -76,7 +76,7 @@ public class UITabNavigation : MonoBehaviour
 		this.tabs[num].isOn = true;
 	}
 
-	// Token: 0x06001359 RID: 4953 RVA: 0x0005F140 File Offset: 0x0005D340
+	// Token: 0x06000FCC RID: 4044 RVA: 0x0004B8B0 File Offset: 0x00049AB0
 	private int FindCurrentlySelectedTab()
 	{
 		for (int i = 0; i < this.tabs.Length; i++)

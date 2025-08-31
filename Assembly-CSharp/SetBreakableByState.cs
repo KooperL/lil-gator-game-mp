@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class SetBreakableByState : MonoBehaviour
 {
-	// Token: 0x0600104F RID: 4175 RVA: 0x0000DFD4 File Offset: 0x0000C1D4
+	// Token: 0x06000D45 RID: 3397 RVA: 0x000405E0 File Offset: 0x0003E7E0
 	public void OnValidate()
 	{
 		if (this.breakableObject == null)
@@ -17,20 +17,20 @@ public class SetBreakableByState : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001050 RID: 4176 RVA: 0x00054EE8 File Offset: 0x000530E8
+	// Token: 0x06000D46 RID: 3398 RVA: 0x00040618 File Offset: 0x0003E818
 	private void OnEnable()
 	{
 		this.stateMachine.onStateChange.AddListener(new UnityAction<int>(this.OnStateChange));
 		this.breakableObject.isInvincible = ((this.stateMachine.StateID >= this.thresholdState) ? this.isInvincibleAfter : this.isInvincibleBefore);
 	}
 
-	// Token: 0x06001051 RID: 4177 RVA: 0x0000E00A File Offset: 0x0000C20A
+	// Token: 0x06000D47 RID: 3399 RVA: 0x0004066D File Offset: 0x0003E86D
 	private void OnDisable()
 	{
 		this.stateMachine.onStateChange.RemoveListener(new UnityAction<int>(this.OnStateChange));
 	}
 
-	// Token: 0x06001052 RID: 4178 RVA: 0x0000E028 File Offset: 0x0000C228
+	// Token: 0x06000D48 RID: 3400 RVA: 0x0004068B File Offset: 0x0003E88B
 	private void OnStateChange(int newState)
 	{
 		this.breakableObject.isInvincible = ((newState >= this.thresholdState) ? this.isInvincibleAfter : this.isInvincibleBefore);

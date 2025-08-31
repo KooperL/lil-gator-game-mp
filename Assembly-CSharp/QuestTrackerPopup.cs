@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class QuestTrackerPopup : MonoBehaviour
 {
-	// Token: 0x0600110D RID: 4365 RVA: 0x00057898 File Offset: 0x00055A98
+	// Token: 0x06000DE8 RID: 3560 RVA: 0x00043548 File Offset: 0x00041748
 	private void Awake()
 	{
 		this.instantiateTime = Time.time;
@@ -21,19 +21,19 @@ public class QuestTrackerPopup : MonoBehaviour
 		this.hideBehavior.Hide();
 	}
 
-	// Token: 0x0600110E RID: 4366 RVA: 0x0000E8B7 File Offset: 0x0000CAB7
+	// Token: 0x06000DE9 RID: 3561 RVA: 0x00043597 File Offset: 0x00041797
 	private void OnEnable()
 	{
 		QuestTrackerPopup.q = this;
 	}
 
-	// Token: 0x0600110F RID: 4367 RVA: 0x0000E8BF File Offset: 0x0000CABF
+	// Token: 0x06000DEA RID: 3562 RVA: 0x0004359F File Offset: 0x0004179F
 	private void OnDisable()
 	{
 		this == null;
 	}
 
-	// Token: 0x06001110 RID: 4368 RVA: 0x000578E8 File Offset: 0x00055AE8
+	// Token: 0x06000DEB RID: 3563 RVA: 0x000435AC File Offset: 0x000417AC
 	public void QuestUpdated(QuestProfile profile)
 	{
 		if (profile == null || profile.tasks == null || profile.tasks.Length == 0 || Time.time - 1f < this.instantiateTime)
@@ -63,7 +63,7 @@ public class QuestTrackerPopup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001111 RID: 4369 RVA: 0x0005798C File Offset: 0x00055B8C
+	// Token: 0x06000DEC RID: 3564 RVA: 0x00043650 File Offset: 0x00041850
 	private void DisplayQuest(QuestProfile profile)
 	{
 		profile.WasDisplayed();
@@ -80,7 +80,7 @@ public class QuestTrackerPopup : MonoBehaviour
 		this.questTitle.text = profile.GetTitle();
 		foreach (GameObject gameObject in this.displayedTasks)
 		{
-			global::UnityEngine.Object.Destroy(gameObject);
+			Object.Destroy(gameObject);
 		}
 		this.displayedTasks = new List<GameObject>();
 		foreach (QuestProfile.QuestTask questTask in profile.tasks)
@@ -100,7 +100,7 @@ public class QuestTrackerPopup : MonoBehaviour
 			}
 			if (gameObject2 != null)
 			{
-				gameObject2 = global::UnityEngine.Object.Instantiate<GameObject>(gameObject2, this.taskParent);
+				gameObject2 = Object.Instantiate<GameObject>(gameObject2, this.taskParent);
 				gameObject2.SetActive(true);
 				this.displayedTasks.Add(gameObject2);
 				QuestTrackerTask questTrackerTask;
@@ -112,7 +112,7 @@ public class QuestTrackerPopup : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06001112 RID: 4370 RVA: 0x0000E8C9 File Offset: 0x0000CAC9
+	// (get) Token: 0x06000DED RID: 3565 RVA: 0x000437AC File Offset: 0x000419AC
 	private bool CanDisplay
 	{
 		get
@@ -121,7 +121,7 @@ public class QuestTrackerPopup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001113 RID: 4371 RVA: 0x00057AE8 File Offset: 0x00055CE8
+	// Token: 0x06000DEE RID: 3566 RVA: 0x000437C0 File Offset: 0x000419C0
 	private void Update()
 	{
 		if (!this.hideBehavior.gameObject.activeSelf && this.profileQueue.Count == 0)

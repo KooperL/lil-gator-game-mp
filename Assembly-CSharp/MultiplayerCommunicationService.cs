@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.WebSockets;
 using System.Text;
 using System.Threading;
@@ -14,7 +16,15 @@ public class MultiplayerCommunicationService
 		if (this.connectionState == MultiplayerCommunicationService.ConnectionState.None)
 		{
 			this.connectionState = MultiplayerCommunicationService.ConnectionState.Connecting;
-			Uri uri = new Uri("ws://" + MultiplayerConfigLoader.Instance.ServerHost + "?sessionKey=" + MultiplayerConfigLoader.Instance.SessionKey);
+			Uri uri = new Uri(string.Concat(new string[]
+			{
+				"ws://",
+				MultiplayerConfigLoader.Instance.ServerHost,
+				"?sessionKey=",
+				MultiplayerConfigLoader.Instance.SessionKey,
+				"&clientVersion=",
+				MultiplayerConfigLoader.Instance.ClientVersion
+			}));
 			using (this._webSocket = new ClientWebSocket())
 			{
 				await this._webSocket.ConnectAsync(uri, default(CancellationToken));
@@ -26,8 +36,15 @@ public class MultiplayerCommunicationService
 					ArraySegment<byte> arraySegment = new ArraySegment<byte>(bytes);
 					WebSocketReceiveResult webSocketReceiveResult = await this._webSocket.ReceiveAsync(arraySegment, default(CancellationToken));
 					string @string = Encoding.UTF8.GetString(bytes, 0, webSocketReceiveResult.Count);
-					Debug.Log("[LGG-MP] Received: " + @string);
+					if (MultiplayerConfigLoader.Instance.logTemp.Contains("B"))
+					{
+						Debug.Log("[LGG-MP] Received: " + @string);
+					}
 					this.receiveMessage(@string);
+					bytes = null;
+					bytes = null;
+					bytes = null;
+					bytes = null;
 					bytes = null;
 					bytes = null;
 					bytes = null;
@@ -59,7 +76,7 @@ public class MultiplayerCommunicationService
 		}
 	}
 
-	// (get) Token: 0x06001E89 RID: 7817
+	// (get) Token: 0x06001EAB RID: 7851
 	public static MultiplayerCommunicationService Instance
 	{
 		get
@@ -74,26 +91,39 @@ public class MultiplayerCommunicationService
 
 	public void receiveMessage(string message)
 	{
+		if (MultiplayerNetworkBootstrap.manager == null)
+		{
+			return;
+		}
+		Dictionary<string, string> missingPlayers = MultiplayerNetworkBootstrap.manager._playerNames.ToDictionary((KeyValuePair<string, string> entry) => entry.Key, (KeyValuePair<string, string> entry) => entry.Value);
 		try
 		{
 			if (!(MultiplayerNetworkBootstrap.manager == null))
 			{
-				MultiplayerPlayerFrameStreamer.MultiplayerPlayerStateData multiplayerPlayerFrameData = JsonUtility.FromJson<MultiplayerPlayerFrameStreamer.MultiplayerPlayerStateData>(message);
-				if (!(multiplayerPlayerFrameData.displayName == MultiplayerConfigLoader.Instance.DisplayName) || !(MultiplayerConfigLoader.Instance.DisplayName != "debug"))
+				foreach (MultiplayerPlayerFrameStreamer.MultiplayerPlayerStateData multiplayerPlayerFrameData in MultiplayerJsonHelper.FromJson<MultiplayerPlayerFrameStreamer.MultiplayerPlayerStateData>(message))
 				{
-					if (multiplayerPlayerFrameData.worldState != Game.WorldState)
+					missingPlayers.Remove(multiplayerPlayerFrameData.displayName);
+					if (!(multiplayerPlayerFrameData.displayName == MultiplayerConfigLoader.Instance.DisplayName) || !(MultiplayerConfigLoader.Instance.DisplayName != "debug"))
 					{
-						MultiplayerNetworkBootstrap.manager.Despawn(multiplayerPlayerFrameData.displayName);
+						if (multiplayerPlayerFrameData.worldState != Game.WorldState)
+						{
+							MultiplayerNetworkBootstrap.manager.Despawn(multiplayerPlayerFrameData.displayName);
+						}
+						else
+						{
+							Vector3 vector = new Vector3(multiplayerPlayerFrameData.x, multiplayerPlayerFrameData.y, multiplayerPlayerFrameData.z);
+							Quaternion quaternion = Quaternion.LookRotation(new Vector3(multiplayerPlayerFrameData.fx, multiplayerPlayerFrameData.fy, multiplayerPlayerFrameData.fz));
+							Vector3 zero = Vector3.zero;
+							double unscaledTimeAsDouble = Time.unscaledTimeAsDouble;
+							MultiplayerNetworkBootstrap.manager.EnsurePlayer(multiplayerPlayerFrameData.displayName, vector, quaternion, null);
+							MultiplayerNetworkBootstrap.manager.OnStateUpdate(multiplayerPlayerFrameData.displayName, vector, quaternion, zero, unscaledTimeAsDouble, -1597646531, 0f, multiplayerPlayerFrameData.speed, multiplayerPlayerFrameData.verticalSpeed, multiplayerPlayerFrameData.angle, multiplayerPlayerFrameData.grounded, multiplayerPlayerFrameData.climbing, multiplayerPlayerFrameData.swimming, multiplayerPlayerFrameData.gliding, multiplayerPlayerFrameData.sledding, multiplayerPlayerFrameData.equippedState, multiplayerPlayerFrameData.attackTrigger, multiplayerPlayerFrameData.ragdollTrigger, multiplayerPlayerFrameData.hatItemID, multiplayerPlayerFrameData.leftHandItemID, multiplayerPlayerFrameData.rightHandItemID);
+						}
 					}
-					else
-					{
-						Vector3 vector = new Vector3(multiplayerPlayerFrameData.x, multiplayerPlayerFrameData.y, multiplayerPlayerFrameData.z);
-						Quaternion quaternion = Quaternion.LookRotation(new Vector3(multiplayerPlayerFrameData.fx, multiplayerPlayerFrameData.fy, multiplayerPlayerFrameData.fz));
-						Vector3 zero = Vector3.zero;
-						double unscaledTimeAsDouble = Time.unscaledTimeAsDouble;
-						MultiplayerNetworkBootstrap.manager.EnsurePlayer(multiplayerPlayerFrameData.displayName, vector, quaternion, null);
-						MultiplayerNetworkBootstrap.manager.OnStateUpdate(multiplayerPlayerFrameData.displayName, vector, quaternion, zero, unscaledTimeAsDouble, -1597646531, 0f, multiplayerPlayerFrameData.speed, multiplayerPlayerFrameData.verticalSpeed, multiplayerPlayerFrameData.angle, multiplayerPlayerFrameData.grounded, multiplayerPlayerFrameData.climbing, multiplayerPlayerFrameData.swimming, multiplayerPlayerFrameData.gliding, multiplayerPlayerFrameData.sledding, multiplayerPlayerFrameData.equippedState, multiplayerPlayerFrameData.attackTrigger, multiplayerPlayerFrameData.ragdollTrigger, multiplayerPlayerFrameData.hatItemID, multiplayerPlayerFrameData.leftHandItemID, multiplayerPlayerFrameData.rightHandItemID);
-					}
+				}
+				foreach (string missingPlayer in missingPlayers.Keys.ToList<string>())
+				{
+					Debug.Log("[LGG-MP] Purging stale player: " + missingPlayer);
+					MultiplayerNetworkBootstrap.manager.Despawn(missingPlayer);
 				}
 			}
 		}
@@ -128,7 +158,7 @@ public class MultiplayerCommunicationService
 			AggregateException exception = sendTask.Exception;
 			Debug.LogError(text + ((exception != null) ? exception.Message : null));
 		}
-		else
+		else if (MultiplayerConfigLoader.Instance.logTemp.Contains("B"))
 		{
 			Debug.Log("[LGG-MP] Message sent via WebSocket: " + Encoding.UTF8.GetString(bytes));
 		}

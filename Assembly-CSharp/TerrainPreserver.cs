@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TerrainPreserver : MonoBehaviour
 {
-	// Token: 0x060010A3 RID: 4259 RVA: 0x00055F44 File Offset: 0x00054144
+	// Token: 0x06000D8B RID: 3467 RVA: 0x0004187C File Offset: 0x0003FA7C
 	private void Awake()
 	{
 		Terrain component = base.GetComponent<Terrain>();
@@ -11,7 +11,7 @@ public class TerrainPreserver : MonoBehaviour
 		TerrainData terrainData;
 		if (this.id == -1)
 		{
-			terrainData = global::UnityEngine.Object.Instantiate<TerrainData>(component.terrainData);
+			terrainData = Object.Instantiate<TerrainData>(component.terrainData);
 		}
 		else
 		{

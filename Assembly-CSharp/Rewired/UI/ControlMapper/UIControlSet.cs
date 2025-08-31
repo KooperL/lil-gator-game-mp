@@ -8,7 +8,7 @@ namespace Rewired.UI.ControlMapper
 	[AddComponentMenu("")]
 	public class UIControlSet : MonoBehaviour
 	{
-		// (get) Token: 0x06001C8E RID: 7310 RVA: 0x00070CF4 File Offset: 0x0006EEF4
+		// (get) Token: 0x060016A6 RID: 5798 RVA: 0x0005EDDC File Offset: 0x0005CFDC
 		private Dictionary<int, UIControl> controls
 		{
 			get
@@ -22,7 +22,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001C8F RID: 7311 RVA: 0x00015D5A File Offset: 0x00013F5A
+		// Token: 0x060016A7 RID: 5799 RVA: 0x0005EE01 File Offset: 0x0005D001
 		public void SetTitle(string text)
 		{
 			if (this.title == null)
@@ -32,7 +32,7 @@ namespace Rewired.UI.ControlMapper
 			this.title.text = text;
 		}
 
-		// Token: 0x06001C90 RID: 7312 RVA: 0x00070D1C File Offset: 0x0006EF1C
+		// Token: 0x060016A8 RID: 5800 RVA: 0x0005EE20 File Offset: 0x0005D020
 		public T GetControl<T>(int uniqueId) where T : UIControl
 		{
 			UIControl uicontrol;
@@ -40,14 +40,14 @@ namespace Rewired.UI.ControlMapper
 			return uicontrol as T;
 		}
 
-		// Token: 0x06001C91 RID: 7313 RVA: 0x00070D44 File Offset: 0x0006EF44
+		// Token: 0x060016A9 RID: 5801 RVA: 0x0005EE48 File Offset: 0x0005D048
 		public UISliderControl CreateSlider(GameObject prefab, Sprite icon, float minValue, float maxValue, Action<int, float> valueChangedCallback, Action<int> cancelCallback)
 		{
-			GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(prefab);
+			GameObject gameObject = Object.Instantiate<GameObject>(prefab);
 			UISliderControl control = gameObject.GetComponent<UISliderControl>();
 			if (control == null)
 			{
-				global::UnityEngine.Object.Destroy(gameObject);
+				Object.Destroy(gameObject);
 				Debug.LogError("Prefab missing UISliderControl component!");
 				return null;
 			}

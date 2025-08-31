@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
 {
-	// Token: 0x0600077B RID: 1915 RVA: 0x000353F4 File Offset: 0x000335F4
+	// Token: 0x06000616 RID: 1558 RVA: 0x0001FC48 File Offset: 0x0001DE48
 	public void OnBeforeSerialize()
 	{
 		this.keys.Clear();
@@ -17,7 +17,7 @@ public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, IS
 		}
 	}
 
-	// Token: 0x0600077C RID: 1916 RVA: 0x00035478 File Offset: 0x00033678
+	// Token: 0x06000617 RID: 1559 RVA: 0x0001FCCC File Offset: 0x0001DECC
 	public void OnAfterDeserialize()
 	{
 		base.Clear();

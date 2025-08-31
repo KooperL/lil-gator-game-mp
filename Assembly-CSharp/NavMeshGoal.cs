@@ -4,13 +4,13 @@ using UnityEngine.AI;
 
 public class NavMeshGoal : MonoBehaviour
 {
-	// Token: 0x06000997 RID: 2455 RVA: 0x000094B7 File Offset: 0x000076B7
+	// Token: 0x060007F3 RID: 2035 RVA: 0x000267B0 File Offset: 0x000249B0
 	private void Awake()
 	{
 		this.agent = base.GetComponent<NavMeshAgent>();
 	}
 
-	// Token: 0x06000998 RID: 2456 RVA: 0x000094C5 File Offset: 0x000076C5
+	// Token: 0x060007F4 RID: 2036 RVA: 0x000267BE File Offset: 0x000249BE
 	private void FixedUpdate()
 	{
 		this.agent.SetDestination(this.goal.position);

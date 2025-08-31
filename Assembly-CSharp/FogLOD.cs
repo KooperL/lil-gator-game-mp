@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FogLOD : MonoBehaviour
 {
-	// Token: 0x06001079 RID: 4217 RVA: 0x000551BC File Offset: 0x000533BC
+	// Token: 0x06000D68 RID: 3432 RVA: 0x000409E4 File Offset: 0x0003EBE4
 	private void Awake()
 	{
 		this.lodTrees = base.GetComponentsInChildren<LODTree>();
@@ -13,7 +13,7 @@ public class FogLOD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600107A RID: 4218 RVA: 0x000551BC File Offset: 0x000533BC
+	// Token: 0x06000D69 RID: 3433 RVA: 0x00040A28 File Offset: 0x0003EC28
 	[ContextMenu("Update All")]
 	public void UpdateAllFogDistance()
 	{
@@ -24,21 +24,21 @@ public class FogLOD : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600107B RID: 4219 RVA: 0x0000E233 File Offset: 0x0000C433
+	// Token: 0x06000D6A RID: 3434 RVA: 0x00040A6C File Offset: 0x0003EC6C
 	[ContextMenu("DebugCrossFade")]
 	public void DebugCrossFade()
 	{
 		Debug.Log(LODGroup.crossFadeAnimationDuration);
 	}
 
-	// Token: 0x0600107C RID: 4220 RVA: 0x0000E244 File Offset: 0x0000C444
+	// Token: 0x06000D6B RID: 3435 RVA: 0x00040A7D File Offset: 0x0003EC7D
 	[ContextMenu("SetSlow")]
 	public void SetSlowCrossFade()
 	{
 		LODGroup.crossFadeAnimationDuration = 5f;
 	}
 
-	// Token: 0x0600107D RID: 4221 RVA: 0x0000E250 File Offset: 0x0000C450
+	// Token: 0x06000D6C RID: 3436 RVA: 0x00040A89 File Offset: 0x0003EC89
 	[ContextMenu("SetDefault")]
 	public void SetDefaultCrossFade()
 	{

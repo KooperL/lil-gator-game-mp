@@ -4,73 +4,6 @@ using UnityEngine;
 
 public class MultiplayerPlayerManager : MonoBehaviour
 {
-	public void OnState(string netId, Vector3 pos, Quaternion rot, Vector3 vel, double remoteTime)
-	{
-		if (!this._players.ContainsKey(netId))
-		{
-			Debug.LogWarning("[LGG-MP] Received state for unknown player: " + netId);
-			return;
-		}
-		GameObject gameObject = this._players[netId];
-		if (gameObject == null)
-		{
-			Debug.LogWarning("[LGG-MP] Player object is null for: " + netId);
-			this._players.Remove(netId);
-			return;
-		}
-		try
-		{
-			Vector3 vector = vel;
-			if (vel.magnitude == 0f && this._lastPositions.ContainsKey(netId) && this._lastUpdateTimes.ContainsKey(netId))
-			{
-				Vector3 vector2 = this._lastPositions[netId];
-				double num = this._lastUpdateTimes[netId];
-				double num2 = remoteTime - num;
-				if (num2 > 0.0)
-				{
-					vector = (pos - vector2) / (float)num2;
-					Debug.Log(string.Format("[LGG-MP] Player {0} - Calculated velocity: {1:F2} from position change", netId, vector.magnitude));
-				}
-			}
-			this._lastPositions[netId] = pos;
-			this._lastUpdateTimes[netId] = remoteTime;
-			gameObject.transform.position = pos;
-			gameObject.transform.rotation = rot;
-			this.UpdateNameTagRotation(gameObject);
-			Transform child = gameObject.transform.GetChild(0);
-			if (child != null)
-			{
-				Animator component = child.GetComponent<Animator>();
-				if (component != null)
-				{
-					try
-					{
-						float magnitude = vector.magnitude;
-						if (magnitude > 0.1f)
-						{
-							Debug.Log(string.Format("[LGG-MP] Player {0} - MOVING: Speed={1:F2}, Velocity={2}", netId, magnitude, vector));
-						}
-						component.SetFloat("Speed", magnitude);
-						component.SetFloat("VerticalSpeed", 0f);
-						component.SetBool("Grounded", true);
-						if (magnitude > 0.1f)
-						{
-							component.SetFloat("Angle", 0f);
-						}
-					}
-					catch (Exception ex)
-					{
-						Debug.LogError("[LGG-MP] Animation update error: " + ex.Message);
-					}
-				}
-			}
-		}
-		catch (Exception ex2)
-		{
-			Debug.LogError("[LGG-MP] Failed to update player " + netId + " state: " + ex2.Message);
-		}
-	}
-
 	public void Despawn(string netId)
 	{
 		if (!this._players.ContainsKey(netId))
@@ -83,7 +16,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 			GameObject gameObject = this._players[netId];
 			if (gameObject != null)
 			{
-				global::UnityEngine.Object.Destroy(gameObject);
+				Object.Destroy(gameObject);
 				Debug.Log("[LGG-MP] Despawned remote player: " + netId);
 			}
 			this._players.Remove(netId);
@@ -104,7 +37,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 
 	private void FindPlayerTemplate()
 	{
-		foreach (GameObject gameObject in global::UnityEngine.Object.FindObjectsOfType<GameObject>())
+		foreach (GameObject gameObject in Object.FindObjectsOfType<GameObject>())
 		{
 			if (gameObject.name == "Player" || gameObject.name == "Player (Baby)")
 			{
@@ -153,7 +86,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 			{
 				try
 				{
-					global::UnityEngine.Object.DestroyImmediate(component);
+					Object.DestroyImmediate(component);
 				}
 				catch (Exception ex)
 				{
@@ -231,7 +164,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		{
 			if (keyValuePair.Value != null)
 			{
-				global::UnityEngine.Object.Destroy(keyValuePair.Value);
+				Object.Destroy(keyValuePair.Value);
 			}
 		}
 		this._players.Clear();
@@ -245,7 +178,10 @@ public class MultiplayerPlayerManager : MonoBehaviour
 	{
 		if (this._players.ContainsKey(netId))
 		{
-			Debug.Log("[LGG-MP] Player " + netId + " already exists");
+			if (MultiplayerConfigLoader.Instance.logTemp.Contains("B"))
+			{
+				Debug.Log("[LGG-MP] Player " + netId + " already exists");
+			}
 			return;
 		}
 		if (this._playerTemplate == null)
@@ -265,7 +201,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 			Transform transform = this.FindChildByName(this._playerTemplate.transform, "Heroboy");
 			if (transform != null)
 			{
-				GameObject gameObject2 = global::UnityEngine.Object.Instantiate<GameObject>(transform.gameObject);
+				GameObject gameObject2 = Object.Instantiate<GameObject>(transform.gameObject);
 				gameObject2.transform.SetParent(gameObject.transform);
 				gameObject2.transform.localPosition = Vector3.zero;
 				gameObject2.transform.localRotation = Quaternion.identity;
@@ -284,7 +220,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 			else
 			{
 				Debug.LogError("[LGG-MP] Could not find Heroboy in player template!");
-				global::UnityEngine.Object.Destroy(gameObject);
+				Object.Destroy(gameObject);
 			}
 		}
 		catch (Exception ex)
@@ -329,7 +265,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 				Camera camera = Camera.main;
 				if (camera == null)
 				{
-					camera = global::UnityEngine.Object.FindObjectOfType<Camera>();
+					camera = Object.FindObjectOfType<Camera>();
 				}
 				if (camera != null)
 				{
@@ -340,109 +276,6 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		}
 		catch (Exception)
 		{
-		}
-	}
-
-	public void OnStateWithAnimation(string netId, Vector3 pos, Quaternion rot, Vector3 vel, double remoteTime, int animStateHash, float animNormalizedTime, float animSpeed, float animVerticalSpeed, float animAngle, bool animGrounded, bool animClimbing, bool animSwimming, bool animGliding, bool animSledding)
-	{
-		Debug.LogWarning("[LGG-MP] STOP USING OnStateWithAnimation");
-		if (!this._players.ContainsKey(netId))
-		{
-			Debug.LogWarning("[LGG-MP] Received state for unknown player: " + netId);
-			return;
-		}
-		GameObject gameObject = this._players[netId];
-		if (gameObject == null)
-		{
-			Debug.LogWarning("[LGG-MP] Player object is null for: " + netId);
-			this._players.Remove(netId);
-			return;
-		}
-		try
-		{
-			this._lastPositions[netId] = pos;
-			this._lastUpdateTimes[netId] = remoteTime;
-			gameObject.transform.position = pos;
-			gameObject.transform.rotation = rot;
-			this.UpdateNameTagRotation(gameObject);
-			Transform child = gameObject.transform.GetChild(0);
-			if (child != null)
-			{
-				Animator component = child.GetComponent<Animator>();
-				if (component != null)
-				{
-					try
-					{
-						component.SetFloat("Speed", animSpeed);
-						component.SetFloat("VerticalSpeed", animVerticalSpeed);
-						component.SetFloat("Angle", animAngle);
-						component.SetBool("Grounded", animGrounded);
-						component.SetBool("Climbing", animClimbing);
-						component.SetBool("Swimming", animSwimming);
-						component.SetBool("Gliding", animGliding);
-						component.SetBool("Sledding", animSledding);
-						component.SetBool("Throwing", false);
-						component.SetBool("Aiming", false);
-						component.Play(animStateHash, 0, animNormalizedTime);
-						Debug.Log(string.Format("[LGG-MP] Player {0} - Synced to state {1}, Speed: {2:F2}", netId, animStateHash, animSpeed));
-					}
-					catch (Exception ex)
-					{
-						Debug.LogError("[LGG-MP] Animation sync error: " + ex.Message);
-					}
-				}
-			}
-		}
-		catch (Exception ex2)
-		{
-			Debug.LogError("[LGG-MP] Failed to sync player " + netId + " state: " + ex2.Message);
-		}
-	}
-
-	public void OnStateSimpleAnimation(string netId, Vector3 pos, Quaternion rot, Vector3 vel, double remoteTime, int animStateHash, float animNormalizedTime, float animSpeed)
-	{
-		if (!this._players.ContainsKey(netId))
-		{
-			Debug.LogWarning("[LGG-MP] Received state for unknown player: " + netId);
-			return;
-		}
-		GameObject gameObject = this._players[netId];
-		if (gameObject == null)
-		{
-			Debug.LogWarning("[LGG-MP] Player object is null for: " + netId);
-			this._players.Remove(netId);
-			return;
-		}
-		try
-		{
-			this._lastPositions[netId] = pos;
-			this._lastUpdateTimes[netId] = remoteTime;
-			gameObject.transform.position = pos;
-			gameObject.transform.rotation = rot;
-			this.UpdateNameTagRotation(gameObject);
-			Transform child = gameObject.transform.GetChild(0);
-			if (child != null)
-			{
-				Animator component = child.GetComponent<Animator>();
-				if (component != null)
-				{
-					try
-					{
-						component.SetFloat("Speed", animSpeed);
-						component.SetBool("Grounded", true);
-						component.Play(animStateHash, 0, animNormalizedTime);
-						Debug.Log(string.Format("[LGG-MP] Player {0} - Simple sync to state {1}, Speed: {2:F2}", netId, animStateHash, animSpeed));
-					}
-					catch (Exception ex)
-					{
-						Debug.LogError("[LGG-MP] Simple animation sync error: " + ex.Message);
-					}
-				}
-			}
-		}
-		catch (Exception ex2)
-		{
-			Debug.LogError("[LGG-MP] Failed to simple sync player " + netId + " state: " + ex2.Message);
 		}
 	}
 
@@ -549,10 +382,6 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		}
 	}
 
-	private void SetupRemotePlayerItemManager(GameObject remotePlayer)
-	{
-	}
-
 	private void SpawnItemOnRemotePlayer(string itemID, Transform anchor, string itemName)
 	{
 		if (anchor == null)
@@ -568,18 +397,21 @@ public class MultiplayerPlayerManager : MonoBehaviour
 				Transform existingItem = anchor.Find(itemName);
 				if (existingItem != null)
 				{
-					global::UnityEngine.Object.Destroy(existingItem.gameObject);
+					Object.Destroy(existingItem.gameObject);
 				}
-				GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(item.prefab, anchor);
+				GameObject gameObject = Object.Instantiate<GameObject>(item.prefab, anchor);
 				gameObject.name = itemName;
 				gameObject.transform.localPosition = Vector3.zero;
 				gameObject.transform.localRotation = Quaternion.identity;
 				IItemBehaviour behaviour = gameObject.GetComponent<IItemBehaviour>();
 				if (behaviour != null)
 				{
-					global::UnityEngine.Object.DestroyImmediate((Component)behaviour);
+					Object.DestroyImmediate((Component)behaviour);
 				}
-				Debug.Log("[LGG-MP] Spawned item: " + itemID + " at anchor: " + anchor.name);
+				if (MultiplayerConfigLoader.Instance.logTemp.Contains("B"))
+				{
+					Debug.Log("[LGG-MP] Spawned item: " + itemID + " at anchor: " + anchor.name);
+				}
 			}
 		}
 		catch (Exception ex)
@@ -666,43 +498,40 @@ public class MultiplayerPlayerManager : MonoBehaviour
 				Transform leftHandAnchor = this.FindTransformRecursive(heroboy, "HandAnchor.L");
 				if (leftHandAnchor == null)
 				{
-					Debug.Log("[LGG-MP] Left hand anchor is null");
-				}
-				else
-				{
-					Debug.Log("[LGG-MP] Left hand anchor is " + leftHandAnchor.name);
+					Debug.LogWarning("[LGG-MP] Left hand anchor is null");
 				}
 				Transform rightHandAnchor = this.FindTransformRecursive(heroboy, "HandAnchor.R");
 				if (rightHandAnchor == null)
 				{
-					Debug.Log("[LGG-MP] Right hand anchor is null");
-				}
-				else
-				{
-					Debug.Log("[LGG-MP] Right hand anchor is " + rightHandAnchor.name);
+					Debug.LogWarning("[LGG-MP] Right hand anchor is null");
 				}
 				Transform hatAnchor = this.FindTransformRecursive(heroboy, "Head");
 				if (hatAnchor == null)
 				{
-					Debug.Log("[LGG-MP] Hat anchor is null");
-				}
-				else
-				{
-					Debug.Log("[LGG-MP] Hat anchor is " + hatAnchor.name);
+					Debug.LogWarning("[LGG-MP] Hat anchor is null");
 				}
 				if (!string.IsNullOrEmpty(leftHandItemID) && ItemManager.i.itemDic.ContainsKey(leftHandItemID))
 				{
-					Debug.Log("[LGG-MP] Spawning " + leftHandItemID + " on " + leftHandAnchor.name);
+					if (MultiplayerConfigLoader.Instance.logTemp.Contains("B"))
+					{
+						Debug.Log("[LGG-MP] Spawning " + leftHandItemID + " on " + leftHandAnchor.name);
+					}
 					this.SpawnItemOnRemotePlayer(leftHandItemID, leftHandAnchor, "LeftHandItem");
 				}
 				if (!string.IsNullOrEmpty(rightHandItemID) && ItemManager.i.itemDic.ContainsKey(rightHandItemID))
 				{
-					Debug.Log("[LGG-MP] Spawning " + rightHandItemID + " on " + rightHandAnchor.name);
+					if (MultiplayerConfigLoader.Instance.logTemp.Contains("B"))
+					{
+						Debug.Log("[LGG-MP] Spawning " + rightHandItemID + " on " + rightHandAnchor.name);
+					}
 					this.SpawnItemOnRemotePlayer(rightHandItemID, rightHandAnchor, "RightHandItem");
 				}
 				if (!string.IsNullOrEmpty(hatItemID) && ItemManager.i.itemDic.ContainsKey(hatItemID))
 				{
-					Debug.Log("[LGG-MP] Spawning " + hatItemID + " on " + hatAnchor.name);
+					if (MultiplayerConfigLoader.Instance.logTemp.Contains("B"))
+					{
+						Debug.Log("[LGG-MP] Spawning " + hatItemID + " on " + hatAnchor.name);
+					}
 					this.SpawnItemOnRemotePlayer(hatItemID, hatAnchor, "HatItem");
 				}
 				Debug.Log("[LGG-MP] Successfully setup remote player items");
@@ -716,7 +545,10 @@ public class MultiplayerPlayerManager : MonoBehaviour
 
 	private void UpdateRemotePlayerItemsSimple(GameObject remotePlayer, string hatItemID, string leftHandItemID, string rightHandItemID, string netId, MultiplayerPlayerManager.PlayerAnimationState playerAnimationState)
 	{
-		Debug.Log("[LGG-MP] Updating items for " + netId);
+		if (MultiplayerConfigLoader.Instance.logTemp.Contains("B"))
+		{
+			Debug.Log("[LGG-MP] Updating items for " + netId);
+		}
 		if (!this._lastItemStates.ContainsKey(netId))
 		{
 			this._lastItemStates[netId] = new MultiplayerPlayerManager.RemotePlayerItemState();
@@ -724,7 +556,10 @@ public class MultiplayerPlayerManager : MonoBehaviour
 		MultiplayerPlayerManager.RemotePlayerItemState lastState = this._lastItemStates[netId];
 		if (!(lastState.hatItemID != hatItemID) && !(lastState.leftHandItemID != leftHandItemID) && !(lastState.rightHandItemID != rightHandItemID))
 		{
-			Debug.Log("[LGG-MP] Early return for " + netId + " when updating items");
+			if (MultiplayerConfigLoader.Instance.logTemp.Contains("B"))
+			{
+				Debug.Log("[LGG-MP] Early return for " + netId + " when updating items");
+			}
 			return;
 		}
 		try
@@ -745,7 +580,7 @@ public class MultiplayerPlayerManager : MonoBehaviour
 
 	private GameObject _playerTemplate;
 
-	private readonly Dictionary<string, string> _playerNames = new Dictionary<string, string>();
+	public readonly Dictionary<string, string> _playerNames = new Dictionary<string, string>();
 
 	private readonly Dictionary<string, Vector3> _lastPositions = new Dictionary<string, Vector3>();
 

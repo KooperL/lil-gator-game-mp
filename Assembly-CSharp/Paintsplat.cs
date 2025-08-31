@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Paintsplat : MonoBehaviour
 {
-	// Token: 0x06000113 RID: 275 RVA: 0x00002DF0 File Offset: 0x00000FF0
+	// Token: 0x060000E6 RID: 230 RVA: 0x00006425 File Offset: 0x00004625
 	public void SetColor(Color color)
 	{
 		this.color = color;
@@ -13,30 +13,30 @@ public class Paintsplat : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000114 RID: 276 RVA: 0x00002E0D File Offset: 0x0000100D
+	// Token: 0x060000E7 RID: 231 RVA: 0x00006442 File Offset: 0x00004642
 	private void Start()
 	{
 		if (this.isRandomized)
 		{
-			this.color = this.randomColor.Evaluate(global::UnityEngine.Random.value);
+			this.color = this.randomColor.Evaluate(Random.value);
 		}
 		this.setDecal = base.GetComponent<SetDecal>();
 		this.t = 0f;
 		this.UpdateDecal();
 	}
 
-	// Token: 0x06000115 RID: 277 RVA: 0x00002E4A File Offset: 0x0000104A
+	// Token: 0x060000E8 RID: 232 RVA: 0x0000647F File Offset: 0x0000467F
 	private void Update()
 	{
 		this.t += Time.deltaTime * this.curveSpeed;
 		this.UpdateDecal();
 		if (this.t >= 1f)
 		{
-			global::UnityEngine.Object.Destroy(base.gameObject);
+			Object.Destroy(base.gameObject);
 		}
 	}
 
-	// Token: 0x06000116 RID: 278 RVA: 0x0001B75C File Offset: 0x0001995C
+	// Token: 0x060000E9 RID: 233 RVA: 0x000064B8 File Offset: 0x000046B8
 	private void UpdateDecal()
 	{
 		Color color = this.color;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SetCameraTransition : MonoBehaviour
 {
-	// Token: 0x06000F3D RID: 3901 RVA: 0x00050570 File Offset: 0x0004E770
+	// Token: 0x06000C41 RID: 3137 RVA: 0x0003AF98 File Offset: 0x00039198
 	private string GetTransitionName(SetCameraTransition.Transition transition)
 	{
 		switch (transition)
@@ -23,7 +23,7 @@ public class SetCameraTransition : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F3E RID: 3902 RVA: 0x0000D32D File Offset: 0x0000B52D
+	// Token: 0x06000C42 RID: 3138 RVA: 0x0003AFE4 File Offset: 0x000391E4
 	private void Awake()
 	{
 		if (string.IsNullOrEmpty(this.transition))

@@ -3,7 +3,7 @@
 [Serializable]
 public struct MultilingualString
 {
-	// Token: 0x06000034 RID: 52 RVA: 0x00017F00 File Offset: 0x00016100
+	// Token: 0x06000034 RID: 52 RVA: 0x00002B60 File Offset: 0x00000D60
 	public string GetText(Language language = Language.Auto)
 	{
 		if (language == Language.Auto)

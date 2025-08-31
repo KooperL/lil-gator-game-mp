@@ -3,35 +3,35 @@ using UnityEngine;
 
 public class SaveFileScreen : MonoBehaviour
 {
-	// Token: 0x0600018F RID: 399 RVA: 0x0000359E File Offset: 0x0000179E
+	// Token: 0x06000156 RID: 342 RVA: 0x00008066 File Offset: 0x00006266
 	private void OnEnable()
 	{
 		this.currentState = SaveFileScreen.State.Standard;
 		this.UpdateState();
 	}
 
-	// Token: 0x06000190 RID: 400 RVA: 0x000035AD File Offset: 0x000017AD
+	// Token: 0x06000157 RID: 343 RVA: 0x00008075 File Offset: 0x00006275
 	public void StartCopy()
 	{
 		this.currentState = SaveFileScreen.State.CopyFrom;
 		this.UpdateState();
 	}
 
-	// Token: 0x06000191 RID: 401 RVA: 0x000035BC File Offset: 0x000017BC
+	// Token: 0x06000158 RID: 344 RVA: 0x00008084 File Offset: 0x00006284
 	public void StartErase()
 	{
 		this.currentState = SaveFileScreen.State.Erase;
 		this.UpdateState();
 	}
 
-	// Token: 0x06000192 RID: 402 RVA: 0x000035CB File Offset: 0x000017CB
+	// Token: 0x06000159 RID: 345 RVA: 0x00008093 File Offset: 0x00006293
 	public void StartNGP()
 	{
 		this.currentState = SaveFileScreen.State.NGPSource;
 		this.UpdateState();
 	}
 
-	// Token: 0x06000193 RID: 403 RVA: 0x0001CE90 File Offset: 0x0001B090
+	// Token: 0x0600015A RID: 346 RVA: 0x000080A4 File Offset: 0x000062A4
 	public void Confirm()
 	{
 		SaveFileScreen.State state = this.currentState;
@@ -58,14 +58,14 @@ public class SaveFileScreen : MonoBehaviour
 		this.UpdateState();
 	}
 
-	// Token: 0x06000194 RID: 404 RVA: 0x0000359E File Offset: 0x0000179E
+	// Token: 0x0600015B RID: 347 RVA: 0x0000811B File Offset: 0x0000631B
 	public void Cancel()
 	{
 		this.currentState = SaveFileScreen.State.Standard;
 		this.UpdateState();
 	}
 
-	// Token: 0x06000195 RID: 405 RVA: 0x0001CF08 File Offset: 0x0001B108
+	// Token: 0x0600015C RID: 348 RVA: 0x0000812C File Offset: 0x0000632C
 	public void PressSaveFileButton(int index)
 	{
 		switch (this.currentState)
@@ -143,7 +143,7 @@ public class SaveFileScreen : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000196 RID: 406 RVA: 0x0001D04C File Offset: 0x0001B24C
+	// Token: 0x0600015D RID: 349 RVA: 0x00008270 File Offset: 0x00006470
 	private void UpdateState()
 	{
 		if (this.currentState == SaveFileScreen.State.Standard)

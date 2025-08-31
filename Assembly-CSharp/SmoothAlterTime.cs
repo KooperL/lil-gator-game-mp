@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class SmoothAlterTime : MonoBehaviour
 {
-	// Token: 0x06000607 RID: 1543 RVA: 0x000064E4 File Offset: 0x000046E4
+	// Token: 0x060004C1 RID: 1217 RVA: 0x0001A02C File Offset: 0x0001822C
 	public void StartAlteredTime()
 	{
 		base.enabled = true;
 		this.isTimeAltered = true;
 	}
 
-	// Token: 0x06000608 RID: 1544 RVA: 0x000064F4 File Offset: 0x000046F4
+	// Token: 0x060004C2 RID: 1218 RVA: 0x0001A03C File Offset: 0x0001823C
 	public void StopAlteredTime()
 	{
 		this.isTimeAltered = false;
 	}
 
-	// Token: 0x06000609 RID: 1545 RVA: 0x00030480 File Offset: 0x0002E680
+	// Token: 0x060004C3 RID: 1219 RVA: 0x0001A048 File Offset: 0x00018248
 	private void Update()
 	{
 		this.alteredTimeSmooth = Mathf.MoveTowards(this.alteredTimeSmooth, this.isTimeAltered ? 1f : 0f, Time.unscaledDeltaTime / this.fadeRealTime);

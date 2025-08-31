@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InstantiateTrees : MonoBehaviour
 {
-	// Token: 0x060010BC RID: 4284 RVA: 0x00056754 File Offset: 0x00054954
+	// Token: 0x06000DA4 RID: 3492 RVA: 0x0004219C File Offset: 0x0004039C
 	private void OnValidate()
 	{
 		for (int i = 0; i < this.prefabs.Length; i++)
@@ -37,7 +37,7 @@ public class InstantiateTrees : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010BD RID: 4285 RVA: 0x0005685C File Offset: 0x00054A5C
+	// Token: 0x06000DA5 RID: 3493 RVA: 0x000422A4 File Offset: 0x000404A4
 	private Vector3 TerrainToWorld(Vector3 position)
 	{
 		Vector3 zero = Vector3.zero;
@@ -50,7 +50,7 @@ public class InstantiateTrees : MonoBehaviour
 		return zero;
 	}
 
-	// Token: 0x060010BE RID: 4286 RVA: 0x000568C0 File Offset: 0x00054AC0
+	// Token: 0x06000DA6 RID: 3494 RVA: 0x00042308 File Offset: 0x00040508
 	private void Start()
 	{
 		if (this.lodParent != null && this.lodParent.gameObject.activeSelf)
@@ -71,7 +71,7 @@ public class InstantiateTrees : MonoBehaviour
 			GameObject gameObject;
 			if (dictionary.TryGetValue(treeInstance.prototypeIndex, out gameObject))
 			{
-				GameObject gameObject2 = global::UnityEngine.Object.Instantiate<GameObject>(gameObject, base.transform);
+				GameObject gameObject2 = Object.Instantiate<GameObject>(gameObject, base.transform);
 				gameObject2.transform.position = this.TerrainToWorld(treeInstance.position);
 				gameObject2.transform.localScale = new Vector3(treeInstance.widthScale, treeInstance.heightScale, treeInstance.widthScale);
 			}

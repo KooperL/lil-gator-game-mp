@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class ActorMark : GenericPath
 {
-	// Token: 0x06000379 RID: 889 RVA: 0x000260E0 File Offset: 0x000242E0
+	// Token: 0x0600030E RID: 782 RVA: 0x00011C70 File Offset: 0x0000FE70
 	private void OnEnable()
 	{
 		if (this.actorIsPlayer)
@@ -38,7 +38,7 @@ public class ActorMark : GenericPath
 		}
 	}
 
-	// Token: 0x0600037A RID: 890 RVA: 0x000261C8 File Offset: 0x000243C8
+	// Token: 0x0600030F RID: 783 RVA: 0x00011D58 File Offset: 0x0000FF58
 	public void SetMark()
 	{
 		if (this.actorMover == null)
@@ -49,7 +49,7 @@ public class ActorMark : GenericPath
 		this.actorMover.SetMark(this.markPath, base.transform.rotation, num, this.onReachMark, this.skipToStart, this.disableInteractionWhileMoving, this.playFootsteps);
 	}
 
-	// Token: 0x0600037B RID: 891 RVA: 0x0002622C File Offset: 0x0002442C
+	// Token: 0x06000310 RID: 784 RVA: 0x00011DBC File Offset: 0x0000FFBC
 	[ContextMenu("Snap root to ground")]
 	public void SnapRootToGround()
 	{

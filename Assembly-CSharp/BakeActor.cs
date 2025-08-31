@@ -6,12 +6,12 @@ using UnityEngine.Events;
 [AddComponentMenu("Actors/Posed Actor")]
 public class BakeActor : MonoBehaviour
 {
-	// Token: 0x0600025B RID: 603 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000216 RID: 534 RVA: 0x0000B7F9 File Offset: 0x000099F9
 	private void OnValidate()
 	{
 	}
 
-	// Token: 0x0600025C RID: 604 RVA: 0x0001FC80 File Offset: 0x0001DE80
+	// Token: 0x06000217 RID: 535 RVA: 0x0000B7FC File Offset: 0x000099FC
 	public void UpdateArmature()
 	{
 		if (this.armatureRoot == null)
@@ -34,7 +34,7 @@ public class BakeActor : MonoBehaviour
 		this.armature = list.ToArray();
 	}
 
-	// Token: 0x0600025D RID: 605 RVA: 0x0001FD94 File Offset: 0x0001DF94
+	// Token: 0x06000218 RID: 536 RVA: 0x0000B910 File Offset: 0x00009B10
 	private void Start()
 	{
 		if (this.disableProximityTrigger && this.proximityTrigger != null)
@@ -75,7 +75,7 @@ public class BakeActor : MonoBehaviour
 		this.SetBakeState(false);
 	}
 
-	// Token: 0x0600025E RID: 606 RVA: 0x00003F8A File Offset: 0x0000218A
+	// Token: 0x06000219 RID: 537 RVA: 0x0000BA2E File Offset: 0x00009C2E
 	private void ActorEnabled()
 	{
 		if (this.actor.lookAtAmount > 0f || this.actor.shoulderLookAmount > 0f)
@@ -85,14 +85,14 @@ public class BakeActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600025F RID: 607 RVA: 0x00003FBE File Offset: 0x000021BE
+	// Token: 0x0600021A RID: 538 RVA: 0x0000BA62 File Offset: 0x00009C62
 	private void ActorEnteredDialogue()
 	{
 		base.enabled = true;
 		this.SetBakeState(false);
 	}
 
-	// Token: 0x06000260 RID: 608 RVA: 0x00003FCE File Offset: 0x000021CE
+	// Token: 0x0600021B RID: 539 RVA: 0x0000BA72 File Offset: 0x00009C72
 	private void Update()
 	{
 		if (!this.actor.enabled)
@@ -102,13 +102,13 @@ public class BakeActor : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000261 RID: 609 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x0600021C RID: 540 RVA: 0x0000BA8F File Offset: 0x00009C8F
 	[ContextMenu("PreBake Mesh")]
 	public void PreBakeMesh()
 	{
 	}
 
-	// Token: 0x06000262 RID: 610 RVA: 0x0001FEB4 File Offset: 0x0001E0B4
+	// Token: 0x0600021D RID: 541 RVA: 0x0000BA94 File Offset: 0x00009C94
 	private void GenerateBakedObject()
 	{
 		GameObject gameObject = new GameObject();
@@ -124,7 +124,7 @@ public class BakeActor : MonoBehaviour
 		gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000263 RID: 611 RVA: 0x00003FEB File Offset: 0x000021EB
+	// Token: 0x0600021E RID: 542 RVA: 0x0000BB4D File Offset: 0x00009D4D
 	private void BakeMesh()
 	{
 		if (this.bakedMesh == null)
@@ -135,7 +135,7 @@ public class BakeActor : MonoBehaviour
 		this.bakedMeshFilter.mesh = this.bakedMesh;
 	}
 
-	// Token: 0x06000264 RID: 612 RVA: 0x0001FF70 File Offset: 0x0001E170
+	// Token: 0x0600021F RID: 543 RVA: 0x0000BB8C File Offset: 0x00009D8C
 	private void SetBakeState(bool isBaked)
 	{
 		this.actor.jawRotationMod = (isBaked ? 0f : this.jawRotationMod);

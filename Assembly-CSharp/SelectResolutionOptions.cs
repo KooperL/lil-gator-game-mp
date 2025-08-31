@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class SelectResolutionOptions : SelectOptions
 {
-	// Token: 0x0600113E RID: 4414 RVA: 0x00057FC0 File Offset: 0x000561C0
+	// Token: 0x06000E19 RID: 3609 RVA: 0x0004400C File Offset: 0x0004220C
 	protected override void OnEnable()
 	{
 		this.options = new string[Screen.resolutions.Length];

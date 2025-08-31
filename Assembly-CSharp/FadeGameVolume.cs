@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 
 public class FadeGameVolume : MonoBehaviour
 {
-	// (get) Token: 0x060006D2 RID: 1746 RVA: 0x00006F46 File Offset: 0x00005146
+	// (get) Token: 0x0600057A RID: 1402 RVA: 0x0001CF0F File Offset: 0x0001B10F
 	public static bool IsFaded
 	{
 		get
@@ -14,7 +14,7 @@ public class FadeGameVolume : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006D3 RID: 1747 RVA: 0x00032BC0 File Offset: 0x00030DC0
+	// Token: 0x0600057B RID: 1403 RVA: 0x0001CF20 File Offset: 0x0001B120
 	public static void FadeOutGameVolume()
 	{
 		if (FadeGameVolume.audioMixer == null && Settings.s != null)
@@ -29,7 +29,7 @@ public class FadeGameVolume : MonoBehaviour
 		CoroutineUtil.Start(FadeGameVolume.coroutine);
 	}
 
-	// Token: 0x060006D4 RID: 1748 RVA: 0x00032C24 File Offset: 0x00030E24
+	// Token: 0x0600057C RID: 1404 RVA: 0x0001CF84 File Offset: 0x0001B184
 	public static void FadeInGameVolume()
 	{
 		if (FadeGameVolume.audioMixer == null && Settings.s != null)
@@ -44,7 +44,7 @@ public class FadeGameVolume : MonoBehaviour
 		CoroutineUtil.Start(FadeGameVolume.coroutine);
 	}
 
-	// Token: 0x060006D5 RID: 1749 RVA: 0x00006F54 File Offset: 0x00005154
+	// Token: 0x0600057D RID: 1405 RVA: 0x0001CFE5 File Offset: 0x0001B1E5
 	private static IEnumerator DoFadeGameVolume(float target)
 	{
 		while (FadeGameVolume.volumeMultiplier != target)
@@ -57,7 +57,7 @@ public class FadeGameVolume : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060006D6 RID: 1750 RVA: 0x00032C88 File Offset: 0x00030E88
+	// Token: 0x0600057E RID: 1406 RVA: 0x0001CFF4 File Offset: 0x0001B1F4
 	public static void UpdateGameVolume()
 	{
 		float num = Mathf.Lerp(Settings.gameVolume, -80f, 1f - FadeGameVolume.volumeMultiplier);

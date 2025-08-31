@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ThrownRigidbody : MonoBehaviour
 {
-	// Token: 0x060006AA RID: 1706 RVA: 0x00006D2B File Offset: 0x00004F2B
+	// Token: 0x0600055E RID: 1374 RVA: 0x0001C762 File Offset: 0x0001A962
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x060006AB RID: 1707 RVA: 0x00032348 File Offset: 0x00030548
+	// Token: 0x0600055F RID: 1375 RVA: 0x0001C770 File Offset: 0x0001A970
 	private void OnDrawGizmosSelected()
 	{
 		float num = 0.1f;
@@ -26,14 +26,14 @@ public class ThrownRigidbody : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006AC RID: 1708 RVA: 0x00006D39 File Offset: 0x00004F39
+	// Token: 0x06000560 RID: 1376 RVA: 0x0001C7EA File Offset: 0x0001A9EA
 	[ContextMenu("PrepareToThrow")]
 	public void PrepareToThrow()
 	{
 		this.willThrow = true;
 	}
 
-	// Token: 0x060006AD RID: 1709 RVA: 0x00006D42 File Offset: 0x00004F42
+	// Token: 0x06000561 RID: 1377 RVA: 0x0001C7F3 File Offset: 0x0001A9F3
 	private void Start()
 	{
 		if (this.willThrow)
@@ -44,7 +44,7 @@ public class ThrownRigidbody : MonoBehaviour
 		this.Land(false);
 	}
 
-	// Token: 0x060006AE RID: 1710 RVA: 0x00006D60 File Offset: 0x00004F60
+	// Token: 0x06000562 RID: 1378 RVA: 0x0001C811 File Offset: 0x0001AA11
 	[ContextMenu("Copy To Intended")]
 	private void CopyToIntended()
 	{
@@ -52,7 +52,7 @@ public class ThrownRigidbody : MonoBehaviour
 		this.intendedRotation = base.transform.rotation;
 	}
 
-	// Token: 0x060006AF RID: 1711 RVA: 0x00006D84 File Offset: 0x00004F84
+	// Token: 0x06000563 RID: 1379 RVA: 0x0001C835 File Offset: 0x0001AA35
 	private IEnumerator ThrowCoroutine()
 	{
 		float t = 0f;
@@ -103,7 +103,7 @@ public class ThrownRigidbody : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060006B0 RID: 1712 RVA: 0x000323C4 File Offset: 0x000305C4
+	// Token: 0x06000564 RID: 1380 RVA: 0x0001C844 File Offset: 0x0001AA44
 	private void Land(bool playEffects = true)
 	{
 		base.transform.position = this.intendedPosition;

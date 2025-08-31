@@ -7,20 +7,20 @@ namespace Rewired.Demos
 	[RequireComponent(typeof(CharacterController))]
 	public class EightPlayersExample_Player : MonoBehaviour
 	{
-		// Token: 0x06001DB1 RID: 7601 RVA: 0x00016B0C File Offset: 0x00014D0C
+		// Token: 0x06001765 RID: 5989 RVA: 0x000635C7 File Offset: 0x000617C7
 		private void Awake()
 		{
 			this.cc = base.GetComponent<CharacterController>();
 		}
 
-		// Token: 0x06001DB2 RID: 7602 RVA: 0x00016B1A File Offset: 0x00014D1A
+		// Token: 0x06001766 RID: 5990 RVA: 0x000635D5 File Offset: 0x000617D5
 		private void Initialize()
 		{
 			this.player = ReInput.players.GetPlayer(this.playerId);
 			this.initialized = true;
 		}
 
-		// Token: 0x06001DB3 RID: 7603 RVA: 0x00016B39 File Offset: 0x00014D39
+		// Token: 0x06001767 RID: 5991 RVA: 0x000635F4 File Offset: 0x000617F4
 		private void Update()
 		{
 			if (!ReInput.isReady)
@@ -35,7 +35,7 @@ namespace Rewired.Demos
 			this.ProcessInput();
 		}
 
-		// Token: 0x06001DB4 RID: 7604 RVA: 0x00074E1C File Offset: 0x0007301C
+		// Token: 0x06001768 RID: 5992 RVA: 0x00063618 File Offset: 0x00061818
 		private void GetInput()
 		{
 			this.moveVector.x = this.player.GetAxis("Move Horizontal");
@@ -43,7 +43,7 @@ namespace Rewired.Demos
 			this.fire = this.player.GetButtonDown("Fire");
 		}
 
-		// Token: 0x06001DB5 RID: 7605 RVA: 0x00074E78 File Offset: 0x00073078
+		// Token: 0x06001769 RID: 5993 RVA: 0x00063674 File Offset: 0x00061874
 		private void ProcessInput()
 		{
 			if (this.moveVector.x != 0f || this.moveVector.y != 0f)
@@ -52,7 +52,7 @@ namespace Rewired.Demos
 			}
 			if (this.fire)
 			{
-				global::UnityEngine.Object.Instantiate<GameObject>(this.bulletPrefab, base.transform.position + base.transform.right, base.transform.rotation).GetComponent<Rigidbody>().AddForce(base.transform.right * this.bulletSpeed, ForceMode.VelocityChange);
+				Object.Instantiate<GameObject>(this.bulletPrefab, base.transform.position + base.transform.right, base.transform.rotation).GetComponent<Rigidbody>().AddForce(base.transform.right * this.bulletSpeed, ForceMode.VelocityChange);
 			}
 		}
 

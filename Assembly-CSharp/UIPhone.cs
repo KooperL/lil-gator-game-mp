@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UIPhone : MonoBehaviour
 {
-	// Token: 0x060012AD RID: 4781 RVA: 0x0000FBCA File Offset: 0x0000DDCA
+	// Token: 0x06000F4A RID: 3914 RVA: 0x000499D6 File Offset: 0x00047BD6
 	private void OnValidate()
 	{
 		if (this.animator == null)
@@ -17,7 +17,7 @@ public class UIPhone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012AE RID: 4782 RVA: 0x0000FC00 File Offset: 0x0000DE00
+	// Token: 0x06000F4B RID: 3915 RVA: 0x00049A0C File Offset: 0x00047C0C
 	[ContextMenu("Activate")]
 	public void Activate()
 	{
@@ -25,7 +25,7 @@ public class UIPhone : MonoBehaviour
 		this.rootGameObject.SetActive(true);
 	}
 
-	// Token: 0x060012AF RID: 4783 RVA: 0x0000FC20 File Offset: 0x0000DE20
+	// Token: 0x06000F4C RID: 3916 RVA: 0x00049A2C File Offset: 0x00047C2C
 	[ContextMenu("Deactivate")]
 	public void Deactivate()
 	{
@@ -33,7 +33,7 @@ public class UIPhone : MonoBehaviour
 		base.StartCoroutine(this.DelayedDeactivate());
 	}
 
-	// Token: 0x060012B0 RID: 4784 RVA: 0x0000FC41 File Offset: 0x0000DE41
+	// Token: 0x06000F4D RID: 3917 RVA: 0x00049A4D File Offset: 0x00047C4D
 	private IEnumerator DelayedDeactivate()
 	{
 		yield return new WaitForSeconds(this.deactivateDelay);

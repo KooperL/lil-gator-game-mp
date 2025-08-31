@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UIShop : MonoBehaviour
 {
-	// Token: 0x06001325 RID: 4901 RVA: 0x0005E644 File Offset: 0x0005C844
+	// Token: 0x06000FA4 RID: 4004 RVA: 0x0004AF98 File Offset: 0x00049198
 	public void Load(Shop.ShopItem loadedItem, Shop sourceShop)
 	{
 		this.shopItem = loadedItem;
@@ -26,7 +26,7 @@ public class UIShop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001326 RID: 4902 RVA: 0x0001021A File Offset: 0x0000E41A
+	// Token: 0x06000FA5 RID: 4005 RVA: 0x0004B083 File Offset: 0x00049283
 	public void Deactivate()
 	{
 		this.itemResource.ForceShow = false;
@@ -34,7 +34,7 @@ public class UIShop : MonoBehaviour
 		this.description.Clear(false);
 	}
 
-	// Token: 0x06001327 RID: 4903 RVA: 0x00010240 File Offset: 0x0000E440
+	// Token: 0x06000FA6 RID: 4006 RVA: 0x0004B0A9 File Offset: 0x000492A9
 	public void SetDescription(string descriptionText)
 	{
 		this.description.Clear(false);
@@ -44,25 +44,25 @@ public class UIShop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001328 RID: 4904 RVA: 0x0001026F File Offset: 0x0000E46F
+	// Token: 0x06000FA7 RID: 4007 RVA: 0x0004B0D8 File Offset: 0x000492D8
 	public void Buy()
 	{
 		this.shop.Buy();
 	}
 
-	// Token: 0x06001329 RID: 4905 RVA: 0x0001027C File Offset: 0x0000E47C
+	// Token: 0x06000FA8 RID: 4008 RVA: 0x0004B0E5 File Offset: 0x000492E5
 	public void Exit()
 	{
 		this.shop.Deactivate();
 	}
 
-	// Token: 0x0600132A RID: 4906 RVA: 0x00010289 File Offset: 0x0000E489
+	// Token: 0x06000FA9 RID: 4009 RVA: 0x0004B0F2 File Offset: 0x000492F2
 	public void MoveRight()
 	{
 		this.shop.MoveSelection(true);
 	}
 
-	// Token: 0x0600132B RID: 4907 RVA: 0x00010297 File Offset: 0x0000E497
+	// Token: 0x06000FAA RID: 4010 RVA: 0x0004B100 File Offset: 0x00049300
 	public void MoveLeft()
 	{
 		this.shop.MoveSelection(false);

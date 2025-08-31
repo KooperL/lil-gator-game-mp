@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class FollowPlayerWithinBounds : MonoBehaviour
 {
-	// Token: 0x0600072D RID: 1837 RVA: 0x00007423 File Offset: 0x00005623
+	// Token: 0x060005C9 RID: 1481 RVA: 0x0001E538 File Offset: 0x0001C738
 	private void OnEnable()
 	{
 		this.UpdatePosition();
 	}
 
-	// Token: 0x0600072E RID: 1838 RVA: 0x00007423 File Offset: 0x00005623
+	// Token: 0x060005CA RID: 1482 RVA: 0x0001E540 File Offset: 0x0001C740
 	private void LateUpdate()
 	{
 		this.UpdatePosition();
 	}
 
-	// Token: 0x0600072F RID: 1839 RVA: 0x00033DF8 File Offset: 0x00031FF8
+	// Token: 0x060005CB RID: 1483 RVA: 0x0001E548 File Offset: 0x0001C748
 	private void UpdatePosition()
 	{
 		Vector3 vector = Player.Position;

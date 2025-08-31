@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ActorHandIK : MonoBehaviour
 {
-	// Token: 0x0600036E RID: 878 RVA: 0x00025E0C File Offset: 0x0002400C
+	// Token: 0x06000303 RID: 771 RVA: 0x00011928 File Offset: 0x0000FB28
 	private void Awake()
 	{
 		this.actor = base.GetComponent<DialogueActor>();
@@ -19,18 +19,18 @@ public class ActorHandIK : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600036F RID: 879 RVA: 0x00025E6C File Offset: 0x0002406C
+	// Token: 0x06000304 RID: 772 RVA: 0x00011988 File Offset: 0x0000FB88
 	private void Update()
 	{
 		this.rightWeight = Mathf.MoveTowards(this.rightWeight, (!this.isRemoving && this.hasRightIK) ? 1f : 0f, 2f * Time.deltaTime);
 		this.leftWeight = Mathf.MoveTowards(this.leftWeight, (!this.isRemoving && this.hasLeftIK) ? 1f : 0f, 2f * Time.deltaTime);
 		if (this.isRemoving && this.rightWeight == 0f && this.leftWeight == 0f)
 		{
-			global::UnityEngine.Object.Destroy(this);
+			Object.Destroy(this);
 		}
 	}
 
-	// Token: 0x06000370 RID: 880 RVA: 0x00025F14 File Offset: 0x00024114
+	// Token: 0x06000305 RID: 773 RVA: 0x00011A30 File Offset: 0x0000FC30
 	private void OnAnimatorIK()
 	{
 		float num = this.rightWeight * this.animator.GetFloat(ActorHandIK.RightHandID);
@@ -41,7 +41,7 @@ public class ActorHandIK : MonoBehaviour
 		this.animator.SetIKPosition(AvatarIKGoal.LeftHand, this.GetIKPosition(true));
 	}
 
-	// Token: 0x06000371 RID: 881 RVA: 0x00025FB0 File Offset: 0x000241B0
+	// Token: 0x06000306 RID: 774 RVA: 0x00011ACC File Offset: 0x0000FCCC
 	public Vector3 GetIKPosition(bool isLeft)
 	{
 		Transform transform = (isLeft ? this.leftAnchor : this.rightAnchor);
@@ -62,16 +62,9 @@ public class ActorHandIK : MonoBehaviour
 		return vector;
 	}
 
+	// Token: 0x06000307 RID: 775 RVA: 0x00011B64 File Offset: 0x0000FD64
 	public void SetHandIK(bool isLeft, Vector3 position, Transform anchor = null, bool allowYAxis = false)
 	{
-		Debug.Log(string.Concat(new string[]
-		{
-			"=================================",
-			isLeft.ToString(),
-			"-",
-			anchor.name,
-			"================================="
-		}));
 		if (this.actor == null)
 		{
 			this.actor = base.transform.GetComponentInParent<DialogueActor>();
@@ -98,7 +91,7 @@ public class ActorHandIK : MonoBehaviour
 		this.isRemoving = false;
 	}
 
-	// Token: 0x06000373 RID: 883 RVA: 0x00004AB9 File Offset: 0x00002CB9
+	// Token: 0x06000308 RID: 776 RVA: 0x00011BFB File Offset: 0x0000FDFB
 	public void ClearAndRemove()
 	{
 		this.isRemoving = true;
@@ -108,7 +101,7 @@ public class ActorHandIK : MonoBehaviour
 		{
 			Player.handIK.ClearOverride(true);
 			Player.handIK.ClearOverride(false);
-			global::UnityEngine.Object.Destroy(this);
+			Object.Destroy(this);
 		}
 	}
 

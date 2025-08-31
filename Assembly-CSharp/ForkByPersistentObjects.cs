@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class ForkByPersistentObjects : MonoBehaviour
 {
-	// Token: 0x060008CE RID: 2254 RVA: 0x000089D6 File Offset: 0x00006BD6
+	// Token: 0x06000743 RID: 1859 RVA: 0x00024454 File Offset: 0x00022654
 	[ContextMenu("Collect Objects")]
 	public void CollectObjects()
 	{
@@ -15,7 +15,7 @@ public class ForkByPersistentObjects : MonoBehaviour
 		this.targets = this.parent.GetComponentsInChildren<PersistentObject>();
 	}
 
-	// Token: 0x060008CF RID: 2255 RVA: 0x00039354 File Offset: 0x00037554
+	// Token: 0x06000744 RID: 1860 RVA: 0x00024484 File Offset: 0x00022684
 	public void ForkLogic()
 	{
 		int num = 0;

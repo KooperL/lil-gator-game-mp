@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class InteractionGeneric : MonoBehaviour, Interaction, InteractionHighlight
 {
-	// Token: 0x06000808 RID: 2056 RVA: 0x00007E9F File Offset: 0x0000609F
+	// Token: 0x0600068F RID: 1679 RVA: 0x00021813 File Offset: 0x0001FA13
 	public Renderer[] GetHighlightedRenderer()
 	{
 		return new Renderer[] { this.highlightRenderer };
 	}
 
-	// Token: 0x06000809 RID: 2057 RVA: 0x00007EB0 File Offset: 0x000060B0
+	// Token: 0x06000690 RID: 1680 RVA: 0x00021824 File Offset: 0x0001FA24
 	public void Interact()
 	{
 		this.interactionBehaviour.enabled = true;

@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public static class DialogueUtil
 {
-	// Token: 0x0600059A RID: 1434 RVA: 0x0000605D File Offset: 0x0000425D
+	// Token: 0x06000478 RID: 1144 RVA: 0x00019048 File Offset: 0x00017248
 	public static IEnumerator RunWithCues(IEnumerator dialogueEnumerator, DialogueUtil.CueData[] cueData, GameObject camera = null, bool precueFirstCue = false, ICueable cueable = null)
 	{
 		Coroutine dialogueCoroutine = CoroutineUtil.Start(dialogueEnumerator);
@@ -33,7 +33,7 @@ public static class DialogueUtil
 		yield break;
 	}
 
-	// Token: 0x0600059B RID: 1435 RVA: 0x00006089 File Offset: 0x00004289
+	// Token: 0x06000479 RID: 1145 RVA: 0x00019074 File Offset: 0x00017274
 	public static void StopLastCue(DialogueUtil.CueData[] cueData, GameObject camera = null)
 	{
 		if (cueData.Length != 0)
@@ -46,7 +46,7 @@ public static class DialogueUtil
 		}
 	}
 
-	// Token: 0x0600059C RID: 1436 RVA: 0x0002F1A4 File Offset: 0x0002D3A4
+	// Token: 0x0600047A RID: 1146 RVA: 0x0001909C File Offset: 0x0001729C
 	public static DialogueUtil.CueData[] UpdateCues(MultilingualTextDocument document, string dialogue, DialogueUtil.CueData[] cueData)
 	{
 		if (document == null)
@@ -143,7 +143,7 @@ public static class DialogueUtil
 		return cueData;
 	}
 
-	// Token: 0x0600059D RID: 1437 RVA: 0x0002F448 File Offset: 0x0002D648
+	// Token: 0x0600047B RID: 1147 RVA: 0x00019340 File Offset: 0x00017540
 	public static bool CheckForPrequeue(MultilingualTextDocument document, string dialogue, DialogueUtil.CueData firstCue)
 	{
 		if (firstCue.lineIndex == 0)
@@ -168,7 +168,7 @@ public static class DialogueUtil
 	[Serializable]
 	public struct CueData
 	{
-		// Token: 0x0600059E RID: 1438 RVA: 0x000060AF File Offset: 0x000042AF
+		// Token: 0x06001915 RID: 6421 RVA: 0x0006B8B9 File Offset: 0x00069AB9
 		public void Clear()
 		{
 			this.name = "";
@@ -176,7 +176,7 @@ public static class DialogueUtil
 			this.cueObjects = new GameObject[0];
 		}
 
-		// Token: 0x0600059F RID: 1439 RVA: 0x0002F4A8 File Offset: 0x0002D6A8
+		// Token: 0x06001916 RID: 6422 RVA: 0x0006B8E0 File Offset: 0x00069AE0
 		public void Cue(ref GameObject currentCamera)
 		{
 			this.onCue.Invoke();
@@ -199,7 +199,7 @@ public static class DialogueUtil
 			}
 		}
 
-		// Token: 0x060005A0 RID: 1440 RVA: 0x0002F514 File Offset: 0x0002D714
+		// Token: 0x06001917 RID: 6423 RVA: 0x0006B94C File Offset: 0x00069B4C
 		public void Uncue()
 		{
 			GameObject[] array = this.cueObjects;

@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class AnimationClipOverrides : List<KeyValuePair<AnimationClip, AnimationClip>>
 {
-	// Token: 0x06000CDB RID: 3291 RVA: 0x0000BF2D File Offset: 0x0000A12D
+	// Token: 0x06000AD9 RID: 2777 RVA: 0x000362AD File Offset: 0x000344AD
 	public AnimationClipOverrides(int capacity)
 		: base(capacity)
 	{
 	}
 
-	// Token: 0x06000CDC RID: 3292 RVA: 0x0000BF36 File Offset: 0x0000A136
+	// Token: 0x06000ADA RID: 2778 RVA: 0x000362B6 File Offset: 0x000344B6
 	public void Set(AnimationClip original, AnimationClip overrideClip)
 	{
 		this[original] = overrideClip;
 	}
 
-	// Token: 0x06000CDD RID: 3293 RVA: 0x0000BF40 File Offset: 0x0000A140
+	// Token: 0x06000ADB RID: 2779 RVA: 0x000362C0 File Offset: 0x000344C0
 	public void Clear(AnimationClip original)
 	{
 		this[original] = null;
 	}
 
-	// Token: 0x06000CDE RID: 3294 RVA: 0x0000BF4A File Offset: 0x0000A14A
+	// Token: 0x06000ADC RID: 2780 RVA: 0x000362CA File Offset: 0x000344CA
 	public void Set(AnimationOverride animationOverride)
 	{
 		this[animationOverride.originalClip] = animationOverride.overrideClip;
 	}
 
-	// Token: 0x06000CDF RID: 3295 RVA: 0x0000BF5E File Offset: 0x0000A15E
+	// Token: 0x06000ADD RID: 2781 RVA: 0x000362DE File Offset: 0x000344DE
 	public void Clear(AnimationOverride animationOverride)
 	{
 		this[animationOverride.originalClip] = null;

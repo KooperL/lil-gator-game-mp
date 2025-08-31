@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [AddComponentMenu("Achievement Tracker - QuestStates")]
 public class Ach_QuestStates : MonoBehaviour
 {
-	// Token: 0x060001EE RID: 494 RVA: 0x00003947 File Offset: 0x00001B47
+	// Token: 0x060001AB RID: 427 RVA: 0x0000997E File Offset: 0x00007B7E
 	public void Start()
 	{
 		this.hasUnlocked = false;
@@ -17,7 +17,7 @@ public class Ach_QuestStates : MonoBehaviour
 		this.questStates.onStateChange.AddListener(new UnityAction<int>(this.OnQuestStateChange));
 	}
 
-	// Token: 0x060001EF RID: 495 RVA: 0x00003986 File Offset: 0x00001B86
+	// Token: 0x060001AC RID: 428 RVA: 0x000099BD File Offset: 0x00007BBD
 	private void OnQuestStateChange(int index)
 	{
 		if (!this.hasUnlocked && index >= this.requiredIndex)
@@ -26,7 +26,7 @@ public class Ach_QuestStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001F0 RID: 496 RVA: 0x0000399F File Offset: 0x00001B9F
+	// Token: 0x060001AD RID: 429 RVA: 0x000099D6 File Offset: 0x00007BD6
 	private void UnlockAchievement()
 	{
 		if (this.hasUnlocked)

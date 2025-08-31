@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-	// (get) Token: 0x06000C38 RID: 3128 RVA: 0x0000B61B File Offset: 0x0000981B
+	// (get) Token: 0x06000A36 RID: 2614 RVA: 0x0002FDBD File Offset: 0x0002DFBD
 	public static Vector2 RawInput
 	{
 		get
@@ -13,7 +13,7 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C39 RID: 3129 RVA: 0x000435C8 File Offset: 0x000417C8
+	// Token: 0x06000A37 RID: 2615 RVA: 0x0002FDE4 File Offset: 0x0002DFE4
 	private void OnEnable()
 	{
 		PlayerInput.p = this;
@@ -36,12 +36,12 @@ public class PlayerInput : MonoBehaviour
 		this.reCenterCamera = ReInput.mapping.GetActionId("ReCenterCamera");
 	}
 
-	// Token: 0x06000C3A RID: 3130 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000A38 RID: 2616 RVA: 0x0002FF0F File Offset: 0x0002E10F
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x06000C3B RID: 3131 RVA: 0x000436F4 File Offset: 0x000418F4
+	// Token: 0x06000A39 RID: 2617 RVA: 0x0002FF14 File Offset: 0x0002E114
 	private void Update()
 	{
 		if (!Game.HasControl)
@@ -240,14 +240,14 @@ public class PlayerInput : MonoBehaviour
 		this.lookAxis = this.lookAxisRaw;
 	}
 
-	// Token: 0x06000C3C RID: 3132 RVA: 0x0000B640 File Offset: 0x00009840
+	// Token: 0x06000A3A RID: 2618 RVA: 0x000304CB File Offset: 0x0002E6CB
 	private void LateUpdate()
 	{
 		this.jumpDesired = false;
 		this.cancelAction = false;
 	}
 
-	// Token: 0x06000C3D RID: 3133 RVA: 0x00043CAC File Offset: 0x00041EAC
+	// Token: 0x06000A3B RID: 2619 RVA: 0x000304DC File Offset: 0x0002E6DC
 	private void HandlePrimary()
 	{
 		bool flag = false;
@@ -284,7 +284,7 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C3E RID: 3134 RVA: 0x00043DDC File Offset: 0x00041FDC
+	// Token: 0x06000A3C RID: 2620 RVA: 0x0003060C File Offset: 0x0002E80C
 	private void HandleSecondary()
 	{
 		bool flag = this.rePlayer.GetButtonDown(this.secondary);
@@ -305,7 +305,7 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C3F RID: 3135 RVA: 0x00043E98 File Offset: 0x00042098
+	// Token: 0x06000A3D RID: 2621 RVA: 0x000306C8 File Offset: 0x0002E8C8
 	private void HandleItem()
 	{
 		bool buttonDown = this.rePlayer.GetButtonDown(this.useItem);
@@ -320,7 +320,7 @@ public class PlayerInput : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C40 RID: 3136 RVA: 0x00043F14 File Offset: 0x00042114
+	// Token: 0x06000A3E RID: 2622 RVA: 0x00030744 File Offset: 0x0002E944
 	private void HandleItem_R()
 	{
 		bool buttonDown = this.rePlayer.GetButtonDown(this.useItemR);

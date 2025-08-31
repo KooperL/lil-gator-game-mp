@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class NGP_Materials : MonoBehaviour
 {
-	// Token: 0x0600099A RID: 2458 RVA: 0x0003B2B8 File Offset: 0x000394B8
+	// Token: 0x060007F6 RID: 2038 RVA: 0x000267E0 File Offset: 0x000249E0
 	private void Start()
 	{
 		foreach (NGP_Materials.MaterialAltTextures materialAltTextures in this.materialAltTextures)
@@ -19,7 +19,7 @@ public class NGP_Materials : MonoBehaviour
 	[Serializable]
 	public struct MaterialAltTextures
 	{
-		// Token: 0x0600099C RID: 2460 RVA: 0x000094DE File Offset: 0x000076DE
+		// Token: 0x06001996 RID: 6550 RVA: 0x0006D820 File Offset: 0x0006BA20
 		public MaterialAltTextures(Material material)
 		{
 			this.name = material.name;

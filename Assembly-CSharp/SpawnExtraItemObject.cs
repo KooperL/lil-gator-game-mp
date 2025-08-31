@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SpawnExtraItemObject : MonoBehaviour
 {
-	// Token: 0x06000B35 RID: 2869 RVA: 0x000403C4 File Offset: 0x0003E5C4
+	// Token: 0x06000951 RID: 2385 RVA: 0x0002C478 File Offset: 0x0002A678
 	private void Start()
 	{
 		Transform transform = null;
@@ -13,18 +13,18 @@ public class SpawnExtraItemObject : MonoBehaviour
 		}
 		if (transform != null)
 		{
-			this.instance = global::UnityEngine.Object.Instantiate<GameObject>(this.prefab, transform);
+			this.instance = Object.Instantiate<GameObject>(this.prefab, transform);
 			return;
 		}
-		this.instance = global::UnityEngine.Object.Instantiate<GameObject>(this.prefab);
+		this.instance = Object.Instantiate<GameObject>(this.prefab);
 	}
 
-	// Token: 0x06000B36 RID: 2870 RVA: 0x0000A918 File Offset: 0x00008B18
+	// Token: 0x06000952 RID: 2386 RVA: 0x0002C4DC File Offset: 0x0002A6DC
 	private void OnDestroy()
 	{
 		if (this.instance != null)
 		{
-			global::UnityEngine.Object.Destroy(this.instance);
+			Object.Destroy(this.instance);
 		}
 	}
 

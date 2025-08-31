@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SwimSheepDialogue : MonoBehaviour, Interaction
 {
-	// (get) Token: 0x06000542 RID: 1346 RVA: 0x00005D47 File Offset: 0x00003F47
-	// (set) Token: 0x06000543 RID: 1347 RVA: 0x00005D59 File Offset: 0x00003F59
+	// (get) Token: 0x06000444 RID: 1092 RVA: 0x000186F0 File Offset: 0x000168F0
+	// (set) Token: 0x06000445 RID: 1093 RVA: 0x00018702 File Offset: 0x00016902
 	private int State
 	{
 		get
@@ -18,13 +18,13 @@ public class SwimSheepDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000544 RID: 1348 RVA: 0x00005DDF File Offset: 0x00003FDF
+	// Token: 0x06000446 RID: 1094 RVA: 0x00018714 File Offset: 0x00016914
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunDialogue());
 	}
 
-	// Token: 0x06000545 RID: 1349 RVA: 0x00005DEE File Offset: 0x00003FEE
+	// Token: 0x06000447 RID: 1095 RVA: 0x00018723 File Offset: 0x00016923
 	private IEnumerator RunDialogue()
 	{
 		switch (this.State)

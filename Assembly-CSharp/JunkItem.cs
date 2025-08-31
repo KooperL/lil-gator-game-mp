@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class JunkItem : MonoBehaviour
 {
-	// Token: 0x06000845 RID: 2117 RVA: 0x00037A80 File Offset: 0x00035C80
+	// Token: 0x060006C6 RID: 1734 RVA: 0x00022688 File Offset: 0x00020888
 	private void Start()
 	{
 		this.renderer = base.transform.parent.GetComponent<Renderer>();
@@ -12,7 +12,7 @@ public class JunkItem : MonoBehaviour
 		this.mainCamera = MainCamera.t;
 	}
 
-	// Token: 0x06000846 RID: 2118 RVA: 0x00037AD8 File Offset: 0x00035CD8
+	// Token: 0x060006C7 RID: 1735 RVA: 0x000226E0 File Offset: 0x000208E0
 	private void FixedUpdate()
 	{
 		this.rigidbody.velocity += 50f * Time.deltaTime * (this.mainCamera.TransformPoint(new Vector3(0f, 0f, -1f)) - this.rigidbody.position).normalized;
@@ -22,7 +22,7 @@ public class JunkItem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000847 RID: 2119 RVA: 0x00037B78 File Offset: 0x00035D78
+	// Token: 0x060006C8 RID: 1736 RVA: 0x00022780 File Offset: 0x00020980
 	private void Collect()
 	{
 		ItemResource itemResource = this.resource;
@@ -32,7 +32,7 @@ public class JunkItem : MonoBehaviour
 		{
 			this.soundEffect.Play();
 		}
-		global::UnityEngine.Object.Destroy(base.transform.parent.gameObject);
+		Object.Destroy(base.transform.parent.gameObject);
 	}
 
 	private Renderer renderer;

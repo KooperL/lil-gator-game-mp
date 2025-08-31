@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RewiredKeyboardLayouts : MonoBehaviour
 {
-	// Token: 0x06000F0B RID: 3851 RVA: 0x0000D18C File Offset: 0x0000B38C
+	// Token: 0x06000C13 RID: 3091 RVA: 0x00039870 File Offset: 0x00037A70
 	private void Start()
 	{
 		this.player = ReInput.players.GetPlayer(0);
@@ -14,19 +14,19 @@ public class RewiredKeyboardLayouts : MonoBehaviour
 		base.InvokeRepeating("CheckKeyboardLayout", 1f, 1f);
 	}
 
-	// Token: 0x06000F0C RID: 3852 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000C14 RID: 3092 RVA: 0x000398B0 File Offset: 0x00037AB0
 	private void OnDestroy()
 	{
 	}
 
-	// Token: 0x06000F0D RID: 3853 RVA: 0x0000D1CC File Offset: 0x0000B3CC
+	// Token: 0x06000C15 RID: 3093 RVA: 0x000398B2 File Offset: 0x00037AB2
 	[ContextMenu("Force Update")]
 	public void ForceUpdate()
 	{
 		this.ApplyKeyboardLayouts();
 	}
 
-	// Token: 0x06000F0E RID: 3854 RVA: 0x0004EED8 File Offset: 0x0004D0D8
+	// Token: 0x06000C16 RID: 3094 RVA: 0x000398BC File Offset: 0x00037ABC
 	private void UpdateKeyboardLayouts(int keyboardID)
 	{
 		Debug.Log(keyboardID);
@@ -46,7 +46,7 @@ public class RewiredKeyboardLayouts : MonoBehaviour
 		this.ApplyKeyboardLayouts();
 	}
 
-	// Token: 0x06000F0F RID: 3855 RVA: 0x0004EF58 File Offset: 0x0004D158
+	// Token: 0x06000C17 RID: 3095 RVA: 0x0003993C File Offset: 0x00037B3C
 	private void ApplyKeyboardLayouts()
 	{
 		int num = -1;
@@ -95,7 +95,7 @@ public class RewiredKeyboardLayouts : MonoBehaviour
 	[DllImport("user32.dll")]
 	private static extern IntPtr GetKeyboardLayout(uint thread);
 
-	// Token: 0x06000F13 RID: 3859 RVA: 0x0004F0CC File Offset: 0x0004D2CC
+	// Token: 0x06000C1B RID: 3099 RVA: 0x00039AB0 File Offset: 0x00037CB0
 	public int GetCurrentKeyboardLayout()
 	{
 		int num2;
@@ -115,7 +115,7 @@ public class RewiredKeyboardLayouts : MonoBehaviour
 		return num2;
 	}
 
-	// Token: 0x06000F14 RID: 3860 RVA: 0x0004F124 File Offset: 0x0004D324
+	// Token: 0x06000C1C RID: 3100 RVA: 0x00039B08 File Offset: 0x00037D08
 	private void CheckKeyboardLayout()
 	{
 		int currentKeyboardLayout = this.GetCurrentKeyboardLayout();

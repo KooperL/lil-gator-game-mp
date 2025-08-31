@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class InteractBuyItem : MonoBehaviour, Interaction
 {
-	// Token: 0x06000832 RID: 2098 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x060006B3 RID: 1715 RVA: 0x000221FA File Offset: 0x000203FA
 	public void Interact()
 	{
 	}

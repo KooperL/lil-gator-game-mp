@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class SharedAudioManager : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06000242 RID: 578 RVA: 0x00003DD0 File Offset: 0x00001FD0
+	// Token: 0x060001FE RID: 510 RVA: 0x0000AE56 File Offset: 0x00009056
 	private void OnEnable()
 	{
 		SharedAudioManager.nearbyAudioSources = new List<ISharedAudioSource>();
-		this.audioListener = global::UnityEngine.Object.FindObjectOfType<AudioListener>();
+		this.audioListener = Object.FindObjectOfType<AudioListener>();
 		this.activeSources = new Dictionary<SharedAudioProfile, SharedAudioManager.ActiveAudioSource>();
 		FastUpdateManager.updateEvery4.Add(this);
 	}
 
-	// Token: 0x06000243 RID: 579 RVA: 0x000026CE File Offset: 0x000008CE
+	// Token: 0x060001FF RID: 511 RVA: 0x0000AE83 File Offset: 0x00009083
 	private void OnDisable()
 	{
 		FastUpdateManager.updateEvery4.Remove(this);
 	}
 
-	// Token: 0x06000244 RID: 580 RVA: 0x0001F4A4 File Offset: 0x0001D6A4
+	// Token: 0x06000200 RID: 512 RVA: 0x0000AE94 File Offset: 0x00009094
 	public void ManagedUpdate()
 	{
 		Vector3 position = base.transform.position;
@@ -96,16 +96,16 @@ public class SharedAudioManager : MonoBehaviour, IManagedUpdate
 		}
 		foreach (SharedAudioProfile sharedAudioProfile2 in this.activeSourcesToRemove)
 		{
-			global::UnityEngine.Object.Destroy(this.activeSources[sharedAudioProfile2].gameObject);
+			Object.Destroy(this.activeSources[sharedAudioProfile2].gameObject);
 			this.activeSources.Remove(sharedAudioProfile2);
 		}
 	}
 
-	// Token: 0x06000245 RID: 581 RVA: 0x0001F91C File Offset: 0x0001DB1C
+	// Token: 0x06000201 RID: 513 RVA: 0x0000B30C File Offset: 0x0000950C
 	private void AddActiveSource(SharedAudioProfile profile)
 	{
 		SharedAudioManager.ActiveAudioSource activeAudioSource = new SharedAudioManager.ActiveAudioSource();
-		activeAudioSource.gameObject = global::UnityEngine.Object.Instantiate<GameObject>(this.audioSourcePrefab);
+		activeAudioSource.gameObject = Object.Instantiate<GameObject>(this.audioSourcePrefab);
 		activeAudioSource.gameObject.name = string.Format("Shared Audio Source ({0})", profile.name);
 		activeAudioSource.transform = activeAudioSource.gameObject.transform;
 		activeAudioSource.audioSource = activeAudioSource.gameObject.GetComponent<AudioSource>();

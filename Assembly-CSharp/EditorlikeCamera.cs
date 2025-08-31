@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class EditorlikeCamera : MonoBehaviour
 {
-	// Token: 0x06000043 RID: 67 RVA: 0x00002348 File Offset: 0x00000548
+	// Token: 0x06000042 RID: 66 RVA: 0x00002E36 File Offset: 0x00001036
 	private void Awake()
 	{
 		this.virtualCamera = base.GetComponent<CinemachineVirtualCamera>();
 	}
 
-	// Token: 0x06000044 RID: 68 RVA: 0x00018190 File Offset: 0x00016390
+	// Token: 0x06000043 RID: 67 RVA: 0x00002E44 File Offset: 0x00001044
 	private void OnEnable()
 	{
 		base.transform.ApplyTransform(MainCamera.t);
@@ -32,7 +32,7 @@ public class EditorlikeCamera : MonoBehaviour
 		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnLookHorizontal), UpdateLoopType.Update, ReInput.mapping.GetActionId("Look Horizontal"));
 	}
 
-	// Token: 0x06000045 RID: 69 RVA: 0x000182FC File Offset: 0x000164FC
+	// Token: 0x06000044 RID: 68 RVA: 0x00002FB0 File Offset: 0x000011B0
 	private void OnDisable()
 	{
 		if (this.allowMovement)
@@ -46,7 +46,7 @@ public class EditorlikeCamera : MonoBehaviour
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnLookVertical));
 	}
 
-	// Token: 0x06000046 RID: 70 RVA: 0x0001839C File Offset: 0x0001659C
+	// Token: 0x06000045 RID: 69 RVA: 0x00003050 File Offset: 0x00001250
 	private void Update()
 	{
 		if (this.lookSmoothing == 0f)
@@ -82,37 +82,37 @@ public class EditorlikeCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000047 RID: 71 RVA: 0x00002356 File Offset: 0x00000556
+	// Token: 0x06000046 RID: 70 RVA: 0x0000325C File Offset: 0x0000145C
 	private void OnLookHorizontal(InputActionEventData obj)
 	{
 		this.lookInput.x = obj.GetAxis();
 	}
 
-	// Token: 0x06000048 RID: 72 RVA: 0x0000236A File Offset: 0x0000056A
+	// Token: 0x06000047 RID: 71 RVA: 0x00003270 File Offset: 0x00001470
 	private void OnLookVertical(InputActionEventData obj)
 	{
 		this.lookInput.y = obj.GetAxis();
 	}
 
-	// Token: 0x06000049 RID: 73 RVA: 0x0000237E File Offset: 0x0000057E
+	// Token: 0x06000048 RID: 72 RVA: 0x00003284 File Offset: 0x00001484
 	private void OnSpeedChange(InputActionEventData obj)
 	{
 		this.speedAdjust = obj.GetAxis();
 	}
 
-	// Token: 0x0600004A RID: 74 RVA: 0x0000238D File Offset: 0x0000058D
+	// Token: 0x06000049 RID: 73 RVA: 0x00003293 File Offset: 0x00001493
 	private void OnMoveVertical(InputActionEventData obj)
 	{
 		this.moveInput.y = obj.GetAxis();
 	}
 
-	// Token: 0x0600004B RID: 75 RVA: 0x000023A1 File Offset: 0x000005A1
+	// Token: 0x0600004A RID: 74 RVA: 0x000032A7 File Offset: 0x000014A7
 	private void OnMoveForward(InputActionEventData obj)
 	{
 		this.moveInput.z = obj.GetAxis();
 	}
 
-	// Token: 0x0600004C RID: 76 RVA: 0x000023B5 File Offset: 0x000005B5
+	// Token: 0x0600004B RID: 75 RVA: 0x000032BB File Offset: 0x000014BB
 	private void OnMoveHorizontal(InputActionEventData obj)
 	{
 		this.moveInput.x = obj.GetAxis();

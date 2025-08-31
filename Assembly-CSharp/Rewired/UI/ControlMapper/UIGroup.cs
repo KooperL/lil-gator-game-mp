@@ -7,8 +7,8 @@ namespace Rewired.UI.ControlMapper
 	[AddComponentMenu("")]
 	public class UIGroup : MonoBehaviour
 	{
-		// (get) Token: 0x06001C9A RID: 7322 RVA: 0x00015DC3 File Offset: 0x00013FC3
-		// (set) Token: 0x06001C9B RID: 7323 RVA: 0x00015DE4 File Offset: 0x00013FE4
+		// (get) Token: 0x060016AF RID: 5807 RVA: 0x0005F00C File Offset: 0x0005D20C
+		// (set) Token: 0x060016B0 RID: 5808 RVA: 0x0005F02D File Offset: 0x0005D22D
 		public string labelText
 		{
 			get
@@ -29,7 +29,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001C9C RID: 7324 RVA: 0x00015E01 File Offset: 0x00014001
+		// (get) Token: 0x060016B1 RID: 5809 RVA: 0x0005F04A File Offset: 0x0005D24A
 		public Transform content
 		{
 			get
@@ -38,7 +38,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001C9D RID: 7325 RVA: 0x00015E09 File Offset: 0x00014009
+		// Token: 0x060016B2 RID: 5810 RVA: 0x0005F052 File Offset: 0x0005D252
 		public void SetLabelActive(bool state)
 		{
 			if (this._label == null)

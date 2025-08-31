@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp\Assembly-CSharp.csproj", "{BC61BA8F-F596-4419-AFE1-BCD8099C3F11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp\Assembly-CSharp.csproj", "{7650968B-BEB5-493C-8B25-153BBD69EC74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BC61BA8F-F596-4419-AFE1-BCD8099C3F11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BC61BA8F-F596-4419-AFE1-BCD8099C3F11}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BC61BA8F-F596-4419-AFE1-BCD8099C3F11}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BC61BA8F-F596-4419-AFE1-BCD8099C3F11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7650968B-BEB5-493C-8B25-153BBD69EC74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7650968B-BEB5-493C-8B25-153BBD69EC74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7650968B-BEB5-493C-8B25-153BBD69EC74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7650968B-BEB5-493C-8B25-153BBD69EC74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

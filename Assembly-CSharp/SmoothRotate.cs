@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class SmoothRotate : MonoBehaviour
 {
-	// Token: 0x0600069C RID: 1692 RVA: 0x00006C83 File Offset: 0x00004E83
+	// Token: 0x06000550 RID: 1360 RVA: 0x0001C493 File Offset: 0x0001A693
 	private void Awake()
 	{
 		this.initialRotation = base.transform.localRotation;
 	}
 
-	// Token: 0x0600069D RID: 1693 RVA: 0x00006C96 File Offset: 0x00004E96
+	// Token: 0x06000551 RID: 1361 RVA: 0x0001C4A6 File Offset: 0x0001A6A6
 	private void OnEnable()
 	{
 		if (this.resetRotation)
@@ -19,7 +19,7 @@ public class SmoothRotate : MonoBehaviour
 		this.t = 0f;
 	}
 
-	// Token: 0x0600069E RID: 1694 RVA: 0x00032134 File Offset: 0x00030334
+	// Token: 0x06000552 RID: 1362 RVA: 0x0001C4CC File Offset: 0x0001A6CC
 	private void Update()
 	{
 		if (this.t < 1f)

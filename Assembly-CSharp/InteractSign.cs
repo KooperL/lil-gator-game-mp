@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class InteractSign : MonoBehaviour
 {
-	// Token: 0x060007F5 RID: 2037 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000682 RID: 1666 RVA: 0x000215E2 File Offset: 0x0001F7E2
 	private void Start()
 	{
 	}
 
-	// Token: 0x060007F6 RID: 2038 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000683 RID: 1667 RVA: 0x000215E4 File Offset: 0x0001F7E4
 	private void Update()
 	{
 	}

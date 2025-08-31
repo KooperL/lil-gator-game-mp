@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class Seesaw : MonoBehaviour
 {
-	// Token: 0x06000FE4 RID: 4068 RVA: 0x0000DB4B File Offset: 0x0000BD4B
+	// Token: 0x06000CDB RID: 3291 RVA: 0x0003E2BA File Offset: 0x0003C4BA
 	private float ClosestStaticAngle(float dynamicAngle)
 	{
 		if (dynamicAngle < 0f)
@@ -14,7 +14,7 @@ public class Seesaw : MonoBehaviour
 		return this.angle2;
 	}
 
-	// Token: 0x06000FE5 RID: 4069 RVA: 0x000530B0 File Offset: 0x000512B0
+	// Token: 0x06000CDC RID: 3292 RVA: 0x0003E2D4 File Offset: 0x0003C4D4
 	private void Start()
 	{
 		this.angle1 = this.static1.transform.localRotation.eulerAngles.z;
@@ -45,13 +45,13 @@ public class Seesaw : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x06000FE6 RID: 4070 RVA: 0x0005321C File Offset: 0x0005141C
+	// Token: 0x06000CDD RID: 3293 RVA: 0x0003E440 File Offset: 0x0003C640
 	private void OnDisable()
 	{
 		this.prevAngularVelocity = (this.angularVelocity = 0f);
 	}
 
-	// Token: 0x06000FE7 RID: 4071 RVA: 0x0000DB62 File Offset: 0x0000BD62
+	// Token: 0x06000CDE RID: 3294 RVA: 0x0003E461 File Offset: 0x0003C661
 	private void TrySqueakEffect()
 	{
 		if (this.squeakEffect != null && Time.time - this.lastSqueakEffectTime > 0.5f)
@@ -61,35 +61,35 @@ public class Seesaw : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FE8 RID: 4072 RVA: 0x0000DB9B File Offset: 0x0000BD9B
+	// Token: 0x06000CDF RID: 3295 RVA: 0x0003E49A File Offset: 0x0003C69A
 	public void OnBeamEnabled()
 	{
 		this.DoInitialPush(Player.RawPosition);
 		base.enabled = true;
 	}
 
-	// Token: 0x06000FE9 RID: 4073 RVA: 0x0000DBAF File Offset: 0x0000BDAF
+	// Token: 0x06000CE0 RID: 3296 RVA: 0x0003E4AE File Offset: 0x0003C6AE
 	public void OnMount1Enabled()
 	{
 		this.DoInitialPush(this.mount1.transform.position);
 		base.enabled = true;
 	}
 
-	// Token: 0x06000FEA RID: 4074 RVA: 0x0000DBCE File Offset: 0x0000BDCE
+	// Token: 0x06000CE1 RID: 3297 RVA: 0x0003E4CD File Offset: 0x0003C6CD
 	public void OnMount2Enabled()
 	{
 		this.DoInitialPush(this.mount2.transform.position);
 		base.enabled = true;
 	}
 
-	// Token: 0x06000FEB RID: 4075 RVA: 0x00053240 File Offset: 0x00051440
+	// Token: 0x06000CE2 RID: 3298 RVA: 0x0003E4EC File Offset: 0x0003C6EC
 	private void DoInitialPush(Vector3 position)
 	{
 		float positionOnBeam = this.GetPositionOnBeam(position);
 		this.angularVelocity -= positionOnBeam * this.initialPush;
 	}
 
-	// Token: 0x06000FEC RID: 4076 RVA: 0x0005326C File Offset: 0x0005146C
+	// Token: 0x06000CE3 RID: 3299 RVA: 0x0003E518 File Offset: 0x0003C718
 	private float GetPositionOnBeam(Vector3 position)
 	{
 		Vector3 position2 = this.balanceBeam.GetPosition(0f);
@@ -101,19 +101,19 @@ public class Seesaw : MonoBehaviour
 		return Mathf.Clamp(Vector3.Dot(position - vector, vector2) / magnitude, -1f, 1f);
 	}
 
-	// Token: 0x06000FED RID: 4077 RVA: 0x0000DBED File Offset: 0x0000BDED
+	// Token: 0x06000CE4 RID: 3300 RVA: 0x0003E588 File Offset: 0x0003C788
 	private void AddPushForPosition(Vector3 position)
 	{
 		this.AddPushForPosition(this.GetPositionOnBeam(Player.RawPosition));
 	}
 
-	// Token: 0x06000FEE RID: 4078 RVA: 0x0000DC00 File Offset: 0x0000BE00
+	// Token: 0x06000CE5 RID: 3301 RVA: 0x0003E59B File Offset: 0x0003C79B
 	private void AddPushForPosition(float position)
 	{
 		this.angularVelocity -= Time.deltaTime * position * this.acceleration;
 	}
 
-	// Token: 0x06000FEF RID: 4079 RVA: 0x000532DC File Offset: 0x000514DC
+	// Token: 0x06000CE6 RID: 3302 RVA: 0x0003E5B8 File Offset: 0x0003C7B8
 	private void Update()
 	{
 		bool flag = false;
@@ -145,7 +145,7 @@ public class Seesaw : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FF0 RID: 4080 RVA: 0x000533B4 File Offset: 0x000515B4
+	// Token: 0x06000CE7 RID: 3303 RVA: 0x0003E690 File Offset: 0x0003C890
 	private void UpdateState()
 	{
 		this.angle = Mathf.Clamp(this.angle, this.angle1, this.angle2);

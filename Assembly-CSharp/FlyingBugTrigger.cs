@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class FlyingBugTrigger : MonoBehaviour
 {
-	// Token: 0x06000150 RID: 336 RVA: 0x00003266 File Offset: 0x00001466
+	// Token: 0x06000123 RID: 291 RVA: 0x00007241 File Offset: 0x00005441
 	private void OnValidate()
 	{
 		if (this.cart == null)
@@ -14,13 +14,13 @@ public class FlyingBugTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000151 RID: 337 RVA: 0x00003282 File Offset: 0x00001482
+	// Token: 0x06000124 RID: 292 RVA: 0x0000725D File Offset: 0x0000545D
 	private void Awake()
 	{
 		this.maxPos = this.cart.m_Path.MaxUnit(this.cart.m_PositionUnits);
 	}
 
-	// Token: 0x06000152 RID: 338 RVA: 0x000032A5 File Offset: 0x000014A5
+	// Token: 0x06000125 RID: 293 RVA: 0x00007280 File Offset: 0x00005480
 	private void OnTriggerStay(Collider other)
 	{
 		if (base.enabled)
@@ -29,7 +29,7 @@ public class FlyingBugTrigger : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000153 RID: 339 RVA: 0x0001C0C4 File Offset: 0x0001A2C4
+	// Token: 0x06000126 RID: 294 RVA: 0x00007294 File Offset: 0x00005494
 	private void FixedUpdate()
 	{
 		bool flag = this.stepsSinceTriggered < 2;

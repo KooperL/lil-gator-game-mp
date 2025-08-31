@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TriggerRagdoll : MonoBehaviour
 {
-	// Token: 0x060010F2 RID: 4338 RVA: 0x0000E746 File Offset: 0x0000C946
+	// Token: 0x06000DD3 RID: 3539 RVA: 0x0004308F File Offset: 0x0004128F
 	[ContextMenu("Ragdoll")]
 	public void DoTheRagdoll()
 	{

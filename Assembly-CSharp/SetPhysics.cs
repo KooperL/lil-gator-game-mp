@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SetPhysics : MonoBehaviour
 {
-	// Token: 0x06000F40 RID: 3904 RVA: 0x000505BC File Offset: 0x0004E7BC
+	// Token: 0x06000C44 RID: 3140 RVA: 0x0003B020 File Offset: 0x00039220
 	public void OnEnable()
 	{
 		if (this.rigidbody == null)
@@ -20,7 +20,7 @@ public class SetPhysics : MonoBehaviour
 		this.rigidbody.AddRelativeTorque(this.angularVelocity, ForceMode.VelocityChange);
 	}
 
-	// Token: 0x06000F41 RID: 3905 RVA: 0x00050644 File Offset: 0x0004E844
+	// Token: 0x06000C45 RID: 3141 RVA: 0x0003B0A8 File Offset: 0x000392A8
 	private void OnDisable()
 	{
 		if (this.resetOnDisable && this.rigidbody != null)

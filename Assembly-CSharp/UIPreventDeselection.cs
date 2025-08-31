@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class UIPreventDeselection : MonoBehaviour
 {
-	// Token: 0x060011B5 RID: 4533 RVA: 0x0000F18D File Offset: 0x0000D38D
+	// Token: 0x06000E84 RID: 3716 RVA: 0x000454ED File Offset: 0x000436ED
 	public void OnEnable()
 	{
 		this.eventSystem = EventSystem.current;
 		this.fallback = this.GetFallbackSelection();
 	}
 
-	// Token: 0x060011B6 RID: 4534 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000E85 RID: 3717 RVA: 0x00045506 File Offset: 0x00043706
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x060011B7 RID: 4535 RVA: 0x00058F38 File Offset: 0x00057138
+	// Token: 0x06000E86 RID: 3718 RVA: 0x00045508 File Offset: 0x00043708
 	private void Update()
 	{
 		if (this.fallback == null || !this.fallback.activeSelf)
@@ -42,7 +42,7 @@ public class UIPreventDeselection : MonoBehaviour
 		this.selection = this.fallback;
 	}
 
-	// Token: 0x060011B8 RID: 4536 RVA: 0x00058FF4 File Offset: 0x000571F4
+	// Token: 0x06000E87 RID: 3719 RVA: 0x000455C4 File Offset: 0x000437C4
 	private void SetSelection(GameObject newSelection)
 	{
 		if (newSelection == null)
@@ -57,7 +57,7 @@ public class UIPreventDeselection : MonoBehaviour
 		this.eventSystem.SetSelectedGameObject(newSelection);
 	}
 
-	// Token: 0x060011B9 RID: 4537 RVA: 0x00059028 File Offset: 0x00057228
+	// Token: 0x06000E88 RID: 3720 RVA: 0x000455F8 File Offset: 0x000437F8
 	private GameObject GetFallbackSelection()
 	{
 		if (this.defaultSelection != null && this.defaultSelection.activeSelf)

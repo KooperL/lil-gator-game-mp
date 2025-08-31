@@ -6,7 +6,7 @@ namespace Rewired.UI.ControlMapper
 	[AddComponentMenu("")]
 	public class ThemedElement : MonoBehaviour
 	{
-		// Token: 0x06001C81 RID: 7297 RVA: 0x00015CCA File Offset: 0x00013ECA
+		// Token: 0x0600169C RID: 5788 RVA: 0x0005ED4A File Offset: 0x0005CF4A
 		private void Start()
 		{
 			ControlMapper.ApplyTheme(this._elements);
@@ -18,7 +18,7 @@ namespace Rewired.UI.ControlMapper
 		[Serializable]
 		public class ElementInfo
 		{
-			// (get) Token: 0x06001C83 RID: 7299 RVA: 0x00015CD7 File Offset: 0x00013ED7
+			// (get) Token: 0x06001DA0 RID: 7584 RVA: 0x000787BB File Offset: 0x000769BB
 			public string themeClass
 			{
 				get
@@ -27,7 +27,7 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// (get) Token: 0x06001C84 RID: 7300 RVA: 0x00015CDF File Offset: 0x00013EDF
+			// (get) Token: 0x06001DA1 RID: 7585 RVA: 0x000787C3 File Offset: 0x000769C3
 			public Component component
 			{
 				get

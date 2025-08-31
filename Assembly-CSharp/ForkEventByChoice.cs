@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class ForkEventByChoice : MonoBehaviour
 {
-	// Token: 0x060008D1 RID: 2257 RVA: 0x00008A03 File Offset: 0x00006C03
+	// Token: 0x06000746 RID: 1862 RVA: 0x000244DE File Offset: 0x000226DE
 	public void Fork()
 	{
 		if (DialogueManager.optionChosen >= 0 && DialogueManager.optionChosen < this.choices.Length)
@@ -18,7 +18,7 @@ public class ForkEventByChoice : MonoBehaviour
 	[Serializable]
 	public struct ChoiceEvent
 	{
-		// Token: 0x060008D3 RID: 2259 RVA: 0x00008A31 File Offset: 0x00006C31
+		// Token: 0x0600197D RID: 6525 RVA: 0x0006D017 File Offset: 0x0006B217
 		public void Execute()
 		{
 			this.onChoose.Invoke();

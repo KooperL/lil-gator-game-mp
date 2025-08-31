@@ -9,14 +9,14 @@ using UnityEngine.UI;
 
 public class LoadLauncher : MonoBehaviour
 {
-	// Token: 0x0600016C RID: 364 RVA: 0x000033D3 File Offset: 0x000015D3
+	// Token: 0x0600013F RID: 319 RVA: 0x00007B99 File Offset: 0x00005D99
 	private void Start()
 	{
-		global::UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
+		Object.DontDestroyOnLoad(base.gameObject);
 		base.StartCoroutine(this.RunLoadLauncher());
 	}
 
-	// Token: 0x0600016D RID: 365 RVA: 0x000033ED File Offset: 0x000015ED
+	// Token: 0x06000140 RID: 320 RVA: 0x00007BB3 File Offset: 0x00005DB3
 	private IEnumerator RunLoadLauncher()
 	{
 		AsyncOperationHandle<SceneInstance> asyncOperationHandle = Addressables.LoadSceneAsync(this.sceneToLoad, LoadSceneMode.Single, true, 100);
@@ -30,7 +30,7 @@ public class LoadLauncher : MonoBehaviour
 			color.a = num;
 			this.backgroundImage.color = color;
 		}
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 		yield break;
 	}
 

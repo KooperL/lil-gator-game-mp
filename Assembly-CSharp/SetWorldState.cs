@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SetWorldState : MonoBehaviour
 {
-	// Token: 0x06000F43 RID: 3907 RVA: 0x0000D35F File Offset: 0x0000B55F
+	// Token: 0x06000C47 RID: 3143 RVA: 0x0003B115 File Offset: 0x00039315
 	private void OnEnable()
 	{
 		Game.g.SetWorldState(this.worldState, this.forceChange, this.delaySceneChange);

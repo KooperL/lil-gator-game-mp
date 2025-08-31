@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class CameraCollidePlayer : MonoBehaviour
 {
-	// Token: 0x06000AAF RID: 2735 RVA: 0x0000A344 File Offset: 0x00008544
+	// Token: 0x060008DD RID: 2269 RVA: 0x00029B5C File Offset: 0x00027D5C
 	private void Awake()
 	{
 		CameraCollidePlayer.c = this;
 	}
 
-	// Token: 0x06000AB0 RID: 2736 RVA: 0x0000A34C File Offset: 0x0000854C
+	// Token: 0x060008DE RID: 2270 RVA: 0x00029B64 File Offset: 0x00027D64
 	private void OnEnable()
 	{
 		if (this.lockMode != CameraCollidePlayer.LockMode.None)
@@ -19,7 +19,7 @@ public class CameraCollidePlayer : MonoBehaviour
 		this.camera.cullingMask = this.playerExcludedMask;
 	}
 
-	// Token: 0x06000AB1 RID: 2737 RVA: 0x0000A36D File Offset: 0x0000856D
+	// Token: 0x060008DF RID: 2271 RVA: 0x00029B85 File Offset: 0x00027D85
 	private void OnDisable()
 	{
 		if (this.lockMode != CameraCollidePlayer.LockMode.None)
@@ -29,7 +29,7 @@ public class CameraCollidePlayer : MonoBehaviour
 		this.camera.cullingMask = this.normalMask;
 	}
 
-	// Token: 0x06000AB2 RID: 2738 RVA: 0x0000A38E File Offset: 0x0000858E
+	// Token: 0x060008E0 RID: 2272 RVA: 0x00029BA6 File Offset: 0x00027DA6
 	private void FixedUpdate()
 	{
 		if (this.lastTriggerTime + 0.2f < Time.time)
@@ -38,7 +38,7 @@ public class CameraCollidePlayer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AB3 RID: 2739 RVA: 0x0003DFAC File Offset: 0x0003C1AC
+	// Token: 0x060008E1 RID: 2273 RVA: 0x00029BC4 File Offset: 0x00027DC4
 	public void SetLockMode(CameraCollidePlayer.LockMode lockMode)
 	{
 		this.lockMode = lockMode;
@@ -60,7 +60,7 @@ public class CameraCollidePlayer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AB4 RID: 2740 RVA: 0x0000A3AA File Offset: 0x000085AA
+	// Token: 0x060008E2 RID: 2274 RVA: 0x00029C41 File Offset: 0x00027E41
 	private void OnTriggerStay(Collider other)
 	{
 		base.enabled = true;

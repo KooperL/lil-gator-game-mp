@@ -9,11 +9,11 @@ namespace Rewired.Demos
 	[RequireComponent(typeof(Image))]
 	public class TouchJoystickExample : MonoBehaviour, IPointerDownHandler, IEventSystemHandler, IPointerUpHandler, IDragHandler
 	{
-		// (get) Token: 0x06001D96 RID: 7574 RVA: 0x00016A09 File Offset: 0x00014C09
-		// (set) Token: 0x06001D97 RID: 7575 RVA: 0x00016A11 File Offset: 0x00014C11
+		// (get) Token: 0x0600174D RID: 5965 RVA: 0x00062CD9 File Offset: 0x00060ED9
+		// (set) Token: 0x0600174E RID: 5966 RVA: 0x00062CE1 File Offset: 0x00060EE1
 		public Vector2 position { get; private set; }
 
-		// Token: 0x06001D98 RID: 7576 RVA: 0x00016A1A File Offset: 0x00014C1A
+		// Token: 0x0600174F RID: 5967 RVA: 0x00062CEA File Offset: 0x00060EEA
 		private void Start()
 		{
 			if (SystemInfo.deviceType == DeviceType.Handheld)
@@ -23,7 +23,7 @@ namespace Rewired.Demos
 			this.StoreOrigValues();
 		}
 
-		// Token: 0x06001D99 RID: 7577 RVA: 0x00074630 File Offset: 0x00072830
+		// Token: 0x06001750 RID: 5968 RVA: 0x00062D04 File Offset: 0x00060F04
 		private void Update()
 		{
 			if ((float)Screen.width != this.origScreenResolution.x || (float)Screen.height != this.origScreenResolution.y || Screen.orientation != this.origScreenOrientation)
@@ -33,7 +33,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001D9A RID: 7578 RVA: 0x00016A31 File Offset: 0x00014C31
+		// Token: 0x06001751 RID: 5969 RVA: 0x00062D50 File Offset: 0x00060F50
 		private void Restart()
 		{
 			this.hasFinger = false;
@@ -41,7 +41,7 @@ namespace Rewired.Demos
 			this.position = Vector2.zero;
 		}
 
-		// Token: 0x06001D9B RID: 7579 RVA: 0x0007467C File Offset: 0x0007287C
+		// Token: 0x06001752 RID: 5970 RVA: 0x00062D7C File Offset: 0x00060F7C
 		private void StoreOrigValues()
 		{
 			this.origAnchoredPosition = (base.transform as RectTransform).anchoredPosition;
@@ -50,7 +50,7 @@ namespace Rewired.Demos
 			this.origScreenOrientation = Screen.orientation;
 		}
 
-		// Token: 0x06001D9C RID: 7580 RVA: 0x000746D4 File Offset: 0x000728D4
+		// Token: 0x06001753 RID: 5971 RVA: 0x00062DD4 File Offset: 0x00060FD4
 		private void UpdateValue(Vector3 value)
 		{
 			Vector3 vector = this.origWorldPosition - value;
@@ -59,7 +59,7 @@ namespace Rewired.Demos
 			this.position = new Vector2(-vector.x, vector.y);
 		}
 
-		// Token: 0x06001D9D RID: 7581 RVA: 0x00016A5B File Offset: 0x00014C5B
+		// Token: 0x06001754 RID: 5972 RVA: 0x00062E22 File Offset: 0x00061022
 		void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
 		{
 			if (this.hasFinger)
@@ -74,7 +74,7 @@ namespace Rewired.Demos
 			this.lastFingerId = eventData.pointerId;
 		}
 
-		// Token: 0x06001D9E RID: 7582 RVA: 0x00016A8F File Offset: 0x00014C8F
+		// Token: 0x06001755 RID: 5973 RVA: 0x00062E56 File Offset: 0x00061056
 		void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
 		{
 			if (eventData.pointerId != this.lastFingerId)
@@ -88,7 +88,7 @@ namespace Rewired.Demos
 			this.Restart();
 		}
 
-		// Token: 0x06001D9F RID: 7583 RVA: 0x00074724 File Offset: 0x00072924
+		// Token: 0x06001756 RID: 5974 RVA: 0x00062E84 File Offset: 0x00061084
 		void IDragHandler.OnDrag(PointerEventData eventData)
 		{
 			if (!this.hasFinger || eventData.pointerId != this.lastFingerId)
@@ -102,7 +102,7 @@ namespace Rewired.Demos
 			this.UpdateValue(vector2);
 		}
 
-		// Token: 0x06001DA0 RID: 7584 RVA: 0x000169E8 File Offset: 0x00014BE8
+		// Token: 0x06001757 RID: 5975 RVA: 0x00062F0B File Offset: 0x0006110B
 		private static bool IsMousePointerId(int id)
 		{
 			return id == -1 || id == -2 || id == -3;

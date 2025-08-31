@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class UIBar : MonoBehaviour
 {
-	// Token: 0x060011BF RID: 4543 RVA: 0x00059104 File Offset: 0x00057304
+	// Token: 0x06000E8E RID: 3726 RVA: 0x00045738 File Offset: 0x00043938
 	private void Enable()
 	{
 		this.leftEdge = base.transform.InverseTransformPoint(base.transform.parent.TransformPoint(new Vector2(this.rectTransform.rect.xMin, 0f)));
@@ -13,12 +13,12 @@ public class UIBar : MonoBehaviour
 		this.leftEdge.y = (this.rightEdge.y = 0f);
 	}
 
-	// Token: 0x060011C0 RID: 4544 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000E8F RID: 3727 RVA: 0x000457E9 File Offset: 0x000439E9
 	private void OnDisable()
 	{
 	}
 
-	// Token: 0x060011C1 RID: 4545 RVA: 0x000591B8 File Offset: 0x000573B8
+	// Token: 0x06000E90 RID: 3728 RVA: 0x000457EC File Offset: 0x000439EC
 	public void Load(UIBar.UIBarChunk[] chunks, ItemResource newResource, UIBar.Callbacks newCallbackObject)
 	{
 		base.gameObject.SetActive(true);
@@ -28,11 +28,11 @@ public class UIBar : MonoBehaviour
 		this.upgradeResource = newResource;
 		while (this.dividers.Count < chunks.Length)
 		{
-			this.dividers.Add(global::UnityEngine.Object.Instantiate<GameObject>(this.dividerPrefab, base.transform).GetComponent<UIBarDivider>());
+			this.dividers.Add(Object.Instantiate<GameObject>(this.dividerPrefab, base.transform).GetComponent<UIBarDivider>());
 		}
 		while (this.dividers.Count > chunks.Length)
 		{
-			global::UnityEngine.Object.Destroy(this.dividers[this.dividers.Count - 1].gameObject);
+			Object.Destroy(this.dividers[this.dividers.Count - 1].gameObject);
 			this.dividers.RemoveAt(this.dividers.Count - 1);
 		}
 		int num = 0;
@@ -90,14 +90,14 @@ public class UIBar : MonoBehaviour
 		this.lockedFill.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, this.rectTransform.rect.width * (float)num3 / (float)num, this.rectTransform.rect.width);
 	}
 
-	// Token: 0x060011C2 RID: 4546 RVA: 0x0000F201 File Offset: 0x0000D401
+	// Token: 0x06000E91 RID: 3729 RVA: 0x00045B54 File Offset: 0x00043D54
 	public void Buy()
 	{
 		base.gameObject.SetActive(false);
 		this.callbackObject.Buy();
 	}
 
-	// Token: 0x060011C3 RID: 4547 RVA: 0x0000F21A File Offset: 0x0000D41A
+	// Token: 0x06000E92 RID: 3730 RVA: 0x00045B6D File Offset: 0x00043D6D
 	public void Cancel()
 	{
 		base.gameObject.SetActive(false);

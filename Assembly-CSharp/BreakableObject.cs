@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class BreakableObject : PersistentObject, IOnTimeout
 {
-	// (get) Token: 0x060007BB RID: 1979 RVA: 0x00007B20 File Offset: 0x00005D20
+	// (get) Token: 0x06000655 RID: 1621 RVA: 0x00020992 File Offset: 0x0001EB92
 	public bool IsBroken
 	{
 		get
@@ -18,13 +18,13 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x060007BC RID: 1980 RVA: 0x00007B43 File Offset: 0x00005D43
+	// Token: 0x06000656 RID: 1622 RVA: 0x000209B5 File Offset: 0x0001EBB5
 	public override void OnValidate()
 	{
 		base.OnValidate();
 	}
 
-	// Token: 0x060007BD RID: 1981 RVA: 0x00035E34 File Offset: 0x00034034
+	// Token: 0x06000657 RID: 1623 RVA: 0x000209C0 File Offset: 0x0001EBC0
 	public override void Load(bool state)
 	{
 		this.isBroken = state;
@@ -38,12 +38,12 @@ public class BreakableObject : PersistentObject, IOnTimeout
 			this.brokenObject.SetActive(this.isBroken);
 			if (this.isBroken)
 			{
-				this.brokenObject.transform.rotation = Quaternion.Euler(0f, global::UnityEngine.Random.value * 360f, 0f);
+				this.brokenObject.transform.rotation = Quaternion.Euler(0f, Random.value * 360f, 0f);
 			}
 		}
 	}
 
-	// Token: 0x060007BE RID: 1982 RVA: 0x00007B4B File Offset: 0x00005D4B
+	// Token: 0x06000658 RID: 1624 RVA: 0x00020A53 File Offset: 0x0001EC53
 	public virtual void OnEnable()
 	{
 		this.Load(this.isBroken);
@@ -53,14 +53,14 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x060007BF RID: 1983 RVA: 0x00035EC8 File Offset: 0x000340C8
+	// Token: 0x06000659 RID: 1625 RVA: 0x00020A78 File Offset: 0x0001EC78
 	public virtual void OnDisable()
 	{
 		if (this.isBroken && this.breakingObject != null)
 		{
 			if (this.waitForValidation)
 			{
-				global::UnityEngine.Object.Destroy(this.breakingObject);
+				Object.Destroy(this.breakingObject);
 			}
 			this.breakingObject = null;
 		}
@@ -70,7 +70,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		}
 	}
 
-	// Token: 0x060007C0 RID: 1984 RVA: 0x00035F14 File Offset: 0x00034114
+	// Token: 0x0600065A RID: 1626 RVA: 0x00020AC4 File Offset: 0x0001ECC4
 	private bool IsRanged(bool isHeavy = false)
 	{
 		if (isHeavy)
@@ -95,7 +95,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		return true;
 	}
 
-	// Token: 0x060007C1 RID: 1985 RVA: 0x00035F8C File Offset: 0x0003418C
+	// Token: 0x0600065B RID: 1627 RVA: 0x00020B3C File Offset: 0x0001ED3C
 	private bool CanBeDestroyed(bool isHeavy = false, bool isRanged = false)
 	{
 		if (this.isNonRanged && isRanged)
@@ -135,13 +135,13 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		return false;
 	}
 
-	// Token: 0x060007C2 RID: 1986 RVA: 0x00007B6E File Offset: 0x00005D6E
+	// Token: 0x0600065C RID: 1628 RVA: 0x00020BCA File Offset: 0x0001EDCA
 	public virtual void Break()
 	{
 		this.Break(false, Vector3.zero, false);
 	}
 
-	// Token: 0x060007C3 RID: 1987 RVA: 0x0003601C File Offset: 0x0003421C
+	// Token: 0x0600065D RID: 1629 RVA: 0x00020BDC File Offset: 0x0001EDDC
 	public virtual void Break(bool fromAttachment, Vector3 velocity, bool isHeavy = false)
 	{
 		if (Time.time - this.lastBreakTime < 0.1f)
@@ -178,7 +178,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 			}
 			if (this.breakingPrefab != null)
 			{
-				this.breakingObject = global::UnityEngine.Object.Instantiate<GameObject>(this.breakingPrefab, base.transform.position, base.transform.rotation);
+				this.breakingObject = Object.Instantiate<GameObject>(this.breakingPrefab, base.transform.position, base.transform.rotation);
 				this.breakingObject.transform.localScale = base.transform.lossyScale.x * Vector3.one;
 				if (fromAttachment)
 				{
@@ -193,7 +193,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 					Rigidbody[] componentsInChildren2 = this.breakingObject.GetComponentsInChildren<Rigidbody>();
 					for (int i = 0; i < componentsInChildren2.Length; i++)
 					{
-						componentsInChildren2[i].velocity += global::UnityEngine.Random.Range(0.75f, 1f) * velocity;
+						componentsInChildren2[i].velocity += Random.Range(0.75f, 1f) * velocity;
 					}
 				}
 				DistanceTimeout component = this.breakingObject.GetComponent<DistanceTimeout>();
@@ -245,7 +245,7 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		this.onNearbyHit.Invoke();
 	}
 
-	// Token: 0x060007C4 RID: 1988 RVA: 0x000362DC File Offset: 0x000344DC
+	// Token: 0x0600065E RID: 1630 RVA: 0x00020E9C File Offset: 0x0001F09C
 	public void OnTimeout()
 	{
 		this.breakingObject = null;
@@ -262,11 +262,11 @@ public class BreakableObject : PersistentObject, IOnTimeout
 		else if (this.brokenObject != null)
 		{
 			this.brokenObject.SetActive(true);
-			this.brokenObject.transform.rotation = Quaternion.Euler(0f, global::UnityEngine.Random.value * 360f, 0f);
+			this.brokenObject.transform.rotation = Quaternion.Euler(0f, Random.value * 360f, 0f);
 		}
 	}
 
-	// Token: 0x060007C5 RID: 1989 RVA: 0x00036374 File Offset: 0x00034574
+	// Token: 0x0600065F RID: 1631 RVA: 0x00020F34 File Offset: 0x0001F134
 	public void ValidateBreak()
 	{
 		this.waitForValidation = false;

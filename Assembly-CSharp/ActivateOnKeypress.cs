@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ActivateOnKeypress : MonoBehaviour
 {
-	// Token: 0x0600015B RID: 347 RVA: 0x000032D1 File Offset: 0x000014D1
+	// Token: 0x0600012E RID: 302 RVA: 0x00007597 File Offset: 0x00005797
 	private void Start()
 	{
 		this.vcam = base.GetComponent<CinemachineVirtualCameraBase>();
 	}
 
-	// Token: 0x0600015C RID: 348 RVA: 0x0001C398 File Offset: 0x0001A598
+	// Token: 0x0600012F RID: 303 RVA: 0x000075A8 File Offset: 0x000057A8
 	private void Update()
 	{
 		if (this.vcam != null)

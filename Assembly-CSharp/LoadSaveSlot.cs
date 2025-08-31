@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LoadSaveSlot : MonoBehaviour
 {
-	// Token: 0x06000175 RID: 373 RVA: 0x00003413 File Offset: 0x00001613
+	// Token: 0x06000142 RID: 322 RVA: 0x00007BCA File Offset: 0x00005DCA
 	public void LoadSlot()
 	{
 		GameData.g.LoadSaveFile(this.index);

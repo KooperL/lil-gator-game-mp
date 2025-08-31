@@ -8,7 +8,7 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public class DualShock4SpecialFeaturesExample : MonoBehaviour
 	{
-		// (get) Token: 0x06001DA2 RID: 7586 RVA: 0x00016AD3 File Offset: 0x00014CD3
+		// (get) Token: 0x06001759 RID: 5977 RVA: 0x00062F34 File Offset: 0x00061134
 		private Player player
 		{
 			get
@@ -17,13 +17,13 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DA3 RID: 7587 RVA: 0x00016AE5 File Offset: 0x00014CE5
+		// Token: 0x0600175A RID: 5978 RVA: 0x00062F46 File Offset: 0x00061146
 		private void Awake()
 		{
 			this.InitializeTouchObjects();
 		}
 
-		// Token: 0x06001DA4 RID: 7588 RVA: 0x000747AC File Offset: 0x000729AC
+		// Token: 0x0600175B RID: 5979 RVA: 0x00062F50 File Offset: 0x00061150
 		private void Update()
 		{
 			if (!ReInput.isReady)
@@ -68,7 +68,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DA5 RID: 7589 RVA: 0x000748BC File Offset: 0x00072ABC
+		// Token: 0x0600175C RID: 5980 RVA: 0x00063060 File Offset: 0x00061260
 		private void OnGUI()
 		{
 			if (this.textStyle == null)
@@ -112,7 +112,7 @@ namespace Rewired.Demos
 			GUILayout.EndArea();
 		}
 
-		// Token: 0x06001DA6 RID: 7590 RVA: 0x00074AC4 File Offset: 0x00072CC4
+		// Token: 0x0600175D RID: 5981 RVA: 0x00063268 File Offset: 0x00061468
 		private void ResetOrientation()
 		{
 			IDualShock4Extension firstDS = this.GetFirstDS4(this.player);
@@ -122,19 +122,19 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DA7 RID: 7591 RVA: 0x00074AE8 File Offset: 0x00072CE8
+		// Token: 0x0600175E RID: 5982 RVA: 0x0006328C File Offset: 0x0006148C
 		private void SetRandomLightColor()
 		{
 			IDualShock4Extension firstDS = this.GetFirstDS4(this.player);
 			if (firstDS != null)
 			{
-				Color color = new Color(global::UnityEngine.Random.Range(0f, 1f), global::UnityEngine.Random.Range(0f, 1f), global::UnityEngine.Random.Range(0f, 1f), 1f);
+				Color color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 1f);
 				firstDS.SetLightColor(color);
 				this.lightObject.GetComponent<MeshRenderer>().material.color = color;
 			}
 		}
 
-		// Token: 0x06001DA8 RID: 7592 RVA: 0x00074B5C File Offset: 0x00072D5C
+		// Token: 0x0600175F RID: 5983 RVA: 0x00063300 File Offset: 0x00061500
 		private void StartLightFlash()
 		{
 			DualShock4Extension dualShock4Extension = this.GetFirstDS4(this.player) as DualShock4Extension;
@@ -144,7 +144,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DA9 RID: 7593 RVA: 0x00074B90 File Offset: 0x00072D90
+		// Token: 0x06001760 RID: 5984 RVA: 0x00063334 File Offset: 0x00061534
 		private void StopLightFlash()
 		{
 			DualShock4Extension dualShock4Extension = this.GetFirstDS4(this.player) as DualShock4Extension;
@@ -154,7 +154,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DAA RID: 7594 RVA: 0x00074BB8 File Offset: 0x00072DB8
+		// Token: 0x06001761 RID: 5985 RVA: 0x0006335C File Offset: 0x0006155C
 		private IDualShock4Extension GetFirstDS4(Player player)
 		{
 			foreach (Joystick joystick in player.controllers.Joysticks)
@@ -168,7 +168,7 @@ namespace Rewired.Demos
 			return null;
 		}
 
-		// Token: 0x06001DAB RID: 7595 RVA: 0x00074C14 File Offset: 0x00072E14
+		// Token: 0x06001762 RID: 5986 RVA: 0x000633B8 File Offset: 0x000615B8
 		private void InitializeTouchObjects()
 		{
 			this.touches = new List<DualShock4SpecialFeaturesExample.Touch>(2);
@@ -185,7 +185,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001DAC RID: 7596 RVA: 0x00074CD4 File Offset: 0x00072ED4
+		// Token: 0x06001763 RID: 5987 RVA: 0x00063478 File Offset: 0x00061678
 		private void HandleTouchpad(IDualShock4Extension ds4)
 		{
 			for (int i = this.touches.Count - 1; i >= 0; i--)

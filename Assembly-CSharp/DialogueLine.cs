@@ -3,13 +3,13 @@
 [Serializable]
 public struct DialogueLine
 {
-	// Token: 0x06000032 RID: 50 RVA: 0x000022D2 File Offset: 0x000004D2
+	// Token: 0x06000032 RID: 50 RVA: 0x00002A66 File Offset: 0x00000C66
 	public bool HasText()
 	{
 		return this.english != null && this.english.Length != 0 && !string.IsNullOrEmpty(this.english[0]);
 	}
 
-	// Token: 0x06000033 RID: 51 RVA: 0x00017E2C File Offset: 0x0001602C
+	// Token: 0x06000033 RID: 51 RVA: 0x00002A8C File Offset: 0x00000C8C
 	public string GetText(Language language = Language.Auto)
 	{
 		if (language == Language.Auto)

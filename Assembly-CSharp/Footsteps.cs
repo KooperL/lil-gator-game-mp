@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 
 public class Footsteps : MonoBehaviour
 {
-	// Token: 0x06000AC1 RID: 2753 RVA: 0x0000A422 File Offset: 0x00008622
+	// Token: 0x060008EF RID: 2287 RVA: 0x0002AC53 File Offset: 0x00028E53
 	public void ClearOverride()
 	{
 		this.overrideSettings = false;
@@ -13,13 +13,13 @@ public class Footsteps : MonoBehaviour
 		this.overrideHasFootstepDust = true;
 	}
 
-	// Token: 0x06000AC2 RID: 2754 RVA: 0x0000A440 File Offset: 0x00008640
+	// Token: 0x060008F0 RID: 2288 RVA: 0x0002AC71 File Offset: 0x00028E71
 	public void DoStep(bool isLeft)
 	{
 		this.Step(isLeft ? this.leftFoot : this.rightFoot, isLeft);
 	}
 
-	// Token: 0x06000AC3 RID: 2755 RVA: 0x0003EFC4 File Offset: 0x0003D1C4
+	// Token: 0x060008F1 RID: 2289 RVA: 0x0002AC8C File Offset: 0x00028E8C
 	private void Step(Transform footTransform, bool isLeft)
 	{
 		if (Time.time - this.minFootstepDelay < this.lastFootstep)
@@ -54,7 +54,7 @@ public class Footsteps : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AC4 RID: 2756 RVA: 0x0003F0E0 File Offset: 0x0003D2E0
+	// Token: 0x060008F2 RID: 2290 RVA: 0x0002ADA8 File Offset: 0x00028FA8
 	private void PlayFootstep(SurfaceMaterial surface, Vector3 position, bool isLeft)
 	{
 		float num = this.footstepVolume;
@@ -62,7 +62,7 @@ public class Footsteps : MonoBehaviour
 		surface.PlayFootstep(position, num, isLeft ? this.leftFootPitch : 1f);
 	}
 
-	// Token: 0x06000AC5 RID: 2757 RVA: 0x0003F134 File Offset: 0x0003D334
+	// Token: 0x060008F3 RID: 2291 RVA: 0x0002ADFC File Offset: 0x00028FFC
 	private void MakeFootprint(SurfaceMaterial surface, Vector3 position, Quaternion rotation)
 	{
 		Color color = Color.white;
@@ -72,21 +72,21 @@ public class Footsteps : MonoBehaviour
 		}
 		if (color.a > 0f)
 		{
-			GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(this.footprint);
+			GameObject gameObject = Object.Instantiate<GameObject>(this.footprint);
 			gameObject.transform.position = position;
 			gameObject.transform.rotation = rotation;
 			gameObject.GetComponent<SpriteRenderer>().color = color;
 		}
 	}
 
-	// Token: 0x06000AC6 RID: 2758 RVA: 0x0003F194 File Offset: 0x0003D394
+	// Token: 0x060008F4 RID: 2292 RVA: 0x0002AE5C File Offset: 0x0002905C
 	private void MakeFootstepDust(SurfaceMaterial surface, Vector3 position)
 	{
 		if (Player.rigidbody.velocity.sqrMagnitude < this.minDustSpeed * this.minDustSpeed)
 		{
 			return;
 		}
-		int num = Mathf.RoundToInt(global::UnityEngine.Random.Range(1f, 2f));
+		int num = Mathf.RoundToInt(Random.Range(1f, 2f));
 		EffectsManager.e.Dust(position, num, base.transform.TransformVector(new Vector3(0f, 1f, -4f)), 0f);
 	}
 

@@ -6,13 +6,13 @@ namespace Cinemachine.Examples
 {
 	public class GenericTrigger : MonoBehaviour
 	{
-		// Token: 0x060013AE RID: 5038 RVA: 0x00010A50 File Offset: 0x0000EC50
+		// Token: 0x06001020 RID: 4128 RVA: 0x0004D40F File Offset: 0x0004B60F
 		private void Start()
 		{
 			this.timeline = base.GetComponent<PlayableDirector>();
 		}
 
-		// Token: 0x060013AF RID: 5039 RVA: 0x00010A5E File Offset: 0x0000EC5E
+		// Token: 0x06001021 RID: 4129 RVA: 0x0004D41D File Offset: 0x0004B61D
 		private void OnTriggerExit(Collider c)
 		{
 			if (c.gameObject.CompareTag("Player"))
@@ -21,7 +21,7 @@ namespace Cinemachine.Examples
 			}
 		}
 
-		// Token: 0x060013B0 RID: 5040 RVA: 0x00010A86 File Offset: 0x0000EC86
+		// Token: 0x06001022 RID: 4130 RVA: 0x0004D445 File Offset: 0x0004B645
 		private void OnTriggerEnter(Collider c)
 		{
 			if (c.gameObject.CompareTag("Player"))

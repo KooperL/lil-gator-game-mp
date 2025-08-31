@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class SetDecal : MonoBehaviour
 {
-	// Token: 0x06000118 RID: 280 RVA: 0x00002E9D File Offset: 0x0000109D
+	// Token: 0x060000EB RID: 235 RVA: 0x00006528 File Offset: 0x00004728
 	public void OnValidate()
 	{
 		this.UpdatePropertyBlock();
 	}
 
-	// Token: 0x06000119 RID: 281 RVA: 0x00002EA5 File Offset: 0x000010A5
+	// Token: 0x060000EC RID: 236 RVA: 0x00006530 File Offset: 0x00004730
 	public void SetColor(Color color)
 	{
 		this.color = color;
 		this.UpdatePropertyBlock();
 	}
 
-	// Token: 0x0600011A RID: 282 RVA: 0x0001B7B4 File Offset: 0x000199B4
+	// Token: 0x060000ED RID: 237 RVA: 0x00006540 File Offset: 0x00004740
 	public void UpdatePropertyBlock()
 	{
 		if (this.properties == null)

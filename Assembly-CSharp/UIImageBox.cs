@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UIImageBox : MonoBehaviour
 {
-	// Token: 0x0600122B RID: 4651 RVA: 0x0005B170 File Offset: 0x00059370
+	// Token: 0x06000EF2 RID: 3826 RVA: 0x00047C24 File Offset: 0x00045E24
 	public void SetImage(Sprite image)
 	{
 		if (this.resizeToFit)
@@ -29,7 +29,7 @@ public class UIImageBox : MonoBehaviour
 		this.displayImage.sprite = image;
 	}
 
-	// Token: 0x0600122C RID: 4652 RVA: 0x0000F70C File Offset: 0x0000D90C
+	// Token: 0x06000EF3 RID: 3827 RVA: 0x00047CE8 File Offset: 0x00045EE8
 	public void SetColor(Color color)
 	{
 		this.coloredImage.color = color;

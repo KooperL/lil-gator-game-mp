@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveDolly : MonoBehaviour
 {
-	// Token: 0x06000602 RID: 1538 RVA: 0x00006490 File Offset: 0x00004690
+	// Token: 0x060004BC RID: 1212 RVA: 0x00019F03 File Offset: 0x00018103
 	private void OnEnable()
 	{
 		if (this.virtualCamera != null)
@@ -14,7 +14,7 @@ public class MoveDolly : MonoBehaviour
 		this.dollyCart.m_PositionUnits = CinemachinePathBase.PositionUnits.PathUnits;
 	}
 
-	// Token: 0x06000603 RID: 1539 RVA: 0x000303A8 File Offset: 0x0002E5A8
+	// Token: 0x060004BD RID: 1213 RVA: 0x00019F30 File Offset: 0x00018130
 	private void OnValidate()
 	{
 		if (this.virtualCamera != null)
@@ -27,7 +27,7 @@ public class MoveDolly : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000604 RID: 1540 RVA: 0x000303F8 File Offset: 0x0002E5F8
+	// Token: 0x060004BE RID: 1214 RVA: 0x00019F80 File Offset: 0x00018180
 	private void Update()
 	{
 		this.position = Mathf.SmoothDamp(this.position, this.targetPosition, ref this.velocity, this.smoothTime);
@@ -42,7 +42,7 @@ public class MoveDolly : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000605 RID: 1541 RVA: 0x000064BD File Offset: 0x000046BD
+	// Token: 0x060004BF RID: 1215 RVA: 0x0001A005 File Offset: 0x00018205
 	public void SetTargetPosition(float newTargetPosition)
 	{
 		this.targetPosition = newTargetPosition;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerKickRigidbodies : MonoBehaviour
 {
-	// Token: 0x06000C80 RID: 3200 RVA: 0x00044CF0 File Offset: 0x00042EF0
+	// Token: 0x06000A7E RID: 2686 RVA: 0x00031944 File Offset: 0x0002FB44
 	private void OnValidate()
 	{
 		if (this.rigidbody == null)

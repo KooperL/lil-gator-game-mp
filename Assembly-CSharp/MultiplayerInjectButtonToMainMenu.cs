@@ -5,14 +5,12 @@ using UnityEngine.UI;
 
 public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 {
-	// Token: 0x06001E75 RID: 7797 RVA: 0x000174BD File Offset: 0x000156BD
 	private void Start()
 	{
 		this.CreateButton();
 		this.StartAnimations();
 	}
 
-	// Token: 0x06001E76 RID: 7798 RVA: 0x000789D4 File Offset: 0x00076BD4
 	private void CreateButton()
 	{
 		GameObject gameObject = GameObject.Find("Main Menu Canvas");
@@ -52,26 +50,26 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 		component.anchorMax = Vector2.one;
 		component.offsetMin = Vector2.zero;
 		component.offsetMax = Vector2.zero;
-		Text component2 = gameObject2.GetComponent<Text>();
+		this.buttonText = gameObject2.GetComponent<Text>();
 		if (MultiplayerConfigLoader.Instance.ConfigFileFound && MultiplayerConfigLoader.Instance.DisplayNamePresent && MultiplayerConfigLoader.Instance.ServerHostPresent)
 		{
-			component2.text = "Multiplayer loaded!";
-			component2.color = Color.green;
+			this.buttonText.text = "Config loaded!";
+			this.buttonText.color = Color.green;
 		}
 		else
 		{
-			component2.text = "Error loading multiplayer";
-			component2.color = Color.red;
+			this.buttonText.text = "Config error!";
+			this.buttonText.color = Color.red;
 		}
-		component2.fontSize = 28;
-		component2.alignment = TextAnchor.MiddleCenter;
+		this.buttonText.fontSize = 28;
+		this.buttonText.alignment = TextAnchor.MiddleCenter;
 		if (this.scribbleFont != null)
 		{
-			component2.font = this.scribbleFont;
+			this.buttonText.font = this.scribbleFont;
 		}
 		else
 		{
-			component2.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+			this.buttonText.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
 		}
 		this.injectedButton.GetComponent<Button>().onClick.AddListener(delegate
 		{
@@ -81,7 +79,6 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 		Debug.Log("[LGG-MP] Injected custom button successfully");
 	}
 
-	// Token: 0x06001E77 RID: 7799 RVA: 0x000174CB File Offset: 0x000156CB
 	private void StartAnimations()
 	{
 		if (this.buttonTransform == null)
@@ -93,9 +90,21 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 		this.animationsEnabled = true;
 	}
 
-	// Token: 0x06001E78 RID: 7800 RVA: 0x000174F4 File Offset: 0x000156F4
 	private void Update()
 	{
+		if (this.buttonText.text == "Config loaded!" || this.buttonText.text == "Could not connect to server!" || this.buttonText.text == "Multiplayer ready!")
+		{
+			if (MultiplayerCommunicationService.Instance.connectionState == MultiplayerCommunicationService.ConnectionState.Connected)
+			{
+				this.buttonText.text = "Multiplayer ready!";
+				this.buttonText.color = Color.green;
+			}
+			else
+			{
+				this.buttonText.text = "Could not connect to server!";
+				this.buttonText.color = Color.red;
+			}
+		}
 		if (!this.animationsEnabled || this.buttonTransform == null)
 		{
 			return;
@@ -104,7 +113,6 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 		this.AnimateScale();
 	}
 
-	// Token: 0x06001E79 RID: 7801 RVA: 0x00078C40 File Offset: 0x00076E40
 	private void AnimateRotation()
 	{
 		this.rotationTimer += Time.deltaTime;
@@ -117,7 +125,6 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 		this.buttonTransform.Rotate(0f, 0f, num);
 	}
 
-	// Token: 0x06001E7A RID: 7802 RVA: 0x00078CB4 File Offset: 0x00076EB4
 	private void AnimateScale()
 	{
 		this.scaleTimer += Time.deltaTime * this.scaleSpeed;
@@ -126,7 +133,6 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 		this.buttonTransform.localScale = vector;
 	}
 
-	// Token: 0x06001E7B RID: 7803 RVA: 0x00017519 File Offset: 0x00015719
 	private IEnumerator ClickAnimation()
 	{
 		Vector3 originalScale = this.buttonTransform.localScale;
@@ -152,31 +158,27 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001E7C RID: 7804 RVA: 0x00017528 File Offset: 0x00015728
 	public void EnableAnimations(bool enable)
 	{
 		this.animationsEnabled = enable;
 	}
 
-	// Token: 0x06001E7D RID: 7805 RVA: 0x00017531 File Offset: 0x00015731
 	public void SetRotationSpeed(float speed)
 	{
 		this.rotationSpeed = speed;
 	}
 
-	// Token: 0x06001E7E RID: 7806 RVA: 0x0001753A File Offset: 0x0001573A
 	public void SetScaleSettings(float amplitude, float speed)
 	{
 		this.scaleAmplitude = amplitude;
 		this.scaleSpeed = speed;
 	}
 
-	// Token: 0x06001E7F RID: 7807 RVA: 0x0001754A File Offset: 0x0001574A
 	private void OnDestroy()
 	{
 		if (this.injectedButton != null)
 		{
-			global::UnityEngine.Object.Destroy(this.injectedButton);
+			Object.Destroy(this.injectedButton);
 		}
 	}
 
@@ -208,4 +210,6 @@ public class MultiplayerInjectButtonToMainMenu : MonoBehaviour
 	private float scaleTimer;
 
 	private bool animationsEnabled = true;
+
+	private Text buttonText;
 }

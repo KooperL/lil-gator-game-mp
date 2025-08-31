@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MoneyFlyingItem : MonoBehaviour
 {
-	// (get) Token: 0x0600097A RID: 2426 RVA: 0x00009319 File Offset: 0x00007519
+	// (get) Token: 0x060007D6 RID: 2006 RVA: 0x00026290 File Offset: 0x00024490
 	private bool IsDelayed
 	{
 		get
@@ -12,15 +12,15 @@ public class MoneyFlyingItem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600097B RID: 2427 RVA: 0x0003AF88 File Offset: 0x00039188
+	// Token: 0x060007D7 RID: 2007 RVA: 0x000262A8 File Offset: 0x000244A8
 	private void Start()
 	{
-		this.velocity = (global::UnityEngine.Random.insideUnitSphere + Vector3.up) * this.initialSpeed;
+		this.velocity = (Random.insideUnitSphere + Vector3.up) * this.initialSpeed;
 		this.spawnTime = Time.time;
-		this.rotation = global::UnityEngine.Random.insideUnitSphere * this.maxRotationSpeed;
+		this.rotation = Random.insideUnitSphere * this.maxRotationSpeed;
 	}
 
-	// Token: 0x0600097C RID: 2428 RVA: 0x0003AFD8 File Offset: 0x000391D8
+	// Token: 0x060007D8 RID: 2008 RVA: 0x000262F8 File Offset: 0x000244F8
 	private void Update()
 	{
 		if (!this.IsDelayed)
@@ -48,10 +48,10 @@ public class MoneyFlyingItem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600097D RID: 2429 RVA: 0x000049DF File Offset: 0x00002BDF
+	// Token: 0x060007D9 RID: 2009 RVA: 0x00026408 File Offset: 0x00024608
 	private void Collect()
 	{
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 	}
 
 	private const float acceleration = 20f;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ActorPathFollower : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06000228 RID: 552 RVA: 0x0001EAF0 File Offset: 0x0001CCF0
+	// Token: 0x060001E4 RID: 484 RVA: 0x0000A36C File Offset: 0x0000856C
 	private void OnValidate()
 	{
 		if (this.actor == null)
@@ -20,13 +20,13 @@ public class ActorPathFollower : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000229 RID: 553 RVA: 0x0001EB70 File Offset: 0x0001CD70
+	// Token: 0x060001E5 RID: 485 RVA: 0x0000A3EC File Offset: 0x000085EC
 	private void Start()
 	{
 		this.scaledSpeed = this.speed / Mathf.Min(1f, base.transform.localScale.x);
 		if (this.randomizeStartPosition)
 		{
-			this.nodePosition = global::UnityEngine.Random.Range(0f, (float)(this.path.positions.Length - 1));
+			this.nodePosition = Random.Range(0f, (float)(this.path.positions.Length - 1));
 		}
 		Vector3 interpolatedPosition = this.path.GetInterpolatedPosition(this.nodePosition);
 		base.transform.position = interpolatedPosition;
@@ -38,12 +38,12 @@ public class ActorPathFollower : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x0600022A RID: 554 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x060001E6 RID: 486 RVA: 0x0000A48F File Offset: 0x0000868F
 	private void InitializePosition()
 	{
 	}
 
-	// Token: 0x0600022B RID: 555 RVA: 0x0001EC14 File Offset: 0x0001CE14
+	// Token: 0x060001E7 RID: 487 RVA: 0x0000A494 File Offset: 0x00008694
 	private void OnEnable()
 	{
 		this.isInRange = this.path.SqrDistance(MainCamera.t.position) <= 3025f;
@@ -55,7 +55,7 @@ public class ActorPathFollower : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEveryNonFixed.Add(this);
 	}
 
-	// Token: 0x0600022C RID: 556 RVA: 0x00003CAA File Offset: 0x00001EAA
+	// Token: 0x060001E8 RID: 488 RVA: 0x0000A4E5 File Offset: 0x000086E5
 	private void OnDisable()
 	{
 		if (this.isInRange)
@@ -66,13 +66,13 @@ public class ActorPathFollower : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x0600022D RID: 557 RVA: 0x00003CCD File Offset: 0x00001ECD
+	// Token: 0x060001E9 RID: 489 RVA: 0x0000A508 File Offset: 0x00008708
 	private bool IsMoving()
 	{
 		return (!this.stopWhileTalking || !this.actor.IsInDialogue) && this.moving;
 	}
 
-	// Token: 0x0600022E RID: 558 RVA: 0x0001EC68 File Offset: 0x0001CE68
+	// Token: 0x060001EA RID: 490 RVA: 0x0000A528 File Offset: 0x00008728
 	public void ManagedUpdate()
 	{
 		if (this.isInRange != this.path.SqrDistance(MainCamera.t.position) <= 3025f)
@@ -135,7 +135,7 @@ public class ActorPathFollower : MonoBehaviour, IManagedUpdate
 			base.transform.position = vector2;
 			Vector3 vector3 = (vector2 - position).Flat();
 			base.transform.rotation = Quaternion.RotateTowards(base.transform.rotation, Quaternion.LookRotation(vector3), 720f * Time.deltaTime);
-			if (this.waitAtNode > 0f && Mathf.Floor(this.oldNodePosition) != Mathf.Floor(this.nodePosition) && global::UnityEngine.Random.value <= this.waitAtNodeChance)
+			if (this.waitAtNode > 0f && Mathf.Floor(this.oldNodePosition) != Mathf.Floor(this.nodePosition) && Random.value <= this.waitAtNodeChance)
 			{
 				this.waitAtNodeCounter = this.waitAtNode;
 			}
@@ -147,7 +147,7 @@ public class ActorPathFollower : MonoBehaviour, IManagedUpdate
 		this.animator.SetLayerWeight(1, num3);
 	}
 
-	// Token: 0x0600022F RID: 559 RVA: 0x0001EF10 File Offset: 0x0001D110
+	// Token: 0x060001EB RID: 491 RVA: 0x0000A7D0 File Offset: 0x000089D0
 	private void DoNewTimeStep()
 	{
 		this.fromPosition = this.toPosition;

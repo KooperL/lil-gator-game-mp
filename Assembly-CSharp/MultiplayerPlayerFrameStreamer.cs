@@ -20,7 +20,6 @@ public class MultiplayerPlayerFrameStreamer : MonoBehaviour
 			this.GetCurrentLeftHandID();
 			this.GetCurrentRightHandID();
 			string displayName = this.displayName;
-			string sessionKey = this.sessionKey;
 			WorldState worldState = this.worldState;
 			PlayerItemManager.EquippedState equippedState = this.equippedState;
 			string hatID = this.hatItemID;
@@ -38,9 +37,8 @@ public class MultiplayerPlayerFrameStreamer : MonoBehaviour
 			bool bool3 = this.swimming;
 			bool bool4 = this.gliding;
 			bool bool5 = this.sledding;
-			string text = JsonUtility.ToJson(new MultiplayerPlayerFrameStreamer.MultiplayerPlayerStateData(pos, forward, displayName, sessionKey, worldState, @float, float2, float3, @bool, bool2, bool3, bool4, bool5, equippedState, attackTrigger, ragdollTrigger, hatID, leftHandID, rightHandID, ""));
+			string text = JsonUtility.ToJson(new MultiplayerPlayerFrameStreamer.MultiplayerPlayerStateData(pos, forward, displayName, worldState, @float, float2, float3, @bool, bool2, bool3, bool4, bool5, equippedState, attackTrigger, ragdollTrigger, hatID, leftHandID, rightHandID, ""));
 			byte[] bytes = Encoding.UTF8.GetBytes(text);
-			Debug.Log("[LGG-MP] Sending message");
 			yield return MultiplayerCommunicationService.Instance.sendMessage(bytes);
 		}
 		yield break;
@@ -179,81 +177,9 @@ public class MultiplayerPlayerFrameStreamer : MonoBehaviour
 	private bool ragdollTrigger;
 
 	[Serializable]
-	public class MultiplayerPlayerFrameData
-	{
-		public MultiplayerPlayerFrameData(Vector3 pos, Vector3 dir, string displayName, string sessionKey, WorldState worldState, float speed, float verticalSpeed, float angle, bool grounded, bool climbing, bool swimming, bool gliding, bool sledding)
-		{
-			Debug.Log("OLD method used");
-			this.x = pos.x;
-			this.y = pos.y;
-			this.z = pos.z;
-			this.fx = dir.x;
-			this.fy = dir.y;
-			this.fz = dir.z;
-			this.displayName = displayName;
-			this.sessionKey = sessionKey;
-			this.worldState = worldState;
-			this.speed = speed;
-			this.verticalSpeed = verticalSpeed;
-			this.angle = angle;
-			this.grounded = grounded;
-			this.climbing = climbing;
-			this.swimming = swimming;
-			this.gliding = gliding;
-			this.sledding = sledding;
-		}
-
-		public float x;
-
-		public float y;
-
-		public float z;
-
-		public float fx;
-
-		public float fy;
-
-		public float fz;
-
-		public string displayName;
-
-		public string sessionKey;
-
-		public WorldState worldState;
-
-		public float speed;
-
-		public float verticalSpeed;
-
-		public float angle;
-
-		public bool grounded;
-
-		public bool climbing;
-
-		public bool swimming;
-
-		public bool gliding;
-
-		public bool sledding;
-
-		public PlayerItemManager.EquippedState equippedState;
-
-		public bool attackTrigger;
-
-		public bool ragdollTrigger;
-
-		public string hatItemID;
-
-		public string leftHandItemID;
-
-		public string rightHandItemID;
-	}
-
-	[Serializable]
 	public class MultiplayerPlayerStateData
 	{
-		public MultiplayerPlayerStateData(Vector3 pos, Vector3 dir, string displayName, string sessionKey, WorldState worldState, float speed, float verticalSpeed, float angle, bool grounded, bool climbing, bool swimming, bool gliding, bool sledding, PlayerItemManager.EquippedState equippedState, bool attackTrigger, bool ragdollTrigger, string hatItemID, string leftHandItemID, string rightHandItemID, string animationHash)
+		public MultiplayerPlayerStateData(Vector3 pos, Vector3 dir, string displayName, WorldState worldState, float speed, float verticalSpeed, float angle, bool grounded, bool climbing, bool swimming, bool gliding, bool sledding, PlayerItemManager.EquippedState equippedState, bool attackTrigger, bool ragdollTrigger, string hatItemID, string leftHandItemID, string rightHandItemID, string animationHash)
 		{
 			this.x = pos.x;
 			this.y = pos.y;
@@ -262,7 +188,6 @@ public class MultiplayerPlayerFrameStreamer : MonoBehaviour
 			this.fy = dir.y;
 			this.fz = dir.z;
 			this.displayName = displayName;
-			this.sessionKey = sessionKey;
 			this.worldState = worldState;
 			this.speed = speed;
 			this.verticalSpeed = verticalSpeed;
@@ -293,8 +218,6 @@ public class MultiplayerPlayerFrameStreamer : MonoBehaviour
 		public float fz;
 
 		public string displayName;
-
-		public string sessionKey;
 
 		public WorldState worldState;
 

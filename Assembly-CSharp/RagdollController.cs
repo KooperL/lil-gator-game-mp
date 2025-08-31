@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RagdollController : MonoBehaviour
 {
-	// Token: 0x06000CF3 RID: 3315 RVA: 0x000493BC File Offset: 0x000475BC
+	// Token: 0x06000AED RID: 2797 RVA: 0x00036644 File Offset: 0x00034844
 	private void OnValidate()
 	{
 		if (this.colliders == null || this.colliders.Length == 0)
@@ -19,7 +19,7 @@ public class RagdollController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CF4 RID: 3316 RVA: 0x00049414 File Offset: 0x00047614
+	// Token: 0x06000AEE RID: 2798 RVA: 0x0003669C File Offset: 0x0003489C
 	private void Awake()
 	{
 		Rigidbody[] array = this.rigidbodies;
@@ -35,7 +35,7 @@ public class RagdollController : MonoBehaviour
 		base.enabled = false;
 	}
 
-	// Token: 0x06000CF5 RID: 3317 RVA: 0x00049464 File Offset: 0x00047664
+	// Token: 0x06000AEF RID: 2799 RVA: 0x000366EC File Offset: 0x000348EC
 	public void OnEnable()
 	{
 		this.actor.isRagdolling = true;
@@ -53,7 +53,7 @@ public class RagdollController : MonoBehaviour
 		foreach (Rigidbody rigidbody in this.rigidbodies)
 		{
 			rigidbody.isKinematic = false;
-			rigidbody.velocity = vector + num * global::UnityEngine.Random.insideUnitSphere;
+			rigidbody.velocity = vector + num * Random.insideUnitSphere;
 		}
 		Collider[] array2 = this.colliders;
 		for (int j = 0; j < array2.Length; j++)
@@ -101,7 +101,7 @@ public class RagdollController : MonoBehaviour
 		this.enabledTime = Time.time;
 	}
 
-	// Token: 0x06000CF6 RID: 3318 RVA: 0x0000C041 File Offset: 0x0000A241
+	// Token: 0x06000AF0 RID: 2800 RVA: 0x00036928 File Offset: 0x00034B28
 	private void Update()
 	{
 		if (Player.input.cancelAction || (!Game.HasControl && !Player.movement.moddedWithoutControl))
@@ -111,7 +111,7 @@ public class RagdollController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CF7 RID: 3319 RVA: 0x0000C069 File Offset: 0x0000A269
+	// Token: 0x06000AF1 RID: 2801 RVA: 0x00036950 File Offset: 0x00034B50
 	public void Jump()
 	{
 		this.Deactivate();
@@ -121,7 +121,7 @@ public class RagdollController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CF8 RID: 3320 RVA: 0x000496A0 File Offset: 0x000478A0
+	// Token: 0x06000AF2 RID: 2802 RVA: 0x0003697C File Offset: 0x00034B7C
 	private void FixedUpdate()
 	{
 		Vector3 vector = this.rigidbody.velocity;
@@ -200,7 +200,7 @@ public class RagdollController : MonoBehaviour
 		this.acceleration = vector2;
 	}
 
-	// Token: 0x06000CF9 RID: 3321 RVA: 0x0000C093 File Offset: 0x0000A293
+	// Token: 0x06000AF3 RID: 2803 RVA: 0x00036CBF File Offset: 0x00034EBF
 	public void Deactivate()
 	{
 		if (this.isDeactivating)
@@ -210,7 +210,7 @@ public class RagdollController : MonoBehaviour
 		CoroutineUtil.Start(this.BufferedDeactivate());
 	}
 
-	// Token: 0x06000CFA RID: 3322 RVA: 0x0000C0AA File Offset: 0x0000A2AA
+	// Token: 0x06000AF4 RID: 2804 RVA: 0x00036CD6 File Offset: 0x00034ED6
 	private IEnumerator BufferedDeactivate()
 	{
 		this.isDeactivating = true;
@@ -279,7 +279,7 @@ public class RagdollController : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000CFB RID: 3323 RVA: 0x0000C0B9 File Offset: 0x0000A2B9
+	// Token: 0x06000AF5 RID: 2805 RVA: 0x00036CE5 File Offset: 0x00034EE5
 	private void OnCollisionStay(Collision collision)
 	{
 		if (Time.time - this.enabledTime > 0.25f)
@@ -288,7 +288,7 @@ public class RagdollController : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CFC RID: 3324 RVA: 0x000499E4 File Offset: 0x00047BE4
+	// Token: 0x06000AF6 RID: 2806 RVA: 0x00036D08 File Offset: 0x00034F08
 	public Vector3 GetForward()
 	{
 		Vector3 vector;
@@ -308,7 +308,7 @@ public class RagdollController : MonoBehaviour
 		return vector;
 	}
 
-	// Token: 0x06000CFD RID: 3325 RVA: 0x00049A7C File Offset: 0x00047C7C
+	// Token: 0x06000AF7 RID: 2807 RVA: 0x00036DA0 File Offset: 0x00034FA0
 	public void SetPosition(Vector3 newPosition)
 	{
 		Vector3 vector = newPosition - this.rigidbodies[0].position;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SetSolverIterations : MonoBehaviour
 {
-	// Token: 0x06001054 RID: 4180 RVA: 0x0000E05B File Offset: 0x0000C25B
+	// Token: 0x06000D4A RID: 3402 RVA: 0x000406BE File Offset: 0x0003E8BE
 	private void OnEnable()
 	{
 		if (this.rigidbody == null)

@@ -7,36 +7,36 @@ namespace Rewired.UI.ControlMapper
 {
 	public interface ICustomSelectable : ICancelHandler, IEventSystemHandler
 	{
-		// (get) Token: 0x06001B0D RID: 6925
-		// (set) Token: 0x06001B0E RID: 6926
+		// (get) Token: 0x0600158A RID: 5514
+		// (set) Token: 0x0600158B RID: 5515
 		Sprite disabledHighlightedSprite { get; set; }
 
-		// (get) Token: 0x06001B0F RID: 6927
-		// (set) Token: 0x06001B10 RID: 6928
+		// (get) Token: 0x0600158C RID: 5516
+		// (set) Token: 0x0600158D RID: 5517
 		Color disabledHighlightedColor { get; set; }
 
-		// (get) Token: 0x06001B11 RID: 6929
-		// (set) Token: 0x06001B12 RID: 6930
+		// (get) Token: 0x0600158E RID: 5518
+		// (set) Token: 0x0600158F RID: 5519
 		string disabledHighlightedTrigger { get; set; }
 
-		// (get) Token: 0x06001B13 RID: 6931
-		// (set) Token: 0x06001B14 RID: 6932
+		// (get) Token: 0x06001590 RID: 5520
+		// (set) Token: 0x06001591 RID: 5521
 		bool autoNavUp { get; set; }
 
-		// (get) Token: 0x06001B15 RID: 6933
-		// (set) Token: 0x06001B16 RID: 6934
+		// (get) Token: 0x06001592 RID: 5522
+		// (set) Token: 0x06001593 RID: 5523
 		bool autoNavDown { get; set; }
 
-		// (get) Token: 0x06001B17 RID: 6935
-		// (set) Token: 0x06001B18 RID: 6936
+		// (get) Token: 0x06001594 RID: 5524
+		// (set) Token: 0x06001595 RID: 5525
 		bool autoNavLeft { get; set; }
 
-		// (get) Token: 0x06001B19 RID: 6937
-		// (set) Token: 0x06001B1A RID: 6938
+		// (get) Token: 0x06001596 RID: 5526
+		// (set) Token: 0x06001597 RID: 5527
 		bool autoNavRight { get; set; }
 
-		// (add) Token: 0x06001B1B RID: 6939
-		// (remove) Token: 0x06001B1C RID: 6940
+		// (add) Token: 0x06001598 RID: 5528
+		// (remove) Token: 0x06001599 RID: 5529
 		event UnityAction CancelEvent;
 	}
 }

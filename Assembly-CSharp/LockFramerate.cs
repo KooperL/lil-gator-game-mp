@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LockFramerate : MonoBehaviour
 {
-	// Token: 0x060008CA RID: 2250 RVA: 0x000089B9 File Offset: 0x00006BB9
+	// Token: 0x0600073F RID: 1855 RVA: 0x00024381 File Offset: 0x00022581
 	private void OnEnable()
 	{
 		Application.targetFrameRate = this.targetFrameRate;

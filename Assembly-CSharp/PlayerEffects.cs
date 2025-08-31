@@ -3,27 +3,27 @@ using UnityEngine;
 
 public class PlayerEffects : MonoBehaviour
 {
-	// Token: 0x06000C2E RID: 3118 RVA: 0x0000B598 File Offset: 0x00009798
+	// Token: 0x06000A2C RID: 2604 RVA: 0x0002F563 File Offset: 0x0002D763
 	private void Awake()
 	{
 		this.playerMaterial = this.playerRenderer.sharedMaterial;
 	}
 
-	// Token: 0x06000C2F RID: 3119 RVA: 0x00042DF0 File Offset: 0x00040FF0
+	// Token: 0x06000A2D RID: 2605 RVA: 0x0002F578 File Offset: 0x0002D778
 	private void Start()
 	{
 		this.playerMaterial.DisableKeyword("CARTOON_SPEC");
 		this.drippingEffect.emission.enabled = false;
 	}
 
-	// Token: 0x06000C30 RID: 3120 RVA: 0x0000B5AB File Offset: 0x000097AB
+	// Token: 0x06000A2E RID: 2606 RVA: 0x0002F5A9 File Offset: 0x0002D7A9
 	public void Scrape()
 	{
 		this.isScraping = true;
 		this.dustCounter += Mathf.Abs(this.rigidbody.velocity.y) * this.climbingSlideDustSpeed * Time.deltaTime;
 	}
 
-	// Token: 0x06000C31 RID: 3121 RVA: 0x00042E24 File Offset: 0x00041024
+	// Token: 0x06000A2F RID: 2607 RVA: 0x0002F5E4 File Offset: 0x0002D7E4
 	private void FixedUpdate()
 	{
 		SurfaceMaterial surfaceMaterial = null;
@@ -130,7 +130,7 @@ public class PlayerEffects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C32 RID: 3122 RVA: 0x00043324 File Offset: 0x00041524
+	// Token: 0x06000A30 RID: 2608 RVA: 0x0002FAE4 File Offset: 0x0002DCE4
 	public void Jump()
 	{
 		SurfaceMaterial surfaceMaterial = MaterialManager.m.SampleSurfaceMaterial(base.transform.position, Vector3.down);
@@ -153,7 +153,7 @@ public class PlayerEffects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C33 RID: 3123 RVA: 0x00043450 File Offset: 0x00041650
+	// Token: 0x06000A31 RID: 2609 RVA: 0x0002FC10 File Offset: 0x0002DE10
 	public void Land(SurfaceMaterial surfaceMaterial, Vector3 normal)
 	{
 		if (this.movement.isSledding)
@@ -171,7 +171,7 @@ public class PlayerEffects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C34 RID: 3124 RVA: 0x000434DC File Offset: 0x000416DC
+	// Token: 0x06000A32 RID: 2610 RVA: 0x0002FC9C File Offset: 0x0002DE9C
 	public void ClimbGrab()
 	{
 		if (this.lastClimbGrab + 0.1f > Time.time)
@@ -186,13 +186,13 @@ public class PlayerEffects : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000C35 RID: 3125 RVA: 0x0000B5E3 File Offset: 0x000097E3
+	// Token: 0x06000A33 RID: 2611 RVA: 0x0002FD0D File Offset: 0x0002DF0D
 	public void SledTransition()
 	{
 		PlayAudio.p.PlayAtPoint(this.sledTransition, base.transform.position);
 	}
 
-	// Token: 0x06000C36 RID: 3126 RVA: 0x0000B600 File Offset: 0x00009800
+	// Token: 0x06000A34 RID: 2612 RVA: 0x0002FD2A File Offset: 0x0002DF2A
 	public void PlaySwimSound()
 	{
 		if (this.swimSound != null)

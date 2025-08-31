@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ChangeMusicLoop : MonoBehaviour
 {
-	// Token: 0x0600005D RID: 93 RVA: 0x00002466 File Offset: 0x00000666
+	// Token: 0x0600005C RID: 92 RVA: 0x00003654 File Offset: 0x00001854
 	public void OnEnable()
 	{
 		this.system.ChangeLoop(this.loopStartBeats, this.loopEndBeats, this.changeBehavior);

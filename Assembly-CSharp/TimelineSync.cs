@@ -4,7 +4,7 @@ using UnityEngine.Playables;
 
 public class TimelineSync : MonoBehaviour
 {
-	// Token: 0x06000015 RID: 21 RVA: 0x0000215B File Offset: 0x0000035B
+	// Token: 0x06000015 RID: 21 RVA: 0x00002601 File Offset: 0x00000801
 	private void OnValidate()
 	{
 		if (this.director == null)
@@ -13,7 +13,7 @@ public class TimelineSync : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000016 RID: 22 RVA: 0x00002177 File Offset: 0x00000377
+	// Token: 0x06000016 RID: 22 RVA: 0x0000261D File Offset: 0x0000081D
 	public void Wait()
 	{
 		if (this.continueTokens > 0)
@@ -25,7 +25,7 @@ public class TimelineSync : MonoBehaviour
 		this.director.Pause();
 	}
 
-	// Token: 0x06000017 RID: 23 RVA: 0x000021A3 File Offset: 0x000003A3
+	// Token: 0x06000017 RID: 23 RVA: 0x00002649 File Offset: 0x00000849
 	public void ContinueTimeline()
 	{
 		if (this.isWaiting)

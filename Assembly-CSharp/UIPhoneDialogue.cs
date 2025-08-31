@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UIPhoneDialogue : MonoBehaviour
 {
-	// Token: 0x060012B8 RID: 4792 RVA: 0x0000FC8A File Offset: 0x0000DE8A
+	// Token: 0x06000F4F RID: 3919 RVA: 0x00049A7F File Offset: 0x00047C7F
 	public IEnumerator DisplayMessage(string text, CharacterProfile character)
 	{
 		if (this.oldMessages == null)
@@ -17,16 +17,16 @@ public class UIPhoneDialogue : MonoBehaviour
 		GameObject newTextMessage;
 		if (character.isPlayer)
 		{
-			newTextMessage = global::UnityEngine.Object.Instantiate<GameObject>(this.playerTextMessageElement, this.messagesParent);
+			newTextMessage = Object.Instantiate<GameObject>(this.playerTextMessageElement, this.messagesParent);
 		}
 		else
 		{
-			newTextMessage = global::UnityEngine.Object.Instantiate<GameObject>(this.textMessageElement, this.messagesParent);
+			newTextMessage = Object.Instantiate<GameObject>(this.textMessageElement, this.messagesParent);
 			if (this.nameplateElement != null)
 			{
 				if (this.lastNameplate == null || this.lastNameplate.character != character)
 				{
-					uinameplate = global::UnityEngine.Object.Instantiate<GameObject>(this.nameplateElement, this.messagesParent).GetComponent<UINameplate>();
+					uinameplate = Object.Instantiate<GameObject>(this.nameplateElement, this.messagesParent).GetComponent<UINameplate>();
 					uinameplate.SetNameplate(character);
 				}
 				else
@@ -73,7 +73,7 @@ public class UIPhoneDialogue : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060012B9 RID: 4793 RVA: 0x0000FCA7 File Offset: 0x0000DEA7
+	// Token: 0x06000F50 RID: 3920 RVA: 0x00049A9C File Offset: 0x00047C9C
 	private IEnumerator ShiftMessages(float height)
 	{
 		float offset = 0f;
@@ -90,12 +90,12 @@ public class UIPhoneDialogue : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060012BA RID: 4794 RVA: 0x0005CFB0 File Offset: 0x0005B1B0
+	// Token: 0x06000F51 RID: 3921 RVA: 0x00049AB4 File Offset: 0x00047CB4
 	public void Clear()
 	{
 		for (int i = 0; i < this.messagesParent.childCount; i++)
 		{
-			global::UnityEngine.Object.Destroy(this.messagesParent.GetChild(i).gameObject);
+			Object.Destroy(this.messagesParent.GetChild(i).gameObject);
 		}
 		this.oldMessages = new List<Transform>();
 	}

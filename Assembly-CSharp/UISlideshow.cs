@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 public class UISlideshow : MonoBehaviour
 {
-	// Token: 0x0600132D RID: 4909 RVA: 0x000102A5 File Offset: 0x0000E4A5
+	// Token: 0x06000FAC RID: 4012 RVA: 0x0004B116 File Offset: 0x00049316
 	public void OnEnable()
 	{
 		Game.g.SetWorldState(this.worldState, false, true);
@@ -20,14 +20,14 @@ public class UISlideshow : MonoBehaviour
 		this.StartLoad();
 	}
 
-	// Token: 0x0600132E RID: 4910 RVA: 0x000102D7 File Offset: 0x0000E4D7
+	// Token: 0x06000FAD RID: 4013 RVA: 0x0004B148 File Offset: 0x00049348
 	private Color MoveTowardsColor(Color current, float target, float speed, int channel)
 	{
 		current[channel] = Mathf.MoveTowards(current[channel], target, speed * Time.deltaTime);
 		return current;
 	}
 
-	// Token: 0x0600132F RID: 4911 RVA: 0x000102F9 File Offset: 0x0000E4F9
+	// Token: 0x06000FAE RID: 4014 RVA: 0x0004B16A File Offset: 0x0004936A
 	private IEnumerator RunSlideTransition(int currentSlide)
 	{
 		Color backgroundColor = this.slides[currentSlide].backgroundColor;
@@ -83,7 +83,7 @@ public class UISlideshow : MonoBehaviour
 		this.currentTransition = null;
 		if (currentSlide == this.slides.Length - 1)
 		{
-			global::UnityEngine.Object.Destroy(base.gameObject);
+			Object.Destroy(base.gameObject);
 		}
 		if (currentSlide == this.slides.Length - 2)
 		{
@@ -92,7 +92,7 @@ public class UISlideshow : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001330 RID: 4912 RVA: 0x0005E730 File Offset: 0x0005C930
+	// Token: 0x06000FAF RID: 4015 RVA: 0x0004B180 File Offset: 0x00049380
 	public void NextSlide()
 	{
 		this.oldBackgroundColor = this.background.color;
@@ -106,13 +106,13 @@ public class UISlideshow : MonoBehaviour
 		base.StartCoroutine(this.currentTransition);
 	}
 
-	// Token: 0x06001331 RID: 4913 RVA: 0x0001030F File Offset: 0x0000E50F
+	// Token: 0x06000FB0 RID: 4016 RVA: 0x0004B1FA File Offset: 0x000493FA
 	public void StartLoad()
 	{
 		base.StartCoroutine(this.LoadSceneAsync());
 	}
 
-	// Token: 0x06001332 RID: 4914 RVA: 0x0001031E File Offset: 0x0000E51E
+	// Token: 0x06000FB1 RID: 4017 RVA: 0x0004B209 File Offset: 0x00049409
 	public void FinishSlideshow()
 	{
 		if (!this.isLoadFinished)
@@ -123,10 +123,10 @@ public class UISlideshow : MonoBehaviour
 		this.isSlideshowFinished = true;
 	}
 
-	// Token: 0x06001333 RID: 4915 RVA: 0x0001033C File Offset: 0x0000E53C
+	// Token: 0x06000FB2 RID: 4018 RVA: 0x0004B227 File Offset: 0x00049427
 	public IEnumerator LoadSceneAsync()
 	{
-		global::UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
+		Object.DontDestroyOnLoad(base.gameObject);
 		this.loadingIcon.SetActive(true);
 		FadeGameVolume.FadeOutGameVolume();
 		yield return new WaitForSeconds(1f);
@@ -145,7 +145,7 @@ public class UISlideshow : MonoBehaviour
 		yield return new WaitForSeconds(0.25f);
 		this.NextSlide();
 		yield return new WaitForSeconds(4f);
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 		yield break;
 	}
 

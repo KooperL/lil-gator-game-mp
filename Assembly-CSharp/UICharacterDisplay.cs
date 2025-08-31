@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UICharacterDisplay : MonoBehaviour
 {
-	// Token: 0x0600137C RID: 4988 RVA: 0x0001079E File Offset: 0x0000E99E
+	// Token: 0x06000FEE RID: 4078 RVA: 0x0004C163 File Offset: 0x0004A363
 	private void OnValidate()
 	{
 		if (this.rectTransform == null)
@@ -13,7 +13,7 @@ public class UICharacterDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600137D RID: 4989 RVA: 0x0005F834 File Offset: 0x0005DA34
+	// Token: 0x06000FEF RID: 4079 RVA: 0x0004C180 File Offset: 0x0004A380
 	public void Load(CharacterProfile profile)
 	{
 		if (!base.gameObject.activeSelf)
@@ -42,7 +42,7 @@ public class UICharacterDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600137E RID: 4990 RVA: 0x000107BA File Offset: 0x0000E9BA
+	// Token: 0x06000FF0 RID: 4080 RVA: 0x0004C242 File Offset: 0x0004A442
 	public void ClearItem()
 	{
 		if (this.nameDisplay != null)
@@ -51,7 +51,7 @@ public class UICharacterDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600137F RID: 4991 RVA: 0x000107DA File Offset: 0x0000E9DA
+	// Token: 0x06000FF1 RID: 4081 RVA: 0x0004C262 File Offset: 0x0004A462
 	private void SetText(Text textObject, string textString)
 	{
 		if (!string.IsNullOrEmpty(textString))

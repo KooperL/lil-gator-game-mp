@@ -6,7 +6,7 @@ namespace Rewired.UI.ControlMapper
 {
 	public static class UITools
 	{
-		// Token: 0x06001CB1 RID: 7345 RVA: 0x00071264 File Offset: 0x0006F464
+		// Token: 0x060016C1 RID: 5825 RVA: 0x0005F49C File Offset: 0x0005D69C
 		public static GameObject InstantiateGUIObject<T>(GameObject prefab, Transform parent, string name) where T : Component
 		{
 			GameObject gameObject = UITools.InstantiateGUIObject_Pre<T>(prefab, parent, name);
@@ -26,7 +26,7 @@ namespace Rewired.UI.ControlMapper
 			return gameObject;
 		}
 
-		// Token: 0x06001CB2 RID: 7346 RVA: 0x000712B4 File Offset: 0x0006F4B4
+		// Token: 0x060016C2 RID: 5826 RVA: 0x0005F4EC File Offset: 0x0005D6EC
 		public static GameObject InstantiateGUIObject<T>(GameObject prefab, Transform parent, string name, Vector2 pivot, Vector2 anchorMin, Vector2 anchorMax, Vector2 anchoredPosition) where T : Component
 		{
 			GameObject gameObject = UITools.InstantiateGUIObject_Pre<T>(prefab, parent, name);
@@ -50,7 +50,7 @@ namespace Rewired.UI.ControlMapper
 			return gameObject;
 		}
 
-		// Token: 0x06001CB3 RID: 7347 RVA: 0x00071324 File Offset: 0x0006F524
+		// Token: 0x060016C3 RID: 5827 RVA: 0x0005F55C File Offset: 0x0005D75C
 		private static GameObject InstantiateGUIObject_Pre<T>(GameObject prefab, Transform parent, string name) where T : Component
 		{
 			if (prefab == null)
@@ -58,7 +58,7 @@ namespace Rewired.UI.ControlMapper
 				Debug.LogError(name + " prefab is null!");
 				return null;
 			}
-			GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(prefab);
+			GameObject gameObject = Object.Instantiate<GameObject>(prefab);
 			if (!string.IsNullOrEmpty(name))
 			{
 				gameObject.name = name;
@@ -76,7 +76,7 @@ namespace Rewired.UI.ControlMapper
 			return gameObject;
 		}
 
-		// Token: 0x06001CB4 RID: 7348 RVA: 0x000713B8 File Offset: 0x0006F5B8
+		// Token: 0x060016C4 RID: 5828 RVA: 0x0005F5F0 File Offset: 0x0005D7F0
 		public static Vector3 GetPointOnRectEdge(RectTransform rectTransform, Vector2 dir)
 		{
 			if (rectTransform == null)
@@ -92,7 +92,7 @@ namespace Rewired.UI.ControlMapper
 			return dir;
 		}
 
-		// Token: 0x06001CB5 RID: 7349 RVA: 0x00071438 File Offset: 0x0006F638
+		// Token: 0x060016C5 RID: 5829 RVA: 0x0005F670 File Offset: 0x0005D870
 		public static Rect GetWorldSpaceRect(RectTransform rt)
 		{
 			if (rt == null)
@@ -106,7 +106,7 @@ namespace Rewired.UI.ControlMapper
 			return new Rect(vector.x, vector.y, vector3.x - vector.x, vector2.y - vector.y);
 		}
 
-		// Token: 0x06001CB6 RID: 7350 RVA: 0x000714F8 File Offset: 0x0006F6F8
+		// Token: 0x060016C6 RID: 5830 RVA: 0x0005F730 File Offset: 0x0005D930
 		public static Rect TransformRectTo(Transform from, Transform to, Rect rect)
 		{
 			Vector3 vector;
@@ -133,13 +133,13 @@ namespace Rewired.UI.ControlMapper
 			return new Rect(vector.x, vector.y, vector3.x - vector.x, vector.y - vector2.y);
 		}
 
-		// Token: 0x06001CB7 RID: 7351 RVA: 0x00015EE3 File Offset: 0x000140E3
+		// Token: 0x060016C7 RID: 5831 RVA: 0x0005F83C File Offset: 0x0005DA3C
 		public static Rect InvertY(Rect rect)
 		{
 			return new Rect(rect.xMin, rect.yMin, rect.width, -rect.height);
 		}
 
-		// Token: 0x06001CB8 RID: 7352 RVA: 0x00071604 File Offset: 0x0006F804
+		// Token: 0x060016C8 RID: 5832 RVA: 0x0005F860 File Offset: 0x0005DA60
 		public static void SetInteractable(Selectable selectable, bool state, bool playTransition)
 		{
 			if (selectable == null)

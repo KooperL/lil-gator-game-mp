@@ -5,7 +5,7 @@ using UnityEngine;
 [AddComponentMenu("Wobble/Bone")]
 public class WobbleBone : WobbleBoneBase
 {
-	// Token: 0x06001017 RID: 4119 RVA: 0x0005383C File Offset: 0x00051A3C
+	// Token: 0x06000D0D RID: 3341 RVA: 0x0003ED1C File Offset: 0x0003CF1C
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.blue;
@@ -13,14 +13,14 @@ public class WobbleBone : WobbleBoneBase
 		Gizmos.DrawWireSphere(base.transform.position, 0.02f);
 	}
 
-	// Token: 0x06001018 RID: 4120 RVA: 0x00053888 File Offset: 0x00051A88
+	// Token: 0x06000D0E RID: 3342 RVA: 0x0003ED68 File Offset: 0x0003CF68
 	private void UpdateWindForce()
 	{
 		WobbleBone.windForceUpdateTime = Time.time;
 		WobbleBone.windForce = ((Mathf.Sin(WobbleBone.windForceUpdateTime * 7f) + 1f) * 2.5f + (Mathf.Sin(WobbleBone.windForceUpdateTime * 5f) + 1f) * 3.5f) * WobbleBone.windDirection;
 	}
 
-	// Token: 0x06001019 RID: 4121 RVA: 0x000538E8 File Offset: 0x00051AE8
+	// Token: 0x06000D0F RID: 3343 RVA: 0x0003EDC8 File Offset: 0x0003CFC8
 	public override void Initialize()
 	{
 		List<WobbleBoneBase> list = new List<WobbleBoneBase>();
@@ -63,7 +63,7 @@ public class WobbleBone : WobbleBoneBase
 		this.maxDistance = this.distanceGoal * this.expansion;
 	}
 
-	// Token: 0x0600101A RID: 4122 RVA: 0x00053B60 File Offset: 0x00051D60
+	// Token: 0x06000D10 RID: 3344 RVA: 0x0003F040 File Offset: 0x0003D240
 	private void UpdateState()
 	{
 		this.oldPosition = this.position;
@@ -84,20 +84,20 @@ public class WobbleBone : WobbleBoneBase
 		this.positionGoal = this.parentPosition + this.distanceGoal * this.directionGoal;
 	}
 
-	// Token: 0x0600101B RID: 4123 RVA: 0x0000DE48 File Offset: 0x0000C048
+	// Token: 0x06000D11 RID: 3345 RVA: 0x0003F104 File Offset: 0x0003D304
 	private Vector3 ProjectOnNormalized(Vector3 vector, Vector3 normal)
 	{
 		return vector - Vector3.Dot(vector, normal) * normal;
 	}
 
-	// Token: 0x0600101C RID: 4124 RVA: 0x0000DE5D File Offset: 0x0000C05D
+	// Token: 0x06000D12 RID: 3346 RVA: 0x0003F119 File Offset: 0x0003D319
 	private Vector3 LockAxisDelta(Vector3 delta, Vector3 axis)
 	{
 		axis = this.parentRotation * axis;
 		return Vector3.ProjectOnPlane(delta, axis);
 	}
 
-	// Token: 0x0600101D RID: 4125 RVA: 0x00053C24 File Offset: 0x00051E24
+	// Token: 0x06000D13 RID: 3347 RVA: 0x0003F130 File Offset: 0x0003D330
 	private Vector3 LockVectorAxes(Vector3 position)
 	{
 		Vector3 vector = position - this.positionGoal;
@@ -116,7 +116,7 @@ public class WobbleBone : WobbleBoneBase
 		return this.positionGoal + vector;
 	}
 
-	// Token: 0x0600101E RID: 4126 RVA: 0x00053C8C File Offset: 0x00051E8C
+	// Token: 0x06000D14 RID: 3348 RVA: 0x0003F198 File Offset: 0x0003D398
 	public override void RunWobbleUpdate()
 	{
 		if (!this.initialized)
@@ -211,7 +211,7 @@ public class WobbleBone : WobbleBoneBase
 		this.forces = Vector3.zero;
 	}
 
-	// Token: 0x0600101F RID: 4127 RVA: 0x000540E4 File Offset: 0x000522E4
+	// Token: 0x06000D15 RID: 3349 RVA: 0x0003F5F0 File Offset: 0x0003D7F0
 	private Vector3 GetAverageChildPosition()
 	{
 		if (this.childBones.Length != 0)
@@ -226,7 +226,7 @@ public class WobbleBone : WobbleBoneBase
 		return this.position;
 	}
 
-	// Token: 0x06001020 RID: 4128 RVA: 0x00054140 File Offset: 0x00052340
+	// Token: 0x06000D16 RID: 3350 RVA: 0x0003F64C File Offset: 0x0003D84C
 	public override void Reacclimate()
 	{
 		this.velocity = Vector3.zero;
@@ -235,12 +235,12 @@ public class WobbleBone : WobbleBoneBase
 		this.rotation = (this.oldVisualRotation = (this.visualRotation = base.transform.rotation));
 	}
 
-	// Token: 0x06001021 RID: 4129 RVA: 0x000541BC File Offset: 0x000523BC
+	// Token: 0x06000D17 RID: 3351 RVA: 0x0003F6C8 File Offset: 0x0003D8C8
 	private void LockAxis()
 	{
 	}
 
-	// Token: 0x06001022 RID: 4130 RVA: 0x000541CC File Offset: 0x000523CC
+	// Token: 0x06000D18 RID: 3352 RVA: 0x0003F6D8 File Offset: 0x0003D8D8
 	public override void ApplyPosition()
 	{
 		Vector3 vector;
@@ -259,7 +259,7 @@ public class WobbleBone : WobbleBoneBase
 		this.LockAxis();
 	}
 
-	// Token: 0x06001023 RID: 4131 RVA: 0x00054248 File Offset: 0x00052448
+	// Token: 0x06000D19 RID: 3353 RVA: 0x0003F754 File Offset: 0x0003D954
 	public override void ApplyPosition(float t)
 	{
 		Vector3 vector;
@@ -277,13 +277,13 @@ public class WobbleBone : WobbleBoneBase
 		this.LockAxis();
 	}
 
-	// Token: 0x06001024 RID: 4132 RVA: 0x0000DE74 File Offset: 0x0000C074
+	// Token: 0x06000D1A RID: 3354 RVA: 0x0003F7E4 File Offset: 0x0003D9E4
 	public override void ApplyRotation()
 	{
 		base.transform.rotation = this.visualRotation;
 	}
 
-	// Token: 0x06001025 RID: 4133 RVA: 0x0000DE87 File Offset: 0x0000C087
+	// Token: 0x06000D1B RID: 3355 RVA: 0x0003F7F7 File Offset: 0x0003D9F7
 	public override void ApplyRotation(float t)
 	{
 		base.transform.rotation = Quaternion.SlerpUnclamped(this.oldVisualRotation, this.visualRotation, t);

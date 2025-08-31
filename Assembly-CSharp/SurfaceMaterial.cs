@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public class SurfaceMaterial : ScriptableObject
 {
-	// (get) Token: 0x06000FD0 RID: 4048 RVA: 0x0000DA78 File Offset: 0x0000BC78
+	// (get) Token: 0x06000CC7 RID: 3271 RVA: 0x0003DBE6 File Offset: 0x0003BDE6
 	public bool HasFootstep
 	{
 		get
@@ -14,7 +14,7 @@ public class SurfaceMaterial : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x06000FD1 RID: 4049 RVA: 0x00052AD8 File Offset: 0x00050CD8
+	// (get) Token: 0x06000CC8 RID: 3272 RVA: 0x0003DBFC File Offset: 0x0003BDFC
 	public AudioClip Footstep
 	{
 		get
@@ -23,7 +23,7 @@ public class SurfaceMaterial : ScriptableObject
 			{
 				return null;
 			}
-			int num = Mathf.FloorToInt(global::UnityEngine.Random.value * (float)this.footsteps.Length);
+			int num = Mathf.FloorToInt(Random.value * (float)this.footsteps.Length);
 			while (this.footsteps.Length > 1 && num == this.lastFootstepIndex)
 			{
 				num = (num + 1) % this.footsteps.Length;
@@ -33,7 +33,7 @@ public class SurfaceMaterial : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x06000FD2 RID: 4050 RVA: 0x0000DA8E File Offset: 0x0000BC8E
+	// (get) Token: 0x06000CC9 RID: 3273 RVA: 0x0003DC63 File Offset: 0x0003BE63
 	public bool HasImpact
 	{
 		get
@@ -42,7 +42,7 @@ public class SurfaceMaterial : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x06000FD3 RID: 4051 RVA: 0x00052B40 File Offset: 0x00050D40
+	// (get) Token: 0x06000CCA RID: 3274 RVA: 0x0003DC7C File Offset: 0x0003BE7C
 	public AudioClip Impact
 	{
 		get
@@ -51,17 +51,17 @@ public class SurfaceMaterial : ScriptableObject
 			{
 				return null;
 			}
-			int num = Mathf.FloorToInt(global::UnityEngine.Random.value * (float)this.impacts.Length);
+			int num = Mathf.FloorToInt(Random.value * (float)this.impacts.Length);
 			while (this.impacts.Length > 1 && num == this.lastImpactIndex)
 			{
 				num = (num + 1) % this.impacts.Length;
 			}
 			this.lastImpactIndex = num;
-			return this.impacts[Mathf.FloorToInt(global::UnityEngine.Random.value * (float)this.impacts.Length)];
+			return this.impacts[Mathf.FloorToInt(Random.value * (float)this.impacts.Length)];
 		}
 	}
 
-	// Token: 0x06000FD4 RID: 4052 RVA: 0x00052BBC File Offset: 0x00050DBC
+	// Token: 0x06000CCB RID: 3275 RVA: 0x0003DCF8 File Offset: 0x0003BEF8
 	public void PlayFootstep(Vector3 position, float volumeMod = 1f, float pitchMod = 1f)
 	{
 		if (!this.HasFootstep)
@@ -71,11 +71,11 @@ public class SurfaceMaterial : ScriptableObject
 		PlayAudio.p.PlayAtPoint(this.Footstep, position, PlayAudio.p.footstepMixer, volumeMod * this.footstepVolume, pitchMod * this.footstepPitch, 128);
 		if (this.footstepEffect != null)
 		{
-			global::UnityEngine.Object.Instantiate<GameObject>(this.footstepEffect, position, Quaternion.identity);
+			Object.Instantiate<GameObject>(this.footstepEffect, position, Quaternion.identity);
 		}
 	}
 
-	// Token: 0x06000FD5 RID: 4053 RVA: 0x00052C24 File Offset: 0x00050E24
+	// Token: 0x06000CCC RID: 3276 RVA: 0x0003DD60 File Offset: 0x0003BF60
 	public void PlayImpact(Vector3 position, float volumeMod = 1f, float pitchMod = 1f)
 	{
 		if (!this.HasImpact)
@@ -85,7 +85,7 @@ public class SurfaceMaterial : ScriptableObject
 		PlayAudio.p.PlayAtPoint(this.Impact, position, volumeMod * this.impactVolume, pitchMod * this.impactPitch, 128);
 		if (this.impactEffect != null)
 		{
-			global::UnityEngine.Object.Instantiate<GameObject>(this.impactEffect, position, Quaternion.identity);
+			Object.Instantiate<GameObject>(this.impactEffect, position, Quaternion.identity);
 		}
 	}
 

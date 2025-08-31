@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text))]
 public class MLText : MonoBehaviour
 {
-	// Token: 0x06000026 RID: 38 RVA: 0x00017CB0 File Offset: 0x00015EB0
+	// Token: 0x06000026 RID: 38 RVA: 0x00002858 File Offset: 0x00000A58
 	public static void ForceRefresh()
 	{
 		foreach (MLText mltext in MLText.activeMLText)
@@ -16,7 +16,7 @@ public class MLText : MonoBehaviour
 		SelectOptions.ForceRefresh();
 	}
 
-	// Token: 0x06000027 RID: 39 RVA: 0x00017D04 File Offset: 0x00015F04
+	// Token: 0x06000027 RID: 39 RVA: 0x000028AC File Offset: 0x00000AAC
 	public void OnValidate()
 	{
 		if (this.text == null)
@@ -34,7 +34,7 @@ public class MLText : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000028 RID: 40 RVA: 0x00017DD4 File Offset: 0x00015FD4
+	// Token: 0x06000028 RID: 40 RVA: 0x0000297C File Offset: 0x00000B7C
 	[ContextMenu("Add entry to document")]
 	public void AddEntryToDocument()
 	{
@@ -44,20 +44,20 @@ public class MLText : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000029 RID: 41 RVA: 0x00002252 File Offset: 0x00000452
+	// Token: 0x06000029 RID: 41 RVA: 0x000029D4 File Offset: 0x00000BD4
 	private void OnEnable()
 	{
 		this.Refresh();
 		MLText.activeMLText.Add(this);
 	}
 
-	// Token: 0x0600002A RID: 42 RVA: 0x00002265 File Offset: 0x00000465
+	// Token: 0x0600002A RID: 42 RVA: 0x000029E7 File Offset: 0x00000BE7
 	private void OnDisable()
 	{
 		MLText.activeMLText.Remove(this);
 	}
 
-	// Token: 0x0600002B RID: 43 RVA: 0x00002273 File Offset: 0x00000473
+	// Token: 0x0600002B RID: 43 RVA: 0x000029F5 File Offset: 0x00000BF5
 	public void Refresh()
 	{
 		if (this.document != null)

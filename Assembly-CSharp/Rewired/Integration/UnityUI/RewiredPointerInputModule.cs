@@ -10,7 +10,7 @@ namespace Rewired.Integration.UnityUI
 {
 	public abstract class RewiredPointerInputModule : BaseInputModule
 	{
-		// (get) Token: 0x06001769 RID: 5993 RVA: 0x00064414 File Offset: 0x00062614
+		// (get) Token: 0x0600135F RID: 4959 RVA: 0x00052140 File Offset: 0x00050340
 		private RewiredPointerInputModule.UnityInputSource defaultInputSource
 		{
 			get
@@ -23,7 +23,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x0600176A RID: 5994 RVA: 0x00011FDA File Offset: 0x000101DA
+		// (get) Token: 0x06001360 RID: 4960 RVA: 0x0005216A File Offset: 0x0005036A
 		private IMouseInputSource defaultMouseInputSource
 		{
 			get
@@ -32,7 +32,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// (get) Token: 0x0600176B RID: 5995 RVA: 0x00011FDA File Offset: 0x000101DA
+		// (get) Token: 0x06001361 RID: 4961 RVA: 0x00052172 File Offset: 0x00050372
 		protected ITouchInputSource defaultTouchInputSource
 		{
 			get
@@ -41,13 +41,13 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x0600176C RID: 5996 RVA: 0x00011FE2 File Offset: 0x000101E2
+		// Token: 0x06001362 RID: 4962 RVA: 0x0005217A File Offset: 0x0005037A
 		protected bool IsDefaultMouse(IMouseInputSource mouse)
 		{
 			return this.defaultMouseInputSource == mouse;
 		}
 
-		// Token: 0x0600176D RID: 5997 RVA: 0x00064440 File Offset: 0x00062640
+		// Token: 0x06001363 RID: 4963 RVA: 0x00052188 File Offset: 0x00050388
 		public IMouseInputSource GetMouseInputSource(int playerId, int mouseIndex)
 		{
 			if (mouseIndex < 0)
@@ -75,7 +75,7 @@ namespace Rewired.Integration.UnityUI
 			return null;
 		}
 
-		// Token: 0x0600176E RID: 5998 RVA: 0x00011FED File Offset: 0x000101ED
+		// Token: 0x06001364 RID: 4964 RVA: 0x00052204 File Offset: 0x00050404
 		public void RemoveMouseInputSource(IMouseInputSource source)
 		{
 			if (source == null)
@@ -85,7 +85,7 @@ namespace Rewired.Integration.UnityUI
 			this.m_MouseInputSourcesList.Remove(source);
 		}
 
-		// Token: 0x0600176F RID: 5999 RVA: 0x0001200A File Offset: 0x0001020A
+		// Token: 0x06001365 RID: 4965 RVA: 0x00052221 File Offset: 0x00050421
 		public void AddMouseInputSource(IMouseInputSource source)
 		{
 			if (UnityTools.IsNullOrDestroyed<IMouseInputSource>(source))
@@ -95,7 +95,7 @@ namespace Rewired.Integration.UnityUI
 			this.m_MouseInputSourcesList.Add(source);
 		}
 
-		// Token: 0x06001770 RID: 6000 RVA: 0x000644BC File Offset: 0x000626BC
+		// Token: 0x06001366 RID: 4966 RVA: 0x00052244 File Offset: 0x00050444
 		public int GetMouseInputSourceCount(int playerId)
 		{
 			if (this.m_MouseInputSourcesList.Count == 0 && this.IsDefaultPlayer(playerId))
@@ -115,7 +115,7 @@ namespace Rewired.Integration.UnityUI
 			return num;
 		}
 
-		// Token: 0x06001771 RID: 6001 RVA: 0x0001202B File Offset: 0x0001022B
+		// Token: 0x06001367 RID: 4967 RVA: 0x000522A6 File Offset: 0x000504A6
 		public ITouchInputSource GetTouchInputSource(int playerId, int sourceIndex)
 		{
 			if (!UnityTools.IsNullOrDestroyed<ITouchInputSource>(this.m_UserDefaultTouchInputSource))
@@ -125,7 +125,7 @@ namespace Rewired.Integration.UnityUI
 			return this.defaultTouchInputSource;
 		}
 
-		// Token: 0x06001772 RID: 6002 RVA: 0x00012047 File Offset: 0x00010247
+		// Token: 0x06001368 RID: 4968 RVA: 0x000522C2 File Offset: 0x000504C2
 		public void RemoveTouchInputSource(ITouchInputSource source)
 		{
 			if (source == null)
@@ -138,7 +138,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x06001773 RID: 6003 RVA: 0x00012067 File Offset: 0x00010267
+		// Token: 0x06001369 RID: 4969 RVA: 0x000522E2 File Offset: 0x000504E2
 		public void AddTouchInputSource(ITouchInputSource source)
 		{
 			if (UnityTools.IsNullOrDestroyed<ITouchInputSource>(source))
@@ -148,7 +148,7 @@ namespace Rewired.Integration.UnityUI
 			this.m_UserDefaultTouchInputSource = source;
 		}
 
-		// Token: 0x06001774 RID: 6004 RVA: 0x00012083 File Offset: 0x00010283
+		// Token: 0x0600136A RID: 4970 RVA: 0x000522FE File Offset: 0x000504FE
 		public int GetTouchInputSourceCount(int playerId)
 		{
 			if (!this.IsDefaultPlayer(playerId))
@@ -158,13 +158,13 @@ namespace Rewired.Integration.UnityUI
 			return 1;
 		}
 
-		// Token: 0x06001775 RID: 6005 RVA: 0x00012091 File Offset: 0x00010291
+		// Token: 0x0600136B RID: 4971 RVA: 0x0005230C File Offset: 0x0005050C
 		protected void ClearMouseInputSources()
 		{
 			this.m_MouseInputSourcesList.Clear();
 		}
 
-		// (get) Token: 0x06001776 RID: 6006 RVA: 0x00064520 File Offset: 0x00062720
+		// (get) Token: 0x0600136C RID: 4972 RVA: 0x0005231C File Offset: 0x0005051C
 		protected virtual bool isMouseSupported
 		{
 			get
@@ -187,7 +187,7 @@ namespace Rewired.Integration.UnityUI
 
 		protected abstract bool IsDefaultPlayer(int playerId);
 
-		// Token: 0x06001778 RID: 6008 RVA: 0x0006456C File Offset: 0x0006276C
+		// Token: 0x0600136E RID: 4974 RVA: 0x00052368 File Offset: 0x00050568
 		protected bool GetPointerData(int playerId, int pointerIndex, int pointerTypeId, out PlayerPointerEventData data, bool create, PointerEventType pointerEventType)
 		{
 			Dictionary<int, PlayerPointerEventData>[] array;
@@ -227,7 +227,7 @@ namespace Rewired.Integration.UnityUI
 			return true;
 		}
 
-		// Token: 0x06001779 RID: 6009 RVA: 0x00064654 File Offset: 0x00062854
+		// Token: 0x0600136F RID: 4975 RVA: 0x00052450 File Offset: 0x00050650
 		private PlayerPointerEventData CreatePointerEventData(int playerId, int pointerIndex, int pointerTypeId, PointerEventType pointerEventType)
 		{
 			PlayerPointerEventData playerPointerEventData = new PlayerPointerEventData(base.eventSystem)
@@ -264,7 +264,7 @@ namespace Rewired.Integration.UnityUI
 			return playerPointerEventData;
 		}
 
-		// Token: 0x0600177A RID: 6010 RVA: 0x000646F8 File Offset: 0x000628F8
+		// Token: 0x06001370 RID: 4976 RVA: 0x000524F4 File Offset: 0x000506F4
 		protected void RemovePointerData(PlayerPointerEventData data)
 		{
 			Dictionary<int, PlayerPointerEventData>[] array;
@@ -274,7 +274,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x0600177B RID: 6011 RVA: 0x0006473C File Offset: 0x0006293C
+		// Token: 0x06001371 RID: 4977 RVA: 0x00052538 File Offset: 0x00050738
 		protected PlayerPointerEventData GetTouchPointerEventData(int playerId, int touchDeviceIndex, Touch input, out bool pressed, out bool released)
 		{
 			PlayerPointerEventData playerPointerEventData;
@@ -303,7 +303,7 @@ namespace Rewired.Integration.UnityUI
 			return playerPointerEventData;
 		}
 
-		// Token: 0x0600177C RID: 6012 RVA: 0x00064810 File Offset: 0x00062A10
+		// Token: 0x06001372 RID: 4978 RVA: 0x0005260C File Offset: 0x0005080C
 		protected virtual RewiredPointerInputModule.MouseState GetMousePointerEventData(int playerId, int mouseIndex)
 		{
 			IMouseInputSource mouseInputSource = this.GetMouseInputSource(playerId, mouseIndex);
@@ -362,7 +362,7 @@ namespace Rewired.Integration.UnityUI
 			return this.m_MouseState;
 		}
 
-		// Token: 0x0600177D RID: 6013 RVA: 0x000649EC File Offset: 0x00062BEC
+		// Token: 0x06001373 RID: 4979 RVA: 0x000527E8 File Offset: 0x000509E8
 		protected PlayerPointerEventData GetLastPointerEventData(int playerId, int pointerIndex, int pointerTypeId, bool ignorePointerTypeId, PointerEventType pointerEventType)
 		{
 			if (!ignorePointerTypeId)
@@ -391,13 +391,13 @@ namespace Rewired.Integration.UnityUI
 			return null;
 		}
 
-		// Token: 0x0600177E RID: 6014 RVA: 0x00064A74 File Offset: 0x00062C74
+		// Token: 0x06001374 RID: 4980 RVA: 0x00052870 File Offset: 0x00050A70
 		private static bool ShouldStartDrag(Vector2 pressPos, Vector2 currentPos, float threshold, bool useDragThreshold)
 		{
 			return !useDragThreshold || (pressPos - currentPos).sqrMagnitude >= threshold * threshold;
 		}
 
-		// Token: 0x0600177F RID: 6015 RVA: 0x00064AA0 File Offset: 0x00062CA0
+		// Token: 0x06001375 RID: 4981 RVA: 0x0005289C File Offset: 0x00050A9C
 		protected virtual void ProcessMove(PlayerPointerEventData pointerEvent)
 		{
 			GameObject gameObject;
@@ -424,7 +424,7 @@ namespace Rewired.Integration.UnityUI
 			base.HandlePointerExitAndEnter(pointerEvent, gameObject);
 		}
 
-		// Token: 0x06001780 RID: 6016 RVA: 0x00064B1C File Offset: 0x00062D1C
+		// Token: 0x06001376 RID: 4982 RVA: 0x00052918 File Offset: 0x00050B18
 		protected virtual void ProcessDrag(PlayerPointerEventData pointerEvent)
 		{
 			if (!pointerEvent.IsPointerMoving() || pointerEvent.pointerDrag == null)
@@ -457,7 +457,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x06001781 RID: 6017 RVA: 0x00064C0C File Offset: 0x00062E0C
+		// Token: 0x06001377 RID: 4983 RVA: 0x00052A08 File Offset: 0x00050C08
 		public override bool IsPointerOverGameObject(int pointerTypeId)
 		{
 			foreach (KeyValuePair<int, Dictionary<int, PlayerPointerEventData>[]> keyValuePair in this.m_PlayerPointerData)
@@ -475,7 +475,7 @@ namespace Rewired.Integration.UnityUI
 			return false;
 		}
 
-		// Token: 0x06001782 RID: 6018 RVA: 0x00064C94 File Offset: 0x00062E94
+		// Token: 0x06001378 RID: 4984 RVA: 0x00052A90 File Offset: 0x00050C90
 		protected void ClearSelection()
 		{
 			BaseEventData baseEventData = this.GetBaseEventData();
@@ -494,7 +494,7 @@ namespace Rewired.Integration.UnityUI
 			base.eventSystem.SetSelectedGameObject(null, baseEventData);
 		}
 
-		// Token: 0x06001783 RID: 6019 RVA: 0x00064D60 File Offset: 0x00062F60
+		// Token: 0x06001379 RID: 4985 RVA: 0x00052B5C File Offset: 0x00050D5C
 		public override string ToString()
 		{
 			string text = "<b>Pointer Input Module of type: </b>";
@@ -518,7 +518,7 @@ namespace Rewired.Integration.UnityUI
 			return stringBuilder.ToString();
 		}
 
-		// Token: 0x06001784 RID: 6020 RVA: 0x0001209E File Offset: 0x0001029E
+		// Token: 0x0600137A RID: 4986 RVA: 0x00052CA8 File Offset: 0x00050EA8
 		protected void DeselectIfSelectionChanged(GameObject currentOverGo, BaseEventData pointerEvent)
 		{
 			if (ExecuteEvents.GetEventHandler<ISelectHandler>(currentOverGo) != base.eventSystem.currentSelectedGameObject)
@@ -527,7 +527,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x06001785 RID: 6021 RVA: 0x000120C5 File Offset: 0x000102C5
+		// Token: 0x0600137B RID: 4987 RVA: 0x00052CCF File Offset: 0x00050ECF
 		protected void CopyFromTo(PointerEventData from, PointerEventData to)
 		{
 			to.position = from.position;
@@ -537,7 +537,7 @@ namespace Rewired.Integration.UnityUI
 			to.pointerEnter = from.pointerEnter;
 		}
 
-		// Token: 0x06001786 RID: 6022 RVA: 0x00064EAC File Offset: 0x000630AC
+		// Token: 0x0600137C RID: 4988 RVA: 0x00052D10 File Offset: 0x00050F10
 		protected PointerEventData.FramePressState StateForMouseButton(int playerId, int mouseIndex, int buttonId)
 		{
 			IMouseInputSource mouseInputSource = this.GetMouseInputSource(playerId, mouseIndex);
@@ -588,7 +588,7 @@ namespace Rewired.Integration.UnityUI
 
 		protected class MouseState
 		{
-			// Token: 0x06001788 RID: 6024 RVA: 0x00064EEC File Offset: 0x000630EC
+			// Token: 0x06001BF2 RID: 7154 RVA: 0x000751DC File Offset: 0x000733DC
 			public bool AnyPressesThisFrame()
 			{
 				for (int i = 0; i < this.m_TrackedButtons.Count; i++)
@@ -601,7 +601,7 @@ namespace Rewired.Integration.UnityUI
 				return false;
 			}
 
-			// Token: 0x06001789 RID: 6025 RVA: 0x00064F2C File Offset: 0x0006312C
+			// Token: 0x06001BF3 RID: 7155 RVA: 0x0007521C File Offset: 0x0007341C
 			public bool AnyReleasesThisFrame()
 			{
 				for (int i = 0; i < this.m_TrackedButtons.Count; i++)
@@ -614,7 +614,7 @@ namespace Rewired.Integration.UnityUI
 				return false;
 			}
 
-			// Token: 0x0600178A RID: 6026 RVA: 0x00064F6C File Offset: 0x0006316C
+			// Token: 0x06001BF4 RID: 7156 RVA: 0x0007525C File Offset: 0x0007345C
 			public RewiredPointerInputModule.ButtonState GetButtonState(int button)
 			{
 				RewiredPointerInputModule.ButtonState buttonState = null;
@@ -638,7 +638,7 @@ namespace Rewired.Integration.UnityUI
 				return buttonState;
 			}
 
-			// Token: 0x0600178B RID: 6027 RVA: 0x0001212C File Offset: 0x0001032C
+			// Token: 0x06001BF5 RID: 7157 RVA: 0x000752CC File Offset: 0x000734CC
 			public void SetButtonState(int button, PointerEventData.FramePressState stateForMouseButton, PlayerPointerEventData data)
 			{
 				RewiredPointerInputModule.ButtonState buttonState = this.GetButtonState(button);
@@ -651,13 +651,13 @@ namespace Rewired.Integration.UnityUI
 
 		public class MouseButtonEventData
 		{
-			// Token: 0x0600178D RID: 6029 RVA: 0x0001215F File Offset: 0x0001035F
+			// Token: 0x06001BF7 RID: 7159 RVA: 0x000752FF File Offset: 0x000734FF
 			public bool PressedThisFrame()
 			{
 				return this.buttonState == PointerEventData.FramePressState.Pressed || this.buttonState == PointerEventData.FramePressState.PressedAndReleased;
 			}
 
-			// Token: 0x0600178E RID: 6030 RVA: 0x00012174 File Offset: 0x00010374
+			// Token: 0x06001BF8 RID: 7160 RVA: 0x00075314 File Offset: 0x00073514
 			public bool ReleasedThisFrame()
 			{
 				return this.buttonState == PointerEventData.FramePressState.Released || this.buttonState == PointerEventData.FramePressState.PressedAndReleased;
@@ -670,8 +670,8 @@ namespace Rewired.Integration.UnityUI
 
 		protected class ButtonState
 		{
-			// (get) Token: 0x06001790 RID: 6032 RVA: 0x0001218A File Offset: 0x0001038A
-			// (set) Token: 0x06001791 RID: 6033 RVA: 0x00012192 File Offset: 0x00010392
+			// (get) Token: 0x06001BFA RID: 7162 RVA: 0x00075332 File Offset: 0x00073532
+			// (set) Token: 0x06001BFB RID: 7163 RVA: 0x0007533A File Offset: 0x0007353A
 			public RewiredPointerInputModule.MouseButtonEventData eventData
 			{
 				get
@@ -684,8 +684,8 @@ namespace Rewired.Integration.UnityUI
 				}
 			}
 
-			// (get) Token: 0x06001792 RID: 6034 RVA: 0x0001219B File Offset: 0x0001039B
-			// (set) Token: 0x06001793 RID: 6035 RVA: 0x000121A3 File Offset: 0x000103A3
+			// (get) Token: 0x06001BFC RID: 7164 RVA: 0x00075343 File Offset: 0x00073543
+			// (set) Token: 0x06001BFD RID: 7165 RVA: 0x0007534B File Offset: 0x0007354B
 			public int button
 			{
 				get
@@ -705,7 +705,7 @@ namespace Rewired.Integration.UnityUI
 
 		private sealed class UnityInputSource : IMouseInputSource, ITouchInputSource
 		{
-			// (get) Token: 0x06001795 RID: 6037 RVA: 0x000121AC File Offset: 0x000103AC
+			// (get) Token: 0x06001BFF RID: 7167 RVA: 0x0007535C File Offset: 0x0007355C
 			int IMouseInputSource.playerId
 			{
 				get
@@ -715,7 +715,7 @@ namespace Rewired.Integration.UnityUI
 				}
 			}
 
-			// (get) Token: 0x06001796 RID: 6038 RVA: 0x000121AC File Offset: 0x000103AC
+			// (get) Token: 0x06001C00 RID: 7168 RVA: 0x00075365 File Offset: 0x00073565
 			int ITouchInputSource.playerId
 			{
 				get
@@ -725,7 +725,7 @@ namespace Rewired.Integration.UnityUI
 				}
 			}
 
-			// (get) Token: 0x06001797 RID: 6039 RVA: 0x000121B5 File Offset: 0x000103B5
+			// (get) Token: 0x06001C01 RID: 7169 RVA: 0x0007536E File Offset: 0x0007356E
 			bool IMouseInputSource.enabled
 			{
 				get
@@ -735,7 +735,7 @@ namespace Rewired.Integration.UnityUI
 				}
 			}
 
-			// (get) Token: 0x06001798 RID: 6040 RVA: 0x000121BE File Offset: 0x000103BE
+			// (get) Token: 0x06001C02 RID: 7170 RVA: 0x00075377 File Offset: 0x00073577
 			bool IMouseInputSource.locked
 			{
 				get
@@ -745,7 +745,7 @@ namespace Rewired.Integration.UnityUI
 				}
 			}
 
-			// (get) Token: 0x06001799 RID: 6041 RVA: 0x000121CE File Offset: 0x000103CE
+			// (get) Token: 0x06001C03 RID: 7171 RVA: 0x00075387 File Offset: 0x00073587
 			int IMouseInputSource.buttonCount
 			{
 				get
@@ -755,28 +755,28 @@ namespace Rewired.Integration.UnityUI
 				}
 			}
 
-			// Token: 0x0600179A RID: 6042 RVA: 0x000121D7 File Offset: 0x000103D7
+			// Token: 0x06001C04 RID: 7172 RVA: 0x00075390 File Offset: 0x00073590
 			bool IMouseInputSource.GetButtonDown(int button)
 			{
 				this.TryUpdate();
 				return Input.GetMouseButtonDown(button);
 			}
 
-			// Token: 0x0600179B RID: 6043 RVA: 0x000121E5 File Offset: 0x000103E5
+			// Token: 0x06001C05 RID: 7173 RVA: 0x0007539E File Offset: 0x0007359E
 			bool IMouseInputSource.GetButtonUp(int button)
 			{
 				this.TryUpdate();
 				return Input.GetMouseButtonUp(button);
 			}
 
-			// Token: 0x0600179C RID: 6044 RVA: 0x000121F3 File Offset: 0x000103F3
+			// Token: 0x06001C06 RID: 7174 RVA: 0x000753AC File Offset: 0x000735AC
 			bool IMouseInputSource.GetButton(int button)
 			{
 				this.TryUpdate();
 				return Input.GetMouseButton(button);
 			}
 
-			// (get) Token: 0x0600179D RID: 6045 RVA: 0x00012201 File Offset: 0x00010401
+			// (get) Token: 0x06001C07 RID: 7175 RVA: 0x000753BA File Offset: 0x000735BA
 			Vector2 IMouseInputSource.screenPosition
 			{
 				get
@@ -786,7 +786,7 @@ namespace Rewired.Integration.UnityUI
 				}
 			}
 
-			// (get) Token: 0x0600179E RID: 6046 RVA: 0x00012213 File Offset: 0x00010413
+			// (get) Token: 0x06001C08 RID: 7176 RVA: 0x000753CC File Offset: 0x000735CC
 			Vector2 IMouseInputSource.screenPositionDelta
 			{
 				get
@@ -796,7 +796,7 @@ namespace Rewired.Integration.UnityUI
 				}
 			}
 
-			// (get) Token: 0x0600179F RID: 6047 RVA: 0x0001222C File Offset: 0x0001042C
+			// (get) Token: 0x06001C09 RID: 7177 RVA: 0x000753E5 File Offset: 0x000735E5
 			Vector2 IMouseInputSource.wheelDelta
 			{
 				get
@@ -806,7 +806,7 @@ namespace Rewired.Integration.UnityUI
 				}
 			}
 
-			// (get) Token: 0x060017A0 RID: 6048 RVA: 0x00012239 File Offset: 0x00010439
+			// (get) Token: 0x06001C0A RID: 7178 RVA: 0x000753F2 File Offset: 0x000735F2
 			bool ITouchInputSource.touchSupported
 			{
 				get
@@ -816,7 +816,7 @@ namespace Rewired.Integration.UnityUI
 				}
 			}
 
-			// (get) Token: 0x060017A1 RID: 6049 RVA: 0x00012246 File Offset: 0x00010446
+			// (get) Token: 0x06001C0B RID: 7179 RVA: 0x000753FF File Offset: 0x000735FF
 			int ITouchInputSource.touchCount
 			{
 				get
@@ -826,14 +826,14 @@ namespace Rewired.Integration.UnityUI
 				}
 			}
 
-			// Token: 0x060017A2 RID: 6050 RVA: 0x00012253 File Offset: 0x00010453
+			// Token: 0x06001C0C RID: 7180 RVA: 0x0007540C File Offset: 0x0007360C
 			Touch ITouchInputSource.GetTouch(int index)
 			{
 				this.TryUpdate();
 				return Input.GetTouch(index);
 			}
 
-			// Token: 0x060017A3 RID: 6051 RVA: 0x00012261 File Offset: 0x00010461
+			// Token: 0x06001C0D RID: 7181 RVA: 0x0007541A File Offset: 0x0007361A
 			private void TryUpdate()
 			{
 				if (Time.frameCount == this.m_LastUpdatedFrame)

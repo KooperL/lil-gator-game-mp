@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DistanceTimeout : MonoBehaviour, IManagedUpdate
 {
-	// (set) Token: 0x0600060D RID: 1549 RVA: 0x0000651B File Offset: 0x0000471B
+	// (set) Token: 0x060004C7 RID: 1223 RVA: 0x0001A10F File Offset: 0x0001830F
 	public bool AutomaticTimeout
 	{
 		set
@@ -12,13 +12,13 @@ public class DistanceTimeout : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x0600060E RID: 1550 RVA: 0x00006524 File Offset: 0x00004724
+	// Token: 0x060004C8 RID: 1224 RVA: 0x0001A118 File Offset: 0x00018318
 	private void Awake()
 	{
 		this.sqrDistance = this.distance * this.distance;
 	}
 
-	// Token: 0x0600060F RID: 1551 RVA: 0x00006539 File Offset: 0x00004739
+	// Token: 0x060004C9 RID: 1225 RVA: 0x0001A12D File Offset: 0x0001832D
 	private void OnEnable()
 	{
 		if (this.automaticTimeout)
@@ -28,13 +28,13 @@ public class DistanceTimeout : MonoBehaviour, IManagedUpdate
 		FastUpdateManager.updateEvery4.Add(this);
 	}
 
-	// Token: 0x06000610 RID: 1552 RVA: 0x000026CE File Offset: 0x000008CE
+	// Token: 0x060004CA RID: 1226 RVA: 0x0001A154 File Offset: 0x00018354
 	private void OnDisable()
 	{
 		FastUpdateManager.updateEvery4.Remove(this);
 	}
 
-	// Token: 0x06000611 RID: 1553 RVA: 0x00030524 File Offset: 0x0002E724
+	// Token: 0x060004CB RID: 1227 RVA: 0x0001A164 File Offset: 0x00018364
 	public void ManagedUpdate()
 	{
 		Vector3 vector = MainCamera.t.position - base.transform.position;
@@ -48,7 +48,7 @@ public class DistanceTimeout : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000612 RID: 1554 RVA: 0x0003058C File Offset: 0x0002E78C
+	// Token: 0x060004CC RID: 1228 RVA: 0x0001A1CC File Offset: 0x000183CC
 	public void Timeout()
 	{
 		if (this.callback == null && this.callbackObject != null)
@@ -70,10 +70,10 @@ public class DistanceTimeout : MonoBehaviour, IManagedUpdate
 				}
 			}
 		}
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000613 RID: 1555 RVA: 0x00006560 File Offset: 0x00004760
+	// Token: 0x060004CD RID: 1229 RVA: 0x0001A267 File Offset: 0x00018467
 	public void SetTimeoutTime(float timeFromNow)
 	{
 		this.automaticTimeoutTime = Time.time + timeFromNow;

@@ -3,19 +3,19 @@ using UnityEngine.Events;
 
 public class LogicStateCollectGrass : LogicState
 {
-	// Token: 0x06000925 RID: 2341 RVA: 0x00008D92 File Offset: 0x00006F92
+	// Token: 0x06000785 RID: 1925 RVA: 0x000252E2 File Offset: 0x000234E2
 	private void OnEnable()
 	{
 		TerrainDetails.onCutDetails.AddListener(new UnityAction<int>(this.OnDetailsCut));
 	}
 
-	// Token: 0x06000926 RID: 2342 RVA: 0x00008DAA File Offset: 0x00006FAA
+	// Token: 0x06000786 RID: 1926 RVA: 0x000252FA File Offset: 0x000234FA
 	private void OnDisable()
 	{
 		TerrainDetails.onCutDetails.RemoveListener(new UnityAction<int>(this.OnDetailsCut));
 	}
 
-	// Token: 0x06000927 RID: 2343 RVA: 0x00008DC2 File Offset: 0x00006FC2
+	// Token: 0x06000787 RID: 1927 RVA: 0x00025312 File Offset: 0x00023512
 	public void OnDetailsCut(int cutAmount)
 	{
 		this.currentCutAmount += cutAmount;

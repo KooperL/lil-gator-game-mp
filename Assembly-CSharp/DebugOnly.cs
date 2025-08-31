@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class DebugOnly : MonoBehaviour
 {
-	// Token: 0x06000358 RID: 856 RVA: 0x000049DF File Offset: 0x00002BDF
+	// Token: 0x060002EF RID: 751 RVA: 0x0001157F File Offset: 0x0000F77F
 	private void Update()
 	{
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 	}
 }

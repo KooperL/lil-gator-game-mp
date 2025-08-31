@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PickupQuickly : MonoBehaviour
 {
-	// Token: 0x06000BE6 RID: 3046 RVA: 0x0000B1B8 File Offset: 0x000093B8
+	// Token: 0x060009F0 RID: 2544 RVA: 0x0002E4E6 File Offset: 0x0002C6E6
 	public void OnHit()
 	{
 		TriggerPickup.TriggerQuickPickup();

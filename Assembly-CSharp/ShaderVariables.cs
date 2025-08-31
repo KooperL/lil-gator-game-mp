@@ -4,13 +4,13 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ShaderVariables : MonoBehaviour
 {
-	// Token: 0x06000F6A RID: 3946 RVA: 0x0000D591 File Offset: 0x0000B791
+	// Token: 0x06000C67 RID: 3175 RVA: 0x0003C1C4 File Offset: 0x0003A3C4
 	private void Awake()
 	{
 		this.skybox = RenderSettings.skybox;
 	}
 
-	// Token: 0x06000F6B RID: 3947 RVA: 0x0000D59E File Offset: 0x0000B79E
+	// Token: 0x06000C68 RID: 3176 RVA: 0x0003C1D1 File Offset: 0x0003A3D1
 	public void OnEnable()
 	{
 		ShaderVariables.s = this;
@@ -19,19 +19,19 @@ public class ShaderVariables : MonoBehaviour
 		this.UpdateVariables();
 	}
 
-	// Token: 0x06000F6C RID: 3948 RVA: 0x0000D5D7 File Offset: 0x0000B7D7
+	// Token: 0x06000C69 RID: 3177 RVA: 0x0003C20A File Offset: 0x0003A40A
 	public void OnDisable()
 	{
 		this.UpdateVariables();
 	}
 
-	// Token: 0x06000F6D RID: 3949 RVA: 0x0000D5D7 File Offset: 0x0000B7D7
+	// Token: 0x06000C6A RID: 3178 RVA: 0x0003C212 File Offset: 0x0003A412
 	private void OnValidate()
 	{
 		this.UpdateVariables();
 	}
 
-	// Token: 0x06000F6E RID: 3950 RVA: 0x0005157C File Offset: 0x0004F77C
+	// Token: 0x06000C6B RID: 3179 RVA: 0x0003C21C File Offset: 0x0003A41C
 	public void UpdateVariables()
 	{
 		Texture2D fogTexture = this.fogFactor;
@@ -119,12 +119,12 @@ public class ShaderVariables : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F6F RID: 3951 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000C6C RID: 3180 RVA: 0x0003C550 File Offset: 0x0003A750
 	public void SetFog(bool isUnderwater)
 	{
 	}
 
-	// Token: 0x06000F70 RID: 3952 RVA: 0x000518B0 File Offset: 0x0004FAB0
+	// Token: 0x06000C6D RID: 3181 RVA: 0x0003C554 File Offset: 0x0003A754
 	private void LateUpdate()
 	{
 		if (Player.transform != null)
@@ -140,7 +140,7 @@ public class ShaderVariables : MonoBehaviour
 				ref Vector4 ptr = ref this.randomVectorChangeTime;
 				int num = i;
 				ptr[num] += this.randomVectorChangeDelay[i];
-				this.randomVector[i] = global::UnityEngine.Random.value;
+				this.randomVector[i] = Random.value;
 			}
 		}
 		if (EnvironmentalSettings.environmentalSettings.Count > 0)

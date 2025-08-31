@@ -4,7 +4,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class StretchFitString : MonoBehaviour
 {
-	// Token: 0x06000FB9 RID: 4025 RVA: 0x000526D4 File Offset: 0x000508D4
+	// Token: 0x06000CB0 RID: 3248 RVA: 0x0003D6F0 File Offset: 0x0003B8F0
 	private void OnEnable()
 	{
 		if (this.attachTargetToPlayer)
@@ -23,7 +23,7 @@ public class StretchFitString : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FBA RID: 4026 RVA: 0x0000D9A3 File Offset: 0x0000BBA3
+	// Token: 0x06000CB1 RID: 3249 RVA: 0x0003D735 File Offset: 0x0003B935
 	private void Start()
 	{
 		if (base.gameObject.isStatic)
@@ -32,7 +32,7 @@ public class StretchFitString : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000FBB RID: 4027 RVA: 0x0005271C File Offset: 0x0005091C
+	// Token: 0x06000CB2 RID: 3250 RVA: 0x0003D74C File Offset: 0x0003B94C
 	private void LateUpdate()
 	{
 		if (this.anchor != null && this.target != null)

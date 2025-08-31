@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class IgnoreAnimator : MonoBehaviour
 {
-	// Token: 0x060007A4 RID: 1956 RVA: 0x000079DF File Offset: 0x00005BDF
+	// Token: 0x0600063E RID: 1598 RVA: 0x00020543 File Offset: 0x0001E743
 	private void Update()
 	{
 		this.position = base.transform.position;
 		this.rotation = base.transform.rotation;
 	}
 
-	// Token: 0x060007A5 RID: 1957 RVA: 0x00007A03 File Offset: 0x00005C03
+	// Token: 0x0600063F RID: 1599 RVA: 0x00020567 File Offset: 0x0001E767
 	private void LateUpdate()
 	{
 		base.transform.position = this.position;

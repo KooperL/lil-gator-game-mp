@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class EnvironmentalSettings : MonoBehaviour
 {
-	// Token: 0x06000634 RID: 1588 RVA: 0x00030AA0 File Offset: 0x0002ECA0
+	// Token: 0x060004EE RID: 1262 RVA: 0x0001A864 File Offset: 0x00018A64
 	[ContextMenu("Get default values")]
 	public void GetDefaultValues()
 	{
-		ShaderVariables shaderVariables = global::UnityEngine.Object.FindObjectOfType<ShaderVariables>();
+		ShaderVariables shaderVariables = Object.FindObjectOfType<ShaderVariables>();
 		this.fogDistance = shaderVariables.cartoonFogDistance;
 		this.fogFadeDistance = shaderVariables.cartoonFogFadeDistance;
 		this.fogTexture = shaderVariables.fogFactor;
@@ -22,7 +22,7 @@ public class EnvironmentalSettings : MonoBehaviour
 		this.cartoonShadowStrength = shaderVariables.cartoonShadowStrength;
 	}
 
-	// Token: 0x06000635 RID: 1589 RVA: 0x00030B2C File Offset: 0x0002ED2C
+	// Token: 0x060004EF RID: 1263 RVA: 0x0001A8F0 File Offset: 0x00018AF0
 	private void OnEnable()
 	{
 		int num = -1;
@@ -45,14 +45,14 @@ public class EnvironmentalSettings : MonoBehaviour
 		ShaderVariables.s.UpdateVariables();
 	}
 
-	// Token: 0x06000636 RID: 1590 RVA: 0x000066AD File Offset: 0x000048AD
+	// Token: 0x060004F0 RID: 1264 RVA: 0x0001A957 File Offset: 0x00018B57
 	private void OnDisable()
 	{
 		EnvironmentalSettings.environmentalSettings.Remove(this);
 		ShaderVariables.s.UpdateVariables();
 	}
 
-	// Token: 0x06000637 RID: 1591 RVA: 0x000066C5 File Offset: 0x000048C5
+	// Token: 0x060004F1 RID: 1265 RVA: 0x0001A96F File Offset: 0x00018B6F
 	public void FadeIn(float fadeTime)
 	{
 		this.target = 1f;
@@ -64,7 +64,7 @@ public class EnvironmentalSettings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000638 RID: 1592 RVA: 0x000066F9 File Offset: 0x000048F9
+	// Token: 0x060004F2 RID: 1266 RVA: 0x0001A9A3 File Offset: 0x00018BA3
 	public void FadeOut(float fadeTime)
 	{
 		this.target = 0f;
@@ -76,7 +76,7 @@ public class EnvironmentalSettings : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000639 RID: 1593 RVA: 0x0000672D File Offset: 0x0000492D
+	// Token: 0x060004F3 RID: 1267 RVA: 0x0001A9D7 File Offset: 0x00018BD7
 	private IEnumerator FadeCoroutine()
 	{
 		while (this.strength != this.target)

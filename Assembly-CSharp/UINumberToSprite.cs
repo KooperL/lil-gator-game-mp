@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UINumberToSprite : MonoBehaviour
 {
-	// Token: 0x060012AA RID: 4778 RVA: 0x0005CDE0 File Offset: 0x0005AFE0
+	// Token: 0x06000F47 RID: 3911 RVA: 0x0004984C File Offset: 0x00047A4C
 	private void Start()
 	{
 		if (this.hideAtStart)
@@ -25,7 +25,7 @@ public class UINumberToSprite : MonoBehaviour
 		this.SetNumber(0);
 	}
 
-	// Token: 0x060012AB RID: 4779 RVA: 0x0005CE58 File Offset: 0x0005B058
+	// Token: 0x06000F48 RID: 3912 RVA: 0x000498C4 File Offset: 0x00047AC4
 	public void SetNumber(int number)
 	{
 		if (this.unitImage != null && !this.unitImage.enabled)

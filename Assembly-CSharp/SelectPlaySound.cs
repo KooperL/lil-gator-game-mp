@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class SelectPlaySound : MonoBehaviour, ISelectHandler, IEventSystemHandler
 {
-	// Token: 0x060011A9 RID: 4521 RVA: 0x00058C94 File Offset: 0x00056E94
+	// Token: 0x06000E78 RID: 3704 RVA: 0x000451C4 File Offset: 0x000433C4
 	private float ModifyVolume(float volume)
 	{
 		if (this.sourceVolume < 0f)
@@ -16,7 +16,7 @@ public class SelectPlaySound : MonoBehaviour, ISelectHandler, IEventSystemHandle
 		return volume;
 	}
 
-	// Token: 0x060011AA RID: 4522 RVA: 0x00058CF4 File Offset: 0x00056EF4
+	// Token: 0x06000E79 RID: 3705 RVA: 0x00045224 File Offset: 0x00043424
 	public void OnSelect(BaseEventData eventData)
 	{
 		if (this.audioSource != null)

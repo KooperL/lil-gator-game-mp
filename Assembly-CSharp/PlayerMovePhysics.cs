@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class PlayerMovePhysics : MonoBehaviour
 {
-	// Token: 0x06000162 RID: 354 RVA: 0x00003344 File Offset: 0x00001544
+	// Token: 0x06000135 RID: 309 RVA: 0x0000798A File Offset: 0x00005B8A
 	private void Start()
 	{
 		this.rb = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x06000163 RID: 355 RVA: 0x00003352 File Offset: 0x00001552
+	// Token: 0x06000136 RID: 310 RVA: 0x00007998 File Offset: 0x00005B98
 	private void OnEnable()
 	{
 		base.transform.position += new Vector3(10f, 0f, 0f);
 	}
 
-	// Token: 0x06000164 RID: 356 RVA: 0x0001C718 File Offset: 0x0001A918
+	// Token: 0x06000137 RID: 311 RVA: 0x000079C4 File Offset: 0x00005BC4
 	private void FixedUpdate()
 	{
 		Vector3 vector = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));

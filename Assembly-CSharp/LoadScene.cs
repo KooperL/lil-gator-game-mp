@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class LoadScene : MonoBehaviour
 {
-	// Token: 0x06000177 RID: 375 RVA: 0x00003425 File Offset: 0x00001625
+	// Token: 0x06000144 RID: 324 RVA: 0x00007BE4 File Offset: 0x00005DE4
 	private void Start()
 	{
 		if (this.automatic)
@@ -14,7 +14,7 @@ public class LoadScene : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000178 RID: 376 RVA: 0x0001C93C File Offset: 0x0001AB3C
+	// Token: 0x06000145 RID: 325 RVA: 0x00007BF4 File Offset: 0x00005DF4
 	public void DoLoadScene()
 	{
 		if (this.triggerSave && Game.AllowedToSave)

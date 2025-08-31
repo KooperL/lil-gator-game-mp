@@ -4,13 +4,13 @@ using UnityEngine.Events;
 
 public class BreakableObjectMulti : BreakableObject
 {
-	// Token: 0x060007C7 RID: 1991 RVA: 0x000363C8 File Offset: 0x000345C8
+	// Token: 0x06000661 RID: 1633 RVA: 0x00020FA4 File Offset: 0x0001F1A4
 	private void BreakStageIndex(int stageIndex)
 	{
 		BreakableObjectMulti.BreakStage breakStage = this.breakingStages[stageIndex];
 		if (breakStage.breakingPrefab != null)
 		{
-			global::UnityEngine.Object.Instantiate<GameObject>(breakStage.breakingPrefab, base.transform.position, base.transform.rotation);
+			Object.Instantiate<GameObject>(breakStage.breakingPrefab, base.transform.position, base.transform.rotation);
 		}
 		if (breakStage.staticPieces.Length != 0)
 		{
@@ -22,7 +22,7 @@ public class BreakableObjectMulti : BreakableObject
 		}
 	}
 
-	// Token: 0x060007C8 RID: 1992 RVA: 0x0003643C File Offset: 0x0003463C
+	// Token: 0x06000662 RID: 1634 RVA: 0x00021018 File Offset: 0x0001F218
 	public override void Break(bool fromAttachment, Vector3 velocity, bool isSturdy = false)
 	{
 		if (!this.isBroken)

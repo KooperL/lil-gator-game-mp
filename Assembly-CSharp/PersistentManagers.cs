@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class PersistentManagers : MonoBehaviour
 {
-	// Token: 0x060009DE RID: 2526 RVA: 0x00009810 File Offset: 0x00007A10
+	// Token: 0x06000827 RID: 2087 RVA: 0x00027121 File Offset: 0x00025321
 	private void Awake()
 	{
 		if (PersistentManagers.p != null)
 		{
-			global::UnityEngine.Object.Destroy(base.gameObject);
+			Object.Destroy(base.gameObject);
 			return;
 		}
 		PersistentManagers.p = this;
-		global::UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
+		Object.DontDestroyOnLoad(base.gameObject);
 	}
 
 	public static PersistentManagers p;

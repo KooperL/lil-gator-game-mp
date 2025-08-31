@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class DialogueOption : MonoBehaviour, ISelectHandler, IEventSystemHandler, ISubmitHandler, IPointerClickHandler
 {
-	// Token: 0x060004A4 RID: 1188 RVA: 0x00005644 File Offset: 0x00003844
+	// Token: 0x060003D0 RID: 976 RVA: 0x00016950 File Offset: 0x00014B50
 	public void OnValidate()
 	{
 		if (this.options == null)
@@ -13,19 +13,19 @@ public class DialogueOption : MonoBehaviour, ISelectHandler, IEventSystemHandler
 		}
 	}
 
-	// Token: 0x060004A5 RID: 1189 RVA: 0x00005660 File Offset: 0x00003860
+	// Token: 0x060003D1 RID: 977 RVA: 0x0001696C File Offset: 0x00014B6C
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		this.options.Submit();
 	}
 
-	// Token: 0x060004A6 RID: 1190 RVA: 0x0000566D File Offset: 0x0000386D
+	// Token: 0x060003D2 RID: 978 RVA: 0x00016979 File Offset: 0x00014B79
 	public void OnSelect(BaseEventData eventData)
 	{
 		this.options.SetSelected(this.index);
 	}
 
-	// Token: 0x060004A7 RID: 1191 RVA: 0x00005660 File Offset: 0x00003860
+	// Token: 0x060003D3 RID: 979 RVA: 0x0001698C File Offset: 0x00014B8C
 	public void OnSubmit(BaseEventData eventData)
 	{
 		this.options.Submit();

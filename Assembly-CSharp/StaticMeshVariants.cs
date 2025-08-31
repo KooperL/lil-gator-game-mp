@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class StaticMeshVariants : MonoBehaviour
 {
-	// Token: 0x06000FB7 RID: 4023 RVA: 0x0000D98B File Offset: 0x0000BB8B
+	// Token: 0x06000CAE RID: 3246 RVA: 0x0003D6CF File Offset: 0x0003B8CF
 	[ContextMenu("Randomize Variants")]
 	public void RandomizeVariants()
 	{

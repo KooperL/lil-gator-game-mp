@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UINewGamePlusMessage : MonoBehaviour
 {
-	// Token: 0x060001A3 RID: 419 RVA: 0x00003609 File Offset: 0x00001809
+	// Token: 0x0600016A RID: 362 RVA: 0x00008752 File Offset: 0x00006952
 	private void Start()
 	{
 		if (Settings.s.ReadBool("HasDisplayedNewGamePlusMessage", false))

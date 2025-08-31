@@ -5,7 +5,7 @@ using UnityEngine;
 [AddComponentMenu("Wobble/Brain")]
 public class WobbleBrain : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06001045 RID: 4165 RVA: 0x00054CA8 File Offset: 0x00052EA8
+	// Token: 0x06000D3B RID: 3387 RVA: 0x00040350 File Offset: 0x0003E550
 	private void Start()
 	{
 		List<WobbleBoneBase> list = new List<WobbleBoneBase>();
@@ -20,7 +20,7 @@ public class WobbleBrain : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06001046 RID: 4166 RVA: 0x00054D10 File Offset: 0x00052F10
+	// Token: 0x06000D3C RID: 3388 RVA: 0x000403B8 File Offset: 0x0003E5B8
 	private void AddChildren(Transform parent, ref List<WobbleBoneBase> boneList)
 	{
 		foreach (object obj in parent)
@@ -38,20 +38,20 @@ public class WobbleBrain : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06001047 RID: 4167 RVA: 0x00002B40 File Offset: 0x00000D40
+	// Token: 0x06000D3D RID: 3389 RVA: 0x00040430 File Offset: 0x0003E630
 	private void OnEnable()
 	{
 		FastUpdateManager.updateEveryNonFixed.Add(this);
 	}
 
-	// Token: 0x06001048 RID: 4168 RVA: 0x0000DF98 File Offset: 0x0000C198
+	// Token: 0x06000D3E RID: 3390 RVA: 0x0004043D File Offset: 0x0003E63D
 	private void OnDisable()
 	{
 		this.isPaused = true;
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x06001049 RID: 4169 RVA: 0x00054D88 File Offset: 0x00052F88
+	// Token: 0x06000D3F RID: 3391 RVA: 0x00040454 File Offset: 0x0003E654
 	public void ManagedUpdate()
 	{
 		float num = Mathf.Min(Time.time - this.lastManagedUpdateTime, 0.5f);
@@ -77,7 +77,7 @@ public class WobbleBrain : MonoBehaviour, IManagedUpdate
 		this.lastManagedUpdateTime = Time.time;
 	}
 
-	// Token: 0x0600104A RID: 4170 RVA: 0x00054E3C File Offset: 0x0005303C
+	// Token: 0x06000D40 RID: 3392 RVA: 0x00040508 File Offset: 0x0003E708
 	private void LateUpdate()
 	{
 		if (this.isPaused)
@@ -99,7 +99,7 @@ public class WobbleBrain : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x0600104B RID: 4171 RVA: 0x00054EAC File Offset: 0x000530AC
+	// Token: 0x06000D41 RID: 3393 RVA: 0x00040578 File Offset: 0x0003E778
 	public void Reacclimate()
 	{
 		if (this.bones != null)

@@ -4,7 +4,7 @@ using UnityEngine;
 [AddComponentMenu("Quest Reward NPCs")]
 public class QuestRewardNPCs : QuestReward
 {
-	// Token: 0x06000E5A RID: 3674 RVA: 0x0004D49C File Offset: 0x0004B69C
+	// Token: 0x06000BB8 RID: 3000 RVA: 0x00038DA8 File Offset: 0x00036FA8
 	[ContextMenu("Give Reward")]
 	public override void GiveReward()
 	{

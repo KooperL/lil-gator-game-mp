@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AttachToBone : MonoBehaviour
 {
-	// Token: 0x06000B16 RID: 2838 RVA: 0x0003FD38 File Offset: 0x0003DF38
+	// Token: 0x06000932 RID: 2354 RVA: 0x0002BC48 File Offset: 0x00029E48
 	private void Start()
 	{
 		if (this.useInitialTransform)
@@ -27,7 +27,7 @@ public class AttachToBone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B17 RID: 2839 RVA: 0x0003FDC0 File Offset: 0x0003DFC0
+	// Token: 0x06000933 RID: 2355 RVA: 0x0002BCD0 File Offset: 0x00029ED0
 	private Vector3 GetDirection(AttachToBone.DirectionSource source, Vector3 direction)
 	{
 		switch (source)
@@ -43,7 +43,7 @@ public class AttachToBone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B18 RID: 2840 RVA: 0x0003FE1C File Offset: 0x0003E01C
+	// Token: 0x06000934 RID: 2356 RVA: 0x0002BD2C File Offset: 0x00029F2C
 	private void LateUpdate()
 	{
 		base.transform.position = this.attachedTransform.TransformPoint(this.localPosition);

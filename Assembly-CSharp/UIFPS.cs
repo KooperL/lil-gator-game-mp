@@ -4,21 +4,21 @@ using UnityEngine.UI;
 
 public class UIFPS : MonoBehaviour
 {
-	// Token: 0x06001209 RID: 4617 RVA: 0x0000F53B File Offset: 0x0000D73B
+	// Token: 0x06000ED0 RID: 3792 RVA: 0x00046C99 File Offset: 0x00044E99
 	private void Start()
 	{
 		this.frameConsistency = new bool[10];
 		this.frameTimings = new FrameTiming[20];
 	}
 
-	// Token: 0x0600120A RID: 4618 RVA: 0x0000F557 File Offset: 0x0000D757
+	// Token: 0x06000ED1 RID: 3793 RVA: 0x00046CB5 File Offset: 0x00044EB5
 	private void OnEnable()
 	{
 		this.display.text = "";
 		this.updateDisplayCounter = 0;
 	}
 
-	// Token: 0x0600120B RID: 4619 RVA: 0x0000F570 File Offset: 0x0000D770
+	// Token: 0x06000ED2 RID: 3794 RVA: 0x00046CCE File Offset: 0x00044ECE
 	private void Update()
 	{
 		FrameTimingManager.CaptureFrameTimings();
@@ -30,7 +30,7 @@ public class UIFPS : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600120C RID: 4620 RVA: 0x0005A3E0 File Offset: 0x000585E0
+	// Token: 0x06000ED3 RID: 3795 RVA: 0x00046CFC File Offset: 0x00044EFC
 	private void UpdateDisplay()
 	{
 		uint latestTimings = FrameTimingManager.GetLatestTimings(20U, this.frameTimings);

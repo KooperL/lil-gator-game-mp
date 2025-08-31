@@ -4,13 +4,13 @@ using UnityEngine.Rendering;
 
 public class SetRendererSettings : MonoBehaviour
 {
-	// Token: 0x0600068D RID: 1677 RVA: 0x00006B91 File Offset: 0x00004D91
+	// Token: 0x06000541 RID: 1345 RVA: 0x0001C0AD File Offset: 0x0001A2AD
 	private void OnEnable()
 	{
 		this.SetSettings();
 	}
 
-	// Token: 0x0600068E RID: 1678 RVA: 0x00006B99 File Offset: 0x00004D99
+	// Token: 0x06000542 RID: 1346 RVA: 0x0001C0B5 File Offset: 0x0001A2B5
 	[ContextMenu("Set Settings")]
 	public void SetSettings()
 	{

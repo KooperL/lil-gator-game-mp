@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [CreateAssetMenu]
 public class QuestProfile : ScriptableObject
 {
-	// (get) Token: 0x060001B4 RID: 436 RVA: 0x0001D71C File Offset: 0x0001B91C
+	// (get) Token: 0x0600017B RID: 379 RVA: 0x00008A9C File Offset: 0x00006C9C
 	public bool IsComplete
 	{
 		get
@@ -27,7 +27,7 @@ public class QuestProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x060001B5 RID: 437 RVA: 0x0001D774 File Offset: 0x0001B974
+	// Token: 0x0600017C RID: 380 RVA: 0x00008AF4 File Offset: 0x00006CF4
 	private void OnValidate()
 	{
 		if (this.key == "" && this.questTitle != "")
@@ -47,7 +47,7 @@ public class QuestProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x060001B6 RID: 438 RVA: 0x0001D834 File Offset: 0x0001BA34
+	// Token: 0x0600017D RID: 381 RVA: 0x00008BB4 File Offset: 0x00006DB4
 	[ContextMenu("Add entries to document")]
 	public void AddEntries()
 	{
@@ -60,7 +60,7 @@ public class QuestProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x060001B7 RID: 439 RVA: 0x000036EA File Offset: 0x000018EA
+	// Token: 0x0600017E RID: 382 RVA: 0x00008C50 File Offset: 0x00006E50
 	private void OnEnable()
 	{
 		if (!QuestProfile.loadedQuestProfiles.Contains(this))
@@ -74,7 +74,7 @@ public class QuestProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x060001B8 RID: 440 RVA: 0x0000371D File Offset: 0x0000191D
+	// Token: 0x0600017F RID: 383 RVA: 0x00008C83 File Offset: 0x00006E83
 	private void OnDisable()
 	{
 		if (QuestProfile.loadedQuestProfiles.Contains(this))
@@ -83,7 +83,7 @@ public class QuestProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x060001B9 RID: 441 RVA: 0x0001D8D0 File Offset: 0x0001BAD0
+	// Token: 0x06000180 RID: 384 RVA: 0x00008CA0 File Offset: 0x00006EA0
 	public bool MarkTaskVisible(int taskIndex, bool autoSave = true)
 	{
 		if (taskIndex >= this.tasks.Length)
@@ -103,7 +103,7 @@ public class QuestProfile : ScriptableObject
 		return true;
 	}
 
-	// Token: 0x060001BA RID: 442 RVA: 0x0001D924 File Offset: 0x0001BB24
+	// Token: 0x06000181 RID: 385 RVA: 0x00008CF4 File Offset: 0x00006EF4
 	public bool MarkTaskComplete(int taskIndex, bool autoSave = true)
 	{
 		if (taskIndex >= this.tasks.Length)
@@ -139,7 +139,7 @@ public class QuestProfile : ScriptableObject
 		return true;
 	}
 
-	// Token: 0x060001BB RID: 443 RVA: 0x0001D9C0 File Offset: 0x0001BBC0
+	// Token: 0x06000182 RID: 386 RVA: 0x00008D90 File Offset: 0x00006F90
 	public void MarkCompleted()
 	{
 		bool flag = this.isComplete;
@@ -163,7 +163,7 @@ public class QuestProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x060001BC RID: 444 RVA: 0x00003738 File Offset: 0x00001938
+	// Token: 0x06000183 RID: 387 RVA: 0x00008E0D File Offset: 0x0000700D
 	public string GetTitle()
 	{
 		if (this.document == null)
@@ -173,7 +173,7 @@ public class QuestProfile : ScriptableObject
 		return this.document.FetchString(this.questTitle, Language.Auto);
 	}
 
-	// Token: 0x060001BD RID: 445 RVA: 0x0001DA40 File Offset: 0x0001BC40
+	// Token: 0x06000184 RID: 388 RVA: 0x00008E38 File Offset: 0x00007038
 	public string GetActiveTask()
 	{
 		QuestProfile.QuestTask[] array = this.tasks;
@@ -197,7 +197,7 @@ public class QuestProfile : ScriptableObject
 		return "";
 	}
 
-	// Token: 0x060001BE RID: 446 RVA: 0x0001DAA4 File Offset: 0x0001BCA4
+	// Token: 0x06000185 RID: 389 RVA: 0x00008E9C File Offset: 0x0000709C
 	public void ResetTasks()
 	{
 		this.lastDisplayTime = -100f;
@@ -209,7 +209,7 @@ public class QuestProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x060001BF RID: 447 RVA: 0x0001DAF4 File Offset: 0x0001BCF4
+	// Token: 0x06000186 RID: 390 RVA: 0x00008EEC File Offset: 0x000070EC
 	[ContextMenu("Load")]
 	public void Load()
 	{
@@ -248,7 +248,7 @@ public class QuestProfile : ScriptableObject
 		goto IL_0093;
 	}
 
-	// Token: 0x060001C0 RID: 448 RVA: 0x0001DBC8 File Offset: 0x0001BDC8
+	// Token: 0x06000187 RID: 391 RVA: 0x00008FC0 File Offset: 0x000071C0
 	[ContextMenu("Save")]
 	public void Save()
 	{
@@ -274,7 +274,7 @@ public class QuestProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x060001C1 RID: 449 RVA: 0x00003762 File Offset: 0x00001962
+	// Token: 0x06000188 RID: 392 RVA: 0x00009087 File Offset: 0x00007287
 	public static IEnumerable<int> GetDigits(int num)
 	{
 		while (num > 0)
@@ -285,7 +285,7 @@ public class QuestProfile : ScriptableObject
 		yield break;
 	}
 
-	// (get) Token: 0x060001C2 RID: 450 RVA: 0x00003772 File Offset: 0x00001972
+	// (get) Token: 0x06000189 RID: 393 RVA: 0x00009097 File Offset: 0x00007297
 	public static QuestProfile ActiveQuestProfile
 	{
 		get
@@ -295,7 +295,7 @@ public class QuestProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x060001C3 RID: 451 RVA: 0x0001DC90 File Offset: 0x0001BE90
+	// Token: 0x0600018A RID: 394 RVA: 0x000090A4 File Offset: 0x000072A4
 	public static void UpdateActiveQuest(bool added)
 	{
 		int num = -1;
@@ -324,7 +324,7 @@ public class QuestProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x060001C4 RID: 452 RVA: 0x0001DD64 File Offset: 0x0001BF64
+	// Token: 0x0600018B RID: 395 RVA: 0x00009178 File Offset: 0x00007378
 	public void QuestZoneTriggered()
 	{
 		if (this.isActiveQuestZone)
@@ -346,13 +346,13 @@ public class QuestProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x060001C5 RID: 453 RVA: 0x0000377F File Offset: 0x0000197F
+	// Token: 0x0600018C RID: 396 RVA: 0x0000921D File Offset: 0x0000741D
 	public void WasDisplayed()
 	{
 		this.lastDisplayTime = Time.realtimeSinceStartup;
 	}
 
-	// (get) Token: 0x060001C6 RID: 454 RVA: 0x0000378C File Offset: 0x0000198C
+	// (get) Token: 0x0600018D RID: 397 RVA: 0x0000922A File Offset: 0x0000742A
 	public bool ShouldShowQuest
 	{
 		get
@@ -361,7 +361,7 @@ public class QuestProfile : ScriptableObject
 		}
 	}
 
-	// Token: 0x060001C7 RID: 455 RVA: 0x0001DE0C File Offset: 0x0001C00C
+	// Token: 0x0600018E RID: 398 RVA: 0x00009254 File Offset: 0x00007454
 	[ContextMenu("Debug best quest")]
 	public void DebugBestQuest()
 	{
@@ -422,7 +422,7 @@ public class QuestProfile : ScriptableObject
 	[Serializable]
 	public struct QuestTask
 	{
-		// Token: 0x060001CA RID: 458 RVA: 0x000037CA File Offset: 0x000019CA
+		// Token: 0x0600182C RID: 6188 RVA: 0x0006754E File Offset: 0x0006574E
 		public string GetTaskText()
 		{
 			if (this.document == null)

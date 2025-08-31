@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class Blackout : MonoBehaviour
 {
-	// Token: 0x06001175 RID: 4469 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000E50 RID: 3664 RVA: 0x00044A33 File Offset: 0x00042C33
 	private static void MarkDialogueDepth()
 	{
 	}
 
-	// Token: 0x06001176 RID: 4470 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000E51 RID: 3665 RVA: 0x00044A35 File Offset: 0x00042C35
 	private static void ClearDialogueDepth()
 	{
 	}
 
-	// Token: 0x06001177 RID: 4471 RVA: 0x0000EF01 File Offset: 0x0000D101
+	// Token: 0x06000E52 RID: 3666 RVA: 0x00044A37 File Offset: 0x00042C37
 	public static Coroutine FadeInAndOut()
 	{
 		Blackout.MarkDialogueDepth();
@@ -24,7 +24,7 @@ public class Blackout : MonoBehaviour
 		return CoroutineUtil.Start(Blackout.b.WaitForFadeOut());
 	}
 
-	// Token: 0x06001178 RID: 4472 RVA: 0x0000EF32 File Offset: 0x0000D132
+	// Token: 0x06000E53 RID: 3667 RVA: 0x00044A68 File Offset: 0x00042C68
 	public static Coroutine FadeIn()
 	{
 		Blackout.MarkDialogueDepth();
@@ -32,7 +32,7 @@ public class Blackout : MonoBehaviour
 		return CoroutineUtil.Start(Blackout.b.WaitForFadeIn());
 	}
 
-	// Token: 0x06001179 RID: 4473 RVA: 0x0000EF58 File Offset: 0x0000D158
+	// Token: 0x06000E54 RID: 3668 RVA: 0x00044A8E File Offset: 0x00042C8E
 	public static Coroutine FadeOut()
 	{
 		if (!Blackout.b.gameObject.activeSelf)
@@ -43,7 +43,7 @@ public class Blackout : MonoBehaviour
 		return CoroutineUtil.Start(Blackout.b.WaitForFadeOut());
 	}
 
-	// Token: 0x0600117A RID: 4474 RVA: 0x00058668 File Offset: 0x00056868
+	// Token: 0x06000E55 RID: 3669 RVA: 0x00044AB8 File Offset: 0x00042CB8
 	public static void Set(float alpha)
 	{
 		Color color = Blackout.b.image.color;
@@ -52,7 +52,7 @@ public class Blackout : MonoBehaviour
 		Blackout.b.gameObject.SetActive(alpha > 0f);
 	}
 
-	// Token: 0x0600117B RID: 4475 RVA: 0x000586B4 File Offset: 0x000568B4
+	// Token: 0x06000E56 RID: 3670 RVA: 0x00044B04 File Offset: 0x00042D04
 	private void Awake()
 	{
 		this.fadeSpeed = 1f / this.fadeTime;
@@ -66,25 +66,25 @@ public class Blackout : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600117C RID: 4476 RVA: 0x0000EF81 File Offset: 0x0000D181
+	// Token: 0x06000E57 RID: 3671 RVA: 0x00044B55 File Offset: 0x00042D55
 	private void OnEnable()
 	{
 		Blackout.b = this;
 	}
 
-	// Token: 0x0600117D RID: 4477 RVA: 0x0000EF89 File Offset: 0x0000D189
+	// Token: 0x06000E58 RID: 3672 RVA: 0x00044B5D File Offset: 0x00042D5D
 	private void OnDisable()
 	{
 		Blackout.ClearDialogueDepth();
 	}
 
-	// Token: 0x0600117E RID: 4478 RVA: 0x0000EF89 File Offset: 0x0000D189
+	// Token: 0x06000E59 RID: 3673 RVA: 0x00044B64 File Offset: 0x00042D64
 	private void OnDestroy()
 	{
 		Blackout.ClearDialogueDepth();
 	}
 
-	// Token: 0x0600117F RID: 4479 RVA: 0x00058708 File Offset: 0x00056908
+	// Token: 0x06000E5A RID: 3674 RVA: 0x00044B6C File Offset: 0x00042D6C
 	private void Update()
 	{
 		if (this.fadeIn)
@@ -110,7 +110,7 @@ public class Blackout : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001180 RID: 4480 RVA: 0x000587B4 File Offset: 0x000569B4
+	// Token: 0x06000E5B RID: 3675 RVA: 0x00044C18 File Offset: 0x00042E18
 	private void UpdateAlpha()
 	{
 		Color color = this.image.color;
@@ -118,7 +118,7 @@ public class Blackout : MonoBehaviour
 		this.image.color = color;
 	}
 
-	// Token: 0x06001181 RID: 4481 RVA: 0x0000EF90 File Offset: 0x0000D190
+	// Token: 0x06000E5C RID: 3676 RVA: 0x00044C4F File Offset: 0x00042E4F
 	public IEnumerator WaitForFadeIn()
 	{
 		this.fadeIn = true;
@@ -129,7 +129,7 @@ public class Blackout : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001182 RID: 4482 RVA: 0x0000EF9F File Offset: 0x0000D19F
+	// Token: 0x06000E5D RID: 3677 RVA: 0x00044C5E File Offset: 0x00042E5E
 	public IEnumerator WaitForFadeOut()
 	{
 		this.fadeOut = true;

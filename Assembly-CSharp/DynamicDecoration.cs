@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class DynamicDecoration : MonoBehaviour
 {
-	// (get) Token: 0x060000F1 RID: 241 RVA: 0x00002C49 File Offset: 0x00000E49
-	// (set) Token: 0x060000F2 RID: 242 RVA: 0x00002C51 File Offset: 0x00000E51
+	// (get) Token: 0x060000D0 RID: 208 RVA: 0x00005DF6 File Offset: 0x00003FF6
+	// (set) Token: 0x060000D1 RID: 209 RVA: 0x00005DFE File Offset: 0x00003FFE
 	public bool IsStatic
 	{
 		get
@@ -21,8 +21,8 @@ public class DynamicDecoration : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x060000F3 RID: 243 RVA: 0x00002C69 File Offset: 0x00000E69
-	// (set) Token: 0x060000F4 RID: 244 RVA: 0x00002C71 File Offset: 0x00000E71
+	// (get) Token: 0x060000D2 RID: 210 RVA: 0x00005E16 File Offset: 0x00004016
+	// (set) Token: 0x060000D3 RID: 211 RVA: 0x00005E1E File Offset: 0x0000401E
 	public bool IsAwake
 	{
 		get
@@ -39,13 +39,13 @@ public class DynamicDecoration : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000F5 RID: 245 RVA: 0x00002C89 File Offset: 0x00000E89
+	// Token: 0x060000D4 RID: 212 RVA: 0x00005E36 File Offset: 0x00004036
 	private void Start()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x060000F6 RID: 246 RVA: 0x0001B0BC File Offset: 0x000192BC
+	// Token: 0x060000D5 RID: 213 RVA: 0x00005E40 File Offset: 0x00004040
 	[ContextMenu("Snap to ground")]
 	public void SnapToGround()
 	{
@@ -58,7 +58,7 @@ public class DynamicDecoration : MonoBehaviour
 		this.staticRoot.SetActive(true);
 	}
 
-	// Token: 0x060000F7 RID: 247 RVA: 0x0001B128 File Offset: 0x00019328
+	// Token: 0x060000D6 RID: 214 RVA: 0x00005EAC File Offset: 0x000040AC
 	public void Settle()
 	{
 		this.staticRoot.SetActive(false);
@@ -143,7 +143,7 @@ public class DynamicDecoration : MonoBehaviour
 		this.staticRoot.SetActive(true);
 	}
 
-	// Token: 0x060000F8 RID: 248 RVA: 0x0001B438 File Offset: 0x00019638
+	// Token: 0x060000D7 RID: 215 RVA: 0x000061BC File Offset: 0x000043BC
 	[ContextMenu("Update State")]
 	private void UpdateState()
 	{

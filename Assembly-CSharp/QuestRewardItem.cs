@@ -2,7 +2,7 @@
 
 public class QuestRewardItem : QuestReward
 {
-	// Token: 0x06000E58 RID: 3672 RVA: 0x0000CB96 File Offset: 0x0000AD96
+	// Token: 0x06000BB6 RID: 2998 RVA: 0x00038D67 File Offset: 0x00036F67
 	public override void GiveReward()
 	{
 		if (this.itemObject != null)

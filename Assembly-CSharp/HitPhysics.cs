@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HitPhysics : MonoBehaviour, IHit
 {
-	// Token: 0x060007D1 RID: 2001 RVA: 0x00007C3E File Offset: 0x00005E3E
+	// Token: 0x0600066B RID: 1643 RVA: 0x0002119D File Offset: 0x0001F39D
 	private void OnValidate()
 	{
 		if (this.rigidbody == null)
@@ -16,7 +16,7 @@ public class HitPhysics : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x060007D2 RID: 2002 RVA: 0x00007C74 File Offset: 0x00005E74
+	// Token: 0x0600066C RID: 1644 RVA: 0x000211D3 File Offset: 0x0001F3D3
 	private void Awake()
 	{
 		if (this.rigidbody == null)
@@ -25,13 +25,13 @@ public class HitPhysics : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x060007D3 RID: 2003 RVA: 0x00036514 File Offset: 0x00034714
+	// Token: 0x0600066D RID: 1645 RVA: 0x000211F0 File Offset: 0x0001F3F0
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		if (this.randomizeForcePoint)
 		{
 			Bounds bounds = this.collider.bounds;
-			Vector3 vector = bounds.center + bounds.extents.magnitude * global::UnityEngine.Random.insideUnitSphere;
+			Vector3 vector = bounds.center + bounds.extents.magnitude * Random.insideUnitSphere;
 			this.rigidbody.AddForceAtPosition(this.forceMultiplier * velocity, vector, ForceMode.Impulse);
 			return;
 		}

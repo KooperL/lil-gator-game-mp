@@ -5,13 +5,13 @@ using UnityEngine;
 [AddComponentMenu("Dialogue Sequence/Dialogue (Phone)")]
 public class DSDialoguePhone : DialogueSequence, ICueable
 {
-	// Token: 0x060005B2 RID: 1458 RVA: 0x0000615B File Offset: 0x0000435B
+	// Token: 0x06000487 RID: 1159 RVA: 0x00019751 File Offset: 0x00017951
 	public void SetCamera(GameObject camera)
 	{
 		this.camera = camera;
 	}
 
-	// Token: 0x060005B3 RID: 1459 RVA: 0x0002F994 File Offset: 0x0002DB94
+	// Token: 0x06000488 RID: 1160 RVA: 0x0001975C File Offset: 0x0001795C
 	public override YieldInstruction Run()
 	{
 		IEnumerator enumerator;
@@ -30,7 +30,7 @@ public class DSDialoguePhone : DialogueSequence, ICueable
 		return CoroutineUtil.Start(enumerator);
 	}
 
-	// Token: 0x060005B4 RID: 1460 RVA: 0x0002FA44 File Offset: 0x0002DC44
+	// Token: 0x06000489 RID: 1161 RVA: 0x0001980C File Offset: 0x00017A0C
 	[ContextMenu("Sync Cues")]
 	private void SyncCues()
 	{
@@ -43,7 +43,7 @@ public class DSDialoguePhone : DialogueSequence, ICueable
 		this.precueFirstCue = false;
 	}
 
-	// Token: 0x060005B5 RID: 1461 RVA: 0x0002FAA4 File Offset: 0x0002DCA4
+	// Token: 0x0600048A RID: 1162 RVA: 0x0001986C File Offset: 0x00017A6C
 	public override void Activate()
 	{
 		if (this.precueFirstCue && this.cueData.Length != 0)
@@ -70,7 +70,7 @@ public class DSDialoguePhone : DialogueSequence, ICueable
 		base.Activate();
 	}
 
-	// Token: 0x060005B6 RID: 1462 RVA: 0x00006164 File Offset: 0x00004364
+	// Token: 0x0600048B RID: 1163 RVA: 0x00019933 File Offset: 0x00017B33
 	public override void Deactivate()
 	{
 		base.Deactivate();

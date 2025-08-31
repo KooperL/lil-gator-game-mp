@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class SharedAudioProfile : ScriptableObject
 {
-	// (get) Token: 0x0600024B RID: 587 RVA: 0x00003E27 File Offset: 0x00002027
+	// (get) Token: 0x06000206 RID: 518 RVA: 0x0000B3F7 File Offset: 0x000095F7
 	public float MinDistance
 	{
 		get

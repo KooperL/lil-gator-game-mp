@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LayerUtil : MonoBehaviour
 {
-	// (get) Token: 0x0600094F RID: 2383 RVA: 0x000090D3 File Offset: 0x000072D3
+	// (get) Token: 0x060007AE RID: 1966 RVA: 0x00025923 File Offset: 0x00023B23
 	public static LayerMask GroundLayers
 	{
 		get
@@ -12,7 +12,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000950 RID: 2384 RVA: 0x000090DF File Offset: 0x000072DF
+	// (get) Token: 0x060007AF RID: 1967 RVA: 0x0002592F File Offset: 0x00023B2F
 	public static LayerMask GroundLayersMinusPlayer
 	{
 		get
@@ -21,7 +21,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000951 RID: 2385 RVA: 0x000090EB File Offset: 0x000072EB
+	// (get) Token: 0x060007B0 RID: 1968 RVA: 0x0002593B File Offset: 0x00023B3B
 	public static LayerMask BalanceBeamAnchorLayers
 	{
 		get
@@ -30,7 +30,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000952 RID: 2386 RVA: 0x000090F7 File Offset: 0x000072F7
+	// (get) Token: 0x060007B1 RID: 1969 RVA: 0x00025947 File Offset: 0x00023B47
 	public static LayerMask HitLayers
 	{
 		get
@@ -39,7 +39,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000953 RID: 2387 RVA: 0x0003A68C File Offset: 0x0003888C
+	// Token: 0x060007B2 RID: 1970 RVA: 0x00025954 File Offset: 0x00023B54
 	public static void SnapToGround(Transform transform, float range = 5f)
 	{
 		Vector3 position = transform.position;
@@ -49,7 +49,7 @@ public class LayerUtil : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000954 RID: 2388 RVA: 0x0003A6B4 File Offset: 0x000388B4
+	// Token: 0x060007B3 RID: 1971 RVA: 0x0002597C File Offset: 0x00023B7C
 	public static bool SnapToGround(ref Vector3 point, float range = 5f)
 	{
 		RaycastHit raycastHit;
@@ -61,20 +61,20 @@ public class LayerUtil : MonoBehaviour
 		return false;
 	}
 
-	// (get) Token: 0x06000955 RID: 2389 RVA: 0x00009103 File Offset: 0x00007303
+	// (get) Token: 0x060007B4 RID: 1972 RVA: 0x000259CE File Offset: 0x00023BCE
 	private static LayerUtil Instance
 	{
 		get
 		{
 			if (LayerUtil.instance == null)
 			{
-				LayerUtil.instance = global::UnityEngine.Object.FindObjectOfType<LayerUtil>();
+				LayerUtil.instance = Object.FindObjectOfType<LayerUtil>();
 			}
 			return LayerUtil.instance;
 		}
 	}
 
-	// Token: 0x06000956 RID: 2390 RVA: 0x00009121 File Offset: 0x00007321
+	// Token: 0x060007B5 RID: 1973 RVA: 0x000259EC File Offset: 0x00023BEC
 	private void Awake()
 	{
 		LayerUtil.instance = this;

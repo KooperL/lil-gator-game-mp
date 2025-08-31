@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class PlayerCameraDistanceZone : MonoBehaviour
 {
-	// Token: 0x06000C27 RID: 3111 RVA: 0x000044B5 File Offset: 0x000026B5
+	// Token: 0x06000A25 RID: 2597 RVA: 0x0002F4F0 File Offset: 0x0002D6F0
 	private void OnValidate()
 	{
 		base.enabled = false;
 	}
 
-	// Token: 0x06000C28 RID: 3112 RVA: 0x0000B52E File Offset: 0x0000972E
+	// Token: 0x06000A26 RID: 2598 RVA: 0x0002F4F9 File Offset: 0x0002D6F9
 	private void OnEnable()
 	{
 		PlayerCameraDistanceZone.activeZones.Add(this);
 	}
 
-	// Token: 0x06000C29 RID: 3113 RVA: 0x0000B53B File Offset: 0x0000973B
+	// Token: 0x06000A27 RID: 2599 RVA: 0x0002F506 File Offset: 0x0002D706
 	private void OnDisable()
 	{
 		PlayerCameraDistanceZone.activeZones.Remove(this);
 	}
 
-	// Token: 0x06000C2A RID: 3114 RVA: 0x0000B549 File Offset: 0x00009749
+	// Token: 0x06000A28 RID: 2600 RVA: 0x0002F514 File Offset: 0x0002D714
 	private void OnTriggerStay(Collider other)
 	{
 		this.lastTriggeredTime = Time.time;
 		base.enabled = true;
 	}
 
-	// Token: 0x06000C2B RID: 3115 RVA: 0x0000B55D File Offset: 0x0000975D
+	// Token: 0x06000A29 RID: 2601 RVA: 0x0002F528 File Offset: 0x0002D728
 	private void Update()
 	{
 		if (Time.time - this.lastTriggeredTime > 0.1f)

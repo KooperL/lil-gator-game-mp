@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class JunkShop : MonoBehaviour
 {
-	// Token: 0x060000E4 RID: 228 RVA: 0x0001AA78 File Offset: 0x00018C78
+	// Token: 0x060000C9 RID: 201 RVA: 0x00005B40 File Offset: 0x00003D40
 	private void OnValidate()
 	{
 		if (this.itemGet == null)
 		{
-			this.itemGet = global::UnityEngine.Object.FindObjectOfType<UIItemGet>();
+			this.itemGet = Object.FindObjectOfType<UIItemGet>();
 		}
 		if (this.uiItemResource == null || (this.itemResource != null && this.uiItemResource.itemResource != this.itemResource))
 		{
-			foreach (UIItemResource uiitemResource in global::UnityEngine.Object.FindObjectsOfType<UIItemResource>())
+			foreach (UIItemResource uiitemResource in Object.FindObjectsOfType<UIItemResource>())
 			{
 				if (uiitemResource.itemResource == this.itemResource)
 				{
@@ -24,20 +24,20 @@ public class JunkShop : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000E5 RID: 229 RVA: 0x00002BF6 File Offset: 0x00000DF6
+	// Token: 0x060000CA RID: 202 RVA: 0x00005BCD File Offset: 0x00003DCD
 	private void Start()
 	{
 		this.displayedItems = new int[] { -1, -1, -1 };
 		this.UpdateInventory();
 	}
 
-	// Token: 0x060000E6 RID: 230 RVA: 0x00002C15 File Offset: 0x00000E15
+	// Token: 0x060000CB RID: 203 RVA: 0x00005BEC File Offset: 0x00003DEC
 	public void RunShopDialogue()
 	{
 		CoroutineUtil.Start(this.RunShopDialogueSequence());
 	}
 
-	// Token: 0x060000E7 RID: 231 RVA: 0x00002C23 File Offset: 0x00000E23
+	// Token: 0x060000CC RID: 204 RVA: 0x00005BFA File Offset: 0x00003DFA
 	private IEnumerator RunShopDialogueSequence()
 	{
 		Game.DialogueDepth++;
@@ -117,7 +117,7 @@ public class JunkShop : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060000E8 RID: 232 RVA: 0x0001AB08 File Offset: 0x00018D08
+	// Token: 0x060000CD RID: 205 RVA: 0x00005C0C File Offset: 0x00003E0C
 	private string[] GetChoiceList()
 	{
 		string[] array = new string[this.displayedItemCount + 1];
@@ -129,7 +129,7 @@ public class JunkShop : MonoBehaviour
 		return array;
 	}
 
-	// Token: 0x060000E9 RID: 233 RVA: 0x0001AB78 File Offset: 0x00018D78
+	// Token: 0x060000CE RID: 206 RVA: 0x00005C7C File Offset: 0x00003E7C
 	private void UpdateInventory()
 	{
 		for (int i = 0; i < this.displayedItemCount; i++)

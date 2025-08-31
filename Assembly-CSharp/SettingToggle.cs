@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SettingToggle : MonoBehaviour
 {
-	// Token: 0x06001150 RID: 4432 RVA: 0x0000ED15 File Offset: 0x0000CF15
+	// Token: 0x06000E2B RID: 3627 RVA: 0x0004441F File Offset: 0x0004261F
 	private void OnValidate()
 	{
 		if (this.toggle == null)
@@ -13,14 +13,14 @@ public class SettingToggle : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001151 RID: 4433 RVA: 0x0000ED31 File Offset: 0x0000CF31
+	// Token: 0x06000E2C RID: 3628 RVA: 0x0004443B File Offset: 0x0004263B
 	private void OnEnable()
 	{
 		this.toggle.isOn = Settings.s.ReadBool(this.key, this.toggle.isOn);
 		this.setInitialSetting = true;
 	}
 
-	// Token: 0x06001152 RID: 4434 RVA: 0x0000ED60 File Offset: 0x0000CF60
+	// Token: 0x06000E2D RID: 3629 RVA: 0x0004446A File Offset: 0x0004266A
 	public void OnToggle(bool isOn)
 	{
 		if (!this.setInitialSetting)

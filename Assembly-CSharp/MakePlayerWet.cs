@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MakePlayerWet : MonoBehaviour
 {
-	// Token: 0x06000B24 RID: 2852 RVA: 0x0000A871 File Offset: 0x00008A71
+	// Token: 0x06000940 RID: 2368 RVA: 0x0002BF28 File Offset: 0x0002A128
 	private void OnEnable()
 	{
 		this.playerEffects = Player.effects;
@@ -13,7 +13,7 @@ public class MakePlayerWet : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000B25 RID: 2853 RVA: 0x0000A89F File Offset: 0x00008A9F
+	// Token: 0x06000941 RID: 2369 RVA: 0x0002BF56 File Offset: 0x0002A156
 	private void OnDisable()
 	{
 		if (this.playerEffects != null)

@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class UIRandomRotation : MonoBehaviour
 {
-	// Token: 0x060012CB RID: 4811 RVA: 0x0000FD2D File Offset: 0x0000DF2D
+	// Token: 0x06000F56 RID: 3926 RVA: 0x00049C0C File Offset: 0x00047E0C
 	private void OnEnable()
 	{
-		base.transform.rotation = Quaternion.Euler(global::UnityEngine.Random.Range(-this.angle, this.angle) * Vector3.forward);
+		base.transform.rotation = Quaternion.Euler(Random.Range(-this.angle, this.angle) * Vector3.forward);
 	}
 
 	public float angle = 25f;

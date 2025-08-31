@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ShowActiveQuestProfile : MonoBehaviour
 {
-	// Token: 0x060001D8 RID: 472 RVA: 0x0001DF3C File Offset: 0x0001C13C
+	// Token: 0x06000196 RID: 406 RVA: 0x00009324 File Offset: 0x00007524
 	private void OnEnable()
 	{
 		if (QuestTrackerPopup.q == null)
@@ -18,7 +18,7 @@ public class ShowActiveQuestProfile : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060001D9 RID: 473 RVA: 0x0001DF7C File Offset: 0x0001C17C
+	// Token: 0x06000197 RID: 407 RVA: 0x00009364 File Offset: 0x00007564
 	private void OnDisable()
 	{
 		if (QuestTrackerPopup.q == null)

@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class MusicZone : MonoBehaviour
 {
-	// Token: 0x060000B4 RID: 180 RVA: 0x000029A5 File Offset: 0x00000BA5
+	// Token: 0x060000A0 RID: 160 RVA: 0x000050EC File Offset: 0x000032EC
 	private void OnValidate()
 	{
 		if (this.musicStateManager == null)
 		{
-			this.musicStateManager = global::UnityEngine.Object.FindObjectOfType<MusicStateManager>();
+			this.musicStateManager = Object.FindObjectOfType<MusicStateManager>();
 		}
 		this.hasState = !string.IsNullOrEmpty(this.state);
 	}
 
-	// Token: 0x060000B5 RID: 181 RVA: 0x000029D4 File Offset: 0x00000BD4
+	// Token: 0x060000A1 RID: 161 RVA: 0x0000511B File Offset: 0x0000331B
 	private void OnTriggerStay(Collider other)
 	{
 		if (this.hasState)

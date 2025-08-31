@@ -4,19 +4,19 @@ using UnityEngine.Events;
 
 public class PlaygroundMusicDynamicStates : MonoBehaviour
 {
-	// Token: 0x060000BF RID: 191 RVA: 0x00002A99 File Offset: 0x00000C99
+	// Token: 0x060000AB RID: 171 RVA: 0x0000530B File Offset: 0x0000350B
 	private void Awake()
 	{
 		this.musicSystem.rightBeforePlaying.AddListener(new UnityAction(this.UpdateMusicSystem));
 	}
 
-	// Token: 0x060000C0 RID: 192 RVA: 0x00002AB7 File Offset: 0x00000CB7
+	// Token: 0x060000AC RID: 172 RVA: 0x00005329 File Offset: 0x00003529
 	private void Start()
 	{
 		this.UpdateMusicSystem();
 	}
 
-	// Token: 0x060000C1 RID: 193 RVA: 0x0001A36C File Offset: 0x0001856C
+	// Token: 0x060000AD RID: 173 RVA: 0x00005334 File Offset: 0x00003534
 	private void UpdateMusicSystem()
 	{
 		bool isAveryQuestFinished = this.townNPCManager.isAveryQuestFinished;

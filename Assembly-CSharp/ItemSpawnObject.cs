@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 {
-	// (get) Token: 0x06000BC1 RID: 3009 RVA: 0x0000AFE5 File Offset: 0x000091E5
+	// (get) Token: 0x060009CB RID: 2507 RVA: 0x0002D836 File Offset: 0x0002BA36
 	private PlayerItemManager.EquippedState EquippedState
 	{
 		get
@@ -16,7 +16,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BC2 RID: 3010 RVA: 0x00041544 File Offset: 0x0003F744
+	// Token: 0x060009CC RID: 2508 RVA: 0x0002D844 File Offset: 0x0002BA44
 	public void Input(bool isDown, bool isHeld)
 	{
 		if (isDown)
@@ -30,7 +30,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 			{
 				Player.itemManager.SetEquippedState(this.EquippedState, false);
 				Player.itemManager.SetItemInUse(this, true);
-				this.spawnedObject = global::UnityEngine.Object.Instantiate<GameObject>(this.spawnedObjectPrefab, Player.RawPosition + Player.transform.rotation * this.spawnedObjectPosition, Player.transform.rotation);
+				this.spawnedObject = Object.Instantiate<GameObject>(this.spawnedObjectPrefab, Player.RawPosition + Player.transform.rotation * this.spawnedObjectPosition, Player.transform.rotation);
 				Vector3 vector = Player.rigidbody.velocity + Player.transform.rotation * this.spawnedObjectVelocity;
 				Rigidbody component = this.spawnedObject.GetComponent<Rigidbody>();
 				if (component != null)
@@ -46,7 +46,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BC3 RID: 3011 RVA: 0x00041638 File Offset: 0x0003F838
+	// Token: 0x060009CD RID: 2509 RVA: 0x0002D938 File Offset: 0x0002BB38
 	private void LateUpdate()
 	{
 		if (this.spawnedObject != null)
@@ -78,7 +78,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BC4 RID: 3012 RVA: 0x000416C0 File Offset: 0x0003F8C0
+	// Token: 0x060009CE RID: 2510 RVA: 0x0002D9C0 File Offset: 0x0002BBC0
 	public void Cancel()
 	{
 		Player.movement.isModified = false;
@@ -86,9 +86,9 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		{
 			if (this.despawnPrefab != null)
 			{
-				global::UnityEngine.Object.Instantiate<GameObject>(this.despawnPrefab, this.spawnedObject.transform.position, this.spawnedObject.transform.rotation);
+				Object.Instantiate<GameObject>(this.despawnPrefab, this.spawnedObject.transform.position, this.spawnedObject.transform.rotation);
 			}
-			global::UnityEngine.Object.Destroy(this.spawnedObject);
+			Object.Destroy(this.spawnedObject);
 		}
 		this.spawnedObject = null;
 		if (Player.movement.isRagdolling)
@@ -101,7 +101,7 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BC5 RID: 3013 RVA: 0x00041768 File Offset: 0x0003F968
+	// Token: 0x060009CF RID: 2511 RVA: 0x0002DA68 File Offset: 0x0002BC68
 	public void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (this.isOnRight ? Player.itemManager.hipAnchor_r : Player.itemManager.hipAnchor);
@@ -119,13 +119,13 @@ public class ItemSpawnObject : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000BC6 RID: 3014 RVA: 0x0000AFF2 File Offset: 0x000091F2
+	// Token: 0x060009D0 RID: 2512 RVA: 0x0002DADA File Offset: 0x0002BCDA
 	public void OnRemove()
 	{
 		this.Cancel();
 	}
 
-	// Token: 0x06000BC7 RID: 3015 RVA: 0x0000AFFA File Offset: 0x000091FA
+	// Token: 0x060009D1 RID: 2513 RVA: 0x0002DAE2 File Offset: 0x0002BCE2
 	public void SetIndex(int index)
 	{
 		if (index == 1)

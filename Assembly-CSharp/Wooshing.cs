@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Wooshing : MonoBehaviour
 {
-	// Token: 0x060006C5 RID: 1733 RVA: 0x00006E8B File Offset: 0x0000508B
+	// Token: 0x06000573 RID: 1395 RVA: 0x0001CD77 File Offset: 0x0001AF77
 	private void OnEnable()
 	{
 		this.speed = 0f;
@@ -11,7 +11,7 @@ public class Wooshing : MonoBehaviour
 		this.oldPosition = base.transform.position;
 	}
 
-	// Token: 0x060006C6 RID: 1734 RVA: 0x00032A74 File Offset: 0x00030C74
+	// Token: 0x06000574 RID: 1396 RVA: 0x0001CDA0 File Offset: 0x0001AFA0
 	private void Update()
 	{
 		Vector3 position = base.transform.position;

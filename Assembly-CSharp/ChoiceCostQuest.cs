@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class ChoiceCostQuest : MonoBehaviour
 {
-	// (get) Token: 0x06000D8F RID: 3471 RVA: 0x0000C551 File Offset: 0x0000A751
-	// (set) Token: 0x06000D90 RID: 3472 RVA: 0x0000C564 File Offset: 0x0000A764
+	// (get) Token: 0x06000B53 RID: 2899 RVA: 0x000381CE File Offset: 0x000363CE
+	// (set) Token: 0x06000B54 RID: 2900 RVA: 0x000381E1 File Offset: 0x000363E1
 	private bool State
 	{
 		get
@@ -19,13 +19,13 @@ public class ChoiceCostQuest : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000D91 RID: 3473 RVA: 0x0000C577 File Offset: 0x0000A777
+	// Token: 0x06000B55 RID: 2901 RVA: 0x000381F4 File Offset: 0x000363F4
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000D92 RID: 3474 RVA: 0x0000C586 File Offset: 0x0000A786
+	// Token: 0x06000B56 RID: 2902 RVA: 0x00038203 File Offset: 0x00036403
 	private IEnumerator RunConversation()
 	{
 		if (!this.State)

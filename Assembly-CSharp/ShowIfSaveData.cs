@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ShowIfSaveData : MonoBehaviour
 {
-	// Token: 0x06001154 RID: 4436 RVA: 0x0000ED90 File Offset: 0x0000CF90
+	// Token: 0x06000E2F RID: 3631 RVA: 0x000444A2 File Offset: 0x000426A2
 	private void OnEnable()
 	{
 		if (!FileUtil.HasInitializedSaveData())

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FadeGroup : MonoBehaviour
 {
-	// Token: 0x060006DF RID: 1759 RVA: 0x00032D3C File Offset: 0x00030F3C
+	// Token: 0x06000581 RID: 1409 RVA: 0x0001D044 File Offset: 0x0001B244
 	[ContextMenu("Find Renderers")]
 	public void FindRenderers()
 	{
@@ -42,7 +42,7 @@ public class FadeGroup : MonoBehaviour
 		this.renderers = list.ToArray();
 	}
 
-	// Token: 0x060006E0 RID: 1760 RVA: 0x00006F86 File Offset: 0x00005186
+	// Token: 0x06000582 RID: 1410 RVA: 0x0001D0F1 File Offset: 0x0001B2F1
 	private void Start()
 	{
 		this.UpdateFade();
@@ -52,7 +52,7 @@ public class FadeGroup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006E1 RID: 1761 RVA: 0x00006FA2 File Offset: 0x000051A2
+	// Token: 0x06000583 RID: 1411 RVA: 0x0001D10D File Offset: 0x0001B30D
 	public void FadeIn()
 	{
 		base.gameObject.SetActive(true);
@@ -60,14 +60,14 @@ public class FadeGroup : MonoBehaviour
 		this.UpdateFade();
 	}
 
-	// Token: 0x060006E2 RID: 1762 RVA: 0x00006FC2 File Offset: 0x000051C2
+	// Token: 0x06000584 RID: 1412 RVA: 0x0001D12D File Offset: 0x0001B32D
 	public void FadeOut()
 	{
 		this.fadeTarget = 0f;
 		this.UpdateFade();
 	}
 
-	// Token: 0x060006E3 RID: 1763 RVA: 0x00032DEC File Offset: 0x00030FEC
+	// Token: 0x06000585 RID: 1413 RVA: 0x0001D140 File Offset: 0x0001B340
 	private void Update()
 	{
 		if (this.fade != this.fadeTarget)
@@ -82,7 +82,7 @@ public class FadeGroup : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060006E4 RID: 1764 RVA: 0x00032E70 File Offset: 0x00031070
+	// Token: 0x06000586 RID: 1414 RVA: 0x0001D1C4 File Offset: 0x0001B3C4
 	private void Initialize()
 	{
 		List<Material> list = new List<Material>();
@@ -102,7 +102,7 @@ public class FadeGroup : MonoBehaviour
 		this.isInitialized = true;
 	}
 
-	// Token: 0x060006E5 RID: 1765 RVA: 0x00032EFC File Offset: 0x000310FC
+	// Token: 0x06000587 RID: 1415 RVA: 0x0001D250 File Offset: 0x0001B450
 	private void UpdateFade()
 	{
 		if (!this.isInitialized)

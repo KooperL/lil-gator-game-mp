@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Slide : GenericPath, ICustomPlayerMovement
 {
-	// Token: 0x0600030C RID: 780 RVA: 0x0002415C File Offset: 0x0002235C
+	// Token: 0x060002B5 RID: 693 RVA: 0x0000FC74 File Offset: 0x0000DE74
 	private void OnTriggerStay(Collider other)
 	{
 		if (!base.enabled && Time.time - this.lastEnabled > 0.5f && !Player.movement.JustCanceled)
@@ -31,7 +31,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		}
 	}
 
-	// Token: 0x0600030D RID: 781 RVA: 0x00024260 File Offset: 0x00022460
+	// Token: 0x060002B6 RID: 694 RVA: 0x0000FD78 File Offset: 0x0000DF78
 	private void OnEnable()
 	{
 		Player.movement.isModified = true;
@@ -71,7 +71,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		}
 	}
 
-	// Token: 0x0600030E RID: 782 RVA: 0x0000463F File Offset: 0x0000283F
+	// Token: 0x060002B7 RID: 695 RVA: 0x0000FEF8 File Offset: 0x0000E0F8
 	private void OnDisable()
 	{
 		Player.footsteps.ClearOverride();
@@ -88,7 +88,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		s.ClearOverride();
 	}
 
-	// Token: 0x0600030F RID: 783 RVA: 0x000243E0 File Offset: 0x000225E0
+	// Token: 0x060002B8 RID: 696 RVA: 0x0000FF34 File Offset: 0x0000E134
 	public void MovementUpdate(Vector3 input, ref Vector3 position, ref Vector3 velocity, ref Vector3 direction, ref Vector3 up, ref float animationIndex)
 	{
 		this.lastT = this.t;
@@ -107,7 +107,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		}
 	}
 
-	// Token: 0x06000310 RID: 784 RVA: 0x000244F0 File Offset: 0x000226F0
+	// Token: 0x060002B9 RID: 697 RVA: 0x00010044 File Offset: 0x0000E244
 	private void Update()
 	{
 		if (this.lockedCamera)
@@ -119,7 +119,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		}
 	}
 
-	// Token: 0x06000311 RID: 785 RVA: 0x0002455C File Offset: 0x0002275C
+	// Token: 0x060002BA RID: 698 RVA: 0x000100B0 File Offset: 0x0000E2B0
 	private void UpdateCameraPos()
 	{
 		this.camera.transform.position = base.GetPosition(this.lockedCameraT) + this.cameraOffset;
@@ -131,7 +131,7 @@ public class Slide : GenericPath, ICustomPlayerMovement
 		this.camera.transform.rotation = QuaternionUtil.SmoothDamp(this.camera.transform.rotation, Quaternion.LookRotation(vector), ref this.lockedCameraRotationalVelocity, 0.3f);
 	}
 
-	// Token: 0x06000312 RID: 786 RVA: 0x00004678 File Offset: 0x00002878
+	// Token: 0x060002BB RID: 699 RVA: 0x00010173 File Offset: 0x0000E373
 	public void Cancel()
 	{
 		this.lastEnabled = Time.time;

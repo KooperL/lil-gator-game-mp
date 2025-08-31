@@ -7,15 +7,15 @@ using UnityEngine.Events;
 
 public class InputHelper : MonoBehaviour
 {
-	// (get) Token: 0x060007AF RID: 1967 RVA: 0x00007A53 File Offset: 0x00005C53
-	// (set) Token: 0x060007B0 RID: 1968 RVA: 0x00007A71 File Offset: 0x00005C71
+	// (get) Token: 0x06000649 RID: 1609 RVA: 0x000206F5 File Offset: 0x0001E8F5
+	// (set) Token: 0x0600064A RID: 1610 RVA: 0x00020713 File Offset: 0x0001E913
 	public static InputHelper i
 	{
 		get
 		{
 			if (InputHelper.instance == null)
 			{
-				InputHelper.instance = global::UnityEngine.Object.FindObjectOfType<InputHelper>();
+				InputHelper.instance = Object.FindObjectOfType<InputHelper>();
 			}
 			return InputHelper.instance;
 		}
@@ -25,18 +25,18 @@ public class InputHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007B1 RID: 1969 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x0600064B RID: 1611 RVA: 0x0002071B File Offset: 0x0001E91B
 	private void Awake()
 	{
 	}
 
-	// Token: 0x060007B2 RID: 1970 RVA: 0x00007A79 File Offset: 0x00005C79
+	// Token: 0x0600064C RID: 1612 RVA: 0x0002071D File Offset: 0x0001E91D
 	private void OnEnable()
 	{
 		InputHelper.i = this;
 	}
 
-	// Token: 0x060007B3 RID: 1971 RVA: 0x00035C70 File Offset: 0x00033E70
+	// Token: 0x0600064D RID: 1613 RVA: 0x00020728 File Offset: 0x0001E928
 	private void Start()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
@@ -44,7 +44,7 @@ public class InputHelper : MonoBehaviour
 		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnAnyInput), UpdateLoopType.Update, InputActionEventType.NegativeButtonJustPressed);
 	}
 
-	// Token: 0x060007B4 RID: 1972 RVA: 0x00035CC4 File Offset: 0x00033EC4
+	// Token: 0x0600064E RID: 1614 RVA: 0x0002077C File Offset: 0x0001E97C
 	private void OnAnyInput(InputActionEventData obj)
 	{
 		if (this.ignoreActions.Contains(obj.actionId))
@@ -97,7 +97,7 @@ public class InputHelper : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060007B5 RID: 1973 RVA: 0x00007A81 File Offset: 0x00005C81
+	// Token: 0x0600064F RID: 1615 RVA: 0x00020898 File Offset: 0x0001EA98
 	public void UpdateInput()
 	{
 		InputHelper.onLastActiveControllerChanged.Invoke();
@@ -121,7 +121,7 @@ public class InputHelper : MonoBehaviour
 
 	private global::Rewired.Player rePlayer;
 
-	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
+	[ActionIdProperty(typeof(Action))]
 	public int[] ignoreActions;
 
 	private Guid dualShock2 = new Guid("c3ad3cad-c7cf-4ca8-8c2e-e3df8d9960bb");

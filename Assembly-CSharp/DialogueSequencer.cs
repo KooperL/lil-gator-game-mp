@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [AddComponentMenu("Dialogue Sequence/Sequencer", 0)]
 public class DialogueSequencer : MonoBehaviour
 {
-	// (get) Token: 0x060005F2 RID: 1522 RVA: 0x00006418 File Offset: 0x00004618
+	// (get) Token: 0x060004B5 RID: 1205 RVA: 0x00019E35 File Offset: 0x00018035
 	public static bool IsInSequence
 	{
 		get
@@ -15,13 +15,13 @@ public class DialogueSequencer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005F3 RID: 1523 RVA: 0x00006422 File Offset: 0x00004622
+	// Token: 0x060004B6 RID: 1206 RVA: 0x00019E3F File Offset: 0x0001803F
 	public void JustStartSequence()
 	{
 		this.StartSequence();
 	}
 
-	// Token: 0x060005F4 RID: 1524 RVA: 0x00030024 File Offset: 0x0002E224
+	// Token: 0x060004B7 RID: 1207 RVA: 0x00019E48 File Offset: 0x00018048
 	[ContextMenu("Start Sequence")]
 	public Coroutine StartSequence()
 	{
@@ -40,7 +40,7 @@ public class DialogueSequencer : MonoBehaviour
 		return CoroutineUtil.Start(this.RunSequence());
 	}
 
-	// Token: 0x060005F5 RID: 1525 RVA: 0x0000642B File Offset: 0x0000462B
+	// Token: 0x060004B8 RID: 1208 RVA: 0x00019E9A File Offset: 0x0001809A
 	protected virtual IEnumerator RunSequence()
 	{
 		this.runningSequence = true;
@@ -121,7 +121,7 @@ public class DialogueSequencer : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x060005F6 RID: 1526 RVA: 0x0000643A File Offset: 0x0000463A
+	// Token: 0x060004B9 RID: 1209 RVA: 0x00019EA9 File Offset: 0x000180A9
 	private void OnDisable()
 	{
 		if (this.runningSequence)
@@ -132,7 +132,7 @@ public class DialogueSequencer : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060005F7 RID: 1527 RVA: 0x0000643A File Offset: 0x0000463A
+	// Token: 0x060004BA RID: 1210 RVA: 0x00019ED2 File Offset: 0x000180D2
 	private void OnDestroy()
 	{
 		if (this.runningSequence)

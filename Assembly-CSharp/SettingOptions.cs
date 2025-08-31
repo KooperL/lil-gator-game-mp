@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SettingOptions : MonoBehaviour
 {
-	// Token: 0x06001140 RID: 4416 RVA: 0x0000EC04 File Offset: 0x0000CE04
+	// Token: 0x06000E1B RID: 3611 RVA: 0x0004406A File Offset: 0x0004226A
 	private void OnValidate()
 	{
 		if (this.selectOptions != null)
@@ -12,14 +12,14 @@ public class SettingOptions : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001141 RID: 4417 RVA: 0x0000EC20 File Offset: 0x0000CE20
+	// Token: 0x06000E1C RID: 3612 RVA: 0x00044086 File Offset: 0x00042286
 	private void OnEnable()
 	{
 		this.selectOptions.SetSelection(Settings.s.ReadInt(this.key, 0), true);
 		this.setInitialSetting = true;
 	}
 
-	// Token: 0x06001142 RID: 4418 RVA: 0x0000EC46 File Offset: 0x0000CE46
+	// Token: 0x06000E1D RID: 3613 RVA: 0x000440AC File Offset: 0x000422AC
 	public void OnSelectionChange(int selectedOption)
 	{
 		if (!this.setInitialSetting)

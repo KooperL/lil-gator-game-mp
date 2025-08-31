@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PauseAnimator : MonoBehaviour
 {
-	// Token: 0x060000D9 RID: 217 RVA: 0x00002B92 File Offset: 0x00000D92
+	// Token: 0x060000C4 RID: 196 RVA: 0x00005AA7 File Offset: 0x00003CA7
 	public YieldInstruction DoThePause()
 	{
 		return base.StartCoroutine(this.RunThePause());
 	}
 
-	// Token: 0x060000DA RID: 218 RVA: 0x00002BA0 File Offset: 0x00000DA0
+	// Token: 0x060000C5 RID: 197 RVA: 0x00005AB5 File Offset: 0x00003CB5
 	private IEnumerator RunThePause()
 	{
 		if (this.waitForPause == null)

@@ -10,7 +10,7 @@ using UnityEngine.Serialization;
 [AddComponentMenu("Music/MusicSystem")]
 public class MusicSystem : MonoBehaviour
 {
-	// (get) Token: 0x06000080 RID: 128 RVA: 0x00002750 File Offset: 0x00000950
+	// (get) Token: 0x0600007E RID: 126 RVA: 0x00003DB3 File Offset: 0x00001FB3
 	public bool IsEligible
 	{
 		get
@@ -19,29 +19,29 @@ public class MusicSystem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000081 RID: 129 RVA: 0x0000276F File Offset: 0x0000096F
+	// Token: 0x0600007F RID: 127 RVA: 0x00003DD2 File Offset: 0x00001FD2
 	private void OnValidate()
 	{
 		this.loopEndTime = 60.0 / (double)this.bpm * (double)this.loopEndBeats;
 		this.loopSkipTime = 60.0 / (double)this.bpm * (double)this.loopStartBeats;
 	}
 
-	// Token: 0x06000082 RID: 130 RVA: 0x000027AF File Offset: 0x000009AF
+	// Token: 0x06000080 RID: 128 RVA: 0x00003E12 File Offset: 0x00002012
 	private void Awake()
 	{
 		base.transform.parent = null;
-		global::UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
+		Object.DontDestroyOnLoad(base.gameObject);
 		this.nativeScene = SceneManager.GetActiveScene();
 		SceneManager.sceneUnloaded += this.OnSceneUnload;
 	}
 
-	// Token: 0x06000083 RID: 131 RVA: 0x000027E4 File Offset: 0x000009E4
+	// Token: 0x06000081 RID: 129 RVA: 0x00003E47 File Offset: 0x00002047
 	private void Start()
 	{
 		this.nativeScene = SceneManager.GetActiveScene();
 	}
 
-	// Token: 0x06000084 RID: 132 RVA: 0x000027F1 File Offset: 0x000009F1
+	// Token: 0x06000082 RID: 130 RVA: 0x00003E54 File Offset: 0x00002054
 	private void OnSceneUnload(Scene unloadedScene)
 	{
 		if (unloadedScene == this.nativeScene)
@@ -50,7 +50,7 @@ public class MusicSystem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000085 RID: 133 RVA: 0x00018CEC File Offset: 0x00016EEC
+	// Token: 0x06000083 RID: 131 RVA: 0x00003E6C File Offset: 0x0000206C
 	private void OnEnable()
 	{
 		if (this.oldSources == null)
@@ -66,7 +66,7 @@ public class MusicSystem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000086 RID: 134 RVA: 0x00002808 File Offset: 0x00000A08
+	// Token: 0x06000084 RID: 132 RVA: 0x00003EE9 File Offset: 0x000020E9
 	private void OnDestroy()
 	{
 		if (MusicSystem.current.Contains(this))
@@ -76,7 +76,7 @@ public class MusicSystem : MonoBehaviour
 		SceneManager.sceneUnloaded -= this.OnSceneUnload;
 	}
 
-	// Token: 0x06000087 RID: 135 RVA: 0x00018D6C File Offset: 0x00016F6C
+	// Token: 0x06000085 RID: 133 RVA: 0x00003F18 File Offset: 0x00002118
 	public void CueStartPlaying(float cueDelay)
 	{
 		if (this.isPlaying)
@@ -118,7 +118,7 @@ public class MusicSystem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000088 RID: 136 RVA: 0x00018EEC File Offset: 0x000170EC
+	// Token: 0x06000086 RID: 134 RVA: 0x00004098 File Offset: 0x00002298
 	public void StartPlaying()
 	{
 		if (this.isPlaying)
@@ -143,7 +143,7 @@ public class MusicSystem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000089 RID: 137 RVA: 0x00018F94 File Offset: 0x00017194
+	// Token: 0x06000087 RID: 135 RVA: 0x00004140 File Offset: 0x00002340
 	private void StartPlayingNow()
 	{
 		double dspTime = AudioSettings.dspTime;
@@ -169,7 +169,7 @@ public class MusicSystem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600008A RID: 138 RVA: 0x00019090 File Offset: 0x00017290
+	// Token: 0x06000088 RID: 136 RVA: 0x0000423C File Offset: 0x0000243C
 	private void TryToUnload()
 	{
 		if (this.masterWeightSmooth > 1E-05f)
@@ -183,10 +183,10 @@ public class MusicSystem : MonoBehaviour
 				return;
 			}
 		}
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x0600008B RID: 139 RVA: 0x000190F0 File Offset: 0x000172F0
+	// Token: 0x06000089 RID: 137 RVA: 0x0000429C File Offset: 0x0000249C
 	private void Update()
 	{
 		float num = Mathf.Min(Time.unscaledDeltaTime, 0.05f);
@@ -202,7 +202,7 @@ public class MusicSystem : MonoBehaviour
 			{
 				if (this.oldSources[i] != null)
 				{
-					global::UnityEngine.Object.Destroy(this.oldSources[i].gameObject);
+					Object.Destroy(this.oldSources[i].gameObject);
 				}
 				this.oldSources.RemoveAt(i);
 				i--;
@@ -307,8 +307,8 @@ public class MusicSystem : MonoBehaviour
 					}
 					else if (this.allowClipsAddedMidloop && this.layers[m].layerSource == null && this.layers[m].audioClip.loadState == AudioDataLoadState.Loaded)
 					{
-						this.layers[m].layerSource = global::UnityEngine.Object.Instantiate<GameObject>(this.musicSourcePrefab, base.transform).GetComponent<AudioSource>();
-						global::UnityEngine.Object.DontDestroyOnLoad(this.layers[m].layerSource.gameObject);
+						this.layers[m].layerSource = Object.Instantiate<GameObject>(this.musicSourcePrefab, base.transform).GetComponent<AudioSource>();
+						Object.DontDestroyOnLoad(this.layers[m].layerSource.gameObject);
 						this.layers[m].layerSource.clip = this.layers[m].audioClip;
 						double num2 = dspTime + 0.25 - this.loopStartTime;
 						if (!this.isFirstLoop)
@@ -335,7 +335,7 @@ public class MusicSystem : MonoBehaviour
 				this.layers[m].ClearSource();
 				if (this.layers[m].cuedLayerSource != null)
 				{
-					global::UnityEngine.Object.Destroy(this.layers[m].cuedLayerSource.gameObject);
+					Object.Destroy(this.layers[m].cuedLayerSource.gameObject);
 				}
 				this.layers[m].isPlaying = false;
 			}
@@ -348,14 +348,14 @@ public class MusicSystem : MonoBehaviour
 				this.layers[n].Unload();
 				if (this.layers[n].cuedLayerSource != null)
 				{
-					global::UnityEngine.Object.Destroy(this.layers[n].cuedLayerSource.gameObject);
+					Object.Destroy(this.layers[n].cuedLayerSource.gameObject);
 				}
 			}
 			this.isPlaying = false;
 		}
 	}
 
-	// Token: 0x0600008C RID: 140 RVA: 0x000197EC File Offset: 0x000179EC
+	// Token: 0x0600008A RID: 138 RVA: 0x00004998 File Offset: 0x00002B98
 	public float GetCurrentBeatT()
 	{
 		double dspTime = AudioSettings.dspTime;
@@ -366,7 +366,7 @@ public class MusicSystem : MonoBehaviour
 		return (float)((dspTime - this.loopStartTime) / (60.0 / (double)this.bpm) % 1.0);
 	}
 
-	// Token: 0x0600008D RID: 141 RVA: 0x0001983C File Offset: 0x00017A3C
+	// Token: 0x0600008B RID: 139 RVA: 0x000049E8 File Offset: 0x00002BE8
 	public bool PrepareStateChange(int[] neededLayers)
 	{
 		bool flag = true;
@@ -380,7 +380,7 @@ public class MusicSystem : MonoBehaviour
 		return flag;
 	}
 
-	// Token: 0x0600008E RID: 142 RVA: 0x00019874 File Offset: 0x00017A74
+	// Token: 0x0600008C RID: 140 RVA: 0x00004A20 File Offset: 0x00002C20
 	public void ClearLayerWeights()
 	{
 		for (int i = 0; i < this.layers.Length; i++)
@@ -389,13 +389,13 @@ public class MusicSystem : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600008F RID: 143 RVA: 0x00002834 File Offset: 0x00000A34
+	// Token: 0x0600008D RID: 141 RVA: 0x00004A52 File Offset: 0x00002C52
 	public void MarkEligible()
 	{
 		this.eligibleTime = Time.time;
 	}
 
-	// Token: 0x06000090 RID: 144 RVA: 0x000198A8 File Offset: 0x00017AA8
+	// Token: 0x0600008E RID: 142 RVA: 0x00004A60 File Offset: 0x00002C60
 	public void ChangeLoop(int newStartBeats, int newEndBeats, MusicSystem.LoopChangeBehavior changeBehavior)
 	{
 		double num = 60.0 / (double)this.bpm * (double)newEndBeats;
@@ -522,7 +522,7 @@ public class MusicSystem : MonoBehaviour
 	[Serializable]
 	public class MusicLayer
 	{
-		// (get) Token: 0x06000093 RID: 147 RVA: 0x0000284D File Offset: 0x00000A4D
+		// (get) Token: 0x060017F9 RID: 6137 RVA: 0x00066718 File Offset: 0x00064918
 		private static bool CanLoad
 		{
 			get
@@ -531,22 +531,22 @@ public class MusicSystem : MonoBehaviour
 			}
 		}
 
-		// Token: 0x06000094 RID: 148 RVA: 0x00002857 File Offset: 0x00000A57
+		// Token: 0x060017FA RID: 6138 RVA: 0x00066722 File Offset: 0x00064922
 		public float GetWeight()
 		{
 			return this.weight;
 		}
 
-		// Token: 0x06000095 RID: 149 RVA: 0x0000285F File Offset: 0x00000A5F
+		// Token: 0x060017FB RID: 6139 RVA: 0x0006672A File Offset: 0x0006492A
 		public void ClearSource()
 		{
 			if (this.layerSource != null)
 			{
-				global::UnityEngine.Object.Destroy(this.layerSource.gameObject);
+				Object.Destroy(this.layerSource.gameObject);
 			}
 		}
 
-		// Token: 0x06000096 RID: 150 RVA: 0x00019A84 File Offset: 0x00017C84
+		// Token: 0x060017FC RID: 6140 RVA: 0x0006674C File Offset: 0x0006494C
 		public void Unload()
 		{
 			if (this.isLoadingAudioClip)
@@ -564,11 +564,11 @@ public class MusicSystem : MonoBehaviour
 			}
 		}
 
-		// Token: 0x06000097 RID: 151 RVA: 0x00019AD8 File Offset: 0x00017CD8
+		// Token: 0x060017FD RID: 6141 RVA: 0x000667A0 File Offset: 0x000649A0
 		public void StartMusic(GameObject musicSourcePrefab, Transform parent, double cuedTime, double endTime = 0.0)
 		{
-			this.layerSource = global::UnityEngine.Object.Instantiate<GameObject>(musicSourcePrefab, parent).GetComponent<AudioSource>();
-			global::UnityEngine.Object.DontDestroyOnLoad(this.layerSource.gameObject);
+			this.layerSource = Object.Instantiate<GameObject>(musicSourcePrefab, parent).GetComponent<AudioSource>();
+			Object.DontDestroyOnLoad(this.layerSource.gameObject);
 			this.layerSource.clip = this.audioClip;
 			this.layerSource.PlayScheduled(cuedTime);
 			if (endTime != 0.0)
@@ -578,13 +578,13 @@ public class MusicSystem : MonoBehaviour
 			this.isPlaying = true;
 		}
 
-		// Token: 0x06000098 RID: 152 RVA: 0x00019B54 File Offset: 0x00017D54
+		// Token: 0x060017FE RID: 6142 RVA: 0x0006681C File Offset: 0x00064A1C
 		public void CueMusic(GameObject musicSourcePrefab, Transform parent, double cuedTime, double startTime = 0.0, double endTime = 0.0)
 		{
 			if (this.cuedLayerSource == null)
 			{
-				this.cuedLayerSource = global::UnityEngine.Object.Instantiate<GameObject>(musicSourcePrefab, parent).GetComponent<AudioSource>();
-				global::UnityEngine.Object.DontDestroyOnLoad(this.cuedLayerSource.gameObject);
+				this.cuedLayerSource = Object.Instantiate<GameObject>(musicSourcePrefab, parent).GetComponent<AudioSource>();
+				Object.DontDestroyOnLoad(this.cuedLayerSource.gameObject);
 				this.cuedLayerSource.clip = this.audioClip;
 				this.cuedLayerSource.timeSamples = (int)(startTime * (double)this.audioClip.frequency);
 				this.cuedLayerSource.PlayScheduled(cuedTime);
@@ -605,13 +605,13 @@ public class MusicSystem : MonoBehaviour
 			}
 		}
 
-		// Token: 0x06000099 RID: 153 RVA: 0x0000287F File Offset: 0x00000A7F
+		// Token: 0x060017FF RID: 6143 RVA: 0x0006690E File Offset: 0x00064B0E
 		public void UpdateEndTime(double absoluteEndTime)
 		{
 			this.layerSource.SetScheduledEndTime(absoluteEndTime + 0.05);
 		}
 
-		// Token: 0x0600009A RID: 154 RVA: 0x00019C48 File Offset: 0x00017E48
+		// Token: 0x06001800 RID: 6144 RVA: 0x00066928 File Offset: 0x00064B28
 		public bool IsReadyToPlay()
 		{
 			if (this.audioClip == null && !this.isLoadingAsset && this.addressableClip.RuntimeKeyIsValid())
@@ -653,7 +653,7 @@ public class MusicSystem : MonoBehaviour
 			}
 		}
 
-		// Token: 0x0600009B RID: 155 RVA: 0x00002897 File Offset: 0x00000A97
+		// Token: 0x06001801 RID: 6145 RVA: 0x00066A02 File Offset: 0x00064C02
 		private void OnLoadFinished(AsyncOperationHandle<AudioClip> obj)
 		{
 			if (this.isLoadingAsset)

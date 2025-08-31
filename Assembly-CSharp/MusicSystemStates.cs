@@ -5,14 +5,14 @@ using UnityEngine;
 [AddComponentMenu("Music/MusicSystem States")]
 public class MusicSystemStates : MonoBehaviour
 {
-	// Token: 0x060000AD RID: 173 RVA: 0x00002937 File Offset: 0x00000B37
+	// Token: 0x0600009A RID: 154 RVA: 0x00004F4E File Offset: 0x0000314E
 	private void OnValidate()
 	{
 		this.musicSystem = base.GetComponent<MusicSystem>();
 		this.dynamicStates = base.GetComponent<MusicSystemDynamicStates>();
 	}
 
-	// Token: 0x060000AE RID: 174 RVA: 0x0001A108 File Offset: 0x00018308
+	// Token: 0x0600009B RID: 155 RVA: 0x00004F68 File Offset: 0x00003168
 	public void SetState(string stateName)
 	{
 		if (this.dynamicStates != null)
@@ -55,7 +55,7 @@ public class MusicSystemStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000AF RID: 175 RVA: 0x00002951 File Offset: 0x00000B51
+	// Token: 0x0600009C RID: 156 RVA: 0x000050A3 File Offset: 0x000032A3
 	private void OnEnable()
 	{
 		if (!MusicSystemStates.current.Contains(this))
@@ -64,7 +64,7 @@ public class MusicSystemStates : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060000B0 RID: 176 RVA: 0x0000296B File Offset: 0x00000B6B
+	// Token: 0x0600009D RID: 157 RVA: 0x000050BD File Offset: 0x000032BD
 	private void OnDestroy()
 	{
 		if (MusicSystemStates.current.Contains(this))

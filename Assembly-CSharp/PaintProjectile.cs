@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class PaintProjectile : MonoBehaviour
 {
-	// Token: 0x060000FE RID: 254 RVA: 0x00002D0A File Offset: 0x00000F0A
+	// Token: 0x060000DD RID: 221 RVA: 0x000062E4 File Offset: 0x000044E4
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x060000FF RID: 255 RVA: 0x00002D18 File Offset: 0x00000F18
+	// Token: 0x060000DE RID: 222 RVA: 0x000062F2 File Offset: 0x000044F2
 	private void Start()
 	{
 		this.spawnTime = Time.time;
 		if (this.isRandomized)
 		{
-			this.color = this.randomColor.Evaluate(global::UnityEngine.Random.value);
+			this.color = this.randomColor.Evaluate(Random.value);
 		}
 		this.setDecal = base.GetComponent<SetDecal>();
 		this.UpdateDecal();
 	}
 
-	// Token: 0x06000100 RID: 256 RVA: 0x0001B4E0 File Offset: 0x000196E0
+	// Token: 0x060000DF RID: 223 RVA: 0x00006330 File Offset: 0x00004530
 	private void UpdateDecal()
 	{
 		Color color = this.color;
@@ -34,7 +34,7 @@ public class PaintProjectile : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000101 RID: 257 RVA: 0x00002D55 File Offset: 0x00000F55
+	// Token: 0x060000E0 RID: 224 RVA: 0x00006380 File Offset: 0x00004580
 	private void OnCollisionEnter(Collision collision)
 	{
 		if (!this.isSpawning)
@@ -43,7 +43,7 @@ public class PaintProjectile : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000102 RID: 258 RVA: 0x0001B530 File Offset: 0x00019730
+	// Token: 0x060000E1 RID: 225 RVA: 0x000063B0 File Offset: 0x000045B0
 	private void OnTriggerEnter(Collider other)
 	{
 		if (!this.isSpawning)
@@ -52,7 +52,7 @@ public class PaintProjectile : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000103 RID: 259 RVA: 0x00002D82 File Offset: 0x00000F82
+	// Token: 0x060000E2 RID: 226 RVA: 0x000063E5 File Offset: 0x000045E5
 	public IEnumerator Spawn(Vector3 direction)
 	{
 		this.isSpawning = true;
@@ -61,12 +61,12 @@ public class PaintProjectile : MonoBehaviour
 		GameObject gameObject;
 		if (Physics.SphereCast(base.transform.position - 0.5f * direction, 0.25f, direction, out raycastHit, 1.25f, this.raycastLayers, QueryTriggerInteraction.Ignore))
 		{
-			gameObject = global::UnityEngine.Object.Instantiate<GameObject>(this.paintsplatPrefab, raycastHit.point + 0.1f * global::UnityEngine.Random.insideUnitSphere, global::UnityEngine.Random.rotation);
+			gameObject = Object.Instantiate<GameObject>(this.paintsplatPrefab, raycastHit.point + 0.1f * Random.insideUnitSphere, Random.rotation);
 			gameObject.transform.rotation = Quaternion.FromToRotation(gameObject.transform.up, raycastHit.normal) * gameObject.transform.rotation;
 		}
 		else
 		{
-			gameObject = global::UnityEngine.Object.Instantiate<GameObject>(this.paintsplatPrefab, base.transform.position + 0.1f * global::UnityEngine.Random.insideUnitSphere, base.transform.rotation);
+			gameObject = Object.Instantiate<GameObject>(this.paintsplatPrefab, base.transform.position + 0.1f * Random.insideUnitSphere, base.transform.rotation);
 		}
 		gameObject.GetComponent<Paintsplat>().SetColor(this.color);
 		this.renderer.enabled = false;
@@ -77,12 +77,12 @@ public class PaintProjectile : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06000104 RID: 260 RVA: 0x00002D98 File Offset: 0x00000F98
+	// Token: 0x060000E3 RID: 227 RVA: 0x000063FB File Offset: 0x000045FB
 	private IEnumerator DestroyNextFrame()
 	{
 		yield return new WaitForFixedUpdate();
 		yield return new WaitForFixedUpdate();
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 		yield break;
 	}
 

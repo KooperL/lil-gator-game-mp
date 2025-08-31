@@ -4,7 +4,7 @@ using UnityEngine;
 [AddComponentMenu("Terrain/Tree LODs")]
 public class TreeLODs : MonoBehaviour
 {
-	// Token: 0x060010C0 RID: 4288 RVA: 0x0000E4F2 File Offset: 0x0000C6F2
+	// Token: 0x06000DA8 RID: 3496 RVA: 0x00042416 File Offset: 0x00040616
 	private void OnValidate()
 	{
 		if (this.terrain == null)
@@ -13,24 +13,24 @@ public class TreeLODs : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060010C1 RID: 4289 RVA: 0x000569C8 File Offset: 0x00054BC8
+	// Token: 0x06000DA9 RID: 3497 RVA: 0x00042434 File Offset: 0x00040634
 	[ContextMenu("Update Prototypes")]
 	public void UpdatePrototypes()
 	{
 	}
 
-	// Token: 0x060010C2 RID: 4290 RVA: 0x000569D8 File Offset: 0x00054BD8
+	// Token: 0x06000DAA RID: 3498 RVA: 0x00042444 File Offset: 0x00040644
 	public void SetLOD(int level = 0)
 	{
 	}
 
-	// Token: 0x060010C3 RID: 4291 RVA: 0x0000E50E File Offset: 0x0000C70E
+	// Token: 0x06000DAB RID: 3499 RVA: 0x00042451 File Offset: 0x00040651
 	private void OnDisable()
 	{
 		this.SetLOD(0);
 	}
 
-	// Token: 0x060010C4 RID: 4292 RVA: 0x0000E50E File Offset: 0x0000C70E
+	// Token: 0x06000DAC RID: 3500 RVA: 0x0004245A File Offset: 0x0004065A
 	private void OnDestroy()
 	{
 		this.SetLOD(0);

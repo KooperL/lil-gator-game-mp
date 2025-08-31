@@ -3,23 +3,23 @@ using UnityEngine;
 
 public class ItemRock : ItemThrowable
 {
-	// Token: 0x06000B79 RID: 2937 RVA: 0x0000AC67 File Offset: 0x00008E67
+	// Token: 0x06000995 RID: 2453 RVA: 0x0002D004 File Offset: 0x0002B204
 	public override float GetSolveSpeed(float charge = 1f)
 	{
 		return this.maxThrowSpeed;
 	}
 
-	// Token: 0x06000B7A RID: 2938 RVA: 0x00040B9C File Offset: 0x0003ED9C
+	// Token: 0x06000996 RID: 2454 RVA: 0x0002D00C File Offset: 0x0002B20C
 	public override void Throw(float charge, Vector3 direction)
 	{
-		Rigidbody component = global::UnityEngine.Object.Instantiate<GameObject>(this.thrownPrefab, Player.itemManager.thrownSpawnPoint.position, base.transform.rotation).GetComponent<Rigidbody>();
+		Rigidbody component = Object.Instantiate<GameObject>(this.thrownPrefab, Player.itemManager.thrownSpawnPoint.position, base.transform.rotation).GetComponent<Rigidbody>();
 		Vector3 vector = Mathf.Lerp(this.minThrowSpeed, this.maxThrowSpeed, charge) * direction;
 		component.velocity = vector;
 		component.AddRelativeTorque(this.thrownAngularVelocity, ForceMode.VelocityChange);
 		base.Throw(charge, direction);
 	}
 
-	// Token: 0x06000B7B RID: 2939 RVA: 0x00040C08 File Offset: 0x0003EE08
+	// Token: 0x06000997 RID: 2455 RVA: 0x0002D078 File Offset: 0x0002B278
 	public override void SetEquipped(bool isEquipped)
 	{
 		(this.isOnRight ? Player.itemManager.hipSatchel_r : Player.itemManager.hipSatchel).SetActive(true);
@@ -39,7 +39,7 @@ public class ItemRock : ItemThrowable
 		}
 	}
 
-	// Token: 0x06000B7C RID: 2940 RVA: 0x0000AC6F File Offset: 0x00008E6F
+	// Token: 0x06000998 RID: 2456 RVA: 0x0002D125 File Offset: 0x0002B325
 	public override void OnRemove()
 	{
 		(this.isOnRight ? Player.itemManager.hipSatchel_r : Player.itemManager.hipSatchel).SetActive(false);

@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class LightPower : MonoBehaviour
 {
-	// Token: 0x0600064A RID: 1610 RVA: 0x000067FF File Offset: 0x000049FF
+	// Token: 0x060004FE RID: 1278 RVA: 0x0001AD76 File Offset: 0x00018F76
 	private void OnValidate()
 	{
 		if (this.fogLight == null)
@@ -13,14 +13,14 @@ public class LightPower : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600064B RID: 1611 RVA: 0x0000681B File Offset: 0x00004A1B
+	// Token: 0x060004FF RID: 1279 RVA: 0x0001AD92 File Offset: 0x00018F92
 	private void OnEnable()
 	{
 		this.lightResource.onAmountChanged.AddListener(new UnityAction<int>(this.LightPowerChanged));
 		this.LightPowerChanged(this.lightResource.Amount);
 	}
 
-	// Token: 0x0600064C RID: 1612 RVA: 0x00030EF8 File Offset: 0x0002F0F8
+	// Token: 0x06000500 RID: 1280 RVA: 0x0001ADC4 File Offset: 0x00018FC4
 	private void LightPowerChanged(int lightPower)
 	{
 		float num = Mathf.Lerp(this.unpoweredStrength, 1f, (float)lightPower / (float)this.maxLightPower);

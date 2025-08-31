@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIScrollToSelected : MonoBehaviour
 {
-	// (get) Token: 0x060012F4 RID: 4852 RVA: 0x0000FFFD File Offset: 0x0000E1FD
+	// (get) Token: 0x06000F7F RID: 3967 RVA: 0x0004A621 File Offset: 0x00048821
 	private bool IsScrolling
 	{
 		get
@@ -15,7 +15,7 @@ public class UIScrollToSelected : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x060012F5 RID: 4853 RVA: 0x00010012 File Offset: 0x0000E212
+	// (get) Token: 0x06000F80 RID: 3968 RVA: 0x0004A636 File Offset: 0x00048836
 	private bool ShouldCheckScroll
 	{
 		get
@@ -24,7 +24,7 @@ public class UIScrollToSelected : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012F6 RID: 4854 RVA: 0x00010027 File Offset: 0x0000E227
+	// Token: 0x06000F81 RID: 3969 RVA: 0x0004A64B File Offset: 0x0004884B
 	private void OnValidate()
 	{
 		if (this.scrollRect == null)
@@ -33,7 +33,7 @@ public class UIScrollToSelected : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012F7 RID: 4855 RVA: 0x0005DBCC File Offset: 0x0005BDCC
+	// Token: 0x06000F82 RID: 3970 RVA: 0x0004A668 File Offset: 0x00048868
 	private void Awake()
 	{
 		this.scrollRT = this.scrollRect.GetComponent<RectTransform>();
@@ -42,7 +42,7 @@ public class UIScrollToSelected : MonoBehaviour
 		this.rePlayer = ReInput.players.GetPlayer(0);
 	}
 
-	// Token: 0x060012F8 RID: 4856 RVA: 0x0005DC38 File Offset: 0x0005BE38
+	// Token: 0x06000F83 RID: 3971 RVA: 0x0004A6D4 File Offset: 0x000488D4
 	private void OnEnable()
 	{
 		this.worldCorners = new Vector3[4];
@@ -53,25 +53,25 @@ public class UIScrollToSelected : MonoBehaviour
 		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.OnUINavigate), UpdateLoopType.Update, InputActionEventType.AxisActive, "UIVertical");
 	}
 
-	// Token: 0x060012F9 RID: 4857 RVA: 0x00010043 File Offset: 0x0000E243
+	// Token: 0x06000F84 RID: 3972 RVA: 0x0004A764 File Offset: 0x00048964
 	private void OnDisable()
 	{
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnUINavigate));
 	}
 
-	// Token: 0x060012FA RID: 4858 RVA: 0x0001005C File Offset: 0x0000E25C
+	// Token: 0x06000F85 RID: 3973 RVA: 0x0004A77D File Offset: 0x0004897D
 	private void OnUINavigate(InputActionEventData obj)
 	{
 		this.lastUINavigation = Time.time;
 	}
 
-	// Token: 0x060012FB RID: 4859 RVA: 0x00010069 File Offset: 0x0000E269
+	// Token: 0x06000F86 RID: 3974 RVA: 0x0004A78A File Offset: 0x0004898A
 	private void LateUpdate()
 	{
 		this.UpdateScrollToSelected();
 	}
 
-	// Token: 0x060012FC RID: 4860 RVA: 0x0005DCC8 File Offset: 0x0005BEC8
+	// Token: 0x06000F87 RID: 3975 RVA: 0x0004A794 File Offset: 0x00048994
 	private void UpdatePositionBad()
 	{
 		this.selectedGameObject = this.eventSystem.currentSelectedGameObject;
@@ -100,13 +100,13 @@ public class UIScrollToSelected : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060012FD RID: 4861 RVA: 0x00010071 File Offset: 0x0000E271
+	// Token: 0x06000F88 RID: 3976 RVA: 0x0004A8BA File Offset: 0x00048ABA
 	private float GetNormalizedPosition(float a, float b, float t)
 	{
 		return (t - a) / (b - a);
 	}
 
-	// Token: 0x060012FE RID: 4862 RVA: 0x0001007A File Offset: 0x0000E27A
+	// Token: 0x06000F89 RID: 3977 RVA: 0x0004A8C3 File Offset: 0x00048AC3
 	private void GetWorldMinMax(RectTransform rectTransform, out float min, out float max)
 	{
 		rectTransform.GetWorldCorners(this.worldCorners);
@@ -114,7 +114,7 @@ public class UIScrollToSelected : MonoBehaviour
 		max = this.worldCorners[1].y;
 	}
 
-	// Token: 0x060012FF RID: 4863 RVA: 0x0005DDF0 File Offset: 0x0005BFF0
+	// Token: 0x06000F8A RID: 3978 RVA: 0x0004A8F8 File Offset: 0x00048AF8
 	private void UpdateScrollToSelected()
 	{
 		GameObject currentSelectedGameObject = EventSystem.current.currentSelectedGameObject;
@@ -153,7 +153,7 @@ public class UIScrollToSelected : MonoBehaviour
 		this.scrollRect.normalizedPosition = new Vector2(0f, num10);
 	}
 
-	// Token: 0x06001300 RID: 4864 RVA: 0x0005DF80 File Offset: 0x0005C180
+	// Token: 0x06000F8B RID: 3979 RVA: 0x0004AA88 File Offset: 0x00048C88
 	public void Scroll(float heightDelta)
 	{
 		this.scrollTime = Time.time;

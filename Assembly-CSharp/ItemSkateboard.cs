@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemSkateboard : ItemShield
 {
-	// Token: 0x06000BBF RID: 3007 RVA: 0x0000AFB2 File Offset: 0x000091B2
+	// Token: 0x060009C9 RID: 2505 RVA: 0x0002D803 File Offset: 0x0002BA03
 	public override Transform GetParent(bool isEquipped, bool isSledding)
 	{
 		if (isEquipped && isSledding)

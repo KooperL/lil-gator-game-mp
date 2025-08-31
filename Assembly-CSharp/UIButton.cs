@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIButton : MonoBehaviour
 {
-	// Token: 0x060011CB RID: 4555 RVA: 0x00059520 File Offset: 0x00057720
+	// Token: 0x06000E98 RID: 3736 RVA: 0x00045C10 File Offset: 0x00043E10
 	private void OnEnable()
 	{
 		if (this.image == null)
@@ -19,7 +19,7 @@ public class UIButton : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011CC RID: 4556 RVA: 0x0000F2B4 File Offset: 0x0000D4B4
+	// Token: 0x06000E99 RID: 3737 RVA: 0x00045C67 File Offset: 0x00043E67
 	private void OnDisable()
 	{
 		if (this.buttonObject != null)
@@ -28,7 +28,7 @@ public class UIButton : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011CD RID: 4557 RVA: 0x00059578 File Offset: 0x00057778
+	// Token: 0x06000E9A RID: 3738 RVA: 0x00045C94 File Offset: 0x00043E94
 	private void UpdateSprite()
 	{
 		Sprite inputSprite = this.buttonObject.InputSprite;

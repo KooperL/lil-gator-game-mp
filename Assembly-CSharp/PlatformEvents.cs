@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class PlatformEvents : MonoBehaviour
 {
-	// Token: 0x06000A90 RID: 2704 RVA: 0x0000A137 File Offset: 0x00008337
+	// Token: 0x060008C4 RID: 2244 RVA: 0x0002969C File Offset: 0x0002789C
 	private void Start()
 	{
 		if (this.pcEvent != null)

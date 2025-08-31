@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class ActorMover : MonoBehaviour, IActorMover
 {
-	// Token: 0x0600038E RID: 910 RVA: 0x00004BC6 File Offset: 0x00002DC6
+	// Token: 0x06000323 RID: 803 RVA: 0x0001279C File Offset: 0x0001099C
 	private void OnValidate()
 	{
 		if (this.animator == null)
@@ -14,7 +14,7 @@ public class ActorMover : MonoBehaviour, IActorMover
 		}
 	}
 
-	// Token: 0x0600038F RID: 911 RVA: 0x00026B60 File Offset: 0x00024D60
+	// Token: 0x06000324 RID: 804 RVA: 0x000127B8 File Offset: 0x000109B8
 	private void Awake()
 	{
 		if (this.animator == null)
@@ -29,7 +29,7 @@ public class ActorMover : MonoBehaviour, IActorMover
 		base.enabled = false;
 	}
 
-	// Token: 0x06000390 RID: 912 RVA: 0x00004BE2 File Offset: 0x00002DE2
+	// Token: 0x06000325 RID: 805 RVA: 0x00012811 File Offset: 0x00010A11
 	private void OnEnable()
 	{
 		this.t = 0f;
@@ -37,7 +37,7 @@ public class ActorMover : MonoBehaviour, IActorMover
 		this.lastPosition = base.transform.position;
 	}
 
-	// Token: 0x06000391 RID: 913 RVA: 0x00026BBC File Offset: 0x00024DBC
+	// Token: 0x06000326 RID: 806 RVA: 0x0001283C File Offset: 0x00010A3C
 	private void Update()
 	{
 		if (this.pathArray == null)
@@ -100,7 +100,7 @@ public class ActorMover : MonoBehaviour, IActorMover
 		}
 	}
 
-	// Token: 0x06000392 RID: 914 RVA: 0x00026E3C File Offset: 0x0002503C
+	// Token: 0x06000327 RID: 807 RVA: 0x00012ABC File Offset: 0x00010CBC
 	public float MoveAlongPath(float t, float distance)
 	{
 		if (distance == 0f)
@@ -126,7 +126,7 @@ public class ActorMover : MonoBehaviour, IActorMover
 		return Mathf.Clamp(t + distance * num2, 0f, (float)(this.path.Count - 1));
 	}
 
-	// Token: 0x06000393 RID: 915 RVA: 0x00026EF4 File Offset: 0x000250F4
+	// Token: 0x06000328 RID: 808 RVA: 0x00012B74 File Offset: 0x00010D74
 	public void SetMark(Vector3[] positions, Quaternion rotation, float speed, UnityEvent onReachMark, bool skipToStart = false, bool disableInteraction = true, bool playFootsteps = true)
 	{
 		if (this.actor == null)
@@ -189,7 +189,7 @@ public class ActorMover : MonoBehaviour, IActorMover
 		this.mountedActor.GetOut();
 	}
 
-	// Token: 0x06000394 RID: 916 RVA: 0x0002709C File Offset: 0x0002529C
+	// Token: 0x06000329 RID: 809 RVA: 0x00012D1C File Offset: 0x00010F1C
 	private void StartMoving()
 	{
 		this.path[0] = (this.pathArray[0] = base.transform.position);
@@ -197,7 +197,7 @@ public class ActorMover : MonoBehaviour, IActorMover
 		base.enabled = true;
 	}
 
-	// Token: 0x06000395 RID: 917 RVA: 0x000270E4 File Offset: 0x000252E4
+	// Token: 0x0600032A RID: 810 RVA: 0x00012D64 File Offset: 0x00010F64
 	public void CancelMove()
 	{
 		if (!base.enabled)

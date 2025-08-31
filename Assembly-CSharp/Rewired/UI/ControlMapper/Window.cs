@@ -12,7 +12,7 @@ namespace Rewired.UI.ControlMapper
 	[RequireComponent(typeof(CanvasGroup))]
 	public class Window : MonoBehaviour
 	{
-		// (get) Token: 0x06001CB9 RID: 7353 RVA: 0x00015F07 File Offset: 0x00014107
+		// (get) Token: 0x060016C9 RID: 5833 RVA: 0x0005F8CB File Offset: 0x0005DACB
 		public bool hasFocus
 		{
 			get
@@ -21,7 +21,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001CBA RID: 7354 RVA: 0x00015F24 File Offset: 0x00014124
+		// (get) Token: 0x060016CA RID: 5834 RVA: 0x0005F8E8 File Offset: 0x0005DAE8
 		public int id
 		{
 			get
@@ -30,7 +30,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001CBB RID: 7355 RVA: 0x00015F2C File Offset: 0x0001412C
+		// (get) Token: 0x060016CB RID: 5835 RVA: 0x0005F8F0 File Offset: 0x0005DAF0
 		public RectTransform rectTransform
 		{
 			get
@@ -43,7 +43,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001CBC RID: 7356 RVA: 0x00015F53 File Offset: 0x00014153
+		// (get) Token: 0x060016CC RID: 5836 RVA: 0x0005F917 File Offset: 0x0005DB17
 		public Text titleText
 		{
 			get
@@ -52,7 +52,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001CBD RID: 7357 RVA: 0x00015F5B File Offset: 0x0001415B
+		// (get) Token: 0x060016CD RID: 5837 RVA: 0x0005F91F File Offset: 0x0005DB1F
 		public List<Text> contentText
 		{
 			get
@@ -61,8 +61,8 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001CBE RID: 7358 RVA: 0x00015F63 File Offset: 0x00014163
-		// (set) Token: 0x06001CBF RID: 7359 RVA: 0x00015F6B File Offset: 0x0001416B
+		// (get) Token: 0x060016CE RID: 5838 RVA: 0x0005F927 File Offset: 0x0005DB27
+		// (set) Token: 0x060016CF RID: 5839 RVA: 0x0005F92F File Offset: 0x0005DB2F
 		public GameObject defaultUIElement
 		{
 			get
@@ -75,8 +75,8 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001CC0 RID: 7360 RVA: 0x00015F74 File Offset: 0x00014174
-		// (set) Token: 0x06001CC1 RID: 7361 RVA: 0x00015F7C File Offset: 0x0001417C
+		// (get) Token: 0x060016D0 RID: 5840 RVA: 0x0005F938 File Offset: 0x0005DB38
+		// (set) Token: 0x060016D1 RID: 5841 RVA: 0x0005F940 File Offset: 0x0005DB40
 		public Action<int> updateCallback
 		{
 			get
@@ -89,7 +89,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001CC2 RID: 7362 RVA: 0x00015F85 File Offset: 0x00014185
+		// (get) Token: 0x060016D2 RID: 5842 RVA: 0x0005F949 File Offset: 0x0005DB49
 		public Window.Timer timer
 		{
 			get
@@ -98,8 +98,8 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001CC3 RID: 7363 RVA: 0x00015F8D File Offset: 0x0001418D
-		// (set) Token: 0x06001CC4 RID: 7364 RVA: 0x00071670 File Offset: 0x0006F870
+		// (get) Token: 0x060016D3 RID: 5843 RVA: 0x0005F951 File Offset: 0x0005DB51
+		// (set) Token: 0x060016D4 RID: 5844 RVA: 0x0005F964 File Offset: 0x0005DB64
 		public int width
 		{
 			get
@@ -114,8 +114,8 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001CC5 RID: 7365 RVA: 0x00015FA0 File Offset: 0x000141A0
-		// (set) Token: 0x06001CC6 RID: 7366 RVA: 0x000716A0 File Offset: 0x0006F8A0
+		// (get) Token: 0x060016D5 RID: 5845 RVA: 0x0005F992 File Offset: 0x0005DB92
+		// (set) Token: 0x060016D6 RID: 5846 RVA: 0x0005F9A8 File Offset: 0x0005DBA8
 		public int height
 		{
 			get
@@ -130,7 +130,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001CC7 RID: 7367 RVA: 0x00015FB3 File Offset: 0x000141B3
+		// (get) Token: 0x060016D7 RID: 5847 RVA: 0x0005F9D6 File Offset: 0x0005DBD6
 		protected bool initialized
 		{
 			get
@@ -139,13 +139,13 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001CC8 RID: 7368 RVA: 0x00015FBB File Offset: 0x000141BB
+		// Token: 0x060016D8 RID: 5848 RVA: 0x0005F9DE File Offset: 0x0005DBDE
 		private void OnEnable()
 		{
 			base.StartCoroutine("OnEnableAsync");
 		}
 
-		// Token: 0x06001CC9 RID: 7369 RVA: 0x00015FC9 File Offset: 0x000141C9
+		// Token: 0x060016D9 RID: 5849 RVA: 0x0005F9EC File Offset: 0x0005DBEC
 		protected virtual void Update()
 		{
 			if (!this._initialized)
@@ -163,7 +163,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001CCA RID: 7370 RVA: 0x000716D0 File Offset: 0x0006F8D0
+		// Token: 0x060016DA RID: 5850 RVA: 0x0005FA20 File Offset: 0x0005DC20
 		public virtual void Initialize(int id, Func<int, bool> isFocusedCallback)
 		{
 			if (this._initialized)
@@ -179,26 +179,26 @@ namespace Rewired.UI.ControlMapper
 			this._initialized = true;
 		}
 
-		// Token: 0x06001CCB RID: 7371 RVA: 0x00015FFC File Offset: 0x000141FC
+		// Token: 0x060016DB RID: 5851 RVA: 0x0005FA77 File Offset: 0x0005DC77
 		public void SetSize(int width, int height)
 		{
 			this.rectTransform.sizeDelta = new Vector2((float)width, (float)height);
 		}
 
-		// Token: 0x06001CCC RID: 7372 RVA: 0x00016012 File Offset: 0x00014212
+		// Token: 0x060016DC RID: 5852 RVA: 0x0005FA8D File Offset: 0x0005DC8D
 		public void CreateTitleText(GameObject prefab, Vector2 offset)
 		{
 			this.CreateText(prefab, ref this._titleText, "Title Text", UIPivot.TopCenter, UIAnchor.TopHStretch, offset);
 		}
 
-		// Token: 0x06001CCD RID: 7373 RVA: 0x00016031 File Offset: 0x00014231
+		// Token: 0x060016DD RID: 5853 RVA: 0x0005FAAC File Offset: 0x0005DCAC
 		public void CreateTitleText(GameObject prefab, Vector2 offset, string text)
 		{
 			this.CreateTitleText(prefab, offset);
 			this.SetTitleText(text);
 		}
 
-		// Token: 0x06001CCE RID: 7374 RVA: 0x00071728 File Offset: 0x0006F928
+		// Token: 0x060016DE RID: 5854 RVA: 0x0005FAC0 File Offset: 0x0005DCC0
 		public void AddContentText(GameObject prefab, UIPivot pivot, UIAnchor anchor, Vector2 offset)
 		{
 			Text text = null;
@@ -206,26 +206,26 @@ namespace Rewired.UI.ControlMapper
 			this._contentText.Add(text);
 		}
 
-		// Token: 0x06001CCF RID: 7375 RVA: 0x00016042 File Offset: 0x00014242
+		// Token: 0x060016DF RID: 5855 RVA: 0x0005FAED File Offset: 0x0005DCED
 		public void AddContentText(GameObject prefab, UIPivot pivot, UIAnchor anchor, Vector2 offset, string text)
 		{
 			this.AddContentText(prefab, pivot, anchor, offset);
 			this.SetContentText(text, this._contentText.Count - 1);
 		}
 
-		// Token: 0x06001CD0 RID: 7376 RVA: 0x00016064 File Offset: 0x00014264
+		// Token: 0x060016E0 RID: 5856 RVA: 0x0005FB0F File Offset: 0x0005DD0F
 		public void AddContentImage(GameObject prefab, UIPivot pivot, UIAnchor anchor, Vector2 offset)
 		{
 			this.CreateImage(prefab, "Image", pivot, anchor, offset);
 		}
 
-		// Token: 0x06001CD1 RID: 7377 RVA: 0x00016076 File Offset: 0x00014276
+		// Token: 0x060016E1 RID: 5857 RVA: 0x0005FB21 File Offset: 0x0005DD21
 		public void AddContentImage(GameObject prefab, UIPivot pivot, UIAnchor anchor, Vector2 offset, string text)
 		{
 			this.AddContentImage(prefab, pivot, anchor, offset);
 		}
 
-		// Token: 0x06001CD2 RID: 7378 RVA: 0x00071758 File Offset: 0x0006F958
+		// Token: 0x060016E2 RID: 5858 RVA: 0x0005FB30 File Offset: 0x0005DD30
 		public void CreateButton(GameObject prefab, UIPivot pivot, UIAnchor anchor, Vector2 offset, string buttonText, UnityAction confirmCallback, UnityAction cancelCallback, bool setDefault)
 		{
 			if (prefab == null)
@@ -258,7 +258,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001CD3 RID: 7379 RVA: 0x00016083 File Offset: 0x00014283
+		// Token: 0x060016E3 RID: 5859 RVA: 0x0005FBBE File Offset: 0x0005DDBE
 		public string GetTitleText(string text)
 		{
 			if (this._titleText == null)
@@ -268,7 +268,7 @@ namespace Rewired.UI.ControlMapper
 			return this._titleText.text;
 		}
 
-		// Token: 0x06001CD4 RID: 7380 RVA: 0x000160A4 File Offset: 0x000142A4
+		// Token: 0x060016E4 RID: 5860 RVA: 0x0005FBDF File Offset: 0x0005DDDF
 		public void SetTitleText(string text)
 		{
 			if (this._titleText == null)
@@ -278,7 +278,7 @@ namespace Rewired.UI.ControlMapper
 			this._titleText.text = text;
 		}
 
-		// Token: 0x06001CD5 RID: 7381 RVA: 0x000717E8 File Offset: 0x0006F9E8
+		// Token: 0x060016E5 RID: 5861 RVA: 0x0005FBFC File Offset: 0x0005DDFC
 		public string GetContentText(int index)
 		{
 			if (this._contentText == null || this._contentText.Count <= index || this._contentText[index] == null)
@@ -288,7 +288,7 @@ namespace Rewired.UI.ControlMapper
 			return this._contentText[index].text;
 		}
 
-		// Token: 0x06001CD6 RID: 7382 RVA: 0x00071838 File Offset: 0x0006FA38
+		// Token: 0x060016E6 RID: 5862 RVA: 0x0005FC4C File Offset: 0x0005DE4C
 		public float GetContentTextHeight(int index)
 		{
 			if (this._contentText == null || this._contentText.Count <= index || this._contentText[index] == null)
@@ -298,7 +298,7 @@ namespace Rewired.UI.ControlMapper
 			return this._contentText[index].rectTransform.sizeDelta.y;
 		}
 
-		// Token: 0x06001CD7 RID: 7383 RVA: 0x000160C1 File Offset: 0x000142C1
+		// Token: 0x060016E7 RID: 5863 RVA: 0x0005FCA4 File Offset: 0x0005DEA4
 		public void SetContentText(string text, int index)
 		{
 			if (this._contentText == null || this._contentText.Count <= index || this._contentText[index] == null)
@@ -308,13 +308,13 @@ namespace Rewired.UI.ControlMapper
 			this._contentText[index].text = text;
 		}
 
-		// Token: 0x06001CD8 RID: 7384 RVA: 0x00016100 File Offset: 0x00014300
+		// Token: 0x060016E8 RID: 5864 RVA: 0x0005FCE3 File Offset: 0x0005DEE3
 		public void SetUpdateCallback(Action<int> callback)
 		{
 			this.updateCallback = callback;
 		}
 
-		// Token: 0x06001CD9 RID: 7385 RVA: 0x00016109 File Offset: 0x00014309
+		// Token: 0x060016E9 RID: 5865 RVA: 0x0005FCEC File Offset: 0x0005DEEC
 		public virtual void TakeInputFocus()
 		{
 			if (EventSystem.current == null)
@@ -325,19 +325,19 @@ namespace Rewired.UI.ControlMapper
 			this.Enable();
 		}
 
-		// Token: 0x06001CDA RID: 7386 RVA: 0x0001612F File Offset: 0x0001432F
+		// Token: 0x060016EA RID: 5866 RVA: 0x0005FD12 File Offset: 0x0005DF12
 		public virtual void Enable()
 		{
 			this._canvasGroup.interactable = true;
 		}
 
-		// Token: 0x06001CDB RID: 7387 RVA: 0x0001613D File Offset: 0x0001433D
+		// Token: 0x060016EB RID: 5867 RVA: 0x0005FD20 File Offset: 0x0005DF20
 		public virtual void Disable()
 		{
 			this._canvasGroup.interactable = false;
 		}
 
-		// Token: 0x06001CDC RID: 7388 RVA: 0x0001614B File Offset: 0x0001434B
+		// Token: 0x060016EC RID: 5868 RVA: 0x0005FD2E File Offset: 0x0005DF2E
 		public virtual void Cancel()
 		{
 			if (!this.initialized)
@@ -350,7 +350,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001CDD RID: 7389 RVA: 0x00071890 File Offset: 0x0006FA90
+		// Token: 0x060016ED RID: 5869 RVA: 0x0005FD4C File Offset: 0x0005DF4C
 		private void CreateText(GameObject prefab, ref Text textComponent, string name, UIPivot pivot, UIAnchor anchor, Vector2 offset)
 		{
 			if (prefab == null || this.content == null)
@@ -374,7 +374,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001CDE RID: 7390 RVA: 0x00071924 File Offset: 0x0006FB24
+		// Token: 0x060016EE RID: 5870 RVA: 0x0005FDE0 File Offset: 0x0005DFE0
 		private void CreateImage(GameObject prefab, string name, UIPivot pivot, UIAnchor anchor, Vector2 offset)
 		{
 			if (prefab == null || this.content == null)
@@ -384,7 +384,7 @@ namespace Rewired.UI.ControlMapper
 			UITools.InstantiateGUIObject<Image>(prefab, this.content.transform, name, pivot, anchor.min, anchor.max, offset);
 		}
 
-		// Token: 0x06001CDF RID: 7391 RVA: 0x00071974 File Offset: 0x0006FB74
+		// Token: 0x060016EF RID: 5871 RVA: 0x0005FE30 File Offset: 0x0005E030
 		private GameObject CreateButton(GameObject prefab, string name, UIAnchor anchor, UIPivot pivot, Vector2 offset, out ButtonInfo buttonInfo)
 		{
 			buttonInfo = null;
@@ -411,7 +411,7 @@ namespace Rewired.UI.ControlMapper
 			return gameObject;
 		}
 
-		// Token: 0x06001CE0 RID: 7392 RVA: 0x00016169 File Offset: 0x00014369
+		// Token: 0x060016F0 RID: 5872 RVA: 0x0005FEBA File Offset: 0x0005E0BA
 		private IEnumerator OnEnableAsync()
 		{
 			yield return 1;
@@ -430,7 +430,7 @@ namespace Rewired.UI.ControlMapper
 			yield break;
 		}
 
-		// Token: 0x06001CE1 RID: 7393 RVA: 0x00071A00 File Offset: 0x0006FC00
+		// Token: 0x060016F1 RID: 5873 RVA: 0x0005FECC File Offset: 0x0005E0CC
 		private void CheckUISelection()
 		{
 			if (!this.hasFocus)
@@ -448,7 +448,7 @@ namespace Rewired.UI.ControlMapper
 			this.lastUISelection = EventSystem.current.currentSelectedGameObject;
 		}
 
-		// Token: 0x06001CE2 RID: 7394 RVA: 0x00016178 File Offset: 0x00014378
+		// Token: 0x060016F2 RID: 5874 RVA: 0x0005FF18 File Offset: 0x0005E118
 		private void RestoreDefaultOrLastUISelection()
 		{
 			if (!this.hasFocus)
@@ -463,7 +463,7 @@ namespace Rewired.UI.ControlMapper
 			this.SetUISelection(this.lastUISelection);
 		}
 
-		// Token: 0x06001CE3 RID: 7395 RVA: 0x00013734 File Offset: 0x00011934
+		// Token: 0x060016F3 RID: 5875 RVA: 0x0005FF57 File Offset: 0x0005E157
 		private void SetUISelection(GameObject selection)
 		{
 			if (EventSystem.current == null)
@@ -503,7 +503,7 @@ namespace Rewired.UI.ControlMapper
 
 		public class Timer
 		{
-			// (get) Token: 0x06001CE5 RID: 7397 RVA: 0x000161C6 File Offset: 0x000143C6
+			// (get) Token: 0x06001DAB RID: 7595 RVA: 0x0007884E File Offset: 0x00076A4E
 			public bool started
 			{
 				get
@@ -512,7 +512,7 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// (get) Token: 0x06001CE6 RID: 7398 RVA: 0x000161CE File Offset: 0x000143CE
+			// (get) Token: 0x06001DAC RID: 7596 RVA: 0x00078856 File Offset: 0x00076A56
 			public bool finished
 			{
 				get
@@ -530,7 +530,7 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// (get) Token: 0x06001CE7 RID: 7399 RVA: 0x000161F1 File Offset: 0x000143F1
+			// (get) Token: 0x06001DAD RID: 7597 RVA: 0x00078879 File Offset: 0x00076A79
 			public float remaining
 			{
 				get
@@ -543,14 +543,14 @@ namespace Rewired.UI.ControlMapper
 				}
 			}
 
-			// Token: 0x06001CE9 RID: 7401 RVA: 0x0001620D File Offset: 0x0001440D
+			// Token: 0x06001DAF RID: 7599 RVA: 0x0007889D File Offset: 0x00076A9D
 			public void Start(float length)
 			{
 				this.end = Time.realtimeSinceStartup + length;
 				this._started = true;
 			}
 
-			// Token: 0x06001CEA RID: 7402 RVA: 0x00016223 File Offset: 0x00014423
+			// Token: 0x06001DB0 RID: 7600 RVA: 0x000788B3 File Offset: 0x00076AB3
 			public void Stop()
 			{
 				this._started = false;

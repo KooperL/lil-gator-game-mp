@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MoneySpawner : MonoBehaviour
 {
-	// Token: 0x06000987 RID: 2439 RVA: 0x00009418 File Offset: 0x00007618
+	// Token: 0x060007E3 RID: 2019 RVA: 0x000264FE File Offset: 0x000246FE
 	private void Start()
 	{
 		if (this.spawnOnAwake)
@@ -12,13 +12,13 @@ public class MoneySpawner : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000988 RID: 2440 RVA: 0x00009428 File Offset: 0x00007628
+	// Token: 0x060007E4 RID: 2020 RVA: 0x0002650E File Offset: 0x0002470E
 	public void SpawnMoney()
 	{
 		int num = this.cents;
 		if (this.minCents != 0)
 		{
-			global::UnityEngine.Random.Range(this.minCents, this.cents);
+			Random.Range(this.minCents, this.cents);
 		}
 	}
 

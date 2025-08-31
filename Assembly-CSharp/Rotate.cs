@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-	// Token: 0x0600067F RID: 1663 RVA: 0x00006AFB File Offset: 0x00004CFB
+	// Token: 0x06000533 RID: 1331 RVA: 0x0001BD86 File Offset: 0x00019F86
 	private void Update()
 	{
 		base.transform.Rotate(this.rotation * Time.deltaTime);

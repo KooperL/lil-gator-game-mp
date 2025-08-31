@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BC61BA8F-F596-4419-AFE1-BCD8099C3F11}</ProjectGuid>
+    <ProjectGuid>{7650968B-BEB5-493C-8B25-153BBD69EC74}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Assembly-CSharp</RootNamespace>
@@ -50,9 +50,6 @@
     </Reference>
     <Reference Include="Rewired_Windows">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Lil Gator Game\Lil Gator Game_Data\Managed\Rewired_Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="System">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Lil Gator Game\Lil Gator Game_Data\Managed\System.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Lil Gator Game\Lil Gator Game_Data\Managed\Unity.2D.PixelPerfect.dll</HintPath>
@@ -507,6 +504,7 @@
     <Compile Include="MultiplayerCommunicationService.cs" />
     <Compile Include="MultiplayerConfigLoader.cs" />
     <Compile Include="MultiplayerInjectButtonToMainMenu.cs" />
+    <Compile Include="MultiplayerJsonHelper.cs" />
     <Compile Include="MultiplayerNetworkBootstrap.cs" />
     <Compile Include="MultiplayerPlayerFrameStreamer.cs" />
     <Compile Include="MultiplayerPlayerManager.cs" />

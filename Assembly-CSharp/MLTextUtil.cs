@@ -2,7 +2,7 @@
 
 public class MLTextUtil
 {
-	// Token: 0x0600002E RID: 46 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x0600002E RID: 46 RVA: 0x00002A37 File Offset: 0x00000C37
 	public static void AddMLStringEntry(MultilingualTextDocument document, string entryID, string englishText)
 	{
 	}

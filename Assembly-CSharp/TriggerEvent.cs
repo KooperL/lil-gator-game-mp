@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class TriggerEvent : MonoBehaviour
 {
-	// Token: 0x06001007 RID: 4103 RVA: 0x0000DD89 File Offset: 0x0000BF89
+	// Token: 0x06000CFE RID: 3326 RVA: 0x0003EB0C File Offset: 0x0003CD0C
 	public void OnTriggerEnter(Collider other)
 	{
 		if (this.onEnter && this.unityEvent != null)
@@ -13,7 +13,7 @@ public class TriggerEvent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001008 RID: 4104 RVA: 0x0000DDA6 File Offset: 0x0000BFA6
+	// Token: 0x06000CFF RID: 3327 RVA: 0x0003EB29 File Offset: 0x0003CD29
 	public void OnTriggerStay(Collider other)
 	{
 		if (this.onStay && this.unityEvent != null)
@@ -22,7 +22,7 @@ public class TriggerEvent : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001009 RID: 4105 RVA: 0x0000DDC3 File Offset: 0x0000BFC3
+	// Token: 0x06000D00 RID: 3328 RVA: 0x0003EB46 File Offset: 0x0003CD46
 	public void OnTriggerExit(Collider other)
 	{
 		if (this.onExit && this.unityEvent != null)

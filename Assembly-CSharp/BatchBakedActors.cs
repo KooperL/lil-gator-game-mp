@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BatchBakedActors : MonoBehaviour
 {
-	// Token: 0x06000266 RID: 614 RVA: 0x00004046 File Offset: 0x00002246
+	// Token: 0x06000221 RID: 545 RVA: 0x0000BC9F File Offset: 0x00009E9F
 	private Vector2 Remap(Vector2 uv, Vector2 min, Vector2 max)
 	{
 		uv.x = Mathf.Lerp(min.x, max.x, uv.x);

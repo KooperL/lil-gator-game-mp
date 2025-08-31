@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class Racetrack : TimedChallenge
 {
-	// Token: 0x06000858 RID: 2136 RVA: 0x00008356 File Offset: 0x00006556
+	// Token: 0x060006D9 RID: 1753 RVA: 0x00022B58 File Offset: 0x00020D58
 	protected override void LoadState()
 	{
 		base.LoadState();
 		this.finishRaceObject.SetActive(false);
 	}
 
-	// Token: 0x06000859 RID: 2137 RVA: 0x0000836A File Offset: 0x0000656A
+	// Token: 0x060006DA RID: 1754 RVA: 0x00022B6C File Offset: 0x00020D6C
 	public override void StartRace()
 	{
 		base.StartRace();
@@ -20,21 +20,21 @@ public class Racetrack : TimedChallenge
 		}
 	}
 
-	// Token: 0x0600085A RID: 2138 RVA: 0x00008386 File Offset: 0x00006586
+	// Token: 0x060006DB RID: 1755 RVA: 0x00022B88 File Offset: 0x00020D88
 	public override void ClearRace()
 	{
 		base.ClearRace();
 		this.finishRaceObject.SetActive(false);
 	}
 
-	// Token: 0x0600085B RID: 2139 RVA: 0x0000839A File Offset: 0x0000659A
+	// Token: 0x060006DC RID: 1756 RVA: 0x00022B9C File Offset: 0x00020D9C
 	protected override void DoParticleEffects()
 	{
 		base.DoParticleEffects();
 		EffectsManager.e.Dust(this.finishRaceObject.transform.position, 15);
 	}
 
-	// Token: 0x0600085C RID: 2140 RVA: 0x000083BE File Offset: 0x000065BE
+	// Token: 0x060006DD RID: 1757 RVA: 0x00022BC0 File Offset: 0x00020DC0
 	protected override Transform RaceGoal()
 	{
 		return this.finishRaceObject.transform;

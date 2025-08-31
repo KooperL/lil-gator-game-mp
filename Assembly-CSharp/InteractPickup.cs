@@ -3,7 +3,7 @@ using System.Collections;
 
 public class InteractPickup : PersistentObject, Interaction
 {
-	// Token: 0x060007E0 RID: 2016 RVA: 0x00036704 File Offset: 0x00034904
+	// Token: 0x0600067A RID: 1658 RVA: 0x000214B8 File Offset: 0x0001F6B8
 	public void Interact()
 	{
 		if (this.resource != null)
@@ -19,7 +19,7 @@ public class InteractPickup : PersistentObject, Interaction
 		}
 	}
 
-	// Token: 0x060007E1 RID: 2017 RVA: 0x00007D5D File Offset: 0x00005F5D
+	// Token: 0x0600067B RID: 1659 RVA: 0x00021525 File Offset: 0x0001F725
 	private IEnumerator RunWithItem()
 	{
 		this.item.Activate();

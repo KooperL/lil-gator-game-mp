@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class CoolShop : MonoBehaviour
 {
-	// Token: 0x06000DFC RID: 3580 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B78 RID: 2936 RVA: 0x00038581 File Offset: 0x00036781
 	public void Introduction()
 	{
 	}
 
-	// Token: 0x06000DFD RID: 3581 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000B79 RID: 2937 RVA: 0x00038583 File Offset: 0x00036783
 	public void ShopLauncher()
 	{
 	}
 
-	// Token: 0x06000DFE RID: 3582 RVA: 0x0000C8B9 File Offset: 0x0000AAB9
+	// Token: 0x06000B7A RID: 2938 RVA: 0x00038585 File Offset: 0x00036785
 	private IEnumerator RunConversation()
 	{
 		if (this.stateMachine.StateID == 0)

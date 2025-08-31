@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class TerrainDetails : MonoBehaviour
 {
-	// Token: 0x0600108E RID: 4238 RVA: 0x000555F0 File Offset: 0x000537F0
+	// Token: 0x06000D7D RID: 3453 RVA: 0x00040FDC File Offset: 0x0003F1DC
 	private void OnValidate()
 	{
 		DetailPrototype[] detailPrototypes = base.GetComponent<Terrain>().terrainData.detailPrototypes;
@@ -16,7 +16,7 @@ public class TerrainDetails : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600108F RID: 4239 RVA: 0x00055648 File Offset: 0x00053848
+	// Token: 0x06000D7E RID: 3454 RVA: 0x00041034 File Offset: 0x0003F234
 	private void OnEnable()
 	{
 		this.t = base.GetComponent<Terrain>();
@@ -42,7 +42,7 @@ public class TerrainDetails : MonoBehaviour
 		this.detailSize = new Vector2Int(this.t.terrainData.detailWidth, this.t.terrainData.detailHeight);
 	}
 
-	// Token: 0x06001090 RID: 4240 RVA: 0x000557A4 File Offset: 0x000539A4
+	// Token: 0x06000D7F RID: 3455 RVA: 0x00041190 File Offset: 0x0003F390
 	public Vector2Int WorldToDetail(Vector3 worldPosition)
 	{
 		Vector2 vector = new Vector2(worldPosition.x - base.transform.position.x, worldPosition.z - base.transform.position.z);
@@ -51,7 +51,7 @@ public class TerrainDetails : MonoBehaviour
 		return new Vector2Int(Mathf.Clamp(Mathf.FloorToInt(vector.x), 0, this.detailSize.x), Mathf.Clamp(Mathf.FloorToInt(vector.y), 0, this.detailSize.y));
 	}
 
-	// Token: 0x06001091 RID: 4241 RVA: 0x0005586C File Offset: 0x00053A6C
+	// Token: 0x06000D80 RID: 3456 RVA: 0x00041258 File Offset: 0x0003F458
 	private Vector3 DetailToWorld(Vector2Int point)
 	{
 		Vector2 vector = new Vector2((float)point.x + 0.5f, (float)point.y + 0.5f);
@@ -63,7 +63,7 @@ public class TerrainDetails : MonoBehaviour
 		return new Vector3(vector.x + base.transform.position.x, num, vector.y + base.transform.position.z);
 	}
 
-	// Token: 0x06001092 RID: 4242 RVA: 0x00055958 File Offset: 0x00053B58
+	// Token: 0x06000D81 RID: 3457 RVA: 0x00041344 File Offset: 0x0003F544
 	public void ClearDetailsBox(Transform localPosition, Vector2 corner1, Vector2 corner2, float pointSpacing)
 	{
 		if (this.isUpdatingDetails)
@@ -113,7 +113,7 @@ public class TerrainDetails : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001093 RID: 4243 RVA: 0x0000E3A9 File Offset: 0x0000C5A9
+	// Token: 0x06000D82 RID: 3458 RVA: 0x000415A4 File Offset: 0x0003F7A4
 	private IEnumerator UpdateDetails(List<int> cutLayers)
 	{
 		this.isUpdatingDetails = true;
@@ -128,7 +128,7 @@ public class TerrainDetails : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001094 RID: 4244 RVA: 0x00055BB8 File Offset: 0x00053DB8
+	// Token: 0x06000D83 RID: 3459 RVA: 0x000415BC File Offset: 0x0003F7BC
 	private void EmitLayer(Vector3 position, TerrainDetails.DetailLayerClippings clipping, float density = 1f)
 	{
 		ParticleSystem.EmitParams emitParams = default(ParticleSystem.EmitParams);
@@ -145,7 +145,7 @@ public class TerrainDetails : MonoBehaviour
 		clipping.particleSystem.Emit(emitParams, Mathf.CeilToInt(density * (float)clipping.count * this.t.detailObjectDensity));
 	}
 
-	// Token: 0x06001095 RID: 4245 RVA: 0x00055C38 File Offset: 0x00053E38
+	// Token: 0x06000D84 RID: 3460 RVA: 0x0004163C File Offset: 0x0003F83C
 	private void CheckLoot(Vector3 position, int amountCut)
 	{
 		this.cumulativeAmountCut += amountCut;
@@ -153,9 +153,9 @@ public class TerrainDetails : MonoBehaviour
 		{
 			foreach (TerrainDetails.ClippingsLoot clippingsLoot in this.clippingsLoot)
 			{
-				if (global::UnityEngine.Random.value <= clippingsLoot.chance)
+				if (Random.value <= clippingsLoot.chance)
 				{
-					global::UnityEngine.Object.Instantiate<GameObject>(clippingsLoot.prefab, position + global::UnityEngine.Random.insideUnitSphere + 0.5f * Vector3.up, Quaternion.identity);
+					Object.Instantiate<GameObject>(clippingsLoot.prefab, position + Random.insideUnitSphere + 0.5f * Vector3.up, Quaternion.identity);
 					break;
 				}
 			}
@@ -163,7 +163,7 @@ public class TerrainDetails : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001096 RID: 4246 RVA: 0x00055CCC File Offset: 0x00053ECC
+	// Token: 0x06000D85 RID: 3461 RVA: 0x000416D0 File Offset: 0x0003F8D0
 	public bool GetStrongestDetail(Vector3 worldPosition, out int detailLayer, out float strength)
 	{
 		Vector2Int vector2Int = this.WorldToDetail(worldPosition);

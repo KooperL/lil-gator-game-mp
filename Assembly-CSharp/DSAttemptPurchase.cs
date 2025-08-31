@@ -5,12 +5,12 @@ using UnityEngine.Events;
 [AddComponentMenu("Dialogue Sequence/Attempt Purchase")]
 public class DSAttemptPurchase : DSDialogue
 {
-	// Token: 0x06000577 RID: 1399 RVA: 0x0002EC98 File Offset: 0x0002CE98
+	// Token: 0x06000461 RID: 1121 RVA: 0x00018CF4 File Offset: 0x00016EF4
 	private new void OnValidate()
 	{
 		if (this.uiItemResource == null || this.uiItemResource.itemResource != this.resource)
 		{
-			foreach (UIItemResource uiitemResource in global::UnityEngine.Object.FindObjectsOfType<UIItemResource>(true))
+			foreach (UIItemResource uiitemResource in Object.FindObjectsOfType<UIItemResource>(true))
 			{
 				if (uiitemResource.itemResource == this.resource)
 				{
@@ -21,14 +21,14 @@ public class DSAttemptPurchase : DSDialogue
 		}
 	}
 
-	// Token: 0x06000578 RID: 1400 RVA: 0x00005F31 File Offset: 0x00004131
+	// Token: 0x06000462 RID: 1122 RVA: 0x00018D5B File Offset: 0x00016F5B
 	public void ShowItem()
 	{
 		this.resource.ForceShow = true;
 		this.uiItemResource.SetPrice(this.cost);
 	}
 
-	// Token: 0x06000579 RID: 1401 RVA: 0x0002ED00 File Offset: 0x0002CF00
+	// Token: 0x06000463 RID: 1123 RVA: 0x00018D7C File Offset: 0x00016F7C
 	public override void Activate()
 	{
 		this.resource.ForceShow = false;
@@ -53,7 +53,7 @@ public class DSAttemptPurchase : DSDialogue
 		base.Activate();
 	}
 
-	// Token: 0x0600057A RID: 1402 RVA: 0x00005F50 File Offset: 0x00004150
+	// Token: 0x06000464 RID: 1124 RVA: 0x00018E0D File Offset: 0x0001700D
 	public override void Deactivate()
 	{
 		base.Deactivate();

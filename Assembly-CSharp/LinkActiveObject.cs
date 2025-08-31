@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LinkActiveObject : MonoBehaviour
 {
-	// Token: 0x060008C5 RID: 2245 RVA: 0x0000896F File Offset: 0x00006B6F
+	// Token: 0x0600073A RID: 1850 RVA: 0x000242DC File Offset: 0x000224DC
 	private void OnEnable()
 	{
 		if (this != null && this.linkedObject != null)
@@ -12,7 +12,7 @@ public class LinkActiveObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060008C6 RID: 2246 RVA: 0x00008994 File Offset: 0x00006B94
+	// Token: 0x0600073B RID: 1851 RVA: 0x00024301 File Offset: 0x00022501
 	private void OnDisable()
 	{
 		if (this != null && this.linkedObject != null)

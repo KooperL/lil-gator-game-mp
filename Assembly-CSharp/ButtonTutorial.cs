@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ButtonTutorial : ScriptableObject
 {
-	// (get) Token: 0x060009B4 RID: 2484 RVA: 0x000095B5 File Offset: 0x000077B5
+	// (get) Token: 0x06000803 RID: 2051 RVA: 0x00026B32 File Offset: 0x00024D32
 	public bool HasBeenPressed
 	{
 		get
@@ -13,7 +13,7 @@ public class ButtonTutorial : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x060009B5 RID: 2485 RVA: 0x000095C4 File Offset: 0x000077C4
+	// (get) Token: 0x06000804 RID: 2052 RVA: 0x00026B41 File Offset: 0x00024D41
 	public bool HasBeenPressedRecently
 	{
 		get
@@ -22,13 +22,13 @@ public class ButtonTutorial : ScriptableObject
 		}
 	}
 
-	// Token: 0x060009B6 RID: 2486 RVA: 0x000095D9 File Offset: 0x000077D9
+	// Token: 0x06000805 RID: 2053 RVA: 0x00026B56 File Offset: 0x00024D56
 	private void OnEnable()
 	{
 		this.lastButtonPress = -100f;
 	}
 
-	// Token: 0x060009B7 RID: 2487 RVA: 0x000095E6 File Offset: 0x000077E6
+	// Token: 0x06000806 RID: 2054 RVA: 0x00026B63 File Offset: 0x00024D63
 	public void Press()
 	{
 		this.lastButtonPress = Time.time;

@@ -4,21 +4,21 @@ using UnityEngine;
 [Serializable]
 public class SoundEffect
 {
-	// (get) Token: 0x06000AA5 RID: 2725 RVA: 0x0000A285 File Offset: 0x00008485
+	// (get) Token: 0x060008D3 RID: 2259 RVA: 0x00029948 File Offset: 0x00027B48
 	public float Volume
 	{
 		get
 		{
-			return Mathf.Lerp(this.minVolume, this.maxVolume, global::UnityEngine.Random.value);
+			return Mathf.Lerp(this.minVolume, this.maxVolume, Random.value);
 		}
 	}
 
-	// (get) Token: 0x06000AA6 RID: 2726 RVA: 0x0000A29D File Offset: 0x0000849D
+	// (get) Token: 0x060008D4 RID: 2260 RVA: 0x00029960 File Offset: 0x00027B60
 	public float Pitch
 	{
 		get
 		{
-			return Mathf.Lerp(this.minPitch, this.maxPitch, global::UnityEngine.Random.value);
+			return Mathf.Lerp(this.minPitch, this.maxPitch, Random.value);
 		}
 	}
 

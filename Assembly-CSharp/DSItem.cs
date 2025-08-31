@@ -5,16 +5,16 @@ using UnityEngine;
 [AddComponentMenu("Dialogue Sequence/Item")]
 public class DSItem : DialogueSequence
 {
-	// Token: 0x060005C7 RID: 1479 RVA: 0x00006290 File Offset: 0x00004490
+	// Token: 0x06000496 RID: 1174 RVA: 0x00019A50 File Offset: 0x00017C50
 	private void OnValidate()
 	{
 		if (this.uiItemGet == null)
 		{
-			this.uiItemGet = global::UnityEngine.Object.FindObjectOfType<UIItemGet>(true);
+			this.uiItemGet = Object.FindObjectOfType<UIItemGet>(true);
 		}
 	}
 
-	// Token: 0x060005C8 RID: 1480 RVA: 0x0002FBEC File Offset: 0x0002DDEC
+	// Token: 0x06000497 RID: 1175 RVA: 0x00019A6C File Offset: 0x00017C6C
 	[ContextMenu("Add Name Entry")]
 	public void AddNameEntry()
 	{
@@ -29,24 +29,24 @@ public class DSItem : DialogueSequence
 		this.document.AddStringEntry(this.itemName_ID, this.itemName);
 	}
 
-	// Token: 0x060005C9 RID: 1481 RVA: 0x000062AC File Offset: 0x000044AC
+	// Token: 0x06000498 RID: 1176 RVA: 0x00019AC9 File Offset: 0x00017CC9
 	public override void Activate()
 	{
 		if (this.uiItemGet == null)
 		{
-			this.uiItemGet = global::UnityEngine.Object.FindObjectOfType<UIItemGet>(true);
+			this.uiItemGet = Object.FindObjectOfType<UIItemGet>(true);
 		}
 		base.Activate();
 		DialogueManager.d.SetDialogueCamera(this.actors);
 	}
 
-	// Token: 0x060005CA RID: 1482 RVA: 0x000062DE File Offset: 0x000044DE
+	// Token: 0x06000499 RID: 1177 RVA: 0x00019AFB File Offset: 0x00017CFB
 	public override YieldInstruction Run()
 	{
 		return CoroutineUtil.Start(this.RunItemSequence());
 	}
 
-	// Token: 0x060005CB RID: 1483 RVA: 0x000062EB File Offset: 0x000044EB
+	// Token: 0x0600049A RID: 1178 RVA: 0x00019B08 File Offset: 0x00017D08
 	public IEnumerator RunItemSequence()
 	{
 		if ((!this.isRealItem || this.overrideName) && this.document != null && !string.IsNullOrEmpty(this.itemName_ID))
@@ -87,7 +87,7 @@ public class DSItem : DialogueSequence
 		yield break;
 	}
 
-	// Token: 0x060005CC RID: 1484 RVA: 0x000062FA File Offset: 0x000044FA
+	// Token: 0x0600049B RID: 1179 RVA: 0x00019B17 File Offset: 0x00017D17
 	public override void Deactivate()
 	{
 		base.Deactivate();

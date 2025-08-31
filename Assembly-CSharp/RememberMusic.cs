@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RememberMusic : MonoBehaviour, IManagedUpdate
 {
-	// (get) Token: 0x060000C7 RID: 199 RVA: 0x00002ACE File Offset: 0x00000CCE
-	// (set) Token: 0x060000C8 RID: 200 RVA: 0x00002AED File Offset: 0x00000CED
+	// (get) Token: 0x060000B3 RID: 179 RVA: 0x00005438 File Offset: 0x00003638
+	// (set) Token: 0x060000B4 RID: 180 RVA: 0x00005457 File Offset: 0x00003657
 	private int CurrentSongIndex
 	{
 		get
@@ -20,8 +20,8 @@ public class RememberMusic : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// (get) Token: 0x060000C9 RID: 201 RVA: 0x00002B07 File Offset: 0x00000D07
-	// (set) Token: 0x060000CA RID: 202 RVA: 0x00002B26 File Offset: 0x00000D26
+	// (get) Token: 0x060000B5 RID: 181 RVA: 0x00005471 File Offset: 0x00003671
+	// (set) Token: 0x060000B6 RID: 182 RVA: 0x00005490 File Offset: 0x00003690
 	private int CurrentState
 	{
 		get
@@ -36,11 +36,11 @@ public class RememberMusic : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060000CB RID: 203 RVA: 0x0001A42C File Offset: 0x0001862C
+	// Token: 0x060000B7 RID: 183 RVA: 0x000054AC File Offset: 0x000036AC
 	[ContextMenu("Update Music List")]
 	public void UpdateMusicList()
 	{
-		MusicSystemDynamicStates[] array = global::UnityEngine.Object.FindObjectsOfType<MusicSystemDynamicStates>();
+		MusicSystemDynamicStates[] array = Object.FindObjectsOfType<MusicSystemDynamicStates>();
 		List<MusicSystemDynamicStates> list = new List<MusicSystemDynamicStates>();
 		if (this.dynamicMusic != null && this.dynamicMusic.Length != 0)
 		{
@@ -56,7 +56,7 @@ public class RememberMusic : MonoBehaviour, IManagedUpdate
 		this.dynamicMusic = list.ToArray();
 	}
 
-	// Token: 0x060000CC RID: 204 RVA: 0x0001A490 File Offset: 0x00018690
+	// Token: 0x060000B8 RID: 184 RVA: 0x00005510 File Offset: 0x00003710
 	private void Start()
 	{
 		int currentSongIndex = this.CurrentSongIndex;
@@ -69,25 +69,25 @@ public class RememberMusic : MonoBehaviour, IManagedUpdate
 		this.dynamicMusic[currentSongIndex].MarkStateEligible(currentState);
 	}
 
-	// Token: 0x060000CD RID: 205 RVA: 0x00002B40 File Offset: 0x00000D40
+	// Token: 0x060000B9 RID: 185 RVA: 0x00005554 File Offset: 0x00003754
 	public void OnEnable()
 	{
 		FastUpdateManager.updateEveryNonFixed.Add(this);
 	}
 
-	// Token: 0x060000CE RID: 206 RVA: 0x000028C1 File Offset: 0x00000AC1
+	// Token: 0x060000BA RID: 186 RVA: 0x00005561 File Offset: 0x00003761
 	private void OnDisable()
 	{
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x060000CF RID: 207 RVA: 0x00002B4D File Offset: 0x00000D4D
+	// Token: 0x060000BB RID: 187 RVA: 0x0000556F File Offset: 0x0000376F
 	void IManagedUpdate.ManagedUpdate()
 	{
 		this.UpdateCurrentState();
 	}
 
-	// Token: 0x060000D0 RID: 208 RVA: 0x0001A4D4 File Offset: 0x000186D4
+	// Token: 0x060000BC RID: 188 RVA: 0x00005578 File Offset: 0x00003778
 	private void UpdateCurrentState()
 	{
 		for (int i = 0; i < this.dynamicMusic.Length; i++)
@@ -101,7 +101,7 @@ public class RememberMusic : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x060000D1 RID: 209 RVA: 0x00002B55 File Offset: 0x00000D55
+	// Token: 0x060000BD RID: 189 RVA: 0x000055DB File Offset: 0x000037DB
 	public AudioClip GetItemGetForMusic()
 	{
 		if (this._currentIndex < 0 || this._currentIndex >= this.itemGets.Length)

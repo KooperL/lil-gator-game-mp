@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SelectProperties : MonoBehaviour, ISelectHandler, IEventSystemHandler, IDeselectHandler
 {
-	// Token: 0x060011AF RID: 4527 RVA: 0x0000F12E File Offset: 0x0000D32E
+	// Token: 0x06000E7E RID: 3710 RVA: 0x0004532D File Offset: 0x0004352D
 	private void OnEnable()
 	{
 		if (EventSystem.current.currentSelectedGameObject == base.gameObject)
@@ -14,7 +14,7 @@ public class SelectProperties : MonoBehaviour, ISelectHandler, IEventSystemHandl
 		}
 	}
 
-	// Token: 0x060011B0 RID: 4528 RVA: 0x0000F14E File Offset: 0x0000D34E
+	// Token: 0x06000E7F RID: 3711 RVA: 0x0004534D File Offset: 0x0004354D
 	private void OnDisable()
 	{
 		if (this == null)
@@ -24,19 +24,19 @@ public class SelectProperties : MonoBehaviour, ISelectHandler, IEventSystemHandl
 		this.SetSelected(false);
 	}
 
-	// Token: 0x060011B1 RID: 4529 RVA: 0x0000F161 File Offset: 0x0000D361
+	// Token: 0x06000E80 RID: 3712 RVA: 0x00045360 File Offset: 0x00043560
 	public void OnSelect(BaseEventData eventData)
 	{
 		this.SetSelected(true);
 	}
 
-	// Token: 0x060011B2 RID: 4530 RVA: 0x0000F16A File Offset: 0x0000D36A
+	// Token: 0x06000E81 RID: 3713 RVA: 0x00045369 File Offset: 0x00043569
 	public void OnDeselect(BaseEventData eventData)
 	{
 		this.SetSelected(false);
 	}
 
-	// Token: 0x060011B3 RID: 4531 RVA: 0x00058DD8 File Offset: 0x00056FD8
+	// Token: 0x06000E82 RID: 3714 RVA: 0x00045374 File Offset: 0x00043574
 	private void SetSelected(bool isSelected)
 	{
 		if (this.modifyText)
@@ -71,7 +71,7 @@ public class SelectProperties : MonoBehaviour, ISelectHandler, IEventSystemHandl
 		}
 		if (this.randomizeSelectedRotation)
 		{
-			base.transform.rotation = Quaternion.Euler(0f, 0f, isSelected ? global::UnityEngine.Random.Range(-this.randomizedAngle, this.randomizedAngle) : 0f);
+			base.transform.rotation = Quaternion.Euler(0f, 0f, isSelected ? Random.Range(-this.randomizedAngle, this.randomizedAngle) : 0f);
 		}
 		if (this.randomizeGraphic && (this.randomizeGraphicOnlySelected || isSelected))
 		{

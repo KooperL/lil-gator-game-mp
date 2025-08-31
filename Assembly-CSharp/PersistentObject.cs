@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class PersistentObject : MonoBehaviour
 {
-	// (get) Token: 0x06000A5C RID: 2652 RVA: 0x00009E82 File Offset: 0x00008082
+	// (get) Token: 0x06000890 RID: 2192 RVA: 0x00028886 File Offset: 0x00026A86
 	public bool PersistentState
 	{
 		get
@@ -13,12 +13,12 @@ public class PersistentObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A5D RID: 2653 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000891 RID: 2193 RVA: 0x00028898 File Offset: 0x00026A98
 	public virtual void OnValidate()
 	{
 	}
 
-	// Token: 0x06000A5E RID: 2654 RVA: 0x00009E94 File Offset: 0x00008094
+	// Token: 0x06000892 RID: 2194 RVA: 0x0002889A File Offset: 0x00026A9A
 	public virtual void Load(bool state)
 	{
 		if (!this.isPersistent)
@@ -29,7 +29,7 @@ public class PersistentObject : MonoBehaviour
 		base.gameObject.SetActive(!state);
 	}
 
-	// Token: 0x06000A5F RID: 2655 RVA: 0x0003D240 File Offset: 0x0003B440
+	// Token: 0x06000893 RID: 2195 RVA: 0x000288BC File Offset: 0x00026ABC
 	public virtual void SaveTrue()
 	{
 		if (!this.isPersistent)
@@ -46,7 +46,7 @@ public class PersistentObject : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000A60 RID: 2656 RVA: 0x0003D290 File Offset: 0x0003B490
+	// Token: 0x06000894 RID: 2196 RVA: 0x0002890C File Offset: 0x00026B0C
 	[ContextMenu("Find persistent objects")]
 	public void FindPersistentObjects()
 	{
@@ -54,7 +54,7 @@ public class PersistentObject : MonoBehaviour
 		{
 			return;
 		}
-		SceneSaveData sceneSaveData = global::UnityEngine.Object.FindObjectOfType<SceneSaveData>();
+		SceneSaveData sceneSaveData = Object.FindObjectOfType<SceneSaveData>();
 		if (sceneSaveData != null)
 		{
 			sceneSaveData.FindPersistentObjects();

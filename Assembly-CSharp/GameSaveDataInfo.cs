@@ -3,7 +3,7 @@
 [Serializable]
 public struct GameSaveDataInfo
 {
-	// Token: 0x06000756 RID: 1878 RVA: 0x00034B8C File Offset: 0x00032D8C
+	// Token: 0x060005F1 RID: 1521 RVA: 0x0001F1E4 File Offset: 0x0001D3E4
 	public GameSaveDataInfo(GameSaveData saveData)
 	{
 		this.v = saveData.v;

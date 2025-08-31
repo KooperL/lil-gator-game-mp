@@ -3,17 +3,17 @@ using UnityEngine;
 
 public class MoneyItem : PersistentObject
 {
-	// Token: 0x0600097F RID: 2431 RVA: 0x00009358 File Offset: 0x00007558
+	// Token: 0x060007DB RID: 2011 RVA: 0x0002643E File Offset: 0x0002463E
 	private void OnTriggerEnter(Collider other)
 	{
 		this.Collect();
 	}
 
-	// Token: 0x06000980 RID: 2432 RVA: 0x00009360 File Offset: 0x00007560
+	// Token: 0x060007DC RID: 2012 RVA: 0x00026446 File Offset: 0x00024646
 	private void Collect()
 	{
 		this.SaveTrue();
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 	}
 
 	public int cents = 1;

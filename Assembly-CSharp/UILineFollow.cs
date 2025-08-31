@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class UILineFollow : MonoBehaviour
 {
-	// (get) Token: 0x0600125C RID: 4700 RVA: 0x0000F928 File Offset: 0x0000DB28
+	// (get) Token: 0x06000F17 RID: 3863 RVA: 0x000488FA File Offset: 0x00046AFA
 	private float CorrectedSourceDistance
 	{
 		get
@@ -12,7 +12,7 @@ public class UILineFollow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600125D RID: 4701 RVA: 0x0000F94B File Offset: 0x0000DB4B
+	// Token: 0x06000F18 RID: 3864 RVA: 0x0004891D File Offset: 0x00046B1D
 	private void OnValidate()
 	{
 		if (this.canvas == null)
@@ -21,7 +21,7 @@ public class UILineFollow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600125E RID: 4702 RVA: 0x0005BDF4 File Offset: 0x00059FF4
+	// Token: 0x06000F19 RID: 3865 RVA: 0x0004893C File Offset: 0x00046B3C
 	private void Awake()
 	{
 		this.lineRenderer = base.GetComponent<LineRenderer>();
@@ -35,14 +35,14 @@ public class UILineFollow : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600125F RID: 4703 RVA: 0x0000F967 File Offset: 0x0000DB67
+	// Token: 0x06000F1A RID: 3866 RVA: 0x000489D5 File Offset: 0x00046BD5
 	private void Start()
 	{
 		this.width = this.lineRenderer.widthMultiplier;
 		this.perlinTime = Time.time;
 	}
 
-	// Token: 0x06001260 RID: 4704 RVA: 0x0005BE90 File Offset: 0x0005A090
+	// Token: 0x06000F1B RID: 3867 RVA: 0x000489F4 File Offset: 0x00046BF4
 	public void SetTarget(DialogueActor actor)
 	{
 		this.target = actor.DialogueAnchor;
@@ -55,7 +55,7 @@ public class UILineFollow : MonoBehaviour
 		this.perlinTime = Time.time;
 	}
 
-	// Token: 0x06001261 RID: 4705 RVA: 0x0005BEFC File Offset: 0x0005A0FC
+	// Token: 0x06000F1C RID: 3868 RVA: 0x00048A60 File Offset: 0x00046C60
 	private void LateUpdate()
 	{
 		if (this.target == null)

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MoveToBone : MonoBehaviour
 {
-	// Token: 0x06000B27 RID: 2855 RVA: 0x0003FF38 File Offset: 0x0003E138
+	// Token: 0x06000943 RID: 2371 RVA: 0x0002BF84 File Offset: 0x0002A184
 	private void Start()
 	{
 		this.originalParent = base.transform.parent;
@@ -39,12 +39,12 @@ public class MoveToBone : MonoBehaviour
 		base.transform.localScale = this.localScale;
 	}
 
-	// Token: 0x06000B28 RID: 2856 RVA: 0x0000A8C2 File Offset: 0x00008AC2
+	// Token: 0x06000944 RID: 2372 RVA: 0x0002C0A6 File Offset: 0x0002A2A6
 	private void LateUpdate()
 	{
 		if (this.originalParent == null)
 		{
-			global::UnityEngine.Object.Destroy(base.gameObject);
+			Object.Destroy(base.gameObject);
 		}
 	}
 

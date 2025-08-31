@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class UIInputText : MonoBehaviour
 {
-	// Token: 0x06001232 RID: 4658 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000EF9 RID: 3833 RVA: 0x00047F1C File Offset: 0x0004611C
 	private void OnEnable()
 	{
 	}

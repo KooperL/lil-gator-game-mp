@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class TriggerPickup : MonoBehaviour, IOnTimeout
 {
-	// Token: 0x060006BA RID: 1722 RVA: 0x00006DE4 File Offset: 0x00004FE4
+	// Token: 0x06000568 RID: 1384 RVA: 0x0001C92F File Offset: 0x0001AB2F
 	public static void TriggerQuickPickup()
 	{
 		TriggerPickup.quickPickupTime = Time.time;
 	}
 
-	// Token: 0x060006BB RID: 1723 RVA: 0x000326D4 File Offset: 0x000308D4
+	// Token: 0x06000569 RID: 1385 RVA: 0x0001C93C File Offset: 0x0001AB3C
 	private void OnValidate()
 	{
 		if (this.rigidbody == null)
@@ -27,7 +27,7 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x060006BC RID: 1724 RVA: 0x00006DF0 File Offset: 0x00004FF0
+	// Token: 0x0600056A RID: 1386 RVA: 0x0001C9C0 File Offset: 0x0001ABC0
 	private void Start()
 	{
 		if (!this.initialized)
@@ -36,13 +36,13 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x060006BD RID: 1725 RVA: 0x00032758 File Offset: 0x00030958
+	// Token: 0x0600056B RID: 1387 RVA: 0x0001C9D0 File Offset: 0x0001ABD0
 	public void Initialize()
 	{
 		this.initialized = true;
 		this.initialPosition = base.transform.position;
-		this.delayTime = Time.time + this.delay + global::UnityEngine.Random.Range(0f, 0.25f);
-		this.autoTime = Time.time + global::UnityEngine.Random.Range(3f, 4f);
+		this.delayTime = Time.time + this.delay + Random.Range(0f, 0.25f);
+		this.autoTime = Time.time + Random.Range(3f, 4f);
 		this.rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
 		this.sphereTrigger.radius *= 1f / base.transform.parent.parent.localScale.x;
 		if (!this.allowPlayerCollision)
@@ -51,7 +51,7 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x060006BE RID: 1726 RVA: 0x00032814 File Offset: 0x00030A14
+	// Token: 0x0600056C RID: 1388 RVA: 0x0001CA8C File Offset: 0x0001AC8C
 	private void FixedUpdate()
 	{
 		if (!this.isQuick && Time.time - TriggerPickup.quickPickupTime < 0.1f)
@@ -71,7 +71,7 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		if (position.y < -20f || magnitude > 17f)
 		{
 			this.GiveReward();
-			global::UnityEngine.Object.Destroy(this.rigidbody.gameObject);
+			Object.Destroy(this.rigidbody.gameObject);
 		}
 		if (position.y - Mathf.Min(this.initialPosition.y, position2.y) < -5f || Time.time > this.autoTime)
 		{
@@ -84,7 +84,7 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		if (magnitude < 0.5f)
 		{
 			this.GiveReward();
-			global::UnityEngine.Object.Destroy(this.rigidbody.gameObject);
+			Object.Destroy(this.rigidbody.gameObject);
 			return;
 		}
 		this.rigidbody.AddForce((this.isQuick ? 100f : 50f) / magnitude * vector, ForceMode.Acceleration);
@@ -92,7 +92,7 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		this.rigidbody.transform.localScale = Vector3.MoveTowards(this.rigidbody.transform.localScale, 0.5f * Vector3.one, 2f * Time.deltaTime);
 	}
 
-	// Token: 0x060006BF RID: 1727 RVA: 0x00006E00 File Offset: 0x00005000
+	// Token: 0x0600056D RID: 1389 RVA: 0x0001CC2F File Offset: 0x0001AE2F
 	private void OnTriggerStay(Collider other)
 	{
 		if (base.enabled && !this.pickingUp && Time.time > this.delayTime)
@@ -101,18 +101,18 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x060006C0 RID: 1728 RVA: 0x00006E25 File Offset: 0x00005025
+	// Token: 0x0600056E RID: 1390 RVA: 0x0001CC54 File Offset: 0x0001AE54
 	public void OnTimeout()
 	{
 		this.resource.SetAmountSecret(this.resource.Amount + this.resourceValue);
 	}
 
-	// Token: 0x060006C1 RID: 1729 RVA: 0x000329B8 File Offset: 0x00030BB8
+	// Token: 0x0600056F RID: 1391 RVA: 0x0001CC74 File Offset: 0x0001AE74
 	private void StartPickUp()
 	{
 		if (this.waterPhysics != null)
 		{
-			global::UnityEngine.Object.Destroy(this.waterPhysics.gameObject);
+			Object.Destroy(this.waterPhysics.gameObject);
 		}
 		this.rigidbody.drag = 3f;
 		this.rigidbody.useGravity = false;
@@ -123,7 +123,7 @@ public class TriggerPickup : MonoBehaviour, IOnTimeout
 		}
 	}
 
-	// Token: 0x060006C2 RID: 1730 RVA: 0x00032A20 File Offset: 0x00030C20
+	// Token: 0x06000570 RID: 1392 RVA: 0x0001CCDC File Offset: 0x0001AEDC
 	private void GiveReward()
 	{
 		if (this.pickingUp && this.audioSourceVariance != null)

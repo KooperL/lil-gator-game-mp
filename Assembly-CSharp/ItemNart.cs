@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class ItemNart : MonoBehaviour, IItemBehaviour
 {
-	// Token: 0x06000B66 RID: 2918 RVA: 0x0000AB8B File Offset: 0x00008D8B
+	// Token: 0x06000982 RID: 2434 RVA: 0x0002CD21 File Offset: 0x0002AF21
 	private void Awake()
 	{
 		this.movement = Player.movement;
 		this.itemManager = Player.itemManager;
 	}
 
-	// Token: 0x06000B67 RID: 2919 RVA: 0x0000ABA3 File Offset: 0x00008DA3
+	// Token: 0x06000983 RID: 2435 RVA: 0x0002CD39 File Offset: 0x0002AF39
 	public void Input(bool isDown, bool isHeld)
 	{
 		if (Game.HasControl && isDown)
@@ -24,7 +24,7 @@ public class ItemNart : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B68 RID: 2920 RVA: 0x0000ABC6 File Offset: 0x00008DC6
+	// Token: 0x06000984 RID: 2436 RVA: 0x0002CD5C File Offset: 0x0002AF5C
 	private void LateUpdate()
 	{
 		if (this.activated && !this.movement.isModified)
@@ -33,13 +33,13 @@ public class ItemNart : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B69 RID: 2921 RVA: 0x0000ABE4 File Offset: 0x00008DE4
+	// Token: 0x06000985 RID: 2437 RVA: 0x0002CD7A File Offset: 0x0002AF7A
 	public void Cancel()
 	{
 		this.SetState(false);
 	}
 
-	// Token: 0x06000B6A RID: 2922 RVA: 0x000409AC File Offset: 0x0003EBAC
+	// Token: 0x06000986 RID: 2438 RVA: 0x0002CD84 File Offset: 0x0002AF84
 	private void SetState(bool isActive)
 	{
 		if (this.activated == isActive)
@@ -68,7 +68,7 @@ public class ItemNart : MonoBehaviour, IItemBehaviour
 		this.itemManager.animator.SetBool("Nart", isActive);
 	}
 
-	// Token: 0x06000B6B RID: 2923 RVA: 0x00040A44 File Offset: 0x0003EC44
+	// Token: 0x06000987 RID: 2439 RVA: 0x0002CE1C File Offset: 0x0002B01C
 	public void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (isEquipped ? this.itemManager.leftHandAnchor : this.itemManager.hipAnchor);
@@ -81,12 +81,12 @@ public class ItemNart : MonoBehaviour, IItemBehaviour
 		}
 	}
 
-	// Token: 0x06000B6C RID: 2924 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000988 RID: 2440 RVA: 0x0002CE94 File Offset: 0x0002B094
 	public void OnRemove()
 	{
 	}
 
-	// Token: 0x06000B6D RID: 2925 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000989 RID: 2441 RVA: 0x0002CE96 File Offset: 0x0002B096
 	public void SetIndex(int index)
 	{
 	}

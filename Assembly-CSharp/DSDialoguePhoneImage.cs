@@ -4,16 +4,16 @@ using UnityEngine;
 [AddComponentMenu("Dialogue Sequence/Phone Image")]
 public class DSDialoguePhoneImage : DialogueSequence
 {
-	// Token: 0x060005B9 RID: 1465 RVA: 0x000061AC File Offset: 0x000043AC
+	// Token: 0x0600048E RID: 1166 RVA: 0x0001997B File Offset: 0x00017B7B
 	private void OnValidate()
 	{
 		if (this.phoneDisplay == null)
 		{
-			this.phoneDisplay = global::UnityEngine.Object.FindObjectOfType<UIScrollingPhoneDisplay>();
+			this.phoneDisplay = Object.FindObjectOfType<UIScrollingPhoneDisplay>();
 		}
 	}
 
-	// Token: 0x060005BA RID: 1466 RVA: 0x000061C7 File Offset: 0x000043C7
+	// Token: 0x0600048F RID: 1167 RVA: 0x00019996 File Offset: 0x00017B96
 	public override YieldInstruction Run()
 	{
 		return CoroutineUtil.Start(this.phoneDisplay.DisplayImage(this.image, this.character, this.displayNames, this.clearPhoneAfter));

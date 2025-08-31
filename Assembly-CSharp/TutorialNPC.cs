@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TutorialNPC : MonoBehaviour, Interaction
 {
-	// Token: 0x06000560 RID: 1376 RVA: 0x00005E95 File Offset: 0x00004095
+	// Token: 0x06000456 RID: 1110 RVA: 0x00018BD1 File Offset: 0x00016DD1
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x06000561 RID: 1377 RVA: 0x00005EA4 File Offset: 0x000040A4
+	// Token: 0x06000457 RID: 1111 RVA: 0x00018BE0 File Offset: 0x00016DE0
 	private IEnumerator RunConversation()
 	{
 		TutorialNPC.tutorialCount = GameData.g.ReadInt("TutorialsSpokenTo", 0);

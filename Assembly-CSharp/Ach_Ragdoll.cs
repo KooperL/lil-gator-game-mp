@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class Ach_Ragdoll : MonoBehaviour
 {
-	// Token: 0x060001F2 RID: 498 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x060001AF RID: 431 RVA: 0x000099FB File Offset: 0x00007BFB
 	private void Awake()
 	{
 	}
 
-	// Token: 0x060001F3 RID: 499 RVA: 0x000039BC File Offset: 0x00001BBC
+	// Token: 0x060001B0 RID: 432 RVA: 0x000099FD File Offset: 0x00007BFD
 	private void OnEnable()
 	{
 		this.stepsSinceFast = 1000;
 	}
 
-	// Token: 0x060001F4 RID: 500 RVA: 0x0001E494 File Offset: 0x0001C694
+	// Token: 0x060001B1 RID: 433 RVA: 0x00009A0C File Offset: 0x00007C0C
 	public void FixedUpdate()
 	{
 		float sqrMagnitude = this.rigidbody.velocity.sqrMagnitude;

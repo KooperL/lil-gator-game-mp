@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class WobbleBones : MonoBehaviour
 {
-	// Token: 0x0600100B RID: 4107 RVA: 0x0000DDEF File Offset: 0x0000BFEF
+	// Token: 0x06000D02 RID: 3330 RVA: 0x0003EB72 File Offset: 0x0003CD72
 	private void Start()
 	{
 		this.parent = base.transform.parent;
 		this.LoadBones();
 	}
 
-	// Token: 0x0600100C RID: 4108 RVA: 0x0005369C File Offset: 0x0005189C
+	// Token: 0x06000D03 RID: 3331 RVA: 0x0003EB8C File Offset: 0x0003CD8C
 	private void LoadBones()
 	{
 		List<WobbleBones.Bone> list = new List<WobbleBones.Bone>();
@@ -23,7 +23,7 @@ public class WobbleBones : MonoBehaviour
 		this.bones = list.ToArray();
 	}
 
-	// Token: 0x0600100D RID: 4109 RVA: 0x000536DC File Offset: 0x000518DC
+	// Token: 0x06000D04 RID: 3332 RVA: 0x0003EBCC File Offset: 0x0003CDCC
 	private void LateUpdate()
 	{
 		for (int i = 0; i < this.bones.Length; i++)
@@ -32,7 +32,7 @@ public class WobbleBones : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600100E RID: 4110 RVA: 0x0005370C File Offset: 0x0005190C
+	// Token: 0x06000D05 RID: 3333 RVA: 0x0003EBFC File Offset: 0x0003CDFC
 	private void UpdateBone(WobbleBones.Bone bone)
 	{
 		bone.position = Vector3.SmoothDamp(bone.position, bone.transform.parent.TransformPoint(bone.tLocalPosition), ref bone.velocity, 0.05f);
@@ -49,7 +49,7 @@ public class WobbleBones : MonoBehaviour
 
 	public class Bone
 	{
-		// Token: 0x06001010 RID: 4112 RVA: 0x0005375C File Offset: 0x0005195C
+		// Token: 0x06001AFB RID: 6907 RVA: 0x00072B9C File Offset: 0x00070D9C
 		public Bone(Transform transform)
 		{
 			this.transform = transform;

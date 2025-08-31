@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AltitudeFog : MonoBehaviour
 {
-	// Token: 0x06000231 RID: 561 RVA: 0x00003CEC File Offset: 0x00001EEC
+	// Token: 0x060001ED RID: 493 RVA: 0x0000A932 File Offset: 0x00008B32
 	private void LateUpdate()
 	{
 		RenderSettings.fogDensity = Mathf.Lerp(this.lowFogDensity, this.highFogDensity, Mathf.InverseLerp(this.lowHeight, this.highHeight, base.transform.position.y));

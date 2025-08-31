@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class NPCPlayerProximity : MonoBehaviour
 {
-	// Token: 0x06000990 RID: 2448 RVA: 0x0003B1C8 File Offset: 0x000393C8
+	// Token: 0x060007EC RID: 2028 RVA: 0x00026658 File Offset: 0x00024858
 	private void OnValidate()
 	{
 		if (this.dialogueActor == null && base.transform.parent != null)
@@ -16,19 +16,19 @@ public class NPCPlayerProximity : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000991 RID: 2449 RVA: 0x00009487 File Offset: 0x00007687
+	// Token: 0x060007ED RID: 2029 RVA: 0x000266D3 File Offset: 0x000248D3
 	private void OnTriggerEnter(Collider other)
 	{
 		this.OnTrigger();
 	}
 
-	// Token: 0x06000992 RID: 2450 RVA: 0x00009487 File Offset: 0x00007687
+	// Token: 0x060007EE RID: 2030 RVA: 0x000266DB File Offset: 0x000248DB
 	private void OnTriggerStay(Collider other)
 	{
 		this.OnTrigger();
 	}
 
-	// Token: 0x06000993 RID: 2451 RVA: 0x0003B244 File Offset: 0x00039444
+	// Token: 0x060007EF RID: 2031 RVA: 0x000266E4 File Offset: 0x000248E4
 	private void OnTrigger()
 	{
 		this.dialogueActor.LookAt = true;
@@ -45,7 +45,7 @@ public class NPCPlayerProximity : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000994 RID: 2452 RVA: 0x0000948F File Offset: 0x0000768F
+	// Token: 0x060007F0 RID: 2032 RVA: 0x00026758 File Offset: 0x00024958
 	private void OnTriggerExit(Collider other)
 	{
 		this.dialogueActor.LookAt = false;
@@ -55,7 +55,7 @@ public class NPCPlayerProximity : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000995 RID: 2453 RVA: 0x0000948F File Offset: 0x0000768F
+	// Token: 0x060007F1 RID: 2033 RVA: 0x00026780 File Offset: 0x00024980
 	private void OnDisable()
 	{
 		this.dialogueActor.LookAt = false;

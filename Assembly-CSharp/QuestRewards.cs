@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class QuestRewards : MonoBehaviour
 {
-	// Token: 0x06000E5E RID: 3678 RVA: 0x0004D500 File Offset: 0x0004B700
+	// Token: 0x06000BBC RID: 3004 RVA: 0x00038E38 File Offset: 0x00037038
 	public void GiveAllRewards()
 	{
 		QuestReward[] components = base.GetComponents<QuestReward>();

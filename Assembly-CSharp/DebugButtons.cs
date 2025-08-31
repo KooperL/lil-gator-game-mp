@@ -5,7 +5,7 @@ using UnityEngine.AddressableAssets;
 
 public class DebugButtons : MonoBehaviour
 {
-	// (get) Token: 0x0600034A RID: 842 RVA: 0x00025A50 File Offset: 0x00023C50
+	// (get) Token: 0x060002E1 RID: 737 RVA: 0x00011390 File Offset: 0x0000F590
 	public static bool IsSkipHeld
 	{
 		get
@@ -23,13 +23,13 @@ public class DebugButtons : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600034B RID: 843 RVA: 0x000048EC File Offset: 0x00002AEC
+	// Token: 0x060002E2 RID: 738 RVA: 0x000113EA File Offset: 0x0000F5EA
 	private void Awake()
 	{
 		DebugButtons.d = this;
 	}
 
-	// Token: 0x0600034C RID: 844 RVA: 0x00025AAC File Offset: 0x00023CAC
+	// Token: 0x060002E3 RID: 739 RVA: 0x000113F4 File Offset: 0x0000F5F4
 	public void OnEnable()
 	{
 		this.rePlayer = ReInput.players.GetPlayer(0);
@@ -38,14 +38,14 @@ public class DebugButtons : MonoBehaviour
 		this.rePlayer.AddInputEventDelegate(new Action<InputActionEventData>(this.SplitTimer), UpdateLoopType.Update, InputActionEventType.ButtonJustPressed, ReInput.mapping.GetActionId("SR_Split"));
 	}
 
-	// Token: 0x0600034D RID: 845 RVA: 0x000048F4 File Offset: 0x00002AF4
+	// Token: 0x060002E4 RID: 740 RVA: 0x0001148A File Offset: 0x0000F68A
 	private void OnDisable()
 	{
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.OnSkip));
 		this.rePlayer.RemoveInputEventDelegate(new Action<InputActionEventData>(this.SplitTimer));
 	}
 
-	// Token: 0x0600034E RID: 846 RVA: 0x00004924 File Offset: 0x00002B24
+	// Token: 0x060002E5 RID: 741 RVA: 0x000114BA File Offset: 0x0000F6BA
 	private void OnSkip(InputActionEventData obj)
 	{
 		if (UINameInput.isInputting)
@@ -55,7 +55,7 @@ public class DebugButtons : MonoBehaviour
 		DebugButtons.isSkipHeld = obj.GetButton();
 	}
 
-	// Token: 0x0600034F RID: 847 RVA: 0x0000493A File Offset: 0x00002B3A
+	// Token: 0x060002E6 RID: 742 RVA: 0x000114D0 File Offset: 0x0000F6D0
 	private void StopTimer(InputActionEventData obj)
 	{
 		if (!SpeedrunData.IsSpeedrunMode)
@@ -68,7 +68,7 @@ public class DebugButtons : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000350 RID: 848 RVA: 0x00004950 File Offset: 0x00002B50
+	// Token: 0x060002E7 RID: 743 RVA: 0x000114E6 File Offset: 0x0000F6E6
 	private void SplitTimer(InputActionEventData obj)
 	{
 		if (!SpeedrunData.IsSpeedrunMode)
@@ -81,7 +81,7 @@ public class DebugButtons : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000351 RID: 849 RVA: 0x00004978 File Offset: 0x00002B78
+	// Token: 0x060002E8 RID: 744 RVA: 0x0001150E File Offset: 0x0000F70E
 	private void QuitToTitle(InputActionEventData obj)
 	{
 		if (!SpeedrunData.IsSpeedrunMode)

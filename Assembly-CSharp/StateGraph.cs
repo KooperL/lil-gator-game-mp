@@ -5,7 +5,7 @@ using XNode;
 [CreateAssetMenu]
 public class StateGraph : NodeGraph
 {
-	// Token: 0x060010EC RID: 4332 RVA: 0x0000E716 File Offset: 0x0000C916
+	// Token: 0x06000DCE RID: 3534 RVA: 0x00042FF8 File Offset: 0x000411F8
 	public void Continue()
 	{
 		this.current.MoveNext();

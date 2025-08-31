@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Laptop : MonoBehaviour
 {
-	// Token: 0x060009C7 RID: 2503 RVA: 0x000096CC File Offset: 0x000078CC
+	// Token: 0x06000816 RID: 2070 RVA: 0x00026E2E File Offset: 0x0002502E
 	public void Close()
 	{
 		CoroutineUtil.Start(this.CloseCoroutine());
 	}
 
-	// Token: 0x060009C8 RID: 2504 RVA: 0x000096DA File Offset: 0x000078DA
+	// Token: 0x06000817 RID: 2071 RVA: 0x00026E3C File Offset: 0x0002503C
 	private IEnumerator CloseCoroutine()
 	{
 		float angle = 0f;

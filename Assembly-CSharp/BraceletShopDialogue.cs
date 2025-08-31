@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class BraceletShopDialogue : MonoBehaviour, Interaction
 {
-	// (get) Token: 0x060004F3 RID: 1267 RVA: 0x00005A30 File Offset: 0x00003C30
+	// (get) Token: 0x06000419 RID: 1049 RVA: 0x00017EDE File Offset: 0x000160DE
 	public int CurrentState
 	{
 		get
@@ -15,7 +15,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// (get) Token: 0x060004F4 RID: 1268 RVA: 0x00005A43 File Offset: 0x00003C43
+	// (get) Token: 0x0600041A RID: 1050 RVA: 0x00017EF1 File Offset: 0x000160F1
 	private string SaveID
 	{
 		get
@@ -24,7 +24,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// (get) Token: 0x060004F5 RID: 1269 RVA: 0x00005A5A File Offset: 0x00003C5A
+	// (get) Token: 0x0600041B RID: 1051 RVA: 0x00017F08 File Offset: 0x00016108
 	private bool NGP_IntroPlayed
 	{
 		get
@@ -33,7 +33,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// (get) Token: 0x060004F6 RID: 1270 RVA: 0x00005A6C File Offset: 0x00003C6C
+	// (get) Token: 0x0600041C RID: 1052 RVA: 0x00017F1A File Offset: 0x0001611A
 	private bool NGP_AllBraceletsPlayed
 	{
 		get
@@ -42,8 +42,8 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// (get) Token: 0x060004F7 RID: 1271 RVA: 0x00005A7E File Offset: 0x00003C7E
-	// (set) Token: 0x060004F8 RID: 1272 RVA: 0x00005A90 File Offset: 0x00003C90
+	// (get) Token: 0x0600041D RID: 1053 RVA: 0x00017F2C File Offset: 0x0001612C
+	// (set) Token: 0x0600041E RID: 1054 RVA: 0x00017F3E File Offset: 0x0001613E
 	private int NGP_InfoGotten
 	{
 		get
@@ -56,16 +56,16 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x060004F9 RID: 1273 RVA: 0x00005AA2 File Offset: 0x00003CA2
+	// Token: 0x0600041F RID: 1055 RVA: 0x00017F50 File Offset: 0x00016150
 	private void OnValidate()
 	{
 		if (this.uiItemGet == null)
 		{
-			this.uiItemGet = global::UnityEngine.Object.FindObjectOfType<UIItemGet>(true);
+			this.uiItemGet = Object.FindObjectOfType<UIItemGet>(true);
 		}
 	}
 
-	// Token: 0x060004FA RID: 1274 RVA: 0x00005ABE File Offset: 0x00003CBE
+	// Token: 0x06000420 RID: 1056 RVA: 0x00017F6C File Offset: 0x0001616C
 	private void OnEnable()
 	{
 		this.state = this.CurrentState;
@@ -75,13 +75,13 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x060004FB RID: 1275 RVA: 0x00005AE6 File Offset: 0x00003CE6
+	// Token: 0x06000421 RID: 1057 RVA: 0x00017F94 File Offset: 0x00016194
 	public void Interact()
 	{
 		CoroutineUtil.Start(this.RunShop());
 	}
 
-	// Token: 0x060004FC RID: 1276 RVA: 0x00005AF4 File Offset: 0x00003CF4
+	// Token: 0x06000422 RID: 1058 RVA: 0x00017FA2 File Offset: 0x000161A2
 	private IEnumerator RunShop()
 	{
 		Game.DialogueDepth++;
@@ -231,7 +231,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x060004FD RID: 1277 RVA: 0x0002D108 File Offset: 0x0002B308
+	// Token: 0x06000423 RID: 1059 RVA: 0x00017FB4 File Offset: 0x000161B4
 	private Coroutine LoadDialogue(string dialogue)
 	{
 		if (this.document != null)
@@ -241,7 +241,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		return base.StartCoroutine(DialogueManager.d.LoadChunk(dialogue, this.actors, DialogueManager.DialogueBoxBackground.Standard, true));
 	}
 
-	// Token: 0x060004FE RID: 1278 RVA: 0x0002D164 File Offset: 0x0002B364
+	// Token: 0x06000424 RID: 1060 RVA: 0x00018010 File Offset: 0x00016210
 	private Coroutine LoadDialogueNGP(string dialogue)
 	{
 		if (this.ngpDocument != null)
@@ -251,7 +251,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		return base.StartCoroutine(DialogueManager.d.LoadChunk(dialogue, this.actors, DialogueManager.DialogueBoxBackground.Standard, true));
 	}
 
-	// Token: 0x060004FF RID: 1279 RVA: 0x0002D1C0 File Offset: 0x0002B3C0
+	// Token: 0x06000425 RID: 1061 RVA: 0x0001806C File Offset: 0x0001626C
 	private Coroutine DoBraceletGet()
 	{
 		int num = ItemManager.i.BraceletsCollected - 1;
@@ -263,7 +263,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		return base.StartCoroutine(this.uiItemGet.RunSequence(this.braceletSprite[num], this.braceletItem.DisplayName, text, this.actors));
 	}
 
-	// Token: 0x06000500 RID: 1280 RVA: 0x0002D254 File Offset: 0x0002B454
+	// Token: 0x06000426 RID: 1062 RVA: 0x00018100 File Offset: 0x00016300
 	private void DisableActor()
 	{
 		base.GetComponent<Collider>().enabled = false;
@@ -279,7 +279,7 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000501 RID: 1281 RVA: 0x00005B03 File Offset: 0x00003D03
+	// Token: 0x06000427 RID: 1063 RVA: 0x0001817C File Offset: 0x0001637C
 	private IEnumerator Poof()
 	{
 		this.DisableActor();
@@ -293,12 +293,12 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		yield break;
 	}
 
-	// Token: 0x06000502 RID: 1282 RVA: 0x0002D2D0 File Offset: 0x0002B4D0
+	// Token: 0x06000428 RID: 1064 RVA: 0x0001818C File Offset: 0x0001638C
 	[ContextMenu("Assign Unique ID")]
 	public void AssignUniqueID()
 	{
 		List<int> list = new List<int>();
-		foreach (BraceletShopDialogue braceletShopDialogue in global::UnityEngine.Object.FindObjectsOfType<BraceletShopDialogue>())
+		foreach (BraceletShopDialogue braceletShopDialogue in Object.FindObjectsOfType<BraceletShopDialogue>())
 		{
 			if (braceletShopDialogue.id != -1 && braceletShopDialogue != this && !list.Contains(braceletShopDialogue.id))
 			{
@@ -315,14 +315,14 @@ public class BraceletShopDialogue : MonoBehaviour, Interaction
 		}
 	}
 
-	// Token: 0x06000503 RID: 1283 RVA: 0x00005B12 File Offset: 0x00003D12
+	// Token: 0x06000429 RID: 1065 RVA: 0x0001821F File Offset: 0x0001641F
 	public void MarkSavedSecret()
 	{
 		GameData.g.Write(this.SaveID, this.braceletsInStock);
 		base.gameObject.SetActive(false);
 	}
 
-	// Token: 0x06000504 RID: 1284 RVA: 0x0002D364 File Offset: 0x0002B564
+	// Token: 0x0600042A RID: 1066 RVA: 0x00018244 File Offset: 0x00016444
 	private bool CheckIfAllBraceletShops()
 	{
 		for (int i = 0; i < 4; i++)

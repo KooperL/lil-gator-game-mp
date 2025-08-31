@@ -7,7 +7,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 	[RequireComponent(typeof(Image))]
 	public class ControllerUIEffect : MonoBehaviour
 	{
-		// Token: 0x06001E40 RID: 7744 RVA: 0x0001720B File Offset: 0x0001540B
+		// Token: 0x060017DB RID: 6107 RVA: 0x00065BB1 File Offset: 0x00063DB1
 		private void Awake()
 		{
 			this._image = base.GetComponent<Image>();
@@ -15,7 +15,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this._color = this._origColor;
 		}
 
-		// Token: 0x06001E41 RID: 7745 RVA: 0x00076FF4 File Offset: 0x000751F4
+		// Token: 0x060017DC RID: 6108 RVA: 0x00065BDC File Offset: 0x00063DDC
 		public void Activate(float amount)
 		{
 			amount = Mathf.Clamp01(amount);
@@ -29,7 +29,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this.RedrawImage();
 		}
 
-		// Token: 0x06001E42 RID: 7746 RVA: 0x00017236 File Offset: 0x00015436
+		// Token: 0x060017DD RID: 6109 RVA: 0x00065C34 File Offset: 0x00063E34
 		public void Deactivate()
 		{
 			if (!this._isActive)
@@ -42,7 +42,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this.RedrawImage();
 		}
 
-		// Token: 0x06001E43 RID: 7747 RVA: 0x00017265 File Offset: 0x00015465
+		// Token: 0x060017DE RID: 6110 RVA: 0x00065C63 File Offset: 0x00063E63
 		private void RedrawImage()
 		{
 			this._image.color = this._color;

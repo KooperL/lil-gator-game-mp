@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class PushAwayTrigger : MonoBehaviour
 {
-	// Token: 0x06000D52 RID: 3410 RVA: 0x0000C395 File Offset: 0x0000A595
+	// Token: 0x06000B3A RID: 2874 RVA: 0x00037EE2 File Offset: 0x000360E2
 	private void Awake()
 	{
 		this.collider = base.GetComponent<CapsuleCollider>();
 	}
 
-	// Token: 0x06000D53 RID: 3411 RVA: 0x0004ADB0 File Offset: 0x00048FB0
+	// Token: 0x06000B3B RID: 2875 RVA: 0x00037EF0 File Offset: 0x000360F0
 	private void OnTriggerStay(Collider other)
 	{
 		Rigidbody attachedRigidbody = other.attachedRigidbody;

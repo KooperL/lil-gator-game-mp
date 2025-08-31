@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class SelectableItem : MonoBehaviour, ISelectHandler, IEventSystemHandler, ISubmitHandler, IPointerDownHandler, IPointerEnterHandler
 {
-	// Token: 0x060010FC RID: 4348 RVA: 0x0000E79C File Offset: 0x0000C99C
+	// Token: 0x06000DDD RID: 3549 RVA: 0x00043444 File Offset: 0x00041644
 	private void OnValidate()
 	{
 		if (this.uiItemDisplay == null)
@@ -13,14 +13,14 @@ public class SelectableItem : MonoBehaviour, ISelectHandler, IEventSystemHandler
 		}
 	}
 
-	// Token: 0x060010FD RID: 4349 RVA: 0x0000E7B8 File Offset: 0x0000C9B8
+	// Token: 0x06000DDE RID: 3550 RVA: 0x00043460 File Offset: 0x00041660
 	public void LoadItem(ItemObject item)
 	{
 		this.loadedItem = item;
 		this.uiItemDisplay.LoadItem(item);
 	}
 
-	// Token: 0x060010FE RID: 4350 RVA: 0x0000E7CD File Offset: 0x0000C9CD
+	// Token: 0x06000DDF RID: 3551 RVA: 0x00043475 File Offset: 0x00041675
 	public void OnSelect(BaseEventData eventData)
 	{
 		if (this.itemsMenu.selectedItem != this.loadedItem)
@@ -30,13 +30,13 @@ public class SelectableItem : MonoBehaviour, ISelectHandler, IEventSystemHandler
 		this.itemsMenu.SelectItem(this.loadedItem);
 	}
 
-	// Token: 0x060010FF RID: 4351 RVA: 0x0000E803 File Offset: 0x0000CA03
+	// Token: 0x06000DE0 RID: 3552 RVA: 0x000434AB File Offset: 0x000416AB
 	public void OnSubmit(BaseEventData eventData)
 	{
 		this.itemsMenu.SubmitItem(this.loadedItem);
 	}
 
-	// Token: 0x06001100 RID: 4352 RVA: 0x0000E816 File Offset: 0x0000CA16
+	// Token: 0x06000DE1 RID: 3553 RVA: 0x000434BE File Offset: 0x000416BE
 	public void OnPointerDown(PointerEventData eventData)
 	{
 		if (this.selectedTime != Time.time)
@@ -45,7 +45,7 @@ public class SelectableItem : MonoBehaviour, ISelectHandler, IEventSystemHandler
 		}
 	}
 
-	// Token: 0x06001101 RID: 4353 RVA: 0x0000E836 File Offset: 0x0000CA36
+	// Token: 0x06000DE2 RID: 3554 RVA: 0x000434DE File Offset: 0x000416DE
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		this.itemsMenu.HighlightItem(this.loadedItem);

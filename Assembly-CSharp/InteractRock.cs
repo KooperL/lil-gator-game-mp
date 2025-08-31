@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class InteractRock : MonoBehaviour, Interaction
 {
-	// Token: 0x06000836 RID: 2102 RVA: 0x00008151 File Offset: 0x00006351
+	// Token: 0x060006B7 RID: 1719 RVA: 0x00022219 File Offset: 0x00020419
 	private void Awake()
 	{
 		this.rigidbody = base.GetComponent<Rigidbody>();
 	}
 
-	// Token: 0x06000837 RID: 2103 RVA: 0x0000815F File Offset: 0x0000635F
+	// Token: 0x060006B8 RID: 1720 RVA: 0x00022227 File Offset: 0x00020427
 	public void Interact()
 	{
 		ItemManager.i.UnlockItem("Rock");
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x06000838 RID: 2104 RVA: 0x00037744 File Offset: 0x00035944
+	// Token: 0x060006B9 RID: 1721 RVA: 0x00022244 File Offset: 0x00020444
 	private void FixedUpdate()
 	{
 		this.interactionCollider.enabled = this.rigidbody.velocity.sqrMagnitude < this.maxSpeedForInteraction;

@@ -9,8 +9,8 @@ namespace Rewired.UI.ControlMapper
 	[AddComponentMenu("")]
 	public class UISliderControl : UIControl
 	{
-		// (get) Token: 0x06001CA8 RID: 7336 RVA: 0x00015E6C File Offset: 0x0001406C
-		// (set) Token: 0x06001CA9 RID: 7337 RVA: 0x00015E74 File Offset: 0x00014074
+		// (get) Token: 0x060016BB RID: 5819 RVA: 0x0005F355 File Offset: 0x0005D555
+		// (set) Token: 0x060016BC RID: 5820 RVA: 0x0005F35D File Offset: 0x0005D55D
 		public bool showIcon
 		{
 			get
@@ -28,8 +28,8 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001CAA RID: 7338 RVA: 0x00015E9D File Offset: 0x0001409D
-		// (set) Token: 0x06001CAB RID: 7339 RVA: 0x00015EA5 File Offset: 0x000140A5
+		// (get) Token: 0x060016BD RID: 5821 RVA: 0x0005F386 File Offset: 0x0005D586
+		// (set) Token: 0x060016BE RID: 5822 RVA: 0x0005F38E File Offset: 0x0005D58E
 		public bool showSlider
 		{
 			get
@@ -47,7 +47,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001CAC RID: 7340 RVA: 0x00071188 File Offset: 0x0006F388
+		// Token: 0x060016BF RID: 5823 RVA: 0x0005F3B8 File Offset: 0x0005D5B8
 		public override void SetCancelCallback(Action cancelCallback)
 		{
 			base.SetCancelCallback(cancelCallback);

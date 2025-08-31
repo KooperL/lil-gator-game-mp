@@ -10,7 +10,7 @@ namespace Rewired.UI.ControlMapper
 	[AddComponentMenu("")]
 	public class CalibrationWindow : Window
 	{
-		// (get) Token: 0x06001804 RID: 6148 RVA: 0x000126BC File Offset: 0x000108BC
+		// (get) Token: 0x060013DA RID: 5082 RVA: 0x00054734 File Offset: 0x00052934
 		private bool axisSelected
 		{
 			get
@@ -19,7 +19,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// (get) Token: 0x06001805 RID: 6149 RVA: 0x000126EC File Offset: 0x000108EC
+		// (get) Token: 0x060013DB RID: 5083 RVA: 0x00054764 File Offset: 0x00052964
 		private AxisCalibration axisCalibration
 		{
 			get
@@ -32,7 +32,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001806 RID: 6150 RVA: 0x00066614 File Offset: 0x00064814
+		// Token: 0x060013DC RID: 5084 RVA: 0x00054788 File Offset: 0x00052988
 		public override void Initialize(int id, Func<int, bool> isFocusedCallback)
 		{
 			if (this.rightContentContainer == null || this.valueDisplayGroup == null || this.calibratedValueMarker == null || this.rawValueMarker == null || this.calibratedZeroMarker == null || this.deadzoneArea == null || this.deadzoneSlider == null || this.sensitivitySlider == null || this.zeroSlider == null || this.invertToggle == null || this.axisScrollAreaContent == null || this.doneButton == null || this.calibrateButton == null || this.axisButtonPrefab == null || this.doneButtonLabel == null || this.cancelButtonLabel == null || this.defaultButtonLabel == null || this.deadzoneSliderLabel == null || this.zeroSliderLabel == null || this.sensitivitySliderLabel == null || this.invertToggleLabel == null || this.calibrateButtonLabel == null)
@@ -53,7 +53,7 @@ namespace Rewired.UI.ControlMapper
 			base.Initialize(id, isFocusedCallback);
 		}
 
-		// Token: 0x06001807 RID: 6151 RVA: 0x0006684C File Offset: 0x00064A4C
+		// Token: 0x060013DD RID: 5085 RVA: 0x000549C0 File Offset: 0x00052BC0
 		public void SetJoystick(int playerId, Joystick joystick)
 		{
 			if (!base.initialized)
@@ -107,7 +107,7 @@ namespace Rewired.UI.ControlMapper
 			this.Redraw();
 		}
 
-		// Token: 0x06001808 RID: 6152 RVA: 0x0001270E File Offset: 0x0001090E
+		// Token: 0x060013DE RID: 5086 RVA: 0x00054BD3 File Offset: 0x00052DD3
 		public void SetButtonCallback(CalibrationWindow.ButtonIdentifier buttonIdentifier, Action<int> callback)
 		{
 			if (!base.initialized)
@@ -126,7 +126,7 @@ namespace Rewired.UI.ControlMapper
 			this.buttonCallbacks.Add((int)buttonIdentifier, callback);
 		}
 
-		// Token: 0x06001809 RID: 6153 RVA: 0x00066A60 File Offset: 0x00064C60
+		// Token: 0x060013DF RID: 5087 RVA: 0x00054C0C File Offset: 0x00052E0C
 		public override void Cancel()
 		{
 			if (!base.initialized)
@@ -149,7 +149,7 @@ namespace Rewired.UI.ControlMapper
 			action(base.id);
 		}
 
-		// Token: 0x0600180A RID: 6154 RVA: 0x00012746 File Offset: 0x00010946
+		// Token: 0x060013E0 RID: 5088 RVA: 0x00054C6C File Offset: 0x00052E6C
 		protected override void Update()
 		{
 			if (!base.initialized)
@@ -160,7 +160,7 @@ namespace Rewired.UI.ControlMapper
 			this.UpdateDisplay();
 		}
 
-		// Token: 0x0600180B RID: 6155 RVA: 0x00066AC0 File Offset: 0x00064CC0
+		// Token: 0x060013E1 RID: 5089 RVA: 0x00054C84 File Offset: 0x00052E84
 		public void OnDone()
 		{
 			if (!base.initialized)
@@ -175,13 +175,13 @@ namespace Rewired.UI.ControlMapper
 			action(base.id);
 		}
 
-		// Token: 0x0600180C RID: 6156 RVA: 0x0001275D File Offset: 0x0001095D
+		// Token: 0x060013E2 RID: 5090 RVA: 0x00054CB7 File Offset: 0x00052EB7
 		public void OnCancel()
 		{
 			this.Cancel();
 		}
 
-		// Token: 0x0600180D RID: 6157 RVA: 0x00012765 File Offset: 0x00010965
+		// Token: 0x060013E3 RID: 5091 RVA: 0x00054CBF File Offset: 0x00052EBF
 		public void OnRestoreDefault()
 		{
 			if (!base.initialized)
@@ -197,7 +197,7 @@ namespace Rewired.UI.ControlMapper
 			this.Redraw();
 		}
 
-		// Token: 0x0600180E RID: 6158 RVA: 0x00066AF4 File Offset: 0x00064CF4
+		// Token: 0x060013E4 RID: 5092 RVA: 0x00054CF0 File Offset: 0x00052EF0
 		public void OnCalibrate()
 		{
 			if (!base.initialized)
@@ -212,7 +212,7 @@ namespace Rewired.UI.ControlMapper
 			action(this.selectedAxis);
 		}
 
-		// Token: 0x0600180F RID: 6159 RVA: 0x00012795 File Offset: 0x00010995
+		// Token: 0x060013E5 RID: 5093 RVA: 0x00054D23 File Offset: 0x00052F23
 		public void OnInvert(bool state)
 		{
 			if (!base.initialized)
@@ -226,7 +226,7 @@ namespace Rewired.UI.ControlMapper
 			this.axisCalibration.invert = state;
 		}
 
-		// Token: 0x06001810 RID: 6160 RVA: 0x000127B5 File Offset: 0x000109B5
+		// Token: 0x060013E6 RID: 5094 RVA: 0x00054D43 File Offset: 0x00052F43
 		public void OnZeroValueChange(float value)
 		{
 			if (!base.initialized)
@@ -241,7 +241,7 @@ namespace Rewired.UI.ControlMapper
 			this.RedrawCalibratedZero();
 		}
 
-		// Token: 0x06001811 RID: 6161 RVA: 0x000127DB File Offset: 0x000109DB
+		// Token: 0x060013E7 RID: 5095 RVA: 0x00054D69 File Offset: 0x00052F69
 		public void OnZeroCancel()
 		{
 			if (!base.initialized)
@@ -257,7 +257,7 @@ namespace Rewired.UI.ControlMapper
 			this.RefreshControls();
 		}
 
-		// Token: 0x06001812 RID: 6162 RVA: 0x00066B28 File Offset: 0x00064D28
+		// Token: 0x060013E8 RID: 5096 RVA: 0x00054DA0 File Offset: 0x00052FA0
 		public void OnDeadzoneValueChange(float value)
 		{
 			if (!base.initialized)
@@ -276,7 +276,7 @@ namespace Rewired.UI.ControlMapper
 			this.RedrawDeadzone();
 		}
 
-		// Token: 0x06001813 RID: 6163 RVA: 0x00012811 File Offset: 0x00010A11
+		// Token: 0x060013E9 RID: 5097 RVA: 0x00054DF8 File Offset: 0x00052FF8
 		public void OnDeadzoneCancel()
 		{
 			if (!base.initialized)
@@ -292,7 +292,7 @@ namespace Rewired.UI.ControlMapper
 			this.RefreshControls();
 		}
 
-		// Token: 0x06001814 RID: 6164 RVA: 0x00012847 File Offset: 0x00010A47
+		// Token: 0x060013EA RID: 5098 RVA: 0x00054E2E File Offset: 0x0005302E
 		public void OnSensitivityValueChange(float value)
 		{
 			if (!base.initialized)
@@ -306,7 +306,7 @@ namespace Rewired.UI.ControlMapper
 			this.SetSensitivity(this.axisCalibration, value);
 		}
 
-		// Token: 0x06001815 RID: 6165 RVA: 0x00012868 File Offset: 0x00010A68
+		// Token: 0x060013EB RID: 5099 RVA: 0x00054E4F File Offset: 0x0005304F
 		public void OnSensitivityCancel(float value)
 		{
 			if (!base.initialized)
@@ -321,13 +321,13 @@ namespace Rewired.UI.ControlMapper
 			this.RefreshControls();
 		}
 
-		// Token: 0x06001816 RID: 6166 RVA: 0x00012898 File Offset: 0x00010A98
+		// Token: 0x060013EC RID: 5100 RVA: 0x00054E7F File Offset: 0x0005307F
 		public void OnAxisScrollRectScroll(Vector2 pos)
 		{
 			bool initialized = base.initialized;
 		}
 
-		// Token: 0x06001817 RID: 6167 RVA: 0x000128A1 File Offset: 0x00010AA1
+		// Token: 0x060013ED RID: 5101 RVA: 0x00054E88 File Offset: 0x00053088
 		private void OnAxisSelected(int axisIndex, Button button)
 		{
 			if (!base.initialized)
@@ -343,20 +343,20 @@ namespace Rewired.UI.ControlMapper
 			this.Redraw();
 		}
 
-		// Token: 0x06001818 RID: 6168 RVA: 0x000128C8 File Offset: 0x00010AC8
+		// Token: 0x060013EE RID: 5102 RVA: 0x00054EAF File Offset: 0x000530AF
 		private void UpdateDisplay()
 		{
 			this.RedrawValueMarkers();
 		}
 
-		// Token: 0x06001819 RID: 6169 RVA: 0x000128D0 File Offset: 0x00010AD0
+		// Token: 0x060013EF RID: 5103 RVA: 0x00054EB7 File Offset: 0x000530B7
 		private void Redraw()
 		{
 			this.RedrawCalibratedZero();
 			this.RedrawValueMarkers();
 		}
 
-		// Token: 0x0600181A RID: 6170 RVA: 0x00066B80 File Offset: 0x00064D80
+		// Token: 0x060013F0 RID: 5104 RVA: 0x00054EC8 File Offset: 0x000530C8
 		private void RefreshControls()
 		{
 			if (!this.axisSelected)
@@ -373,7 +373,7 @@ namespace Rewired.UI.ControlMapper
 			this.invertToggle.isOn = this.axisCalibration.invert;
 		}
 
-		// Token: 0x0600181B RID: 6171 RVA: 0x00066C2C File Offset: 0x00064E2C
+		// Token: 0x060013F1 RID: 5105 RVA: 0x00054F74 File Offset: 0x00053174
 		private void RedrawDeadzone()
 		{
 			if (!this.axisSelected)
@@ -385,7 +385,7 @@ namespace Rewired.UI.ControlMapper
 			this.deadzoneArea.anchoredPosition = new Vector2(this.axisCalibration.calibratedZero * -this.deadzoneArea.parent.localPosition.x, this.deadzoneArea.anchoredPosition.y);
 		}
 
-		// Token: 0x0600181C RID: 6172 RVA: 0x00066CB8 File Offset: 0x00064EB8
+		// Token: 0x060013F2 RID: 5106 RVA: 0x00055000 File Offset: 0x00053200
 		private void RedrawCalibratedZero()
 		{
 			if (!this.axisSelected)
@@ -396,7 +396,7 @@ namespace Rewired.UI.ControlMapper
 			this.RedrawDeadzone();
 		}
 
-		// Token: 0x0600181D RID: 6173 RVA: 0x00066D18 File Offset: 0x00064F18
+		// Token: 0x060013F3 RID: 5107 RVA: 0x00055060 File Offset: 0x00053260
 		private void RedrawValueMarkers()
 		{
 			if (!this.axisSelected)
@@ -411,7 +411,7 @@ namespace Rewired.UI.ControlMapper
 			this.rawValueMarker.anchoredPosition = new Vector2(this.displayAreaWidth * 0.5f * num, this.rawValueMarker.anchoredPosition.y);
 		}
 
-		// Token: 0x0600181E RID: 6174 RVA: 0x00066E08 File Offset: 0x00065008
+		// Token: 0x060013F4 RID: 5108 RVA: 0x00055150 File Offset: 0x00053350
 		private void SelectAxis(int index)
 		{
 			if (index < 0 || index >= this.axisButtons.Count)
@@ -436,7 +436,7 @@ namespace Rewired.UI.ControlMapper
 			this.SetMinSensitivity();
 		}
 
-		// Token: 0x0600181F RID: 6175 RVA: 0x000128DE File Offset: 0x00010ADE
+		// Token: 0x060013F5 RID: 5109 RVA: 0x000551F2 File Offset: 0x000533F2
 		public override void TakeInputFocus()
 		{
 			base.TakeInputFocus();
@@ -448,7 +448,7 @@ namespace Rewired.UI.ControlMapper
 			this.Redraw();
 		}
 
-		// Token: 0x06001820 RID: 6176 RVA: 0x00066EAC File Offset: 0x000650AC
+		// Token: 0x060013F6 RID: 5110 RVA: 0x0005521C File Offset: 0x0005341C
 		private void SetMinSensitivity()
 		{
 			if (!this.axisSelected)
@@ -470,7 +470,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001821 RID: 6177 RVA: 0x00066F34 File Offset: 0x00065134
+		// Token: 0x060013F7 RID: 5111 RVA: 0x000552A4 File Offset: 0x000534A4
 		private bool IsMenuAxis(int actionId, int axisIndex)
 		{
 			if (this.rewiredStandaloneInputModule == null)
@@ -506,7 +506,7 @@ namespace Rewired.UI.ControlMapper
 			return false;
 		}
 
-		// Token: 0x06001822 RID: 6178 RVA: 0x00067004 File Offset: 0x00065204
+		// Token: 0x060013F8 RID: 5112 RVA: 0x00055374 File Offset: 0x00053574
 		private void GetAxisButtonDeadZone(int playerId, int actionId, ref float value)
 		{
 			InputAction action = ReInput.mapping.GetAction(actionId);
@@ -523,7 +523,7 @@ namespace Rewired.UI.ControlMapper
 			value = inputBehavior.buttonDeadZone + 0.1f;
 		}
 
-		// Token: 0x06001823 RID: 6179 RVA: 0x00012907 File Offset: 0x00010B07
+		// Token: 0x060013F9 RID: 5113 RVA: 0x000553B7 File Offset: 0x000535B7
 		private float GetSliderSensitivity(AxisCalibration axisCalibration)
 		{
 			if (axisCalibration.sensitivityType == AxisSensitivityType.Multiplier)
@@ -537,7 +537,7 @@ namespace Rewired.UI.ControlMapper
 			return axisCalibration.sensitivity;
 		}
 
-		// Token: 0x06001824 RID: 6180 RVA: 0x00067048 File Offset: 0x00065248
+		// Token: 0x060013FA RID: 5114 RVA: 0x000553F4 File Offset: 0x000535F4
 		public void SetSensitivity(AxisCalibration axisCalibration, float sliderValue)
 		{
 			if (axisCalibration.sensitivityType == AxisSensitivityType.Multiplier)
@@ -560,7 +560,7 @@ namespace Rewired.UI.ControlMapper
 			}
 		}
 
-		// Token: 0x06001825 RID: 6181 RVA: 0x000670BC File Offset: 0x000652BC
+		// Token: 0x060013FB RID: 5115 RVA: 0x00055468 File Offset: 0x00053668
 		private static float ProcessPowerValue(float value, float minValue, float maxValue)
 		{
 			value = Mathf.Clamp(value, minValue, maxValue);

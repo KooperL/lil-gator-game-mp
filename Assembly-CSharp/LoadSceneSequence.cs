@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadSceneSequence : MonoBehaviour
 {
-	// Token: 0x0600017A RID: 378 RVA: 0x0000344B File Offset: 0x0000164B
+	// Token: 0x06000147 RID: 327 RVA: 0x00007C90 File Offset: 0x00005E90
 	public static void LoadScene(int buildIndex, LoadSceneSequence.LoadType loadType = LoadSceneSequence.LoadType.LoadingScreen)
 	{
 		LoadSceneSequence.isSceneAsset = false;
@@ -17,7 +17,7 @@ public class LoadSceneSequence : MonoBehaviour
 		LoadSceneSequence.LoadScene(loadType);
 	}
 
-	// Token: 0x0600017B RID: 379 RVA: 0x0000345F File Offset: 0x0000165F
+	// Token: 0x06000148 RID: 328 RVA: 0x00007CA4 File Offset: 0x00005EA4
 	public static void LoadScene(AssetReference sceneAsset, LoadSceneSequence.LoadType loadType = LoadSceneSequence.LoadType.LoadingScreen)
 	{
 		LoadSceneSequence.isSceneAsset = true;
@@ -25,7 +25,7 @@ public class LoadSceneSequence : MonoBehaviour
 		LoadSceneSequence.LoadScene(loadType);
 	}
 
-	// Token: 0x0600017C RID: 380 RVA: 0x00003473 File Offset: 0x00001673
+	// Token: 0x06000149 RID: 329 RVA: 0x00007CB8 File Offset: 0x00005EB8
 	public static void StartPreloadScene(AssetReference sceneAsset)
 	{
 		LoadSceneSequence.hasPreloadedScene = true;
@@ -33,29 +33,29 @@ public class LoadSceneSequence : MonoBehaviour
 		LoadSceneSequence.preloadedScene = sceneAsset;
 	}
 
-	// Token: 0x0600017D RID: 381 RVA: 0x00003490 File Offset: 0x00001690
+	// Token: 0x0600014A RID: 330 RVA: 0x00007CD5 File Offset: 0x00005ED5
 	private static void LoadScene(LoadSceneSequence.LoadType loadType)
 	{
 		LoadSceneSequence.loadType = loadType;
 		LoadSceneSequence.oldScene = SceneManager.GetActiveScene();
 		if (loadType == LoadSceneSequence.LoadType.Fade)
 		{
-			global::UnityEngine.Object.Instantiate<GameObject>(Prefabs.p.loadingSequenceFade);
+			Object.Instantiate<GameObject>(Prefabs.p.loadingSequenceFade);
 			return;
 		}
-		global::UnityEngine.Object.Instantiate<GameObject>(Prefabs.p.loadingSequence);
+		Object.Instantiate<GameObject>(Prefabs.p.loadingSequence);
 	}
 
-	// Token: 0x0600017E RID: 382 RVA: 0x000034C7 File Offset: 0x000016C7
+	// Token: 0x0600014B RID: 331 RVA: 0x00007D0C File Offset: 0x00005F0C
 	private void Start()
 	{
 		base.StartCoroutine(this.LoadSceneAsync());
 	}
 
-	// Token: 0x0600017F RID: 383 RVA: 0x000034D6 File Offset: 0x000016D6
+	// Token: 0x0600014C RID: 332 RVA: 0x00007D1B File Offset: 0x00005F1B
 	public IEnumerator LoadSceneAsync()
 	{
-		global::UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
+		Object.DontDestroyOnLoad(base.gameObject);
 		FadeGameVolume.FadeOutGameVolume();
 		ReInput.players.GetPlayer(0).controllers.maps.SetAllMapsEnabled(false);
 		yield return new WaitForSeconds(1f);
@@ -102,7 +102,7 @@ public class LoadSceneSequence : MonoBehaviour
 		FadeGameVolume.FadeInGameVolume();
 		yield return new WaitForSeconds(0.5f);
 		ReInput.players.GetPlayer(0).controllers.maps.SetAllMapsEnabled(true);
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 		yield break;
 	}
 

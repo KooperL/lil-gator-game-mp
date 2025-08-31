@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class MultipleUnique : MonoBehaviour
 {
-	// Token: 0x0600098A RID: 2442 RVA: 0x0000945A File Offset: 0x0000765A
+	// Token: 0x060007E6 RID: 2022 RVA: 0x00026540 File Offset: 0x00024740
 	public void Awake()
 	{
 		MultipleUnique.allUnique.Add(this);
 		this.Load();
 	}
 
-	// Token: 0x0600098B RID: 2443 RVA: 0x0000946D File Offset: 0x0000766D
+	// Token: 0x060007E7 RID: 2023 RVA: 0x00026553 File Offset: 0x00024753
 	private void OnDestroy()
 	{
 		MultipleUnique.allUnique.Remove(this);
 	}
 
-	// Token: 0x0600098C RID: 2444 RVA: 0x0003B0E8 File Offset: 0x000392E8
+	// Token: 0x060007E8 RID: 2024 RVA: 0x00026564 File Offset: 0x00024764
 	public void Load()
 	{
 		int num = GameData.g.ReadInt(this.key, -1);
@@ -32,7 +32,7 @@ public class MultipleUnique : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600098D RID: 2445 RVA: 0x0003B140 File Offset: 0x00039340
+	// Token: 0x060007E9 RID: 2025 RVA: 0x000265BC File Offset: 0x000247BC
 	public void MarkThisOne()
 	{
 		GameData.g.Write(this.key, this.id);

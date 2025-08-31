@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CMConversationCamera : MonoBehaviour
 {
-	// Token: 0x06000AA8 RID: 2728 RVA: 0x0000A2E9 File Offset: 0x000084E9
+	// Token: 0x060008D6 RID: 2262 RVA: 0x000299AC File Offset: 0x00027BAC
 	private void OnEnable()
 	{
 		CMConversationCamera.c = this;
 		this.virtualCamera = base.GetComponent<CinemachineVirtualCamera>();
 	}
 
-	// Token: 0x06000AA9 RID: 2729 RVA: 0x0003DE5C File Offset: 0x0003C05C
+	// Token: 0x060008D7 RID: 2263 RVA: 0x000299C0 File Offset: 0x00027BC0
 	private void Start()
 	{
 		this.defaultFocus = this.virtualCamera.LookAt;
@@ -22,7 +22,7 @@ public class CMConversationCamera : MonoBehaviour
 		base.enabled = this.isEnabled;
 	}
 
-	// Token: 0x06000AAA RID: 2730 RVA: 0x0000A2FD File Offset: 0x000084FD
+	// Token: 0x060008D8 RID: 2264 RVA: 0x00029A2D File Offset: 0x00027C2D
 	public void SetFocus(DialogueActor actor)
 	{
 		this.virtualCamera.LookAt = actor.DialogueAnchor;
@@ -33,7 +33,7 @@ public class CMConversationCamera : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000AAB RID: 2731 RVA: 0x0003DECC File Offset: 0x0003C0CC
+	// Token: 0x060008D9 RID: 2265 RVA: 0x00029A5C File Offset: 0x00027C5C
 	private void Update()
 	{
 		if (Game.HasControl)
@@ -61,14 +61,14 @@ public class CMConversationCamera : MonoBehaviour
 		base.transform.position = vector3;
 	}
 
-	// Token: 0x06000AAC RID: 2732 RVA: 0x0000A32B File Offset: 0x0000852B
+	// Token: 0x060008DA RID: 2266 RVA: 0x00029B3B File Offset: 0x00027D3B
 	public void LockPosition(Vector3 position)
 	{
 		this.lockedPosition = position;
 		this.isPositionLocked = true;
 	}
 
-	// Token: 0x06000AAD RID: 2733 RVA: 0x0000A33B File Offset: 0x0000853B
+	// Token: 0x060008DB RID: 2267 RVA: 0x00029B4B File Offset: 0x00027D4B
 	public void UnlockPosition()
 	{
 		this.isPositionLocked = false;

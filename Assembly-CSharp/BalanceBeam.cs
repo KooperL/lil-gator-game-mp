@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPositions
 {
-	// Token: 0x060002C8 RID: 712 RVA: 0x00004443 File Offset: 0x00002643
+	// Token: 0x06000271 RID: 625 RVA: 0x0000D005 File Offset: 0x0000B205
 	private void OnValidate()
 	{
 		if (!Application.isPlaying)
@@ -14,7 +14,7 @@ public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPosi
 		}
 	}
 
-	// Token: 0x060002C9 RID: 713 RVA: 0x0002172C File Offset: 0x0001F92C
+	// Token: 0x06000272 RID: 626 RVA: 0x0000D018 File Offset: 0x0000B218
 	[ContextMenu("Fit Capsule To Beam")]
 	public void FitCapsule()
 	{
@@ -25,12 +25,12 @@ public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPosi
 		component.height = Mathf.Abs(vector.z - vector2.z) + 1f;
 	}
 
-	// Token: 0x060002CA RID: 714 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000273 RID: 627 RVA: 0x0000D082 File Offset: 0x0000B282
 	private void Awake()
 	{
 	}
 
-	// Token: 0x060002CB RID: 715 RVA: 0x00021798 File Offset: 0x0001F998
+	// Token: 0x06000274 RID: 628 RVA: 0x0000D084 File Offset: 0x0000B284
 	private void Initialize()
 	{
 		this.negativeClamp = 0f;
@@ -71,7 +71,7 @@ public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPosi
 		this.isInitialized = true;
 	}
 
-	// Token: 0x060002CC RID: 716 RVA: 0x00021910 File Offset: 0x0001FB10
+	// Token: 0x06000275 RID: 629 RVA: 0x0000D1FC File Offset: 0x0000B3FC
 	private bool IsBeamEligible()
 	{
 		if (!this.isInitialized)
@@ -83,7 +83,7 @@ public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPosi
 		return this.IsBeamEligible(this.t, direction);
 	}
 
-	// Token: 0x060002CD RID: 717 RVA: 0x00021958 File Offset: 0x0001FB58
+	// Token: 0x06000276 RID: 630 RVA: 0x0000D244 File Offset: 0x0000B444
 	private bool IsBeamEligible(float t, Vector3 direction)
 	{
 		if (!this.isInitialized)
@@ -114,7 +114,7 @@ public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPosi
 		return (num >= 0f || base.MoveAlongPath(t, -0.5f) > 0f) && (num <= 0f || base.MoveAlongPath(t, 0.5f) < (float)(this.positions.Length - 1));
 	}
 
-	// Token: 0x060002CE RID: 718 RVA: 0x00021A44 File Offset: 0x0001FC44
+	// Token: 0x06000277 RID: 631 RVA: 0x0000D330 File Offset: 0x0000B530
 	private void OnTriggerStay(Collider other)
 	{
 		if (Time.time - this.lastEnabled < 0.5f && Time.time - PlayerMovement.mostRecentEnable > 0.5f)
@@ -167,7 +167,7 @@ public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPosi
 		}
 	}
 
-	// Token: 0x060002CF RID: 719 RVA: 0x00021B5C File Offset: 0x0001FD5C
+	// Token: 0x06000278 RID: 632 RVA: 0x0000D448 File Offset: 0x0000B648
 	private BalanceBeam[] FindBeamsAtPosition(Vector3 position)
 	{
 		if (BalanceBeam.playerTriggerMask == 0)
@@ -190,7 +190,7 @@ public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPosi
 		return list.ToArray();
 	}
 
-	// Token: 0x060002D0 RID: 720 RVA: 0x00021C34 File Offset: 0x0001FE34
+	// Token: 0x06000279 RID: 633 RVA: 0x0000D520 File Offset: 0x0000B720
 	private Vector3 GetBeamDirection(BalanceBeam beam, Vector3 referencePosition)
 	{
 		Vector3 position = beam.GetPosition(0);
@@ -202,7 +202,7 @@ public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPosi
 		return (position2 - position).normalized;
 	}
 
-	// Token: 0x060002D1 RID: 721 RVA: 0x00021C9C File Offset: 0x0001FE9C
+	// Token: 0x0600027A RID: 634 RVA: 0x0000D588 File Offset: 0x0000B788
 	private void FindConnectedBeams()
 	{
 		Vector3 position = base.GetPosition(0);
@@ -222,7 +222,7 @@ public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPosi
 		this.checkedForConnectedBeams = true;
 	}
 
-	// Token: 0x060002D2 RID: 722 RVA: 0x00021D68 File Offset: 0x0001FF68
+	// Token: 0x0600027B RID: 635 RVA: 0x0000D654 File Offset: 0x0000B854
 	private void OnEnable()
 	{
 		Player.movement.isModified = true;
@@ -262,7 +262,7 @@ public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPosi
 		this.onEnable.Invoke();
 	}
 
-	// Token: 0x060002D3 RID: 723 RVA: 0x00021F0C File Offset: 0x0002010C
+	// Token: 0x0600027C RID: 636 RVA: 0x0000D7F8 File Offset: 0x0000B9F8
 	private void OnDisable()
 	{
 		if (Player.footIK.customIKPositions == this)
@@ -292,7 +292,7 @@ public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPosi
 		this.lastEnabled = Time.time;
 	}
 
-	// Token: 0x060002D4 RID: 724 RVA: 0x00022030 File Offset: 0x00020230
+	// Token: 0x0600027D RID: 637 RVA: 0x0000D91C File Offset: 0x0000BB1C
 	public void MovementUpdate(Vector3 input, ref Vector3 position, ref Vector3 velocity, ref Vector3 direction, ref Vector3 up, ref float animationIndex)
 	{
 		this.t = Mathf.Clamp(this.t, 0f, (float)(this.positions.Length - 1));
@@ -410,7 +410,7 @@ public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPosi
 		}
 	}
 
-	// Token: 0x060002D5 RID: 725 RVA: 0x0002243C File Offset: 0x0002063C
+	// Token: 0x0600027E RID: 638 RVA: 0x0000DD28 File Offset: 0x0000BF28
 	private BalanceBeam GetNextBeam(BalanceBeam[] beams, Vector3[] directions, Vector3 inputDirection)
 	{
 		BalanceBeam balanceBeam = null;
@@ -427,7 +427,7 @@ public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPosi
 		return balanceBeam;
 	}
 
-	// Token: 0x060002D6 RID: 726 RVA: 0x00004453 File Offset: 0x00002653
+	// Token: 0x0600027F RID: 639 RVA: 0x0000DD6C File Offset: 0x0000BF6C
 	public void Cancel()
 	{
 		if (this != null)
@@ -436,36 +436,36 @@ public class BalanceBeam : GenericPath, ICustomPlayerMovement, ICustomFootIKPosi
 		}
 	}
 
-	// Token: 0x060002D7 RID: 727 RVA: 0x00004465 File Offset: 0x00002665
+	// Token: 0x06000280 RID: 640 RVA: 0x0000DD7E File Offset: 0x0000BF7E
 	public void GetStatsForJoinedBeam(out float speed)
 	{
 		speed = this.speed;
 	}
 
-	// Token: 0x060002D8 RID: 728 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000281 RID: 641 RVA: 0x0000DD88 File Offset: 0x0000BF88
 	private void CopyFromJoinedBeam(BalanceBeam joinedBeam)
 	{
 	}
 
-	// Token: 0x060002D9 RID: 729 RVA: 0x0000446F File Offset: 0x0000266F
+	// Token: 0x06000282 RID: 642 RVA: 0x0000DD8A File Offset: 0x0000BF8A
 	public Vector3 GetLeftFootTarget(Vector3 currentPosition)
 	{
 		return this.GetFootTarget(currentPosition);
 	}
 
-	// Token: 0x060002DA RID: 730 RVA: 0x0000446F File Offset: 0x0000266F
+	// Token: 0x06000283 RID: 643 RVA: 0x0000DD93 File Offset: 0x0000BF93
 	public Vector3 GetRightFootTarget(Vector3 currentPosition)
 	{
 		return this.GetFootTarget(currentPosition);
 	}
 
-	// Token: 0x060002DB RID: 731 RVA: 0x00004478 File Offset: 0x00002678
+	// Token: 0x06000284 RID: 644 RVA: 0x0000DD9C File Offset: 0x0000BF9C
 	private float GetInterpolatedT()
 	{
 		return Mathf.Lerp(this.prevT, this.t, (Time.time - Time.fixedTime) / Time.fixedDeltaTime);
 	}
 
-	// Token: 0x060002DC RID: 732 RVA: 0x00022480 File Offset: 0x00020680
+	// Token: 0x06000285 RID: 645 RVA: 0x0000DDC0 File Offset: 0x0000BFC0
 	private Vector3 GetFootTarget(Vector3 footPosition)
 	{
 		float interpolatedT = this.GetInterpolatedT();

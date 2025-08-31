@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FitBounds : MonoBehaviour
 {
-	// Token: 0x06000055 RID: 85 RVA: 0x00018798 File Offset: 0x00016998
+	// Token: 0x06000054 RID: 84 RVA: 0x00003524 File Offset: 0x00001724
 	public void Fit(BoxCollider box)
 	{
 		base.transform.position = box.transform.TransformPoint(box.center);

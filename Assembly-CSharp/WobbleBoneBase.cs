@@ -3,43 +3,43 @@ using UnityEngine;
 
 public class WobbleBoneBase : MonoBehaviour
 {
-	// Token: 0x06001028 RID: 4136 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000D1E RID: 3358 RVA: 0x0003F89A File Offset: 0x0003DA9A
 	public virtual void Initialize()
 	{
 	}
 
-	// Token: 0x06001029 RID: 4137 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000D1F RID: 3359 RVA: 0x0003F89C File Offset: 0x0003DA9C
 	public virtual void RunWobbleUpdate()
 	{
 	}
 
-	// Token: 0x0600102A RID: 4138 RVA: 0x0000B52B File Offset: 0x0000972B
+	// Token: 0x06000D20 RID: 3360 RVA: 0x0003F89E File Offset: 0x0003DA9E
 	protected float Extrapolate(float t)
 	{
 		return t;
 	}
 
-	// Token: 0x0600102B RID: 4139 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000D21 RID: 3361 RVA: 0x0003F8A1 File Offset: 0x0003DAA1
 	public virtual void ApplyPosition()
 	{
 	}
 
-	// Token: 0x0600102C RID: 4140 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000D22 RID: 3362 RVA: 0x0003F8A3 File Offset: 0x0003DAA3
 	public virtual void ApplyPosition(float t)
 	{
 	}
 
-	// Token: 0x0600102D RID: 4141 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000D23 RID: 3363 RVA: 0x0003F8A5 File Offset: 0x0003DAA5
 	public virtual void ApplyRotation()
 	{
 	}
 
-	// Token: 0x0600102E RID: 4142 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000D24 RID: 3364 RVA: 0x0003F8A7 File Offset: 0x0003DAA7
 	public virtual void ApplyRotation(float t)
 	{
 	}
 
-	// Token: 0x0600102F RID: 4143 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x06000D25 RID: 3365 RVA: 0x0003F8A9 File Offset: 0x0003DAA9
 	public virtual void Reacclimate()
 	{
 	}

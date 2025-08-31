@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public static class UnityExtensions
 {
-	// Token: 0x06000A29 RID: 2601 RVA: 0x0003C824 File Offset: 0x0003AA24
+	// Token: 0x0600085D RID: 2141 RVA: 0x00027B94 File Offset: 0x00025D94
 	public static T GetOrAddComponent<T>(this GameObject gameObject) where T : Component
 	{
 		T t;
@@ -16,19 +16,19 @@ public static class UnityExtensions
 		return gameObject.AddComponent<T>();
 	}
 
-	// Token: 0x06000A2A RID: 2602 RVA: 0x00009BD0 File Offset: 0x00007DD0
+	// Token: 0x0600085E RID: 2142 RVA: 0x00027BB3 File Offset: 0x00025DB3
 	public static bool Contains(this LayerMask mask, int layer)
 	{
 		return mask == (mask | (1 << layer));
 	}
 
-	// Token: 0x06000A2B RID: 2603 RVA: 0x00009BE7 File Offset: 0x00007DE7
+	// Token: 0x0600085F RID: 2143 RVA: 0x00027BCA File Offset: 0x00025DCA
 	public static Color SetAlpha(this Color color, float alpha)
 	{
 		return new Color(color.r, color.g, color.b, alpha);
 	}
 
-	// Token: 0x06000A2C RID: 2604 RVA: 0x00009C01 File Offset: 0x00007E01
+	// Token: 0x06000860 RID: 2144 RVA: 0x00027BE4 File Offset: 0x00025DE4
 	public static Transform ApplyTransform(this Transform transform, Transform sourceTransform)
 	{
 		transform.position = sourceTransform.position;
@@ -36,7 +36,7 @@ public static class UnityExtensions
 		return transform;
 	}
 
-	// Token: 0x06000A2D RID: 2605 RVA: 0x00009C1C File Offset: 0x00007E1C
+	// Token: 0x06000861 RID: 2145 RVA: 0x00027BFF File Offset: 0x00025DFF
 	public static Transform ApplyTransformLocal(this Transform transform, Transform sourceTransform)
 	{
 		transform.localPosition = sourceTransform.localPosition;
@@ -44,7 +44,7 @@ public static class UnityExtensions
 		return transform;
 	}
 
-	// Token: 0x06000A2E RID: 2606 RVA: 0x00009C37 File Offset: 0x00007E37
+	// Token: 0x06000862 RID: 2146 RVA: 0x00027C1A File Offset: 0x00025E1A
 	public static Transform ApplyParent(this Transform transform, Transform newParent)
 	{
 		transform.parent = newParent;
@@ -54,7 +54,7 @@ public static class UnityExtensions
 		return transform;
 	}
 
-	// Token: 0x06000A2F RID: 2607 RVA: 0x0003C844 File Offset: 0x0003AA44
+	// Token: 0x06000863 RID: 2147 RVA: 0x00027C48 File Offset: 0x00025E48
 	public static T GetComponentUpHeirarchy<T>(this Transform transform) where T : Component
 	{
 		while (transform != null)
@@ -69,7 +69,7 @@ public static class UnityExtensions
 		return default(T);
 	}
 
-	// Token: 0x06000A30 RID: 2608 RVA: 0x0003C87C File Offset: 0x0003AA7C
+	// Token: 0x06000864 RID: 2148 RVA: 0x00027C80 File Offset: 0x00025E80
 	public static int GetDepth(this Transform transform)
 	{
 		int num = 0;
@@ -81,13 +81,13 @@ public static class UnityExtensions
 		return num;
 	}
 
-	// Token: 0x06000A31 RID: 2609 RVA: 0x00009C62 File Offset: 0x00007E62
+	// Token: 0x06000865 RID: 2149 RVA: 0x00027CB1 File Offset: 0x00025EB1
 	public static Quaternion Inverse(this Quaternion quaternion)
 	{
 		return Quaternion.Inverse(quaternion);
 	}
 
-	// Token: 0x06000A32 RID: 2610 RVA: 0x0003C8B0 File Offset: 0x0003AAB0
+	// Token: 0x06000866 RID: 2150 RVA: 0x00027CBC File Offset: 0x00025EBC
 	public static void ApplyState(this Animator animator, string state)
 	{
 		ActorState actorState;
@@ -97,13 +97,13 @@ public static class UnityExtensions
 		}
 	}
 
-	// Token: 0x06000A33 RID: 2611 RVA: 0x00009C6A File Offset: 0x00007E6A
+	// Token: 0x06000867 RID: 2151 RVA: 0x00027CDA File Offset: 0x00025EDA
 	public static void ApplyState(this Animator animator, int state)
 	{
 		animator.SetInteger(UnityExtensions.stateID, state);
 	}
 
-	// Token: 0x06000A34 RID: 2612 RVA: 0x0003C8D0 File Offset: 0x0003AAD0
+	// Token: 0x06000868 RID: 2152 RVA: 0x00027CE8 File Offset: 0x00025EE8
 	public static void ApplyPosition(this Animator animator, string position)
 	{
 		ActorPosition actorPosition;
@@ -113,13 +113,13 @@ public static class UnityExtensions
 		}
 	}
 
-	// Token: 0x06000A35 RID: 2613 RVA: 0x00009C78 File Offset: 0x00007E78
+	// Token: 0x06000869 RID: 2153 RVA: 0x00027D06 File Offset: 0x00025F06
 	public static void ApplyPosition(this Animator animator, int position)
 	{
 		animator.SetInteger(UnityExtensions.positionID, position);
 	}
 
-	// Token: 0x06000A36 RID: 2614 RVA: 0x0003C8F0 File Offset: 0x0003AAF0
+	// Token: 0x0600086A RID: 2154 RVA: 0x00027D14 File Offset: 0x00025F14
 	public static bool TryFindIndex<T>(this IEnumerable<T> array, T target, out int index)
 	{
 		index = 0;
@@ -145,8 +145,8 @@ public static class UnityExtensions
 		return false;
 	}
 
-	// Token: 0x06000A37 RID: 2615 RVA: 0x0003C970 File Offset: 0x0003AB70
-	public static bool HasPersistentTarget(this UnityEvent unityEvent, global::UnityEngine.Object target)
+	// Token: 0x0600086B RID: 2155 RVA: 0x00027D94 File Offset: 0x00025F94
+	public static bool HasPersistentTarget(this UnityEvent unityEvent, Object target)
 	{
 		int persistentEventCount = unityEvent.GetPersistentEventCount();
 		for (int i = 0; i < persistentEventCount; i++)
@@ -159,7 +159,7 @@ public static class UnityExtensions
 		return false;
 	}
 
-	// Token: 0x06000A38 RID: 2616 RVA: 0x0003C9A4 File Offset: 0x0003ABA4
+	// Token: 0x0600086C RID: 2156 RVA: 0x00027DC8 File Offset: 0x00025FC8
 	public static bool Contains<T>(this T[] array, T target)
 	{
 		foreach (T t in array)
@@ -172,7 +172,7 @@ public static class UnityExtensions
 		return false;
 	}
 
-	// Token: 0x06000A39 RID: 2617 RVA: 0x00009C86 File Offset: 0x00007E86
+	// Token: 0x0600086D RID: 2157 RVA: 0x00027DFE File Offset: 0x00025FFE
 	public static T[] Remove<T>(this T[] array, T elementToRemove)
 	{
 		List<T> list = new List<T>(array);
@@ -181,7 +181,7 @@ public static class UnityExtensions
 		return array;
 	}
 
-	// Token: 0x06000A3A RID: 2618 RVA: 0x00009C9E File Offset: 0x00007E9E
+	// Token: 0x0600086E RID: 2158 RVA: 0x00027E16 File Offset: 0x00026016
 	public static T[] Add<T>(this T[] array, T newElement)
 	{
 		Array.Resize<T>(ref array, array.Length + 1);
@@ -189,10 +189,10 @@ public static class UnityExtensions
 		return array;
 	}
 
-	// Token: 0x06000A3B RID: 2619 RVA: 0x0003C9DC File Offset: 0x0003ABDC
+	// Token: 0x0600086F RID: 2159 RVA: 0x00027E34 File Offset: 0x00026034
 	public static T RandomValue<T>(this T[] array)
 	{
-		int num = Mathf.FloorToInt(global::UnityEngine.Random.value * (float)array.Length);
+		int num = Mathf.FloorToInt(Random.value * (float)array.Length);
 		if (num == UnityExtensions.lastRandomIndex)
 		{
 			num = (num + 1) % array.Length;
@@ -201,32 +201,32 @@ public static class UnityExtensions
 		return array[num];
 	}
 
-	// Token: 0x06000A3C RID: 2620 RVA: 0x00009CB9 File Offset: 0x00007EB9
+	// Token: 0x06000870 RID: 2160 RVA: 0x00027E6E File Offset: 0x0002606E
 	public static Vector4 ToVector4(this Quaternion quaternion)
 	{
 		return new Vector4(quaternion.x, quaternion.y, quaternion.z, quaternion.w);
 	}
 
-	// Token: 0x06000A3D RID: 2621 RVA: 0x00009CD8 File Offset: 0x00007ED8
+	// Token: 0x06000871 RID: 2161 RVA: 0x00027E8D File Offset: 0x0002608D
 	public static Quaternion ToQuaternion(this Vector4 vector4)
 	{
 		return new Quaternion(vector4.x, vector4.y, vector4.z, vector4.w);
 	}
 
-	// Token: 0x06000A3E RID: 2622 RVA: 0x00009CF7 File Offset: 0x00007EF7
+	// Token: 0x06000872 RID: 2162 RVA: 0x00027EAC File Offset: 0x000260AC
 	public static Vector2Int PixelSize(this Resolution res)
 	{
 		return new Vector2Int(res.width, res.height);
 	}
 
-	// Token: 0x06000A3F RID: 2623 RVA: 0x00009D0C File Offset: 0x00007F0C
+	// Token: 0x06000873 RID: 2163 RVA: 0x00027EC1 File Offset: 0x000260C1
 	public static Vector3 Flat(this Vector3 vector3)
 	{
 		vector3.y = 0f;
 		return vector3;
 	}
 
-	// Token: 0x06000A40 RID: 2624 RVA: 0x0003CA18 File Offset: 0x0003AC18
+	// Token: 0x06000874 RID: 2164 RVA: 0x00027ED0 File Offset: 0x000260D0
 	public static bool IsNaN(this Vector3 vector3)
 	{
 		return float.IsNaN(vector3.x) || float.IsPositiveInfinity(vector3.x) || float.IsNegativeInfinity(vector3.x) || (float.IsNaN(vector3.y) || float.IsPositiveInfinity(vector3.y) || float.IsNegativeInfinity(vector3.y)) || (float.IsNaN(vector3.z) || float.IsPositiveInfinity(vector3.z) || float.IsNegativeInfinity(vector3.z));

@@ -4,19 +4,19 @@ using UnityEngine.Events;
 
 public class OnWaterCollision : MonoBehaviour
 {
-	// Token: 0x06000A62 RID: 2658 RVA: 0x00009ECB File Offset: 0x000080CB
+	// Token: 0x06000896 RID: 2198 RVA: 0x0002894D File Offset: 0x00026B4D
 	private void OnTriggerEnter(Collider other)
 	{
 		this.WaterTrigger(other);
 	}
 
-	// Token: 0x06000A63 RID: 2659 RVA: 0x00009ECB File Offset: 0x000080CB
+	// Token: 0x06000897 RID: 2199 RVA: 0x00028956 File Offset: 0x00026B56
 	private void OnTriggerStay(Collider other)
 	{
 		this.WaterTrigger(other);
 	}
 
-	// Token: 0x06000A64 RID: 2660 RVA: 0x0003D2BC File Offset: 0x0003B4BC
+	// Token: 0x06000898 RID: 2200 RVA: 0x00028960 File Offset: 0x00026B60
 	private void WaterTrigger(Collider collider)
 	{
 		if (collider.gameObject.layer != 4)

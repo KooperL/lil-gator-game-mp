@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SetActorName : MonoBehaviour
 {
-	// Token: 0x06000F37 RID: 3895 RVA: 0x00050520 File Offset: 0x0004E720
+	// Token: 0x06000C3B RID: 3131 RVA: 0x0003AEEC File Offset: 0x000390EC
 	public static void ForceRefresh()
 	{
 		foreach (SetActorName setActorName in SetActorName.active)
@@ -13,14 +13,14 @@ public class SetActorName : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F38 RID: 3896 RVA: 0x0000D2DA File Offset: 0x0000B4DA
+	// Token: 0x06000C3C RID: 3132 RVA: 0x0003AF3C File Offset: 0x0003913C
 	public void OnEnable()
 	{
 		SetActorName.active.Add(this);
 		this.UpdateName();
 	}
 
-	// Token: 0x06000F39 RID: 3897 RVA: 0x0000D2ED File Offset: 0x0000B4ED
+	// Token: 0x06000C3D RID: 3133 RVA: 0x0003AF4F File Offset: 0x0003914F
 	private void OnDisable()
 	{
 		if (SetActorName.active.Contains(this))
@@ -29,7 +29,7 @@ public class SetActorName : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F3A RID: 3898 RVA: 0x0000D308 File Offset: 0x0000B508
+	// Token: 0x06000C3E RID: 3134 RVA: 0x0003AF6A File Offset: 0x0003916A
 	private void UpdateName()
 	{
 		this.character.SetName(this.actorName, this.document);

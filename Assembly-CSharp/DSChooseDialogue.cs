@@ -4,7 +4,7 @@ using UnityEngine;
 [AddComponentMenu("Dialogue Sequence/Choose Dialogue")]
 public class DSChooseDialogue : DSDialogue
 {
-	// Token: 0x06000592 RID: 1426 RVA: 0x0002F068 File Offset: 0x0002D268
+	// Token: 0x06000470 RID: 1136 RVA: 0x00018EEC File Offset: 0x000170EC
 	public override YieldInstruction Run()
 	{
 		int optionChosen = DialogueManager.optionChosen;

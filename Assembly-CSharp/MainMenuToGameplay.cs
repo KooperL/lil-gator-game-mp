@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class MainMenuToGameplay : MonoBehaviour
 {
-	// Token: 0x060009D0 RID: 2512 RVA: 0x0003BB90 File Offset: 0x00039D90
 	private void Start()
 	{
 		Game.State = GameState.Menu;
@@ -22,7 +21,7 @@ public class MainMenuToGameplay : MonoBehaviour
 		base.gameObject.AddComponent<MultiplayerInjectButtonToMainMenu>();
 	}
 
-	// Token: 0x060009D1 RID: 2513 RVA: 0x0000971E File Offset: 0x0000791E
+	// Token: 0x0600081A RID: 2074 RVA: 0x00026EA6 File Offset: 0x000250A6
 	public void StartFreshNewGame(int index = 0)
 	{
 		GameData.g.SetSaveFile(index);
@@ -30,14 +29,14 @@ public class MainMenuToGameplay : MonoBehaviour
 		this.StartNewGame();
 	}
 
-	// Token: 0x060009D2 RID: 2514 RVA: 0x00009746 File Offset: 0x00007946
+	// Token: 0x0600081B RID: 2075 RVA: 0x00026ECE File Offset: 0x000250CE
 	public void StartNewGamePlus(int index = 0)
 	{
 		GameData.g.LoadSaveFile(index);
 		this.StartNewGame();
 	}
 
-	// Token: 0x060009D3 RID: 2515 RVA: 0x0003BBE4 File Offset: 0x00039DE4
+	// Token: 0x0600081C RID: 2076 RVA: 0x00026EE4 File Offset: 0x000250E4
 	public void StartNewGame()
 	{
 		this.game.enabled = true;
@@ -45,7 +44,7 @@ public class MainMenuToGameplay : MonoBehaviour
 		GameData.g.save = true;
 		Game.State = GameState.Play;
 		this.mainMenuObject.SetActive(false);
-		global::UnityEngine.Object.Destroy(this.mainMenuSettings);
+		Object.Destroy(this.mainMenuSettings);
 		this.introSequence.StartSequence();
 		this.gameplayObject.SetActive(true);
 		if (SpeedrunData.IsSpeedrunMode)
@@ -54,7 +53,7 @@ public class MainMenuToGameplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060009D4 RID: 2516 RVA: 0x0003BC54 File Offset: 0x00039E54
+	// Token: 0x0600081D RID: 2077 RVA: 0x00026F54 File Offset: 0x00025154
 	public void LoadGameplay()
 	{
 		this.game.enabled = true;
@@ -71,18 +70,18 @@ public class MainMenuToGameplay : MonoBehaviour
 		this.gameplayObject.SetActive(true);
 	}
 
-	// Token: 0x060009D5 RID: 2517 RVA: 0x00009759 File Offset: 0x00007959
+	// Token: 0x0600081E RID: 2078 RVA: 0x00026FD1 File Offset: 0x000251D1
 	[ContextMenu("Start Slideshow")]
 	public void StartSlideshow()
 	{
-		global::UnityEngine.Object.Instantiate<GameObject>(this.slideshow);
+		Object.Instantiate<GameObject>(this.slideshow);
 	}
 
-	// Token: 0x060009D6 RID: 2518 RVA: 0x00009767 File Offset: 0x00007967
+	// Token: 0x0600081F RID: 2079 RVA: 0x00026FDF File Offset: 0x000251DF
 	[ContextMenu("Start Indieland Slideshow")]
 	public void StartILSlideshow()
 	{
-		global::UnityEngine.Object.Instantiate<GameObject>(this.ilSlideshow);
+		Object.Instantiate<GameObject>(this.ilSlideshow);
 	}
 
 	public Game game;

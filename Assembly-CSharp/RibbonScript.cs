@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RibbonScript : MonoBehaviour
 {
-	// Token: 0x06000F18 RID: 3864 RVA: 0x0004F150 File Offset: 0x0004D350
+	// Token: 0x06000C1E RID: 3102 RVA: 0x00039B48 File Offset: 0x00037D48
 	private void Start()
 	{
 		this.rootForceDirection.Normalize();
@@ -76,7 +76,7 @@ public class RibbonScript : MonoBehaviour
 		this.initialised = true;
 	}
 
-	// Token: 0x06000F19 RID: 3865 RVA: 0x0004F6D4 File Offset: 0x0004D8D4
+	// Token: 0x06000C1F RID: 3103 RVA: 0x0003A0CC File Offset: 0x000382CC
 	private int CountBones(Transform parentLink)
 	{
 		int num = 1;
@@ -91,7 +91,7 @@ public class RibbonScript : MonoBehaviour
 		return num;
 	}
 
-	// Token: 0x06000F1A RID: 3866 RVA: 0x0004F764 File Offset: 0x0004D964
+	// Token: 0x06000C20 RID: 3104 RVA: 0x0003A15C File Offset: 0x0003835C
 	private int PopulateRibbonArray(Transform parentlink, int ribbonIndex)
 	{
 		this.ribbon[ribbonIndex].bone = parentlink.gameObject;
@@ -108,7 +108,7 @@ public class RibbonScript : MonoBehaviour
 		return ribbonIndex;
 	}
 
-	// Token: 0x06000F1B RID: 3867 RVA: 0x0000D1FA File Offset: 0x0000B3FA
+	// Token: 0x06000C21 RID: 3105 RVA: 0x0003A230 File Offset: 0x00038430
 	private void FixedUpdate()
 	{
 		if (this.isCompleteRoot)
@@ -117,13 +117,13 @@ public class RibbonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F1C RID: 3868 RVA: 0x0000D20A File Offset: 0x0000B40A
+	// Token: 0x06000C22 RID: 3106 RVA: 0x0003A240 File Offset: 0x00038440
 	public void RibbonAction()
 	{
 		this.ActRibbonPiece(0, this.rootStrength);
 	}
 
-	// Token: 0x06000F1D RID: 3869 RVA: 0x0004F838 File Offset: 0x0004DA38
+	// Token: 0x06000C23 RID: 3107 RVA: 0x0003A250 File Offset: 0x00038450
 	private void ActRibbonPiece(int ribbonIndex, float currentRootInfluence)
 	{
 		if (ribbonIndex > 0)
@@ -169,7 +169,7 @@ public class RibbonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F1E RID: 3870 RVA: 0x0004FBCC File Offset: 0x0004DDCC
+	// Token: 0x06000C24 RID: 3108 RVA: 0x0003A5E4 File Offset: 0x000387E4
 	private void LateUpdate()
 	{
 		if (this.isCompleteRoot)
@@ -179,13 +179,13 @@ public class RibbonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F1F RID: 3871 RVA: 0x0000D219 File Offset: 0x0000B419
+	// Token: 0x06000C25 RID: 3109 RVA: 0x0003A632 File Offset: 0x00038832
 	public void RibbonPlacement(Vector3 intervalOffset)
 	{
 		this.PlaceRibbonPiece(1, intervalOffset);
 	}
 
-	// Token: 0x06000F20 RID: 3872 RVA: 0x0004FC1C File Offset: 0x0004DE1C
+	// Token: 0x06000C26 RID: 3110 RVA: 0x0003A63C File Offset: 0x0003883C
 	private void PlaceRibbonPiece(int ribbonIndex, Vector3 intervalOffset)
 	{
 		this.ribbon[ribbonIndex].boneHolder.transform.position = this.ribbon[ribbonIndex].position + intervalOffset;
@@ -206,7 +206,7 @@ public class RibbonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F21 RID: 3873 RVA: 0x0000D223 File Offset: 0x0000B423
+	// Token: 0x06000C27 RID: 3111 RVA: 0x0003A77D File Offset: 0x0003897D
 	private void OnDrawGizmosSelected()
 	{
 		this.debuRootInfluence = 1f;
@@ -218,7 +218,7 @@ public class RibbonScript : MonoBehaviour
 		this.DrawRibbon(0, this.debuRootInfluence);
 	}
 
-	// Token: 0x06000F22 RID: 3874 RVA: 0x0004FD60 File Offset: 0x0004DF60
+	// Token: 0x06000C28 RID: 3112 RVA: 0x0003A7AC File Offset: 0x000389AC
 	private void DrawHierachy(Transform targetTransform)
 	{
 		foreach (object obj in targetTransform.transform)
@@ -233,7 +233,7 @@ public class RibbonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F23 RID: 3875 RVA: 0x0004FE00 File Offset: 0x0004E000
+	// Token: 0x06000C29 RID: 3113 RVA: 0x0003A84C File Offset: 0x00038A4C
 	private void DrawRibbon(int ribbonIndex, float influenceIndicator)
 	{
 		if (this.ribbon[ribbonIndex].childIndeces != null)
@@ -246,7 +246,7 @@ public class RibbonScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000F24 RID: 3876 RVA: 0x0004FE9C File Offset: 0x0004E09C
+	// Token: 0x06000C2A RID: 3114 RVA: 0x0003A8E8 File Offset: 0x00038AE8
 	private void DrawBone(Vector3 source, Vector3 child, float strengthness)
 	{
 		this.lineDirection = child - source;
@@ -314,7 +314,7 @@ public class RibbonScript : MonoBehaviour
 
 	private struct RibbonPiece
 	{
-		// Token: 0x06000F26 RID: 3878 RVA: 0x0005016C File Offset: 0x0004E36C
+		// Token: 0x06001AEC RID: 6892 RVA: 0x00072944 File Offset: 0x00070B44
 		public void AddChild(int childInt)
 		{
 			if (this.childIndeces == null)
@@ -334,7 +334,7 @@ public class RibbonScript : MonoBehaviour
 			}
 		}
 
-		// Token: 0x06000F27 RID: 3879 RVA: 0x000501F4 File Offset: 0x0004E3F4
+		// Token: 0x06001AED RID: 6893 RVA: 0x000729CC File Offset: 0x00070BCC
 		public void AddChildRibbon(RibbonScript childScript)
 		{
 			if (this.childRibbons == null)

@@ -4,16 +4,16 @@ using UnityEngine;
 [AddComponentMenu("Dialogue Sequence/Picture Display")]
 public class DSPictureDisplay : DialogueSequence
 {
-	// Token: 0x060005D8 RID: 1496 RVA: 0x00006320 File Offset: 0x00004520
+	// Token: 0x060004A1 RID: 1185 RVA: 0x00019B72 File Offset: 0x00017D72
 	private void OnValidate()
 	{
 		if (this.pictureDisplay == null)
 		{
-			this.pictureDisplay = global::UnityEngine.Object.FindObjectOfType<UIPictureDisplay>(true);
+			this.pictureDisplay = Object.FindObjectOfType<UIPictureDisplay>(true);
 		}
 	}
 
-	// Token: 0x060005D9 RID: 1497 RVA: 0x0000633C File Offset: 0x0000453C
+	// Token: 0x060004A2 RID: 1186 RVA: 0x00019B8E File Offset: 0x00017D8E
 	public override YieldInstruction Run()
 	{
 		this.pictureDisplay.pictureImage.sprite = this.picture;

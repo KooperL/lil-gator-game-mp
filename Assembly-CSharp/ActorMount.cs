@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionReciever
 {
-	// (get) Token: 0x0600037D RID: 893 RVA: 0x00004B36 File Offset: 0x00002D36
+	// (get) Token: 0x06000312 RID: 786 RVA: 0x00011E12 File Offset: 0x00010012
 	public bool isMounted
 	{
 		get
@@ -13,7 +13,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// (get) Token: 0x0600037E RID: 894 RVA: 0x00004B4F File Offset: 0x00002D4F
+	// (get) Token: 0x06000313 RID: 787 RVA: 0x00011E2B File Offset: 0x0001002B
 	public bool isFilled
 	{
 		get
@@ -22,14 +22,14 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x0600037F RID: 895 RVA: 0x00004B7C File Offset: 0x00002D7C
+	// Token: 0x06000314 RID: 788 RVA: 0x00011E58 File Offset: 0x00010058
 	public void StartTransition(float duration)
 	{
 		this.lerp = 0f;
 		this.transitionSpeed = 1f / duration;
 	}
 
-	// Token: 0x06000380 RID: 896 RVA: 0x00026268 File Offset: 0x00024468
+	// Token: 0x06000315 RID: 789 RVA: 0x00011E74 File Offset: 0x00010074
 	private void Update()
 	{
 		if (this.mountedActor == null)
@@ -48,7 +48,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x06000381 RID: 897 RVA: 0x000262C8 File Offset: 0x000244C8
+	// Token: 0x06000316 RID: 790 RVA: 0x00011ED4 File Offset: 0x000100D4
 	public virtual void MovementUpdate(Vector3 input, ref Vector3 position, ref Vector3 velocity, ref Vector3 direction, ref Vector3 up, ref float animationIndex)
 	{
 		Vector3 vector;
@@ -64,7 +64,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		this.HandlePlayerInput(input, ref animationIndex);
 	}
 
-	// Token: 0x06000382 RID: 898 RVA: 0x00026358 File Offset: 0x00024558
+	// Token: 0x06000317 RID: 791 RVA: 0x00011F64 File Offset: 0x00010164
 	protected virtual void HandlePlayerInput(Vector3 input, ref float animationIndex)
 	{
 		animationIndex = -1f;
@@ -83,7 +83,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x06000383 RID: 899 RVA: 0x000263C0 File Offset: 0x000245C0
+	// Token: 0x06000318 RID: 792 RVA: 0x00011FCC File Offset: 0x000101CC
 	private void UpdateTransform(out Vector3 position, out Quaternion rotation, out Vector3 nextPosition)
 	{
 		Transform transform = (this.gettingIntoPosition ? this.mountAnchor : this.standingAnchor);
@@ -119,7 +119,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x06000384 RID: 900 RVA: 0x000264E4 File Offset: 0x000246E4
+	// Token: 0x06000319 RID: 793 RVA: 0x000120F0 File Offset: 0x000102F0
 	private Vector3 GetPosition(Transform target, float lerp)
 	{
 		float num = Mathf.Abs(lerp - 0.5f) * 2f;
@@ -127,7 +127,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		return Vector3.Lerp(this.initialPosition, target.position, lerp) + 0.5f * num2 * Vector3.up;
 	}
 
-	// Token: 0x06000385 RID: 901 RVA: 0x00026538 File Offset: 0x00024738
+	// Token: 0x0600031A RID: 794 RVA: 0x00012144 File Offset: 0x00010344
 	public void InviteActor(DialogueActor actor, bool skipToMount = false, bool skipWalk = false)
 	{
 		if (this.isFilled)
@@ -176,13 +176,13 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		base.enabled = false;
 	}
 
-	// Token: 0x06000386 RID: 902 RVA: 0x00004B96 File Offset: 0x00002D96
+	// Token: 0x0600031B RID: 795 RVA: 0x00012290 File Offset: 0x00010490
 	private void GetIntoMount()
 	{
 		this.GetIntoMount(false);
 	}
 
-	// Token: 0x06000387 RID: 903 RVA: 0x00026684 File Offset: 0x00024884
+	// Token: 0x0600031C RID: 796 RVA: 0x0001229C File Offset: 0x0001049C
 	protected virtual void GetIntoMount(bool skipToMount)
 	{
 		this.mountedActor = this.actor.gameObject.AddComponent<MountedActor>();
@@ -256,7 +256,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 	}
 
-	// Token: 0x06000388 RID: 904 RVA: 0x00026900 File Offset: 0x00024B00
+	// Token: 0x0600031D RID: 797 RVA: 0x00012518 File Offset: 0x00010718
 	public virtual void GetOut()
 	{
 		if (this.mountedActor == null || !this.gettingIntoPosition)
@@ -270,7 +270,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		this.gettingIntoPosition = false;
 	}
 
-	// Token: 0x06000389 RID: 905 RVA: 0x00026970 File Offset: 0x00024B70
+	// Token: 0x0600031E RID: 798 RVA: 0x00012588 File Offset: 0x00010788
 	private void GottenOut()
 	{
 		if (this.actor.isPlayer)
@@ -291,12 +291,12 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		}
 		this.onGottenOut = new UnityEvent();
 		this.mountedActor.GottenOut();
-		global::UnityEngine.Object.Destroy(this.mountedActor);
+		Object.Destroy(this.mountedActor);
 		this.mountedActor = null;
 		this.actor = null;
 	}
 
-	// Token: 0x0600038A RID: 906 RVA: 0x000269F4 File Offset: 0x00024BF4
+	// Token: 0x0600031F RID: 799 RVA: 0x0001260C File Offset: 0x0001080C
 	public virtual void Cancel()
 	{
 		if (this == null)
@@ -307,7 +307,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		if (this.gettingIntoPosition || this.lerp < 1f)
 		{
 			this.actor = null;
-			global::UnityEngine.Object.Destroy(this.mountedActor);
+			Object.Destroy(this.mountedActor);
 			this.onGottenOut = new UnityEvent();
 			this.onGottenInto = new UnityEvent();
 			base.enabled = false;
@@ -321,7 +321,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		this.gettingIntoPosition = false;
 	}
 
-	// Token: 0x0600038B RID: 907 RVA: 0x00026AD4 File Offset: 0x00024CD4
+	// Token: 0x06000320 RID: 800 RVA: 0x000126EC File Offset: 0x000108EC
 	public virtual void CancelMount()
 	{
 		if (this.actor.isPlayer)
@@ -335,7 +335,7 @@ public class ActorMount : MonoBehaviour, ICustomPlayerMovement, ITransitionRecie
 		{
 			this.actor.SetStateAndPosition(-1, 0, true, true);
 			this.actor = null;
-			global::UnityEngine.Object.Destroy(this.mountedActor);
+			Object.Destroy(this.mountedActor);
 			this.onGottenOut = new UnityEvent();
 			this.onGottenInto = new UnityEvent();
 			base.enabled = false;

@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class BlacksmithHit : MonoBehaviour, IHit
 {
-	// Token: 0x0600014D RID: 333 RVA: 0x0001BDB0 File Offset: 0x00019FB0
+	// Token: 0x06000120 RID: 288 RVA: 0x00006F04 File Offset: 0x00005104
 	public void Hit(Vector3 velocity, bool isHeavy = false)
 	{
 		this.charge = Mathf.MoveTowards(this.charge, 1f, this.hitChargeAmount);
@@ -31,7 +31,7 @@ public class BlacksmithHit : MonoBehaviour, IHit
 		}
 	}
 
-	// Token: 0x0600014E RID: 334 RVA: 0x0001BEEC File Offset: 0x0001A0EC
+	// Token: 0x06000121 RID: 289 RVA: 0x00007040 File Offset: 0x00005240
 	private void Update()
 	{
 		if (this.charge < 1f && this.charge > 0f)

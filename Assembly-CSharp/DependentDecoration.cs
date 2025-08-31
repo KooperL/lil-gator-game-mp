@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DependentDecoration : MonoBehaviour
 {
-	// Token: 0x0600035B RID: 859 RVA: 0x00025B44 File Offset: 0x00023D44
+	// Token: 0x060002F2 RID: 754 RVA: 0x0001159C File Offset: 0x0000F79C
 	public static void ActivateAll()
 	{
 		foreach (DependentDecoration dependentDecoration in DependentDecoration.dependentDecorations)
@@ -13,14 +13,14 @@ public class DependentDecoration : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600035C RID: 860 RVA: 0x000049EC File Offset: 0x00002BEC
+	// Token: 0x060002F3 RID: 755 RVA: 0x000115EC File Offset: 0x0000F7EC
 	private void OnEnable()
 	{
 		DependentDecoration.dependentDecorations.Add(this);
 		this.ActivateDecorations();
 	}
 
-	// Token: 0x0600035D RID: 861 RVA: 0x00025B94 File Offset: 0x00023D94
+	// Token: 0x060002F4 RID: 756 RVA: 0x00011600 File Offset: 0x0000F800
 	private void OnDisable()
 	{
 		if (DependentDecoration.dependentDecorations.Contains(this))
@@ -35,7 +35,7 @@ public class DependentDecoration : MonoBehaviour
 		BuildingUpgradeStation.UpdateAllActive();
 	}
 
-	// Token: 0x0600035E RID: 862 RVA: 0x00025BE0 File Offset: 0x00023DE0
+	// Token: 0x060002F5 RID: 757 RVA: 0x0001164C File Offset: 0x0000F84C
 	public void ActivateDecorations()
 	{
 		GameObject[] array = this.decorations;

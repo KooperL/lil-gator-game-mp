@@ -4,7 +4,7 @@ using UnityEngine;
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Property | AttributeTargets.Field, Inherited = true)]
 public class ConditionalHideAttribute : PropertyAttribute
 {
-	// Token: 0x06000D3F RID: 3391 RVA: 0x0004AAD0 File Offset: 0x00048CD0
+	// Token: 0x06000B27 RID: 2855 RVA: 0x00037B70 File Offset: 0x00035D70
 	public ConditionalHideAttribute(string conditionalSourceField)
 	{
 		this.ConditionalSourceField = conditionalSourceField;
@@ -12,7 +12,7 @@ public class ConditionalHideAttribute : PropertyAttribute
 		this.Inverse = false;
 	}
 
-	// Token: 0x06000D40 RID: 3392 RVA: 0x0004AB28 File Offset: 0x00048D28
+	// Token: 0x06000B28 RID: 2856 RVA: 0x00037BC8 File Offset: 0x00035DC8
 	public ConditionalHideAttribute(string conditionalSourceField, bool hideInInspector)
 	{
 		this.ConditionalSourceField = conditionalSourceField;
@@ -20,7 +20,7 @@ public class ConditionalHideAttribute : PropertyAttribute
 		this.Inverse = false;
 	}
 
-	// Token: 0x06000D41 RID: 3393 RVA: 0x0004AB80 File Offset: 0x00048D80
+	// Token: 0x06000B29 RID: 2857 RVA: 0x00037C20 File Offset: 0x00035E20
 	public ConditionalHideAttribute(string conditionalSourceField, bool hideInInspector, bool inverse)
 	{
 		this.ConditionalSourceField = conditionalSourceField;
@@ -28,7 +28,7 @@ public class ConditionalHideAttribute : PropertyAttribute
 		this.Inverse = inverse;
 	}
 
-	// Token: 0x06000D42 RID: 3394 RVA: 0x0004ABD8 File Offset: 0x00048DD8
+	// Token: 0x06000B2A RID: 2858 RVA: 0x00037C78 File Offset: 0x00035E78
 	public ConditionalHideAttribute(bool hideInInspector = false)
 	{
 		this.ConditionalSourceField = "";
@@ -36,7 +36,7 @@ public class ConditionalHideAttribute : PropertyAttribute
 		this.Inverse = false;
 	}
 
-	// Token: 0x06000D43 RID: 3395 RVA: 0x0004AC34 File Offset: 0x00048E34
+	// Token: 0x06000B2B RID: 2859 RVA: 0x00037CD4 File Offset: 0x00035ED4
 	public ConditionalHideAttribute(string[] conditionalSourceFields, bool[] conditionalSourceFieldInverseBools, bool hideInInspector, bool inverse)
 	{
 		this.ConditionalSourceFields = conditionalSourceFields;
@@ -45,7 +45,7 @@ public class ConditionalHideAttribute : PropertyAttribute
 		this.Inverse = inverse;
 	}
 
-	// Token: 0x06000D44 RID: 3396 RVA: 0x0004AC94 File Offset: 0x00048E94
+	// Token: 0x06000B2C RID: 2860 RVA: 0x00037D34 File Offset: 0x00035F34
 	public ConditionalHideAttribute(string[] conditionalSourceFields, bool hideInInspector, bool inverse)
 	{
 		this.ConditionalSourceFields = conditionalSourceFields;

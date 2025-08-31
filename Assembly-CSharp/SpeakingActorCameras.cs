@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class SpeakingActorCameras : MonoBehaviour
 {
-	// Token: 0x0600092B RID: 2347 RVA: 0x00008E2B File Offset: 0x0000702B
+	// Token: 0x0600078B RID: 1931 RVA: 0x00025383 File Offset: 0x00023583
 	private void OnEnable()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x0600092C RID: 2348 RVA: 0x0003A380 File Offset: 0x00038580
+	// Token: 0x0600078C RID: 1932 RVA: 0x0002538C File Offset: 0x0002358C
 	private void OnDisable()
 	{
 		for (int i = 0; i < this.cameras.Length; i++)
@@ -18,13 +18,13 @@ public class SpeakingActorCameras : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600092D RID: 2349 RVA: 0x00008E2B File Offset: 0x0000702B
+	// Token: 0x0600078D RID: 1933 RVA: 0x000253BA File Offset: 0x000235BA
 	public void Update()
 	{
 		this.UpdateState();
 	}
 
-	// Token: 0x0600092E RID: 2350 RVA: 0x0003A3B0 File Offset: 0x000385B0
+	// Token: 0x0600078E RID: 1934 RVA: 0x000253C4 File Offset: 0x000235C4
 	private void UpdateState()
 	{
 		for (int i = 0; i < this.cameras.Length; i++)

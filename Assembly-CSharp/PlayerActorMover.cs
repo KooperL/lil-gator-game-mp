@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovement
 {
-	// Token: 0x060004CD RID: 1229 RVA: 0x0002C5D4 File Offset: 0x0002A7D4
+	// Token: 0x060003F3 RID: 1011 RVA: 0x00017160 File Offset: 0x00015360
 	public void MovementUpdate(Vector3 input, ref Vector3 position, ref Vector3 velocity, ref Vector3 direction, ref Vector3 up, ref float animationIndex)
 	{
 		if (this.pathArray == null)
@@ -56,7 +56,7 @@ public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovemen
 		direction = vector2;
 	}
 
-	// Token: 0x060004CE RID: 1230 RVA: 0x0002C7F4 File Offset: 0x0002A9F4
+	// Token: 0x060003F4 RID: 1012 RVA: 0x00017380 File Offset: 0x00015580
 	public float MoveAlongPath(float t, float distance)
 	{
 		if (distance == 0f)
@@ -82,7 +82,7 @@ public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovemen
 		return Mathf.Clamp(t + distance * num2, 0f, (float)(this.path.Count - 1));
 	}
 
-	// Token: 0x060004CF RID: 1231 RVA: 0x0002C8AC File Offset: 0x0002AAAC
+	// Token: 0x060003F5 RID: 1013 RVA: 0x00017438 File Offset: 0x00015638
 	public void SetMark(Vector3[] positions, Quaternion rotation, float speed, UnityEvent onReachMark, bool skipToStart, bool disableInteraction = false, bool playFootsteps = true)
 	{
 		if (this.path == null)
@@ -140,7 +140,7 @@ public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovemen
 		this.mountedActor.GetOut();
 	}
 
-	// Token: 0x060004D0 RID: 1232 RVA: 0x0002CA3C File Offset: 0x0002AC3C
+	// Token: 0x060003F6 RID: 1014 RVA: 0x000175C8 File Offset: 0x000157C8
 	private void StartMoving()
 	{
 		this.path[0] = (this.pathArray[0] = base.transform.position);
@@ -165,14 +165,14 @@ public class PlayerActorMover : MonoBehaviour, IActorMover, ICustomPlayerMovemen
 		base.enabled = true;
 	}
 
-	// Token: 0x060004D1 RID: 1233 RVA: 0x000057FD File Offset: 0x000039FD
+	// Token: 0x060003F7 RID: 1015 RVA: 0x000176CE File Offset: 0x000158CE
 	public void Cancel()
 	{
 		this.onReachMark = new UnityEvent();
 		base.enabled = false;
 	}
 
-	// Token: 0x060004D2 RID: 1234 RVA: 0x00005811 File Offset: 0x00003A11
+	// Token: 0x060003F8 RID: 1016 RVA: 0x000176E2 File Offset: 0x000158E2
 	public void CancelMove()
 	{
 		if (!base.enabled)

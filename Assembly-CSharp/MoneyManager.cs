@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class MoneyManager : MonoBehaviour
 {
-	// Token: 0x06000982 RID: 2434 RVA: 0x00009382 File Offset: 0x00007582
+	// Token: 0x060007DE RID: 2014 RVA: 0x00026468 File Offset: 0x00024668
 	private static void Split(int cents, out int dollars, out int dimes, out int pennies)
 	{
 		dollars = Mathf.FloorToInt((float)cents / 100f);
@@ -14,8 +14,8 @@ public class MoneyManager : MonoBehaviour
 		pennies = cents;
 	}
 
-	// (get) Token: 0x06000983 RID: 2435 RVA: 0x000093B7 File Offset: 0x000075B7
-	// (set) Token: 0x06000984 RID: 2436 RVA: 0x000093C9 File Offset: 0x000075C9
+	// (get) Token: 0x060007DF RID: 2015 RVA: 0x0002649D File Offset: 0x0002469D
+	// (set) Token: 0x060007E0 RID: 2016 RVA: 0x000264AF File Offset: 0x000246AF
 	public int CollectedCents
 	{
 		get
@@ -29,7 +29,7 @@ public class MoneyManager : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000985 RID: 2437 RVA: 0x000093E7 File Offset: 0x000075E7
+	// Token: 0x060007E1 RID: 2017 RVA: 0x000264CD File Offset: 0x000246CD
 	private void OnEnable()
 	{
 		MoneyManager.m = this;

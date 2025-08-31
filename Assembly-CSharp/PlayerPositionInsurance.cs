@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerPositionInsurance : MonoBehaviour
 {
-	// Token: 0x06000D27 RID: 3367 RVA: 0x0004A400 File Offset: 0x00048600
+	// Token: 0x06000B15 RID: 2837 RVA: 0x000375B4 File Offset: 0x000357B4
 	private void LateUpdate()
 	{
 		if (base.transform.position.IsNaN())

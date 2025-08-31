@@ -7,8 +7,8 @@ namespace Rewired.Integration.UnityUI
 	[AddComponentMenu("Rewired/Rewired Event System")]
 	public class RewiredEventSystem : EventSystem
 	{
-		// (get) Token: 0x06001765 RID: 5989 RVA: 0x00011FC1 File Offset: 0x000101C1
-		// (set) Token: 0x06001766 RID: 5990 RVA: 0x00011FC9 File Offset: 0x000101C9
+		// (get) Token: 0x0600135B RID: 4955 RVA: 0x000520C8 File Offset: 0x000502C8
+		// (set) Token: 0x0600135C RID: 4956 RVA: 0x000520D0 File Offset: 0x000502D0
 		public bool alwaysUpdate
 		{
 			get
@@ -21,7 +21,7 @@ namespace Rewired.Integration.UnityUI
 			}
 		}
 
-		// Token: 0x06001767 RID: 5991 RVA: 0x000643B8 File Offset: 0x000625B8
+		// Token: 0x0600135D RID: 4957 RVA: 0x000520DC File Offset: 0x000502DC
 		protected override void Update()
 		{
 			if (this.alwaysUpdate)

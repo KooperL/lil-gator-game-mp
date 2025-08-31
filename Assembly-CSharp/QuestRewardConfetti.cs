@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class QuestRewardConfetti : QuestReward
 {
-	// Token: 0x06000E52 RID: 3666 RVA: 0x0000CB60 File Offset: 0x0000AD60
+	// Token: 0x06000BB0 RID: 2992 RVA: 0x00038C27 File Offset: 0x00036E27
 	public override void GiveReward()
 	{
 		this.GiveReward(this.amount);
 	}
 
-	// Token: 0x06000E53 RID: 3667 RVA: 0x0004D39C File Offset: 0x0004B59C
+	// Token: 0x06000BB1 RID: 2993 RVA: 0x00038C38 File Offset: 0x00036E38
 	public void GiveReward(int amount)
 	{
 		Vector3 vector = base.transform.position;
@@ -29,7 +29,7 @@ public class QuestRewardConfetti : QuestReward
 		{
 			vector = this.source.position;
 		}
-		ParticleSystem component = global::UnityEngine.Object.Instantiate<GameObject>(this.prefab, vector, Quaternion.identity).GetComponent<ParticleSystem>();
+		ParticleSystem component = Object.Instantiate<GameObject>(this.prefab, vector, Quaternion.identity).GetComponent<ParticleSystem>();
 		component.main.maxParticles = Mathf.RoundToInt((float)amount / component.GetComponent<ParticlePickup>().rewardPerPickup);
 	}
 

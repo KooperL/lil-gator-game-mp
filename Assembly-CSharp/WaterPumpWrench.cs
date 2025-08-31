@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WaterPumpWrench : MonoBehaviour, Interaction
 {
-	// Token: 0x06000146 RID: 326 RVA: 0x0001BCC0 File Offset: 0x00019EC0
+	// Token: 0x06000119 RID: 281 RVA: 0x00006DCC File Offset: 0x00004FCC
 	public void Interact()
 	{
 		if (DialogueManager.d.IsInImportantDialogue)
@@ -23,7 +23,7 @@ public class WaterPumpWrench : MonoBehaviour, Interaction
 		DialogueManager.d.Bubble("Cool_Pump_Wrench2", this.actors, 0f, false, true, true);
 	}
 
-	// Token: 0x06000147 RID: 327 RVA: 0x0000320D File Offset: 0x0000140D
+	// Token: 0x0600011A RID: 282 RVA: 0x00006E61 File Offset: 0x00005061
 	public void OnHit()
 	{
 		if (!this.waterPump.activated && ItemManager.i.GetPrimaryID() == "Sword_Wrench")

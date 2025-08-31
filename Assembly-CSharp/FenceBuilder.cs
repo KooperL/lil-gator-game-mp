@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FenceBuilder : GenericPath
 {
-	// Token: 0x06000137 RID: 311 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x0600010A RID: 266 RVA: 0x00006B93 File Offset: 0x00004D93
 	public override void UpdatePath()
 	{
 	}

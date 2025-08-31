@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SettingSlider : MonoBehaviour
 {
-	// Token: 0x0600114C RID: 4428 RVA: 0x0000ECA4 File Offset: 0x0000CEA4
+	// Token: 0x06000E27 RID: 3623 RVA: 0x000443A6 File Offset: 0x000425A6
 	private void OnValidate()
 	{
 		if (this.slider == null)
@@ -13,14 +13,14 @@ public class SettingSlider : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600114D RID: 4429 RVA: 0x0000ECC0 File Offset: 0x0000CEC0
+	// Token: 0x06000E28 RID: 3624 RVA: 0x000443C2 File Offset: 0x000425C2
 	private void OnEnable()
 	{
 		this.slider.value = Settings.s.ReadFloat(this.key, this.slider.value);
 		this.setInitialSetting = true;
 	}
 
-	// Token: 0x0600114E RID: 4430 RVA: 0x0000ECEF File Offset: 0x0000CEEF
+	// Token: 0x06000E29 RID: 3625 RVA: 0x000443F1 File Offset: 0x000425F1
 	public void OnSliderChange(float value)
 	{
 		if (!this.setInitialSetting)

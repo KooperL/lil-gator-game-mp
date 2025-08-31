@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class Prefabs : MonoBehaviour
 {
-	// (get) Token: 0x060009E7 RID: 2535 RVA: 0x000098B5 File Offset: 0x00007AB5
+	// (get) Token: 0x06000830 RID: 2096 RVA: 0x000272D5 File Offset: 0x000254D5
 	public static Prefabs p
 	{
 		get
 		{
 			if (Prefabs.instance == null)
 			{
-				Prefabs.instance = global::UnityEngine.Object.FindObjectOfType<Prefabs>();
+				Prefabs.instance = Object.FindObjectOfType<Prefabs>();
 			}
 			return Prefabs.instance;
 		}
 	}
 
-	// Token: 0x060009E8 RID: 2536 RVA: 0x000098D3 File Offset: 0x00007AD3
+	// Token: 0x06000831 RID: 2097 RVA: 0x000272F3 File Offset: 0x000254F3
 	private void Awake()
 	{
 		if (Prefabs.instance == null)

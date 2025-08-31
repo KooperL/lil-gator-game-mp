@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIDescriptionDisplay : MonoBehaviour
 {
-	// Token: 0x0600112B RID: 4395 RVA: 0x0000EA46 File Offset: 0x0000CC46
+	// Token: 0x06000E06 RID: 3590 RVA: 0x00043D11 File Offset: 0x00041F11
 	public void Load(string description, UIDescription parent)
 	{
 		this.clearTime = -1f;
@@ -14,19 +14,19 @@ public class UIDescriptionDisplay : MonoBehaviour
 		this.onLoad.Invoke();
 	}
 
-	// Token: 0x0600112C RID: 4396 RVA: 0x0000EA71 File Offset: 0x0000CC71
+	// Token: 0x06000E07 RID: 3591 RVA: 0x00043D3C File Offset: 0x00041F3C
 	public void KeepOpen()
 	{
 		this.clearTime = -1f;
 	}
 
-	// Token: 0x0600112D RID: 4397 RVA: 0x0000EA7E File Offset: 0x0000CC7E
+	// Token: 0x06000E08 RID: 3592 RVA: 0x00043D49 File Offset: 0x00041F49
 	public void Clear()
 	{
 		this.clearTime = Time.time + 0.03f;
 	}
 
-	// Token: 0x0600112E RID: 4398 RVA: 0x0000EA91 File Offset: 0x0000CC91
+	// Token: 0x06000E09 RID: 3593 RVA: 0x00043D5C File Offset: 0x00041F5C
 	private void Update()
 	{
 		if (this.clearTime > 0f && Time.time > this.clearTime)
@@ -37,10 +37,10 @@ public class UIDescriptionDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600112F RID: 4399 RVA: 0x000049DF File Offset: 0x00002BDF
+	// Token: 0x06000E0A RID: 3594 RVA: 0x00043D99 File Offset: 0x00041F99
 	public void DestroyObject()
 	{
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 	}
 
 	public UnityEvent onLoad;

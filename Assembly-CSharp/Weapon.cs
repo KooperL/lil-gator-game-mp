@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Weapon : MonoBehaviour, IItemBehaviour
 {
-	// (get) Token: 0x06000BEB RID: 3051
+	// (get) Token: 0x060009F5 RID: 2549 RVA: 0x0002E552 File Offset: 0x0002C752
 	private PlayerItemManager itemManager
 	{
 		get
@@ -14,18 +14,21 @@ public class Weapon : MonoBehaviour, IItemBehaviour
 		}
 	}
 
+	// Token: 0x060009F6 RID: 2550 RVA: 0x0002E559 File Offset: 0x0002C759
 	private void Awake()
 	{
 		this.audioVariance = base.GetComponent<AudioSourceVariance>();
 		this.waitForPointOne = new WaitForSeconds(0.1f);
 	}
 
+	// Token: 0x060009F7 RID: 2551 RVA: 0x0002E577 File Offset: 0x0002C777
 	public void Cancel()
 	{
 		this.isSwinging = false;
 		this.itemManager.SetItemInUse(this, false);
 	}
 
+	// Token: 0x060009F8 RID: 2552 RVA: 0x0002E58D File Offset: 0x0002C78D
 	private void OnDisable()
 	{
 		if (this.isSwinging)
@@ -40,6 +43,7 @@ public class Weapon : MonoBehaviour, IItemBehaviour
 		}
 	}
 
+	// Token: 0x060009F9 RID: 2553 RVA: 0x0002E5D0 File Offset: 0x0002C7D0
 	public void Input(bool isDown, bool isHeld)
 	{
 		if (isDown && !this.isSwinging)
@@ -56,6 +60,7 @@ public class Weapon : MonoBehaviour, IItemBehaviour
 		}
 	}
 
+	// Token: 0x060009FA RID: 2554 RVA: 0x0002E632 File Offset: 0x0002C832
 	public void PlayAudio()
 	{
 		this.audioVariance.Play();
@@ -77,6 +82,7 @@ public class Weapon : MonoBehaviour, IItemBehaviour
 		this.triggers.SetActive(false);
 	}
 
+	// Token: 0x060009FD RID: 2557 RVA: 0x0002E689 File Offset: 0x0002C889
 	private IEnumerator UseWeapon()
 	{
 		this.isSwinging = true;
@@ -95,6 +101,7 @@ public class Weapon : MonoBehaviour, IItemBehaviour
 		yield break;
 	}
 
+	// Token: 0x060009FE RID: 2558 RVA: 0x0002E698 File Offset: 0x0002C898
 	public void SetEquipped(bool isEquipped)
 	{
 		Transform transform = (isEquipped ? this.itemManager.leftHandAnchor : this.itemManager.swordUnequippedAnchor);
@@ -113,10 +120,12 @@ public class Weapon : MonoBehaviour, IItemBehaviour
 		this.onUnequip.Invoke();
 	}
 
+	// Token: 0x060009FF RID: 2559 RVA: 0x0002E72A File Offset: 0x0002C92A
 	public void OnRemove()
 	{
 	}
 
+	// Token: 0x06000A00 RID: 2560 RVA: 0x0002E72C File Offset: 0x0002C92C
 	public void OnHit()
 	{
 		Weapon.lastWeaponHitTime = Time.time;
@@ -131,6 +140,7 @@ public class Weapon : MonoBehaviour, IItemBehaviour
 		}
 	}
 
+	// Token: 0x06000A01 RID: 2561 RVA: 0x0002E77F File Offset: 0x0002C97F
 	private IEnumerator RunHitPause()
 	{
 		Player.animator.speed = 0f;
@@ -143,6 +153,7 @@ public class Weapon : MonoBehaviour, IItemBehaviour
 		yield break;
 	}
 
+	// Token: 0x06000A02 RID: 2562 RVA: 0x0002E78E File Offset: 0x0002C98E
 	public void SetIndex(int index)
 	{
 	}
@@ -163,7 +174,7 @@ public class Weapon : MonoBehaviour, IItemBehaviour
 
 	private YieldInstruction waitForPointOne;
 
-	public bool isSwinging;
+	private bool isSwinging;
 
 	public UnityEvent onSwing;
 

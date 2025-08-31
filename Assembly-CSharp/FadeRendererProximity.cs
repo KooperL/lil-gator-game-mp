@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class FadeRendererProximity : FadeRenderer
 {
-	// Token: 0x060006F8 RID: 1784 RVA: 0x00007118 File Offset: 0x00005318
+	// Token: 0x0600059A RID: 1434 RVA: 0x0001D61F File Offset: 0x0001B81F
 	public override void OnValidate()
 	{
 		this.maxSqrDistance = this.maxDistance * this.maxDistance;
 		base.OnValidate();
 		if (this.proximityTransform == null)
 		{
-			PlayerMovement playerMovement = global::UnityEngine.Object.FindObjectOfType<PlayerMovement>();
+			PlayerMovement playerMovement = Object.FindObjectOfType<PlayerMovement>();
 			this.proximityTransform = ((playerMovement != null) ? playerMovement.transform : null);
 		}
 	}
 
-	// Token: 0x060006F9 RID: 1785 RVA: 0x0003316C File Offset: 0x0003136C
+	// Token: 0x0600059B RID: 1435 RVA: 0x0001D660 File Offset: 0x0001B860
 	private void LateUpdate()
 	{
 		if (this.usePlayerTransform)
@@ -31,7 +31,7 @@ public class FadeRendererProximity : FadeRenderer
 		}
 	}
 
-	// Token: 0x060006FA RID: 1786 RVA: 0x000331E4 File Offset: 0x000313E4
+	// Token: 0x0600059C RID: 1436 RVA: 0x0001D6D8 File Offset: 0x0001B8D8
 	private void OnTriggerStay(Collider other)
 	{
 		if (base.enabled)

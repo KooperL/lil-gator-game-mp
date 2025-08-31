@@ -8,7 +8,7 @@ namespace Rewired.UI.ControlMapper
 {
 	public static class UISelectionUtility
 	{
-		// Token: 0x06001CA6 RID: 7334 RVA: 0x00070F78 File Offset: 0x0006F178
+		// Token: 0x060016B9 RID: 5817 RVA: 0x0005F138 File Offset: 0x0005D338
 		public static Selectable FindNextSelectable(Selectable selectable, Transform transform, Vector3 direction)
 		{
 			RectTransform rectTransform = transform as RectTransform;

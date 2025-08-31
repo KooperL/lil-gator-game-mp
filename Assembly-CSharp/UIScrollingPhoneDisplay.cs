@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 public class UIScrollingPhoneDisplay : MonoBehaviour
 {
-	// Token: 0x06001302 RID: 4866 RVA: 0x0005DFFC File Offset: 0x0005C1FC
+	// Token: 0x06000F8D RID: 3981 RVA: 0x0004AB38 File Offset: 0x00048D38
 	private void Awake()
 	{
 		this.textGenerationSettings = this.textTemplate.GetGenerationSettings(this.textTemplate.rectTransform.rect.size);
 	}
 
-	// Token: 0x06001303 RID: 4867 RVA: 0x0005E034 File Offset: 0x0005C234
+	// Token: 0x06000F8E RID: 3982 RVA: 0x0004AB70 File Offset: 0x00048D70
 	private void OnEnable()
 	{
 		if (this.contents == null)
@@ -24,7 +24,7 @@ public class UIScrollingPhoneDisplay : MonoBehaviour
 		this.scrollingArea.anchoredPosition = Vector3.zero;
 	}
 
-	// Token: 0x06001304 RID: 4868 RVA: 0x0005E084 File Offset: 0x0005C284
+	// Token: 0x06000F8F RID: 3983 RVA: 0x0004ABC0 File Offset: 0x00048DC0
 	private void OnDisable()
 	{
 		if (this.contents != null && this.contents.Count > 0)
@@ -33,7 +33,7 @@ public class UIScrollingPhoneDisplay : MonoBehaviour
 			{
 				if (gameObject != null)
 				{
-					global::UnityEngine.Object.Destroy(gameObject);
+					Object.Destroy(gameObject);
 				}
 			}
 			this.contents.Clear();
@@ -42,19 +42,19 @@ public class UIScrollingPhoneDisplay : MonoBehaviour
 		this.scrollingArea.anchoredPosition = Vector3.zero;
 	}
 
-	// Token: 0x06001305 RID: 4869 RVA: 0x0005E12C File Offset: 0x0005C32C
+	// Token: 0x06000F90 RID: 3984 RVA: 0x0004AC68 File Offset: 0x00048E68
 	private void InsertName(CharacterProfile character)
 	{
 		if (!character.isPlayer && this.lastCharacterDisplayed != character)
 		{
-			UICharacterDisplay component = global::UnityEngine.Object.Instantiate<GameObject>(this.nameDisplay, this.scrollingArea).GetComponent<UICharacterDisplay>();
+			UICharacterDisplay component = Object.Instantiate<GameObject>(this.nameDisplay, this.scrollingArea).GetComponent<UICharacterDisplay>();
 			component.Load(character);
 			this.contents.Add(component.gameObject);
 		}
 		this.lastCharacterDisplayed = character;
 	}
 
-	// Token: 0x06001306 RID: 4870 RVA: 0x000100E2 File Offset: 0x0000E2E2
+	// Token: 0x06000F91 RID: 3985 RVA: 0x0004ACC1 File Offset: 0x00048EC1
 	public IEnumerator DisplayTextMessage(string message, CharacterProfile character, bool displayNames = true)
 	{
 		if (!base.gameObject.activeSelf)
@@ -67,7 +67,7 @@ public class UIScrollingPhoneDisplay : MonoBehaviour
 		}
 		message = DialogueBox.InsertLineBreaks(message, this.textGenerationSettings);
 		GameObject gameObject = ((character == null) ? this.textSystemPrefab : (character.isPlayer ? this.textRightPrefab : this.textLeftPrefab));
-		UITextBox newTextbox = global::UnityEngine.Object.Instantiate<GameObject>(gameObject, this.scrollingArea).GetComponent<UITextBox>();
+		UITextBox newTextbox = Object.Instantiate<GameObject>(gameObject, this.scrollingArea).GetComponent<UITextBox>();
 		if (character != null)
 		{
 			newTextbox.SetColor(character.darkColor);
@@ -83,7 +83,7 @@ public class UIScrollingPhoneDisplay : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001307 RID: 4871 RVA: 0x00010106 File Offset: 0x0000E306
+	// Token: 0x06000F92 RID: 3986 RVA: 0x0004ACE5 File Offset: 0x00048EE5
 	public IEnumerator DisplayImage(Sprite image, CharacterProfile character, bool displayNames = true, bool clearAfter = true)
 	{
 		if (!base.gameObject.activeSelf)
@@ -95,7 +95,7 @@ public class UIScrollingPhoneDisplay : MonoBehaviour
 			this.InsertName(character);
 		}
 		GameObject gameObject = (character.isPlayer ? this.imageRightPrefab : this.imageLeftPrefab);
-		UIImageBox newImageBox = global::UnityEngine.Object.Instantiate<GameObject>(gameObject, this.scrollingArea).GetComponent<UIImageBox>();
+		UIImageBox newImageBox = Object.Instantiate<GameObject>(gameObject, this.scrollingArea).GetComponent<UIImageBox>();
 		newImageBox.SetColor(character.darkColor);
 		newImageBox.SetImage(this.loadingImage);
 		yield return new WaitForSeconds(0.25f);
@@ -112,13 +112,13 @@ public class UIScrollingPhoneDisplay : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06001308 RID: 4872 RVA: 0x00010132 File Offset: 0x0000E332
+	// Token: 0x06000F93 RID: 3987 RVA: 0x0004AD11 File Offset: 0x00048F11
 	public void ClearPhone()
 	{
 		this.phone.Deactivate();
 	}
 
-	// Token: 0x06001309 RID: 4873 RVA: 0x0005E188 File Offset: 0x0005C388
+	// Token: 0x06000F94 RID: 3988 RVA: 0x0004AD20 File Offset: 0x00048F20
 	private void Update()
 	{
 		this.position = Mathf.SmoothDamp(this.position, this.scrollingArea.rect.height, ref this.velocity, 0.05f);

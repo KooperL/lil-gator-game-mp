@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerOverrideAnimations : MonoBehaviour
 {
-	// Token: 0x06000CE6 RID: 3302 RVA: 0x0000BF95 File Offset: 0x0000A195
+	// Token: 0x06000AE0 RID: 2784 RVA: 0x0003638B File Offset: 0x0003458B
 	private void OnValidate()
 	{
 		if (this.animator == null)
@@ -12,7 +12,7 @@ public class PlayerOverrideAnimations : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CE7 RID: 3303 RVA: 0x0000BFB1 File Offset: 0x0000A1B1
+	// Token: 0x06000AE1 RID: 2785 RVA: 0x000363A7 File Offset: 0x000345A7
 	private void Awake()
 	{
 		if (this.overrides == null)
@@ -21,7 +21,7 @@ public class PlayerOverrideAnimations : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000CE8 RID: 3304 RVA: 0x000491C8 File Offset: 0x000473C8
+	// Token: 0x06000AE2 RID: 2786 RVA: 0x000363B8 File Offset: 0x000345B8
 	private void InitializeOverrides()
 	{
 		this.overrideController = new AnimatorOverrideController(this.animator.runtimeAnimatorController);
@@ -30,14 +30,14 @@ public class PlayerOverrideAnimations : MonoBehaviour
 		this.overrideController.GetOverrides(this.overrides);
 	}
 
-	// Token: 0x06000CE9 RID: 3305 RVA: 0x0000BFC1 File Offset: 0x0000A1C1
+	// Token: 0x06000AE3 RID: 2787 RVA: 0x00036413 File Offset: 0x00034613
 	public void SetStandardAnimation(ActorAnimationOverrides.StandardAnimation standardAnimation, AnimationClip animationOverride)
 	{
 		this.overrides.Set(ActorAnimationOverrides.GetStandardAnimation(standardAnimation, this.overrides), animationOverride);
 		this.overrideController.ApplyOverrides(this.overrides);
 	}
 
-	// Token: 0x06000CEA RID: 3306 RVA: 0x00049224 File Offset: 0x00047424
+	// Token: 0x06000AE4 RID: 2788 RVA: 0x00036440 File Offset: 0x00034640
 	public void SetOverrides(AnimationOverride[] animations)
 	{
 		if (this.overrides == null)
@@ -51,7 +51,7 @@ public class PlayerOverrideAnimations : MonoBehaviour
 		this.overrideController.ApplyOverrides(this.overrides);
 	}
 
-	// Token: 0x06000CEB RID: 3307 RVA: 0x00049274 File Offset: 0x00047474
+	// Token: 0x06000AE5 RID: 2789 RVA: 0x00036490 File Offset: 0x00034690
 	public void SetContextualAnimations(AnimationSet animationSet)
 	{
 		AnimationClip[] animations = animationSet.animations;
@@ -65,7 +65,7 @@ public class PlayerOverrideAnimations : MonoBehaviour
 		this.overrideController.ApplyOverrides(this.overrides);
 	}
 
-	// Token: 0x06000CEC RID: 3308 RVA: 0x00049304 File Offset: 0x00047504
+	// Token: 0x06000AE6 RID: 2790 RVA: 0x00036520 File Offset: 0x00034720
 	public void ClearOverrides(AnimationOverride[] animations)
 	{
 		foreach (AnimationOverride animationOverride in animations)

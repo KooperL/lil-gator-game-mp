@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-	// Token: 0x06000669 RID: 1641 RVA: 0x00006A03 File Offset: 0x00004C03
+	// Token: 0x0600051D RID: 1309 RVA: 0x0001B664 File Offset: 0x00019864
 	private void Update()
 	{
 		base.transform.position += Time.deltaTime * base.transform.TransformDirection(this.velocity);

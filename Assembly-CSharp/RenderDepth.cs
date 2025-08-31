@@ -4,7 +4,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class RenderDepth : MonoBehaviour
 {
-	// (get) Token: 0x06000662 RID: 1634 RVA: 0x00031548 File Offset: 0x0002F748
+	// (get) Token: 0x06000516 RID: 1302 RVA: 0x0001B528 File Offset: 0x00019728
 	private Shader shader
 	{
 		get
@@ -17,7 +17,7 @@ public class RenderDepth : MonoBehaviour
 		}
 	}
 
-	// (get) Token: 0x06000663 RID: 1635 RVA: 0x00006958 File Offset: 0x00004B58
+	// (get) Token: 0x06000517 RID: 1303 RVA: 0x0001B55D File Offset: 0x0001975D
 	private Material material
 	{
 		get
@@ -31,13 +31,13 @@ public class RenderDepth : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000664 RID: 1636 RVA: 0x0000698C File Offset: 0x00004B8C
+	// Token: 0x06000518 RID: 1304 RVA: 0x0001B591 File Offset: 0x00019791
 	private void Awake()
 	{
 		this.camera = base.GetComponent<Camera>();
 	}
 
-	// Token: 0x06000665 RID: 1637 RVA: 0x00031580 File Offset: 0x0002F780
+	// Token: 0x06000519 RID: 1305 RVA: 0x0001B5A0 File Offset: 0x000197A0
 	private void Start()
 	{
 		if (this.shader == null || !this.shader.isSupported)
@@ -49,16 +49,16 @@ public class RenderDepth : MonoBehaviour
 		this.camera.depthTextureMode = DepthTextureMode.Depth;
 	}
 
-	// Token: 0x06000666 RID: 1638 RVA: 0x0000699A File Offset: 0x00004B9A
+	// Token: 0x0600051A RID: 1306 RVA: 0x0001B5FB File Offset: 0x000197FB
 	private void OnDisable()
 	{
 		if (this._material != null)
 		{
-			global::UnityEngine.Object.DestroyImmediate(this._material);
+			Object.DestroyImmediate(this._material);
 		}
 	}
 
-	// Token: 0x06000667 RID: 1639 RVA: 0x000069B5 File Offset: 0x00004BB5
+	// Token: 0x0600051B RID: 1307 RVA: 0x0001B616 File Offset: 0x00019816
 	private void OnRenderImage(RenderTexture src, RenderTexture dest)
 	{
 		if (this.shader != null)

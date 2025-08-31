@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class UIButtonDisplay : MonoBehaviour
 {
-	// Token: 0x060011CF RID: 4559 RVA: 0x0000F2E0 File Offset: 0x0000D4E0
+	// Token: 0x06000E9C RID: 3740 RVA: 0x00045CD3 File Offset: 0x00043ED3
 	public void OnEnable()
 	{
 		if (this.updateAutomatically)
@@ -17,7 +17,7 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011D0 RID: 4560 RVA: 0x0000F306 File Offset: 0x0000D506
+	// Token: 0x06000E9D RID: 3741 RVA: 0x00045CF9 File Offset: 0x00043EF9
 	private void OnDisable()
 	{
 		if (this.updateAutomatically)
@@ -26,16 +26,16 @@ public class UIButtonDisplay : MonoBehaviour
 		}
 	}
 
-	// Token: 0x060011D1 RID: 4561 RVA: 0x0000F326 File Offset: 0x0000D526
+	// Token: 0x06000E9E RID: 3742 RVA: 0x00045D19 File Offset: 0x00043F19
 	public void ClearButtonDisplay()
 	{
 		if (this.currentButtonDisplay != null)
 		{
-			global::UnityEngine.Object.Destroy(this.currentButtonDisplay);
+			Object.Destroy(this.currentButtonDisplay);
 		}
 	}
 
-	// Token: 0x060011D2 RID: 4562 RVA: 0x000595B0 File Offset: 0x000577B0
+	// Token: 0x06000E9F RID: 3743 RVA: 0x00045D34 File Offset: 0x00043F34
 	[ContextMenu("Update Button Display")]
 	public void UpdateButtonDisplay()
 	{
@@ -113,7 +113,7 @@ public class UIButtonDisplay : MonoBehaviour
 
 	public UIButtonDisplaySettings settings;
 
-	[ActionIdProperty(typeof(global::RewiredConsts.Action))]
+	[ActionIdProperty(typeof(Action))]
 	public int action;
 
 	[HideInInspector]

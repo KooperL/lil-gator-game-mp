@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SpecialSettingsZone : MonoBehaviour
 {
-	// Token: 0x06001070 RID: 4208 RVA: 0x0000E195 File Offset: 0x0000C395
+	// Token: 0x06000D60 RID: 3424 RVA: 0x00040950 File Offset: 0x0003EB50
 	public void OnEnable()
 	{
 		if (this.enableSpecialPCSettings)
@@ -16,7 +16,7 @@ public class SpecialSettingsZone : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06001071 RID: 4209 RVA: 0x0000E1C1 File Offset: 0x0000C3C1
+	// Token: 0x06000D61 RID: 3425 RVA: 0x0004097C File Offset: 0x0003EB7C
 	public void OnDisable()
 	{
 		if (this.enableSpecialPCSettings)

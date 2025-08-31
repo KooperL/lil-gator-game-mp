@@ -4,14 +4,14 @@ using UnityEngine.Events;
 
 public class AnimationEvents : MonoBehaviour
 {
-	// Token: 0x06000233 RID: 563 RVA: 0x00003D59 File Offset: 0x00001F59
+	// Token: 0x060001EF RID: 495 RVA: 0x0000A99F File Offset: 0x00008B9F
 	private void Awake()
 	{
 		this.footsteps = base.GetComponent<Footsteps>();
 		this.actor = base.GetComponent<DialogueActor>();
 	}
 
-	// Token: 0x06000234 RID: 564 RVA: 0x0001F074 File Offset: 0x0001D274
+	// Token: 0x060001F0 RID: 496 RVA: 0x0000A9BC File Offset: 0x00008BBC
 	public void LeftStep()
 	{
 		if (this.lastStep > 0f && Time.time - this.lastStep < 0.5f)
@@ -31,7 +31,7 @@ public class AnimationEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000235 RID: 565 RVA: 0x0001F110 File Offset: 0x0001D310
+	// Token: 0x060001F1 RID: 497 RVA: 0x0000AA58 File Offset: 0x00008C58
 	public void RightStep()
 	{
 		if (this.lastStep < 0f && Time.time - -this.lastStep < 0.5f)
@@ -51,7 +51,7 @@ public class AnimationEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000236 RID: 566 RVA: 0x0001F1B0 File Offset: 0x0001D3B0
+	// Token: 0x060001F2 RID: 498 RVA: 0x0000AAF8 File Offset: 0x00008CF8
 	public void PlaySound(AnimationEvent animEvent)
 	{
 		if (animEvent.objectReferenceParameter == null)
@@ -71,7 +71,7 @@ public class AnimationEvents : MonoBehaviour
 		PlayAudio.p.PlayAtPoint(audioClip, base.transform.position, num, 1f, 128);
 	}
 
-	// Token: 0x06000237 RID: 567 RVA: 0x0001F218 File Offset: 0x0001D418
+	// Token: 0x060001F3 RID: 499 RVA: 0x0000AB60 File Offset: 0x00008D60
 	public void PlayEffect(AnimationEvent animEvent)
 	{
 		int intParameter = animEvent.intParameter;
@@ -110,7 +110,7 @@ public class AnimationEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000238 RID: 568 RVA: 0x0001F338 File Offset: 0x0001D538
+	// Token: 0x060001F4 RID: 500 RVA: 0x0000AC80 File Offset: 0x00008E80
 	public void PlayContinuousSound(AnimationEvent animEvent)
 	{
 		if (Vector3.Distance(base.transform.position, MainCamera.t.position) > 30f)
@@ -119,7 +119,7 @@ public class AnimationEvents : MonoBehaviour
 		}
 		if (this.continuousSound == null)
 		{
-			GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(Prefabs.p.continuousSound, base.transform);
+			GameObject gameObject = Object.Instantiate<GameObject>(Prefabs.p.continuousSound, base.transform);
 			this.continuousSound = gameObject.GetComponent<AudioSource>();
 			this.continuousSound.clip = animEvent.objectReferenceParameter as AudioClip;
 			this.continuousSound.Play();
@@ -142,18 +142,18 @@ public class AnimationEvents : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06000239 RID: 569 RVA: 0x0001F440 File Offset: 0x0001D640
+	// Token: 0x060001F5 RID: 501 RVA: 0x0000AD88 File Offset: 0x00008F88
 	private void ClearContinuousSound()
 	{
 		this.hasContinousHook = false;
 		this.actor.onChangeStateOrEmote.RemoveListener(new UnityAction(this.ClearContinuousSound));
 		if (this.continuousPing != null && this.continuousPing.gameObject != null)
 		{
-			global::UnityEngine.Object.Destroy(this.continuousPing.gameObject);
+			Object.Destroy(this.continuousPing.gameObject);
 		}
 	}
 
-	// Token: 0x0600023A RID: 570 RVA: 0x00003D73 File Offset: 0x00001F73
+	// Token: 0x060001F6 RID: 502 RVA: 0x0000ADE9 File Offset: 0x00008FE9
 	public void StartTransition(float duration)
 	{
 		if (this.transitionReciever != null)

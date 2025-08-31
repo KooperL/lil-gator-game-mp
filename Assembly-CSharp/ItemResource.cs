@@ -5,8 +5,8 @@ using UnityEngine.Events;
 [CreateAssetMenu]
 public class ItemResource : ScriptableObject
 {
-	// (get) Token: 0x060001A9 RID: 425 RVA: 0x00003641 File Offset: 0x00001841
-	// (set) Token: 0x060001AA RID: 426 RVA: 0x00003649 File Offset: 0x00001849
+	// (get) Token: 0x06000170 RID: 368 RVA: 0x00008875 File Offset: 0x00006A75
+	// (set) Token: 0x06000171 RID: 369 RVA: 0x0000887D File Offset: 0x00006A7D
 	public bool ForceShow
 	{
 		get
@@ -27,8 +27,8 @@ public class ItemResource : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x060001AB RID: 427 RVA: 0x00003685 File Offset: 0x00001885
-	// (set) Token: 0x060001AC RID: 428 RVA: 0x0001D5B0 File Offset: 0x0001B7B0
+	// (get) Token: 0x06000172 RID: 370 RVA: 0x000088B9 File Offset: 0x00006AB9
+	// (set) Token: 0x06000173 RID: 371 RVA: 0x000088DC File Offset: 0x00006ADC
 	public int Amount
 	{
 		get
@@ -43,7 +43,7 @@ public class ItemResource : ScriptableObject
 		{
 			if (value > 0 && this.showItemGet && !GameData.g.ReadBool(this.itemGetID, false))
 			{
-				global::UnityEngine.Object.Instantiate<GameObject>(this.itemGetObject);
+				Object.Instantiate<GameObject>(this.itemGetObject);
 			}
 			GameData.g.Write(this.itemGetID, true);
 			this.lastChangeHidden = false;
@@ -57,13 +57,13 @@ public class ItemResource : ScriptableObject
 		}
 	}
 
-	// Token: 0x060001AD RID: 429 RVA: 0x000036A7 File Offset: 0x000018A7
+	// Token: 0x06000174 RID: 372 RVA: 0x00008957 File Offset: 0x00006B57
 	public bool HasBeenCollected()
 	{
 		return GameData.g.ReadBool(this.itemGetID, false) || this.Amount > 0;
 	}
 
-	// Token: 0x060001AE RID: 430 RVA: 0x000036C7 File Offset: 0x000018C7
+	// Token: 0x06000175 RID: 373 RVA: 0x00008977 File Offset: 0x00006B77
 	public void SetAmountSecret(int newAmount)
 	{
 		this.lastChangeHidden = true;

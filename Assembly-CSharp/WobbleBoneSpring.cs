@@ -5,7 +5,7 @@ using UnityEngine;
 [AddComponentMenu("Wobble/Spring Bone")]
 public class WobbleBoneSpring : WobbleBoneBase
 {
-	// Token: 0x06001037 RID: 4151 RVA: 0x0005383C File Offset: 0x00051A3C
+	// Token: 0x06000D2D RID: 3373 RVA: 0x0003FC1C File Offset: 0x0003DE1C
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.blue;
@@ -13,14 +13,14 @@ public class WobbleBoneSpring : WobbleBoneBase
 		Gizmos.DrawWireSphere(base.transform.position, 0.02f);
 	}
 
-	// Token: 0x06001038 RID: 4152 RVA: 0x00054650 File Offset: 0x00052850
+	// Token: 0x06000D2E RID: 3374 RVA: 0x0003FC68 File Offset: 0x0003DE68
 	private void UpdateWindForce()
 	{
 		WobbleBoneSpring.windForceUpdateTime = Time.time;
 		WobbleBoneSpring.windForce = ((Mathf.Sin(WobbleBoneSpring.windForceUpdateTime * 7f) + 1f) * 2.5f + (Mathf.Sin(WobbleBoneSpring.windForceUpdateTime * 5f) + 1f) * 3.5f) * WobbleBoneSpring.windDirection;
 	}
 
-	// Token: 0x06001039 RID: 4153 RVA: 0x000546B0 File Offset: 0x000528B0
+	// Token: 0x06000D2F RID: 3375 RVA: 0x0003FCC8 File Offset: 0x0003DEC8
 	public override void Initialize()
 	{
 		List<WobbleBoneBase> list = new List<WobbleBoneBase>();
@@ -63,7 +63,7 @@ public class WobbleBoneSpring : WobbleBoneBase
 		this.maxDistance = magnitude * this.expansion;
 	}
 
-	// Token: 0x0600103A RID: 4154 RVA: 0x000548F0 File Offset: 0x00052AF0
+	// Token: 0x06000D30 RID: 3376 RVA: 0x0003FF08 File Offset: 0x0003E108
 	private void UpdateState()
 	{
 		this.oldPosition = this.position;
@@ -81,13 +81,13 @@ public class WobbleBoneSpring : WobbleBoneBase
 		this.positionGoal = this.parentPosition + this.parentRotation * this.initialPositionLocal;
 	}
 
-	// Token: 0x0600103B RID: 4155 RVA: 0x0000DE48 File Offset: 0x0000C048
+	// Token: 0x06000D31 RID: 3377 RVA: 0x0003FF9D File Offset: 0x0003E19D
 	private Vector3 ProjectOnNormalized(Vector3 vector, Vector3 normal)
 	{
 		return vector - Vector3.Dot(vector, normal) * normal;
 	}
 
-	// Token: 0x0600103C RID: 4156 RVA: 0x00054988 File Offset: 0x00052B88
+	// Token: 0x06000D32 RID: 3378 RVA: 0x0003FFB4 File Offset: 0x0003E1B4
 	public override void RunWobbleUpdate()
 	{
 		if (!this.initialized)
@@ -138,7 +138,7 @@ public class WobbleBoneSpring : WobbleBoneBase
 		this.forces = Vector3.zero;
 	}
 
-	// Token: 0x0600103D RID: 4157 RVA: 0x00054B90 File Offset: 0x00052D90
+	// Token: 0x06000D33 RID: 3379 RVA: 0x000401BC File Offset: 0x0003E3BC
 	private Vector3 GetAverageChildPosition()
 	{
 		if (this.childBones.Length != 0)
@@ -153,7 +153,7 @@ public class WobbleBoneSpring : WobbleBoneBase
 		return this.position;
 	}
 
-	// Token: 0x0600103E RID: 4158 RVA: 0x00054BEC File Offset: 0x00052DEC
+	// Token: 0x06000D34 RID: 3380 RVA: 0x00040218 File Offset: 0x0003E418
 	public override void Reacclimate()
 	{
 		this.velocity = Vector3.zero;
@@ -161,25 +161,25 @@ public class WobbleBoneSpring : WobbleBoneBase
 		this.rotation = (this.oldVisualRotation = (this.visualRotation = base.transform.rotation));
 	}
 
-	// Token: 0x0600103F RID: 4159 RVA: 0x00054C4C File Offset: 0x00052E4C
+	// Token: 0x06000D35 RID: 3381 RVA: 0x00040278 File Offset: 0x0003E478
 	public override void ApplyPosition()
 	{
 		base.transform.position = (this.interpolatedPosition = this.position);
 	}
 
-	// Token: 0x06001040 RID: 4160 RVA: 0x00054C74 File Offset: 0x00052E74
+	// Token: 0x06000D36 RID: 3382 RVA: 0x000402A0 File Offset: 0x0003E4A0
 	public override void ApplyPosition(float t)
 	{
 		base.transform.position = (this.interpolatedPosition = Vector3.Lerp(this.oldPosition, this.position, t));
 	}
 
-	// Token: 0x06001041 RID: 4161 RVA: 0x0000DF1B File Offset: 0x0000C11B
+	// Token: 0x06000D37 RID: 3383 RVA: 0x000402D3 File Offset: 0x0003E4D3
 	public override void ApplyRotation()
 	{
 		base.transform.rotation = this.visualRotation;
 	}
 
-	// Token: 0x06001042 RID: 4162 RVA: 0x0000DF2E File Offset: 0x0000C12E
+	// Token: 0x06000D38 RID: 3384 RVA: 0x000402E6 File Offset: 0x0003E4E6
 	public override void ApplyRotation(float t)
 	{
 		base.transform.rotation = Quaternion.SlerpUnclamped(this.oldVisualRotation, this.visualRotation, t);

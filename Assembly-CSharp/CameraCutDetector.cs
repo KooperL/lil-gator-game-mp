@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraCutDetector : MonoBehaviour
 {
-	// Token: 0x06000297 RID: 663 RVA: 0x00020CA8 File Offset: 0x0001EEA8
+	// Token: 0x06000240 RID: 576 RVA: 0x0000C340 File Offset: 0x0000A540
 	private void Update()
 	{
 		Vector3 vector = base.transform.position;
@@ -15,7 +15,7 @@ public class CameraCutDetector : MonoBehaviour
 		this.position = vector;
 	}
 
-	// Token: 0x06000298 RID: 664 RVA: 0x00020CE4 File Offset: 0x0001EEE4
+	// Token: 0x06000241 RID: 577 RVA: 0x0000C37C File Offset: 0x0000A57C
 	private void UpdateSubscribers()
 	{
 		foreach (ICameraCut cameraCut in CameraCutDetector.subscribers)

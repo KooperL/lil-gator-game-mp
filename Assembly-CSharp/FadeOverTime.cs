@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class FadeOverTime : MonoBehaviour
 {
-	// Token: 0x06000052 RID: 82 RVA: 0x000186F8 File Offset: 0x000168F8
+	// Token: 0x06000051 RID: 81 RVA: 0x0000345C File Offset: 0x0000165C
 	public void OnEnable()
 	{
 		this.fade = this.initialFadeLevel;
@@ -13,7 +13,7 @@ public class FadeOverTime : MonoBehaviour
 		this.image.color = this.color;
 	}
 
-	// Token: 0x06000053 RID: 83 RVA: 0x00018744 File Offset: 0x00016944
+	// Token: 0x06000052 RID: 82 RVA: 0x000034A8 File Offset: 0x000016A8
 	private void Update()
 	{
 		this.fade = Mathf.MoveTowards(this.fade, this.targetFadeLevel, Time.deltaTime * this.fadeSpeed);

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class BlacksmithDialogue : MonoBehaviour, Interaction
 {
-	// Token: 0x060003A8 RID: 936 RVA: 0x00004CB7 File Offset: 0x00002EB7
+	// Token: 0x0600033D RID: 829 RVA: 0x00013056 File Offset: 0x00011256
 	public void Interact()
 	{
 		base.StartCoroutine(this.RunConversation());
 	}
 
-	// Token: 0x060003A9 RID: 937 RVA: 0x00004CC6 File Offset: 0x00002EC6
+	// Token: 0x0600033E RID: 830 RVA: 0x00013065 File Offset: 0x00011265
 	private IEnumerator RunConversation()
 	{
 		yield return null;

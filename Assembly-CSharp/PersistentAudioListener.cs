@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class PersistentAudioListener : MonoBehaviour
 {
-	// Token: 0x060009DB RID: 2523 RVA: 0x00009799 File Offset: 0x00007999
+	// Token: 0x06000824 RID: 2084 RVA: 0x000270A2 File Offset: 0x000252A2
 	private void Start()
 	{
 		if (PersistentAudioListener.persistentInstance == null)
 		{
 			PersistentAudioListener.persistentInstance = this;
 			this.audioListener.enabled = true;
-			global::UnityEngine.Object.DontDestroyOnLoad(base.gameObject);
+			Object.DontDestroyOnLoad(base.gameObject);
 			return;
 		}
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 	}
 
-	// Token: 0x060009DC RID: 2524 RVA: 0x000097D1 File Offset: 0x000079D1
+	// Token: 0x06000825 RID: 2085 RVA: 0x000270DA File Offset: 0x000252DA
 	private void LateUpdate()
 	{
 		if (this.parent == null)

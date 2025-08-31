@@ -7,7 +7,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 	[RequireComponent(typeof(Image))]
 	public class ControllerUIElement : MonoBehaviour
 	{
-		// (get) Token: 0x06001E45 RID: 7749 RVA: 0x0001729C File Offset: 0x0001549C
+		// (get) Token: 0x060017E0 RID: 6112 RVA: 0x00065C9A File Offset: 0x00063E9A
 		private bool hasEffects
 		{
 			get
@@ -16,7 +16,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001E46 RID: 7750 RVA: 0x000172BA File Offset: 0x000154BA
+		// Token: 0x060017E1 RID: 6113 RVA: 0x00065CB8 File Offset: 0x00063EB8
 		private void Awake()
 		{
 			this._image = base.GetComponent<Image>();
@@ -25,7 +25,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			this.ClearLabels();
 		}
 
-		// Token: 0x06001E47 RID: 7751 RVA: 0x0007704C File Offset: 0x0007524C
+		// Token: 0x060017E2 RID: 6114 RVA: 0x00065CEC File Offset: 0x00063EEC
 		public void Activate(float amount)
 		{
 			amount = Mathf.Clamp(amount, -1f, 1f);
@@ -63,7 +63,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001E48 RID: 7752 RVA: 0x00077140 File Offset: 0x00075340
+		// Token: 0x060017E3 RID: 6115 RVA: 0x00065DE0 File Offset: 0x00063FE0
 		public void Deactivate()
 		{
 			if (!this._isActive)
@@ -94,7 +94,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001E49 RID: 7753 RVA: 0x000771E8 File Offset: 0x000753E8
+		// Token: 0x060017E4 RID: 6116 RVA: 0x00065E88 File Offset: 0x00064088
 		public void SetLabel(string text, AxisRange labelType)
 		{
 			Text text2;
@@ -129,7 +129,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001E4A RID: 7754 RVA: 0x00077274 File Offset: 0x00075474
+		// Token: 0x060017E5 RID: 6117 RVA: 0x00065F14 File Offset: 0x00064114
 		public void ClearLabels()
 		{
 			if (this._label != null)
@@ -156,7 +156,7 @@ namespace Rewired.Demos.GamepadTemplateUI
 			}
 		}
 
-		// Token: 0x06001E4B RID: 7755 RVA: 0x000172EB File Offset: 0x000154EB
+		// Token: 0x060017E6 RID: 6118 RVA: 0x00065FB4 File Offset: 0x000641B4
 		private void RedrawImage()
 		{
 			this._image.color = this._color;

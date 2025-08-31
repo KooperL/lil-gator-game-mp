@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class LeafPile : PersistentObject
 {
-	// Token: 0x06000139 RID: 313 RVA: 0x00003151 File Offset: 0x00001351
+	// Token: 0x0600010C RID: 268 RVA: 0x00006BA8 File Offset: 0x00004DA8
 	private void Start()
 	{
 		this.displacementPerHealth = this.maxDisplacement / (float)this.health;
@@ -14,13 +14,13 @@ public class LeafPile : PersistentObject
 		}
 	}
 
-	// Token: 0x0600013A RID: 314 RVA: 0x0001BB60 File Offset: 0x00019D60
+	// Token: 0x0600010D RID: 269 RVA: 0x00006BD8 File Offset: 0x00004DD8
 	private void OnTriggerEnter(Collider other)
 	{
 		this.health--;
 		if (this.splashPrefab)
 		{
-			global::UnityEngine.Object.Instantiate<GameObject>(this.splashPrefab, base.transform.position, base.transform.rotation);
+			Object.Instantiate<GameObject>(this.splashPrefab, base.transform.position, base.transform.rotation);
 		}
 		if (this.health > 0)
 		{
@@ -38,7 +38,7 @@ public class LeafPile : PersistentObject
 			this.hiddenObject.SetActive(true);
 		}
 		this.SaveTrue();
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 	}
 
 	public int health = 3;

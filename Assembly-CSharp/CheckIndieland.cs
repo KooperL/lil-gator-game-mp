@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CheckIndieland : MonoBehaviour
 {
-	// Token: 0x06000166 RID: 358 RVA: 0x0000339F File Offset: 0x0000159F
+	// Token: 0x06000139 RID: 313 RVA: 0x00007B07 File Offset: 0x00005D07
 	private void Awake()
 	{
 		if (false != this.showIfIndieland)

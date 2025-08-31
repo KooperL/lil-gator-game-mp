@@ -9,7 +9,7 @@ namespace Rewired.Demos
 	[AddComponentMenu("")]
 	public class SimpleControlRemapping : MonoBehaviour
 	{
-		// (get) Token: 0x06001E0C RID: 7692 RVA: 0x00016E4A File Offset: 0x0001504A
+		// (get) Token: 0x060017B6 RID: 6070 RVA: 0x000650D9 File Offset: 0x000632D9
 		private Player player
 		{
 			get
@@ -18,7 +18,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// (get) Token: 0x06001E0D RID: 7693 RVA: 0x00076690 File Offset: 0x00074890
+		// (get) Token: 0x060017B7 RID: 6071 RVA: 0x000650E8 File Offset: 0x000632E8
 		private ControllerMap controllerMap
 		{
 			get
@@ -31,7 +31,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// (get) Token: 0x06001E0E RID: 7694 RVA: 0x00016F38 File Offset: 0x00015138
+		// (get) Token: 0x060017B8 RID: 6072 RVA: 0x00065134 File Offset: 0x00063334
 		private Controller controller
 		{
 			get
@@ -40,7 +40,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001E0F RID: 7695 RVA: 0x000766DC File Offset: 0x000748DC
+		// Token: 0x060017B9 RID: 6073 RVA: 0x00065154 File Offset: 0x00063354
 		private void OnEnable()
 		{
 			if (!ReInput.isReady)
@@ -57,7 +57,7 @@ namespace Rewired.Demos
 			this.InitializeUI();
 		}
 
-		// Token: 0x06001E10 RID: 7696 RVA: 0x00016F56 File Offset: 0x00015156
+		// Token: 0x060017BA RID: 6074 RVA: 0x000651F6 File Offset: 0x000633F6
 		private void OnDisable()
 		{
 			this.inputMapper.Stop();
@@ -66,7 +66,7 @@ namespace Rewired.Demos
 			ReInput.ControllerDisconnectedEvent -= this.OnControllerChanged;
 		}
 
-		// Token: 0x06001E11 RID: 7697 RVA: 0x00076780 File Offset: 0x00074980
+		// Token: 0x060017BB RID: 6075 RVA: 0x00065230 File Offset: 0x00063430
 		private void RedrawUI()
 		{
 			if (this.controller == null)
@@ -100,7 +100,7 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001E12 RID: 7698 RVA: 0x000768BC File Offset: 0x00074ABC
+		// Token: 0x060017BC RID: 6076 RVA: 0x0006536C File Offset: 0x0006356C
 		private void ClearUI()
 		{
 			if (this.selectedControllerType == ControllerType.Joystick)
@@ -117,16 +117,16 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001E13 RID: 7699 RVA: 0x00076928 File Offset: 0x00074B28
+		// Token: 0x060017BD RID: 6077 RVA: 0x000653D8 File Offset: 0x000635D8
 		private void InitializeUI()
 		{
 			foreach (object obj in this.actionGroupTransform)
 			{
-				global::UnityEngine.Object.Destroy(((Transform)obj).gameObject);
+				Object.Destroy(((Transform)obj).gameObject);
 			}
 			foreach (object obj2 in this.fieldGroupTransform)
 			{
-				global::UnityEngine.Object.Destroy(((Transform)obj2).gameObject);
+				Object.Destroy(((Transform)obj2).gameObject);
 			}
 			foreach (InputAction inputAction in ReInput.mapping.ActionsInCategory("Default"))
 			{
@@ -144,14 +144,14 @@ namespace Rewired.Demos
 			this.RedrawUI();
 		}
 
-		// Token: 0x06001E14 RID: 7700 RVA: 0x00076AA0 File Offset: 0x00074CA0
+		// Token: 0x060017BE RID: 6078 RVA: 0x00065550 File Offset: 0x00063750
 		private void CreateUIRow(InputAction action, AxisRange actionRange, string label)
 		{
-			GameObject gameObject = global::UnityEngine.Object.Instantiate<GameObject>(this.textPrefab);
+			GameObject gameObject = Object.Instantiate<GameObject>(this.textPrefab);
 			gameObject.transform.SetParent(this.actionGroupTransform);
 			gameObject.transform.SetAsLastSibling();
 			gameObject.GetComponent<Text>().text = label;
-			GameObject gameObject2 = global::UnityEngine.Object.Instantiate<GameObject>(this.buttonPrefab);
+			GameObject gameObject2 = Object.Instantiate<GameObject>(this.buttonPrefab);
 			gameObject2.transform.SetParent(this.fieldGroupTransform);
 			gameObject2.transform.SetAsLastSibling();
 			this.rows.Add(new SimpleControlRemapping.Row
@@ -163,7 +163,7 @@ namespace Rewired.Demos
 			});
 		}
 
-		// Token: 0x06001E15 RID: 7701 RVA: 0x00076B40 File Offset: 0x00074D40
+		// Token: 0x060017BF RID: 6079 RVA: 0x000655F0 File Offset: 0x000637F0
 		private void SetSelectedController(ControllerType controllerType)
 		{
 			bool flag = false;
@@ -199,13 +199,13 @@ namespace Rewired.Demos
 			}
 		}
 
-		// Token: 0x06001E16 RID: 7702 RVA: 0x00016F90 File Offset: 0x00015190
+		// Token: 0x060017C0 RID: 6080 RVA: 0x00065686 File Offset: 0x00063886
 		public void OnControllerSelected(int controllerType)
 		{
 			this.SetSelectedController((ControllerType)controllerType);
 		}
 
-		// Token: 0x06001E17 RID: 7703 RVA: 0x00016F99 File Offset: 0x00015199
+		// Token: 0x060017C1 RID: 6081 RVA: 0x0006568F File Offset: 0x0006388F
 		private void OnInputFieldClicked(int index, int actionElementMapToReplaceId)
 		{
 			if (index < 0 || index >= this.rows.Count)
@@ -219,7 +219,7 @@ namespace Rewired.Demos
 			base.StartCoroutine(this.StartListeningDelayed(index, actionElementMapToReplaceId));
 		}
 
-		// Token: 0x06001E18 RID: 7704 RVA: 0x00016FC6 File Offset: 0x000151C6
+		// Token: 0x060017C2 RID: 6082 RVA: 0x000656BC File Offset: 0x000638BC
 		private IEnumerator StartListeningDelayed(int index, int actionElementMapToReplaceId)
 		{
 			yield return new WaitForSeconds(0.1f);
@@ -235,19 +235,19 @@ namespace Rewired.Demos
 			yield break;
 		}
 
-		// Token: 0x06001E19 RID: 7705 RVA: 0x00016FE3 File Offset: 0x000151E3
+		// Token: 0x060017C3 RID: 6083 RVA: 0x000656D9 File Offset: 0x000638D9
 		private void OnControllerChanged(ControllerStatusChangedEventArgs args)
 		{
 			this.SetSelectedController(this.selectedControllerType);
 		}
 
-		// Token: 0x06001E1A RID: 7706 RVA: 0x00016FF1 File Offset: 0x000151F1
+		// Token: 0x060017C4 RID: 6084 RVA: 0x000656E7 File Offset: 0x000638E7
 		private void OnInputMapped(InputMapper.InputMappedEventData data)
 		{
 			this.RedrawUI();
 		}
 
-		// Token: 0x06001E1B RID: 7707 RVA: 0x00016FF9 File Offset: 0x000151F9
+		// Token: 0x060017C5 RID: 6085 RVA: 0x000656EF File Offset: 0x000638EF
 		private void OnStopped(InputMapper.StoppedEventData data)
 		{
 			this.statusUIText.text = string.Empty;

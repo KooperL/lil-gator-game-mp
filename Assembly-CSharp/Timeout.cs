@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class Timeout : MonoBehaviour
 {
-	// Token: 0x06000FE1 RID: 4065 RVA: 0x0000DB25 File Offset: 0x0000BD25
+	// Token: 0x06000CD8 RID: 3288 RVA: 0x0003E287 File Offset: 0x0003C487
 	private void Start()
 	{
 		base.Invoke("Destroy", this.delay);
 	}
 
-	// Token: 0x06000FE2 RID: 4066 RVA: 0x000049DF File Offset: 0x00002BDF
+	// Token: 0x06000CD9 RID: 3289 RVA: 0x0003E29A File Offset: 0x0003C49A
 	private void Destroy()
 	{
-		global::UnityEngine.Object.Destroy(base.gameObject);
+		Object.Destroy(base.gameObject);
 	}
 
 	public float delay = 0.5f;

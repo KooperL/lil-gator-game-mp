@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ProximityEnabled : MonoBehaviour, IManagedUpdate
 {
-	// Token: 0x06000D4A RID: 3402 RVA: 0x0000C362 File Offset: 0x0000A562
+	// Token: 0x06000B32 RID: 2866 RVA: 0x00037DC7 File Offset: 0x00035FC7
 	private void OnValidate()
 	{
 		if (this.collider == null)
@@ -12,19 +12,19 @@ public class ProximityEnabled : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000D4B RID: 3403 RVA: 0x00002B40 File Offset: 0x00000D40
+	// Token: 0x06000B33 RID: 2867 RVA: 0x00037DE3 File Offset: 0x00035FE3
 	private void OnEnable()
 	{
 		FastUpdateManager.updateEveryNonFixed.Add(this);
 	}
 
-	// Token: 0x06000D4C RID: 3404 RVA: 0x000028C1 File Offset: 0x00000AC1
+	// Token: 0x06000B34 RID: 2868 RVA: 0x00037DF0 File Offset: 0x00035FF0
 	private void OnDisable()
 	{
 		FastUpdateManager.updateEveryNonFixed.Remove(this);
 	}
 
-	// Token: 0x06000D4D RID: 3405 RVA: 0x0000C37E File Offset: 0x0000A57E
+	// Token: 0x06000B35 RID: 2869 RVA: 0x00037DFE File Offset: 0x00035FFE
 	public void OnTriggerEnter(Collider other)
 	{
 		this.stepsSinceProximity = 0;
@@ -34,7 +34,7 @@ public class ProximityEnabled : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000D4E RID: 3406 RVA: 0x0004ACEC File Offset: 0x00048EEC
+	// Token: 0x06000B36 RID: 2870 RVA: 0x00037E18 File Offset: 0x00036018
 	public void ManagedUpdate()
 	{
 		Vector3 position = Player.Position;
@@ -52,7 +52,7 @@ public class ProximityEnabled : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000D4F RID: 3407 RVA: 0x0004AD48 File Offset: 0x00048F48
+	// Token: 0x06000B37 RID: 2871 RVA: 0x00037E74 File Offset: 0x00036074
 	private void OnProximityEnter()
 	{
 		base.enabled = true;
@@ -63,7 +63,7 @@ public class ProximityEnabled : MonoBehaviour, IManagedUpdate
 		}
 	}
 
-	// Token: 0x06000D50 RID: 3408 RVA: 0x0004AD7C File Offset: 0x00048F7C
+	// Token: 0x06000B38 RID: 2872 RVA: 0x00037EA8 File Offset: 0x000360A8
 	private void OnProximityExit()
 	{
 		base.enabled = false;

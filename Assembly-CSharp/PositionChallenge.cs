@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class PositionChallenge : PersistentObject
 {
-	// Token: 0x06000849 RID: 2121 RVA: 0x00037BC8 File Offset: 0x00035DC8
+	// Token: 0x060006CA RID: 1738 RVA: 0x000227E4 File Offset: 0x000209E4
 	private void Awake()
 	{
 		BreakableObject[] array = this.countedBreakables;
@@ -14,28 +14,28 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x0600084A RID: 2122 RVA: 0x0000828D File Offset: 0x0000648D
+	// Token: 0x060006CB RID: 1739 RVA: 0x0002281F File Offset: 0x00020A1F
 	[ContextMenu("Gather Breakables")]
 	public void GatherBreakables()
 	{
 		this.challengeBreakables = base.transform.GetComponentsInChildren<BreakableObject>();
 	}
 
-	// Token: 0x0600084B RID: 2123 RVA: 0x000082A0 File Offset: 0x000064A0
+	// Token: 0x060006CC RID: 1740 RVA: 0x00022832 File Offset: 0x00020A32
 	public override void Load(bool state)
 	{
 		this.isFinished = state;
 		this.LoadState();
 	}
 
-	// Token: 0x0600084C RID: 2124 RVA: 0x000082AF File Offset: 0x000064AF
+	// Token: 0x060006CD RID: 1741 RVA: 0x00022841 File Offset: 0x00020A41
 	protected virtual void Start()
 	{
 		this.LoadState();
 		base.enabled = false;
 	}
 
-	// Token: 0x0600084D RID: 2125 RVA: 0x00037C04 File Offset: 0x00035E04
+	// Token: 0x060006CE RID: 1742 RVA: 0x00022850 File Offset: 0x00020A50
 	protected virtual void LoadState()
 	{
 		this.startObject.SetActive(!this.isFinished);
@@ -48,7 +48,7 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x0600084E RID: 2126 RVA: 0x000082BE File Offset: 0x000064BE
+	// Token: 0x060006CF RID: 1743 RVA: 0x000228A3 File Offset: 0x00020AA3
 	public void OnTrigger()
 	{
 		this.raceTrigger = Time.time;
@@ -58,7 +58,7 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x0600084F RID: 2127 RVA: 0x00037C58 File Offset: 0x00035E58
+	// Token: 0x060006D0 RID: 1744 RVA: 0x000228C0 File Offset: 0x00020AC0
 	public virtual void StartChallenge()
 	{
 		BreakableObject[] array = this.challengeBreakables;
@@ -79,13 +79,13 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x06000850 RID: 2128 RVA: 0x000082D9 File Offset: 0x000064D9
+	// Token: 0x060006D1 RID: 1745 RVA: 0x00022946 File Offset: 0x00020B46
 	protected virtual Transform RaceGoal()
 	{
 		return this.startObject.transform;
 	}
 
-	// Token: 0x06000851 RID: 2129 RVA: 0x000082E6 File Offset: 0x000064E6
+	// Token: 0x060006D2 RID: 1746 RVA: 0x00022953 File Offset: 0x00020B53
 	private void Update()
 	{
 		if (!this.isInChallenge)
@@ -99,7 +99,7 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x06000852 RID: 2130 RVA: 0x00037CE0 File Offset: 0x00035EE0
+	// Token: 0x060006D3 RID: 1747 RVA: 0x00022980 File Offset: 0x00020B80
 	public virtual void CancelChallenge()
 	{
 		if (this.raceFailedSound != null)
@@ -115,7 +115,7 @@ public class PositionChallenge : PersistentObject
 		this.ClearRace();
 	}
 
-	// Token: 0x06000853 RID: 2131 RVA: 0x00037D44 File Offset: 0x00035F44
+	// Token: 0x060006D4 RID: 1748 RVA: 0x000229E4 File Offset: 0x00020BE4
 	private void BreakableBroken()
 	{
 		int num = 0;
@@ -135,14 +135,14 @@ public class PositionChallenge : PersistentObject
 		PlayAudio.p.PlayQuestSting(num);
 	}
 
-	// Token: 0x06000854 RID: 2132 RVA: 0x00037D94 File Offset: 0x00035F94
+	// Token: 0x060006D5 RID: 1749 RVA: 0x00022A34 File Offset: 0x00020C34
 	public void FinishChallenge()
 	{
 		if (!this.isInChallenge)
 		{
 			return;
 		}
-		ParticleSystem component = global::UnityEngine.Object.Instantiate<GameObject>(this.rewardObject, base.transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
+		ParticleSystem component = Object.Instantiate<GameObject>(this.rewardObject, base.transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
 		component.main.maxParticles = Mathf.RoundToInt((float)this.rewardAmount / component.GetComponent<ParticlePickup>().rewardPerPickup);
 		this.startObject.SetActive(false);
 		this.SaveTrue();
@@ -154,7 +154,7 @@ public class PositionChallenge : PersistentObject
 		this.onFinish.Invoke();
 	}
 
-	// Token: 0x06000855 RID: 2133 RVA: 0x00008311 File Offset: 0x00006511
+	// Token: 0x060006D6 RID: 1750 RVA: 0x00022ACC File Offset: 0x00020CCC
 	public void ClearRace()
 	{
 		base.enabled = false;
@@ -165,7 +165,7 @@ public class PositionChallenge : PersistentObject
 		}
 	}
 
-	// Token: 0x06000856 RID: 2134 RVA: 0x00037E2C File Offset: 0x0003602C
+	// Token: 0x060006D7 RID: 1751 RVA: 0x00022AF8 File Offset: 0x00020CF8
 	protected virtual void DoParticleEffects()
 	{
 		foreach (BreakableObject breakableObject in this.challengeBreakables)

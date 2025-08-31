@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerColliders : MonoBehaviour
 {
-	// Token: 0x06000D25 RID: 3365 RVA: 0x0004A38C File Offset: 0x0004858C
+	// Token: 0x06000B13 RID: 2835 RVA: 0x00037538 File Offset: 0x00035738
 	private void Awake()
 	{
 		if (IgnorePlayerCollision.playerColliders == null || IgnorePlayerCollision.playerColliders.Length == 0)

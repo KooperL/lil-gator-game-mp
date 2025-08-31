@@ -4,12 +4,12 @@ using UnityEngine.Events;
 
 public class ImpactSound : MonoBehaviour
 {
-	// Token: 0x06000658 RID: 1624 RVA: 0x00002229 File Offset: 0x00000429
+	// Token: 0x0600050C RID: 1292 RVA: 0x0001B1C2 File Offset: 0x000193C2
 	private void Start()
 	{
 	}
 
-	// Token: 0x06000659 RID: 1625 RVA: 0x0003122C File Offset: 0x0002F42C
+	// Token: 0x0600050D RID: 1293 RVA: 0x0001B1C4 File Offset: 0x000193C4
 	private void OnTriggerEnter(Collider other)
 	{
 		if (!base.enabled)
@@ -28,7 +28,7 @@ public class ImpactSound : MonoBehaviour
 		}
 	}
 
-	// Token: 0x0600065A RID: 1626 RVA: 0x00031294 File Offset: 0x0002F494
+	// Token: 0x0600050E RID: 1294 RVA: 0x0001B22C File Offset: 0x0001942C
 	private void OnCollisionEnter(Collision collision)
 	{
 		if (!base.enabled)

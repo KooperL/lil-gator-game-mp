@@ -6,7 +6,7 @@ namespace Cinemachine.Examples
 	[AddComponentMenu("")]
 	public class ActivateCamOnPlay : MonoBehaviour
 	{
-		// Token: 0x060013BA RID: 5050 RVA: 0x00010B41 File Offset: 0x0000ED41
+		// Token: 0x0600102C RID: 4140 RVA: 0x0004DAD9 File Offset: 0x0004BCD9
 		private void Start()
 		{
 			if (this.vcam)

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [CreateAssetMenu]
 public class ItemObject : ScriptableObject
 {
-	// (get) Token: 0x06000122 RID: 290 RVA: 0x00002F36 File Offset: 0x00001136
+	// (get) Token: 0x060000F5 RID: 245 RVA: 0x00006781 File Offset: 0x00004981
 	public string DisplayName
 	{
 		get
@@ -14,8 +14,8 @@ public class ItemObject : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x06000123 RID: 291 RVA: 0x00002F3E File Offset: 0x0000113E
-	// (set) Token: 0x06000124 RID: 292 RVA: 0x0001B964 File Offset: 0x00019B64
+	// (get) Token: 0x060000F6 RID: 246 RVA: 0x00006789 File Offset: 0x00004989
+	// (set) Token: 0x060000F7 RID: 247 RVA: 0x000067A8 File Offset: 0x000049A8
 	public bool IsUnlocked
 	{
 		get
@@ -40,8 +40,8 @@ public class ItemObject : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x06000125 RID: 293 RVA: 0x00002F5B File Offset: 0x0000115B
-	// (set) Token: 0x06000126 RID: 294 RVA: 0x00002F82 File Offset: 0x00001182
+	// (get) Token: 0x060000F8 RID: 248 RVA: 0x00006811 File Offset: 0x00004A11
+	// (set) Token: 0x060000F9 RID: 249 RVA: 0x00006838 File Offset: 0x00004A38
 	public bool IsShopUnlocked
 	{
 		get
@@ -57,7 +57,7 @@ public class ItemObject : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x06000127 RID: 295 RVA: 0x00002F9D File Offset: 0x0000119D
+	// (get) Token: 0x060000FA RID: 250 RVA: 0x00006853 File Offset: 0x00004A53
 	public string Name
 	{
 		get
@@ -70,7 +70,7 @@ public class ItemObject : ScriptableObject
 		}
 	}
 
-	// (get) Token: 0x06000128 RID: 296 RVA: 0x00002FC7 File Offset: 0x000011C7
+	// (get) Token: 0x060000FB RID: 251 RVA: 0x0000687D File Offset: 0x00004A7D
 	public string Description
 	{
 		get
